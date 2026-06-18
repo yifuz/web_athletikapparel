@@ -20,7 +20,7 @@ $hero_image = get_stylesheet_directory_uri() . '/assets/images/%E4%B8%BB%E5%9B%B
 		<div class="ma-home-hero__content">
 			<p class="ma-home-hero__eyebrow"><?php esc_html_e( 'Technical knitwear manufacturing partner', 'myathletik-child' ); ?></p>
 			<h1 class="ma-home-hero__title"><?php esc_html_e( 'Vertically Integrated OEM Knitwear Manufacturer', 'myathletik-child' ); ?></h1>
-			<p class="ma-home-hero__subhead">[CONTENT: user to write hero positioning subhead]</p>
+			<p class="ma-home-hero__subhead"><?php esc_html_e( 'Full-package flatlock and activeseam knitwear for underwear, sportswear, and outdoor brands worldwide - backed by 15 years of technical production and our own integrated manufacturing.', 'myathletik-child' ); ?></p>
 
 			<div class="ma-home-hero__actions" aria-label="<?php esc_attr_e( 'Primary homepage actions', 'myathletik-child' ); ?>">
 				<a class="ma-button ma-button--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
