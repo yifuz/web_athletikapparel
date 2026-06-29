@@ -24,7 +24,7 @@ $proof_items = array(
 	),
 	array(
 		'label' => __( 'Full-Package OEM/ODM', 'myathletik-child' ),
-		'copy'  => __( 'From fabric to finished garment.', 'myathletik-child' ),
+		'copy'  => __( 'From yarn to finished garment.', 'myathletik-child' ),
 	),
 );
 ?>

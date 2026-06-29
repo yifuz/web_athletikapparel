@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 $gallery_columns = array(
 	array(
-		array( 'file' => 'sportswear/flatlock-athletic-800-17.jpg', 'alt' => __( 'Sportswear model product sample for OEM knitwear', 'myathletik-child' ), 'size' => 'short' ),
+		array( 'file' => 'sportswear/flatlock-athletic-800-17.jpg', 'alt' => __( 'Sportswear model product sample for OEM/ODM knitwear', 'myathletik-child' ), 'size' => 'short' ),
 		array( 'file' => 'outdoor clothing/flatlock-athletic-800-4.jpg', 'alt' => __( 'Outdoor technical knitwear model sample', 'myathletik-child' ), 'size' => 'tall' ),
 	),
 	array(
@@ -28,14 +28,14 @@ $gallery_columns = array(
 		array( 'file' => 'outdoor clothing/flatlock-athletic-800-50-1.jpg', 'alt' => __( 'Outdoor clothing model product sample', 'myathletik-child' ), 'size' => 'short' ),
 	),
 	array(
-		array( 'file' => 'silkwear/IMG_5478.jpg', 'alt' => __( 'Silk wear model sample for OEM apparel', 'myathletik-child' ), 'size' => 'short' ),
+		array( 'file' => 'silkwear/IMG_5478.jpg', 'alt' => __( 'Silk wear model sample for OEM/ODM apparel', 'myathletik-child' ), 'size' => 'short' ),
 		array( 'file' => 'merino wool product/merino-wool-base-layer-12.jpg', 'alt' => __( 'Merino wool apparel model sample for production', 'myathletik-child' ), 'size' => 'tall' ),
 	),
 	array(
 		array( 'file' => 'sportswear/IMG_7836-1-scaled.jpg', 'alt' => __( 'Sportswear model sample in technical knit apparel', 'myathletik-child' ), 'size' => 'tall' ),
 	),
 	array(
-		array( 'file' => 'outdoor clothing/flatlock-athletic-800-54.jpg', 'alt' => __( 'Outdoor knitwear model sample for OEM manufacturing', 'myathletik-child' ), 'size' => 'medium' ),
+		array( 'file' => 'outdoor clothing/flatlock-athletic-800-54.jpg', 'alt' => __( 'Outdoor knitwear model sample for OEM/ODM manufacturing', 'myathletik-child' ), 'size' => 'medium' ),
 		array( 'file' => 'silkwear/IMG_5519.jpg', 'alt' => __( 'Silk wear model apparel sample', 'myathletik-child' ), 'size' => 'medium' ),
 	),
 	array(
@@ -52,7 +52,7 @@ $gallery_columns = array(
 	),
 	array(
 		array( 'file' => 'merino wool product/merino-wool-base-layer-16.jpg', 'alt' => __( 'Merino wool technical knitwear model sample', 'myathletik-child' ), 'size' => 'short' ),
-		array( 'file' => 'silkwear/IMG_5600.jpg', 'alt' => __( 'Silk wear model image for OEM apparel lookbook', 'myathletik-child' ), 'size' => 'tall' ),
+		array( 'file' => 'silkwear/IMG_5600.jpg', 'alt' => __( 'Silk wear model image for OEM/ODM apparel lookbook', 'myathletik-child' ), 'size' => 'tall' ),
 	),
 	array(
 		array( 'file' => 'silkwear/IMG_5614.jpg', 'alt' => __( 'Silk apparel model garment detail', 'myathletik-child' ), 'size' => 'medium' ),

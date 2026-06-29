@@ -33,7 +33,7 @@ Four points (label + microcopy):
 2. **Technical Construction** — Yamato flatlock & Merrow activeseam machines
 3. **15 Years' Experience** — Trusted by brands across North America, Europe &
    the Nordics
-4. **Full-Package OEM/ODM** — From fabric to finished garment
+4. **Full-Package OEM/ODM** — From yarn to finished garment
 
 ---
 
@@ -53,15 +53,15 @@ Replace `[CONTENT: user to write short product category intro]` with:
 Replace `[CONTENT: user to write why myathletik overview]` (overview) with:
 
 > We're not just a factory — we're an integrated production partner. From our
-> own fabric mill to finished-garment construction, we give performance brands
+> yarn and fabric development to finished-garment construction, we give performance brands
 > the technical capability and flexible capacity to bring demanding designs to
 > life.
 
 Replace each `[CONTENT: user to write this reason]` (5 reasons) with:
 
-1. **Vertical Integration** — From our own fabric mill with full in-house
-   testing to flatlock and activeseam garment construction, we control quality
-   at every stage.
+1. **Vertical Integration** — From yarn and fabric development with full
+   in-house testing to flatlock and activeseam garment construction, we control
+   quality at every stage.
 2. **Technical Knit Construction** — Specialized in flatlock seam and activeseam
    production with Yamato and Merrow machines, refined over 15 years.
 3. **Performance Fabric Expertise** — Microfiber, merino wool, power stretch,

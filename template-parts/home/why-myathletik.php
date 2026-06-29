@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $reasons = array(
 	array(
 		'title' => __( 'Vertical Integration', 'myathletik-child' ),
-		'copy'  => __( 'From our own fabric mill with full in-house testing to flatlock and activeseam garment construction, we control quality at every stage.', 'myathletik-child' ),
+		'copy'  => __( 'From yarn and fabric development with full in-house testing to flatlock and activeseam garment construction, we control quality at every stage.', 'myathletik-child' ),
 	),
 	array(
 		'title' => __( 'Technical Knit Construction', 'myathletik-child' ),
@@ -38,7 +38,7 @@ $reasons = array(
 		<div class="ma-section-heading">
 			<p class="ma-section-kicker"><?php esc_html_e( 'Why myathletik', 'myathletik-child' ); ?></p>
 			<h2 id="ma-home-why-title"><?php esc_html_e( 'Built for technical repeat orders, not tiny one-off runs', 'myathletik-child' ); ?></h2>
-			<p><?php esc_html_e( "We're not just a factory - we're an integrated production partner. From our own fabric mill to finished-garment construction, we give performance brands the technical capability and flexible capacity to bring demanding designs to life.", 'myathletik-child' ); ?></p>
+			<p><?php esc_html_e( "We're not just a factory - we're an integrated production partner. From yarn and fabric development to finished-garment construction, we give performance brands the technical capability and flexible capacity to bring demanding designs to life.", 'myathletik-child' ); ?></p>
 		</div>
 
 		<div class="ma-home-why__list">

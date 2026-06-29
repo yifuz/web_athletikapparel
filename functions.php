@@ -11,6 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // No direct access.
 }
 
+require_once get_stylesheet_directory() . '/inc/product-category-data.php';
+
 /**
  * Enqueue parent + child stylesheets.
  *
@@ -29,11 +31,19 @@ function myathletik_enqueue_styles() {
 		$child->parent() ? $child->parent()->get( 'Version' ) : null
 	);
 
+	// Heading font: only the weights used in this theme, with display=swap.
+	wp_enqueue_style(
+		'myathletik-google-fonts',
+		'https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap',
+		array(),
+		null
+	);
+
 	// Child stylesheet.
 	wp_enqueue_style(
 		'myathletik-child-style',
 		get_stylesheet_uri(),
-		array( 'generatepress-style' ),
+		array( 'generatepress-style', 'myathletik-google-fonts' ),
 		file_exists( $child_style_path ) ? filemtime( $child_style_path ) : $child->get( 'Version' )
 	);
 
@@ -41,6 +51,28 @@ function myathletik_enqueue_styles() {
 	// project grows, e.g. per-template stylesheets.
 }
 add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_styles' );
+
+/**
+ * Add preconnect hints for Google Fonts.
+ *
+ * @param array  $urls          Resource hint URLs.
+ * @param string $relation_type Hint relation type.
+ * @return array
+ */
+function myathletik_resource_hints( $urls, $relation_type ) {
+	if ( 'preconnect' === $relation_type ) {
+		$urls[] = array(
+			'href' => 'https://fonts.googleapis.com',
+		);
+		$urls[] = array(
+			'href'        => 'https://fonts.gstatic.com',
+			'crossorigin' => 'anonymous',
+		);
+	}
+
+	return $urls;
+}
+add_filter( 'wp_resource_hints', 'myathletik_resource_hints', 10, 2 );
 
 /**
  * Theme supports / setup.
@@ -195,6 +227,264 @@ function myathletik_ensure_primary_menu() {
 add_action( 'init', 'myathletik_ensure_primary_menu', 20 );
 
 /**
+ * Seed empty WordPress pages for the code-rendered category templates.
+ *
+ * WordPress only loads page-{slug}.php templates when a matching Page exists.
+ * The body is intentionally placeholder-only because page content is rendered
+ * from theme templates and user-authored copy will be filled later.
+ */
+function myathletik_ensure_product_category_pages() {
+	$categories = myathletik_product_category_data();
+
+	foreach ( $categories as $slug => $category ) {
+		$page = get_page_by_path( $slug, OBJECT, 'page' );
+
+		if ( $page ) {
+			continue;
+		}
+
+		wp_insert_post(
+			array(
+				'post_type'    => 'page',
+				'post_status'  => 'publish',
+				'post_name'    => $slug,
+				'post_title'   => wp_strip_all_tags( $category['h1'] ),
+				'post_content' => '[CONTENT: rendered by myathletik-child category template]',
+			)
+		);
+	}
+}
+add_action( 'init', 'myathletik_ensure_product_category_pages', 30 );
+
+/**
+ * Seed the Contact page used by page-contact.php.
+ */
+function myathletik_ensure_contact_page() {
+	if ( get_page_by_path( 'contact', OBJECT, 'page' ) ) {
+		return;
+	}
+
+	wp_insert_post(
+		array(
+			'post_type'    => 'page',
+			'post_status'  => 'publish',
+			'post_name'    => 'contact',
+			'post_title'   => 'Contact Us',
+			'post_content' => '',
+		)
+	);
+}
+add_action( 'init', 'myathletik_ensure_contact_page', 35 );
+
+/**
+ * Seed the Services page used by page-services.php.
+ */
+function myathletik_ensure_services_page() {
+	if ( get_page_by_path( 'services', OBJECT, 'page' ) ) {
+		return;
+	}
+
+	wp_insert_post(
+		array(
+			'post_type'    => 'page',
+			'post_status'  => 'publish',
+			'post_name'    => 'services',
+			'post_title'   => 'Our Services',
+			'post_content' => '',
+		)
+	);
+}
+add_action( 'init', 'myathletik_ensure_services_page', 36 );
+
+/**
+ * Seed the About page used by page-about-us.php.
+ */
+function myathletik_ensure_about_page() {
+	if ( get_page_by_path( 'about-us', OBJECT, 'page' ) ) {
+		return;
+	}
+
+	wp_insert_post(
+		array(
+			'post_type'    => 'page',
+			'post_status'  => 'publish',
+			'post_name'    => 'about-us',
+			'post_title'   => 'About Athletik Clothing',
+			'post_content' => '',
+		)
+	);
+}
+add_action( 'init', 'myathletik_ensure_about_page', 37 );
+
+/**
+ * Seed the Sustainability page used by page-sustainability.php.
+ */
+function myathletik_ensure_sustainability_page() {
+	if ( get_page_by_path( 'sustainability', OBJECT, 'page' ) ) {
+		return;
+	}
+
+	wp_insert_post(
+		array(
+			'post_type'    => 'page',
+			'post_status'  => 'publish',
+			'post_name'    => 'sustainability',
+			'post_title'   => 'Sustainability',
+			'post_content' => '',
+		)
+	);
+}
+add_action( 'init', 'myathletik_ensure_sustainability_page', 38 );
+
+/**
+ * Redirect the old misspelled sustainability slug to the corrected URL.
+ */
+function myathletik_redirect_misspelled_sustainability_slug() {
+	$request_path = isset( $_SERVER['REQUEST_URI'] ) ? wp_parse_url( sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ), PHP_URL_PATH ) : '';
+
+	if ( '/sustainabilty/' === $request_path || '/sustainabilty' === $request_path ) {
+		wp_safe_redirect( home_url( '/sustainability/' ), 301 );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'myathletik_redirect_misspelled_sustainability_slug', 1 );
+
+/**
+ * Get category data for the current product category page.
+ *
+ * @return array|null
+ */
+function myathletik_get_current_product_category() {
+	if ( ! is_page() ) {
+		return null;
+	}
+
+	$slug = get_post_field( 'post_name', get_queried_object_id() );
+
+	return $slug ? myathletik_get_product_category_data( $slug ) : null;
+}
+
+/**
+ * Use category-specific document titles for product category pages.
+ *
+ * @param array $parts Document title parts.
+ * @return array
+ */
+function myathletik_product_category_document_title( $parts ) {
+	$category = myathletik_get_current_product_category();
+
+	if ( $category && ! empty( $category['seo_title'] ) ) {
+		$parts['title'] = wp_strip_all_tags( $category['seo_title'] );
+		unset( $parts['site'] );
+	}
+
+	return $parts;
+}
+add_filter( 'document_title_parts', 'myathletik_product_category_document_title', 20 );
+
+/**
+ * Print category-specific meta descriptions for product category pages.
+ */
+function myathletik_product_category_meta_description() {
+	$category = myathletik_get_current_product_category();
+
+	if ( ! $category || empty( $category['meta_description'] ) ) {
+		return;
+	}
+	?>
+	<meta name="description" content="<?php echo esc_attr( $category['meta_description'] ); ?>">
+	<?php
+}
+add_action( 'wp_head', 'myathletik_product_category_meta_description', 1 );
+
+/**
+ * Use service-page-specific document title and meta description.
+ *
+ * @param array $parts Document title parts.
+ * @return array
+ */
+function myathletik_services_document_title( $parts ) {
+	if ( is_page( 'services' ) ) {
+		$parts['title'] = 'OEM/ODM Knitwear Services - Sampling to Shipping | Athletik Clothing';
+		unset( $parts['site'] );
+	}
+
+	return $parts;
+}
+add_filter( 'document_title_parts', 'myathletik_services_document_title', 25 );
+
+/**
+ * Print the Services page meta description.
+ */
+function myathletik_services_meta_description() {
+	if ( ! is_page( 'services' ) ) {
+		return;
+	}
+	?>
+	<meta name="description" content="<?php echo esc_attr__( 'OEM/ODM knitwear services from sampling and prototyping to bulk production, quality control, export support, and shipping coordination.', 'myathletik-child' ); ?>">
+	<?php
+}
+add_action( 'wp_head', 'myathletik_services_meta_description', 2 );
+
+/**
+ * Use about-page-specific document title and meta description.
+ *
+ * @param array $parts Document title parts.
+ * @return array
+ */
+function myathletik_about_document_title( $parts ) {
+	if ( is_page( 'about-us' ) ) {
+		$parts['title'] = 'About Us - Vertically Integrated Knitwear Manufacturer | Athletik Clothing';
+		unset( $parts['site'] );
+	}
+
+	return $parts;
+}
+add_filter( 'document_title_parts', 'myathletik_about_document_title', 26 );
+
+/**
+ * Print the About page meta description.
+ */
+function myathletik_about_meta_description() {
+	if ( ! is_page( 'about-us' ) ) {
+		return;
+	}
+	?>
+	<meta name="description" content="<?php echo esc_attr__( 'Learn about Athletik Clothing, a vertically integrated OEM/ODM technical knitwear manufacturer in the Zhangjiagang / Suzhou area of China.', 'myathletik-child' ); ?>">
+	<?php
+}
+add_action( 'wp_head', 'myathletik_about_meta_description', 3 );
+
+/**
+ * Use sustainability-page-specific document title and meta description.
+ *
+ * @param array $parts Document title parts.
+ * @return array
+ */
+function myathletik_sustainability_document_title( $parts ) {
+	if ( is_page( 'sustainability' ) ) {
+		$parts['title'] = 'Sustainability | Athletik Clothing';
+		unset( $parts['site'] );
+	}
+
+	return $parts;
+}
+add_filter( 'document_title_parts', 'myathletik_sustainability_document_title', 27 );
+
+/**
+ * Print the Sustainability page meta description.
+ */
+function myathletik_sustainability_meta_description() {
+	if ( ! is_page( 'sustainability' ) ) {
+		return;
+	}
+	?>
+	<meta name="description" content="<?php echo esc_attr__( 'Sustainability and compliance information for Athletik Clothing, including responsible materials, vertical integration, and verified badge groups.', 'myathletik-child' ); ?>">
+	<?php
+}
+add_action( 'wp_head', 'myathletik_sustainability_meta_description', 4 );
+
+/**
  * Add utility actions after the primary menu.
  *
  * Language switching is a front-end placeholder until multilingual routing is
@@ -246,7 +536,7 @@ function myathletik_site_footer() {
 					<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php esc_attr_e( 'Athletik Clothing', 'myathletik-child' ); ?>">
 					<span><?php esc_html_e( 'Athletik Clothing', 'myathletik-child' ); ?></span>
 				</a>
-				<p><?php esc_html_e( '[CONTENT: user to write short footer company positioning]', 'myathletik-child' ); ?></p>
+				<p><?php esc_html_e( 'Technical knitwear OEM/ODM manufacturing partner for underwear, sportswear, outdoor clothing, and performance fabrics.', 'myathletik-child' ); ?></p>
 				<ul class="ma-site-footer__social" aria-label="<?php esc_attr_e( 'Social media links', 'myathletik-child' ); ?>">
 					<li>
 						<a href="#" aria-label="<?php esc_attr_e( 'Instagram [NEEDS INPUT: Instagram URL]', 'myathletik-child' ); ?>">
@@ -301,9 +591,9 @@ function myathletik_site_footer() {
 			<div class="ma-site-footer__contact">
 				<h2><?php esc_html_e( 'Contact', 'myathletik-child' ); ?></h2>
 				<ul>
-					<li><?php esc_html_e( '[NEEDS INPUT: WhatsApp / phone number]', 'myathletik-child' ); ?></li>
-					<li><?php esc_html_e( '[NEEDS INPUT: business email]', 'myathletik-child' ); ?></li>
-					<li><?php esc_html_e( '[NEEDS INPUT: factory / office address]', 'myathletik-child' ); ?></li>
+					<li><a href="tel:+8613951139696">86-13951139696</a></li>
+					<li><a href="mailto:info@athletik.com.cn">info@athletik.com.cn</a></li>
+					<li><?php esc_html_e( 'No.25, Zhongxing Road, Yangshe Town, Zhangjiagang, Jiangsu, 215699 China', 'myathletik-child' ); ?></li>
 				</ul>
 				<a class="ma-site-footer__quote" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Request a Quote', 'myathletik-child' ); ?></a>
 			</div>
