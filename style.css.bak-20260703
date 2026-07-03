@@ -30,7 +30,7 @@ Text Domain:  myathletik-child
   --ma-fs-base:      1rem;
   --ma-fs-h1:        clamp(2rem, 4vw, 3rem);
   --ma-fs-h2:        clamp(1.5rem, 3vw, 2.25rem);
-  --ma-fs-h3:        clamp(1.15rem, 1.8vw, 1.35rem);
+  --ma-fs-h3:        1.25rem;
   --ma-lh-body:      1.6;
 
   /* Spacing scale */
@@ -40,9 +40,6 @@ Text Domain:  myathletik-child
   --ma-space-4: 1.5rem;
   --ma-space-5: 2.5rem;
   --ma-space-6: 4rem;
-
-
-  --ma-section-y:    5rem;   /* vertical section padding for sub-pages */
 
   /* Layout */
   --ma-container:    1200px;
@@ -452,7 +449,7 @@ body {
   }
 }
 
-/* --- Home: Hero (split layout: text left, image right) --- */
+/* --- Home: Hero --- */
 .ma-home {
   width: 100%;
   margin: 0;
@@ -491,85 +488,88 @@ body.home .container.grid-container {
 }
 
 .ma-home-hero {
+  position: relative;
   display: flex;
   width: 100%;
-  min-height: 0;
+  min-height: 58vh;
   overflow: hidden;
-  background: var(--ma-color-surface);
+  isolation: isolate;
+}
+
+.ma-home-hero__media,
+.ma-home-hero__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.ma-home-hero__media {
+  z-index: -2;
+  background-position: 54% center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ma-home-hero__overlay {
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(43, 39, 36, 0.78), rgba(43, 39, 36, 0.58));
 }
 
 .ma-home-hero__inner {
-  display: grid;
   width: 100%;
   max-width: var(--ma-container);
   margin: 0 auto;
-  padding: 0;
+  padding: var(--ma-space-4) var(--ma-space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
 }
 
-/* --- Text panel (left) --- */
 .ma-home-hero__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: var(--ma-space-5) var(--ma-space-4);
-  background: var(--ma-color-surface);
-  color: var(--ma-color-text);
+  max-width: 42rem;
+  color: var(--ma-color-bg);
+  text-align: center;
 }
 
 .ma-home-hero__eyebrow {
-  margin: 0 0 var(--ma-space-2);
-  color: var(--ma-color-accent-2);
+  margin: 0 0 var(--ma-space-3);
+  color: rgba(250, 248, 245, 0.84);
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
   line-height: 1.4;
   text-transform: uppercase;
 }
 
 .ma-home-hero__title {
   margin: 0;
-  color: var(--ma-color-text);
+  color: var(--ma-color-bg);
   font-family: var(--ma-font-head);
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: 2rem;
   font-weight: 600;
-  letter-spacing: -0.015em;
-  line-height: 1.08;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  text-shadow: 0 0.18rem 1.1rem rgba(0, 0, 0, 0.38);
 }
 
 .ma-home-hero__subhead {
-  max-width: 32rem;
-  margin: var(--ma-space-3) 0 0;
-  color: var(--ma-color-muted);
-  font-size: 1.02rem;
+  max-width: 36rem;
+  margin: var(--ma-space-4) 0 0;
+  color: rgba(250, 248, 245, 0.9);
+  font-size: 1.05rem;
   line-height: 1.55;
 }
 
 .ma-home-hero__actions {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;
+  justify-content: center;
   gap: var(--ma-space-3);
   margin-top: var(--ma-space-4);
 }
 
-/* --- Image panel (right) --- */
-.ma-home-hero__image {
-  display: flex;
-  align-items: stretch;
-  min-height: 18rem;
-  overflow: hidden;
-}
-
-.ma-home-hero__image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* --- Buttons --- */
 .ma-button {
   display: inline-flex;
   align-items: center;
@@ -585,7 +585,7 @@ body.home .container.grid-container {
 }
 
 .ma-button:focus-visible {
-  outline: 3px solid rgba(194, 96, 47, 0.5);
+  outline: 3px solid rgba(250, 248, 245, 0.7);
   outline-offset: 3px;
 }
 
@@ -600,17 +600,6 @@ body.home .container.grid-container {
   color: var(--ma-color-bg);
 }
 
-.ma-button--outline {
-  border-color: var(--ma-color-border);
-  color: var(--ma-color-text);
-}
-
-.ma-button--outline:hover,
-.ma-button--outline:focus {
-  border-color: var(--ma-color-accent);
-  background: var(--ma-color-surface);
-  color: var(--ma-color-accent-2);
-}
 .ma-button--secondary {
   border-color: rgba(250, 248, 245, 0.58);
   color: var(--ma-color-bg);
@@ -623,30 +612,36 @@ body.home .container.grid-container {
   color: var(--ma-color-bg);
 }
 
-/* --- Desktop: side-by-side --- */
-@media (min-width: 48rem) {
-  .ma-home-hero__inner {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    min-height: 65vh;
-    max-height: 44rem;
+@media (min-width: 42rem) {
+  .ma-home-hero {
+    min-height: 64vh;
   }
 
-  .ma-home-hero__content {
-    padding: var(--ma-space-6) var(--ma-space-5);
+  .ma-home-hero__media {
+    background-position: 58% center;
+  }
+
+  .ma-home-hero__overlay {
+    background:
+      linear-gradient(180deg, rgba(43, 39, 36, 0.72), rgba(43, 39, 36, 0.54)),
+      linear-gradient(90deg, rgba(43, 39, 36, 0.72), rgba(43, 39, 36, 0.18));
+  }
+
+  .ma-home-hero__inner {
+    padding: var(--ma-space-5) var(--ma-space-4);
+  }
+
+  .ma-home-hero__title {
+    font-size: 3rem;
   }
 
   .ma-home-hero__subhead {
-    font-size: 1.08rem;
+    font-size: 1.2rem;
   }
 
-  .ma-home-hero__image {
-    min-height: 0;
-  }
-}
-
-@media (min-width: 72rem) {
-  .ma-home-hero__content {
-    padding: var(--ma-space-6) var(--ma-space-6);
+  .ma-home-hero__actions {
+    flex-direction: row;
+    align-items: center;
   }
 }
 
@@ -881,13 +876,6 @@ body.home .container.grid-container {
   }
 }
 
-
-@media (prefers-reduced-motion: reduce) {
-  .ma-style-marquee__track {
-    animation: none;
-  }
-}
-
 /* --- Home: Shared Sections --- */
 .ma-section-inner {
   width: 100%;
@@ -1017,7 +1005,7 @@ body.home .container.grid-container {
 
 .ma-category-card::after {
   position: absolute;
-  inset: 22% 0 0;
+  inset: 34% 0 0;
   content: "";
   background: linear-gradient(180deg, rgba(43, 39, 36, 0), rgba(43, 39, 36, 0.74));
   pointer-events: none;
@@ -1043,8 +1031,6 @@ body.home .container.grid-container {
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 1.2;
-
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
 }
 
 .ma-category-card:hover img,
