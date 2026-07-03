@@ -30,7 +30,7 @@ Text Domain:  myathletik-child
   --ma-fs-base:      1rem;
   --ma-fs-h1:        clamp(2rem, 4vw, 3rem);
   --ma-fs-h2:        clamp(1.5rem, 3vw, 2.25rem);
-  --ma-fs-h3:        1.25rem;
+  --ma-fs-h3:        clamp(1.15rem, 1.8vw, 1.35rem);
   --ma-lh-body:      1.6;
 
   /* Spacing scale */
@@ -40,6 +40,9 @@ Text Domain:  myathletik-child
   --ma-space-4: 1.5rem;
   --ma-space-5: 2.5rem;
   --ma-space-6: 4rem;
+
+
+  --ma-section-y:    5rem;   /* vertical section padding for sub-pages */
 
   /* Layout */
   --ma-container:    1200px;
@@ -511,7 +514,7 @@ body.home .container.grid-container {
 
 .ma-home-hero__overlay {
   z-index: -1;
-  background: linear-gradient(180deg, rgba(43, 39, 36, 0.78), rgba(43, 39, 36, 0.58));
+  background: linear-gradient(180deg, rgba(43, 39, 36, 0.60), rgba(43, 39, 36, 0.30));
 }
 
 .ma-home-hero__inner {
@@ -545,7 +548,7 @@ body.home .container.grid-container {
   margin: 0;
   color: var(--ma-color-bg);
   font-family: var(--ma-font-head);
-  font-size: 2rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.1;
@@ -623,8 +626,8 @@ body.home .container.grid-container {
 
   .ma-home-hero__overlay {
     background:
-      linear-gradient(180deg, rgba(43, 39, 36, 0.72), rgba(43, 39, 36, 0.54)),
-      linear-gradient(90deg, rgba(43, 39, 36, 0.72), rgba(43, 39, 36, 0.18));
+      linear-gradient(180deg, rgba(43, 39, 36, 0.50), rgba(43, 39, 36, 0.24)),
+      linear-gradient(90deg, rgba(43, 39, 36, 0.48), rgba(43, 39, 36, 0.08));
   }
 
   .ma-home-hero__inner {
@@ -632,7 +635,7 @@ body.home .container.grid-container {
   }
 
   .ma-home-hero__title {
-    font-size: 3rem;
+        /* font-size now uses clamp() at base level */
   }
 
   .ma-home-hero__subhead {
@@ -876,6 +879,13 @@ body.home .container.grid-container {
   }
 }
 
+
+@media (prefers-reduced-motion: reduce) {
+  .ma-style-marquee__track {
+    animation: none;
+  }
+}
+
 /* --- Home: Shared Sections --- */
 .ma-section-inner {
   width: 100%;
@@ -1005,7 +1015,7 @@ body.home .container.grid-container {
 
 .ma-category-card::after {
   position: absolute;
-  inset: 34% 0 0;
+  inset: 22% 0 0;
   content: "";
   background: linear-gradient(180deg, rgba(43, 39, 36, 0), rgba(43, 39, 36, 0.74));
   pointer-events: none;
@@ -1031,6 +1041,8 @@ body.home .container.grid-container {
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 1.2;
+
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
 }
 
 .ma-category-card:hover img,
