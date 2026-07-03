@@ -557,17 +557,12 @@ body.home .container.grid-container {
 .ma-home-hero__image {
   display: flex;
   align-items: stretch;
-  min-height: 18rem;
+  min-height: 14rem;
   overflow: hidden;
+  order: -1;
 }
 
-.ma-home-hero__image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
+
 
 /* --- Buttons --- */
 .ma-button {
@@ -641,6 +636,7 @@ body.home .container.grid-container {
 
   .ma-home-hero__image {
     min-height: 0;
+    order: 0;
   }
 }
 
@@ -803,8 +799,9 @@ body.home .container.grid-container {
   gap: 1rem;
   width: max-content;
   padding: 0 1rem;
+  min-width: 0;
   will-change: transform;
-  animation: ma-style-scroll 35s linear infinite;
+  animation: ma-style-scroll 60s linear infinite;
 }
 
 .ma-style-marquee:focus-within .ma-style-marquee__track {
@@ -824,6 +821,7 @@ body.home .container.grid-container {
   grid-auto-rows: min-content;
   gap: 1rem;
   width: clamp(10.5rem, 16vw, 15.5rem);
+  flex-shrink: 0;
 }
 
 .ma-style-card img {
@@ -852,11 +850,10 @@ body.home .container.grid-container {
 }
 
 @keyframes ma-style-scroll {
-  from {
+  0% {
     transform: translateX(0);
   }
-
-  to {
+  100% {
     transform: translateX(-33.3333%);
   }
 }
@@ -872,7 +869,7 @@ body.home .container.grid-container {
   .ma-style-marquee__track {
     gap: 0.85rem;
     padding: 0 var(--ma-space-3);
-    animation-duration: 28s;
+    animation-duration: 40s;
   }
 
   .ma-style-column {
@@ -1152,10 +1149,16 @@ body.home .container.grid-container {
   min-height: 100%;
   flex-direction: column;
   padding: var(--ma-space-4);
-  border: 1px solid rgba(250, 248, 245, 0.18);
+  border: 1px solid rgba(250, 248, 245, 0.14);
   border-radius: var(--ma-radius);
-  background: rgba(250, 248, 245, 0.06);
-  box-shadow: inset 0 1px 0 rgba(250, 248, 245, 0.08);
+  background: rgba(250, 248, 245, 0.04);
+  box-shadow: inset 0 1px 0 rgba(250, 248, 245, 0.06);
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.ma-number-card:hover {
+  border-color: var(--ma-color-accent);
+  background: rgba(250, 248, 245, 0.1);
 }
 
 .ma-number-card__figure {
@@ -1167,7 +1170,7 @@ body.home .container.grid-container {
 
 .ma-number-card__figure strong {
   display: inline-block;
-  color: var(--ma-color-bg);
+  color: var(--ma-color-accent);
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   line-height: 1;
   white-space: nowrap;
@@ -1222,7 +1225,7 @@ body.home .container.grid-container {
   padding: var(--ma-space-4);
   border: 1px solid var(--ma-color-border);
   border-radius: var(--ma-radius);
-  background: rgba(255, 255, 255, 0.44);
+  background: rgba(250, 248, 245, 0.62);
   color: var(--ma-color-text);
   box-shadow: 0 10px 24px rgba(43, 39, 36, 0.06);
   text-decoration: none;
