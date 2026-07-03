@@ -66,7 +66,7 @@ $gallery_columns = array(
 		<div class="ma-section-heading ma-section-heading--center">
 			<p class="ma-section-kicker"><?php esc_html_e( 'Product lookbook', 'myathletik-child' ); ?></p>
 			<h2 id="ma-home-style-gallery-title"><?php esc_html_e( 'Technical knitwear, built around your brand', 'myathletik-child' ); ?></h2>
-			<p>[CONTENT: user to write short lookbook intro]</p>
+			<!-- [CONTENT: user to write short lookbook intro] -->
 		</div>
 	</div>
 

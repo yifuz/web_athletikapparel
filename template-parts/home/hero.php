@@ -13,7 +13,7 @@ $hero_image = get_stylesheet_directory_uri() . '/assets/images/%E4%B8%BB%E5%9B%B
 ?>
 
 <section class="ma-home-hero" aria-label="<?php esc_attr_e( 'myathletik homepage introduction', 'myathletik-child' ); ?>">
-	<div class="ma-home-hero__media" style="background-image: url('<?php echo esc_url( $hero_image ); ?>');"></div>
+	<div class="ma-home-hero__media" style="background-image: url('<?php echo esc_url( $hero_image ); ?>');" role="img" aria-label="<?php esc_attr_e( 'Athletik Clothing technical knitwear manufacturing facility', 'myathletik-child' ); ?>"></div>
 	<div class="ma-home-hero__overlay"></div>
 
 	<div class="ma-home-hero__inner">

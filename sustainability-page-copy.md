@@ -90,6 +90,74 @@ logo here.]
 them; otherwise badges alone are fine.]
 
 ================================================================
+## Sustainable Fabrics  (NEW section — add to the page)
+================================================================
+Focuses on the eco-conscious fabrics we supply reliably, plus a note that other
+recycled/sustainable fibers can be sourced on request. CRITICAL TRADEMARK NOTE:
+we do NOT use Lenzing TENCEL™ — our lyocell/modal are generic, so use "Lyocell"
+/ "Modal" and NEVER the "TENCEL™" trademark. We do NOT currently offer recycled
+or RWS wool — do NOT mention it. Certifications listed (e.g. GRS, OEKO-TEX) are
+real and evidenceable on request.
+
+Section intro:
+> For brands building more responsible collections, we work with a range of
+> eco-conscious fabrics. Below are the materials we supply reliably — and for
+> other recycled or sustainable fibers, we can source to your requirements.
+
+----------------------------------------------------------------
+### Core sustainable fabrics (our stable, in-house range)
+----------------------------------------------------------------
+Feature these three prominently — they're our reliable supply.
+
+**Recycled Polyester (rPET)**
+> Made from recycled PET, our recycled polyester reduces reliance on virgin
+> petroleum-based fibers. Available GRS-certified (Global Recycled Standard),
+> with certification available on request.
+[IMAGE: real rPET fabric / recycled material photo]
+
+**Bamboo Charcoal Fiber**
+> Bamboo charcoal fiber offers natural antibacterial and odor-control properties,
+> with moisture management — well suited to performance and base-layer pieces.
+[IMAGE: real bamboo charcoal fabric photo]
+
+**Coffee Yarn**
+> Made using recycled coffee grounds, coffee yarn provides natural odor control,
+> moisture-wicking, and UV protection — turning a waste byproduct into a
+> functional performance fiber.
+[IMAGE: real coffee yarn fabric photo]
+
+----------------------------------------------------------------
+### Natural cellulosic fibers
+----------------------------------------------------------------
+Group lyocell + modal together under one heading.
+
+**Lyocell & Modal**
+> Soft, breathable cellulosic fibers made from wood pulp. Lyocell is produced in
+> a closed-loop process that recovers and reuses solvents; modal adds softness
+> and drape. Both are popular choices for next-to-skin and base-layer garments.
+[IMAGE: real lyocell / modal fabric photo]
+
+----------------------------------------------------------------
+### Other sustainable fibers — on request
+----------------------------------------------------------------
+> We can also source additional recycled and sustainable materials to meet your
+> brand's specific requirements. If you have a particular fiber or certification
+> in mind, get in touch and we'll work with you to source it.
+
+Note (optional small print):
+> Fiber certifications (e.g. GRS, OEKO-TEX) available on request. We continue to
+> expand our sustainable fabric range.
+
+TRADEMARK / ACCURACY GUARDRAILS for this section:
+- NEVER write "TENCEL™" — use "Lyocell" and "Modal" only (generic, not Lenzing).
+- Do NOT mention recycled wool or RWS wool — we don't currently offer it.
+- Attach a certification name (GRS, OEKO-TEX) only where real & evidenceable.
+  Bamboo charcoal & coffee yarn claims are functional (antibacterial, odor, UV) —
+  keep them functional, don't overclaim "certified sustainable."
+- Images must be real fabric photos (assets/images/fabrics/), not stock.
+  `[IMAGE:...]` placeholders never render as literal text.
+
+================================================================
 ## Closing (no overpromising)
 ================================================================
 > We're continuing to expand our responsible-manufacturing capabilities. If your

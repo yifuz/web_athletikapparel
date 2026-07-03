@@ -17,6 +17,10 @@ $latest_posts = new WP_Query(
 		'ignore_sticky_posts' => true,
 	)
 );
+
+if ( ! $latest_posts->have_posts() ) {
+	return;
+}
 ?>
 
 <section class="ma-home-latest" aria-labelledby="ma-home-latest-title">
@@ -40,8 +44,6 @@ $latest_posts = new WP_Query(
 				<?php endwhile; ?>
 			</div>
 			<?php wp_reset_postdata(); ?>
-		<?php else : ?>
-			<p class="ma-home-latest__empty">[CONTENT: user to publish or select latest blog posts]</p>
 		<?php endif; ?>
 	</div>
 </section>

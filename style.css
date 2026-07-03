@@ -9,18 +9,20 @@ Text Domain:  myathletik-child
 */
 
 /* =========================================================
-   Design tokens â€” defined once, reused everywhere.
+   Design tokens â€?defined once, reused everywhere.
    Edit these to retheme the whole site.
    ========================================================= */
 :root {
-  /* Colors â€” warm palette (see docs/design-brief.md). Tune, don't replace. */
+  /* Colors â€?warm palette (see docs/design-brief.md). Tune, don't replace. */
   --ma-color-bg:        #faf8f5; /* warm off-white / cream background */
   --ma-color-surface:   #f1ede7; /* warm light surface for cards/sections */
   --ma-color-text:      #2b2724; /* warm near-black, not pure #000 */
   --ma-color-muted:     #6f675f; /* warm gray for secondary text */
-  --ma-color-accent:    #c4602f; /* terracotta / burnt orange â€” CTAs, highlights */
+  --ma-color-accent:    #c4602f; /* terracotta / burnt orange â€?CTAs, highlights */
   --ma-color-accent-2:  #9a4a23; /* darker terracotta for hovers/links */
   --ma-color-border:    #e2dad0; /* warm border */
+  --ma-color-white:     #ffffff; /* pure white for surfaces */
+  --ma-color-dark:      #0c0b0a; /* dark for footer/CTA bands */
 
   /* Typography */
   --ma-font-body:    system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -59,7 +61,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #ffffff;
+  background: var(--ma-color-white);
   border-bottom: 1px solid rgba(226, 218, 208, 0.9);
   box-shadow: 0 8px 24px rgba(43, 39, 36, 0.06);
 }
@@ -649,11 +651,11 @@ body.home .container.grid-container {
   overflow: hidden;
   width: 100%;
   margin: 0;
-  background: #ffffff;
+  background: var(--ma-color-white);
   color: var(--ma-color-muted);
   border-top: 1px solid var(--ma-color-border);
   border-bottom: 1px solid var(--ma-color-border);
-  box-shadow: 0 0 0 100vmax #ffffff;
+  box-shadow: 0 0 0 100vmax var(--ma-color-white);
   clip-path: inset(0 -100vmax);
 }
 
@@ -1453,7 +1455,7 @@ body.home .container.grid-container {
   padding: 0.7rem 0.8rem;
   border: 1px solid var(--ma-color-border);
   border-radius: var(--ma-radius);
-  background: #fff;
+  background: var(--ma-color-white);
   color: var(--ma-color-text);
   font: inherit;
 }
@@ -1573,7 +1575,7 @@ body.home .container.grid-container {
   padding: 0.72rem 0.85rem;
   border: 1px solid var(--ma-color-border);
   border-radius: var(--ma-radius);
-  background: #ffffff;
+  background: var(--ma-color-white);
   color: var(--ma-color-text);
   font: inherit;
   line-height: 1.35;
@@ -1612,7 +1614,7 @@ body.home .container.grid-container {
   border: 1px solid var(--ma-color-accent);
   border-radius: var(--ma-radius);
   background: var(--ma-color-accent);
-  color: #ffffff;
+  color: var(--ma-color-white);
   font: inherit;
   font-weight: 800;
   line-height: 1.2;
@@ -1718,7 +1720,7 @@ body.page .container.grid-container:has(.ma-contact-page) {
 .ma-contact-card {
   border: 1px solid var(--ma-color-border);
   border-radius: var(--ma-radius);
-  background: #ffffff;
+  background: var(--ma-color-white);
   box-shadow: 0 14px 34px rgba(43, 39, 36, 0.06);
 }
 
@@ -1904,7 +1906,7 @@ body.page .container.grid-container:has(.ma-services-page) {
   padding: var(--ma-space-4);
   border: 1px solid var(--ma-color-border);
   border-radius: var(--ma-radius);
-  background: #ffffff;
+  background: var(--ma-color-white);
   box-shadow: 0 10px 24px rgba(43, 39, 36, 0.06);
 }
 
@@ -2053,12 +2055,12 @@ body.page .container.grid-container:has(.ma-about-page) {
 }
 
 .ma-about-hero h1 {
-  max-width: 13ch;
+  max-width: 15ch;
   margin: var(--ma-space-2) 0 0;
   font-family: var(--ma-font-head);
-  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  font-size: clamp(2.35rem, 4.8vw, 4rem);
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.04;
 }
 
 .ma-about-hero p:not(.ma-section-kicker),
@@ -2258,6 +2260,7 @@ body.page .container.grid-container:has(.ma-sustainability-page) {
 
 .ma-sustainability-actions,
 .ma-sustainability-badges,
+.ma-sustainable-fabrics,
 .ma-sustainability-cta {
   padding: var(--ma-section-y) 0;
 }
@@ -2272,7 +2275,7 @@ body.page .container.grid-container:has(.ma-sustainability-page) {
   padding: var(--ma-space-4);
   border: 1px solid var(--ma-color-border);
   border-radius: var(--ma-radius);
-  background: #ffffff;
+  background: var(--ma-color-white);
   box-shadow: 0 10px 24px rgba(43, 39, 36, 0.06);
 }
 
@@ -2291,8 +2294,110 @@ body.page .container.grid-container:has(.ma-sustainability-page) {
   background: var(--ma-color-surface);
 }
 
+.ma-sustainability-badges .ma-certification-groups {
+  gap: var(--ma-space-4);
+}
+
+.ma-sustainability-badges .ma-certification-group {
+  gap: var(--ma-space-3);
+  padding: var(--ma-space-4);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 10px 24px rgba(43, 39, 36, 0.05);
+}
+
+.ma-sustainability-badges .ma-certification-group p {
+  max-width: 56rem;
+  font-size: 0.98rem;
+}
+
+.ma-sustainability-badges .ma-home-certifications__strip {
+  gap: var(--ma-space-3);
+}
+
 .ma-sustainability-badges .ma-certification-badge {
+  min-height: 6rem;
+  padding: var(--ma-space-2);
   background: rgba(255, 255, 255, 0.76);
+}
+
+.ma-sustainability-badges .ma-certification-badge img {
+  max-width: 4.8rem;
+  max-height: 4.8rem;
+}
+
+.ma-sustainable-fabrics {
+  background: var(--ma-color-bg);
+}
+
+.ma-sustainable-fabrics .ma-section-heading p:not(.ma-section-kicker) {
+  max-width: 54rem;
+  margin: var(--ma-space-3) 0 0;
+  color: var(--ma-color-muted);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-sustainable-fabrics__grid {
+  display: grid;
+  gap: var(--ma-space-4);
+}
+
+.ma-sustainable-fabric-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  box-shadow: 0 10px 24px rgba(43, 39, 36, 0.06);
+}
+
+.ma-sustainable-fabric-card__media {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  flex: 0 0 auto;
+  background:
+    linear-gradient(135deg, rgba(194, 96, 47, 0.08), rgba(43, 39, 36, 0.04)),
+    var(--ma-color-surface);
+}
+
+.ma-sustainable-fabric-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ma-sustainable-fabric-card__body {
+  min-width: 0;
+  padding: var(--ma-space-4);
+  overflow: visible;
+}
+
+.ma-sustainable-fabric-card h3 {
+  margin: 0;
+  font-size: var(--ma-fs-h3);
+}
+
+.ma-sustainable-fabric-card p {
+  margin: var(--ma-space-3) 0 0;
+  color: var(--ma-color-muted);
+  line-height: var(--ma-lh-body);
+  overflow-wrap: break-word;
+}
+
+.ma-sustainable-fabrics__note {
+  max-width: 54rem;
+  margin: var(--ma-space-5) 0 0;
+  color: var(--ma-color-muted);
+  font-size: 0.95rem;
+  line-height: var(--ma-lh-body);
 }
 
 .ma-sustainability-cta {
@@ -2329,13 +2434,15 @@ body.page .container.grid-container:has(.ma-sustainability-page) {
 }
 
 @media (min-width: 48rem) {
-  .ma-sustainability-actions__grid {
+  .ma-sustainability-actions__grid,
+  .ma-sustainable-fabrics__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 64rem) {
-  .ma-sustainability-actions__grid {
+  .ma-sustainability-actions__grid,
+  .ma-sustainable-fabrics__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -2489,7 +2596,7 @@ body.page .container.grid-container:has(.ma-product-category) {
   margin: 0;
   overflow: hidden;
   border-radius: var(--ma-radius);
-  background: #ffffff;
+  background: var(--ma-color-white);
   box-shadow: 0 10px 24px rgba(43, 39, 36, 0.06);
 }
 
@@ -2561,7 +2668,7 @@ body.page .container.grid-container:has(.ma-product-category) {
   padding: 0.65rem 1rem;
   border: 1px solid var(--ma-color-border);
   border-radius: 999px;
-  background: #ffffff;
+  background: var(--ma-color-white);
   color: var(--ma-color-text);
   font-weight: 700;
   text-decoration: none;
@@ -2636,13 +2743,13 @@ body.page .container.grid-container:has(.ma-product-category) {
 
 /* --- Site Footer --- */
 .site-footer {
-  background: #050505;
+  background: var(--ma-color-dark);
   color: rgba(250, 248, 245, 0.86);
 }
 
 .ma-site-footer {
   background:
-    linear-gradient(180deg, #0c0b0a 0%, #050505 100%);
+    linear-gradient(180deg, var(--ma-color-dark) 0%, var(--ma-color-dark) 100%);
   color: rgba(250, 248, 245, 0.86);
 }
 
@@ -2667,7 +2774,7 @@ body.page .container.grid-container:has(.ma-product-category) {
   display: inline-flex;
   align-items: center;
   gap: var(--ma-space-3);
-  color: #fff;
+  color: var(--ma-color-white);
   text-decoration: none;
 }
 
@@ -2675,7 +2782,7 @@ body.page .container.grid-container:has(.ma-product-category) {
   width: 4.25rem;
   height: 4.25rem;
   object-fit: contain;
-  background: #fff;
+  background: var(--ma-color-white);
 }
 
 .ma-site-footer__logo span {
@@ -2693,7 +2800,7 @@ body.page .container.grid-container:has(.ma-product-category) {
 
 .ma-site-footer h2 {
   margin: 0 0 var(--ma-space-4);
-  color: #fff;
+  color: var(--ma-color-white);
   font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -2719,7 +2826,7 @@ body.page .container.grid-container:has(.ma-product-category) {
 
 .ma-site-footer a:hover,
 .ma-site-footer a:focus {
-  color: #fff;
+  color: var(--ma-color-white);
 }
 
 .ma-site-footer__social {
@@ -2736,7 +2843,7 @@ body.page .container.grid-container:has(.ma-product-category) {
   place-items: center;
   border: 1px solid rgba(250, 248, 245, 0.22);
   border-radius: 999px;
-  color: #fff;
+  color: var(--ma-color-white);
   background: rgba(255, 255, 255, 0.06);
 }
 
@@ -2775,7 +2882,7 @@ body.page .container.grid-container:has(.ma-product-category) {
   padding: 0.7rem 1.05rem;
   border-radius: 999px;
   background: var(--ma-color-accent);
-  color: #fff !important;
+  color: var(--ma-color-white) !important;
   font-weight: 800;
 }
 

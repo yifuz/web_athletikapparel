@@ -39,7 +39,7 @@ get_header();
 		<div class="ma-section-inner ma-about-hero__grid">
 			<div class="ma-about-hero__copy">
 				<p class="ma-section-kicker"><?php esc_html_e( 'About Athletik', 'myathletik-child' ); ?></p>
-				<h1 id="ma-about-title"><?php esc_html_e( 'About Athletik Clothing', 'myathletik-child' ); ?></h1>
+				<h1 id="ma-about-title"><?php esc_html_e( 'About Us', 'myathletik-child' ); ?></h1>
 				<p><?php esc_html_e( 'Athletik Clothing is a vertically integrated OEM/ODM manufacturer of technical knitwear, based in the Zhangjiagang / Suzhou area of China. For more than 15 years, we have produced full-package underwear, sportswear, outdoor clothing, and knitted fabrics for performance brands around the world, built on specialized flatlock and activeseam construction.', 'myathletik-child' ); ?></p>
 			</div>
 			<figure class="ma-about-image-slot">

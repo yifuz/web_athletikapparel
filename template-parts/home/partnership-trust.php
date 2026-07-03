@@ -20,7 +20,7 @@ $image = get_stylesheet_directory_uri() . '/assets/images/production/athletik-pr
 		<div class="ma-home-partnership__content">
 			<p class="ma-section-kicker"><?php esc_html_e( 'Partnership trust', 'myathletik-child' ); ?></p>
 			<h2 id="ma-home-partnership-title"><?php esc_html_e( 'Long-term manufacturing relationships need real context', 'myathletik-child' ); ?></h2>
-			<p>[CONTENT + NEEDS INPUT: user to confirm what client or partnership information is shareable]</p>
+			<!-- [CONTENT + NEEDS INPUT: user to confirm what client or partnership information is shareable] -->
 			<a class="ma-text-link" href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>"><?php esc_html_e( 'Learn about myathletik', 'myathletik-child' ); ?></a>
 		</div>
 	</div>

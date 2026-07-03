@@ -122,20 +122,5 @@ $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 		</div>
 	</section>
 
-	<section class="ma-product-section ma-product-redirect-note" aria-label="<?php esc_attr_e( 'Launch redirect note', 'myathletik-child' ); ?>">
-		<div class="ma-section-inner">
-			<p>
-				<?php
-				printf(
-					/* translators: %1$s: old URL, %2$s: current URL. */
-					esc_html__( 'Launch note: 301 redirect %1$s to %2$s before this page goes live.', 'myathletik-child' ),
-					esc_html( $category['old_url'] ),
-					esc_html( '/' . $category_slug . '/' )
-				);
-				?>
-			</p>
-		</div>
-	</section>
-
 	<?php get_template_part( 'template-parts/home/inquiry-cta' ); ?>
 </main>

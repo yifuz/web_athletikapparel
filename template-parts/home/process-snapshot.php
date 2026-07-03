@@ -12,22 +12,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 $steps = array(
 	array(
 		'title' => __( 'Sampling & Prototyping', 'myathletik-child' ),
-		'url'   => '/sampling-prototyping/',
+		'url'   => '/services/',
 		'copy'  => __( 'Samples in 1-2 weeks, depending on complexity. We work from your samples, designs, or concepts.', 'myathletik-child' ),
 	),
 	array(
 		'title' => __( 'Bulk Production', 'myathletik-child' ),
-		'url'   => '/bulk-production/',
+		'url'   => '/services/',
 		'copy'  => __( 'MOQ 500 pcs per style (300 pcs per style for multi-style orders), built on technical knit construction.', 'myathletik-child' ),
 	),
 	array(
 		'title' => __( 'Quality Control', 'myathletik-child' ),
-		'url'   => '/quality-control/',
+		'url'   => '/services/',
 		'copy'  => __( 'In-house testing and inspection at every stage.', 'myathletik-child' ),
 	),
 	array(
 		'title' => __( 'Export & Shipping', 'myathletik-child' ),
-		'url'   => '/export-shipping/',
+		'url'   => '/services/',
 		'copy'  => __( 'FOB and DDP supported, with our own freight booking.', 'myathletik-child' ),
 	),
 );

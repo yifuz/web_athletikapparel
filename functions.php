@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * myathletik Child Theme functions.
  *
@@ -463,7 +463,7 @@ add_action( 'wp_head', 'myathletik_about_meta_description', 3 );
  */
 function myathletik_sustainability_document_title( $parts ) {
 	if ( is_page( 'sustainability' ) ) {
-		$parts['title'] = 'Sustainability | Athletik Clothing';
+		$parts['title'] = 'Sustainability - Responsible OEM/ODM Knitwear Manufacturing | Athletik Clothing';
 		unset( $parts['site'] );
 	}
 
@@ -479,7 +479,7 @@ function myathletik_sustainability_meta_description() {
 		return;
 	}
 	?>
-	<meta name="description" content="<?php echo esc_attr__( 'Sustainability and compliance information for Athletik Clothing, including responsible materials, vertical integration, and verified badge groups.', 'myathletik-child' ); ?>">
+	<meta name="description" content="<?php echo esc_attr__( 'Responsible OEM/ODM apparel manufacturing with sustainable fabric options, certified materials, traceability support, in-house testing, and documentation support.', 'myathletik-child' ); ?>">
 	<?php
 }
 add_action( 'wp_head', 'myathletik_sustainability_meta_description', 4 );
@@ -496,7 +496,7 @@ function myathletik_header_actions() {
 		<div class="ma-language-menu">
 			<button class="ma-language-toggle" type="button" aria-label="<?php esc_attr_e( 'Language selector placeholder', 'myathletik-child' ); ?>">
 				<span>EN</span>
-				<span aria-hidden="true">⌄</span>
+				<span aria-hidden="true">?</span>
 			</button>
 			<ul class="ma-language-options" aria-label="<?php esc_attr_e( 'Language options placeholder', 'myathletik-child' ); ?>">
 				<li><button type="button">AR</button></li>
@@ -539,7 +539,7 @@ function myathletik_site_footer() {
 				<p><?php esc_html_e( 'Technical knitwear OEM/ODM manufacturing partner for underwear, sportswear, outdoor clothing, and performance fabrics.', 'myathletik-child' ); ?></p>
 				<ul class="ma-site-footer__social" aria-label="<?php esc_attr_e( 'Social media links', 'myathletik-child' ); ?>">
 					<li>
-						<a href="#" aria-label="<?php esc_attr_e( 'Instagram [NEEDS INPUT: Instagram URL]', 'myathletik-child' ); ?>">
+						<a href="https://www.instagram.com/athletikclothinginc/" target="_blank" rel="noopener noreferrer" aria-label="Athletik Clothing on Instagram">
 							<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 								<rect x="4" y="4" width="16" height="16" rx="5"></rect>
 								<circle cx="12" cy="12" r="3.4"></circle>
@@ -548,7 +548,7 @@ function myathletik_site_footer() {
 						</a>
 					</li>
 					<li>
-						<a href="#" aria-label="<?php esc_attr_e( 'YouTube [NEEDS INPUT: YouTube URL]', 'myathletik-child' ); ?>">
+						<a href="https://www.youtube.com/@athletikclothinginc" target="_blank" rel="noopener noreferrer" aria-label="Athletik Clothing on YouTube">
 							<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 								<rect x="3" y="6.5" width="18" height="11" rx="3"></rect>
 								<path d="M10 9.5v5l4.6-2.5z"></path>
@@ -583,8 +583,8 @@ function myathletik_site_footer() {
 					<li><a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>"><?php esc_html_e( 'About Us', 'myathletik-child' ); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/sustainability/' ) ); ?>"><?php esc_html_e( 'Sustainability', 'myathletik-child' ); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>"><?php esc_html_e( 'Products', 'myathletik-child' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'Blog', 'myathletik-child' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/sitemap/' ) ); ?>"><?php esc_html_e( 'Sitemap', 'myathletik-child' ); ?></a></li>
+					
+					<li><a href="<?php echo esc_url( home_url( '/wp-sitemap.xml' ) ); ?>"><?php esc_html_e( 'Sitemap', 'myathletik-child' ); ?></a></li>
 				</ul>
 			</nav>
 
@@ -604,7 +604,7 @@ function myathletik_site_footer() {
 				<?php
 				printf(
 					/* translators: %1$s: current year. */
-					esc_html__( '© %1$s Athletik Clothing. All rights reserved.', 'myathletik-child' ),
+					esc_html__( '? %1$s Athletik Clothing. All rights reserved.', 'myathletik-child' ),
 					esc_html( gmdate( 'Y' ) )
 				);
 				?>
