@@ -70,10 +70,15 @@ scaffold, first-pass category copy, and category image galleries.
 2. **Product category SEO details** - the 7 category page first-pass copy and
    image galleries exist, but meta titles/descriptions and final image review
    still need to be completed.
-3. **Services pages - not started yet.** Per docs/sitemap.md build order:
-   - Services pages (/services/, sampling, bulk-production, quality-control,
-     export-shipping).
-   - About (/about-us/), Contact (/contact/), Sustainability (/sustainability/).
+3. **Services sub-pages — CANCELLED (2026-07).** Only `/services/` overview
+   exists (page-services.php, 4-stage process strip). The originally planned
+   sub-pages (/sampling-prototyping/ /bulk-production/ /quality-control/
+   /export-shipping/) are folded into the single overview. Home page
+   process-snapshot links all point to /services/.
+   - Capabilities pages (/production/ /factory/ /equipments/) — also CANCELLED
+     this phase. Capability proof lives on homepage + category pages.
+   - About / Contact / Sustainability pages — DONE (page-about-us.php,
+     page-contact.php, page-sustainability.php).
 4. **301 redirects** - apply per docs/sitemap.md section 8 before/at launch.
 5. **Inquiry form backend** - inquiry-cta form is front-end only; backend/email
    handling is a later task.

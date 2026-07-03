@@ -27,17 +27,13 @@ Home  /
 │   └── /sports-accessories-manufacturer/
 │   └── /products/  (overview hub linking to all of the above)
 │
-├── CAPABILITIES / PRODUCTION (auxiliary — hierarchy kept)
-│   ├── /production/
-│   ├── /factory/
-│   └── /equipments/
+├── CAPABILITIES / PRODUCTION  ❌ CANCELLED (2026-07)
+│   └── /production/ /factory/ /equipments/  — not being built this phase
 │
-├── SERVICES / PROCESS (differentiation vs. competitors)
-│   ├── /services/            (overview)
-│   ├── /sampling-prototyping/
-│   ├── /bulk-production/
-│   ├── /quality-control/
-│   └── /export-shipping/
+├── SERVICES / PROCESS
+│   └── /services/            (overview only — single page)
+│   ❌ CANCELLED (2026-07): sub-pages /sampling-prototyping/ /bulk-production/
+│      /quality-control/ /export-shipping/ — folded into /services/ overview
 │
 ├── /sustainability/   (301 from misspelled /sustainabilty/)
 ├── /about-us/
@@ -108,55 +104,24 @@ alive (it has equity) and gives the nav a parent landing page.
 
 ---
 
-## 3. Capabilities / Production (auxiliary — URLs kept)
+## 3. Capabilities / Production  ❌ CANCELLED (2026-07)
 
-### Production overview — `/production/`  (KEEP)
-**H1:** Production & Manufacturing Capabilities
-Overview of the vertically integrated process; links to Factory and Equipment.
-
-### Factory — `/factory/`  (KEEP)
-**H1:** Our Factories
-The four factories, locations, capacity, what makes vertical integration real.
-**Use real factory photos.**
-
-### Equipment — `/equipments/`  (KEEP)
-**H1:** Manufacturing Equipment
-Machine list — Yamato flatlock machines, coverstitch, overlock, laser
-perforation, Carbondry finishing line. This is concrete proof; lean into specifics.
-
-【CONTENT: user to write】
+Originally planned `/production/` / `/factory/` / `/equipments/` auxiliary
+pages. **Not being built this phase.** Capability proof points live on the
+homepage (capability-proof, numbers-proof blocks) and inline on category pages.
 
 ---
 
-## 4. Services / Process  (the differentiation layer — mostly NEW)
+## 4. Services / Process
 
-This is what most factory-type competitors lack. Your export-documentation and
-full-service capability lives here.
-
-### Services overview — `/services/`  (NEW)
+### Services overview — `/services/`  ✅ DONE (single page, `page-services.php`)
 **H1:** Our Services
-4–6 service cards (Sampling, Bulk Production, QC, Export & Shipping) linking out.
-Mirrors the proven competitor structure but framed for mid-sized technical orders.
+4-stage process strip (Sample → Production → QC → Export) on one page.
 
-### Sampling & Prototyping — `/sampling-prototyping/`  (NEW)
-**H1:** Sampling & Prototyping
-Tech pack handling, pattern making, sample lead times, revision policy.
-
-### Bulk Production — `/bulk-production/`  (NEW)
-**H1:** Bulk Production
-MOQ, capacity, quality system, how orders run.
-
-### Quality Control — `/quality-control/`  (NEW)
-**H1:** Quality Control
-Inspection process, audits/certifications (tie to the badge row), pre-ship video.
-
-### Export & Shipping — `/export-shipping/`  (NEW)
-**H1:** Export & Global Shipping
-**Your edge:** full export documentation (Commercial Invoice, Packing List, CO),
-sea freight handling, incoterms, regional merchandiser support (NA/Europe/Nordics).
-Most pure factories can't speak to this — make it prominent.
-
-【CONTENT: user to write】
+**❌ CANCELLED (2026-07):** sub-pages `/sampling-prototyping/`
+`/bulk-production/` `/quality-control/` `/export-shipping/` — folded into the
+single `/services/` overview. Home page process-snapshot links all point to
+`/services/` (no dead links).
 
 ---
 
@@ -215,12 +180,13 @@ Plus: direct contact details, factory location(s).
 
 ## 9. Build order (recommended sequence)
 
-1. **Home** — biggest visibility, sets the template/design language.
-2. **7 category pages** — from the shared template; these carry SEO + 301s.
-3. **Services pages** — the differentiation layer.
-4. **Factory / Equipment / About** — fill with real photos + real specs.
-5. **Sustainability + Contact cleanup** — fix slugs, forms, remove demo page.
+1. ~~**Home**~~ — ✅ DONE
+2. ~~**7 category pages**~~ — ✅ DONE (carry SEO + 301s)
+3. ~~**Services pages**~~ — ✅ `/services/` single page DONE; sub-pages CANCELLED
+4. ~~**Factory / Equipment**~~ — ❌ CANCELLED this phase
+5. **About / Sustainability / Contact** — ✅ pages DONE; polish + 301 (sustainability slug) pending
 6. **Apply all 301s** before/at launch — never after, to avoid an index gap.
+7. **Page-by-page visual polish + QA cleanup** — current focus (2026-07)
 
 【确认项 still open from SKILL.md:
  - merino slug: /merino-wool-manufacturer/ vs /merino-wool-apparel-manufacturer/
