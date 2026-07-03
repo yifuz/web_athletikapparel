@@ -24,7 +24,7 @@ $logo_files = array_values( $logo_files );
 <section class="ma-client-logos" aria-labelledby="ma-client-logos-title">
 	<div class="ma-client-logos__inner">
 		<p id="ma-client-logos-title" class="ma-client-logos__heading">
-			<?php esc_html_e( 'Trusted by leading brands worldwide', 'myathletik-child' ); ?>
+			<?php esc_html_e( 'Brand experience across global markets', 'myathletik-child' ); ?>
 		</p>
 
 		<div class="ma-client-logos__viewport" aria-label="<?php esc_attr_e( 'Client brand logo strip', 'myathletik-child' ); ?>">
