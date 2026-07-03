@@ -36,8 +36,10 @@ $hero_image = get_stylesheet_directory_uri() . '/assets/images/production/%E5%9C
 				<li><?php esc_html_e( 'Reliable Export', 'myathletik-child' ); ?></li>
 			</ul>
 		</div>
-		<div class="ma-home-hero__image">
-			<img src="<?php echo esc_url( $hero_image ); ?>" alt="<?php esc_attr_e( 'Athletik Clothing circular knitting production floor for technical knitwear manufacturing', 'myathletik-child' ); ?>" width="720" height="540" loading="eager">
+		<div class="ma-home-hero__visual" aria-hidden="true">
+			<div class="ma-home-hero__visual-frame">
+				<img src="<?php echo esc_url( $hero_image ); ?>" alt="" width="720" height="540" loading="eager">
+			</div>
 		</div>
 	</div>
 </section>
