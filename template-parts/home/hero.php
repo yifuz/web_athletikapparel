@@ -9,7 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$hero_image = get_stylesheet_directory_uri() . '/assets/images/production/%E5%9C%86%E6%9C%BA.png';
+$hero_image      = get_stylesheet_directory_uri() . '/assets/images/production/%E5%9C%86%E6%9C%BA.png';
+$hero_sewing     = get_stylesheet_directory_uri() . '/assets/images/production/%E7%BC%9D%E7%BA%AB.png';
+$hero_garment    = get_stylesheet_directory_uri() . '/assets/images/sportswear/flatlock-athletic-800-1.jpg';
 ?>
 
 <section class="ma-home-hero" aria-label="<?php esc_attr_e( 'myathletik homepage introduction', 'myathletik-child' ); ?>">
@@ -25,7 +27,7 @@ $hero_image = get_stylesheet_directory_uri() . '/assets/images/production/%E5%9C
 				<a class="ma-button ma-button--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
 					<?php esc_html_e( 'Request a Quote', 'myathletik-child' ); ?>
 				</a>
-				<a class="ma-button ma-button--outline" href="<?php echo esc_url( home_url( '/products/' ) ); ?>">
+				<a class="ma-button ma-button--outline" href="<?php echo esc_url( home_url( '/#ma-home-categories-title' ) ); ?>">
 					<?php esc_html_e( 'View Products', 'myathletik-child' ); ?>
 				</a>
 			</div>
@@ -37,8 +39,12 @@ $hero_image = get_stylesheet_directory_uri() . '/assets/images/production/%E5%9C
 			</ul>
 		</div>
 		<div class="ma-home-hero__visual" aria-hidden="true">
-			<div class="ma-home-hero__visual-frame">
-				<img src="<?php echo esc_url( $hero_image ); ?>" alt="" width="720" height="540" loading="eager">
+			<div class="ma-home-hero__collage">
+				<div class="ma-home-hero__visual-frame">
+					<img src="<?php echo esc_url( $hero_image ); ?>" alt="" width="720" height="540" loading="eager">
+				</div>
+				<img class="ma-home-hero__thumb ma-home-hero__thumb--tl" src="<?php echo esc_url( $hero_sewing ); ?>" alt="" width="160" height="160" loading="eager">
+				<img class="ma-home-hero__thumb ma-home-hero__thumb--br" src="<?php echo esc_url( $hero_garment ); ?>" alt="" width="160" height="160" loading="eager">
 			</div>
 		</div>
 	</div>

@@ -646,6 +646,68 @@ body.home .container.grid-container {
   object-fit: cover;
   object-position: center center;
 }
+
+/* --- Collage: yarn -> garment visual story --- */
+.ma-home-hero__collage {
+  position: relative;
+  width: min(100%, 28rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ma-home-hero__thumb {
+  position: absolute;
+  z-index: 2;
+  width: clamp(4.5rem, 22vw, 6rem);
+  height: clamp(4.5rem, 22vw, 6rem);
+  border-radius: 0.85rem;
+  border: 3px solid var(--ma-color-bg);
+  background: var(--ma-color-border);
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 10px 26px rgba(43, 39, 36, 0.18);
+}
+
+/* top-left: technical sewing */
+.ma-home-hero__thumb--tl {
+  top: -0.75rem;
+  left: -1.25rem;
+  transform: rotate(-4deg);
+}
+
+/* bottom-right: finished garment */
+.ma-home-hero__thumb--br {
+  bottom: -0.75rem;
+  right: -1.25rem;
+  transform: rotate(4deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ma-home-hero__thumb {
+    opacity: 0;
+    animation: ma-hero-thumb-in 600ms ease-out 200ms forwards;
+  }
+  .ma-home-hero__thumb--br {
+    animation-delay: 320ms;
+  }
+  @keyframes ma-hero-thumb-in {
+    from { opacity: 0; transform: translateY(8px) rotate(0); }
+    to   { opacity: 1; }
+  }
+  /* keep the end-state rotation stable after the animation finishes */
+  .ma-home-hero__thumb--tl { animation-name: ma-hero-thumb-in-tl; }
+  .ma-home-hero__thumb--br { animation-name: ma-hero-thumb-in-br; }
+  @keyframes ma-hero-thumb-in-tl {
+    from { opacity: 0; transform: translateY(8px) rotate(0); }
+    to   { opacity: 1; transform: translateY(0) rotate(-4deg); }
+  }
+  @keyframes ma-hero-thumb-in-br {
+    from { opacity: 0; transform: translateY(8px) rotate(0); }
+    to   { opacity: 1; transform: translateY(0) rotate(4deg); }
+  }
+}
+
 /* --- Buttons --- */
 .ma-button {
   display: inline-flex;
@@ -726,6 +788,30 @@ body.home .container.grid-container {
     aspect-ratio: 4 / 3;
     border-radius: 0 2.75rem 0 2.75rem;
     box-shadow: 0 14px 32px rgba(43, 39, 36, 0.1);
+  }
+
+  /* Collage thumbnails: shrink + hug the frame on small screens */
+  .ma-home-hero__collage {
+    width: min(100%, 24rem);
+  }
+
+  .ma-home-hero__thumb {
+    width: clamp(3.75rem, 18vw, 5rem);
+    height: clamp(3.75rem, 18vw, 5rem);
+    border-radius: 0.65rem;
+    border-width: 2px;
+  }
+
+  .ma-home-hero__thumb--tl {
+    top: -0.5rem;
+    left: -0.6rem;
+    transform: rotate(-3deg);
+  }
+
+  .ma-home-hero__thumb--br {
+    bottom: -0.5rem;
+    right: -0.6rem;
+    transform: rotate(3deg);
   }
 }
 /* --- Home: Client Logos --- */
