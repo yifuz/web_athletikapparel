@@ -92,8 +92,17 @@ The rebuild reorganizes the site around search intent. Target structure:
 
 ## 3. URL & SEO rules (SEO landmines — strictest section)
 
-- **Never change an existing indexed URL without a 301 redirect.** The domain
-  has existing search equity; broken/changed URLs without redirects throw it away.
+> **Status update (2026-07-04): the user confirmed the OLD site's pages are all
+> dead — no inherited search equity to preserve.** The category-page redirects
+> in the historical table below are therefore **NOT required** and should not
+> be added. The general principles in this section (unique titles, single H1,
+> alt text, and "any future URL change on a live/indexed page needs a 301")
+> remain in force once this rebuild goes to production.
+
+- **Never change a live, indexed URL without a 301 redirect.** Once this
+  rebuild reaches production and pages start getting indexed, every subsequent
+  URL change throws away search equity unless redirected. (The old-site URLs
+  are dead, so this rule applies going FORWARD, not retroactively — see table.)
 - **URL convention for category pages: top-level, keyword-aligned slugs**
   (the "manufacturer" pattern, matching how B2B buyers search). Category pages
   move OUT of the `/products/` hierarchy to the top level. Example:
@@ -102,19 +111,22 @@ The rebuild reorganizes the site around search intent. Target structure:
   structure, these aren't primary search-traffic targets): `/production/`,
   `/factory/`, `/equipments/`, `/about-us/`, `/contact/`, etc. keep their paths.
 
-### Required 301 redirect map (old indexed URL → new top-level URL)
-Every category page that moves MUST have a 301. Add these to redirects when the
-new pages go live:
+### Historical 301 redirect map — NOT NEEDED (old site dead)
 
-| Old URL                              | New URL                                  |
-|--------------------------------------|------------------------------------------|
-| `/products/knitted-fabrics/`         | `/knitted-fabrics-manufacturer/`         |
-| `/products/sports-accessories/`      | `/sports-accessories-manufacturer/`      |
-| `/products/outdoor-clothing/`        | `/outdoor-clothing-manufacturer/`        |
-| `/products/sportswear/`              | `/sportswear-manufacturer/`              |
-| `/products/underwear/`               | `/underwear-manufacturer/`               |
-| `/products/merino-wool-apparel/`     | `/merino-wool-manufacturer/`             |
-| `/products/silk-wear/`               | `/silk-wear-manufacturer/`               |
+These category pages were originally planned to move from `/products/<x>/` to
+top-level `/<x>-manufacturer/` with a 301. **As of 2026-07-04 the old URLs are
+all dead, so these redirects are NOT required.** Kept for reference only —
+revisit if Search Console later shows any of these old URLs still indexed:
+
+| Old URL (dead)                      | New URL                                  | Status |
+|--------------------------------------|------------------------------------------|--------|
+| `/products/knitted-fabrics/`         | `/knitted-fabrics-manufacturer/`         | NOT NEEDED |
+| `/products/sports-accessories/`      | `/sports-accessories-manufacturer/`      | NOT NEEDED |
+| `/products/outdoor-clothing/`        | `/outdoor-clothing-manufacturer/`        | NOT NEEDED |
+| `/products/sportswear/`              | `/sportswear-manufacturer/`              | NOT NEEDED |
+| `/products/underwear/`               | `/underwear-manufacturer/`               | NOT NEEDED |
+| `/products/merino-wool-apparel/`     | `/merino-wool-manufacturer/`             | NOT NEEDED |
+| `/products/silk-wear/`               | `/silk-wear-manufacturer/`               | NOT NEEDED |
 | `/products/` (hub)                   | keep as `/products/` overview, or 301 to home — decide |
 
   【确认: 上面的新slug措辞可调。比如 merino-wool-manufacturer 也可写成
@@ -122,8 +134,9 @@ new pages go live:
 
 - **Auxiliary pages — preserve or 301:**
   - `/production/`, `/factory/`, `/equipments/` — keep
-  - `/sustainabilty/` ← **misspelled.** If corrected to `/sustainability/`,
-    you MUST 301 the old slug to the new one.
+  - `/sustainabilty/` ← **misspelled.** Already corrected to `/sustainability/`
+    in this rebuild; a redirect for the misspelled slug exists in `functions.php`
+    and is worth keeping IF the misspelled URL was ever indexed or linked.
   - `/about-us/`, `/contact/` — keep
 - Every page needs: a unique <title>, a meta description, one H1 only, logical
   H2/H3 hierarchy, and descriptive image alt text (real keywords, not filenames).
