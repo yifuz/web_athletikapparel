@@ -42,16 +42,16 @@ $hero_knitting   = get_stylesheet_directory_uri() . '/assets/images/production/h
 		<div class="ma-home-hero__visual" aria-hidden="true">
 			<div class="ma-home-hero__collage">
 				<figure class="ma-bento ma-bento--a">
-					<img src="<?php echo esc_url( $hero_garment_a ); ?>" alt="" width="900" height="787" loading="eager">
+					<img src="<?php echo esc_url( $hero_garment_a ); ?>" alt="" width="1280" height="1120" loading="eager">
 				</figure>
 				<figure class="ma-bento ma-bento--b">
-					<img src="<?php echo esc_url( $hero_sewing ); ?>" alt="" width="600" height="600" loading="eager">
+					<img src="<?php echo esc_url( $hero_sewing ); ?>" alt="" width="800" height="800" loading="eager">
 				</figure>
 				<figure class="ma-bento ma-bento--c">
 					<img src="<?php echo esc_url( $hero_knitting ); ?>" alt="" width="506" height="506" loading="eager">
 				</figure>
 				<figure class="ma-bento ma-bento--d">
-					<img src="<?php echo esc_url( $hero_garment_d ); ?>" alt="" width="600" height="600" loading="eager">
+					<img src="<?php echo esc_url( $hero_garment_d ); ?>" alt="" width="800" height="800" loading="eager">
 				</figure>
 			</div>
 		</div>
