@@ -124,15 +124,28 @@ If hardcoding `<img>` (e.g. in a static template part), include `srcset`,
 
 ## Home page image wall (specific task)
 
-AGENTS.md §4 calls out 30+ untitled unlinked product images. Workflow:
-1. Identify the images (likely in `template-parts/home/product-categories.php`
-   or `style-gallery.php`).
-2. **Group by category** — match each image to one of the 7 product categories
-   in `docs/sitemap.md`.
-3. Write descriptive alt for each (real keywords from the category).
-4. Wrap each (or each cluster) in `<a href="<category-manufacturer url>">`.
-5. Add a visible title/label per cluster.
-6. Lazy-load all of them (none is the LCP image — that's the hero).
+AGENTS.md §4 originally called out 30+ untitled unlinked product images.
+**Status (verified 2026-07-04): the alt + linking work is DONE.** Both
+`template-parts/home/product-categories.php` (7-card category grid) and
+`template-parts/home/style-gallery.php` (marquee) already have:
+- Descriptive, keyworded alt text on every `<img>` (real category terms, not
+  filenames).
+- Each card linked to its `*-manufacturer/` page.
+
+**Before "fixing" missing alt here, VERIFY first** — grep the current template
+for `alt=` before claiming alt is missing. The remaining real issues on these
+images are technical, not SEO-text:
+- No `width`/`height` (or `aspect-ratio`) → CLS risk.
+- No `decoding="async"` → main-thread decode blocking.
+- No `srcset`/`sizes` → oversize payloads on mobile.
+- `style-gallery.php` multiplies the 26-image set ×3 = 78 images per page;
+  review whether the multiplier is justified.
+- No WebP variants.
+
+The hero images (`template-parts/home/hero.php`) are a SEPARATE concern: their
+`alt=""` is intentionally empty (wrapper is `aria-hidden`), but as the page's
+most important visuals they forgo image-SEO equity — see `wp-seo-audit`
+findings and author descriptive alts there.
 
 Don't auto-generate marketing captions — those go to the user (AGENTS.md §5).
 

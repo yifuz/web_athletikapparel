@@ -65,7 +65,12 @@ add_action( 'wp_head', function () {
         'url'      => $home,
         'logo'     => esc_url( get_stylesheet_directory_uri() . '/assets/images/辅图/cropped-ATHLETIK_R_512.jpg' ),
         'description' => 'Vertically integrated OEM knitwear manufacturer specializing in flatlock and activeseam technical knitwear.',
-        'sameAs'   => [], // ← fill with real social/profile URLs only (AGENTS.md §4: social icons currently dead)
+        // sameAs: populate with REAL profile URLs only. Verified 2026-07-04:
+        // Instagram and YouTube are live in functions.php footer
+        // (instagram.com/athletikclothinginc/, youtube.com/@athletikclothinginc).
+        // Only WhatsApp still points to '#'. Read functions.php footer before
+        // listing — don't include any URL still pointing to '#'/empty.
+        'sameAs'   => [],
     ];
     $site = [
         '@context' => 'https://schema.org',
@@ -157,7 +162,9 @@ When adding schema:
   templates (harder to maintain). No plugin.
 - **Never invent facts.** Omit unknown factual fields rather than fabricate.
 - **Mirror visible content.** FAQ/Article schema must match what's on the page.
-- **SameAs only with real URLs.** AGENTS.md §4 says social icons are currently
-  dead (`#`/empty) — don't list fake social profile URLs in `sameAs` until the
-  user provides real ones.
+- **SameAs only with real URLs.** Verify current state by reading the
+  `functions.php` footer social links before populating `sameAs`. As of
+  2026-07-04: Instagram + YouTube are live; WhatsApp still points to `#`.
+  Only list URLs that actually resolve to a real profile — never include any
+  still pointing to `#`/empty. Re-verify each session, since these change.
 - All output escapes properly: `esc_url`, `wp_json_encode`, `esc_html` as needed.
