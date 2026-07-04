@@ -23,41 +23,62 @@ existing search equity. This skill exists to make that automatic.
 
 ## When to invoke
 
-Invoke this skill **BEFORE** any of these actions:
-- Changing a page/post slug
-- Deleting or trashing a page
-- Merging two pages
-- Reparenting a category
-- Correcting a misspelled slug (e.g. `/sustainabilty/` → `/sustainability/`)
-- Moving a page from `/products/<x>/` to top-level `/<x>-manufacturer/`
+Invoke this skill **BEFORE** any action that changes a **currently live or
+previously indexed** URL. Trigger cases:
+- Changing a published page/post's slug
+- Deleting or trashing a published page
+- Merging two published pages into one
+- Reparenting a category that's already live
+- Correcting a misspelled slug that was already indexed or externally linked
 
-If the user mentions any of these and you're about to act, **stop and run this
-skill first** to produce the redirect plan.
+**Not needed for:** never-published stubs, dead-site URLs, local-dev-only
+pages, or URLs that were never indexed and never linked. (See "Rule of thumb"
+under the historical 301 map below.)
 
-## The canonical 301 map (from AGENTS.md §3)
+If the user mentions a slug/URL change and you're about to act, **stop and run
+this skill first** to produce the redirect plan — UNLESS the change is clearly
+in the "not needed" category above, in which case confirm with the user that
+the old URL is truly dead before skipping the redirect.
 
-These category pages are moving from `/products/<x>/` to top-level
-`/<x>-manufacturer/`. Every row needs a 301 when the new page goes live:
+## Historical 301 map (from AGENTS.md §3) — MOSTLY NO LONGER NEEDED
 
-| Old URL                              | New URL                                  |
-|--------------------------------------|------------------------------------------|
-| `/products/knitted-fabrics/`         | `/knitted-fabrics-manufacturer/`         |
-| `/products/sports-accessories/`      | `/sports-accessories-manufacturer/`      |
-| `/products/outdoor-clothing/`        | `/outdoor-clothing-manufacturer/`        |
-| `/products/sportswear/`              | `/sportswear-manufacturer/`              |
-| `/products/underwear/`               | `/underwear-manufacturer/`               |
-| `/products/merino-wool-apparel/`     | `/merino-wool-manufacturer/`             |
-| `/products/silk-wear/`               | `/silk-wear-manufacturer/`               |
+**Status update (2026-07-04): the user confirmed the old site's pages are all
+dead — no inherited search equity to preserve.** The category-page redirects
+below are therefore NOT required and should NOT be added.
 
-Plus the misspelling fix:
-| `/sustainabilty/`                    | `/sustainability/`                       |
+The original plan (kept for historical reference, in case the assumption
+changes — e.g. a specific old URL turns out to still be indexed):
 
-Plus auxiliary pages that **stay** (no redirect needed unless they later move):
-`/production/`, `/factory/`, `/equipments/`, `/about-us/`, `/contact/`,
-`/products/` (hub, kept or 301'd to home — TBD).
+| Old URL                              | New URL                                  | Status |
+|--------------------------------------|------------------------------------------|--------|
+| `/products/knitted-fabrics/`         | `/knitted-fabrics-manufacturer/`         | NOT NEEDED (old URL dead) |
+| `/products/sports-accessories/`      | `/sports-accessories-manufacturer/`      | NOT NEEDED |
+| `/products/outdoor-clothing/`        | `/outdoor-clothing-manufacturer/`        | NOT NEEDED |
+| `/products/sportswear/`              | `/sportswear-manufacturer/`              | NOT NEEDED |
+| `/products/underwear/`               | `/underwear-manufacturer/`               | NOT NEEDED |
+| `/products/merino-wool-apparel/`     | `/merino-wool-manufacturer/`             | NOT NEEDED |
+| `/products/silk-wear/`               | `/silk-wear-manufacturer/`               | NOT NEEDED |
 
-**Confirm with the user** before applying — the new slugs' exact wording is
-tunable (e.g. `merino-wool-manufacturer` vs `merino-wool-apparel-manufacturer`).
+The misspelling fix `/sustainabilty/` → `/sustainability/` may still be worth
+keeping IF the misspelled URL was ever indexed or linked; check with the user
+or Search Console before deciding. The current code has it in `functions.php`.
+
+### When this skill still applies
+
+The redirects above are off the table, but this skill STILL triggers for:
+- **Renaming any CURRENTLY LIVE page's slug** — old URL is dead is fine, but
+  if `/sportswear-manufacturer/` is already indexed and you rename it to
+  `/activewear-manufacturer/`, THAT needs a 301 (the new URL is live).
+- **Merging two currently-live pages** into one.
+- **Deleting a currently-live page** (vs. a never-live stub).
+- **Correcting a misspelled slug** that's already indexed or linked.
+- **Any new slug change once the site goes to production** — from launch
+  onward, every URL change needs a 301 by default.
+
+Rule of thumb: if the old URL was ever (a) indexed by Google, (b) linked from
+external sites, or (c) live on the production domain → its change needs a 301.
+If it only ever existed as a never-published stub or on a dead site → no
+redirect needed.
 
 ## Workflow
 
