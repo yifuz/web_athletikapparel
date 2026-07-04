@@ -33,9 +33,9 @@ $proof_items = array(
 	<div class="ma-section-inner">
 		<h2 id="ma-home-proof-title" class="ma-section-kicker"><?php esc_html_e( 'Manufacturing proof points', 'myathletik-child' ); ?></h2>
 		<div class="ma-home-proof__grid">
-			<?php foreach ( $proof_items as $item ) : ?>
+			<?php foreach ( $proof_items as $index => $item ) : ?>
 				<article class="ma-home-proof__item">
-					<span class="ma-home-proof__mark" aria-hidden="true"></span>
+					<span class="ma-home-proof__mark" aria-hidden="true"><?php echo esc_html( str_pad( (string) ( $index + 1 ), 2, '0', STR_PAD_LEFT ) ); ?></span>
 					<h3><?php echo esc_html( $item['label'] ); ?></h3>
 					<p><?php echo esc_html( $item['copy'] ); ?></p>
 				</article>

@@ -42,7 +42,7 @@ Text Domain:  myathletik-child
   --ma-space-6: 4rem;
 
 
-  --ma-section-y:    5rem;   /* vertical section padding for sub-pages */
+  --ma-section-y:    clamp(3.5rem, 7vw, 5.5rem);   /* vertical section padding, responsive */
 
   /* Layout */
   --ma-container:    1200px;
@@ -1029,7 +1029,7 @@ body.home .container.grid-container {
   width: 100%;
   max-width: var(--ma-container);
   margin: 0 auto;
-  padding: var(--ma-space-6) var(--ma-space-4);
+  padding: var(--ma-section-y) var(--ma-space-4);
   box-sizing: border-box;
 }
 
@@ -1064,7 +1064,7 @@ body.home .container.grid-container {
   color: var(--ma-color-accent-2);
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: 0.09em;
   line-height: 1.4;
   text-transform: uppercase;
 }
@@ -1096,11 +1096,14 @@ body.home .container.grid-container {
 
 .ma-home-proof__mark {
   display: block;
-  width: 2rem;
-  height: 0.22rem;
   margin-bottom: var(--ma-space-3);
-  border-radius: 999px;
-  background: var(--ma-color-accent);
+  color: var(--ma-color-accent);
+  font-family: var(--ma-font-head);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  opacity: 0.85;
 }
 
 .ma-home-proof__item h3,
@@ -1176,10 +1179,11 @@ body.home .container.grid-container {
   left: var(--ma-space-3);
   right: var(--ma-space-3);
   bottom: var(--ma-space-3);
-  font-size: 1.2rem;
+  font-family: var(--ma-font-head);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-weight: 700;
+  letter-spacing: 0.01em;
   line-height: 1.2;
-
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
 }
 
@@ -1240,14 +1244,19 @@ body.home .container.grid-container {
 .ma-reason-card {
   padding: var(--ma-space-4);
   border-left: 3px solid var(--ma-color-accent);
-  background: var(--ma-color-surface);
+  background: var(--ma-color-white);
   border-radius: var(--ma-radius);
   box-shadow: 0 12px 26px rgba(43, 39, 36, 0.07);
 }
 
 .ma-reason-card span {
-  color: var(--ma-color-accent-2);
-  font-weight: 800;
+  display: inline-block;
+  color: var(--ma-color-accent);
+  font-family: var(--ma-font-head);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
 }
 
 .ma-reason-card h3 {
@@ -1495,6 +1504,13 @@ body.home .container.grid-container {
   border: 1px solid var(--ma-color-border);
   border-radius: var(--ma-radius);
   background: rgba(255, 255, 255, 0.5);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.ma-certification-badge:hover {
+  border-color: rgba(196, 96, 47, 0.4);
+  box-shadow: 0 8px 20px rgba(43, 39, 36, 0.08);
+  transform: translateY(-2px);
 }
 
 .ma-certification-badge img {
@@ -1588,10 +1604,11 @@ body.home .container.grid-container {
 .ma-inquiry-form {
   display: grid;
   gap: var(--ma-space-4);
-  padding: var(--ma-space-4);
-  border-radius: var(--ma-radius);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: 0.75rem;
   background: var(--ma-color-bg);
   color: var(--ma-color-text);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
 }
 
 .ma-form-row {
