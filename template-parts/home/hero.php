@@ -9,9 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$hero_image      = get_stylesheet_directory_uri() . '/assets/images/production/%E5%9C%86%E6%9C%BA.png';
-$hero_sewing     = get_stylesheet_directory_uri() . '/assets/images/production/%E7%BC%9D%E7%BA%AB.png';
-$hero_garment    = get_stylesheet_directory_uri() . '/assets/images/sportswear/flatlock-athletic-800-1.jpg';
+$hero_garment_a  = get_stylesheet_directory_uri() . '/assets/images/sportswear/hero_bento_a.jpg';
+$hero_garment_d  = get_stylesheet_directory_uri() . '/assets/images/sportswear/hero_bento_d.jpg';
+$hero_sewing     = get_stylesheet_directory_uri() . '/assets/images/production/hero_bento_b.jpg';
+$hero_knitting   = get_stylesheet_directory_uri() . '/assets/images/production/hero_bento_c.jpg';
 ?>
 
 <section class="ma-home-hero" aria-label="<?php esc_attr_e( 'myathletik homepage introduction', 'myathletik-child' ); ?>">
@@ -40,11 +41,18 @@ $hero_garment    = get_stylesheet_directory_uri() . '/assets/images/sportswear/f
 		</div>
 		<div class="ma-home-hero__visual" aria-hidden="true">
 			<div class="ma-home-hero__collage">
-				<div class="ma-home-hero__visual-frame">
-					<img src="<?php echo esc_url( $hero_image ); ?>" alt="" width="720" height="540" loading="eager">
-				</div>
-				<img class="ma-home-hero__thumb ma-home-hero__thumb--tl" src="<?php echo esc_url( $hero_sewing ); ?>" alt="" width="160" height="160" loading="eager">
-				<img class="ma-home-hero__thumb ma-home-hero__thumb--br" src="<?php echo esc_url( $hero_garment ); ?>" alt="" width="160" height="160" loading="eager">
+				<figure class="ma-bento ma-bento--a">
+					<img src="<?php echo esc_url( $hero_garment_a ); ?>" alt="" width="900" height="787" loading="eager">
+				</figure>
+				<figure class="ma-bento ma-bento--b">
+					<img src="<?php echo esc_url( $hero_sewing ); ?>" alt="" width="600" height="600" loading="eager">
+				</figure>
+				<figure class="ma-bento ma-bento--c">
+					<img src="<?php echo esc_url( $hero_knitting ); ?>" alt="" width="506" height="506" loading="eager">
+				</figure>
+				<figure class="ma-bento ma-bento--d">
+					<img src="<?php echo esc_url( $hero_garment_d ); ?>" alt="" width="600" height="600" loading="eager">
+				</figure>
 			</div>
 		</div>
 	</div>

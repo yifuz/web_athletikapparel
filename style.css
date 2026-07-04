@@ -609,7 +609,7 @@ body.home .container.grid-container {
   vertical-align: middle;
 }
 
-/* --- Visual panel (right) --- */
+/* --- Visual panel (right): Bento collage --- */
 .ma-home-hero__visual {
   position: relative;
   display: flex;
@@ -619,92 +619,77 @@ body.home .container.grid-container {
   width: 100%;
 }
 
-.ma-home-hero__visual-frame {
-  position: relative;
-  width: min(100%, 28rem);
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  border: 3px solid rgba(250, 248, 245, 0.96);
-  border-radius: 0 4.25rem 0 4.25rem;
-  background: var(--ma-color-border);
-  box-shadow: 0 20px 48px rgba(43, 39, 36, 0.12);
+/*
+ * Bento grid ¡ª 4 cells, products vs manufacturing balanced.
+ * Desktop layout (min-width 48rem):
+ *   ©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©Ð©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
+ *   ©¦              ©¦   C     ©¦  C: circular knitting (manufacturing)
+ *   ©¦      A       ©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©È
+ *   ©¦  garment A   ©¦   B     ©¦  B: sewing floor (manufacturing)
+ *   ©¦  (large)     ©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©È
+ *   ©¦              ©¦   D     ©¦  D: garment D (product)
+ *   ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©Ø©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
+ *  A spans the full height on the left; C/B/D stack on the right.
+ */
+.ma-home-hero__collage {
+  display: grid;
+  width: min(100%, 30rem);
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0.6rem;
 }
 
-.ma-home-hero__visual-frame::after {
+.ma-bento {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0.9rem;
+  border: 3px solid var(--ma-color-bg);
+  background: var(--ma-color-border);
+  box-shadow: 0 14px 34px rgba(43, 39, 36, 0.14);
+}
+
+/* A: large garment image ¡ª fills the left column, spans all 3 rows */
+.ma-bento--a {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  border-radius: 0 2.5rem 0 2.5rem;
+}
+
+/* B, C, D: right column squares */
+.ma-bento--c { grid-column: 2; grid-row: 1; }
+.ma-bento--b { grid-column: 2; grid-row: 2; }
+.ma-bento--d { grid-column: 2; grid-row: 3; }
+
+.ma-bento img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Soft inner edge for definition on light backgrounds */
+.ma-bento::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  box-shadow: inset 0 0 0 1px rgba(43, 39, 36, 0.06);
-}
-
-.ma-home-hero__visual-frame img {
-  display: block;
-  width: 100%;
-  max-width: none;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-}
-
-/* --- Collage: yarn -> garment visual story --- */
-.ma-home-hero__collage {
-  position: relative;
-  width: min(100%, 28rem);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ma-home-hero__thumb {
-  position: absolute;
-  z-index: 2;
-  width: clamp(4.5rem, 22vw, 6rem);
-  height: clamp(4.5rem, 22vw, 6rem);
-  border-radius: 0.85rem;
-  border: 3px solid var(--ma-color-bg);
-  background: var(--ma-color-border);
-  object-fit: cover;
-  object-position: center;
-  box-shadow: 0 10px 26px rgba(43, 39, 36, 0.18);
-}
-
-/* top-left: technical sewing */
-.ma-home-hero__thumb--tl {
-  top: -0.75rem;
-  left: -1.25rem;
-  transform: rotate(-4deg);
-}
-
-/* bottom-right: finished garment */
-.ma-home-hero__thumb--br {
-  bottom: -0.75rem;
-  right: -1.25rem;
-  transform: rotate(4deg);
+  box-shadow: inset 0 0 0 1px rgba(43, 39, 36, 0.05);
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .ma-home-hero__thumb {
+  .ma-bento {
     opacity: 0;
-    animation: ma-hero-thumb-in 600ms ease-out 200ms forwards;
+    animation: ma-bento-in 520ms ease-out forwards;
   }
-  .ma-home-hero__thumb--br {
-    animation-delay: 320ms;
-  }
-  @keyframes ma-hero-thumb-in {
-    from { opacity: 0; transform: translateY(8px) rotate(0); }
-    to   { opacity: 1; }
-  }
-  /* keep the end-state rotation stable after the animation finishes */
-  .ma-home-hero__thumb--tl { animation-name: ma-hero-thumb-in-tl; }
-  .ma-home-hero__thumb--br { animation-name: ma-hero-thumb-in-br; }
-  @keyframes ma-hero-thumb-in-tl {
-    from { opacity: 0; transform: translateY(8px) rotate(0); }
-    to   { opacity: 1; transform: translateY(0) rotate(-4deg); }
-  }
-  @keyframes ma-hero-thumb-in-br {
-    from { opacity: 0; transform: translateY(8px) rotate(0); }
-    to   { opacity: 1; transform: translateY(0) rotate(4deg); }
+  .ma-bento--a { animation-delay: 60ms; }
+  .ma-bento--c { animation-delay: 180ms; }
+  .ma-bento--b { animation-delay: 280ms; }
+  .ma-bento--d { animation-delay: 380ms; }
+  @keyframes ma-bento-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 }
 
@@ -783,36 +768,27 @@ body.home .container.grid-container {
     font-size: clamp(2.1rem, 11vw, 2.9rem);
   }
 
-  .ma-home-hero__visual-frame {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    border-radius: 0 2.75rem 0 2.75rem;
-    box-shadow: 0 14px 32px rgba(43, 39, 36, 0.1);
-  }
-
-  /* Collage thumbnails: shrink + hug the frame on small screens */
+  /* Bento: stack into A on top (wide), B/C/D in a row below */
   .ma-home-hero__collage {
-    width: min(100%, 24rem);
+    width: 100%;
+    max-width: 26rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
   }
 
-  .ma-home-hero__thumb {
-    width: clamp(3.75rem, 18vw, 5rem);
-    height: clamp(3.75rem, 18vw, 5rem);
-    border-radius: 0.65rem;
-    border-width: 2px;
+  .ma-bento--a {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    aspect-ratio: 16 / 10;
+    border-radius: 0 2rem 0 2rem;
   }
 
-  .ma-home-hero__thumb--tl {
-    top: -0.5rem;
-    left: -0.6rem;
-    transform: rotate(-3deg);
-  }
+  .ma-bento--c { grid-column: 1; grid-row: 2; }
+  .ma-bento--b { grid-column: 2; grid-row: 2; }
+  .ma-bento--d { grid-column: 3; grid-row: 2; }
 
-  .ma-home-hero__thumb--br {
-    bottom: -0.5rem;
-    right: -0.6rem;
-    transform: rotate(3deg);
-  }
+  .ma-bento { border-width: 2px; }
 }
 /* --- Home: Client Logos --- */
 .ma-client-logos {
