@@ -11,13 +11,62 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 $categories = array(
-	array( 'title' => __( 'Sportswear', 'myathletik-child' ), 'url' => '/sportswear-manufacturer/', 'image' => 'sportswear/flatlock-athletic-800-1.jpg', 'alt' => __( 'Sportswear flatlock garment sample for OEM/ODM manufacturing', 'myathletik-child' ), 'modifier' => 'ma-category-card--wide', 'position' => '50% 24%' ),
-	array( 'title' => __( 'Underwear', 'myathletik-child' ), 'url' => '/underwear-manufacturer/', 'image' => 'underwear/boxer-brief-n-trunk-boxer-22.jpg', 'alt' => __( 'Technical underwear product sample for OEM/ODM manufacturing', 'myathletik-child' ), 'modifier' => '', 'position' => '50% 52%' ),
-	array( 'title' => __( 'Outdoor Clothing', 'myathletik-child' ), 'url' => '/outdoor-clothing-manufacturer/', 'image' => 'outdoor clothing/flatlock-athletic-800-3.jpg', 'alt' => __( 'Outdoor clothing technical knitwear sample', 'myathletik-child' ), 'modifier' => '', 'position' => '50% 22%' ),
-	array( 'title' => __( 'Merino Wool', 'myathletik-child' ), 'url' => '/merino-wool-manufacturer/', 'image' => 'merino wool product/merino-wool-base-layer-1.jpg', 'alt' => __( 'Merino wool base layer OEM/ODM product sample', 'myathletik-child' ), 'modifier' => 'ma-category-card--tall', 'position' => '50% 16%' ),
-	array( 'title' => __( 'Silk Wear', 'myathletik-child' ), 'url' => '/silk-wear-manufacturer/', 'image' => 'silkwear/IMG_5350.jpg', 'alt' => __( 'Silk wear garment sample for OEM/ODM production', 'myathletik-child' ), 'modifier' => 'ma-category-card--wide', 'position' => '50% 18%' ),
-	array( 'title' => __( 'Knitted Fabrics', 'myathletik-child' ), 'url' => '/knitted-fabrics-manufacturer/', 'image' => 'knitted fabrics/91pCNmlupyL._AC_SL1500_.jpg', 'alt' => __( 'Knitted fabric material sample for manufacturing', 'myathletik-child' ), 'modifier' => '', 'position' => '50% 50%' ),
-	array( 'title' => __( 'Sports Accessories', 'myathletik-child' ), 'url' => '/sports-accessories-manufacturer/', 'image' => 'sports accessories/mieke-campbell-esmxlhT-68w-unsplash.jpg', 'alt' => __( 'Sports accessories category image for OEM/ODM manufacturing', 'myathletik-child' ), 'modifier' => '', 'position' => '50% 36%' ),
+	array(
+		'title' => __( 'Sportswear', 'myathletik-child' ),
+		'url'   => '/sportswear-manufacturer/',
+		'image' => 'sportswear/cat_feature.jpg',
+		'alt'   => __( 'Sportswear sample for OEM/ODM knitwear manufacturing', 'myathletik-child' ),
+		'area'  => 'feature',
+		'position' => '50% 20%',
+	),
+	array(
+		'title' => __( 'Underwear', 'myathletik-child' ),
+		'url'   => '/underwear-manufacturer/',
+		'image' => 'underwear/boxer-brief-n-trunk-boxer-22.jpg',
+		'alt'   => __( 'Technical underwear product sample for OEM/ODM manufacturing', 'myathletik-child' ),
+		'area'  => 'c1',
+		'position' => '50% 52%',
+	),
+	array(
+		'title' => __( 'Outdoor Clothing', 'myathletik-child' ),
+		'url'   => '/outdoor-clothing-manufacturer/',
+		'image' => 'outdoor clothing/flatlock-athletic-800-3.jpg',
+		'alt'   => __( 'Outdoor clothing technical knitwear sample', 'myathletik-child' ),
+		'area'  => 'c2',
+		'position' => '50% 22%',
+	),
+	array(
+		'title' => __( 'Merino Wool', 'myathletik-child' ),
+		'url'   => '/merino-wool-manufacturer/',
+		'image' => 'merino wool product/merino-wool-base-layer-1.jpg',
+		'alt'   => __( 'Merino wool base layer OEM/ODM product sample', 'myathletik-child' ),
+		'area'  => 'c3',
+		'position' => '50% 16%',
+	),
+	array(
+		'title' => __( 'Silk Wear', 'myathletik-child' ),
+		'url'   => '/silk-wear-manufacturer/',
+		'image' => 'silkwear/IMG_5350.jpg',
+		'alt'   => __( 'Silk wear garment sample for OEM/ODM production', 'myathletik-child' ),
+		'area'  => 'c4',
+		'position' => '50% 18%',
+	),
+	array(
+		'title' => __( 'Knitted Fabrics', 'myathletik-child' ),
+		'url'   => '/knitted-fabrics-manufacturer/',
+		'image' => 'production/cat_knitted_fabrics.jpg',
+		'alt'   => __( 'Warp knitting machine producing technical knitted fabrics', 'myathletik-child' ),
+		'area'  => 'c5',
+		'position' => '50% 50%',
+	),
+	array(
+		'title' => __( 'Sports Accessories', 'myathletik-child' ),
+		'url'   => '/sports-accessories-manufacturer/',
+		'image' => 'sports accessories/cat_card.jpg',
+		'alt'   => __( 'Sports accessories for OEM/ODM manufacturing programs', 'myathletik-child' ),
+		'area'  => 'c6',
+		'position' => '50% 36%',
+	),
 );
 ?>
 
@@ -31,7 +80,7 @@ $categories = array(
 
 		<div class="ma-home-categories__grid">
 			<?php foreach ( $categories as $category ) : ?>
-				<a class="ma-category-card <?php echo esc_attr( $category['modifier'] ); ?>" href="<?php echo esc_url( home_url( $category['url'] ) ); ?>">
+				<a class="ma-category-card" href="<?php echo esc_url( home_url( $category['url'] ) ); ?>" style="grid-area: <?php echo esc_attr( $category['area'] ); ?>;">
 					<img src="<?php echo esc_url( $image_base . $category['image'] ); ?>" alt="<?php echo esc_attr( $category['alt'] ); ?>" loading="lazy" style="object-position: <?php echo esc_attr( $category['position'] ); ?>;">
 					<span><?php echo esc_html( $category['title'] ); ?></span>
 				</a>

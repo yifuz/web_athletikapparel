@@ -1142,7 +1142,7 @@ body.home .container.grid-container {
 .ma-category-card {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   min-height: 0;
   overflow: hidden;
   border-radius: var(--ma-radius);
@@ -1153,6 +1153,9 @@ body.home .container.grid-container {
   transform: translateY(0);
   transition: box-shadow 180ms ease, transform 180ms ease;
 }
+
+/* Feature card aspect-ratio set per-breakpoint below (2:3 on tablet+,
+   4:3 on mobile to avoid an overly tall card). */
 
 .ma-category-card::after {
   position: absolute;
@@ -1199,13 +1202,27 @@ body.home .container.grid-container {
   transform: translateY(-2px);
 }
 
+/* Tablet (48rem+): feature card spans 2 cols x 3 rows on the left;
+   six small cards fill the right 2 columns. Feature card's 2:3 aspect
+   drives the grid height; small cards stretch to fill each row. */
 @media (min-width: 48rem) {
   .ma-home-categories__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-areas:
+      "feature feature c1 c2"
+      "feature feature c3 c4"
+      "feature feature c5 c6";
   }
 
+  /* Small cards fill their grid cells; feature card keeps its 2:3 aspect */
   .ma-category-card {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: auto;
+    height: 100%;
+  }
+
+  .ma-category-card[style*="grid-area: feature"] {
+    aspect-ratio: 2 / 3;
+    height: auto;
   }
 
   .ma-category-card span {
@@ -1216,13 +1233,10 @@ body.home .container.grid-container {
   }
 }
 
+/* Desktop (70rem+): same area map, cards just get bigger */
 @media (min-width: 70rem) {
   .ma-home-categories__grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .ma-category-card {
-    aspect-ratio: 4 / 3;
+    gap: var(--ma-space-5);
   }
 }
 

@@ -1,0 +1,876 @@
+{
+  "home": {
+    "url": "https://www.performancefabrics.com/",
+    "final_url": "https://www.performancefabrics.com/",
+    "images": [
+      {
+        "filename": "performance-fabric.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/performance-fabric.jpg"
+      },
+      {
+        "filename": "fucntion-5-thermal-regulation-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/fucntion-5-thermal-regulation-xxx_2022.png"
+      },
+      {
+        "filename": "fucntion-8-cooling-xxx-2022-1.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/fucntion-8-cooling-xxx_2022-1.png"
+      },
+      {
+        "filename": "function-1-wicking-xxx-2022-1.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-1-wicking-xxx_2022-1.png"
+      },
+      {
+        "filename": "function-10-eco-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-10-eco-xxx_2022.png"
+      },
+      {
+        "filename": "function-2-one-way-wicking-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-2-one-way-wicking-xxx_2022.png"
+      },
+      {
+        "filename": "function-3-anti-odor-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-3-anti-odor-xxx_2022.png"
+      },
+      {
+        "filename": "function-4-antimicrobial-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-4-antimicrobial-xxx_2022.png"
+      },
+      {
+        "filename": "function-6-wind-proof-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-6-wind-proof-xxx_2022.png"
+      },
+      {
+        "filename": "function-7-water-repellent-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-7-water-repellent-xxx_2022.png"
+      },
+      {
+        "filename": "functiuon-9-thermal-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/functiuon-9-thermal-xxx_2022.png"
+      },
+      {
+        "filename": "banner-activedri-com-a1x.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-activedri_com_A1X.png"
+      },
+      {
+        "filename": "banner-kwikwarm-com-500pix.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-kwikwarm_com_500pix.png"
+      },
+      {
+        "filename": "banner-oembaselayer-com-500pix.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-oembaselayer_com_500pix.png"
+      },
+      {
+        "filename": "grs-btexco.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2023/01/GRS-BTEXCO.png"
+      },
+      {
+        "filename": "higg-btexco.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2023/01/HIGG_BTEXCO.jpg"
+      },
+      {
+        "filename": "oeko-tex-100.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2023/01/oeko-tex-100.png"
+      },
+      {
+        "filename": "kintting-functional-fabrics-1x.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2023/08/kintting-functional-fabrics-1x.png"
+      }
+    ]
+  },
+  "products": {
+    "url": "https://www.performancefabrics.com/products.html",
+    "final_url": "https://www.performancefabrics.com/products.html",
+    "images": [
+      {
+        "filename": "knit-fabric-1.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-1-150x150.jpg"
+      },
+      {
+        "filename": "knit-fabric-10.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-10-150x150.jpg"
+      },
+      {
+        "filename": "knit-fabric-11.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-11-150x150.jpg"
+      },
+      {
+        "filename": "knit-fabric-12-150x150-1.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-12-150x150-1.jpg"
+      },
+      {
+        "filename": "knit-fabric-13-150x150-1.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-13-150x150-1.jpg"
+      },
+      {
+        "filename": "knit-fabric-14.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-14-150x150.jpg"
+      },
+      {
+        "filename": "knit-fabric-16.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-16-150x150.jpg"
+      },
+      {
+        "filename": "knit-fabric-17-150x150-1.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-17-150x150-1.jpg"
+      },
+      {
+        "filename": "knit-fabric-18.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-18-150x150.jpg"
+      },
+      {
+        "filename": "knit-fabric-2.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-2-150x150.jpg"
+      },
+      {
+        "filename": "knit-fabric-20.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-20-150x150.jpg"
+      },
+      {
+        "filename": "knit-fabric-3-150x150-1.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-3-150x150-1.jpg"
+      },
+      {
+        "filename": "knit-fabric-4.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-4-150x150.jpg"
+      },
+      {
+        "filename": "knit-fabric-5.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-5-150x150.jpg"
+      },
+      {
+        "filename": "knit-fabric-6-150x150-1.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-6-150x150-1.jpg"
+      },
+      {
+        "filename": "knit-fabric-7-150x150-1.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-7-150x150-1.jpg"
+      },
+      {
+        "filename": "knit-fabric-8.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-8-150x150.jpg"
+      },
+      {
+        "filename": "knit-fabric-9.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/knit-fabric-9-150x150.jpg"
+      },
+      {
+        "filename": "performance-fabric.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/performance-fabric.jpg"
+      },
+      {
+        "filename": "fucntion-8-cooling-xxx-2022-1.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/fucntion-8-cooling-xxx_2022-1.png"
+      },
+      {
+        "filename": "function-1-wicking-xxx-2022-1.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-1-wicking-xxx_2022-1.png"
+      },
+      {
+        "filename": "function-10-eco-xxx-2022-1.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-10-eco-xxx_2022-1.png"
+      },
+      {
+        "filename": "function-10-eco-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-10-eco-xxx_2022.png"
+      },
+      {
+        "filename": "function-2-one-way-wicking-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-2-one-way-wicking-xxx_2022.png"
+      },
+      {
+        "filename": "function-3-anti-odor-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-3-anti-odor-xxx_2022.png"
+      },
+      {
+        "filename": "function-4-antimicrobial-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-4-antimicrobial-xxx_2022.png"
+      },
+      {
+        "filename": "function-6-wind-proof-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-6-wind-proof-xxx_2022.png"
+      },
+      {
+        "filename": "function-7-water-repellent-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/function-7-water-repellent-xxx_2022.png"
+      },
+      {
+        "filename": "functiuon-9-thermal-xxx-2022.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/02/functiuon-9-thermal-xxx_2022.png"
+      },
+      {
+        "filename": "banner-activedri-com-a1x.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-activedri_com_A1X.png"
+      },
+      {
+        "filename": "banner-kwikwarm-com-500pix.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-kwikwarm_com_500pix.png"
+      },
+      {
+        "filename": "banner-oembaselayer-com-500pix.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-oembaselayer_com_500pix.png"
+      },
+      {
+        "filename": "fucntion-5-thermal-regulation-xxx-2022-611452.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2023/02/fucntion-5-thermal-regulation-xxx_2022.png"
+      }
+    ]
+  },
+  "materials": {
+    "url": "https://www.performancefabrics.com/materials.html",
+    "final_url": "https://www.performancefabrics.com/materials.html",
+    "images": [
+      {
+        "filename": "fiber-1-softwarm.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-1-softwarm-150x150.jpg"
+      },
+      {
+        "filename": "fiber-10-meryl-skinlife.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-10-meryl-skinlife-150x150.jpg"
+      },
+      {
+        "filename": "fiber-11-coolplus.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-11-coolplus-150x150.jpg"
+      },
+      {
+        "filename": "fiber-12-tactel.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-12-tactel-150x150.jpg"
+      },
+      {
+        "filename": "fiber-13-viloft.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-13-viloft-150x150.jpg"
+      },
+      {
+        "filename": "fiber-14-coolpass.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-14-coolpass-150x150.jpg"
+      },
+      {
+        "filename": "fiber-15-thermolite.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-15-thermolite-150x150.jpg"
+      },
+      {
+        "filename": "fiber-16-x-static1.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-16-x-static1-150x150.jpg"
+      },
+      {
+        "filename": "fiber-17-aqua-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-17-aqua-x.jpg"
+      },
+      {
+        "filename": "fiber-2-coolmax.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-2-coolmax-150x150.jpg"
+      },
+      {
+        "filename": "fiber-3-nilit.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-3-nilit-150x150.jpg"
+      },
+      {
+        "filename": "fiber-4-drirelease.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-4-drirelease-150x150.jpg"
+      },
+      {
+        "filename": "fiber-5-supplex.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-5-supplex-150x150.jpg"
+      },
+      {
+        "filename": "fiber-6-coolvisions.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-6-coolvisions-150x150.jpg"
+      },
+      {
+        "filename": "fiber-7-celliant.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-7-celliant-150x150.jpg"
+      },
+      {
+        "filename": "fiber-8-outlast.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-8-outlast-150x150.jpg"
+      },
+      {
+        "filename": "fiber-9-flycool.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fiber-9-flycool-150x150.jpg"
+      },
+      {
+        "filename": "performance-fabric.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/performance-fabric.jpg"
+      },
+      {
+        "filename": "banner-activedri-com-a1x.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-activedri_com_A1X.png"
+      },
+      {
+        "filename": "banner-kwikwarm-com-500pix.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-kwikwarm_com_500pix.png"
+      },
+      {
+        "filename": "banner-oembaselayer-com-500pix.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-oembaselayer_com_500pix.png"
+      }
+    ]
+  },
+  "collections": {
+    "url": "https://www.performancefabrics.com/collections.html",
+    "final_url": "https://www.performancefabrics.com/collections.html",
+    "images": [
+      {
+        "filename": "fabric-collection-1-v2018.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fabric-collection-1-v2018.jpg"
+      },
+      {
+        "filename": "fabric-collection-2-v2018.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fabric-collection-2-v2018.jpg"
+      },
+      {
+        "filename": "fabric-collection-3-v2018.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/fabric-collection-3-v2018.jpg"
+      },
+      {
+        "filename": "performance-fabric.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/performance-fabric.jpg"
+      },
+      {
+        "filename": "btexco-showroom-11.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/11/btexco-showroom-11.jpg"
+      },
+      {
+        "filename": "btexco-showroom-2.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/11/btexco-showroom-2.jpg"
+      },
+      {
+        "filename": "btexco-showroom-4.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/11/btexco-showroom-4.jpg"
+      },
+      {
+        "filename": "btexco-showroom-5.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/11/btexco-showroom-5.jpg"
+      },
+      {
+        "filename": "btexco-showroom-a1.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/11/btexco-showroom-a1.jpg"
+      },
+      {
+        "filename": "banner-activedri-com-a1x.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-activedri_com_A1X.png"
+      },
+      {
+        "filename": "banner-kwikwarm-com-500pix.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-kwikwarm_com_500pix.png"
+      },
+      {
+        "filename": "banner-oembaselayer-com-500pix.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-oembaselayer_com_500pix.png"
+      }
+    ]
+  },
+  "testing-inspections": {
+    "url": "https://www.performancefabrics.com/testing-and-inspections.html",
+    "final_url": "https://www.performancefabrics.com/testing-and-inspections.html",
+    "images": [
+      {
+        "filename": "alice-zeng.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/Alice_Zeng.jpg"
+      },
+      {
+        "filename": "jesica-sun.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/Jesica_sun.jpg"
+      },
+      {
+        "filename": "linda-ding.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/Linda_Ding.jpg"
+      },
+      {
+        "filename": "lulu-chen.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/Lulu-Chen.jpg"
+      },
+      {
+        "filename": "nancy-qian.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/Nancy_Qian.jpg"
+      },
+      {
+        "filename": "veronica-huang.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/Veronica_Huang.jpg"
+      },
+      {
+        "filename": "performance-fabric.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/performance-fabric.jpg"
+      },
+      {
+        "filename": "banner-activedri-com-a1x.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-activedri_com_A1X.png"
+      },
+      {
+        "filename": "banner-kwikwarm-com-500pix.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-kwikwarm_com_500pix.png"
+      },
+      {
+        "filename": "banner-oembaselayer-com-500pix.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-oembaselayer_com_500pix.png"
+      },
+      {
+        "filename": "test-2-its-s.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2023/01/test-2-ITS-s-150x150.jpg"
+      },
+      {
+        "filename": "testing-1-bv-s.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2023/01/testing-1-bv-s-150x150.jpg"
+      },
+      {
+        "filename": "testing-3-kaken-s.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2023/01/testing-3-kaken-s-150x150.jpg"
+      },
+      {
+        "filename": "testing-4-sgs-s.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2023/01/testing-4-sgs-s-150x150.jpg"
+      },
+      {
+        "filename": "testing-5-ttri-s.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2023/01/testing-5-ttri-s-150x150.jpg"
+      },
+      {
+        "filename": "testing-6-bttg.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2023/01/testing-6-BTTG.jpg"
+      }
+    ]
+  },
+  "brand-partners": {
+    "url": "https://www.performancefabrics.com/brand-partners.html",
+    "final_url": "https://www.performancefabrics.com/brand-partners.html",
+    "images": [
+      {
+        "filename": "performance-fabric.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/performance-fabric.jpg"
+      },
+      {
+        "filename": "10-bcg-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/10-BCG-x.jpg"
+      },
+      {
+        "filename": "100-kuhl.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/100-kuhl.jpg"
+      },
+      {
+        "filename": "101-superdey.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/101-Superdey.jpg"
+      },
+      {
+        "filename": "11-beach-mountain.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/11-beach-mountain.jpg"
+      },
+      {
+        "filename": "12-bench.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/12-bench.jpg"
+      },
+      {
+        "filename": "13-benross-2-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/13-benross-2-x.jpg"
+      },
+      {
+        "filename": "14-big-5.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/14-big-5.jpg"
+      },
+      {
+        "filename": "15-blains-work-n-play-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/15-blains-work_n_play-x.jpg"
+      },
+      {
+        "filename": "16-bobux-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/16-bobux-x.jpg"
+      },
+      {
+        "filename": "17-body-glove-2.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/17-body-glove-2.jpg"
+      },
+      {
+        "filename": "18-brekka-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/18-brekka-x.jpg"
+      },
+      {
+        "filename": "19-brp-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/19-brp-x.jpg"
+      },
+      {
+        "filename": "1-46-nord-1.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/1_46-Nord-1.jpg"
+      },
+      {
+        "filename": "2-academy-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/2-academy-x.jpg"
+      },
+      {
+        "filename": "20-bula.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/20-bula.jpg"
+      },
+      {
+        "filename": "21-c9-by-champion.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/21-c9-by-champion.jpg"
+      },
+      {
+        "filename": "22-cabelas-logo.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/22-Cabelas_Logo.jpg"
+      },
+      {
+        "filename": "22-bas-pro-redhead-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/22-bas-pro-redhead-x.jpg"
+      },
+      {
+        "filename": "23-calvin-klein-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/23-calvin-klein-x.jpg"
+      },
+      {
+        "filename": "24-catmandoo.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/24_Catmandoo.jpg"
+      },
+      {
+        "filename": "25-chlorophylle.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/25_Chlorophylle.jpg"
+      },
+      {
+        "filename": "26-choko-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/26-choko-x.jpg"
+      },
+      {
+        "filename": "27-cooper-mvp-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/27-cooper-mvp-x.jpg"
+      },
+      {
+        "filename": "28-danskin-now-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/28-danskin_now-x.jpg"
+      },
+      {
+        "filename": "29-denali-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/29-denali-x.jpg"
+      },
+      {
+        "filename": "3-action-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/3-action-x.jpg"
+      },
+      {
+        "filename": "30-dicks-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/30-dicks-x.jpg"
+      },
+      {
+        "filename": "31-digitial-clothing-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/31-digitial_clothing-x.jpg"
+      },
+      {
+        "filename": "32-doite.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/32-Doite.jpg"
+      },
+      {
+        "filename": "33-ducks-unlimited-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/33-ducks-unlimited-x.jpg"
+      },
+      {
+        "filename": "34-energy-zone-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/34-energy-zone-x.jpg"
+      },
+      {
+        "filename": "35-fashion-power.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/35-fashion-power.jpg"
+      },
+      {
+        "filename": "36-fjord.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/36-fjord.jpg"
+      },
+      {
+        "filename": "37-gander-maountain.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/37-gander-maountain.jpg"
+      },
+      {
+        "filename": "38-genus.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/38-genus.jpg"
+      },
+      {
+        "filename": "39-george-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/39-george-x.jpg"
+      },
+      {
+        "filename": "4-alizee-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/4-alizee-x.jpg"
+      },
+      {
+        "filename": "40-grit-gear.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/40-grit-gear.jpg"
+      },
+      {
+        "filename": "41-guahoo-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/41-guahoo-x.jpg"
+      },
+      {
+        "filename": "42-halti-outdoor-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/42-halti-Outdoor-x.jpg"
+      },
+      {
+        "filename": "43-hanes.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/43_Hanes.jpg"
+      },
+      {
+        "filename": "44-highpoint-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/44-Highpoint-x.jpg"
+      },
+      {
+        "filename": "45-hi-tec.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/45-hi-tec.jpg"
+      },
+      {
+        "filename": "45-jcb-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/45-jcb-x.jpg"
+      },
+      {
+        "filename": "46-hottotties-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/46-hottotties-x.jpg"
+      },
+      {
+        "filename": "47-id-workwear.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/47-id-workwear.jpg"
+      },
+      {
+        "filename": "48-intersport.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/48_intersport.jpg"
+      },
+      {
+        "filename": "5-amer-sports.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/5-amer-sports.jpg"
+      },
+      {
+        "filename": "50-kodiak-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/50-kodiak-x.jpg"
+      },
+      {
+        "filename": "51-kramp.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/51-kramp.jpg"
+      },
+      {
+        "filename": "52-l-aubaierie-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/52-l-aubaierie-x.jpg"
+      },
+      {
+        "filename": "53-lee.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/53-Lee.jpg"
+      },
+      {
+        "filename": "54-lindberg-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/54-lindberg-x.jpg"
+      },
+      {
+        "filename": "55-louis-garneau-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/55-Louis_Garneau-x.jpg"
+      },
+      {
+        "filename": "56-magellans.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/56-magellans.jpg"
+      },
+      {
+        "filename": "57-manaraga-2-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/57-manaraga-2-x.jpg"
+      },
+      {
+        "filename": "58-marks-works-wearhouse-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/58-marks-works-wearhouse-x.jpg"
+      },
+      {
+        "filename": "59-marshall-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/59-Marshall-x.jpg"
+      },
+      {
+        "filename": "60-mashie-golf.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/60_mashie-golf.jpg"
+      },
+      {
+        "filename": "61-medalist-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/61-medalist-x.jpg"
+      },
+      {
+        "filename": "62-new-balance.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/62-new-balance.jpg"
+      },
+      {
+        "filename": "63-nordictrack-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/63-NordicTrack-x.jpg"
+      },
+      {
+        "filename": "64-orage.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/64-orage.jpg"
+      },
+      {
+        "filename": "65-ozark.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/65-ozark.jpg"
+      },
+      {
+        "filename": "66-patagonia-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/66-patagonia-x.jpg"
+      },
+      {
+        "filename": "67-point-zero-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/67-point_zero-x.jpg"
+      },
+      {
+        "filename": "68-polar-edge-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/68-Polar_Edge-x.jpg"
+      },
+      {
+        "filename": "69-realtree.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/69-realtree.jpg"
+      },
+      {
+        "filename": "6-ashmei.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/6_ashmei.jpg"
+      },
+      {
+        "filename": "7-aspen.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/7-aspen.jpg"
+      },
+      {
+        "filename": "70-reebok-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/70-Reebok-x.jpg"
+      },
+      {
+        "filename": "71-rohnisch-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/71-Rohnisch-x.jpg"
+      },
+      {
+        "filename": "72-running-room.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/72-running-room.jpg"
+      },
+      {
+        "filename": "73-sainsburys.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/73-sainsburys.jpg"
+      },
+      {
+        "filename": "74-scheels.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/74-scheels.jpg"
+      },
+      {
+        "filename": "75-she.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/75-she.jpg"
+      },
+      {
+        "filename": "76-sierra-trading-post-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/76-Sierra-Trading-Post-x.jpg"
+      },
+      {
+        "filename": "77-skydda-85889.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/77-skydda_85889.jpg"
+      },
+      {
+        "filename": "78-speedo.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/78_speedo.jpg"
+      },
+      {
+        "filename": "79-sportek-zellers-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/79-sportek-zellers-x.jpg"
+      },
+      {
+        "filename": "8-aw-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/8-AW-x.jpg"
+      },
+      {
+        "filename": "80-sportsman.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/80-sportsman.jpg"
+      },
+      {
+        "filename": "81-stadium.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/81-Stadium.jpg"
+      },
+      {
+        "filename": "82-stanfields.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/82-Stanfields.jpg"
+      },
+      {
+        "filename": "83-starter-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/83-starter-x.jpg"
+      },
+      {
+        "filename": "86-sweatvac.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/86-sweatVac.jpg"
+      },
+      {
+        "filename": "87-tanaga.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/87_tanaga.jpg"
+      },
+      {
+        "filename": "88-thermotech.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/88-thermotech.jpg"
+      },
+      {
+        "filename": "89-tj-maxx-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/89-tj-maxx-x.jpg"
+      },
+      {
+        "filename": "9-bas-pro-shops.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/9-bas-pro-shops.jpg"
+      },
+      {
+        "filename": "90-tk-maxx-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/90-tk-maxx-x.jpg"
+      },
+      {
+        "filename": "91-tmax-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/91-tmax-x.jpg"
+      },
+      {
+        "filename": "92-tog-24.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/92-TOG-24.jpg"
+      },
+      {
+        "filename": "93-travel-smith.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/93-travel-smith.jpg"
+      },
+      {
+        "filename": "94-ullmax.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/94-ullmax.jpg"
+      },
+      {
+        "filename": "95-underscrub-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/95-Underscrub-x.jpg"
+      },
+      {
+        "filename": "96-winchester-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/96-winchester-x.jpg"
+      },
+      {
+        "filename": "97-windriver-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/97-windriver-x.jpg"
+      },
+      {
+        "filename": "98-y-athletics-logo.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/98-Y-athletics-logo.jpg"
+      },
+      {
+        "filename": "99-zenformen-x.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2019/04/99-zenformen-x.jpg"
+      },
+      {
+        "filename": "banner-activedri-com-a1x.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-activedri_com_A1X.png"
+      },
+      {
+        "filename": "banner-kwikwarm-com-500pix.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-kwikwarm_com_500pix.png"
+      },
+      {
+        "filename": "banner-oembaselayer-com-500pix.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-oembaselayer_com_500pix.png"
+      }
+    ]
+  },
+  "contact-us": {
+    "url": "https://www.performancefabrics.com/contact-us.html",
+    "final_url": "https://www.performancefabrics.com/contact-us.html",
+    "images": [
+      {
+        "filename": "performance-fabric.jpg",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2018/10/performance-fabric.jpg"
+      },
+      {
+        "filename": "banner-activedri-com-a1x.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-activedri_com_A1X.png"
+      },
+      {
+        "filename": "banner-kwikwarm-com-500pix.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-kwikwarm_com_500pix.png"
+      },
+      {
+        "filename": "banner-oembaselayer-com-500pix.png",
+        "url": "https://www.performancefabrics.com/wp-content/uploads/2022/11/banner-oembaselayer_com_500pix.png"
+      }
+    ]
+  }
+}
