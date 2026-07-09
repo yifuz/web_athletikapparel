@@ -1128,115 +1128,230 @@ body.home .container.grid-container {
   }
 }
 
-/* --- Home: Product Categories --- */
+/* --- Home: Product Categories (Bento layout, option A) ---
+   Three tiers by card area:
+     Tier 1  primary-left / primary-right  ！ 2 large cards side by side (3:4)
+     Tier 2  med-1 / med-2 / med-3         ！ 3 medium cards
+     Tier 3  small-1 / small-2             ！ 2 small cards
+   Hierarchy is driven by card SIZE, not text. Aspect ratios are locked so
+   images always crop cleanly and rows stay perfectly aligned.
+*/
+
 .ma-home-categories {
   background:
     linear-gradient(180deg, var(--ma-color-bg) 0%, var(--ma-color-surface) 100%);
 }
 
-.ma-home-categories__grid {
+/* Mobile-first: single column stack, generous card height so images breathe. */
+.ma-category-bento {
   display: grid;
-  gap: var(--ma-space-4);
+  gap: var(--ma-space-3);
+  grid-template-areas:
+    "primary-left"
+    "primary-right"
+    "med-1"
+    "med-2"
+    "med-3"
+    "small-1"
+    "small-2";
 }
 
+/* --- Card base --- */
 .ma-category-card {
   position: relative;
   display: block;
-  aspect-ratio: 1 / 1;
-  min-height: 0;
   overflow: hidden;
   border-radius: var(--ma-radius);
   background: var(--ma-color-text);
-  color: var(--ma-color-bg);
   box-shadow: 0 16px 34px rgba(43, 39, 36, 0.12);
   text-decoration: none;
   transform: translateY(0);
   transition: box-shadow 180ms ease, transform 180ms ease;
 }
 
-/* Feature card aspect-ratio set per-breakpoint below (2:3 on tablet+,
-   4:3 on mobile to avoid an overly tall card). */
-
-.ma-category-card::after {
-  position: absolute;
-  inset: 22% 0 0;
-  content: "";
-  background: linear-gradient(180deg, rgba(43, 39, 36, 0), rgba(43, 39, 36, 0.74));
-  pointer-events: none;
+/* Locked aspect ratios per tier ！ the key to a perfectly aligned grid. */
+.ma-category-card--primary-left,
+.ma-category-card--primary-right {
+  aspect-ratio: 4 / 5;
 }
 
+.ma-category-card--med-1,
+.ma-category-card--med-2,
+.ma-category-card--med-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.ma-category-card--small-1,
+.ma-category-card--small-2 {
+  aspect-ratio: 5 / 3;
+}
+
+/* Image fills the card; object-position comes from inline style per card. */
 .ma-category-card img {
   display: block;
   width: 100%;
   height: 100%;
-  max-height: none;
-  min-height: 0;
   object-fit: cover;
-  opacity: 0.92;
-  transition: opacity 180ms ease, transform 180ms ease;
+  opacity: 0.94;
+  transition: opacity 180ms ease, transform 220ms ease;
 }
 
-.ma-category-card span {
+/* Gradient overlay for text legibility (bottom-weighted). */
+.ma-category-card__overlay {
   position: absolute;
-  z-index: 1;
+  inset: 30% 0 0;
+  background: linear-gradient(180deg, rgba(43, 39, 36, 0), rgba(43, 39, 36, 0.78));
+  pointer-events: none;
+}
+
+/* Capability tag ！ top-left pill, only on primary cards. */
+.ma-category-card__tag {
+  position: absolute;
+  top: var(--ma-space-3);
+  left: var(--ma-space-3);
+  z-index: 2;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+  font-family: var(--ma-font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Label row: category title + arrow, bottom-left. */
+.ma-category-card__label {
+  position: absolute;
+  z-index: 2;
   left: var(--ma-space-3);
   right: var(--ma-space-3);
   bottom: var(--ma-space-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ma-space-2);
+  color: var(--ma-color-white);
+}
+
+.ma-category-card__title {
   font-family: var(--ma-font-head);
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
   font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 1.2;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
 }
 
-.ma-category-card:hover img,
-.ma-category-card:focus img {
-  opacity: 1;
-  transform: scale(1.03);
+/* Primary cards get a larger title to match their visual weight. */
+.ma-category-card--primary-left .ma-category-card__title,
+.ma-category-card--primary-right .ma-category-card__title {
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
 }
 
+.ma-category-card__arrow {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  opacity: 0.85;
+  transition: transform 180ms ease;
+}
+
+/* Hover / focus: lift + image zoom + arrow nudge. */
 .ma-category-card:hover,
 .ma-category-card:focus {
-  box-shadow: 0 22px 44px rgba(43, 39, 36, 0.18);
+  box-shadow: 0 22px 44px rgba(43, 39, 36, 0.2);
   transform: translateY(-2px);
 }
 
-/* Tablet (48rem+): feature card spans 2 cols x 3 rows on the left;
-   six small cards fill the right 2 columns. Feature card's 2:3 aspect
-   drives the grid height; small cards stretch to fill each row. */
+.ma-category-card:hover img,
+.ma-category-card:focus img {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.ma-category-card:hover .ma-category-card__arrow,
+.ma-category-card:focus .ma-category-card__arrow {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+/* --- Tablet (48rem+): two columns, tiers read as rows. --- */
 @media (min-width: 48rem) {
-  .ma-home-categories__grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .ma-category-bento {
+    gap: var(--ma-space-4);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-areas:
-      "feature feature c1 c2"
-      "feature feature c3 c4"
-      "feature feature c5 c6";
+      "primary-left  primary-right"
+      "med-1         med-2"
+      "med-3         med-3"
+      "small-1       small-2";
   }
 
-  /* Small cards fill their grid cells; feature card keeps its 2:3 aspect */
-  .ma-category-card {
-    aspect-ratio: auto;
-    height: 100%;
+  /* Primary cards become a true 3:4 portrait ！ the tallest cards. */
+  .ma-category-card--primary-left,
+  .ma-category-card--primary-right {
+    aspect-ratio: 3 / 4;
   }
 
-  .ma-category-card[style*="grid-area: feature"] {
-    aspect-ratio: 2 / 3;
-    height: auto;
+  /* Medium cards square up in the 2-col band. */
+  .ma-category-card--med-1,
+  .ma-category-card--med-2 {
+    aspect-ratio: 1 / 1;
   }
 
-  .ma-category-card span {
+  /* Outdoor (med-3) spans full width as a wide banner ！ matches its 2:1 image. */
+  .ma-category-card--med-3 {
+    aspect-ratio: 2 / 1;
+  }
+
+  .ma-category-card__label {
     left: var(--ma-space-4);
     right: var(--ma-space-4);
     bottom: var(--ma-space-4);
-    font-size: 1.35rem;
   }
 }
 
-/* Desktop (70rem+): same area map, cards just get bigger */
-@media (min-width: 70rem) {
-  .ma-home-categories__grid {
-    gap: var(--ma-space-5);
+/* --- Desktop (64rem+): 4-column bento, area-based hierarchy. --- */
+@media (min-width: 64rem) {
+  .ma-category-bento {
+    gap: var(--ma-space-4);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-areas:
+      "primary-left  primary-left  primary-right primary-right"
+      "med-1         med-2         med-3         med-3"
+      "small-1       small-1       small-2       small-2";
+  }
+
+  /* On desktop, heights are driven by the grid rows; let cards fill rows. */
+  .ma-category-card--primary-left,
+  .ma-category-card--primary-right,
+  .ma-category-card--med-1,
+  .ma-category-card--med-2,
+  .ma-category-card--med-3,
+  .ma-category-card--small-1,
+  .ma-category-card--small-2 {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 0;
+  }
+
+  /* Lock the grid ROW heights so the tier hierarchy is explicit and stable.
+     Row 1 (primary) is the tallest; row 3 (small) the shortest. */
+  .ma-category-bento {
+    grid-template-rows: 440px 240px 180px;
+  }
+}
+
+/* --- Wide desktop (75rem+): a touch more breathing room. --- */
+@media (min-width: 75rem) {
+  .ma-category-bento {
+    grid-template-rows: 480px 260px 200px;
   }
 }
 

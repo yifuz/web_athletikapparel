@@ -35,7 +35,7 @@ routine text edits happen in the block editor.
     ├── style.css        ← all custom styles
     ├── functions.php    ← enqueue, custom functions, block registration
     ├── templates/       ← page templates / template parts
-    └── assets/          ← images, js, fonts
+    └── assets/          ← js, fonts, .gitkeep (NOT images — see §1.6)
   ```
 - **No Kadence, no Spectra, no other page-builder plugin.** (Previous plan
   assumed Kadence + Spectra; that is REVERSED — this is now a code-first build.)
@@ -55,6 +55,78 @@ routine text edits happen in the block editor.
   directly on these files.
 - Changes flow: LocalWP (dev) → staging → production. Never assume direct
   production edits.
+
+## 1.6 Image storage — images live in uploads, NOT in the theme/git repo
+
+> **READ THIS BEFORE TOUCHING ANY IMAGE.** This is the #1 source of bugs
+> for agents new to this project. The image pipeline is non-obvious and
+> putting a file in the wrong place will silently produce a 404.
+
+**As of 2026-07-09, all images were migrated OUT of the theme directory and
+OUT of the git repo.** Reasons: the repo had grown to 259 MB of image blobs;
+git history was rewritten to strip them (`.git` is now <1 MB). Images are no
+longer version-controlled — they are bulk assets, not code.
+
+### Where images physically live
+
+```
+app/public/wp-content/uploads/myathletik-theme/assets/images/<category>/
+```
+
+The on-disk directory tree is **identical** to the old theme-relative layout
+(`sportswear/`, `production/`, `audit&certificates/`, `主图/`, `辅图/`,
+`brand-partner/`, etc.) — only the root changed from the theme to uploads.
+Existing categories include:
+
+| Folder | Contents |
+|--------|----------|
+| `sportswear/` `underwear/` `outdoor clothing/` `merino wool product/` `silkwear/` `knitted fabrics/` `sports accessories/` | Product photos per category |
+| `production/` | Factory / workshop / machinery photos |
+| `主图/` `辅图/` | Homepage hero & supporting visuals (Chinese folder names, URL-encoded in code) |
+| `audit&certificates/` `sustainable/` | Certification badges, sustainability material swatches |
+| `brand-partner/` | Client logo wall — **scanned at runtime by `client-logos.php`** (do not rename) |
+
+### The single rule: put images in uploads, NEVER in the theme
+
+- **Any new or regenerated image goes into the matching `uploads/.../images/<category>/` folder.** Period.
+- **Do NOT put images in `themes/myathletik-child/assets/images/`.** That folder is `.gitignore`d (only a `.gitkeep` is tracked) and, critically, images placed there **will not load** — see the URL-rewrite mechanism below. The theme folder stays empty.
+- Use ASCII filenames (lowercase, hyphenated, e.g. `flatlock-detail-01.jpg`). Chinese/space/uppercase names work but invite URL-encoding bugs; prefer ASCII for new files.
+
+### How URLs work — why a file in the theme folder 404s
+
+Code references images using the theme-relative path, exactly as before:
+```php
+$image = get_stylesheet_directory_uri() . '/assets/images/sportswear/photo.jpg';
+```
+This emits a URL pointing at the **theme** directory. But `functions.php`
+registers an output buffer (`myathletik_start_image_url_buffer`, hooked on
+`template_redirect`) that rewrites every `…/themes/myathletik-child/assets/images/…`
+URL in the final HTML to `…/uploads/myathletik-theme/assets/images/…`. So:
+
+- File in uploads → URL rewritten to uploads → **loads ✓**
+- File in theme → URL rewritten to uploads (where it doesn't exist) → **404 ✗**
+
+Therefore the **code path never changes** — keep writing
+`get_stylesheet_directory_uri() . '/assets/images/…'`. The buffer handles
+the redirect. The only file you must not edit blindly is the buffer itself
+or the `myathletik_images_uri()` / `myathletik_images_dir()` helpers in
+`functions.php`.
+
+### The two helpers in functions.php
+
+For the rare case where code needs the real location (not a rewritten URL):
+- **`myathletik_images_uri()`** → public URL to uploads image dir (for building `<img src>`).
+- **`myathletik_images_dir()`** → filesystem path to uploads image dir (for `glob()`/`scandir()`).
+  Used by `template-parts/home/client-logos.php` to scan the brand logo folder.
+
+For normal `<img>` output, keep using `get_stylesheet_directory_uri()` and let the buffer rewrite it — no need to call the helpers.
+
+### Deploying images (uploads is not in git)
+
+Because uploads is outside the repo, `git push` does NOT carry images. When
+syncing to staging/production, transfer `uploads/myathletik-theme/` separately
+(FTP/SCP the whole folder, or use WP Migrate / All-in-One WP Migration). Plan
+for this on every environment sync.
 
 ## 2. Information architecture
 
@@ -191,6 +263,10 @@ technical terms the same way the user does:
 
 ## 7. When in doubt
 
+- **Adding/swapping/regenerating ANY image → re-read §1.6 first.** Images go
+  in `uploads/myathletik-theme/assets/images/`, NOT the theme folder. Code
+  paths stay theme-relative; the output buffer rewrites them. Putting a file
+  in the theme folder = guaranteed 404.
 - Structural/IA changes, URL changes, or anything touching SEO → pause and ask.
 - Pure content additions to an existing page → proceed, follow §5 and §6.
 - New custom code → child theme `myathletik-child` only; never the GeneratePress

@@ -5,8 +5,10 @@ docs/design-brief.md, and docs/homepage-copy.md when starting a new session.
 This file tracks WHAT IS DONE and WHAT IS LEFT, since the rule docs only define
 HOW. Also check `git log` for the latest commits.
 
-Last updated: covers through homepage core completion, product category page
-scaffold, first-pass category copy, and category image galleries.
+Last updated: 2026-07-09 — covers homepage core completion, 7 product category
+pages, services/about/contact/sustainability pages, a QA-audit cleanup pass, a
+hero bento rebuild, and the homepage product-categories Bento rebuild. See
+docs/qa-audit-260703.md for the per-item re-audit status table.
 
 ---
 
@@ -62,6 +64,38 @@ scaffold, first-pass category copy, and category image galleries.
   https://athletik.com.cn/products.html as reference content. Each category now
   has short positioning copy, overview copy, capability copy, and at least 6
   gallery images that differ from its title/hero image.
+- Homepage HERO: rebuilt as a 4-cell bento collage of real photos (2 sportswear
+  garments + sewing + knitting). Stock pexels photo removed. Uses <img> with
+  alt/width/height, loading="eager".
+- Homepage PRODUCT-CATEGORIES grid: REBUILT (2026-07-09) as a 3-tier Bento
+  layout (option A). Tier 1 = Merino Wool + Knitted Fabrics (large primary
+  cards, highest weight); Tier 2 = Sportswear / Underwear / Outdoor Clothing
+  (medium); Tier 3 = Silk Wear / Sports Accessories (small). Hierarchy is
+  driven by CARD AREA, each tier locks an aspect ratio so the grid stays
+  perfectly aligned. 7 dedicated cat_* images (no Hero/lookbook overlap).
+  Responsive: 1-col mobile, 2-col tablet, 4-col desktop (row heights
+  440/240/180px). See template-parts/home/product-categories.php + the
+  "Product Categories (Bento layout)" section in style.css.
+
+## Image storage rule (IMPORTANT — read before placing any image)
+
+- ALL theme images live in `wp-content/uploads/myathletik-theme/assets/images/`
+  (NOT in `themes/myathletik-child/assets/images/`). The theme assets dir is
+  kept empty except for a `.gitkeep`, and is gitignored.
+- An output buffer in `functions.php` (`myathletik_rewrite_image_urls`, hooked
+  via `ob_start` on `template_redirect`) rewrites theme-relative image URLs to
+  the uploads path at render time. So PHP keeps writing
+  `get_stylesheet_directory_uri() . '/assets/images/...'` and the browser is
+  silently served from uploads.
+- Therefore: to add/change an image, drop the file into the matching folder
+  under `uploads/myathletik-theme/assets/images/` only. Do NOT copy it into
+  the theme dir (it would be ignored and never served).
+- QA audit cleanup pass (see docs/qa-audit-260703.md): most P0/P1 items fixed
+  — process-snapshot dead links, /sitemap/ and /blog/ footer links, hero stock
+  image, redirect-note, placeholder text, hex tokens, hero alt, Russia removed
+  from regions list. Still open: 7 unsplash stock images in 2 category-page
+  galleries, WhatsApp footer link, FluentForm field audit, services.php
+  heading-tag bug (now fixed).
 
 ## TO DO (next priorities)
 
