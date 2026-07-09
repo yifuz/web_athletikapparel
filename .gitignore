@@ -12,3 +12,10 @@ npm-debug.log*
 # Local env / secrets
 *.log
 .env
+
+# Images live in wp-content/uploads/ now (migrated out of the repo to keep
+# .git small). The full tree was moved to uploads/myathletik-theme/assets/images
+# and URLs are rewritten at runtime via myathletik_images_uri() in functions.php.
+# Keep the directory itself tracked via .gitkeep so the structure exists.
+assets/images/*
+!assets/images/.gitkeep

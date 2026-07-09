@@ -14,6 +14,74 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once get_stylesheet_directory() . '/inc/product-category-data.php';
 
 /**
+ * Image storage has been migrated out of the theme/git repo into the
+ * WordPress uploads directory. The on-disk tree is preserved 1:1:
+ *   <uploads>/myathletik-theme/assets/images/...  (same structure as before)
+ *
+ * These helpers expose the new locations, and an output-buffer rewrite keeps
+ * the existing theme-relative URLs (get_stylesheet_directory_uri() . '/assets/images/...')
+ * working without touching the 16 PHP call sites that hard-code that path.
+ */
+
+if ( ! defined( 'MYATHLETIK_IMAGES_SUBDIR' ) ) {
+	define( 'MYATHLETIK_IMAGES_SUBDIR', '/myathletik-theme/assets/images' );
+}
+
+/**
+ * Get the uploads filesystem path to the theme image directory.
+ *
+ * Use this instead of get_stylesheet_directory() . '/assets/images' when code
+ * needs to scan the disk (e.g. glob() over the brand-partner folder).
+ *
+ * @return string Absolute filesystem path, no trailing slash.
+ */
+function myathletik_images_dir() {
+	$uploads = wp_get_upload_dir();
+	return untrailingslashit( $uploads['basedir'] ) . MYATHLETIK_IMAGES_SUBDIR;
+}
+
+/**
+ * Get the public URL to the theme image directory in uploads.
+ *
+ * @return string Absolute URL, no trailing slash.
+ */
+function myathletik_images_uri() {
+	$uploads = wp_get_upload_dir();
+	return untrailingslashit( $uploads['baseurl'] ) . MYATHLETIK_IMAGES_SUBDIR;
+}
+
+/**
+ * Rewrite theme-relative image URLs in the final HTML to point at uploads.
+ *
+ * Images were moved out of the theme (and out of git) into
+ * wp-content/uploads/myathletik-theme/assets/images/. Existing PHP still emits
+ * URLs like <home>/wp-content/themes/myathletik-child/assets/images/...
+ * This buffer swaps that prefix for the uploads URL so no call site needs to
+ * change. Scoped to the exact theme + assets/images path to avoid collateral.
+ *
+ * @param string $buffer Full HTML page output.
+ * @return string
+ */
+function myathletik_rewrite_image_urls( $buffer ) {
+	$theme_uri  = get_stylesheet_directory_uri() . '/assets/images/';
+	$uploads_uri = myathletik_images_uri() . '/';
+
+	if ( false === strpos( $buffer, $theme_uri ) ) {
+		return $buffer;
+	}
+
+	return str_replace( $theme_uri, $uploads_uri, $buffer );
+}
+
+/**
+ * Start the output buffer that rewrites theme image URLs to uploads URLs.
+ */
+function myathletik_start_image_url_buffer() {
+	ob_start( 'myathletik_rewrite_image_urls' );
+}
+add_action( 'template_redirect', 'myathletik_start_image_url_buffer', 1 );
+
+/**
  * Enqueue parent + child stylesheets.
  *
  * GeneratePress loads its own styles; we enqueue the child stylesheet

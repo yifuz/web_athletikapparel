@@ -9,8 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$logo_dir      = get_stylesheet_directory() . '/assets/images/brand-partner';
-$logo_uri_base = get_stylesheet_directory_uri() . '/assets/images/brand-partner/';
+// Images now live in uploads (migrated out of the theme/git repo).
+$logo_dir      = myathletik_images_dir() . '/brand-partner';
+$logo_uri_base = myathletik_images_uri() . '/brand-partner/';
 $logo_files    = is_dir( $logo_dir ) ? glob( $logo_dir . '/*.{jpg,jpeg,png,webp,gif,svg}', GLOB_BRACE ) : array();
 
 if ( empty( $logo_files ) ) {
