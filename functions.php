@@ -295,6 +295,58 @@ function myathletik_ensure_primary_menu() {
 add_action( 'init', 'myathletik_ensure_primary_menu', 20 );
 
 /**
+ * Force-correct the "Products" nav menu item URL.
+ *
+ * The Products parent item was originally seeded with /products/, but that
+ * page does not exist (no page-products.php template, no seeded page) and
+ * would 404. This runs on every init and rewrites any "Products" menu item
+ * to the homepage product-categories anchor. Uses a short transient so the
+ * DB write only happens once per day, not every page load.
+ */
+function myathletik_fix_products_menu_url() {
+	// Bail early if already corrected recently (avoid a DB write every load).
+	if ( get_transient( 'myathletik_products_menu_fixed' ) ) {
+		return;
+	}
+
+	$target_url = home_url( '/#ma-home-categories-title' );
+	$menus      = wp_get_nav_menus();
+
+	if ( empty( $menus ) ) {
+		return;
+	}
+
+	$changed = false;
+
+	foreach ( $menus as $menu ) {
+		$items = wp_get_nav_menu_items( $menu->term_id );
+
+		if ( empty( $items ) ) {
+			continue;
+		}
+
+		foreach ( $items as $item ) {
+			// Match the Products parent item by title + its seeded URL.
+			if ( 'Products' === $item->title && false !== strpos( $item->url, '/products' ) ) {
+				wp_update_nav_menu_item(
+					$menu->term_id,
+					$item->db_id,
+					array(
+						'menu-item-url' => $target_url,
+					)
+				);
+				$changed = true;
+			}
+		}
+	}
+
+	if ( $changed ) {
+		set_transient( 'myathletik_products_menu_fixed', 1, DAY_IN_SECONDS );
+	}
+}
+add_action( 'init', 'myathletik_fix_products_menu_url', 30 );
+
+/**
  * Seed empty WordPress pages for the code-rendered category templates.
  *
  * WordPress only loads page-{slug}.php templates when a matching Page exists.
