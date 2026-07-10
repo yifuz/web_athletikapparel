@@ -1128,11 +1128,11 @@ body.home .container.grid-container {
   }
 }
 
-/* --- Home: Product Categories (Bento layout, option A) ---
+/* --- Home: Product Categories (Bento layout, v2) ---
    Three tiers by card area:
-     Tier 1  primary-left / primary-right  ！ 2 large cards side by side (3:4)
-     Tier 2  med-1 / med-2 / med-3         ！ 3 medium cards
-     Tier 3  small-1 / small-2             ！ 2 small cards
+     Tier 1  feature (Sportswear, big left card) + t1-side (Merino, tall right)
+     Tier 2  t2-1 (Knitted Fabrics) + t2-2 (Outdoor Clothing)
+     Tier 3  t3-1 (Silk Wear) + t3-2 (Sports Accessories) + t3-3 (Underwear)
    Hierarchy is driven by card SIZE, not text. Aspect ratios are locked so
    images always crop cleanly and rows stay perfectly aligned.
 */
@@ -1147,13 +1147,13 @@ body.home .container.grid-container {
   display: grid;
   gap: var(--ma-space-3);
   grid-template-areas:
-    "primary-left"
-    "primary-right"
-    "med-1"
-    "med-2"
-    "med-3"
-    "small-1"
-    "small-2";
+    "feature"
+    "t1-side"
+    "t2-1"
+    "t2-2"
+    "t3-1"
+    "t3-2"
+    "t3-3";
 }
 
 /* --- Card base --- */
@@ -1169,20 +1169,23 @@ body.home .container.grid-container {
   transition: box-shadow 180ms ease, transform 180ms ease;
 }
 
-/* Locked aspect ratios per tier ！ the key to a perfectly aligned grid. */
-.ma-category-card--primary-left,
-.ma-category-card--primary-right {
+/* Locked aspect ratios per tier (mobile) ！ the key to a perfectly aligned grid. */
+.ma-category-card--feature {
+  aspect-ratio: 3 / 2;
+}
+
+.ma-category-card--t1-side {
   aspect-ratio: 4 / 5;
 }
 
-.ma-category-card--med-1,
-.ma-category-card--med-2,
-.ma-category-card--med-3 {
+.ma-category-card--t2-1,
+.ma-category-card--t2-2 {
   aspect-ratio: 4 / 3;
 }
 
-.ma-category-card--small-1,
-.ma-category-card--small-2 {
+.ma-category-card--t3-1,
+.ma-category-card--t3-2,
+.ma-category-card--t3-3 {
   aspect-ratio: 5 / 3;
 }
 
@@ -1204,7 +1207,7 @@ body.home .container.grid-container {
   pointer-events: none;
 }
 
-/* Capability tag ！ top-left pill, only on primary cards. */
+/* Capability tag ！ top-left pill, only on tier-1 cards. */
 .ma-category-card__tag {
   position: absolute;
   top: var(--ma-space-3);
@@ -1248,9 +1251,9 @@ body.home .container.grid-container {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
 }
 
-/* Primary cards get a larger title to match their visual weight. */
-.ma-category-card--primary-left .ma-category-card__title,
-.ma-category-card--primary-right .ma-category-card__title {
+/* Tier-1 cards get a larger title to match their visual weight. */
+.ma-category-card--feature .ma-category-card__title,
+.ma-category-card--t1-side .ma-category-card__title {
   font-size: clamp(1.35rem, 3vw, 1.85rem);
 }
 
@@ -1281,32 +1284,42 @@ body.home .container.grid-container {
   opacity: 1;
 }
 
-/* --- Tablet (48rem+): two columns, tiers read as rows. --- */
+/* --- Tablet (48rem+): two columns.
+   Tier 1: feature (Sportswear) wide-left + t1-side (Merino) tall-right.
+   Tier 2: two equal cards.
+   Tier 3: three cards, last one spans full width as a banner. --- */
 @media (min-width: 48rem) {
   .ma-category-bento {
     gap: var(--ma-space-4);
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-areas:
-      "primary-left  primary-right"
-      "med-1         med-2"
-      "med-3         med-3"
-      "small-1       small-2";
+      "feature  feature"
+      "feature  t1-side"
+      "t2-1     t2-2"
+      "t3-1     t3-2"
+      "t3-3     t3-3";
   }
 
-  /* Primary cards become a true 3:4 portrait ！ the tallest cards. */
-  .ma-category-card--primary-left,
-  .ma-category-card--primary-right {
+  /* Feature card is wide landscape; side card stays tall portrait. */
+  .ma-category-card--feature {
+    aspect-ratio: auto;
+  }
+  .ma-category-card--t1-side {
     aspect-ratio: 3 / 4;
   }
 
-  /* Medium cards square up in the 2-col band. */
-  .ma-category-card--med-1,
-  .ma-category-card--med-2 {
+  /* Tier-2 cards square up. */
+  .ma-category-card--t2-1,
+  .ma-category-card--t2-2 {
     aspect-ratio: 1 / 1;
   }
 
-  /* Outdoor (med-3) spans full width as a wide banner ！ matches its 2:1 image. */
-  .ma-category-card--med-3 {
+  /* Tier-3 cards: first two square, third is a wide banner. */
+  .ma-category-card--t3-1,
+  .ma-category-card--t3-2 {
+    aspect-ratio: 1 / 1;
+  }
+  .ma-category-card--t3-3 {
     aspect-ratio: 2 / 1;
   }
 
@@ -1317,41 +1330,41 @@ body.home .container.grid-container {
   }
 }
 
-/* --- Desktop (64rem+): 4-column bento, area-based hierarchy. --- */
+/* --- Desktop (64rem+): 4-column bento, area-based hierarchy.
+   Row 1 (tier 1) is tallest; row 3 (tier 3) shortest. --- */
 @media (min-width: 64rem) {
   .ma-category-bento {
     gap: var(--ma-space-4);
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-areas:
-      "primary-left  primary-left  primary-right primary-right"
-      "med-1         med-2         med-3         med-3"
-      "small-1       small-1       small-2       small-2";
+      "feature  feature  feature  t1-side"
+      "t2-1     t2-1     t2-2     t2-2"
+      "t3-1     t3-2     t3-3     t3-3";
   }
 
   /* On desktop, heights are driven by the grid rows; let cards fill rows. */
-  .ma-category-card--primary-left,
-  .ma-category-card--primary-right,
-  .ma-category-card--med-1,
-  .ma-category-card--med-2,
-  .ma-category-card--med-3,
-  .ma-category-card--small-1,
-  .ma-category-card--small-2 {
+  .ma-category-card--feature,
+  .ma-category-card--t1-side,
+  .ma-category-card--t2-1,
+  .ma-category-card--t2-2,
+  .ma-category-card--t3-1,
+  .ma-category-card--t3-2,
+  .ma-category-card--t3-3 {
     aspect-ratio: auto;
     height: 100%;
     min-height: 0;
   }
 
-  /* Lock the grid ROW heights so the tier hierarchy is explicit and stable.
-     Row 1 (primary) is the tallest; row 3 (small) the shortest. */
+  /* Lock the grid ROW heights so the tier hierarchy is explicit and stable. */
   .ma-category-bento {
-    grid-template-rows: 440px 240px 180px;
+    grid-template-rows: 460px 260px 200px;
   }
 }
 
-/* --- Wide desktop (75rem+): a touch more breathing room. --- */
+/* --- Wide desktop (75rem+): a touch more height for impact. --- */
 @media (min-width: 75rem) {
   .ma-category-bento {
-    grid-template-rows: 480px 260px 200px;
+    grid-template-rows: 500px 280px 220px;
   }
 }
 

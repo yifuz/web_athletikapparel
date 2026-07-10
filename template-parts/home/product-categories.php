@@ -1,14 +1,13 @@
 <?php
 /**
- * Homepage product categories grid — Bento layout (option A).
+ * Homepage product categories grid — Bento layout (v2).
  *
- * Two large primary cards (Merino Wool + Knitted Fabrics) anchor the top,
- * three medium cards (Sportswear / Underwear / Outdoor) fill the middle band,
- * and two small cards (Silk Wear / Sports Accessories) close the bottom.
- * Hierarchy is driven by card AREA, not by heading size.
- *
- * Each card has a fixed aspect ratio so images always crop cleanly and the
- * grid stays perfectly aligned across desktop and mobile.
+ * Three tiers by card area:
+ *   Tier 1  Sportswear (large feature, left, biggest area) + Merino Wool (tall)
+ *   Tier 2  Knitted Fabrics + Outdoor Clothing
+ *   Tier 3  Silk Wear + Sports Accessories + Underwear
+ * Hierarchy is driven by card AREA, not by heading size. Each tier locks an
+ * aspect ratio so images always crop cleanly and the grid stays aligned.
  *
  * @package myathletik-child
  */
@@ -19,63 +18,50 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 
-/*
- * Card data. `area` maps to a named grid-area in the CSS grid below; the
- * CSS sets the aspect ratio per area so this file never needs to know the
- * exact pixel size.
- */
 $categories = array(
-	// Tier 1 — large primary cards (left column, tall 3:4).
+	// Tier 1 — Sportswear is the hero feature card (left, largest area).
+	array(
+		'title'    => __( 'Sportswear', 'myathletik-child' ),
+		'url'      => '/sportswear-manufacturer/',
+		'image'    => 'sportswear/sportwear-category.png',
+		'alt'      => __( 'Sportswear sample for OEM/ODM knitwear manufacturing', 'myathletik-child' ),
+		'area'     => 'feature',
+		'position' => '50% 40%',
+		'tag'      => __( 'Performance knit', 'myathletik-child' ),
+	),
 	array(
 		'title'    => __( 'Merino Wool', 'myathletik-child' ),
 		'url'      => '/merino-wool-manufacturer/',
 		'image'    => 'merino wool product/cat_merino.jpg',
 		'alt'      => __( 'Merino wool base layer OEM/ODM product sample', 'myathletik-child' ),
-		'area'     => 'primary-left',
-		'position' => '50% 40%',
+		'area'     => 't1-side',
+		'position' => '50% 15%',
 		'tag'      => __( 'Performance knit', 'myathletik-child' ),
 	),
+	// Tier 2.
 	array(
 		'title'    => __( 'Knitted Fabrics', 'myathletik-child' ),
 		'url'      => '/knitted-fabrics-manufacturer/',
-		'image'    => 'knitted fabrics/cat_knitted_fabrics.png',
+		'image'    => 'knitted fabrics/product-category-003.png',
 		'alt'      => __( 'Performance knitted fabric swatch collection for OEM/ODM programs', 'myathletik-child' ),
-		'area'     => 'primary-right',
+		'area'     => 't2-1',
 		'position' => '50% 50%',
-		'tag'      => __( 'Own fabric mill', 'myathletik-child' ),
-	),
-	// Tier 2 — medium cards.
-	array(
-		'title'    => __( 'Sportswear', 'myathletik-child' ),
-		'url'      => '/sportswear-manufacturer/',
-		'image'    => 'sportswear/cat_sportswear.jpg',
-		'alt'      => __( 'Sportswear sample for OEM/ODM knitwear manufacturing', 'myathletik-child' ),
-		'area'     => 'med-1',
-		'position' => '50% 30%',
-	),
-	array(
-		'title'    => __( 'Underwear', 'myathletik-child' ),
-		'url'      => '/underwear-manufacturer/',
-		'image'    => 'underwear/cat_underwear.jpg',
-		'alt'      => __( 'Technical underwear product sample for OEM/ODM manufacturing', 'myathletik-child' ),
-		'area'     => 'med-2',
-		'position' => '50% 45%',
 	),
 	array(
 		'title'    => __( 'Outdoor Clothing', 'myathletik-child' ),
 		'url'      => '/outdoor-clothing-manufacturer/',
 		'image'    => 'outdoor clothing/cat_outdoor.png',
 		'alt'      => __( 'Outdoor clothing technical knitwear sample', 'myathletik-child' ),
-		'area'     => 'med-3',
+		'area'     => 't2-2',
 		'position' => '50% 40%',
 	),
-	// Tier 3 — small closing cards.
+	// Tier 3.
 	array(
 		'title'    => __( 'Silk Wear', 'myathletik-child' ),
 		'url'      => '/silk-wear-manufacturer/',
 		'image'    => 'silkwear/cat_silkwear.png',
 		'alt'      => __( 'Silk wear garment sample for OEM/ODM production', 'myathletik-child' ),
-		'area'     => 'small-1',
+		'area'     => 't3-1',
 		'position' => '50% 50%',
 	),
 	array(
@@ -83,7 +69,15 @@ $categories = array(
 		'url'      => '/sports-accessories-manufacturer/',
 		'image'    => 'sports accessories/cat_accessories.png',
 		'alt'      => __( 'Sports accessories for OEM/ODM manufacturing programs', 'myathletik-child' ),
-		'area'     => 'small-2',
+		'area'     => 't3-2',
+		'position' => '50% 45%',
+	),
+	array(
+		'title'    => __( 'Underwear', 'myathletik-child' ),
+		'url'      => '/underwear-manufacturer/',
+		'image'    => 'underwear/homepage.png',
+		'alt'      => __( 'Technical underwear product sample for OEM/ODM manufacturing', 'myathletik-child' ),
+		'area'     => 't3-3',
 		'position' => '50% 45%',
 	),
 );
@@ -92,8 +86,8 @@ $categories = array(
 	<div class="ma-section-inner">
 		<div class="ma-section-heading">
 			<p class="ma-section-kicker"><?php esc_html_e( 'Product categories', 'myathletik-child' ); ?></p>
-			<h2 id="ma-home-categories-title"><?php esc_html_e( 'Technical knitwear categories for B2B buyers', 'myathletik-child' ); ?></h2>
-			<p><?php esc_html_e( 'We produce full-package underwear, sportswear, outdoor clothing, and knitted fabrics for global brands. Every category is built on technical knit construction and performance fabrics - engineered to your samples, designs, and specifications.', 'myathletik-child' ); ?></p>
+			<h2 id="ma-home-categories-title"><?php esc_html_e( 'What we make', 'myathletik-child' ); ?></h2>
+			<p><?php esc_html_e( 'Each category is built to your designs, samples, or tech packs - with the same flatlock, activeseam, and performance-knit construction across every program.', 'myathletik-child' ); ?></p>
 		</div>
 
 		<div class="ma-category-bento">
