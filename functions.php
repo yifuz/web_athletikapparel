@@ -239,7 +239,7 @@ function myathletik_ensure_primary_menu() {
 			0,
 			array(
 				'menu-item-title'  => 'Products',
-				'menu-item-url'    => home_url( '/products/' ),
+				'menu-item-url'    => home_url( '/#ma-home-categories-title' ),
 				'menu-item-status' => 'publish',
 			)
 		);
@@ -650,7 +650,7 @@ function myathletik_site_footer() {
 				<ul>
 					<li><a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>"><?php esc_html_e( 'About Us', 'myathletik-child' ); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/sustainability/' ) ); ?>"><?php esc_html_e( 'Sustainability', 'myathletik-child' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>"><?php esc_html_e( 'Products', 'myathletik-child' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/#ma-home-categories-title' ) ); ?>"><?php esc_html_e( 'Products', 'myathletik-child' ); ?></a></li>
 					
 					<li><a href="<?php echo esc_url( home_url( '/wp-sitemap.xml' ) ); ?>"><?php esc_html_e( 'Sitemap', 'myathletik-child' ); ?></a></li>
 				</ul>
