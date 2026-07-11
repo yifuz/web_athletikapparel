@@ -71,6 +71,36 @@ function myathletik_product_category_data() {
 				__( 'Running singlets and performance layers', 'myathletik-child' ),
 				__( 'Compression and power-stretch pieces', 'myathletik-child' ),
 			),
+			// Structured sub-category showcase: image + title + description.
+			// When present, the template renders these as alternating detail
+			// blocks instead of the plain what_we_make text list.
+			'subcategories'    => array(
+				array(
+					'title'       => __( 'Training tops, tanks, and tees', 'myathletik-child' ),
+					'description' => __( 'Close-fit training tops built for range of motion. Flatlock seams stay smooth under a barbell or during bodyweight circuits, and the knit keeps its shape after repeated wash cycles.', 'myathletik-child' ),
+					'image'       => 'sportswear/1U128494.jpg',
+				),
+				array(
+					'title'       => __( 'Leggings, shorts, and compression bottoms', 'myathletik-child' ),
+					'description' => __( 'High-stretch leggings and compression shorts with power-band waistbands. 4-way-stretch knits with moisture management and squat-proof opacity.', 'myathletik-child' ),
+					'image'       => 'sportswear/1U128532.jpg',
+				),
+				array(
+					'title'       => __( 'Yoga and studio wear', 'myathletik-child' ),
+					'description' => __( 'Soft-drape knits that move with the body through any flow. Lightweight, breathable, and finished with flatlock seams that never dig during floor work.', 'myathletik-child' ),
+					'image'       => 'sportswear/IMG_5836.JPG',
+				),
+				array(
+					'title'       => __( 'Running singlets and performance layers', 'myathletik-child' ),
+					'description' => __( 'Lightweight running singlets and layering tees with mesh ventilation zones. Moisture-wicking and quick-dry finishes for sustained effort in varied conditions.', 'myathletik-child' ),
+					'image'       => 'sportswear/1U128568.jpg',
+				),
+				array(
+					'title'       => __( 'Compression and power-stretch pieces', 'myathletik-child' ),
+					'description' => __( 'Graduated compression silhouettes in high-gauge power-stretch knits. Engineered for muscle support and recovery, with flatlock construction that eliminates chafe points.', 'myathletik-child' ),
+					'image'       => 'sportswear/IMG_5861.JPG',
+				),
+			),
 			'construction'     => __( 'Flatlock and activeseam seams for chafe-free comfort during repetitive motion. Built in power-stretch and 4-way-stretch knits with moisture-wicking, UV-protective, and antimicrobial finishes - the fabrics that let sportswear move with the body and stay dry under exertion.', 'myathletik-child' ),
 			'image_note'       => __( '[IMAGE: real sportswear product / production shots]', 'myathletik-child' ),
 			'gallery'          => array(

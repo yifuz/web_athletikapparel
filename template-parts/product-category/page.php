@@ -48,6 +48,32 @@ $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 		</div>
 	</section>
 
+	<?php if ( ! empty( $category['subcategories'] ) ) : ?>
+	<section class="ma-product-section ma-product-subcategories" aria-labelledby="ma-product-subcats-title">
+		<div class="ma-section-inner">
+			<div class="ma-section-heading">
+				<p class="ma-section-kicker"><?php esc_html_e( 'Product range', 'myathletik-child' ); ?></p>
+				<h2 id="ma-product-subcats-title"><?php esc_html_e( 'Explore what we manufacture', 'myathletik-child' ); ?></h2>
+			</div>
+			<div class="ma-subcategories">
+				<?php foreach ( $category['subcategories'] as $index => $sub ) : ?>
+					<?php $is_even = ( $index % 2 === 1 ); // alternate image side ?>
+					<article class="ma-subcat <?php echo $is_even ? 'ma-subcat--reverse' : ''; ?>">
+						<div class="ma-subcat__media">
+							<img src="<?php echo esc_url( $image_base . $sub['image'] ); ?>" alt="<?php echo esc_attr( $sub['title'] ); ?>" loading="lazy">
+						</div>
+						<div class="ma-subcat__body">
+							<span class="ma-subcat__index"><?php echo esc_html( sprintf( '%02d', $index + 1 ) ); ?></span>
+							<h3><?php echo esc_html( $sub['title'] ); ?></h3>
+							<p><?php echo esc_html( $sub['description'] ); ?></p>
+						</div>
+					</article>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</section>
+	<?php endif; ?>
+
 	<section class="ma-product-section ma-product-capabilities">
 		<div class="ma-section-inner ma-product-feature">
 			<div class="ma-section-heading">

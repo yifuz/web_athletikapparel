@@ -121,6 +121,40 @@ body {
   color: var(--ma-color-text);
 }
 
+/* --- Two-tone brand wordmark: "Athletik" + "Clothing" --- */
+.ma-brand-title a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+/* Primary name: dark, bold ¡ª carries the brand weight. */
+.ma-brand-title__name {
+  font-family: var(--ma-font-head);
+  font-weight: 700;
+  letter-spacing: -0.012em;
+  color: var(--ma-color-text);
+}
+
+/* Thin vertical divider between name and descriptor. */
+.ma-brand-title__divider {
+  display: inline-block;
+  width: 1px;
+  height: 1.1em;
+  background: var(--ma-color-border);
+}
+
+/* Category descriptor: muted, lighter ¡ª subtle complement to the name. */
+.ma-brand-title__desc {
+  font-family: var(--ma-font-head);
+  font-weight: 400;
+  font-size: 0.82em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ma-color-muted);
+}
+
 .site-description {
   margin-top: 0.15rem;
   color: var(--ma-color-muted);
@@ -1243,12 +1277,25 @@ body.home .container.grid-container {
 }
 
 .ma-category-card__title {
+  display: block;
   font-family: var(--ma-font-head);
   font-size: clamp(1.1rem, 2.4vw, 1.5rem);
   font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 1.2;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+}
+
+/* Subtitle sits under the title (e.g. "Apparel & base layers" on Merino). */
+.ma-category-card__subtitle {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--ma-font-body);
+  font-size: clamp(0.72rem, 1.1vw, 0.85rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.88;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Tier-1 cards get a larger title to match their visual weight. */
@@ -2865,6 +2912,97 @@ body.page .container.grid-container:has(.ma-product-category) {
 .ma-product-feature {
   display: grid;
   gap: var(--ma-space-4);
+}
+
+/* --- Product sub-category showcase (image + title + description) ---
+   Alternating left/right layout. Each sub-category gets a large image on
+   one side and its title + description on the other. Odd items = image
+   left, even items = image right (via --reverse modifier).
+*/
+.ma-product-subcategories {
+  background: var(--ma-color-bg);
+}
+
+.ma-subcategories {
+  display: grid;
+  gap: var(--ma-space-5);
+}
+
+.ma-subcat {
+  display: grid;
+  gap: var(--ma-space-4);
+  align-items: center;
+}
+
+.ma-subcat__media {
+  overflow: hidden;
+  border-radius: var(--ma-radius);
+  box-shadow: 0 10px 28px rgba(43, 39, 36, 0.1);
+}
+
+.ma-subcat__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.ma-subcat:hover .ma-subcat__media img {
+  transform: scale(1.03);
+}
+
+.ma-subcat__body {
+  padding: 0 var(--ma-space-2);
+}
+
+.ma-subcat__index {
+  display: inline-block;
+  font-family: var(--ma-font-head);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ma-color-accent);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--ma-space-2);
+}
+
+.ma-subcat__body h3 {
+  margin: 0 0 var(--ma-space-2);
+  font-family: var(--ma-font-head);
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  font-weight: 700;
+  color: var(--ma-color-text);
+  line-height: 1.25;
+}
+
+.ma-subcat__body p {
+  margin: 0;
+  color: var(--ma-color-muted);
+  font-size: 1.02rem;
+  line-height: var(--ma-lh-body);
+}
+
+/* Tablet+: two-column alternating layout. */
+@media (min-width: 48rem) {
+  .ma-subcat {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--ma-space-5);
+    align-items: center;
+  }
+
+  /* Even-index items flip the columns so the image alternates sides. */
+  .ma-subcat--reverse .ma-subcat__media {
+    order: 2;
+  }
+
+  .ma-subcat--reverse .ma-subcat__body {
+    order: 1;
+  }
+
+  .ma-subcat__media img {
+    aspect-ratio: 4 / 3;
+  }
 }
 
 .ma-product-capabilities__grid,
