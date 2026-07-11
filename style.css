@@ -2905,6 +2905,28 @@ body.page .container.grid-container:has(.ma-product-category) {
   line-height: var(--ma-lh-body);
 }
 
+/* When list items are anchor links (subcategories exist), style them as
+   clickable jump links with a hover cue. */
+.ma-product-list a {
+  color: var(--ma-color-text);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.ma-product-list a:hover,
+.ma-product-list a:focus {
+  color: var(--ma-color-accent);
+}
+
+.ma-product-list li {
+  position: relative;
+}
+
+/* Add a subtle "¡ý" hint on hover to signal it jumps down. */
+.ma-product-list li:has(a)::marker {
+  color: var(--ma-color-accent);
+}
+
 .ma-product-capabilities {
   background: var(--ma-color-surface);
 }
@@ -2932,6 +2954,8 @@ body.page .container.grid-container:has(.ma-product-category) {
   display: grid;
   gap: var(--ma-space-4);
   align-items: center;
+  /* Offset for sticky header when jumping via anchor link. */
+  scroll-margin-top: 6rem;
 }
 
 .ma-subcat__media {

@@ -41,7 +41,19 @@ $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 			<div class="ma-product-copy-slot">
 				<ul class="ma-product-list">
 					<?php foreach ( $category['what_we_make'] as $item ) : ?>
-						<li><?php echo esc_html( $item ); ?></li>
+						<li>
+							<?php
+							// When subcategories exist, turn each list item into an
+							// anchor link that jumps to the matching detail block below.
+							$has_subs = ! empty( $category['subcategories'] );
+							if ( $has_subs ) :
+								$slug = sanitize_title( $item );
+								?>
+								<a href="#subcat-<?php echo esc_attr( $slug ); ?>"><?php echo esc_html( $item ); ?></a>
+							<?php else : ?>
+								<?php echo esc_html( $item ); ?>
+							<?php endif; ?>
+						</li>
 					<?php endforeach; ?>
 				</ul>
 			</div>
@@ -57,8 +69,11 @@ $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 			</div>
 			<div class="ma-subcategories">
 				<?php foreach ( $category['subcategories'] as $index => $sub ) : ?>
-					<?php $is_even = ( $index % 2 === 1 ); // alternate image side ?>
-					<article class="ma-subcat <?php echo $is_even ? 'ma-subcat--reverse' : ''; ?>">
+					<?php
+					$is_even  = ( $index % 2 === 1 ); // alternate image side
+					$sub_slug = sanitize_title( $sub['title'] );
+					?>
+					<article class="ma-subcat <?php echo $is_even ? 'ma-subcat--reverse' : ''; ?>" id="subcat-<?php echo esc_attr( $sub_slug ); ?>">
 						<div class="ma-subcat__media">
 							<img src="<?php echo esc_url( $image_base . $sub['image'] ); ?>" alt="<?php echo esc_attr( $sub['title'] ); ?>" loading="lazy">
 						</div>
