@@ -27,7 +27,7 @@ $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 			<p><?php echo esc_html( $category['intro'] ); ?></p>
 			<div class="ma-product-hero__actions">
 				<a class="ma-button ma-button--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Request a Quote', 'myathletik-child' ); ?></a>
-				<a class="ma-button ma-button--secondary" href="#product-examples"><?php esc_html_e( 'View Examples', 'myathletik-child' ); ?></a>
+				<a class="ma-button ma-button--secondary" href="<?php echo ! empty( $category['subcategories'] ) ? '#ma-product-subcats-title' : '#product-examples'; ?>"><?php esc_html_e( 'View Examples', 'myathletik-child' ); ?></a>
 			</div>
 		</div>
 	</section>
@@ -101,6 +101,7 @@ $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 		</div>
 	</section>
 
+	<?php if ( empty( $category['subcategories'] ) ) : ?>
 	<section id="product-examples" class="ma-product-section ma-product-examples">
 		<div class="ma-section-inner">
 			<div class="ma-section-heading">
@@ -126,6 +127,7 @@ $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 			</div>
 		</div>
 	</section>
+	<?php endif; ?>
 
 	<section class="ma-product-section ma-product-specs">
 		<div class="ma-section-inner">
