@@ -20,7 +20,13 @@ $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 ?>
 
 <main id="primary" class="site-main ma-product-category">
-	<section class="ma-product-hero" aria-labelledby="ma-product-title">
+	<section class="ma-product-hero<?php echo ! empty( $category['hero_video'] ) ? ' ma-product-hero--video' : ''; ?>" aria-labelledby="ma-product-title">
+		<?php if ( ! empty( $category['hero_video'] ) ) : ?>
+			<video class="ma-product-hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+				<source src="<?php echo esc_url( $image_base . $category['hero_video'] ); ?>" type="video/mp4">
+			</video>
+			<div class="ma-product-hero__video-overlay" aria-hidden="true"></div>
+		<?php endif; ?>
 		<div class="ma-product-hero__content">
 			<p class="ma-section-kicker"><?php esc_html_e( 'OEM/ODM technical knitwear category', 'myathletik-child' ); ?></p>
 			<h1 id="ma-product-title"><?php echo esc_html( $category['h1'] ); ?></h1>

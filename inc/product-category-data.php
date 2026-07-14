@@ -237,6 +237,7 @@ function myathletik_product_category_data() {
 			'meta_description' => __( 'Merino wool manufacturer for base layers, underwear, jacquard merino apparel, printed merino pieces, and OEM/ODM performance knit programs.', 'myathletik-child' ),
 			'h1'               => __( 'Merino Wool Apparel Manufacturer', 'myathletik-child' ),
 			'old_url'          => '/products/merino-wool-apparel/',
+			'hero_video'       => 'merino wool product/merinowool.mp4',
 			'intro'            => __( 'We produce premium merino wool apparel - base layers, underwear, and performance pieces that combine natural temperature regulation and breathability with technical knit construction.', 'myathletik-child' ),
 			'what_we_make'     => array(
 				__( 'Merino wool base layers and underwear', 'myathletik-child' ),
