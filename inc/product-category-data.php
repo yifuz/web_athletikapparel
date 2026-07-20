@@ -77,22 +77,22 @@ function myathletik_product_category_data() {
 				array(
 					'title'       => __( 'Training tops, tanks, and tees', 'myathletik-child' ),
 					'description' => __( 'Close-fit training tops built for range of motion. Flatlock seams stay smooth under a barbell or during bodyweight circuits, and the knit keeps its shape after repeated wash cycles.', 'myathletik-child' ),
-					'image'       => 'sportswear/IMG_3515.JPG',
+					'image'       => 'sportswear/IMG_3515_4x3.png',
 				),
 				array(
 					'title'       => __( 'Leggings, shorts, and compression pieces', 'myathletik-child' ),
 					'description' => __( 'High-stretch leggings, shorts, and graduated compression pieces with power-band waistbands. 4-way-stretch and power-stretch knits with moisture management, squat-proof opacity, and muscle-support compression where needed.', 'myathletik-child' ),
-					'image'       => 'sportswear/1U128568.jpg',
+					'image'       => 'sportswear/1U128568_4x3_background_extended_final_v2.png',
 				),
 				array(
 					'title'       => __( 'Yoga and studio wear', 'myathletik-child' ),
 					'description' => __( 'Soft-drape knits that move with the body through any flow. Lightweight, breathable, and finished with flatlock seams that never dig during floor work.', 'myathletik-child' ),
-					'image'       => 'sportswear/1U128579.jpg',
+					'image'       => 'sportswear/1U128579_4X3.png',
 				),
 				array(
 					'title'       => __( 'Running singlets and performance layers', 'myathletik-child' ),
 					'description' => __( 'Lightweight running singlets and layering tees with mesh ventilation zones. Moisture-wicking and quick-dry finishes for sustained effort in varied conditions.', 'myathletik-child' ),
-					'image'       => 'sportswear/IMG_7601.jpg',
+					'image'       => 'sportswear/IMG_7601_4X3.png',
 				),
 			),
 			'construction'     => __( 'Flatlock and activeseam seams for chafe-free comfort during repetitive motion. Built in power-stretch and 4-way-stretch knits with moisture-wicking, UV-protective, and antimicrobial finishes - the fabrics that let sportswear move with the body and stay dry under exertion.', 'myathletik-child' ),
@@ -128,22 +128,22 @@ function myathletik_product_category_data() {
 				array(
 					'title'       => __( 'Men\'s boxer shorts and briefs', 'myathletik-child' ),
 					'description' => __( 'Classic and trunk-length boxers with flatlock seams that stay smooth against the skin. Contoured pouches and stay-put waistbands engineered for everyday comfort.', 'myathletik-child' ),
-					'image'       => 'underwear/boxer-brief-n-trunk-boxer-7.jpg',
+					'image'       => 'underwear/boxer-brief-4x3-1600x1200.jpg',
 				),
 				array(
 					'title'       => __( 'Thermal base layers and underwear', 'myathletik-child' ),
 					'description' => __( 'Next-to-skin thermal tops and bottoms in brushed-back, fleece-lined, and performance knits. The full base-layer program for cold-weather brands - moisture-moving against the skin, warm without bulk, flatlock seams that stay comfortable under a pack hipbelt or harness.', 'myathletik-child' ),
-					'image'       => 'underwear/IMG_7661.jpg',
+					'image'       => 'underwear/IMG_7661_4X3.jpg',
 				),
 				array(
 					'title'       => __( '4-way-stretch performance underwear', 'myathletik-child' ),
 					'description' => __( 'High-stretch performance underwear that moves with the body during active use. Quick-dry and shape-retentive knits for sport and travel.', 'myathletik-child' ),
-					'image'       => 'underwear/IMG_5675.JPG',
+					'image'       => 'underwear/IMG_5675_4x3.jpg',
 				),
 				array(
 					'title'       => __( 'Microfiber and merino wool underwear', 'myathletik-child' ),
 					'description' => __( 'Ultra-fine microfiber for a silky hand feel, or natural merino wool for odor resistance and temperature regulation. Both available in flatlock or seamless construction.', 'myathletik-child' ),
-					'image'       => 'underwear/1U153309.JPG',
+					'image'       => 'underwear/1U153309_4x3.jpg',
 				),
 			),
 			'construction'     => __( 'Flatlock and activeseam seams for next-to-skin comfort, plus bonded-welded options for a clean seamless finish. Produced in 4-way stretch, microfiber, and merino wool, with moisture-wicking and antimicrobial finishes available.', 'myathletik-child' ),
@@ -179,22 +179,22 @@ function myathletik_product_category_data() {
 				array(
 					'title'       => __( 'Mid-layer tops and hoodies', 'myathletik-child' ),
 					'description' => __( 'Insulating mid-layers in Genesis fleece and thermal knits that trap warm air without restricting movement. Hooded and crew options for layering over a base layer and under a shell.', 'myathletik-child' ),
-					'image'       => 'outdoor clothing/IMG_7776.JPG',
+					'image'       => 'outdoor clothing/IMG_7776(1)_4X3.JPG',
 				),
 				array(
 					'title'       => __( 'Cold-weather layering pieces', 'myathletik-child' ),
 					'description' => __( 'Heavier-weight knit tops and bottoms designed for stationary and low-output cold-weather use. Brushed interiors for warmth in hunting blinds, ski lifts, and winter commuting.', 'myathletik-child' ),
-					'image'       => 'outdoor clothing/IMG_7874.JPG',
+					'image'       => 'outdoor clothing/IMG_7874(1)_4X3.JPG',
 				),
 				array(
 					'title'       => __( 'Hiking and trekking knitwear', 'myathletik-child' ),
 					'description' => __( 'Durable, abrasion-resistant knits built for repeated days on trail. Merino blends and synthetic performance knits that regulate temperature across long ascents and variable conditions.', 'myathletik-child' ),
-					'image'       => 'outdoor clothing/1U153835.JPG',
+					'image'       => 'outdoor clothing/1U153835(1)_4X3.JPG',
 				),
 				array(
 					'title'       => __( 'Merino-blend and Genesis fleece insulation layers', 'myathletik-child' ),
 					'description' => __( 'Hybrid insulation blending natural merino warmth with synthetic durability. Genesis fleece options add loft and structure for technical layering systems.', 'myathletik-child' ),
-					'image'       => 'outdoor clothing/1U153247.JPG',
+					'image'       => 'outdoor clothing/1U153247(1)_4X3.JPG',
 				),
 			),
 			'construction'     => __( 'Same flatlock and activeseam construction as our sportswear, but in fabrics chosen for the outdoors - thermal knits, merino blends, and Genesis fleece that trap warmth and move moisture away from the skin. The seams that prevent chafing in a gym become, in heavier weights, the durability a hiker needs under a pack strap.', 'myathletik-child' ),
@@ -234,17 +234,17 @@ function myathletik_product_category_data() {
 				array(
 					'title'       => __( 'Jacquard merino wool apparel', 'myathletik-child' ),
 					'description' => __( 'Jacquard-knit merino with woven-in patterns and structural textures. The design is knit into the fabric - not printed - so it will not crack, fade, or peel over time. A capability unique to merino programs with our gauge range.', 'myathletik-child' ),
-					'image'       => 'merino wool product/showcase.jpeg',
+					'image'       => 'merino wool product/showcase_4X3.jpeg',
 				),
 				array(
 					'title'       => __( 'Printed merino wool apparel', 'myathletik-child' ),
 					'description' => __( 'All-over and placement-printed merino for brands that need custom graphics on natural-fiber knitwear. Prints are developed and tested in-house for color fastness on protein fibers.', 'myathletik-child' ),
-					'image'       => 'merino wool product/1U153433.JPG',
+					'image'       => 'merino wool product/1U153433_4X3.JPG',
 				),
 				array(
 					'title'       => __( 'Merino blend performance pieces', 'myathletik-child' ),
 					'description' => __( 'Merino blended with synthetic fibers for added stretch, durability, and shape retention. The performance of technical knit with the hand feel of natural wool - engineered for brands that need merino warmth without merino fragility.', 'myathletik-child' ),
-					'image'       => 'merino wool product/1U153813.JPG',
+					'image'       => 'merino wool product/1U153813_4X3.JPG',
 				),
 				array(
 					'title'       => __( 'Merino yarn sourcing and fabric development', 'myathletik-child' ),
