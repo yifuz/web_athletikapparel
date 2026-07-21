@@ -717,7 +717,7 @@ function myathletik_site_footer() {
 						</a>
 					</li>
 					<li>
-						<a href="#" aria-label="<?php esc_attr_e( 'WhatsApp [NEEDS INPUT: WhatsApp URL]', 'myathletik-child' ); ?>">
+						<a href="https://wa.me/16044049819" target="_blank" rel="noopener noreferrer" aria-label="Athletik Clothing on WhatsApp">
 							<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 								<path d="M5.1 19l1-3.2a7.3 7.3 0 1 1 2.8 2.6z"></path>
 								<path d="M9.4 8.6c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c.6 1.1 1.4 1.9 2.6 2.5l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.6v.4c0 .4-.1.7-.4.9-.5.4-1.2.6-1.9.4-3.1-.7-5.4-3-6.2-6.1-.2-.7 0-1.5.4-2.1z"></path>
