@@ -155,22 +155,33 @@ The old site's pages are all dead, no inherited search equity to preserve.
 
 ## TO DO
 
-1. **WhatsApp footer link still `#`:** functions.php has `href="#"` +
-   `[NEEDS INPUT: WhatsApp URL]`. Instagram + YouTube are done; WhatsApp is
-   the last social link. Either provide the URL or hide the icon.
-   (QA P0-2 — partial, last item.)
+1. **WhatsApp footer link still `#`:** ✅ FIXED 2026-07-21 — filled with
+   `https://wa.me/16044049819`. (Closes QA P0-2.)
 2. **Contact form (FluentForm id=3) field audit:** backend confirmation that
    the form has the sitemap-required lead-filtering fields (budget tier,
    order quantity, selling channel, website, tech-pack upload). Code can't
    verify this — needs WP admin check. (QA P1-8 — open.)
-3. **Remove the /sustainabilty/ -> /sustainability/ 301 redirect** in
-   functions.php (`myathletik_redirect_misspelled_sustainability_slug`).
-   Per the 2026-07-21 decision, redirects are not being done.
+3. **Remove the /sustainabilty/ -> /sustainability/ 301 redirect** ✅ DONE
+   2026-07-21 — function removed from functions.php.
 4. **Video hero rollout beyond Merino:** the architecture is ready
    (hero_video + hero_video_position fields). Pending video assets for the
    other 6 category pages + the homepage hero.
-5. **Remote git repository:** no remote configured yet. Pending user
-   providing a repo URL (GitHub/GitLab/etc.) when ready.
+5. **Remote git repository:** configured 2026-07-21
+   (https://github.com/yifuz/web_myathletik.git). PUSH PENDING — HTTPS push
+   fails (connection reset, typical CN GitHub issue); SSH key not yet added
+   to GitHub account. To push: either (a) add this machine's SSH pubkey to
+   GitHub and `git push -u origin master` via SSH, or (b) configure an
+   HTTP(S) proxy for git that can reach GitHub.
+6. **Language switcher (header):** the existing 6-button switcher
+   (AR/NL/FR/DE/IT/ES, functions.php:657-668) is a pure placeholder with no
+   behavior. **Decision 2026-07-21: defer multilingual.** Go live EN-only,
+   watch Search Console country data, then decide whether to translate
+   DE/FR/ES (the only markets with meaningful B2B search volume for our
+   keywords). Before launch: either hide the switcher entirely or leave it
+   as-is if a translation widget is added later. Machine translation (Google
+   Translate widget) was rejected — no SEO value and B2B quality issues.
+   Real translation would require Polylang + restructuring
+   inc/product-category-data.php for per-language content.
 
 ## Notes / status of the 07-03 QA audit
 
