@@ -13,6 +13,9 @@ npm-debug.log*
 *.log
 .env
 
+# Temp tooling (image processing scripts, preview files, scratch)
+tools/
+
 # Images live in wp-content/uploads/ now (migrated out of the repo to keep
 # .git small). The full tree was moved to uploads/myathletik-theme/assets/images
 # and URLs are rewritten at runtime via myathletik_images_uri() in functions.php.

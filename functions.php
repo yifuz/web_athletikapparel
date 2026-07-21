@@ -198,6 +198,33 @@ add_filter( 'option_blogname', 'myathletik_site_title' );
 add_filter( 'generate_logo_title', 'myathletik_site_title' );
 
 /**
+ * Render the header site title as a two-tone wordmark.
+ *
+ * Splits "Athletik Clothing" into a bold dark "Athletik" and a lighter
+ * terracotta "Clothing" so the brand name carries visual weight while the
+ * category descriptor reads as a refined accent. Keeps the <a> wrapper and
+ * microdata-free output that GeneratePress expects.
+ *
+ * @param string $output Default GeneratePress title HTML.
+ * @return string
+ */
+function myathletik_site_title_markup( $output ) {
+	$tag   = ( is_front_page() && is_home() ) ? 'h1' : 'p';
+	$href  = esc_url( home_url( '/' ) );
+
+	return sprintf(
+		'<%1$s class="main-title ma-brand-title">
+			<a href="%2$s" rel="home">
+				<span class="ma-brand-title__name">Athletik</span><span class="ma-brand-title__divider" aria-hidden="true"></span><span class="ma-brand-title__desc">Clothing</span>
+			</a>
+		</%1$s>',
+		$tag,
+		$href
+	);
+}
+add_filter( 'generate_site_title_output', 'myathletik_site_title_markup', 20 );
+
+/**
  * Seed the WordPress primary menu when no menu has been assigned yet.
  *
  * This keeps navigation managed by the WordPress menu system while removing
@@ -205,13 +232,37 @@ add_filter( 'generate_logo_title', 'myathletik_site_title' );
  */
 function myathletik_ensure_primary_menu() {
 	$locations = get_nav_menu_locations();
+	$menu_name = 'Main Navigation';
+
+	// If a primary menu location is already assigned, verify it still has the
+	// expected items. A previous bug deleted the Products item; detect a
+	// broken menu and rebuild it from scratch (once).
+	if ( ! empty( $locations['primary'] ) ) {
+		$menu_obj = wp_get_nav_menu_object( $locations['primary'] );
+		if ( $menu_obj ) {
+			$items    = wp_get_nav_menu_items( $menu_obj->term_id );
+			$titles   = array();
+			if ( ! empty( $items ) ) {
+				foreach ( $items as $it ) {
+					$titles[] = $it->title;
+				}
+			}
+			// If Products (a core nav item) is missing, the menu is broken — rebuild.
+			if ( ! in_array( 'Products', $titles, true ) && ! get_transient( 'myathletik_menu_rebuilt' ) ) {
+				// Delete the broken menu and fall through to the fresh-build branch.
+				wp_delete_nav_menu( $menu_obj->term_id );
+				set_transient( 'myathletik_menu_rebuilt', 1, DAY_IN_SECONDS );
+				// Clear location so the build branch reassigns it.
+				$locations['primary'] = 0;
+			}
+		}
+	}
 
 	if ( ! empty( $locations['primary'] ) ) {
 		return;
 	}
 
-	$menu_name = 'Main Navigation';
-	$menu      = wp_get_nav_menu_object( $menu_name );
+	$menu = wp_get_nav_menu_object( $menu_name );
 
 	if ( ! $menu ) {
 		$menu_id = wp_create_nav_menu( $menu_name );
@@ -299,12 +350,13 @@ add_action( 'init', 'myathletik_ensure_primary_menu', 20 );
  *
  * The Products parent item was originally seeded with /products/, but that
  * page does not exist (no page-products.php template, no seeded page) and
- * would 404. This runs on every init and rewrites any "Products" menu item
- * to the homepage product-categories anchor. Uses a short transient so the
- * DB write only happens once per day, not every page load.
+ * would 404. This runs on every init and rewrites any "Products" menu item's
+ * _menu_item_url post meta directly — NOT via wp_update_nav_menu_item(), which
+ * can wipe other fields when called with a partial args array.
+ *
+ * Uses a transient so the DB write happens at most once per day.
  */
 function myathletik_fix_products_menu_url() {
-	// Bail early if already corrected recently (avoid a DB write every load).
 	if ( get_transient( 'myathletik_products_menu_fixed' ) ) {
 		return;
 	}
@@ -326,16 +378,13 @@ function myathletik_fix_products_menu_url() {
 		}
 
 		foreach ( $items as $item ) {
-			// Match the Products parent item by title + its seeded URL.
-			if ( 'Products' === $item->title && false !== strpos( $item->url, '/products' ) ) {
-				wp_update_nav_menu_item(
-					$menu->term_id,
-					$item->db_id,
-					array(
-						'menu-item-url' => $target_url,
-					)
-				);
-				$changed = true;
+			if ( 'Products' === $item->title ) {
+				// Directly update the URL post-meta. Safe, surgical, no side effects.
+				$current = get_post_meta( $item->db_id, '_menu_item_url', true );
+				if ( $current !== $target_url ) {
+					update_post_meta( $item->db_id, '_menu_item_url', $target_url );
+					$changed = true;
+				}
 			}
 		}
 	}

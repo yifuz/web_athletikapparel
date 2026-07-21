@@ -37,6 +37,7 @@ $categories = array(
 		'area'     => 't1-side',
 		'position' => '50% 15%',
 		'tag'      => __( 'Performance knit', 'myathletik-child' ),
+		'subtitle' => __( 'Apparel & base layers', 'myathletik-child' ),
 	),
 	// Tier 2.
 	array(
@@ -99,7 +100,12 @@ $categories = array(
 						<span class="ma-category-card__tag"><?php echo esc_html( $category['tag'] ); ?></span>
 					<?php endif; ?>
 					<span class="ma-category-card__label">
-						<span class="ma-category-card__title"><?php echo esc_html( $category['title'] ); ?></span>
+						<span class="ma-category-card__title">
+							<?php echo esc_html( $category['title'] ); ?>
+							<?php if ( ! empty( $category['subtitle'] ) ) : ?>
+								<span class="ma-category-card__subtitle"><?php echo esc_html( $category['subtitle'] ); ?></span>
+							<?php endif; ?>
+						</span>
 						<span class="ma-category-card__arrow" aria-hidden="true">&rarr;</span>
 					</span>
 				</a>

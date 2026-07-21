@@ -22,7 +22,8 @@ $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 <main id="primary" class="site-main ma-product-category">
 	<section class="ma-product-hero<?php echo ! empty( $category['hero_video'] ) ? ' ma-product-hero--video' : ''; ?>" aria-labelledby="ma-product-title">
 		<?php if ( ! empty( $category['hero_video'] ) ) : ?>
-			<video class="ma-product-hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+			<?php $video_pos = ! empty( $category['hero_video_position'] ) ? $category['hero_video_position'] : 'center'; ?>
+			<video class="ma-product-hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true" style="object-position: <?php echo esc_attr( $video_pos ); ?>;">
 				<source src="<?php echo esc_url( $image_base . $category['hero_video'] ); ?>" type="video/mp4">
 			</video>
 			<div class="ma-product-hero__video-overlay" aria-hidden="true"></div>
