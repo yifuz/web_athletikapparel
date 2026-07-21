@@ -166,22 +166,16 @@ The old site's pages are all dead, no inherited search equity to preserve.
 4. **Video hero rollout beyond Merino:** the architecture is ready
    (hero_video + hero_video_position fields). Pending video assets for the
    other 6 category pages + the homepage hero.
-5. **Remote git repository:** configured 2026-07-21
-   (https://github.com/yifuz/web_myathletik.git). PUSH PENDING — HTTPS push
-   fails (connection reset, typical CN GitHub issue); SSH key not yet added
-   to GitHub account. To push: either (a) add this machine's SSH pubkey to
-   GitHub and `git push -u origin master` via SSH, or (b) configure an
-   HTTP(S) proxy for git that can reach GitHub.
-6. **Language switcher (header):** the existing 6-button switcher
-   (AR/NL/FR/DE/IT/ES, functions.php:657-668) is a pure placeholder with no
-   behavior. **Decision 2026-07-21: defer multilingual.** Go live EN-only,
+5. **Remote git repository:** ✅ DONE 2026-07-21 — pushed to
+   https://github.com/yifuz/web_myathletik.git. Remember: uploads/ images
+   are NOT in git and must be transferred separately on deploy.
+6. **Language switcher (header):** ✅ HIDDEN 2026-07-21 — the 6-button
+   switcher (functions.php myathletik_header_actions) now returns early with
+   no output. **Decision 2026-07-21: defer multilingual.** Go live EN-only,
    watch Search Console country data, then decide whether to translate
-   DE/FR/ES (the only markets with meaningful B2B search volume for our
-   keywords). Before launch: either hide the switcher entirely or leave it
-   as-is if a translation widget is added later. Machine translation (Google
-   Translate widget) was rejected — no SEO value and B2B quality issues.
-   Real translation would require Polylang + restructuring
-   inc/product-category-data.php for per-language content.
+   DE/FR/ES. Machine translation rejected. Real translation would require
+   Polylang + restructuring inc/product-category-data.php. To re-enable the
+   switcher: remove the early return in myathletik_header_actions().
 
 ## Notes / status of the 07-03 QA audit
 

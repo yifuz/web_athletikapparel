@@ -649,9 +649,12 @@ add_action( 'wp_head', 'myathletik_sustainability_meta_description', 4 );
  * Add utility actions after the primary menu.
  *
  * Language switching is a front-end placeholder until multilingual routing is
- * added.
+ * added. Decision 2026-07-21: go live EN-only, so the switcher is hidden
+ * (returns early). Re-enable by removing the early return once Polylang or
+ * another multilingual setup is in place.
  */
 function myathletik_header_actions() {
+	return; // EN-only launch: language switcher hidden (2026-07-21).
 	?>
 	<div class="ma-header-actions" aria-label="<?php esc_attr_e( 'Header tools', 'myathletik-child' ); ?>">
 		<div class="ma-language-menu">
