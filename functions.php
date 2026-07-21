@@ -617,6 +617,52 @@ function myathletik_about_meta_description() {
 add_action( 'wp_head', 'myathletik_about_meta_description', 3 );
 
 /**
+ * Use homepage-specific document title.
+ *
+ * @param array $parts Document title parts.
+ * @return array
+ */
+function myathletik_home_document_title( $parts ) {
+	if ( is_front_page() ) {
+		$parts['title'] = 'Technical Knitwear Manufacturer | Athletik Clothing';
+		unset( $parts['site'] );
+		unset( $parts['tagline'] );
+	}
+
+	return $parts;
+}
+add_filter( 'document_title_parts', 'myathletik_home_document_title', 28 );
+
+/**
+ * Override the final homepage <title> after SEO plugins (e.g. Rank Math,
+ * which hooks pre_get_document_title earlier) have run.
+ *
+ * @param string $title Document title.
+ * @return string
+ */
+function myathletik_home_title_final( $title ) {
+	if ( is_front_page() ) {
+		return 'Technical Knitwear Manufacturer | Athletik Clothing';
+	}
+
+	return $title;
+}
+add_filter( 'pre_get_document_title', 'myathletik_home_title_final', 99 );
+
+/**
+ * Print the homepage meta description.
+ */
+function myathletik_home_meta_description() {
+	if ( ! is_front_page() ) {
+		return;
+	}
+	?>
+	<meta name="description" content="<?php echo esc_attr__( 'Vertically integrated OEM manufacturer of flatlock & activeseam knitwear — underwear, sportswear & outdoor for global brands. 15+ years. Request a quote.', 'myathletik-child' ); ?>">
+	<?php
+}
+add_action( 'wp_head', 'myathletik_home_meta_description', 2 );
+
+/**
  * Use sustainability-page-specific document title and meta description.
  *
  * @param array $parts Document title parts.
