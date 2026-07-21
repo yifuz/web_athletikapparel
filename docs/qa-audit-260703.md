@@ -178,3 +178,60 @@
 4. **P1-2** knitted-fabrics / accessories 真实图
 5. **P1-4** style-gallery / partnership 文案
 6. **P1-8** FluentForm 后台确认 + **P1-9** 合作国家口径
+
+---
+
+## 复审状态（2026-07-21 代码级核对）
+
+重新逐文件审计了所有 PHP 模板 + functions.php + inc/product-category-data.php
++ style.css。各项当前状态如下（对照 docs/progress.md 的 TODO 列表）：
+
+| ID | 原问题 | 当前状态 | 备注 |
+|----|--------|----------|------|
+| P0-1 | process-snapshot 4 死链 | ✅ 已修 | 4 步全部指向 `/services/` |
+| P0-2 | footer 社交链接 `#` | ⚠️ 部分 | Instagram / YouTube 已填真实 URL（`@athletikclothinginc`）；WhatsApp 仍 `#` + `[NEEDS INPUT]`（functions.php:728）。见 progress.md TODO #1 |
+| P0-3 | footer `/sitemap/` 死链 | ✅ 已修 | 改为 `/wp-sitemap.xml` |
+| P0-4 | footer `/blog/` 待确认 | ✅ 已修 | `/blog/` 链接已移除；blog 区块在 front-page.php 注释禁用 |
+| P1-1 | hero stock 图 | ✅ 已修 | 换成 4 格 bento 真实图（2 服装 + 缝纫 + 织造）|
+| P1-2 | knitted-fabrics / accessories stock 图 | ✅ 实质解决 | unsplash 图所在的 "Sample image groups" gallery 区现在被 subcategory 详展区替代——7 个类目都有 subcats，gallery 区不再渲染。stock 图问题随之消失 |
+| P1-3 | redirect-note 面向前端显示 | ✅ 已修 | 整个 section 已删除 |
+| P1-4 | style-gallery / partnership `[CONTENT]` 占位 | ✅ 已修 | 均已填真实内容；partnership 图换成真实客户照 |
+| P1-5 | latest-posts 占位符 | ✅ 已修 | 无文章时 `return;`，且 front-page.php 中已注释禁用 |
+| P1-6 | 硬编码 hex 值 | ✅ 已修 | :root 新增 `--ma-color-white` / `--ma-color-dark` token |
+| P1-7 | services stage 标题层级 | ✅ 已修 | stage 标题改 `<h3>` |
+| P1-7b | services.php H 标签 bug（修复 P1-7 时引入） | ✅ 已修 | `[PLACEHOLDER]` 已删除；CTA 标题开闭合统一为 `<h2>`；stage 标题补回 `<h3>` 开标签 |
+| P1-8 | 联系表单字段待后台确认 | ⏳ 仍开放 | 需 WP 后台 FluentForms 确认 id=3 字段配置。见 progress.md TODO #2 |
+| P1-9 | "3 continents" 口径 / Russia | ✅ 已修 | numbers-proof 改为 "North America, Europe, and Asia-Pacific"，删去 Russia |
+| P1-10 | hero 图无 alt | ✅ 已修 | 改用 `<img>` + alt + width/height |
+
+### 仍需用户输入/决策的项（共 3 项）
+1. **P0-2 残留** WhatsApp URL（或隐藏该图标）— progress.md TODO #1
+2. **P1-8** FluentForm id=3 后台字段配置确认 — progress.md TODO #2
+3. **移除 sustainability 301 重定向** — progress.md TODO #3（用户 2026-07-21 决定不做任何 301）
+
+### 已无需处理
+所有其他 P0/P1 项已修复或因架构演进（如 subcategory 系统上线）自动消解。
+
+---
+
+## 2026-07-21 新增工作（本次会话完成的、超出原审计范围的事）
+
+原 07-03 审计只覆盖了"修 bug"，但本次会话做了大量新功能/视觉优化，
+记录在此供后续会话参考：
+
+- **首页产品区**：bento v2 布局（Sportswear 左侧大主卡 + Merino 右竖卡），
+  section 顺序调整（Products 上移到 capability-proof 之上），Merino 加副标签，
+  H2 改文案。
+- **Logo 双色 wordmark**：`Athletik` 深色粗 + `Clothing` muted 细，via
+  `generate_site_title_output` filter。
+- **导航修复**：Products 死链改首页锚点；菜单完整性恢复；URL 用
+  `update_post_meta` 安全修正（替代会破坏菜单的 `wp_update_nav_menu_item`）。
+- **产品页子品类系统**：7 个类目全部上线 "Product range" 图文详展区；
+  What-we-make 列表变锚点链接；旧 "Sample image groups" 区隐藏。
+- **子品类去重**：Sportswear 5→4、Outdoor 删 base layer、Underwear 吸收
+  base layer 并删第 5 子品类、Merino 换成纱线开发。
+- **子品类图片**：27 张图按 md 清单更新；15 张用 Codex 生成的 4:3 补白版；
+  Silk/Accessories 保持原图。
+- **Merino 视频 hero**：原型上线（merinowool.mp4 + `hero_video_position`）。
+- **Lookbook 扩充**：修 3 张丢图、列数 12→24、46 张全唯一、零跨区块重复。
+- **services.php H 标签 bug**：P1-7b 已修复。

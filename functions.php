@@ -505,18 +505,10 @@ function myathletik_ensure_sustainability_page() {
 }
 add_action( 'init', 'myathletik_ensure_sustainability_page', 38 );
 
-/**
- * Redirect the old misspelled sustainability slug to the corrected URL.
- */
-function myathletik_redirect_misspelled_sustainability_slug() {
-	$request_path = isset( $_SERVER['REQUEST_URI'] ) ? wp_parse_url( sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ), PHP_URL_PATH ) : '';
-
-	if ( '/sustainabilty/' === $request_path || '/sustainabilty' === $request_path ) {
-		wp_safe_redirect( home_url( '/sustainability/' ), 301 );
-		exit;
-	}
-}
-add_action( 'template_redirect', 'myathletik_redirect_misspelled_sustainability_slug', 1 );
+// Note: the /sustainabilty/ -> /sustainability/ 301 redirect that used to live
+// here was removed on 2026-07-21. Decision: no 301 redirects are being done
+// (old site is dead, no inbound equity to preserve). See docs/progress.md
+// §"301 redirects — NOT being done".
 
 /**
  * Get category data for the current product category page.
