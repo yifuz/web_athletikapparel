@@ -173,8 +173,10 @@ The old site's pages are all dead, no inherited search equity to preserve.
    (d) email notifications: one goes to {wp.admin_email} (currently LocalWP
    default dev-email@wpengine.local — verify at deploy), one to
    info@myathletik.com with {all_data}; no customer auto-reply (optional);
-   (e) live submission + email-delivery test still pending (do on staging/
-   production too — GoDaddy wp_mail is unreliable, install FluentSMTP).
+   (e) ✅ local submission test passed 2026-07-21 — frontend success message
+   shown, entry stored correctly in Fluent Forms Entries (all dropdown
+   values captured); email delivery test still pending on staging/
+   production (GoDaddy wp_mail is unreliable, install FluentSMTP).
    (Note: an unsaved stray Address field seen in one editor session was
    never part of the saved form — re-verified absent 2026-07-21.)
 3. **Remove the /sustainabilty/ -> /sustainability/ 301 redirect** ✅ DONE
