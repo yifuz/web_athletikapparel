@@ -157,10 +157,26 @@ The old site's pages are all dead, no inherited search equity to preserve.
 
 1. **WhatsApp footer link still `#`:** ✅ FIXED 2026-07-21 — filled with
    `https://wa.me/16044049819`. (Closes QA P0-2.)
-2. **Contact form (FluentForm id=3) field audit:** backend confirmation that
-   the form has the sitemap-required lead-filtering fields (budget tier,
-   order quantity, selling channel, website, tech-pack upload). Code can't
-   verify this — needs WP admin check. (QA P1-8 — open.)
+2. **Contact form (FluentForm id=3) field audit:** ✅ AUDITED 2026-07-21
+   via browser inspection of the form editor. Current fields: Name, Email*,
+   Company, Country, Website, Product Category of Interest* (7 cats + Other),
+   Estimated Order Quantity* (Under 500 / 500–2,000 / 2,000–5,000 / 5,000+),
+   Business Type* (Established brand / New brand / Wholesaler-Importer /
+   Other), Message*, plus a full Address block. Gaps found:
+   (a) ✅ tech pack prompt added 2026-07-21 via the Message field
+   placeholder ("...Include a link to your tech pack if you have one.") —
+   File Upload itself is a Fluent Forms PRO feature, placeholder link prompt
+   chosen as the free-tier solution; (b) no budget-tier dropdown (sitemap
+   §7 asks for one, quantity field partially covers the filtering role);
+   (c) anti-spam NOT configured — reCAPTCHA keys empty, no honeypot
+   field rendering on the frontend; enable honeypot or Cloudflare Turnstile;
+   (d) email notifications: one goes to {wp.admin_email} (currently LocalWP
+   default dev-email@wpengine.local — verify at deploy), one to
+   info@myathletik.com with {all_data}; no customer auto-reply (optional);
+   (e) live submission + email-delivery test still pending (do on staging/
+   production too — GoDaddy wp_mail is unreliable, install FluentSMTP).
+   (Note: an unsaved stray Address field seen in one editor session was
+   never part of the saved form — re-verified absent 2026-07-21.)
 3. **Remove the /sustainabilty/ -> /sustainability/ 301 redirect** ✅ DONE
    2026-07-21 — function removed from functions.php.
 4. **Video hero rollout beyond Merino:** the architecture is ready
