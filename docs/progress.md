@@ -161,6 +161,8 @@ The old site's pages are all dead, no inherited search equity to preserve.
    at GoDaddy, was experimental only — keep as 301 to primary for 1-2 years
    after launch. Hosting: Flywheel Tiny (~$150/yr), deploy via Local Connect
    push (Files + Database). Launch directly on athletikapparel.com.
+   **2026-07-22: pushed to Flywheel via Local Connect, temp-domain
+   acceptance PASSED. Next: attach domain (Cloudflare DNS) + SSL + go live.**
 
 1. **WhatsApp footer link still `#`:** ✅ FIXED 2026-07-21 — filled with
    `https://wa.me/16044049819`. (Closes QA P0-2.)
