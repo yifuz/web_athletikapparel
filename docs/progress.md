@@ -158,9 +158,11 @@ The old site's pages are all dead, no inherited search equity to preserve.
 0. **Domains (2026-07-22):** purchased at Cloudflare Registrar —
    **athletikapparel.com = PRIMARY** (site, email, all branding);
    athletik-clothing.com = defensive, 301 to primary. myathletik.com stays
-   at GoDaddy, was experimental only — keep as 301 to primary for 1-2 years
-   after launch. Hosting: Flywheel Tiny (~$150/yr), deploy via Local Connect
-   push (Files + Database). Launch directly on athletikapparel.com.
+   at GoDaddy, was experimental only — decision 2026-07-22: NO 301 needed
+   (site never actually used, zero traffic); keep the domain parked or let
+   it lapse, no redirect work. Hosting: Flywheel Tiny (~$150/yr), deploy via
+   Local Connect push (Files + Database). Launch directly on
+   athletikapparel.com.
    **2026-07-22: pushed to Flywheel via Local Connect, temp-domain
    acceptance PASSED.**
    **2026-07-22 PM — LAUNCHED on athletikapparel.com:**
@@ -201,13 +203,13 @@ The old site's pages are all dead, no inherited search equity to preserve.
      "couldn't fetch" status is normal for fresh submissions; robots.txt
      301s to WP's virtual robots file which allows all + declares the
      sitemap, Googlebot UA gets 200 — verified fine).
-   - STILL OPEN (user-side): (a) GoDaddy hosting auto-renew OFF (keep
-     myathletik.com domain renewal — needed for the future 301);
-     (b) Local push of commit 31f4b99 (email display) to Flywheel;
-     (c) myathletik.com 301 -> athletikapparel.com (after GoDaddy hosting
-     is dealt with); (d) WP Mail SMTP / FluentSMTP on Flywheel as a
-     deliverability upgrade (wp_mail works today, but unauthenticated);
-     (e) Cloudflare Turnstile anti-spam (optional, post-launch).
+   - STILL OPEN (post-launch optional): (a) WP Mail SMTP / FluentSMTP on
+     Flywheel as a deliverability upgrade (wp_mail works today, but
+     unauthenticated); (b) Cloudflare Turnstile anti-spam (optional).
+   - CLOSED user-side 2026-07-22: GoDaddy hosting auto-renew turned OFF
+     (myathletik.com domain renewal kept, no 301 planned); email-display
+     commit 31f4b99 confirmed live (decoded from Cloudflare's
+     email-obfuscation data-cfemail on the live homepage footer).
 
 1. **WhatsApp footer link still `#`:** ✅ FIXED 2026-07-21 — filled with
    `https://wa.me/16044049819`. (Closes QA P0-2.)
