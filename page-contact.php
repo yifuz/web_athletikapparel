@@ -39,7 +39,7 @@ get_header();
 					<ul class="ma-contact-list">
 						<li>
 							<span><?php esc_html_e( 'Email', 'myathletik-child' ); ?></span>
-							<a href="mailto:info@athletik.com.cn">info@athletik.com.cn</a>
+							<a href="mailto:info@athletikapparel.com">info@athletikapparel.com</a>
 						</li>
 						<li>
 							<span><?php esc_html_e( 'Tel', 'myathletik-child' ); ?></span>
