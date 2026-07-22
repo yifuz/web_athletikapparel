@@ -5,9 +5,9 @@ docs/design-brief.md, and docs/homepage-copy.md when starting a new session.
 This file tracks WHAT IS DONE and WHAT IS LEFT, since the rule docs only
 define HOW. Also check `git log` for the latest commits.
 
-Last updated: 2026-07-21 — reflects code re-audit after the visual-polish
-phase (homepage product-area rebuild, product-page subcategory system,
-subcategory de-duplication, video hero, lookbook expansion).
+Last updated: 2026-07-22 — LAUNCH DAY. Site live on Flywheel at
+https://www.athletikapparel.com (see TO DO #0 for the full launch record).
+Previous: 2026-07-21 code re-audit after the visual-polish phase.
 
 ---
 
@@ -162,7 +162,52 @@ The old site's pages are all dead, no inherited search equity to preserve.
    after launch. Hosting: Flywheel Tiny (~$150/yr), deploy via Local Connect
    push (Files + Database). Launch directly on athletikapparel.com.
    **2026-07-22: pushed to Flywheel via Local Connect, temp-domain
-   acceptance PASSED. Next: attach domain (Cloudflare DNS) + SSL + go live.**
+   acceptance PASSED.**
+   **2026-07-22 PM — LAUNCHED on athletikapparel.com:**
+   - Domain attached via Flywheel's Cloudflare integration (www = primary;
+     A/CNAME records auto-created, Proxied). Privacy Mode disabled.
+   - SSL: Let's Encrypt issued on Flywheel (valid to 2026-10-20, auto-renews).
+     Gotcha: cert issuance FAILS while Cloudflare proxy is on — fix was to
+     temporarily set both records to DNS-only, run CHECK DNS AGAIN +
+     COMPLETE SSL SETUP, then re-enable proxy. Cloudflare SSL/TLS mode now
+     Full (strict) + Always Use HTTPS on.
+   - All four entries verified live: http/https x apex/www all funnel to
+     https://www.athletikapparel.com (200).
+   - Email: GoDaddy mailbox (info@myathletik.com) confirmed EXPIRED — no
+     email product left on GoDaddy, nothing to preserve there. New setup:
+     Cloudflare Email Routing (free) forwards info@athletikapparel.com ->
+     alanzhang@athletik.com; MX/SPF auto-created; forwarding test PASSED.
+   - Public contact email in footer (functions.php) + contact page
+     (page-contact.php) changed info@athletik.com.cn ->
+     info@athletikapparel.com (commit 31f4b99 — needs a Local push to go
+     live).
+   - FluentForm id=3 admin notification recipient: was {wp.admin_email},
+     now hardcoded to info@athletikapparel.com (edited live via wp-admin).
+     Gotcha: FluentForms' Vue admin silently ignores programmatic fills
+     unless the native setter + input/change events are used; verify saves
+     via the network response, the list view shows stale values.
+   - Live end-to-end test inquiry PASSED: 3 submissions -> 3 notification
+     emails received at alanzhang@athletik.com via the info@ forward +
+     entries stored. (Frontend gotcha: page <head> has a
+     <meta name="description"> — any script must target
+     textarea[name="description"], never [name="description"].)
+   - athletik-clothing.com: Cloudflare Redirect Rule deployed 2026-07-22 —
+     "Redirect to athletikapparel.com", All incoming requests -> static
+     https://www.athletikapparel.com, 301. Verified: http/https/www all
+     301 correctly.
+   - Google Search Console: Domain property athletikapparel.com verified
+     2026-07-22 (auto-verified, no TXT needed); sitemap
+     https://www.athletikapparel.com/sitemap_index.xml submitted (initial
+     "couldn't fetch" status is normal for fresh submissions; robots.txt
+     301s to WP's virtual robots file which allows all + declares the
+     sitemap, Googlebot UA gets 200 — verified fine).
+   - STILL OPEN (user-side): (a) GoDaddy hosting auto-renew OFF (keep
+     myathletik.com domain renewal — needed for the future 301);
+     (b) Local push of commit 31f4b99 (email display) to Flywheel;
+     (c) myathletik.com 301 -> athletikapparel.com (after GoDaddy hosting
+     is dealt with); (d) WP Mail SMTP / FluentSMTP on Flywheel as a
+     deliverability upgrade (wp_mail works today, but unauthenticated);
+     (e) Cloudflare Turnstile anti-spam (optional, post-launch).
 
 1. **WhatsApp footer link still `#`:** ✅ FIXED 2026-07-21 — filled with
    `https://wa.me/16044049819`. (Closes QA P0-2.)
@@ -179,9 +224,10 @@ The old site's pages are all dead, no inherited search equity to preserve.
    §7 asks for one, quantity field partially covers the filtering role);
    (c) anti-spam NOT configured — reCAPTCHA keys empty, no honeypot
    field rendering on the frontend; enable honeypot or Cloudflare Turnstile;
-   (d) email notifications: one goes to {wp.admin_email} (currently LocalWP
-   default dev-email@wpengine.local — verify at deploy), one to
-   info@myathletik.com with {all_data}; no customer auto-reply (optional);
+   (d) email notifications: admin notification recipient hardcoded to
+   info@athletikapparel.com 2026-07-22 (was {wp.admin_email}); live
+   delivery test PASSED same day (3 submissions -> 3 emails via Email
+   Routing forward + entries stored); no customer auto-reply (optional);
    (e) ✅ local submission test passed 2026-07-21 — frontend success message
    shown, entry stored correctly in Fluent Forms Entries (all dropdown
    values captured); email delivery test still pending on staging/
