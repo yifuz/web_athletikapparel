@@ -155,6 +155,13 @@ The old site's pages are all dead, no inherited search equity to preserve.
 
 ## TO DO
 
+0. **Domains (2026-07-22):** purchased at Cloudflare Registrar —
+   **athletikapparel.com = PRIMARY** (site, email, all branding);
+   athletik-clothing.com = defensive, 301 to primary. myathletik.com stays
+   at GoDaddy, was experimental only — keep as 301 to primary for 1-2 years
+   after launch. Hosting: Flywheel Tiny (~$150/yr), deploy via Local Connect
+   push (Files + Database). Launch directly on athletikapparel.com.
+
 1. **WhatsApp footer link still `#`:** ✅ FIXED 2026-07-21 — filled with
    `https://wa.me/16044049819`. (Closes QA P0-2.)
 2. **Contact form (FluentForm id=3) field audit:** ✅ AUDITED 2026-07-21
