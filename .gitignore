@@ -13,8 +13,17 @@ npm-debug.log*
 *.log
 .env
 
+# Secrets — NEVER commit credentials/recovery codes
+flywheel_recovery_codes.txt
+*_recovery_codes.txt
+*.secret
+*.key
+
 # Temp tooling (image processing scripts, preview files, scratch)
 tools/
+
+# AI agent working dirs
+.zcode/
 
 # Images live in wp-content/uploads/ now (migrated out of the repo to keep
 # .git small). The full tree was moved to uploads/myathletik-theme/assets/images

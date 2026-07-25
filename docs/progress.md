@@ -5,9 +5,10 @@ docs/design-brief.md, and docs/homepage-copy.md when starting a new session.
 This file tracks WHAT IS DONE and WHAT IS LEFT, since the rule docs only
 define HOW. Also check `git log` for the latest commits.
 
-Last updated: 2026-07-22 — LAUNCH DAY. Site live on Flywheel at
+Last updated: 2026-07-24 — uploads asset migration (27G -> 0.27G local;
+Flywheel server cleanup pending — see docs/flywheel-cleanup-guide.md).
+Previous: 2026-07-22 LAUNCH DAY. Site live on Flywheel at
 https://www.athletikapparel.com (see TO DO #0 for the full launch record).
-Previous: 2026-07-21 code re-audit after the visual-polish phase.
 
 ---
 
@@ -155,6 +156,52 @@ The old site's pages are all dead, no inherited search equity to preserve.
 
 ## TO DO
 
+-2. **FluentForm plugin folder was emptied (2026-07-24):** Before a push,
+   the `plugins/fluentform/` folder became an EMPTY skeleton (4 subdirs,
+   0 files, no fluentform.php). WP dropped it from active_plugins (so the
+   plugin "disappeared" from admin) and re-installing failed with
+   "Destination folder already exists."
+   **Root cause:** the folder existed but had no files — WP couldn't load
+   the plugin (no main file) AND the empty folder blocked re-install.
+   **DB state — all SAFE:** 7 fluentform_* tables intact, all 3 forms
+   preserved (id=1 Contact Form Demo, id=2 Subscription Form,
+   id=3 "inquiry form" — the one page-contact.php uses via
+   `[fluentform id="3"]`). Form id=3 will auto-restore once the plugin
+   files are reinstalled + reactivated; no rebuild needed.
+   **Fixed 2026-07-24:** deleted the empty `fluentform/` folder
+   (confirmed 0 files first) — "Destination folder already exists" error
+   now resolved. Next: reinstall FluentForm via WP admin
+   (Plugins → Add New → search "Fluent Forms" → Install → Activate).
+   Diagnostic script ff-diag.php (used to verify DB state) was deleted
+   after use (it exposed DB/plugin info). Verify after activation:
+   contact page at /contact/ renders the inquiry form, and a test
+   submission lands in the entries + sends the notification email.
+
+-1. **Flywheel server 27G cleanup (2026-07-24):** LocalWP Local Connect push
+   pushed the entire uploads (27G) to Flywheel, blowing past Tiny plan storage.
+   **Local side DONE 2026-07-24:**
+   - Migrated 4446 unused asset files (26.38G) out of uploads to
+     `D:\C-网站素材\` (local archive, structure mirrored). uploads now
+     218 files / 0.27G (only code-referenced assets + brand-partner logos).
+   - Fixed 3 dead image refs in inc/product-category-data.php:
+     `merino-wool-base-layer-10` -> `-19`, `-16` -> `-20` (avoided
+     dup with Outdoor page's -17/-18), `underwear/X-IMG_4877-scaled.jpg`
+     normalized to `underwear/IMG_4877-scaled.jpg` (copied from 6/IMG_4877.JPG).
+   - Verified: static audit of 195 unique image refs = 0 missing in uploads;
+     homepage first fetch = 200 with 162 images rendered; output buffer
+     rewriting theme->uploads URLs correctly. (502 errors during testing were
+     LocalWP being hammered by the audit's concurrency, NOT a migration issue.)
+   - Decision: Local Connect CANNOT exclude uploads subdirs (no config, no
+     rule file — only per-push manual deselect, impractical at 4k+ files).
+     Root-cause fix = keep uploads lean, which is now done.
+   - Cleanup scripts: tools/plan_asset_move.py, exec_asset_move.py,
+     audit_image_refs.py, audit_all_refs.py, verify_pages.py. Keep/move lists:
+     tools/move_plan_KEEP.txt (218), tools/move_plan_MOVE.txt (4446).
+   **PENDING (user does in Flywheel panel):** see docs/flywheel-cleanup-guide.md
+   — (1) delete server `uploads/myathletik-theme/` (the 27G), (2) re-upload
+   the 270MB zip at `D:\C-网站素材\myathletik-theme-upload-to-flywheel.zip`
+   (218 files), (3) verify pages load with no 404s.
+
 0. **Domains (2026-07-22):** purchased at Cloudflare Registrar —
    **athletikapparel.com = PRIMARY** (site, email, all branding);
    athletik-clothing.com = defensive, 301 to primary. myathletik.com stays
@@ -279,6 +326,12 @@ status of each item:
 - ALL theme images live in `wp-content/uploads/myathletik-theme/assets/images/`
   (NOT in `themes/myathletik-child/assets/images/`). The theme assets dir is
   kept empty except for a `.gitkeep`, and is gitignored.
+- **(2026-07-24) uploads stays LEAN.** Only code-referenced images (218 files,
+  0.27G) live in uploads. The full raw asset library (4446 files, 26.38G) was
+  moved OUT of uploads to `D:\C-网站素材\` because LocalWP Local Connect
+  pushes the entire uploads folder and has NO exclusion mechanism. Putting
+  unused assets back in uploads = server storage blowup again. Raw/unused
+  assets go in `D:\C-网站素材\<category>\`, NOT uploads.
 - An output buffer in `functions.php` (`myathletik_rewrite_image_urls`, hooked
   via `ob_start` on `template_redirect`) rewrites theme-relative image URLs to
   the uploads path at render time. So PHP keeps writing
@@ -286,9 +339,10 @@ status of each item:
   silently served from uploads.
 - Videos follow the same pattern — place them anywhere under
   `uploads/myathletik-theme/assets/images/` and reference theme-relative.
-- Therefore: to add/change an image or video, drop the file into the matching
-  folder under `uploads/myathletik-theme/assets/images/` only. Do NOT copy it
-  into the theme dir (it would be ignored and never served).
+- Therefore: to add/change an image or video that the SITE USES, drop ONLY
+  that file into the matching folder under
+  `uploads/myathletik-theme/assets/images/`. Do NOT copy it into the theme
+  dir (404) and do NOT bulk-dump unused assets into uploads (server bloat).
 
 ## Notes / gotchas learned
 

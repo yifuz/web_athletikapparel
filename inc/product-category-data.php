@@ -154,7 +154,7 @@ function myathletik_product_category_data() {
 				myathletik_gallery_item( 'underwear/IMG_5054-scaled.jpg', __( 'Technical underwear garment construction sample', 'myathletik-child' ) ),
 				myathletik_gallery_item( 'underwear/IMG_5173-scaled.jpg', __( 'Close-to-skin underwear OEM/ODM sample', 'myathletik-child' ) ),
 				myathletik_gallery_item( 'underwear/IMG_5512-scaled.jpg', __( 'Technical knit underwear product sample', 'myathletik-child' ) ),
-				myathletik_gallery_item( 'underwear/X-IMG_4877-scaled.jpg', __( 'Underwear sample for private-label manufacturing', 'myathletik-child' ) ),
+				myathletik_gallery_item( 'underwear/IMG_4877-scaled.jpg', __( 'Underwear sample for private-label manufacturing', 'myathletik-child' ) ),
 			),
 			'related'          => array(
 				myathletik_related_link( __( 'Sportswear Manufacturer', 'myathletik-child' ), '/sportswear-manufacturer/' ),
@@ -255,12 +255,12 @@ function myathletik_product_category_data() {
 			'construction'     => __( 'Natural merino wool engineered for warmth, breathability, and odor resistance, finished with flatlock and activeseam construction. Available in jacquard and printed designs, plain or blended for added stretch and durability.', 'myathletik-child' ),
 			'image_note'       => __( '[IMAGE: real merino wool product shots]', 'myathletik-child' ),
 			'gallery'          => array(
-				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-10.jpg', __( 'Merino wool apparel product sample', 'myathletik-child' ) ),
+				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-19.jpg', __( 'Merino wool apparel product sample', 'myathletik-child' ) ),
 				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-12.jpg', __( 'Merino wool technical knitwear sample', 'myathletik-child' ) ),
 				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-13.jpg', __( 'Merino wool base layer product detail', 'myathletik-child' ) ),
 				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-14.jpg', __( 'Merino wool OEM/ODM garment sample', 'myathletik-child' ) ),
 				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-15.jpg', __( 'Merino wool outdoor apparel sample', 'myathletik-child' ) ),
-				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-16.jpg', __( 'Merino wool base layer manufacturing sample', 'myathletik-child' ) ),
+				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-20.jpg', __( 'Merino wool base layer manufacturing sample', 'myathletik-child' ) ),
 			),
 			'related'          => array(
 				myathletik_related_link( __( 'Underwear Manufacturer', 'myathletik-child' ), '/underwear-manufacturer/' ),
