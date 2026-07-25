@@ -78,7 +78,7 @@ get_header();
 					<article class="ma-services-stage">
 						<div class="ma-services-stage__number" aria-hidden="true"><?php echo esc_html( $stage['number'] ); ?></div>
 						<div class="ma-services-stage__copy">
-							[PLACEHOLDER]<?php echo esc_html( $stage['title'] ); ?></h3>
+							<h3 class="ma-services-stage__title"><?php echo esc_html( $stage['title'] ); ?></h3>
 							<p><?php echo esc_html( $stage['copy'] ); ?></p>
 						</div>
 					</article>
@@ -91,7 +91,7 @@ get_header();
 		<div class="ma-section-inner ma-services-cta__inner">
 			<div>
 				<p class="ma-section-kicker"><?php esc_html_e( 'Start a project', 'myathletik-child' ); ?></p>
-				<h2 id="ma-services-cta-title"><?php esc_html_e( 'Ready to start a project?', 'myathletik-child' ); ?></h3>
+				<h2 id="ma-services-cta-title"><?php esc_html_e( 'Ready to start a project?', 'myathletik-child' ); ?></h2>
 				<p><?php esc_html_e( 'Tell us what you are building and our team will get back to you with a quote and next steps.', 'myathletik-child' ); ?></p>
 			</div>
 			<a class="ma-button ma-button--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Request a Quote', 'myathletik-child' ); ?></a>
