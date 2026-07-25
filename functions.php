@@ -225,6 +225,28 @@ function myathletik_site_title_markup( $output ) {
 add_filter( 'generate_site_title_output', 'myathletik_site_title_markup', 20 );
 
 /**
+ * Build a site-relative URL using the scheme from the 'home' option, not is_ssl().
+ *
+ * Under LocalWP, nginx terminates SSL so is_ssl() returns true even though the
+ * site's siteurl/home option is http. WordPress' home_url() honors is_ssl(),
+ * which would emit https URLs that trigger a browser cert warning on the local
+ * self-signed cert. This helper keeps the scheme consistent with the 'home'
+ * option (http locally, https in production with a real cert) so menu items
+ * and other absolute URLs stay uniform.
+ *
+ * Use only for URLs stored durably (nav menu item URLs). For runtime hrefs
+ * that the browser resolves immediately, home_url() is fine.
+ *
+ * @param string $path Path starting with '/', e.g. '/contact/'.
+ * @return string Absolute URL.
+ */
+function myathletik_home_url( $path = '/' ) {
+	$home = untrailingslashit( get_option( 'home' ) );
+	$path = '/' . ltrim( $path, '/' );
+	return $home . $path;
+}
+
+/**
  * Seed the WordPress primary menu when no menu has been assigned yet.
  *
  * This keeps navigation managed by the WordPress menu system while removing
@@ -280,7 +302,7 @@ function myathletik_ensure_primary_menu() {
 			0,
 			array(
 				'menu-item-title'  => 'Home',
-				'menu-item-url'    => home_url( '/' ),
+				'menu-item-url'    => myathletik_home_url( '/' ),
 				'menu-item-status' => 'publish',
 			)
 		);
@@ -290,7 +312,7 @@ function myathletik_ensure_primary_menu() {
 			0,
 			array(
 				'menu-item-title'  => 'Products',
-				'menu-item-url'    => home_url( '/#ma-home-categories-title' ),
+				'menu-item-url'    => myathletik_home_url( '/#ma-home-categories-title' ),
 				'menu-item-status' => 'publish',
 			)
 		);
@@ -312,7 +334,7 @@ function myathletik_ensure_primary_menu() {
 					0,
 					array(
 						'menu-item-title'     => $title,
-						'menu-item-url'       => home_url( $url ),
+						'menu-item-url'       => myathletik_home_url( $url ),
 						'menu-item-status'    => 'publish',
 						'menu-item-parent-id' => (int) $products_item,
 					)
@@ -354,6 +376,14 @@ add_action( 'init', 'myathletik_ensure_primary_menu', 20 );
  * _menu_item_url post meta directly — NOT via wp_update_nav_menu_item(), which
  * can wipe other fields when called with a partial args array.
  *
+ * Scheme note: home_url() honors is_ssl(), which returns true under LocalWP
+ * (nginx terminates SSL even though the site's siteurl/home option is http).
+ * That would write an https URL into the Products item while sibling items
+ * stay http — clicking Products then triggers a browser cert warning on the
+ * self-signed local cert. We derive the scheme from the 'home' option instead,
+ * so local (http) and production (https with a real cert) both stay consistent
+ * with the rest of the menu.
+ *
  * Uses a transient so the DB write happens at most once per day.
  */
 function myathletik_fix_products_menu_url() {
@@ -361,8 +391,10 @@ function myathletik_fix_products_menu_url() {
 		return;
 	}
 
-	$target_url = home_url( '/#ma-home-categories-title' );
-	$menus      = wp_get_nav_menus();
+	// Build the target URL with the scheme from the 'home' option, not is_ssl().
+	$home_option = trailingslashit( get_option( 'home' ) );
+	$target_url  = $home_option . '#ma-home-categories-title';
+	$menus       = wp_get_nav_menus();
 
 	if ( empty( $menus ) ) {
 		return;
