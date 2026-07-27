@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$hero_garment_a  = get_stylesheet_directory_uri() . '/assets/images/sportswear/hero_bento_a.jpg';
+$hero_garment_a  = get_stylesheet_directory_uri() . '/assets/images/sportswear/hero_bento_a_v2.jpg';
 $hero_garment_d  = get_stylesheet_directory_uri() . '/assets/images/sportswear/hero_bento_d.jpg';
 $hero_sewing     = get_stylesheet_directory_uri() . '/assets/images/production/hero_bento_b.jpg';
 $hero_knitting   = get_stylesheet_directory_uri() . '/assets/images/production/hero_bento_c.jpg';
@@ -42,7 +42,7 @@ $hero_knitting   = get_stylesheet_directory_uri() . '/assets/images/production/h
 		<div class="ma-home-hero__visual" aria-hidden="true">
 			<div class="ma-home-hero__collage">
 				<figure class="ma-bento ma-bento--a">
-					<img src="<?php echo esc_url( $hero_garment_a ); ?>" alt="" width="6007" height="8009" loading="eager" fetchpriority="high">
+					<img src="<?php echo esc_url( $hero_garment_a ); ?>" alt="" width="3868" height="8009" loading="eager" fetchpriority="high">
 				</figure>
 				<figure class="ma-bento ma-bento--b">
 					<img src="<?php echo esc_url( $hero_sewing ); ?>" alt="" width="800" height="800" loading="eager">

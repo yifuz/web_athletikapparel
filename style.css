@@ -550,7 +550,9 @@ body.home .container.grid-container {
   flex-direction: column;
   justify-content: center;
   min-width: 0;
-  max-width: 35rem;
+  /* Was 35rem (560px). Tightened to 30rem so the text column reads as a
+     narrower panel against the now-wider bento collage. */
+  max-width: 30rem;
   padding: var(--ma-space-3) 0;
   color: var(--ma-color-text);
 }
@@ -667,7 +669,11 @@ body.home .container.grid-container {
  */
 .ma-home-hero__collage {
   display: grid;
-  width: min(100%, 30rem);
+  /* Was min(100%, 30rem) = capped at 480px, which left empty space inside
+     the visual column. Tuned to 35rem (560px) as a balance: collage gets
+     ~80px wider than original (so bento_a reads bigger) without pushing
+     client-logos below the fold. */
+  width: min(100%, 35rem);
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 0.6rem;
@@ -784,7 +790,10 @@ body.home .container.grid-container {
 /* --- Desktop: side-by-side --- */
 @media (min-width: 48rem) {
   .ma-home-hero__inner {
-    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    /* Was 0.92fr / 1.08fr (near 50/50). Narrowed the text column and
+       widened the visual column so the bento collage gets more room ¡ª
+       the model image was the tightest element in the hero. */
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
     min-height: clamp(27rem, 50vh, 32rem);
   }
 
