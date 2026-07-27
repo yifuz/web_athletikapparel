@@ -80,11 +80,11 @@
 - **建议**: stage 标题改 `<h3>`，保持 H1 > H2 > H3 层级。
 - **工作量**: 小
 
-### P1-8 联系表单字段无法从代码确认是否含 lead-filtering
+### P1-8 联系表单字段确认（✅ 已关闭）
 - **位置**: `page-contact.php:32`、`template-parts/home/inquiry-cta.php:24`
-- **现状**: 两处都用 `[fluentform id="3"]` shortcode，表单字段在 FluentForm 后台配置，代码层无法验证是否含 sitemap 要求的 budget tier / order quantity / selling channel / website / tech pack 上传字段。
-- **建议**: 需在 WP 后台 FluentForms 确认表单 id=3 的字段配置，确保 lead-filtering 字段存在且必填。
-- **工作量**: 需后台确认
+- **原始审计结论**: 两处都用 `[fluentform id="3"]` shortcode，因此当时无法仅从代码确认后台字段。
+- **当前状态（2026-07-27）**: 已在 FluentForms 后台完成字段审计；前端渲染、Entries 入库及通知邮件均已验证正常。此项完全解决，不再需要用户确认。
+- **工作量**: 已完成
 
 ### P1-9 numbers-proof 区块 "3 continents" 描述与列表不一致
 - **位置**: `template-parts/home/numbers-proof.php:16`
@@ -171,7 +171,7 @@
 5. **P1-7** services stage H2 → H3
 6. **P1-10** hero 图加 aria-label
 
-## 需用户决策的（共 6 项）
+## 原始审计时需用户决策的项目（现已全部关闭）
 1. **P0-2** 社交链接 URL（或隐藏）
 2. **P0-4** 有无博客 / `/blog/` 去留
 3. **P1-1** hero 真实图（用户说暂不换，上线前最终确认）
@@ -179,9 +179,12 @@
 5. **P1-4** style-gallery / partnership 文案
 6. **P1-8** FluentForm 后台确认 + **P1-9** 合作国家口径
 
+以上为 2026-07-03 原始审计记录；截至 2026-07-27 均已完成或关闭，
+不再作为当前待办。
+
 ---
 
-## 复审状态（2026-07-21 代码级核对）
+## 复审状态（2026-07-27 当前状态）
 
 重新逐文件审计了所有 PHP 模板 + functions.php + inc/product-category-data.php
 + style.css。各项当前状态如下（对照 docs/progress.md 的 TODO 列表）：
@@ -189,7 +192,7 @@
 | ID | 原问题 | 当前状态 | 备注 |
 |----|--------|----------|------|
 | P0-1 | process-snapshot 4 死链 | ✅ 已修 | 4 步全部指向 `/services/` |
-| P0-2 | footer 社交链接 `#` | ⚠️ 部分 | Instagram / YouTube 已填真实 URL（`@athletikclothinginc`）；WhatsApp 仍 `#` + `[NEEDS INPUT]`（functions.php:728）。见 progress.md TODO #1 |
+| P0-2 | footer 社交链接 `#` | ✅ 已完全解决 | Instagram / YouTube 使用真实账号；WhatsApp 已指向 `https://wa.me/16044049819`。 |
 | P0-3 | footer `/sitemap/` 死链 | ✅ 已修 | 改为 `/wp-sitemap.xml` |
 | P0-4 | footer `/blog/` 待确认 | ✅ 已修 | `/blog/` 链接已移除；blog 区块在 front-page.php 注释禁用 |
 | P1-1 | hero stock 图 | ✅ 已修 | 换成 4 格 bento 真实图（2 服装 + 缝纫 + 织造）|
@@ -200,17 +203,14 @@
 | P1-6 | 硬编码 hex 值 | ✅ 已修 | :root 新增 `--ma-color-white` / `--ma-color-dark` token |
 | P1-7 | services stage 标题层级 | ✅ 已修 | stage 标题改 `<h3>` |
 | P1-7b | services.php H 标签 bug（修复 P1-7 时引入） | ✅ 已修 | `[PLACEHOLDER]` 已删除；CTA 标题开闭合统一为 `<h2>`；stage 标题补回 `<h3>` 开标签 |
-| P1-8 | 联系表单字段待后台确认 | ⏳ 仍开放 | 需 WP 后台 FluentForms 确认 id=3 字段配置。见 progress.md TODO #2 |
+| P1-8 | 联系表单字段待后台确认 | ✅ 已完全解决 | FluentForm id=3 字段、前端渲染、Entries 入库及通知邮件均已确认正常。 |
 | P1-9 | "3 continents" 口径 / Russia | ✅ 已修 | numbers-proof 改为 "North America, Europe, and Asia-Pacific"，删去 Russia |
 | P1-10 | hero 图无 alt | ✅ 已修 | 改用 `<img>` + alt + width/height |
 
-### 仍需用户输入/决策的项（共 3 项）
-1. **P0-2 残留** WhatsApp URL（或隐藏该图标）— progress.md TODO #1
-2. **P1-8** FluentForm id=3 后台字段配置确认 — progress.md TODO #2
-3. **移除 sustainability 301 重定向** — progress.md TODO #3（用户 2026-07-21 决定不做任何 301）
+### 已无需用户输入
 
-### 已无需处理
-所有其他 P0/P1 项已修复或因架构演进（如 subcategory 系统上线）自动消解。
+P0-2 WhatsApp、P1-8 Contact Form 及 sustainability 301 决策均已关闭。
+当前 QA 表中的 P0/P1 项已全部修复或因架构演进自动消解。
 
 ---
 

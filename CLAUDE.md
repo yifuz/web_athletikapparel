@@ -25,8 +25,9 @@ page-builder site. Claude Code / Codex are expected to do substantial work in
 the theme code. Day-to-day layout/structure changes happen in code; only
 routine text edits happen in the block editor.
 
-- **Platform:** WordPress 7.0 (self-hosted on GoDaddy; developed locally on
-  LocalWP, pushed to staging/production).
+- **Platform:** WordPress 7.0 (hosted on Flywheel; developed locally on
+  LocalWP and deployed with Local Connect). GoDaddy is not part of the
+  current hosting, email, or deployment stack.
 - **Parent theme:** **GeneratePress** (lightweight, developer-oriented, clean
   hook system, strong Core Web Vitals). Do NOT edit the parent theme.
 - **All custom work lives in the child theme `myathletik-child`:**

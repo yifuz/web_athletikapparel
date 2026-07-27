@@ -61,8 +61,8 @@ Note (microcopy under submit, optional):
 ================================================================
 
 **Get in touch**
-- Email: [CONTENT: user to confirm public email, e.g. info@myathletik.com]
-- [CONTENT: user to add phone / WhatsApp / WeChat if desired]
+- Email: info@athletikapparel.com
+- WhatsApp: +1 604 404 9819 (`https://wa.me/16044049819`)
 
 **Our facility**
 - [CONTENT: user to fill in own-facility address — publish the self-owned

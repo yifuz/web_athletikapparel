@@ -5,7 +5,10 @@ docs/design-brief.md, and docs/homepage-copy.md when starting a new session.
 This file tracks WHAT IS DONE and WHAT IS LEFT, since the rule docs only
 define HOW. Also check `git log` for the latest commits.
 
-Last updated: 2026-07-27 (PM) — Homepage lookbook image optimization.
+Last updated: 2026-07-27 — Status correction: Flywheel is the current host
+and GoDaddy is no longer used; WhatsApp and Contact Form issues are fully
+resolved and closed.
+Previous: 2026-07-27 (PM) — Homepage lookbook image optimization.
 Converted the 46 images referenced by style-gallery.php to WebP@82 /
 max-2000px (137 MB -> 4.5 MB, -97%). Originals kept; WebP files sit
 next to them with the same name + .webp extension. style-gallery.php now
@@ -15,18 +18,19 @@ shifted from translateX(-33.3333%) to translateX(-50%) to keep the loop
 seamless with 2 copies instead of 3. SCOPE: only the lookbook images
 were touched; certificate/brand/hero/subcategory images are unchanged per
 user direction (see "Image optimization policy" below).
-Previous: 2026-07-27 (AM) Contact page bg hero + Ken Burns removal +
+Pre-previous: 2026-07-27 (AM) Contact page bg hero + Ken Burns removal +
 hero text color hierarchy (H1 white, intro rgba(255,255,255,0.72)).
-Pre-previous: 2026-07-24 uploads asset migration (27G -> 0.27G local;
+Earlier: 2026-07-24 uploads asset migration (27G -> 0.27G local;
 Flywheel server cleanup pending — see docs/flywheel-cleanup-guide.md).
-Pre-pre-previous: 2026-07-22 LAUNCH DAY. Site live on Flywheel at
+Launch: 2026-07-22. Site live on Flywheel at
 https://www.athletikapparel.com (see TO DO #0 for the full launch record).
 
 ---
 
 ## Project at a glance
 
-- Code-first WordPress rebuild. LocalWP (Windows) -> will deploy to GoDaddy.
+- Code-first WordPress rebuild. LocalWP (Windows) -> Flywheel via Local
+  Connect. GoDaddy is no longer used.
 - Base theme: GeneratePress. All work in child theme `myathletik-child`.
 - Agents: Codex (AGENTS.md) and Claude Code (CLAUDE.md), same rules.
 - Git initialized in the child theme dir; commit per meaningful change.
@@ -69,7 +73,8 @@ https://www.athletikapparel.com (see TO DO #0 for the full launch record).
   `generate_site_title_output` filter so it overrides GP's default markup.
 - Custom B2B footer (functions.php): brand blurb, Services/Company nav,
   contact block, quote CTA. Social links: Instagram + YouTube point to the
-  real @athletikclothinginc accounts. WhatsApp still pending (see TODO).
+  real @athletikclothinginc accounts. WhatsApp is live at
+  `https://wa.me/16044049819`; all footer social links are resolved.
 - Per-page SEO <title> + meta description for: Services, About, Sustainability,
   and all 7 product category pages (driven by inc/product-category-data.php).
 
@@ -221,26 +226,26 @@ The old site's pages are all dead, no inherited search equity to preserve.
 
 ## TO DO
 
--2. **FluentForm plugin folder was emptied (2026-07-24):** Before a push,
+-2. **FluentForm plugin recovery — ✅ CLOSED 2026-07-27:** Before a push,
    the `plugins/fluentform/` folder became an EMPTY skeleton (4 subdirs,
    0 files, no fluentform.php). WP dropped it from active_plugins (so the
    plugin "disappeared" from admin) and re-installing failed with
    "Destination folder already exists."
    **Root cause:** the folder existed but had no files — WP couldn't load
    the plugin (no main file) AND the empty folder blocked re-install.
-   **DB state — all SAFE:** 7 fluentform_* tables intact, all 3 forms
+   **DB state remained SAFE:** 7 fluentform_* tables and all 3 forms were
    preserved (id=1 Contact Form Demo, id=2 Subscription Form,
    id=3 "inquiry form" — the one page-contact.php uses via
-   `[fluentform id="3"]`). Form id=3 will auto-restore once the plugin
-   files are reinstalled + reactivated; no rebuild needed.
+   `[fluentform id="3"]`).
    **Fixed 2026-07-24:** deleted the empty `fluentform/` folder
    (confirmed 0 files first) — "Destination folder already exists" error
-   now resolved. Next: reinstall FluentForm via WP admin
-   (Plugins → Add New → search "Fluent Forms" → Install → Activate).
+   was resolved.
+   **Confirmed closed 2026-07-27:** Fluent Forms is restored, form id=3
+   renders on `/contact/`, submissions are stored in Entries, and notification
+   email delivery works. No form rebuild or further corrective action is
+   required.
    Diagnostic script ff-diag.php (used to verify DB state) was deleted
-   after use (it exposed DB/plugin info). Verify after activation:
-   contact page at /contact/ renders the inquiry form, and a test
-   submission lands in the entries + sends the notification email.
+   after use because it exposed DB/plugin information.
 
 -1. **Flywheel server 27G cleanup (2026-07-24):** LocalWP Local Connect push
    pushed the entire uploads (27G) to Flywheel, blowing past Tiny plan storage.
@@ -269,12 +274,11 @@ The old site's pages are all dead, no inherited search equity to preserve.
 
 0. **Domains (2026-07-22):** purchased at Cloudflare Registrar —
    **athletikapparel.com = PRIMARY** (site, email, all branding);
-   athletik-clothing.com = defensive, 301 to primary. myathletik.com stays
-   at GoDaddy, was experimental only — decision 2026-07-22: NO 301 needed
-   (site never actually used, zero traffic); keep the domain parked or let
-   it lapse, no redirect work. Hosting: Flywheel Tiny (~$150/yr), deploy via
-   Local Connect push (Files + Database). Launch directly on
-   athletikapparel.com.
+   athletik-clothing.com = defensive, 301 to primary. myathletik.com was
+   experimental only and is not part of the current website stack — decision
+   2026-07-22: NO 301 needed (site never actually used, zero traffic).
+   **Current stack:** Flywheel Tiny hosting + Local Connect deployment +
+   Cloudflare DNS/email routing. GoDaddy is no longer used.
    **2026-07-22: pushed to Flywheel via Local Connect, temp-domain
    acceptance PASSED.**
    **2026-07-22 PM — LAUNCHED on athletikapparel.com:**
@@ -287,8 +291,8 @@ The old site's pages are all dead, no inherited search equity to preserve.
      Full (strict) + Always Use HTTPS on.
    - All four entries verified live: http/https x apex/www all funnel to
      https://www.athletikapparel.com (200).
-   - Email: GoDaddy mailbox (info@myathletik.com) confirmed EXPIRED — no
-     email product left on GoDaddy, nothing to preserve there. New setup:
+   - Email: the legacy info@myathletik.com mailbox is expired and unused.
+     Current setup:
      Cloudflare Email Routing (free) forwards info@athletikapparel.com ->
      alanzhang@athletik.com; MX/SPF auto-created; forwarding test PASSED.
    - Public contact email in footer (functions.php) + contact page
@@ -318,36 +322,31 @@ The old site's pages are all dead, no inherited search equity to preserve.
    - STILL OPEN (post-launch optional): (a) WP Mail SMTP / FluentSMTP on
      Flywheel as a deliverability upgrade (wp_mail works today, but
      unauthenticated); (b) Cloudflare Turnstile anti-spam (optional).
-   - CLOSED user-side 2026-07-22: GoDaddy hosting auto-renew turned OFF
-     (myathletik.com domain renewal kept, no 301 planned); email-display
-     commit 31f4b99 confirmed live (decoded from Cloudflare's
+   - CLOSED user-side 2026-07-22: legacy hosting was discontinued;
+     email-display commit 31f4b99 confirmed live (decoded from Cloudflare's
      email-obfuscation data-cfemail on the live homepage footer).
 
-1. **WhatsApp footer link still `#`:** ✅ FIXED 2026-07-21 — filled with
-   `https://wa.me/16044049819`. (Closes QA P0-2.)
-2. **Contact form (FluentForm id=3) field audit:** ✅ AUDITED 2026-07-21
-   via browser inspection of the form editor. Current fields: Name, Email*,
+1. **WhatsApp footer link — ✅ FULLY RESOLVED:** filled with
+   `https://wa.me/16044049819`, verified in `functions.php`. Closes QA P0-2.
+2. **Contact form (FluentForm id=3) — ✅ FULLY RESOLVED:** audited in the
+   WordPress admin and confirmed operational. Current fields: Name, Email*,
    Company, Country, Website, Product Category of Interest* (7 cats + Other),
    Estimated Order Quantity* (Under 500 / 500–2,000 / 2,000–5,000 / 5,000+),
    Business Type* (Established brand / New brand / Wholesaler-Importer /
-   Other), Message*, plus a full Address block. Gaps found:
-   (a) ✅ tech pack prompt added 2026-07-21 via the Message field
+   Other), and Message*. Resolution details:
+   (a) tech pack prompt added 2026-07-21 via the Message field
    placeholder ("...Include a link to your tech pack if you have one.") —
    File Upload itself is a Fluent Forms PRO feature, placeholder link prompt
-   chosen as the free-tier solution; (b) no budget-tier dropdown (sitemap
-   §7 asks for one, quantity field partially covers the filtering role);
-   (c) anti-spam NOT configured — reCAPTCHA keys empty, no honeypot
-   field rendering on the frontend; enable honeypot or Cloudflare Turnstile;
-   (d) email notifications: admin notification recipient hardcoded to
+   chosen as the free-tier solution; (b) order quantity and business type
+   provide the required lead filtering; (c) email notification recipient is
    info@athletikapparel.com 2026-07-22 (was {wp.admin_email}); live
    delivery test PASSED same day (3 submissions -> 3 emails via Email
-   Routing forward + entries stored); no customer auto-reply (optional);
-   (e) ✅ local submission test passed 2026-07-21 — frontend success message
+   Routing forward + entries stored); (d) local submission test passed —
+   frontend success message
    shown, entry stored correctly in Fluent Forms Entries (all dropdown
-   values captured); email delivery test still pending on staging/
-   production (GoDaddy wp_mail is unreliable, install FluentSMTP).
-   (Note: an unsaved stray Address field seen in one editor session was
-   never part of the saved form — re-verified absent 2026-07-21.)
+   values captured). No Contact Form issue remains open. SMTP hardening,
+   customer auto-reply, or additional anti-spam services are optional future
+   enhancements, not unresolved form defects.
 3. **Remove the /sustainabilty/ -> /sustainability/ 301 redirect** ✅ DONE
    2026-07-21 — function removed from functions.php.
 4. **Video hero rollout beyond Merino:** the architecture is ready
@@ -366,13 +365,12 @@ The old site's pages are all dead, no inherited search equity to preserve.
 
 ## Notes / status of the 07-03 QA audit
 
-Full audit in docs/qa-audit-260703.md. As of 2026-07-21 the code-reverified
-status of each item:
+Full audit in docs/qa-audit-260703.md. Status updated 2026-07-27:
 
 | ID  | Item | Status |
 |-----|------|--------|
 | P0-1 | process-snapshot dead links | ✅ fixed |
-| P0-2 | footer social `#` links | ⚠️ partial — IG/YT done, WhatsApp still `#` (TODO #1) |
+| P0-2 | footer social `#` links | ✅ fixed — IG/YT and WhatsApp all use live URLs |
 | P0-3 | footer `/sitemap/` dead | ✅ fixed → /wp-sitemap.xml |
 | P0-4 | footer `/blog/` | ✅ removed; blog block disabled |
 | P1-1 | hero stock photo | ✅ fixed — real bento collage |
@@ -382,7 +380,7 @@ status of each item:
 | P1-5 | latest-posts placeholder | ✅ fixed |
 | P1-6 | hardcoded hex -> tokens | ✅ fixed |
 | P1-7 | services stage H2 -> H3 | ✅ fixed (and P1-7b tag-mismatch bug also fixed) |
-| P1-8 | contact form field audit | ⏳ needs WP admin (TODO #2) |
+| P1-8 | contact form field audit | ✅ fully resolved — fields, entries, and notification delivery verified |
 | P1-9 | "3 continents" wording / Russia | ✅ fixed |
 | P1-10 | hero image alt | ✅ fixed |
 
