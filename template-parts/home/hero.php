@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$hero_garment_a  = get_stylesheet_directory_uri() . '/assets/images/sportswear/hero_bento_a_v2.jpg';
+$hero_garment_a  = get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-knitwear-campaign-4x7-2160x3780.png';
 $hero_garment_d  = get_stylesheet_directory_uri() . '/assets/images/sportswear/hero_bento_d.jpg';
 $hero_sewing     = get_stylesheet_directory_uri() . '/assets/images/production/hero_bento_b.jpg';
 $hero_knitting   = get_stylesheet_directory_uri() . '/assets/images/production/hero_bento_c.jpg';
@@ -20,8 +20,8 @@ $hero_knitting   = get_stylesheet_directory_uri() . '/assets/images/production/h
 		<div class="ma-home-hero__content">
 			<p class="ma-home-hero__eyebrow"><?php esc_html_e( 'Technical knitwear OEM/ODM partner', 'myathletik-child' ); ?></p>
 			<h1 class="ma-home-hero__title">
-				<span><?php esc_html_e( 'Technical Knitwear', 'myathletik-child' ); ?></span>
-				<span><?php esc_html_e( 'Manufacturing Partner', 'myathletik-child' ); ?></span>
+				<span><?php esc_html_e( 'Performance Knitwear', 'myathletik-child' ); ?></span>
+				<span><?php esc_html_e( 'Manufacturer', 'myathletik-child' ); ?></span>
 			</h1>
 			<p class="ma-home-hero__subhead"><?php esc_html_e( 'From yarn and fabric development to finished garments, we support underwear, sportswear, outdoor, and performance knitwear programs with integrated production and technical sewing capabilities.', 'myathletik-child' ); ?></p>
 			<div class="ma-home-hero__actions" aria-label="<?php esc_attr_e( 'Primary homepage actions', 'myathletik-child' ); ?>">
@@ -42,7 +42,7 @@ $hero_knitting   = get_stylesheet_directory_uri() . '/assets/images/production/h
 		<div class="ma-home-hero__visual" aria-hidden="true">
 			<div class="ma-home-hero__collage">
 				<figure class="ma-bento ma-bento--a">
-					<img src="<?php echo esc_url( $hero_garment_a ); ?>" alt="" width="3868" height="8009" loading="eager" fetchpriority="high">
+					<img src="<?php echo esc_url( $hero_garment_a ); ?>" alt="" width="2160" height="3780" loading="eager" fetchpriority="high">
 				</figure>
 				<figure class="ma-bento ma-bento--b">
 					<img src="<?php echo esc_url( $hero_sewing ); ?>" alt="" width="800" height="800" loading="eager">

@@ -584,10 +584,13 @@ body.home .container.grid-container {
   color: var(--ma-color-text);
   font-family: var(--ma-font-head);
   max-width: 18ch;
-  font-size: clamp(2.15rem, 4.3vw, 3.45rem);
+  /* Was clamp(2.15rem, 4.3vw, 3.45rem). Upper cap lowered to 2.9rem so the
+     first line ("Performance Knitwear") stays on one line without crowding
+     the 30rem text panel. Mid and floor kept responsive. */
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
   font-weight: 600;
   letter-spacing: 0;
-  line-height: 1.03;
+  line-height: 1.05;
 }
 
 .ma-home-hero__title span {
@@ -674,7 +677,9 @@ body.home .container.grid-container {
      ~80px wider than original (so bento_a reads bigger) without pushing
      client-logos below the fold. */
   width: min(100%, 35rem);
-  grid-template-columns: 1.5fr 1fr;
+  /* 1.75:1 makes the full-height A card approximately 4:7 while preserving
+     three near-square manufacturing/product cards in the right column. */
+  grid-template-columns: 1.75fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 0.6rem;
 }
@@ -795,6 +800,13 @@ body.home .container.grid-container {
        the model image was the tightest element in the hero. */
     grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
     min-height: clamp(27rem, 50vh, 32rem);
+  }
+
+  /* Reduce internal whitespace without distorting the model. Bottom-center
+     anchoring keeps the shoes stable while trimming the top and side space. */
+  .ma-bento--a img {
+    transform: scale(1.15);
+    transform-origin: center bottom;
   }
 
   .ma-home-hero__subhead {

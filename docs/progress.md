@@ -5,10 +5,21 @@ docs/design-brief.md, and docs/homepage-copy.md when starting a new session.
 This file tracks WHAT IS DONE and WHAT IS LEFT, since the rule docs only
 define HOW. Also check `git log` for the latest commits.
 
-Last updated: 2026-07-27 — Status correction: Flywheel is the current host
+Last updated: 2026-07-27 (PM) — Homepage Hero copy and Bento A visual finalized.
+Eyebrow = "Technical knitwear OEM/ODM partner"; H1 = "Performance Knitwear" /
+"Manufacturer". Bento A now uses the approved 4:7 campaign image
+`sportswear/performance-knitwear-campaign-4x7-2160x3780.png` (2160 × 3780,
+full-resolution PNG). The desktop Bento grid was widened from 1.5:1 to
+1.75:1 so the A card renders close to 4:7, and the image is uniformly scaled
+to 1.15 from the bottom center to reduce internal whitespace without
+distorting the model. Mobile keeps the existing 16:10 A-card layout.
+The image lives in uploads and is not carried by Git; transfer it separately
+with uploads when deploying. Current source size is ~4.97 MB, so web delivery
+optimization remains a separate follow-up after the visual lock.
+Previous: 2026-07-27 — Status correction: Flywheel is the current host
 and GoDaddy is no longer used; WhatsApp and Contact Form issues are fully
 resolved and closed.
-Previous: 2026-07-27 (PM) — Homepage lookbook image optimization.
+Earlier: 2026-07-27 (PM) — Homepage lookbook image optimization.
 Converted the 46 images referenced by style-gallery.php to WebP@82 /
 max-2000px (137 MB -> 4.5 MB, -97%). Originals kept; WebP files sit
 next to them with the same name + .webp extension. style-gallery.php now
@@ -83,8 +94,9 @@ Block order: hero, client-logos, product-categories, capability-proof,
 why-myathletik, style-gallery, numbers-proof, process-snapshot,
 partnership-trust, certifications, inquiry-cta.
 (latest-posts is commented out — no posts yet.)
-- Hero: 4-cell bento collage of real photos (2 sportswear garments + sewing +
-  knitting). Stock pexels photo removed. <img> with alt/width/height, eager.
+- Hero: 4-cell bento collage (approved 4:7 campaign model image + sportswear
+  garment + sewing + knitting). Stock pexels photo removed. Bento A uses
+  correct width/height, eager loading, and `fetchpriority="high"`.
 - Client logo marquee: full-bleed seamless auto-scroll, grayscale with
   color-on-hover. Clients all authorized.
 - Product-categories grid: REBUILT as 3-tier Bento (v2). Sportswear is the
@@ -419,7 +431,7 @@ or regenerating images — do NOT apply a blanket rule across all folders.
 | **Brand partner logos** (`brand-partner/`) | **Unchanged.** | Logos are sharp flat graphics; converting would blur edges. |
 | **Hero banners** (`contact/` `services/` `sustainable/` + `production/工厂全景.png`) | **Unchanged.** Keep full resolution. | Full-bleed background needs high clarity; user explicitly wanted these preserved. |
 | **Product-page subcategory images** (~27 files across category folders) | **Unchanged.** | These are decision-critical close-ups; user wanted them kept as-is. |
-| **Homepage hero bento** (`sportswear/hero_bento_*`, `production/hero_bento_*`) | **Already optimal.** Pre-sized to exact display dimensions in a prior pass (largest is 150 KB). | No action needed. |
+| **Homepage hero bento** (`sportswear/performance-knitwear-campaign-4x7-2160x3780.png`, remaining `sportswear/hero_bento_*` and `production/hero_bento_*`) | **Bento A adopted at full resolution; delivery optimization pending.** Keep the approved PNG original. Other three cells remain pre-sized and lightweight. | Bento A is visually locked at 4:7 with CSS scale 1.15 but is ~4.97 MB; optimize its served version separately before the next production asset sync without changing the approved source. |
 
 When adding a NEW image: identify which group it belongs to from the table
 above and apply that group's rule. If it doesn't fit any group, ASK before
