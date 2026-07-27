@@ -5,16 +5,21 @@ docs/design-brief.md, and docs/homepage-copy.md when starting a new session.
 This file tracks WHAT IS DONE and WHAT IS LEFT, since the rule docs only
 define HOW. Also check `git log` for the latest commits.
 
-Last updated: 2026-07-27 — Contact page gets a full-bleed background hero
-(sample-room photo); Ken Burns animation REMOVED from all 4 bg heroes
-(About/Services/Sustainability/Contact) after it failed to render reliably
-across browsers — replaced with a static `transform: scale(1.04)` zoom so
-the photo still has depth without relying on motion. Hero text colour
-hierarchy tightened: H1 pure white, intro paragraph soft grey-white
-`rgba(255,255,255,0.72)` so the title reads as the primary element.
-Previous: 2026-07-24 uploads asset migration (27G -> 0.27G local;
+Last updated: 2026-07-27 (PM) — Homepage lookbook image optimization.
+Converted the 46 images referenced by style-gallery.php to WebP@82 /
+max-2000px (137 MB -> 4.5 MB, -97%). Originals kept; WebP files sit
+next to them with the same name + .webp extension. style-gallery.php now
+emits <picture> with a WebP <source> + JPG/PNG <img> fallback. Marquee
+node count cut from 138 to 92 (46 × 3 -> 46 × 2) and the scroll keyframe
+shifted from translateX(-33.3333%) to translateX(-50%) to keep the loop
+seamless with 2 copies instead of 3. SCOPE: only the lookbook images
+were touched; certificate/brand/hero/subcategory images are unchanged per
+user direction (see "Image optimization policy" below).
+Previous: 2026-07-27 (AM) Contact page bg hero + Ken Burns removal +
+hero text color hierarchy (H1 white, intro rgba(255,255,255,0.72)).
+Pre-previous: 2026-07-24 uploads asset migration (27G -> 0.27G local;
 Flywheel server cleanup pending — see docs/flywheel-cleanup-guide.md).
-Pre-previous: 2026-07-22 LAUNCH DAY. Site live on Flywheel at
+Pre-pre-previous: 2026-07-22 LAUNCH DAY. Site live on Flywheel at
 https://www.athletikapparel.com (see TO DO #0 for the full launch record).
 
 ---
@@ -144,9 +149,39 @@ partnership-trust, certifications, inquiry-cta.
   wanted later, use a JS (IntersectionObserver + rAF) approach instead.
 - **Hero text colour hierarchy (2026-07-27):** H1 = pure white
   (`--ma-color-white`); intro paragraph = soft grey-white
-  `rgba(255,255,255,0.72)` so the title reads as the primary element. An
-  earlier attempt used warm cream `#e8ddc9`, which read too gold against the
-  photo and was rejected.
+  `rgba(255,255,255,0.65)` so the title reads as the primary element.
+  Tuning sequence: started at `rgba(255,255,255,0.82)` (too close to H1),
+  tried 0.72, settled on **0.65** per user preference for maximum title
+  emphasis. An earlier attempt used warm cream `#e8ddc9`, which read too
+  gold against the photo and was rejected. All 4 bg heroes (About/Services/
+  Sustainability/Contact) use 0.65.
+
+### Homepage lookbook — WebP + node optimization (2026-07-27 PM)
+- The 46 images referenced by `template-parts/home/style-gallery.php` were
+  converted to **WebP @ quality 82, max edge 2000px**. Total payload
+  dropped from **137 MB to 4.5 MB (-97%)**. Originals are kept untouched;
+  the WebP files live next to them with the same basename + `.webp`
+  extension (e.g. `sportswear/1U128570.jpg` + `sportswear/1U128570.webp`).
+- `style-gallery.php` now emits `<picture>` with a `<source type="image/webp">`
+  followed by the original JPG/PNG `<img>` as fallback. Browsers that
+  support WebP (all modern ones) fetch the WebP; old browsers fall back.
+  `loading="lazy"` and `decoding="async"` are set on the `<img>`.
+- **Marquee node count cut 138 -> 92.** The PHP loop previously rendered
+  the 46-image set 3 times (`for $set < 3`) with a keyframe of
+  `translateX(-33.3333%)`. Reduced to 2 copies + `translateX(-50%)` — the
+  loop stays seamless (copy 2 picks up exactly where copy 1 ends) while
+  shedding a third of the DOM nodes and decode work.
+- Conversion was done with `sharp` 0.35.3 (Node), installed to a temp dir
+  outside the repo. No build step is wired into the theme; if more images
+  need converting later, re-run a one-off script (do NOT commit sharp into
+  the repo — it is a dev-only tool).
+- **Quality 82 chosen after a 5-sample A/B/B compare** (sportswear-max,
+  merino, underwear, silkwear, contact-hero). User reviewed the compare
+  page (`/webp-compare/compare.html`, served locally) and judged q82
+  visually acceptable; q78 was rejected as slightly too lossy.
+- Verified in browser: 92 `<picture>` + 92 `<source type="image/webp">`
+  nodes render on the homepage; first card's `<source srcset>` points to
+  the `.webp` and `<img src>` to the `.jpg` fallback as expected.
 
 ### Other pages
 - Services: page-services.php, single overview, 4-stage process strip.
@@ -373,6 +408,29 @@ status of each item:
   that file into the matching folder under
   `uploads/myathletik-theme/assets/images/`. Do NOT copy it into the theme
   dir (404) and do NOT bulk-dump unused assets into uploads (server bloat).
+
+## Image optimization policy (decision: 2026-07-27)
+
+Different image groups get different treatment. Respect this when adding
+or regenerating images — do NOT apply a blanket rule across all folders.
+
+| Group | Treatment | Why |
+|-------|-----------|-----|
+| **Homepage lookbook** (`sportswear/` `underwear/` `silkwear/` `merino wool product/` `outdoor clothing/` — only the files referenced by `style-gallery.php`) | **WebP @ q82, max edge 2000px**, served via `<picture>` + JPG fallback. Done 2026-07-27. | 46 images scroll in a marquee — payload matters; q82 judged visually acceptable in A/B compare. |
+| **Certificates** (`audit&certificates/`) | **Unchanged.** No WebP, no resize. | Small text on cert scans would suffer; tiny files anyway. |
+| **Brand partner logos** (`brand-partner/`) | **Unchanged.** | Logos are sharp flat graphics; converting would blur edges. |
+| **Hero banners** (`contact/` `services/` `sustainable/` + `production/工厂全景.png`) | **Unchanged.** Keep full resolution. | Full-bleed background needs high clarity; user explicitly wanted these preserved. |
+| **Product-page subcategory images** (~27 files across category folders) | **Unchanged.** | These are decision-critical close-ups; user wanted them kept as-is. |
+| **Homepage hero bento** (`sportswear/hero_bento_*`, `production/hero_bento_*`) | **Already optimal.** Pre-sized to exact display dimensions in a prior pass (largest is 150 KB). | No action needed. |
+
+When adding a NEW image: identify which group it belongs to from the table
+above and apply that group's rule. If it doesn't fit any group, ASK before
+converting — the user makes per-group calls, not the agent.
+
+When converting: keep the original (do NOT delete), emit the WebP next to
+it with the same basename, and use `<picture>` with a JPG/PNG fallback.
+Never wire a build step into the theme — conversion is a one-off `sharp`
+script run outside the repo.
 
 ## Notes / gotchas learned
 

@@ -119,12 +119,22 @@ $gallery_columns = array(
 
 	<div class="ma-style-marquee" aria-label="<?php esc_attr_e( 'Scrolling product and model image gallery', 'myathletik-child' ); ?>">
 		<div class="ma-style-marquee__track">
-			<?php for ( $set = 0; $set < 3; $set++ ) : ?>
+			<?php for ( $set = 0; $set < 2; $set++ ) : ?>
 				<?php foreach ( $gallery_columns as $column ) : ?>
 					<div class="ma-style-column">
 						<?php foreach ( $column as $image ) : ?>
 							<figure class="ma-style-card ma-style-card--<?php echo esc_attr( $image['size'] ); ?>">
-								<img src="<?php echo esc_url( $image_base . $image['file'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy">
+								<?php
+								// WebP 优先,JPG/PNG fallback(老浏览器)。WebP 由构建脚本预生成,
+								// 与原图同目录同名,扩展名 .webp。$image['file'] 仍是原始 JPG/PNG 路径。
+								$file_path  = $image['file'];
+								$file_ext   = pathinfo( $file_path, PATHINFO_EXTENSION );
+								$webp_path  = substr( $file_path, 0, -strlen( $file_ext ) ) . 'webp';
+								?>
+								<picture>
+									<source type="image/webp" srcset="<?php echo esc_url( $image_base . $webp_path ); ?>">
+									<img src="<?php echo esc_url( $image_base . $file_path ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy" decoding="async">
+								</picture>
 							</figure>
 						<?php endforeach; ?>
 					</div>
