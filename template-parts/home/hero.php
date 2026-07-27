@@ -42,7 +42,7 @@ $hero_knitting   = get_stylesheet_directory_uri() . '/assets/images/production/h
 		<div class="ma-home-hero__visual" aria-hidden="true">
 			<div class="ma-home-hero__collage">
 				<figure class="ma-bento ma-bento--a">
-					<img src="<?php echo esc_url( $hero_garment_a ); ?>" alt="" width="1280" height="1120" loading="eager">
+					<img src="<?php echo esc_url( $hero_garment_a ); ?>" alt="" width="6007" height="8009" loading="eager" fetchpriority="high">
 				</figure>
 				<figure class="ma-bento ma-bento--b">
 					<img src="<?php echo esc_url( $hero_sewing ); ?>" alt="" width="800" height="800" loading="eager">
