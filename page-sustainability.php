@@ -87,10 +87,14 @@ $sustainable_fabrics = array(
 );
 
 get_header();
+
+$sustainability_hero_image = get_stylesheet_directory_uri() . '/assets/images/sustainable/hero.png';
 ?>
 
 <main id="primary" class="site-main ma-sustainability-page">
-	<section class="ma-sustainability-hero" aria-labelledby="ma-sustainability-title">
+	<section class="ma-sustainability-hero ma-sustainability-hero--bg" aria-labelledby="ma-sustainability-title">
+		<img class="ma-sustainability-hero__bg" src="<?php echo esc_url( $sustainability_hero_image ); ?>" alt="<?php esc_attr_e( 'Natural and recycled fibers for sustainable knitwear manufacturing', 'myathletik-child' ); ?>" loading="eager">
+		<div class="ma-sustainability-hero__overlay" aria-hidden="true"></div>
 		<div class="ma-section-inner">
 			<p class="ma-section-kicker"><?php esc_html_e( 'Materials, compliance & traceability', 'myathletik-child' ); ?></p>
 			<h1 id="ma-sustainability-title"><?php esc_html_e( 'Sustainability', 'myathletik-child' ); ?></h1>

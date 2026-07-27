@@ -2047,8 +2047,69 @@ body.page .container.grid-container:has(.ma-contact-page) {
 }
 
 .ma-contact-hero {
+  position: relative;
   padding: var(--ma-space-6) 0 var(--ma-space-5);
   background: var(--ma-color-surface);
+  overflow: hidden;
+}
+
+/* --- Full-bleed background hero variant (Contact) --- */
+/* Same pattern as Services / Sustainability / About:
+   <img> covers the section, dark gradient overlay on the left, white
+   left-aligned text. Ken Burns zooms slowly to add depth. */
+.ma-contact-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  /* Ken Burns animation removed ¡ª did not render reliably across browsers in
+     testing. A slight static zoom keeps depth without relying on motion. */
+  transform: scale(1.04);
+}
+
+.ma-contact-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg,
+      rgba(12, 11, 10, 0.82) 0%,
+      rgba(12, 11, 10, 0.55) 40%,
+      rgba(12, 11, 10, 0.15) 100%),
+    linear-gradient(180deg,
+      rgba(12, 11, 10, 0.3) 0%,
+      rgba(12, 11, 10, 0.1) 30%,
+      rgba(12, 11, 10, 0.55) 100%);
+}
+
+/* Lift content above overlay; flip text to light. Note: both .ma-contact-hero
+   and .ma-contact-hero--bg live on the SAME <section>, so chain them to raise
+   specificity above the default .ma-contact-hero h1 / p rules below. */
+.ma-contact-hero.ma-contact-hero--bg .ma-section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.ma-contact-hero.ma-contact-hero--bg .ma-section-kicker {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ma-contact-hero.ma-contact-hero--bg h1 {
+  color: var(--ma-color-white);
+}
+
+/* Intro paragraph uses a softer grey-white so it visually separates from
+   the pure-white H1 ¡ª the previous version used the same white and looked flat. */
+.ma-contact-hero.ma-contact-hero--bg .ma-contact-hero__intro {
+  color: rgba(255, 255, 255, 0.65); /* soft grey-white, distinct from pure-white H1 */
+  max-width: 44rem;
+}
+
+.ma-contact-hero--bg {
+  padding: clamp(4.5rem, 9vw, 7rem) 0;
 }
 
 .ma-contact-hero h1 {
@@ -2231,8 +2292,63 @@ body.page .container.grid-container:has(.ma-services-page) {
 }
 
 .ma-services-hero {
+  position: relative;
   padding: var(--ma-space-6) 0 var(--ma-space-5);
   background: var(--ma-color-surface);
+  overflow: hidden;
+}
+
+/* --- Full-bleed background hero variant (Services) --- */
+.ma-services-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  /* Ken Burns removed; static zoom keeps depth. */
+  transform: scale(1.04);
+}
+
+.ma-services-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg,
+      rgba(12, 11, 10, 0.82) 0%,
+      rgba(12, 11, 10, 0.55) 40%,
+      rgba(12, 11, 10, 0.15) 100%),
+    linear-gradient(180deg,
+      rgba(12, 11, 10, 0.3) 0%,
+      rgba(12, 11, 10, 0.1) 30%,
+      rgba(12, 11, 10, 0.55) 100%);
+}
+
+/* Lift content above the overlay; cap width on wide screens.
+   Chain both classes on the <section> ( specificity 0,2,1 ) so these win
+   over the default .ma-services-hero h1/p rules below. */
+.ma-services-hero.ma-services-hero--bg .ma-section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.ma-services-hero.ma-services-hero--bg .ma-section-kicker {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ma-services-hero.ma-services-hero--bg h1 {
+  color: var(--ma-color-white);
+}
+
+.ma-services-hero.ma-services-hero--bg p:not(.ma-section-kicker) {
+  color: rgba(255, 255, 255, 0.65); /* soft grey-white, distinct from pure-white H1 */
+  max-width: 44rem;
+}
+
+.ma-services-hero--bg {
+  padding: clamp(4.5rem, 9vw, 7rem) 0;
 }
 
 .ma-services-hero h1 {
@@ -2404,8 +2520,81 @@ body.page .container.grid-container:has(.ma-about-page) {
 }
 
 .ma-about-hero {
+  position: relative;
   padding: var(--ma-space-6) 0 var(--ma-space-5);
   background: var(--ma-color-surface);
+  overflow: hidden;
+}
+
+/* --- Full-bleed background hero variant --- */
+/* The <img> fills the hero section as a background, with a left-dark
+   gradient overlay so the left-aligned text reads on any image.
+   Ken Burns: slow zoom-in with a slight pan, loops infinitely.
+   Note: initial transform lives INSIDE @keyframes 0% (not on the element)
+   so the animation reliably controls it end-to-end. */
+.ma-about-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  /* Ken Burns removed; static zoom keeps depth. */
+  transform: scale(1.04);
+}
+
+/* Pause the animation if the user prefers reduced motion. */
+
+.ma-about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  /* Same overlay params as the product-page video hero (proven readable). */
+  background:
+    linear-gradient(90deg,
+      rgba(12, 11, 10, 0.82) 0%,
+      rgba(12, 11, 10, 0.55) 40%,
+      rgba(12, 11, 10, 0.15) 100%),
+    linear-gradient(180deg,
+      rgba(12, 11, 10, 0.3) 0%,
+      rgba(12, 11, 10, 0.1) 30%,
+      rgba(12, 11, 10, 0.55) 100%);
+}
+
+/* When the bg variant is active, content sits above overlay and text flips light. */
+.ma-about-hero--bg .ma-about-hero__grid {
+  position: relative;
+  z-index: 2;
+  /* Single column on bg variant (image moved to background, no right slot). */
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Cap the copy width so it doesn't span the full hero on wide screens. */
+.ma-about-hero--bg .ma-about-hero__copy {
+  max-width: 44rem;
+}
+
+/* Readability comes from the dark overlay, not text shadows ¡ª same approach
+   as the product-page video hero. */
+/* Note: both .ma-about-hero and .ma-about-hero--bg live on the SAME <section>.
+   We chain the two classes on the section to raise specificity above the
+   default .ma-about-hero h1 / p rules (which appear later in this file). */
+.ma-about-hero.ma-about-hero--bg .ma-section-kicker {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ma-about-hero.ma-about-hero--bg h1 {
+  color: var(--ma-color-white);
+}
+
+.ma-about-hero.ma-about-hero--bg p:not(.ma-section-kicker) {
+  color: rgba(255, 255, 255, 0.65); /* soft grey-white, distinct from pure-white H1 */
+}
+
+/* On the bg variant, lift vertical padding so the hero feels taller. */
+.ma-about-hero--bg {
+  padding: clamp(4.5rem, 9vw, 7rem) 0;
 }
 
 .ma-about-hero__grid,
@@ -2557,7 +2746,8 @@ body.page .container.grid-container:has(.ma-about-page) {
 }
 
 @media (min-width: 64rem) {
-  .ma-about-hero__grid {
+  /* Two-column hero only on the non-bg variant (the bg variant is single-column). */
+  .ma-about-hero:not(.ma-about-hero--bg) .ma-about-hero__grid {
     grid-template-columns: minmax(0, 0.85fr) minmax(30rem, 1.15fr);
   }
 
@@ -2599,8 +2789,60 @@ body.page .container.grid-container:has(.ma-sustainability-page) {
 }
 
 .ma-sustainability-hero {
+  position: relative;
   padding: var(--ma-space-6) 0 var(--ma-space-5);
   background: var(--ma-color-surface);
+  overflow: hidden;
+}
+
+/* --- Full-bleed background hero variant (Sustainability) --- */
+.ma-sustainability-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  /* Ken Burns removed; static zoom keeps depth. */
+  transform: scale(1.04);
+}
+
+.ma-sustainability-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg,
+      rgba(12, 11, 10, 0.82) 0%,
+      rgba(12, 11, 10, 0.55) 40%,
+      rgba(12, 11, 10, 0.15) 100%),
+    linear-gradient(180deg,
+      rgba(12, 11, 10, 0.3) 0%,
+      rgba(12, 11, 10, 0.1) 30%,
+      rgba(12, 11, 10, 0.55) 100%);
+}
+
+.ma-sustainability-hero.ma-sustainability-hero--bg .ma-section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.ma-sustainability-hero.ma-sustainability-hero--bg .ma-section-kicker {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ma-sustainability-hero.ma-sustainability-hero--bg h1 {
+  color: var(--ma-color-white);
+}
+
+.ma-sustainability-hero.ma-sustainability-hero--bg p:not(.ma-section-kicker) {
+  color: rgba(255, 255, 255, 0.65); /* soft grey-white, distinct from pure-white H1 */
+  max-width: 44rem;
+}
+
+.ma-sustainability-hero--bg {
+  padding: clamp(4.5rem, 9vw, 7rem) 0;
 }
 
 .ma-sustainability-hero h1 {

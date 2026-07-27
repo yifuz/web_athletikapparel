@@ -35,16 +35,15 @@ get_header();
 ?>
 
 <main id="primary" class="site-main ma-about-page">
-	<section class="ma-about-hero" aria-labelledby="ma-about-title">
+	<section class="ma-about-hero ma-about-hero--bg" aria-labelledby="ma-about-title">
+		<img class="ma-about-hero__bg" src="<?php echo esc_url( $about_hero_image ); ?>" alt="<?php esc_attr_e( 'Athletik Clothing facility exterior in Zhangjiagang', 'myathletik-child' ); ?>" loading="eager">
+		<div class="ma-about-hero__overlay" aria-hidden="true"></div>
 		<div class="ma-section-inner ma-about-hero__grid">
 			<div class="ma-about-hero__copy">
 				<p class="ma-section-kicker"><?php esc_html_e( 'About Athletik', 'myathletik-child' ); ?></p>
 				<h1 id="ma-about-title"><?php esc_html_e( 'About Us', 'myathletik-child' ); ?></h1>
 				<p><?php esc_html_e( 'Athletik Clothing is a vertically integrated OEM/ODM manufacturer of technical knitwear, based in the Zhangjiagang / Suzhou area of China. For more than 15 years, we have produced full-package underwear, sportswear, outdoor clothing, and knitted fabrics for performance brands around the world, built on specialized flatlock and activeseam construction.', 'myathletik-child' ); ?></p>
 			</div>
-			<figure class="ma-about-image-slot">
-				<img src="<?php echo esc_url( $about_hero_image ); ?>" alt="<?php esc_attr_e( 'Athletik Clothing facility exterior in Zhangjiagang', 'myathletik-child' ); ?>" loading="lazy">
-			</figure>
 		</div>
 	</section>
 

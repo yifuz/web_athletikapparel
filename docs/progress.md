@@ -5,9 +5,16 @@ docs/design-brief.md, and docs/homepage-copy.md when starting a new session.
 This file tracks WHAT IS DONE and WHAT IS LEFT, since the rule docs only
 define HOW. Also check `git log` for the latest commits.
 
-Last updated: 2026-07-24 — uploads asset migration (27G -> 0.27G local;
+Last updated: 2026-07-27 — Contact page gets a full-bleed background hero
+(sample-room photo); Ken Burns animation REMOVED from all 4 bg heroes
+(About/Services/Sustainability/Contact) after it failed to render reliably
+across browsers — replaced with a static `transform: scale(1.04)` zoom so
+the photo still has depth without relying on motion. Hero text colour
+hierarchy tightened: H1 pure white, intro paragraph soft grey-white
+`rgba(255,255,255,0.72)` so the title reads as the primary element.
+Previous: 2026-07-24 uploads asset migration (27G -> 0.27G local;
 Flywheel server cleanup pending — see docs/flywheel-cleanup-guide.md).
-Previous: 2026-07-22 LAUNCH DAY. Site live on Flywheel at
+Pre-previous: 2026-07-22 LAUNCH DAY. Site live on Flywheel at
 https://www.athletikapparel.com (see TO DO #0 for the full launch record).
 
 ---
@@ -119,11 +126,34 @@ partnership-trust, certifications, inquiry-cta.
   surface-color hero. Prototype on Merino; other categories pending video
   assets.
 
+### Background-image heroes (About / Services / Sustainability / Contact)
+- All four non-product landing pages use the same full-bleed `<img>` hero
+  pattern: a cover-fit photo, a left-dark/right-transparent gradient overlay
+  for text legibility, white H1, and a soft grey-white intro paragraph.
+- Photos: About = production/工厂全景.png; Services = services/hero.png;
+  Sustainability = sustainable/hero.png; Contact = contact/hero.png
+  (sample-room photo, added 2026-07-27).
+- **Ken Burns animation REMOVED 2026-07-27.** The CSS `@keyframes` zoom had
+  been written (scale 1->1.12 over 24s) but never rendered reliably across
+  browsers in user testing — even at exaggerated debug params (3s / scale
+  1.5) nothing visibly moved. Rather than chase the cause, the animation was
+  dropped entirely; heroes now use a static `transform: scale(1.04)` so the
+  photo still fills the frame with a touch of depth. The `prefers-reduced-
+  motion` fallbacks were removed at the same time (no animation -> no
+  fallback needed). Do NOT reintroduce CSS Ken Burns here; if motion is
+  wanted later, use a JS (IntersectionObserver + rAF) approach instead.
+- **Hero text colour hierarchy (2026-07-27):** H1 = pure white
+  (`--ma-color-white`); intro paragraph = soft grey-white
+  `rgba(255,255,255,0.72)` so the title reads as the primary element. An
+  earlier attempt used warm cream `#e8ddc9`, which read too gold against the
+  photo and was rejected.
+
 ### Other pages
 - Services: page-services.php, single overview, 4-stage process strip.
   H-tag bug (P1-7b: broken `<h3>` open + `<h2>...</h3>` mismatch) FIXED.
 - About Us: page-about-us.php.
-- Contact: page-contact.php (FluentForm shortcode id=3).
+- Contact: page-contact.php — full-bleed background hero (sample-room photo,
+  contact/hero.png, 2026-07-27) + FluentForm shortcode id=3.
 - Sustainability: page-sustainability.php.
 - Blog: latest-posts block returns early when empty AND is commented out in
   front-page.php. Re-enable by uncommenting get_template_part line once posts

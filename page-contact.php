@@ -10,14 +10,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header();
+
+$contact_hero_image = get_stylesheet_directory_uri() . '/assets/images/contact/hero.png';
 ?>
 
 <main id="primary" class="site-main ma-contact-page">
-	<section class="ma-contact-hero" aria-labelledby="ma-contact-title">
+	<section class="ma-contact-hero ma-contact-hero--bg" aria-labelledby="ma-contact-title">
+		<img class="ma-contact-hero__bg" src="<?php echo esc_url( $contact_hero_image ); ?>" alt="<?php esc_attr_e( 'Athletik Clothing sample room with tech packs and knitwear swatches', 'myathletik-child' ); ?>" loading="eager">
+		<div class="ma-contact-hero__overlay" aria-hidden="true"></div>
 		<div class="ma-section-inner">
 			<p class="ma-section-kicker"><?php esc_html_e( 'OEM/ODM inquiry', 'myathletik-child' ); ?></p>
 			<h1 id="ma-contact-title"><?php esc_html_e( 'Contact Us', 'myathletik-child' ); ?></h1>
-			<p><?php esc_html_e( 'Tell us about your project and our team will get back to you with a quote and next steps. Whether you have a finished tech pack or just a concept, we are here to help you move from design to production.', 'myathletik-child' ); ?></p>
+			<p class="ma-contact-hero__intro"><?php esc_html_e( 'Tell us about your project and our team will get back to you with a quote and next steps. Whether you have a finished tech pack or just a concept, we are here to help you move from design to production.', 'myathletik-child' ); ?></p>
 		</div>
 	</section>
 

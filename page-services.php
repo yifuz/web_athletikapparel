@@ -40,10 +40,14 @@ $stages = array(
 );
 
 get_header();
+
+$services_hero_image = get_stylesheet_directory_uri() . '/assets/images/services/hero.png';
 ?>
 
 <main id="primary" class="site-main ma-services-page">
-	<section class="ma-services-hero" aria-labelledby="ma-services-title">
+	<section class="ma-services-hero ma-services-hero--bg" aria-labelledby="ma-services-title">
+		<img class="ma-services-hero__bg" src="<?php echo esc_url( $services_hero_image ); ?>" alt="<?php esc_attr_e( 'Athletik Clothing production line for full-package knitwear manufacturing', 'myathletik-child' ); ?>" loading="eager">
+		<div class="ma-services-hero__overlay" aria-hidden="true"></div>
 		<div class="ma-section-inner">
 			<p class="ma-section-kicker"><?php esc_html_e( 'From sample to shipment', 'myathletik-child' ); ?></p>
 			<h1 id="ma-services-title"><?php esc_html_e( 'Our Services', 'myathletik-child' ); ?></h1>
