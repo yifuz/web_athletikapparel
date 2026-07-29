@@ -54,7 +54,8 @@ category page, capture inquiries.
 1. Hero — headline + one-line positioning + primary CTA (Contact / Get a Quote).
    **Real factory image, not stock.**
 2. Capability strip — 3–4 proof points (vertical integration, flatlock/
-   activeseam, four factories, full export docs). Icons + short labels.
+   activeseam, own production facility, full export docs). Do not publish a
+   factory count or subcontracting details. Icons + short labels.
 3. Product categories grid — 7 cards, each linking to its `*-manufacturer/`
    page. Replaces the current 30-image untitled wall.
 4. Why myathletik — 3 differentiators (technical construction, finishing
@@ -138,8 +139,9 @@ correct spelling; old slug MUST 301 to the new one. Fix the nav label too.
 ## 6. About Us — `/about-us/`  (KEEP)
 
 **H1:** About myathletik
-Company story, the four factories, regional merchandiser teams (North America /
-Europe / Nordics), foreign-trade capability. Replace stock imagery.
+Company story, own production facility / vertical integration, regional
+coverage, and foreign-trade capability. Do not publish a factory count or
+subcontracting details. Replace stock imagery.
 
 ---
 
@@ -157,12 +159,18 @@ Inquiry form with lead-filtering fields:
 Plus: direct contact details, factory location(s).
 
 ### Cleanup tied to this page
-- Remove the leftover `/contact-2/` ("Contact_example") demo page from footer.
-  301 `/contact-2/` → `/contact/` if it was ever indexed.
+- ✅ The leftover `/contact-2/` ("Contact_example") footer link was removed.
+  No historical redirect was added because the old site had no inherited
+  search equity.
 
 ---
 
-## 8. Master 301 redirect list (hand this to the redirect plugin)
+## 8. Historical 301 redirect plan — NOT IMPLEMENTED
+
+The old site's pages were confirmed dead with no inherited search equity.
+The mappings below are retained only as historical planning context and must
+not be added unless Search Console later proves that a specific old URL still
+has indexed traffic or inbound links.
 
 | Old URL | New URL | Reason |
 |---------|---------|--------|
@@ -184,10 +192,10 @@ Plus: direct contact details, factory location(s).
 2. ~~**7 category pages**~~ — ✅ DONE (carry SEO + 301s)
 3. ~~**Services pages**~~ — ✅ `/services/` single page DONE; sub-pages CANCELLED
 4. ~~**Factory / Equipment**~~ — ❌ CANCELLED this phase
-5. **About / Sustainability / Contact** — ✅ pages DONE; polish + 301 (sustainability slug) pending
-6. **Apply all 301s** before/at launch — never after, to avoid an index gap.
-7. **Page-by-page visual polish + QA cleanup** — current focus (2026-07)
+5. ~~**About / Sustainability / Contact**~~ — ✅ pages DONE and polished
+6. ~~**Historical 301 plan**~~ — ✅ cancelled; old site had no equity to preserve
+7. ~~**Page-by-page visual polish + QA cleanup**~~ — ✅ completed before launch
+8. **Production launch** — ✅ complete on Flywheel; final site and uploads
+   synchronized 2026-07-28
 
-【确认项 still open from SKILL.md:
- - merino slug: /merino-wool-manufacturer/ vs /merino-wool-apparel-manufacturer/
- - any category H1 wording you'd phrase differently】
+Confirmed slug: `/merino-wool-manufacturer/`.

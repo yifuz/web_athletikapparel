@@ -120,12 +120,14 @@ CTA button label: **Request a Quote**
 
 ---
 
-## Still open (separate sections, do later)
+## Historical open items — closed
 
-- **Certifications** (`certifications.php`) — you said this has its own section;
-  confirm which audit/certification badges are public, then we write the copy.
-- **Partnership / clients** (`partnership-trust.php`) — anonymized "safe" version
-  pending; we'll write the anonymized case copy next (no named brands until
-  authorization is confirmed).
-- **Images** — replace remaining stock photos (hero pexels image, category
-  model shots) with real factory/product photography when ready.
+- **Certifications** (`certifications.php`) — ✅ section built with approved
+  public badges.
+- **Partnership / clients** (`partnership-trust.php`) — ✅ approved safe
+  presentation completed.
+- **Images** — ✅ live Pexels/stock Hero removed; homepage now uses approved
+  factory, product, and campaign visuals.
+
+This file remains a copy source/reference. Use `docs/progress.md` for current
+project status.

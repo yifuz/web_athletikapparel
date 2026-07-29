@@ -1,6 +1,6 @@
 # Design Brief — myathletik Homepage (v1)
 
-Companion to `CLAUDE.md` / `AGENTS.md` and `docs/sitemap.md`. Read this before
+Companion to `AGENTS.md` and `docs/sitemap.md`. Read this before
 building the homepage. It defines the visual direction, the homepage block
 order, and what to borrow vs. avoid from the reference site.
 
@@ -67,7 +67,8 @@ placeholders.
 
 2. **Capability proof strip**
    - 3–4 quick trust signals: vertically integrated, flatlock/activeseam
-     technical construction, four factories, full export documentation.
+     technical construction, own production facility, full export
+     documentation. Never publish a factory count or subcontracting details.
    - Icons + short labels (microcopy agent may draft).
 
 3. **Product categories grid** (7 cards)
@@ -118,7 +119,7 @@ placeholders.
 
 ---
 
-## 4. Build approach for Codex/Claude Code
+## 4. Build approach for Codex
 
 - Build section by section as template parts; assemble into the homepage
   template. Keep each part independently editable.

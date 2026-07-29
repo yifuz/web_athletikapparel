@@ -1,5 +1,9 @@
 # myathletik-child — 上线前 QA 审计报告
 
+> **历史审计 / 已归档：** 本报告记录 2026-07-03 的上线前问题。
+> 截至 2026-07-28，表内 P0/P1 项均已关闭，网站已完整上线并重新同步到
+> Flywheel。当前状态以 `docs/progress.md` 为准。
+
 **审计日期**: 2026-07-03
 **审计范围**: 全部 PHP 模板 + style.css + functions.php + inc/product-category-data.php
 **审计方式**: 静态代码审计（LocalWP 实测因站点 502 未能进行渲染层验证）
@@ -187,7 +191,7 @@
 ## 复审状态（2026-07-27 当前状态）
 
 重新逐文件审计了所有 PHP 模板 + functions.php + inc/product-category-data.php
-+ style.css。各项当前状态如下（对照 docs/progress.md 的 TODO 列表）：
++ style.css。各项当前状态如下（对照 docs/progress.md 的当前状态列表）：
 
 | ID | 原问题 | 当前状态 | 备注 |
 |----|--------|----------|------|

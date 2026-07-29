@@ -89,5 +89,6 @@ Note (microcopy under submit, optional):
 ================================================================
 ## Cleanup tied to this page (from sitemap §8)
 ================================================================
-- Remove any leftover demo "Contact_example" / `/contact-2/` page; 301 it to
-  /contact/ if it was ever indexed.
+- ✅ The leftover demo "Contact_example" / `/contact-2/` footer link was
+  removed. No historical redirect was required because the old site had no
+  inherited search equity.

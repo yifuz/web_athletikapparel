@@ -115,10 +115,46 @@ function myathletik_enqueue_styles() {
 		file_exists( $child_style_path ) ? filemtime( $child_style_path ) : $child->get( 'Version' )
 	);
 
-	// Optional: extra CSS files from /assets/css can be enqueued here as the
-	// project grows, e.g. per-template stylesheets.
+	if ( is_front_page() ) {
+		$home_hero_mobile_path = get_stylesheet_directory() . '/assets/css/home-hero-mobile.css';
+
+		wp_enqueue_style(
+			'myathletik-home-hero-mobile',
+			get_stylesheet_directory_uri() . '/assets/css/home-hero-mobile.css',
+			array( 'myathletik-child-style' ),
+			file_exists( $home_hero_mobile_path ) ? filemtime( $home_hero_mobile_path ) : $child->get( 'Version' )
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_styles' );
+
+/**
+ * Enqueue successful inquiry tracking wherever form 3 is rendered.
+ *
+ * The event is emitted only after Fluent Forms confirms that form 3 was
+ * accepted. Site Kit supplies the Google tag; this script adds the GA4
+ * recommended generate_lead event without embedding a measurement ID.
+ */
+function myathletik_enqueue_inquiry_tracking() {
+	if ( ! is_front_page() && ! is_page( 'contact' ) ) {
+		return;
+	}
+
+	$script_path = get_stylesheet_directory() . '/assets/js/inquiry-tracking.js';
+
+	if ( ! file_exists( $script_path ) ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'myathletik-inquiry-tracking',
+		get_stylesheet_directory_uri() . '/assets/js/inquiry-tracking.js',
+		array( 'jquery' ),
+		filemtime( $script_path ),
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_inquiry_tracking' );
 
 /**
  * Add preconnect hints for Google Fonts.
@@ -203,22 +239,21 @@ add_filter( 'generate_logo_title', 'myathletik_site_title' );
  * Splits "Athletik Clothing" into a bold dark "Athletik" and a lighter
  * terracotta "Clothing" so the brand name carries visual weight while the
  * category descriptor reads as a refined accent. Keeps the <a> wrapper and
- * microdata-free output that GeneratePress expects.
+ * microdata-free output that GeneratePress expects. The wordmark uses a
+ * paragraph so the page hero remains the homepage's single H1.
  *
  * @param string $output Default GeneratePress title HTML.
  * @return string
  */
 function myathletik_site_title_markup( $output ) {
-	$tag   = ( is_front_page() && is_home() ) ? 'h1' : 'p';
-	$href  = esc_url( home_url( '/' ) );
+	$href = esc_url( home_url( '/' ) );
 
 	return sprintf(
-		'<%1$s class="main-title ma-brand-title">
-			<a href="%2$s" rel="home">
+		'<p class="main-title ma-brand-title">
+			<a href="%1$s" rel="home">
 				<span class="ma-brand-title__name">Athletik</span><span class="ma-brand-title__divider" aria-hidden="true"></span><span class="ma-brand-title__desc">Clothing</span>
 			</a>
-		</%1$s>',
-		$tag,
+		</p>',
 		$href
 	);
 }
@@ -576,22 +611,7 @@ function myathletik_product_category_document_title( $parts ) {
 add_filter( 'document_title_parts', 'myathletik_product_category_document_title', 20 );
 
 /**
- * Print category-specific meta descriptions for product category pages.
- */
-function myathletik_product_category_meta_description() {
-	$category = myathletik_get_current_product_category();
-
-	if ( ! $category || empty( $category['meta_description'] ) ) {
-		return;
-	}
-	?>
-	<meta name="description" content="<?php echo esc_attr( $category['meta_description'] ); ?>">
-	<?php
-}
-add_action( 'wp_head', 'myathletik_product_category_meta_description', 1 );
-
-/**
- * Use service-page-specific document title and meta description.
+ * Use the service-page-specific document title.
  *
  * @param array $parts Document title parts.
  * @return array
@@ -607,20 +627,7 @@ function myathletik_services_document_title( $parts ) {
 add_filter( 'document_title_parts', 'myathletik_services_document_title', 25 );
 
 /**
- * Print the Services page meta description.
- */
-function myathletik_services_meta_description() {
-	if ( ! is_page( 'services' ) ) {
-		return;
-	}
-	?>
-	<meta name="description" content="<?php echo esc_attr__( 'OEM/ODM knitwear services from sampling and prototyping to bulk production, quality control, export support, and shipping coordination.', 'myathletik-child' ); ?>">
-	<?php
-}
-add_action( 'wp_head', 'myathletik_services_meta_description', 2 );
-
-/**
- * Use about-page-specific document title and meta description.
+ * Use the about-page-specific document title.
  *
  * @param array $parts Document title parts.
  * @return array
@@ -634,19 +641,6 @@ function myathletik_about_document_title( $parts ) {
 	return $parts;
 }
 add_filter( 'document_title_parts', 'myathletik_about_document_title', 26 );
-
-/**
- * Print the About page meta description.
- */
-function myathletik_about_meta_description() {
-	if ( ! is_page( 'about-us' ) ) {
-		return;
-	}
-	?>
-	<meta name="description" content="<?php echo esc_attr__( 'Learn about Athletik Clothing, a vertically integrated OEM/ODM technical knitwear manufacturer in the Zhangjiagang / Suzhou area of China.', 'myathletik-child' ); ?>">
-	<?php
-}
-add_action( 'wp_head', 'myathletik_about_meta_description', 3 );
 
 /**
  * Use homepage-specific document title.
@@ -695,7 +689,7 @@ function myathletik_home_meta_description() {
 add_action( 'wp_head', 'myathletik_home_meta_description', 2 );
 
 /**
- * Use sustainability-page-specific document title and meta description.
+ * Use the sustainability-page-specific document title.
  *
  * @param array $parts Document title parts.
  * @return array
@@ -711,17 +705,34 @@ function myathletik_sustainability_document_title( $parts ) {
 add_filter( 'document_title_parts', 'myathletik_sustainability_document_title', 27 );
 
 /**
- * Print the Sustainability page meta description.
+ * Return a real 404 for the unused, empty default post category.
+ *
+ * WordPress otherwise renders the empty archive as a 200 "Nothing Found"
+ * response. Keep the rule limited to the default slug and only while it has no
+ * posts, so future populated categories are unaffected.
  */
-function myathletik_sustainability_meta_description() {
-	if ( ! is_page( 'sustainability' ) ) {
+function myathletik_404_empty_uncategorized_archive() {
+	if ( ! is_category( 'uncategorized' ) ) {
 		return;
 	}
-	?>
-	<meta name="description" content="<?php echo esc_attr__( 'Responsible OEM/ODM apparel manufacturing with sustainable fabric options, certified materials, traceability support, in-house testing, and documentation support.', 'myathletik-child' ); ?>">
-	<?php
+
+	$category = get_queried_object();
+
+	if ( ! $category instanceof WP_Term || 0 < (int) $category->count ) {
+		return;
+	}
+
+	global $wp_query;
+
+	if ( ! $wp_query instanceof WP_Query ) {
+		return;
+	}
+
+	$wp_query->set_404();
+	status_header( 404 );
+	nocache_headers();
 }
-add_action( 'wp_head', 'myathletik_sustainability_meta_description', 4 );
+add_action( 'template_redirect', 'myathletik_404_empty_uncategorized_archive', 0 );
 
 /**
  * Add utility actions after the primary menu.

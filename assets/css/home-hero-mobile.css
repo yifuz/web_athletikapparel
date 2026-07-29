@@ -1,0 +1,13 @@
+/**
+ * Homepage Hero mobile crop adjustment.
+ *
+ * The approved portrait image has generous headroom. The mobile Hero card is
+ * landscape, so a top-aligned cover crop shows mostly background. Shift the
+ * focal point down to keep the model's face and upper body in view.
+ */
+
+@media (max-width: 47.9375rem) {
+  .ma-home-hero .ma-bento--a img {
+    object-position: center 28%;
+  }
+}

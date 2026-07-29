@@ -5,7 +5,26 @@ docs/design-brief.md, and docs/homepage-copy.md when starting a new session.
 This file tracks WHAT IS DONE and WHAT IS LEFT, since the rule docs only
 define HOW. Also check `git log` for the latest commits.
 
-Last updated: 2026-07-28 — Full production deployment completed. The finalized
+Last updated: 2026-07-29 — Homepage Lookbook QA fixes completed. Corrected
+`sportswear/IMG_5836.webp`, whose EXIF orientation had been lost during the
+WebP conversion; the replacement is auto-oriented and remains WebP quality 82
+with a 2000px maximum edge. Slowed the continuous marquee from 35s to 110s on
+desktop and from 28s to 90s on mobile. Hovering anywhere over the Lookbook now
+pauses the marquee; keyboard focus continues to pause it as before. The WebP
+asset lives in uploads and must be transferred separately when deploying.
+Previous: 2026-07-29 — Production SMTP hardening completed. FluentSMTP
+2.2.95 is connected to Brevo via its native API using
+`info@athletikapparel.com` / `Athletik Clothing`; the sender is active and the
+Cloudflare-hosted domain is verified + authenticated in Brevo. The API key is
+encrypted in the WordPress database and is not stored in the public site tree
+or theme repo. An initial production Email Test to `alanzhang@athletik.com`
+completed the Brevo `request` -> `delivered` flow and was received
+successfully. A final production inquiry-form test on 2026-07-29 produced
+exactly one notification to `info@athletikapparel.com`; Brevo recorded
+`request` -> `delivered` -> `opened`, and Cloudflare Email Routing currently
+forwards that public address to `zhangyifuzjg0609@163.com`. Receipt in the
+163.com destination inbox was confirmed by the user.
+Previous: 2026-07-28 — Full production deployment completed. The finalized
 site, theme changes, and current uploads assets were pushed to Flywheel. The
 old 27 GB server asset directory was removed; current Flywheel storage usage is
 approximately 660 MB. Git `main` is synchronized with `origin/main` at
@@ -246,6 +265,25 @@ The old site's pages are all dead, no inherited search equity to preserve.
 
 ## Current status / remaining enhancements
 
+-4. **Production SMTP / Brevo — ✅ CLOSED 2026-07-29:** FluentSMTP 2.2.95
+   is configured locally and on the Flywheel production site with the native
+   Brevo API connection. From address = `info@athletikapparel.com`; From name =
+   `Athletik Clothing`; forced sender name is enabled. Brevo reports
+   `athletikapparel.com` as both verified and authenticated. The API key is
+   encrypted in the WordPress database, and a public-tree scan found no
+   plaintext key. Production Email Test delivery was confirmed in both Brevo
+   events (`request` -> `delivered`) and the recipient inbox. A final
+   production form submission then produced exactly one Brevo event chain to
+   `info@athletikapparel.com` (`request` -> `delivered` -> `opened`);
+   Cloudflare currently forwards this address to
+   `zhangyifuzjg0609@163.com`, where inbox receipt was confirmed. The Fluent
+   Forms id=3 notification was also normalized locally and in production on
+   2026-07-29: the duplicate default `{wp.admin_email}` notification was
+   removed; one enabled `New Notification` remains with Send To / From Email =
+   `info@athletikapparel.com`, From Name = `Athletik Clothing`, and Reply-To =
+   `{inputs.email}`. This also removed the stale `info@myathletik.com`
+   recipient that had been restored by an earlier database sync.
+
 -3. **Public Turnstile secret file — ✅ CLOSED 2026-07-29:** A
    `Turnstile-KEY/secret-key.txt` file was found under the public
    `wp-content/uploads/myathletik-theme/assets/` tree on 2026-07-28.
@@ -328,7 +366,9 @@ The old site's pages are all dead, no inherited search equity to preserve.
    - Email: the legacy info@myathletik.com mailbox is expired and unused.
      Current setup:
      Cloudflare Email Routing (free) forwards info@athletikapparel.com ->
-     alanzhang@athletik.com; MX/SPF auto-created; forwarding test PASSED.
+     `zhangyifuzjg0609@163.com` (current destination as of 2026-07-29);
+     MX/SPF auto-created; forwarding test PASSED. The previous forwarding
+     destination was `alanzhang@athletik.com`.
    - Public contact email in footer (functions.php) + contact page
      (page-contact.php) changed info@athletik.com.cn ->
      info@athletikapparel.com (commit 31f4b99; confirmed live).
@@ -352,9 +392,9 @@ The old site's pages are all dead, no inherited search equity to preserve.
      "couldn't fetch" status is normal for fresh submissions; robots.txt
      301s to WP's virtual robots file which allows all + declares the
      sitemap, Googlebot UA gets 200 — verified fine).
-   - OPTIONAL post-launch enhancements: (a) WP Mail SMTP / FluentSMTP on
-     Flywheel as a deliverability upgrade (wp_mail works today, but
-     unauthenticated); (b) Cloudflare Turnstile anti-spam (optional).
+   - SMTP deliverability enhancement: ✅ CLOSED 2026-07-29 via FluentSMTP +
+     Brevo API; production Email Test passed. Cloudflare Turnstile anti-spam
+     remains optional.
    - CLOSED user-side 2026-07-22: legacy hosting was discontinued;
      email-display commit 31f4b99 confirmed live (decoded from Cloudflare's
      email-obfuscation data-cfemail on the live homepage footer).
@@ -372,14 +412,24 @@ The old site's pages are all dead, no inherited search equity to preserve.
    File Upload itself is a Fluent Forms PRO feature, placeholder link prompt
    chosen as the free-tier solution; (b) order quantity and business type
    provide the required lead filtering; (c) email notification recipient is
-   info@athletikapparel.com 2026-07-22 (was {wp.admin_email}); live
-   delivery test PASSED same day (3 submissions -> 3 emails via Email
-   Routing forward + entries stored); (d) local submission test passed —
+   `info@athletikapparel.com`; live delivery test PASSED 2026-07-22
+   (3 submissions -> 3 emails via Email Routing forward + entries stored).
+   On 2026-07-29, a stale `info@myathletik.com` recipient and a duplicate
+   `{wp.admin_email}` notification were found after database synchronization.
+   Both local and production settings were corrected to one enabled
+   notification with Send To / From Email = `info@athletikapparel.com`, From
+   Name = `Athletik Clothing`, and Reply-To = `{inputs.email}`. A final
+   production submission on 2026-07-29 generated exactly one Brevo
+   `request` -> `delivered` -> `opened` chain to
+   `info@athletikapparel.com`; Cloudflare's current destination is
+   `zhangyifuzjg0609@163.com`, and receipt in that inbox was confirmed; (d)
+   local submission test passed —
    frontend success message
    shown, entry stored correctly in Fluent Forms Entries (all dropdown
-   values captured). No Contact Form issue remains open. SMTP hardening,
-   customer auto-reply, or additional anti-spam services are optional future
-   enhancements, not unresolved form defects.
+   values captured). No Contact Form issue remains open. SMTP hardening was
+   completed 2026-07-29 via FluentSMTP + Brevo. Customer auto-reply or
+   additional anti-spam services remain optional future enhancements, not
+   unresolved form defects.
 3. **Remove the /sustainabilty/ -> /sustainability/ 301 redirect** ✅ DONE
    2026-07-21 — function removed from functions.php.
 4. **Video hero rollout beyond Merino:** the architecture is ready

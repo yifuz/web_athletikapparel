@@ -1,4 +1,6 @@
-> This is the project instruction file for Claude Code / Codex. It is loaded automatically. Full page structure & URL/301 plan is in `docs/sitemap.md` — read it before creating or restructuring pages.
+> This is the canonical project instruction file for Codex. Full page
+> structure and URL/SEO decisions are in `docs/sitemap.md` — read it before
+> creating or restructuring pages.
 
 ---
 name: myathletik-website
@@ -21,7 +23,7 @@ flag it rather than silently overriding.
 ## 1. Tech stack (this is a CODE-FIRST project)
 
 This site is rebuilt and maintained as a **code project**, not a visual
-page-builder site. Claude Code / Codex are expected to do substantial work in
+page-builder site. Codex is expected to do substantial work in
 the theme code. Day-to-day layout/structure changes happen in code; only
 routine text edits happen in the block editor.
 
@@ -52,7 +54,7 @@ routine text edits happen in the block editor.
 - Develop on **LocalWP** (Windows). Site files live at
   `…\Local Sites\<site>\app\public\`; child theme at
   `wp-content\themes\myathletik-child\`.
-- Open the **child theme folder** in VS Code so Claude Code / Codex operate
+- Open the **child theme folder** in VS Code so Codex operates
   directly on these files.
 - Changes flow: LocalWP (dev) → staging → production. Never assume direct
   production edits.
@@ -148,8 +150,8 @@ The rebuild reorganizes the site around search intent. Target structure:
   Export & Shipping  (differentiation vs. Hongyu — the user's export
   documentation experience is a selling point here)
 - **Sustainability** (note: fix the misspelled "Sustainabilty" slug — see §3)
-- **About Us** → company, the four factories, regional merchandiser teams
-  (North America / Europe / Nordics)
+- **About Us** → company, own production facility / vertical integration,
+  regional coverage. Do not disclose factory count or subcontracting.
 - **Contact** (with an inquiry form: budget tier + order quantity fields to
   filter out sub-MOQ leads)
 
@@ -161,7 +163,7 @@ The rebuild reorganizes the site around search intent. Target structure:
   Hongyu Apparel, who target startups / low MOQ.)
 - Differentiators to emphasize: vertical integration, flatlock/activeseam
   technical construction, Carbondry finishing, laser perforation, full export
-  documentation capability, four factories, regional merchandiser coverage.
+  documentation capability, own production facility, regional coverage.
 
 ## 3. URL & SEO rules (SEO landmines — strictest section)
 
@@ -200,32 +202,30 @@ revisit if Search Console later shows any of these old URLs still indexed:
 | `/products/underwear/`               | `/underwear-manufacturer/`               | NOT NEEDED |
 | `/products/merino-wool-apparel/`     | `/merino-wool-manufacturer/`             | NOT NEEDED |
 | `/products/silk-wear/`               | `/silk-wear-manufacturer/`               | NOT NEEDED |
-| `/products/` (hub)                   | keep as `/products/` overview, or 301 to home — decide |
-
-  【确认: 上面的新slug措辞可调。比如 merino-wool-manufacturer 也可写成
-   merino-wool-apparel-manufacturer,看你想命中的搜索词。告诉我就改】
+| `/products/` (hub)                   | keep as `/products/` overview |
 
 - **Auxiliary pages — preserve or 301:**
   - `/production/`, `/factory/`, `/equipments/` — keep
   - `/sustainabilty/` ← **misspelled.** Already corrected to `/sustainability/`
-    in this rebuild; a redirect for the misspelled slug exists in `functions.php`
-    and is worth keeping IF the misspelled URL was ever indexed or linked.
+    in this rebuild. The historical redirect was intentionally removed because
+    the old site had no indexed traffic or inbound links to preserve.
   - `/about-us/`, `/contact/` — keep
 - Every page needs: a unique <title>, a meta description, one H1 only, logical
   H2/H3 hierarchy, and descriptive image alt text (real keywords, not filenames).
 - When you delete or merge a page, output the 301 mapping explicitly so it can
   be added to redirects.
 
-## 4. Known issues to fix during rebuild (cleanup checklist)
+## 4. Rebuild cleanup checklist — completed
 
-- [ ] Replace stock photography (Unsplash/Pexels) with **real factory/product
-      photos.** The current "Trusted Factory Partners" image is a Hyundai stock
-      photo — must go. Real phone-shot factory images beat polished stock here.
-- [ ] Remove leftover test/demo links: footer `Contact_example` (`/contact-2/`).
-- [ ] Fix dead social icon links (currently point to `#` / empty).
-- [ ] Fix the `Sustainabilty` spelling (slug + nav label) — with 301.
-- [ ] The 30+ untitled, unlinked product images on the home page: regroup by
-      category, add titles/alt text, and link each cluster to its category page.
+- [x] Remove live stock photography and replace it with approved
+      factory/product/campaign visuals. Inactive fallback gallery data may
+      still contain Unsplash filenames but does not render on current pages.
+- [x] Remove leftover test/demo footer links such as `Contact_example`.
+- [x] Fix Instagram, YouTube, and WhatsApp links.
+- [x] Fix the `Sustainabilty` spelling in the live URL and navigation; no
+      historical 301 was needed.
+- [x] Regroup homepage product imagery by category and connect cards/sections
+      to the corresponding category pages.
 
 ## 5. Brand voice & copy rules
 

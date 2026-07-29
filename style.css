@@ -1000,9 +1000,10 @@ body.home .container.grid-container {
   padding: 0 1rem;
   min-width: 0;
   will-change: transform;
-  animation: ma-style-scroll 35s linear infinite;
+  animation: ma-style-scroll 110s linear infinite;
 }
 
+.ma-style-marquee:hover .ma-style-marquee__track,
 .ma-style-marquee:focus-within .ma-style-marquee__track {
   animation-play-state: paused;
 }
@@ -1074,7 +1075,7 @@ body.home .container.grid-container {
   .ma-style-marquee__track {
     gap: 0.85rem;
     padding: 0 var(--ma-space-3);
-    animation-duration: 28s;
+    animation-duration: 90s;
   }
 
   .ma-style-column {
