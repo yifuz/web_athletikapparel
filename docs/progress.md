@@ -1,11 +1,16 @@
 # Project Progress Snapshot - myathletik.com Rebuild
 
-Read this together with AGENTS.md / CLAUDE.md, docs/sitemap.md,
+Read this together with AGENTS.md, docs/sitemap.md,
 docs/design-brief.md, and docs/homepage-copy.md when starting a new session.
 This file tracks WHAT IS DONE and WHAT IS LEFT, since the rule docs only
 define HOW. Also check `git log` for the latest commits.
 
-Last updated: 2026-07-27 (PM) — Homepage Hero copy and Bento A visual finalized.
+Last updated: 2026-07-28 — Full production deployment completed. The finalized
+site, theme changes, and current uploads assets were pushed to Flywheel. The
+old 27 GB server asset directory was removed; current Flywheel storage usage is
+approximately 660 MB. Git `main` is synchronized with `origin/main` at
+`77a12c6`.
+Previous: 2026-07-27 (PM) — Homepage Hero copy and Bento A visual finalized.
 Eyebrow = "Technical knitwear OEM/ODM partner"; H1 = "Performance Knitwear" /
 "Manufacturer". Bento A now uses the approved 4:7 campaign image
 `sportswear/performance-knitwear-campaign-4x7-2160x3780.png` (2160 × 3780,
@@ -16,7 +21,7 @@ distorting the model. Mobile keeps the existing 16:10 A-card layout.
 The image lives in uploads and is not carried by Git; transfer it separately
 with uploads when deploying. Current source size is ~4.97 MB, so web delivery
 optimization remains a separate follow-up after the visual lock.
-Previous: 2026-07-27 — Status correction: Flywheel is the current host
+Earlier: 2026-07-27 — Status correction: Flywheel is the current host
 and GoDaddy is no longer used; WhatsApp and Contact Form issues are fully
 resolved and closed.
 Earlier: 2026-07-27 (PM) — Homepage lookbook image optimization.
@@ -31,10 +36,12 @@ were touched; certificate/brand/hero/subcategory images are unchanged per
 user direction (see "Image optimization policy" below).
 Pre-previous: 2026-07-27 (AM) Contact page bg hero + Ken Burns removal +
 hero text color hierarchy (H1 white, intro rgba(255,255,255,0.72)).
-Earlier: 2026-07-24 uploads asset migration (27G -> 0.27G local;
-Flywheel server cleanup pending — see docs/flywheel-cleanup-guide.md).
+Historical: 2026-07-24 uploads asset migration (27G -> 0.27G local);
+Flywheel server cleanup completed 2026-07-28. See the archived
+docs/flywheel-cleanup-guide.md.
 Launch: 2026-07-22. Site live on Flywheel at
-https://www.athletikapparel.com (see TO DO #0 for the full launch record).
+https://www.athletikapparel.com (see the current status section for the full
+launch record).
 
 ---
 
@@ -43,7 +50,8 @@ https://www.athletikapparel.com (see TO DO #0 for the full launch record).
 - Code-first WordPress rebuild. LocalWP (Windows) -> Flywheel via Local
   Connect. GoDaddy is no longer used.
 - Base theme: GeneratePress. All work in child theme `myathletik-child`.
-- Agents: Codex (AGENTS.md) and Claude Code (CLAUDE.md), same rules.
+- Agent rules: `AGENTS.md` is the single canonical project instruction file.
+  The unused `CLAUDE.md` was removed 2026-07-28 to prevent rule drift.
 - Git initialized in the child theme dir; commit per meaningful change.
 - Reference site for STRUCTURE only: hongyuapparel.com. Do not copy its
   startup tone or visuals.
@@ -232,11 +240,24 @@ User confirmed: **301 redirects are not needed and not being implemented.**
 The old site's pages are all dead, no inherited search equity to preserve.
 - The 7 category-page redirects in docs/sitemap.md §8 (/products/<x>/ ->
   /<x>-manufacturer/) are NOT required and should not be added.
-- The misspelled `/sustainabilty/` -> `/sustainability/` 301 in functions.php
-  is also being removed per the same decision (no indexed inbound links to
-  protect). See TODO #5.
+- The misspelled `/sustainabilty/` -> `/sustainability/` 301 was removed from
+  functions.php. No historical redirect was implemented because there were no
+  indexed inbound links to protect.
 
-## TO DO
+## Current status / remaining enhancements
+
+-3. **Public Turnstile secret file — ✅ CLOSED 2026-07-29:** A
+   `Turnstile-KEY/secret-key.txt` file was found under the public
+   `wp-content/uploads/myathletik-theme/assets/` tree on 2026-07-28.
+   - Deleted the key files from the local uploads asset tree 2026-07-29.
+   - **Verified the key file was never pushed to Flywheel** (server uploads
+     was clean — no public exposure on production).
+   - **Rotated the Turnstile secret in Cloudflare** (old secret treated as
+     compromised); new secret lives only in the WP plugin config / DB / env,
+     never under uploads/.
+   - **Verified the old public URL now returns 404.**
+   Lesson: never place credentials under `wp-content/uploads/` — it is
+   web-readable and outside the repo's gitignore safety net.
 
 -2. **FluentForm plugin recovery — ✅ CLOSED 2026-07-27:** Before a push,
    the `plugins/fluentform/` folder became an EMPTY skeleton (4 subdirs,
@@ -259,7 +280,7 @@ The old site's pages are all dead, no inherited search equity to preserve.
    Diagnostic script ff-diag.php (used to verify DB state) was deleted
    after use because it exposed DB/plugin information.
 
--1. **Flywheel server 27G cleanup (2026-07-24):** LocalWP Local Connect push
+-1. **Flywheel server 27G cleanup — ✅ CLOSED 2026-07-28:** LocalWP Local Connect push
    pushed the entire uploads (27G) to Flywheel, blowing past Tiny plan storage.
    **Local side DONE 2026-07-24:**
    - Migrated 4446 unused asset files (26.38G) out of uploads to
@@ -279,10 +300,11 @@ The old site's pages are all dead, no inherited search equity to preserve.
    - Cleanup scripts: tools/plan_asset_move.py, exec_asset_move.py,
      audit_image_refs.py, audit_all_refs.py, verify_pages.py. Keep/move lists:
      tools/move_plan_KEEP.txt (218), tools/move_plan_MOVE.txt (4446).
-   **PENDING (user does in Flywheel panel):** see docs/flywheel-cleanup-guide.md
-   — (1) delete server `uploads/myathletik-theme/` (the 27G), (2) re-upload
-   the 270MB zip at `D:\C-网站素材\myathletik-theme-upload-to-flywheel.zip`
-   (218 files), (3) verify pages load with no 404s.
+   **Production side completed 2026-07-28:** the old 27 GB server asset
+   directory was removed, the finalized site and current uploads assets were
+   pushed again through Local Connect, and Flywheel storage now reports
+   approximately 660 MB. The 2026-07-24 270 MB ZIP is an obsolete historical
+   snapshot and must not be used for future deployments.
 
 0. **Domains (2026-07-22):** purchased at Cloudflare Registrar —
    **athletikapparel.com = PRIMARY** (site, email, all branding);
@@ -309,8 +331,7 @@ The old site's pages are all dead, no inherited search equity to preserve.
      alanzhang@athletik.com; MX/SPF auto-created; forwarding test PASSED.
    - Public contact email in footer (functions.php) + contact page
      (page-contact.php) changed info@athletik.com.cn ->
-     info@athletikapparel.com (commit 31f4b99 — needs a Local push to go
-     live).
+     info@athletikapparel.com (commit 31f4b99; confirmed live).
    - FluentForm id=3 admin notification recipient: was {wp.admin_email},
      now hardcoded to info@athletikapparel.com (edited live via wp-admin).
      Gotcha: FluentForms' Vue admin silently ignores programmatic fills
@@ -331,7 +352,7 @@ The old site's pages are all dead, no inherited search equity to preserve.
      "couldn't fetch" status is normal for fresh submissions; robots.txt
      301s to WP's virtual robots file which allows all + declares the
      sitemap, Googlebot UA gets 200 — verified fine).
-   - STILL OPEN (post-launch optional): (a) WP Mail SMTP / FluentSMTP on
+   - OPTIONAL post-launch enhancements: (a) WP Mail SMTP / FluentSMTP on
      Flywheel as a deliverability upgrade (wp_mail works today, but
      unauthenticated); (b) Cloudflare Turnstile anti-spam (optional).
    - CLOSED user-side 2026-07-22: legacy hosting was discontinued;
@@ -365,8 +386,10 @@ The old site's pages are all dead, no inherited search equity to preserve.
    (hero_video + hero_video_position fields). Pending video assets for the
    other 6 category pages + the homepage hero.
 5. **Remote git repository:** ✅ DONE 2026-07-21 — pushed to
-   https://github.com/yifuz/web_myathletik.git. Remember: uploads/ images
-   are NOT in git and must be transferred separately on deploy.
+   https://github.com/yifuz/web_myathletik.git. Latest theme changes were
+   pushed through commit `77a12c6`; current uploads assets were separately
+   synchronized to Flywheel on 2026-07-28. Future uploads changes must still
+   be transferred separately because images are not in Git.
 6. **Language switcher (header):** ✅ HIDDEN 2026-07-21 — the 6-button
    switcher (functions.php myathletik_header_actions) now returns early with
    no output. **Decision 2026-07-21: defer multilingual.** Go live EN-only,
@@ -401,8 +424,10 @@ Full audit in docs/qa-audit-260703.md. Status updated 2026-07-27:
 - ALL theme images live in `wp-content/uploads/myathletik-theme/assets/images/`
   (NOT in `themes/myathletik-child/assets/images/`). The theme assets dir is
   kept empty except for a `.gitkeep`, and is gitignored.
-- **(2026-07-24) uploads stays LEAN.** Only code-referenced images (218 files,
-  0.27G) live in uploads. The full raw asset library (4446 files, 26.38G) was
+- **Uploads stays LEAN.** The 2026-07-24 cleanup baseline was 218 files /
+  0.27G. After the approved WebP and Hero additions, the 2026-07-28 local
+  snapshot is approximately 0.31G. The full raw asset library (4446 files,
+  26.38G) was
   moved OUT of uploads to `D:\C-网站素材\` because LocalWP Local Connect
   pushes the entire uploads folder and has NO exclusion mechanism. Putting
   unused assets back in uploads = server storage blowup again. Raw/unused
