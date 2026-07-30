@@ -72,7 +72,7 @@
 | SEO-003 | 高 | 已完成 | 首页存在两个 H1 | Hero 保留 H1，页头品牌名称改为非 H1 元素 |
 | SEO-004 | 高 | 已完成 | 首页图片负载约 29.9MB，移动端性能较差 | 已使用无损/Q100 WebP 和响应式尺寸替换主要图片 |
 | SEO-005 | 中 | 已完成 | 首页 Open Graph、Twitter 和部分 Schema 标题显示为 `Athletik Clothing -` | 与正式首页 SEO 标题统一 |
-| SEO-006 | 中 | 待上线验证 | 多个企业落地页被标记为 Article，并带个人作者 | 调整为更准确的页面类型和 Schema |
+| SEO-006 | 中 | 已完成 | 多个企业落地页被标记为 Article，并带个人作者 | 调整为更准确的页面类型和 Schema |
 | SEO-007 | 中 | 待处理 | Sitemap 存在默认页面、首页重复及较旧的 lastmod | 清理 Sitemap 并核对更新时间来源 |
 | SEO-008 | 中 | 待处理 | `/products/` 当前返回 404 | 决定是否建设真正的产品 Hub；不创建空页面 |
 | SEO-009 | 低 | 待处理 | 裸域 HTTP 存在两跳，页脚 Sitemap 链接发生一次 301 | 有条件时改为一步跳转和最终链接 |
@@ -438,7 +438,18 @@
 - 本地 11 个核心内页均无 `Article`、个人作者、作者 URL 或 `#richSnippet` 残留。
 - 首页 SEO 标题仍为 `Technical Knitwear Manufacturer | Athletik Clothing`，SEO-005 修复未发生回退。
 - PHP 语法检查通过。
-- 当前状态为待上线验证；生产环境验收通过后再标记为已完成。
+- 生产环境验收前状态为待上线验证。
+
+2026-07-30 最终线上验收：
+
+- 12 个核心页面均返回 HTTP 200，并且每页只有一个可正常解析的 JSON-LD 数据块。
+- 7 个产品分类页均为 `CollectionPage`；Services、Sustainability 和首页均为 `WebPage`；About Us 为 `AboutPage`；Contact 为 `ContactPage`。
+- 12 个核心页面均无 `Article`、`BlogPosting`、`NewsArticle`、个人作者 `Person`、作者 URL 或 `#richSnippet` 残留。
+- 全部核心页面的 `LocalBusiness` 均使用 HTTPS Logo，并包含与网站公开信息一致的电话、邮箱和工厂地址。
+- 未确认的 `openingHours` 已从全部核心页面移除。
+- HTTPS Logo 资源返回 HTTP 200。
+- 首页 Title、Open Graph、Twitter 和页面级 Schema 名称仍为 `Technical Knitwear Manufacturer | Athletik Clothing`，SEO-005 未发生回退。
+- SEO-006 状态：已完成。
 
 ### SEO-007：Sitemap
 
