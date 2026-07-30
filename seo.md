@@ -2,7 +2,7 @@
 
 > 网站：<https://www.athletikapparel.com/>  
 > 首次审查日期：2026-07-29  
-> 当前阶段：网站主体已完成，进入 SEO 清理与性能优化阶段  
+> 当前阶段：首轮 SEO 审查与整改已完成，进入收录观察和日常维护阶段
 > 文档用途：记录 SEO 基线、待处理问题、处理顺序、验证结果和后续决策
 
 ## 1. 当前结论
@@ -19,7 +19,7 @@
 - 搜索结果页和作者归档页已设置为 `noindex`。
 - 7 个产品分类页正文约为 670–760 词，没有明显的内容过薄问题。
 
-当前需要处理的重点是：默认 WordPress 页面、重复 Meta Description、首页双 H1、图片性能、社交分享元数据和结构化数据语义。
+首轮发现的默认 WordPress 内容、重复 Meta Description、首页双 H1、主要图片负载、社交分享元数据、结构化数据语义和 Sitemap 问题均已处理并通过线上验证。当前没有仍在处理或等待上线验证的 SEO 问题。
 
 ## 2. 本次审查范围
 
@@ -55,7 +55,7 @@
 - 首页 Lighthouse 移动端实验室测试
 - HTTPS 和首选域名跳转
 
-## 3. 待处理清单
+## 3. 处理清单
 
 状态说明：
 
@@ -63,6 +63,7 @@
 - `处理中`：已经开始修改，尚未完成验证
 - `待上线验证`：代码已完成，等待生产环境核对
 - `已完成`：线上验证通过
+- `已跳过`：复核后确认影响接近零或当前实现正确，不进行修改
 - `暂缓`：已决定以后处理
 
 | ID | 优先级 | 状态 | 问题 | 处理目标 |
@@ -73,11 +74,11 @@
 | SEO-004 | 高 | 已完成 | 首页图片负载约 29.9MB，移动端性能较差 | 已使用无损/Q100 WebP 和响应式尺寸替换主要图片 |
 | SEO-005 | 中 | 已完成 | 首页 Open Graph、Twitter 和部分 Schema 标题显示为 `Athletik Clothing -` | 与正式首页 SEO 标题统一 |
 | SEO-006 | 中 | 已完成 | 多个企业落地页被标记为 Article，并带个人作者 | 调整为更准确的页面类型和 Schema |
-| SEO-007 | 中 | 待处理 | Sitemap 存在默认页面、首页重复及较旧的 lastmod | 清理 Sitemap 并核对更新时间来源 |
-| SEO-008 | 中 | 待处理 | `/products/` 当前返回 404 | 决定是否建设真正的产品 Hub；不创建空页面 |
-| SEO-009 | 低 | 待处理 | 裸域 HTTP 存在两跳，页脚 Sitemap 链接发生一次 301 | 有条件时改为一步跳转和最终链接 |
-| SEO-010 | 持续 | 待处理 | 需要确认 Google 实际收录状态 | 使用 Search Console 检查 Sitemap、Pages 和 URL Inspection |
-| SEO-011 | 低 | 待处理 | 首页部分图片使用空 alt | 区分装饰图与内容图，只补充有意义的替代文本 |
+| SEO-007 | 中 | 已完成 | Sitemap 旧记录包含默认内容、首页重复及不可靠的 lastmod | 保持 URL 清洁，并让 lastmod 反映真实重要更新 |
+| SEO-008 | 中 | 已完成 | Products 导航实际指向首页产品区，需核实 `/products/` 的 404 是否构成问题 | 确认首页产品区承担 Hub 功能，不建立重复的空页面 |
+| SEO-009 | 低 | 已跳过 | 非首选裸域 HTTP 存在两跳，页脚 Sitemap 链接发生一次 301 | 影响接近零，保留现状 |
+| SEO-010 | 高 | 已完成 | 公开查询暂未发现 Google 收录结果 | Search Console 已确认首页收录、Sitemap 可读且代表性产品页可以编入索引 |
+| SEO-011 | 低 | 已跳过 | 首页部分图片使用空 alt | 已确认全部为空的图片均为装饰图或无障碍隐藏的重复 Logo |
 
 ## 4. 问题证据与处理要求
 
@@ -453,51 +454,137 @@
 
 ### SEO-007：Sitemap
 
-当前 Sitemap：
+主 Sitemap：
 
 `https://www.athletikapparel.com/sitemap_index.xml`
 
-发现：
+2026-07-30 开始处理时重新审计生产环境：
 
-- 默认文章、默认页面和默认分类仍在 Sitemap。
-- 首页同时出现在 post sitemap 和 page sitemap。
-- 多个页面的 `lastmod` 仍为 2026 年 6 月日期。
-- `/wp-sitemap.xml` 会跳转到 Rank Math Sitemap。
+- Sitemap Index 返回 HTTP 200，Content-Type 为 XML。
+- Sitemap Index 当前只包含 `page-sitemap.xml`，原来的 post 和 category Sitemap 已随 SEO-001 清理完成。
+- `page-sitemap.xml` 恰好包含 12 个唯一核心 URL；默认文章、默认页面和默认分类均无残留。
+- 首页只出现一次，不再存在跨 post/page Sitemap 的重复。
+- 12 个 Sitemap URL 均返回 HTTP 200、使用自引用 Canonical，并且没有 `noindex`。
+- `robots.txt` 返回 HTTP 200，并声明最终的 `https://www.athletikapparel.com/sitemap_index.xml`。
+- 12 个 URL 的 `lastmod` 仍为 2026 年 6 月 26–27 日。
+- 这些页面的主要内容和结构化数据由子主题模板输出；7 月的模板、链接和 Schema 更新不会改变 WordPress 页面表中的修改时间，因此 Rank Math 默认读取的数据库时间已经不能准确代表实际页面更新。
+- `/wp-sitemap.xml` 到 Rank Math Sitemap 的跳转及页脚链接归入 SEO-009，不在本轮扩大处理范围。
 
-处理时不要为了更新时间而每天伪造 `lastmod`；只在页面内容真实改变时更新。
+Google 只在 `<lastmod>` 持续且可验证地准确时使用它；主要内容、结构化数据和页面链接的显著变化都属于有效更新，但版权年份变化不属于。本轮采用以下规则：
+
+- 以 SEO-005/SEO-006 已上线的全站标题和结构化数据更新作为 12 个核心页面的最低真实更新时间：`2026-07-30T01:00:00+00:00`。
+- 如果某个 WordPress 页面以后有更晚的真实修改时间，则自动使用更晚值。
+- 不按访问时间、当天日期或定时任务每天刷新 `lastmod`。
+- 以后只有在核心页面的主要内容、结构化数据或内部链接发生全局显著变化时，才更新代码中的基线。
+
+2026-07-30 处理记录：
+
+- 已在子主题 `rank-math.php` 中增加 Rank Math Sitemap 输出规则。
+- 规则只识别首页和 11 个核心内页，不覆盖映射范围外的 URL。
+- Page Sitemap Index 的 `lastmod` 与核心页面条目使用同一真实基线。
+- 本地清除 Rank Math Sitemap 缓存后，Sitemap Index 与 Page Sitemap 均返回 HTTP 200，并可正常解析为 XML。
+- 本地 12 个核心 URL 的 `lastmod` 均更新为 `2026-07-30T01:00:00+00:00`。
+- 本地仍存在的 `sample-page` 保持原数据库时间，证明规则没有把全站所有 URL 强制改成同一天；该本地演示内容不在生产环境。
+- 已验证未来晚于基线的 WordPress 修改时间会优先输出，映射范围外 URL 和非 page Sitemap Index 不受影响。
+- PHP 语法检查通过。
+- 部署后已清除 Rank Math Sitemap 缓存。
+
+2026-07-30 最终线上验收：
+
+- Sitemap Index 和 Page Sitemap 均返回 HTTP 200，并可正常解析为 XML。
+- Sitemap Index 只包含一个 `page-sitemap.xml` 条目，其 `lastmod` 为 `2026-07-30T01:00:00+00:00`。
+- Page Sitemap 恰好包含 12 个唯一核心 URL，无缺失、重复或额外 URL。
+- 12 个核心 URL 的 `lastmod` 均为 `2026-07-30T01:00:00+00:00`，没有旧日期残留。
+- 12 个 Sitemap URL 均返回 HTTP 200、使用正确的自引用 Canonical，并且没有 `noindex`。
+- `robots.txt` 返回 HTTP 200，并继续声明最终的 Rank Math Sitemap 地址。
+- SEO-007 状态：已完成。
 
 ### SEO-008：Products Hub
 
-`/products/` 当前返回 404，并且未出现在 Sitemap。
+2026-07-30 重新核实生产环境：
 
-这不是当前的收录阻塞问题。后续需要在以下方案中选择：
+- 顶部导航、页脚及首页 `View Products` 按钮的 Products 目标均为 `https://www.athletikapparel.com/#ma-home-categories-title`，并不指向 `/products/`。
+- 从 Services、Contact 和产品分类页等内页点击 Products，会打开首页并定位到产品分类区。
+- 首页的 `ma-home-categories-title` 锚点存在且唯一。
+- 首页产品区包含 7 张分类卡，分别链接至 7 个正式的 `*-manufacturer/` 产品分类页。
+- Sitemap 中的 12 个核心页面均未发现指向 `/products/` 的站内链接。
+- 字面路径 `/products/` 仍返回 HTTP 404，但它没有出现在 Sitemap，也没有被当前导航或正文使用。
 
-1. 建立具有独立内容、分类入口和内部链接价值的 Products Hub。
-2. 明确不使用该 URL，继续由首页和各产品分类页承担导航功能。
+处理决定：
 
-在做出决定前，不建立内容空洞的占位页面。
+- 当前首页产品分类区已经承担 Products Hub 的导航功能，访客入口不是空按钮或死链。
+- 不再为了消除一个未使用路径的 404 而创建与首页产品区重复、内容薄弱的 `/products/` 页面。
+- 当前不为 `/products/` 添加跳转；旧站已确认没有需要继承的搜索权益，现站也没有内部链接向该路径。
+- 如果以后 Search Console、服务器日志或外部反向链接显示 `/products/` 存在真实访问或索引信号，再决定为其建立具有独立价值的 Hub，或添加到首页产品区的 301。
+- 本轮不需要修改主题代码或 WordPress 页面。
+- SEO-008 状态：已完成。
 
 ### SEO-009：跳转与链接清理
 
-- `http://athletikapparel.com/` 当前经过两次 301 后到达最终 www HTTPS 地址。
-- `http://www.athletikapparel.com/` 可一步到达最终地址。
-- 页脚指向 `/wp-sitemap.xml`，该地址再跳转到 `/sitemap_index.xml`。
+2026-07-30 重新核实生产环境：
 
-这些属于低优先级清理，不会阻止网站收录。
+- `http://athletikapparel.com/` 经过两次永久跳转后到达最终的 `https://www.athletikapparel.com/`。
+- `http://www.athletikapparel.com/` 和 `https://athletikapparel.com/` 均只经过一次跳转。
+- 正式的 `https://www.athletikapparel.com/` 不发生跳转。
+- 页脚 Sitemap 链接指向 `/wp-sitemap.xml`，该地址经过一次跳转到 `/sitemap_index.xml`。
+- `robots.txt` 和 Sitemap 输出均已经直接声明最终的 `/sitemap_index.xml`。
+- 核心页面的 Canonical、Sitemap URL 和站内主要链接均使用最终 www HTTPS 地址。
+
+影响评估与决定：
+
+- Google 可以处理永久跳转，并建议避免过长的跳转链；当前最长链只有两跳，低于其建议保持在三跳以内的范围。
+- 当前额外跳转只发生在非首选域入口和页脚辅助链接，不影响核心页面的抓取、Canonical 或 Sitemap 提交。
+- 优化后最多减少一次请求，不会带来可衡量的排名或收录改善。
+- 按“影响接近零则不处理”的原则，本项不修改服务器跳转或主题代码。
+- SEO-009 状态：已跳过。
 
 ### SEO-010：Google Search Console
 
-网站上线时间较短，外部 `site:` 抽查暂未观察到明确收录结果，但这不能单独证明存在问题。
+2026-07-30 公开收录信号复核：
 
-后续核对项目：
+- `site:athletikapparel.com`、品牌词和核心页面精确查询均暂未返回本站结果。
+- 网站于 2026-07-28 完成生产上线，目前只有约两天；公开搜索暂时无结果不能单独证明存在技术问题。
+- 12 个核心页面均已确认返回 HTTP 200、允许索引、使用自引用 Canonical，并包含在有效 Sitemap 中。
+- 公开搜索结果不是完整的索引报告，必须使用 Search Console 才能区分“尚未发现”“已发现未抓取”“已抓取未收录”或其他状态。
 
-- Sitemap 状态是否为读取成功。
-- 首页是否已编入索引。
-- 7 个产品分类页是否已编入索引。
-- Services、Sustainability、About Us、Contact 是否已编入索引。
-- Pages 报告中的未收录原因。
-- Core Web Vitals 的移动端真实用户数据。
-- 是否存在旧 URL、软 404、重复页面或错误 Canonical。
+影响评估：
+
+- 该项不是低价值的页面微调，而是确认 Google 是否已经发现并处理网站的关键诊断，影响程度为高，不能跳过。
+
+2026-07-30 Search Console 验证记录：
+
+- `Page indexing` 报告显示 3 个 URL 已编入索引，3 个 URL 未编入索引。
+- 两个“网页会自动重定向”示例分别是 `http://www.athletikapparel.com/` 和 `https://athletikapparel.com/`，它们正确跳转到首选 www HTTPS 地址，属于预期排除。
+- 唯一“已抓取但尚未编入索引”的示例是非业务路径 `https://www.athletikapparel.com/wp-content/themes/generatepress/*`；实时请求返回 HTTP 404，不需要收录或修复。
+- `sitemap_index.xml` 已于 2026-07-22 提交，Google 于 2026-07-29 成功读取；报告中的 16 个 URL 和 category/post 子 Sitemap 是 SEO-001/SEO-007 清理前的历史快照。
+- 当前线上 Sitemap Index 只包含 Page Sitemap，Page Sitemap 包含 12 个核心 URL；已于 2026-07-30 重新提交同一 Sitemap，等待 Google 更新报告。
+- 首页 URL Inspection 显示“网址已收录到 Google”，网页索引和 HTTPS 状态均正常。
+- `/sportswear-manufacturer/` 最初显示 Google 尚未发现；Live Test 随后通过，结果为“网址可编入 Google 索引”且网页可用性正常。
+- Sportswear 页面已成功提交编入索引请求。
+- 未发现 robots、`noindex`、Canonical、HTTPS、抓取可用性或 Sitemap 有效性方面的技术性收录障碍。
+
+后续观察：
+
+- 不逐页重复提交其余核心页面，由已重新提交的 Sitemap 负责批量发现。
+- 2026-08-06 起复查 Sitemap 的最后读取时间、发现 URL 数量以及 Page indexing 数量。
+- 如果两周后核心页面仍大量未被发现，再使用 URL Inspection 检查具体页面并依据实际原因处理。
+- SEO-010 首轮收录基线状态：已完成。
+
+### SEO-011：首页图片 alt
+
+2026-07-30 重新核实生产环境和模板：
+
+- 首页共输出 302 张图片，没有任何图片缺少 `alt` 属性。
+- 其中 97 张使用 `alt=""`：4 张位于 `aria-hidden="true"` 的 Hero 装饰拼图中；另外 93 张是客户 Logo 跑马灯的第二套无障碍隐藏副本。
+- 客户 Logo 的第一套可见语义副本均具有品牌名称 alt；第二套只为实现无缝循环，重复朗读会造成无障碍噪音。
+- 产品卡、Lookbook、认证标志、合作伙伴图片及站点 Logo 等有信息价值的图片均具有描述性 alt。
+
+影响评估与决定：
+
+- 空 alt 与缺少 alt 属性不是同一情况；对装饰图和已隐藏的重复内容使用 `alt=""` 是正确实现。
+- 为这些图片强行添加关键词不会提高页面 SEO，反而会制造重复语义和屏幕阅读器噪音。
+- 本项不修改模板代码。
+- SEO-011 状态：已跳过。
 
 ## 5. 当前确认正常的项目
 
@@ -513,9 +600,9 @@
 - 产品分类页均有一个内容主 H1。
 - 核心页面内部链接未发现 404。
 - 旧地址 `/sustainabilty/` 和 `/contact-2/` 返回 404/noindex；除非 Search Console 以后发现外链或历史流量，否则暂不要求重定向。
-- 所有已检查图片都具有 alt 属性；空 alt 需要按图片用途进一步判断，不应机械填充。
+- 首页所有图片都具有 alt 属性；当前空 alt 仅用于装饰图和无障碍隐藏的重复 Logo，属于正确实现。
 
-## 6. 建议处理顺序
+## 6. 已执行顺序与后续观察
 
 ### 第一阶段：低风险技术清理
 
@@ -534,13 +621,13 @@
 
 1. SEO-006：调整结构化数据
 2. SEO-007：整理 Sitemap
-3. SEO-008：决定是否建立 Products Hub
-4. SEO-009：清理次要跳转
+3. SEO-008：确认首页产品区承担 Products Hub 功能（已完成）
+4. SEO-009：清理次要跳转（已跳过，影响接近零）
 
 ### 第四阶段：收录验证
 
-1. SEO-010：Search Console URL Inspection
-2. 检查 Pages 和 Sitemap 报告
+1. SEO-010：Search Console URL Inspection（首轮已完成）
+2. 2026-08-06 起复查 Pages 和 Sitemap 报告
 3. 记录实际收录日期和异常原因
 4. 根据真实数据决定是否需要进一步操作
 
@@ -567,3 +654,27 @@
 - Google Canonical Guide：<https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls>
 - Google Structured Data Policies：<https://developers.google.com/search/docs/appearance/structured-data/sd-policies>
 - Google Core Web Vitals：<https://developers.google.com/search/docs/appearance/core-web-vitals>
+
+## 9. 首轮 SEO 收尾总结
+
+收尾日期：2026-07-30
+
+处理结果：
+
+- SEO-001 至 SEO-011 共 11 项：9 项已完成，2 项因影响接近零或当前实现正确而明确跳过。
+- 当前没有状态为 `待处理`、`处理中`、`待上线验证` 或 `暂缓` 的问题。
+- 12 个核心页面最终线上自动化抽查全部通过。
+- 每个核心页面均返回 HTTP 200，并且只输出一个 Title、一个 Meta Description、一个 H1、一个自引用 Canonical、一个 Open Graph title 和一个可正常解析的 JSON-LD 数据块。
+- 12 个核心页面均无意外 `noindex`。
+- robots.txt 返回 HTTP 200，并声明最终的 Rank Math Sitemap。
+- Page Sitemap 包含 12 个唯一核心 URL，没有默认内容、重复首页或额外 URL。
+- 首页已被 Google 收录；代表性产品页通过 Search Console Live Test，并已成功提交收录请求。
+- 未发现会阻止 Google 抓取或编入索引的全站性技术问题。
+
+后续只进行常规观察，不作为当前整改遗留项：
+
+- 2026-08-06 起复查 Search Console 的 Sitemap 最后读取时间、发现 URL 数量和 Page indexing 数量。
+- 新增页面、修改 URL、调整主要内容或 Schema 后，重新进行对应页面级检查。
+- 只有在 Search Console 出现持续的抓取/收录异常，或真实用户 Core Web Vitals 数据出现问题时，才重新开启专项整改。
+
+结论：网站首轮 SEO 技术整改可以正式收尾。

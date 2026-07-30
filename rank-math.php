@@ -169,3 +169,108 @@ function myathletik_rank_math_publisher_schema( $data ) {
 	return $data;
 }
 add_filter( 'rank_math/json_ld', 'myathletik_rank_math_publisher_schema', 102 );
+
+/**
+ * Return the last significant site-wide update for theme-rendered core pages.
+ *
+ * Update this value only when the rendered main content, structured data, or
+ * internal links change materially across the managed pages. WordPress page
+ * modifications newer than this baseline continue to take precedence.
+ *
+ * @return int Unix timestamp in UTC.
+ */
+function myathletik_rank_math_core_sitemap_baseline() {
+	return strtotime( '2026-07-30 01:00:00 UTC' );
+}
+
+/**
+ * Check whether a Sitemap URL belongs to one of the 12 managed core pages.
+ *
+ * @param string $url Absolute Sitemap URL.
+ * @return bool
+ */
+function myathletik_rank_math_is_core_sitemap_url( $url ) {
+	$path = wp_parse_url( $url, PHP_URL_PATH );
+
+	if ( ! is_string( $path ) ) {
+		return false;
+	}
+
+	$path = '/' . trim( $path, '/' );
+	$path = '/' === $path ? $path : trailingslashit( $path );
+
+	return in_array(
+		$path,
+		array(
+			'/',
+			'/sportswear-manufacturer/',
+			'/underwear-manufacturer/',
+			'/outdoor-clothing-manufacturer/',
+			'/merino-wool-manufacturer/',
+			'/silk-wear-manufacturer/',
+			'/knitted-fabrics-manufacturer/',
+			'/sports-accessories-manufacturer/',
+			'/services/',
+			'/sustainability/',
+			'/about-us/',
+			'/contact/',
+		),
+		true
+	);
+}
+
+/**
+ * Keep core-page Sitemap lastmod values aligned with real rendered changes.
+ *
+ * Rank Math normally uses only the WordPress database modification time. The
+ * site's page bodies are theme-rendered, so that value does not change when a
+ * template or the shared structured data changes.
+ *
+ * @param string $output Rendered XML for one Sitemap URL.
+ * @param array  $url    Sitemap URL data.
+ * @return string
+ */
+function myathletik_rank_math_core_sitemap_lastmod( $output, $url ) {
+	if (
+		! is_string( $output ) ||
+		! is_array( $url ) ||
+		empty( $url['loc'] ) ||
+		! myathletik_rank_math_is_core_sitemap_url( $url['loc'] )
+	) {
+		return $output;
+	}
+
+	$modified = ! empty( $url['mod'] ) ? strtotime( $url['mod'] ) : 0;
+	$modified = max( (int) $modified, myathletik_rank_math_core_sitemap_baseline() );
+	$lastmod  = '<lastmod>' . esc_html( gmdate( DATE_W3C, $modified ) ) . '</lastmod>';
+
+	if ( false !== strpos( $output, '<lastmod>' ) ) {
+		return (string) preg_replace( '#<lastmod>[^<]*</lastmod>#', $lastmod, $output, 1 );
+	}
+
+	return (string) preg_replace( '#(\s*</url>\s*)$#', "\n\t\t" . $lastmod . '$1', $output, 1 );
+}
+add_filter( 'rank_math/sitemap/url', 'myathletik_rank_math_core_sitemap_lastmod', 20, 2 );
+
+/**
+ * Keep the Page Sitemap index timestamp aligned with its core-page entries.
+ *
+ * @param array  $entry       Sitemap index entry.
+ * @param string $object_type Entry object type.
+ * @param string $sitemap     Sitemap provider name.
+ * @return array
+ */
+function myathletik_rank_math_page_sitemap_index_lastmod( $entry, $object_type, $sitemap ) {
+	if ( ! is_array( $entry ) || 'post' !== $object_type || 'page' !== $sitemap ) {
+		return $entry;
+	}
+
+	$current          = ! empty( $entry['lastmod'] ) ? strtotime( $entry['lastmod'] ) : 0;
+	$entry['lastmod'] = gmdate(
+		'Y-m-d H:i:s',
+		max( (int) $current, myathletik_rank_math_core_sitemap_baseline() )
+	);
+
+	return $entry;
+}
+add_filter( 'rank_math/sitemap/index/entry', 'myathletik_rank_math_page_sitemap_index_lastmod', 20, 3 );
