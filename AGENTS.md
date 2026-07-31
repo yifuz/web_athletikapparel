@@ -158,7 +158,7 @@ The rebuild reorganizes the site around search intent. Target structure:
 ### Positioning (drives all content decisions)
 - Audience: **mid-sized B2B buyers** (brands/wholesalers placing technical knit
   orders), NOT startups doing tiny runs.
-- MOQ ~500 pieces. Frame the site as a **technical manufacturing partner**, not
+- MOQ 1,000 pieces per style. Frame the site as a **technical manufacturing partner**, not
   a startup hand-holding service. (This is the key contrast vs. competitors like
   Hongyu Apparel, who target startups / low MOQ.)
 - Differentiators to emphasize: vertical integration, flatlock/activeseam

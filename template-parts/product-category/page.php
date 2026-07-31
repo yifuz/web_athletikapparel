@@ -141,8 +141,8 @@ $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 			<div class="ma-product-specs__grid">
 				<article>
 					<span><?php esc_html_e( 'MOQ', 'myathletik-child' ); ?></span>
-					<strong><?php esc_html_e( '500 pcs / style', 'myathletik-child' ); ?></strong>
-					<p><?php esc_html_e( '300 pcs / style for multi-style orders.', 'myathletik-child' ); ?></p>
+					<strong><?php esc_html_e( '1,000 pcs', 'myathletik-child' ); ?></strong>
+					<p><?php esc_html_e( 'Per style.', 'myathletik-child' ); ?></p>
 				</article>
 				<article>
 					<span><?php esc_html_e( 'Sampling', 'myathletik-child' ); ?></span>

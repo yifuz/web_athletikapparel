@@ -81,7 +81,7 @@ launch record).
 - Public story: "our own production facility / vertically integrated." NEVER
   reveal the real number of factories or that orders are subcontracted.
 - Vertical capability can be stated as "from yarn to finished garment."
-- Audience: mid-sized B2B brand clients. MOQ 500/style (300/style multi-style).
+- Audience: mid-sized B2B brand clients. MOQ 1,000 pcs per style.
 - Voice: professional + credible + warm. Not startup hand-holding.
 - URLs: top-level keyword style (/sportswear-manufacturer/ etc.). See §"301
   redirects" below — NOT being done (old site dead).
@@ -404,7 +404,8 @@ The old site's pages are all dead, no inherited search equity to preserve.
 2. **Contact form (FluentForm id=3) — ✅ FULLY RESOLVED:** audited in the
    WordPress admin and confirmed operational. Current fields: Name, Email*,
    Company, Country, Website, Product Category of Interest* (7 cats + Other),
-   Estimated Order Quantity* (Under 500 / 500–2,000 / 2,000–5,000 / 5,000+),
+   Estimated Order Quantity* (Under 1,000 / 1,000–2,000 / 2,000–5,000 /
+   5,000+; tiers updated for the 1,000 pcs-per-style MOQ),
    Business Type* (Established brand / New brand / Wholesaler-Importer /
    Other), and Message*. Resolution details:
    (a) tech pack prompt added 2026-07-21 via the Message field

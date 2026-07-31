@@ -25,7 +25,7 @@ $stages = array(
 	array(
 		'number' => '02',
 		'title'  => __( 'Bulk Production', 'myathletik-child' ),
-		'copy'   => __( 'Once samples are approved, we move into bulk production in our own facility. With technical knit construction and flexible, scalable capacity, we handle orders of 500 pcs per style, or 300 pcs per style for multi-style orders, and scale up without compromising quality or lead times.', 'myathletik-child' ),
+		'copy'   => __( 'Once samples are approved, we move into bulk production in our own facility. With technical knit construction and flexible, scalable capacity, we handle orders from 1,000 pcs per style and scale up without compromising quality or lead times.', 'myathletik-child' ),
 	),
 	array(
 		'number' => '03',

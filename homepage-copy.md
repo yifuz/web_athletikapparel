@@ -5,7 +5,7 @@ placeholder it replaces. Either edit the file directly in VS Code (Ctrl+F the
 placeholder text, replace it) or hand this doc to Codex to apply.
 
 Numbers confirmed: 15+ years · 4,500+ m² own facility · 100,000+ pcs/month
-capacity · MOQ 500/style (300/style for multi-style orders).
+capacity · MOQ 1,000 pcs per style.
 
 Voice: balanced — technical credibility + warmth. "Integrated production
 partner," not just a factory. Never state the real number of factories.
@@ -99,8 +99,8 @@ Replace each `[CONTENT: user to write step description]` (4 steps) with:
 
 1. **Sampling & Prototyping** — Samples in 1–2 weeks, depending on complexity.
    We work from your samples, designs, or concepts.
-2. **Bulk Production** — MOQ 500 pcs per style (300 pcs per style for
-   multi-style orders), built on technical knit construction.
+2. **Bulk Production** — MOQ 1,000 pcs per style, built on technical knit
+   construction.
 3. **Quality Control** — In-house testing and inspection at every stage.
 4. **Export & Shipping** — FOB and DDP supported, with our own freight booking.
 

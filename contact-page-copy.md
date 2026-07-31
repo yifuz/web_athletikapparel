@@ -39,9 +39,10 @@ GUARDRAILS:
 - Product category of interest (dropdown — your 7 categories):
   Sportswear · Underwear · Outdoor Clothing · Merino Wool · Silk Wear ·
   Knitted Fabrics · Sports Accessories · Other
-- Estimated order quantity (dropdown — softly signals scale, no MOQ stated):
-  - Under 500 pcs
-  - 500 – 2,000 pcs
+- Estimated order quantity per style (dropdown — softly signals scale, no MOQ
+  stated):
+  - Under 1,000 pcs
+  - 1,000 – 2,000 pcs
   - 2,000 – 5,000 pcs
   - 5,000+ pcs
 - Business type (dropdown):
@@ -81,8 +82,8 @@ Note (microcopy under submit, optional):
   right on desktop; stacked on mobile).
 - File upload is optional — do not make it required; accept PDF + common image
   types; show a size limit hint.
-- The "Under 500 pcs" tier stays in the dropdown (it's the soft signal) but MOQ
-  is never stated as a rule anywhere on the page.
+- The "Under 1,000 pcs" tier stays in the dropdown (it's the soft signal) but
+  MOQ is never stated as a rule anywhere on the page.
 - `[CONTENT: ...]` / `[IMAGE: ...]` are editor placeholders — never render the
   literal text on the live page.
 

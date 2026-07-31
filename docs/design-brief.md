@@ -106,7 +106,7 @@ placeholders.
 10. **Inquiry CTA band + form**
     - Borrow Hongyu's smart lead-filtering fields (budget tier, order quantity,
       selling channel, website, file upload for tech packs) — but set budget
-      thresholds HIGHER, appropriate for ~500 MOQ technical orders, to filter out
+      thresholds HIGHER, appropriate for a 1,000 pcs per style MOQ, to filter out
       sub-MOQ inquiries. Warm, direct CTA copy.
 
 ### Explicitly DROP from Hongyu (do not build these)

@@ -18,7 +18,7 @@ $steps = array(
 	array(
 		'title' => __( 'Bulk Production', 'myathletik-child' ),
 		'url'   => '/services/',
-		'copy'  => __( 'MOQ 500 pcs per style (300 pcs per style for multi-style orders), built on technical knit construction.', 'myathletik-child' ),
+		'copy'  => __( 'MOQ 1,000 pcs per style, built on technical knit construction.', 'myathletik-child' ),
 	),
 	array(
 		'title' => __( 'Quality Control', 'myathletik-child' ),

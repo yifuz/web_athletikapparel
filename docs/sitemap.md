@@ -78,7 +78,8 @@ target replacing an old `/products/<x>/` URL.
 
 ### Shared template for every category page
 **H1:** `[Category] Manufacturer` (e.g. "Sportswear Manufacturer")
-1. Intro — what you make in this category + who it's for (B2B, MOQ ~500).
+1. Intro — what you make in this category + who it's for (B2B, MOQ 1,000 pcs
+   per style).
 2. Capabilities — fabrics, construction (flatlock/activeseam where relevant),
    finishing options.
 3. Product/style examples — real photos, grouped, with alt text.
@@ -149,7 +150,7 @@ subcontracting details. Replace stock imagery.
 
 **H1:** Contact Us
 Inquiry form with lead-filtering fields:
-- Budget tier (set thresholds appropriate for ~500 MOQ technical orders —
+- Budget tier (set thresholds appropriate for a 1,000 pcs per style MOQ —
   higher than a startup-focused competitor's tiers)
 - Estimated order quantity
 - Product category of interest
