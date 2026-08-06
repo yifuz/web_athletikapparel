@@ -117,6 +117,8 @@ function myathletik_product_category_data() {
 			'meta_description' => __( 'Underwear manufacturer for flatlock, activeseam, bonded-welded, microfiber, merino wool, and technical OEM/ODM underwear programs.', 'myathletik-child' ),
 			'h1'               => __( 'Underwear Manufacturer', 'myathletik-child' ),
 			'old_url'          => '/products/underwear/',
+			'hero_video'       => 'underwear/underwear-hero-black-white-base-layer.mp4',
+			'hero_video_position' => 'center 18%',
 			'intro'            => __( 'We specialize in technical and performance underwear - flatlock, activeseam, and bonded-welded construction for a smooth, seamless feel against the skin. A trusted production partner for underwear brands, importers, and private labels worldwide.', 'myathletik-child' ),
 			'what_we_make'     => array(
 				__( 'Men\'s boxer shorts and briefs', 'myathletik-child' ),
