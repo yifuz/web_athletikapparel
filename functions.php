@@ -136,7 +136,10 @@ add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_styles' );
  * recommended generate_lead event without embedding a measurement ID.
  */
 function myathletik_enqueue_inquiry_tracking() {
-	if ( ! is_front_page() && ! is_page( 'contact' ) ) {
+	$page_slug                = is_page() ? get_post_field( 'post_name', get_queried_object_id() ) : '';
+	$is_product_category_page = $page_slug && myathletik_get_product_category_data( $page_slug );
+
+	if ( ! is_front_page() && ! is_page( 'contact' ) && ! $is_product_category_page ) {
 		return;
 	}
 
@@ -155,6 +158,128 @@ function myathletik_enqueue_inquiry_tracking() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_inquiry_tracking' );
+
+/**
+ * Preserve paid-campaign attribution while visitors move between site pages.
+ *
+ * The inquiry form is not embedded on every landing page, so the first landing
+ * page and campaign parameters need to survive the trip to the contact form.
+ * Session storage keeps the data limited to the current browser tab/session.
+ */
+function myathletik_enqueue_attribution_tracking() {
+	$script_path = get_stylesheet_directory() . '/assets/js/attribution-tracking.js';
+
+	if ( ! file_exists( $script_path ) ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'myathletik-attribution-tracking',
+		get_stylesheet_directory_uri() . '/assets/js/attribution-tracking.js',
+		array(),
+		filemtime( $script_path ),
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_attribution_tracking' );
+
+/**
+ * Load the Cookiebot consent-settings control when a CBID is configured.
+ */
+function myathletik_enqueue_consent_controls() {
+	if ( ! get_option( 'cookiebot-cbid' ) ) {
+		return;
+	}
+
+	$script_path = get_stylesheet_directory() . '/assets/js/consent-controls.js';
+
+	if ( ! file_exists( $script_path ) ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'myathletik-consent-controls',
+		get_stylesheet_directory_uri() . '/assets/js/consent-controls.js',
+		array(),
+		(string) filemtime( $script_path ),
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_consent_controls' );
+
+/**
+ * Add campaign attribution to Fluent Forms inquiry submissions.
+ *
+ * Fluent Forms removes inputs that are not part of its stored form model. This
+ * filter runs after that cleanup and restores only the allowlisted attribution
+ * fields after applying server-side sanitization and length limits.
+ *
+ * @param array $form_data Submitted form values accepted by Fluent Forms.
+ * @param int   $form_id   Fluent Forms form ID.
+ * @return array
+ */
+function myathletik_add_inquiry_attribution( $form_data, $form_id ) {
+	if ( 3 !== (int) $form_id ) {
+		return $form_data;
+	}
+
+	$raw_data = array();
+
+	if ( function_exists( 'wpFluentForm' ) ) {
+		$request_data = wpFluentForm( 'request' )->get( 'data' );
+
+		if ( is_array( $request_data ) ) {
+			$raw_data = $request_data;
+		}
+	}
+
+	if ( empty( $raw_data ) && isset( $_POST['data'] ) && is_string( $_POST['data'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Fluent Forms validates the submission before this filter runs.
+		parse_str( wp_unslash( $_POST['data'] ), $raw_data ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+	}
+
+	$text_fields = array(
+		'ma_utm_source',
+		'ma_utm_medium',
+		'ma_utm_campaign',
+		'ma_utm_content',
+		'ma_utm_term',
+		'ma_gclid',
+	);
+
+	foreach ( $text_fields as $field_name ) {
+		if ( ! isset( $raw_data[ $field_name ] ) || is_array( $raw_data[ $field_name ] ) ) {
+			continue;
+		}
+
+		$value = sanitize_text_field( $raw_data[ $field_name ] );
+		$value = function_exists( 'mb_substr' ) ? mb_substr( $value, 0, 255 ) : substr( $value, 0, 255 );
+
+		if ( '' !== $value ) {
+			$form_data[ $field_name ] = $value;
+		}
+	}
+
+	$url_fields = array(
+		'ma_first_landing_page',
+		'ma_original_referrer',
+	);
+
+	foreach ( $url_fields as $field_name ) {
+		if ( ! isset( $raw_data[ $field_name ] ) || is_array( $raw_data[ $field_name ] ) ) {
+			continue;
+		}
+
+		$value = esc_url_raw( $raw_data[ $field_name ] );
+		$value = function_exists( 'mb_substr' ) ? mb_substr( $value, 0, 2048 ) : substr( $value, 0, 2048 );
+
+		if ( '' !== $value ) {
+			$form_data[ $field_name ] = $value;
+		}
+	}
+
+	return $form_data;
+}
+add_filter( 'fluentform/insert_response_data', 'myathletik_add_inquiry_attribution', 10, 2 );
 
 /**
  * Add preconnect hints for Google Fonts.
@@ -777,10 +902,32 @@ function myathletik_replace_footer() {
 add_action( 'after_setup_theme', 'myathletik_replace_footer', 30 );
 
 /**
+ * Render a short privacy notice beside an inquiry form.
+ *
+ * WordPress returns no public Privacy Policy URL while the assigned page is
+ * still a draft, so the notice appears only after the policy is published.
+ */
+function myathletik_inquiry_privacy_notice() {
+	$privacy_policy_url = get_privacy_policy_url();
+
+	if ( ! $privacy_policy_url ) {
+		return;
+	}
+	?>
+	<p class="ma-inquiry-form__note">
+		<?php esc_html_e( 'We use the information you provide to respond to your inquiry.', 'myathletik-child' ); ?>
+		<a href="<?php echo esc_url( $privacy_policy_url ); ?>"><?php esc_html_e( 'Privacy Policy', 'myathletik-child' ); ?></a>
+	</p>
+	<?php
+}
+
+/**
  * Render the custom footer.
  */
 function myathletik_site_footer() {
-	$logo_url = myathletik_header_logo();
+	$logo_url             = myathletik_header_logo();
+	$privacy_policy_url   = get_privacy_policy_url();
+	$cookiebot_configured = (bool) get_option( 'cookiebot-cbid' );
 	?>
 	<div class="ma-site-footer">
 		<div class="ma-site-footer__inner">
@@ -836,7 +983,12 @@ function myathletik_site_footer() {
 					<li><a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>"><?php esc_html_e( 'About Us', 'myathletik-child' ); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/sustainability/' ) ); ?>"><?php esc_html_e( 'Sustainability', 'myathletik-child' ); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/#ma-home-categories-title' ) ); ?>"><?php esc_html_e( 'Products', 'myathletik-child' ); ?></a></li>
-					
+					<?php if ( $privacy_policy_url ) : ?>
+						<li><a href="<?php echo esc_url( $privacy_policy_url ); ?>"><?php esc_html_e( 'Privacy Policy', 'myathletik-child' ); ?></a></li>
+					<?php endif; ?>
+					<?php if ( $cookiebot_configured ) : ?>
+						<li><a href="#cookie-settings" data-cookie-settings><?php esc_html_e( 'Cookie Settings', 'myathletik-child' ); ?></a></li>
+					<?php endif; ?>
 					<li><a href="<?php echo esc_url( home_url( '/wp-sitemap.xml' ) ); ?>"><?php esc_html_e( 'Sitemap', 'myathletik-child' ); ?></a></li>
 				</ul>
 			</nav>

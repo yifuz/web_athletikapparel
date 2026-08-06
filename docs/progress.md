@@ -5,7 +5,100 @@ docs/design-brief.md, and docs/homepage-copy.md when starting a new session.
 This file tracks WHAT IS DONE and WHAT IS LEFT, since the rule docs only
 define HOW. Also check `git log` for the latest commits.
 
-Last updated: 2026-07-29 — Homepage Lookbook QA fixes completed. Corrected
+Last updated: 2026-08-05 — Production privacy, consent, attribution, and
+first Google Ads launch completed.
+WP Consent API 2.0.1 and Cookiebot 4.7.2 are active; CBID
+`f81cac53-c468-4afd-9823-7adcc4839c5b` uses Auto blocking. Cookiebot's own
+Google Consent Mode is disabled, leaving Site Kit as the sole Google consent
+controller. The first production scan contains 7 categorized trackers and no
+Unclassified entries. The banner uses explicit consent for all visitors, no
+preselected optional categories, English content, a bottom Bar on desktop, a
+responsive Dialog on mobile, Outline buttons, no close icon, and an enabled
+Privacy Trigger. Exact 390px emulation confirmed no horizontal overflow.
+Fresh-profile automation confirmed Reject all keeps optional WP consent and
+the four Google advertising/analytics consent signals denied, while Allow all
+grants them. The live Privacy Trigger can reopen the consent controls, and an
+Allow all -> Withdraw consent test reset Preferences, Statistics, Marketing,
+and their WP Consent API states to false. The current scan has Statistics
+trackers but zero Preferences or Marketing trackers, so the live banner
+currently collapses to Allow all / Reject all; granular Statistics-versus-
+Marketing testing is deferred until the Google Ads tag is added and Cookiebot
+is rescanned.
+
+AdSense was disconnected from production Site Kit; a cache-bypassed public
+HTML recheck confirmed the AdSense script and related domain references were
+removed. WordPress Privacy Policy page ID 3 is a structured English United States
+first-launch version containing the Cookiebot declaration shortcode. It was approved
+by the business, published locally on 2026-08-04, deployed to production, and
+verified on the public site. The production theme footer includes a Cookie
+Settings control using `Cookiebot.renew()`. The live Privacy Trigger remains
+enabled as a second route for visitors to review or change consent. The
+production UTM/GCLID attribution code requires WP Consent API
+`marketing` consent and deletes stored attribution when consent is denied or
+revoked. The user confirmed Athletik Clothing Inc. as data controller and
+`info@athletikapparel.com` as privacy contact. The New York controller address
+is `228 Park Avenue S #30327, New York, NY 10003, United States`. The approved
+retention plan is 24 months after last substantive contact for unsuccessful
+inquiries and related email, 14 months for GA4 with activity reset disabled,
+and a 30-day target for server/security/diagnostic logs. Cookiebot's browser consent
+cookie lasts up to 12 months; its official documentation does not expose a fixed
+account-level server consent-log period, so the criterion-based policy wording still
+requires final legal review. The production Cookiebot dashboard confirms that User
+Consent Logging is active and the consent-log download control is available; no visitor
+log was downloaded during verification. Flywheel provides the most recent 7 days of access,
+PHP error, and slow logs, while nightly website/database backups are retained for 30 days
+and then permanently deleted. The production Cloudflare zone is on the Free plan with no
+Workers connected. Verified customer-visible windows are: zone traffic analytics up to 30
+days, Security Analytics 7 days, Security Events 24 hours, DNS Analytics 8 days, Turnstile
+Analytics 7 days, Email Routing activity queries up to 30 days, and administrative account
+audit logs 18 months. These product windows are not treated as a universal deletion period
+for all Cloudflare Network Data. Brevo transactional logs are now configured for all senders
+to auto-delete after 1 month, and new transactional email previews are not stored. Final
+Cookiebot/Cloudflare provider wording still requires review. An existing Brevo test log was
+checked and no email-content preview was available under the current retention rules. The single
+CRM contact shown in the Brevo account was confirmed by the user as the account owner's own
+contact, not a website visitor, customer, or inquiry record. The user also confirmed that no
+additional CRM, spreadsheet, WhatsApp account, mailbox, or sales system receives website inquiry
+data; the current path is WordPress/Fluent Forms, Brevo, Cloudflare Email Routing, and the 163.com
+destination inbox.
+The version-controlled source now contains a complete English Privacy Policy review draft covering
+the confirmed collection, purposes, legal-basis candidates, consent controls, processors, retention
+periods, rights, security, external links, and children's privacy. The United States first-launch
+public copy was approved and published to local WordPress Privacy Policy page ID 3 on 2026-08-04,
+then deployed to production and verified. The page contains 14 H2 sections, no
+content-level H1, one working Cookiebot declaration shortcode, valid Gutenberg blocks, and no public
+placeholders. The principal European activation blocker is the current 163.com destination mailbox:
+the contracting entity, processing location, and EEA/UK/Swiss transfer mechanism must be confirmed,
+or the destination must be changed, before European promotion. Legal
+review must also confirm whether active EEA/UK targeting requires Athletik to appoint regional
+privacy representatives. The user confirmed that Athletik does not meet any of the three principal
+CCPA business thresholds, so the initial screen does not indicate that the company is a covered CCPA
+business. Final review must still check controlled-entity and other routes to coverage, other US
+state privacy laws, and reassess before any future cross-context behavioral advertising is used.
+The initial plan targeted the United States only; the actual first search campaign was launched for
+the United States and Canada. EEA, UK,
+and Swiss representative and transfer requirements are now tracked as a regional activation gate;
+those regions must not be actively targeted until the 163.com transfer and representative questions
+are resolved.
+The inquiry-form privacy implementation was revised after review: an ordinary manufacturing inquiry
+does not require a mandatory Privacy Policy acknowledgment checkbox. Both production form placements now
+show a concise Privacy Policy notice only after the assigned policy page is published. Any future
+email-marketing consent must remain separate and optional.
+The production GA4 property was verified with both event and user data set to 14 months
+and activity reset disabled. GA4 is linked to Google Ads account `734-505-8603`,
+and the `generate_lead` inquiry conversion was verified in Tag Assistant and
+GA4 DebugView after analytics consent. The first search campaign,
+`Leads-Search-1`, uses the sportswear manufacturer landing page, Search Network
+only, United States and Canada targeting, English, Maximize Clicks, and a
+custom daily budget of RMB 25. AI Max, Search Partners, Display expansion,
+text adaptation, and final URL expansion are disabled. The campaign was
+launched on 2026-08-05 and entered Google review. See
+`docs/privacy-consent-plan.md`, `docs/privacy-policy-draft.md`, and
+`docs/consent-deployment-runbook.md`. The complete launch baseline and
+monitoring rules are recorded in
+`docs/google-ads-launch-record-2026-08-05.md`.
+
+Previous: 2026-07-29 — Homepage Lookbook QA fixes completed. Corrected
 `sportswear/IMG_5836.webp`, whose EXIF orientation had been lost during the
 WebP conversion; the replacement is auto-oriented and remains WebP quality 82
 with a 2000px maximum edge. Slowed the continuous marquee from 35s to 110s on

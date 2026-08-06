@@ -34,6 +34,7 @@ $contact_hero_image = get_stylesheet_directory_uri() . '/assets/images/contact/h
 				</div>
 
 				<?php echo do_shortcode( '[fluentform id="3"]' ); ?>
+				<?php myathletik_inquiry_privacy_notice(); ?>
 			</div>
 
 			<aside class="ma-contact-details" aria-labelledby="ma-contact-details-title">

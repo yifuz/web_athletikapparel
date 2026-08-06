@@ -22,6 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="ma-inquiry-form ma-inquiry-form--fluent">
 			<?php echo do_shortcode( '[fluentform id="3"]' ); ?>
+			<?php myathletik_inquiry_privacy_notice(); ?>
 		</div>
 	</div>
 </section>
