@@ -1017,20 +1017,9 @@ function myathletik_site_footer() {
 					<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php esc_attr_e( 'Athletik Clothing', 'myathletik-child' ); ?>">
 					<span><?php esc_html_e( 'Athletik Clothing', 'myathletik-child' ); ?></span>
 				</a>
-				<p><?php esc_html_e( 'Technical knitwear OEM/ODM manufacturing partner for underwear, sportswear, outdoor clothing, and performance fabrics.', 'myathletik-child' ); ?></p>
-				<?php myathletik_social_links(); ?>
+				<p><?php esc_html_e( 'Technical knitwear OEM/ODM manufacturer.', 'myathletik-child' ); ?></p>
+				<?php myathletik_social_links( 'footer', true ); ?>
 			</div>
-
-			<nav class="ma-site-footer__nav" aria-labelledby="ma-footer-services-title">
-				<h2 id="ma-footer-services-title"><?php esc_html_e( 'Services', 'myathletik-child' ); ?></h2>
-				<ul>
-					<li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>"><?php esc_html_e( 'Sample Development', 'myathletik-child' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>"><?php esc_html_e( 'Custom Apparel Production', 'myathletik-child' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>"><?php esc_html_e( 'Fabric & Trim Sourcing', 'myathletik-child' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>"><?php esc_html_e( 'Labels & Packaging', 'myathletik-child' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>"><?php esc_html_e( 'Bulk Manufacturing', 'myathletik-child' ); ?></a></li>
-				</ul>
-			</nav>
 
 			<nav class="ma-site-footer__nav" aria-labelledby="ma-footer-company-title">
 				<h2 id="ma-footer-company-title"><?php esc_html_e( 'Company', 'myathletik-child' ); ?></h2>
@@ -1064,7 +1053,7 @@ function myathletik_site_footer() {
 				<?php
 				printf(
 					/* translators: %1$s: current year. */
-					esc_html__( '? %1$s Athletik Clothing. All rights reserved.', 'myathletik-child' ),
+					esc_html__( '© %1$s Athletik Clothing. All rights reserved.', 'myathletik-child' ),
 					esc_html( gmdate( 'Y' ) )
 				);
 				?>
