@@ -9,16 +9,16 @@ Text Domain:  myathletik-child
 */
 
 /* =========================================================
-   Design tokens â€?defined once, reused everywhere.
+   Design tokens ï¿½?defined once, reused everywhere.
    Edit these to retheme the whole site.
    ========================================================= */
 :root {
-  /* Colors â€?warm palette (see docs/design-brief.md). Tune, don't replace. */
+  /* Colors ï¿½?warm palette (see docs/design-brief.md). Tune, don't replace. */
   --ma-color-bg:        #faf8f5; /* warm off-white / cream background */
   --ma-color-surface:   #f1ede7; /* warm light surface for cards/sections */
   --ma-color-text:      #2b2724; /* warm near-black, not pure #000 */
   --ma-color-muted:     #6f675f; /* warm gray for secondary text */
-  --ma-color-accent:    #c4602f; /* terracotta / burnt orange â€?CTAs, highlights */
+  --ma-color-accent:    #c4602f; /* terracotta / burnt orange ï¿½?CTAs, highlights */
   --ma-color-accent-2:  #9a4a23; /* darker terracotta for hovers/links */
   --ma-color-border:    #e2dad0; /* warm border */
   --ma-color-white:     #ffffff; /* pure white for surfaces */
@@ -28,6 +28,7 @@ Text Domain:  myathletik-child
   --ma-font-body:    system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --ma-font-head:    "Manrope", var(--ma-font-body);
   --ma-fs-base:      1rem;
+  --ma-fs-small:     0.875rem;
   --ma-fs-h1:        clamp(2rem, 4vw, 3rem);
   --ma-fs-h2:        clamp(1.5rem, 3vw, 2.25rem);
   --ma-fs-h3:        clamp(1.15rem, 1.8vw, 1.35rem);
@@ -47,6 +48,7 @@ Text Domain:  myathletik-child
   /* Layout */
   --ma-container:    1200px;
   --ma-radius:       6px;
+  --ma-touch-target: 2.75rem;
 }
 
 html,
@@ -129,7 +131,7 @@ body {
   text-decoration: none;
 }
 
-/* Primary name: dark, bold ¡ª carries the brand weight. */
+/* Primary name: dark, bold ï¿½ï¿½ carries the brand weight. */
 .ma-brand-title__name {
   font-family: var(--ma-font-head);
   font-weight: 700;
@@ -145,7 +147,7 @@ body {
   background: var(--ma-color-border);
 }
 
-/* Category descriptor: muted, lighter ¡ª subtle complement to the name. */
+/* Category descriptor: muted, lighter ï¿½ï¿½ subtle complement to the name. */
 .ma-brand-title__desc {
   font-family: var(--ma-font-head);
   font-weight: 400;
@@ -275,6 +277,112 @@ body {
 .main-navigation .main-nav ul ul li[class*="current-menu-"] > a {
   background: var(--ma-color-surface);
   color: var(--ma-color-accent-2);
+}
+
+/* --- Homepage social bar --- */
+.ma-home-social-bar {
+  width: 100%;
+  background: var(--ma-color-dark);
+  color: var(--ma-color-white);
+}
+
+.ma-home-social-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ma-space-4);
+  width: 100%;
+  max-width: var(--ma-container);
+  margin: 0 auto;
+  padding: var(--ma-space-3) var(--ma-space-4);
+  box-sizing: border-box;
+}
+
+.ma-home-social-bar__prompt {
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-small);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ma-social-links--header {
+  display: flex;
+  align-items: center;
+  gap: var(--ma-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ma-social-links--header a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ma-space-2);
+  min-height: var(--ma-touch-target);
+  padding: 0 var(--ma-space-3);
+  border: thin solid var(--ma-color-white);
+  border-radius: var(--ma-radius);
+  color: var(--ma-color-white);
+  font-size: var(--ma-fs-small);
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.ma-social-links--header a:hover,
+.ma-social-links--header a:focus {
+  border-color: var(--ma-color-accent);
+  background: var(--ma-color-accent);
+  color: var(--ma-color-white);
+}
+
+.ma-social-links--header a:focus-visible {
+  outline: medium solid var(--ma-color-white);
+  outline-offset: var(--ma-space-1);
+}
+
+.ma-social-links--header svg {
+  flex: 0 0 auto;
+  width: var(--ma-space-4);
+  height: var(--ma-space-4);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ma-social-links--header svg path:last-child {
+  fill: currentColor;
+  stroke: none;
+}
+
+@media (max-width: 48rem) {
+  .ma-home-social-bar__inner {
+    display: block;
+    padding-top: var(--ma-space-2);
+    padding-bottom: var(--ma-space-2);
+  }
+
+  .ma-home-social-bar__prompt {
+    display: none;
+  }
+
+  .ma-social-links--header {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .ma-social-links--header a {
+    flex-direction: column;
+    gap: var(--ma-space-1);
+    min-height: calc(var(--ma-touch-target) + var(--ma-space-3));
+    padding: var(--ma-space-2);
+  }
 }
 
 .ma-header-actions {
@@ -659,15 +767,15 @@ body.home .container.grid-container {
 }
 
 /*
- * Bento grid ¡ª 4 cells, products vs manufacturing balanced.
+ * Bento grid ï¿½ï¿½ 4 cells, products vs manufacturing balanced.
  * Desktop layout (min-width 48rem):
- *   ©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©Ð©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
- *   ©¦              ©¦   C     ©¦  C: circular knitting (manufacturing)
- *   ©¦      A       ©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©È
- *   ©¦  garment A   ©¦   B     ©¦  B: sewing floor (manufacturing)
- *   ©¦  (large)     ©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©È
- *   ©¦              ©¦   D     ©¦  D: garment D (product)
- *   ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©Ø©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
+ *   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ *   ï¿½ï¿½              ï¿½ï¿½   C     ï¿½ï¿½  C: circular knitting (manufacturing)
+ *   ï¿½ï¿½      A       ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ *   ï¿½ï¿½  garment A   ï¿½ï¿½   B     ï¿½ï¿½  B: sewing floor (manufacturing)
+ *   ï¿½ï¿½  (large)     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ *   ï¿½ï¿½              ï¿½ï¿½   D     ï¿½ï¿½  D: garment D (product)
+ *   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  *  A spans the full height on the left; C/B/D stack on the right.
  */
 .ma-home-hero__collage {
@@ -694,7 +802,7 @@ body.home .container.grid-container {
   box-shadow: 0 14px 34px rgba(43, 39, 36, 0.14);
 }
 
-/* A: large garment image ¡ª fills the left column, spans all 3 rows */
+/* A: large garment image ï¿½ï¿½ fills the left column, spans all 3 rows */
 .ma-bento--a {
   grid-column: 1;
   grid-row: 1 / span 3;
@@ -796,7 +904,7 @@ body.home .container.grid-container {
 @media (min-width: 48rem) {
   .ma-home-hero__inner {
     /* Was 0.92fr / 1.08fr (near 50/50). Narrowed the text column and
-       widened the visual column so the bento collage gets more room ¡ª
+       widened the visual column so the bento collage gets more room ï¿½ï¿½
        the model image was the tightest element in the hero. */
     grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
     min-height: clamp(27rem, 50vh, 32rem);
@@ -1231,7 +1339,7 @@ body.home .container.grid-container {
   transition: box-shadow 180ms ease, transform 180ms ease;
 }
 
-/* Locked aspect ratios per tier (mobile) ¡ª the key to a perfectly aligned grid. */
+/* Locked aspect ratios per tier (mobile) ï¿½ï¿½ the key to a perfectly aligned grid. */
 .ma-category-card--feature {
   aspect-ratio: 3 / 2;
 }
@@ -1269,7 +1377,7 @@ body.home .container.grid-container {
   pointer-events: none;
 }
 
-/* Capability tag ¡ª top-left pill, only on tier-1 cards. */
+/* Capability tag ï¿½ï¿½ top-left pill, only on tier-1 cards. */
 .ma-category-card__tag {
   position: absolute;
   top: var(--ma-space-3);
@@ -2093,7 +2201,7 @@ body.page .container.grid-container:has(.ma-contact-page) {
   object-fit: cover;
   object-position: center;
   z-index: 0;
-  /* Ken Burns animation removed ¡ª did not render reliably across browsers in
+  /* Ken Burns animation removed ï¿½ï¿½ did not render reliably across browsers in
      testing. A slight static zoom keeps depth without relying on motion. */
   transform: scale(1.04);
 }
@@ -2130,7 +2238,7 @@ body.page .container.grid-container:has(.ma-contact-page) {
 }
 
 /* Intro paragraph uses a softer grey-white so it visually separates from
-   the pure-white H1 ¡ª the previous version used the same white and looked flat. */
+   the pure-white H1 ï¿½ï¿½ the previous version used the same white and looked flat. */
 .ma-contact-hero.ma-contact-hero--bg .ma-contact-hero__intro {
   color: rgba(255, 255, 255, 0.65); /* soft grey-white, distinct from pure-white H1 */
   max-width: 44rem;
@@ -2603,7 +2711,7 @@ body.page .container.grid-container:has(.ma-about-page) {
   max-width: 44rem;
 }
 
-/* Readability comes from the dark overlay, not text shadows ¡ª same approach
+/* Readability comes from the dark overlay, not text shadows ï¿½ï¿½ same approach
    as the product-page video hero. */
 /* Note: both .ma-about-hero and .ma-about-hero--bg live on the SAME <section>.
    We chain the two classes on the section to raise specificity above the
@@ -3242,7 +3350,7 @@ body.page .container.grid-container:has(.ma-product-category) {
   position: relative;
 }
 
-/* Add a subtle "¡ý" hint on hover to signal it jumps down. */
+/* Add a subtle "ï¿½ï¿½" hint on hover to signal it jumps down. */
 .ma-product-list li:has(a)::marker {
   color: var(--ma-color-accent);
 }

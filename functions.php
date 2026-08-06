@@ -860,6 +860,87 @@ function myathletik_404_empty_uncategorized_archive() {
 add_action( 'template_redirect', 'myathletik_404_empty_uncategorized_archive', 0 );
 
 /**
+ * Render the shared social links used by the homepage header and site footer.
+ *
+ * @param string $context     Visual context used for modifier classes.
+ * @param bool   $show_labels Whether to show the platform names.
+ */
+function myathletik_social_links( $context = 'footer', $show_labels = false ) {
+	$context = sanitize_html_class( $context );
+	$classes = array( 'ma-social-links', 'ma-social-links--' . $context );
+
+	if ( 'footer' === $context ) {
+		$classes[] = 'ma-site-footer__social';
+	}
+
+	$links = array(
+		'instagram' => array(
+			'label'      => __( 'Instagram', 'myathletik-child' ),
+			'aria_label' => __( 'Athletik Clothing on Instagram', 'myathletik-child' ),
+			'url'        => 'https://www.instagram.com/athletikclothinginc/',
+		),
+		'youtube'   => array(
+			'label'      => __( 'YouTube', 'myathletik-child' ),
+			'aria_label' => __( 'Athletik Clothing on YouTube', 'myathletik-child' ),
+			'url'        => 'https://www.youtube.com/@athletikclothinginc',
+		),
+		'whatsapp'  => array(
+			'label'      => __( 'WhatsApp', 'myathletik-child' ),
+			'aria_label' => __( 'Athletik Clothing on WhatsApp', 'myathletik-child' ),
+			'url'        => 'https://wa.me/16044049819',
+		),
+	);
+	?>
+	<ul class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" aria-label="<?php esc_attr_e( 'Social media links', 'myathletik-child' ); ?>">
+		<?php foreach ( $links as $platform => $link ) : ?>
+			<li>
+				<a href="<?php echo esc_url( $link['url'] ); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( $link['aria_label'] ); ?>">
+					<?php if ( 'instagram' === $platform ) : ?>
+						<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+							<rect x="4" y="4" width="16" height="16" rx="5"></rect>
+							<circle cx="12" cy="12" r="3.4"></circle>
+							<circle cx="16.7" cy="7.3" r="0.8"></circle>
+						</svg>
+					<?php elseif ( 'youtube' === $platform ) : ?>
+						<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+							<rect x="3" y="6.5" width="18" height="11" rx="3"></rect>
+							<path d="M10 9.5v5l4.6-2.5z"></path>
+						</svg>
+					<?php else : ?>
+						<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+							<path d="M5.1 19l1-3.2a7.3 7.3 0 1 1 2.8 2.6z"></path>
+							<path d="M9.4 8.6c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c.6 1.1 1.4 1.9 2.6 2.5l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.6v.4c0 .4-.1.7-.4.9-.5.4-1.2.6-1.9.4-3.1-.7-5.4-3-6.2-6.1-.2-.7 0-1.5.4-2.1z"></path>
+						</svg>
+					<?php endif; ?>
+					<?php if ( $show_labels ) : ?>
+						<span><?php echo esc_html( $link['label'] ); ?></span>
+					<?php endif; ?>
+				</a>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+	<?php
+}
+
+/**
+ * Give social channels a prominent, homepage-only entry below the site header.
+ */
+function myathletik_home_social_bar() {
+	if ( ! is_front_page() ) {
+		return;
+	}
+	?>
+	<nav class="ma-home-social-bar" aria-label="<?php esc_attr_e( 'Connect with Athletik Clothing', 'myathletik-child' ); ?>">
+		<div class="ma-home-social-bar__inner">
+			<span class="ma-home-social-bar__prompt"><?php esc_html_e( 'Follow Athletik Clothing', 'myathletik-child' ); ?></span>
+			<?php myathletik_social_links( 'header', true ); ?>
+		</div>
+	</nav>
+	<?php
+}
+add_action( 'generate_after_header', 'myathletik_home_social_bar', 15 );
+
+/**
  * Add utility actions after the primary menu.
  *
  * Language switching is a front-end placeholder until multilingual routing is
@@ -937,33 +1018,7 @@ function myathletik_site_footer() {
 					<span><?php esc_html_e( 'Athletik Clothing', 'myathletik-child' ); ?></span>
 				</a>
 				<p><?php esc_html_e( 'Technical knitwear OEM/ODM manufacturing partner for underwear, sportswear, outdoor clothing, and performance fabrics.', 'myathletik-child' ); ?></p>
-				<ul class="ma-site-footer__social" aria-label="<?php esc_attr_e( 'Social media links', 'myathletik-child' ); ?>">
-					<li>
-						<a href="https://www.instagram.com/athletikclothinginc/" target="_blank" rel="noopener noreferrer" aria-label="Athletik Clothing on Instagram">
-							<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-								<rect x="4" y="4" width="16" height="16" rx="5"></rect>
-								<circle cx="12" cy="12" r="3.4"></circle>
-								<circle cx="16.7" cy="7.3" r="0.8"></circle>
-							</svg>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.youtube.com/@athletikclothinginc" target="_blank" rel="noopener noreferrer" aria-label="Athletik Clothing on YouTube">
-							<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-								<rect x="3" y="6.5" width="18" height="11" rx="3"></rect>
-								<path d="M10 9.5v5l4.6-2.5z"></path>
-							</svg>
-						</a>
-					</li>
-					<li>
-						<a href="https://wa.me/16044049819" target="_blank" rel="noopener noreferrer" aria-label="Athletik Clothing on WhatsApp">
-							<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-								<path d="M5.1 19l1-3.2a7.3 7.3 0 1 1 2.8 2.6z"></path>
-								<path d="M9.4 8.6c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c.6 1.1 1.4 1.9 2.6 2.5l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.6v.4c0 .4-.1.7-.4.9-.5.4-1.2.6-1.9.4-3.1-.7-5.4-3-6.2-6.1-.2-.7 0-1.5.4-2.1z"></path>
-							</svg>
-						</a>
-					</li>
-				</ul>
+				<?php myathletik_social_links(); ?>
 			</div>
 
 			<nav class="ma-site-footer__nav" aria-labelledby="ma-footer-services-title">
