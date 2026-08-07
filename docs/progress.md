@@ -21,6 +21,17 @@ recurring baseline. Customer cases now require a written authorization record;
 no record means no publication. GEO is a lightweight SEO-adjacent observation
 workflow rather than a special-markup promise.
 
+The first provisional Meta Ads baseline is now recorded in
+`docs/meta-ads-baseline-2026-08-07.md`. A user-provided Ad Set-level screenshot
+for 2026-07-07 through 2026-08-05 shows the current ad set at 61 Instagram
+profile visits, RMB 2.29 per visit, RMB 139.52 spent, 1,132 impressions, and
+1,038 reach. The user separately confirmed that the promoted video produced
+approximately 120 follows and that several cheaper profile-visit creatives did
+not produce meaningful follows or engagement. Because the follows and Ads
+Manager screenshot are not yet matched to the same date and attribution scope,
+no verified cost-per-follow value has been recorded. Google Ads remains in
+strategy learning with no performance data reported by the user.
+
 Previous: 2026-08-07 — Documentation reconciled with the 2026-08-06
 theme commits. The homepage now has a prominent social bar, the footer content
 and responsive layout were refined, and Underwear now joins Merino Wool as the

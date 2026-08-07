@@ -62,6 +62,12 @@
 定位：**品牌背书与形象第一，询盘第二**。B2B 针织 OEM 的决策者会在评估供应商时
 翻看 Instagram，把它当作"这家工厂是否真实、专业、活跃"的佐证。
 
+2026-08-07 初步基线：Ads Manager 截图中当前广告组显示 61 次主页访问、单次访问
+RMB 2.29、花费 RMB 139.52；用户确认当前推广视频带来约 120 个关注，而部分历史素材
+虽有更低的主页访问成本，却几乎没有关注、点赞等后续互动。由于截图和关注数据的日期与
+归因口径尚未对齐，暂不直接计算单次关注成本。详见
+[`meta-ads-baseline-2026-08-07.md`](meta-ads-baseline-2026-08-07.md)。
+
 ### 内容支柱（素材持续拍摄中，按此分类产出）
 
 1. 工艺特写：FLATLOCK、ACTIVESEAM、Carbondry、Laser perforation 的微距/慢镜头
@@ -86,12 +92,15 @@
 
 ### KPI（月度复盘）
 
-- 主页访问量、关注者净增与质量（是否为目标行业账号）
+- 第一指标：有效关注成本与有效关注率；抽查新关注者是否为目标买家、品牌、采购、
+  sourcing 或其他相关行业账号，只记录汇总数量
+- 第二指标：同一统计窗口内的关注数、主页访问数及主页访问→关注转化
 - 网站点击；付费使用 `utm_source=instagram&utm_medium=paid_social`，自然内容使用
   `utm_source=instagram&utm_medium=organic_social`，并补充 `utm_campaign` 与
   `utm_content`
 - 品牌提升代理指标：GSC 中品牌词（athletik / athletik apparel）展示量变化、
   GA4 中 Direct 流量变化
+- 主页访问成本、覆盖和互动作为诊断指标，不单独决定素材去留
 - 询盘只作辅助记录，不设目标
 
 ---
