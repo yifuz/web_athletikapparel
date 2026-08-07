@@ -1,6 +1,6 @@
 # Meta Ads Baseline — 2026-08-07
 
-> Status: first verified observation; follower quality still needs manual review.
+> Status: first verified observation; follower authenticity and audience mix still need manual review.
 > Evidence: user-provided Reel Insights and promotion-performance screenshots.
 > Control Reel published: 2026-08-03 at 11:02.
 > Promotion snapshot: active for 4 days at RMB 68/day.
@@ -61,35 +61,46 @@ profile visits but produced little or no follow, like, or other meaningful engag
 
 ## 2. Working interpretation
 
+- The confirmed Instagram objective is follower growth and broader brand influence.
+  Direct inquiries are incidental and are not a success KPI for this channel.
 - Low profile-visit cost alone is not evidence of a useful audience.
 - The current video is the control because it has the strongest verified
   downstream follow result among the compared promotions.
-- Meta should be evaluated on follower quality and follow conversion, with
-  profile-visit cost retained as a diagnostic metric rather than the main KPI.
+- Meta should be evaluated primarily on net follower growth, cost per follow,
+  follow conversion, and reach. Profile-visit cost remains a diagnostic metric.
 - The current promotion's 20.6% visit-to-follow rate is a useful early signal,
   but four days is not enough to establish a stable scaling baseline.
 - The Reel's real factory process, visible human operation, and immediately clear
   technical action are working creative characteristics. They may also attract
-  garment workers or process-content viewers, so follower quality must be checked
-  before treating the follows as B2B brand growth.
+  garment workers, apparel professionals, or process-content viewers. These can
+  still contribute to influence; the manual review is mainly a guard against bots,
+  suspicious accounts, and completely unrelated traffic rather than a requirement
+  that every follower be a buyer.
 - The Google Search campaign remains in strategy learning with no reportable
   performance data. Keep checking delivery and errors, but do not infer
   performance from an empty report.
 
 ## 3. KPI order for the first baseline
 
-1. **Cost per qualified follow:** spend divided by follows from target-industry accounts.
-2. **Qualified follower rate:** target-industry follows divided by sampled new follows.
-3. **Matched cost per follow:** currently RMB 12.15 for the promotion snapshot.
-4. **Profile-to-follow rate:** currently 20.6% for the promotion snapshot.
-5. Profile visits, cost per profile visit, reach, impressions, frequency, and content engagement.
+1. **Net follower growth:** account follower increase in the review window.
+2. **Matched cost per follow:** currently RMB 12.15 for the promotion snapshot.
+3. **Profile-to-follow rate:** currently 20.6% for the promotion snapshot.
+4. **Influence signals:** reach, views, saves, shares, and repeatable follower growth per Reel.
+5. **Audience-health guardrail:** genuine-account rate and suspicious-account rate.
+6. **Strategic audience mix:** buyer/business, apparel-industry, and general genuine followers.
+7. Profile visits and cost per profile visit as diagnostic metrics only.
 
 For follower-quality review, check a sample of 30 recent followers and record
 aggregate counts only:
 
-- A: target buyer or business account — brand, wholesaler, importer, sourcing, apparel business.
-- B: relevant industry account — supplier, designer, factory, or apparel professional.
-- C: consumer, unrelated, suspicious, or otherwise not useful for B2B promotion.
+- A: commercial target — brand, wholesaler, importer, sourcing, or apparel business.
+- B: relevant industry or influence account — supplier, designer, factory, garment worker,
+  apparel professional, or technical-process audience.
+- C: genuine general audience — real account without an obvious commercial or industry role.
+- D: suspicious, bot-like, empty, duplicated, or completely unrelated account.
+
+For the follower-growth objective, A, B, and C all count as genuine growth. A and
+B are additionally reported as strategically relevant influence; D is the quality guardrail.
 
 Do not store follower usernames or other personal identifiers in this repository.
 
@@ -105,9 +116,9 @@ Do not store follower usernames or other personal identifiers in this repository
 - After the matched baseline is complete, test one creative variable at a time by
   creating a separate variant; keep the control unchanged for comparison.
 - At seven complete days, record the same promotion fields again. Do not increase
-  Meta budget until follower quality, cost per follow, and follow conversion are
-  stable enough to review; Google can remain a separate learning track while it
-  still has no delivery data.
+  Meta budget until genuine follower growth, cost per follow, follow conversion,
+  and suspicious-account rate are stable enough to review. Google remains a
+  separate inquiry-acquisition track and does not gate Instagram follower growth.
 
 ## 5. Remaining data needed before scaling
 
@@ -115,8 +126,9 @@ At seven complete days, capture the same views again and add:
 
 - Updated spend, profile visits, ad-attributed follows, reach, views, and interactions.
 - Instagram account net follower change from the Reel's publication date.
-- Audience country distribution and the A/B/C quality sample of 30 recent followers.
-- Number of A and B accounts that resemble potential buyers or useful industry contacts.
+- Audience country distribution and the A/B/C/D sample of 30 recent followers.
+- Genuine follower rate (`A + B + C`) and suspicious-account rate (`D`).
+- A+B share as a secondary indicator of commercially or industrially relevant influence.
 
 If follower quality is acceptable, create one separate creative variant while
 keeping this Reel unchanged as the control. Preserve the clear factory action and

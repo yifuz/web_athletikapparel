@@ -31,8 +31,12 @@ remaining difference from the combined 135 follows is not labelled purely
 organic because the Reel and promotion views use different scopes. Several
 cheaper profile-visit creatives did not produce meaningful follows or
 engagement. The control remains unchanged through the initial seven-day review;
-follower B2B quality still requires a 30-account aggregate sample. Google Ads
-remains in strategy learning with no performance data reported by the user.
+Instagram's confirmed objective is real follower growth and broader brand
+influence, not direct inquiry generation. A 30-account aggregate sample is used
+as an authenticity guardrail: genuine general followers count toward growth,
+while buyer and apparel-industry accounts are reported as a secondary strategic
+segment. Google Ads remains the separate inquiry-acquisition track and is still
+in strategy learning with no performance data reported by the user.
 
 Previous: 2026-08-07 — Documentation reconciled with the 2026-08-06
 theme commits. The homepage now has a prominent social bar, the footer content
