@@ -97,7 +97,10 @@ Google Search、目标客户开发和 SEO/GEO 为主。多渠道分工、预算�
   已部署生产。
 - 首轮 Google 搜索广告已于 2026-08-05 开启；当前审核/投放状态需要在 Google Ads
   后台实时确认，不能继续把上线时的“审核中”当作当前事实。
-- LinkedIn Insight Tag 尚未安装，重复及过时的 LinkedIn 公司资料仍待清理。
+- 服装制造业务已指定 `https://www.linkedin.com/company/111831319/` 为官方 LinkedIn
+  推广主页，并完成名称、Logo、真实车间封面、官网和中国办公地址等基础设置；当前转入
+  自然内容数据积累。历史面料出口页仍无管理员权限，暂保持独立。LinkedIn Insight Tag
+  尚未安装，付费和再营销继续暂缓。
 - Instagram @athletikclothinginc（约 300 粉丝 / 60 帖）已开始 Meta 付费推广，
   当前每日 RMB 68，首要目标为真实粉丝增长和品牌影响力；平台询盘不设 KPI。
 - 2026-08-07 Reel Insights 与广告成效页已完成口径拆分：当前 Reel 整体获得 135 个
@@ -205,17 +208,19 @@ Google Search、目标客户开发和 SEO/GEO 为主。多渠道分工、预算�
 
 ### 4.3 公开品牌资料清理
 
-- [ ] 确认唯一的官方 LinkedIn 公司主页。
-- [ ] 在账号权限允许的情况下，申请合并、重命名或移除重复及过期资料。
-- [ ] 将官方网站统一为 `https://www.athletikapparel.com/`。
-- [ ] 将公司简介统一为当前已批准的定位：
+- [x] 指定 `https://www.linkedin.com/company/111831319/` 为服装制造业务官方推广主页。
+- [ ] 在账号权限允许的情况下，处理历史面料出口页的管理员权限和过期资料；不把其既有
+      粉丝迁作当前服装主页的决策依据。
+- [x] 将当前 LinkedIn 官方主页网站统一为 `https://www.athletikapparel.com/`。
+- [ ] 下次页面复盘时确认 Overview 已统一为当前批准定位，且前台 Tagline 没有截断：
   - Vertically integrated OEM
   - 技术针织服装制造
   - FLATLOCK 和 ACTIVESEAM 结构
   - 面向中型 B2B 买家
   - 每款 MOQ 1,000 件
 - [ ] 重新使用历史客户名称、认证、工厂数量、产能、地址或年份前，逐项核实。
-- [ ] 更新 LinkedIn Logo、封面图、Contact CTA 和员工关联信息。
+- [x] 更新当前 LinkedIn 官方主页的 Logo、真实车间封面图、Message 入口和办公地址。
+- [ ] 后续根据实际员工账号情况核对员工关联信息。
 - [ ] 审核代表公司的个人主页，修改过期网站和业务描述。
 
 ---
@@ -346,6 +351,9 @@ Google 搜索广告用于捕获已经主动寻找制造商的买家。每个广�
 
 ### 6.2 目标客户开发（单人保守基线）
 
+- 操作流程与空白字段模板见 [`outbound-workflow.md`](outbound-workflow.md) 和
+  [`outbound-lead-ledger-template.csv`](outbound-lead-ledger-template.csv)。真实联系人数据
+  必须保存在 Git 之外的受限工作副本中。
 - [ ] 启动前确定线索台账、访问权限、保存期限和退订/禁止联系流程，并同步隐私与数据流文档。
 - [ ] 首轮以美国为主；加拿大主动外联在适用范围和营销合规完成复核后启动。
 - [ ] 每周建立约 10–15 家匹配企业的目标名单。
@@ -594,7 +602,7 @@ Google 与 Instagram 使用独立目标和扩量门槛。Meta 首次扩量只依
 - `已确认：首轮唯一投放品类为 Sportswear Manufacturer；其他品类在首轮询盘验证后再决定。`
 - `【需要确认：用于计算 CPQL 的典型订单金额或毛利范围】`
 - `已确认（2026-08-07）：首次回复与销售阶段更新由用户本人负责；正式接单后转交业务员跟进。`
-- `【需要确认：正式的官方 LinkedIn 公司主页】`
+- `已确认（2026-08-07）：服装制造业务官方 LinkedIn 主页为 https://www.linkedin.com/company/111831319/。`
 - `已确认：Privacy Policy 数据控制者为 Athletik Clothing Inc.；隐私联系邮箱为 info@athletikapparel.com。`
 - `已确认：生产站关闭 AdSense。`
 - `已确认：Cookiebot 账户使用 zhangyifuzjg@gmail.com 创建。`
@@ -605,7 +613,8 @@ Google 与 Instagram 使用独立目标和扩量门槛。Meta 首次扩量只依
 - `【需要确认：最终 Privacy Policy 和同意管理负责人】`
 - `用户说明（2026-08-07）：大部分客户可接受公开展示；这不构成批量授权。单个客户名称、案例和素材仍须写入授权台账，没有书面记录即不发布。认证与业务事实沿用原有逐项核实规则。`
 - `已确认（2026-08-07）：推广由用户本人单人全职负责；内容量采用保守基线，有余力时可额外更新，但额外产出不自动提高后续基线。`
-- `【待建立：Outbound 线索台账、保存期限、退订/禁止联系记录与加拿大适用范围复核】`
+- `已建立 Outbound 空白台账模板和美国首轮操作流程；真实台账保存位置、未回复潜客保留期限、
+  发送邮箱与加拿大适用范围仍待确认。`
 - `【待建立：客户案例授权台账；没有书面记录的客户名称和素材不得发布】`
 
 ---
@@ -616,7 +625,7 @@ Google 与 Instagram 使用独立目标和扩量门槛。Meta 首次扩量只依
 
 - [ ] 确认第 12 节中的业务信息。
 - [ ] 重新检查 Search Console Pages 和 Sitemap 报告。
-- [ ] 清理并指定官方 LinkedIn 公司主页。
+- [x] 指定服装制造业务官方 LinkedIn 公司主页并完成基础资料、封面和地址设置。
 - [x] 发布 Privacy Policy 并实施 Consent Mode。
 - [x] 测试 GA4 `generate_lead`，并将其作为 Google Ads 主要转化。
 - [x] 关联 GA4 和 Google Ads。
@@ -624,6 +633,7 @@ Google 与 Instagram 使用独立目标和扩量门槛。Meta 首次扩量只依
 - [x] 部署后通过带 UTM/GCLID 的 URL 提交测试询盘，验证完整数据链路。
 - [ ] 对批准的市场和品类运行 Keyword Planner。
 - [ ] 建立并持续维护否定关键词列表；首轮精准/词组关键词已经上线。
+- [ ] 确认 Outbound 真实台账保存位置、未回复潜客保留期限和发送邮箱后，再开始美国首轮触达。
 - [x] 首轮广告已映射到 Sportswear Manufacturer 落地页。
 - [x] 首轮广告素材已经上线；完整标题、描述和站内链接仍应从 Google Ads 补录归档。
 - [x] 已于 2026-08-05 启动可控的 Google 搜索广告测试。

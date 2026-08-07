@@ -21,6 +21,18 @@ recurring baseline. Customer cases now require a written authorization record;
 no record means no publication. GEO is a lightweight SEO-adjacent observation
 workflow rather than a special-markup promise.
 
+The apparel-manufacturing LinkedIn Page at
+`https://www.linkedin.com/company/111831319/` is now the designated official
+promotion Page. Its name, logo, real-workshop cover image, website, Page details,
+and Zhangjiagang office location are configured; it has moved into low-frequency
+organic publishing and data accumulation. The historical fabric-export Page
+remains separate because the user does not currently have admin access, and the
+retired LinkedIn China Page is no longer an operating target. LinkedIn paid media
+and the Insight Tag remain deferred. The next operational gate is Outbound: a
+version-controlled blank ledger template and workflow now exist, but live contact
+data must stay outside Git and outreach must not begin until the working storage,
+non-responsive-prospect retention rule, and sending mailbox are confirmed.
+
 The first verified Meta Ads observation is recorded in
 `docs/meta-ads-baseline-2026-08-07.md`. The control Reel has 7,785 views, 6,325
 reach, 123 interactions, and 135 combined follows. Its promotion-performance
