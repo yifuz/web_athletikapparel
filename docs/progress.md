@@ -11,7 +11,17 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
-Last updated: 2026-08-07 — Documentation reconciled with the 2026-08-06
+Last updated: 2026-08-07 — The promotion matrix and execution plan were revised
+for one full-time operator using conservative, sustainable baselines: two
+Instagram feed posts per week, one reused Short and one LinkedIn post per week,
+one YouTube long-form video and one technical article per month, and 10–15
+outbound target companies per week only after lead-record, opt-out, and market
+compliance gates are ready. Extra content is optional capacity, not a new
+recurring baseline. Customer cases now require a written authorization record;
+no record means no publication. GEO is a lightweight SEO-adjacent observation
+workflow rather than a special-markup promise.
+
+Previous: 2026-08-07 — Documentation reconciled with the 2026-08-06
 theme commits. The homepage now has a prominent social bar, the footer content
 and responsive layout were refined, and Underwear now joins Merino Wool as the
 second product category with a video hero. The Google Ads status in this repo
