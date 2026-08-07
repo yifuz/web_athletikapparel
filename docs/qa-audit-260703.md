@@ -56,8 +56,8 @@
 
 ### P1-3 产品类目页底部 "Launch redirect note" 提示文字会面向访客显示
 - **位置**: `template-parts/product-category/page.php:125-138`
-- **现状**: 每个类目页底部渲染一段 "Launch note: 301 redirect /products/sportswear/ to /sportswear-manufacturer/ before this page goes live." 用户确认 301 已完成，这段文字现在是面向前端访客可见的内部备注，极不专业。
-- **建议**: 删除整个 `ma-product-redirect-note` section（301 已完成，备注无用）。
+- **原始现状**: 每个类目页底部曾渲染一段 "Launch note: 301 redirect /products/sportswear/ to /sportswear-manufacturer/ before this page goes live." 后续确认旧站没有需继承的搜索权益，因此这些 301 没有实施；无论是否实施，内部备注都不应面向访客显示。
+- **建议**: 删除整个 `ma-product-redirect-note` section（历史 301 未实施，备注无用）。
 - **工作量**: 小
 
 ### P1-4 首页 style-gallery 和 partnership-trust 含未填写的 `[CONTENT]` 占位符

@@ -1,8 +1,9 @@
 # Athletik Clothing 网站推广计划
 
 > 网站：<https://www.athletikapparel.com/>
-> 版本：1.1
+> 版本：1.2
 > 创建日期：2026-08-03
+> 文档对齐日期：2026-08-07
 > 规划周期：首个 90 天
 > 当前状态：网站、隐私、归因与转化验证已完成；首轮 Google 搜索广告已开启并进入审核
 > 首轮媒体预算：每月 RMB 500–1,000（已确认）
@@ -78,16 +79,16 @@ Max 开始。这些渠道应在转化质量和受众数据建立后再考虑。
 - Search Console、Sitemap、Canonical、H1、Meta Description 和 JSON-LD
   已完成首轮技术 SEO 整改，具体记录见 [`seo.md`](seo.md)。
 
-### 付费推广前尚未完成的项目
+### 付费推广当前状态（2026-08-07 文档对齐）
 
-- 尚未确认 Google Ads 已与 GA4、Site Kit 正确关联。
-- 2026-08-03 对生产环境 HTML 的检查中没有检测到 Google Ads 转化标签。
-- 来源归因代码尚未在生产环境通过真实表单提交验证。
-- 生产环境 HTML 中没有检测到 LinkedIn Insight Tag。
-- 生产环境 HTML 中没有检测到常见 CMP、Consent Mode 或首页可见的
-  Privacy Policy 链接。
-- 公开搜索中存在不止一份内容不一致的 Athletik Clothing LinkedIn 公司资料。
-  在用于推广之前，需要审核旧网址和历史表述。
+- Google Ads 已与 GA4 关联，`generate_lead` 已作为主要转化使用。
+- 生产来源归因、Fluent Forms Entry、Tag Assistant、GA4 DebugView 和询盘邮件链路
+  已完成验证。
+- Cookiebot、WP Consent API、Site Kit Consent Mode、Privacy Policy 和页脚同意入口
+  已部署生产。
+- 首轮 Google 搜索广告已于 2026-08-05 开启；当前审核/投放状态需要在 Google Ads
+  后台实时确认，不能继续把上线时的“审核中”当作当前事实。
+- LinkedIn Insight Tag 尚未安装，重复及过时的 LinkedIn 公司资料仍待清理。
 
 ---
 
@@ -95,11 +96,11 @@ Max 开始。这些渠道应在转化质量和受众数据建立后再考虑。
 
 ### 4.1 数据测量与来源归因
 
-- [ ] 确认生产环境每次 Fluent Forms 表单 3 成功提交，只产生一次
+- [x] 确认生产环境每次 Fluent Forms 表单 3 成功提交，只产生一次
       `generate_lead` 事件。
-- [ ] 在 GA4 中把 `generate_lead` 标记为关键事件。
-- [ ] 关联 GA4 与 Google Ads；在同意管理完成并审核通过前，不启用个性化广告。
-- [ ] 将网站询盘事件导入 Google Ads。
+- [x] 在 GA4 中将 `generate_lead` 用作线索事件，并在 Google Ads 中设为主要转化。
+- [x] 关联 GA4 与 Google Ads；当前同意状态继续由 Site Kit Consent Mode 控制。
+- [x] 将网站询盘事件导入 Google Ads，未把 `form_submit` 同时设为主要转化。
 - [x] 在网站端为表单 3 注入以下来源字段：
   - [x] `ma_utm_source`
   - [x] `ma_utm_medium`
@@ -117,8 +118,9 @@ Max 开始。这些渠道应在转化质量和受众数据建立后再考虑。
       模拟 Fluent Forms 的 jQuery 和原生双成功信号时，只记录一次 `generate_lead`。
 - [x] 2026-08-03 将归因存储接入 WP Consent API `marketing` 类别；自动测试确认：
       拒绝时不写入、允许时写入 UTM/GCLID、撤回时删除存储和表单隐藏字段。
-- [ ] Cookiebot 配置完成后，在真实浏览器中复测接受、拒绝和撤回三种归因行为。
-- [ ] 部署到测试/生产环境后，使用带 UTM 和测试 GCLID 的 URL 提交一次表单，
+- [x] Cookiebot 配置完成后，已在真实浏览器中复测接受、拒绝和撤回流程；
+      广告 tracker 出现后的 Statistics-only 部分同意仍需单独验证。
+- [x] 部署到生产环境后，已使用带 UTM 和测试 GCLID 的 URL 提交表单，
       核对 Entries 中的来源数据。
 - [ ] 将来源摘要加入销售通知或后续线索记录。
 - [ ] 将 WhatsApp 和电子邮件点击记录为辅助诊断事件，不作为核心转化。
@@ -159,13 +161,13 @@ Max 开始。这些渠道应在转化质量和受众数据建立后再考虑。
       没有 Unclassified 项目。
 - [x] 2026-08-04 保存 Cookiebot 全访客 Explicit Consent 横幅、英文内容、
       Cookie Declaration、无关闭图标和启用浮动 Privacy Trigger 的配置。
-- [x] 将 WordPress Privacy Policy 页面 ID 3 重构为结构化英文审核草稿并保持 Draft；
-      版本控制源见 [`privacy-policy-draft.md`](privacy-policy-draft.md)。
-- [x] 2026-08-04 确认首轮仅面向美国，并将完整美国首轮公开正文同步到本地页面 ID 3；
-      页面仍为 Draft，未发布或部署生产。
+- [x] 将 WordPress Privacy Policy 页面 ID 3 重构为结构化英文版本；版本控制源见
+      [`privacy-policy-draft.md`](privacy-policy-draft.md)，生产页面已发布。
+- [x] 2026-08-04 完整美国首轮公开正文经业务方批准并部署生产页面 ID 3；
+      2026-08-05 实际广告范围扩展为美国和加拿大，加拿大适用范围仍需补充复核。
 - [x] 将 UTM/GCLID 来源归因接入 WP Consent API `marketing` 类别；拒绝或撤回后删除存储。
-- [ ] 发布或确认最终版 Privacy Policy。
-- [ ] 在页脚增加可见的 Privacy Policy 链接。
+- [x] 美国首轮 Privacy Policy 已经业务方批准、发布并部署生产。
+- [x] 页脚已增加并验证 Privacy Policy 与 Cookie Settings 入口。
 - [x] 选择并配置用户同意管理方案。
 - [x] 在生产 Site Kit 启用 Google Consent Mode v2；默认代码只输出一次，自动浏览器测试
       确认 Reject all 与 Allow all 能正确更新四个 Google consent 信号。
@@ -174,7 +176,8 @@ Max 开始。这些渠道应在转化质量和受众数据建立后再考虑。
       拒绝 Marketing 的部分同意流程。
 - [x] 2026-08-04 从生产 Site Kit 断开 AdSense，并验证前端脚本与相关域名引用均已移除。
 - [x] 将自定义 `sessionStorage` 来源归因接入 `marketing` 同意类别。
-- [ ] 确认用户拒绝同意时，Analytics、广告、再营销和用户数据的处理方式。
+- [x] 已验证 Reject all 与 Allow all 对 WP Consent API 和四个 Google consent 信号的
+      更新；真实广告点击和部分同意场景仍按上线清单继续验证。
 - [ ] 在针对欧洲经济区、英国和瑞士用户投放或再营销前，完成区域行为验证。
 - [ ] 安装 LinkedIn Insight Tag 或上传第一方线索数据前，更新 Privacy Policy。
 
@@ -201,9 +204,9 @@ Max 开始。这些渠道应在转化质量和受众数据建立后再考虑。
 
 ### 首批市场
 
-首轮市场已确定为：**美国**。
+原计划首轮市场为美国；2026-08-05 实际上线范围为：**美国和加拿大**。
 
-选择美国作为微预算验证市场的原因：
+选择英语北美市场作为微预算验证范围的原因：
 
 - 当前站点和广告准备以英语为主，不需要拆分语言版本。
 - 每月 RMB 500–1,000 的预算不足以同时覆盖美国和多个欧洲国家。
@@ -211,7 +214,8 @@ Max 开始。这些渠道应在转化质量和受众数据建立后再考虑。
 - 欧洲市场需要进一步按国家、语言和隐私要求拆分，不适合作为当前微预算的
   混合投放区域。
 
-加拿大、澳大利亚和新西兰可作为英语市场的后续扩展选择。
+加拿大已经进入首轮实际投放，不再属于后续候选。由于现有 Privacy Policy 的业务批准
+记录仍是美国首轮范围，应补做加拿大适用范围复核。澳大利亚和新西兰仍可作为以后候选。
 
 完成 Consent Mode 和区域隐私要求，并在美国市场验证询盘链路后，再评估：
 
@@ -414,8 +418,9 @@ RMB 17–33。该预算只用于验证追踪链路、搜索词质量和能否获
 - 小预算不要平均分散到 7 个品类和多个国家。
 - 当前预算的付费流量全部用于 Google Search，不安排 LinkedIn 付费广告、
   展示广告、Performance Max 或社交媒体冷广告。
-- 首轮只建立一个广告系列、一个目标国家和一个产品品类；关键词以精准匹配
-  和词组匹配为主。
+- 首轮实际只建立一个广告系列、覆盖美国和加拿大、只投一个产品品类；关键词以精准
+  匹配和词组匹配为主。两个国家共享同一微预算，若数据过度分散，优先收缩地域而不是
+  立即增加预算。
 - 首轮关键词数量保持精简，以 5–10 个高购买意图主题为起点，并使用否定词
   控制低 MOQ、零售、求职和其他无关流量。
 - 第一个月以学习和建立基线为主，不期待立即达到成熟效率。
@@ -536,7 +541,8 @@ RMB 17–33。该预算只用于验证追踪链路、搜索词质量和能否获
 ## 12. 上线推广前需要确认的信息
 
 - `已确认：首轮每月媒体预算为 RMB 500–1,000；获得真实合格询盘后再逐级增加。`
-- `已确认：首轮目标市场为美国；欧洲保留为完成隐私配置和美国验证后的第二阶段市场。`
+- `实际设置：首轮广告覆盖美国和加拿大；加拿大适用范围仍需补充复核。欧洲继续作为
+  完成跨境传输、代表和区域隐私 Gate 后的后续市场。`
 - `已确认：首轮唯一投放品类为 Sportswear Manufacturer；其他品类在首轮询盘验证后再决定。`
 - `【需要确认：用于计算 CPQL 的典型订单金额或毛利范围】`
 - `【需要确认：负责首次回复和更新销售阶段的人员】`
@@ -560,16 +566,16 @@ RMB 17–33。该预算只用于验证追踪链路、搜索词质量和能否获
 - [ ] 确认第 12 节中的业务信息。
 - [ ] 重新检查 Search Console Pages 和 Sitemap 报告。
 - [ ] 清理并指定官方 LinkedIn 公司主页。
-- [ ] 发布 Privacy Policy 并实施 Consent Mode。
-- [ ] 测试 GA4 `generate_lead`，并将其标记为关键事件。
-- [ ] 关联 GA4 和 Google Ads。
+- [x] 发布 Privacy Policy 并实施 Consent Mode。
+- [x] 测试 GA4 `generate_lead`，并将其作为 Google Ads 主要转化。
+- [x] 关联 GA4 和 Google Ads。
 - [x] 在本地站点验证 Fluent Forms 的 UTM、GCLID、首次落地页和 Referrer 记录。
-- [ ] 部署后通过带 UTM 的 URL 提交一次测试询盘，验证完整数据链路。
+- [x] 部署后通过带 UTM/GCLID 的 URL 提交测试询盘，验证完整数据链路。
 - [ ] 对批准的市场和品类运行 Keyword Planner。
-- [ ] 准备精准/词组关键词和否定关键词列表。
-- [ ] 将每个广告组映射到对应产品分类页。
-- [ ] 审批广告素材和所有品牌表述。
-- [ ] 启动可控的 Google 搜索广告测试。
+- [ ] 建立并持续维护否定关键词列表；首轮精准/词组关键词已经上线。
+- [x] 首轮广告已映射到 Sportswear Manufacturer 落地页。
+- [x] 首轮广告素材已经上线；完整标题、描述和站内链接仍应从 Google Ads 补录归档。
+- [x] 已于 2026-08-05 启动可控的 Google 搜索广告测试。
 
 ---
 

@@ -1,5 +1,9 @@
 # Design Brief — myathletik Homepage (v1)
 
+Status: implemented. Use `docs/progress.md` and the current templates for live
+copy, block status, and asset delivery; this file remains the visual-direction
+brief.
+
 Companion to `AGENTS.md` and `docs/sitemap.md`. Read this before
 building the homepage. It defines the visual direction, the homepage block
 order, and what to borrow vs. avoid from the reference site.
@@ -63,7 +67,8 @@ placeholders.
    - One H1 (the page's only H1), a one-line positioning subhead, primary CTA
      ("Request a Quote" / "Start a Project"), real factory hero image.
    - Tone: confident partner, not "new brand? we're your first stop." 
-   - `[CONTENT: user to write hero headline + subhead]`
+   - The approved production headline and subhead are recorded in
+     `homepage-copy.md` and the live template.
 
 2. **Capability proof strip**
    - 3–4 quick trust signals: vertically integrated, flatlock/activeseam
@@ -83,9 +88,13 @@ placeholders.
    - `[CONTENT: user to write the body of each reason]`
 
 5. **Numbers / proof** (adapted from Hongyu's "Numbers We Are Proud Of")
-   - Real, verifiable figures only: # factories (4), merchandiser team size
-     (~20), years in operation, MOQ positioning, monthly capacity IF known.
-   - `[NEEDS INPUT: confirm exact numbers]` — do NOT fabricate.
+   - Use only the confirmed public proof points recorded in `AGENTS.md` and
+     `docs/progress.md`. Never publish a factory count, subcontracting detail,
+     or unconfirmed team size.
+   - Keep the number and unit in separate elements with stable spacing and
+     height so mixed-length values remain aligned across desktop and mobile.
+   - For any new figure, use `【NEEDS INPUT: confirm exact number】` rather than
+     inferring or fabricating it.
 
 6. **Process snapshot** (adapted from "How We Make It")
    - 4-step strip: Sampling & Prototyping → Bulk Production → QC →
@@ -101,13 +110,14 @@ placeholders.
 8. **Certifications / audits strip**
    - Keep the existing badge row (it's legitimate proof). Real badges only.
 
-9. **Latest from blog** (1–3 posts)
+9. **Latest from blog** — deferred; the current homepage keeps this block
+   disabled until real posts exist.
 
 10. **Inquiry CTA band + form**
-    - Borrow Hongyu's smart lead-filtering fields (budget tier, order quantity,
-      selling channel, website, file upload for tech packs) — but set budget
-      thresholds HIGHER, appropriate for a 1,000 pcs per style MOQ, to filter out
-      sub-MOQ inquiries. Warm, direct CTA copy.
+    - The current shared form uses product category, estimated order quantity,
+      business type, website, and a project message. Fluent Forms File Upload
+      is not available in the current free-tier setup, so the Message prompt
+      asks for a tech pack link when available.
 
 ### Explicitly DROP from Hongyu (do not build these)
 - The 3-tier "difficulty level" comparison with percentage bars (startup

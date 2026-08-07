@@ -1,7 +1,8 @@
 # 隐私与同意管理上线操作清单
 
 > 日期：2026-08-04
-> 状态：Cookiebot、Consent Mode、拒绝/允许/撤回流程、Privacy Policy 与主题改动均已完成生产部署和验证
+> 文档对齐日期：2026-08-07
+> 状态：核心部署已完成；仍需执行的真实广告点击、部分同意和跨页归因检查保留为未勾选项
 > 生产站：<https://www.athletikapparel.com/>
 
 ## 1. Cookiebot 账户（需要账户持有人完成）
@@ -38,8 +39,8 @@ AdSense 脚本和 `pagead2.googlesyndication.com` 引用均为 0。
 
 ## 3. 生产站安装与连接
 
-2026-08-04 断开 AdSense 后复查：生产首页仍未加载 Cookiebot、WP Consent API
-或 Site Kit Consent Mode。以下步骤尚未执行。
+2026-08-04 断开 AdSense 后的首次复查曾发现生产首页尚未加载 Cookiebot、WP Consent
+API 或 Site Kit Consent Mode。以下步骤随后已完成；该句仅保留为部署前基线。
 
 1. [x] 安装并启用 `WP Consent API` 2.0.1；公开页面复查确认脚本已输出。
 2. [x] 安装并启用 `Cookiebot by Usercentrics`。
@@ -49,9 +50,9 @@ AdSense 脚本和 `pagead2.googlesyndication.com` 引用均为 0。
    Site Kit 默认 consent 配置只输出一次。
 6. [x] Site Kit 后台已检测到 WP Consent API；Cookiebot 由公开源码确认已连接并输出。
    Site Kit 对 CMP 卡片只显示通用兼容性提示，不单独确认插件名称。
-7. 在 Privacy Policy 的 Cookies 章节插入 `[cookie_declaration]`。
-8. 完成 Privacy Policy 审核并发布；页脚 Privacy Policy 链接会在页面发布后自动显示。
-9. 增加并验证 `Cookie Settings` 入口，让访客可以重新打开 Cookiebot 设置。
+7. [x] 在 Privacy Policy 的 Cookies 章节插入 `[cookie_declaration]`。
+8. [x] 完成 Privacy Policy 审核并发布；页脚 Privacy Policy 链接已在生产验证。
+9. [x] 增加并验证 `Cookie Settings` 入口，让访客可以重新打开 Cookiebot 设置。
 
 ## 4. 当前本地状态
 
@@ -75,8 +76,8 @@ AdSense 脚本和 `pagead2.googlesyndication.com` 引用均为 0。
 - [ ] 拒绝后不写入 UTM/GCLID `sessionStorage`。
 - [ ] 接受后跨页面保留允许的 UTM/GCLID 数据。
 - [ ] 撤回 marketing 后立即删除归因存储和表单隐藏字段。
-- [ ] 四个 Google Consent Mode v2 信号在 Google Tag Assistant 中正确变化。
-- [ ] Contact 表单提交、询盘邮件和 `generate_lead` 不重复且不报错。
+- [x] 四个 Google Consent Mode v2 信号在 Google Tag Assistant 中正确变化。
+- [x] Contact 表单提交、询盘邮件和 `generate_lead` 不重复且不报错。
 - [x] AdSense 脚本已从生产 HTML 移除。
 - [x] 生产页脚 Cookie Settings 已部署并验证；Cookiebot Privacy Trigger 保留为备用入口。
       已验证访客可重新打开设置，且 Allow all 后执行 Withdraw consent 会撤回全部非必要类别。

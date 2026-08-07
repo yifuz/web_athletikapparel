@@ -1,6 +1,6 @@
 # Product Category Pages — Copy (7 pages)
 
-Companion to docs/sitemap.md and docs/homepage-copy.md. One complete content set
+Companion to docs/sitemap.md and homepage-copy.md. One complete content set
 per category page. All 7 follow the same section structure so they stay
 consistent and the layout template can be reused.
 

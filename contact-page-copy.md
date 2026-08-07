@@ -1,5 +1,8 @@
 # Contact Page — Copy & Form Spec  (/contact/)
 
+Status: the page and Fluent Form ID 3 are live. This document now reflects the
+current production field set and replaces the earlier front-end-only plan.
+
 Companion to docs/sitemap.md, design-brief.md. The conversion endpoint — all
 homepage and product-page CTAs point here. Goal: capture qualified B2B
 inquiries and gently filter out sub-MOQ leads via the order-quantity field
@@ -29,28 +32,27 @@ GUARDRAILS:
 ================================================================
 
 **Contact details**
-- Name* (text)
-- Company* (text)
+- Name (text)
 - Email* (email)
-- Country / Region (text or dropdown) — helps route to the right regional team
+- Company (text)
+- Country / Region (text)
 - Website (url) — optional
 
 **Project details**
-- Product category of interest (dropdown — your 7 categories):
+- Product category of interest* (dropdown — your 7 categories):
   Sportswear · Underwear · Outdoor Clothing · Merino Wool · Silk Wear ·
   Knitted Fabrics · Sports Accessories · Other
-- Estimated order quantity per style (dropdown — softly signals scale, no MOQ
+- Estimated order quantity per style* (dropdown — softly signals scale, no MOQ
   stated):
   - Under 1,000 pcs
   - 1,000 – 2,000 pcs
   - 2,000 – 5,000 pcs
   - 5,000+ pcs
-- Business type (dropdown):
+- Business type* (dropdown):
   Established brand · New brand · Wholesaler / Importer · Other
-- Message* (textarea) — "Tell us about your project: products, fabrics,
-  timeline, or any questions."
-- Attachment (file upload, OPTIONAL) — "Optional: attach a tech pack, sketch,
-  or reference (PDF, image)."
+- Message* (textarea) — includes a prompt to add a link to a tech pack when
+  available. File Upload is a Fluent Forms PRO feature and is not part of the
+  current form.
 
 **Submit button:** Send Inquiry
 
@@ -63,27 +65,28 @@ Note (microcopy under submit, optional):
 
 **Get in touch**
 - Email: info@athletikapparel.com
-- WhatsApp: +1 604 404 9819 (`https://wa.me/16044049819`)
+- Tel: +86 139 5113 9696
+- WhatsApp remains available in the global site footer.
 
 **Our facility**
-- [CONTENT: user to fill in own-facility address — publish the self-owned
-  factory address only; do NOT list partner factories]
-- Optional: an embedded map of the facility location
+- Zhangjiagang Athletik Clothing Co., Limited
+- No.25, Zhongxing Road, Yangshe Town, Zhangjiagang, Jiangsu, 215699 China
+- The page links to Google Maps; do not list partner factories.
 
 [IMAGE: optional — real photo of the facility exterior or entrance]
 
 ================================================================
-## Form behavior / build notes (for Codex)
+## Form behavior / implementation status
 ================================================================
-- Front-end structure + styling only for now; no backend submission/email yet
-  (separate later task). Mark required fields with *.
+- Fluent Form ID 3 is live on Contact and the homepage inquiry CTA. Entries,
+  Brevo notification delivery, and the destination inbox have been verified.
 - Use design-brief tokens (warm palette, accent color for the Send button).
 - Mobile-first AND verify desktop (two-column: form left, company details
   right on desktop; stacked on mobile).
-- File upload is optional — do not make it required; accept PDF + common image
-  types; show a size limit hint.
+- File Upload is not enabled in the current free-tier setup; keep the tech pack
+  link prompt in the Message field unless the form architecture changes.
 - The "Under 1,000 pcs" tier stays in the dropdown (it's the soft signal) but
-  MOQ is never stated as a rule anywhere on the page.
+  MOQ is not presented as a hard rejection rule on the Contact page.
 - `[CONTENT: ...]` / `[IMAGE: ...]` are editor placeholders — never render the
   literal text on the live page.
 

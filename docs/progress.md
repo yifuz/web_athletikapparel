@@ -1,12 +1,25 @@
 # Project Progress Snapshot - myathletik.com Rebuild
 
 Read this together with AGENTS.md, docs/sitemap.md,
-docs/design-brief.md, and docs/homepage-copy.md when starting a new session.
+docs/design-brief.md, and homepage-copy.md when starting a new session.
 This file tracks WHAT IS DONE and WHAT IS LEFT, since the rule docs only
 define HOW. Also check `git log` for the latest commits.
 
-Last updated: 2026-08-05 — Production privacy, consent, attribution, and
-first Google Ads launch completed.
+Status precedence: `AGENTS.md` is canonical for project rules; this file is
+canonical for repository progress; dated launch/audit records are historical
+snapshots unless they explicitly contain a later verification. External states
+such as Google Ads review, Search Console counts, and provider dashboards must
+be checked live before being described as current.
+
+Last updated: 2026-08-07 — Documentation reconciled with the 2026-08-06
+theme commits. The homepage now has a prominent social bar, the footer content
+and responsive layout were refined, and Underwear now joins Merino Wool as the
+second product category with a video hero. The Google Ads status in this repo
+is still the 2026-08-05 launch snapshot; its current review/delivery state must
+be checked in Google Ads before being reported as current.
+
+Previous: 2026-08-05 — Production privacy, consent, attribution, and first
+Google Ads launch completed.
 WP Consent API 2.0.1 and Cookiebot 4.7.2 are active; CBID
 `f81cac53-c468-4afd-9823-7adcc4839c5b` uses Auto blocking. Cookiebot's own
 Google Consent Mode is disabled, leaving Site Kit as the sole Google consent
@@ -257,16 +270,16 @@ partnership-trust, certifications, inquiry-cta.
   exist, else to #product-examples.
 - Subcategory de-duplication (strict): see §"Subcategory structure" below.
 
-### Video hero (Merino Wool prototype)
-- Merino Wool page renders a muted autoplay looping <video> behind the hero
-  text, with a dual-gradient overlay (left-dark for text legibility +
-  bottom-dark). Driven by the `hero_video` field in category data.
+### Video heroes (Merino Wool + Underwear)
+- Merino Wool and Underwear render muted autoplay looping `<video>` elements
+  behind the hero text, with a dual-gradient overlay (left-dark for text
+  legibility + bottom-dark). Driven by the `hero_video` field in category data.
 - `hero_video_position` field supports per-video object-position to keep
   portrait subjects' heads in frame when cropped to a wide hero (Merino uses
   "center 20%").
-- Backward compatible: categories without hero_video keep the plain
-  surface-color hero. Prototype on Merino; other categories pending video
-  assets.
+- Backward compatible: categories without `hero_video` keep the plain
+  surface-color hero. The other 5 product categories remain optional future
+  video additions.
 
 ### Background-image heroes (About / Services / Sustainability / Contact)
 - All four non-product landing pages use the same full-bleed `<img>` hero
@@ -526,9 +539,10 @@ The old site's pages are all dead, no inherited search equity to preserve.
    unresolved form defects.
 3. **Remove the /sustainabilty/ -> /sustainability/ 301 redirect** ✅ DONE
    2026-07-21 — function removed from functions.php.
-4. **Video hero rollout beyond Merino:** the architecture is ready
-   (hero_video + hero_video_position fields). Pending video assets for the
-   other 6 category pages + the homepage hero.
+4. **Video hero rollout beyond Merino and Underwear:** the architecture is
+   ready (`hero_video` + `hero_video_position` fields). Merino Wool and
+   Underwear are live; video assets remain optional enhancements for the other
+   5 category pages and the homepage hero.
 5. **Remote git repository:** ✅ DONE 2026-07-21 — pushed to
    https://github.com/yifuz/web_myathletik.git. Latest theme changes were
    pushed through commit `77a12c6`; current uploads assets were separately
@@ -600,7 +614,7 @@ or regenerating images — do NOT apply a blanket rule across all folders.
 | **Brand partner logos** (`brand-partner/`) | **Unchanged.** | Logos are sharp flat graphics; converting would blur edges. |
 | **Hero banners** (`contact/` `services/` `sustainable/` + `production/工厂全景.png`) | **Unchanged.** Keep full resolution. | Full-bleed background needs high clarity; user explicitly wanted these preserved. |
 | **Product-page subcategory images** (~27 files across category folders) | **Unchanged.** | These are decision-critical close-ups; user wanted them kept as-is. |
-| **Homepage hero bento** (`sportswear/performance-knitwear-campaign-4x7-2160x3780.png`, remaining `sportswear/hero_bento_*` and `production/hero_bento_*`) | **Bento A adopted at full resolution; delivery optimization pending.** Keep the approved PNG original. Other three cells remain pre-sized and lightweight. | Bento A is visually locked at 4:7 with CSS scale 1.15 but is ~4.97 MB; optimize its served version separately before the next production asset sync without changing the approved source. |
+| **Homepage hero bento** (`sportswear/performance-knitwear-campaign-4x7-2160x3780.png`, responsive `performance-knitwear-hero-*-lossless.webp`, and the remaining `hero_bento_*` files) | **Responsive delivery optimization completed 2026-07-29.** Keep the approved PNG as the source asset; the live template serves 720w / 960w / 1280w lossless WebP variants through `srcset`. The other three cells remain pre-sized and lightweight. | The approved 4:7 source and CSS focal treatment remain visually locked, while browsers receive an appropriately sized WebP. Uploads assets must still be synchronized separately from Git. |
 
 When adding a NEW image: identify which group it belongs to from the table
 above and apply that group's rule. If it doesn't fit any group, ASK before

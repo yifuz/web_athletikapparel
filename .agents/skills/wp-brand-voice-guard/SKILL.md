@@ -63,8 +63,10 @@ Specifically never invent:
   that's the user's stated figure, OK to reuse; don't invent new ones)
 - Capacity numbers (pieces/month, knit meters, etc.)
 - Client / brand names
-- MOQ as a hard rule (`seo-tags.md` notes don't state MOQ as a rule — the
-  ~500 figure is internal guidance)
+- An unconfirmed or altered MOQ. The current confirmed public positioning is
+  **1,000 pieces per style**; individual pages may omit the figure when their
+  approved content specification calls for softer lead filtering, but must not
+  substitute a different number.
 - Awards, partnerships, media mentions
 
 If a fact is needed and not in `seo-tags.md` / `docs/sitemap.md` /
@@ -119,7 +121,7 @@ From AGENTS.md §5 + `docs/design-brief.md`:
 - **Specific > generic.** "Flatlock seam construction at 14 SPI" beats
   "high-quality stitching".
 - **Mid-sized B2B buyer audience** (brands/wholesalers placing technical knit
-  orders, MOQ ~500). Not startups, not end consumers.
+  orders, MOQ 1,000 pieces per style). Not startups, not end consumers.
 
 ## Output format
 

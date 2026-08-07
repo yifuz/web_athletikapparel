@@ -136,8 +136,10 @@ for this on every environment sync.
 The rebuild reorganizes the site around search intent. Target structure:
 
 - **Home**
-- **Products** (hub) → category landing pages. Keep the EXISTING categories
-    (no new sport-specific categories added at this stage):
+- **Products hub:** the homepage product section at
+  `/#ma-home-categories-title` links to the category landing pages. A separate
+  `/products/` page is not built in the current phase. Keep the EXISTING
+  categories (no new sport-specific categories added at this stage):
   - Knitted Fabrics
   - Sports Accessories
   - Outdoor Clothing
@@ -145,15 +147,19 @@ The rebuild reorganizes the site around search intent. Target structure:
   - Underwear
   - Merino Wool Apparel
   - Silk Wear
-- **Capabilities / Production** → Factory, Equipment, Vertical Integration
-- **Services / Process** → Sampling & Prototyping, Bulk Production, QC,
-  Export & Shipping  (differentiation vs. Hongyu — the user's export
-  documentation experience is a selling point here)
-- **Sustainability** (note: fix the misspelled "Sustainabilty" slug — see §3)
+- **Capabilities / Production:** no standalone `/production/`, `/factory/`, or
+  `/equipments/` pages in the current phase. Capability proof lives on the
+  homepage and product category pages.
+- **Services / Process:** one `/services/` overview contains Sampling &
+  Prototyping, Bulk Production, QC, and Export & Shipping. The four originally
+  planned service sub-pages are cancelled.
+- **Sustainability:** the current `/sustainability/` slug is correct; the old
+  misspelled path has no historical redirect because the old site was dead.
 - **About Us** → company, own production facility / vertical integration,
   regional coverage. Do not disclose factory count or subcontracting.
-- **Contact** (with an inquiry form: budget tier + order quantity fields to
-  filter out sub-MOQ leads)
+- **Contact** (with an inquiry form: product category, estimated order
+  quantity, business type, company details, and project message to filter out
+  sub-MOQ leads)
 
 ### Positioning (drives all content decisions)
 - Audience: **mid-sized B2B buyers** (brands/wholesalers placing technical knit
@@ -202,10 +208,10 @@ revisit if Search Console later shows any of these old URLs still indexed:
 | `/products/underwear/`               | `/underwear-manufacturer/`               | NOT NEEDED |
 | `/products/merino-wool-apparel/`     | `/merino-wool-manufacturer/`             | NOT NEEDED |
 | `/products/silk-wear/`               | `/silk-wear-manufacturer/`               | NOT NEEDED |
-| `/products/` (hub)                   | keep as `/products/` overview |
+| `/products/` (historical hub idea)   | —                                          | NOT BUILT; homepage product section is the current hub |
 
-- **Auxiliary pages — preserve or 301:**
-  - `/production/`, `/factory/`, `/equipments/` — keep
+- **Auxiliary-page decisions:**
+  - `/production/`, `/factory/`, `/equipments/` — not built in the current phase
   - `/sustainabilty/` ← **misspelled.** Already corrected to `/sustainability/`
     in this rebuild. The historical redirect was intentionally removed because
     the old site had no indexed traffic or inbound links to preserve.

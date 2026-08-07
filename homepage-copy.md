@@ -1,8 +1,9 @@
-# Homepage Copy — Final Draft & Fill-in Map
+# Homepage Copy — Approved Source & Implementation Map
 
-How to use: each section below shows the finalized English copy and which file /
-placeholder it replaces. Either edit the file directly in VS Code (Ctrl+F the
-placeholder text, replace it) or hand this doc to Codex to apply.
+How to use: the homepage copy has already been implemented. Each section below
+records the approved source and its template location; compare it with the live
+template before making future changes instead of treating every “Replace” note
+as an open task.
 
 Numbers confirmed: 15+ years · 4,500+ m² own facility · 100,000+ pcs/month
 capacity · MOQ 1,000 pcs per style.
@@ -14,13 +15,13 @@ partner," not just a factory. Never state the real number of factories.
 
 ## 1. Hero — `template-parts/home/hero.php`
 
-Replace `[CONTENT: user to write hero positioning subhead]` with:
+Current production copy:
 
-> Full-package flatlock and activeseam knitwear for underwear, sportswear, and
-> outdoor brands worldwide — backed by 15 years of technical production and our
-> own integrated manufacturing.
-
-(H1 stays: "Vertically Integrated OEM Knitwear Manufacturer")
+- Eyebrow: `Technical knitwear OEM/ODM partner`
+- H1: `Performance Knitwear Manufacturer`
+- Subhead: `From yarn and fabric development to finished garments, we support
+  underwear, sportswear, outdoor, and performance knitwear programs with
+  integrated production and technical sewing capabilities.`
 
 ---
 
@@ -39,7 +40,7 @@ Four points (label + microcopy):
 
 ## 3. Product categories intro — `template-parts/home/product-categories.php`
 
-Replace `[CONTENT: user to write short product category intro]` with:
+Implemented product-category intro:
 
 > We produce full-package underwear, sportswear, outdoor clothing, and knitted
 > fabrics for global brands. Every category is built on technical knit
@@ -50,14 +51,14 @@ Replace `[CONTENT: user to write short product category intro]` with:
 
 ## 4. Why myathletik — `template-parts/home/why-myathletik.php`
 
-Replace `[CONTENT: user to write why myathletik overview]` (overview) with:
+Implemented “Why myathletik” overview:
 
 > We're not just a factory — we're an integrated production partner. From our
 > yarn and fabric development to finished-garment construction, we give performance brands
 > the technical capability and flexible capacity to bring demanding designs to
 > life.
 
-Replace each `[CONTENT: user to write this reason]` (5 reasons) with:
+Implemented copy for the five reasons:
 
 1. **Vertical Integration** — From yarn and fabric development with full
    in-house testing to flatlock and activeseam garment construction, we control
@@ -76,26 +77,27 @@ Replace each `[CONTENT: user to write this reason]` (5 reasons) with:
 
 ## 5. Numbers proof — `template-parts/home/numbers-proof.php`
 
-Replace the `[NEEDS INPUT]` placeholders with these confirmed figures:
+Confirmed figures used in the proof cards:
 
 - **15+** Years of production experience
 - **4,500+ m²** Own production facility
 - **100,000+** Pieces per month capacity
 - **3 continents** Brands served across North America, Europe & Asia
 
-(Remove the merchandiser-team-size and exact-MOQ `[NEEDS INPUT]` placeholders —
-we're intentionally not publishing team size; MOQ lives in the process section.)
+Team size and factory count are intentionally not published. The live proof
+cards keep the number and unit in separate elements so mixed-length values stay
+aligned across desktop and mobile.
 
 ---
 
 ## 6. Process snapshot — `template-parts/home/process-snapshot.php`
 
-Replace `[CONTENT: user to write short process overview]` with:
+Implemented process overview:
 
 > From first sample to final shipment, every order runs through our integrated
 > process — built for technical knitwear and the brands that depend on it.
 
-Replace each `[CONTENT: user to write step description]` (4 steps) with:
+Implemented copy for the four process steps:
 
 1. **Sampling & Prototyping** — Samples in 1–2 weeks, depending on complexity.
    We work from your samples, designs, or concepts.
@@ -111,7 +113,7 @@ is industry-standard and not a differentiator.)
 
 ## 7. Inquiry CTA — `template-parts/home/inquiry-cta.php`
 
-Replace `[CONTENT: user to write inquiry CTA copy]` with:
+Implemented inquiry CTA copy:
 
 > Have a tech pack or a sample in mind? Tell us about your project — our team
 > will get back to you with a quote and next steps.

@@ -1,14 +1,18 @@
 # myathletik.com — Sitemap & Page Plan (Rebuild v1)
 
-Companion to `SKILL.md`. This is the build blueprint: every page, its URL, its
-single H1, its target search intent, the 301 source (if it replaces an old
-URL), and a content-block outline. The user writes all long-form body copy;
-this plan defines structure only.
+Status reconciled: 2026-08-07. Current implementation and URL decisions below
+supersede the earlier planning assumptions retained in historical sections.
+
+Companion to `AGENTS.md`. This is the build blueprint: every page, its URL, its
+single H1, target search intent, historical URL context, and content-block
+outline. The user writes all long-form body copy; this plan defines structure
+only.
 
 Legend:
 - **NEW** = page didn't exist before, no redirect needed
-- **301 from** = replaces an existing indexed URL, requires a 301 redirect
-- **KEEP** = existing URL stays as-is
+- **Historical old URL** = planning reference only; do not add a redirect
+  unless current Search Console, server-log, or backlink evidence justifies it
+- **KEEP** = current live URL stays as-is
 
 ---
 
@@ -24,8 +28,8 @@ Home  /
 │   ├── /merino-wool-manufacturer/
 │   ├── /silk-wear-manufacturer/
 │   ├── /knitted-fabrics-manufacturer/
-│   └── /sports-accessories-manufacturer/
-│   └── /products/  (overview hub linking to all of the above)
+│   ├── /sports-accessories-manufacturer/
+│   └── /#ma-home-categories-title  (current Products hub; `/products/` is not built)
 │
 ├── CAPABILITIES / PRODUCTION  ❌ CANCELLED (2026-07)
 │   └── /production/ /factory/ /equipments/  — not being built this phase
@@ -35,7 +39,7 @@ Home  /
 │   ❌ CANCELLED (2026-07): sub-pages /sampling-prototyping/ /bulk-production/
 │      /quality-control/ /export-shipping/ — folded into /services/ overview
 │
-├── /sustainability/   (301 from misspelled /sustainabilty/)
+├── /sustainability/   (correct live slug; no historical redirect implemented)
 ├── /about-us/
 └── /contact/
 ```
@@ -44,8 +48,7 @@ Home  /
 
 ## 1. Home — `/`  (KEEP)
 
-**H1:** Vertically Integrated OEM Knitwear Manufacturer
-*(or your preferred headline — one H1 only)*
+**Current H1:** Performance Knitwear Manufacturer
 
 **Purpose:** Establish positioning in 5 seconds, route buyers to the right
 category page, capture inquiries.
@@ -63,18 +66,20 @@ category page, capture inquiries.
 5. Process snapshot — 4-step strip (Sample → Production → QC → Export),
    links to /services/.
 6. Certifications / audits strip — the existing badge row (keep, it's good).
-7. Latest from blog — 1–3 posts.
-8. Inquiry CTA band — short form (budget tier + order quantity fields to
-   filter sub-MOQ leads).
+7. Latest from blog — deferred and disabled until real posts exist.
+8. Inquiry CTA band — shared Fluent Form 3 with product category, estimated
+   order quantity, business type, company details, and project message.
 
-【CONTENT: user to write hero headline + positioning paragraph】
+Current approved homepage copy is recorded in `homepage-copy.md` and the live
+template; this structure document does not override it.
 
 ---
 
 ## 2. Product category pages (top-level, keyword-aligned)
 
-All 7 follow the SAME template so structure stays consistent. Each is a 301
-target replacing an old `/products/<x>/` URL.
+All 7 follow the SAME template so structure stays consistent. The old
+`/products/<x>/` paths are historical references only; the old site was
+confirmed dead, so no category redirects were implemented.
 
 ### Shared template for every category page
 **H1:** `[Category] Manufacturer` (e.g. "Sportswear Manufacturer")
@@ -89,8 +94,8 @@ target replacing an old `/products/<x>/` URL.
 
 【CONTENT: user to write body copy per page】
 
-| Page | URL | H1 | 301 from |
-|------|-----|----|----------|
+| Page | URL | H1 | Historical old URL (no redirect) |
+|------|-----|----|----------------------------------|
 | Sportswear | `/sportswear-manufacturer/` | Sportswear Manufacturer | `/products/sportswear/` |
 | Underwear | `/underwear-manufacturer/` | Underwear Manufacturer | `/products/underwear/` |
 | Outdoor Clothing | `/outdoor-clothing-manufacturer/` | Outdoor Clothing Manufacturer | `/products/outdoor-clothing/` |
@@ -99,10 +104,13 @@ target replacing an old `/products/<x>/` URL.
 | Knitted Fabrics | `/knitted-fabrics-manufacturer/` | Knitted Fabrics Manufacturer | `/products/knitted-fabrics/` |
 | Sports Accessories | `/sports-accessories-manufacturer/` | Sports Accessories Manufacturer | `/products/sports-accessories/` |
 
-### Products hub — `/products/`  (KEEP as overview)
-**H1:** Our Products
-Simple overview page: 7 category cards linking out. Keeps the `/products/` URL
-alive (it has equity) and gives the nav a parent landing page.
+### Products hub — homepage product section (current implementation)
+
+The homepage product section at `/#ma-home-categories-title` is the current
+Products hub and links to all 7 category pages. `/products/` is intentionally
+not built, is absent from navigation and the Sitemap, and currently returns
+404. Only create a standalone hub or add a redirect if future Search Console,
+server-log, or backlink evidence shows that `/products/` has real value.
 
 ---
 
@@ -127,11 +135,13 @@ single `/services/` overview. Home page process-snapshot links all point to
 
 ---
 
-## 5. Sustainability — `/sustainability/`  (301 from `/sustainabilty/`)
+## 5. Sustainability — `/sustainability/`
 
 **H1:** Sustainability
-**Critical:** the old slug is misspelled (`/sustainabilty/`). New page uses the
-correct spelling; old slug MUST 301 to the new one. Fix the nav label too.
+The current page and navigation use the correct spelling. The historical
+misspelling `/sustainabilty/` has no inherited search equity and no redirect
+was implemented. Revisit only if current evidence shows indexed traffic or
+backlinks to the misspelled path.
 
 【CONTENT: user to write】
 
@@ -139,7 +149,7 @@ correct spelling; old slug MUST 301 to the new one. Fix the nav label too.
 
 ## 6. About Us — `/about-us/`  (KEEP)
 
-**H1:** About myathletik
+**H1:** About Us
 Company story, own production facility / vertical integration, regional
 coverage, and foreign-trade capability. Do not publish a factory count or
 subcontracting details. Replace stock imagery.
@@ -150,14 +160,15 @@ subcontracting details. Replace stock imagery.
 
 **H1:** Contact Us
 Inquiry form with lead-filtering fields:
-- Budget tier (set thresholds appropriate for a 1,000 pcs per style MOQ —
-  higher than a startup-focused competitor's tiers)
 - Estimated order quantity
 - Product category of interest
-- Company / selling channel
-- Message + file upload (tech packs)
+- Company / business type
+- Message with a prompt to include a tech pack link when available
 
-Plus: direct contact details, factory location(s).
+File Upload is not part of the current Fluent Forms free-tier implementation.
+
+Plus: direct contact details and the own-facility address. Do not publish a
+factory count or partner-factory locations.
 
 ### Cleanup tied to this page
 - ✅ The leftover `/contact-2/` ("Contact_example") footer link was removed.
@@ -190,7 +201,7 @@ has indexed traffic or inbound links.
 ## 9. Build order (recommended sequence)
 
 1. ~~**Home**~~ — ✅ DONE
-2. ~~**7 category pages**~~ — ✅ DONE (carry SEO + 301s)
+2. ~~**7 category pages**~~ — ✅ DONE (top-level keyword-aligned URLs; no historical redirects)
 3. ~~**Services pages**~~ — ✅ `/services/` single page DONE; sub-pages CANCELLED
 4. ~~**Factory / Equipment**~~ — ❌ CANCELLED this phase
 5. ~~**About / Sustainability / Contact**~~ — ✅ pages DONE and polished

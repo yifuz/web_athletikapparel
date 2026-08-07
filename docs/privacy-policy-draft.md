@@ -334,6 +334,12 @@ Email: <info@athletikapparel.com>
 
 ## Internal Maintenance Notes — Not Part of the Public Privacy Policy
 
+### Operational scope reconciliation — August 7, 2026
+
+- The first Google Ads campaign was launched for the United States and Canada. This source's
+  recorded business approval remains United States-only; Canadian privacy scope and any required
+  notice changes remain pending review and are not silently treated as approved by this note.
+
 ### United States launch publication gates
 
 1. Confirm the final effective date and legal-approval date.
@@ -352,8 +358,9 @@ Email: <info@athletikapparel.com>
 
 ### EEA and UK activation gate
 
-- The first advertising launch is limited to the United States. Do not actively target EEA, UK, or
-  Swiss buyers until this gate is completed.
+- The first advertising campaign actually targets the United States and Canada. Complete the
+  separate Canadian privacy-scope review; do not actively target EEA, UK, or Swiss buyers until
+  the regional activation gate is completed.
 - Treat the 163.com destination as the principal European-transfer blocker. Confirm an EU and UK
   transfer mechanism and complete any required transfer assessment, or move the destination inbox
   before European promotion.
@@ -370,8 +377,9 @@ Email: <info@athletikapparel.com>
   threshold screen does not indicate that Athletik is a covered CCPA business.
 - Final legal review should still confirm that Athletik is not covered through a controlled entity,
   joint venture, partnership, or voluntary certification, and should assess any other applicable US
-  state privacy law. Reassess this screen annually, if business scale changes, and before activating
-  Google Ads conversion measurement or cross-context behavioral advertising.
+  state privacy law. Google Ads conversion measurement was activated on August 5, 2026, so the
+  previously stated pre-activation review trigger has been reached. Complete the follow-up review
+  promptly and before expanding audiences or cross-context behavioral advertising.
 
 ### Official review references
 

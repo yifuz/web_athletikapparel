@@ -2,6 +2,7 @@
 
 > 版本：1.1
 > 日期：2026-08-04
+> 文档对齐日期：2026-08-07
 > 状态：美国首轮隐私政策、Cookiebot、CMP 与 Consent Mode 已完成生产部署和验证；欧洲推广前补充对应法律输入
 > 适用站点：<https://www.athletikapparel.com/>
 
@@ -12,7 +13,11 @@
 本文档是技术实施清单，不是法律意见。最终隐私文本、法律依据、保留期限和跨境传输说明
 应由熟悉目标市场要求的专业人员审核。
 
-## 1. 当前审计结论
+## 1. 实施前审计基线（已完成整改）
+
+本节保留 2026-08-04 部署前发现的问题作为历史基线，不代表当前生产状态。
+当前状态以本文 Gate B–D、`docs/progress.md` 和
+`docs/google-ads-launch-record-2026-08-05.md` 为准。
 
 ### 生产站
 
@@ -122,9 +127,9 @@ AdSense 等发布商产品在向 EEA、英国和瑞士用户提供个性化广�
 | 联系人姓名、邮箱、公司、国家、网址 | 回复 OEM 询盘和评估匹配度 | 表单提交时收集 | 必须披露 |
 | 产品品类、订单数量、客户类型、项目说明 | 询盘筛选与报价准备 | 表单提交时收集 | 必须披露 |
 | IP、浏览器、设备、来源 URL | Fluent Forms 记录与安全/诊断 | 确认必要性与保留期限 | 必须披露 |
-| UTM、GCLID、首次落地页、Referrer | 广告与询盘来源归因 | 按批准的 statistics/marketing 同意规则启停 | 尚待接入 CMP |
-| GA4 / Google tag | 网站测量和转化事件 | 由 Site Kit Consent Mode 控制 | 尚待配置 |
-| Google Ads | 搜索广告与询盘转化 | 由 Site Kit Consent Mode 控制 | 尚待账户关联 |
+| UTM、GCLID、首次落地页、Referrer | 广告与询盘来源归因 | 仅在 `marketing` 同意后写入；拒绝或撤回时删除 | 已接入并部署生产 |
+| GA4 / Google tag | 网站测量和转化事件 | 由 Site Kit Consent Mode 控制 | 已配置并验证允许/拒绝信号 |
+| Google Ads | 搜索广告与询盘转化 | 由 Site Kit Consent Mode 控制 | 已关联并于 2026-08-05 启动首轮广告；真实点击验证待完成 |
 | AdSense | 展示广告发布商产品 | 已从生产 Site Kit 断开并验证脚本已移除 | 已完成 |
 | FluentSMTP / Brevo | 发送询盘通知邮件 | 日志 1 个月且不保存新邮件预览；账户主体与处理地区仍需最终核对 | 必须披露 |
 | 163.com 邮箱服务 | 接收 Cloudflare Email Routing 转发的询盘通知 | 服务商法律主体与处理地区仍需最终核对 | 必须披露 |
@@ -267,10 +272,12 @@ AdSense 等发布商产品在向 EEA、英国和瑞士用户提供个性化广�
 - [ ] Google Ads 接入并产生 Marketing tracker 后验证部分接受。
 - [ ] 拒绝后刷新和跨页面访问不会重新授予同意。
 - [ ] Privacy Policy、Cookie Declaration、横幅分类和实际网络请求一致。
-- [ ] 用 Google Tag Assistant 和浏览器 Network/Application 面板保存测试证据。
-- [ ] 验证 Contact 表单、询盘通知和来源字段仍能正常工作。
-- [x] 当前生产页脚尚无 Cookie Settings；浮动 Privacy Trigger 已启用并验证，可供访客
-      修改或撤回同意。主题页脚入口部署前保持启用。
+- [x] 已使用 Google Tag Assistant、GA4 DebugView 和浏览器网络请求验证允许路径及
+      四种 Google consent 信号；真实广告点击仍按广告上线记录单独验证。
+- [x] Contact 表单、Fluent Forms Entry、询盘通知、`generate_lead` 和来源字段已完成
+      生产验证。
+- [x] 生产页脚 Cookie Settings 已部署并验证，可通过 `Cookiebot.renew()` 重新打开
+      设置；浮动 Privacy Trigger 继续作为第二入口。
 
 ## 8. 用户确认记录与剩余输入
 
@@ -290,6 +297,8 @@ AdSense 等发布商产品在向 EEA、英国和瑞士用户提供个性化广�
 
 1. Cookiebot 与 Cloudflare 的标准式服务商保留表述。
 2. Cookiebot/Cloudflare 标准式表述的独立法律复核（不阻塞已获业务批准的美国首轮版本）。
+3. 2026-08-05 实际广告范围包含美国和加拿大；现有发布批准记录仍是美国首轮版本，
+   加拿大适用范围和告知内容需要单独复核。
 
 本地审核草稿的版本控制源文件见 [`privacy-policy-draft.md`](privacy-policy-draft.md)。
 发布前主体、地址和保留期限决策见 [`privacy-policy-decisions.md`](privacy-policy-decisions.md)。

@@ -5,8 +5,10 @@ design. B2B buyers (esp. EU/Nordic) scrutinize sustainability claims, and false
 claims carry regulatory risk. Only state what is real and provable. When in
 doubt, say less.
 
-URL NOTE: correct spelling is /sustainability/. The old site used the misspelled
-/sustainabilty/ — that old slug MUST 301 to this page (see sitemap §8).
+URL NOTE: the live page uses the correct `/sustainability/` spelling. The old
+site's misspelled `/sustainabilty/` path was confirmed to have no inherited
+search equity, so no historical redirect was implemented. Revisit only if
+current Search Console, server-log, or backlink evidence justifies one.
 
 GUARDRAILS:
 - No vague green slogans ("we love the planet"). Only concrete, provable points.
