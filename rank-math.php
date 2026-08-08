@@ -155,6 +155,12 @@ function myathletik_rank_math_publisher_schema( $data ) {
 
 	$data['publisher']['telephone'] = '+8613951139696';
 	$data['publisher']['email']     = 'info@athletikapparel.com';
+	$data['publisher']['legalName'] = 'Athletik Clothing Inc.';
+	$data['publisher']['sameAs']    = array(
+		'https://www.linkedin.com/company/111831319/',
+		'https://www.instagram.com/athletikclothinginc/',
+		'https://www.youtube.com/@athletikclothinginc',
+	);
 	$data['publisher']['address']   = array(
 		'@type'           => 'PostalAddress',
 		'streetAddress'   => 'No.25, Zhongxing Road, Yangshe Town',
@@ -180,7 +186,7 @@ add_filter( 'rank_math/json_ld', 'myathletik_rank_math_publisher_schema', 102 );
  * @return int Unix timestamp in UTC.
  */
 function myathletik_rank_math_core_sitemap_baseline() {
-	return strtotime( '2026-07-30 01:00:00 UTC' );
+	return strtotime( '2026-08-08 02:30:00 UTC' );
 }
 
 /**

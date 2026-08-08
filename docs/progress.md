@@ -11,7 +11,19 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
-Last updated: 2026-08-08 — The production inquiry path was re-audited before
+Last updated: 2026-08-08 — GEO execution started with a fixed eight-prompt,
+three-engine monthly baseline, an entity-conflict register and a first-hand
+FLATLOCK-vs-OVERLOCK article brief. Public user-agent checks returned HTTP 200
+for Googlebot, OAI-SearchBot, PerplexityBot and Claude-SearchBot on the homepage
+and Sportswear page, with no visible challenge. The canonical Organization
+entity now adds the approved legal name plus verified LinkedIn, Instagram and
+YouTube `sameAs` URLs. Public search still surfaces historical sites and
+third-party profiles containing conflicting identity, contact, MOQ, date,
+capacity or operating claims; no external record will be changed until the user
+confirms which domains and profiles are controlled. See
+`docs/geo-prompt-baseline.md` and `docs/content-brief-flatlock-vs-overlock.md`.
+
+Previous: 2026-08-08 — The production inquiry path was re-audited before
 adding new measurement. The homepage, Contact page, and Sportswear landing page
 all return HTTP 200 and render Fluent Form 3, the Google tag, Cookiebot, the
 approved attribution and inquiry scripts, the Privacy Policy link, WhatsApp,

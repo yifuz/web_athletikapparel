@@ -175,7 +175,7 @@ Athletik Clothing 能被提及或引用。
 
 ### 6.1 提示词基线与监测（每月一次，轻量执行）
 
-建立一张监测表（建议放 `docs/geo-prompt-baseline.md`），固定 8–10 条买家
+监测表已建立在 [`geo-prompt-baseline.md`](geo-prompt-baseline.md)，固定 8 条买家
 真实会问的提示词，每月在同一批 AI 引擎上各跑一遍，记录：是否提及 Athletik /
 是否引用 athletikapparel.com / 推荐了哪些竞品。首批提示词方向：
 
@@ -185,6 +185,10 @@ Athletik Clothing 能被提及或引用。
 - merino wool base layer manufacturer
 - how to choose a knitwear manufacturer (MOQ, tech pack)
 - China vs Portugal vs Vietnam knitwear manufacturing
+
+2026-08-08 技术基线：主页和 Sportswear 页使用 Googlebot、OAI-SearchBot、
+PerplexityBot 和 Claude-SearchBot 标识请求均返回 HTTP 200，未出现显式挑战；
+`robots.txt` 没有屏蔽公开页面。该检查只排除明显的 UA/robots 阻拦，不替代真实爬虫日志。
 
 ### 6.2 站内 GEO 改造（与 SEO 内容合并执行）
 
