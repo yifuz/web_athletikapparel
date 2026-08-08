@@ -100,15 +100,17 @@ editability confirmation before any correction work:
 
 ## 7. First improvement cycle
 
-1. Add `legalName` and verified official-profile `sameAs` links to the canonical
+1. Run the first 24 checks before correcting historical sources or publishing
+   the first article; this is the pre-improvement comparison snapshot.
+2. Add `legalName` and verified official-profile `sameAs` links to the canonical
    Organization entity.
-2. Confirm which historical domains and directory profiles the company controls.
-3. Correct the highest-visibility owned source before publishing new directory
+3. Confirm which historical domains and directory profiles the company controls.
+4. Correct the highest-visibility owned source before publishing new directory
    listings.
-4. Produce one first-hand technical article using
+5. Produce one first-hand technical article using
    [`content-brief-flatlock-vs-overlock.md`](content-brief-flatlock-vs-overlock.md).
-5. Run the 24-check baseline after entity corrections and the first article are
-   publicly crawlable; repeat monthly without changing the prompt wording.
+6. Repeat the same 24 checks after entity corrections and the first article are
+   publicly crawlable; continue monthly without changing the prompt wording.
 
 ## 8. Official references
 
