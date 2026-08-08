@@ -146,7 +146,10 @@ Google Search、目标客户开发和 SEO/GEO 为主。多渠道分工、预算�
 - [x] 部署到生产环境后，已使用带 UTM 和测试 GCLID 的 URL 提交表单，
       核对 Entries 中的来源数据。
 - [ ] 将来源摘要加入销售通知或后续线索记录。
-- [ ] 将 WhatsApp 和电子邮件点击记录为辅助诊断事件，不作为核心转化。
+- [x] 网站代码已将 WhatsApp 和电子邮件点击分别记录为
+      `contact_whatsapp_click` 和 `contact_email_click` 辅助诊断事件；二者不作为
+      核心转化，也不导入 Google Ads。
+- [ ] 部署后在 GA4 DebugView 验证以上两个辅助事件，并确认它们未被标记为主要事件。
 - [ ] 建立每周更新线索状态的流程，包括合格、不合格、已报价、打样、成交和流失。
 - [ ] 运营流程准备好后，增加以下 GA4 线索阶段事件：
   - [ ] `qualify_lead`

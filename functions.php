@@ -160,6 +160,30 @@ function myathletik_enqueue_inquiry_tracking() {
 add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_inquiry_tracking' );
 
 /**
+ * Track deliberate email and WhatsApp contact clicks as secondary GA4 events.
+ *
+ * These events are diagnostic only. A successful form submission remains the
+ * sole generate_lead event and the only website action intended to be used as
+ * a primary Google Ads conversion.
+ */
+function myathletik_enqueue_contact_tracking() {
+	$script_path = get_stylesheet_directory() . '/assets/js/contact-tracking.js';
+
+	if ( ! file_exists( $script_path ) ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'myathletik-contact-tracking',
+		get_stylesheet_directory_uri() . '/assets/js/contact-tracking.js',
+		array(),
+		filemtime( $script_path ),
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_contact_tracking' );
+
+/**
  * Preserve paid-campaign attribution while visitors move between site pages.
  *
  * The inquiry form is not embedded on every landing page, so the first landing

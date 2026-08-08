@@ -11,7 +11,18 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
-Last updated: 2026-08-07 — The promotion matrix and execution plan were revised
+Last updated: 2026-08-08 — The production inquiry path was re-audited before
+adding new measurement. The homepage, Contact page, and Sportswear landing page
+all return HTTP 200 and render Fluent Form 3, the Google tag, Cookiebot, the
+approved attribution and inquiry scripts, the Privacy Policy link, WhatsApp,
+and the public contact email. The production inquiry and attribution JavaScript
+files match the current repository copies. Code now records
+`contact_email_click` and `contact_whatsapp_click` as secondary GA4 diagnostic
+events without changing `generate_lead`, which remains the sole primary website
+conversion. Production deployment and GA4 DebugView verification of the two new
+events are still required.
+
+Previous: 2026-08-07 — The promotion matrix and execution plan were revised
 for one full-time operator using conservative, sustainable baselines: two
 Instagram feed posts per week, one reused Short and one LinkedIn post per week,
 one YouTube long-form video and one technical article per month, and 10–15

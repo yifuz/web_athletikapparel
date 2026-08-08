@@ -163,6 +163,8 @@ Google Ads 创建流程中的预测值仅作参考：
 - 生产环境完整测试询盘已正常进入 Fluent Forms Entries。
 - Brevo 通知链路已经验证 `Sent → Delivered → Opened`，实际收件箱收到询盘。
 - 网站能在表单记录中保存 UTM、GCLID、首次落地页和原始 Referrer。
+- 网站代码已准备 `contact_email_click` 和 `contact_whatsapp_click` 两个辅助诊断事件；
+  部署后仍需在 GA4 DebugView 验证。它们不得标记为主要转化或导入 Google Ads。
 
 ### 同意管理行为
 
