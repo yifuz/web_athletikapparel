@@ -1,7 +1,12 @@
-# myathletik.com — Sitemap & Page Plan (Rebuild v1)
+# Athletik Clothing — Sitemap & Page Plan (Rebuild v1)
 
-Status reconciled: 2026-08-07. Current implementation and URL decisions below
+Status reconciled: 2026-08-08. Current implementation and URL decisions below
 supersede the earlier planning assumptions retained in historical sections.
+
+Legacy-domain correction: `myathletik.com` remains live and searchable, but the
+owner plans to retire it in the short term without cross-domain redirects. It
+is outside this rebuild's implementation scope; current URL/SEO work applies
+only to `https://www.athletikapparel.com/`.
 
 Companion to `AGENTS.md`. This is the build blueprint: every page, its URL, its
 single H1, target search intent, historical URL context, and content-block
@@ -78,8 +83,8 @@ template; this structure document does not override it.
 ## 2. Product category pages (top-level, keyword-aligned)
 
 All 7 follow the SAME template so structure stays consistent. The old
-`/products/<x>/` paths are historical references only; the old site was
-confirmed dead, so no category redirects were implemented.
+`/products/<x>/` paths are historical references only. No legacy category
+redirects are planned under the owner's 2026-08-08 retirement decision.
 
 ### Shared template for every category page
 **H1:** `[Category] Manufacturer` (e.g. "Sportswear Manufacturer")
@@ -139,9 +144,9 @@ single `/services/` overview. Home page process-snapshot links all point to
 
 **H1:** Sustainability
 The current page and navigation use the correct spelling. The historical
-misspelling `/sustainabilty/` has no inherited search equity and no redirect
-was implemented. Revisit only if current evidence shows indexed traffic or
-backlinks to the misspelled path.
+misspelling `/sustainabilty/` has no redirect currently implemented. Check the
+exact legacy-domain URL, indexed traffic and backlinks during the migration
+inventory before deciding whether a redirect is required.
 
 【CONTENT: user to write】
 
@@ -172,17 +177,16 @@ factory count or partner-factory locations.
 
 ### Cleanup tied to this page
 - ✅ The leftover `/contact-2/` ("Contact_example") footer link was removed.
-  No historical redirect was added because the old site had no inherited
-  search equity.
+  No historical redirect is planned under the owner's legacy-domain decision.
 
 ---
 
-## 8. Historical 301 redirect plan — NOT IMPLEMENTED
+## 8. Legacy-domain redirects — NOT PLANNED (owner decision)
 
-The old site's pages were confirmed dead with no inherited search equity.
-The mappings below are retained only as historical planning context and must
-not be added unless Search Console later proves that a specific old URL still
-has indexed traffic or inbound links.
+The legacy `myathletik.com` site is still live and is being cited by search.
+The owner plans to retire it in the short term without cross-domain redirects.
+The mappings below remain historical planning context only and must not be
+implemented unless the owner later reopens the decision.
 
 | Old URL | New URL | Reason |
 |---------|---------|--------|
@@ -205,7 +209,7 @@ has indexed traffic or inbound links.
 3. ~~**Services pages**~~ — ✅ `/services/` single page DONE; sub-pages CANCELLED
 4. ~~**Factory / Equipment**~~ — ❌ CANCELLED this phase
 5. ~~**About / Sustainability / Contact**~~ — ✅ pages DONE and polished
-6. ~~**Historical 301 plan**~~ — ✅ cancelled; old site had no equity to preserve
+6. ~~**Legacy-domain redirects**~~ — ❌ out of scope by owner decision
 7. ~~**Page-by-page visual polish + QA cleanup**~~ — ✅ completed before launch
 8. **Production launch** — ✅ complete on Flywheel; final site and uploads
    synchronized 2026-07-28

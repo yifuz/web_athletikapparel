@@ -1,4 +1,4 @@
-# Project Progress Snapshot - myathletik.com Rebuild
+# Project Progress Snapshot - Athletik Clothing Website
 
 Read this together with AGENTS.md, docs/sitemap.md,
 docs/design-brief.md, and homepage-copy.md when starting a new session.
@@ -15,9 +15,16 @@ Last updated: 2026-08-08 — GEO execution started with a fixed eight-prompt,
 three-engine monthly baseline, an entity-conflict register and a first-hand
 FLATLOCK-vs-OVERLOCK article brief. Public user-agent checks returned HTTP 200
 for Googlebot, OAI-SearchBot, PerplexityBot and Claude-SearchBot on the homepage
-and Sportswear page, with no visible challenge. The canonical Organization
-entity now adds the approved legal name plus verified LinkedIn, Instagram and
-YouTube `sameAs` URLs. Public search still surfaces historical sites and
+and Sportswear page, with no visible challenge. A supplemental Microsoft Bing
+GEO-01 check cited the live legacy `myathletik.com/about-us/` page instead of
+the canonical `athletikapparel.com` domain. The earlier “old site is dead”
+assumption is superseded. The user plans to retire that legacy site in the
+short term and explicitly chose not to create 301 redirects; it is outside the
+new site's GEO work except as a temporary competing/cached source. The
+Organization `legalName` and
+verified social `sameAs` improvement is prepared locally in `rank-math.php`;
+production deployment remains intentionally pending until the pre-improvement
+baseline is captured. Public search also surfaces other historical sites and
 third-party profiles containing conflicting identity, contact, MOQ, date,
 capacity or operating claims; no external record will be changed until the user
 confirms which domains and profiles are controlled. See
@@ -251,8 +258,8 @@ launch record).
 - Vertical capability can be stated as "from yarn to finished garment."
 - Audience: mid-sized B2B brand clients. MOQ 1,000 pcs per style.
 - Voice: professional + credible + warm. Not startup hand-holding.
-- URLs: top-level keyword style (/sportswear-manufacturer/ etc.). See §"301
-  redirects" below — NOT being done (old site dead).
+- URLs: top-level keyword style (/sportswear-manufacturer/ etc.). No legacy
+  redirects are currently deployed; see the pending migration audit below.
 - User writes all long-form body copy unless explicitly requested otherwise.
 - No stock photos on live pages. Use placeholders for missing real photos.
 - Confirmed numbers: 15+ yrs / 4,500+ sq m own facility / 100,000+ pcs/month /
@@ -421,15 +428,14 @@ SEO landing-page URLs preserved.
 | Knitted Fabrics | 5 | Performance knit; Thermal; Functional finishes; Stretch/microfiber/merino; Recycled (GRS). Independent fabric-supply business. |
 | Sports Accessories | 3 | Balaclavas; Gloves/liners; Knit accessories |
 
-## 301 redirects — NOT being done (decision: 2026-07-21)
+## Legacy domain — short-term retirement, no redirects (2026-08-08)
 
-User confirmed: **301 redirects are not needed and not being implemented.**
-The old site's pages are all dead, no inherited search equity to preserve.
-- The 7 category-page redirects in docs/sitemap.md §8 (/products/<x>/ ->
-  /<x>-manufacturer/) are NOT required and should not be added.
-- The misspelled `/sustainabilty/` -> `/sustainability/` 301 was removed from
-  functions.php. No historical redirect was implemented because there were no
-  indexed inbound links to protect.
+The old site remains online and Bing cites its About Us page in a branded
+answer. The user plans to take it offline in the short term and explicitly
+decided not to create old-to-new 301 redirects. No legacy URL inventory,
+redirect implementation or content remediation is in scope. GEO work focuses
+only on `athletikapparel.com`; after the old site is retired, baseline checks
+should note any continued legacy citations as search/AI cache lag.
 
 ## Current status / remaining enhancements
 
@@ -512,11 +518,13 @@ The old site's pages are all dead, no inherited search equity to preserve.
    approximately 660 MB. The 2026-07-24 270 MB ZIP is an obsolete historical
    snapshot and must not be used for future deployments.
 
-0. **Domains (2026-07-22):** purchased at Cloudflare Registrar —
+0. **Domains (corrected 2026-08-08):** purchased at Cloudflare Registrar —
    **athletikapparel.com = PRIMARY** (site, email, all branding);
-   athletik-clothing.com = defensive, 301 to primary. myathletik.com was
-   experimental only and is not part of the current website stack — decision
-   2026-07-22: NO 301 needed (site never actually used, zero traffic).
+   athletik-clothing.com = defensive, 301 to primary. `myathletik.com` is a
+   separate live legacy public site and currently appears in branded Bing
+   results. It is not the current canonical website and is scheduled for
+   short-term retirement without 301 redirects by explicit owner decision. The
+   earlier “never used, zero traffic” note is superseded.
    **Current stack:** Flywheel Tiny hosting + Local Connect deployment +
    Cloudflare DNS/email routing. GoDaddy is no longer used.
    **2026-07-22: pushed to Flywheel via Local Connect, temp-domain

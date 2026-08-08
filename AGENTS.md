@@ -5,15 +5,16 @@
 ---
 name: myathletik-website
 description: >
-  Project rules for rebuilding the myathletik.com website. myathletik (legal
-  entity "Athletik Clothing Inc.") is a vertically integrated OEM knitwear
+  Project rules for the Athletik Clothing website on athletikapparel.com.
+  Athletik Clothing (legal entity "Athletik Clothing Inc.") is a vertically
+  integrated OEM knitwear
   manufacturer specializing in flatlock / activeseam technical knitwear. This
   skill encodes the site's tech stack, information architecture, URL/SEO rules,
   brand voice, and terminology standards. Apply it on ANY task that creates or
   edits theme code, page content, blocks, CSS, or redirects for this site.
 ---
 
-# myathletik.com — Website Rebuild Project Rules
+# Athletik Clothing — Website Project Rules
 
 Read this file before writing any code, content, or block markup for this
 project. These rules exist to protect the site's existing SEO equity and to
@@ -153,8 +154,9 @@ The rebuild reorganizes the site around search intent. Target structure:
 - **Services / Process:** one `/services/` overview contains Sampling &
   Prototyping, Bulk Production, QC, and Export & Shipping. The four originally
   planned service sub-pages are cancelled.
-- **Sustainability:** the current `/sustainability/` slug is correct; the old
-  misspelled path has no historical redirect because the old site was dead.
+- **Sustainability:** the current `/sustainability/` slug is correct. No
+  historical redirect is implemented. The owner explicitly excluded the
+  legacy domain from redirect/migration work on 2026-08-08.
 - **About Us** → company, own production facility / vertical integration,
   regional coverage. Do not disclose factory count or subcontracting.
 - **Contact** (with an inquiry form: product category, estimated order
@@ -173,17 +175,18 @@ The rebuild reorganizes the site around search intent. Target structure:
 
 ## 3. URL & SEO rules (SEO landmines — strictest section)
 
-> **Status update (2026-07-04): the user confirmed the OLD site's pages are all
-> dead — no inherited search equity to preserve.** The category-page redirects
-> in the historical table below are therefore **NOT required** and should not
-> be added. The general principles in this section (unique titles, single H1,
-> alt text, and "any future URL change on a live/indexed page needs a 301")
-> remain in force once this rebuild goes to production.
+> **Status correction (2026-08-08): `myathletik.com` is still a live public
+> legacy site and is indexed/cited by search.** This supersedes the earlier
+> assumption that all old-site pages were dead. The owner plans to retire it
+> in the short term and explicitly chose not to create legacy-domain 301s.
+> Treat that domain as out of scope and focus SEO/GEO work on
+> `https://www.athletikapparel.com/`.
 
 - **Never change a live, indexed URL without a 301 redirect.** Once this
   rebuild reaches production and pages start getting indexed, every subsequent
-  URL change throws away search equity unless redirected. (The old-site URLs
-  are dead, so this rule applies going FORWARD, not retroactively — see table.)
+  URL change throws away search equity unless redirected. The owner's explicit
+  no-redirect retirement decision for the separate legacy domain is a scoped
+  exception and is not precedent for current canonical-site URL changes.
 - **URL convention for category pages: top-level, keyword-aligned slugs**
   (the "manufacturer" pattern, matching how B2B buyers search). Category pages
   move OUT of the `/products/` hierarchy to the top level. Example:
@@ -192,29 +195,29 @@ The rebuild reorganizes the site around search intent. Target structure:
   structure, these aren't primary search-traffic targets): `/production/`,
   `/factory/`, `/equipments/`, `/about-us/`, `/contact/`, etc. keep their paths.
 
-### Historical 301 redirect map — NOT NEEDED (old site dead)
+### Legacy-domain redirects — OUT OF SCOPE (owner decision)
 
 These category pages were originally planned to move from `/products/<x>/` to
-top-level `/<x>-manufacturer/` with a 301. **As of 2026-07-04 the old URLs are
-all dead, so these redirects are NOT required.** Kept for reference only —
-revisit if Search Console later shows any of these old URLs still indexed:
+top-level `/<x>-manufacturer/` with a 301. The legacy site is still live, but
+the owner decided on 2026-08-08 not to create cross-domain redirects. Do not
+inventory, implement or propose these mappings unless that decision is later
+reopened:
 
-| Old URL (dead)                      | New URL                                  | Status |
+| Candidate legacy URL                | Current canonical URL                    | Status |
 |--------------------------------------|------------------------------------------|--------|
-| `/products/knitted-fabrics/`         | `/knitted-fabrics-manufacturer/`         | NOT NEEDED |
-| `/products/sports-accessories/`      | `/sports-accessories-manufacturer/`      | NOT NEEDED |
-| `/products/outdoor-clothing/`        | `/outdoor-clothing-manufacturer/`        | NOT NEEDED |
-| `/products/sportswear/`              | `/sportswear-manufacturer/`              | NOT NEEDED |
-| `/products/underwear/`               | `/underwear-manufacturer/`               | NOT NEEDED |
-| `/products/merino-wool-apparel/`     | `/merino-wool-manufacturer/`             | NOT NEEDED |
-| `/products/silk-wear/`               | `/silk-wear-manufacturer/`               | NOT NEEDED |
-| `/products/` (historical hub idea)   | —                                          | NOT BUILT; homepage product section is the current hub |
+| `/products/knitted-fabrics/`         | `/knitted-fabrics-manufacturer/`         | NOT PLANNED |
+| `/products/sports-accessories/`      | `/sports-accessories-manufacturer/`      | NOT PLANNED |
+| `/products/outdoor-clothing/`        | `/outdoor-clothing-manufacturer/`        | NOT PLANNED |
+| `/products/sportswear/`              | `/sportswear-manufacturer/`              | NOT PLANNED |
+| `/products/underwear/`               | `/underwear-manufacturer/`               | NOT PLANNED |
+| `/products/merino-wool-apparel/`     | `/merino-wool-manufacturer/`             | NOT PLANNED |
+| `/products/silk-wear/`               | `/silk-wear-manufacturer/`               | NOT PLANNED |
+| `/products/`                         | `/#ma-home-categories-title` or a future hub | NOT PLANNED |
 
 - **Auxiliary-page decisions:**
   - `/production/`, `/factory/`, `/equipments/` — not built in the current phase
   - `/sustainabilty/` ← **misspelled.** Already corrected to `/sustainability/`
-    in this rebuild. The historical redirect was intentionally removed because
-    the old site had no indexed traffic or inbound links to preserve.
+    in this rebuild. No legacy-domain redirect is planned.
   - `/about-us/`, `/contact/` — keep
 - Every page needs: a unique <title>, a meta description, one H1 only, logical
   H2/H3 hierarchy, and descriptive image alt text (real keywords, not filenames).

@@ -40,28 +40,29 @@ this skill first** to produce the redirect plan — UNLESS the change is clearly
 in the "not needed" category above, in which case confirm with the user that
 the old URL is truly dead before skipping the redirect.
 
-## Historical 301 map (from AGENTS.md §3) — MOSTLY NO LONGER NEEDED
+## Legacy-domain status (from AGENTS.md §3) — OUT OF SCOPE
 
-**Status update (2026-07-04): the user confirmed the old site's pages are all
-dead — no inherited search equity to preserve.** The category-page redirects
-below are therefore NOT required and should NOT be added.
+**Status correction (2026-08-08): `myathletik.com` is still live and appears in
+search, but the owner plans to retire it in the short term and explicitly chose
+not to create cross-domain 301 redirects.** Do not inventory, implement or
+propose legacy-domain mappings unless the owner later reopens that decision.
+This scoped exception does not relax redirect protection for any current
+`athletikapparel.com` URL.
 
 The original plan (kept for historical reference, in case the assumption
 changes — e.g. a specific old URL turns out to still be indexed):
 
 | Old URL                              | New URL                                  | Status |
 |--------------------------------------|------------------------------------------|--------|
-| `/products/knitted-fabrics/`         | `/knitted-fabrics-manufacturer/`         | NOT NEEDED (old URL dead) |
-| `/products/sports-accessories/`      | `/sports-accessories-manufacturer/`      | NOT NEEDED |
-| `/products/outdoor-clothing/`        | `/outdoor-clothing-manufacturer/`        | NOT NEEDED |
-| `/products/sportswear/`              | `/sportswear-manufacturer/`              | NOT NEEDED |
-| `/products/underwear/`               | `/underwear-manufacturer/`               | NOT NEEDED |
-| `/products/merino-wool-apparel/`     | `/merino-wool-manufacturer/`             | NOT NEEDED |
-| `/products/silk-wear/`               | `/silk-wear-manufacturer/`               | NOT NEEDED |
+| `/products/knitted-fabrics/`         | `/knitted-fabrics-manufacturer/`         | NOT PLANNED (owner decision) |
+| `/products/sports-accessories/`      | `/sports-accessories-manufacturer/`      | NOT PLANNED |
+| `/products/outdoor-clothing/`        | `/outdoor-clothing-manufacturer/`        | NOT PLANNED |
+| `/products/sportswear/`              | `/sportswear-manufacturer/`              | NOT PLANNED |
+| `/products/underwear/`               | `/underwear-manufacturer/`               | NOT PLANNED |
+| `/products/merino-wool-apparel/`     | `/merino-wool-manufacturer/`             | NOT PLANNED |
+| `/products/silk-wear/`               | `/silk-wear-manufacturer/`               | NOT PLANNED |
 
-The misspelling fix `/sustainabilty/` → `/sustainability/` may still be worth
-keeping IF the misspelled URL was ever indexed or linked; check with the user
-or Search Console before deciding. The current code has it in `functions.php`.
+No legacy `/sustainabilty/` redirect is planned under the same owner decision.
 
 ### When this skill still applies
 
@@ -116,9 +117,9 @@ In priority order:
 1. **Rank Math Redirections** (if Rank Math Pro / free with redirection add-on
    is active) — managed in WP admin, version-controlled via DB export.
 2. **Redirection plugin** (free, widely used) — also DB-stored, has logging.
-3. **`.htaccess`** (Apache, this is GoDaddy so Apache is likely) — fastest, but
-   not reviewable in git and easy to break the site. Use only for high-volume
-   static redirects.
+3. **Hosting/CDN redirect rules** (current stack: Flywheel + Cloudflare) — use
+   only when the rule belongs at the edge/server and can be reviewed and
+   validated in that environment.
 4. **`functions.php` `template_redirect` hook** — last-resort fallback, only
    for a handful of redirects:
    ```php

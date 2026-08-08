@@ -45,6 +45,15 @@ account or region.
 Do not infer or publish factory count, partner-factory details, client names,
 unapproved certifications or other capacity claims from third-party pages.
 
+### Legacy-domain status
+
+`myathletik.com` remains a live public legacy site as of 2026-08-08. A Bing
+answer for GEO-01 cited its About Us page rather than the canonical
+`athletikapparel.com` site. The owner plans to take the legacy site offline in
+the short term and explicitly chose not to create 301 redirects. It is not a
+GEO optimization target; record it only as a temporary competing/cached source
+while all improvement work stays focused on the canonical new site.
+
 ## 3. Technical access baseline
 
 Checked on 2026-08-08:
@@ -82,7 +91,7 @@ months.
 
 | Run date | Engine + model/mode | Prompt ID | Brand mentioned? | `athletikapparel.com` cited? | Cited Athletik URL | Incorrect/outdated facts | Other suppliers mentioned | Evidence link/screenshot | Notes |
 |---|---|---|---|---|---|---|---|---|---|
-| 【NEEDS INPUT: first run date】 | 【NEEDS INPUT: engine and model/mode】 | GEO-01 | — | — | — | — | — | — | — |
+| 2026-08-08 | Microsoft Bing domestic web, AI answer block (supplemental) | GEO-01 | Yes | No | `https://myathletik.com/about-us/` | Answer relies on the legacy domain and repeats “seamless technology,” which is not part of the approved current entity baseline | None visible | User-provided screenshot, 2026-08-08 | Answer: based in Zhangjiagang, Suzhou, China; specializes in flatlock stitch construction, seamless technology and technical sportswear. This supplemental Bing check does not replace a ChatGPT/Perplexity/Gemini monthly row. |
 
 ## 6. Entity-conflict register
 
@@ -92,6 +101,7 @@ editability confirmation before any correction work:
 
 | Source | Observed conflict type | Control status | Next action |
 |---|---|---|---|
+| `myathletik.com` | Live legacy site is currently cited ahead of the canonical domain; its About Us page contains historical operating and capability claims | Scheduled for short-term retirement; no 301s by owner decision | No remediation in this GEO project; after retirement, track how long search/AI answers continue to cite cached legacy pages |
 | `athletik.com` | Historical brand/site copy and contact details | 【NEEDS INPUT: owned and editable?】 | Update, canonicalize or retire after ownership confirmation |
 | `athletik.nyc` | Historical company description, capacity and factory-structure claims | 【NEEDS INPUT: owned and editable?】 | Replace with current approved entity facts or redirect if appropriate |
 | `athletik.com.cn` | Historical entity wording, email and operational claims | 【NEEDS INPUT: owned and editable?】 | Update or clearly identify its current role |
@@ -104,7 +114,8 @@ editability confirmation before any correction work:
    the first article; this is the pre-improvement comparison snapshot.
 2. Add `legalName` and verified official-profile `sameAs` links to the canonical
    Organization entity.
-3. Confirm which historical domains and directory profiles the company controls.
+3. Confirm which historical domains and directory profiles the company controls,
+   excluding the retiring `myathletik.com` site from remediation work.
 4. Correct the highest-visibility owned source before publishing new directory
    listings.
 5. Produce one first-hand technical article using
