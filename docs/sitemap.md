@@ -1,12 +1,12 @@
 # Athletik Clothing — Sitemap & Page Plan (Rebuild v1)
 
-Status reconciled: 2026-08-08. Current implementation and URL decisions below
+Status reconciled: 2026-08-10. Current implementation and URL decisions below
 supersede the earlier planning assumptions retained in historical sections.
 
-Legacy-domain correction: `myathletik.com` remains live and searchable, but the
-owner plans to retire it in the short term without cross-domain redirects. It
-is outside this rebuild's implementation scope; current URL/SEO work applies
-only to `https://www.athletikapparel.com/`.
+Legacy-domain correction: `myathletik.com` has been retired without cross-domain
+redirects by explicit owner decision and returns HTTP 410. It is outside this
+rebuild's implementation scope; current URL/SEO work applies only to
+`https://www.athletikapparel.com/`.
 
 Companion to `AGENTS.md`. This is the build blueprint: every page, its URL, its
 single H1, target search intent, historical URL context, and content-block
@@ -183,10 +183,9 @@ factory count or partner-factory locations.
 
 ## 8. Legacy-domain redirects — NOT PLANNED (owner decision)
 
-The legacy `myathletik.com` site is still live and is being cited by search.
-The owner plans to retire it in the short term without cross-domain redirects.
-The mappings below remain historical planning context only and must not be
-implemented unless the owner later reopens the decision.
+The legacy `myathletik.com` site now returns HTTP 410 without cross-domain
+redirects. The mappings below remain historical planning context only and must
+not be implemented unless the owner later reopens the decision.
 
 | Old URL | New URL | Reason |
 |---------|---------|--------|

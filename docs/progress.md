@@ -11,7 +11,19 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
-Last updated: 2026-08-08 — GEO execution started with a fixed eight-prompt,
+Last updated: 2026-08-10 — The legacy `myathletik.com` site has been retired
+without redirects by explicit owner decision; external checks confirmed HTTP
+410 for its homepage, inner page, Sitemap, robots.txt and HTTP/HTTPS host
+variants. The new site's entity-schema deployment is live: `legalName`, the
+approved LinkedIn/Instagram/YouTube `sameAs` URLs, contact details and address
+are present in valid server-rendered JSON-LD, with no legacy-domain URL. The
+first ChatGPT Search GEO-02 answer cited six canonical pages and accurately
+summarized the site's technical-knitwear manufacturing focus. The only clear
+entity drift was one use of “Athletik Apparel” instead of the approved public
+brand “Athletik Clothing”; its sweater-manufacturer contrast was model-added.
+See `docs/geo-prompt-baseline.md`.
+
+Previous: 2026-08-08 — GEO execution started with a fixed eight-prompt,
 three-engine monthly baseline, an entity-conflict register and a first-hand
 FLATLOCK-vs-OVERLOCK article brief. Public user-agent checks returned HTTP 200
 for Googlebot, OAI-SearchBot, PerplexityBot and Claude-SearchBot on the homepage
@@ -428,14 +440,14 @@ SEO landing-page URLs preserved.
 | Knitted Fabrics | 5 | Performance knit; Thermal; Functional finishes; Stretch/microfiber/merino; Recycled (GRS). Independent fabric-supply business. |
 | Sports Accessories | 3 | Balaclavas; Gloves/liners; Knit accessories |
 
-## Legacy domain — short-term retirement, no redirects (2026-08-08)
+## Legacy domain — retired with 410, no redirects (2026-08-10)
 
-The old site remains online and Bing cites its About Us page in a branded
-answer. The user plans to take it offline in the short term and explicitly
-decided not to create old-to-new 301 redirects. No legacy URL inventory,
-redirect implementation or content remediation is in scope. GEO work focuses
-only on `athletikapparel.com`; after the old site is retired, baseline checks
-should note any continued legacy citations as search/AI cache lag.
+Before retirement, Bing cited the old site's About Us page in a branded answer.
+The site now returns HTTP 410 and no old-to-new 301 redirects were created by
+explicit owner decision. No legacy URL inventory, redirect implementation or
+content remediation is in scope. GEO work focuses only on
+`athletikapparel.com`; any continued legacy citation is recorded as search/AI
+cache lag.
 
 ## Current status / remaining enhancements
 
@@ -518,13 +530,13 @@ should note any continued legacy citations as search/AI cache lag.
    approximately 660 MB. The 2026-07-24 270 MB ZIP is an obsolete historical
    snapshot and must not be used for future deployments.
 
-0. **Domains (corrected 2026-08-08):** purchased at Cloudflare Registrar —
+0. **Domains (corrected 2026-08-10):** purchased at Cloudflare Registrar —
    **athletikapparel.com = PRIMARY** (site, email, all branding);
    athletik-clothing.com = defensive, 301 to primary. `myathletik.com` is a
-   separate live legacy public site and currently appears in branded Bing
-   results. It is not the current canonical website and is scheduled for
-   short-term retirement without 301 redirects by explicit owner decision. The
-   earlier “never used, zero traffic” note is superseded.
+   separate legacy public site that appeared in branded Bing results. It is not
+   the current canonical website and was retired with HTTP 410 without 301
+   redirects by explicit owner decision. The earlier “never used, zero traffic”
+   note is superseded.
    **Current stack:** Flywheel Tiny hosting + Local Connect deployment +
    Cloudflare DNS/email routing. GoDaddy is no longer used.
    **2026-07-22: pushed to Flywheel via Local Connect, temp-domain

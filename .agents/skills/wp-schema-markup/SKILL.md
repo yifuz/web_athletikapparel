@@ -37,12 +37,11 @@ Confirm against `docs/sitemap.md` for the canonical page list.
 
 - **Legal entity:** Athletik Clothing Inc.
 - **Brand / public name:** Athletik Clothing (used in `<title>` brand suffix)
-- **Domain:** https://myathletik.com
+- **Domain:** https://www.athletikapparel.com/
 - **Business type:** Vertically integrated OEM knitwear manufacturer
 - **Specialties:** flatlock, activeseam, self-fabric, Carbondry finishing,
   laser perforation, merino wool
-- **MOQ:** ~500 pieces (state only if user confirms; AGENTS.md says don't
-  state as a hard rule in marketing copy)
+- **MOQ:** 1,000 pieces per style
 - **Audience:** mid-sized B2B buyers, regional merchandiser teams
   (North America / Europe / Nordics)
 
@@ -65,12 +64,13 @@ add_action( 'wp_head', function () {
         'url'      => $home,
         'logo'     => esc_url( get_stylesheet_directory_uri() . '/assets/images/辅图/cropped-ATHLETIK_R_512.jpg' ),
         'description' => 'Vertically integrated OEM knitwear manufacturer specializing in flatlock and activeseam technical knitwear.',
-        // sameAs: populate with REAL profile URLs only. Verified 2026-07-04:
-        // Instagram and YouTube are live in functions.php footer
-        // (instagram.com/athletikclothinginc/, youtube.com/@athletikclothinginc).
-        // Only WhatsApp still points to '#'. Read functions.php footer before
-        // listing — don't include any URL still pointing to '#'/empty.
-        'sameAs'   => [],
+        // sameAs: populate with REAL profile URLs only. Verified 2026-08-10:
+        // LinkedIn, Instagram and YouTube are the approved entity profiles.
+        'sameAs'   => [
+            'https://www.linkedin.com/company/111831319/',
+            'https://www.instagram.com/athletikclothinginc/',
+            'https://www.youtube.com/@athletikclothinginc',
+        ],
     ];
     $site = [
         '@context' => 'https://schema.org',
@@ -162,9 +162,8 @@ When adding schema:
   templates (harder to maintain). No plugin.
 - **Never invent facts.** Omit unknown factual fields rather than fabricate.
 - **Mirror visible content.** FAQ/Article schema must match what's on the page.
-- **SameAs only with real URLs.** Verify current state by reading the
-  `functions.php` footer social links before populating `sameAs`. As of
-  2026-07-04: Instagram + YouTube are live; WhatsApp still points to `#`.
-  Only list URLs that actually resolve to a real profile — never include any
-  still pointing to `#`/empty. Re-verify each session, since these change.
+- **SameAs only with real URLs.** Verify current state before populating
+  `sameAs`. As of 2026-08-10, the approved profiles are LinkedIn company
+  `111831319`, Instagram `athletikclothinginc`, and YouTube
+  `@athletikclothinginc`. Re-verify each session, since these can change.
 - All output escapes properly: `esc_url`, `wp_json_encode`, `esc_html` as needed.

@@ -175,12 +175,11 @@ The rebuild reorganizes the site around search intent. Target structure:
 
 ## 3. URL & SEO rules (SEO landmines — strictest section)
 
-> **Status correction (2026-08-08): `myathletik.com` is still a live public
-> legacy site and is indexed/cited by search.** This supersedes the earlier
-> assumption that all old-site pages were dead. The owner plans to retire it
-> in the short term and explicitly chose not to create legacy-domain 301s.
-> Treat that domain as out of scope and focus SEO/GEO work on
-> `https://www.athletikapparel.com/`.
+> **Status correction (2026-08-10): `myathletik.com` has been retired without
+> redirects by explicit owner decision and returns HTTP 410.** It remains out
+> of scope; focus SEO/GEO work on `https://www.athletikapparel.com/`. Any later
+> legacy-domain citation is a stale search/AI cache signal, not a reason to
+> restore or optimize the old site.
 
 - **Never change a live, indexed URL without a 301 redirect.** Once this
   rebuild reaches production and pages start getting indexed, every subsequent
@@ -198,7 +197,7 @@ The rebuild reorganizes the site around search intent. Target structure:
 ### Legacy-domain redirects — OUT OF SCOPE (owner decision)
 
 These category pages were originally planned to move from `/products/<x>/` to
-top-level `/<x>-manufacturer/` with a 301. The legacy site is still live, but
+top-level `/<x>-manufacturer/` with a 301. The legacy site now returns 410, and
 the owner decided on 2026-08-08 not to create cross-domain redirects. Do not
 inventory, implement or propose these mappings unless that decision is later
 reopened:

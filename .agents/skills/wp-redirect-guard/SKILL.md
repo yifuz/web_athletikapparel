@@ -42,12 +42,11 @@ the old URL is truly dead before skipping the redirect.
 
 ## Legacy-domain status (from AGENTS.md §3) — OUT OF SCOPE
 
-**Status correction (2026-08-08): `myathletik.com` is still live and appears in
-search, but the owner plans to retire it in the short term and explicitly chose
-not to create cross-domain 301 redirects.** Do not inventory, implement or
-propose legacy-domain mappings unless the owner later reopens that decision.
-This scoped exception does not relax redirect protection for any current
-`athletikapparel.com` URL.
+**Status correction (2026-08-10): `myathletik.com` has been retired without
+cross-domain redirects by explicit owner decision and returns HTTP 410.** Do
+not inventory, implement or propose legacy-domain mappings unless the owner
+later reopens that decision. This scoped exception does not relax redirect
+protection for any current `athletikapparel.com` URL.
 
 The original plan (kept for historical reference, in case the assumption
 changes — e.g. a specific old URL turns out to still be indexed):
@@ -158,7 +157,8 @@ point directly to the new URL:
 ### 4. Validate
 
 After redirect is live, the user should:
-- `curl -I https://myathletik.com/old-url/` → expect `301` + `Location: /new-url/`.
+- `curl -I https://www.athletikapparel.com/old-url/` → expect `301` +
+  `Location: /new-url/`.
 - Google Search Console → mark the old URL as moved (optional but accelerates
   reindexing).
 

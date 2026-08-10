@@ -47,12 +47,12 @@ unapproved certifications or other capacity claims from third-party pages.
 
 ### Legacy-domain status
 
-`myathletik.com` remains a live public legacy site as of 2026-08-08. A Bing
-answer for GEO-01 cited its About Us page rather than the canonical
-`athletikapparel.com` site. The owner plans to take the legacy site offline in
-the short term and explicitly chose not to create 301 redirects. It is not a
-GEO optimization target; record it only as a temporary competing/cached source
-while all improvement work stays focused on the canonical new site.
+`myathletik.com` was retired without redirects by owner decision and now
+returns HTTP 410 across its public URLs and HTTP/HTTPS host variants. Before
+retirement, a Bing answer for GEO-01 cited its About Us page rather than the
+canonical `athletikapparel.com` site. It is not a GEO optimization target;
+record any later citation only as a stale search/AI cache signal while all
+improvement work stays focused on the canonical new site.
 
 ## 3. Technical access baseline
 
@@ -70,6 +70,15 @@ server or Cloudflare logs only if an engine reports a crawl failure.
 The site does not need `llms.txt` or special AI schema for Google visibility.
 The current approach is crawlable first-hand content, consistent entities and
 normal SEO foundations.
+
+Deployment verified on 2026-08-10:
+
+- The canonical Organization/LocalBusiness entity includes `legalName` =
+  `Athletik Clothing Inc.` and the verified LinkedIn, Instagram and YouTube
+  `sameAs` URLs.
+- The homepage, About Us and Sportswear Manufacturer pages returned HTTP 200,
+  and their server-rendered JSON-LD parsed successfully.
+- No `myathletik.com` URL remained in the canonical site's JSON-LD.
 
 ## 4. Fixed prompt set
 
@@ -92,6 +101,7 @@ months.
 | Run date | Engine + model/mode | Prompt ID | Brand mentioned? | `athletikapparel.com` cited? | Cited Athletik URL | Incorrect/outdated facts | Other suppliers mentioned | Evidence link/screenshot | Notes |
 |---|---|---|---|---|---|---|---|---|---|
 | 2026-08-08 | Microsoft Bing domestic web, AI answer block (supplemental) | GEO-01 | Yes | No | `https://myathletik.com/about-us/` | Answer relies on the legacy domain and repeats “seamless technology,” which is not part of the approved current entity baseline | None visible | User-provided screenshot, 2026-08-08 | Answer: based in Zhangjiagang, Suzhou, China; specializes in flatlock stitch construction, seamless technology and technical sportswear. This supplemental Bing check does not replace a ChatGPT/Perplexity/Gemini monthly row. |
+| 2026-08-10 | ChatGPT Search (visible model/mode not supplied) | GEO-02 | Yes, but called the brand “Athletik Apparel” once | Yes | Homepage, About Us, Underwear, Sportswear, Outdoor Clothing and Knitted Fabrics pages | Public-brand naming drift: “Athletik Apparel” instead of “Athletik Clothing.” The contrast with a “fashion sweater manufacturer” is model-added rather than site wording. No unsupported factory count, capacity or client claim. | None | User-pasted first response, 2026-08-10 | Strong canonical-domain citation result. Manufacturing claims were traceable to current site copy, and the answer explicitly labeled ownership/capability/certification details as company-reported rather than independently verified. Citation links included `utm_source=chatgpt.com`, enabling attributable referral measurement. Run occurred after the entity-schema deployment and after the legacy site began returning 410. |
 
 ## 6. Entity-conflict register
 
@@ -101,7 +111,7 @@ editability confirmation before any correction work:
 
 | Source | Observed conflict type | Control status | Next action |
 |---|---|---|---|
-| `myathletik.com` | Live legacy site is currently cited ahead of the canonical domain; its About Us page contains historical operating and capability claims | Scheduled for short-term retirement; no 301s by owner decision | No remediation in this GEO project; after retirement, track how long search/AI answers continue to cite cached legacy pages |
+| `myathletik.com` | Pre-retirement GEO-01 cited its historical About Us page ahead of the canonical domain | Retired; all checked variants return 410; no 301s by owner decision | No remediation; track only whether search/AI systems continue citing cached legacy pages |
 | `athletik.com` | Historical brand/site copy and contact details | 【NEEDS INPUT: owned and editable?】 | Update, canonicalize or retire after ownership confirmation |
 | `athletik.nyc` | Historical company description, capacity and factory-structure claims | 【NEEDS INPUT: owned and editable?】 | Replace with current approved entity facts or redirect if appropriate |
 | `athletik.com.cn` | Historical entity wording, email and operational claims | 【NEEDS INPUT: owned and editable?】 | Update or clearly identify its current role |
@@ -110,17 +120,21 @@ editability confirmation before any correction work:
 
 ## 7. First improvement cycle
 
-1. Run the first 24 checks before correcting historical sources or publishing
-   the first article; this is the pre-improvement comparison snapshot.
-2. Add `legalName` and verified official-profile `sameAs` links to the canonical
-   Organization entity.
-3. Confirm which historical domains and directory profiles the company controls,
-   excluding the retiring `myathletik.com` site from remediation work.
-4. Correct the highest-visibility owned source before publishing new directory
+1. Preserve the timing of every result. The August sample is not a clean
+   before/after experiment: Bing GEO-01 was recorded before legacy retirement,
+   while ChatGPT GEO-02 was recorded after legacy retirement and entity-schema
+   deployment.
+2. Continue the remaining fixed prompts without delaying useful improvements;
+   always record the deployment/crawl conditions in the Notes column.
+3. `legalName` and verified official-profile `sameAs` links are deployed on the
+   canonical Organization/LocalBusiness entity.
+4. Confirm which historical domains and directory profiles the company controls,
+   excluding the retired `myathletik.com` site from remediation work.
+5. Correct the highest-visibility owned source before publishing new directory
    listings.
-5. Produce one first-hand technical article using
+6. Produce one first-hand technical article using
    [`content-brief-flatlock-vs-overlock.md`](content-brief-flatlock-vs-overlock.md).
-6. Repeat the same 24 checks after entity corrections and the first article are
+7. Repeat the same 24 checks after entity corrections and the first article are
    publicly crawlable; continue monthly without changing the prompt wording.
 
 ## 8. Official references
