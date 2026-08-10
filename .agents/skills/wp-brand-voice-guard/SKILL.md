@@ -68,6 +68,8 @@ Specifically never invent:
   approved content specification calls for softer lead filtering, but must not
   substitute a different number.
 - Awards, partnerships, media mentions
+- An unconfirmed legal/operational responsibility split between Athletik
+  Clothing Inc. and Zhangjiagang Athletik Clothing Co., Limited
 
 If a fact is needed and not in `seo-tags.md` / `docs/sitemap.md` /
 `*-copy.md`, **ask the user** or use `【NEEDS INPUT: ...】`.
@@ -91,7 +93,14 @@ technical terms **exactly** as below:
 | Vertically integrated OEM | Vertically integrated OEM | vertically-integrated (no hyphen needed) |
 | MOQ                   | MOQ (abbr.) / Minimum Order Quantity (first use) | M.O.Q, moq |
 | Tech pack / spec sheet | tech pack / spec sheet   | tech-pack, TechPack               |
-| Brand name            | myathletik (lowercase, the domain/entity) / Athletik Clothing (public brand name, legal: Athletik Clothing Inc.) | MyAthletik, Myathletik, ATHLETIK (caps) |
+| Brand / entities      | Athletik Clothing (public brand); Athletik Clothing Inc. (U.S. entity); Zhangjiagang Athletik Clothing Co., Limited (China entity) | MyAthletik, Myathletik, ATHLETIK (caps), or treating either jurisdictional entity name as the sole public brand |
+
+The owner confirmed that the U.S. and China entity names belong to the same
+Athletik business but have different operational responsibilities. The current
+confirmed roles are limited to the U.S. entity as website privacy data
+controller and the China entity as the named China production facility. Do not
+invent the remaining responsibility split or describe the two as one legal
+entity.
 
 ## Pre-publish / pre-commit check
 

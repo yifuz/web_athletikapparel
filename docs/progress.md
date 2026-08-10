@@ -27,25 +27,30 @@ neutral brand/entity-recognition result, although the pasted response retained
 no clickable source URLs. It also exposed a first-party entity ambiguity: the
 model treated Zhangjiagang Athletik Clothing Co., Limited as the company behind
 the site because that name is published in the Contact page's facility block,
-while the current JSON-LD, privacy documents and approved entity baseline use
-Athletik Clothing Inc. The relationship and public roles of the two entities
-must be confirmed before changing the live page. The response's 50+ circular
-knitting-machine figure came from older material and is not a current approved
-site fact. Panjiva and ImportInfo support shipment/export activity under several
-related name variants, but they do not independently verify factory ownership,
-vertical integration or capacity. The initial
-ChatGPT Search GEO-03 answer placed Athletik first in a five-supplier
+while the current JSON-LD and privacy documents use Athletik Clothing Inc. The
+owner has now confirmed that the former is the China entity name and the latter
+is the U.S. entity name; both belong to the same
+Athletik business, while their operational responsibilities differ. The current
+confirmed public roles are the China production-facility name and the U.S.
+website privacy data controller. The model's China-entity identification was
+therefore source-based but incomplete because it omitted the U.S. entity and
+role split. No broader responsibility split is added until the owner supplies
+it. The response's 50+ circular-knitting-machine figure came from older material
+and is not a current approved site fact. Panjiva and ImportInfo support
+shipment/export activity under several related name variants, but they do not
+independently verify factory ownership, vertical integration or capacity. The
+initial ChatGPT Search GEO-03 answer placed Athletik first in a five-supplier
 FLATLOCK/ACTIVESEAM shortlist and assigned it the highest confidence. A new
 Temporary Chat rerun then again placed Athletik first, this time in a
 four-supplier shortlist, and called it the strongest match. This is the first
 neutral ChatGPT Search rerun and an encouraging sign that GEO-03 discovery did
 not depend on historical-chat Memory. The response still did not retain source
-URLs, used “Zhangjiagang Athletik Clothing Co., Ltd.” instead of the approved
-entity names, and repeated competitor equipment/facility claims that remain
-self-reported or unverified. Its association of `ultramerino.com` with Athletik
-was later confirmed by the owner, although the answer did not preserve the
-supporting source. The Temporary Chat's Custom Instructions state was not
-separately visible in the supplied evidence. The
+URLs, used a shortened form of the valid China entity name without the public
+brand or U.S./China role distinction, and repeated competitor equipment/facility
+claims that remain self-reported or unverified. Its association of
+`ultramerino.com` with Athletik was later confirmed by the owner, although the
+answer did not preserve the supporting source. The Temporary Chat's Custom
+Instructions state was not separately visible in the supplied evidence. The
 GEO-04 answer then recommended Athletik first for a 1,000-piece-per-style
 sportswear program and used the correct public brand name. That is the clearest
 positive commercial-discovery signal from the original personalized runs, but

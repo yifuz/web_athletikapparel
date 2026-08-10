@@ -6,9 +6,10 @@
 name: myathletik-website
 description: >
   Project rules for the Athletik Clothing website on athletikapparel.com.
-  Athletik Clothing (legal entity "Athletik Clothing Inc.") is a vertically
-  integrated OEM knitwear
-  manufacturer specializing in flatlock / activeseam technical knitwear. This
+  Athletik Clothing operates through the U.S. entity "Athletik Clothing Inc."
+  and the China entity "Zhangjiagang Athletik Clothing Co., Limited" as a
+  vertically integrated OEM knitwear manufacturer specializing in FLATLOCK /
+  ACTIVESEAM technical knitwear. This
   skill encodes the site's tech stack, information architecture, URL/SEO rules,
   brand voice, and terminology standards. Apply it on ANY task that creates or
   edits theme code, page content, blocks, CSS, or redirects for this site.
@@ -172,6 +173,25 @@ The rebuild reorganizes the site around search intent. Target structure:
 - Differentiators to emphasize: vertical integration, flatlock/activeseam
   technical construction, Carbondry finishing, laser perforation, full export
   documentation capability, own production facility, regional coverage.
+
+### Entity naming and relationship
+
+- **Public brand:** Athletik Clothing.
+- **U.S. entity name:** Athletik Clothing Inc.
+- **China entity name:** Zhangjiagang Athletik Clothing Co., Limited.
+- The owner confirmed on 2026-08-10 that both names belong to the same Athletik
+  business, while their operational responsibilities differ. Do not describe
+  them as one legal entity, a parent/subsidiary pair, or interchangeable legal
+  names unless the owner supplies that exact legal relationship.
+- Current confirmed public roles are limited to: Athletik Clothing Inc. is the
+  U.S. entity and the website privacy data controller; Zhangjiagang Athletik
+  Clothing Co., Limited is the China entity and the name shown for the China
+  production facility. If content needs a more detailed responsibility split,
+  use `【NEEDS INPUT: confirm U.S./China entity responsibility】` rather than
+  inventing sales, contracting, manufacturing, export, employment, or IP roles.
+- Keep the public brand distinct from both entity names. A page may name the
+  relevant jurisdictional entity, but should not silently replace the public
+  brand with that entity name.
 
 ## 3. URL & SEO rules (SEO landmines — strictest section)
 
