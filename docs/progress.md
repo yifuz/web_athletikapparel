@@ -18,7 +18,22 @@ variants. The new site's entity-schema deployment is live: `legalName`, the
 approved LinkedIn/Instagram/YouTube `sameAs` URLs, contact details and address
 are present in valid server-rendered JSON-LD, with no legacy-domain URL. The
 first ChatGPT Search GEO-02 answer cited six canonical pages and accurately
-summarized the site's technical-knitwear manufacturing focus. The initial
+summarized the site's technical-knitwear manufacturing focus. A subsequent
+independent Temporary Chat GEO-02 rerun again classified the site as a
+technical/performance knitwear OEM/ODM and accurately repeated the main current
+site claims, including the product focus, FLATLOCK/ACTIVESEAM capabilities,
+4,500+ sq m facility and 100,000+ pieces/month capacity. This is a strong
+neutral brand/entity-recognition result, although the pasted response retained
+no clickable source URLs. It also exposed a first-party entity ambiguity: the
+model treated Zhangjiagang Athletik Clothing Co., Limited as the company behind
+the site because that name is published in the Contact page's facility block,
+while the current JSON-LD, privacy documents and approved entity baseline use
+Athletik Clothing Inc. The relationship and public roles of the two entities
+must be confirmed before changing the live page. The response's 50+ circular
+knitting-machine figure came from older material and is not a current approved
+site fact. Panjiva and ImportInfo support shipment/export activity under several
+related name variants, but they do not independently verify factory ownership,
+vertical integration or capacity. The initial
 ChatGPT Search GEO-03 answer placed Athletik first in a five-supplier
 FLATLOCK/ACTIVESEAM shortlist and assigned it the highest confidence. A new
 Temporary Chat rerun then again placed Athletik first, this time in a
@@ -88,8 +103,7 @@ OpenAI documents that Memory can affect ChatGPT Search query
 rewriting. The original GEO-02 through GEO-05 runs are therefore retained as
 exploratory personalized observations. GEO-03 now also has a separately logged
 Temporary Chat baseline, and GEO-04 has a confirmed Temporary Chat baseline;
-GEO-05 through GEO-08 now also have confirmed Temporary Chat baselines. GEO-02
-still requires a clean rerun.
+GEO-02 through GEO-08 now have confirmed Temporary Chat baselines.
 The GEO log
 separates all of these model/source assertions from approved entity facts. See
 `docs/geo-prompt-baseline.md`.
