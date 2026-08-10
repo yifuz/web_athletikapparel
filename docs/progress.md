@@ -29,7 +29,19 @@ sportswear program and used the correct public brand name. That is the clearest
 commercial-discovery signal so far, but its Apparel Sourcing NYC attribution
 was not substantiated by the current public-source check, and the two named
 competitors' capacity, certification and MOQ details remain supplier-reported.
-The GEO log separates those model assertions from approved entity facts. See
+GEO-05 mentioned Athletik but cited the historical `ultramerino.com` product
+page instead of the canonical site, merged the names as “Athletik/UltraMerino,”
+and repeated historical micron-range, ISO 607 and Woolmark-license claims that
+are not in the current approved entity baseline. It also answered a supplier
+question mainly with consumer brands before listing three OEM candidates.
+`ultramerino.com` is therefore now the highest-priority unresolved historical
+entity source, pending confirmation of ownership and intended role. The phrase
+“your own” also confirms that GEO-05 used user-specific context beyond the
+fixed prompt. OpenAI documents that Memory can affect ChatGPT Search query
+rewriting, so GEO-02 through GEO-05 are retained as exploratory personalized
+observations rather than a neutral baseline until each is rerun in a separate
+Temporary Chat with unrelated Custom Instructions disabled. The GEO log
+separates all of these model/source assertions from approved entity facts. See
 `docs/geo-prompt-baseline.md`.
 
 Previous: 2026-08-08 — GEO execution started with a fixed eight-prompt,
