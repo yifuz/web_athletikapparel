@@ -24,7 +24,12 @@ shortlist and assigned it the highest confidence, a positive high-intent
 discovery signal. Its pasted source links did not retain their URLs, it merged
 the public brand with “Zhangjiagang Athletik Clothing Co., Ltd.,” and several
 competitor equipment/capacity claims remain self-reported or unverified. The
-GEO log now separates those model assertions from approved entity facts. See
+GEO-04 answer then recommended Athletik first for a 1,000-piece-per-style
+sportswear program and used the correct public brand name. That is the clearest
+commercial-discovery signal so far, but its Apparel Sourcing NYC attribution
+was not substantiated by the current public-source check, and the two named
+competitors' capacity, certification and MOQ details remain supplier-reported.
+The GEO log separates those model assertions from approved entity facts. See
 `docs/geo-prompt-baseline.md`.
 
 Previous: 2026-08-08 — GEO execution started with a fixed eight-prompt,

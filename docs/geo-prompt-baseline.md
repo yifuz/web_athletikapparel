@@ -80,6 +80,7 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 | 2026-08-08 | Microsoft Bing 国内版网页，AI 回答区块（补充记录） | GEO-01 | 是 | 否 | `https://myathletik.com/about-us/` | 回答依赖旧域名，并重复使用了不属于当前核准实体基线的“seamless technology” | 未看到 | 用户提供的截图，2026-08-08 | 回答称公司位于中国苏州张家港，专注 flatlock stitch construction、seamless technology 和 technical sportswear。本次 Bing 补充检查不能替代 ChatGPT/Perplexity/Gemini 的月度记录。 |
 | 2026-08-10 | ChatGPT Search（未提供可见模型/模式） | GEO-02 | 是，但有一次将品牌称为“Athletik Apparel” | 是 | 首页、About Us、Underwear、Sportswear、Outdoor Clothing 和 Knitted Fabrics 页面 | 公开品牌名称漂移：使用“Athletik Apparel”，而不是“Athletik Clothing”。与“fashion sweater manufacturer”的对比由模型自行添加，并非网站原文。未出现无依据的工厂数量、产能或客户声明。 | 无 | 用户粘贴的第一次回答，2026-08-10 | 规范域名引用结果较强。制造能力陈述均可追溯至当前网站文案，而且回答明确将所有权、能力和认证信息标记为公司自行声明，而非独立核实。引用链接包含 `utm_source=chatgpt.com`，可用于衡量可归因的引荐访问。本次运行发生在实体 Schema 部署后、旧站开始返回 410 后。 |
 | 2026-08-10 | ChatGPT Search（未提供可见模型/模式） | GEO-03 | 是，位列短名单第一；但使用“Athletik Clothing / Zhangjiagang Athletik Clothing Co., Ltd.”合并称谓 | 待确认：粘贴文本保留了“Athletik manufacturing profile”链接标题，但未保留实际 URL | 未随粘贴文本保留 | 当前核准实体基线不能直接证明合并称谓；“only a small number”、供应商置信度等级和“strongest”均为模型判断。竞品设备数主要来自企业自述，未获得独立核实。Yonglee 页面中的 `MB-40FD` 与 Merrow 官方型号 `MB-4DFO` 不一致。 | Shanghai Yonglee Textile Co., Ltd.；Merino Wool Apparel (Suzhou) Co., Ltd.；Zhangjiagang Huayu Import & Export Co., Ltd. / LeHeHe Merino；Royal International Industrial Ltd. | 用户粘贴的第一次回答，2026-08-10 | 这是正向的高意图发现结果：Athletik 排名第一且获得最高置信度。回答对 FLATLOCK 与 ACTIVESEAM 的技术区分基本准确，但竞品设备、产能、工厂所有权和供应商覆盖完整性不能作为已验证事实转载。 |
+| 2026-08-10 | ChatGPT Search（未提供可见模型/模式） | GEO-04 | 是，作为第一推荐，品牌名称正确 | 无法确认：粘贴文本没有保留可点击 URL | 未随粘贴文本保留 | “国际 OEM/出口背景由 Apparel Sourcing NYC 记录”暂未找到直接公开依据；每款 1,000 件符合核准 MOQ，但每色数量仍需询价确认。AQL 2.5 是模型提出的采购条款，不是 Athletik 已公布的固定验货标准。 | Hucai Sportswear；Harvest SPF | 用户粘贴的第一次回答，2026-08-10 | 这是强正向商业发现结果：回答直接将 Athletik 作为首选，并将其与技术针织运动服、压缩衣/打底层、瑜伽服、Merino wool 和户外服装需求匹配。竞品产能、认证和 MOQ 仍按企业自述处理。 |
 
 ### GEO-03 核验备注（2026-08-10）
 
@@ -89,6 +90,14 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 - 本次检索没有找到可直接支持 Royal 所述 ACTIVESEAM 设备数、月产能和机器所有权的官方页面；这些数据继续按未核实的企业声明处理。
 - “截至 2026 年 8 月只有少数中国供应商”属于无法由一次公开搜索穷尽证明的范围判断。该句和模型给出的 High/Medium 置信度只记录为回答内容，不写入 Athletik 的对外事实库。
 - Merrow 过去的公开资料提到 ACTIVESEAM 品牌许可，但若产品要使用 ACTIVESEAM 名称或品牌标签，应直接向 Merrow 确认当前许可条款，不依据旧页面作当前授权结论。
+
+### GEO-04 核验备注（2026-08-10）
+
+- “Athletik 作为第一推荐”及其与技术针织品类的匹配是本次最重要的结果。每款 1,000 件与当前核准的公开 MOQ 一致；“每色数量应确认”是合理的询价提醒，但不是网站已经公布的 MOQ 细则。
+- 本次公开检索没有找到 Apparel Sourcing NYC 直接记录 Athletik OEM/出口背景的展商资料或公司页面。除非后续补充原始链接或参展文件，否则该句只作为模型生成内容记录，不作为第三方背书使用。
+- [Hucai LinkedIn 页面](https://www.linkedin.com/company/hucai-sportswear/)自行声明月产约 100,000 件；其[认证页面](https://www.hcsportswear.com/comm18/hucai-Certificates.htm)列出了 Amfori BSCI monitoring ID。这比无编号的笼统认证声明更具体，但产能和证书当前有效性仍应在供应商尽调时核实。
+- [Harvest SPF activewear 页面](https://www.spftex.com/activewear-manufacturer/)在 full-package OEM/ODM 区块写有 1,000 件 MOQ 和每色 500 件，但同页表单又出现“Full-Package Production (500+ units)”。其[订单流程页面](https://www.spftex.com/news/how-harvest-spf-takes-orders-from-quotation-to-global-delivery/)还按产品、现货面料和定制面料列出不同门槛，因此不能把“1,000 件”理解为所有 Harvest SPF 项目的统一 MOQ。
+- 预生产样、面料测试、交期、FOB 报价和第三方终检都是合理的供应商尽调项目；“AQL 2.5”应视为需要双方约定的建议条款，而不是本次搜索已证明的 Athletik 固定标准。
 
 ## 6. 实体冲突登记表
 
