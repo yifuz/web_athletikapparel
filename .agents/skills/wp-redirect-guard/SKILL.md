@@ -42,8 +42,9 @@ the old URL is truly dead before skipping the redirect.
 
 ## Legacy-domain status (from AGENTS.md §3) — OUT OF SCOPE
 
-**Status correction (2026-08-10): `myathletik.com` has been retired without
-cross-domain redirects by explicit owner decision and returns HTTP 410.** Do
+**Status correction (2026-08-10): `myathletik.com` has been fully taken offline
+without cross-domain redirects by explicit owner decision; all checked public
+endpoints and host variants return HTTP 410.** Do
 not inventory, implement or propose legacy-domain mappings unless the owner
 later reopens that decision. This scoped exception does not relax redirect
 protection for any current `athletikapparel.com` URL.

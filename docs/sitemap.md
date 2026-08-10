@@ -3,8 +3,9 @@
 Status reconciled: 2026-08-10. Current implementation and URL decisions below
 supersede the earlier planning assumptions retained in historical sections.
 
-Legacy-domain correction: `myathletik.com` has been retired without cross-domain
-redirects by explicit owner decision and returns HTTP 410. It is outside this
+Legacy-domain correction: `myathletik.com` has been fully taken offline without
+cross-domain redirects by explicit owner decision; all checked public endpoints
+and host variants return HTTP 410. It is outside this
 rebuild's implementation scope; current URL/SEO work applies only to
 `https://www.athletikapparel.com/`.
 

@@ -11,8 +11,8 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
-Last updated: 2026-08-10 — The legacy `myathletik.com` site has been retired
-without redirects by explicit owner decision; external checks confirmed HTTP
+Last updated: 2026-08-10 — The legacy `myathletik.com` site has been fully taken
+offline without redirects by explicit owner decision; external checks confirmed HTTP
 410 for its homepage, inner page, Sitemap, robots.txt and HTTP/HTTPS host
 variants. The new site's entity-schema deployment is live: `legalName`, the
 approved LinkedIn/Instagram/YouTube `sameAs` URLs, contact details and address
@@ -440,7 +440,7 @@ SEO landing-page URLs preserved.
 | Knitted Fabrics | 5 | Performance knit; Thermal; Functional finishes; Stretch/microfiber/merino; Recycled (GRS). Independent fabric-supply business. |
 | Sports Accessories | 3 | Balaclavas; Gloves/liners; Knit accessories |
 
-## Legacy domain — retired with 410, no redirects (2026-08-10)
+## Legacy domain — fully offline with 410, no redirects (2026-08-10)
 
 Before retirement, Bing cited the old site's About Us page in a branded answer.
 The site now returns HTTP 410 and no old-to-new 301 redirects were created by

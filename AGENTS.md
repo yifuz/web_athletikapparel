@@ -175,8 +175,9 @@ The rebuild reorganizes the site around search intent. Target structure:
 
 ## 3. URL & SEO rules (SEO landmines — strictest section)
 
-> **Status correction (2026-08-10): `myathletik.com` has been retired without
-> redirects by explicit owner decision and returns HTTP 410.** It remains out
+> **Status correction (2026-08-10): `myathletik.com` has been fully taken
+> offline without redirects by explicit owner decision; all checked public
+> endpoints and host variants return HTTP 410.** It remains out
 > of scope; focus SEO/GEO work on `https://www.athletikapparel.com/`. Any later
 > legacy-domain citation is a stale search/AI cache signal, not a reason to
 > restore or optimize the old site.
