@@ -70,12 +70,26 @@ fully-fashioned/linking construction and WHOLEGARMENT-type production rather
 than cut-and-sew technical performance apparel using FLATLOCK or ACTIVESEAM.
 The result is useful for flat knitting but exposes a material semantic mismatch
 between the fixed prompt and Athletik's intended buyer-education territory.
+The Temporary Chat GEO-07 response likewise mentioned neither Athletik nor the
+canonical site. Its FLATLOCK-versus-OVERLOCK explanation was broadly accurate,
+including the industrial-versus-serger distinction and the importance of seam
+placement, but its chafing and strength hierarchy was too absolute for an
+engineering specification. This result confirms the content gap targeted by
+the existing first-party FLATLOCK-versus-OVERLOCK article brief. GEO-08 also
+mentioned neither Athletik nor the canonical site. It supplied a useful OEM
+due-diligence framework and generally sound traceability/compliance guidance,
+but its 100-point weights and 75–80 threshold were model-authored rather than
+an industry standard, and its technical criteria again leaned toward
+flat-knitted sweaters instead of cut-and-sew performance apparel. The
+compliance references were checked against current official sources. GEO-08 is
+therefore retained as a later buyer-guide topic without expanding the current
+single-operator content workload.
 OpenAI documents that Memory can affect ChatGPT Search query
 rewriting. The original GEO-02 through GEO-05 runs are therefore retained as
 exploratory personalized observations. GEO-03 now also has a separately logged
 Temporary Chat baseline, and GEO-04 has a confirmed Temporary Chat baseline;
-GEO-05 now also has a confirmed Temporary Chat baseline. GEO-02 still requires
-a clean rerun.
+GEO-05 through GEO-08 now also have confirmed Temporary Chat baselines. GEO-02
+still requires a clean rerun.
 The GEO log
 separates all of these model/source assertions from approved entity facts. See
 `docs/geo-prompt-baseline.md`.
