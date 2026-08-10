@@ -83,6 +83,7 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 | 运行日期 | 引擎 + 模型/模式 | 提示词 ID | 是否提及品牌？ | 是否引用 `athletikapparel.com`？ | 引用的 Athletik URL | 错误/过时信息 | 提及的其他供应商 | 证据链接/截图 | 备注 |
 |---|---|---|---|---|---|---|---|---|---|
 | 2026-08-08 | Microsoft Bing 国内版网页，AI 回答区块（补充记录） | GEO-01 | 是 | 否 | `https://myathletik.com/about-us/` | 回答依赖旧域名，并重复使用了不属于当前核准实体基线的“seamless technology” | 未看到 | 用户提供的截图，2026-08-08 | 回答称公司位于中国苏州张家港，专注 flatlock stitch construction、seamless technology 和 technical sportswear。本次 Bing 补充检查不能替代 ChatGPT/Perplexity/Gemini 的月度记录。 |
+| 2026-08-10 | ChatGPT Search（独立 Temporary Chat；用户已确认；未提供可见模型/模式） | GEO-01 | 是，公开品牌和制造定位正确 | 无法确认：粘贴文本没有保留可点击来源 | 无 | “Athletik Clothing Inc. also lists a New York, NY headquarters”可追溯到仍被索引的旧 LinkedIn 页面，但当前核准 LinkedIn 页面把 Headquarters 标为 Zhangjiagang, Jiangsu；纽约地址目前核准为美国实体/网站数据控制者地址，不自动等于当前公开品牌总部。“production facilities are in Asia”也来自旧资料，表述过于宽泛。 | 无 | 用户提供的第一次回答，2026-08-10 | 计入中性 GEO-01 基线。回答正确识别 technical knitwear、underwear/base layers、sportswear/activewear、outdoor clothing、knitted fabrics、Merino wool、FLATLOCK、ACTIVESEAM 以及张家港/苏州/江苏制造地点；总体结论准确。主要问题是把旧 LinkedIn 的纽约总部字段与当前中国制造基线合并，没有说明新旧 LinkedIn 页面和美国/中国实体角色差异。粘贴文本未保留 Sources，因此不计规范站可点击引用。 |
 | 2026-08-10 | ChatGPT Search（个性化状态未控制；未提供可见模型/模式） | GEO-02 | 是，但有一次将品牌称为“Athletik Apparel” | 是 | 首页、About Us、Underwear、Sportswear、Outdoor Clothing 和 Knitted Fabrics 页面 | 公开品牌名称漂移：使用“Athletik Apparel”，而不是“Athletik Clothing”。与“fashion sweater manufacturer”的对比由模型自行添加，并非网站原文。未出现无依据的工厂数量、产能或客户声明。 | 无 | 用户粘贴的第一次回答，2026-08-10 | 规范域名引用结果较强。制造能力陈述均可追溯至当前网站文案，而且回答明确将所有权、能力和认证信息标记为公司自行声明，而非独立核实。引用链接包含 `utm_source=chatgpt.com`，可用于衡量可归因的引荐访问。本次运行发生在实体 Schema 部署后、旧站开始返回 410 后；因未控制 Memory/历史聊天状态，暂作为探索性个性化结果。 |
 | 2026-08-10 | ChatGPT Search（独立 Temporary Chat 复测；用户已确认后续测试均来自 Temporary Chat；未提供可见模型/模式） | GEO-02 | 是，使用正确公开品牌 Athletik Clothing；但只把网站归为中国实体 Zhangjiagang Athletik Clothing Co., Limited | 无法确认：回答提到规范域名，但粘贴文本没有保留可点击来源 | 无 | Zhangjiagang Athletik Clothing Co., Limited 确为核准的中国实体名称，不是幻觉；但回答没有同时说明 Athletik Clothing Inc. 是美国实体，也没有说明两者属于同一 Athletik 业务体系且运营职责不同。50+ 台圆机来自旧公司资料，不是当前规范站核准事实。Panjiva/ImportInfo 可以支持相关名称存在出口记录，但不能独立证明工厂所有权、纵向整合、产能或所有记录均属于同一法律主体。 | 无供应商；提及 LinkedIn、Panjiva 和 ImportInfo 作为资料来源 | 用户粘贴的第一次回答，2026-08-10 | 计入中性 GEO-02 基线。这是强正向网站/实体发现结果：回答明确认可 technical/performance knitwear 和 Vertically integrated OEM/ODM 定位，产品、技术、4,500+ m² 与 100,000+ 件/月等主要当前站声明基本准确。与首次个性化状态未控制的结果方向一致，且没有“your own”等可见用户关系措辞。不过粘贴文本没有保留实际来源链接，所以不能把本次单独计为规范站可点击引用。回答对中国实体名称的识别有第一方依据，但把第一方声明与贸易记录组合成“独立制造商验证”时仍存在证据层级过度外推。 |
 | 2026-08-10 | ChatGPT Search（个性化状态未控制；未提供可见模型/模式） | GEO-03 | 是，位列短名单第一；但使用“Athletik Clothing / Zhangjiagang Athletik Clothing Co., Ltd.”合并称谓 | 待确认：粘贴文本保留了“Athletik manufacturing profile”链接标题，但未保留实际 URL | 未随粘贴文本保留 | Zhangjiagang Athletik Clothing Co., Limited 已确认为中国实体名称，但“Athletik Clothing / ...”不是核准的合并公开品牌，也没有说明美国实体角色；“only a small number”、供应商置信度等级和“strongest”均为模型判断。竞品设备数主要来自企业自述，未获得独立核实。Yonglee 页面中的 `MB-40FD` 与 Merrow 官方型号 `MB-4DFO` 不一致。 | Shanghai Yonglee Textile Co., Ltd.；Merino Wool Apparel (Suzhou) Co., Ltd.；Zhangjiagang Huayu Import & Export Co., Ltd. / LeHeHe Merino；Royal International Industrial Ltd. | 用户粘贴的第一次回答，2026-08-10 | 这是正向的高意图发现结果：Athletik 排名第一且获得最高置信度。回答对 FLATLOCK 与 ACTIVESEAM 的技术区分基本准确，但竞品设备、产能、工厂所有权和供应商覆盖完整性不能作为已验证事实转载。因未控制 Memory/历史聊天状态，暂作为探索性个性化结果。 |
@@ -94,6 +95,14 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 | 2026-08-10 | ChatGPT Search（独立 Temporary Chat；用户已确认；未提供可见模型/模式） | GEO-06 | 否 | 否 | 无 | 回答把 technical/engineered knitwear 主要解释成电脑横机毛衫、fully fashioned、linking 和整件成型生产，而不是 Athletik 所处的针织面料裁剪缝制技术服装语境；`WHOLEGARMENT` 是 SHIMA SEIKI 注册商标，不应当作为所有整件或无缝针织的通用名称。20 项清单中的测试与性能要求没有提供具体方法或合格值，但回答已明确要求买家自行指定。 | STOLL；SHIMA SEIKI / WHOLEGARMENT（均作为技术来源或平台提及，不是供应商推荐） | 用户提供的粘贴回答，2026-08-10 | 计入中性 GEO-06 基线。回答结构完整，适合作为 flat-knit sweater / engineered flat knitting 的 tech pack 参考，但与网站目标的 cut-and-sew technical performance knitwear buyer education 意图错位。Athletik 和规范站均未出现，粘贴文本也未保留实际引用 URL。结果暴露出“technical knitwear”在公开检索中的语义歧义。 |
 | 2026-08-10 | ChatGPT Search（独立 Temporary Chat；用户已确认；未提供可见模型/模式） | GEO-07 | 否 | 否 | 无 | “chafing risk lowest”“OVERLOCK generally very robust”以及“高接触部位用 FLATLOCK、低接触部位用 OVERLOCK”都是有条件的工程判断，不是适用于所有面料、版型和针线配置的绝对规则。回答没有给出 stitch class、针线配置、缝宽或测试依据。 | 无 | 用户提供的第一次回答，2026-08-10 | 计入中性 GEO-07 基线。回答对 FLATLOCK 的低凸起接缝、OVERLOCK 的包边与生产效率、工业 FLATLOCK 与家用/普通包缝机 flatlock-style seam 的区别，以及接缝位置的重要性均把握正确；但 Athletik 和规范站均未出现，粘贴文本也没有保留来源 URL。结果直接支持现有第一方 FLATLOCK vs OVERLOCK 技术文章的优先级。回答结尾在一句未完成的话处截断，但不影响主体记录。 |
 | 2026-08-10 | ChatGPT Search（独立 Temporary Chat；用户已确认；未提供可见模型/模式） | GEO-08 | 否 | 否 | 无 | 100 分权重和 75–80 分准入线属于模型提出的采购框架，不是行业标准；“5% 价差”和不同客户规模的金额只是示例。回答再次把 knitwear 主要解释为横机毛衫，重点使用 gauge、fully-fashioned、linking、intarsia 和洗后手感等指标，没有覆盖 Athletik 买家更需要的针织面料、GSM、伸长/回复、接缝图、FLATLOCK/ACTIVESEAM 和成衣测试规格。 | Textile Exchange；GOTS；Better Cotton；DHS / UFLPA；SLCP；ZDHC；OEKO-TEX（均作为标准、法规或尽调框架提及，不是供应商推荐） | 用户提供的第一次回答，2026-08-10 | 计入中性 GEO-08 基线。框架对核实实际自有/关联/外包工序、追溯批次、检查质量趋势、压力测试成本与 MOQ、核验证书范围及先做试单均有实用价值；合规方向也与官方资料基本一致。但 Athletik 和规范站均未出现，回答未保留实际引用 URL，并再次暴露“knitwear”容易被解释为 sweater/flat knitting 的语义偏移。作为单人运营项目，先完成已规划的 FLATLOCK vs OVERLOCK 内容，再把本题作为后续买家尽调指南选题，不提高本轮内容量。 |
+
+### GEO-01 核验备注（2026-08-10）
+
+- 独立 Temporary Chat 首次回答准确识别了 Athletik Clothing 的主要产品、技术针织定位和张家港/苏州/江苏制造地点，没有引用已经 410 下线的 `myathletik.com`。这比旧站下线前 Bing GEO-01 仍引用旧域名的结果更健康，但两个样本来自不同引擎和不同部署时点，不能当作严格前后对照。
+- 回答中的纽约总部并非无来源生成。[仍可索引的旧 LinkedIn 页面](https://www.linkedin.com/company/athletik-clothing-inc)把 Headquarters 写为 New York, NY，并列出纽约和张家港两个地点；但该页面还使用旧网站、旧地址，以及未纳入当前核准事实库的客户、审核、人数和成立年份声明。用户此前确认其中国版入口已经弃用，当前推广主页面是[新 LinkedIn 页面](https://www.linkedin.com/company/111831319/)。
+- 用户提供的新 LinkedIn 页面截图把 Headquarters 显示为 Zhangjiagang, Jiangsu；当前规范站 About Us 也写明业务制造基地位于 Zhangjiagang / Suzhou area of China。项目已确认纽约地址属于美国实体 Athletik Clothing Inc. 和网站数据控制者地址，但尚未把“New York headquarters”批准为当前公开品牌口径。因此回答最后的“corporate presence in New York”比“New York headquarters”更稳妥。
+- “production facilities are in Asia”是旧 LinkedIn 的宽泛表述。当前核准的可公开事实是中国实体及张家港生产设施；不能据此推断其他亚洲工厂、工厂数量或地区分布。
+- 本次结果完成了 ChatGPT Search 独立 Temporary Chat 的固定 GEO-01～08 首轮基线。后续不立即重复相同测试；先发布第一方技术内容并等待抓取，再按原提示词复测。
 
 ### GEO-02 核验备注（2026-08-10）
 
@@ -188,6 +197,7 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 |---|---|---|---|
 | `myathletik.com` | 旧站下线前的 GEO-01 在规范域名之前引用了其历史 About Us 页面 | 站点内容已完全下线；所有已检查入口返回 410；按所有者决定不做 301 | 不修复旧站；只追踪搜索/AI 系统是否继续引用缓存中的旧页面 |
 | `athletikapparel.com/contact/` | 当前页面把 Zhangjiagang Athletik Clothing Co., Limited 列为中国生产设施；当前 JSON-LD 和隐私文件使用美国实体 Athletik Clothing Inc.。GEO-02 因此只把网站归为中国实体 | 已确认：两者属于同一 Athletik 业务体系，分别为中国与美国实体名称，运营职责不同；当前已知角色为中国生产设施名称与美国网站数据控制者 | 保留两个准确实体名称；对外内容需要更详细职责时由所有者补充，不自行推断母子公司、签约、出口、雇佣或知识产权关系，也不把两者写成同一个法律实体 |
+| `linkedin.com/company/athletik-clothing-inc` | 旧 LinkedIn 页面仍被国际搜索索引，显示 New York, NY headquarters、旧网站/地址，以及尚未进入当前核准事实库的客户、审核、人数和成立年份等资料；GEO-01 采用了其 New York 字段 | 中国版入口已弃用；当前主推广页为 `linkedin.com/company/111831319/`。旧国际页面的管理权限和可编辑性尚未确认 | 不把旧页声明并入当前事实库；若无法取得管理权，则继续用规范站和当前 LinkedIn 强化准确实体信息，并监测后续 GEO 是否仍引用旧页 |
 | `athletik.com` | 历史品牌/网站文案和联系信息 | 【需要确认：是否拥有且可编辑？】 | 确认所有权后再更新、设置规范指向或下线 |
 | `athletik.nyc` | 历史公司简介、产能和工厂结构声明 | 【需要确认：是否拥有且可编辑？】 | 替换为当前核准实体信息，或在适当时重定向 |
 | `athletik.com.cn` | 历史实体表述、邮箱和运营声明 | 【需要确认：是否拥有且可编辑？】 | 更新信息，或明确说明其当前用途 |
@@ -198,7 +208,7 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 ## 7. 第一轮改进周期
 
 1. 保留每条结果的时间背景。8 月样本不是严格的前后对照实验：Bing GEO-01 记录于旧站下线前；ChatGPT GEO-02 记录于旧站下线和实体 Schema 部署后。
-2. 在不延迟有效改进的前提下继续运行其余固定提示词；始终在“备注”栏记录当时的部署和抓取条件。
+2. ChatGPT Search 的固定 GEO-01 至 GEO-08 已完成首轮独立 Temporary Chat 基线；其余引擎按可用性分批运行，并始终在“备注”栏记录当时的部署和抓取条件。
 3. 规范站的 Organization/LocalBusiness 实体已经部署 `legalName` 和经过核实的官方资料 `sameAs` 链接。
 4. 确认公司能控制哪些历史域名和目录资料页；已完全下线的 `myathletik.com` 不进入修复范围。
 5. 先修正可控制且可见度最高的来源，再发布新的目录资料。

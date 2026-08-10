@@ -17,6 +17,15 @@ offline without redirects by explicit owner decision; external checks confirmed 
 variants. The new site's entity-schema deployment is live: `legalName`, the
 approved LinkedIn/Instagram/YouTube `sameAs` URLs, contact details and address
 are present in valid server-rendered JSON-LD, with no legacy-domain URL. The
+independent Temporary Chat GEO-01 answer correctly summarized Athletik's
+technical-knitwear focus and Zhangjiagang/Suzhou manufacturing base. It also
+called New York, NY a headquarters because an older indexed LinkedIn profile
+`athletik-clothing-inc` remains indexed with that field. The approved current
+LinkedIn page identifies Zhangjiagang, Jiangsu as headquarters; New York is
+currently approved only as the U.S. entity and website data-controller address.
+The answer therefore counts as a largely accurate neutral baseline with an
+old-profile entity qualifier, not as a newly approved headquarters claim. Its
+pasted text retained no clickable source URLs. The
 first ChatGPT Search GEO-02 answer cited six canonical pages and accurately
 summarized the site's technical-knitwear manufacturing focus. A subsequent
 independent Temporary Chat GEO-02 rerun again classified the site as a
@@ -108,7 +117,7 @@ OpenAI documents that Memory can affect ChatGPT Search query
 rewriting. The original GEO-02 through GEO-05 runs are therefore retained as
 exploratory personalized observations. GEO-03 now also has a separately logged
 Temporary Chat baseline, and GEO-04 has a confirmed Temporary Chat baseline;
-GEO-02 through GEO-08 now have confirmed Temporary Chat baselines.
+GEO-01 through GEO-08 now have confirmed Temporary Chat baselines.
 The GEO log
 separates all of these model/source assertions from approved entity facts. See
 `docs/geo-prompt-baseline.md`.
