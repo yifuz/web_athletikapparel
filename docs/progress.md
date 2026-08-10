@@ -18,12 +18,18 @@ variants. The new site's entity-schema deployment is live: `legalName`, the
 approved LinkedIn/Instagram/YouTube `sameAs` URLs, contact details and address
 are present in valid server-rendered JSON-LD, with no legacy-domain URL. The
 first ChatGPT Search GEO-02 answer cited six canonical pages and accurately
-summarized the site's technical-knitwear manufacturing focus. ChatGPT Search
-GEO-03 then placed Athletik first in a five-supplier FLATLOCK/ACTIVESEAM
-shortlist and assigned it the highest confidence, a positive high-intent
-discovery signal. Its pasted source links did not retain their URLs, it merged
-the public brand with “Zhangjiagang Athletik Clothing Co., Ltd.,” and several
-competitor equipment/capacity claims remain self-reported or unverified. The
+summarized the site's technical-knitwear manufacturing focus. The initial
+ChatGPT Search GEO-03 answer placed Athletik first in a five-supplier
+FLATLOCK/ACTIVESEAM shortlist and assigned it the highest confidence. A new
+Temporary Chat rerun then again placed Athletik first, this time in a
+four-supplier shortlist, and called it the strongest match. This is the first
+neutral ChatGPT Search rerun and an encouraging sign that GEO-03 discovery did
+not depend on historical-chat Memory. The response still did not retain source
+URLs, used “Zhangjiagang Athletik Clothing Co., Ltd.” instead of the approved
+entity names, inferred that `ultramerino.com` is another Athletik web presence,
+and repeated competitor equipment/facility claims that remain self-reported or
+unverified. The Temporary Chat's Custom Instructions state was not separately
+visible in the supplied evidence. The
 GEO-04 answer then recommended Athletik first for a 1,000-piece-per-style
 sportswear program and used the correct public brand name. That is the clearest
 commercial-discovery signal so far, but its Apparel Sourcing NYC attribution
@@ -38,9 +44,10 @@ question mainly with consumer brands before listing three OEM candidates.
 entity source, pending confirmation of ownership and intended role. The phrase
 “your own” also confirms that GEO-05 used user-specific context beyond the
 fixed prompt. OpenAI documents that Memory can affect ChatGPT Search query
-rewriting, so GEO-02 through GEO-05 are retained as exploratory personalized
-observations rather than a neutral baseline until each is rerun in a separate
-Temporary Chat with unrelated Custom Instructions disabled. The GEO log
+rewriting. The original GEO-02 through GEO-05 runs are therefore retained as
+exploratory personalized observations. GEO-03 now also has a separately logged
+Temporary Chat baseline; GEO-02, GEO-04 and GEO-05 still require clean reruns.
+The GEO log
 separates all of these model/source assertions from approved entity facts. See
 `docs/geo-prompt-baseline.md`.
 
