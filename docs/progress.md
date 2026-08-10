@@ -33,9 +33,16 @@ supporting source. The Temporary Chat's Custom Instructions state was not
 separately visible in the supplied evidence. The
 GEO-04 answer then recommended Athletik first for a 1,000-piece-per-style
 sportswear program and used the correct public brand name. That is the clearest
-commercial-discovery signal so far, but its Apparel Sourcing NYC attribution
-was not substantiated by the current public-source check, and the two named
-competitors' capacity, certification and MOQ details remain supplier-reported.
+positive commercial-discovery signal from the original personalized runs, but
+its Apparel Sourcing NYC attribution was not substantiated by the current
+public-source check, and the two named competitors' capacity, certification and
+MOQ details remain supplier-reported. A subsequent GEO-04 response did not
+mention Athletik and instead recommended HUCAI first, followed by Yueyi Active
+and Ohsure. The user confirmed it came from a new Temporary Chat, so it is the
+neutral GEO-04 baseline and shows that Athletik does not yet surface for the
+generic sportswear OEM + 1,000-piece intent. HUCAI's
+public pages contain conflicting MOQ and company-scale figures, so the supplier
+details remain source claims rather than approved facts.
 GEO-05 mentioned Athletik but cited the historical `ultramerino.com` product
 page instead of the canonical site, merged the names as “Athletik/UltraMerino,”
 and repeated historical micron-range, ISO 607 and Woolmark-license claims that
@@ -51,7 +58,8 @@ the canonical site. The phrase
 fixed prompt. OpenAI documents that Memory can affect ChatGPT Search query
 rewriting. The original GEO-02 through GEO-05 runs are therefore retained as
 exploratory personalized observations. GEO-03 now also has a separately logged
-Temporary Chat baseline; GEO-02, GEO-04 and GEO-05 still require clean reruns.
+Temporary Chat baseline, and GEO-04 has a confirmed Temporary Chat baseline;
+GEO-02 and GEO-05 still require clean reruns.
 The GEO log
 separates all of these model/source assertions from approved entity facts. See
 `docs/geo-prompt-baseline.md`.
