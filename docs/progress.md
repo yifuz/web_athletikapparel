@@ -18,10 +18,14 @@ variants. The new site's entity-schema deployment is live: `legalName`, the
 approved LinkedIn/Instagram/YouTube `sameAs` URLs, contact details and address
 are present in valid server-rendered JSON-LD, with no legacy-domain URL. The
 first ChatGPT Search GEO-02 answer cited six canonical pages and accurately
-summarized the site's technical-knitwear manufacturing focus. The only clear
-entity drift was one use of “Athletik Apparel” instead of the approved public
-brand “Athletik Clothing”; its sweater-manufacturer contrast was model-added.
-See `docs/geo-prompt-baseline.md`.
+summarized the site's technical-knitwear manufacturing focus. ChatGPT Search
+GEO-03 then placed Athletik first in a five-supplier FLATLOCK/ACTIVESEAM
+shortlist and assigned it the highest confidence, a positive high-intent
+discovery signal. Its pasted source links did not retain their URLs, it merged
+the public brand with “Zhangjiagang Athletik Clothing Co., Ltd.,” and several
+competitor equipment/capacity claims remain self-reported or unverified. The
+GEO log now separates those model assertions from approved entity facts. See
+`docs/geo-prompt-baseline.md`.
 
 Previous: 2026-08-08 — GEO execution started with a fixed eight-prompt,
 three-engine monthly baseline, an entity-conflict register and a first-hand
