@@ -26,10 +26,11 @@ four-supplier shortlist, and called it the strongest match. This is the first
 neutral ChatGPT Search rerun and an encouraging sign that GEO-03 discovery did
 not depend on historical-chat Memory. The response still did not retain source
 URLs, used “Zhangjiagang Athletik Clothing Co., Ltd.” instead of the approved
-entity names, inferred that `ultramerino.com` is another Athletik web presence,
-and repeated competitor equipment/facility claims that remain self-reported or
-unverified. The Temporary Chat's Custom Instructions state was not separately
-visible in the supplied evidence. The
+entity names, and repeated competitor equipment/facility claims that remain
+self-reported or unverified. Its association of `ultramerino.com` with Athletik
+was later confirmed by the owner, although the answer did not preserve the
+supporting source. The Temporary Chat's Custom Instructions state was not
+separately visible in the supplied evidence. The
 GEO-04 answer then recommended Athletik first for a 1,000-piece-per-style
 sportswear program and used the correct public brand name. That is the clearest
 commercial-discovery signal so far, but its Apparel Sourcing NYC attribution
@@ -40,8 +41,12 @@ page instead of the canonical site, merged the names as “Athletik/UltraMerino,
 and repeated historical micron-range, ISO 607 and Woolmark-license claims that
 are not in the current approved entity baseline. It also answered a supplier
 question mainly with consumer brands before listing three OEM candidates.
-`ultramerino.com` is therefore now the highest-priority unresolved historical
-entity source, pending confirmation of ownership and intended role. The phrase
+The owner has confirmed that `ultramerino.com` belongs to the company and was
+one of several category-specific sites created for an earlier site matrix.
+Ownership is therefore resolved, but the site's current role, content validity
+and retention strategy remain open. Its historical certification, equipment,
+capacity and material statements are not automatically approved for reuse on
+the canonical site. The phrase
 “your own” also confirms that GEO-05 used user-specific context beyond the
 fixed prompt. OpenAI documents that Memory can affect ChatGPT Search query
 rewriting. The original GEO-02 through GEO-05 runs are therefore retained as

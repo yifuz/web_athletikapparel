@@ -25,6 +25,7 @@
 | 公开品牌 | Athletik Clothing |
 | 法律实体 | Athletik Clothing Inc. |
 | 规范主站 | <https://www.athletikapparel.com/> |
+| 已确认拥有的历史类目矩阵站 | <https://www.ultramerino.com/>（公司早期为类目矩阵建立的独立网站；当前角色与去留策略尚未确定） |
 | 公开邮箱 | `info@athletikapparel.com` |
 | 公开电话 | `+86 139 5113 9696` |
 | 中国办公地址 | No.25, Zhongxing Road, Yangshe Town, Zhangjiagang, Jiangsu, 215699 China |
@@ -82,7 +83,7 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 | 2026-08-08 | Microsoft Bing 国内版网页，AI 回答区块（补充记录） | GEO-01 | 是 | 否 | `https://myathletik.com/about-us/` | 回答依赖旧域名，并重复使用了不属于当前核准实体基线的“seamless technology” | 未看到 | 用户提供的截图，2026-08-08 | 回答称公司位于中国苏州张家港，专注 flatlock stitch construction、seamless technology 和 technical sportswear。本次 Bing 补充检查不能替代 ChatGPT/Perplexity/Gemini 的月度记录。 |
 | 2026-08-10 | ChatGPT Search（个性化状态未控制；未提供可见模型/模式） | GEO-02 | 是，但有一次将品牌称为“Athletik Apparel” | 是 | 首页、About Us、Underwear、Sportswear、Outdoor Clothing 和 Knitted Fabrics 页面 | 公开品牌名称漂移：使用“Athletik Apparel”，而不是“Athletik Clothing”。与“fashion sweater manufacturer”的对比由模型自行添加，并非网站原文。未出现无依据的工厂数量、产能或客户声明。 | 无 | 用户粘贴的第一次回答，2026-08-10 | 规范域名引用结果较强。制造能力陈述均可追溯至当前网站文案，而且回答明确将所有权、能力和认证信息标记为公司自行声明，而非独立核实。引用链接包含 `utm_source=chatgpt.com`，可用于衡量可归因的引荐访问。本次运行发生在实体 Schema 部署后、旧站开始返回 410 后；因未控制 Memory/历史聊天状态，暂作为探索性个性化结果。 |
 | 2026-08-10 | ChatGPT Search（个性化状态未控制；未提供可见模型/模式） | GEO-03 | 是，位列短名单第一；但使用“Athletik Clothing / Zhangjiagang Athletik Clothing Co., Ltd.”合并称谓 | 待确认：粘贴文本保留了“Athletik manufacturing profile”链接标题，但未保留实际 URL | 未随粘贴文本保留 | 当前核准实体基线不能直接证明合并称谓；“only a small number”、供应商置信度等级和“strongest”均为模型判断。竞品设备数主要来自企业自述，未获得独立核实。Yonglee 页面中的 `MB-40FD` 与 Merrow 官方型号 `MB-4DFO` 不一致。 | Shanghai Yonglee Textile Co., Ltd.；Merino Wool Apparel (Suzhou) Co., Ltd.；Zhangjiagang Huayu Import & Export Co., Ltd. / LeHeHe Merino；Royal International Industrial Ltd. | 用户粘贴的第一次回答，2026-08-10 | 这是正向的高意图发现结果：Athletik 排名第一且获得最高置信度。回答对 FLATLOCK 与 ACTIVESEAM 的技术区分基本准确，但竞品设备、产能、工厂所有权和供应商覆盖完整性不能作为已验证事实转载。因未控制 Memory/历史聊天状态，暂作为探索性个性化结果。 |
-| 2026-08-10 | ChatGPT Search（独立 Temporary Chat 复测；用户已确认；未提供可见模型/模式） | GEO-03 | 是，四家短名单中位列第一，并被称为“strongest match”；但主要使用“Zhangjiagang Athletik Clothing Co., Ltd.” | 否：粘贴文本没有保留可点击 URL | 未随粘贴文本保留 | 公司称谓仍未对齐当前核准的公开品牌 Athletik Clothing 和法律实体 Athletik Clothing Inc.；把 `ultramerino.com` 判断为 Athletik 的另一个网站属于模型推断；“pool in China is fairly small”和“strongest match”属于检索总结，不是可穷尽证明。Royal 的厂房面积、设备数与产品范围，以及其他竞品设备数仍需独立核实。 | Shanghai Yonglee Textile Co., Ltd. / Yonglee Group；Royal / Royal APAC；Merino Wool Apparel (Suzhou) Co., Ltd. | 用户提供的复测回答，并确认来自新的 Temporary Chat，2026-08-10 | 计入本轮 ChatGPT Search 中性 GEO-03 基线。回答没有出现“your own”或其他可见用户关系措辞；在去除历史聊天 Memory 后，Athletik 仍保持第一推荐，说明核心发现结果具有初步稳定性。Temporary Chat 仍会遵循启用中的 Custom Instructions；本次附件未单独显示其状态，因此该限制保留在记录中。品牌提及成立，但因没有保留规范站 URL，网站引用仍记为否。 |
+| 2026-08-10 | ChatGPT Search（独立 Temporary Chat 复测；用户已确认；未提供可见模型/模式） | GEO-03 | 是，四家短名单中位列第一，并被称为“strongest match”；但主要使用“Zhangjiagang Athletik Clothing Co., Ltd.” | 否：粘贴文本没有保留可点击 URL | 未随粘贴文本保留 | 公司称谓仍未对齐当前核准的公开品牌 Athletik Clothing 和法律实体 Athletik Clothing Inc.；回答把 `ultramerino.com` 识别为 Athletik 的另一个网站，所有权关系后来由用户确认属实，但回答没有保留支持该判断的来源；“pool in China is fairly small”和“strongest match”属于检索总结，不是可穷尽证明。Royal 的厂房面积、设备数与产品范围，以及其他竞品设备数仍需独立核实。 | Shanghai Yonglee Textile Co., Ltd. / Yonglee Group；Royal / Royal APAC；Merino Wool Apparel (Suzhou) Co., Ltd. | 用户提供的复测回答，并确认来自新的 Temporary Chat，2026-08-10 | 计入本轮 ChatGPT Search 中性 GEO-03 基线。回答没有出现“your own”或其他可见用户关系措辞；在去除历史聊天 Memory 后，Athletik 仍保持第一推荐，说明核心发现结果具有初步稳定性。Temporary Chat 仍会遵循启用中的 Custom Instructions；本次附件未单独显示其状态，因此该限制保留在记录中。品牌提及成立，但因没有保留规范站 URL，网站引用仍记为否。 |
 | 2026-08-10 | ChatGPT Search（个性化状态未控制；未提供可见模型/模式） | GEO-04 | 是，作为第一推荐，品牌名称正确 | 无法确认：粘贴文本没有保留可点击 URL | 未随粘贴文本保留 | “国际 OEM/出口背景由 Apparel Sourcing NYC 记录”暂未找到直接公开依据；每款 1,000 件符合核准 MOQ，但每色数量仍需询价确认。AQL 2.5 是模型提出的采购条款，不是 Athletik 已公布的固定验货标准。 | Hucai Sportswear；Harvest SPF | 用户粘贴的第一次回答，2026-08-10 | 这是强正向商业发现结果：回答直接将 Athletik 作为首选，并将其与技术针织运动服、压缩衣/打底层、瑜伽服、Merino wool 和户外服装需求匹配。竞品产能、认证和 MOQ 仍按企业自述处理。因未控制 Memory/历史聊天状态，暂作为探索性个性化结果。 |
 | 2026-08-10 | ChatGPT Search（确认受到用户上下文影响；未提供可见模型/模式） | GEO-05 | 是，但使用“Athletik/UltraMerino”合并称谓，并称“your own” | 否 | `https://www.ultramerino.com/products.html` | 回答引用历史细分站而非规范新站，并将两个名称合并；16–19.5 micron、Yamato ISO 607 和 Woolmark licensed production 均来自历史站，不属于当前核准实体事实。题目问 manufacturers，回答主体却先列出 12 个消费品牌，意图只得到部分满足。 | OEM/ODM：BTEXCO、Sansansun；另列 Icebreaker、Smartwool、Devold、Aclima、Kari Traa、Minus33、Ridge Merino、Ibex、KUIU、First Lite、Helly Hansen、Mons Royale 等品牌 | 用户粘贴的第一次回答及其中 URL，2026-08-10 | “your own”证明回答使用了本次提示词之外的用户上下文，但仅凭措辞无法区分来源是当前对话、历史聊天、Saved Memory 还是 Custom Instructions。本行只作为个性化观察，不计入中性 GEO 基线；需要在干净 Temporary Chat 中复测。 |
 
@@ -91,7 +92,7 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 - Temporary Chat 复测与首次个性化状态未控制的结果方向一致：两次都把 Athletik 放在第一位，并把 FLATLOCK、ACTIVESEAM 和技术针织品作为核心匹配依据。这说明品牌的核心发现结果没有依赖“your own”式个性化措辞；但单次复测只能作为初始基线，不能解释为稳定排名保证。
 - 复测名单从首次的五家缩小为四家，删除了 Huayu，同时继续出现 Yonglee、Merino Wool Apparel 和 Royal。供应商覆盖范围和排序仍会随检索时间、地区及来源可用性变化。
 - 复测回答没有保留任何实际引用 URL，因此只能确认“品牌被提及”，不能确认 `athletikapparel.com` 获得引用。下次应优先保存回答的共享链接或包含 Sources 区域的截图。
-- “Zhangjiagang Athletik Clothing Co., Ltd.”及“UltraMerino 是 Athletik 的另一个网站”均不写入当前对外实体事实库。前者与核准法律实体不一致，后者需要所有权或后台控制证据。
+- 用户已确认 `ultramerino.com` 由公司拥有，是早期为类目矩阵建立的独立网站。因此复测识别出的共同所有权方向正确；但“Zhangjiagang Athletik Clothing Co., Ltd.”仍与当前核准法律实体不一致，“Athletik/UltraMerino”也不应作为新的合并公开品牌使用。
 - [Merrow 官方 MB-4DFO 2.0 页面](https://www.merrow.com/Sergers_and_Overlock_Sewing_Machines/mb4dfo)支持核心技术区分：该设备生产两线或三线 ACTIVESEAM，ACTIVESEAM 是传统 FLATLOCK/INTERLOCK/OVERLOCK 的替代结构，并非 FLATLOCK 的通用同义词。
 - [Yonglee 页面](https://yonglee.com/factory/baselayer)确实自行声明 30 多台 Yamato 四针六线设备和 10 多台美国 ACTIVESEAM 设备，但把型号写成 `MB-40FD`。[Merino Wool Apparel 页面](https://www.merinowoolapparel.com/about-us)使用了高度相似的数字和文案，因此两页不能视为相互独立的佐证，背后的公司或工厂关系仍不明确。
 - 可检索的 [Huayu 第三方资料页](https://www.exporthub.com/zhangjiagang-huayu-import-amp-export-co-ltd/)明确提到四针 FLATLOCK、OVERLOCK 和 COVERSTITCH，但没有为本次回答中的 ACTIVESEAM 设备声明提供同等强度的证据。
@@ -112,8 +113,8 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 - “your own”是本轮测试方法受到个性化影响的明确信号，但不是 Saved Memory 的单独确证。[OpenAI Memory FAQ](https://help.openai.com/en/articles/8590148-memory-in-chatgpt-faq)说明，回答可使用历史聊天、Saved Memory、Custom Instructions、文件等个性化来源，并可通过回答下方的书本图标查看 Memory Sources；该界面不一定展示影响回答的全部因素。
 - [OpenAI ChatGPT Search 说明](https://help.openai.com/en/articles/9237897-chatgpt-search)明确指出，Memory 开启时，ChatGPT Search 在把提示词重写为搜索查询时可能使用相关记忆。因此影响不只限于“your own”的措辞，也可能延伸到实际查询、检索结果和来源选择；它不会因此改变公开网站索引或其他用户的非个性化结果。
 - 干净复测方法：每条提示词使用独立 Temporary Chat；确认 Custom Instructions 不包含 Athletik 相关信息；保持相同地区与联网设置；保存第一次回答。OpenAI 说明 Temporary Chat 不读取或创建 Memory，但仍会遵循启用中的 Custom Instructions。
-- 这是第一次在本轮 ChatGPT 测试中明确引用 `ultramerino.com`。该站当前仍可被搜索抓取，并在[产品页](https://www.ultramerino.com/products.html)自行声明 16–19.5 micron Merino wool、full FLATLOCK、Woolmark licensed factory 和 Yamato ISO 607。回答并非凭空生成这些细节，但这些是历史来源的企业自述，不能自动升级为 `athletikapparel.com` 的当前核准事实。
-- “Athletik/UltraMerino”是模型合并出的称谓。当前核准公开品牌仍是 Athletik Clothing，法律实体为 Athletik Clothing Inc.；在确认历史站的所有权、当前角色和实体关系之前，不复用该合并称谓。
+- 这是第一次在本轮 ChatGPT 测试中明确引用 `ultramerino.com`。用户已确认该站由公司拥有，是早期类目矩阵中的独立网站；其[产品页](https://www.ultramerino.com/products.html)自行声明 16–19.5 micron Merino wool、full FLATLOCK、Woolmark licensed factory 和 Yamato ISO 607。回答并非凭空生成这些细节，但这些仍是历史站的企业自述，不能自动升级为 `athletikapparel.com` 的当前核准事实。
+- “Athletik/UltraMerino”是模型根据共同所有权合并出的称谓，但不是当前核准的公开品牌写法。规范主站仍使用 Athletik Clothing，法律实体仍为 Athletik Clothing Inc.；在决定历史矩阵站的当前角色之前，不在新站或销售材料中复用该合并称谓。
 - Woolmark 许可属于时效敏感的认证/授权信息。即使历史页面曾声明 licensed factory，也必须取得当前许可证编号、适用主体和有效期，才能在新站或销售材料中使用。
 - 消费品牌产品页可以证明某个 SKU 使用 Merino wool 和 flatlock seam，例如 [Icebreaker 200 Oasis](https://eu.icebreaker.com/en-dk/products/merino-200-oasis-long-sleeve-crew-thermal-top-ib104365013)当前写有 100% Merino wool 与 flatlock seams；但品牌拥有产品不等于品牌是实际缝制制造商，因此这部分没有直接完成供应商发现意图。
 - [Fibre2Fashion 的 BTEXCO 文章](https://www.fibre2fashion.com/industry-article/8252/specialised-oem-odm-manufacturer-of-flatlock-baselayer-sportswear-and-outdoor-apparel)确实列出 FLATLOCK、Merino wool 和制造能力，但页面免责声明明确不保证准确性或作出背书，应按投稿/企业宣传资料处理，而非独立验证。
@@ -122,7 +123,7 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 
 ## 6. 实体冲突登记表
 
-公开搜索目前仍可能在规范新域名之前展示历史网站和第三方记录。除已经完全下线的 `myathletik.com` 外，以下来源必须先确认所有权和可编辑性，才能进行修正：
+公开搜索目前仍可能在规范新域名之前展示历史网站和第三方记录。用户确认公司早期曾为类目矩阵建立多个独立网站；下表只记录目前已经提供或发现的域名，并分别跟踪所有权、可编辑性、当前用途和内容有效性：
 
 | 来源 | 发现的冲突类型 | 控制状态 | 下一步 |
 |---|---|---|---|
@@ -130,7 +131,7 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 | `athletik.com` | 历史品牌/网站文案和联系信息 | 【需要确认：是否拥有且可编辑？】 | 确认所有权后再更新、设置规范指向或下线 |
 | `athletik.nyc` | 历史公司简介、产能和工厂结构声明 | 【需要确认：是否拥有且可编辑？】 | 替换为当前核准实体信息，或在适当时重定向 |
 | `athletik.com.cn` | 历史实体表述、邮箱和运营声明 | 【需要确认：是否拥有且可编辑？】 | 更新信息，或明确说明其当前用途 |
-| `ultramerino.com` | GEO-05 将其作为“Athletik/UltraMerino”引用，页面包含历史实体名称、认证、设备、产能和材料声明 | 【需要确认：是否拥有、可编辑，以及当前应扮演什么角色？】 | 已成为高优先级实体冲突；确认控制权后，再决定更新、设置规范指向或下线，不在没有流量与所有权证据时直接重定向 |
+| `ultramerino.com` | 公司早期为类目矩阵建立的独立网站；GEO-03 识别出其与 Athletik 的关系，GEO-05 将其作为“Athletik/UltraMerino”引用；页面包含历史实体名称、认证、设备、产能和材料声明 | 用户已确认公司拥有；当前角色、内容有效性和去留策略尚未确定 | 所有权问题已关闭；核验流量、索引、反向链接和历史声明后，再决定保留并更新、设置规范指向或下线。未完成评估前，不把历史站声明自动并入规范新站 |
 | `powermerino.com` / `sportsbaselayer.com` | 历史细分网站声明、日期和联系信息 | 【需要确认：是否拥有且可编辑？】 | 每次检查一个域名；没有流量证据时不要批量重定向 |
 | 供应商目录和进口数据网站 | 不受控制或由账户管理的 MOQ、地址、产品和关联数据 | 【需要确认：哪些资料页可以编辑？】 | 只修正公司能够控制的资料页，不声称可以控制公开记录 |
 
