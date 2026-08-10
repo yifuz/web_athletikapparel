@@ -53,13 +53,29 @@ one of several category-specific sites created for an earlier site matrix.
 Ownership is therefore resolved, but the site's current role, content validity
 and retention strategy remain open. Its historical certification, equipment,
 capacity and material statements are not automatically approved for reuse on
-the canonical site. The phrase
-“your own” also confirms that GEO-05 used user-specific context beyond the
-fixed prompt. OpenAI documents that Memory can affect ChatGPT Search query
+the canonical site. The phrase “your own” also confirms that the original
+GEO-05 used user-specific context beyond the fixed prompt. Its subsequent
+Temporary Chat rerun mentioned neither Athletik nor UltraMerino and instead
+listed nine consumer brands. That clean result confirms the personalized
+Athletik insertion cannot be treated as neutral discovery performance. Because
+the fixed GEO-05 prompt does not specify China, OEM/ODM or factory sourcing,
+the brand-led interpretation is linguistically reasonable; it nevertheless
+shows that Athletik does not currently surface for generic Merino wool base
+layer + flatlock product discovery. Representative product claims were found
+on current brand-owned pages, but those pages do not establish which factories
+actually cut and sew the garments. The Temporary Chat GEO-06 response also did
+not mention Athletik. It produced a detailed 20-section tech-pack guide, but
+interpreted technical/engineered knitwear mainly as flat-knit sweaters,
+fully-fashioned/linking construction and WHOLEGARMENT-type production rather
+than cut-and-sew technical performance apparel using FLATLOCK or ACTIVESEAM.
+The result is useful for flat knitting but exposes a material semantic mismatch
+between the fixed prompt and Athletik's intended buyer-education territory.
+OpenAI documents that Memory can affect ChatGPT Search query
 rewriting. The original GEO-02 through GEO-05 runs are therefore retained as
 exploratory personalized observations. GEO-03 now also has a separately logged
 Temporary Chat baseline, and GEO-04 has a confirmed Temporary Chat baseline;
-GEO-02 and GEO-05 still require clean reruns.
+GEO-05 now also has a confirmed Temporary Chat baseline. GEO-02 still requires
+a clean rerun.
 The GEO log
 separates all of these model/source assertions from approved entity facts. See
 `docs/geo-prompt-baseline.md`.
