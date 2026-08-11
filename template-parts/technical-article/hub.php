@@ -12,19 +12,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 $hub      = myathletik_technical_guides_hub_data();
 $articles = myathletik_get_published_technical_articles();
 $media    = get_stylesheet_directory_uri() . '/assets/images/';
+$hero_url = $media . ltrim( $hub['featured_image'], '/' );
+$hero_small_url = $media . ltrim( $hub['featured_small'], '/' );
 ?>
 
 <main id="primary" class="site-main ma-technical-guides">
 	<header class="ma-technical-guides__hero">
 		<div class="ma-technical-guides__hero-inner">
-			<nav class="ma-technical-guides__breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'myathletik-child' ); ?>">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'myathletik-child' ); ?></a>
-				<span aria-hidden="true">/</span>
-				<span aria-current="page"><?php esc_html_e( 'Technical Guides', 'myathletik-child' ); ?></span>
-			</nav>
-			<p class="ma-section-kicker"><?php echo esc_html( $hub['kicker'] ); ?></p>
-			<h1><?php echo esc_html( $hub['title'] ); ?></h1>
-			<p class="ma-technical-guides__lede"><?php echo esc_html( $hub['intro'] ); ?></p>
+			<div class="ma-technical-guides__hero-copy">
+				<nav class="ma-technical-guides__breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'myathletik-child' ); ?>">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'myathletik-child' ); ?></a>
+					<span aria-hidden="true">/</span>
+					<span aria-current="page"><?php esc_html_e( 'Technical Guides', 'myathletik-child' ); ?></span>
+				</nav>
+				<p class="ma-section-kicker"><?php echo esc_html( $hub['kicker'] ); ?></p>
+				<h1><?php echo esc_html( $hub['title'] ); ?></h1>
+				<p class="ma-technical-guides__lede"><?php echo esc_html( $hub['intro'] ); ?></p>
+			</div>
+			<figure class="ma-technical-guides__hero-media">
+				<img
+					src="<?php echo esc_url( $hero_url ); ?>"
+					srcset="<?php echo esc_attr( $hero_small_url . ' 800w, ' . $hero_url . ' ' . $hub['featured_width'] . 'w' ); ?>"
+					sizes="(max-width: 63.99rem) calc(100vw - 3rem), 32rem"
+					width="<?php echo esc_attr( $hub['featured_width'] ); ?>"
+					height="<?php echo esc_attr( $hub['featured_height'] ); ?>"
+					loading="eager"
+					fetchpriority="high"
+					decoding="async"
+					alt="<?php echo esc_attr( $hub['featured_alt'] ); ?>"
+				>
+			</figure>
 		</div>
 	</header>
 
@@ -37,12 +54,17 @@ $media    = get_stylesheet_directory_uri() . '/assets/images/';
 
 			<div class="ma-technical-guides__grid">
 				<?php foreach ( $articles as $slug => $article ) : ?>
+					<?php
+					$card_url       = $media . ltrim( $article['featured_image'], '/' );
+					$card_small_url = $media . ltrim( $article['featured_small'], '/' );
+					?>
 					<article class="ma-guide-card">
 						<a href="<?php echo esc_url( home_url( '/' . $slug . '/' ) ); ?>">
 							<?php if ( ! empty( $article['featured_image'] ) ) : ?>
 								<div class="ma-guide-card__media">
 									<img
-										src="<?php echo esc_url( $media . ltrim( $article['featured_image'], '/' ) ); ?>"
+										src="<?php echo esc_url( $card_url ); ?>"
+										srcset="<?php echo esc_attr( $card_small_url . ' 800w, ' . $card_url . ' ' . $article['featured_width'] . 'w' ); ?>"
 										width="<?php echo esc_attr( $article['featured_width'] ); ?>"
 										height="<?php echo esc_attr( $article['featured_height'] ); ?>"
 										loading="lazy"

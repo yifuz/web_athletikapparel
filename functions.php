@@ -52,6 +52,39 @@ function myathletik_images_uri() {
 }
 
 /**
+ * Preload the responsive editorial cover used above the fold on guide pages.
+ */
+function myathletik_preload_technical_guide_cover() {
+	$image = null;
+
+	if ( is_page( 'technical-guides' ) ) {
+		$image = myathletik_technical_guides_hub_data();
+	} elseif ( is_page() ) {
+		$slug  = get_post_field( 'post_name', get_queried_object_id() );
+		$image = $slug ? myathletik_get_technical_article_data( $slug ) : null;
+	}
+
+	if ( ! $image || empty( $image['featured_image'] ) || empty( $image['featured_small'] ) ) {
+		return;
+	}
+
+	$base_url  = myathletik_images_uri() . '/';
+	$full_url  = $base_url . ltrim( $image['featured_image'], '/' );
+	$small_url = $base_url . ltrim( $image['featured_small'], '/' );
+	?>
+	<link
+		rel="preload"
+		as="image"
+		href="<?php echo esc_url( $full_url ); ?>"
+		imagesrcset="<?php echo esc_attr( $small_url . ' 800w, ' . $full_url . ' ' . $image['featured_width'] . 'w' ); ?>"
+		imagesizes="(max-width: 63.99rem) calc(100vw - 3rem), 32rem"
+		fetchpriority="high"
+	>
+	<?php
+}
+add_action( 'wp_head', 'myathletik_preload_technical_guide_cover', 3 );
+
+/**
  * Rewrite theme-relative image URLs in the final HTML to point at uploads.
  *
  * Images were moved out of the theme (and out of git) into

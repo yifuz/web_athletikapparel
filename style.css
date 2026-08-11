@@ -3819,7 +3819,32 @@ body.page .site-main.ma-technical-article {
 }
 
 .ma-technical-guides__hero-inner {
+	display: grid;
+	gap: var(--ma-space-5);
   padding: var(--ma-space-5) var(--ma-space-4);
+}
+
+.ma-technical-guides__hero-copy {
+	align-self: center;
+}
+
+.ma-technical-guides__hero-media,
+.ma-technical-article__hero-media {
+	width: 100%;
+	margin: 0;
+	overflow: hidden;
+	border: 1px solid var(--ma-color-border);
+	border-radius: var(--ma-radius);
+	background: var(--ma-color-border);
+	aspect-ratio: 4 / 3;
+}
+
+.ma-technical-guides__hero-media img,
+.ma-technical-article__hero-media img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .ma-technical-guides__inner,
@@ -4041,6 +4066,14 @@ body.page .site-main.ma-technical-article {
   }
 }
 
+@media (min-width: 64rem) {
+	.ma-technical-guides__hero-inner,
+	.ma-technical-article__hero-inner {
+		grid-template-columns: minmax(0, 1fr) minmax(0, var(--ma-article-media-width));
+		align-items: center;
+	}
+}
+
 /* --- Technical article pages --- */
 .ma-technical-article {
   width: 100%;
@@ -4064,7 +4097,13 @@ body.page .site-main.ma-technical-article {
 }
 
 .ma-technical-article__hero-inner {
+	display: grid;
+	gap: var(--ma-space-5);
   padding: var(--ma-space-5) var(--ma-space-4);
+}
+
+.ma-technical-article__hero-copy {
+	align-self: center;
 }
 
 .ma-technical-article__breadcrumb {

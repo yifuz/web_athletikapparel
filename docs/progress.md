@@ -11,19 +11,21 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
-Last updated: 2026-08-11 — The owner approved the two remaining foundation
-guides for publication. `/technical-knitwear-tech-pack-guide/` and
-`/evaluate-technical-knitwear-oem/` now use the existing shared article layout,
-with page-specific content, tables of contents, visible FAQs, primary
-references, CTA copy, Rank Math metadata and Article/FAQPage/BreadcrumbList
-Schema. The data-driven `/technical-guides/` hub now exposes all three approved
-guides and its ItemList Schema matches the visible cards. Existing uploads
-provide a real technical-sewing image and production-floor image; no new media
-deployment is required. Official source links were rechecked on publication
-day. Local rendering returns HTTP 200 for the hub and both new guides; the hub
-shows three cards with a matching three-item ItemList, and both new URLs appear
-in the refreshed Rank Math Page Sitemap. Production synchronization through
-Local Connect remains pending.
+Last updated: 2026-08-11 — The three-guide foundation and Technical Guides hub
+are locally publication-ready. The hub, FLATLOCK-versus-OVERLOCK guide and tech
+pack guide now use owner-supplied editorial covers; the OEM-evaluation guide
+retains the approved real production-floor photograph. Responsive WebP full
+and 800-pixel variants live in
+`uploads/myathletik-theme/assets/images/production/articles/covers/`, outside
+Git, and must be included in the Local Connect media synchronization. The hub
+and each shared article hero now expose a responsive above-the-fold cover with
+explicit dimensions, descriptive alt text and preload hints; the same assets
+populate the three guide cards and homepage guide entry. Local desktop and
+mobile rendering is visually approved at the implementation checkpoint, all
+four URLs return HTTP 200, and PHP syntax validation passes. The generated seam
+comparison image is editorial presentation only; real production videos remain
+the article's technical evidence. Production synchronization through Local
+Connect remains pending.
 
 Last updated: 2026-08-11 — Tightened the Technical Guides and article heroes
 after owner review. The hub H1 and intro are reduced to one concise positioning

@@ -48,8 +48,8 @@ Home  /
 ├── TECHNICAL GUIDES
 │   ├── /technical-guides/  (content centre)
 │   ├── /flatlock-vs-overlock-technical-knitwear/  (published)
-│   ├── /technical-knitwear-tech-pack-guide/  (draft; not public)
-│   └── /evaluate-technical-knitwear-oem/  (draft; not public)
+│   ├── /technical-knitwear-tech-pack-guide/  (published)
+│   └── /evaluate-technical-knitwear-oem/  (published)
 │
 ├── /sustainability/   (correct live slug; no historical redirect implemented)
 ├── /about-us/

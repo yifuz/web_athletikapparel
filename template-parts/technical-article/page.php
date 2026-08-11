@@ -20,32 +20,50 @@ $published_iso     = get_the_date( DATE_W3C );
 $published_display = get_the_date( 'F j, Y' );
 $reviewed_iso      = $article['reviewed_on'];
 $reviewed_display  = wp_date( 'F j, Y', strtotime( $reviewed_iso ) );
+$media             = get_stylesheet_directory_uri() . '/assets/images/';
+$image_url         = $media . ltrim( $article['featured_image'], '/' );
+$image_small_url   = $media . ltrim( $article['featured_small'], '/' );
 ?>
 
 <main id="primary" class="site-main ma-technical-article">
 	<article aria-labelledby="ma-technical-article-title">
 		<header class="ma-technical-article__hero">
 			<div class="ma-technical-article__hero-inner">
-				<nav class="ma-technical-article__breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'myathletik-child' ); ?>">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'myathletik-child' ); ?></a>
-					<span aria-hidden="true">/</span>
-					<a href="<?php echo esc_url( home_url( '/technical-guides/' ) ); ?>"><?php esc_html_e( 'Technical Guides', 'myathletik-child' ); ?></a>
-					<span aria-hidden="true">/</span>
-					<span aria-current="page"><?php echo esc_html( $article['title'] ); ?></span>
-				</nav>
+				<div class="ma-technical-article__hero-copy">
+					<nav class="ma-technical-article__breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'myathletik-child' ); ?>">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'myathletik-child' ); ?></a>
+						<span aria-hidden="true">/</span>
+						<a href="<?php echo esc_url( home_url( '/technical-guides/' ) ); ?>"><?php esc_html_e( 'Technical Guides', 'myathletik-child' ); ?></a>
+						<span aria-hidden="true">/</span>
+						<span aria-current="page"><?php echo esc_html( $article['title'] ); ?></span>
+					</nav>
 
-				<p class="ma-section-kicker"><?php echo esc_html( $article['kicker'] ); ?></p>
-				<h1 id="ma-technical-article-title"><?php echo esc_html( $article['title'] ); ?></h1>
-				<p class="ma-technical-article__lede"><?php echo esc_html( $article['intro'] ); ?></p>
-				<p class="ma-technical-article__meta">
-					<?php esc_html_e( 'Published by', 'myathletik-child' ); ?>
-					<a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>"><?php esc_html_e( 'Athletik Clothing', 'myathletik-child' ); ?></a>
-					<span aria-hidden="true">·</span>
-					<time datetime="<?php echo esc_attr( $published_iso ); ?>"><?php echo esc_html( $published_display ); ?></time>
-					<span aria-hidden="true">·</span>
-					<?php esc_html_e( 'Technical review completed', 'myathletik-child' ); ?>
-					<time datetime="<?php echo esc_attr( $reviewed_iso ); ?>"><?php echo esc_html( $reviewed_display ); ?></time>
-				</p>
+					<p class="ma-section-kicker"><?php echo esc_html( $article['kicker'] ); ?></p>
+					<h1 id="ma-technical-article-title"><?php echo esc_html( $article['title'] ); ?></h1>
+					<p class="ma-technical-article__lede"><?php echo esc_html( $article['intro'] ); ?></p>
+					<p class="ma-technical-article__meta">
+						<?php esc_html_e( 'Published by', 'myathletik-child' ); ?>
+						<a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>"><?php esc_html_e( 'Athletik Clothing', 'myathletik-child' ); ?></a>
+						<span aria-hidden="true">·</span>
+						<time datetime="<?php echo esc_attr( $published_iso ); ?>"><?php echo esc_html( $published_display ); ?></time>
+						<span aria-hidden="true">·</span>
+						<?php esc_html_e( 'Technical review completed', 'myathletik-child' ); ?>
+						<time datetime="<?php echo esc_attr( $reviewed_iso ); ?>"><?php echo esc_html( $reviewed_display ); ?></time>
+					</p>
+				</div>
+				<figure class="ma-technical-article__hero-media">
+					<img
+						src="<?php echo esc_url( $image_url ); ?>"
+						srcset="<?php echo esc_attr( $image_small_url . ' 800w, ' . $image_url . ' ' . $article['featured_width'] . 'w' ); ?>"
+						sizes="(max-width: 63.99rem) calc(100vw - 3rem), 32rem"
+						width="<?php echo esc_attr( $article['featured_width'] ); ?>"
+						height="<?php echo esc_attr( $article['featured_height'] ); ?>"
+						loading="eager"
+						fetchpriority="high"
+						decoding="async"
+						alt="<?php echo esc_attr( $article['featured_alt'] ); ?>"
+					>
+				</figure>
 			</div>
 		</header>
 

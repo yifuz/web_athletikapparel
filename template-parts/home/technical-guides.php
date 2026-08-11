@@ -18,6 +18,7 @@ if ( ! $article ) {
 }
 
 $image_url = get_stylesheet_directory_uri() . '/assets/images/' . ltrim( $article['featured_image'], '/' );
+$image_small_url = get_stylesheet_directory_uri() . '/assets/images/' . ltrim( $article['featured_small'], '/' );
 ?>
 
 <section class="ma-home-guides" aria-labelledby="ma-home-guides-title">
@@ -34,6 +35,7 @@ $image_url = get_stylesheet_directory_uri() . '/assets/images/' . ltrim( $articl
 				<div class="ma-home-guides__media">
 					<img
 						src="<?php echo esc_url( $image_url ); ?>"
+						srcset="<?php echo esc_attr( $image_small_url . ' 800w, ' . $image_url . ' ' . $article['featured_width'] . 'w' ); ?>"
 						width="<?php echo esc_attr( $article['featured_width'] ); ?>"
 						height="<?php echo esc_attr( $article['featured_height'] ); ?>"
 						loading="lazy"
