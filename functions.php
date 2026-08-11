@@ -587,6 +587,22 @@ function myathletik_ensure_primary_menu() {
 add_action( 'init', 'myathletik_ensure_primary_menu', 20 );
 
 /**
+ * Normalize an internal menu URL for scheme-independent path comparison.
+ *
+ * @param string $url Menu item URL.
+ * @return string Normalized path without a trailing slash.
+ */
+function myathletik_menu_url_path( $url ) {
+	$path = wp_parse_url( $url, PHP_URL_PATH );
+
+	if ( ! is_string( $path ) || '' === $path ) {
+		return '/';
+	}
+
+	return '/' . trim( $path, '/' );
+}
+
+/**
  * Keep Guides available while preserving Contact as the final priority CTA.
  *
  * Existing installations already have an assigned menu. New items are added
@@ -607,23 +623,25 @@ function myathletik_ensure_technical_guides_menu_item() {
 		return;
 	}
 
-	$guides_url  = myathletik_home_url( '/technical-guides/' );
-	$contact_url = myathletik_home_url( '/contact/' );
-	$items        = wp_get_nav_menu_items( $menu->term_id );
-	$items        = is_array( $items ) ? $items : array();
-	$guides_item  = null;
-	$contact_item = null;
+	$guides_url   = myathletik_home_url( '/technical-guides/' );
+	$contact_url  = myathletik_home_url( '/contact/' );
+	$guides_path  = myathletik_menu_url_path( $guides_url );
+	$contact_path = myathletik_menu_url_path( $contact_url );
+	$items         = wp_get_nav_menu_items( $menu->term_id );
+	$items         = is_array( $items ) ? $items : array();
+	$guides_item   = null;
+	$contact_item  = null;
 
 	foreach ( $items as $item ) {
 		if ( 0 !== (int) $item->menu_item_parent ) {
 			continue;
 		}
 
-		$item_url = untrailingslashit( $item->url );
+		$item_path = myathletik_menu_url_path( $item->url );
 
-		if ( untrailingslashit( $guides_url ) === $item_url ) {
+		if ( $guides_path === $item_path ) {
 			$guides_item = $item;
-		} elseif ( untrailingslashit( $contact_url ) === $item_url ) {
+		} elseif ( $contact_path === $item_path ) {
 			$contact_item = $item;
 		}
 	}
@@ -654,6 +672,46 @@ function myathletik_ensure_technical_guides_menu_item() {
 
 	$items        = wp_get_nav_menu_items( $menu->term_id );
 	$items        = is_array( $items ) ? $items : array();
+	$matched      = array(
+		$guides_path => array(),
+		$contact_path => array(),
+	);
+
+	foreach ( $items as $item ) {
+		if ( 0 !== (int) $item->menu_item_parent ) {
+			continue;
+		}
+
+		$item_path = myathletik_menu_url_path( $item->url );
+
+		if ( isset( $matched[ $item_path ] ) ) {
+			$matched[ $item_path ][] = $item;
+		}
+	}
+
+	foreach ( $matched as $duplicates ) {
+		if ( count( $duplicates ) < 2 ) {
+			continue;
+		}
+
+		usort(
+			$duplicates,
+			static function ( $first, $second ) {
+				return (int) $first->ID <=> (int) $second->ID;
+			}
+		);
+
+		// Preserve the oldest item and remove later duplicates created by a
+		// production HTTP-to-HTTPS menu mismatch.
+		array_shift( $duplicates );
+
+		foreach ( $duplicates as $duplicate ) {
+			wp_delete_post( (int) $duplicate->ID, true );
+		}
+	}
+
+	$items        = wp_get_nav_menu_items( $menu->term_id );
+	$items        = is_array( $items ) ? $items : array();
 	$top_level    = array();
 	$guides_item  = null;
 	$contact_item = null;
@@ -667,11 +725,11 @@ function myathletik_ensure_technical_guides_menu_item() {
 		}
 
 		$top_level[] = $item;
-		$item_url    = untrailingslashit( $item->url );
+		$item_path   = myathletik_menu_url_path( $item->url );
 
-		if ( untrailingslashit( $guides_url ) === $item_url ) {
+		if ( $guides_path === $item_path ) {
 			$guides_item = $item;
-		} elseif ( untrailingslashit( $contact_url ) === $item_url ) {
+		} elseif ( $contact_path === $item_path ) {
 			$contact_item = $item;
 		}
 	}

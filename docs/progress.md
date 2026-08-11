@@ -11,21 +11,20 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
-Last updated: 2026-08-11 — The three-guide foundation and Technical Guides hub
-are locally publication-ready. The hub, FLATLOCK-versus-OVERLOCK guide and tech
-pack guide now use owner-supplied editorial covers; the OEM-evaluation guide
-retains the approved real production-floor photograph. Responsive WebP full
-and 800-pixel variants live in
-`uploads/myathletik-theme/assets/images/production/articles/covers/`, outside
-Git, and must be included in the Local Connect media synchronization. The hub
-and each shared article hero now expose a responsive above-the-fold cover with
-explicit dimensions, descriptive alt text and preload hints; the same assets
-populate the three guide cards and homepage guide entry. Local desktop and
-mobile rendering is visually approved at the implementation checkpoint, all
-four URLs return HTTP 200, and PHP syntax validation passes. The generated seam
-comparison image is editorial presentation only; real production videos remain
-the article's technical evidence. Production synchronization through Local
-Connect remains pending.
+Last updated: 2026-08-11 — The first production synchronization of the Technical
+Guides hub, all three foundation guides and the responsive WebP cover package
+is complete. Live verification returns HTTP 200 for the four pages and all
+eight cover variants; Browser, Googlebot, OAI-SearchBot and PerplexityBot
+receive the same pages. Titles, descriptions, canonicals, single H1s, alt text,
+responsive hero markup and Article/FAQPage/BreadcrumbList/ItemList Schema all
+match the local implementation. Two post-deploy corrections remain: Rank Math's
+live Page Sitemap still shows the pre-publication 13-page set and needs a manual
+Sitemap Settings cache refresh, and the assigned production menu exposed a
+duplicate Contact item because the old stored HTTP URL did not match the HTTPS
+comparison. The menu code now compares normalized URL paths, retains the oldest
+matching item, removes later duplicates and restores Guides immediately before
+the single final Contact CTA. That corrective theme commit still needs a Local
+Connect synchronization, followed by live navigation and Sitemap revalidation.
 
 Last updated: 2026-08-11 — Tightened the Technical Guides and article heroes
 after owner review. The hub H1 and intro are reduced to one concise positioning

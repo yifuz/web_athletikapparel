@@ -290,8 +290,9 @@ not be implemented unless the owner later reopens the decision.
 7. ~~**Page-by-page visual polish + QA cleanup**~~ — ✅ completed before launch
 8. **Production launch** — ✅ complete on Flywheel; final site and uploads
    synchronized 2026-07-28
-9. **Technical Guides content centre** — ✅ hub, homepage/menu/footer entry and
-   all three approved foundation guides implemented locally on 2026-08-11;
-   production synchronization pending.
+9. **Technical Guides content centre** — hub, homepage/footer entry, all three
+   approved foundation guides and their cover assets synchronized to production
+   on 2026-08-11. Corrective menu de-duplication deployment and Rank Math Sitemap
+   cache refresh remain pending after the first live validation.
 
 Confirmed slug: `/merino-wool-manufacturer/`.
