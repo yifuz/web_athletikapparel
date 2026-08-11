@@ -11,6 +11,21 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
+Last updated: 2026-08-11 — The owner approved the complete FLATLOCK-versus-
+OVERLOCK article for deployment. A code-rendered page at
+`/flatlock-vs-overlock-technical-knitwear/` now has a reusable technical-article
+layout, one H1, table of contents, approved body copy, a responsive comparison
+table, visible FAQs, primary references, internal links and inquiry CTA. Rank
+Math integration supplies the approved title/description plus matching Article
+and FAQPage entities; the public Organization is used as author because no
+individual author identity was supplied. The publisher Schema no longer mixes
+the U.S. entity's legal name with the China production address. Sportswear and
+Underwear pages now link to the guide. The selected source videos were converted from 84–89 MB
+masters to silent 720×1280 H.264 web files (2.56 MB and 5.50 MB) with JPEG
+posters in uploads. Code and local media are deployment-ready; production
+rendering, Sitemap visibility and Schema validation remain pending until Local
+Connect synchronization.
+
 Last updated: 2026-08-11 — The owner corrected the project copy rule and
 explicitly authorized an agent-written long-form draft when requested. The
 canonical `AGENTS.md` rule and `wp-brand-voice-guard` skill now require explicit
@@ -25,10 +40,9 @@ planned FLATLOCK-versus-OVERLOCK article: `羊毛提花260623.mp4` for Yamato
 FLATLOCK and `密拷260718.mp4` for OVERLOCK. Both source files were validated as
 vertical H.264 video and remain outside the site; no file was copied or
 deployed. Merrow ACTIVESEAM and HSAT-K5 will be described only in text for this
-article. The internal content brief now records the reference stitch
-configurations, provisional garment-area map, evidence limits and remaining
-first-hand inputs. Long-form article copy and page implementation have not
-started.
+article. The internal content brief records the reference stitch
+configurations, provisional garment-area map and evidence limits. This earlier
+planning status was superseded by the approved implementation recorded above.
 
 Last updated: 2026-08-10 — The legacy `myathletik.com` site has been fully taken
 offline without redirects by explicit owner decision; external checks confirmed HTTP

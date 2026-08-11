@@ -33,6 +33,51 @@ add_filter( 'rank_math/opengraph/facebook/og_title', 'myathletik_rank_math_home_
 add_filter( 'rank_math/opengraph/twitter/twitter_title', 'myathletik_rank_math_home_social_title', 20 );
 
 /**
+ * Return the current technical article record when applicable.
+ *
+ * @return array|null
+ */
+function myathletik_rank_math_current_technical_article() {
+	if ( ! is_page() ) {
+		return null;
+	}
+
+	$slug = get_post_field( 'post_name', get_queried_object_id() );
+
+	return $slug ? myathletik_get_technical_article_data( $slug ) : null;
+}
+
+/**
+ * Keep the technical article title and social title deterministic.
+ *
+ * @param string $title Rank Math generated title.
+ * @return string
+ */
+function myathletik_rank_math_technical_article_title( $title ) {
+	$article = myathletik_rank_math_current_technical_article();
+
+	return $article ? $article['seo_title'] : $title;
+}
+add_filter( 'rank_math/frontend/title', 'myathletik_rank_math_technical_article_title', 20 );
+add_filter( 'rank_math/opengraph/facebook/og_title', 'myathletik_rank_math_technical_article_title', 21 );
+add_filter( 'rank_math/opengraph/twitter/twitter_title', 'myathletik_rank_math_technical_article_title', 21 );
+
+/**
+ * Keep the technical article description and social description aligned.
+ *
+ * @param string $description Rank Math generated description.
+ * @return string
+ */
+function myathletik_rank_math_technical_article_description( $description ) {
+	$article = myathletik_rank_math_current_technical_article();
+
+	return $article ? $article['meta_description'] : $description;
+}
+add_filter( 'rank_math/frontend/description', 'myathletik_rank_math_technical_article_description', 20 );
+add_filter( 'rank_math/opengraph/facebook/og_description', 'myathletik_rank_math_technical_article_description', 20 );
+add_filter( 'rank_math/opengraph/twitter/twitter_description', 'myathletik_rank_math_technical_article_description', 20 );
+
+/**
  * Keep the homepage WebPage entity aligned with the document title.
  *
  * Organization and WebSite names intentionally remain the shorter brand name.
@@ -86,6 +131,10 @@ function myathletik_rank_math_core_webpage_type() {
 	}
 
 	if ( is_page( array( 'services', 'sustainability' ) ) ) {
+		return 'WebPage';
+	}
+
+	if ( myathletik_rank_math_current_technical_article() ) {
 		return 'WebPage';
 	}
 
@@ -155,7 +204,9 @@ function myathletik_rank_math_publisher_schema( $data ) {
 
 	$data['publisher']['telephone'] = '+8613951139696';
 	$data['publisher']['email']     = 'info@athletikapparel.com';
-	$data['publisher']['legalName'] = 'Athletik Clothing Inc.';
+	// Keep the publisher as the public brand. Do not combine the U.S. entity's
+	// legal name with the China production address in one Organization entity.
+	unset( $data['publisher']['legalName'] );
 	$data['publisher']['sameAs']    = array(
 		'https://www.linkedin.com/company/111831319/',
 		'https://www.instagram.com/athletikclothinginc/',
@@ -177,20 +228,121 @@ function myathletik_rank_math_publisher_schema( $data ) {
 add_filter( 'rank_math/json_ld', 'myathletik_rank_math_publisher_schema', 102 );
 
 /**
- * Return the last significant site-wide update for theme-rendered core pages.
+ * Add Article and FAQPage entities that mirror the approved visible content.
  *
- * Update this value only when the rendered main content, structured data, or
- * internal links change materially across the managed pages. WordPress page
- * modifications newer than this baseline continue to take precedence.
+ * The public brand is used as an Organization author because no individual
+ * author identity has been supplied. This avoids inventing a Person entity.
  *
+ * @param array $data Rank Math JSON-LD entities.
+ * @return array
+ */
+function myathletik_rank_math_technical_article_schema( $data ) {
+	$article = myathletik_rank_math_current_technical_article();
+
+	if ( ! $article || ! is_array( $data ) ) {
+		return $data;
+	}
+
+	$page_id      = get_queried_object_id();
+	$page_url     = get_permalink( $page_id );
+	$article_id   = $page_url . '#article';
+	$webpage_id   = ! empty( $data['WebPage']['@id'] ) ? $data['WebPage']['@id'] : $page_url . '#webpage';
+	$publisher_id = ! empty( $data['publisher']['@id'] ) ? $data['publisher']['@id'] : home_url( '/#organization' );
+	$image_url    = myathletik_images_uri() . '/' . ltrim( $article['featured_image'], '/' );
+
+	$data['technicalArticle'] = array(
+		'@type'            => 'Article',
+		'@id'              => $article_id,
+		'headline'         => $article['title'],
+		'description'      => $article['meta_description'],
+		'datePublished'    => get_post_time( DATE_W3C, false, $page_id ),
+		'dateModified'     => get_post_modified_time( DATE_W3C, false, $page_id ),
+		'inLanguage'       => 'en-US',
+		'articleSection'   => 'Technical knitwear construction',
+		'mainEntityOfPage' => array( '@id' => $webpage_id ),
+		'image'            => array(
+			'@type'  => 'ImageObject',
+			'url'    => $image_url,
+			'width'  => 720,
+			'height' => 1280,
+		),
+		'author'           => array(
+			'@type' => 'Organization',
+			'name'  => 'Athletik Clothing',
+			'url'   => home_url( '/about-us/' ),
+		),
+		'publisher'        => array( '@id' => $publisher_id ),
+		'about'            => array( 'FLATLOCK', 'OVERLOCK', 'ACTIVESEAM', 'Technical knitwear' ),
+	);
+
+	$questions = array();
+	foreach ( $article['faq'] as $item ) {
+		$questions[] = array(
+			'@type'          => 'Question',
+			'name'           => $item['question'],
+			'acceptedAnswer' => array(
+				'@type' => 'Answer',
+				'text'  => $item['answer'],
+			),
+		);
+	}
+
+	$data['technicalArticleFaq'] = array(
+		'@type'      => 'FAQPage',
+		'@id'        => $page_url . '#faq',
+		'mainEntity' => $questions,
+	);
+
+	if ( ! empty( $data['WebPage'] ) && is_array( $data['WebPage'] ) ) {
+		$data['WebPage']['name']        = $article['seo_title'];
+		$data['WebPage']['description'] = $article['meta_description'];
+		$data['WebPage']['mainEntity']  = array( '@id' => $article_id );
+	}
+
+	return $data;
+}
+add_filter( 'rank_math/json_ld', 'myathletik_rank_math_technical_article_schema', 103 );
+
+/**
+ * Return the last significant update for theme-rendered core pages.
+ *
+ * The no-argument value is the latest managed-page update and is used by the
+ * page Sitemap index. Passing a URL keeps unchanged pages on the previous
+ * site-wide baseline while reflecting this guide and its two new inbound links.
+ *
+ * @param string $url Optional absolute page URL.
  * @return int Unix timestamp in UTC.
  */
-function myathletik_rank_math_core_sitemap_baseline() {
+function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
+	$latest = strtotime( '2026-08-11 02:30:00 UTC' );
+
+	if ( '' === $url ) {
+		return $latest;
+	}
+
+	$path = wp_parse_url( $url, PHP_URL_PATH );
+	$path = is_string( $path ) ? '/' . trim( $path, '/' ) : '';
+	$path = '/' === $path ? $path : trailingslashit( $path );
+
+	if (
+		in_array(
+			$path,
+			array(
+				'/flatlock-vs-overlock-technical-knitwear/',
+				'/sportswear-manufacturer/',
+				'/underwear-manufacturer/',
+			),
+			true
+		)
+	) {
+		return $latest;
+	}
+
 	return strtotime( '2026-08-08 02:30:00 UTC' );
 }
 
 /**
- * Check whether a Sitemap URL belongs to one of the 12 managed core pages.
+ * Check whether a Sitemap URL belongs to one of the 13 managed core pages.
  *
  * @param string $url Absolute Sitemap URL.
  * @return bool
@@ -209,6 +361,7 @@ function myathletik_rank_math_is_core_sitemap_url( $url ) {
 		$path,
 		array(
 			'/',
+			'/flatlock-vs-overlock-technical-knitwear/',
 			'/sportswear-manufacturer/',
 			'/underwear-manufacturer/',
 			'/outdoor-clothing-manufacturer/',
@@ -247,7 +400,7 @@ function myathletik_rank_math_core_sitemap_lastmod( $output, $url ) {
 	}
 
 	$modified = ! empty( $url['mod'] ) ? strtotime( $url['mod'] ) : 0;
-	$modified = max( (int) $modified, myathletik_rank_math_core_sitemap_baseline() );
+	$modified = max( (int) $modified, myathletik_rank_math_core_sitemap_baseline( $url['loc'] ) );
 	$lastmod  = '<lastmod>' . esc_html( gmdate( DATE_W3C, $modified ) ) . '</lastmod>';
 
 	if ( false !== strpos( $output, '<lastmod>' ) ) {

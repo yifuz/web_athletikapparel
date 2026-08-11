@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once get_stylesheet_directory() . '/inc/product-category-data.php';
+require_once get_stylesheet_directory() . '/inc/technical-article-data.php';
 
 /**
  * Image storage has been migrated out of the theme/git repo into the
@@ -721,6 +722,37 @@ function myathletik_ensure_sustainability_page() {
 }
 add_action( 'init', 'myathletik_ensure_sustainability_page', 38 );
 
+/**
+ * Seed the code-rendered FLATLOCK versus OVERLOCK technical article page.
+ */
+function myathletik_ensure_flatlock_overlock_article_page() {
+	$slug    = 'flatlock-vs-overlock-technical-knitwear';
+	$article = myathletik_get_technical_article_data( $slug );
+
+	if ( ! $article || get_page_by_path( $slug, OBJECT, 'page' ) ) {
+		return;
+	}
+
+	$page_id = wp_insert_post(
+		array(
+			'post_type'    => 'page',
+			'post_status'  => 'publish',
+			'post_name'    => $slug,
+			'post_title'   => wp_strip_all_tags( $article['title'] ),
+			'post_content' => '[Theme-rendered technical article]',
+		),
+		true
+	);
+
+	if ( is_wp_error( $page_id ) ) {
+		return;
+	}
+
+	update_post_meta( $page_id, 'rank_math_title', $article['seo_title'] );
+	update_post_meta( $page_id, 'rank_math_description', $article['meta_description'] );
+}
+add_action( 'init', 'myathletik_ensure_flatlock_overlock_article_page', 39 );
+
 // Note: the /sustainabilty/ -> /sustainability/ 301 redirect that used to live
 // here was removed on 2026-07-21. Decision: no 301 redirects are being done
 // (old site is dead, no inbound equity to preserve). See docs/progress.md
@@ -758,6 +790,29 @@ function myathletik_product_category_document_title( $parts ) {
 	return $parts;
 }
 add_filter( 'document_title_parts', 'myathletik_product_category_document_title', 20 );
+
+/**
+ * Use the approved title for code-rendered technical articles.
+ *
+ * @param array $parts Document title parts.
+ * @return array
+ */
+function myathletik_technical_article_document_title( $parts ) {
+	if ( ! is_page() ) {
+		return $parts;
+	}
+
+	$slug    = get_post_field( 'post_name', get_queried_object_id() );
+	$article = $slug ? myathletik_get_technical_article_data( $slug ) : null;
+
+	if ( $article && ! empty( $article['seo_title'] ) ) {
+		$parts['title'] = wp_strip_all_tags( $article['seo_title'] );
+		unset( $parts['site'] );
+	}
+
+	return $parts;
+}
+add_filter( 'document_title_parts', 'myathletik_technical_article_document_title', 24 );
 
 /**
  * Use the service-page-specific document title.

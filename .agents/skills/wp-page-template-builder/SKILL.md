@@ -109,7 +109,8 @@ Per category page, the data is:
 - Slug (e.g. `sportswear-manufacturer`)
 - H1 (e.g. "Sportswear Manufacturer")
 - SEO Title + Meta Description (from `seo-tags.md`)
-- Intro paragraph (`【CONTENT: user to write】` placeholder — do NOT author)
+- Intro paragraph (use approved copy, draft it only with explicit user
+  authorization, or insert `【CONTENT: user to write】`)
 - Product sub-categories / specs (from user)
 - Images (real factory/product photos only)
 
@@ -195,8 +196,9 @@ H1: <text>
 - **One shared template part per page type.** Don't copy-paste structure across
   siblings.
 - **One `<h1>` per page.** (SEO rule, see `wp-seo-audit`.)
-- **No body copy authoring.** Insert `【CONTENT: user to write】` for prose
-  slots (AGENTS.md §5).
+- **Body copy requires explicit authorization.** Use approved copy or draft
+  only the scope the user explicitly requests; otherwise insert
+  `【CONTENT: user to write】` (AGENTS.md §5).
 - **No invented facts** (certifications, capacities, client names). Insert
   `【NEEDS INPUT: ...】` for unknown factual fields (AGENTS.md §5).
 - **Use `--ma-*` tokens** for all visual values (see `wp-design-polish`).

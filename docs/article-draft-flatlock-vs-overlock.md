@@ -1,12 +1,13 @@
 # Draft Article — FLATLOCK vs OVERLOCK for Technical Knitwear
 
-> Status: owner review required; not approved for publication.
+> Status: owner-approved for publication on 2026-08-11; implemented in the
+> code-rendered technical-article template.
 > Owner authorization: the owner explicitly asked Codex to prepare the
 > long-form first draft on 2026-08-11.
-> Proposed slug: `/flatlock-vs-overlock-technical-knitwear/` — not yet created
-> or approved.
-> Author: 【NEEDS INPUT: real author name and manufacturing role】
-> Technical reviewer: 【NEEDS INPUT: reviewer name and role, if different】
+> Approved slug: `/flatlock-vs-overlock-technical-knitwear/`.
+> Author: Athletik Clothing (Organization; no individual identity supplied).
+> Technical review: owner approval completed 2026-08-11; no public individual
+> reviewer identity supplied.
 
 # FLATLOCK vs OVERLOCK for Technical Knitwear
 
@@ -39,9 +40,9 @@ representative industrial applications, not a universal seam map for every
 garment. The position and construction still need to be confirmed against the
 product design and fabric.
 
-【MEDIA: embed the selected Yamato FLATLOCK production video,
-`羊毛提花260623.mp4`; identify it as a production example, not a controlled
-comparison】
+Media deployment: the selected `羊毛提花260623.mp4` source was converted to
+`yamato-flatlock-knitwear-production.mp4` with a poster image and is identified
+as a production example, not a controlled comparison.
 
 ## What is OVERLOCK construction?
 
@@ -62,9 +63,9 @@ the appropriate thread, differential feed, tension and stitch setting, an
 OVERLOCK seam can be soft and extensible. Its suitability must be evaluated on
 the nominated fabric rather than inferred from the stitch name alone.
 
-【MEDIA: embed the selected OVERLOCK production video,
-`密拷260718.mp4`; identify it as a separate production example made on a
-different garment/fabric】
+Media deployment: the selected `密拷260718.mp4` source was converted to
+`overlock-knit-assembly-production.mp4` with a poster image and is identified
+as a separate production example made on a different garment/fabric.
 
 ## FLATLOCK vs OVERLOCK: the practical differences
 

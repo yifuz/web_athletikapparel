@@ -105,6 +105,18 @@ Responsible knitwear manufacturing — GRS recycled fabrics, OEKO-TEX 100, BSCI,
 Sedex, WRAP & more. Practical, verifiable steps for performance brands.
 
 ================================================================
+## Technical guide  (/flatlock-vs-overlock-technical-knitwear/)
+================================================================
+Primary keyword: FLATLOCK vs OVERLOCK / technical knitwear seams
+
+**SEO Title:**
+FLATLOCK vs OVERLOCK for Technical Knitwear | Athletik
+
+**Meta Description:**
+Compare FLATLOCK and OVERLOCK for technical knitwear: seam profile, 607/514
+stitch references, garment applications, testing and tech pack callouts.
+
+================================================================
 ## Image alt text (general rule for Codex)
 ================================================================
 Every image needs descriptive alt text with a natural keyword, e.g.:

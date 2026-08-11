@@ -1,7 +1,7 @@
 # Content Brief — FLATLOCK vs OVERLOCK for Technical Knitwear
 
-> Status: first long-form draft prepared; owner review required before
-> publication. Draft file: `docs/article-draft-flatlock-vs-overlock.md`.
+> Status: owner-approved on 2026-08-11 and implemented locally for deployment.
+> Approved source draft: `docs/article-draft-flatlock-vs-overlock.md`.
 > Purpose: create one first-hand technical article that can support buyer
 > research, conventional SEO and GEO observation without generic AI filler.
 
@@ -12,9 +12,9 @@
 | Working H1 | FLATLOCK vs OVERLOCK for Technical Knitwear |
 | Primary buyer question | When should a performance-apparel buyer specify FLATLOCK instead of OVERLOCK? |
 | Audience | Mid-sized sportswear, underwear, base-layer and outdoor-apparel buyers |
-| Proposed slug | `/flatlock-vs-overlock-technical-knitwear/` — requires approval before implementation |
-| Author | 【NEEDS INPUT: real author name and manufacturing role】 |
-| Reviewer | 【NEEDS INPUT: technical reviewer name/role, if different】 |
+| Approved slug | `/flatlock-vs-overlock-technical-knitwear/` |
+| Author | Athletik Clothing (Organization; no individual author identity supplied) |
+| Reviewer | Owner review completed 2026-08-11; no public individual reviewer name supplied |
 | Evidence | Selected production videos: Yamato FLATLOCK and OVERLOCK; see Section 4. Merrow ACTIVESEAM and HSAT-K5 will not use video in this article. |
 
 ## 2. Confirmed technical direction and remaining input
@@ -53,30 +53,27 @@
   the article must not claim that FLATLOCK is universally better or that every
   manufacturer uses an identical seam map.
 
-### Remaining first-hand input before publication
+### Details intentionally excluded from this publication
 
-1. 【NEEDS INPUT: exact Yamato model and needle distance only if model-specific
-   machine data will be published】
-2. How fabric weight, stretch and recovery change Athletik's actual seam choice.
-3. What wearer-visible differences and production/cost trade-offs may be stated
-   publicly from Athletik's production experience.
-4. What Athletik asks buyers to specify in the tech pack / spec sheet.
-5. Author/reviewer identity and approval that the selected videos expose no
-   customer branding, order information or confidential design details.
+1. Exact Athletik Yamato model, needle distance and machine count are not
+   published because they were not needed for the approved comparison.
+2. Athletik-specific cost and production-speed claims are omitted.
+3. No individual author/reviewer identity is published; the public Organization
+   is the visible and structured-data author.
 
 ## 3. Article outline
 
 ### Opening answer
 
-Drafted in `docs/article-draft-flatlock-vs-overlock.md`; owner review pending.
+Owner-approved in `docs/article-draft-flatlock-vs-overlock.md` and implemented.
 
 ### H2 — What is FLATLOCK construction?
 
-Drafted in `docs/article-draft-flatlock-vs-overlock.md`; owner review pending.
+Owner-approved in `docs/article-draft-flatlock-vs-overlock.md` and implemented.
 
 ### H2 — What is OVERLOCK construction?
 
-Drafted in `docs/article-draft-flatlock-vs-overlock.md`; owner review pending.
+Owner-approved in `docs/article-draft-flatlock-vs-overlock.md` and implemented.
 
 ### H2 — FLATLOCK vs OVERLOCK comparison
 
@@ -87,20 +84,20 @@ Complete only confirmed cells. Remove any row that cannot be supported.
 | Typical garment areas | Shoulder/raglan, sleeve, underarm/side body, crotch/inseam and next-to-skin panel joins where specified | General knit assembly including shoulder, sleeve and side seams; selected band or elastic operations depending on design | Yamato application pages; selected Athletik production videos |
 | Seam profile / bulk | Flat seam intended to avoid a conventional projecting seam allowance | Cut edges are enclosed; the joined plies normally create an internal seam allowance/ridge | Coats seam-class and soft-seam technical guidance; selected videos |
 | Stretch behavior | Can be engineered for stretch; result depends on thread, tension, stitch setting and fabric | Can also be engineered for stretch; do not rank it without testing the nominated fabric | Yamato and Coats technical guidance; approved sample/testing required |
-| Suitable fabric conditions | Performance and next-to-skin knits where low profile is required; exact setup depends on fabric weight and recovery | Broad general-knit assembly where an internal seam allowance is acceptable | 【NEEDS INPUT: Athletik production limits by fabric type/GSM/stretch】 |
-| Production considerations | Specialized machine/setup; no public cost or speed claim until confirmed | General assembly reference; no public cost or speed claim until confirmed | 【NEEDS INPUT: Athletik production/cost trade-offs】 |
+| Suitable fabric conditions | Performance and next-to-skin knits where low profile is required; exact setup depends on fabric weight and recovery | Broad general-knit assembly where an internal seam allowance is acceptable | No universal Athletik production limit is claimed; approve on the nominated fabric |
+| Production considerations | Specialized machine/setup; no public cost or speed claim | General assembly reference; no public cost or speed claim | Athletik-specific cost and speed comparisons are outside the approved scope |
 
 ### H2 — When buyers should specify FLATLOCK
 
-Drafted in `docs/article-draft-flatlock-vs-overlock.md`; owner review pending.
+Owner-approved in `docs/article-draft-flatlock-vs-overlock.md` and implemented.
 
 ### H2 — When OVERLOCK may be the appropriate construction
 
-Drafted in `docs/article-draft-flatlock-vs-overlock.md`; owner review pending.
+Owner-approved in `docs/article-draft-flatlock-vs-overlock.md` and implemented.
 
 ### H2 — What to include in the tech pack / spec sheet
 
-Drafted in `docs/article-draft-flatlock-vs-overlock.md`; owner review pending.
+Owner-approved in `docs/article-draft-flatlock-vs-overlock.md` and implemented.
 
 ### H2 — Questions buyers commonly ask
 
@@ -143,15 +140,16 @@ FAQPage Schema until the visible answers are owner-approved and final.
 
 - [x] Owner explicitly authorized Codex to prepare the long-form technical
   first draft on 2026-08-11.
-- [ ] Owner reviews, corrects where needed and approves the final body copy.
-- [ ] Author and reviewer identity confirmed.
-- [ ] Claims checked against real production evidence.
+- [x] Owner reviewed and approved the final body copy on 2026-08-11.
+- [x] Organization author selected; no individual identity is fabricated.
+- [x] Claims checked against real production evidence and primary sources.
 - [x] FLATLOCK and OVERLOCK production-video candidates selected and file metadata validated.
 - [x] Merrow ACTIVESEAM and HSAT-K5 excluded from the video requirement for this article.
-- [ ] No client names, confidential designs or unsupported certifications.
-- [ ] Title, meta description, canonical and one-H1 structure approved.
-- [ ] Article date reflects the actual publication/review date.
-- [ ] Article Schema mirrors the visible author, dates, headline and image.
-- [ ] Images have descriptive alt text and accurate dimensions.
-- [ ] Page added to the XML Sitemap and linked from at least one relevant page.
+- [x] No client names, confidential designs or unsupported certifications.
+- [x] Title, meta description and one-H1 structure implemented; Rank Math owns the canonical.
+- [x] Article date uses the WordPress publication date and shows the 2026-08-11 review date.
+- [x] Article and FAQPage Schema mirror the visible Organization author, dates, headline, image and FAQ answers.
+- [x] Videos have accurate dimensions, poster images and descriptive captions.
+- [x] Page is seeded into the Page Sitemap and linked from Sportswear and Underwear pages.
+- [x] Web versions created at 720×1280 H.264 with JPEG posters; source files remain outside uploads.
 - [ ] Production page validated after publication; then run the fixed GEO prompts.

@@ -45,6 +45,9 @@ Home  /
 │   ❌ CANCELLED (2026-07): sub-pages /sampling-prototyping/ /bulk-production/
 │      /quality-control/ /export-shipping/ — folded into /services/ overview
 │
+├── TECHNICAL GUIDES
+│   └── /flatlock-vs-overlock-technical-knitwear/
+│
 ├── /sustainability/   (correct live slug; no historical redirect implemented)
 ├── /about-us/
 └── /contact/
@@ -117,6 +120,29 @@ Products hub and links to all 7 category pages. `/products/` is intentionally
 not built, is absent from navigation and the Sitemap, and currently returns
 404. Only create a standalone hub or add a redirect if future Search Console,
 server-log, or backlink evidence shows that `/products/` has real value.
+
+---
+
+## 2A. Technical guide — `/flatlock-vs-overlock-technical-knitwear/`  (NEW)
+
+**H1:** FLATLOCK vs OVERLOCK for Technical Knitwear
+
+**Purpose:** Answer a high-intent buyer question with first-party production
+evidence, clarify stitch types 607 and 514, distinguish ACTIVESEAM, and give
+buyers an actionable seam-map and tech pack checklist.
+
+**Block outline:**
+1. Direct answer and publication/review metadata.
+2. FLATLOCK definition with the approved Yamato production video.
+3. OVERLOCK definition with the approved production video.
+4. Comparison table and garment-area decision logic.
+5. Fabric, thread, machine-setting and testing considerations.
+6. ACTIVESEAM distinction.
+7. Tech pack / spec sheet checklist.
+8. Visible FAQ, primary technical references and inquiry CTA.
+
+The page is linked from the Sportswear and Underwear category pages. It is a
+top-level technical guide, not the start of a `/blog/` hierarchy.
 
 ---
 
@@ -213,5 +239,7 @@ not be implemented unless the owner later reopens the decision.
 7. ~~**Page-by-page visual polish + QA cleanup**~~ — ✅ completed before launch
 8. **Production launch** — ✅ complete on Flywheel; final site and uploads
    synchronized 2026-07-28
+9. **First technical guide** — ✅ approved and implemented locally on
+   2026-08-11; production synchronization pending
 
 Confirmed slug: `/merino-wool-manufacturer/`.
