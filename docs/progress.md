@@ -11,20 +11,15 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
-Last updated: 2026-08-11 — The first production synchronization of the Technical
-Guides hub, all three foundation guides and the responsive WebP cover package
-is complete. Live verification returns HTTP 200 for the four pages and all
-eight cover variants; Browser, Googlebot, OAI-SearchBot and PerplexityBot
-receive the same pages. Titles, descriptions, canonicals, single H1s, alt text,
-responsive hero markup and Article/FAQPage/BreadcrumbList/ItemList Schema all
-match the local implementation. Two post-deploy corrections remain: Rank Math's
-live Page Sitemap still shows the pre-publication 13-page set and needs a manual
-Sitemap Settings cache refresh, and the assigned production menu exposed a
-duplicate Contact item because the old stored HTTP URL did not match the HTTPS
-comparison. The menu code now compares normalized URL paths, retains the oldest
-matching item, removes later duplicates and restores Guides immediately before
-the single final Contact CTA. That corrective theme commit still needs a Local
-Connect synchronization, followed by live navigation and Sitemap revalidation.
+Last updated: 2026-08-11 — The Technical Guides production rollout is complete.
+Final live verification after the corrective synchronization confirms one
+`Guides` navigation item immediately before the single final `Contact` CTA.
+Rank Math's Page Sitemap now contains 17 URLs, including the hub and all three
+foundation guides. Browser, Googlebot, OAI-SearchBot and PerplexityBot receive
+HTTP 200 for all four pages. Titles, descriptions, self-referencing canonicals,
+single H1s, image alt text, responsive hero markup and the expected
+Article/FAQPage/BreadcrumbList/ItemList Schema all match the approved local
+implementation. No further theme deployment is required for this rollout.
 
 Last updated: 2026-08-11 — Tightened the Technical Guides and article heroes
 after owner review. The hub H1 and intro are reduced to one concise positioning
