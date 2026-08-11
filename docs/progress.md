@@ -20,8 +20,10 @@ Schema. The data-driven `/technical-guides/` hub now exposes all three approved
 guides and its ItemList Schema matches the visible cards. Existing uploads
 provide a real technical-sewing image and production-floor image; no new media
 deployment is required. Official source links were rechecked on publication
-day. Local rendering and production synchronization are recorded separately
-after final validation.
+day. Local rendering returns HTTP 200 for the hub and both new guides; the hub
+shows three cards with a matching three-item ItemList, and both new URLs appear
+in the refreshed Rank Math Page Sitemap. Production synchronization through
+Local Connect remains pending.
 
 Last updated: 2026-08-11 — Tightened the Technical Guides and article heroes
 after owner review. The hub H1 and intro are reduced to one concise positioning
