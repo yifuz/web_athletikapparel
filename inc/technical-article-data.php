@@ -10,6 +10,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Return the technical-guides hub metadata.
+ *
+ * @return array
+ */
+function myathletik_technical_guides_hub_data() {
+	return array(
+		'title'            => __( 'Technical Guides for Performance Knitwear Production', 'myathletik-child' ),
+		'seo_title'        => __( 'Technical Knitwear Guides for Buyers | Athletik Clothing', 'myathletik-child' ),
+		'meta_description' => __( 'Practical technical guides for cut-and-sew performance knitwear buyers, covering seam construction, tech packs, testing and OEM evaluation.', 'myathletik-child' ),
+		'kicker'           => __( 'Buyer resource library', 'myathletik-child' ),
+		'intro'            => __( 'Practical guidance for buyers developing cut-and-sew performance knitwear. The library focuses on construction decisions, fabric and garment specifications, sampling, testing and supplier evaluation.', 'myathletik-child' ),
+		'scope'            => array(
+			array(
+				'title' => __( 'Construction decisions', 'myathletik-child' ),
+				'copy'  => __( 'Compare stitch types, seam profiles, garment applications and approval criteria.', 'myathletik-child' ),
+			),
+			array(
+				'title' => __( 'Tech pack preparation', 'myathletik-child' ),
+				'copy'  => __( 'Define fabric, measurement, seam, testing and sample-approval requirements clearly.', 'myathletik-child' ),
+			),
+			array(
+				'title' => __( 'OEM evaluation', 'myathletik-child' ),
+				'copy'  => __( 'Review process ownership, production controls, traceability and project fit.', 'myathletik-child' ),
+			),
+		),
+	);
+}
+
+/**
  * Return the technical article registry.
  *
  * Long-form body markup remains in a slug-specific content template. This
@@ -21,13 +50,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 function myathletik_technical_article_data() {
 	return array(
 		'flatlock-vs-overlock-technical-knitwear' => array(
+			'status'           => 'publish',
 			'title'            => __( 'FLATLOCK vs OVERLOCK for Technical Knitwear', 'myathletik-child' ),
 			'seo_title'        => __( 'FLATLOCK vs OVERLOCK for Technical Knitwear | Athletik', 'myathletik-child' ),
 			'meta_description' => __( 'Compare FLATLOCK and OVERLOCK for technical knitwear: seam profile, 607/514 stitch references, garment applications, testing and tech pack callouts.', 'myathletik-child' ),
 			'kicker'           => __( 'Technical construction guide', 'myathletik-child' ),
+			'topic'            => __( 'Seam construction', 'myathletik-child' ),
+			'summary'          => __( 'Compare seam profile, stitch types 607 and 514, garment applications, testing considerations and the seam information buyers should include in a tech pack.', 'myathletik-child' ),
 			'intro'            => __( 'FLATLOCK and OVERLOCK are both used to assemble stretch knitted garments, but they solve different construction problems. Specify FLATLOCK when a low-profile seam is important against the skin or under repeated pressure. Specify OVERLOCK when an enclosed cut edge, reliable stretch construction and efficient general assembly are the priorities and an internal seam allowance is acceptable. Neither construction is automatically better. The right choice depends on the seam location, fabric, thread, machine setting and approved sample.', 'myathletik-child' ),
 			'reviewed_on'      => '2026-08-11',
 			'featured_image'   => 'production/articles/flatlock-vs-overlock/yamato-flatlock-knitwear-poster.jpg',
+			'featured_alt'     => __( 'Yamato FLATLOCK sewing operation for technical performance knitwear', 'myathletik-child' ),
 			'toc'              => array(
 				'what-is-flatlock'   => __( 'What is FLATLOCK construction?', 'myathletik-child' ),
 				'what-is-overlock'   => __( 'What is OVERLOCK construction?', 'myathletik-child' ),
@@ -101,4 +134,21 @@ function myathletik_get_technical_article_data( $slug ) {
 	$articles = myathletik_technical_article_data();
 
 	return isset( $articles[ $slug ] ) ? $articles[ $slug ] : null;
+}
+
+/**
+ * Return only owner-approved, published technical articles.
+ *
+ * Draft briefs remain in docs and never appear on the public hub until their
+ * registry record is explicitly marked publish.
+ *
+ * @return array
+ */
+function myathletik_get_published_technical_articles() {
+	return array_filter(
+		myathletik_technical_article_data(),
+		static function ( $article ) {
+			return isset( $article['status'] ) && 'publish' === $article['status'];
+		}
+	);
 }

@@ -48,6 +48,15 @@ function myathletik_rank_math_current_technical_article() {
 }
 
 /**
+ * Return Technical Guides hub metadata when applicable.
+ *
+ * @return array|null
+ */
+function myathletik_rank_math_current_technical_guides_hub() {
+	return is_page( 'technical-guides' ) ? myathletik_technical_guides_hub_data() : null;
+}
+
+/**
  * Keep the technical article title and social title deterministic.
  *
  * @param string $title Rank Math generated title.
@@ -55,8 +64,13 @@ function myathletik_rank_math_current_technical_article() {
  */
 function myathletik_rank_math_technical_article_title( $title ) {
 	$article = myathletik_rank_math_current_technical_article();
+	$hub     = myathletik_rank_math_current_technical_guides_hub();
 
-	return $article ? $article['seo_title'] : $title;
+	if ( $article ) {
+		return $article['seo_title'];
+	}
+
+	return $hub ? $hub['seo_title'] : $title;
 }
 add_filter( 'rank_math/frontend/title', 'myathletik_rank_math_technical_article_title', 20 );
 add_filter( 'rank_math/opengraph/facebook/og_title', 'myathletik_rank_math_technical_article_title', 21 );
@@ -70,8 +84,13 @@ add_filter( 'rank_math/opengraph/twitter/twitter_title', 'myathletik_rank_math_t
  */
 function myathletik_rank_math_technical_article_description( $description ) {
 	$article = myathletik_rank_math_current_technical_article();
+	$hub     = myathletik_rank_math_current_technical_guides_hub();
 
-	return $article ? $article['meta_description'] : $description;
+	if ( $article ) {
+		return $article['meta_description'];
+	}
+
+	return $hub ? $hub['meta_description'] : $description;
 }
 add_filter( 'rank_math/frontend/description', 'myathletik_rank_math_technical_article_description', 20 );
 add_filter( 'rank_math/opengraph/facebook/og_description', 'myathletik_rank_math_technical_article_description', 20 );
@@ -132,6 +151,10 @@ function myathletik_rank_math_core_webpage_type() {
 
 	if ( is_page( array( 'services', 'sustainability' ) ) ) {
 		return 'WebPage';
+	}
+
+	if ( is_page( 'technical-guides' ) ) {
+		return 'CollectionPage';
 	}
 
 	if ( myathletik_rank_math_current_technical_article() ) {
@@ -293,15 +316,107 @@ function myathletik_rank_math_technical_article_schema( $data ) {
 		'mainEntity' => $questions,
 	);
 
+	$data['technicalArticleBreadcrumb'] = array(
+		'@type'           => 'BreadcrumbList',
+		'@id'             => $page_url . '#breadcrumb',
+		'itemListElement' => array(
+			array(
+				'@type'    => 'ListItem',
+				'position' => 1,
+				'name'     => 'Home',
+				'item'     => home_url( '/' ),
+			),
+			array(
+				'@type'    => 'ListItem',
+				'position' => 2,
+				'name'     => 'Technical Guides',
+				'item'     => home_url( '/technical-guides/' ),
+			),
+			array(
+				'@type'    => 'ListItem',
+				'position' => 3,
+				'name'     => $article['title'],
+				'item'     => $page_url,
+			),
+		),
+	);
+
 	if ( ! empty( $data['WebPage'] ) && is_array( $data['WebPage'] ) ) {
 		$data['WebPage']['name']        = $article['seo_title'];
 		$data['WebPage']['description'] = $article['meta_description'];
 		$data['WebPage']['mainEntity']  = array( '@id' => $article_id );
+		$data['WebPage']['breadcrumb']  = array( '@id' => $page_url . '#breadcrumb' );
 	}
 
 	return $data;
 }
 add_filter( 'rank_math/json_ld', 'myathletik_rank_math_technical_article_schema', 103 );
+
+/**
+ * Add the published-guide ItemList and visible breadcrumb trail to the hub.
+ *
+ * @param array $data Rank Math JSON-LD entities.
+ * @return array
+ */
+function myathletik_rank_math_technical_guides_schema( $data ) {
+	$hub = myathletik_rank_math_current_technical_guides_hub();
+
+	if ( ! $hub || ! is_array( $data ) ) {
+		return $data;
+	}
+
+	$page_url   = get_permalink( get_queried_object_id() );
+	$itemlist   = $page_url . '#itemlist';
+	$list_items = array();
+	$position   = 1;
+
+	foreach ( myathletik_get_published_technical_articles() as $slug => $article ) {
+		$list_items[] = array(
+			'@type'    => 'ListItem',
+			'position' => $position,
+			'name'     => $article['title'],
+			'url'      => home_url( '/' . $slug . '/' ),
+		);
+		++$position;
+	}
+
+	$data['technicalGuidesItemList'] = array(
+		'@type'           => 'ItemList',
+		'@id'             => $itemlist,
+		'name'            => $hub['title'],
+		'numberOfItems'   => count( $list_items ),
+		'itemListElement' => $list_items,
+	);
+
+	$data['technicalGuidesBreadcrumb'] = array(
+		'@type'           => 'BreadcrumbList',
+		'@id'             => $page_url . '#breadcrumb',
+		'itemListElement' => array(
+			array(
+				'@type'    => 'ListItem',
+				'position' => 1,
+				'name'     => 'Home',
+				'item'     => home_url( '/' ),
+			),
+			array(
+				'@type'    => 'ListItem',
+				'position' => 2,
+				'name'     => 'Technical Guides',
+				'item'     => $page_url,
+			),
+		),
+	);
+
+	if ( ! empty( $data['WebPage'] ) && is_array( $data['WebPage'] ) ) {
+		$data['WebPage']['name']        = $hub['seo_title'];
+		$data['WebPage']['description'] = $hub['meta_description'];
+		$data['WebPage']['mainEntity']  = array( '@id' => $itemlist );
+		$data['WebPage']['breadcrumb']  = array( '@id' => $page_url . '#breadcrumb' );
+	}
+
+	return $data;
+}
+add_filter( 'rank_math/json_ld', 'myathletik_rank_math_technical_guides_schema', 104 );
 
 /**
  * Return the last significant update for theme-rendered core pages.
@@ -314,7 +429,7 @@ add_filter( 'rank_math/json_ld', 'myathletik_rank_math_technical_article_schema'
  * @return int Unix timestamp in UTC.
  */
 function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
-	$latest = strtotime( '2026-08-11 02:30:00 UTC' );
+	$latest = strtotime( '2026-08-11 03:15:00 UTC' );
 
 	if ( '' === $url ) {
 		return $latest;
@@ -328,9 +443,9 @@ function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
 		in_array(
 			$path,
 			array(
+				'/',
+				'/technical-guides/',
 				'/flatlock-vs-overlock-technical-knitwear/',
-				'/sportswear-manufacturer/',
-				'/underwear-manufacturer/',
 			),
 			true
 		)
@@ -338,11 +453,15 @@ function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
 		return $latest;
 	}
 
+	if ( in_array( $path, array( '/sportswear-manufacturer/', '/underwear-manufacturer/' ), true ) ) {
+		return strtotime( '2026-08-11 02:30:00 UTC' );
+	}
+
 	return strtotime( '2026-08-08 02:30:00 UTC' );
 }
 
 /**
- * Check whether a Sitemap URL belongs to one of the 13 managed core pages.
+ * Check whether a Sitemap URL belongs to one of the 14 managed core pages.
  *
  * @param string $url Absolute Sitemap URL.
  * @return bool
@@ -361,6 +480,7 @@ function myathletik_rank_math_is_core_sitemap_url( $url ) {
 		$path,
 		array(
 			'/',
+			'/technical-guides/',
 			'/flatlock-vs-overlock-technical-knitwear/',
 			'/sportswear-manufacturer/',
 			'/underwear-manufacturer/',

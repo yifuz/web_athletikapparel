@@ -529,6 +529,7 @@ function myathletik_ensure_primary_menu() {
 
 		$top_level_items = array(
 			'Services'       => '/services/',
+			'Guides'         => '/technical-guides/',
 			'Sustainability' => '/sustainability/',
 			'About'          => '/about-us/',
 			'Contact'        => '/contact/',
@@ -551,6 +552,48 @@ function myathletik_ensure_primary_menu() {
 	set_theme_mod( 'nav_menu_locations', $locations );
 }
 add_action( 'init', 'myathletik_ensure_primary_menu', 20 );
+
+/**
+ * Add the Technical Guides hub to an already-seeded primary menu.
+ *
+ * Existing installations already have an assigned menu, so changing only the
+ * initial seed array would not expose the new content centre. This routine is
+ * additive and leaves all existing items and their order untouched.
+ */
+function myathletik_ensure_technical_guides_menu_item() {
+	$locations = get_nav_menu_locations();
+
+	if ( empty( $locations['primary'] ) ) {
+		return;
+	}
+
+	$menu = wp_get_nav_menu_object( $locations['primary'] );
+
+	if ( ! $menu ) {
+		return;
+	}
+
+	$items = wp_get_nav_menu_items( $menu->term_id );
+	$items = is_array( $items ) ? $items : array();
+	$url   = myathletik_home_url( '/technical-guides/' );
+
+	foreach ( $items as $item ) {
+		if ( untrailingslashit( $item->url ) === untrailingslashit( $url ) ) {
+			return;
+		}
+	}
+
+	wp_update_nav_menu_item(
+		$menu->term_id,
+		0,
+		array(
+			'menu-item-title'  => 'Guides',
+			'menu-item-url'    => $url,
+			'menu-item-status' => 'publish',
+		)
+	);
+}
+add_action( 'init', 'myathletik_ensure_technical_guides_menu_item', 21 );
 
 /**
  * Force-correct the "Products" nav menu item URL.
@@ -753,6 +796,37 @@ function myathletik_ensure_flatlock_overlock_article_page() {
 }
 add_action( 'init', 'myathletik_ensure_flatlock_overlock_article_page', 39 );
 
+/**
+ * Seed the code-rendered Technical Guides content centre.
+ */
+function myathletik_ensure_technical_guides_page() {
+	$slug = 'technical-guides';
+	$hub  = myathletik_technical_guides_hub_data();
+
+	if ( get_page_by_path( $slug, OBJECT, 'page' ) ) {
+		return;
+	}
+
+	$page_id = wp_insert_post(
+		array(
+			'post_type'    => 'page',
+			'post_status'  => 'publish',
+			'post_name'    => $slug,
+			'post_title'   => wp_strip_all_tags( $hub['title'] ),
+			'post_content' => '[Theme-rendered technical guides hub]',
+		),
+		true
+	);
+
+	if ( is_wp_error( $page_id ) ) {
+		return;
+	}
+
+	update_post_meta( $page_id, 'rank_math_title', $hub['seo_title'] );
+	update_post_meta( $page_id, 'rank_math_description', $hub['meta_description'] );
+}
+add_action( 'init', 'myathletik_ensure_technical_guides_page', 40 );
+
 // Note: the /sustainabilty/ -> /sustainability/ 301 redirect that used to live
 // here was removed on 2026-07-21. Decision: no 301 redirects are being done
 // (old site is dead, no inbound equity to preserve). See docs/progress.md
@@ -813,6 +887,23 @@ function myathletik_technical_article_document_title( $parts ) {
 	return $parts;
 }
 add_filter( 'document_title_parts', 'myathletik_technical_article_document_title', 24 );
+
+/**
+ * Use the approved title for the Technical Guides hub.
+ *
+ * @param array $parts Document title parts.
+ * @return array
+ */
+function myathletik_technical_guides_document_title( $parts ) {
+	if ( is_page( 'technical-guides' ) ) {
+		$hub            = myathletik_technical_guides_hub_data();
+		$parts['title'] = wp_strip_all_tags( $hub['seo_title'] );
+		unset( $parts['site'] );
+	}
+
+	return $parts;
+}
+add_filter( 'document_title_parts', 'myathletik_technical_guides_document_title', 25 );
 
 /**
  * Use the service-page-specific document title.
@@ -1106,6 +1197,7 @@ function myathletik_site_footer() {
 					<li><a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>"><?php esc_html_e( 'About Us', 'myathletik-child' ); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/sustainability/' ) ); ?>"><?php esc_html_e( 'Sustainability', 'myathletik-child' ); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/#ma-home-categories-title' ) ); ?>"><?php esc_html_e( 'Products', 'myathletik-child' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/technical-guides/' ) ); ?>"><?php esc_html_e( 'Technical Guides', 'myathletik-child' ); ?></a></li>
 					<?php if ( $privacy_policy_url ) : ?>
 						<li><a href="<?php echo esc_url( $privacy_policy_url ); ?>"><?php esc_html_e( 'Privacy Policy', 'myathletik-child' ); ?></a></li>
 					<?php endif; ?>

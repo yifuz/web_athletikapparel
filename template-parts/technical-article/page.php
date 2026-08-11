@@ -29,7 +29,7 @@ $reviewed_display  = wp_date( 'F j, Y', strtotime( $reviewed_iso ) );
 				<nav class="ma-technical-article__breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'myathletik-child' ); ?>">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'myathletik-child' ); ?></a>
 					<span aria-hidden="true">/</span>
-					<span><?php esc_html_e( 'Technical guides', 'myathletik-child' ); ?></span>
+					<a href="<?php echo esc_url( home_url( '/technical-guides/' ) ); ?>"><?php esc_html_e( 'Technical Guides', 'myathletik-child' ); ?></a>
 					<span aria-hidden="true">/</span>
 					<span aria-current="page"><?php echo esc_html( $article['title'] ); ?></span>
 				</nav>

@@ -28,14 +28,16 @@ stays reviewable in git).
 | Category landing `*-manufacturer/`   | `Service` or `Product` (manufacturer service) |
 | Home `/`                             | + `Organization` (already in site-wide) |
 | FAQ sections (if present)            | `FAQPage`                             |
-| Blog post (single)                   | `Article`                             |
+| Approved technical guide / blog post | `Article`                             |
+| Technical Guides hub                 | `CollectionPage`, `ItemList`          |
 | Contact `/contact/`                  | `LocalBusiness`/`Organization` with contactPoint |
 
 Confirm against `docs/sitemap.md` for the canonical page list.
 
 ## Canonical site-wide facts (use these, don't invent)
 
-- **Legal entity:** Athletik Clothing Inc.
+- **U.S. entity:** Athletik Clothing Inc.
+- **China entity:** Zhangjiagang Athletik Clothing Co., Limited
 - **Brand / public name:** Athletik Clothing (used in `<title>` brand suffix)
 - **Domain:** https://www.athletikapparel.com/
 - **Business type:** Vertically integrated OEM knitwear manufacturer
@@ -48,6 +50,9 @@ Confirm against `docs/sitemap.md` for the canonical page list.
 **Never invent** certifications, factory counts, founding year, client names,
 or capacity numbers. If a schema field needs such a fact and it's unknown,
 omit the field or insert `【NEEDS INPUT: ...】` and ask the user.
+Keep the public Organization distinct from both jurisdictional entity names.
+Do not combine a U.S. `legalName` with the China production address in one
+Organization entity or infer the remaining responsibility split.
 
 ## Implementation pattern
 
@@ -60,7 +65,6 @@ add_action( 'wp_head', function () {
         '@context' => 'https://schema.org',
         '@type'    => 'Organization',
         'name'     => 'Athletik Clothing',
-        'legalName'=> 'Athletik Clothing Inc.',
         'url'      => $home,
         'logo'     => esc_url( get_stylesheet_directory_uri() . '/assets/images/辅图/cropped-ATHLETIK_R_512.jpg' ),
         'description' => 'Vertically integrated OEM knitwear manufacturer specializing in flatlock and activeseam technical knitwear.',
@@ -126,8 +130,18 @@ must have an `acceptedAnswer` `Answer` with `text` matching the on-page answer.
 
 ### 5. Article
 
-For single blog posts only. Include `headline`, `datePublished`,
-`dateModified`, `author` (Person), `image`, `publisher` (@id reference to Org).
+For approved technical guides and single blog posts. Include `headline`,
+`datePublished`, `dateModified`, `image`, `publisher` (@id reference to Org),
+and an `author` that matches the visible byline. The author may be a real
+`Person` or the public `Organization`; never invent a Person identity merely to
+fill the field.
+
+### 6. Technical Guides hub
+
+Use `CollectionPage` for `/technical-guides/` and add an `ItemList` containing
+only owner-approved, publicly visible guides. Draft briefs must not appear in
+the ItemList. The visible hub cards and JSON-LD list must use the same titles
+and URLs.
 
 ## Validation
 

@@ -105,6 +105,18 @@ Responsible knitwear manufacturing — GRS recycled fabrics, OEKO-TEX 100, BSCI,
 Sedex, WRAP & more. Practical, verifiable steps for performance brands.
 
 ================================================================
+## Technical Guides hub  (/technical-guides/)
+================================================================
+Primary keyword: technical knitwear guides / performance knitwear production
+
+**SEO Title:**
+Technical Knitwear Guides for Buyers | Athletik Clothing
+
+**Meta Description:**
+Practical technical guides for cut-and-sew performance knitwear buyers,
+covering seam construction, tech packs, testing and OEM evaluation.
+
+================================================================
 ## Technical guide  (/flatlock-vs-overlock-technical-knitwear/)
 ================================================================
 Primary keyword: FLATLOCK vs OVERLOCK / technical knitwear seams
@@ -115,6 +127,30 @@ FLATLOCK vs OVERLOCK for Technical Knitwear | Athletik
 **Meta Description:**
 Compare FLATLOCK and OVERLOCK for technical knitwear: seam profile, 607/514
 stitch references, garment applications, testing and tech pack callouts.
+
+================================================================
+## Planned technical guide  (/technical-knitwear-tech-pack-guide/) — DRAFT
+================================================================
+Primary keyword: technical knitwear tech pack
+
+**SEO Title:**
+Technical Knitwear Tech Pack Guide | Athletik Clothing
+
+**Meta Description:**
+Build a cut-and-sew technical knitwear tech pack with fabric specifications,
+seam maps, POMs, tolerances, testing requirements and approval stages.
+
+================================================================
+## Planned technical guide  (/evaluate-technical-knitwear-oem/) — DRAFT
+================================================================
+Primary keyword: evaluate technical knitwear OEM
+
+**SEO Title:**
+How to Evaluate a Technical Knitwear OEM | Athletik
+
+**Meta Description:**
+Evaluate a cut-and-sew knitwear OEM by checking process ownership, fabric
+controls, seam capability, testing, traceability, capacity and approvals.
 
 ================================================================
 ## Image alt text (general rule for Codex)

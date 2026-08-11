@@ -187,7 +187,10 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 - 追溯部分方向正确：[Textile Exchange Content Claim Standard](https://textileexchange.org/content-claim-standard/)要求通过文件、数量平衡、隔离及 scope/transaction certificates 追踪认证材料；[GOTS 官方说明](https://global-standard.org/certification-and-labelling/who-needs-to-be-certified)要求最终产品使用 GOTS 标识时相关加工、制造和贸易阶段满足认证要求。证书必须核对法律主体、站点、产品/工序范围和有效期，不能只看供应链中某一家持证。
 - 美国进口风险的提醒也有当前官方依据：[DHS UFLPA 页面](https://www.dhs.gov/uflpa)说明，全部或部分在新疆生产或涉及 UFLPA Entity List 实体的货物适用可反驳推定；名单会更新，因此任何对外尽调指南都应链接当前 DHS/CBP 资料并标注核验日期，而不是固化某一份名单。
 - [SLCP 官方说明](https://slconvergence.org/tool)明确其 CAF 提供经核验的工厂社会与劳工数据，但 SLCP 本身不评分或作价值判断；品牌仍需按自己的准则分析。[ZDHC 供应商化学品管理说明](https://programme.roadmaptozero.com/suppliers/process/chemical-management-strategy-v1/plan-and-allocate-resources-to-implement-the-chemical-management-strategy)支持检查化学品清单、MRSL、SDS、废水和改进记录。[OEKO-TEX STANDARD 100](https://www.oeko-tex.com/en/our-standards/oeko-tex-standard-100)只证明相应纺织品通过有害物质测试，不证明劳动、工厂所有权或全部环境表现；回答对此限制说明正确。
-- 本次结果适合形成后续“如何评估 vertically integrated OEM”的买家指南，但不改变单人保守内容计划：先完成 GEO-07 已有 brief 对应的第一篇文章；GEO-08 只进入后续选题池，待第一篇上线和复测后再决定是否制作。
+- 2026-08-11 的 owner decision 取代上述旧排期：现在先建立稳定的
+  Technical Guides 内容中心，并一次性完成三篇基础内容。GEO-08 因此作为
+  第三篇完整草稿推进，但在 owner 审核前不公开。这是一次性的内容基础建设，
+  不代表单人运营此后固定采用每期三篇的更新节奏。
 
 ## 6. 实体冲突登记表
 

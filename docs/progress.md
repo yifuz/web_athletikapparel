@@ -11,6 +11,23 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
+Last updated: 2026-08-11 — The owner chose to establish the content centre now
+and complete a one-time three-guide foundation instead of waiting to redesign
+the entry after three publications. `/technical-guides/` is implemented as a
+stable, data-driven hub, with permanent entry points on the homepage, primary
+menu, footer and guide breadcrumbs. Its public cards and ItemList Schema read
+only owner-approved `publish` entries, so unfinished drafts cannot leak onto
+the site. The approved FLATLOCK-versus-OVERLOCK guide is the first public
+entry. Full internal review drafts for the technical-knitwear tech-pack guide
+and vertically integrated OEM evaluation guide are complete in `docs/`; their
+public templates, registry entries and Article Schema remain intentionally
+unbuilt until owner approval. This is an initial content sprint, not a change
+to the conservative ongoing workload for a single operator. Local WordPress
+rendering returns HTTP 200 for the hub and existing guide; the hub has one H1,
+one published card, matching CollectionPage/ItemList/BreadcrumbList Schema and
+one Sitemap entry after the local Rank Math Sitemap cache refresh. Neither
+draft URL appears in rendered HTML, Schema or the Sitemap.
+
 Last updated: 2026-08-11 — The owner approved the complete FLATLOCK-versus-
 OVERLOCK article for deployment. A code-rendered page at
 `/flatlock-vs-overlock-technical-knitwear/` now has a reusable technical-article
@@ -143,9 +160,10 @@ due-diligence framework and generally sound traceability/compliance guidance,
 but its 100-point weights and 75–80 threshold were model-authored rather than
 an industry standard, and its technical criteria again leaned toward
 flat-knitted sweaters instead of cut-and-sew performance apparel. The
-compliance references were checked against current official sources. GEO-08 is
-therefore retained as a later buyer-guide topic without expanding the current
-single-operator content workload.
+compliance references were checked against current official sources. At that
+checkpoint GEO-08 was retained as a later buyer-guide topic; the later
+2026-08-11 owner decision above supersedes that sequencing and authorizes the
+one-time three-guide foundation.
 OpenAI documents that Memory can affect ChatGPT Search query
 rewriting. The original GEO-02 through GEO-05 runs are therefore retained as
 exploratory personalized observations. GEO-03 now also has a separately logged

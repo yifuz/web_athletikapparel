@@ -46,7 +46,10 @@ Home  /
 │      /quality-control/ /export-shipping/ — folded into /services/ overview
 │
 ├── TECHNICAL GUIDES
-│   └── /flatlock-vs-overlock-technical-knitwear/
+│   ├── /technical-guides/  (content centre)
+│   ├── /flatlock-vs-overlock-technical-knitwear/  (published)
+│   ├── /technical-knitwear-tech-pack-guide/  (draft; not public)
+│   └── /evaluate-technical-knitwear-oem/  (draft; not public)
 │
 ├── /sustainability/   (correct live slug; no historical redirect implemented)
 ├── /about-us/
@@ -75,7 +78,8 @@ category page, capture inquiries.
 5. Process snapshot — 4-step strip (Sample → Production → QC → Export),
    links to /services/.
 6. Certifications / audits strip — the existing badge row (keep, it's good).
-7. Latest from blog — deferred and disabled until real posts exist.
+7. Technical Guides — stable content-centre entry plus the latest approved
+   technical guide. The generic WordPress post feed remains disabled.
 8. Inquiry CTA band — shared Fluent Form 3 with product category, estimated
    order quantity, business type, company details, and project message.
 
@@ -123,7 +127,28 @@ server-log, or backlink evidence shows that `/products/` has real value.
 
 ---
 
-## 2A. Technical guide — `/flatlock-vs-overlock-technical-knitwear/`  (NEW)
+## 2A. Technical Guides hub — `/technical-guides/`  (NEW)
+
+**H1:** Technical Guides for Performance Knitwear Production
+
+**Purpose:** Provide one stable, crawlable content centre for buyer education
+while individual keyword-aligned guide URLs remain top-level. The homepage,
+primary menu, footer and guide breadcrumbs link here.
+
+**Block outline:**
+1. Direct introduction defining the library as cut-and-sew performance
+   knitwear guidance.
+2. Data-driven cards for owner-approved published guides only.
+3. Scope strip: construction decisions, tech pack preparation and OEM
+   evaluation.
+4. Project-review CTA.
+
+Draft briefs never render as public cards or Schema items. Each new guide is
+added only after owner approval, without restructuring the homepage or hub.
+
+---
+
+## 2B. Technical guide — `/flatlock-vs-overlock-technical-knitwear/`  (NEW)
 
 **H1:** FLATLOCK vs OVERLOCK for Technical Knitwear
 
@@ -141,8 +166,30 @@ buyers an actionable seam-map and tech pack checklist.
 7. Tech pack / spec sheet checklist.
 8. Visible FAQ, primary technical references and inquiry CTA.
 
-The page is linked from the Sportswear and Underwear category pages. It is a
-top-level technical guide, not the start of a `/blog/` hierarchy.
+The page is linked from the Technical Guides hub, homepage, Sportswear and
+Underwear category pages. Its existing top-level URL is retained; the content
+centre does not require a `/blog/` hierarchy or an article URL change.
+
+---
+
+## 2C. Planned guide — `/technical-knitwear-tech-pack-guide/`  (DRAFT)
+
+**H1:** What to Include in a Tech Pack for Technical Knitwear
+
+**Purpose:** Correct the GEO-06 semantic drift by explaining a tech pack for
+cut-and-sew performance knitwear rather than flat-knitted sweater production.
+The page remains non-public until its full draft is owner-approved.
+
+---
+
+## 2D. Planned guide — `/evaluate-technical-knitwear-oem/`  (DRAFT)
+
+**H1:** How to Evaluate a Vertically Integrated Knitwear OEM
+
+**Purpose:** Correct the GEO-08 semantic drift with a risk-based evaluation
+framework for cut-and-sew performance apparel. No arbitrary scoring weights or
+unverified certification claims will be published. The page remains non-public
+until its full draft is owner-approved.
 
 ---
 
@@ -239,7 +286,8 @@ not be implemented unless the owner later reopens the decision.
 7. ~~**Page-by-page visual polish + QA cleanup**~~ — ✅ completed before launch
 8. **Production launch** — ✅ complete on Flywheel; final site and uploads
    synchronized 2026-07-28
-9. **First technical guide** — ✅ approved and implemented locally on
-   2026-08-11; production synchronization pending
+9. **Technical Guides content centre** — ✅ hub, homepage/menu/footer entry and
+   first approved guide implemented locally on 2026-08-11; production
+   synchronization pending. Guides 2 and 3 are in owner-review draft status.
 
 Confirmed slug: `/merino-wool-manufacturer/`.

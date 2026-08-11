@@ -1307,6 +1307,118 @@ body.home .container.grid-container {
   }
 }
 
+/* --- Home: Technical Guides --- */
+.ma-home-guides {
+  background: var(--ma-color-surface);
+}
+
+.ma-home-guides__layout {
+  display: grid;
+  gap: var(--ma-space-5);
+}
+
+.ma-home-guides__intro {
+  align-self: center;
+  max-width: var(--ma-reading-width);
+}
+
+.ma-home-guides__intro h2 {
+  margin: 0;
+  color: var(--ma-color-text);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-h2);
+  line-height: 1.15;
+}
+
+.ma-home-guides__intro p:not(.ma-section-kicker) {
+  margin: var(--ma-space-3) 0 var(--ma-space-4);
+  color: var(--ma-color-muted);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-home-guides__featured a {
+  display: grid;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-bg);
+  color: var(--ma-color-text);
+  text-decoration: none;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.ma-home-guides__featured a:hover,
+.ma-home-guides__featured a:focus-visible {
+  border-color: var(--ma-color-accent);
+  transform: translateY(calc(-1 * var(--ma-space-1)));
+}
+
+.ma-home-guides__featured a:focus-visible {
+  outline: 3px solid var(--ma-color-accent);
+  outline-offset: var(--ma-space-1);
+}
+
+.ma-home-guides__media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--ma-color-border);
+}
+
+.ma-home-guides__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ma-home-guides__featured-copy {
+  padding: var(--ma-space-4);
+}
+
+.ma-home-guides__featured-copy p,
+.ma-home-guides__featured-copy h3 {
+  margin: 0;
+}
+
+.ma-home-guides__featured-copy p {
+  color: var(--ma-color-accent-2);
+  font-size: var(--ma-fs-small);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ma-home-guides__featured-copy h3 {
+  margin-top: var(--ma-space-2);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-h3);
+  line-height: 1.25;
+}
+
+.ma-home-guides__featured-copy > span {
+  display: inline-block;
+  margin-top: var(--ma-space-3);
+  color: var(--ma-color-accent-2);
+  font-weight: 700;
+}
+
+@media (min-width: 48rem) {
+  .ma-home-guides__layout {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: stretch;
+  }
+
+  .ma-home-guides__featured a {
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .ma-home-guides__featured-copy {
+    align-self: center;
+  }
+}
+
 /* --- Home: Product Categories (Bento layout, v2) ---
    Three tiers by card area:
      Tier 1  feature (Sportswear, big left card) + t1-side (Merino, tall right)
@@ -3655,6 +3767,241 @@ body.page .container.grid-container:has(.ma-product-category) {
   .ma-home-inquiry__layout {
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     align-items: start;
+  }
+}
+
+/* --- Technical Guides hub --- */
+.ma-technical-guides {
+  background: var(--ma-color-bg);
+  color: var(--ma-color-text);
+}
+
+.ma-technical-guides__hero {
+  border-bottom: 1px solid var(--ma-color-border);
+  background: var(--ma-color-surface);
+}
+
+.ma-technical-guides__hero-inner,
+.ma-technical-guides__inner,
+.ma-technical-guides__cta-inner {
+  width: 100%;
+  max-width: var(--ma-container);
+  margin: 0 auto;
+  padding: var(--ma-section-y) var(--ma-space-4);
+  box-sizing: border-box;
+}
+
+.ma-technical-guides__breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ma-space-2);
+  margin-bottom: var(--ma-space-5);
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-small);
+}
+
+.ma-technical-guides__breadcrumb a {
+  color: var(--ma-color-accent-2);
+  text-decoration: underline;
+  text-underline-offset: var(--ma-space-1);
+}
+
+.ma-technical-guides__breadcrumb a:hover,
+.ma-technical-guides__breadcrumb a:focus {
+  color: var(--ma-color-accent);
+}
+
+.ma-technical-guides__hero h1 {
+  max-width: var(--ma-article-title-width);
+  margin: 0;
+  color: var(--ma-color-text);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-h1);
+  line-height: 1.08;
+}
+
+.ma-technical-guides__lede {
+  max-width: var(--ma-reading-width);
+  margin: var(--ma-space-4) 0 0;
+  color: var(--ma-color-muted);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-technical-guides__grid {
+  display: grid;
+  gap: var(--ma-space-4);
+  margin-top: var(--ma-space-5);
+}
+
+.ma-guide-card a {
+  display: grid;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  color: var(--ma-color-text);
+  text-decoration: none;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.ma-guide-card a:hover,
+.ma-guide-card a:focus-visible {
+  border-color: var(--ma-color-accent);
+  transform: translateY(calc(-1 * var(--ma-space-1)));
+}
+
+.ma-guide-card a:focus-visible {
+  outline: 3px solid var(--ma-color-accent);
+  outline-offset: var(--ma-space-1);
+}
+
+.ma-guide-card__media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--ma-color-border);
+}
+
+.ma-guide-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ma-guide-card__content {
+  padding: var(--ma-space-4);
+}
+
+.ma-guide-card__topic,
+.ma-guide-card__content h3,
+.ma-guide-card__content > p {
+  margin: 0;
+}
+
+.ma-guide-card__topic {
+  color: var(--ma-color-accent-2);
+  font-size: var(--ma-fs-small);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ma-guide-card__content h3 {
+  margin-top: var(--ma-space-2);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-h3);
+  line-height: 1.25;
+}
+
+.ma-guide-card__content > p {
+  margin-top: var(--ma-space-3);
+  color: var(--ma-color-muted);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-guide-card__link {
+  display: inline-block;
+  margin-top: var(--ma-space-4);
+  color: var(--ma-color-accent-2);
+  font-weight: 700;
+}
+
+.ma-technical-guides__scope {
+  background: var(--ma-color-surface);
+}
+
+.ma-technical-guides__scope-grid {
+  display: grid;
+  gap: var(--ma-space-4);
+  margin-top: var(--ma-space-5);
+}
+
+.ma-technical-guides__scope-grid article {
+  padding: var(--ma-space-4);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-bg);
+}
+
+.ma-technical-guides__scope-grid article > span {
+  color: var(--ma-color-accent);
+  font-family: var(--ma-font-head);
+  font-weight: 700;
+}
+
+.ma-technical-guides__scope-grid h3,
+.ma-technical-guides__scope-grid p {
+  margin: 0;
+}
+
+.ma-technical-guides__scope-grid h3 {
+  margin-top: var(--ma-space-3);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-h3);
+}
+
+.ma-technical-guides__scope-grid p {
+  margin-top: var(--ma-space-2);
+  color: var(--ma-color-muted);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-technical-guides__cta {
+  background: var(--ma-color-dark);
+}
+
+.ma-technical-guides__cta-inner {
+  display: grid;
+  gap: var(--ma-space-5);
+}
+
+.ma-technical-guides__cta .ma-section-kicker,
+.ma-technical-guides__cta h2 {
+  color: var(--ma-color-bg);
+}
+
+.ma-technical-guides__cta h2 {
+  margin: 0;
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-h2);
+}
+
+.ma-technical-guides__cta p:not(.ma-section-kicker) {
+  max-width: var(--ma-reading-width);
+  margin: var(--ma-space-3) 0 0;
+  color: var(--ma-color-border);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-technical-guides__cta .ma-button {
+  justify-self: start;
+}
+
+@media (min-width: 48rem) {
+  .ma-technical-guides__grid {
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  }
+
+  .ma-guide-card:only-child {
+    grid-column: 1 / -1;
+  }
+
+  .ma-guide-card:only-child a {
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
+  }
+
+  .ma-guide-card:only-child .ma-guide-card__content {
+    align-self: center;
+  }
+
+  .ma-technical-guides__scope-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ma-technical-guides__cta-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
   }
 }
 
