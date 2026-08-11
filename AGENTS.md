@@ -259,13 +259,15 @@ reopened:
 ## 5. Brand voice & copy rules
 
 - Language: **English**, written for North American / European B2B buyers.
-- **The user writes all long-form body copy.** Do NOT auto-generate or
-  ghost-write page body content, product descriptions, or marketing paragraphs
-  unless explicitly asked. The agent's job here is structure, blocks, code,
-  layout, headings/labels, alt text, and cleanup — not authoring prose. When a
-  content slot is empty, insert a clearly marked placeholder
-  (`【CONTENT: user to write】`) rather than filling it in.
-- Tone (for the headings/labels/microcopy agents DO write): technical,
+- **Agents may draft long-form body copy only when the user explicitly asks or
+  authorizes them to do so.** A scoped request to write, draft, rewrite or
+  translate specific content is authorization for that content. Without such
+  authorization, limit work to structure, blocks, code, layout,
+  headings/labels, alt text and cleanup, and use `【CONTENT: user to write】` for
+  empty prose slots. Agent-written long-form copy must be clearly treated as a
+  draft, grounded in approved facts and sources, and reviewed and approved by
+  the owner before publication.
+- Tone (for all agent-written text): technical,
   confident, specific. Avoid startup-pitch warmth; this is a manufacturer
   talking to professional buyers.
 - Do not invent facts, certifications, capacity numbers, or client names. If a
@@ -274,10 +276,9 @@ reopened:
 
 ## 6. Terminology — spelling consistency reference
 
-The user writes long-form copy themselves. Agents should NOT auto-generate or
-translate body content. This list exists only so that when an agent edits small
-bits of text, fixes alt text, or generates headings/labels, it spells these
-technical terms the same way the user does:
+Agents may draft or translate body content only under the explicit-authorization
+rule in §5. In all authored or edited text, spell these technical terms the same
+way the user does:
 
 - FLATLOCK (flatlock seam / flatlock stitch)
 - ACTIVESEAM

@@ -11,6 +11,15 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
+Last updated: 2026-08-11 — The owner corrected the project copy rule and
+explicitly authorized an agent-written long-form draft when requested. The
+canonical `AGENTS.md` rule and `wp-brand-voice-guard` skill now require explicit
+authorization, source-backed facts and owner approval before publication rather
+than prohibiting agent-written body copy. A complete English review draft of
+`FLATLOCK vs OVERLOCK for Technical Knitwear` is in
+`docs/article-draft-flatlock-vs-overlock.md`. It is an internal document only;
+no WordPress page, URL, video or media asset was created or deployed.
+
 Last updated: 2026-08-11 — First-party video evidence has been selected for the
 planned FLATLOCK-versus-OVERLOCK article: `羊毛提花260623.mp4` for Yamato
 FLATLOCK and `密拷260718.mp4` for OVERLOCK. Both source files were validated as
@@ -381,7 +390,8 @@ launch record).
 - Voice: professional + credible + warm. Not startup hand-holding.
 - URLs: top-level keyword style (/sportswear-manufacturer/ etc.). No legacy
   redirects are currently deployed; see the pending migration audit below.
-- User writes all long-form body copy unless explicitly requested otherwise.
+- Agents may draft long-form body copy only when the user explicitly requests
+  or authorizes it; owner review is required before publication.
 - No stock photos on live pages. Use placeholders for missing real photos.
 - Confirmed numbers: 15+ yrs / 4,500+ sq m own facility / 100,000+ pcs/month /
   3 continents. Russia deliberately removed from the regions list

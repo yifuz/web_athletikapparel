@@ -11,8 +11,8 @@ rebuild's implementation scope; current URL/SEO work applies only to
 
 Companion to `AGENTS.md`. This is the build blueprint: every page, its URL, its
 single H1, target search intent, historical URL context, and content-block
-outline. The user writes all long-form body copy; this plan defines structure
-only.
+outline. Agents may draft long-form body copy when the user explicitly requests
+or authorizes it; owner review is required before publication.
 
 Legend:
 - **NEW** = page didn't exist before, no redirect needed

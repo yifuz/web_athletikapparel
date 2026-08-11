@@ -2,13 +2,14 @@
 name: wp-brand-voice-guard
 description: >
   Brand voice, terminology, and anti-fabrication guard for myathletik-child.
-  Enforces AGENTS.md §5 (no auto-authored body copy, use placeholders) and §6
+  Enforces AGENTS.md §5 (explicit authorization for long-form copy, owner
+  review before publication) and §6
   (consistent technical term spelling: FLATLOCK, ACTIVESEAM, SELF FABRIC,
   SCREENPRINT, COVERSTITCH, OVERLOCK, Carbondry, Laser perforation, Merino
   wool, Vertically integrated OEM, MOQ, Tech pack / spec sheet). Also blocks
   invented facts (certifications, factory counts, capacity numbers, client
-  names) and ensures empty content slots use 【CONTENT: user to write】 /
-  【NEEDS INPUT: ...】 placeholders. Use whenever the user asks to 写文案 /
+  names) and ensures unauthorized or factually incomplete content slots use
+  【CONTENT: user to write】 / 【NEEDS INPUT: ...】 placeholders. Use whenever the user asks to 写文案 /
   改文字 / 检查术语 / 拼写检查 / 品牌口吻, or says "write copy", "check
   terminology", "fix spelling", "brand voice", "rewrite this text", "what
   should this say", or before publishing/committing any page that contains
@@ -23,21 +24,22 @@ This skill enforces the **content rules** in AGENTS.md §5 and §6. It's the
 
 ## The two hard rules
 
-### Rule 1 — No auto-authored body copy (AGENTS.md §5)
+### Rule 1 — Draft body copy only with explicit authorization (AGENTS.md §5)
 
-> The user writes all long-form body copy. Do NOT auto-generate or ghost-write
-> page body content, product descriptions, or marketing paragraphs unless
-> explicitly asked. When a content slot is empty, insert a clearly marked
-> placeholder rather than filling it in.
+> Agents may draft long-form body copy only when the user explicitly asks or
+> authorizes them to do so. A scoped request to write, draft, rewrite or
+> translate specific content counts as authorization for that content. The
+> result remains a draft until the owner reviews and approves it for
+> publication.
 
-What the agent **may** write (structural / microcopy):
+What the agent **may always** write (structural / microcopy):
 - Headings and labels (H1/H2/H3 text, nav labels, button labels)
 - alt text (real keywords — see `wp-image-optimize`)
 - SEO Title / Meta Description (per `seo-tags.md`, technical tone)
 - Schema field values that are factual (entity name, URL — not marketing copy)
 - Code comments, commit messages
 
-What the agent **must NOT** write (long-form prose):
+What the agent **may write only with explicit user authorization**:
 - Page intro paragraphs
 - Product descriptions
 - Marketing / positioning paragraphs
@@ -45,7 +47,7 @@ What the agent **must NOT** write (long-form prose):
 - Service process explanations
 - Blog posts
 
-When such a slot is empty, insert:
+When authorization is absent, or a required fact is unknown, insert:
 - `【CONTENT: user to write】` — for prose the user will author.
 - `【NEEDS INPUT: <what's needed>】` — for a specific unknown fact.
 
@@ -106,19 +108,22 @@ entity.
 
 Before committing any page or template that contains text:
 
-1. **Scan for placeholders still in place.** If `【CONTENT: ...】` or
+1. **Confirm the authorization and approval state.** Long-form copy needs an
+   explicit user request or authorization. Treat new agent-written copy as a
+   draft until the owner approves it for publication.
+2. **Scan for placeholders still in place.** If `【CONTENT: ...】` or
    `【NEEDS INPUT: ...】` is still in the file, decide:
    - If publishing to production → block / warn (placeholders must not ship).
    - If local dev / staging → OK to commit, but flag in the commit message.
-2. **Scan for fabricated facts.** Grep for numbers, certifications, years,
+3. **Scan for fabricated facts.** Grep for numbers, certifications, years,
    client names that aren't sourced from `seo-tags.md` / `docs/` / user input.
-3. **Scan for terminology drift.** Check the terms above are spelled correctly.
-4. **Scan for stock-photo-style marketing fluff** the agent might have slipped
+4. **Scan for terminology drift.** Check the terms above are spelled correctly.
+5. **Scan for stock-photo-style marketing fluff** the agent might have slipped
    in ("world-class", "industry-leading", "cutting-edge", "premier",
    "top-tier", "best-in-class"). These violate the technical-confident tone.
    Replace with specific technical claims or remove.
 
-## Tone (for the text the agent IS allowed to write)
+## Tone (for agent-written text)
 
 From AGENTS.md §5 + `docs/design-brief.md`:
 - **Technical, confident, specific.** Like a manufacturer talking to
@@ -155,17 +160,21 @@ When checking existing content:
 - <what's correct>
 ```
 
-When the user asks the agent to write something it shouldn't (body copy):
-- Refuse politely: "That's body copy, which per AGENTS.md §5 you write. I've
-  left a `【CONTENT: ...】` placeholder. Want me to draft a structure/outline
-  for you to fill?"
-- Offer the structural help (heading outline, key points list) without
-  authoring the prose.
+When the user explicitly asks the agent to write long-form body copy:
+- Draft only the requested scope.
+- Mark the result as a draft requiring owner review before publication.
+- Use approved facts and primary sources; use `【NEEDS INPUT: ...】` for any
+  missing factual detail instead of filling the gap.
+
+When the request is ambiguous and would require substantial new body copy:
+- Ask whether the user wants a full draft, or provide an outline with
+  `【CONTENT: user to write】` placeholders.
 
 ## Rules
 
-- **Placeholders over prose.** When in doubt, insert `【CONTENT: ...】` /
-  `【NEEDS INPUT: ...】` and ask.
+- **Authorization before prose.** Draft long-form copy only within an explicit
+  user request. When authorization or a required fact is missing, insert
+  `【CONTENT: ...】` / `【NEEDS INPUT: ...】` and ask.
 - **Reuse user-stated facts only.** What's in `seo-tags.md`, `docs/sitemap.md`,
   `*-copy.md`, or that the user said in conversation. Cite the source when
   reusing.

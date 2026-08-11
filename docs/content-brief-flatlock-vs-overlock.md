@@ -1,6 +1,7 @@
 # Content Brief — FLATLOCK vs OVERLOCK for Technical Knitwear
 
-> Status: internal outline only; not approved for publication.
+> Status: first long-form draft prepared; owner review required before
+> publication. Draft file: `docs/article-draft-flatlock-vs-overlock.md`.
 > Purpose: create one first-hand technical article that can support buyer
 > research, conventional SEO and GEO observation without generic AI filler.
 
@@ -67,15 +68,15 @@
 
 ### Opening answer
 
-【CONTENT: user to write — answer the primary buyer question directly in 60–100 words】
+Drafted in `docs/article-draft-flatlock-vs-overlock.md`; owner review pending.
 
 ### H2 — What is FLATLOCK construction?
 
-【CONTENT: user to write — definition based on actual machinery and seam samples】
+Drafted in `docs/article-draft-flatlock-vs-overlock.md`; owner review pending.
 
 ### H2 — What is OVERLOCK construction?
 
-【CONTENT: user to write — definition and actual production context】
+Drafted in `docs/article-draft-flatlock-vs-overlock.md`; owner review pending.
 
 ### H2 — FLATLOCK vs OVERLOCK comparison
 
@@ -91,16 +92,15 @@ Complete only confirmed cells. Remove any row that cannot be supported.
 
 ### H2 — When buyers should specify FLATLOCK
 
-【CONTENT: user to write — use concrete garment scenarios, not promotional claims】
+Drafted in `docs/article-draft-flatlock-vs-overlock.md`; owner review pending.
 
 ### H2 — When OVERLOCK may be the appropriate construction
 
-【CONTENT: user to write — include limitations and trade-offs】
+Drafted in `docs/article-draft-flatlock-vs-overlock.md`; owner review pending.
 
 ### H2 — What to include in the tech pack / spec sheet
 
-【CONTENT: user to write — seam callouts, stitch references, garment locations,
-fabric details, tolerances and sample-review points actually required】
+Drafted in `docs/article-draft-flatlock-vs-overlock.md`; owner review pending.
 
 ### H2 — Questions buyers commonly ask
 
@@ -111,7 +111,8 @@ the page. Potential questions:
 - Can FLATLOCK be used on lightweight stretch fabric?
 - What seam information should be included in a tech pack / spec sheet?
 
-【CONTENT: user to write answers; omit FAQPage Schema until the visible answers are final】
+Answers are drafted in `docs/article-draft-flatlock-vs-overlock.md`. Omit
+FAQPage Schema until the visible answers are owner-approved and final.
 
 ## 4. Internal evidence and links
 
@@ -140,7 +141,9 @@ the page. Potential questions:
 
 ## 5. Publication gate
 
-- [ ] User supplies and approves all long-form technical body copy.
+- [x] Owner explicitly authorized Codex to prepare the long-form technical
+  first draft on 2026-08-11.
+- [ ] Owner reviews, corrects where needed and approves the final body copy.
 - [ ] Author and reviewer identity confirmed.
 - [ ] Claims checked against real production evidence.
 - [x] FLATLOCK and OVERLOCK production-video candidates selected and file metadata validated.
