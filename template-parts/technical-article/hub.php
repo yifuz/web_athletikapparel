@@ -43,8 +43,8 @@ $media    = get_stylesheet_directory_uri() . '/assets/images/';
 								<div class="ma-guide-card__media">
 									<img
 										src="<?php echo esc_url( $media . ltrim( $article['featured_image'], '/' ) ); ?>"
-										width="720"
-										height="1280"
+										width="<?php echo esc_attr( $article['featured_width'] ); ?>"
+										height="<?php echo esc_attr( $article['featured_height'] ); ?>"
 										loading="lazy"
 										decoding="async"
 										sizes="(max-width: 767px) 100vw, 42vw"

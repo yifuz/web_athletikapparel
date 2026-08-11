@@ -34,8 +34,8 @@ $image_url = get_stylesheet_directory_uri() . '/assets/images/' . ltrim( $articl
 				<div class="ma-home-guides__media">
 					<img
 						src="<?php echo esc_url( $image_url ); ?>"
-						width="720"
-						height="1280"
+						width="<?php echo esc_attr( $article['featured_width'] ); ?>"
+						height="<?php echo esc_attr( $article['featured_height'] ); ?>"
 						loading="lazy"
 						decoding="async"
 						sizes="(max-width: 767px) 100vw, 40vw"

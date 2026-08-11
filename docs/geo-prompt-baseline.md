@@ -189,8 +189,9 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 - [SLCP 官方说明](https://slconvergence.org/tool)明确其 CAF 提供经核验的工厂社会与劳工数据，但 SLCP 本身不评分或作价值判断；品牌仍需按自己的准则分析。[ZDHC 供应商化学品管理说明](https://programme.roadmaptozero.com/suppliers/process/chemical-management-strategy-v1/plan-and-allocate-resources-to-implement-the-chemical-management-strategy)支持检查化学品清单、MRSL、SDS、废水和改进记录。[OEKO-TEX STANDARD 100](https://www.oeko-tex.com/en/our-standards/oeko-tex-standard-100)只证明相应纺织品通过有害物质测试，不证明劳动、工厂所有权或全部环境表现；回答对此限制说明正确。
 - 2026-08-11 的 owner decision 取代上述旧排期：现在先建立稳定的
   Technical Guides 内容中心，并一次性完成三篇基础内容。GEO-08 因此作为
-  第三篇完整草稿推进，但在 owner 审核前不公开。这是一次性的内容基础建设，
-  不代表单人运营此后固定采用每期三篇的更新节奏。
+  第三篇完整草稿推进，并在 owner 审核通过后与 tech pack 指南一起接入公开
+  内容中心。这是一次性的内容基础建设，不代表单人运营此后固定采用每期三篇
+  的更新节奏。
 
 ## 6. 实体冲突登记表
 

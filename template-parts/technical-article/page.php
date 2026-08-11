@@ -94,9 +94,9 @@ $reviewed_display  = wp_date( 'F j, Y', strtotime( $reviewed_iso ) );
 		<footer class="ma-technical-article__cta" aria-labelledby="ma-technical-article-cta-title">
 			<div class="ma-technical-article__cta-inner">
 				<div>
-					<p class="ma-section-kicker"><?php esc_html_e( 'Develop a technical knitwear program', 'myathletik-child' ); ?></p>
-					<h2 id="ma-technical-article-cta-title"><?php esc_html_e( 'Review the seam map before sampling', 'myathletik-child' ); ?></h2>
-					<p><?php esc_html_e( 'Send the garment drawing or tech pack, fabric specification, intended use, order quantity and required testing so the construction can be reviewed against the actual program.', 'myathletik-child' ); ?></p>
+					<p class="ma-section-kicker"><?php echo esc_html( $article['cta_kicker'] ); ?></p>
+					<h2 id="ma-technical-article-cta-title"><?php echo esc_html( $article['cta_title'] ); ?></h2>
+					<p><?php echo esc_html( $article['cta_copy'] ); ?></p>
 				</div>
 				<a class="ma-button ma-button--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Discuss Your Project', 'myathletik-child' ); ?></a>
 			</div>

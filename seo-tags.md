@@ -129,7 +129,7 @@ Compare FLATLOCK and OVERLOCK for technical knitwear: seam profile, 607/514
 stitch references, garment applications, testing and tech pack callouts.
 
 ================================================================
-## Planned technical guide  (/technical-knitwear-tech-pack-guide/) — DRAFT
+## Technical guide  (/technical-knitwear-tech-pack-guide/)
 ================================================================
 Primary keyword: technical knitwear tech pack
 
@@ -141,7 +141,7 @@ Build a cut-and-sew technical knitwear tech pack with fabric specifications,
 seam maps, POMs, tolerances, testing requirements and approval stages.
 
 ================================================================
-## Planned technical guide  (/evaluate-technical-knitwear-oem/) — DRAFT
+## Technical guide  (/evaluate-technical-knitwear-oem/)
 ================================================================
 Primary keyword: evaluate technical knitwear OEM
 

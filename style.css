@@ -3798,7 +3798,7 @@ body.page .site-main.ma-technical-article {
 }
 
 .ma-technical-guides {
-  width: 100vw;
+  width: 100%;
   max-width: none;
   background: var(--ma-color-bg);
   color: var(--ma-color-text);
@@ -4043,7 +4043,7 @@ body.page .site-main.ma-technical-article {
 
 /* --- Technical article pages --- */
 .ma-technical-article {
-  width: 100vw;
+  width: 100%;
   max-width: none;
   background: var(--ma-color-bg);
   color: var(--ma-color-text);

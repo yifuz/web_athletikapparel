@@ -281,13 +281,13 @@ function myathletik_rank_math_technical_article_schema( $data ) {
 		'datePublished'    => get_post_time( DATE_W3C, false, $page_id ),
 		'dateModified'     => get_post_modified_time( DATE_W3C, false, $page_id ),
 		'inLanguage'       => 'en-US',
-		'articleSection'   => 'Technical knitwear construction',
+		'articleSection'   => $article['article_section'],
 		'mainEntityOfPage' => array( '@id' => $webpage_id ),
 		'image'            => array(
 			'@type'  => 'ImageObject',
 			'url'    => $image_url,
-			'width'  => 720,
-			'height' => 1280,
+			'width'  => (int) $article['featured_width'],
+			'height' => (int) $article['featured_height'],
 		),
 		'author'           => array(
 			'@type' => 'Organization',
@@ -295,7 +295,7 @@ function myathletik_rank_math_technical_article_schema( $data ) {
 			'url'   => home_url( '/about-us/' ),
 		),
 		'publisher'        => array( '@id' => $publisher_id ),
-		'about'            => array( 'FLATLOCK', 'OVERLOCK', 'ACTIVESEAM', 'Technical knitwear' ),
+		'about'            => $article['about'],
 	);
 
 	$questions = array();
@@ -429,7 +429,7 @@ add_filter( 'rank_math/json_ld', 'myathletik_rank_math_technical_guides_schema',
  * @return int Unix timestamp in UTC.
  */
 function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
-	$latest = strtotime( '2026-08-11 03:15:00 UTC' );
+	$latest = strtotime( '2026-08-11 05:00:00 UTC' );
 
 	if ( '' === $url ) {
 		return $latest;
@@ -446,6 +446,8 @@ function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
 				'/',
 				'/technical-guides/',
 				'/flatlock-vs-overlock-technical-knitwear/',
+				'/technical-knitwear-tech-pack-guide/',
+				'/evaluate-technical-knitwear-oem/',
 			),
 			true
 		)
@@ -461,7 +463,7 @@ function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
 }
 
 /**
- * Check whether a Sitemap URL belongs to one of the 14 managed core pages.
+ * Check whether a Sitemap URL belongs to one of the 16 managed core pages.
  *
  * @param string $url Absolute Sitemap URL.
  * @return bool
@@ -482,6 +484,8 @@ function myathletik_rank_math_is_core_sitemap_url( $url ) {
 			'/',
 			'/technical-guides/',
 			'/flatlock-vs-overlock-technical-knitwear/',
+			'/technical-knitwear-tech-pack-guide/',
+			'/evaluate-technical-knitwear-oem/',
 			'/sportswear-manufacturer/',
 			'/underwear-manufacturer/',
 			'/outdoor-clothing-manufacturer/',

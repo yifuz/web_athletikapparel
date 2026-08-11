@@ -11,6 +11,18 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
+Last updated: 2026-08-11 — The owner approved the two remaining foundation
+guides for publication. `/technical-knitwear-tech-pack-guide/` and
+`/evaluate-technical-knitwear-oem/` now use the existing shared article layout,
+with page-specific content, tables of contents, visible FAQs, primary
+references, CTA copy, Rank Math metadata and Article/FAQPage/BreadcrumbList
+Schema. The data-driven `/technical-guides/` hub now exposes all three approved
+guides and its ItemList Schema matches the visible cards. Existing uploads
+provide a real technical-sewing image and production-floor image; no new media
+deployment is required. Official source links were rechecked on publication
+day. Local rendering and production synchronization are recorded separately
+after final validation.
+
 Last updated: 2026-08-11 — Tightened the Technical Guides and article heroes
 after owner review. The hub H1 and intro are reduced to one concise positioning
 pair; the FLATLOCK-versus-OVERLOCK article introduction now states only the
@@ -31,16 +43,11 @@ the entry after three publications. `/technical-guides/` is implemented as a
 stable, data-driven hub, with permanent entry points on the homepage, primary
 menu, footer and guide breadcrumbs. Its public cards and ItemList Schema read
 only owner-approved `publish` entries, so unfinished drafts cannot leak onto
-the site. The approved FLATLOCK-versus-OVERLOCK guide is the first public
-entry. Full internal review drafts for the technical-knitwear tech-pack guide
-and vertically integrated OEM evaluation guide are complete in `docs/`; their
-public templates, registry entries and Article Schema remain intentionally
-unbuilt until owner approval. This is an initial content sprint, not a change
-to the conservative ongoing workload for a single operator. Local WordPress
-rendering returns HTTP 200 for the hub and existing guide; the hub has one H1,
-one published card, matching CollectionPage/ItemList/BreadcrumbList Schema and
-one Sitemap entry after the local Rank Math Sitemap cache refresh. Neither
-draft URL appears in rendered HTML, Schema or the Sitemap.
+the site. At that checkpoint, the approved FLATLOCK-versus-OVERLOCK guide was
+the first public entry and the other two guides remained internal drafts. The
+later owner approval and three-guide publication supersede that temporary
+state. This is an initial content sprint, not a change to the conservative
+ongoing workload for a single operator.
 
 Last updated: 2026-08-11 — The owner approved the complete FLATLOCK-versus-
 OVERLOCK article for deployment. A code-rendered page at

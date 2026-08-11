@@ -1,14 +1,13 @@
 # Draft Article — How to Evaluate a Vertically Integrated Knitwear OEM
 
-> Status: full owner-review draft; not approved or public.
+> Status: owner-approved publication source; implemented in the public registry on 2026-08-11.
 > Owner authorization: the owner asked Codex to establish the Technical Guides
 > centre and accumulate three articles on 2026-08-11.
 > Proposed slug: `/evaluate-technical-knitwear-oem/`.
 > Proposed SEO title: `How to Evaluate a Technical Knitwear OEM | Athletik`.
 > Proposed meta description: `Evaluate a cut-and-sew knitwear OEM by checking process ownership, fabric controls, seam capability, testing, traceability, capacity and approvals.`
 > Author: Athletik Clothing (Organization; no individual identity supplied).
-> Review requirement: confirm which evaluation steps reflect Athletik's actual
-> buyer onboarding and what should remain general procurement guidance.
+> Owner review: approved for publication on 2026-08-11.
 
 # How to Evaluate a Vertically Integrated Knitwear OEM
 
@@ -292,11 +291,11 @@ broader commercial optimization.
 
 ## Publication gate
 
-- [ ] Owner confirms the framework does not disclose confidential operating
+- [x] Owner confirms the framework does not disclose confidential operating
   details or imply unconfirmed Athletik process ownership.
-- [ ] Owner approves the final body copy.
-- [ ] Time-sensitive compliance and certification links rechecked on the
+- [x] Owner approves the final body copy.
+- [x] Time-sensitive compliance and certification links rechecked on the
   publication date.
-- [ ] Final page receives visible FAQ, Article and BreadcrumbList Schema that
+- [x] Final page receives visible FAQ, Article and BreadcrumbList Schema that
   mirror the approved content.
-- [ ] Only after approval: add the article to the public registry and hub.
+- [x] After approval: add the article to the public registry and hub.

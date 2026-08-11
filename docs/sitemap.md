@@ -172,24 +172,28 @@ centre does not require a `/blog/` hierarchy or an article URL change.
 
 ---
 
-## 2C. Planned guide — `/technical-knitwear-tech-pack-guide/`  (DRAFT)
+## 2C. Technical guide — `/technical-knitwear-tech-pack-guide/`  (NEW)
 
 **H1:** What to Include in a Tech Pack for Technical Knitwear
 
 **Purpose:** Correct the GEO-06 semantic drift by explaining a tech pack for
 cut-and-sew performance knitwear rather than flat-knitted sweater production.
-The page remains non-public until its full draft is owner-approved.
+The owner approved the full draft for publication on 2026-08-11. The page uses
+the shared article layout and covers document control, technical flats, POMs,
+finished-fabric specifications, seam maps, testing and sample approvals.
 
 ---
 
-## 2D. Planned guide — `/evaluate-technical-knitwear-oem/`  (DRAFT)
+## 2D. Technical guide — `/evaluate-technical-knitwear-oem/`  (NEW)
 
 **H1:** How to Evaluate a Vertically Integrated Knitwear OEM
 
 **Purpose:** Correct the GEO-08 semantic drift with a risk-based evaluation
 framework for cut-and-sew performance apparel. No arbitrary scoring weights or
-unverified certification claims will be published. The page remains non-public
-until its full draft is owner-approved.
+unverified certification claims are presented as proof. The owner approved the
+full draft for publication on 2026-08-11. The page uses the shared article
+layout and covers legal identity, process ownership, technical capability,
+fabric controls, traceability, project-level capacity and quotation scope.
 
 ---
 
@@ -287,7 +291,7 @@ not be implemented unless the owner later reopens the decision.
 8. **Production launch** — ✅ complete on Flywheel; final site and uploads
    synchronized 2026-07-28
 9. **Technical Guides content centre** — ✅ hub, homepage/menu/footer entry and
-   first approved guide implemented locally on 2026-08-11; production
-   synchronization pending. Guides 2 and 3 are in owner-review draft status.
+   all three approved foundation guides implemented locally on 2026-08-11;
+   production synchronization pending.
 
 Confirmed slug: `/merino-wool-manufacturer/`.

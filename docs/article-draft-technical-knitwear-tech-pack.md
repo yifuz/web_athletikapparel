@@ -1,14 +1,13 @@
 # Draft Article — What to Include in a Tech Pack for Technical Knitwear
 
-> Status: full owner-review draft; not approved or public.
+> Status: owner-approved publication source; implemented in the public registry on 2026-08-11.
 > Owner authorization: the owner asked Codex to establish the Technical Guides
 > centre and accumulate three articles on 2026-08-11.
 > Proposed slug: `/technical-knitwear-tech-pack-guide/`.
 > Proposed SEO title: `Technical Knitwear Tech Pack Guide | Athletik Clothing`.
 > Proposed meta description: `Build a cut-and-sew technical knitwear tech pack with fabric specifications, seam maps, POMs, tolerances, testing requirements and approval stages.`
 > Author: Athletik Clothing (Organization; no individual identity supplied).
-> Review requirement: confirm the final checklist reflects actual development
-> practice before this article is added to the public article registry.
+> Owner review: approved for publication on 2026-08-11.
 
 # What to Include in a Tech Pack for Technical Knitwear
 
@@ -242,10 +241,10 @@ next controlled revision.
 
 ## Publication gate
 
-- [ ] Owner confirms the checklist reflects Athletik's actual development
+- [x] Owner confirms the checklist reflects Athletik's actual development
   handoff and approval workflow.
-- [ ] Owner approves the final body copy.
-- [ ] Relevant primary-source links rechecked on the publication date.
-- [ ] Final page receives visible FAQ, Article and BreadcrumbList Schema that
+- [x] Owner approves the final body copy.
+- [x] Relevant primary-source links rechecked on the publication date.
+- [x] Final page receives visible FAQ, Article and BreadcrumbList Schema that
   mirror the approved content.
-- [ ] Only after approval: add the article to the public registry and hub.
+- [x] After approval: add the article to the public registry and hub.
