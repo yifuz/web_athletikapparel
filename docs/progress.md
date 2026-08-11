@@ -11,6 +11,13 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
+Last updated: 2026-08-11 — Tightened the Technical Guides and article heroes
+after owner review. The hub H1 and intro are reduced to one concise positioning
+pair; the FLATLOCK-versus-OVERLOCK article introduction now states only the
+core selection logic. Both page shells are full-bleed like the other coded
+inner pages, while hero text remains aligned to the shared content container.
+Breadcrumb, lead and metadata spacing are reduced on desktop and mobile.
+
 Last updated: 2026-08-11 — Corrected the primary-navigation priority after the
 Technical Guides rollout. `Guides` remains a normal navigation item immediately
 before `Contact`; `Contact` is restored as the final item and the only filled

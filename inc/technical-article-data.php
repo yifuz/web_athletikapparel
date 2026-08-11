@@ -16,11 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function myathletik_technical_guides_hub_data() {
 	return array(
-		'title'            => __( 'Technical Guides for Performance Knitwear Production', 'myathletik-child' ),
+		'title'            => __( 'Technical Knitwear Guides', 'myathletik-child' ),
 		'seo_title'        => __( 'Technical Knitwear Guides for Buyers | Athletik Clothing', 'myathletik-child' ),
 		'meta_description' => __( 'Practical technical guides for cut-and-sew performance knitwear buyers, covering seam construction, tech packs, testing and OEM evaluation.', 'myathletik-child' ),
 		'kicker'           => __( 'Buyer resource library', 'myathletik-child' ),
-		'intro'            => __( 'Practical guidance for buyers developing cut-and-sew performance knitwear. The library focuses on construction decisions, fabric and garment specifications, sampling, testing and supplier evaluation.', 'myathletik-child' ),
+		'intro'            => __( 'Production guidance on seam construction, tech packs, testing and OEM evaluation for cut-and-sew performance knitwear.', 'myathletik-child' ),
 		'scope'            => array(
 			array(
 				'title' => __( 'Construction decisions', 'myathletik-child' ),
@@ -57,7 +57,7 @@ function myathletik_technical_article_data() {
 			'kicker'           => __( 'Technical construction guide', 'myathletik-child' ),
 			'topic'            => __( 'Seam construction', 'myathletik-child' ),
 			'summary'          => __( 'Compare seam profile, stitch types 607 and 514, garment applications, testing considerations and the seam information buyers should include in a tech pack.', 'myathletik-child' ),
-			'intro'            => __( 'FLATLOCK and OVERLOCK are both used to assemble stretch knitted garments, but they solve different construction problems. Specify FLATLOCK when a low-profile seam is important against the skin or under repeated pressure. Specify OVERLOCK when an enclosed cut edge, reliable stretch construction and efficient general assembly are the priorities and an internal seam allowance is acceptable. Neither construction is automatically better. The right choice depends on the seam location, fabric, thread, machine setting and approved sample.', 'myathletik-child' ),
+			'intro'            => __( 'FLATLOCK reduces seam profile in high-contact areas; OVERLOCK provides efficient stretch assembly where an internal seam allowance is acceptable. Neither is universally better—the correct choice depends on seam position, fabric and testing.', 'myathletik-child' ),
 			'reviewed_on'      => '2026-08-11',
 			'featured_image'   => 'production/articles/flatlock-vs-overlock/yamato-flatlock-knitwear-poster.jpg',
 			'featured_alt'     => __( 'Yamato FLATLOCK sewing operation for technical performance knitwear', 'myathletik-child' ),

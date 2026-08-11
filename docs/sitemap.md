@@ -129,7 +129,7 @@ server-log, or backlink evidence shows that `/products/` has real value.
 
 ## 2A. Technical Guides hub — `/technical-guides/`  (NEW)
 
-**H1:** Technical Guides for Performance Knitwear Production
+**H1:** Technical Knitwear Guides
 
 **Purpose:** Provide one stable, crawlable content centre for buyer education
 while individual keyword-aligned guide URLs remain top-level. The homepage,

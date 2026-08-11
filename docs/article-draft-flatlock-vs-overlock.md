@@ -11,14 +11,10 @@
 
 # FLATLOCK vs OVERLOCK for Technical Knitwear
 
-FLATLOCK and OVERLOCK are both used to assemble stretch knitted garments, but
-they solve different construction problems. Specify FLATLOCK when a
-low-profile seam is important against the skin or under repeated pressure.
-Specify OVERLOCK when an enclosed cut edge, reliable stretch construction and
-efficient general assembly are the priorities and an internal seam allowance
-is acceptable. Neither construction is automatically better. The right choice
-depends on the seam location, fabric, thread, machine setting and approved
-sample.
+FLATLOCK reduces seam profile in high-contact areas; OVERLOCK provides
+efficient stretch assembly where an internal seam allowance is acceptable.
+Neither is universally better—the correct choice depends on seam position,
+fabric and testing.
 
 ## What is FLATLOCK construction?
 
