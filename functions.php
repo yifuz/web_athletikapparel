@@ -554,11 +554,12 @@ function myathletik_ensure_primary_menu() {
 add_action( 'init', 'myathletik_ensure_primary_menu', 20 );
 
 /**
- * Add the Technical Guides hub to an already-seeded primary menu.
+ * Keep Guides available while preserving Contact as the final priority CTA.
  *
- * Existing installations already have an assigned menu, so changing only the
- * initial seed array would not expose the new content centre. This routine is
- * additive and leaves all existing items and their order untouched.
+ * Existing installations already have an assigned menu. New items are added
+ * without rebuilding that menu, then Guides and Contact are moved to the final
+ * two top-level positions so the existing last-item CTA styling always belongs
+ * to Contact.
  */
 function myathletik_ensure_technical_guides_menu_item() {
 	$locations = get_nav_menu_locations();
@@ -573,23 +574,97 @@ function myathletik_ensure_technical_guides_menu_item() {
 		return;
 	}
 
-	$items = wp_get_nav_menu_items( $menu->term_id );
-	$items = is_array( $items ) ? $items : array();
-	$url   = myathletik_home_url( '/technical-guides/' );
+	$guides_url  = myathletik_home_url( '/technical-guides/' );
+	$contact_url = myathletik_home_url( '/contact/' );
+	$items        = wp_get_nav_menu_items( $menu->term_id );
+	$items        = is_array( $items ) ? $items : array();
+	$guides_item  = null;
+	$contact_item = null;
 
 	foreach ( $items as $item ) {
-		if ( untrailingslashit( $item->url ) === untrailingslashit( $url ) ) {
-			return;
+		if ( 0 !== (int) $item->menu_item_parent ) {
+			continue;
+		}
+
+		$item_url = untrailingslashit( $item->url );
+
+		if ( untrailingslashit( $guides_url ) === $item_url ) {
+			$guides_item = $item;
+		} elseif ( untrailingslashit( $contact_url ) === $item_url ) {
+			$contact_item = $item;
 		}
 	}
 
-	wp_update_nav_menu_item(
-		$menu->term_id,
-		0,
+	if ( ! $guides_item ) {
+		wp_update_nav_menu_item(
+			$menu->term_id,
+			0,
+			array(
+				'menu-item-title'  => 'Guides',
+				'menu-item-url'    => $guides_url,
+				'menu-item-status' => 'publish',
+			)
+		);
+	}
+
+	if ( ! $contact_item ) {
+		wp_update_nav_menu_item(
+			$menu->term_id,
+			0,
+			array(
+				'menu-item-title'  => 'Contact',
+				'menu-item-url'    => $contact_url,
+				'menu-item-status' => 'publish',
+			)
+		);
+	}
+
+	$items        = wp_get_nav_menu_items( $menu->term_id );
+	$items        = is_array( $items ) ? $items : array();
+	$top_level    = array();
+	$guides_item  = null;
+	$contact_item = null;
+	$max_order    = 0;
+
+	foreach ( $items as $item ) {
+		$max_order = max( $max_order, (int) $item->menu_order );
+
+		if ( 0 !== (int) $item->menu_item_parent ) {
+			continue;
+		}
+
+		$top_level[] = $item;
+		$item_url    = untrailingslashit( $item->url );
+
+		if ( untrailingslashit( $guides_url ) === $item_url ) {
+			$guides_item = $item;
+		} elseif ( untrailingslashit( $contact_url ) === $item_url ) {
+			$contact_item = $item;
+		}
+	}
+
+	if ( ! $guides_item || ! $contact_item || count( $top_level ) < 2 ) {
+		return;
+	}
+
+	$last_item        = $top_level[ count( $top_level ) - 1 ];
+	$penultimate_item = $top_level[ count( $top_level ) - 2 ];
+
+	if ( (int) $contact_item->ID === (int) $last_item->ID && (int) $guides_item->ID === (int) $penultimate_item->ID ) {
+		return;
+	}
+
+	wp_update_post(
 		array(
-			'menu-item-title'  => 'Guides',
-			'menu-item-url'    => $url,
-			'menu-item-status' => 'publish',
+			'ID'         => (int) $guides_item->ID,
+			'menu_order' => $max_order + 1,
+		)
+	);
+
+	wp_update_post(
+		array(
+			'ID'         => (int) $contact_item->ID,
+			'menu_order' => $max_order + 2,
 		)
 	);
 }

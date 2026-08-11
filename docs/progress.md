@@ -11,6 +11,13 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
+Last updated: 2026-08-11 — Corrected the primary-navigation priority after the
+Technical Guides rollout. `Guides` remains a normal navigation item immediately
+before `Contact`; `Contact` is restored as the final item and the only filled
+accent CTA on desktop and in the expanded mobile menu. The existing assigned
+WordPress menu is reordered additively, without rebuilding or deleting any
+other menu items.
+
 Last updated: 2026-08-11 — The owner chose to establish the content centre now
 and complete a one-time three-guide foundation instead of waiting to redesign
 the entry after three publications. `/technical-guides/` is implemented as a

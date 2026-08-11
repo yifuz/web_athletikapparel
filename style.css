@@ -244,7 +244,8 @@ body {
   color: var(--ma-color-accent-2);
 }
 
-.main-navigation:not(.toggled) .main-nav > ul > li:last-child > a {
+.main-navigation:not(.toggled) .main-nav > ul > li:last-child > a,
+.main-navigation.toggled .main-nav > ul > li:last-child > a {
   margin-left: 0.2rem;
   background: var(--ma-color-accent);
   color: var(--ma-color-bg);
@@ -252,7 +253,9 @@ body {
 }
 
 .main-navigation:not(.toggled) .main-nav > ul > li:last-child:hover > a,
-.main-navigation:not(.toggled) .main-nav > ul > li:last-child:focus > a {
+.main-navigation:not(.toggled) .main-nav > ul > li:last-child:focus > a,
+.main-navigation.toggled .main-nav > ul > li:last-child:hover > a,
+.main-navigation.toggled .main-nav > ul > li:last-child:focus > a {
   background: var(--ma-color-accent-2);
   color: var(--ma-color-bg);
 }
