@@ -11,6 +11,16 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
+Last updated: 2026-08-11 — First-party video evidence has been selected for the
+planned FLATLOCK-versus-OVERLOCK article: `羊毛提花260623.mp4` for Yamato
+FLATLOCK and `密拷260718.mp4` for OVERLOCK. Both source files were validated as
+vertical H.264 video and remain outside the site; no file was copied or
+deployed. Merrow ACTIVESEAM and HSAT-K5 will be described only in text for this
+article. The internal content brief now records the reference stitch
+configurations, provisional garment-area map, evidence limits and remaining
+first-hand inputs. Long-form article copy and page implementation have not
+started.
+
 Last updated: 2026-08-10 — The legacy `myathletik.com` site has been fully taken
 offline without redirects by explicit owner decision; external checks confirmed HTTP
 410 for its homepage, inner page, Sitemap, robots.txt and HTTP/HTTPS host

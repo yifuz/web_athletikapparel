@@ -14,23 +14,54 @@
 | Proposed slug | `/flatlock-vs-overlock-technical-knitwear/` — requires approval before implementation |
 | Author | 【NEEDS INPUT: real author name and manufacturing role】 |
 | Reviewer | 【NEEDS INPUT: technical reviewer name/role, if different】 |
-| Evidence | 【NEEDS INPUT: approved factory photos, seam samples or process video】 |
+| Evidence | Selected production videos: Yamato FLATLOCK and OVERLOCK; see Section 4. Merrow ACTIVESEAM and HSAT-K5 will not use video in this article. |
 
-## 2. Required first-hand input
+## 2. Confirmed technical direction and remaining input
 
-The article should not be drafted until the following points are answered from
-actual production experience:
+### Reference constructions
 
-1. Which FLATLOCK and OVERLOCK seam configurations are relevant to the products
-   Athletik currently manufactures?
-2. Which garment areas commonly use each construction?
-3. How do fabric weight, stretch and recovery affect the choice?
-4. What differences can a wearer or buyer observe in seam bulk, next-to-skin
-   comfort, appearance and stretch?
-5. What production or cost trade-offs may be stated publicly?
-6. What should the buyer specify in the tech pack / spec sheet?
-7. Which photographs or videos show the comparison without exposing customer
-   branding or confidential designs?
+- **Yamato FLATLOCK:** use a four-needle, six-thread flatseam / stitch type 607
+  as the article's reference construction. Yamato publishes four-needle,
+  six-thread configurations with 5.2 mm or 6.0 mm needle distance, but the
+  Athletik machine model and gauge have not yet been confirmed. Do not publish
+  a model, needle distance or machine count without owner confirmation.
+- **OVERLOCK:** use a two-needle, four-thread / stitch type 514 construction as
+  the primary knit-assembly reference. A one-needle, three-thread / stitch type
+  504 may be mentioned only as a separate edge-finishing or lighter seaming
+  configuration; do not present 504 and 514 as interchangeable.
+- **Merrow ACTIVESEAM:** distinguish it from FLATLOCK. The Merrow MB-4DFO
+  platform is a two-needle, two- or three-thread flat overlock alternative to
+  conventional FLATLOCK, INTERLOCK and OVERLOCK construction. It will receive
+  a short text clarification only; no ACTIVESEAM video is planned for this
+  article.
+- **HSAT-K5:** exclude it from the FLATLOCK-versus-OVERLOCK comparison. It is an
+  automatic elastic-joining operation, not one of the two seam constructions
+  being compared; no HSAT-K5 video is planned here.
+
+### Application map for the article
+
+- FLATLOCK examples: shoulder or raglan seams, sleeve closing, underarm and
+  side-body seams, crotch/inseam construction, and other next-to-skin panel
+  joins on base layers, underwear, compression garments, technical tops and
+  leggings where a low-profile seam is a design requirement.
+- OVERLOCK examples: general knitted-garment assembly such as shoulder, sleeve
+  and side seams, plus selected neckband, waistband or elastic operations when
+  an enclosed cut edge and internal seam allowance are acceptable.
+- These use cases overlap. Seam location, fabric construction, stretch and
+  recovery, thread, tension and the approved sample determine the final choice;
+  the article must not claim that FLATLOCK is universally better or that every
+  manufacturer uses an identical seam map.
+
+### Remaining first-hand input before publication
+
+1. 【NEEDS INPUT: exact Yamato model and needle distance only if model-specific
+   machine data will be published】
+2. How fabric weight, stretch and recovery change Athletik's actual seam choice.
+3. What wearer-visible differences and production/cost trade-offs may be stated
+   publicly from Athletik's production experience.
+4. What Athletik asks buyers to specify in the tech pack / spec sheet.
+5. Author/reviewer identity and approval that the selected videos expose no
+   customer branding, order information or confidential design details.
 
 ## 3. Article outline
 
@@ -52,11 +83,11 @@ Complete only confirmed cells. Remove any row that cannot be supported.
 
 | Decision factor | FLATLOCK | OVERLOCK | Evidence/source |
 |---|---|---|---|
-| Typical garment areas | 【NEEDS INPUT】 | 【NEEDS INPUT】 | 【NEEDS INPUT】 |
-| Seam profile / bulk | 【NEEDS INPUT】 | 【NEEDS INPUT】 | 【NEEDS INPUT】 |
-| Stretch behavior | 【NEEDS INPUT】 | 【NEEDS INPUT】 | 【NEEDS INPUT】 |
-| Suitable fabric conditions | 【NEEDS INPUT】 | 【NEEDS INPUT】 | 【NEEDS INPUT】 |
-| Production considerations | 【NEEDS INPUT】 | 【NEEDS INPUT】 | 【NEEDS INPUT】 |
+| Typical garment areas | Shoulder/raglan, sleeve, underarm/side body, crotch/inseam and next-to-skin panel joins where specified | General knit assembly including shoulder, sleeve and side seams; selected band or elastic operations depending on design | Yamato application pages; selected Athletik production videos |
+| Seam profile / bulk | Flat seam intended to avoid a conventional projecting seam allowance | Cut edges are enclosed; the joined plies normally create an internal seam allowance/ridge | Coats seam-class and soft-seam technical guidance; selected videos |
+| Stretch behavior | Can be engineered for stretch; result depends on thread, tension, stitch setting and fabric | Can also be engineered for stretch; do not rank it without testing the nominated fabric | Yamato and Coats technical guidance; approved sample/testing required |
+| Suitable fabric conditions | Performance and next-to-skin knits where low profile is required; exact setup depends on fabric weight and recovery | Broad general-knit assembly where an internal seam allowance is acceptable | 【NEEDS INPUT: Athletik production limits by fabric type/GSM/stretch】 |
+| Production considerations | Specialized machine/setup; no public cost or speed claim until confirmed | General assembly reference; no public cost or speed claim until confirmed | 【NEEDS INPUT: Athletik production/cost trade-offs】 |
 
 ### H2 — When buyers should specify FLATLOCK
 
@@ -84,6 +115,22 @@ the page. Potential questions:
 
 ## 4. Internal evidence and links
 
+- Selected OVERLOCK video: `D:\B-视频素材\CAPCUT成品\密拷260718.mp4`
+  (H.264, 2160×3840, 30 fps, 23.3 seconds).
+- Selected Yamato FLATLOCK video:
+  `D:\B-视频素材\CAPCUT成品\羊毛提花260623.mp4`
+  (H.264, 1080×1920, 60 fps, 39.8 seconds).
+- Both are vertical production videos from different garments/fabrics. Present
+  them as separate real-process examples, not as a controlled same-fabric
+  laboratory comparison.
+- Source files remain outside the WordPress site. Do not copy, transcode or
+  deploy them until the article structure and confidentiality review are
+  approved. Final web video files and poster images belong in WordPress
+  uploads, not in the child-theme Git repository.
+- Technical references: [Yamato FD-62 flatseamer applications](https://www.yamato-sewing.com/en/product/flatseamer/fd-62dry/submodel/),
+  [Yamato knit-garment OVERLOCK applications](https://www.yamato-sewing.com/en/product/item/tshirt1/),
+  [Coats soft and secure seam guidance](https://www.coats.com/en/info-hub/about-soft-and-secure-seams-for-activewear-and-intimates/),
+  and [Merrow MB-4DFO ACTIVESEAM specifications](https://www.merrow.com/Sergers_and_Overlock_Sewing_Machines/mb4dfo).
 - Link to `/sportswear-manufacturer/` where the example concerns sportswear.
 - Link to `/underwear-manufacturer/` where the example concerns next-to-skin
   garments or base layers.
@@ -96,6 +143,8 @@ the page. Potential questions:
 - [ ] User supplies and approves all long-form technical body copy.
 - [ ] Author and reviewer identity confirmed.
 - [ ] Claims checked against real production evidence.
+- [x] FLATLOCK and OVERLOCK production-video candidates selected and file metadata validated.
+- [x] Merrow ACTIVESEAM and HSAT-K5 excluded from the video requirement for this article.
 - [ ] No client names, confidential designs or unsupported certifications.
 - [ ] Title, meta description, canonical and one-H1 structure approved.
 - [ ] Article date reflects the actual publication/review date.
