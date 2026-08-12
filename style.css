@@ -51,6 +51,7 @@ Text Domain:  myathletik-child
   --ma-radius:       6px;
   --ma-touch-target: 2.75rem;
   --ma-social-icon-size: 1.25rem;
+  --ma-social-button-height: calc(var(--ma-touch-target) - var(--ma-space-2));
   --ma-social-button-padding-x: var(--ma-space-2);
   --ma-reading-width: 68ch;
   --ma-article-media-width: 30rem;
@@ -343,6 +344,7 @@ body {
 }
 
 .ma-social-links--header a {
+  min-height: var(--ma-social-button-height);
   font-size: var(--ma-fs-social);
 }
 
