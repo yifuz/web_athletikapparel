@@ -31,7 +31,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 - [`geo/GEO.md`](geo/GEO.md) 是 GEO 中央工作台和路由文档。
 - Baseline v1（原 GEO-01～08）的第一轮 Temporary Chat 中性基线已经完成并冻结；Baseline v2 已建立，等待首次月度运行。
 - 实体、技术可抓取性、三篇指南和 GEO-07 首轮 LinkedIn/Instagram 分发已经完成。
-- GEO-06 的 LinkedIn 单图与 Instagram 七图分发包已于 2026-08-12 准备并完成初检，等待所有者审核和发布；GEO-08 分发、
+- GEO-06 与 GEO-08 的 LinkedIn 单图、Instagram 七图和 Story 分发包已于 2026-08-12 准备并完成初检，等待所有者审核和发布；
   GEO-07 七日数据、Search Console 索引观察和后续月度复测仍待进行。
 - 当前长期 GEO 对话只用于规划和证据分析，不能作为中性测试环境。
 
@@ -541,7 +541,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 ## 13. 下一步优先级
 
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
-2. 审核并发布已经准备好的 GEO-06 Tech Pack LinkedIn/Instagram 内容包，再制作 GEO-08。
+2. 按单人节奏依次审核并发布已经准备好的 GEO-06 Tech Pack 与 GEO-08 OEM Evaluation 内容包。
 3. 等待 Search Console 正常刷新后核对 4 个指南 URL 的索引状态。
 4. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 5. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。

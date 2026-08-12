@@ -75,3 +75,32 @@
 - 审核通过后分别发布 LinkedIn 与 Instagram，并补录公开帖子 URL 和实际发布时间。
 - Instagram Carousel 发布后确认 Story Link Sticker 是否完成。
 - 按实际发布时间计算满七个自然日的数据复盘日。
+
+## 2026-08-12 — Technical Knitwear OEM Evaluation（素材准备）
+
+| 字段 | 记录 |
+|---|---|
+| 内部 Campaign | `2026-08-evaluate-technical-knitwear-oem` |
+| 官网母文章 | <https://www.athletikapparel.com/evaluate-technical-knitwear-oem/> |
+| 主题 | How to Evaluate a Vertically Integrated Knitwear OEM |
+| 当前状态 | Instagram 七图和 LinkedIn 单图已生成并完成技术/视觉初检；等待所有者审核，尚未发布 |
+| LinkedIn 计划格式 | 1 张 1080 × 1350 信息总览图 + 正文；不制作 PDF/PPT |
+| LinkedIn UTM content | `technical_knitwear_oem_evaluation_single_image` |
+| Instagram 计划格式 | 7 张 1080 × 1350 JPG Carousel + 1080 × 1920 Story |
+| Instagram UTM content | `technical_knitwear_oem_evaluation_story` |
+| 发布素材包 | `D:\B-视频素材\营销内容包\2026-08-evaluate-technical-knitwear-oem\`（Git 外运营资产） |
+| 素材来源 | 官网已批准文章封面 + 买家尽调信息图；本主题未使用额外生产视频 |
+| 数据复盘日 | 待实际发布日期确定后填写 |
+
+### 已准备文件
+
+- LinkedIn 单张 4:5 信息总览图；Instagram 七张 4:5 Carousel，以及为原生 Link Sticker 留出安全区的 Story。
+- LinkedIn 技术教育正文、Instagram 精简正文和两个渠道的独立 UTM。
+- 图片 alt text、联系表、发布说明、发布记录和七日数据模板。
+
+### 发布前待办
+
+- 所有者审核 LinkedIn 单图、Instagram 七图顺序、Story CTA 和两版英文正文。
+- 审核通过后分别发布 LinkedIn 与 Instagram，并补录公开帖子 URL 和实际发布时间。
+- Instagram Carousel 发布后确认 Story Link Sticker 是否完成。
+- 按实际发布时间计算满七个自然日的数据复盘日。
