@@ -1,920 +1,547 @@
-# Project Progress Snapshot - Athletik Clothing Website
+# Athletik Clothing 网站项目进度快照
 
-Read this together with AGENTS.md, docs/sitemap.md,
-docs/site/design-brief.md, and homepage-copy.md when starting a new session.
-This file tracks WHAT IS DONE and WHAT IS LEFT, since the rule docs only
-define HOW. Also check `git log` for the latest commits.
+新会话开始时，请将本文件与 `AGENTS.md`、[`sitemap.md`](sitemap.md)、
+[`site/design-brief.md`](site/design-brief.md) 及相关页面文案一起阅读，并用 `git log`
+确认最近提交。
 
-Status precedence: `AGENTS.md` is canonical for project rules; this file is
-canonical for repository progress; dated launch/audit records are historical
-snapshots unless they explicitly contain a later verification. External states
-such as Google Ads review, Search Console counts, and provider dashboards must
-be checked live before being described as current.
+本文件回答“已经完成什么、目前是什么状态、下一步做什么”。规则和实施边界以
+`AGENTS.md` 为准；页面结构和 URL 决策以 `sitemap.md` 为准；本文件是仓库进度的主要入口。
+带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
+Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-Last updated: 2026-08-12 — `docs/geo/GEO.md` is now the central GEO workspace and
-routing document. It records that the initial technical/entity foundation,
-three-guide content base, four-URL indexing submission and GEO-07 social
-distribution are complete, while two remaining guide distributions, seven-day
-data capture, indexing observation and clean Temporary Chat monthly retesting
-remain active. This ongoing GEO conversation is used for planning and evidence
-analysis, not as a neutral test environment.
-
-Last updated: 2026-08-12 — The first website-guide distribution package was
-published to the official LinkedIn Page and Instagram account using the live
-`FLATLOCK vs OVERLOCK` guide. The shared asset package contains seven 1080 ×
-1350 cards, channel-specific copy, independent UTM links, alt text, a Story
-asset and a seven-day metrics template. The actual LinkedIn Page interface did
-not support PDF, so the published workflow uses a seven-image post and keeps
-the generated PDF only as an internal preview. A reusable execution SOP and a
-dated publishing log now live in `docs/geo/distribution/social-content-sop.md`
-and `docs/geo/distribution/publishing-log.md`; public post URLs, Story publication
-status and the 2026-08-19 results remain explicitly pending rather than being
-inferred.
-
-Previous: 2026-08-11 — The Technical Guides production rollout is complete.
-Final live verification after the corrective synchronization confirms one
-`Guides` navigation item immediately before the single final `Contact` CTA.
-Rank Math's Page Sitemap now contains 17 URLs, including the hub and all three
-foundation guides. Browser, Googlebot, OAI-SearchBot and PerplexityBot receive
-HTTP 200 for all four pages. Titles, descriptions, self-referencing canonicals,
-single H1s, image alt text, responsive hero markup and the expected
-Article/FAQPage/BreadcrumbList/ItemList Schema all match the approved local
-implementation. No further theme deployment is required for this rollout.
-
-Last updated: 2026-08-11 — Tightened the Technical Guides and article heroes
-after owner review. The hub H1 and intro are reduced to one concise positioning
-pair; the FLATLOCK-versus-OVERLOCK article introduction now states only the
-core selection logic. Both page shells are full-bleed like the other coded
-inner pages, while hero text remains aligned to the shared content container.
-Breadcrumb, lead and metadata spacing are reduced on desktop and mobile.
-
-Last updated: 2026-08-11 — Corrected the primary-navigation priority after the
-Technical Guides rollout. `Guides` remains a normal navigation item immediately
-before `Contact`; `Contact` is restored as the final item and the only filled
-accent CTA on desktop and in the expanded mobile menu. The existing assigned
-WordPress menu is reordered additively, without rebuilding or deleting any
-other menu items.
-
-Last updated: 2026-08-11 — The owner chose to establish the content centre now
-and complete a one-time three-guide foundation instead of waiting to redesign
-the entry after three publications. `/technical-guides/` is implemented as a
-stable, data-driven hub, with permanent entry points on the homepage, primary
-menu, footer and guide breadcrumbs. Its public cards and ItemList Schema read
-only owner-approved `publish` entries, so unfinished drafts cannot leak onto
-the site. At that checkpoint, the approved FLATLOCK-versus-OVERLOCK guide was
-the first public entry and the other two guides remained internal drafts. The
-later owner approval and three-guide publication supersede that temporary
-state. This is an initial content sprint, not a change to the conservative
-ongoing workload for a single operator.
-
-Last updated: 2026-08-11 — The owner approved the complete FLATLOCK-versus-
-OVERLOCK article for deployment. A code-rendered page at
-`/flatlock-vs-overlock-technical-knitwear/` now has a reusable technical-article
-layout, one H1, table of contents, approved body copy, a responsive comparison
-table, visible FAQs, primary references, internal links and inquiry CTA. Rank
-Math integration supplies the approved title/description plus matching Article
-and FAQPage entities; the public Organization is used as author because no
-individual author identity was supplied. The publisher Schema no longer mixes
-the U.S. entity's legal name with the China production address. Sportswear and
-Underwear pages now link to the guide. The selected source videos were converted from 84–89 MB
-masters to silent 720×1280 H.264 web files (2.56 MB and 5.50 MB) with JPEG
-posters in uploads. Code and local media are deployment-ready; production
-rendering, Sitemap visibility and Schema validation remain pending until Local
-Connect synchronization.
-
-Last updated: 2026-08-11 — The owner corrected the project copy rule and
-explicitly authorized an agent-written long-form draft when requested. The
-canonical `AGENTS.md` rule and `wp-brand-voice-guard` skill now require explicit
-authorization, source-backed facts and owner approval before publication rather
-than prohibiting agent-written body copy. A complete English review draft of
-`FLATLOCK vs OVERLOCK for Technical Knitwear` is in
-`docs/geo/content/flatlock-vs-overlock-draft.md`. It is an internal document only;
-no WordPress page, URL, video or media asset was created or deployed.
-
-Last updated: 2026-08-11 — First-party video evidence has been selected for the
-planned FLATLOCK-versus-OVERLOCK article: `羊毛提花260623.mp4` for Yamato
-FLATLOCK and `密拷260718.mp4` for OVERLOCK. Both source files were validated as
-vertical H.264 video and remain outside the site; no file was copied or
-deployed. Merrow ACTIVESEAM and HSAT-K5 will be described only in text for this
-article. The internal content brief records the reference stitch
-configurations, provisional garment-area map and evidence limits. This earlier
-planning status was superseded by the approved implementation recorded above.
-
-Last updated: 2026-08-10 — The legacy `myathletik.com` site has been fully taken
-offline without redirects by explicit owner decision; external checks confirmed HTTP
-410 for its homepage, inner page, Sitemap, robots.txt and HTTP/HTTPS host
-variants. The new site's entity-schema deployment is live: `legalName`, the
-approved LinkedIn/Instagram/YouTube `sameAs` URLs, contact details and address
-are present in valid server-rendered JSON-LD, with no legacy-domain URL. The
-independent Temporary Chat GEO-01 answer correctly summarized Athletik's
-technical-knitwear focus and Zhangjiagang/Suzhou manufacturing base. It also
-called New York, NY a headquarters because an older indexed LinkedIn profile
-`athletik-clothing-inc` remains indexed with that field. The approved current
-LinkedIn page identifies Zhangjiagang, Jiangsu as headquarters; New York is
-currently approved only as the U.S. entity and website data-controller address.
-The answer therefore counts as a largely accurate neutral baseline with an
-old-profile entity qualifier, not as a newly approved headquarters claim. Its
-pasted text retained no clickable source URLs. The
-first ChatGPT Search GEO-02 answer cited six canonical pages and accurately
-summarized the site's technical-knitwear manufacturing focus. A subsequent
-independent Temporary Chat GEO-02 rerun again classified the site as a
-technical/performance knitwear OEM/ODM and accurately repeated the main current
-site claims, including the product focus, FLATLOCK/ACTIVESEAM capabilities,
-4,500+ sq m facility and 100,000+ pieces/month capacity. This is a strong
-neutral brand/entity-recognition result, although the pasted response retained
-no clickable source URLs. It also exposed a first-party entity ambiguity: the
-model treated Zhangjiagang Athletik Clothing Co., Limited as the company behind
-the site because that name is published in the Contact page's facility block,
-while the current JSON-LD and privacy documents use Athletik Clothing Inc. The
-owner has now confirmed that the former is the China entity name and the latter
-is the U.S. entity name; both belong to the same
-Athletik business, while their operational responsibilities differ. The current
-confirmed public roles are the China production-facility name and the U.S.
-website privacy data controller. The model's China-entity identification was
-therefore source-based but incomplete because it omitted the U.S. entity and
-role split. No broader responsibility split is added until the owner supplies
-it. The response's 50+ circular-knitting-machine figure came from older material
-and is not a current approved site fact. Panjiva and ImportInfo support
-shipment/export activity under several related name variants, but they do not
-independently verify factory ownership, vertical integration or capacity. The
-initial ChatGPT Search GEO-03 answer placed Athletik first in a five-supplier
-FLATLOCK/ACTIVESEAM shortlist and assigned it the highest confidence. A new
-Temporary Chat rerun then again placed Athletik first, this time in a
-four-supplier shortlist, and called it the strongest match. This is the first
-neutral ChatGPT Search rerun and an encouraging sign that GEO-03 discovery did
-not depend on historical-chat Memory. The response still did not retain source
-URLs, used a shortened form of the valid China entity name without the public
-brand or U.S./China role distinction, and repeated competitor equipment/facility
-claims that remain self-reported or unverified. Its association of
-`ultramerino.com` with Athletik was later confirmed by the owner, although the
-answer did not preserve the supporting source. The Temporary Chat's Custom
-Instructions state was not separately visible in the supplied evidence. The
-GEO-04 answer then recommended Athletik first for a 1,000-piece-per-style
-sportswear program and used the correct public brand name. That is the clearest
-positive commercial-discovery signal from the original personalized runs, but
-its Apparel Sourcing NYC attribution was not substantiated by the current
-public-source check, and the two named competitors' capacity, certification and
-MOQ details remain supplier-reported. A subsequent GEO-04 response did not
-mention Athletik and instead recommended HUCAI first, followed by Yueyi Active
-and Ohsure. The user confirmed it came from a new Temporary Chat, so it is the
-neutral GEO-04 baseline and shows that Athletik does not yet surface for the
-generic sportswear OEM + 1,000-piece intent. HUCAI's
-public pages contain conflicting MOQ and company-scale figures, so the supplier
-details remain source claims rather than approved facts.
-GEO-05 mentioned Athletik but cited the historical `ultramerino.com` product
-page instead of the canonical site, merged the names as “Athletik/UltraMerino,”
-and repeated historical micron-range, ISO 607 and Woolmark-license claims that
-are not in the current approved entity baseline. It also answered a supplier
-question mainly with consumer brands before listing three OEM candidates.
-The owner has confirmed that `ultramerino.com` belongs to the company and was
-one of several category-specific sites created for an earlier site matrix.
-Ownership is therefore resolved, but the site's current role, content validity
-and retention strategy remain open. Its historical certification, equipment,
-capacity and material statements are not automatically approved for reuse on
-the canonical site. The phrase “your own” also confirms that the original
-GEO-05 used user-specific context beyond the fixed prompt. Its subsequent
-Temporary Chat rerun mentioned neither Athletik nor UltraMerino and instead
-listed nine consumer brands. That clean result confirms the personalized
-Athletik insertion cannot be treated as neutral discovery performance. Because
-the fixed GEO-05 prompt does not specify China, OEM/ODM or factory sourcing,
-the brand-led interpretation is linguistically reasonable; it nevertheless
-shows that Athletik does not currently surface for generic Merino wool base
-layer + flatlock product discovery. Representative product claims were found
-on current brand-owned pages, but those pages do not establish which factories
-actually cut and sew the garments. The Temporary Chat GEO-06 response also did
-not mention Athletik. It produced a detailed 20-section tech-pack guide, but
-interpreted technical/engineered knitwear mainly as flat-knit sweaters,
-fully-fashioned/linking construction and WHOLEGARMENT-type production rather
-than cut-and-sew technical performance apparel using FLATLOCK or ACTIVESEAM.
-The result is useful for flat knitting but exposes a material semantic mismatch
-between the fixed prompt and Athletik's intended buyer-education territory.
-The Temporary Chat GEO-07 response likewise mentioned neither Athletik nor the
-canonical site. Its FLATLOCK-versus-OVERLOCK explanation was broadly accurate,
-including the industrial-versus-serger distinction and the importance of seam
-placement, but its chafing and strength hierarchy was too absolute for an
-engineering specification. This result confirms the content gap targeted by
-the existing first-party FLATLOCK-versus-OVERLOCK article brief. GEO-08 also
-mentioned neither Athletik nor the canonical site. It supplied a useful OEM
-due-diligence framework and generally sound traceability/compliance guidance,
-but its 100-point weights and 75–80 threshold were model-authored rather than
-an industry standard, and its technical criteria again leaned toward
-flat-knitted sweaters instead of cut-and-sew performance apparel. The
-compliance references were checked against current official sources. At that
-checkpoint GEO-08 was retained as a later buyer-guide topic; the later
-2026-08-11 owner decision above supersedes that sequencing and authorizes the
-one-time three-guide foundation.
-OpenAI documents that Memory can affect ChatGPT Search query
-rewriting. The original GEO-02 through GEO-05 runs are therefore retained as
-exploratory personalized observations. GEO-03 now also has a separately logged
-Temporary Chat baseline, and GEO-04 has a confirmed Temporary Chat baseline;
-GEO-01 through GEO-08 now have confirmed Temporary Chat baselines.
-The GEO log
-separates all of these model/source assertions from approved entity facts. See
-`docs/geo/testing/prompt-baseline.md`.
-
-Previous: 2026-08-08 — GEO execution started with a fixed eight-prompt,
-three-engine monthly baseline, an entity-conflict register and a first-hand
-FLATLOCK-vs-OVERLOCK article brief. Public user-agent checks returned HTTP 200
-for Googlebot, OAI-SearchBot, PerplexityBot and Claude-SearchBot on the homepage
-and Sportswear page, with no visible challenge. A supplemental Microsoft Bing
-GEO-01 check cited the live legacy `myathletik.com/about-us/` page instead of
-the canonical `athletikapparel.com` domain. The earlier “old site is dead”
-assumption is superseded. The user plans to retire that legacy site in the
-short term and explicitly chose not to create 301 redirects; it is outside the
-new site's GEO work except as a temporary competing/cached source. The
-Organization `legalName` and
-verified social `sameAs` improvement is prepared locally in `rank-math.php`;
-production deployment remains intentionally pending until the pre-improvement
-baseline is captured. Public search also surfaces other historical sites and
-third-party profiles containing conflicting identity, contact, MOQ, date,
-capacity or operating claims; no external record will be changed until the user
-confirms which domains and profiles are controlled. See
-`docs/geo/testing/prompt-baseline.md` and
-`docs/geo/content/flatlock-vs-overlock-brief.md`.
-
-Previous: 2026-08-08 — The production inquiry path was re-audited before
-adding new measurement. The homepage, Contact page, and Sportswear landing page
-all return HTTP 200 and render Fluent Form 3, the Google tag, Cookiebot, the
-approved attribution and inquiry scripts, the Privacy Policy link, WhatsApp,
-and the public contact email. The production inquiry and attribution JavaScript
-files match the current repository copies. Code now records
-`contact_email_click` and `contact_whatsapp_click` as secondary GA4 diagnostic
-events without changing `generate_lead`, which remains the sole primary website
-conversion. Production deployment and GA4 DebugView verification of the two new
-events are still required.
-
-Previous: 2026-08-07 — The promotion matrix and execution plan were revised
-for one full-time operator using conservative, sustainable baselines: two
-Instagram feed posts per week, one reused Short and one LinkedIn post per week,
-one YouTube long-form video and one technical article per month, and 10–15
-outbound target companies per week only after lead-record, opt-out, and market
-compliance gates are ready. Extra content is optional capacity, not a new
-recurring baseline. Customer cases now require a written authorization record;
-no record means no publication. GEO is a lightweight SEO-adjacent observation
-workflow rather than a special-markup promise.
-
-The apparel-manufacturing LinkedIn Page at
-`https://www.linkedin.com/company/111831319/` is now the designated official
-promotion Page. Its name, logo, real-workshop cover image, website, Page details,
-and Zhangjiagang office location are configured; it has moved into low-frequency
-organic publishing and data accumulation. The historical fabric-export Page
-remains separate because the user does not currently have admin access, and the
-retired LinkedIn China Page is no longer an operating target. LinkedIn paid media
-and the Insight Tag remain deferred. The next operational gate is Outbound: a
-version-controlled blank ledger template and workflow now exist, but live contact
-data must stay outside Git and outreach must not begin until the working storage,
-non-responsive-prospect retention rule, and sending mailbox are confirmed.
-
-The first verified Meta Ads observation is recorded in
-`docs/marketing/ads/meta-ads-baseline-2026-08-07.md`. The control Reel has 7,785 views, 6,325
-reach, 123 interactions, and 135 combined follows. Its promotion-performance
-view directly attributes 68 profile visits and 14 follows to RMB 170.08 spend,
-for RMB 12.15 per ad-attributed follow and a 20.6% profile-visit-to-follow rate.
-The promotion was active for four days at RMB 68/day when captured. The
-remaining difference from the combined 135 follows is not labelled purely
-organic because the Reel and promotion views use different scopes. Several
-cheaper profile-visit creatives did not produce meaningful follows or
-engagement. The control remains unchanged through the initial seven-day review;
-Instagram's confirmed objective is real follower growth and broader brand
-influence, not direct inquiry generation. A 30-account aggregate sample is used
-as an authenticity guardrail: genuine general followers count toward growth,
-while buyer and apparel-industry accounts are reported as a secondary strategic
-segment. Google Ads remains the separate inquiry-acquisition track and is still
-in strategy learning with no performance data reported by the user.
-
-Previous: 2026-08-07 — Documentation reconciled with the 2026-08-06
-theme commits. The homepage now has a prominent social bar, the footer content
-and responsive layout were refined, and Underwear now joins Merino Wool as the
-second product category with a video hero. The Google Ads status in this repo
-is still the 2026-08-05 launch snapshot; its current review/delivery state must
-be checked in Google Ads before being reported as current.
-
-Previous: 2026-08-05 — Production privacy, consent, attribution, and first
-Google Ads launch completed.
-WP Consent API 2.0.1 and Cookiebot 4.7.2 are active; CBID
-`f81cac53-c468-4afd-9823-7adcc4839c5b` uses Auto blocking. Cookiebot's own
-Google Consent Mode is disabled, leaving Site Kit as the sole Google consent
-controller. The first production scan contains 7 categorized trackers and no
-Unclassified entries. The banner uses explicit consent for all visitors, no
-preselected optional categories, English content, a bottom Bar on desktop, a
-responsive Dialog on mobile, Outline buttons, no close icon, and an enabled
-Privacy Trigger. Exact 390px emulation confirmed no horizontal overflow.
-Fresh-profile automation confirmed Reject all keeps optional WP consent and
-the four Google advertising/analytics consent signals denied, while Allow all
-grants them. The live Privacy Trigger can reopen the consent controls, and an
-Allow all -> Withdraw consent test reset Preferences, Statistics, Marketing,
-and their WP Consent API states to false. The current scan has Statistics
-trackers but zero Preferences or Marketing trackers, so the live banner
-currently collapses to Allow all / Reject all; granular Statistics-versus-
-Marketing testing is deferred until the Google Ads tag is added and Cookiebot
-is rescanned.
-
-AdSense was disconnected from production Site Kit; a cache-bypassed public
-HTML recheck confirmed the AdSense script and related domain references were
-removed. WordPress Privacy Policy page ID 3 is a structured English United States
-first-launch version containing the Cookiebot declaration shortcode. It was approved
-by the business, published locally on 2026-08-04, deployed to production, and
-verified on the public site. The production theme footer includes a Cookie
-Settings control using `Cookiebot.renew()`. The live Privacy Trigger remains
-enabled as a second route for visitors to review or change consent. The
-production UTM/GCLID attribution code requires WP Consent API
-`marketing` consent and deletes stored attribution when consent is denied or
-revoked. The user confirmed Athletik Clothing Inc. as data controller and
-`info@athletikapparel.com` as privacy contact. The New York controller address
-is `228 Park Avenue S #30327, New York, NY 10003, United States`. The approved
-retention plan is 24 months after last substantive contact for unsuccessful
-inquiries and related email, 14 months for GA4 with activity reset disabled,
-and a 30-day target for server/security/diagnostic logs. Cookiebot's browser consent
-cookie lasts up to 12 months; its official documentation does not expose a fixed
-account-level server consent-log period, so the criterion-based policy wording still
-requires final legal review. The production Cookiebot dashboard confirms that User
-Consent Logging is active and the consent-log download control is available; no visitor
-log was downloaded during verification. Flywheel provides the most recent 7 days of access,
-PHP error, and slow logs, while nightly website/database backups are retained for 30 days
-and then permanently deleted. The production Cloudflare zone is on the Free plan with no
-Workers connected. Verified customer-visible windows are: zone traffic analytics up to 30
-days, Security Analytics 7 days, Security Events 24 hours, DNS Analytics 8 days, Turnstile
-Analytics 7 days, Email Routing activity queries up to 30 days, and administrative account
-audit logs 18 months. These product windows are not treated as a universal deletion period
-for all Cloudflare Network Data. Brevo transactional logs are now configured for all senders
-to auto-delete after 1 month, and new transactional email previews are not stored. Final
-Cookiebot/Cloudflare provider wording still requires review. An existing Brevo test log was
-checked and no email-content preview was available under the current retention rules. The single
-CRM contact shown in the Brevo account was confirmed by the user as the account owner's own
-contact, not a website visitor, customer, or inquiry record. The user also confirmed that no
-additional CRM, spreadsheet, WhatsApp account, mailbox, or sales system receives website inquiry
-data; the current path is WordPress/Fluent Forms, Brevo, Cloudflare Email Routing, and the 163.com
-destination inbox.
-The version-controlled source now contains a complete English Privacy Policy review draft covering
-the confirmed collection, purposes, legal-basis candidates, consent controls, processors, retention
-periods, rights, security, external links, and children's privacy. The United States first-launch
-public copy was approved and published to local WordPress Privacy Policy page ID 3 on 2026-08-04,
-then deployed to production and verified. The page contains 14 H2 sections, no
-content-level H1, one working Cookiebot declaration shortcode, valid Gutenberg blocks, and no public
-placeholders. The principal European activation blocker is the current 163.com destination mailbox:
-the contracting entity, processing location, and EEA/UK/Swiss transfer mechanism must be confirmed,
-or the destination must be changed, before European promotion. Legal
-review must also confirm whether active EEA/UK targeting requires Athletik to appoint regional
-privacy representatives. The user confirmed that Athletik does not meet any of the three principal
-CCPA business thresholds, so the initial screen does not indicate that the company is a covered CCPA
-business. Final review must still check controlled-entity and other routes to coverage, other US
-state privacy laws, and reassess before any future cross-context behavioral advertising is used.
-The initial plan targeted the United States only; the actual first search campaign was launched for
-the United States and Canada. EEA, UK,
-and Swiss representative and transfer requirements are now tracked as a regional activation gate;
-those regions must not be actively targeted until the 163.com transfer and representative questions
-are resolved.
-The inquiry-form privacy implementation was revised after review: an ordinary manufacturing inquiry
-does not require a mandatory Privacy Policy acknowledgment checkbox. Both production form placements now
-show a concise Privacy Policy notice only after the assigned policy page is published. Any future
-email-marketing consent must remain separate and optional.
-The production GA4 property was verified with both event and user data set to 14 months
-and activity reset disabled. GA4 is linked to Google Ads account `734-505-8603`,
-and the `generate_lead` inquiry conversion was verified in Tag Assistant and
-GA4 DebugView after analytics consent. The first search campaign,
-`Leads-Search-1`, uses the sportswear manufacturer landing page, Search Network
-only, United States and Canada targeting, English, Maximize Clicks, and a
-custom daily budget of RMB 25. AI Max, Search Partners, Display expansion,
-text adaptation, and final URL expansion are disabled. The campaign was
-launched on 2026-08-05 and entered Google review. See
-`docs/privacy/consent-plan.md`, `docs/privacy/policy-draft.md`, and
-`docs/privacy/consent-deployment-runbook.md`. The complete launch baseline and
-monitoring rules are recorded in
-`docs/marketing/ads/google-ads-launch-2026-08-05.md`.
-
-Previous: 2026-07-29 — Homepage Lookbook QA fixes completed. Corrected
-`sportswear/IMG_5836.webp`, whose EXIF orientation had been lost during the
-WebP conversion; the replacement is auto-oriented and remains WebP quality 82
-with a 2000px maximum edge. Slowed the continuous marquee from 35s to 110s on
-desktop and from 28s to 90s on mobile. Hovering anywhere over the Lookbook now
-pauses the marquee; keyboard focus continues to pause it as before. The WebP
-asset lives in uploads and must be transferred separately when deploying.
-Previous: 2026-07-29 — Production SMTP hardening completed. FluentSMTP
-2.2.95 is connected to Brevo via its native API using
-`info@athletikapparel.com` / `Athletik Clothing`; the sender is active and the
-Cloudflare-hosted domain is verified + authenticated in Brevo. The API key is
-encrypted in the WordPress database and is not stored in the public site tree
-or theme repo. An initial production Email Test to `alanzhang@athletik.com`
-completed the Brevo `request` -> `delivered` flow and was received
-successfully. A final production inquiry-form test on 2026-07-29 produced
-exactly one notification to `info@athletikapparel.com`; Brevo recorded
-`request` -> `delivered` -> `opened`, and Cloudflare Email Routing currently
-forwards that public address to `zhangyifuzjg0609@163.com`. Receipt in the
-163.com destination inbox was confirmed by the user.
-Previous: 2026-07-28 — Full production deployment completed. The finalized
-site, theme changes, and current uploads assets were pushed to Flywheel. The
-old 27 GB server asset directory was removed; current Flywheel storage usage is
-approximately 660 MB. Git `main` is synchronized with `origin/main` at
-`77a12c6`.
-Previous: 2026-07-27 (PM) — Homepage Hero copy and Bento A visual finalized.
-Eyebrow = "Technical knitwear OEM/ODM partner"; H1 = "Performance Knitwear" /
-"Manufacturer". Bento A now uses the approved 4:7 campaign image
-`sportswear/performance-knitwear-campaign-4x7-2160x3780.png` (2160 × 3780,
-full-resolution PNG). The desktop Bento grid was widened from 1.5:1 to
-1.75:1 so the A card renders close to 4:7, and the image is uniformly scaled
-to 1.15 from the bottom center to reduce internal whitespace without
-distorting the model. Mobile keeps the existing 16:10 A-card layout.
-The image lives in uploads and is not carried by Git; transfer it separately
-with uploads when deploying. Current source size is ~4.97 MB, so web delivery
-optimization remains a separate follow-up after the visual lock.
-Earlier: 2026-07-27 — Status correction: Flywheel is the current host
-and GoDaddy is no longer used; WhatsApp and Contact Form issues are fully
-resolved and closed.
-Earlier: 2026-07-27 (PM) — Homepage lookbook image optimization.
-Converted the 46 images referenced by style-gallery.php to WebP@82 /
-max-2000px (137 MB -> 4.5 MB, -97%). Originals kept; WebP files sit
-next to them with the same name + .webp extension. style-gallery.php now
-emits <picture> with a WebP <source> + JPG/PNG <img> fallback. Marquee
-node count cut from 138 to 92 (46 × 3 -> 46 × 2) and the scroll keyframe
-shifted from translateX(-33.3333%) to translateX(-50%) to keep the loop
-seamless with 2 copies instead of 3. SCOPE: only the lookbook images
-were touched; certificate/brand/hero/subcategory images are unchanged per
-user direction (see "Image optimization policy" below).
-Pre-previous: 2026-07-27 (AM) Contact page bg hero + Ken Burns removal +
-hero text color hierarchy (H1 white, intro rgba(255,255,255,0.72)).
-Historical: 2026-07-24 uploads asset migration (27G -> 0.27G local);
-Flywheel server cleanup completed 2026-07-28. See the archived
-docs/operations/flywheel-cleanup-guide.md.
-Launch: 2026-07-22. Site live on Flywheel at
-https://www.athletikapparel.com (see the current status section for the full
-launch record).
+最后更新：2026-08-12。
 
 ---
 
-## Project at a glance
+## 1. 当前状态摘要
 
-- Code-first WordPress rebuild. LocalWP (Windows) -> Flywheel via Local
-  Connect. GoDaddy is no longer used.
-- Base theme: GeneratePress. All work in child theme `myathletik-child`.
-- Agent rules: `AGENTS.md` is the single canonical project instruction file.
-  The unused `CLAUDE.md` was removed 2026-07-28 to prevent rule drift.
-- Git initialized in the child theme dir; commit per meaningful change.
-- Reference site for STRUCTURE only: hongyuapparel.com. Do not copy its
-  startup tone or visuals.
+### 1.1 网站与内容
 
-## Key positioning / guardrails (do not violate)
+- 规范站：<https://www.athletikapparel.com/>，运行于 Flywheel。
+- WordPress 重建已上线，使用 GeneratePress 父主题和 `myathletik-child` 子主题。
+- 首页、7 个产品类目页、Services、About、Contact、Sustainability 和 Privacy Policy 已上线。
+- Technical Guides 内容中心及 3 篇基础指南已上线，站点导航、首页和页脚均有稳定入口。
+- Rank Math Page Sitemap 最近一次生产核验包含 17 个 URL，其中包括内容中心与 3 篇指南。
+- 浏览器、Googlebot、OAI-SearchBot 和 PerplexityBot 访问 4 个指南 URL 均返回 HTTP 200。
+- 4 个新 URL 已在 Google Search Console 逐个申请索引；目前进入等待和观察阶段，不重复提交。
+- `myathletik.com` 已按所有者决定完全下线，已检查入口返回 HTTP 410；不做跨域 301，也不再优化旧站。
 
-- Athletik Clothing, 15+ yrs technical knit OEM.
-- Public story: "our own production facility / vertically integrated." NEVER
-  reveal the real number of factories or that orders are subcontracted.
-- Vertical capability can be stated as "from yarn to finished garment."
-- Audience: mid-sized B2B brand clients. MOQ 1,000 pcs per style.
-- Voice: professional + credible + warm. Not startup hand-holding.
-- URLs: top-level keyword style (/sportswear-manufacturer/ etc.). No legacy
-  redirects are currently deployed; see the pending migration audit below.
-- Agents may draft long-form body copy only when the user explicitly requests
-  or authorizes it; owner review is required before publication.
-- No stock photos on live pages. Use placeholders for missing real photos.
-- Confirmed numbers: 15+ yrs / 4,500+ sq m own facility / 100,000+ pcs/month /
-  3 continents. Russia deliberately removed from the regions list
-  (geopolitically sensitive); regions now read "North America, Europe, and
-  Asia-Pacific."
+### 1.2 GEO
+
+- [`geo/GEO.md`](geo/GEO.md) 是 GEO 中央工作台和路由文档。
+- 固定 GEO-01～08 的第一轮 Temporary Chat 中性基线已经完成。
+- 实体、技术可抓取性、三篇指南和 GEO-07 首轮 LinkedIn/Instagram 分发已经完成。
+- GEO-06、GEO-08 的社交分发、GEO-07 七日数据、Search Console 索引观察和后续月度复测仍待进行。
+- 当前长期 GEO 对话只用于规划和证据分析，不能作为中性测试环境。
+
+### 1.3 营销与广告
+
+- Instagram、官网和 YouTube 正在运营；LinkedIn 公司主页已完成基础配置并进入低频自然更新。
+- Meta Ads 当前目标是获取真实粉丝和扩大影响力，不以 Instagram 直接询盘为主要目标。
+- 已记录的 Meta 对照 Reel 表现较强；详见
+  [`marketing/ads/meta-ads-baseline-2026-08-07.md`](marketing/ads/meta-ads-baseline-2026-08-07.md)。
+- Google Ads 是独立的询盘获客路径。仓库中最新记录仍是 2026-08-05 上线快照；报告当前状态前必须登录平台核验。
+- Outbound 已有流程和空白台账模板，但真实联系人数据不得进入 Git；在工作存储、留存规则和发送邮箱确认前不启动。
+
+### 1.4 隐私、归因与询盘
+
+- Cookiebot、WP Consent API、Google Consent Mode、GA4、UTM/GCLID 归因和 Fluent Forms 询盘路径已部署。
+- `generate_lead` 是唯一主要网站转化；`contact_email_click` 与
+  `contact_whatsapp_click` 是辅助诊断事件。
+- 生产询盘、Brevo 发信、Cloudflare Email Routing 和最终收件箱均已完成端到端验证。
+- 美国与加拿大是首轮广告地区。EEA、英国和瑞士的主动推广仍受跨境传输与代表问题约束。
+- 隐私详细决策以 [`privacy/`](privacy/) 内文档为准，不从本摘要推断法律结论。
 
 ---
 
-## DONE
+## 2. 定位与不可突破的边界
 
-### Foundation & global
-- Full child theme scaffold (style.css with :root warm tokens, functions.php,
-  front-page.php, template-parts/home/*, template-parts/product-category/).
-- Design tokens in :root include --ma-color-white and --ma-color-dark so dark
-  bands and white surfaces no longer hardcode hex (QA P1-6 resolved).
-- Heading font: Manrope (Google Fonts, enqueued with display=swap);
-  --ma-font-head token; hero/site title use lighter 600 weight. Preconnect
-  hints configured.
-- Navigation: WP menu system + custom styling (logo left, menu right, Products
-  dropdown, Contact as accent CTA button). Desktop single-row, mobile hamburger.
-- Header brand wordmark: two-tone "Athletik" (dark bold) + "Clothing" (muted
-  accent, uppercase, thin) with a 1px divider. Implemented via the
-  `generate_site_title_output` filter so it overrides GP's default markup.
-- Custom B2B footer (functions.php): brand blurb, Services/Company nav,
-  contact block, quote CTA. Social links: Instagram + YouTube point to the
-  real @athletikclothinginc accounts. WhatsApp is live at
-  `https://wa.me/16044049819`; all footer social links are resolved.
-- Per-page SEO <title> + meta description for: Services, About, Sustainability,
-  and all 7 product category pages (driven by inc/product-category-data.php).
+- 公开品牌：Athletik Clothing。
+- 美国实体：Athletik Clothing Inc.。
+- 中国实体：Zhangjiagang Athletik Clothing Co., Limited。
+- 两个实体属于同一 Athletik 业务体系，但运营职责不同；不得写成同一个法律实体，
+  也不得自行推断母子公司、签约、出口、雇佣或知识产权关系。
+- 当前确认的公开角色仅包括：美国实体是网站隐私数据控制者；中国实体名称用于中国生产设施。
+- 定位：面向中型 B2B 品牌买家的技术针织 Vertically integrated OEM。
+- 公开 MOQ：每款 1,000 件。
+- 可强调：自有生产设施、从纱线到成衣的垂直整合、FLATLOCK / ACTIVESEAM、
+  Carbondry、Laser perforation、完整出口文件能力与区域覆盖。
+- 不公开工厂数量或分包安排，不杜撰认证、产能、客户或法律实体关系。
+- 已确认的网站数字：15+ 年、4,500+ sq m 自有设施、100,000+ pcs/month、3 continents。
+- 区域统一写作 `North America, Europe, and Asia-Pacific`，不再列出俄罗斯。
+- 正式网站文案使用面向北美和欧洲 B2B 买家的英文；内部 Markdown 文档默认使用简体中文。
+- agent 只有在用户明确要求或授权时才能起草长篇正文，且必须经过所有者审核后才能发布。
+- 实际页面不使用图库式库存照片；缺少真实素材时使用明确占位符。
+- 已上线并被索引的 URL 不得在没有 301 的情况下修改。
 
-### Homepage (front-page.php — 11 blocks)
-Block order: hero, client-logos, product-categories, capability-proof,
-why-myathletik, style-gallery, numbers-proof, process-snapshot,
-partnership-trust, certifications, inquiry-cta.
-(latest-posts is commented out — no posts yet.)
-- Hero: 4-cell bento collage (approved 4:7 campaign model image + sportswear
-  garment + sewing + knitting). Stock pexels photo removed. Bento A uses
-  correct width/height, eager loading, and `fetchpriority="high"`.
-- Client logo marquee: full-bleed seamless auto-scroll, grayscale with
-  color-on-hover. Clients all authorized.
-- Product-categories grid: REBUILT as 3-tier Bento (v2). Sportswear is the
-  large feature card on the left (biggest area = visual focus); Merino is a
-  tall card on the right. Tier 2 = Knitted Fabrics + Outdoor; Tier 3 = Silk +
-  Accessories + Underwear. Hierarchy driven by card AREA, each tier locks an
-  aspect ratio so the grid stays aligned. 7 dedicated cat_* images, no overlap
-  with Hero or lookbook. Section sits ABOVE capability-proof now. Merino card
-  has a subtitle "Apparel & base layers" to clarify it is apparel, not raw
-  wool. H2 simplified to "What we make".
-- Style-gallery (lookbook): EXPANDED 12 -> 24 columns (46 unique images, was
-  23). Fixed 3 missing merino images that were broken. Distribution: silkwear
-  15, merino 10, sportswear 8, underwear 7, outdoor 6. Zero overlap with hero /
-  bento / partnership / product-page subcats. Excludes Knitted Fabrics &
-  Accessories (non-apparel).
-- Capability-proof, why-myathletik, certifications, numbers-proof,
-  process-snapshot, partnership-trust, inquiry-cta: built and copy-filled.
-  Numbers-proof regions corrected to "North America, Europe, and Asia-Pacific"
-  (Russia removed). Process-snapshot links all point to /services/.
+---
 
-### Product category pages (7) — subcategory showcase system
-- All 7 top-level SEO slugs built from a shared data file + shared template
-  part + slug-specific page templates (page-{slug}.php).
-- Each category page structure: hero (H1 + intro + CTAs) -> "What we make"
-  index list (each item is an anchor link that jumps to its detail block
-  below) -> "Product range" subcategory showcase -> Construction & fabric ->
-  Specs band -> Related links -> Inquiry CTA.
-- Subcategory showcase: every subcategory gets image + title + one-line
-  description, alternating left/right on tablet+. Data lives in the
-  `subcategories` array (title/description/image) per category.
-- "What we make" text list items become clickable anchor links to the matching
-  `#subcat-{slug}` detail block when subcategories exist.
-- Old "Sample image groups" gallery section is HIDDEN when subcategories exist
-  (all 7 categories have them now) — so the unsplash stock images that used
-  to live there (P1-2) no longer render. The block only shows for categories
-  without subcategories (currently none).
-- Hero "View Examples" button points to the subcats heading when subcats
-  exist, else to #product-examples.
-- Subcategory de-duplication (strict): see §"Subcategory structure" below.
+## 3. 已完成的网站实现
 
-### Video heroes (Merino Wool + Underwear)
-- Merino Wool and Underwear render muted autoplay looping `<video>` elements
-  behind the hero text, with a dual-gradient overlay (left-dark for text
-  legibility + bottom-dark). Driven by the `hero_video` field in category data.
-- `hero_video_position` field supports per-video object-position to keep
-  portrait subjects' heads in frame when cropped to a wide hero (Merino uses
-  "center 20%").
-- Backward compatible: categories without `hero_video` keep the plain
-  surface-color hero. The other 5 product categories remain optional future
-  video additions.
+### 3.1 技术基础与全局组件
 
-### Background-image heroes (About / Services / Sustainability / Contact)
-- All four non-product landing pages use the same full-bleed `<img>` hero
-  pattern: a cover-fit photo, a left-dark/right-transparent gradient overlay
-  for text legibility, white H1, and a soft grey-white intro paragraph.
-- Photos: About = production/工厂全景.png; Services = services/hero.png;
-  Sustainability = sustainable/hero.png; Contact = contact/hero.png
-  (sample-room photo, added 2026-07-27).
-- **Ken Burns animation REMOVED 2026-07-27.** The CSS `@keyframes` zoom had
-  been written (scale 1->1.12 over 24s) but never rendered reliably across
-  browsers in user testing — even at exaggerated debug params (3s / scale
-  1.5) nothing visibly moved. Rather than chase the cause, the animation was
-  dropped entirely; heroes now use a static `transform: scale(1.04)` so the
-  photo still fills the frame with a touch of depth. The `prefers-reduced-
-  motion` fallbacks were removed at the same time (no animation -> no
-  fallback needed). Do NOT reintroduce CSS Ken Burns here; if motion is
-  wanted later, use a JS (IntersectionObserver + rAF) approach instead.
-- **Hero text colour hierarchy (2026-07-27):** H1 = pure white
-  (`--ma-color-white`); intro paragraph = soft grey-white
-  `rgba(255,255,255,0.65)` so the title reads as the primary element.
-  Tuning sequence: started at `rgba(255,255,255,0.82)` (too close to H1),
-  tried 0.72, settled on **0.65** per user preference for maximum title
-  emphasis. An earlier attempt used warm cream `#e8ddc9`, which read too
-  gold against the photo and was rejected. All 4 bg heroes (About/Services/
-  Sustainability/Contact) use 0.65.
+- 完成子主题基础结构：`style.css`、`functions.php`、`front-page.php`、
+  `template-parts/home/*`、`template-parts/product-category/*` 等。
+- 所有定制代码位于 `myathletik-child`；未修改 GeneratePress 父主题。
+- `:root` 中建立暖色系设计变量，包括 `--ma-color-white`、`--ma-color-dark`、
+  字体、间距和尺寸变量，减少硬编码颜色。
+- 标题字体使用 Manrope，Google Fonts 设置 `display=swap` 并配置预连接。
+- Header 品牌字标通过 `generate_site_title_output` 过滤器实现双色排版。
+- 响应式桌面导航和移动菜单已完成；`Contact` 是最后一项和唯一填充色 CTA。
+- `Guides` 为普通导航项，紧邻并位于 `Contact` 前。
+- 自定义 B2B 页脚包含品牌介绍、服务/公司导航、联系方式、询盘 CTA、Instagram、YouTube 和 WhatsApp。
+- WhatsApp 链接为 <https://wa.me/16044049819>，页脚社交链接已全部解决。
+- Services、About、Sustainability、7 个产品类目页和 3 篇指南均具备独立 SEO 标题与 meta description。
 
-### Homepage lookbook — WebP + node optimization (2026-07-27 PM)
-- The 46 images referenced by `template-parts/home/style-gallery.php` were
-  converted to **WebP @ quality 82, max edge 2000px**. Total payload
-  dropped from **137 MB to 4.5 MB (-97%)**. Originals are kept untouched;
-  the WebP files live next to them with the same basename + `.webp`
-  extension (e.g. `sportswear/1U128570.jpg` + `sportswear/1U128570.webp`).
-- `style-gallery.php` now emits `<picture>` with a `<source type="image/webp">`
-  followed by the original JPG/PNG `<img>` as fallback. Browsers that
-  support WebP (all modern ones) fetch the WebP; old browsers fall back.
-  `loading="lazy"` and `decoding="async"` are set on the `<img>`.
-- **Marquee node count cut 138 -> 92.** The PHP loop previously rendered
-  the 46-image set 3 times (`for $set < 3`) with a keyframe of
-  `translateX(-33.3333%)`. Reduced to 2 copies + `translateX(-50%)` — the
-  loop stays seamless (copy 2 picks up exactly where copy 1 ends) while
-  shedding a third of the DOM nodes and decode work.
-- Conversion was done with `sharp` 0.35.3 (Node), installed to a temp dir
-  outside the repo. No build step is wired into the theme; if more images
-  need converting later, re-run a one-off script (do NOT commit sharp into
-  the repo — it is a dev-only tool).
-- **Quality 82 chosen after a 5-sample A/B/B compare** (sportswear-max,
-  merino, underwear, silkwear, contact-hero). User reviewed the compare
-  page (`/webp-compare/compare.html`, served locally) and judged q82
-  visually acceptable; q78 was rejected as slightly too lossy.
-- Verified in browser: 92 `<picture>` + 92 `<source type="image/webp">`
-  nodes render on the homepage; first card's `<source srcset>` points to
-  the `.webp` and `<img src>` to the `.jpg` fallback as expected.
+### 3.2 首页
 
-### Other pages
-- Services: page-services.php, single overview, 4-stage process strip.
-  H-tag bug (P1-7b: broken `<h3>` open + `<h2>...</h3>` mismatch) FIXED.
-- About Us: page-about-us.php.
-- Contact: page-contact.php — full-bleed background hero (sample-room photo,
-  contact/hero.png, 2026-07-27) + FluentForm shortcode id=3.
-- Sustainability: page-sustainability.php.
-- Blog: latest-posts block returns early when empty AND is commented out in
-  front-page.php. Re-enable by uncommenting get_template_part line once posts
-  exist.
+首页当前区块顺序：
 
-## Subcategory structure (after 2026-07 de-duplication)
+1. Hero
+2. Client logos
+3. Product categories
+4. Capability proof
+5. Why Athletik
+6. Style gallery / Lookbook
+7. Numbers proof
+8. Process snapshot
+9. Partnership trust
+10. Certifications
+11. Inquiry CTA
 
-Each subcategory owns unique content; no overlap across categories. All 7
-SEO landing-page URLs preserved.
+此外已增加稳定的 Technical Guides 入口。`latest-posts` 在没有普通博客文章时保持禁用。
 
-| Category | # subcats | Subcategories |
-|----------|-----------|---------------|
-| Sportswear | 4 | Training tops/tanks/tees; Leggings & compression; Yoga & studio; Running singlets & layers (merged two compression items into one) |
-| Underwear | 4 | Boxer/brief; Thermal base layer (absorbed Outdoor's base layers); 4-way-stretch; Microfiber & merino (dropped 5th "Seamless bonded-welded") |
-| Outdoor Clothing | 4 | Mid-layer/hoodies; Cold-weather layering; Hiking/trekking; Merino-blend & Genesis fleece (dropped base layer -> moved to Underwear) |
-| Merino Wool | 4 | Jacquard; Printed; Blend; Yarn sourcing & fabric development (dropped base layer -> unique vertical-integration story) |
-| Silk Wear | 3 | Base layer/underwear; Lightweight apparel; Blend (structure kept, copy stresses silk-only properties) |
-| Knitted Fabrics | 5 | Performance knit; Thermal; Functional finishes; Stretch/microfiber/merino; Recycled (GRS). Independent fabric-supply business. |
-| Sports Accessories | 3 | Balaclavas; Gloves/liners; Knit accessories |
+主要实现状态：
 
-## Legacy domain — fully offline with 410, no redirects (2026-08-10)
+- Hero 使用 4 单元 Bento 拼图，全部为真实产品、工厂和生产素材；不再使用 Pexels 图。
+- 主视觉使用核准的 4:7 campaign 图片，桌面端焦点和缩放已经锁定；移动端保留 16:10 布局。
+- Client logo marquee 全宽连续滚动，默认灰度，悬停显示彩色；客户标志均已获授权。
+- Product categories 为三级 Bento：Sportswear 为左侧最大主卡，Merino 为右侧高卡；
+  第二层为 Knitted Fabrics + Outdoor，第三层为 Silk + Accessories + Underwear。
+- 7 张类目图与 Hero、Lookbook、Partnership 区域不重复。
+- Merino 卡片使用副标题 `Apparel & base layers`，避免被理解成原料羊毛。
+- 类目区 H2 为 `What we make`。
+- Lookbook 从 23 张扩展为 46 张唯一图片；页面渲染两组副本，共 92 个节点，滚动仍保持无缝。
+- Lookbook 分布：Silk Wear 15、Merino 10、Sportswear 8、Underwear 7、Outdoor 6；
+  不展示 Knitted Fabrics 与 Sports Accessories。
+- Capability、Why Athletik、Numbers、Process、Partnership、Certifications、Inquiry CTA 均已完成。
+- Process Snapshot 的链接统一指向 `/services/`。
 
-Before retirement, Bing cited the old site's About Us page in a branded answer.
-The site now returns HTTP 410 and no old-to-new 301 redirects were created by
-explicit owner decision. No legacy URL inventory, redirect implementation or
-content remediation is in scope. GEO work focuses only on
-`athletikapparel.com`; any continued legacy citation is recorded as search/AI
-cache lag.
+### 3.3 产品类目页（7 个）
 
-## Current status / remaining enhancements
+- 7 个顶级关键词 URL 由共享数据文件、共享模板部件和对应 `page-{slug}.php` 模板生成。
+- 统一页面结构：Hero → `What we make` 锚点索引 → Product range 子类展示 →
+  Construction & fabric → Specs band → Related links → Inquiry CTA。
+- 每个子类具有图片、标题和一行说明；平板及以上交替左右排版。
+- `What we make` 项目可跳转至匹配的 `#subcat-{slug}` 详情区块。
+- 所有 7 个类目已有子类数据，因此旧的 Sample image groups 库存图画廊不再渲染。
+- Hero 的 `View Examples` 在有子类时跳转至子类标题。
+- Sportswear 与 Underwear 页面已链接 FLATLOCK vs OVERLOCK 指南。
 
--4. **Production SMTP / Brevo — ✅ CLOSED 2026-07-29:** FluentSMTP 2.2.95
-   is configured locally and on the Flywheel production site with the native
-   Brevo API connection. From address = `info@athletikapparel.com`; From name =
-   `Athletik Clothing`; forced sender name is enabled. Brevo reports
-   `athletikapparel.com` as both verified and authenticated. The API key is
-   encrypted in the WordPress database, and a public-tree scan found no
-   plaintext key. Production Email Test delivery was confirmed in both Brevo
-   events (`request` -> `delivered`) and the recipient inbox. A final
-   production form submission then produced exactly one Brevo event chain to
-   `info@athletikapparel.com` (`request` -> `delivered` -> `opened`);
-   Cloudflare currently forwards this address to
-   `zhangyifuzjg0609@163.com`, where inbox receipt was confirmed. The Fluent
-   Forms id=3 notification was also normalized locally and in production on
-   2026-07-29: the duplicate default `{wp.admin_email}` notification was
-   removed; one enabled `New Notification` remains with Send To / From Email =
-   `info@athletikapparel.com`, From Name = `Athletik Clothing`, and Reply-To =
-   `{inputs.email}`. This also removed the stale `info@myathletik.com`
-   recipient that had been restored by an earlier database sync.
+#### 子类结构
 
--3. **Public Turnstile secret file — ✅ CLOSED 2026-07-29:** A
-   `Turnstile-KEY/secret-key.txt` file was found under the public
-   `wp-content/uploads/myathletik-theme/assets/` tree on 2026-07-28.
-   - Deleted the key files from the local uploads asset tree 2026-07-29.
-   - **Verified the key file was never pushed to Flywheel** (server uploads
-     was clean — no public exposure on production).
-   - **Rotated the Turnstile secret in Cloudflare** (old secret treated as
-     compromised); new secret lives only in the WP plugin config / DB / env,
-     never under uploads/.
-   - **Verified the old public URL now returns 404.**
-   Lesson: never place credentials under `wp-content/uploads/` — it is
-   web-readable and outside the repo's gitignore safety net.
+| 类目 | 数量 | 当前子类 |
+|---|---:|---|
+| Sportswear | 4 | Training tops / tanks / tees；Leggings & compression；Yoga & studio；Running singlets & layers |
+| Underwear | 4 | Boxer / brief；Thermal base layer；4-way-stretch；Microfiber & merino |
+| Outdoor Clothing | 4 | Mid-layer / hoodies；Cold-weather layering；Hiking / trekking；Merino-blend & Genesis fleece |
+| Merino Wool | 4 | Jacquard；Printed；Blend；Yarn sourcing & fabric development |
+| Silk Wear | 3 | Base layer / underwear；Lightweight apparel；Blend |
+| Knitted Fabrics | 5 | Performance knit；Thermal；Functional finishes；Stretch / microfiber / merino；Recycled (GRS) |
+| Sports Accessories | 3 | Balaclavas；Gloves / liners；Knit accessories |
 
--2. **FluentForm plugin recovery — ✅ CLOSED 2026-07-27:** Before a push,
-   the `plugins/fluentform/` folder became an EMPTY skeleton (4 subdirs,
-   0 files, no fluentform.php). WP dropped it from active_plugins (so the
-   plugin "disappeared" from admin) and re-installing failed with
-   "Destination folder already exists."
-   **Root cause:** the folder existed but had no files — WP couldn't load
-   the plugin (no main file) AND the empty folder blocked re-install.
-   **DB state remained SAFE:** 7 fluentform_* tables and all 3 forms were
-   preserved (id=1 Contact Form Demo, id=2 Subscription Form,
-   id=3 "inquiry form" — the one page-contact.php uses via
-   `[fluentform id="3"]`).
-   **Fixed 2026-07-24:** deleted the empty `fluentform/` folder
-   (confirmed 0 files first) — "Destination folder already exists" error
-   was resolved.
-   **Confirmed closed 2026-07-27:** Fluent Forms is restored, form id=3
-   renders on `/contact/`, submissions are stored in Entries, and notification
-   email delivery works. No form rebuild or further corrective action is
-   required.
-   Diagnostic script ff-diag.php (used to verify DB state) was deleted
-   after use because it exposed DB/plugin information.
+已完成去重：Thermal base layer 归入 Underwear；Outdoor 不重复 base layer；
+Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独立面料供应业务定位。
 
--1. **Flywheel server 27G cleanup — ✅ CLOSED 2026-07-28:** LocalWP Local Connect push
-   pushed the entire uploads (27G) to Flywheel, blowing past Tiny plan storage.
-   **Local side DONE 2026-07-24:**
-   - Migrated 4446 unused asset files (26.38G) out of uploads to
-     `D:\C-网站素材\` (local archive, structure mirrored). uploads now
-     218 files / 0.27G (only code-referenced assets + brand-partner logos).
-   - Fixed 3 dead image refs in inc/product-category-data.php:
-     `merino-wool-base-layer-10` -> `-19`, `-16` -> `-20` (avoided
-     dup with Outdoor page's -17/-18), `underwear/X-IMG_4877-scaled.jpg`
-     normalized to `underwear/IMG_4877-scaled.jpg` (copied from 6/IMG_4877.JPG).
-   - Verified: static audit of 195 unique image refs = 0 missing in uploads;
-     homepage first fetch = 200 with 162 images rendered; output buffer
-     rewriting theme->uploads URLs correctly. (502 errors during testing were
-     LocalWP being hammered by the audit's concurrency, NOT a migration issue.)
-   - Decision: Local Connect CANNOT exclude uploads subdirs (no config, no
-     rule file — only per-push manual deselect, impractical at 4k+ files).
-     Root-cause fix = keep uploads lean, which is now done.
-   - Cleanup scripts: tools/plan_asset_move.py, exec_asset_move.py,
-     audit_image_refs.py, audit_all_refs.py, verify_pages.py. Keep/move lists:
-     tools/move_plan_KEEP.txt (218), tools/move_plan_MOVE.txt (4446).
-   **Production side completed 2026-07-28:** the old 27 GB server asset
-   directory was removed, the finalized site and current uploads assets were
-   pushed again through Local Connect, and Flywheel storage now reports
-   approximately 660 MB. The 2026-07-24 270 MB ZIP is an obsolete historical
-   snapshot and must not be used for future deployments.
+### 3.4 视频和背景 Hero
 
-0. **Domains (corrected 2026-08-10):** purchased at Cloudflare Registrar —
-   **athletikapparel.com = PRIMARY** (site, email, all branding);
-   athletik-clothing.com = defensive, 301 to primary. `myathletik.com` is a
-   separate legacy public site that appeared in branded Bing results. It is not
-   the current canonical website and was retired with HTTP 410 without 301
-   redirects by explicit owner decision. The earlier “never used, zero traffic”
-   note is superseded.
-   **Current stack:** Flywheel Tiny hosting + Local Connect deployment +
-   Cloudflare DNS/email routing. GoDaddy is no longer used.
-   **2026-07-22: pushed to Flywheel via Local Connect, temp-domain
-   acceptance PASSED.**
-   **2026-07-22 PM — LAUNCHED on athletikapparel.com:**
-   - Domain attached via Flywheel's Cloudflare integration (www = primary;
-     A/CNAME records auto-created, Proxied). Privacy Mode disabled.
-   - SSL: Let's Encrypt issued on Flywheel (valid to 2026-10-20, auto-renews).
-     Gotcha: cert issuance FAILS while Cloudflare proxy is on — fix was to
-     temporarily set both records to DNS-only, run CHECK DNS AGAIN +
-     COMPLETE SSL SETUP, then re-enable proxy. Cloudflare SSL/TLS mode now
-     Full (strict) + Always Use HTTPS on.
-   - All four entries verified live: http/https x apex/www all funnel to
-     https://www.athletikapparel.com (200).
-   - Email: the legacy info@myathletik.com mailbox is expired and unused.
-     Current setup:
-     Cloudflare Email Routing (free) forwards info@athletikapparel.com ->
-     `zhangyifuzjg0609@163.com` (current destination as of 2026-07-29);
-     MX/SPF auto-created; forwarding test PASSED. The previous forwarding
-     destination was `alanzhang@athletik.com`.
-   - Public contact email in footer (functions.php) + contact page
-     (page-contact.php) changed info@athletik.com.cn ->
-     info@athletikapparel.com (commit 31f4b99; confirmed live).
-   - FluentForm id=3 admin notification recipient: was {wp.admin_email},
-     now hardcoded to info@athletikapparel.com (edited live via wp-admin).
-     Gotcha: FluentForms' Vue admin silently ignores programmatic fills
-     unless the native setter + input/change events are used; verify saves
-     via the network response, the list view shows stale values.
-   - Live end-to-end test inquiry PASSED: 3 submissions -> 3 notification
-     emails received at alanzhang@athletik.com via the info@ forward +
-     entries stored. (Frontend gotcha: page <head> has a
-     <meta name="description"> — any script must target
-     textarea[name="description"], never [name="description"].)
-   - athletik-clothing.com: Cloudflare Redirect Rule deployed 2026-07-22 —
-     "Redirect to athletikapparel.com", All incoming requests -> static
-     https://www.athletikapparel.com, 301. Verified: http/https/www all
-     301 correctly.
-   - Google Search Console: Domain property athletikapparel.com verified
-     2026-07-22 (auto-verified, no TXT needed); sitemap
-     https://www.athletikapparel.com/sitemap_index.xml submitted (initial
-     "couldn't fetch" status is normal for fresh submissions; robots.txt
-     301s to WP's virtual robots file which allows all + declares the
-     sitemap, Googlebot UA gets 200 — verified fine).
-   - SMTP deliverability enhancement: ✅ CLOSED 2026-07-29 via FluentSMTP +
-     Brevo API; production Email Test passed. Cloudflare Turnstile anti-spam
-     remains optional.
-   - CLOSED user-side 2026-07-22: legacy hosting was discontinued;
-     email-display commit 31f4b99 confirmed live (decoded from Cloudflare's
-     email-obfuscation data-cfemail on the live homepage footer).
+- Merino Wool 与 Underwear 使用静音、自动播放、循环的背景视频 Hero。
+- `hero_video` 控制是否使用视频；`hero_video_position` 控制裁切焦点。
+- 其他 5 个类目和首页 Hero 的视频仍是可选增强，不是当前缺陷。
+- About、Services、Sustainability、Contact 使用统一全宽背景图 Hero：
+  cover 图片、左深右透明渐变、白色 H1 与较柔和的介绍文字。
+- 背景图 Hero 的 CSS Ken Burns 动画已于 2026-07-27 移除；当前使用静态
+  `transform: scale(1.04)`。不要重新加入该 CSS 动画；未来需要动态效果时应使用经测试的 JS 方案。
+- Hero H1 使用纯白，介绍文字使用 `rgba(255,255,255,0.65)`；暖米黄色方案已被否决。
 
-1. **WhatsApp footer link — ✅ FULLY RESOLVED:** filled with
-   `https://wa.me/16044049819`, verified in `functions.php`. Closes QA P0-2.
-2. **Contact form (FluentForm id=3) — ✅ FULLY RESOLVED:** audited in the
-   WordPress admin and confirmed operational. Current fields: Name, Email*,
-   Company, Country, Website, Product Category of Interest* (7 cats + Other),
-   Estimated Order Quantity* (Under 1,000 / 1,000–2,000 / 2,000–5,000 /
-   5,000+; tiers updated for the 1,000 pcs-per-style MOQ),
-   Business Type* (Established brand / New brand / Wholesaler-Importer /
-   Other), and Message*. Resolution details:
-   (a) tech pack prompt added 2026-07-21 via the Message field
-   placeholder ("...Include a link to your tech pack if you have one.") —
-   File Upload itself is a Fluent Forms PRO feature, placeholder link prompt
-   chosen as the free-tier solution; (b) order quantity and business type
-   provide the required lead filtering; (c) email notification recipient is
-   `info@athletikapparel.com`; live delivery test PASSED 2026-07-22
-   (3 submissions -> 3 emails via Email Routing forward + entries stored).
-   On 2026-07-29, a stale `info@myathletik.com` recipient and a duplicate
-   `{wp.admin_email}` notification were found after database synchronization.
-   Both local and production settings were corrected to one enabled
-   notification with Send To / From Email = `info@athletikapparel.com`, From
-   Name = `Athletik Clothing`, and Reply-To = `{inputs.email}`. A final
-   production submission on 2026-07-29 generated exactly one Brevo
-   `request` -> `delivered` -> `opened` chain to
-   `info@athletikapparel.com`; Cloudflare's current destination is
-   `zhangyifuzjg0609@163.com`, and receipt in that inbox was confirmed; (d)
-   local submission test passed —
-   frontend success message
-   shown, entry stored correctly in Fluent Forms Entries (all dropdown
-   values captured). No Contact Form issue remains open. SMTP hardening was
-   completed 2026-07-29 via FluentSMTP + Brevo. Customer auto-reply or
-   additional anti-spam services remain optional future enhancements, not
-   unresolved form defects.
-3. **Remove the /sustainabilty/ -> /sustainability/ 301 redirect** ✅ DONE
-   2026-07-21 — function removed from functions.php.
-4. **Video hero rollout beyond Merino and Underwear:** the architecture is
-   ready (`hero_video` + `hero_video_position` fields). Merino Wool and
-   Underwear are live; video assets remain optional enhancements for the other
-   5 category pages and the homepage hero.
-5. **Remote git repository:** ✅ DONE 2026-07-21 — pushed to
-   https://github.com/yifuz/web_myathletik.git. Latest theme changes were
-   pushed through commit `77a12c6`; current uploads assets were separately
-   synchronized to Flywheel on 2026-07-28. Future uploads changes must still
-   be transferred separately because images are not in Git.
-6. **Language switcher (header):** ✅ HIDDEN 2026-07-21 — the 6-button
-   switcher (functions.php myathletik_header_actions) now returns early with
-   no output. **Decision 2026-07-21: defer multilingual.** Go live EN-only,
-   watch Search Console country data, then decide whether to translate
-   DE/FR/ES. Machine translation rejected. Real translation would require
-   Polylang + restructuring inc/product-category-data.php. To re-enable the
-   switcher: remove the early return in myathletik_header_actions().
+### 3.5 Technical Guides 内容中心
 
-## Notes / status of the 07-03 QA audit
+已上线 URL：
 
-Full audit in docs/site/qa-audit-2026-07-03.md. Status updated 2026-07-27:
+1. <https://www.athletikapparel.com/technical-guides/>
+2. <https://www.athletikapparel.com/flatlock-vs-overlock-technical-knitwear/>
+3. <https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/>
+4. <https://www.athletikapparel.com/evaluate-technical-knitwear-oem/>
 
-| ID  | Item | Status |
-|-----|------|--------|
-| P0-1 | process-snapshot dead links | ✅ fixed |
-| P0-2 | footer social `#` links | ✅ fixed — IG/YT and WhatsApp all use live URLs |
-| P0-3 | footer `/sitemap/` dead | ✅ fixed → /wp-sitemap.xml |
-| P0-4 | footer `/blog/` | ✅ removed; blog block disabled |
-| P1-1 | hero stock photo | ✅ fixed — real bento collage |
-| P1-2 | knitted-fabrics/accessories stock | ✅ effectively resolved — the gallery section that showed those unsplash images is now hidden behind the subcategory showcase on all 7 pages |
-| P1-3 | redirect-note visible to visitors | ✅ fixed |
-| P1-4 | style-gallery/partnership placeholders | ✅ fixed |
-| P1-5 | latest-posts placeholder | ✅ fixed |
-| P1-6 | hardcoded hex -> tokens | ✅ fixed |
-| P1-7 | services stage H2 -> H3 | ✅ fixed (and P1-7b tag-mismatch bug also fixed) |
-| P1-8 | contact form field audit | ✅ fully resolved — fields, entries, and notification delivery verified |
-| P1-9 | "3 continents" wording / Russia | ✅ fixed |
-| P1-10 | hero image alt | ✅ fixed |
+实施要点：
 
-## Image storage rule (IMPORTANT — read before placing any image)
+- 内容中心为稳定的数据驱动 Hub，只读取状态为 `publish` 的核准条目。
+- 首页、主导航、页脚和文章面包屑均有入口。
+- 三篇文章共用技术文章模板；每页只有一个 H1，并包含目录、正文、FAQ、参考资料、内部链接和询盘 CTA。
+- Rank Math 输出独立 title、description、canonical 以及对应的 Article、FAQPage、BreadcrumbList；
+  Hub 输出 ItemList。
+- 未提供个人作者身份，因此公开 Organization 作为 Article 作者。
+- Publisher Schema 不再把美国实体法律名称与中国生产地址错误混用。
+- Hub 与文章 Hero 已压缩文字长度、统一全宽页面外壳，并减少桌面和移动端的面包屑、导语及元数据间距。
+- 三篇正文均经所有者审核后上线。
+- FLATLOCK vs OVERLOCK 文章使用真实 Yamato FLATLOCK 与 OVERLOCK 生产视频；
+  Web 文件为静音 720 × 1280 H.264，并配有 JPEG poster。
+- Merrow ACTIVESEAM 与 HSAT-K5 在该文章中只作文字说明，没有使用视频。
 
-- ALL theme images live in `wp-content/uploads/myathletik-theme/assets/images/`
-  (NOT in `themes/myathletik-child/assets/images/`). The theme assets dir is
-  kept empty except for a `.gitkeep`, and is gitignored.
-- **Uploads stays LEAN.** The 2026-07-24 cleanup baseline was 218 files /
-  0.27G. After the approved WebP and Hero additions, the 2026-07-28 local
-  snapshot is approximately 0.31G. The full raw asset library (4446 files,
-  26.38G) was
-  moved OUT of uploads to `D:\C-网站素材\` because LocalWP Local Connect
-  pushes the entire uploads folder and has NO exclusion mechanism. Putting
-  unused assets back in uploads = server storage blowup again. Raw/unused
-  assets go in `D:\C-网站素材\<category>\`, NOT uploads.
-- An output buffer in `functions.php` (`myathletik_rewrite_image_urls`, hooked
-  via `ob_start` on `template_redirect`) rewrites theme-relative image URLs to
-  the uploads path at render time. So PHP keeps writing
-  `get_stylesheet_directory_uri() . '/assets/images/...'` and the browser is
-  silently served from uploads.
-- Videos follow the same pattern — place them anywhere under
-  `uploads/myathletik-theme/assets/images/` and reference theme-relative.
-- Therefore: to add/change an image or video that the SITE USES, drop ONLY
-  that file into the matching folder under
-  `uploads/myathletik-theme/assets/images/`. Do NOT copy it into the theme
-  dir (404) and do NOT bulk-dump unused assets into uploads (server bloat).
+### 3.6 其他页面
 
-## Image optimization policy (decision: 2026-07-27)
+- `/services/`：单页概览，包含 4 阶段流程；历史 H2/H3 标签不匹配问题已修复。
+- `/about-us/`：已上线。
+- `/contact/`：全宽背景图 Hero + Fluent Form 3。
+- `/sustainability/`：已上线；当前规范拼写正确。
+- Privacy Policy：美国首发英文版已上线，包含 Cookiebot declaration shortcode。
+- 普通 Blog 区块在无文章时不会渲染；未来有内容时再启用。
 
-Different image groups get different treatment. Respect this when adding
-or regenerating images — do NOT apply a blanket rule across all folders.
+---
 
-| Group | Treatment | Why |
-|-------|-----------|-----|
-| **Homepage lookbook** (`sportswear/` `underwear/` `silkwear/` `merino wool product/` `outdoor clothing/` — only the files referenced by `style-gallery.php`) | **WebP @ q82, max edge 2000px**, served via `<picture>` + JPG fallback. Done 2026-07-27. | 46 images scroll in a marquee — payload matters; q82 judged visually acceptable in A/B compare. |
-| **Certificates** (`audit&certificates/`) | **Unchanged.** No WebP, no resize. | Small text on cert scans would suffer; tiny files anyway. |
-| **Brand partner logos** (`brand-partner/`) | **Unchanged.** | Logos are sharp flat graphics; converting would blur edges. |
-| **Hero banners** (`contact/` `services/` `sustainable/` + `production/工厂全景.png`) | **Unchanged.** Keep full resolution. | Full-bleed background needs high clarity; user explicitly wanted these preserved. |
-| **Product-page subcategory images** (~27 files across category folders) | **Unchanged.** | These are decision-critical close-ups; user wanted them kept as-is. |
-| **Homepage hero bento** (`sportswear/performance-knitwear-campaign-4x7-2160x3780.png`, responsive `performance-knitwear-hero-*-lossless.webp`, and the remaining `hero_bento_*` files) | **Responsive delivery optimization completed 2026-07-29.** Keep the approved PNG as the source asset; the live template serves 720w / 960w / 1280w lossless WebP variants through `srcset`. The other three cells remain pre-sized and lightweight. | The approved 4:7 source and CSS focal treatment remain visually locked, while browsers receive an appropriately sized WebP. Uploads assets must still be synchronized separately from Git. |
+## 4. SEO 与 GEO 状态
 
-When adding a NEW image: identify which group it belongs to from the table
-above and apply that group's rule. If it doesn't fit any group, ASK before
-converting — the user makes per-group calls, not the agent.
+### 4.1 规范域名与旧域名
 
-When converting: keep the original (do NOT delete), emit the WebP next to
-it with the same basename, and use `<picture>` with a JPG/PNG fallback.
-Never wire a build step into the theme — conversion is a one-off `sharp`
-script run outside the repo.
+- `athletikapparel.com` 是网站、邮箱和品牌推广的主域名。
+- `athletik-clothing.com` 是防御性域名，通过 Cloudflare 301 到主域名。
+- `myathletik.com` 是独立旧站，已于 2026-08-10 完全下线并返回 HTTP 410。
+- 所有当前 SEO/GEO 工作只针对 `https://www.athletikapparel.com/`。
+- 旧站继续出现在搜索或 AI 回答中时，只记录为缓存滞后，不恢复旧站，也不建立跨域 301。
 
-## Notes / gotchas learned
+### 4.2 当前实体 Schema
 
-- LocalWP: if site won't start / MySQL error, kill stray `mysqld.exe` in Task
-  Manager, then restart site.
-- VPN (Clash): bypass `.local` so system proxy can stay on. Or toggle system
-  proxy off to view local site.
-- Git: if VSCode git UI hangs (pipe ENOENT), use the terminal. If locked,
-  delete `.git\index.lock`.
-- Desktop layout has been a recurring weak spot - always verify desktop
-  (1440px, 100% zoom) explicitly, not just mobile.
-- Stats / proof cards: use separate number/unit elements so cards align.
-- When editing heading levels, double-check BOTH opening and closing tags —
-  the services.php bug (H2 opened, H3 closed; missing h3 open) slipped through
-  a P1-7 "fix."
-- For nav menu URL corrections: `wp_update_nav_menu_item` with partial args
-  can wipe other fields. Use `update_post_meta( $db_id, '_menu_item_url', ... )`
-  for surgical URL-only changes.
-- For square/portrait hero videos cropped to a wide hero, set
-  `hero_video_position` (e.g. "center 20%") to keep the subject's head in
-  frame.
+- 已部署核准的 `legalName`、官方 LinkedIn / Instagram / YouTube `sameAs`、联系方式和地址。
+- JSON-LD 为服务端渲染，不包含旧域名。
+- 当前可公开陈述的职责边界有限；需要更详细的中美实体职责时必须向所有者确认。
+
+### 4.3 第一轮 GEO-01～08 中性基线
+
+完整证据见 [`geo/testing/prompt-baseline.md`](geo/testing/prompt-baseline.md)。方向性结论：
+
+- GEO-01：可识别技术针织定位和张家港/苏州制造基地；旧 LinkedIn 的 New York headquarters 字段仍会造成干扰。
+- GEO-02：可认可 technical/performance knitwear OEM/ODM 定位，但中美实体角色说明不完整。
+- GEO-03：Temporary Chat 将 Athletik 列为中国 FLATLOCK/ACTIVESEAM 供应商短名单第一，
+  是当前最强的非品牌发现信号。
+- GEO-04：中性测试未出现 Athletik；通用 sportswear OEM + 1,000 件采购意图仍是缺口。
+- GEO-05：中性测试未出现 Athletik，且提示词容易产生消费品牌推荐；Merino wool OEM 发现仍是缺口。
+- GEO-06：中性回答偏向横机毛衫 tech pack；Athletik 未出现。已上线 cut-and-sew 技术针织指南用于纠偏。
+- GEO-07：中性回答没有引用 Athletik，且部分结论过于绝对；第一方指南和首轮社交分发已完成。
+- GEO-08：中性回答没有引用 Athletik，并偏向毛衫供应商尽调；对应 OEM 评估指南已上线。
+
+原始个性化测试中出现过 `your own` 等用语，说明 Memory 或历史上下文影响回答；
+这些结果只保留为探索性观察，不计入中性成绩。GEO-01～08 均已有独立 Temporary Chat 基线。
+
+### 4.4 历史域名与第三方资料
+
+- `ultramerino.com` 已由所有者确认属于公司，是早期矩阵中的类目站之一。
+- 该站当前保留、更新、canonical 或下线策略尚未决定；历史认证、设备、产能和材料声明不能自动复用到规范站。
+- `athletik.com`、`athletik.nyc`、`athletik.com.cn`、`powermerino.com`、
+  `sportsbaselayer.com` 的所有权、可编辑性和当前价值仍需逐项确认。
+- Panjiva、ImportInfo 等记录可辅助证明相关名称下的贸易/运输活动，
+  但不能独立证明工厂所有权、垂直整合或产能。
+
+### 4.5 当前 GEO 后续动作
+
+1. 补录 GEO-07 LinkedIn 与 Instagram 公开帖子 URL，并确认 Story 状态。
+2. 2026-08-19 起记录 GEO-07 满 7 个自然日的平台与 GA4 数据。
+3. 按单人保守节奏依次分发 GEO-06 与 GEO-08；优先 GEO-06。
+4. 等待 Search Console 正常刷新，不重复申请索引。
+5. 三篇指南获得合理抓取时间后，在全新 Temporary Chat 按固定提示词复测；首选 2026 年 9 月月度窗口。
+
+暂不制作 `llms.txt` 或所谓 AI 专用 Schema，不每日重复提示词，不以社交展示量替代 GEO 引用证据，
+也不通过低信息密度文章、购买目录链接或虚构第三方评价追求数量。
+
+---
+
+## 5. 内容分发与营销记录
+
+### 5.1 GEO-07 首轮内容分发
+
+- 2026-08-12 将官网 `FLATLOCK vs OVERLOCK` 指南分发到官方 LinkedIn Page 与 Instagram。
+- 素材包包含 7 张 1080 × 1350 卡片、平台专用文案、独立 UTM、alt text、Story 素材和七日数据模板。
+- LinkedIn 当前公司主页界面不支持 PDF，因此正式发布采用 7 图帖；生成的 PDF 只作内部预览。
+- Instagram 使用 Carousel 形式，文案更短，并强调滑动、收藏及 tech pack 应用。
+- 执行 SOP：[`geo/distribution/social-content-sop.md`](geo/distribution/social-content-sop.md)。
+- 发布记录：[`geo/distribution/publishing-log.md`](geo/distribution/publishing-log.md)。
+- 尚未补录：公开帖子 URL、Story 最终状态、2026-08-19 七日数据。
+
+### 5.2 单人运营基线
+
+当前保守、可持续的内容基线：
+
+- Instagram：每周 2 个 feed posts。
+- Shorts：每周复用 1 条。
+- LinkedIn：每周 1 条。
+- YouTube：每月 1 条长视频。
+- 官网：每月 1 篇技术文章。
+- Outbound：合规和记录条件完成后，每周 10～15 家目标公司。
+
+额外产出只视为有余力时的增量，不自动提高持续基线。客户案例必须有书面授权记录；没有记录就不发布。
+
+### 5.3 LinkedIn
+
+- 官方推广主页：<https://www.linkedin.com/company/111831319/>。
+- 页面名称、Logo、真实车间封面、官网、简介、公司详情和张家港地址已配置。
+- 历史面料出口主页因无管理权限保持独立；已弃用的 LinkedIn China 页面不再作为运营目标。
+- 当前采用低频自然内容积累；LinkedIn 付费广告和 Insight Tag 暂缓。
+
+### 5.4 Meta Ads 基线
+
+2026-08-07 保存的对照 Reel 数据：
+
+- 浏览量 7,785；覆盖 6,325；互动 123；综合关注 135。
+- 推广视图直接归因 68 次主页访问和 14 次关注。
+- 花费 RMB 170.08；单个广告归因关注 RMB 12.15；主页访问到关注转化率 20.6%。
+- 截图时已投放 4 天，日预算 RMB 68。
+
+综合 135 次关注与广告归因 14 次关注采用不同统计范围，差额不得直接标记为“纯自然”。
+若其他素材只有更低主页访问成本，却没有带来关注或互动，不应仅凭点击成本判为更优。
+
+### 5.5 Google Ads 快照
+
+- GA4 已链接 Google Ads 账号 `734-505-8603`。
+- 首个搜索 Campaign：`Leads-Search-1`。
+- 落地页：Sportswear manufacturer。
+- 地区：United States + Canada；语言：English；Search Network only。
+- 出价：Maximize Clicks；日预算 RMB 25。
+- AI Max、Search Partners、Display expansion、text adaptation、final URL expansion 均关闭。
+- 2026-08-05 启动并进入 Google 审核；后续是否开始展示必须实时核验，不能沿用该历史快照。
+
+---
+
+## 6. 隐私、同意、归因和询盘
+
+### 6.1 同意管理
+
+- WP Consent API 2.0.1 与 Cookiebot 4.7.2 已在生产启用。
+- Cookiebot CBID：`f81cac53-c468-4afd-9823-7adcc4839c5b`，使用 Auto blocking。
+- Cookiebot 自带 Google Consent Mode 已关闭，由 Site Kit 单独控制 Google consent。
+- Banner 对所有访问者采用明确同意；可选类别不预选；桌面为底部 Bar，移动端为响应式 Dialog。
+- `Reject all` 保持可选 WP consent 和 Google 广告/分析信号为 denied；`Allow all` 将其设为 granted。
+- Privacy Trigger 与页脚 `Cookiebot.renew()` 均可重新打开同意设置。
+- 撤回同意会将 Preferences、Statistics、Marketing 及对应 WP Consent API 状态恢复为 false。
+- AdSense 已从生产 Site Kit 断开；公开 HTML 已确认不再加载 AdSense 脚本或域名引用。
+
+### 6.2 Privacy Policy 与区域边界
+
+- WordPress Privacy Policy 页面 ID 3 为经业务核准的美国首发英文版。
+- 页面包含 14 个 H2、无正文级 H1、一个有效 Cookiebot declaration shortcode、有效 Gutenberg blocks，且无公开占位符。
+- 数据控制者：Athletik Clothing Inc.；隐私邮箱：`info@athletikapparel.com`。
+- 纽约控制者地址已记录在隐私决策文档，不在本摘要中重复作为生产总部声明。
+- 普通制造询盘不要求强制勾选 Privacy Policy；表单使用简短隐私提示。
+- 未来营销邮件同意必须独立且可选。
+- EEA/英国/瑞士主动推广前，必须解决 163.com 目的邮箱涉及的签约实体、处理地点、传输机制和地区代表问题。
+- 所有者确认当前未达到三项主要 CCPA business thresholds；最终法律审查仍需考虑受控实体及其他州法路径。
+
+### 6.3 数据保留已确认项
+
+- 未成交询盘及相关邮件：最后一次实质联系后 24 个月。
+- GA4：14 个月，activity reset 关闭。
+- 服务器/安全/诊断日志：目标 30 天；实际供应商可见窗口按产品记录。
+- Flywheel：最近 7 天访问/PHP 错误/慢日志；夜间站点及数据库备份保留 30 天。
+- Brevo：交易日志自动删除设为 1 个月；新交易邮件预览不存储。
+- Cookiebot 浏览器 consent cookie 最长约 12 个月；账户侧日志没有公开固定期限，最终政策表述仍需法律复核。
+
+### 6.4 归因与表单
+
+- 生产 UTM/GCLID 归因代码只有在 WP Consent API `marketing` 同意后才存储数据；拒绝或撤回时删除。
+- `generate_lead` 已通过 Tag Assistant 和 GA4 DebugView 验证。
+- Fluent Form 3 当前字段：Name、Email、Company、Country、Website、Product Category、
+  Estimated Order Quantity、Business Type、Message。
+- 订单量选项围绕每款 1,000 件 MOQ 设计；Message 提示可附 tech pack 链接。
+- File Upload 是 Fluent Forms PRO 功能，当前免费方案采用链接提示。
+- 表单只保留一个启用的 `New Notification`：Send To / From Email =
+  `info@athletikapparel.com`，From Name = `Athletik Clothing`，Reply-To = `{inputs.email}`。
+- 2026-07-29 最终生产测试仅产生一个 Brevo `request → delivered → opened` 链路，
+  Cloudflare 转发到 `zhangyifuzjg0609@163.com`，已确认收件。
+
+---
+
+## 7. 域名、托管、部署与版本控制
+
+### 7.1 当前基础设施
+
+- Registrar / DNS / Email Routing：Cloudflare。
+- Hosting：Flywheel Tiny。
+- 本地开发：LocalWP。
+- 部署：Local Connect。
+- GoDaddy 不再属于当前托管、邮箱或部署链路。
+
+### 7.2 生产上线记录
+
+- 2026-07-22：站点在 `athletikapparel.com` 正式上线。
+- `www` 为主域名；apex 和 HTTP/HTTPS 变体统一进入
+  `https://www.athletikapparel.com/`。
+- Flywheel Let's Encrypt SSL 已签发并自动续期；Cloudflare 使用 Full (strict) 和 Always Use HTTPS。
+- 证书签发若被 Cloudflare proxy 阻碍，可临时切为 DNS-only，完成 SSL 后再恢复 proxy。
+- `athletik-clothing.com` 的 Cloudflare Redirect Rule 已验证为 301 到主域名。
+- Google Search Console Domain property 已验证；Sitemap 为
+  <https://www.athletikapparel.com/sitemap_index.xml>。
+
+### 7.3 Git 与媒体部署
+
+- 子主题 Git 远程仓库：<https://github.com/yifuz/web_myathletik.git>。
+- Codex 在当前 checkout 成功提交后必须立即推送当前分支。
+- 图片和视频位于 uploads，不进入 Git；每次变更必须通过 Local Connect、FTP/SCP 或迁移工具另行同步。
+- 代码提交成功不代表图片已经部署。
+
+---
+
+## 8. 已关闭的重要事故与修复
+
+### 8.1 Flywheel 27 GB 存储清理 — 2026-07-28 关闭
+
+- Local Connect 曾把整个 27 GB uploads 推到 Flywheel，超过 Tiny 计划容量。
+- 本地将 4,446 个未使用素材、共约 26.38 GB 移出 uploads，归档到外部素材盘。
+- uploads 保留约 218 个在用文件，基线约 0.27 GB；增加核准 WebP 和 Hero 后约 0.31 GB。
+- 静态核验 195 个唯一图片引用，缺失数为 0。
+- 生产旧 27 GB 资产目录已删除，重新部署后 Flywheel 总使用量约 660 MB。
+- 2026-07-24 的 270 MB ZIP 是过期历史快照，不得用于未来部署。
+- Local Connect 没有可靠的 uploads 子目录排除机制，因此必须长期保持 uploads 精简。
+
+### 8.2 Fluent Forms 空目录恢复 — 2026-07-27 关闭
+
+- `plugins/fluentform/` 曾只剩空目录骨架，导致插件从激活列表消失且重新安装提示目标目录已存在。
+- 数据库中的 7 个 `fluentform_*` 表和 3 个表单保持安全。
+- 在确认目录无文件后删除空目录，重新安装并恢复插件。
+- Form 3 已重新渲染、保存 Entries 并成功发送通知。
+- 临时诊断脚本 `ff-diag.php` 使用后已删除，避免泄露数据库/插件信息。
+
+### 8.3 Turnstile secret 文件 — 2026-07-29 关闭
+
+- 本地公开 uploads 树中曾发现 `Turnstile-KEY/secret-key.txt`。
+- 已从本地公开树删除；确认该文件从未推到 Flywheel。
+- 旧 secret 按泄露处理并在 Cloudflare 轮换；公开旧 URL 返回 404。
+- 凭据不得放在 `wp-content/uploads/`，因为该目录可被 Web 读取且不受仓库 `.gitignore` 保护。
+
+### 8.4 SMTP / Brevo — 2026-07-29 关闭
+
+- FluentSMTP 2.2.95 通过 Brevo 原生 API 连接。
+- From Email：`info@athletikapparel.com`；From Name：`Athletik Clothing`；强制发件人名称启用。
+- Brevo 中域名已 verified + authenticated；API key 只保存在加密数据库配置中。
+- Email Test 和最终真实表单提交均完成端到端验证。
+
+---
+
+## 9. 2026-07-03 QA 审计状态
+
+完整审计见 [`site/qa-audit-2026-07-03.md`](site/qa-audit-2026-07-03.md)。
+
+| ID | 项目 | 当前状态 |
+|---|---|---|
+| P0-1 | Process Snapshot 死链 | 已修复 |
+| P0-2 | 页脚社交 `#` 链接 | 已修复；Instagram、YouTube、WhatsApp 均为真实 URL |
+| P0-3 | 页脚 `/sitemap/` 死链 | 已修复为 `/wp-sitemap.xml` |
+| P0-4 | 页脚 `/blog/` | 已移除；普通 Blog 区块禁用 |
+| P1-1 | Hero 库存图 | 已替换为真实 Bento 素材 |
+| P1-2 | 类目页库存图 | 已通过子类详情系统停止渲染 |
+| P1-3 | 前台可见的重定向说明 | 已移除 |
+| P1-4 | Style Gallery / Partnership 占位内容 | 已修复 |
+| P1-5 | Latest Posts 占位内容 | 已修复 |
+| P1-6 | 硬编码颜色 | 已迁移至设计变量 |
+| P1-7 | Services 标题层级及标签不匹配 | 已修复 |
+| P1-8 | Contact 表单字段和通知 | 已完成并通过端到端验证 |
+| P1-9 | `3 continents` 与俄罗斯表述 | 已修复 |
+| P1-10 | Hero 图片 alt | 已修复 |
+
+---
+
+## 10. 图片和视频存储规则
+
+### 10.1 唯一存储位置
+
+所有站点图片和视频必须放在：
+
+```text
+wp-content/uploads/myathletik-theme/assets/images/
+```
+
+不得放入：
+
+```text
+themes/myathletik-child/assets/images/
+```
+
+主题中的图片代码仍使用：
+
+```php
+get_stylesheet_directory_uri() . '/assets/images/...'
+```
+
+`functions.php` 的输出缓冲会在渲染时把主题相对 URL 改写到 uploads。
+把文件误放进主题目录会被改写到不存在的 uploads 路径并产生 404。
+
+只把网站实际使用的文件放入 uploads。原始或暂未使用素材保留在外部素材盘，不能批量倒回 uploads。
+
+### 10.2 图片优化策略
+
+不同素材组采用不同策略，不得全局机械转换：
+
+| 素材组 | 当前处理 | 原因 |
+|---|---|---|
+| 首页 Lookbook | WebP q82，最长边 2000 px，通过 `<picture>` + JPG/PNG fallback | 46 张连续滚动，必须控制总负载 |
+| 证书 | 保持原图 | 小字清晰度优先，文件本身较小 |
+| Brand partner logos | 保持原图 | 平面边缘清晰度优先 |
+| About / Services / Sustainability / Contact Hero | 保持全分辨率 | 全宽背景需要清晰度 |
+| 产品页子类图 | 保持原图 | 属于买家判断所需细节图 |
+| 首页主 Bento 图 | 核准 PNG 保留为源图；线上使用 720w / 960w / 1280w lossless WebP `srcset` | 保持视觉焦点，同时控制交付尺寸 |
+
+新增图片如果无法归类，转换前先询问所有者。转换时保留原图，在同目录生成同 basename 的 WebP，
+通过 `<picture>` 提供 fallback；不要把 `sharp` 等一次性工具加入主题构建链路。
+
+### 10.3 Lookbook 优化记录
+
+- 46 张图片转换为 WebP q82、最长边 2000 px，总负载从约 137 MB 降至 4.5 MB，约减少 97%。
+- q82 经 5 张样图对比后由所有者接受；q78 被认为损失略大。
+- 节点从 138 减至 92，动画位移由 `translateX(-33.3333%)` 改为 `translateX(-50%)`。
+- 2026-07-29 修复 `sportswear/IMG_5836.webp` 的 EXIF 方向问题。
+- Marquee 桌面速度由 35s 调整为 110s，移动端由 28s 调整为 90s；悬停和键盘焦点均可暂停。
+
+---
+
+## 11. 已知操作注意事项
+
+- LocalWP 若因 MySQL 无法启动，先在任务管理器结束残留 `mysqld.exe`，再重启站点。
+- 使用 Clash/VPN 时应旁路 `.local`，或临时关闭系统代理访问本地站。
+- VS Code Git UI 若因 pipe ENOENT 卡住，改用终端；确认无 Git 进程后再处理 `.git/index.lock`。
+- 桌面端布局一直是高风险区域，每次必须显式检查 1440 px、100% 缩放，不只看移动端。
+- Stats / proof cards 的数字与单位必须使用分离元素，保持不同数值在桌面和移动端对齐。
+- 修改标题级别时同时检查开始和结束标签。
+- 修正菜单 URL 时，`wp_update_nav_menu_item` 的不完整参数可能清空其他字段；
+  仅改 URL 时优先更新 `_menu_item_url` post meta。
+- 方形或竖版 Hero 视频在横向容器中需要设置 `hero_video_position`，避免人物头部被裁切。
+- Fluent Forms Vue 管理界面可能忽略程序化填充值；保存后需查看网络响应，并进行真实表单测试。
+- 页面 `<head>` 中存在 `<meta name="description">`；自动化脚本必须使用
+  `textarea[name="description"]` 定位表单 Message，而不是宽泛的 `[name="description"]`。
+
+---
+
+## 12. 关键时间线
+
+| 日期 | 里程碑 |
+|---|---|
+| 2026-07-21 | 远程 Git 仓库建立；语言切换器隐藏；决定先只上线英文站 |
+| 2026-07-22 | Flywheel 正式上线；域名、SSL、Cloudflare、Search Console、Email Routing 与表单首轮测试完成 |
+| 2026-07-24 | 本地 uploads 从约 27 GB 精简至约 0.27 GB |
+| 2026-07-27 | Contact Hero、Hero 文字层级、Lookbook WebP 与节点优化完成；Ken Burns 动画移除 |
+| 2026-07-28 | 生产全量部署和 Flywheel 27 GB 清理完成，存储约 660 MB |
+| 2026-07-29 | Lookbook 方向/速度修复；FluentSMTP + Brevo、表单通知与 Turnstile secret 事件关闭 |
+| 2026-08-04 | 美国首发 Privacy Policy 发布并核验 |
+| 2026-08-05 | Consent/归因与首个 Google Ads Campaign 上线快照完成 |
+| 2026-08-07 | 单人保守营销基线、LinkedIn 官方主页状态和 Meta Ads 基线记录完成 |
+| 2026-08-08 | GEO 固定提示词、实体冲突表和首轮爬虫可访问性检查启动 |
+| 2026-08-10 | `myathletik.com` 以 HTTP 410 完全下线；中美实体命名和 GEO-01～08 基线完成 |
+| 2026-08-11 | Technical Guides Hub 与 3 篇基础指南全部完成、核验并部署 |
+| 2026-08-12 | GEO-07 LinkedIn/Instagram 分发完成；GEO 文档和 docs 目录完成整合 |
+
+---
+
+## 13. 下一步优先级
+
+1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
+2. 先制作并发布 GEO-06 Tech Pack 指南的 LinkedIn/Instagram 内容包，再做 GEO-08。
+3. 等待 Search Console 正常刷新后核对 4 个指南 URL 的索引状态。
+4. 在 2026 年 9 月窗口使用全新 Temporary Chat 固定复测 GEO-01～08。
+5. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
+6. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。

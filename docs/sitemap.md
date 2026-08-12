@@ -1,33 +1,29 @@
-# Athletik Clothing — Sitemap & Page Plan (Rebuild v1)
+# Athletik Clothing — 网站地图与页面规划（重建版 v1）
 
-Status reconciled: 2026-08-10. Current implementation and URL decisions below
-supersede the earlier planning assumptions retained in historical sections.
+状态对齐日期：2026-08-10。下文记录的当前实现和 URL 决策取代历史章节中保留的早期规划假设。
 
-Legacy-domain correction: `myathletik.com` has been fully taken offline without
-cross-domain redirects by explicit owner decision; all checked public endpoints
-and host variants return HTTP 410. It is outside this
-rebuild's implementation scope; current URL/SEO work applies only to
-`https://www.athletikapparel.com/`.
+旧域名状态修正：根据所有者明确决定，`myathletik.com` 已完全下线且不设置跨域重定向；
+所有已检查的公开入口和主机变体均返回 HTTP 410。旧域名不属于本次重建的实施范围；
+当前 URL 与 SEO 工作仅适用于 `https://www.athletikapparel.com/`。
 
-Companion to `AGENTS.md`. This is the build blueprint: every page, its URL, its
-single H1, target search intent, historical URL context, and content-block
-outline. Agents may draft long-form body copy when the user explicitly requests
-or authorizes it; owner review is required before publication.
+本文件是 `AGENTS.md` 的配套构建蓝图，记录每个页面、URL、唯一 H1、目标搜索意图、
+历史 URL 背景和内容区块结构。只有在用户明确要求或授权时，agent 才能起草长篇正文；
+正式发布前必须由所有者审核。
 
-Legend:
-- **NEW** = page didn't exist before, no redirect needed
-- **Historical old URL** = planning reference only; do not add a redirect
-  unless current Search Console, server-log, or backlink evidence justifies it
-- **KEEP** = current live URL stays as-is
+图例：
+
+- **新增**：以前不存在的页面，无需重定向。
+- **历史旧 URL**：只作规划参考；除非当前 Search Console、服务器日志或反向链接证据证明有必要，否则不添加重定向。
+- **保留**：当前线上 URL 保持不变。
 
 ---
 
-## 0. Site structure at a glance
+## 0. 网站结构概览
 
-```
-Home  /
+```text
+首页  /
 │
-├── PRODUCTS (top-level keyword pages — the SEO traffic engine)
+├── 产品（顶级关键词页面——SEO 流量核心）
 │   ├── /sportswear-manufacturer/
 │   ├── /underwear-manufacturer/
 │   ├── /outdoor-clothing-manufacturer/
@@ -35,80 +31,70 @@ Home  /
 │   ├── /silk-wear-manufacturer/
 │   ├── /knitted-fabrics-manufacturer/
 │   ├── /sports-accessories-manufacturer/
-│   └── /#ma-home-categories-title  (current Products hub; `/products/` is not built)
+│   └── /#ma-home-categories-title  （当前产品中心；未建设 `/products/`）
 │
-├── CAPABILITIES / PRODUCTION  ❌ CANCELLED (2026-07)
-│   └── /production/ /factory/ /equipments/  — not being built this phase
+├── 生产能力 / 生产  ❌ 已取消（2026-07）
+│   └── /production/ /factory/ /equipments/  — 本阶段不建设
 │
-├── SERVICES / PROCESS
-│   └── /services/            (overview only — single page)
-│   ❌ CANCELLED (2026-07): sub-pages /sampling-prototyping/ /bulk-production/
-│      /quality-control/ /export-shipping/ — folded into /services/ overview
+├── 服务 / 流程
+│   └── /services/            （仅保留单页概览）
+│   ❌ 已取消（2026-07）：子页面 /sampling-prototyping/ /bulk-production/
+│      /quality-control/ /export-shipping/ — 已并入 /services/ 概览
 │
-├── TECHNICAL GUIDES
-│   ├── /technical-guides/  (content centre)
-│   ├── /flatlock-vs-overlock-technical-knitwear/  (published)
-│   ├── /technical-knitwear-tech-pack-guide/  (published)
-│   └── /evaluate-technical-knitwear-oem/  (published)
+├── 技术指南
+│   ├── /technical-guides/  （内容中心）
+│   ├── /flatlock-vs-overlock-technical-knitwear/  （已发布）
+│   ├── /technical-knitwear-tech-pack-guide/  （已发布）
+│   └── /evaluate-technical-knitwear-oem/  （已发布）
 │
-├── /sustainability/   (correct live slug; no historical redirect implemented)
+├── /sustainability/   （当前正确 slug；未实施历史重定向）
 ├── /about-us/
 └── /contact/
 ```
 
 ---
 
-## 1. Home — `/`  (KEEP)
+## 1. 首页 — `/`（保留）
 
-**Current H1:** Performance Knitwear Manufacturer
+**当前 H1：** Performance Knitwear Manufacturer
 
-**Purpose:** Establish positioning in 5 seconds, route buyers to the right
-category page, capture inquiries.
+**目的：** 在 5 秒内建立定位、把买家引导至正确品类页并承接询盘。
 
-**Block outline:**
-1. Hero — headline + one-line positioning + primary CTA (Contact / Get a Quote).
-   **Real factory image, not stock.**
-2. Capability strip — 3–4 proof points (vertical integration, flatlock/
-   activeseam, own production facility, full export docs). Do not publish a
-   factory count or subcontracting details. Icons + short labels.
-3. Product categories grid — 7 cards, each linking to its `*-manufacturer/`
-   page. Replaces the current 30-image untitled wall.
-4. Why myathletik — 3 differentiators (technical construction, finishing
-   capabilities like Carbondry & laser perforation, regional merchandiser teams).
-5. Process snapshot — 4-step strip (Sample → Production → QC → Export),
-   links to /services/.
-6. Certifications / audits strip — the existing badge row (keep, it's good).
-7. Technical Guides — stable content-centre entry plus the latest approved
-   technical guide. The generic WordPress post feed remains disabled.
-8. Inquiry CTA band — shared Fluent Form 3 with product category, estimated
-   order quantity, business type, company details, and project message.
+**区块结构：**
 
-Current approved homepage copy is recorded in `homepage-copy.md` and the live
-template; this structure document does not override it.
+1. Hero：标题、单行定位和主要 CTA（Contact / Get a Quote）。必须使用真实工厂图片，不使用图库图片。
+2. 能力条：3–4 个证明点（垂直整合、FLATLOCK/ACTIVESEAM、自有生产设施、完整出口文件能力）。不公开工厂数量或分包细节；使用图标和短标签。
+3. 产品品类网格：7 张卡片，分别链接对应的 `*-manufacturer/` 页面；取代原来的 30 张无标题图片墙。
+4. Why myathletik：3 个差异点（技术结构、Carbondry 与 Laser perforation 等后整理能力、区域跟单团队）。
+5. 流程概览：四步流程条（Sample → Production → QC → Export），链接到 `/services/`。
+6. 认证 / 审核条：保留现有徽章行。
+7. Technical Guides：稳定的内容中心入口和最新一篇已批准技术指南；通用 WordPress 文章流保持关闭。
+8. 询盘 CTA：共用 Fluent Form 3，包含产品类别、预计订单量、业务类型、公司信息和项目说明。
+
+当前已批准的首页文案记录在 `homepage-copy.md` 和线上模板中；本结构文件不覆盖已批准文案。
 
 ---
 
-## 2. Product category pages (top-level, keyword-aligned)
+## 2. 产品品类页（顶级、关键词对齐）
 
-All 7 follow the SAME template so structure stays consistent. The old
-`/products/<x>/` paths are historical references only. No legacy category
-redirects are planned under the owner's 2026-08-08 retirement decision.
+全部 7 个品类页使用同一个模板，以保证结构一致。旧 `/products/<x>/` 路径只作历史参考；
+根据所有者 2026-08-08 的旧站退役决定，不规划旧品类 URL 的重定向。
 
-### Shared template for every category page
-**H1:** `[Category] Manufacturer` (e.g. "Sportswear Manufacturer")
-1. Intro — what you make in this category + who it's for (B2B, MOQ 1,000 pcs
-   per style).
-2. Capabilities — fabrics, construction (flatlock/activeseam where relevant),
-   finishing options.
-3. Product/style examples — real photos, grouped, with alt text.
-4. Specs band — MOQ, lead time, sampling availability.
-5. Related: link to /services/ and to 1–2 sibling categories (internal linking).
-6. Inquiry CTA.
+### 所有品类页的共用模板
+
+**H1：** `[Category] Manufacturer`，例如 “Sportswear Manufacturer”。
+
+1. 简介：说明该品类生产内容及目标客户（B2B，每款 MOQ 1,000 件）。
+2. 能力：面料、结构（适用时包括 FLATLOCK/ACTIVESEAM）和后整理选项。
+3. 产品 / 款式示例：按组展示真实图片，并配置 alt 文本。
+4. 规格条：MOQ、交期和打样可用性。
+5. 相关链接：链接 `/services/` 及 1–2 个相关品类页，形成内链。
+6. 询盘 CTA。
 
 【CONTENT: user to write body copy per page】
 
-| Page | URL | H1 | Historical old URL (no redirect) |
-|------|-----|----|----------------------------------|
+| 页面 | URL | H1 | 历史旧 URL（不重定向） |
+|---|---|---|---|
 | Sportswear | `/sportswear-manufacturer/` | Sportswear Manufacturer | `/products/sportswear/` |
 | Underwear | `/underwear-manufacturer/` | Underwear Manufacturer | `/products/underwear/` |
 | Outdoor Clothing | `/outdoor-clothing-manufacturer/` | Outdoor Clothing Manufacturer | `/products/outdoor-clothing/` |
@@ -117,183 +103,171 @@ redirects are planned under the owner's 2026-08-08 retirement decision.
 | Knitted Fabrics | `/knitted-fabrics-manufacturer/` | Knitted Fabrics Manufacturer | `/products/knitted-fabrics/` |
 | Sports Accessories | `/sports-accessories-manufacturer/` | Sports Accessories Manufacturer | `/products/sports-accessories/` |
 
-### Products hub — homepage product section (current implementation)
+### 产品中心——首页产品区块（当前实现）
 
-The homepage product section at `/#ma-home-categories-title` is the current
-Products hub and links to all 7 category pages. `/products/` is intentionally
-not built, is absent from navigation and the Sitemap, and currently returns
-404. Only create a standalone hub or add a redirect if future Search Console,
-server-log, or backlink evidence shows that `/products/` has real value.
-
----
-
-## 2A. Technical Guides hub — `/technical-guides/`  (NEW)
-
-**H1:** Technical Knitwear Guides
-
-**Purpose:** Provide one stable, crawlable content centre for buyer education
-while individual keyword-aligned guide URLs remain top-level. The homepage,
-primary menu, footer and guide breadcrumbs link here.
-
-**Block outline:**
-1. Direct introduction defining the library as cut-and-sew performance
-   knitwear guidance.
-2. Data-driven cards for owner-approved published guides only.
-3. Scope strip: construction decisions, tech pack preparation and OEM
-   evaluation.
-4. Project-review CTA.
-
-Draft briefs never render as public cards or Schema items. Each new guide is
-added only after owner approval, without restructuring the homepage or hub.
+首页 `/#ma-home-categories-title` 产品区块是当前产品中心，并链接全部 7 个品类页。
+`/products/` 被有意保留为未建设状态，不出现在导航和 Sitemap 中，目前返回 404。
+只有未来 Search Console、服务器日志或反向链接证据证明 `/products/` 具有实际价值时，
+才创建独立产品中心或添加重定向。
 
 ---
 
-## 2B. Technical guide — `/flatlock-vs-overlock-technical-knitwear/`  (NEW)
+## 2A. Technical Guides 内容中心 — `/technical-guides/`（新增）
 
-**H1:** FLATLOCK vs OVERLOCK for Technical Knitwear
+**H1：** Technical Knitwear Guides
 
-**Purpose:** Answer a high-intent buyer question with first-party production
-evidence, clarify stitch types 607 and 514, distinguish ACTIVESEAM, and give
-buyers an actionable seam-map and tech pack checklist.
+**目的：** 建立一个稳定、可抓取的买家教育内容中心，同时让各个关键词对齐的指南 URL 保持顶级路径。
+首页、主导航、页脚和指南面包屑均链接至此。
 
-**Block outline:**
-1. Direct answer and publication/review metadata.
-2. FLATLOCK definition with the approved Yamato production video.
-3. OVERLOCK definition with the approved production video.
-4. Comparison table and garment-area decision logic.
-5. Fabric, thread, machine-setting and testing considerations.
-6. ACTIVESEAM distinction.
-7. Tech pack / spec sheet checklist.
-8. Visible FAQ, primary technical references and inquiry CTA.
+**区块结构：**
 
-The page is linked from the Technical Guides hub, homepage, Sportswear and
-Underwear category pages. Its existing top-level URL is retained; the content
-centre does not require a `/blog/` hierarchy or an article URL change.
+1. 直接说明本内容库聚焦裁剪缝制类功能针织服装。
+2. 数据驱动的指南卡片，只显示所有者已批准且已发布的内容。
+3. 范围条：结构选择、tech pack 准备和 OEM 评估。
+4. 项目审核 CTA。
+
+未完成的内容简报不得渲染为公开卡片或 Schema 条目。每篇新指南只在所有者批准后加入，
+无需重构首页或内容中心。
 
 ---
 
-## 2C. Technical guide — `/technical-knitwear-tech-pack-guide/`  (NEW)
+## 2B. 技术指南 — `/flatlock-vs-overlock-technical-knitwear/`（新增）
 
-**H1:** What to Include in a Tech Pack for Technical Knitwear
+**H1：** FLATLOCK vs OVERLOCK for Technical Knitwear
 
-**Purpose:** Correct the GEO-06 semantic drift by explaining a tech pack for
-cut-and-sew performance knitwear rather than flat-knitted sweater production.
-The owner approved the full draft for publication on 2026-08-11. The page uses
-the shared article layout and covers document control, technical flats, POMs,
-finished-fabric specifications, seam maps, testing and sample approvals.
+**目的：** 使用第一方生产证据回答高意向买家问题，解释 607 和 514 线迹类型、区分 ACTIVESEAM，
+并向买家提供可执行的接缝图和 tech pack 检查清单。
 
----
+**区块结构：**
 
-## 2D. Technical guide — `/evaluate-technical-knitwear-oem/`  (NEW)
+1. 直接答案和发布 / 复核元数据。
+2. FLATLOCK 定义及已批准的 Yamato 生产视频。
+3. OVERLOCK 定义及已批准的生产视频。
+4. 对比表与成衣部位选择逻辑。
+5. 面料、缝线、机器设置和测试注意事项。
+6. ACTIVESEAM 区分说明。
+7. tech pack / spec sheet 检查清单。
+8. 可见 FAQ、主要技术参考资料和询盘 CTA。
 
-**H1:** How to Evaluate a Vertically Integrated Knitwear OEM
-
-**Purpose:** Correct the GEO-08 semantic drift with a risk-based evaluation
-framework for cut-and-sew performance apparel. No arbitrary scoring weights or
-unverified certification claims are presented as proof. The owner approved the
-full draft for publication on 2026-08-11. The page uses the shared article
-layout and covers legal identity, process ownership, technical capability,
-fabric controls, traceability, project-level capacity and quotation scope.
+本页从 Technical Guides 内容中心、首页、Sportswear 和 Underwear 品类页获得内链。
+保留现有顶级 URL；内容中心不要求增加 `/blog/` 层级，也不要求更改文章 URL。
 
 ---
 
-## 3. Capabilities / Production  ❌ CANCELLED (2026-07)
+## 2C. 技术指南 — `/technical-knitwear-tech-pack-guide/`（新增）
 
-Originally planned `/production/` / `/factory/` / `/equipments/` auxiliary
-pages. **Not being built this phase.** Capability proof points live on the
-homepage (capability-proof, numbers-proof blocks) and inline on category pages.
+**H1：** What to Include in a Tech Pack for Technical Knitwear
+
+**目的：** 解释裁剪缝制类功能针织服装的 tech pack，而非横机毛衫生产，以纠正 GEO-06 的语义偏移。
+所有者已于 2026-08-11 批准完整草稿发布。本页使用共用文章布局，内容包括文件控制、技术平面图、
+POM、成品面料规格、接缝图、测试和样品批准。
 
 ---
 
-## 4. Services / Process
+## 2D. 技术指南 — `/evaluate-technical-knitwear-oem/`（新增）
 
-### Services overview — `/services/`  ✅ DONE (single page, `page-services.php`)
-**H1:** Our Services
-4-stage process strip (Sample → Production → QC → Export) on one page.
+**H1：** How to Evaluate a Vertically Integrated Knitwear OEM
 
-**❌ CANCELLED (2026-07):** sub-pages `/sampling-prototyping/`
-`/bulk-production/` `/quality-control/` `/export-shipping/` — folded into the
-single `/services/` overview. Home page process-snapshot links all point to
-`/services/` (no dead links).
+**目的：** 使用面向裁剪缝制功能服装的风险评估框架纠正 GEO-08 的语义偏移。
+不把任意评分权重或未经验证的认证声明作为证明。所有者已于 2026-08-11 批准完整草稿发布。
+本页使用共用文章布局，覆盖法律主体、工序所有权、技术能力、面料控制、可追溯性、项目级产能和报价范围。
+
+---
+
+## 3. 生产能力 / 生产页面 ❌ 已取消（2026-07）
+
+原计划建设 `/production/`、`/factory/` 和 `/equipments/` 等辅助页面，**本阶段不建设**。
+能力证明放在首页的 capability-proof、numbers-proof 区块及各品类页正文中。
+
+---
+
+## 4. 服务 / 流程
+
+### 服务概览 — `/services/` ✅ 已完成（单页，`page-services.php`）
+
+**H1：** Our Services
+
+单页展示四阶段流程（Sample → Production → QC → Export）。
+
+**❌ 已取消（2026-07）：** 子页面 `/sampling-prototyping/`、`/bulk-production/`、
+`/quality-control/`、`/export-shipping/` 已并入单一 `/services/` 概览。
+首页 process-snapshot 的所有链接均指向 `/services/`，不存在失效链接。
 
 ---
 
 ## 5. Sustainability — `/sustainability/`
 
-**H1:** Sustainability
-The current page and navigation use the correct spelling. The historical
-misspelling `/sustainabilty/` has no redirect currently implemented. Check the
-exact legacy-domain URL, indexed traffic and backlinks during the migration
-inventory before deciding whether a redirect is required.
+**H1：** Sustainability
+
+当前页面和导航已使用正确拼写。历史拼写错误 `/sustainabilty/` 目前没有实施重定向。
+只有在迁移清单中核对准确的旧域名 URL、索引流量和反向链接后，才决定是否需要重定向。
 
 【CONTENT: user to write】
 
 ---
 
-## 6. About Us — `/about-us/`  (KEEP)
+## 6. About Us — `/about-us/`（保留）
 
-**H1:** About Us
-Company story, own production facility / vertical integration, regional
-coverage, and foreign-trade capability. Do not publish a factory count or
-subcontracting details. Replace stock imagery.
+**H1：** About Us
 
----
-
-## 7. Contact — `/contact/`  (KEEP)
-
-**H1:** Contact Us
-Inquiry form with lead-filtering fields:
-- Estimated order quantity
-- Product category of interest
-- Company / business type
-- Message with a prompt to include a tech pack link when available
-
-File Upload is not part of the current Fluent Forms free-tier implementation.
-
-Plus: direct contact details and the own-facility address. Do not publish a
-factory count or partner-factory locations.
-
-### Cleanup tied to this page
-- ✅ The leftover `/contact-2/` ("Contact_example") footer link was removed.
-  No historical redirect is planned under the owner's legacy-domain decision.
+内容包括公司介绍、自有生产设施 / 垂直整合、区域覆盖和外贸能力。
+不公开工厂数量或分包细节；替换图库图片。
 
 ---
 
-## 8. Legacy-domain redirects — NOT PLANNED (owner decision)
+## 7. Contact — `/contact/`（保留）
 
-The legacy `myathletik.com` site now returns HTTP 410 without cross-domain
-redirects. The mappings below remain historical planning context only and must
-not be implemented unless the owner later reopens the decision.
+**H1：** Contact Us
 
-| Old URL | New URL | Reason |
-|---------|---------|--------|
-| `/products/sportswear/` | `/sportswear-manufacturer/` | category → top-level |
-| `/products/underwear/` | `/underwear-manufacturer/` | category → top-level |
-| `/products/outdoor-clothing/` | `/outdoor-clothing-manufacturer/` | category → top-level |
-| `/products/merino-wool-apparel/` | `/merino-wool-manufacturer/` | category → top-level |
-| `/products/silk-wear/` | `/silk-wear-manufacturer/` | category → top-level |
-| `/products/knitted-fabrics/` | `/knitted-fabrics-manufacturer/` | category → top-level |
-| `/products/sports-accessories/` | `/sports-accessories-manufacturer/` | category → top-level |
-| `/sustainabilty/` | `/sustainability/` | spelling fix |
-| `/contact-2/` | `/contact/` | remove demo page |
+询盘表单包含以下线索筛选字段：
+
+- 预计订单量。
+- 感兴趣的产品品类。
+- 公司 / 业务类型。
+- 项目说明，并提示在有条件时提供 tech pack 链接。
+
+当前 Fluent Forms 免费版未实施文件上传。
+
+同时显示直接联系方式和自有生产设施地址；不公开工厂数量或合作工厂地点。
+
+### 与本页相关的清理
+
+- ✅ 已移除页脚遗留的 `/contact-2/`（“Contact_example”）链接。
+- 根据所有者的旧域名决定，不规划历史重定向。
 
 ---
 
-## 9. Build order (recommended sequence)
+## 8. 旧域名重定向——不规划（所有者决定）
 
-1. ~~**Home**~~ — ✅ DONE
-2. ~~**7 category pages**~~ — ✅ DONE (top-level keyword-aligned URLs; no historical redirects)
-3. ~~**Services pages**~~ — ✅ `/services/` single page DONE; sub-pages CANCELLED
-4. ~~**Factory / Equipment**~~ — ❌ CANCELLED this phase
-5. ~~**About / Sustainability / Contact**~~ — ✅ pages DONE and polished
-6. ~~**Legacy-domain redirects**~~ — ❌ out of scope by owner decision
-7. ~~**Page-by-page visual polish + QA cleanup**~~ — ✅ completed before launch
-8. **Production launch** — ✅ complete on Flywheel; final site and uploads
-   synchronized 2026-07-28
-9. ~~**Technical Guides content centre**~~ — ✅ completed 2026-08-11. The hub,
-   homepage/footer entry, all three approved foundation guides and their cover
-   assets are live. Final validation confirms the de-duplicated navigation,
-   all four guide URLs in the 17-URL Page Sitemap, HTTP 200 for search and AI
-   crawlers, and the approved metadata, image and Schema output.
+旧 `myathletik.com` 站点目前返回 HTTP 410，且不设置跨域重定向。
+下表只保留为历史规划背景；除非所有者以后重新开启此决定，否则不得实施。
 
-Confirmed slug: `/merino-wool-manufacturer/`.
+| 旧 URL | 新 URL | 原规划原因 |
+|---|---|---|
+| `/products/sportswear/` | `/sportswear-manufacturer/` | 品类页移至顶级路径 |
+| `/products/underwear/` | `/underwear-manufacturer/` | 品类页移至顶级路径 |
+| `/products/outdoor-clothing/` | `/outdoor-clothing-manufacturer/` | 品类页移至顶级路径 |
+| `/products/merino-wool-apparel/` | `/merino-wool-manufacturer/` | 品类页移至顶级路径 |
+| `/products/silk-wear/` | `/silk-wear-manufacturer/` | 品类页移至顶级路径 |
+| `/products/knitted-fabrics/` | `/knitted-fabrics-manufacturer/` | 品类页移至顶级路径 |
+| `/products/sports-accessories/` | `/sports-accessories-manufacturer/` | 品类页移至顶级路径 |
+| `/sustainabilty/` | `/sustainability/` | 修正拼写 |
+| `/contact-2/` | `/contact/` | 移除演示页面 |
+
+---
+
+## 9. 建设顺序（建议执行次序）
+
+1. ~~**首页**~~ — ✅ 已完成。
+2. ~~**7 个品类页**~~ — ✅ 已完成；使用顶级关键词 URL，不设置历史重定向。
+3. ~~**服务页面**~~ — ✅ `/services/` 单页已完成；子页面已取消。
+4. ~~**工厂 / 设备页面**~~ — ❌ 本阶段已取消。
+5. ~~**About / Sustainability / Contact**~~ — ✅ 页面已完成并优化。
+6. ~~**旧域名重定向**~~ — ❌ 根据所有者决定，不在范围内。
+7. ~~**逐页视觉优化与 QA 清理**~~ — ✅ 上线前完成。
+8. **生产上线** — ✅ 已在 Flywheel 完成；最终网站和 uploads 于 2026-07-28 同步。
+9. ~~**Technical Guides 内容中心**~~ — ✅ 2026-08-11 完成。内容中心、首页 / 页脚入口、
+   三篇已批准基础指南及其封面资源均已上线。最终验证确认：导航已去重，四个指南 URL 均出现在
+   17 URL 的 Page Sitemap 中，搜索与 AI 爬虫访问返回 HTTP 200，元数据、图片和 Schema 输出符合批准版本。
+
+已确认 slug：`/merino-wool-manufacturer/`。

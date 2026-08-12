@@ -61,6 +61,14 @@ routine text edits happen in the block editor.
 - Changes flow: LocalWP (dev) → staging → production. Never assume direct
   production edits.
 
+### 内部 Markdown 文档语言
+
+- 新建或实质性改写的内部 `.md` 文档默认使用**简体中文**，包括标题、说明、状态、计划、审计结论和操作记录。
+- 下列内容保留原生英文，不做机械翻译：正式网站英文文案、已核准的 title / H1 / meta、固定测试提示词、原始引文或来源摘录、代码/API/Schema/事件名、URL、路径、命令、字段名、法律实体名与其他专有名称。
+- 用户明确要求英文，或文档本身就是待上线的英文正文/英文源材料时，继续使用英文。
+- 既有英文历史资料不要求仅为语言统一而批量翻译；但以后更新内部叙述时，新增内容应使用中文。
+- 本规则只适用于内部项目文档；网站对外文案仍按第 5 节使用面向北美和欧洲 B2B 买家的英文。
+
 ## 1.6 Image storage — images live in uploads, NOT in the theme/git repo
 
 > **READ THIS BEFORE TOUCHING ANY IMAGE.** This is the #1 source of bugs
