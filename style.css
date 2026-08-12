@@ -49,6 +49,8 @@ Text Domain:  myathletik-child
   --ma-container:    1200px;
   --ma-radius:       6px;
   --ma-touch-target: 2.75rem;
+  --ma-social-icon-size: 1.25rem;
+  --ma-social-button-padding-x: var(--ma-space-2);
   --ma-reading-width: 68ch;
   --ma-article-media-width: 30rem;
   --ma-article-title-width: 20ch;
@@ -300,7 +302,7 @@ body {
   width: 100%;
   max-width: var(--ma-container);
   margin: 0 auto;
-  padding: var(--ma-space-3) var(--ma-space-4);
+  padding: var(--ma-space-2) var(--ma-space-4);
   box-sizing: border-box;
 }
 
@@ -329,7 +331,7 @@ body {
   justify-content: center;
   gap: var(--ma-space-2);
   min-height: var(--ma-touch-target);
-  padding: 0 var(--ma-space-3);
+  padding: 0 var(--ma-social-button-padding-x);
   border: thin solid var(--ma-color-white);
   border-radius: var(--ma-radius);
   color: var(--ma-color-white);
@@ -357,8 +359,8 @@ body {
 .ma-social-links--header svg,
 .ma-site-footer__social svg {
   flex: 0 0 auto;
-  width: var(--ma-space-4);
-  height: var(--ma-space-4);
+  width: var(--ma-social-icon-size);
+  height: var(--ma-social-icon-size);
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -375,8 +377,6 @@ body {
 @media (max-width: 48rem) {
   .ma-home-social-bar__inner {
     display: block;
-    padding-top: var(--ma-space-2);
-    padding-bottom: var(--ma-space-2);
   }
 
   .ma-home-social-bar__prompt {
@@ -385,15 +385,25 @@ body {
 
   .ma-social-links--header {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     width: 100%;
   }
 
   .ma-social-links--header a {
-    flex-direction: column;
     gap: var(--ma-space-1);
-    min-height: calc(var(--ma-touch-target) + var(--ma-space-3));
-    padding: var(--ma-space-2);
+    min-height: var(--ma-touch-target);
+    padding: 0 var(--ma-space-1);
+  }
+}
+
+@media (max-width: 30rem) {
+  .ma-social-links--header a {
+    min-height: var(--ma-touch-target);
+    padding: 0;
+  }
+
+  .ma-social-links--header a span {
+    display: none;
   }
 }
 
@@ -4476,7 +4486,7 @@ body.page .site-main.ma-technical-article {
 
 .ma-site-footer__social {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: repeat(2, max-content);
   gap: var(--ma-space-2);
   width: fit-content;
   margin-top: var(--ma-space-4);

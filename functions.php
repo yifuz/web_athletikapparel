@@ -1211,6 +1211,11 @@ function myathletik_social_links( $context = 'footer', $show_labels = false ) {
 	}
 
 	$links = array(
+		'linkedin'  => array(
+			'label'      => __( 'LinkedIn', 'myathletik-child' ),
+			'aria_label' => __( 'Athletik Clothing on LinkedIn', 'myathletik-child' ),
+			'url'        => 'https://www.linkedin.com/company/athletik-apparel',
+		),
 		'instagram' => array(
 			'label'      => __( 'Instagram', 'myathletik-child' ),
 			'aria_label' => __( 'Athletik Clothing on Instagram', 'myathletik-child' ),
@@ -1232,7 +1237,11 @@ function myathletik_social_links( $context = 'footer', $show_labels = false ) {
 		<?php foreach ( $links as $platform => $link ) : ?>
 			<li>
 				<a href="<?php echo esc_url( $link['url'] ); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( $link['aria_label'] ); ?>">
-					<?php if ( 'instagram' === $platform ) : ?>
+					<?php if ( 'linkedin' === $platform ) : ?>
+						<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+							<path d="M5.4 8.7H2.3V19h3.1V8.7zM3.8 3.5a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6zM10.4 8.7H7.5V19h3.1v-5.1c0-1.4.3-2.7 2-2.7 1.7 0 1.7 1.6 1.7 2.8v5h3.1v-5.6c0-2.8-.6-4.9-3.8-4.9-1.5 0-2.6.8-3 1.6h-.1V8.7z"></path>
+						</svg>
+					<?php elseif ( 'instagram' === $platform ) : ?>
 						<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 							<rect x="4" y="4" width="16" height="16" rx="5"></rect>
 							<circle cx="12" cy="12" r="3.4"></circle>
