@@ -21,8 +21,8 @@ Instagram 的自然内容。本文按单人运营的实际工作量设计；完�
 ```text
 YYYY-MM-topic-slug/
 ├── source/                 原始图片、视频截图和文章封面
-├── linkedin/              LinkedIn 单图或视频发布素材
-├── instagram/             Instagram Carousel 与 Story
+├── linkedin/              LinkedIn 单图/视频及可直接复制的正文 TXT
+├── instagram/             Instagram Carousel、Story 及对应正文/Sticker TXT
 ├── preview/               联系表或总览图
 ├── captions.md            两个平台的最终文案和 UTM
 ├── alt-text.md            图片替代文字
@@ -33,6 +33,7 @@ YYYY-MM-topic-slug/
 
 素材包属于运营资产，保存在视频素材盘，不放入 WordPress 主题或 Git。网站图片继续遵守
 `AGENTS.md` 的 uploads 规则；社交媒体素材不复制进网站 uploads，除非它们也被网站页面实际使用。
+每个平台的最终发布文字同时放入对应平台目录，文件名与图片主题一致；根目录 `captions.md` 继续作为总览和审核记录。
 
 ## 3. Instagram 图片规格与页面顺序
 
