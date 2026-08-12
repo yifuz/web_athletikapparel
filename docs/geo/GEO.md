@@ -4,7 +4,8 @@
 >
 > 规范站：<https://www.athletikapparel.com/>
 >
-> 当前阶段：第一轮 GEO 基础建设与 GEO-07 内容分发已完成；进入抓取等待、其余指南分发和月度复测阶段。
+> 当前阶段：第一轮 GEO 基础建设与 GEO-07 内容分发已完成；GEO-06 分发包已准备并等待所有者审核，
+> 同时进入抓取等待、其余指南分发和月度复测阶段。
 >
 > 使用范围：以后与 Athletik Clothing GEO 有关的计划、执行顺序和阶段结论先更新本文件；详细测试证据继续追加到对应日志。
 
@@ -85,7 +86,7 @@ GEO 不等于添加特殊 AI 标记，也不承诺固定排名。当前执行环
 | 对应意图 | 已上线内容 | 分发状态 |
 |---|---|---|
 | GEO-07 | <https://www.athletikapparel.com/flatlock-vs-overlock-technical-knitwear/> | LinkedIn 七图帖与 Instagram Carousel 已于 2026-08-12 发布；Story 状态待补录 |
-| GEO-06 | <https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/> | 官网已上线；站外分发待做 |
+| GEO-06 | <https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/> | 官网已上线；七图分发包已于 2026-08-12 准备，待所有者审核与发布 |
 | GEO-08 | <https://www.athletikapparel.com/evaluate-technical-knitwear-oem/> | 官网已上线；站外分发待做 |
 
 内容中心：<https://www.athletikapparel.com/technical-guides/>。
@@ -133,11 +134,15 @@ GEO 不等于添加特殊 AI 标记，也不承诺固定排名。当前执行环
 
 按单人保守节奏，一次只做一个主题，不要求连续两天完成：
 
-1. `What to Include in a Tech Pack for Technical Knitwear`（对应 GEO-06）。
+1. `What to Include in a Tech Pack for Technical Knitwear`（对应 GEO-06；素材包已准备，待审核与发布）。
 2. `How to Evaluate a Vertically Integrated Knitwear OEM`（对应 GEO-08）。
 
 两篇都复用已经验证的七图或精简五图流程，并分别建立内容包、UTM、发布记录和七日复盘。
 优先做 GEO-06，因为当前中性回答存在明显的 sweater/flat-knitting 语义偏移，第一方内容可提供更直接的纠偏材料。
+
+GEO-06 运营素材包位于 `D:\B-视频素材\营销内容包\2026-08-technical-knitwear-tech-pack\`（Git 外）。
+它包含七张 LinkedIn/Instagram 卡片、Story、英文文案、独立 UTM、alt text、可编辑 PPTX、审核 PDF、
+联系表和七日数据模板。没有使用额外视频，也没有把“已准备”误记为“已发布”。
 
 ### 优先级 3 — 等待抓取后进行第一轮复测
 
