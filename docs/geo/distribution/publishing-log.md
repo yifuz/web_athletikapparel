@@ -65,7 +65,7 @@
 
 ### 已准备文件
 
-- LinkedIn 单张 4:5 信息总览图；Instagram 七张 4:5 Carousel 及带可见 CTA 的 Story。
+- LinkedIn 单张 4:5 信息总览图；Instagram 七张 4:5 Carousel，以及为原生 Link Sticker 留出安全区的 Story。
 - LinkedIn 技术教育正文、Instagram 精简正文和两个渠道的独立 UTM。
 - 图片 alt text、联系表、发布说明和七日数据模板。
 

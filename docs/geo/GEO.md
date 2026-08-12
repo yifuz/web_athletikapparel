@@ -141,7 +141,7 @@ GEO 不等于添加特殊 AI 标记，也不承诺固定排名。当前执行环
 优先做 GEO-06，因为当前中性回答存在明显的 sweater/flat-knitting 语义偏移，第一方内容可提供更直接的纠偏材料。
 
 GEO-06 运营素材包位于 `D:\B-视频素材\营销内容包\2026-08-technical-knitwear-tech-pack\`（Git 外）。
-它包含 LinkedIn 单张信息总览图、Instagram 七图 Carousel、带可见 CTA 的 Story、英文文案、独立 UTM、
+它包含 LinkedIn 单张信息总览图、Instagram 七图 Carousel、为原生 Link Sticker 留白的 Story、英文文案、独立 UTM、
 alt text、联系表和七日数据模板。不制作 PDF/PPT，没有使用额外视频，也没有把“已准备”误记为“已发布”。
 
 ### 优先级 3 — 等待抓取后进行第一轮复测
