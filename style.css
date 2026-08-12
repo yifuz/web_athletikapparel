@@ -29,6 +29,7 @@ Text Domain:  myathletik-child
   --ma-font-head:    "Manrope", var(--ma-font-body);
   --ma-fs-base:      1rem;
   --ma-fs-small:     0.875rem;
+  --ma-fs-social:    0.75rem;
   --ma-fs-h1:        clamp(2rem, 4vw, 3rem);
   --ma-fs-h2:        clamp(1.5rem, 3vw, 2.25rem);
   --ma-fs-h3:        clamp(1.15rem, 1.8vw, 1.35rem);
@@ -308,7 +309,7 @@ body {
 
 .ma-home-social-bar__prompt {
   font-family: var(--ma-font-head);
-  font-size: var(--ma-fs-small);
+  font-size: var(--ma-fs-social);
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -339,6 +340,10 @@ body {
   font-weight: 800;
   line-height: 1;
   text-decoration: none;
+}
+
+.ma-social-links--header a {
+  font-size: var(--ma-fs-social);
 }
 
 .ma-social-links--header a:hover,
