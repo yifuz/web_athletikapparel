@@ -1,7 +1,7 @@
 # Project Progress Snapshot - Athletik Clothing Website
 
 Read this together with AGENTS.md, docs/sitemap.md,
-docs/design-brief.md, and homepage-copy.md when starting a new session.
+docs/site/design-brief.md, and homepage-copy.md when starting a new session.
 This file tracks WHAT IS DONE and WHAT IS LEFT, since the rule docs only
 define HOW. Also check `git log` for the latest commits.
 
@@ -11,6 +11,14 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
+Last updated: 2026-08-12 — `docs/geo/GEO.md` is now the central GEO workspace and
+routing document. It records that the initial technical/entity foundation,
+three-guide content base, four-URL indexing submission and GEO-07 social
+distribution are complete, while two remaining guide distributions, seven-day
+data capture, indexing observation and clean Temporary Chat monthly retesting
+remain active. This ongoing GEO conversation is used for planning and evidence
+analysis, not as a neutral test environment.
+
 Last updated: 2026-08-12 — The first website-guide distribution package was
 published to the official LinkedIn Page and Instagram account using the live
 `FLATLOCK vs OVERLOCK` guide. The shared asset package contains seven 1080 ×
@@ -18,8 +26,8 @@ published to the official LinkedIn Page and Instagram account using the live
 asset and a seven-day metrics template. The actual LinkedIn Page interface did
 not support PDF, so the published workflow uses a seven-image post and keeps
 the generated PDF only as an internal preview. A reusable execution SOP and a
-dated publishing log now live in `docs/social-content-distribution-sop.md` and
-`docs/social-content-publishing-log.md`; public post URLs, Story publication
+dated publishing log now live in `docs/geo/distribution/social-content-sop.md`
+and `docs/geo/distribution/publishing-log.md`; public post URLs, Story publication
 status and the 2026-08-19 results remain explicitly pending rather than being
 inferred.
 
@@ -80,7 +88,7 @@ canonical `AGENTS.md` rule and `wp-brand-voice-guard` skill now require explicit
 authorization, source-backed facts and owner approval before publication rather
 than prohibiting agent-written body copy. A complete English review draft of
 `FLATLOCK vs OVERLOCK for Technical Knitwear` is in
-`docs/article-draft-flatlock-vs-overlock.md`. It is an internal document only;
+`docs/geo/content/flatlock-vs-overlock-draft.md`. It is an internal document only;
 no WordPress page, URL, video or media asset was created or deployed.
 
 Last updated: 2026-08-11 — First-party video evidence has been selected for the
@@ -202,7 +210,7 @@ Temporary Chat baseline, and GEO-04 has a confirmed Temporary Chat baseline;
 GEO-01 through GEO-08 now have confirmed Temporary Chat baselines.
 The GEO log
 separates all of these model/source assertions from approved entity facts. See
-`docs/geo-prompt-baseline.md`.
+`docs/geo/testing/prompt-baseline.md`.
 
 Previous: 2026-08-08 — GEO execution started with a fixed eight-prompt,
 three-engine monthly baseline, an entity-conflict register and a first-hand
@@ -221,7 +229,8 @@ baseline is captured. Public search also surfaces other historical sites and
 third-party profiles containing conflicting identity, contact, MOQ, date,
 capacity or operating claims; no external record will be changed until the user
 confirms which domains and profiles are controlled. See
-`docs/geo-prompt-baseline.md` and `docs/content-brief-flatlock-vs-overlock.md`.
+`docs/geo/testing/prompt-baseline.md` and
+`docs/geo/content/flatlock-vs-overlock-brief.md`.
 
 Previous: 2026-08-08 — The production inquiry path was re-audited before
 adding new measurement. The homepage, Contact page, and Sportswear landing page
@@ -257,7 +266,7 @@ data must stay outside Git and outreach must not begin until the working storage
 non-responsive-prospect retention rule, and sending mailbox are confirmed.
 
 The first verified Meta Ads observation is recorded in
-`docs/meta-ads-baseline-2026-08-07.md`. The control Reel has 7,785 views, 6,325
+`docs/marketing/ads/meta-ads-baseline-2026-08-07.md`. The control Reel has 7,785 views, 6,325
 reach, 123 interactions, and 135 combined follows. Its promotion-performance
 view directly attributes 68 profile visits and 14 follows to RMB 170.08 spend,
 for RMB 12.15 per ad-attributed follow and a 20.6% profile-visit-to-follow rate.
@@ -368,10 +377,10 @@ only, United States and Canada targeting, English, Maximize Clicks, and a
 custom daily budget of RMB 25. AI Max, Search Partners, Display expansion,
 text adaptation, and final URL expansion are disabled. The campaign was
 launched on 2026-08-05 and entered Google review. See
-`docs/privacy-consent-plan.md`, `docs/privacy-policy-draft.md`, and
-`docs/consent-deployment-runbook.md`. The complete launch baseline and
+`docs/privacy/consent-plan.md`, `docs/privacy/policy-draft.md`, and
+`docs/privacy/consent-deployment-runbook.md`. The complete launch baseline and
 monitoring rules are recorded in
-`docs/google-ads-launch-record-2026-08-05.md`.
+`docs/marketing/ads/google-ads-launch-2026-08-05.md`.
 
 Previous: 2026-07-29 — Homepage Lookbook QA fixes completed. Corrected
 `sportswear/IMG_5836.webp`, whose EXIF orientation had been lost during the
@@ -425,7 +434,7 @@ Pre-previous: 2026-07-27 (AM) Contact page bg hero + Ken Burns removal +
 hero text color hierarchy (H1 white, intro rgba(255,255,255,0.72)).
 Historical: 2026-07-24 uploads asset migration (27G -> 0.27G local);
 Flywheel server cleanup completed 2026-07-28. See the archived
-docs/flywheel-cleanup-guide.md.
+docs/operations/flywheel-cleanup-guide.md.
 Launch: 2026-07-22. Site live on Flywheel at
 https://www.athletikapparel.com (see the current status section for the full
 launch record).
@@ -822,7 +831,7 @@ cache lag.
 
 ## Notes / status of the 07-03 QA audit
 
-Full audit in docs/qa-audit-260703.md. Status updated 2026-07-27:
+Full audit in docs/site/qa-audit-2026-07-03.md. Status updated 2026-07-27:
 
 | ID  | Item | Status |
 |-----|------|--------|

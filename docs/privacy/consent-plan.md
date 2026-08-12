@@ -17,7 +17,7 @@
 
 本节保留 2026-08-04 部署前发现的问题作为历史基线，不代表当前生产状态。
 当前状态以本文 Gate B–D、`docs/progress.md` 和
-`docs/google-ads-launch-record-2026-08-05.md` 为准。
+`docs/marketing/ads/google-ads-launch-2026-08-05.md` 为准。
 
 ### 生产站
 
@@ -300,8 +300,8 @@ AdSense 等发布商产品在向 EEA、英国和瑞士用户提供个性化广�
 3. 2026-08-05 实际广告范围包含美国和加拿大；现有发布批准记录仍是美国首轮版本，
    加拿大适用范围和告知内容需要单独复核。
 
-本地审核草稿的版本控制源文件见 [`privacy-policy-draft.md`](privacy-policy-draft.md)。
-发布前主体、地址和保留期限决策见 [`privacy-policy-decisions.md`](privacy-policy-decisions.md)。
+本地审核草稿的版本控制源文件见 [`policy-draft.md`](policy-draft.md)。
+发布前主体、地址和保留期限决策见 [`policy-decisions.md`](policy-decisions.md)。
 生产配置的逐项操作见 [`consent-deployment-runbook.md`](consent-deployment-runbook.md)。
 
 ## 9. 官方参考

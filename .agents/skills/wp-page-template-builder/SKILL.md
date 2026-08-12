@@ -26,7 +26,7 @@ same type has identical structure, only different content.
 
 - `docs/sitemap.md` — every page's URL, H1, target keyword, block outline.
 - `seo-tags.md` — the SEO Title / Meta Description per page.
-- `docs/design-brief.md` — block order and visual direction for the homepage.
+- `docs/site/design-brief.md` — block order and visual direction for the homepage.
 
 ## Current state
 

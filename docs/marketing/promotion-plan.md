@@ -11,7 +11,7 @@
 > 首轮投放品类：Sportswear Manufacturer（已确认）
 
 使用本计划时，请同时参考 `AGENTS.md`、`docs/progress.md`、
-`docs/sitemap.md` 和 `seo.md`。本文件用于规划推广、数据归因、询盘筛选
+`docs/sitemap.md` 和 `docs/site/seo.md`。本文件用于规划推广、数据归因、询盘筛选
 和渠道运营，不授权发布未经确认的客户名称、认证、产能、工厂数量等信息，
 也不授权更改已被索引的 URL。
 
@@ -80,13 +80,13 @@ Google Search、目标客户开发和 SEO/GEO 为主。多渠道分工、预算�
 - Fluent Forms 表单 3 已收集产品品类、订单数量、客户类型、联系信息和项目需求。
 - Google Site Kit 已提供 Google tag。
 - 表单提交成功后会通过
-  [`assets/js/inquiry-tracking.js`](../assets/js/inquiry-tracking.js)
+  [`assets/js/inquiry-tracking.js`](../../assets/js/inquiry-tracking.js)
   发送 GA4 推荐事件 `generate_lead`。
-- [`assets/js/attribution-tracking.js`](../assets/js/attribution-tracking.js)
+- [`assets/js/attribution-tracking.js`](../../assets/js/attribution-tracking.js)
   已通过本地真实浏览器和表单提交验证：记录 UTM、GCLID、首次落地页和原始
   Referrer，并在提交表单 3 时写入 Fluent Forms Entries。
 - Search Console、Sitemap、Canonical、H1、Meta Description 和 JSON-LD
-  已完成首轮技术 SEO 整改，具体记录见 [`seo.md`](seo.md)。
+  已完成首轮技术 SEO 整改，具体记录见 [`../site/seo.md`](../site/seo.md)。
 
 ### 付费推广当前状态（2026-08-07 文档对齐）
 
@@ -107,7 +107,7 @@ Google Search、目标客户开发和 SEO/GEO 为主。多渠道分工、预算�
   关注；广告页直接归因 68 次主页访问和 14 个关注，花费 RMB 170.08，对应广告归因
   关注成本约 RMB 12.15、主页访问→关注转化约 20.6%。整体关注包含 Reel 和广告共同
   结果，不能把差额直接标为纯自然关注。当前预算 RMB 68/日，先保持至 7 天复盘。基线见
-  [`meta-ads-baseline-2026-08-07.md`](meta-ads-baseline-2026-08-07.md)。
+  [`ads/meta-ads-baseline-2026-08-07.md`](ads/meta-ads-baseline-2026-08-07.md)。
 - YouTube @athletikclothinginc 已在运营，作为长视频证明渠道；Shorts 与
   Instagram Reels 复用素材。
 - SEO 之外新增 GEO（生成式引擎优化）方向，具体范围、内容格式与月度监测方法见
@@ -170,7 +170,7 @@ Google Search、目标客户开发和 SEO/GEO 为主。多渠道分工、预算�
 ### 4.2 隐私与用户同意
 
 - [x] 完成本地与生产站隐私/标签现状审计，并形成
-      [`privacy-consent-plan.md`](privacy-consent-plan.md)。
+      [`../privacy/consent-plan.md`](../privacy/consent-plan.md)。
 - [x] 确定推荐架构：Cookiebot CMP + WP Consent API + Site Kit 统一管理
       Google Consent Mode v2。
 - [x] 确认 Privacy Policy 数据控制者为 Athletik Clothing Inc.，隐私联系邮箱为
@@ -188,7 +188,7 @@ Google Search、目标客户开发和 SEO/GEO 为主。多渠道分工、预算�
 - [x] 2026-08-04 保存 Cookiebot 全访客 Explicit Consent 横幅、英文内容、
       Cookie Declaration、无关闭图标和启用浮动 Privacy Trigger 的配置。
 - [x] 将 WordPress Privacy Policy 页面 ID 3 重构为结构化英文版本；版本控制源见
-      [`privacy-policy-draft.md`](privacy-policy-draft.md)，生产页面已发布。
+      [`../privacy/policy-draft.md`](../privacy/policy-draft.md)，生产页面已发布。
 - [x] 2026-08-04 完整美国首轮公开正文经业务方批准并部署生产页面 ID 3；
       2026-08-05 实际广告范围扩展为美国和加拿大，加拿大适用范围仍需补充复核。
 - [x] 将 UTM/GCLID 来源归因接入 WP Consent API `marketing` 类别；拒绝或撤回后删除存储。
@@ -354,8 +354,8 @@ Google 搜索广告用于捕获已经主动寻找制造商的买家。每个广�
 
 ### 6.2 目标客户开发（单人保守基线）
 
-- 操作流程与空白字段模板见 [`outbound-workflow.md`](outbound-workflow.md) 和
-  [`outbound-lead-ledger-template.csv`](outbound-lead-ledger-template.csv)。真实联系人数据
+- 操作流程与空白字段模板见 [`outbound/workflow.md`](outbound/workflow.md) 和
+  [`outbound/lead-ledger-template.csv`](outbound/lead-ledger-template.csv)。真实联系人数据
   必须保存在 Git 之外的受限工作副本中。
 - [ ] 启动前确定线索台账、访问权限、保存期限和退订/禁止联系流程，并同步隐私与数据流文档。
 - [ ] 首轮以美国为主；加拿大主动外联在适用范围和营销合规完成复核后启动。

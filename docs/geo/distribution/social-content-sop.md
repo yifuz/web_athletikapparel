@@ -110,5 +110,5 @@ Story 记录覆盖与 Link Sticker 点击。GA4 按 `technical_guides` Campaign 
 ## 8. 首次验证案例
 
 首轮已发布案例和待补录项见
-[`social-content-publishing-log.md`](social-content-publishing-log.md)。以后新主题复制本 SOP，
+[`publishing-log.md`](publishing-log.md)。以后新主题复制本 SOP，
 而不是从聊天记录重新推导流程。

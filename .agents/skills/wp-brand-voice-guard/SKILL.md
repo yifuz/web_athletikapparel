@@ -125,7 +125,7 @@ Before committing any page or template that contains text:
 
 ## Tone (for agent-written text)
 
-From AGENTS.md §5 + `docs/design-brief.md`:
+From AGENTS.md §5 + `docs/site/design-brief.md`:
 - **Technical, confident, specific.** Like a manufacturer talking to
   professional buyers.
 - **Not startup-pitch warm.** No "we're passionate about...", "your success is

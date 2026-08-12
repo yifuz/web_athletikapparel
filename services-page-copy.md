@@ -2,7 +2,7 @@
 
 Single overview page. Walks a buyer through "what it's like to work with us"
 from sample to shipment. The 4 stages are sections on this one page (not
-separate pages). Companion to docs/sitemap.md, design-brief.md.
+separate pages). Companion to docs/sitemap.md and docs/site/design-brief.md.
 
 GUARDRAILS:
 - "Vertically integrated / our own facility / our own fabric mill" only. NEVER

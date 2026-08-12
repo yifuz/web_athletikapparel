@@ -13,7 +13,7 @@ Text Domain:  myathletik-child
    Edit these to retheme the whole site.
    ========================================================= */
 :root {
-  /* Colors â€?warm palette (see docs/design-brief.md). Tune, don't replace. */
+  /* Colors â€?warm palette (see docs/site/design-brief.md). Tune, don't replace. */
   --ma-color-bg:        #faf8f5; /* warm off-white / cream background */
   --ma-color-surface:   #f1ede7; /* warm light surface for cards/sections */
   --ma-color-text:      #2b2724; /* warm near-black, not pure #000 */

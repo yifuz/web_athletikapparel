@@ -1,0 +1,54 @@
+# Athletik Clothing 文档索引
+
+`docs/` 按工作领域归档。新会话先读 `AGENTS.md`，再从本页进入对应主题；不要为了找状态而扫描全部文档。
+
+## 根目录：项目入口
+
+| 文件 | 用途 |
+|---|---|
+| [`progress.md`](progress.md) | 当前项目完成状态、历史里程碑和待办；状态判断的主要入口 |
+| [`sitemap.md`](sitemap.md) | 页面结构、URL 与 SEO 信息架构；创建或重构页面前必读 |
+| `README.md` | 本索引 |
+
+## `geo/`：生成式搜索可见性
+
+- [`geo/GEO.md`](geo/GEO.md)：GEO 中央工作台、当前阶段与下一步。
+- [`geo/testing/prompt-baseline.md`](geo/testing/prompt-baseline.md)：固定 GEO-01～08、测试结果和实体冲突证据。
+- `geo/content/`：三篇 GEO 基础指南的批准草稿和内容简报。
+- `geo/distribution/`：LinkedIn/Instagram 分发 SOP 与发布日志。
+
+## `marketing/`：推广与获客
+
+- [`marketing/promotion-plan.md`](marketing/promotion-plan.md)：90 天推广、归因、预算与询盘计划。
+- [`marketing/promotion-matrix.md`](marketing/promotion-matrix.md)：渠道分工、单人内容基线和复盘指标。
+- `marketing/ads/`：Google Ads 与 Meta Ads 的日期化上线/基线记录。
+- `marketing/outbound/`：Outbound 操作流程和空白线索台账模板；真实联系人数据不得进入 Git。
+
+## `privacy/`：隐私、同意与部署
+
+- [`privacy/consent-plan.md`](privacy/consent-plan.md)：Privacy Policy、CMP、Consent Mode 与归因实施方案。
+- [`privacy/consent-deployment-runbook.md`](privacy/consent-deployment-runbook.md)：生产部署清单。
+- [`privacy/policy-decisions.md`](privacy/policy-decisions.md)：法律主体、地址、保留期限等决策记录。
+- [`privacy/policy-draft.md`](privacy/policy-draft.md)：版本控制中的 Privacy Policy 文本。
+
+## `site/`：网站设计、SEO 与 QA
+
+- [`site/design-brief.md`](site/design-brief.md)：视觉与交互基线。
+- [`site/seo.md`](site/seo.md)：技术 SEO 审查和修复记录。
+- [`site/qa-audit-2026-07-03.md`](site/qa-audit-2026-07-03.md)：历史上线前 QA 审计；当前状态仍以 `progress.md` 为准。
+
+## `operations/`：环境与维护
+
+- [`operations/flywheel-cleanup-guide.md`](operations/flywheel-cleanup-guide.md)：已完成的 Flywheel 清理操作记录。
+
+## `source-content/`：历史来源材料
+
+这里保存公司可控制的历史类目站内容摘录和清单，用于核验与迁移研究。它们不是当前规范站的自动批准事实库；
+历史认证、产能、设备、客户和实体表述在重新使用前仍须按 `AGENTS.md` 核验。
+
+## 维护规则
+
+- 新文档放入最接近的主题目录，不再直接堆到 `docs/` 根目录。
+- 根目录只保留高频跨领域入口。
+- 日期化快照写入对应领域子目录，并在 `progress.md` 或领域入口中建立链接。
+- 移动文档时必须更新仓库内引用并运行 Markdown 本地链接检查。

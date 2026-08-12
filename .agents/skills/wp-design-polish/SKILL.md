@@ -22,7 +22,7 @@ This project uses a token-driven CSS system. **All visual values come from the
 
 - `style.css` — the `:root` block (colors, type scale, spacing, layout).
   Read it before proposing any visual change.
-- `docs/design-brief.md` — the visual direction (warm, technical-but-warm,
+- `docs/site/design-brief.md` — the visual direction (warm, technical-but-warm,
   anti-catalogue, anti-startup). Don't drift toward cold industrial or
   startup-framing aesthetics.
 

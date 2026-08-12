@@ -3,7 +3,7 @@
 Status: the page and Fluent Form ID 3 are live. This document now reflects the
 current production field set and replaces the earlier front-end-only plan.
 
-Companion to docs/sitemap.md, design-brief.md. The conversion endpoint — all
+Companion to docs/sitemap.md and docs/site/design-brief.md. The conversion endpoint — all
 homepage and product-page CTAs point here. Goal: capture qualified B2B
 inquiries and gently filter out sub-MOQ leads via the order-quantity field
 (without stating MOQ outright).

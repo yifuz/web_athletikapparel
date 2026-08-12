@@ -3,7 +3,7 @@
 Status: preparation only. No live outreach is authorized by this document.
 
 This workflow prepares the first United States target-account test described in
-`promotion-plan.md` and `promotion-matrix.md`. It is an internal operating
+`../promotion-plan.md` and `../promotion-matrix.md`. It is an internal operating
 control, not legal advice. Canada, the EEA, the United Kingdom, and Switzerland
 remain outside the first outbound test until their separate market and privacy
 gates are reviewed.
@@ -11,7 +11,7 @@ gates are reviewed.
 ## 1. Storage boundary
 
 - The repository contains only the blank
-  [`outbound-lead-ledger-template.csv`](outbound-lead-ledger-template.csv).
+  [`lead-ledger-template.csv`](lead-ledger-template.csv).
 - Create the working copy outside Git in one access-restricted location controlled
   by the user. Do not store populated copies, exports, contact screenshots, or
   email archives in the theme repository.
@@ -122,7 +122,7 @@ Qualification values:
 - `B`
 - `C`
 
-Apply the A/B/C definitions in `promotion-plan.md` section 9. Keep the status and
+Apply the A/B/C definitions in `../promotion-plan.md` section 9. Keep the status and
 qualification separate: a lead can be `replied` while its qualification remains
 `unknown`.
 

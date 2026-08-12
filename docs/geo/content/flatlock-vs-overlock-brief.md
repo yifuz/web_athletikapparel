@@ -1,7 +1,7 @@
 # Content Brief — FLATLOCK vs OVERLOCK for Technical Knitwear
 
 > Status: owner-approved on 2026-08-11 and implemented locally for deployment.
-> Approved source draft: `docs/article-draft-flatlock-vs-overlock.md`.
+> Approved source draft: [`flatlock-vs-overlock-draft.md`](flatlock-vs-overlock-draft.md).
 > Purpose: create one first-hand technical article that can support buyer
 > research, conventional SEO and GEO observation without generic AI filler.
 
@@ -65,15 +65,15 @@
 
 ### Opening answer
 
-Owner-approved in `docs/article-draft-flatlock-vs-overlock.md` and implemented.
+Owner-approved in `flatlock-vs-overlock-draft.md` and implemented.
 
 ### H2 — What is FLATLOCK construction?
 
-Owner-approved in `docs/article-draft-flatlock-vs-overlock.md` and implemented.
+Owner-approved in `flatlock-vs-overlock-draft.md` and implemented.
 
 ### H2 — What is OVERLOCK construction?
 
-Owner-approved in `docs/article-draft-flatlock-vs-overlock.md` and implemented.
+Owner-approved in `flatlock-vs-overlock-draft.md` and implemented.
 
 ### H2 — FLATLOCK vs OVERLOCK comparison
 
@@ -89,15 +89,15 @@ Complete only confirmed cells. Remove any row that cannot be supported.
 
 ### H2 — When buyers should specify FLATLOCK
 
-Owner-approved in `docs/article-draft-flatlock-vs-overlock.md` and implemented.
+Owner-approved in `flatlock-vs-overlock-draft.md` and implemented.
 
 ### H2 — When OVERLOCK may be the appropriate construction
 
-Owner-approved in `docs/article-draft-flatlock-vs-overlock.md` and implemented.
+Owner-approved in `flatlock-vs-overlock-draft.md` and implemented.
 
 ### H2 — What to include in the tech pack / spec sheet
 
-Owner-approved in `docs/article-draft-flatlock-vs-overlock.md` and implemented.
+Owner-approved in `flatlock-vs-overlock-draft.md` and implemented.
 
 ### H2 — Questions buyers commonly ask
 
@@ -108,7 +108,7 @@ the page. Potential questions:
 - Can FLATLOCK be used on lightweight stretch fabric?
 - What seam information should be included in a tech pack / spec sheet?
 
-Answers are drafted in `docs/article-draft-flatlock-vs-overlock.md`. Omit
+Answers are drafted in `flatlock-vs-overlock-draft.md`. Omit
 FAQPage Schema until the visible answers are owner-approved and final.
 
 ## 4. Internal evidence and links

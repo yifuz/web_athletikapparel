@@ -70,7 +70,7 @@
 Reel 与广告共同结果，不能把未被广告直接归因的差额简单标为纯自然关注。当前广告运行
 4 天、预算 RMB 68/日，先保持不变至首个 7 天复盘。部分历史素材虽有更低的主页访问
 成本，却几乎没有关注、点赞等后续互动。详见
-[`meta-ads-baseline-2026-08-07.md`](meta-ads-baseline-2026-08-07.md)。
+[`ads/meta-ads-baseline-2026-08-07.md`](ads/meta-ads-baseline-2026-08-07.md)。
 
 ### 内容支柱（素材持续拍摄中，按此分类产出）
 
@@ -157,7 +157,7 @@ LinkedIn Insight Tag 在隐私政策更新后再安装，付费只从网站访�
 
 ## 5. SEO（延续 promotion-plan.md §6.4）
 
-- 技术整改已完成（见 seo.md）；当前重点是内容供给。
+- 技术整改已完成（见 [`../site/seo.md`](../site/seo.md)）；当前重点是内容供给。
 - 基线为每月 1 篇深度技术文章，由用户编写或批准，基于真实一线制造经验。
 - 若当月文章、询盘处理和广告复盘均按时完成，可增加第 2 篇，但不自动提高下月基线。
 - 首批主题不变：FLATLOCK 对比、ACTIVESEAM 应用、Tech pack 指南、Merino base
@@ -169,13 +169,16 @@ LinkedIn Insight Tag 在隐私政策更新后再安装，付费只从网站访�
 
 ## 6. GEO（生成式引擎优化）——新增方向
 
+中央状态、已完成项目和下一步顺序统一记录在 [`../geo/GEO.md`](../geo/GEO.md)。本节保留渠道策略；
+详细提示词结果仍写入 [`../geo/testing/prompt-baseline.md`](../geo/testing/prompt-baseline.md)。
+
 目标：当潜在买家向 ChatGPT、Perplexity、Gemini、Google AI Overviews 等提问
 "中国运动服制造商推荐""flatlock manufacturer MOQ 1000""如何选择针织 OEM"时，
 Athletik Clothing 能被提及或引用。
 
 ### 6.1 提示词基线与监测（每月一次，轻量执行）
 
-监测表已建立在 [`geo-prompt-baseline.md`](geo-prompt-baseline.md)，固定 8 条买家
+监测表已建立在 [`../geo/testing/prompt-baseline.md`](../geo/testing/prompt-baseline.md)，固定 8 条买家
 真实会问的提示词，每月在同一批 AI 引擎上各跑一遍，记录：是否提及 Athletik /
 是否引用 athletikapparel.com / 推荐了哪些竞品。首批提示词方向：
 
@@ -228,8 +231,8 @@ PerplexityBot 和 Claude-SearchBot 标识请求均返回 HTTP 200，未出现显
 
 启动前先确定线索台账、访问权限、保存期限、退订/禁止联系记录和各目标市场的合规流程，
 并同步数据流与隐私文档。首轮以美国目标企业为主；加拿大主动外联须在适用范围复核后启动。
-操作边界、字段定义和空白台账见 [`outbound-workflow.md`](outbound-workflow.md) 与
-[`outbound-lead-ledger-template.csv`](outbound-lead-ledger-template.csv)。真实联系人数据不得写入 Git。
+操作边界、字段定义和空白台账见 [`outbound/workflow.md`](outbound/workflow.md) 与
+[`outbound/lead-ledger-template.csv`](outbound/lead-ledger-template.csv)。真实联系人数据不得写入 Git。
 
 单人基线：每周 10–15 家匹配企业，每家优先选择 1–2 位相关联系人；使用专属 UTM
 链接到对应品类页，以邮件 + LinkedIn 组合跟进，完整记录联系→成交漏斗。只有在前一周
@@ -255,9 +258,9 @@ Instagram 与 YouTube 的内容资产在开发信中作为信任佐证引用。
 6. 所有发布内容涉及客户信息前逐一确认授权
 
 官网技术指南改编为 LinkedIn 与 Instagram 内容时，使用
-[`social-content-distribution-sop.md`](social-content-distribution-sop.md) 的图片规格、
+[`../geo/distribution/social-content-sop.md`](../geo/distribution/social-content-sop.md) 的图片规格、
 文案、UTM、审核和七日复盘流程。实际发布结果追加到
-[`social-content-publishing-log.md`](social-content-publishing-log.md)，不依赖聊天记录保存。
+[`../geo/distribution/publishing-log.md`](../geo/distribution/publishing-log.md)，不依赖聊天记录保存。
 
 每周节奏（与 promotion-plan.md §11 合并执行）：
 
@@ -286,6 +289,6 @@ Instagram 与 YouTube 的内容资产在开发信中作为信任佐证引用。
 - 【需要确认：典型订单金额或毛利范围】——用于计算可接受 CPQL 与预算放大标准
 - 【已确认（2026-08-07）：服装制造业务官方 LinkedIn 主页为 company/111831319】
 - 【需要确认：Meta 广告账户结构与当前在投广告组明细】——用于 §2 付费结构对齐
-- 【待建立：GEO 提示词基线表】——建议文档 `docs/geo-prompt-baseline.md`，首次监测后定基线
+- 【已建立：GEO 提示词基线表】——见 `docs/geo/testing/prompt-baseline.md`
 - 【已建立空白模板与流程；待确认：真实台账保存位置、未回复潜客保留期限和发送邮箱】
 - 【待建立：客户案例授权台账】——没有书面记录的客户名称和素材不得发布

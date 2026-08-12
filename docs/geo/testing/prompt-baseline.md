@@ -2,6 +2,7 @@
 
 > 建立日期：2026-08-08
 > 范围：针对 ChatGPT Search、Perplexity 和 Gemini/Google AI 体验进行轻量级月度观察。本记录不构成排名保证。
+> 中央 GEO 状态、已完成工作与下一步顺序见 [`../GEO.md`](../GEO.md)；本文件保留固定提示词、逐次结果和证据明细。
 
 ## 1. 执行规则
 
@@ -177,7 +178,7 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 - [Coats 的技术资料](https://cdn.coats.com/wp-content/uploads/Coats-Surfilor-Product-Information-Sheet-2025.pdf)把 504/514 列为 OVERLOCK、605/607 列为 flatseam、406 列为 coverseam，说明回答涉及的是不同 stitch type，不应把普通包缝机拉开的 flatlock-style seam 与工业 FLATLOCK 混为一谈。[ISO 4915:1991](https://www.iso.org/standard/10932.html)是当前的 stitch type 分类与术语标准；1981 版已撤销。
 - “高接触接缝用 FLATLOCK、低接触接缝用 OVERLOCK”可以作为早期 seam map 启发，不能直接作为量产规格。买家还应要求接缝两面照片、批准样、指定面料上的接缝伸长/强力及洗后测试，并结合背包带、腋下、裆部和腰头等实际受压位置确认。
 - [Merrow MB-4DFO 官方页面](https://www.merrow.com/Sergers_and_Overlock_Sewing_Machines/mb4dfo)把 ACTIVESEAM 定义为两线或三线 flat overlock，并明确称其是传统 FLATLOCK、INTERLOCK 和 OVERLOCK 的替代结构。未来的 Athletik 第一方文章应单独说明这一点，而不是把 ACTIVESEAM 当作 FLATLOCK 的别名。
-- 本次回答没有提及 Athletik 或引用任何第一方制造页面，因此没有形成品牌引用。现有 [`content-brief-flatlock-vs-overlock.md`](content-brief-flatlock-vs-overlock.md) 正好覆盖这一内容缺口，仍是下一篇第一方技术内容的首选。
+- 本次回答没有提及 Athletik 或引用任何第一方制造页面，因此没有形成品牌引用。现有 [`../content/flatlock-vs-overlock-brief.md`](../content/flatlock-vs-overlock-brief.md) 正好覆盖这一内容缺口，仍是下一篇第一方技术内容的首选。
 
 ### GEO-08 核验备注（2026-08-10）
 
@@ -216,8 +217,9 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 3. 规范站的 Organization/LocalBusiness 实体已经部署 `legalName` 和经过核实的官方资料 `sameAs` 链接。
 4. 确认公司能控制哪些历史域名和目录资料页；已完全下线的 `myathletik.com` 不进入修复范围。
 5. 先修正可控制且可见度最高的来源，再发布新的目录资料。
-6. 使用 [`content-brief-flatlock-vs-overlock.md`](content-brief-flatlock-vs-overlock.md) 制作一篇第一方技术文章。
-7. 等实体修正和第一篇文章公开可抓取后，重复同样的 24 次检查；以后按月执行，不改变提示词措辞。
+6. 已完成：FLATLOCK vs OVERLOCK、technical knitwear tech pack 和 OEM evaluation 三篇第一方指南已发布到 Technical Guides 内容中心。
+7. 已完成：GEO-07 对应指南已于 2026-08-12 分发到 LinkedIn 和 Instagram；其余两篇分发和七日数据记录见 [`../GEO.md`](../GEO.md)。
+8. 等三篇内容获得合理抓取时间后重复同样的固定检查；以后按月执行，不改变提示词措辞。
 
 ## 8. 官方参考资料
 

@@ -1,6 +1,6 @@
 # About Us Page — Copy  (/about-us/)
 
-Companion to docs/sitemap.md, design-brief.md. Builds trust by telling the
+Companion to docs/sitemap.md and docs/site/design-brief.md. Builds trust by telling the
 company story and showing real capability — without revealing subcontracting or
 team size.
 
