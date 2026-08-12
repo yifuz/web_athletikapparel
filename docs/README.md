@@ -13,7 +13,7 @@
 ## `geo/`：生成式搜索可见性
 
 - [`geo/GEO.md`](geo/GEO.md)：GEO 中央工作台、当前阶段与下一步。
-- [`geo/testing/prompt-baseline.md`](geo/testing/prompt-baseline.md)：固定 GEO-01～08、测试结果和实体冲突证据。
+- [`geo/testing/prompt-baseline.md`](geo/testing/prompt-baseline.md)：冻结的 Baseline v1、当前 Baseline v2、测试结果和实体冲突证据。
 - `geo/content/`：三篇 GEO 基础指南的批准草稿和内容简报。
 - `geo/distribution/`：LinkedIn/Instagram 分发 SOP 与发布日志。
 

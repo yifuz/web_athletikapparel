@@ -31,7 +31,7 @@ GEO 不等于添加特殊 AI 标记，也不承诺固定排名。当前执行环
 | 文档 | 用途 |
 |---|---|
 | 本文件 `GEO.md` | GEO 总状态、优先级和下一步工作台 |
-| [`testing/prompt-baseline.md`](testing/prompt-baseline.md) | 固定 GEO-01～08、各引擎原始结果、证据和实体冲突明细 |
+| [`testing/prompt-baseline.md`](testing/prompt-baseline.md) | 冻结的 Baseline v1、当前 Baseline v2、各产品原始结果、证据和实体冲突明细 |
 | [`distribution/social-content-sop.md`](distribution/social-content-sop.md) | 官网指南改编为 LinkedIn/Instagram 内容的执行 SOP |
 | [`distribution/publishing-log.md`](distribution/publishing-log.md) | 每次站外分发的发布时间、链接和七日数据 |
 | [`../sitemap.md`](../sitemap.md) | 规范 URL、页面定位与信息架构 |
@@ -64,8 +64,9 @@ GEO 不等于添加特殊 AI 标记，也不承诺固定排名。当前执行环
 
 ### A. 基线与实体层 — 已完成
 
-- [x] 建立固定 GEO-01～08 提示词和记录口径。
-- [x] 在独立 Temporary Chat 中完成 ChatGPT Search GEO-01～08 首轮中性基线。
+- [x] 冻结 2026-08 的 Baseline v1（原 GEO-01～08）及历史结果。
+- [x] 建立意图更准确的 Baseline v2 和分类型记录口径，作为后续月度主基线。
+- [x] 在独立 Temporary Chat 中完成 ChatGPT Search Baseline v1 首轮中性基线；Baseline v2 尚待首次运行。
 - [x] 将个性化回答与中性基线分开；出现 `your own` 等上下文信号的结果不计入中性成绩。
 - [x] 确认公开品牌、美国实体、中国实体、规范站、办公地址和官方社交页面。
 - [x] 在规范站 JSON-LD 中部署核准的 `legalName` 与官方 `sameAs`。
@@ -106,7 +107,7 @@ GEO 不等于添加特殊 AI 标记，也不承诺固定排名。当前执行环
 
 ## 5. 当前 GEO 结果摘要
 
-首轮 ChatGPT Search 中性基线的方向性结论如下；所有逐条证据以
+首轮 ChatGPT Search Baseline v1 中性结果的方向性结论如下；这些结论属于历史快照，所有逐条证据以
 [`testing/prompt-baseline.md`](testing/prompt-baseline.md) 为准：
 
 - GEO-01：能识别技术针织定位和中国制造基地，但旧 LinkedIn 的 New York headquarters 字段造成实体口径干扰。
@@ -148,9 +149,10 @@ alt text、联系表和七日数据模板。不制作 PDF/PPT，没有使用额�
 
 - 不在当前长期 GEO 工作对话中运行中性测试，因为该对话已经包含大量 Athletik 上下文。
 - 继续使用全新的 Temporary Chat；每条提示词单独开一个对话，记录第一次回答。
-- 固定 GEO-01～08 不改写，才能与 2026-08-10 首轮结果比较。
+- 后续主测试使用固定 Baseline v2 原文；v2 第一次完整运行建立新的时间序列，不能与 2026-08-10 的 v1 逐题硬比较。
 - 建议在三篇指南已获得合理抓取时间后进行；以 2026 年 9 月的月度窗口为首选，而不是发布当天反复测试。
-- ChatGPT Search、Perplexity、Gemini/Google AI 体验按可用性执行；某引擎不可用时如实记录，不用其他产品替代后混算。
+- 主轨道为 ChatGPT Search、Perplexity 和 Google AI Mode；Gemini App 为独立可选轨道。某产品不可用时如实记录，不用其他产品替代或混算。
+- 每月每题默认一次；只有关键状态变化时增加两次独立确认运行，至少两次支持同一方向才标记“初步确认”。
 
 ### 优先级 4 — 处理仍可控制的实体冲突
 

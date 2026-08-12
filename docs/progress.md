@@ -29,7 +29,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 ### 1.2 GEO
 
 - [`geo/GEO.md`](geo/GEO.md) 是 GEO 中央工作台和路由文档。
-- 固定 GEO-01～08 的第一轮 Temporary Chat 中性基线已经完成。
+- Baseline v1（原 GEO-01～08）的第一轮 Temporary Chat 中性基线已经完成并冻结；Baseline v2 已建立，等待首次月度运行。
 - 实体、技术可抓取性、三篇指南和 GEO-07 首轮 LinkedIn/Instagram 分发已经完成。
 - GEO-06 的 LinkedIn 单图与 Instagram 七图分发包已于 2026-08-12 准备并完成初检，等待所有者审核和发布；GEO-08 分发、
   GEO-07 七日数据、Search Console 索引观察和后续月度复测仍待进行。
@@ -216,7 +216,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - JSON-LD 为服务端渲染，不包含旧域名。
 - 当前可公开陈述的职责边界有限；需要更详细的中美实体职责时必须向所有者确认。
 
-### 4.3 第一轮 GEO-01～08 中性基线
+### 4.3 Baseline v1（原 GEO-01～08）中性结果
 
 完整证据见 [`geo/testing/prompt-baseline.md`](geo/testing/prompt-baseline.md)。方向性结论：
 
@@ -231,7 +231,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - GEO-08：中性回答没有引用 Athletik，并偏向毛衫供应商尽调；对应 OEM 评估指南已上线。
 
 原始个性化测试中出现过 `your own` 等用语，说明 Memory 或历史上下文影响回答；
-这些结果只保留为探索性观察，不计入中性成绩。GEO-01～08 均已有独立 Temporary Chat 基线。
+这些结果只保留为探索性观察，不计入中性成绩。Baseline v1 的 8 条提示词均已有独立 Temporary Chat 结果，现已冻结为 2026-08 历史快照。
 
 ### 4.4 历史域名与第三方资料
 
@@ -248,7 +248,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 2. 2026-08-19 起记录 GEO-07 满 7 个自然日的平台与 GA4 数据。
 3. 按单人保守节奏依次分发 GEO-06 与 GEO-08；优先 GEO-06。
 4. 等待 Search Console 正常刷新，不重复申请索引。
-5. 三篇指南获得合理抓取时间后，在全新 Temporary Chat 按固定提示词复测；首选 2026 年 9 月月度窗口。
+5. 三篇指南获得合理抓取时间后，按固定 Baseline v2 建立新的月度时间序列；首选 2026 年 9 月窗口。
 
 暂不制作 `llms.txt` 或所谓 AI 专用 Schema，不每日重复提示词，不以社交展示量替代 GEO 引用证据，
 也不通过低信息密度文章、购买目录链接或虚构第三方评价追求数量。
@@ -531,10 +531,10 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-04 | 美国首发 Privacy Policy 发布并核验 |
 | 2026-08-05 | Consent/归因与首个 Google Ads Campaign 上线快照完成 |
 | 2026-08-07 | 单人保守营销基线、LinkedIn 官方主页状态和 Meta Ads 基线记录完成 |
-| 2026-08-08 | GEO 固定提示词、实体冲突表和首轮爬虫可访问性检查启动 |
-| 2026-08-10 | `myathletik.com` 以 HTTP 410 完全下线；中美实体命名和 GEO-01～08 基线完成 |
+| 2026-08-08 | GEO Baseline v1 固定提示词、实体冲突表和首轮爬虫可访问性检查启动 |
+| 2026-08-10 | `myathletik.com` 以 HTTP 410 完全下线；中美实体命名和 Baseline v1 完成 |
 | 2026-08-11 | Technical Guides Hub 与 3 篇基础指南全部完成、核验并部署 |
-| 2026-08-12 | GEO-07 LinkedIn/Instagram 分发完成；GEO 文档和 docs 目录完成整合 |
+| 2026-08-12 | GEO-07 LinkedIn/Instagram 分发完成；GEO 文档和 docs 目录完成整合；Baseline v1 冻结并建立 Baseline v2 |
 
 ---
 
@@ -543,6 +543,6 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-06 Tech Pack LinkedIn/Instagram 内容包，再制作 GEO-08。
 3. 等待 Search Console 正常刷新后核对 4 个指南 URL 的索引状态。
-4. 在 2026 年 9 月窗口使用全新 Temporary Chat 固定复测 GEO-01～08。
+4. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 5. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
 6. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。

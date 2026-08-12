@@ -172,22 +172,24 @@ LinkedIn Insight Tag 在隐私政策更新后再安装，付费只从网站访�
 中央状态、已完成项目和下一步顺序统一记录在 [`../geo/GEO.md`](../geo/GEO.md)。本节保留渠道策略；
 详细提示词结果仍写入 [`../geo/testing/prompt-baseline.md`](../geo/testing/prompt-baseline.md)。
 
-目标：当潜在买家向 ChatGPT、Perplexity、Gemini、Google AI Overviews 等提问
-"中国运动服制造商推荐""flatlock manufacturer MOQ 1000""如何选择针织 OEM"时，
-Athletik Clothing 能被提及或引用。
+目标：当潜在买家在 ChatGPT Search、Perplexity、Google AI Mode 等搜索产品中查询
+中国技术针织 OEM、FLATLOCK / ACTIVESEAM 能力、Merino wool base layer 供应商、
+Tech pack 或 OEM 尽调问题时，Athletik Clothing 或相关规范站内容能够被准确提及和引用。
+Gemini App 作为独立可选轨道，不与 Google AI Mode 混算。
 
 ### 6.1 提示词基线与监测（每月一次，轻量执行）
 
-监测表已建立在 [`../geo/testing/prompt-baseline.md`](../geo/testing/prompt-baseline.md)，固定 8 条买家
-真实会问的提示词，每月在同一批 AI 引擎上各跑一遍，记录：是否提及 Athletik /
-是否引用 athletikapparel.com / 推荐了哪些竞品。首批提示词方向：
+监测表已建立在 [`../geo/testing/prompt-baseline.md`](../geo/testing/prompt-baseline.md)。
+Baseline v1 已冻结为 2026-08 历史快照；后续使用 Baseline v2 的 8 条固定英文提示词，
+分别覆盖实体准确性、未点名供应商发现和第一方内容权威性。主基线每月运行：
 
-- best sportswear manufacturer in China
-- technical knitwear OEM manufacturer
-- flatlock / activeseam clothing manufacturer
-- merino wool base layer manufacturer
-- how to choose a knitwear manufacturer (MOQ, tech pack)
-- China vs Portugal vs Vietnam knitwear manufacturing
+- ChatGPT Search：8 次
+- Perplexity：8 次
+- Google AI Mode：8 次
+- 合计 24 次；Gemini App 如有余力再单独增加 8 次
+
+每次记录运行环境、品牌提及/短名单位置、是否引用 `athletikapparel.com`、实际来源 URL、
+引用相关性、错误或意图错位和主要竞品。不建立跨类型 GEO 总分，也不把 v1 与 v2 合并为同一时间序列。
 
 2026-08-08 技术基线：主页和 Sportswear 页使用 Googlebot、OAI-SearchBot、
 PerplexityBot 和 Claude-SearchBot 标识请求均返回 HTTP 200，未出现显式挑战；

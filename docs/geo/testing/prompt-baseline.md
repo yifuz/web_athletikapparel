@@ -1,23 +1,35 @@
 # GEO 提示词基线与实体一致性记录
 
 > 建立日期：2026-08-08
-> 范围：针对 ChatGPT Search、Perplexity 和 Gemini/Google AI 体验进行轻量级月度观察。本记录不构成排名保证。
-> 中央 GEO 状态、已完成工作与下一步顺序见 [`../GEO.md`](../GEO.md)；本文件保留固定提示词、逐次结果和证据明细。
+> 范围：针对 ChatGPT Search、Perplexity 和 Google AI Mode 进行轻量级月度观察；Gemini App 作为独立可选轨道，不与 Google AI Mode 混算。本记录不构成排名保证。
+> 中央 GEO 状态、已完成工作与下一步顺序见 [`../GEO.md`](../GEO.md)；本文件保留 Baseline v1 历史快照、Baseline v2 固定提示词、逐次结果和证据明细。
+>
+> 版本状态：Baseline v1 冻结于 2026-08-12；Baseline v2 自 2026-08-12 起成为后续月度主基线。两个版本不能逐题硬比较，也不能合并为同一时间序列。
 
 ## 1. 执行规则
 
-- 每月使用全新的 Temporary Chat，以英文运行一次相同的提示词；每条提示词单独开启一个 Temporary Chat，不在同一对话中连续测试。
-- 测试前确认 Custom Instructions 中没有 Athletik、服装业务或供应商偏好。Temporary Chat 不使用或创建 Memory，但仍会执行已启用的 Custom Instructions；如果无法使用 Temporary Chat，则采用退出登录的独立浏览器会话。
-- 保持联网/搜索功能开启；产品允许选择地区时，使用美国地区。
+- 每月以英文运行一次相同版本的固定提示词；每条提示词单独开启一个全新会话，不在同一对话中连续测试。
+- ChatGPT Search 使用 Temporary Chat，并关闭 Custom Instructions；Temporary Chat 不使用或创建 Memory，但仍会执行启用中的 Custom Instructions。
+- Perplexity 使用未登录匿名会话或 Incognito；如果使用登录账户，必须确认 Company、Occupation、Custom Instructions、Personalization 和 Connectors 不含 Athletik 或服装业务上下文。
+- Google AI Mode 关闭 Personalized Recommendations、Personal Intelligence、Search Services History 影响和 Preferred Sources；使用隐私浏览窗口。即使关闭个性化，仍记录实际网络地区、界面语言和设备类型。
+- Gemini App 若单独测试，使用 Temporary Chat，关闭 Memory/Personal Intelligence、Instructions 和 Connected Apps。Gemini App 与 Google AI Mode 分开记录，不能互相替代。
+- 保持联网/搜索功能开启；统一使用英文界面/英文回答，地区目标固定为美国。若产品只能按实际网络地区运行，记录实际地区，不伪装成美国结果。
+- 使用各产品的标准网页搜索回答，不使用 Deep Research、Research 或其他需要额外提示/长流程的研究模式；如果产品自动切换模式，如实记录可见模式。
 - 记录第一次回答，不要为了让品牌出现而反复重新生成。
 - 分开记录品牌提及和网站引用：提到品牌但没有链接，不算网站引用。
-- 保存回答链接或截图，并记录引擎、可见的模型/模式和运行日期，因为结果会随时间和用户而变化。
+- 保存完整回答、来源面板中的实际 URL 和截图；分享链接不能替代来源 URL。记录产品、登录状态、临时/隐私模式、搜索模式、可见模型、语言、实际地区和运行日期。
 - 不跨引擎比较原始排名；每个引擎只与其自身上月结果比较。
 - 如果 Search Console 已为此资源显示生成式 AI 效果报告，则每月记录其展示次数和被引用页面。该功能仍在逐步推出，菜单暂未出现不视为错误。
 - 检查 GA4 获客/引荐数据中可归因的 AI 搜索访问。引荐流量比未附引用的品牌提及更有证明力。
 - 单独标记个性化运行。凡回答出现“your own”、引用用户身份/业务关系，或 Memory Sources 显示历史聊天、Saved Memory、文件或应用来源，均只作为个性化观察，不计入中性 GEO 基线。
+- 每月默认每条提示词运行一次。若出现关键状态变化，例如“未提及 → 进入短名单”“无引用 → 引用规范站”或反向变化，在相同条件下增加两次独立确认运行；至少两次结果支持同一方向，才标记为“初步确认”。附加确认运行不并入月度 24 次默认工作量。
+- 每个月度批次尽量在连续 3 个自然日内完成。批次期间不部署会改变实体信息、指南正文、导航或 Schema 的更新；如果中途发生此类部署，拆分记录为不同观察窗口，不能把结果当作同一批次。
 
-单人执行基线：8 条提示词 × 3 个引擎 = 每月 24 次检查。如果某个引擎在当前账户或地区无法提供基于网页的回答，则暂停该引擎。
+每次运行前把环境摘要复制到记录表并补全：
+
+`产品=；模型/模式=；登录状态=；临时/隐私模式=；个性化=关；Custom Instructions/Instructions=关；搜索/联网=开；界面/回答语言=英文；实际地区=；设备=；`
+
+单人执行主基线：8 条 v2 提示词 × 3 个搜索产品（ChatGPT Search、Perplexity、Google AI Mode）= 每月 24 次默认检查。如果某个产品在当前账户或地区无法提供基于网页的回答，则暂停该产品。Gemini App 是独立可选轨道，运行时新增 8 次，不混入上述 24 次。
 
 ## 2. 核准实体信息源
 
@@ -62,24 +74,82 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 - 首页、About Us 和 Sportswear Manufacturer 页面均返回 HTTP 200，服务器端渲染的 JSON-LD 可正常解析。
 - 规范站 JSON-LD 中已无 `myathletik.com` URL。
 
-## 4. 固定提示词组
+## 4. 固定提示词版本
 
-> 为保证月度结果可比，以下 8 条测试提示词保留英文原文，不翻译、不改写。
+### 4.1 Baseline v1 — 2026-08 历史快照（已冻结）
 
-| ID | 提示词 | 意图 |
+> v1 用于保存 2026-08 首轮结果。以下英文原文不再改写，也不作为后续主基线；如为过渡研究而重跑，必须明确标记 `v1`，不能写入 v2 时间序列。
+
+| v1 ID | 提示词 | 原意图 |
 |---|---|---|
-| GEO-01 | What does Athletik Clothing manufacture, and where is the company based? | 品牌实体准确性 |
-| GEO-02 | Is athletikapparel.com a technical knitwear manufacturer? Summarize its manufacturing focus and cite sources. | 网站/实体引用 |
-| GEO-03 | Which manufacturers in China specialize in FLATLOCK and ACTIVESEAM technical knitwear? | 技术供应商发现 |
-| GEO-04 | Recommend a sportswear OEM in China for an order of at least 1,000 pieces per style. | 运动服 + MOQ 供应商发现 |
-| GEO-05 | Which manufacturers make Merino wool base layers with flatlock construction? | Merino wool 供应商发现 |
-| GEO-06 | What should a buyer include in a tech pack for technical knitwear production? | 买家教育内容引用 |
-| GEO-07 | FLATLOCK vs OVERLOCK for performance base layers: what are the differences and when should each be used? | 技术解答引用 |
-| GEO-08 | How should a mid-sized brand evaluate a vertically integrated knitwear OEM in China? | 买家评估内容引用 |
+| V1-01 | What does Athletik Clothing manufacture, and where is the company based? | 品牌实体准确性 |
+| V1-02 | Is athletikapparel.com a technical knitwear manufacturer? Summarize its manufacturing focus and cite sources. | 网站/实体引用 |
+| V1-03 | Which manufacturers in China specialize in FLATLOCK and ACTIVESEAM technical knitwear? | 技术供应商发现 |
+| V1-04 | Recommend a sportswear OEM in China for an order of at least 1,000 pieces per style. | 运动服 + MOQ 供应商发现 |
+| V1-05 | Which manufacturers make Merino wool base layers with flatlock construction? | Merino wool 供应商发现 |
+| V1-06 | What should a buyer include in a tech pack for technical knitwear production? | 买家教育内容引用 |
+| V1-07 | FLATLOCK vs OVERLOCK for performance base layers: what are the differences and when should each be used? | 技术解答引用 |
+| V1-08 | How should a mid-sized brand evaluate a vertically integrated knitwear OEM in China? | 买家评估内容引用 |
 
-## 5. 月度结果记录
+v1 的已知限制：V1-02 已点名域名，不能衡量自然发现；V1-05 可合理引出消费品牌而非 OEM；V1-06 和 V1-08 的 `technical knitwear` / `knitwear` 容易被解释为横机毛衫或 fully fashioned knitwear。后续不再让这些歧义主导主基线判断。
 
-每个提示词/引擎结果使用一行。只新增记录，不覆盖以前月份。
+### 4.2 Baseline v2 — 后续月度主基线
+
+> 以下 8 条是固定英文原文。除非再次建立新版本，否则不翻译、不改写。v2 的目标不是诱导 Athletik 出现，而是让问题更准确地代表本项目的真实 B2B 买家意图。
+
+| v2 ID | 提示词 | 类型 | 主要成功条件 |
+|---|---|---|---|
+| V2-E01 | What does Athletik Clothing manufacture, where is its production operation based, and what is its official website? | 实体准确性 | 正确识别公开品牌、制造重点、中国生产地点和规范站；不混淆中美实体角色 |
+| V2-E02 | Based on athletikapparel.com, what type of manufacturer is Athletik Clothing? Summarize its main products and manufacturing capabilities, and cite the pages you used. | 指定网站理解 | 正确概括站内内容并引用相关规范站页面；不把指定域名引用当作自然发现 |
+| V2-D03 | Which manufacturers in China have documented capability in both industrial FLATLOCK and Merrow ACTIVESEAM construction for cut-and-sew technical knitwear? List up to five and cite evidence. | 供应商发现 | Athletik 是否进入最多五家的证据化短名单、位置及规范站引用 |
+| V2-D04 | Recommend up to five OEM/ODM manufacturers in China for cut-and-sew technical performance knitwear, such as base layers and activewear, for an order of at least 1,000 pieces per style. Explain why each is a fit. | 供应商发现 | Athletik 是否进入目标订单短名单、位置、匹配理由及事实准确性 |
+| V2-D05 | Which OEM/ODM manufacturers in China produce Merino wool base layers using industrial FLATLOCK construction? List up to five and cite evidence. | 供应商发现 | Athletik 是否进入 Merino wool OEM 短名单、位置及规范站引用；不把消费品牌混作实际 OEM |
+| V2-C06 | What should a buyer include in a tech pack for cut-and-sew technical performance knitwear such as base layers or activewear? Cite useful sources. | 内容权威性 | 是否引用 Athletik tech pack 指南、引用是否支持答案、回答是否处于 cut-and-sew 语境 |
+| V2-C07 | For cut-and-sew performance base layers, how do industrial FLATLOCK and OVERLOCK seams differ, and where should each be used? Cite sources. | 内容权威性 | 是否引用 Athletik 接缝指南、引用相关性及技术准确性 |
+| V2-C08 | How should a mid-sized brand evaluate a vertically integrated OEM for cut-and-sew performance knitwear in China? Provide a practical due-diligence checklist and cite sources. | 内容权威性 | 是否引用 Athletik OEM 评估指南、引用相关性及尽调框架准确性 |
+
+### 4.3 为什么 v1 与 v2 不直接比较
+
+- V2-E01/E02 是实体与指定网站理解；它们不用于证明未点名状态下的供应商发现。
+- V2-D03～D05 是未点名的供应商发现；品牌位置和规范站引用属于核心结果。
+- V2-C06～C08 是未点名的内容权威性；即使 Athletik 没被列为供应商，只要相关第一方指南被准确引用，也属于正向结果。
+- v2 修正了 v1 的意图歧义，因此不能把 `V1-05 未出现` 与 `V2-D05 出现` 直接表述为排名提升。v2 第一次完整运行是新时间序列的起点。
+
+## 5. 结果记录与评分口径
+
+### 5.1 运行有效性
+
+每次运行先标记一种状态：
+
+| 状态 | 定义 | 是否计入中性基线 |
+|---|---|---|
+| 有效中性运行 | 环境控制完成，使用固定原文，搜索/联网开启，保存第一次完整回答和来源 URL | 是 |
+| 个性化观察 | 出现用户关系、Memory/历史聊天、账户资料或来源偏好影响 | 否 |
+| 来源不可验证 | 回答声称检索但没有可检查的来源 URL，或只保存了不含来源的粘贴文本 | 可记录提及，不计网站引用 |
+| 意图错位 | 回答主体落入消费品牌、横机毛衫等与固定题意不符的类别 | 保留记录，不把未提及直接解释为 GEO 失败 |
+| 无效运行 | 提示词被改写、同一会话受前题影响、搜索未开启或证据不完整到无法判断 | 否 |
+
+### 5.2 分类指标
+
+不建立单一 GEO 总分，也不把三类提示词的结果相加。
+
+| 类型 | 核心字段 |
+|---|---|
+| 实体准确性 V2-E01/E02 | 公开品牌、规范站、中国生产地点、中美实体角色、产品/能力概括、错误或过时信息 |
+| 供应商发现 V2-D03～D05 | 未出现 / 普通提及 / 进入短名单 / 第一推荐、名单位置、规范站引用、匹配理由、竞品 |
+| 内容权威性 V2-C06～C08 | 是否引用 Athletik 指南、引用 URL、引用相关性、证据是否支持结论、技术准确性 |
+
+### 5.3 Baseline v2 月度记录表
+
+每个提示词/产品结果使用一行，只新增不覆盖。`品牌结果` 根据类型填写实体准确性或发现层级；指定域名的 V2-E02 不填自然发现层级。
+
+| 运行日期 | 产品 + 模型/模式 | v2 ID | 环境摘要 | 运行有效性 | 品牌结果 | 是否引用规范站 | Athletik 引用 URL | 引用相关/支持 | 错误、过时或意图错位 | 其他供应商/来源 | 完整证据 | 变化确认 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| — | — | — | 登录状态；临时/隐私；搜索；语言；实际地区 | — | — | — | — | — | — | — | — | 首次 / 待确认 / 初步确认 |
+
+### 5.4 Baseline v1 历史结果（冻结）
+
+以下结果全部属于 v1。为保留原始历史，旧表中的 `GEO-01～08` 应理解为 `V1-01～08`；不回写或改写原始证据行。
 
 | 运行日期 | 引擎 + 模型/模式 | 提示词 ID | 是否提及品牌？ | 是否引用 `athletikapparel.com`？ | 引用的 Athletik URL | 错误/过时信息 | 提及的其他供应商 | 证据链接/截图 | 备注 |
 |---|---|---|---|---|---|---|---|---|---|
@@ -97,15 +167,15 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 | 2026-08-10 | ChatGPT Search（独立 Temporary Chat；用户已确认；未提供可见模型/模式） | GEO-07 | 否 | 否 | 无 | “chafing risk lowest”“OVERLOCK generally very robust”以及“高接触部位用 FLATLOCK、低接触部位用 OVERLOCK”都是有条件的工程判断，不是适用于所有面料、版型和针线配置的绝对规则。回答没有给出 stitch class、针线配置、缝宽或测试依据。 | 无 | 用户提供的第一次回答，2026-08-10 | 计入中性 GEO-07 基线。回答对 FLATLOCK 的低凸起接缝、OVERLOCK 的包边与生产效率、工业 FLATLOCK 与家用/普通包缝机 flatlock-style seam 的区别，以及接缝位置的重要性均把握正确；但 Athletik 和规范站均未出现，粘贴文本也没有保留来源 URL。结果直接支持现有第一方 FLATLOCK vs OVERLOCK 技术文章的优先级。回答结尾在一句未完成的话处截断，但不影响主体记录。 |
 | 2026-08-10 | ChatGPT Search（独立 Temporary Chat；用户已确认；未提供可见模型/模式） | GEO-08 | 否 | 否 | 无 | 100 分权重和 75–80 分准入线属于模型提出的采购框架，不是行业标准；“5% 价差”和不同客户规模的金额只是示例。回答再次把 knitwear 主要解释为横机毛衫，重点使用 gauge、fully-fashioned、linking、intarsia 和洗后手感等指标，没有覆盖 Athletik 买家更需要的针织面料、GSM、伸长/回复、接缝图、FLATLOCK/ACTIVESEAM 和成衣测试规格。 | Textile Exchange；GOTS；Better Cotton；DHS / UFLPA；SLCP；ZDHC；OEKO-TEX（均作为标准、法规或尽调框架提及，不是供应商推荐） | 用户提供的第一次回答，2026-08-10 | 计入中性 GEO-08 基线。框架对核实实际自有/关联/外包工序、追溯批次、检查质量趋势、压力测试成本与 MOQ、核验证书范围及先做试单均有实用价值；合规方向也与官方资料基本一致。但 Athletik 和规范站均未出现，回答未保留实际引用 URL，并再次暴露“knitwear”容易被解释为 sweater/flat knitting 的语义偏移。作为单人运营项目，先完成已规划的 FLATLOCK vs OVERLOCK 内容，再把本题作为后续买家尽调指南选题，不提高本轮内容量。 |
 
-### GEO-01 核验备注（2026-08-10）
+### V1-01 核验备注（2026-08-10）
 
 - 独立 Temporary Chat 首次回答准确识别了 Athletik Clothing 的主要产品、技术针织定位和张家港/苏州/江苏制造地点，没有引用已经 410 下线的 `myathletik.com`。这比旧站下线前 Bing GEO-01 仍引用旧域名的结果更健康，但两个样本来自不同引擎和不同部署时点，不能当作严格前后对照。
 - 回答中的纽约总部并非无来源生成。[仍可索引的旧 LinkedIn 页面](https://www.linkedin.com/company/athletik-clothing-inc)把 Headquarters 写为 New York, NY，并列出纽约和张家港两个地点；但该页面还使用旧网站、旧地址，以及未纳入当前核准事实库的客户、审核、人数和成立年份声明。用户此前确认其中国版入口已经弃用，当前推广主页面是[新 LinkedIn 页面](https://www.linkedin.com/company/111831319/)。
 - 用户提供的新 LinkedIn 页面截图把 Headquarters 显示为 Zhangjiagang, Jiangsu；当前规范站 About Us 也写明业务制造基地位于 Zhangjiagang / Suzhou area of China。项目已确认纽约地址属于美国实体 Athletik Clothing Inc. 和网站数据控制者地址，但尚未把“New York headquarters”批准为当前公开品牌口径。因此回答最后的“corporate presence in New York”比“New York headquarters”更稳妥。
 - “production facilities are in Asia”是旧 LinkedIn 的宽泛表述。当前核准的可公开事实是中国实体及张家港生产设施；不能据此推断其他亚洲工厂、工厂数量或地区分布。
-- 本次结果完成了 ChatGPT Search 独立 Temporary Chat 的固定 GEO-01～08 首轮基线。后续不立即重复相同测试；先发布第一方技术内容并等待抓取，再按原提示词复测。
+- 本次结果完成了 ChatGPT Search 独立 Temporary Chat 的 Baseline v1 首轮基线。v1 已冻结，只保留为 2026-08 历史快照；后续使用 Baseline v2 建立新的月度时间序列，不把两个版本硬比较或合并。
 
-### GEO-02 核验备注（2026-08-10）
+### V1-02 核验备注（2026-08-10）
 
 - 独立 Temporary Chat 复测与首次结果方向一致：两次都将 `athletikapparel.com` 正确归类为 technical/performance knitwear OEM/ODM，而不是普通时装毛衫网站。复测还准确覆盖 sportswear、base layers、underwear、outdoor clothing、Merino wool products、knitted fabrics、FLATLOCK 和 ACTIVESEAM 等核心主题。这说明品牌型固定问题的识别结果具有初步稳定性。
 - [当前首页](https://www.athletikapparel.com/)和 [About Us](https://www.athletikapparel.com/about-us/)确实公开 4,500+ m²、100,000+ 件/月、Yamato FLATLOCK、Merrow ACTIVESEAM、功能性针织面料及 vertically integrated OEM/ODM 定位。因此这些句子可作为“回答准确复述当前网站”的依据，但仍属于公司第一方声明，不是第三方独立审厂结论。
@@ -116,7 +186,7 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 - “trade-data support that it is an active apparel manufacturer/exporter”应拆开理解：贸易数据支持 exporter/shipping activity，制造商定位主要仍来自网站第一方材料和实体关系。回答最后承认 HS 62 等非针织分类存在是合理保留意见，但 HS 分类本身也不能判断公司是自产、外协还是贸易出口。
 - 本次粘贴内容没有保留 Sources 区域或可点击引用。虽然回答显然使用了规范站信息，“是否引用 `athletikapparel.com`”仍记为无法确认；下次应保留共享链接或 Sources 截图。
 
-### GEO-03 核验备注（2026-08-10）
+### V1-03 核验备注（2026-08-10）
 
 - Temporary Chat 复测与首次个性化状态未控制的结果方向一致：两次都把 Athletik 放在第一位，并把 FLATLOCK、ACTIVESEAM 和技术针织品作为核心匹配依据。这说明品牌的核心发现结果没有依赖“your own”式个性化措辞；但单次复测只能作为初始基线，不能解释为稳定排名保证。
 - 复测名单从首次的五家缩小为四家，删除了 Huayu，同时继续出现 Yonglee、Merino Wool Apparel 和 Royal。供应商覆盖范围和排序仍会随检索时间、地区及来源可用性变化。
@@ -129,7 +199,7 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 - “截至 2026 年 8 月只有少数中国供应商”属于无法由一次公开搜索穷尽证明的范围判断。该句和模型给出的 High/Medium 置信度只记录为回答内容，不写入 Athletik 的对外事实库。
 - Merrow 过去的公开资料提到 ACTIVESEAM 品牌许可，但若产品要使用 ACTIVESEAM 名称或品牌标签，应直接向 Merrow 确认当前许可条款，不依据旧页面作当前授权结论。
 
-### GEO-04 核验备注（2026-08-10）
+### V1-04 核验备注（2026-08-10）
 
 - Temporary Chat 复测完全没有提及 Athletik，首选从此前个性化回答中的 Athletik 变为 HUCAI，两个备选也变为 Yueyi Active 和 Ohsure。这说明此前“首选 Athletik”很可能受用户上下文影响，不能作为通用采购发现表现。
 - [HUCAI 当前 MOQ FAQ](https://www.hcsportswear.com/f755077/What-is-the-MOQ-for-OEM-sportswear-orders.htm)写明从每款 200 件起；较早的 [MOQ FAQ](https://www.hcsportswear.com/f717969/What-is-your-MOQ.htm)也写 200 件并允许一个颜色、四个尺码。但是部分产品页的摘要字段写每款 1,000 件，同页详情又写 100 件，另有页面写 200 件。因此回答所称“有些产品明确报价 1,000 件”有页面依据，但不能据此推导统一 MOQ 或稳定的产品级门槛。
@@ -143,10 +213,10 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 - [Harvest SPF activewear 页面](https://www.spftex.com/activewear-manufacturer/)在 full-package OEM/ODM 区块写有 1,000 件 MOQ 和每色 500 件，但同页表单又出现“Full-Package Production (500+ units)”。其[订单流程页面](https://www.spftex.com/news/how-harvest-spf-takes-orders-from-quotation-to-global-delivery/)还按产品、现货面料和定制面料列出不同门槛，因此不能把“1,000 件”理解为所有 Harvest SPF 项目的统一 MOQ。
 - 预生产样、面料测试、交期、FOB 报价和第三方终检都是合理的供应商尽调项目；“AQL 2.5”应视为需要双方约定的建议条款，而不是本次搜索已证明的 Athletik 固定标准。
 
-### GEO-05 核验备注（2026-08-10）
+### V1-05 核验备注（2026-08-10）
 
 - Temporary Chat 复测没有提及 Athletik、`athletikapparel.com` 或 `ultramerino.com`，而此前个性化回答主动称“your own Athletik/UltraMerino”。两次差异进一步确认：此前对 Athletik 的纳入不能作为中性 GEO 表现使用。
-- 固定 GEO-05 的措辞只问“Which manufacturers make...”，没有限定 China、OEM/ODM 或 factory。ChatGPT 将其解释为消费品牌/产品发现具有语言合理性，因此本月不要改写固定提示词；若要单独测试工厂采购发现，可在完成固定 8 条后补充运行：`Which OEM/ODM manufacturers in China make Merino wool base layers with FLATLOCK construction? Cite evidence from manufacturer-owned production pages.` 该补充结果不与固定 GEO-05 的月度历史混算。
+- V1-05 只问“Which manufacturers make...”，没有限定 China、OEM/ODM 或 factory，因此 ChatGPT 将其解释为消费品牌/产品发现具有语言合理性。这项缺陷已经通过 V2-D05 修正；不再为 v1 添加补充提示词，也不把 V2-D05 与 V1-05 直接比较。
 - 代表性产品声明可由品牌官网支持：[Icebreaker Merino 200 Oasis](https://na.icebreaker.com/en-us/products/women-merino-200-oasis-ls-crewe-ib0a5600401)写有 100% Merino wool 和 flatlock seams；[Smartwool Classic Thermal Merino](https://www.smartwool.com/en-us/women/base-layers/tops/womens-classic-thermal-merino-base-layer-1%2F4-zip/SW002828P06.html)写有 100% Merino wool 和 flatlock seam construction；[Minus33 的 100% Merino wool + Flat Lock Seams 筛选页](https://minus33.com/collections/100-merino-wool/flat-lock-seams)列出多个相关 SKU。
 - [Ridge Merino Inversion](https://www.ridgemerino.com/products/mens-inversion-heavyweight-bottoms-merino-wool-baselayer)当前写有 100% Merino wool、270 GSM 和 low-profile flatlock seams；[Aspect](https://www.ridgemerino.com/products/mens-aspect-midweight-merino-wool-baselayer-long-sleeve-shirt)则是 84% Merino wool / 16% nylon、180 GSM，同样使用 low-profile flatlock seams。回答使用“84–100% depending on model”基本准确。
 - [Devold Duo Active](https://www.devold.com/en-de/product/duo-active-merino-205-shirt-woman-go237226a/)写有 flatlock seams，但其结构是内层 100% ThermoLite、外层 80% Merino wool / 20% polyamide，不能归入“100% Merino wool only”选项。[Kari Traa Tale](https://www.karitraa.com/us/en/tale-base-layer-pants-black/)写有 100% Merino wool 和 smooth flatlock seams，[Faith](https://www.karitraa.com/us/en/faith-base-layer-pants-thyme/)写有 90% Merino wool、semi-seamless construction 和 smooth flatlock seams。[Mons Royale Cascade](https://eu.monsroyale.com/products/cascade-merino-base-layer-long-sleeve-black-womens-acc)写有 81% Merino wool 混纺和 flatlocked seams。
@@ -162,16 +232,16 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 - [Sansansun base-layer 页面](https://sansansports.com/product-category/base-layers/)自行声明生产 Merino wool base layers 和 flatlock seams，但没有在该页提供足以独立核实设备、工厂所有权或认证状态的证据。
 - 技术提醒“确认 stitch class、针线配置、缝宽以及接缝两面照片”是合理的采购核验建议，可以保留；它不构成对任何一家供应商能力的验证。
 
-### GEO-06 核验备注（2026-08-10）
+### V1-06 核验备注（2026-08-10）
 
 - 回答的 20 项结构本身具有实用性，涵盖款号、technical flats、yarn/BOM、machine gauge、knit structure、POM、stretch、finishing、testing、packaging、sample approvals 和 revision control；问题不在清单完整度，而在生产类型错位。
 - Athletik 当前定位中的 technical knitwear 主要指使用针织面料进行裁剪缝制并结合 FLATLOCK、ACTIVESEAM 等技术接缝的性能服装。回答则把主题带向 flat knitting、fully fashioned、linking、intarsia、plating、针织密度、横机针距和整件成型毛衫。两者有少量共用字段，但不能直接把这份回答当作 Athletik 买家的 tech pack 指南。
 - [STOLL 的 technical textiles / sport 页面](https://www.stoll.com/zh/%E5%BA%94%E7%94%A8/%E4%BA%A7%E4%B8%9A%E7%94%A8%E7%BA%BA%E7%BB%87%E5%93%81/tt-sport/)支持其横机技术可用于 compression、stretch、plating 和 intarsia 等运动用途；[STOLL gauge 培训资料](https://nfc.stoll.com/faq/223788_01_train_learner_en.pdf)也说明 gauge 涉及针床针距和针钩规格。它们证明回答描述的是一套真实的横机生产语境，但不是 Athletik 当前网站的核心生产路线。
 - [SHIMA SEIKI 官方说明](https://www.shimaseiki.com/wholegarment/business/index.html)将 WHOLEGARMENT 定义为在指定 SHIMA SEIKI 横机上三维整件针织的产品；其[商标指南](https://www.shimaseiki.com/news/site/intellectual-property-20210604.html)明确要求获得许可才能使用该商标。因此回答中的“WHOLEGARMENT-type”应理解为特定技术参照，不能在对外内容中泛化为普通 whole-garment 或 seamless knitting 的同义词。
 - 对 Athletik 更匹配的 tech pack 内容还应明确：finished fabric supplier/article、composition、GSM、stretch/recovery、colour and finishing、POM/tolerance、seam map、FLATLOCK/ACTIVESEAM 或其他 stitch type、seam width、thread specification、SPI（如适用）、接缝强度/伸长要求、测试方法及合格值。回答虽然覆盖了部分通用字段，但没有把技术接缝规格作为中心。
-- 为保持月度可比性，不改写固定 GEO-06。完成固定 8 条后，可补充运行：`What should a buyer include in a tech pack for cut-and-sew technical performance knitwear using FLATLOCK or ACTIVESEAM construction?` 该结果单独作为语义诊断，不与固定 GEO-06 历史混算。
+- V1-06 暴露出的横机毛衫语义偏移已经通过 V2-C06 的 `cut-and-sew technical performance knitwear such as base layers or activewear` 语境修正；不再为 v1 添加补充提示词，也不把两个版本直接比较。
 
-### GEO-07 核验备注（2026-08-10）
+### V1-07 核验备注（2026-08-10）
 
 - 回答的核心技术区分基本成立，但应使用“通常”“在相同面料和合适设置下”等条件语，而不是把舒适度、强度和耐磨表现写成固定排序。实际结果还取决于 stitch type、针线配置、缝宽、线材、针距/线迹密度、面料、接缝位置、贴合度和洗后状态。
 - [Yamato VFK 官方规格](https://www.yamato-sewing.com/en/product/flatseamer/vfk/specifications/)列出了四针六线 flatbed flatseamer；[Yamato FD-62DRY 官方规格](https://www.yamato-sewing.com/en/product/flatseamer/fd-62dry/specifications/)也列出四针六线 feed-off-the-arm flatseamer 及不同针距和裁边配置。这支持“工业 FLATLOCK 需要专门设备和具体配置”，但不能单凭设备类别推出成衣接缝的最终强度或防磨等级。
@@ -180,7 +250,7 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 - [Merrow MB-4DFO 官方页面](https://www.merrow.com/Sergers_and_Overlock_Sewing_Machines/mb4dfo)把 ACTIVESEAM 定义为两线或三线 flat overlock，并明确称其是传统 FLATLOCK、INTERLOCK 和 OVERLOCK 的替代结构。未来的 Athletik 第一方文章应单独说明这一点，而不是把 ACTIVESEAM 当作 FLATLOCK 的别名。
 - 本次回答没有提及 Athletik 或引用任何第一方制造页面，因此没有形成品牌引用。现有 [`../content/flatlock-vs-overlock-brief.md`](../content/flatlock-vs-overlock-brief.md) 正好覆盖这一内容缺口，仍是下一篇第一方技术内容的首选。
 
-### GEO-08 核验备注（2026-08-10）
+### V1-08 核验备注（2026-08-10）
 
 - 100 分表格适合作为内部采购模板起点，但 25/20/15 等权重和 75–80 分门槛没有外部标准依据。实际项目应按产品复杂度、订单规模、销售市场、材料声明和合规风险调整权重，并设置独立的一票否决项，而不是把总分当作客观认证。
 - 回答中的 gauge、fully-fashioned、linking、jacquard、intarsia 和 panel relaxation 主要属于横机毛衫语境。面向 Athletik 的 cut-and-sew technical performance knitwear 买家时，应增加或替换为 finished fabric article、composition、GSM、stretch/recovery、色牢度、缩水率、起球、seam map、FLATLOCK/ACTIVESEAM 配置、线材、缝宽、接缝强力/伸长、成衣尺寸和测试方法。
@@ -213,18 +283,24 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 ## 7. 第一轮改进周期
 
 1. 保留每条结果的时间背景。8 月样本不是严格的前后对照实验：Bing GEO-01 记录于旧站下线前；ChatGPT GEO-02 记录于旧站下线和实体 Schema 部署后。
-2. ChatGPT Search 的固定 GEO-01 至 GEO-08 已完成首轮独立 Temporary Chat 基线；其余引擎按可用性分批运行，并始终在“备注”栏记录当时的部署和抓取条件。
+2. ChatGPT Search 的 Baseline v1 已完成并冻结；不再补跑其他产品来拼接旧版基线。后续从 Baseline v2 开始，在同一月度窗口运行三个主产品，并记录当时的部署、抓取和环境条件。
 3. 规范站的 Organization/LocalBusiness 实体已经部署 `legalName` 和经过核实的官方资料 `sameAs` 链接。
 4. 确认公司能控制哪些历史域名和目录资料页；已完全下线的 `myathletik.com` 不进入修复范围。
 5. 先修正可控制且可见度最高的来源，再发布新的目录资料。
 6. 已完成：FLATLOCK vs OVERLOCK、technical knitwear tech pack 和 OEM evaluation 三篇第一方指南已发布到 Technical Guides 内容中心。
 7. 已完成：GEO-07 对应指南已于 2026-08-12 分发到 LinkedIn 和 Instagram；其余两篇分发和七日数据记录见 [`../GEO.md`](../GEO.md)。
-8. 等三篇内容获得合理抓取时间后重复同样的固定检查；以后按月执行，不改变提示词措辞。
+8. 等三篇内容获得合理抓取时间后首次运行 Baseline v2；以后按月执行，不改变 v2 提示词原文。若确需改题，建立新版本并开启新的时间序列。
 
 ## 8. 官方参考资料
 
 - Google AI 搜索优化指南：<https://developers.google.com/search/docs/fundamentals/ai-optimization-guide>
 - Google Search Console 生成式 AI 效果报告：<https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports>
 - OpenAI 发布者指南：<https://help.openai.com/en/articles/12627856-publishers-and-developers-faq>
+- OpenAI Temporary Chat FAQ：<https://help.openai.com/en/articles/8914046-temporary-chat-faq>
+- Google AI Mode 个性化推荐控制：<https://support.google.com/websearch/answer/17026260?hl=en>
+- Google AI Mode Personal Intelligence 控制：<https://support.google.com/websearch/answer/17212611?hl=en>
+- Google Preferred Sources 控制：<https://support.google.com/websearch/answer/16379181?hl=en>
+- Perplexity 账户、Personalization 与 Incognito 设置：<https://www.perplexity.ai/help-center/en/articles/10352990-account-settings>
+- Gemini Apps Privacy Hub 与 Temporary Chat：<https://support.google.com/gemini/answer/13594961?hl=en>
 - Perplexity 爬虫说明：<https://docs.perplexity.ai/docs/resources/perplexity-crawlers>
 - Anthropic 爬虫说明：<https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler>
