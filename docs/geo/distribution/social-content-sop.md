@@ -21,7 +21,7 @@ Instagram 的自然内容。本文按单人运营的实际工作量设计；完�
 ```text
 YYYY-MM-topic-slug/
 ├── source/                 原始图片、视频截图和文章封面
-├── linkedin/images/       LinkedIn 多图帖
+├── linkedin/              LinkedIn 单图或视频发布素材
 ├── instagram/             Instagram Carousel 与 Story
 ├── preview/               联系表或总览图
 ├── captions.md            两个平台的最终文案和 UTM
@@ -34,19 +34,23 @@ YYYY-MM-topic-slug/
 素材包属于运营资产，保存在视频素材盘，不放入 WordPress 主题或 Git。网站图片继续遵守
 `AGENTS.md` 的 uploads 规则；社交媒体素材不复制进网站 uploads，除非它们也被网站页面实际使用。
 
-## 3. 图片规格与页面顺序
+## 3. Instagram 图片规格与页面顺序
 
 - 主规格：JPG，1080 × 1350 px，4:5。
 - 建议数量：5–7 张；本次验证使用 7 张。
 - 通用顺序：问题封面 → 概念 A → 概念 B → 对照 → 判断方法 → 买家检查清单 → 官网文章 CTA。
 - 首图必须能在不依赖正文的情况下说明主题。
 - 最后一张只放一个主要动作，通常是阅读官网完整指南。
+- 标签和 CTA 的容器必须按文字量收紧，避免“大按钮配小字”；短标签优先使用较小容器和更高字号。
 - 发布前同时检查单张图片和联系表，避免字号、裁切、重复信息或不可见文字。
 
 ## 4. LinkedIn 执行
 
-当前 Athletik Clothing 公司主页的实际发布界面不支持 PDF。以后仍以当时后台实际界面为准；
-在功能没有变化时，使用 7 张 4:5 JPG 组成多图帖，不再把 PDF Document Post 当成默认方案。
+LinkedIn 默认使用“单张信息总览图或生产视频 + 正文”。常规分发不额外生成 PDF、PPT 或七图副本；
+只有主题确实需要逐页解释且所有者明确选择多图格式时，才制作 LinkedIn 多图版本。
+
+单图应把主题的 4～6 个核心判断维度整合到一页并保持移动端可读，不能把 Instagram 七页文字机械压缩。
+视频优先使用能直接证明主题的真实生产画面，由正文承担主要解释。两种格式都使用 LinkedIn 专属 UTM。
 
 LinkedIn 文案采用技术教育型结构：
 
@@ -62,11 +66,10 @@ LinkedIn 文案采用技术教育型结构：
 utm_source=linkedin
 utm_medium=organic_social
 utm_campaign=technical_guides
-utm_content=<topic>_multi_image
+utm_content=<topic>_single_image
 ```
 
-如果当时的 LinkedIn 界面不能一次上传全部图片，使用首图发布单图帖并保留完整正文和文章链接；
-不要为了迁就界面把一套内容拆成多条连续帖子。
+使用视频时把末项改为 `<topic>_video`。不要为了堆发布数量把一套内容拆成多条连续帖子。
 
 ## 5. Instagram 执行
 
@@ -74,6 +77,8 @@ Instagram 文案比 LinkedIn 更短：首句提出选择问题，第二行提示
 正文不重复图片上的全部文字，结尾使用“保存供下次 tech pack 审核参考”一类的收藏动作。
 
 本轮采用的进站路径是：Carousel 负责内容阅读与收藏，Story 使用原生 Link Sticker 指向完整指南。
+Story 底图必须直接显示 CTA 文字；原生 Link Sticker 放在 CTA 附近，不能依赖发布时再补文字，
+也不要完全遮挡底图 CTA。
 Sticker 与 Instagram 使用独立 UTM：
 
 ```text
@@ -89,8 +94,10 @@ utm_content=<topic>_story
 
 - [ ] 官网母文章已上线，URL、移动端和 CTA 正常。
 - [ ] 所有工艺和设备陈述都有站内批准内容或所有者确认支持。
-- [ ] 所有者审核七张图片、顺序和两版英文文案。
+- [ ] 所有者审核 LinkedIn 单图/视频、Instagram 七图顺序、Story 和两版英文文案。
+- [ ] LinkedIn 单图或视频在移动端预览可读，不包含无实际用途的 PDF/PPT。
 - [ ] LinkedIn 与 Instagram 使用各自的 UTM。
+- [ ] Instagram 标签/CTA 的容器与字号比例协调，Story CTA 文字已直接显示。
 - [ ] 图中和正文中的技术术语一致。
 - [ ] 没有未确认的客户、认证、产能、交期或性能结论。
 - [ ] 发布身份、公开范围、图片顺序和链接目标正确。
@@ -100,7 +107,7 @@ utm_content=<topic>_story
 
 起步阶段不做每日分析。每条内容满七个完整自然日后记录一次结果；阶段性汇总时再比较主题和平台。
 
-LinkedIn 至少记录：展示、覆盖（如平台提供）、互动、反应、评论、转发、链接点击、主页访问和新增关注。
+LinkedIn 至少记录：发布格式（单图/视频）、展示、覆盖（如平台提供）、互动、反应、评论、转发、链接点击、主页访问和新增关注。
 
 Instagram Carousel 至少记录：覆盖、展示、点赞、评论、收藏、分享、主页活动和新增关注；
 Story 记录覆盖与 Link Sticker 点击。GA4 按 `technical_guides` Campaign 检查 Sessions 和 Engaged sessions。

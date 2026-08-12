@@ -31,7 +31,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 - [`geo/GEO.md`](geo/GEO.md) 是 GEO 中央工作台和路由文档。
 - 固定 GEO-01～08 的第一轮 Temporary Chat 中性基线已经完成。
 - 实体、技术可抓取性、三篇指南和 GEO-07 首轮 LinkedIn/Instagram 分发已经完成。
-- GEO-06 七图分发包已于 2026-08-12 准备并完成初检，等待所有者审核和发布；GEO-08 分发、
+- GEO-06 的 LinkedIn 单图与 Instagram 七图分发包已于 2026-08-12 准备并完成初检，等待所有者审核和发布；GEO-08 分发、
   GEO-07 七日数据、Search Console 索引观察和后续月度复测仍待进行。
 - 当前长期 GEO 对话只用于规划和证据分析，不能作为中性测试环境。
 

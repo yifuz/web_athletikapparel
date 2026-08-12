@@ -54,9 +54,9 @@
 | 内部 Campaign | `2026-08-technical-knitwear-tech-pack` |
 | 官网母文章 | <https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/> |
 | 主题 | What to Include in a Tech Pack for Technical Knitwear |
-| 当前状态 | 七图分发包已生成并完成技术/视觉初检；等待所有者审核，尚未发布 |
-| LinkedIn 计划格式 | 7 张 1080 × 1350 JPG 多图帖；PDF 只作内部审核预览 |
-| LinkedIn UTM content | `technical_knitwear_tech_pack_multi_image` |
+| 当前状态 | Instagram 七图和 LinkedIn 单图已生成并完成技术/视觉初检；等待所有者审核，尚未发布 |
+| LinkedIn 计划格式 | 1 张 1080 × 1350 信息总览图 + 正文；不制作 PDF/PPT |
+| LinkedIn UTM content | `technical_knitwear_tech_pack_single_image` |
 | Instagram 计划格式 | 7 张 1080 × 1350 JPG Carousel + 1080 × 1920 Story |
 | Instagram UTM content | `technical_knitwear_tech_pack_story` |
 | 发布素材包 | `D:\B-视频素材\营销内容包\2026-08-technical-knitwear-tech-pack\`（Git 外运营资产） |
@@ -65,13 +65,13 @@
 
 ### 已准备文件
 
-- LinkedIn / Instagram 七张 4:5 卡片及 Story。
+- LinkedIn 单张 4:5 信息总览图；Instagram 七张 4:5 Carousel 及带可见 CTA 的 Story。
 - LinkedIn 技术教育正文、Instagram 精简正文和两个渠道的独立 UTM。
-- 图片 alt text、可编辑 PPTX、内部审核 PDF、联系表、发布说明和七日数据模板。
+- 图片 alt text、联系表、发布说明和七日数据模板。
 
 ### 发布前待办
 
-- 所有者审核七张图片、顺序和两版英文正文。
+- 所有者审核 LinkedIn 单图、Instagram 七图顺序、Story CTA 和两版英文正文。
 - 审核通过后分别发布 LinkedIn 与 Instagram，并补录公开帖子 URL 和实际发布时间。
 - Instagram Carousel 发布后确认 Story Link Sticker 是否完成。
 - 按实际发布时间计算满七个自然日的数据复盘日。
