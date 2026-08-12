@@ -254,6 +254,11 @@ Instagram 与 YouTube 的内容资产在开发信中作为信任佐证引用。
 5. 有余力时优先增加复用型短内容；第二篇文章或第二条长视频属于加量项
 6. 所有发布内容涉及客户信息前逐一确认授权
 
+官网技术指南改编为 LinkedIn 与 Instagram 内容时，使用
+[`social-content-distribution-sop.md`](social-content-distribution-sop.md) 的图片规格、
+文案、UTM、审核和七日复盘流程。实际发布结果追加到
+[`social-content-publishing-log.md`](social-content-publishing-log.md)，不依赖聊天记录保存。
+
 每周节奏（与 promotion-plan.md §11 合并执行）：
 
 | 日 | 动作 |

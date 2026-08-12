@@ -11,7 +11,19 @@ snapshots unless they explicitly contain a later verification. External states
 such as Google Ads review, Search Console counts, and provider dashboards must
 be checked live before being described as current.
 
-Last updated: 2026-08-11 — The Technical Guides production rollout is complete.
+Last updated: 2026-08-12 — The first website-guide distribution package was
+published to the official LinkedIn Page and Instagram account using the live
+`FLATLOCK vs OVERLOCK` guide. The shared asset package contains seven 1080 ×
+1350 cards, channel-specific copy, independent UTM links, alt text, a Story
+asset and a seven-day metrics template. The actual LinkedIn Page interface did
+not support PDF, so the published workflow uses a seven-image post and keeps
+the generated PDF only as an internal preview. A reusable execution SOP and a
+dated publishing log now live in `docs/social-content-distribution-sop.md` and
+`docs/social-content-publishing-log.md`; public post URLs, Story publication
+status and the 2026-08-19 results remain explicitly pending rather than being
+inferred.
+
+Previous: 2026-08-11 — The Technical Guides production rollout is complete.
 Final live verification after the corrective synchronization confirms one
 `Guides` navigation item immediately before the single final `Contact` CTA.
 Rank Math's Page Sitemap now contains 17 URLs, including the hub and all three
