@@ -53,6 +53,7 @@ Text Domain:  myathletik-child
   --ma-social-icon-size: 1.25rem;
   --ma-social-button-height: calc(var(--ma-touch-target) - var(--ma-space-2));
   --ma-social-button-padding-x: var(--ma-space-2);
+  --ma-footer-social-width: 15rem;
   --ma-reading-width: 68ch;
   --ma-article-media-width: 30rem;
   --ma-article-title-width: 20ch;
@@ -384,6 +385,8 @@ body {
 @media (max-width: 48rem) {
   .ma-home-social-bar__inner {
     display: block;
+    padding-top: var(--ma-space-1);
+    padding-bottom: var(--ma-space-1);
   }
 
   .ma-home-social-bar__prompt {
@@ -392,19 +395,14 @@ body {
 
   .ma-social-links--header {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(4, var(--ma-touch-target));
+    justify-content: center;
+    gap: var(--ma-space-3);
     width: 100%;
   }
 
   .ma-social-links--header a {
-    gap: var(--ma-space-1);
-    min-height: var(--ma-touch-target);
-    padding: 0 var(--ma-space-1);
-  }
-}
-
-@media (max-width: 30rem) {
-  .ma-social-links--header a {
+    width: var(--ma-touch-target);
     min-height: var(--ma-touch-target);
     padding: 0;
   }
@@ -4493,9 +4491,10 @@ body.page .site-main.ma-technical-article {
 
 .ma-site-footer__social {
   display: grid;
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--ma-space-2);
-  width: fit-content;
+  width: 100%;
+  max-width: var(--ma-footer-social-width);
   margin-top: var(--ma-space-4);
 }
 
