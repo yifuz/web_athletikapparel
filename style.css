@@ -1432,7 +1432,13 @@ body.home .container.grid-container {
     align-items: stretch;
   }
 
+  .ma-home-guides__media {
+    min-width: 0;
+    aspect-ratio: auto;
+  }
+
   .ma-home-guides__featured-copy {
+    min-width: 0;
     align-self: center;
   }
 }
