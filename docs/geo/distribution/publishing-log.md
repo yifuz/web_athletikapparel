@@ -47,21 +47,21 @@
 | Instagram Carousel | 待录 | 待录 | 待录 | 不适用 | 待录 | 待录 | 待录 | 待录 | — |
 | Instagram Story | 待确认 | 待确认 | 不适用 | 待确认 | 待确认 | 待确认 | 待确认 | 待确认 | — |
 
-## 2026-08-12 — Technical Knitwear Tech Pack（素材准备）
+## 2026-08-13 — Technical Knitwear Tech Pack（已发布）
 
 | 字段 | 记录 |
 |---|---|
 | 内部 Campaign | `2026-08-technical-knitwear-tech-pack` |
 | 官网母文章 | <https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/> |
 | 主题 | What to Include in a Tech Pack for Technical Knitwear |
-| 当前状态 | Instagram 七图和 LinkedIn 单图已生成并完成技术/视觉初检；等待所有者审核，尚未发布 |
-| LinkedIn 计划格式 | 1 张 1080 × 1350 信息总览图 + 正文；不制作 PDF/PPT |
+| 当前状态 | 所有者确认 LinkedIn 单图帖和 Instagram Carousel 已于 2026-08-13 发布；公开帖子 URL 待补录 |
+| LinkedIn 发布格式 | 1 张 1080 × 1350 信息总览图 + 正文；未使用 PDF/PPT |
 | LinkedIn UTM content | `technical_knitwear_tech_pack_single_image` |
-| Instagram 计划格式 | 7 张 1080 × 1350 JPG Carousel + 1080 × 1920 Story |
+| Instagram 发布格式 | 7 张 1080 × 1350 JPG Carousel；Story 状态待确认 |
 | Instagram UTM content | `technical_knitwear_tech_pack_story` |
 | 发布素材包 | `D:\B-视频素材\营销内容包\2026-08-technical-knitwear-tech-pack\`（Git 外运营资产） |
 | 素材来源 | 官网已批准文章封面 + 信息图；本主题未使用额外生产视频 |
-| 数据复盘日 | 待实际发布日期确定后填写 |
+| 数据复盘日 | 2026-08-21 起记录满七个完整自然日的数据 |
 
 ### 已准备文件
 
@@ -69,12 +69,11 @@
 - LinkedIn 技术教育正文、Instagram 精简正文和两个渠道的独立 UTM。
 - 图片 alt text、联系表、发布说明和七日数据模板。
 
-### 发布前待办
+### 待补录与复盘
 
-- 所有者审核 LinkedIn 单图、Instagram 七图顺序、Story CTA 和两版英文正文。
-- 审核通过后分别发布 LinkedIn 与 Instagram，并补录公开帖子 URL 和实际发布时间。
-- Instagram Carousel 发布后确认 Story Link Sticker 是否完成。
-- 按实际发布时间计算满七个自然日的数据复盘日。
+- 补录 LinkedIn 与 Instagram 公开帖子 URL 和实际发布时间。
+- 单独确认 Instagram Story Link Sticker 是否发布；不根据 Carousel 状态推断。
+- 2026-08-21 起记录两个 Feed 帖满七个完整自然日的数据。
 
 ## 2026-08-12 — Technical Knitwear OEM Evaluation（素材准备）
 

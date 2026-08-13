@@ -4,8 +4,8 @@
 >
 > 规范站：<https://www.athletikapparel.com/>
 >
-> 当前阶段：第一轮 GEO 基础建设与 GEO-07 内容分发已完成；GEO-06 和 GEO-08 渠道分发包均已准备并等待所有者审核，
-> 同时进入抓取等待、指南分发和月度复测阶段。
+> 当前阶段：第一轮 GEO 基础建设及 GEO-07、GEO-06 内容分发已完成；GEO-08 渠道分发包已准备并等待所有者审核，
+> 同时进入抓取等待、剩余指南分发和月度复测阶段。
 >
 > 使用范围：以后与 Athletik Clothing GEO 有关的计划、执行顺序和阶段结论先更新本文件；详细测试证据继续追加到对应日志。
 
@@ -87,7 +87,7 @@ GEO 不等于添加特殊 AI 标记，也不承诺固定排名。当前执行环
 | 对应意图 | 已上线内容 | 分发状态 |
 |---|---|---|
 | GEO-07 | <https://www.athletikapparel.com/flatlock-vs-overlock-technical-knitwear/> | LinkedIn 七图帖与 Instagram Carousel 已于 2026-08-12 发布；Story 状态待补录 |
-| GEO-06 | <https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/> | 官网已上线；LinkedIn 单图和 Instagram 七图分发包已于 2026-08-12 准备，待所有者审核与发布 |
+| GEO-06 | <https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/> | LinkedIn 单图帖与 Instagram Carousel 已于 2026-08-13 发布；公开帖子 URL 和 Story 状态待补录 |
 | GEO-08 | <https://www.athletikapparel.com/evaluate-technical-knitwear-oem/> | 官网已上线；LinkedIn 单图和 Instagram 七图分发包已于 2026-08-12 准备，待所有者审核与发布 |
 
 内容中心：<https://www.athletikapparel.com/technical-guides/>。
@@ -126,24 +126,24 @@ GEO 不等于添加特殊 AI 标记，也不承诺固定排名。当前执行环
 
 ### 优先级 1 — 完成本轮记录，不马上重测
 
-1. 补录 2026-08-12 LinkedIn 与 Instagram 公开帖子 URL。
-2. 确认 Story 是否发布；若没有，可补发已准备的 Story，并记录实际时间。
-3. 2026-08-19 起记录 GEO-07 分发的七日平台数据与 GA4 `technical_guides` Campaign 数据。
+1. 分别补录 GEO-07（2026-08-12）和 GEO-06（2026-08-13）的 LinkedIn、Instagram 公开帖子 URL。
+2. 分别确认两轮 Instagram Story 是否发布；若没有，可补发已准备的 Story，并记录实际时间。
+3. 2026-08-19 起记录 GEO-07、2026-08-21 起记录 GEO-06 的七日平台数据与 GA4 `technical_guides` Campaign 数据。
 4. 在 Search Console 下一次正常更新后检查四个新 URL 的索引状态；目前不重复提交。
 
 ### 优先级 2 — 分发另外两篇已上线指南
 
 按单人保守节奏，一次只做一个主题，不要求连续两天完成：
 
-1. `What to Include in a Tech Pack for Technical Knitwear`（对应 GEO-06；素材包已准备，待审核与发布）。
+1. `What to Include in a Tech Pack for Technical Knitwear`（对应 GEO-06；已于 2026-08-13 发布到 LinkedIn 和 Instagram Feed）。
 2. `How to Evaluate a Vertically Integrated Knitwear OEM`（对应 GEO-08；素材包已准备，待审核与发布）。
 
 两篇都复用已经验证的七图或精简五图流程，并分别建立内容包、UTM、发布记录和七日复盘。
-优先做 GEO-06，因为当前中性回答存在明显的 sweater/flat-knitting 语义偏移，第一方内容可提供更直接的纠偏材料。
+GEO-06 已完成 Feed 分发；下一项按单人节奏审核并发布 GEO-08。
 
 GEO-06 运营素材包位于 `D:\B-视频素材\营销内容包\2026-08-technical-knitwear-tech-pack\`（Git 外）。
 它包含 LinkedIn 单张信息总览图、Instagram 七图 Carousel、为原生 Link Sticker 留白的 Story、英文文案、独立 UTM、
-alt text、联系表和七日数据模板。不制作 PDF/PPT，没有使用额外视频，也没有把“已准备”误记为“已发布”。
+alt text、联系表和七日数据模板。不制作 PDF/PPT，没有使用额外视频；Feed 已发布，公开 URL 和 Story 状态仍待补录。
 
 GEO-08 运营素材包位于 `D:\B-视频素材\营销内容包\2026-08-evaluate-technical-knitwear-oem\`（Git 外），
 采用相同的 LinkedIn 单图、Instagram 七图、Story 原生 Link Sticker、独立 UTM 和七日复盘结构。

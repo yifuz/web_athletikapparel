@@ -31,8 +31,8 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 - [`geo/GEO.md`](geo/GEO.md) 是 GEO 中央工作台和路由文档。
 - Baseline v1（原 GEO-01～08）的第一轮 Temporary Chat 中性基线已经完成并冻结；Baseline v2 已建立，等待首次月度运行。
 - 实体、技术可抓取性、三篇指南和 GEO-07 首轮 LinkedIn/Instagram 分发已经完成。
-- GEO-06 与 GEO-08 的 LinkedIn 单图、Instagram 七图和 Story 分发包已于 2026-08-12 准备并完成初检，等待所有者审核和发布；
-  GEO-07 七日数据、Search Console 索引观察和后续月度复测仍待进行。
+- GEO-06 LinkedIn 单图帖和 Instagram Carousel 已于 2026-08-13 发布；公开帖子 URL 与 Story 状态待补录。GEO-08 分发包已准备并完成初检，等待所有者审核和发布；
+  GEO-07/GEO-06 七日数据、Search Console 索引观察和后续月度复测仍待进行。
 - 当前长期 GEO 对话只用于规划和证据分析，不能作为中性测试环境。
 
 ### 1.3 营销与广告
@@ -246,9 +246,10 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 
 1. 补录 GEO-07 LinkedIn 与 Instagram 公开帖子 URL，并确认 Story 状态。
 2. 2026-08-19 起记录 GEO-07 满 7 个自然日的平台与 GA4 数据。
-3. 按单人保守节奏依次分发 GEO-06 与 GEO-08；优先 GEO-06。
-4. 等待 Search Console 正常刷新，不重复申请索引。
-5. 三篇指南获得合理抓取时间后，按固定 Baseline v2 建立新的月度时间序列；首选 2026 年 9 月窗口。
+3. 补录 GEO-06 LinkedIn 与 Instagram 公开帖子 URL，并确认 Story 状态；2026-08-21 起记录满 7 个自然日的数据。
+4. GEO-06 Feed 分发已完成；按单人保守节奏继续审核和分发 GEO-08。
+5. 等待 Search Console 正常刷新，不重复申请索引。
+6. 三篇指南获得合理抓取时间后，按固定 Baseline v2 建立新的月度时间序列；首选 2026 年 9 月窗口。
 
 暂不制作 `llms.txt` 或所谓 AI 专用 Schema，不每日重复提示词，不以社交展示量替代 GEO 引用证据，
 也不通过低信息密度文章、购买目录链接或虚构第三方评价追求数量。
@@ -535,13 +536,14 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-10 | `myathletik.com` 以 HTTP 410 完全下线；中美实体命名和 Baseline v1 完成 |
 | 2026-08-11 | Technical Guides Hub 与 3 篇基础指南全部完成、核验并部署 |
 | 2026-08-12 | GEO-07 LinkedIn/Instagram 分发完成；GEO 文档和 docs 目录完成整合；Baseline v1 冻结并建立 Baseline v2 |
+| 2026-08-13 | GEO-06 Technical Knitwear Tech Pack 完成 LinkedIn 单图帖与 Instagram Carousel 分发；公开 URL 和 Story 状态待补录 |
 
 ---
 
 ## 13. 下一步优先级
 
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
-2. 按单人节奏依次审核并发布已经准备好的 GEO-06 Tech Pack 与 GEO-08 OEM Evaluation 内容包。
+2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
 3. 等待 Search Console 正常刷新后核对 4 个指南 URL 的索引状态。
 4. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 5. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
