@@ -2,28 +2,29 @@
 
 > 网站：<https://www.athletikapparel.com/>  
 > 首次审查日期：2026-07-29  
-> 当前阶段：首轮 SEO 审查与整改已完成，进入收录观察和日常维护阶段
+> Baseline V2 审查日期：2026-08-15
+> 当前阶段：Baseline V2 线上技术审查已完成；无抓取阻断，等待最新 Search Console 数据
 > 文档用途：记录 SEO 基线、待处理问题、处理顺序、验证结果和后续决策
-> 状态边界：本文尚未记录 2026-08-06 之后的新一轮 Search Console 复查结果；
-> 在实时核对前，不把 2026-07-30 的收录数字当作当前数字
+> 状态边界：Baseline V2 的公开页面、Sitemap 和 robots 检查是 2026-08-15 当前结果；
+> 本文仍未记录 2026-08-06 之后的新一轮 Search Console 复查结果，不能把历史收录数字当作当前数字
 
 ## 1. 当前结论
 
-网站整体 SEO 基础正常，没有发现会阻止搜索引擎抓取或收录的全站性问题：
+2026-08-15 的 Baseline V2 结论仍然是：网站整体 SEO 基础正常，没有发现会阻止搜索引擎抓取或收录的全站性问题：
 
-- `robots.txt` 可访问，并声明了 Rank Math Sitemap。
-- 核心页面均返回 HTTP 200。
-- 核心页面均为 `index, follow`。
-- Canonical 均指向正确的 HTTPS 自身地址。
+- `page-sitemap.xml` 当前包含 17 个唯一 URL：16 个受主题管理的核心页面，加 Privacy Policy。
+- 17 个 Sitemap URL 均返回 HTTP 200，未发现意外 `noindex`。
+- 每页均只有一个 Title、一个 Meta Description、一个 H1、一个自引用 Canonical 和一个可解析的 JSON-LD 数据块。
+- 16 个受管页面的 Title、Meta Description 和 H1 均与 `seo-tags.md` / `docs/sitemap.md` 一致。
+- `robots.txt` 可访问，并声明最终的 Rank Math Sitemap。
 - 首选域名已统一为 `https://www.athletikapparel.com/`。
-- 核心页面标题唯一，关键词方向基本正确。
-- 核心页面之间的内部链接未发现 404。
-- 搜索结果页和作者归档页已设置为 `noindex`。
-- 7 个产品分类页正文约为 670–760 词，没有明显的内容过薄问题。
+- 17 个页面均至少从另一个站内页面获得链接，没有孤立页；未发现业务页面内链 404。
+- 页面标题层级没有 H1 重复或 H2/H3 跳级。
+- 全站图片标签未发现缺少 `alt` 属性或直接使用文件名作为 alt 的情况。
 
-首轮发现的默认 WordPress 内容、重复 Meta Description、首页双 H1、主要图片负载、社交分享元数据、结构化数据语义和 Sitemap 问题均已处理并通过线上验证。当前没有仍在处理或等待上线验证的 SEO 问题。
+Baseline V2 没有 Critical 问题，但记录了 8 组非阻断警告：最新 Search Console 数据缺口、部分 Title/Meta 软长度超限、Privacy Policy 元数据与 Schema、首页社交描述缺失、历史路径跳转与规划状态不一致、两篇新指南的内链入口较少、两段较大的自动播放 Hero 视频，以及 SEO 字段存在两套来源。完整证据见第 10 节。
 
-## 2. 本次审查范围
+## 2. 首轮审查范围（2026-07-29）
 
 ### 核心页面
 
@@ -57,7 +58,7 @@
 - 首页 Lighthouse 移动端实验室测试
 - HTTPS 和首选域名跳转
 
-## 3. 处理清单
+## 3. 首轮处理清单
 
 状态说明：
 
@@ -82,7 +83,7 @@
 | SEO-010 | 高 | 已完成 | 公开查询暂未发现 Google 收录结果 | Search Console 已确认首页收录、Sitemap 可读且代表性产品页可以编入索引 |
 | SEO-011 | 低 | 已跳过 | 首页部分图片使用空 alt | 已确认全部为空的图片均为装饰图或无障碍隐藏的重复 Logo |
 
-## 4. 问题证据与处理要求
+## 4. 首轮问题证据与处理要求
 
 ### SEO-001：默认 WordPress 页面
 
@@ -588,7 +589,7 @@ Google 只在 `<lastmod>` 持续且可验证地准确时使用它；主要内容
 - 本项不修改模板代码。
 - SEO-011 状态：已跳过。
 
-## 5. 当前确认正常的项目
+## 5. 首轮确认正常的项目
 
 - robots.txt 没有屏蔽前台页面。
 - Rank Math Sitemap 可以正常访问。
@@ -604,7 +605,7 @@ Google 只在 `<lastmod>` 持续且可验证地准确时使用它；主要内容
 - 旧地址 `/sustainabilty/` 和 `/contact-2/` 返回 404/noindex；除非 Search Console 以后发现外链或历史流量，否则暂不要求重定向。
 - 首页所有图片都具有 alt 属性；当前空 alt 仅用于装饰图和无障碍隐藏的重复 Logo，属于正确实现。
 
-## 6. 已执行顺序与后续观察
+## 6. 首轮已执行顺序与后续观察
 
 ### 第一阶段：低风险技术清理
 
@@ -680,3 +681,141 @@ Google 只在 `<lastmod>` 持续且可验证地准确时使用它；主要内容
 - 只有在 Search Console 出现持续的抓取/收录异常，或真实用户 Core Web Vitals 数据出现问题时，才重新开启专项整改。
 
 结论：网站首轮 SEO 技术整改可以正式收尾。
+
+---
+
+## 10. SEO Baseline V2（2026-08-15）
+
+### 10.1 审查范围与方法
+
+本轮为生产环境只读审查，没有修改 WordPress、主题代码、Rank Math 设置、URL 或重定向。
+
+审查对象：
+
+- `https://www.athletikapparel.com/sitemap_index.xml`
+- `https://www.athletikapparel.com/page-sitemap.xml`
+- `https://www.athletikapparel.com/robots.txt`
+- Page Sitemap 中的全部 17 个 URL
+- 当前站内 HTML 链接和 `docs/sitemap.md` 中记录的历史路径
+- 主题中的 Title/Meta、Schema、图片加载、字体和 Hero 媒体实现
+
+自动化检查项目：
+
+- HTTP 状态、最终 URL、Title、Meta Description、Canonical 和 robots
+- H1 数量、H1 真值匹配及 H2/H3 层级跳级
+- Open Graph / Twitter 标题与描述
+- JSON-LD 数量、JSON 可解析性和主要 `@type`
+- 图片 alt、文件名式 alt、`loading`、`decoding`、`fetchpriority` 和尺寸稳定信号
+- Sitemap 唯一性与 `lastmod`
+- 站内链接目标和页面入链
+- 历史 URL 的首跳状态、Location 与 `X-Redirect-By`
+
+边界：
+
+- 本轮不运行 Lighthouse；真实 Core Web Vitals 仍以 Search Console / CrUX 为准。
+- 公开 HTML 只能确认页面“允许索引”，不能确认 Google 已经编入索引。
+- 本轮没有 Search Console 账户级数据，因此不更新点击、展示、查询词、平均排名或 Page indexing 数量。
+
+### 10.2 页面级结果
+
+`seo-tags.md` 没有 Privacy Policy 条目，因此该页只核对技术输出，不把当前 Title/Meta 视为已批准真值。
+
+| URL | HTTP | Title 字符 | Meta 字符 | H1 | 主要页面 Schema | 结果 |
+|---|---:|---:|---:|---|---|---|
+| `/` | 200 | 51 | 153 | `Performance Knitwear Manufacturer` | `WebPage` | 通过；社交描述见 V2-004 |
+| `/sportswear-manufacturer/` | 200 | 43 | 150 | `Sportswear Manufacturer` | `CollectionPage` | 通过 |
+| `/underwear-manufacturer/` | 200 | 42 | 157 | `Underwear Manufacturer` | `CollectionPage` | Meta 软长度警告 |
+| `/outdoor-clothing-manufacturer/` | 200 | 49 | 156 | `Outdoor Clothing Manufacturer` | `CollectionPage` | Meta 软长度警告 |
+| `/merino-wool-manufacturer/` | 200 | 52 | 153 | `Merino Wool Apparel Manufacturer` | `CollectionPage` | 通过 |
+| `/silk-wear-manufacturer/` | 200 | 42 | 156 | `Silk Wear Manufacturer` | `CollectionPage` | Meta 软长度警告 |
+| `/knitted-fabrics-manufacturer/` | 200 | 48 | 157 | `Knitted Fabrics Manufacturer` | `CollectionPage` | Meta 软长度警告 |
+| `/sports-accessories-manufacturer/` | 200 | 51 | 159 | `Sports Accessories Manufacturer` | `CollectionPage` | Meta 软长度警告 |
+| `/services/` | 200 | 63 | 151 | `Our Services` | `WebPage` | Title 软长度警告 |
+| `/sustainability/` | 200 | 51 | 150 | `Sustainability` | `WebPage` | 通过 |
+| `/about-us/` | 200 | 52 | 160 | `About Us` | `AboutPage` | Meta 软长度警告 |
+| `/contact/` | 200 | 44 | 147 | `Contact Us` | `ContactPage` | 通过 |
+| `/technical-guides/` | 200 | 56 | 139 | `Technical Knitwear Guides` | `CollectionPage` + `ItemList` | 通过 |
+| `/flatlock-vs-overlock-technical-knitwear/` | 200 | 54 | 148 | `FLATLOCK vs OVERLOCK for Technical Knitwear` | `WebPage` + `Article` + `FAQPage` | 通过 |
+| `/technical-knitwear-tech-pack-guide/` | 200 | 54 | 147 | `What to Include in a Tech Pack for Technical Knitwear` | `WebPage` + `Article` + `FAQPage` | 通过；内链见 V2-006 |
+| `/evaluate-technical-knitwear-oem/` | 200 | 51 | 147 | `How to Evaluate a Vertically Integrated Knitwear OEM` | `WebPage` + `Article` + `FAQPage` | 通过；内链见 V2-006 |
+| `/privacy-policy/` | 200 | 34 | 58 | `Privacy Policy` | `WebPage` + `Article` + `Person` | 见 V2-003 |
+
+全部 17 个页面还同时满足：
+
+- Title、Meta Description、H1、Canonical 和 JSON-LD 各只有一份。
+- Canonical 指向当前页面自身的最终 www HTTPS URL。
+- 没有意外 `noindex`。
+- JSON-LD 均可解析，没有损坏的 JSON。
+- H1 只有一个，H2/H3 顺序没有跳级。
+- Open Graph title 和 Twitter title 各只有一份。
+
+### 10.3 Findings by severity
+
+#### Critical
+
+无。未发现阻止抓取、破坏 Canonical、缺失 Title/Meta/H1 或损坏 JSON-LD 的问题。
+
+#### Warning
+
+| ID | 优先级 | 状态 | 发现 | 建议动作 |
+|---|---|---|---|---|
+| V2-001 | 高 | 待外部验证 | 当前文档没有 2026-08-06 之后的 Search Console 数据；公开页面检查不能确认实际收录 | 获取最新 Page indexing、Sitemap、Performance 和 4 个 Technical Guides URL Inspection 结果后补录 |
+| V2-002 | 低 | 待评估 | `/services/` Title 为 63 字符；6 个页面 Meta 为 156–160 字符，略高于内部约 60/155 的软目标 | 先看 GSC CTR 与实际 SERP 截断；没有数据前不为长度机械改写 |
+| V2-003 | 中 | 待确认 | Privacy Policy 没有 `seo-tags.md` 真值条目；当前 Meta 只是 `Effective date...Last updated...` 拼接文本，Schema 仍含 `Article` 和个人作者 `Person` | `【NEEDS INPUT: approve a dedicated Privacy Policy SEO title and meta description】`；确认后再决定是否改为普通 `WebPage` |
+| V2-004 | 低 | 待评估 | 首页有 Open Graph / Twitter title，但没有 `og:description` 或 `twitter:description` | 若社交预览实际缺少描述，再让 Rank Math/主题复用已批准首页 Meta；不影响 Google 抓取 |
+| V2-005 | 中 | 待调查 | 6 个当前域 `/products/<x>/` 历史路径由 WordPress 301 到新页面，但 Merino 历史路径仍为 404；与“当前不规划这些跳转”的文档状态不一致 | 在 Search Console、服务器日志和 WordPress 旧 slug 数据核实前，不删除现有 301，也不擅自补齐 Merino |
+| V2-006 | 中 | 待评估 | Tech Pack 和 OEM Evaluation 两篇新指南当前各只有 Technical Guides Hub 的一个正文入口；不是孤立页，但上下文内链弱于 FLATLOCK 指南 | 从确实相关的品类页、Services 或指南正文增加少量上下文链接，前提是不强行堆关键词 |
+| V2-007 | 中 | 待性能数据 | Underwear 与 Merino 类目 Hero 使用 `autoplay` + `preload="auto"` 视频，本地文件约 5.02MB 和 9.52MB | 先用真实 CWV 或页面级 Lighthouse 判断影响；若有问题，再评估 poster、preload 策略和视频压缩 |
+| V2-008 | 中 | 待整理 | `seo-tags.md` 与生产输出一致，但 `inc/product-category-data.php` 还保存另一套类目 Meta；Merino 的代码内 `seo_title` 也与生产值不同 | 后续选定唯一真值来源并删除或同步非活动字段，避免以后误改或环境漂移 |
+
+#### Passed
+
+- 17 个 Sitemap URL 全部返回 HTTP 200，没有重复 URL。
+- `robots.txt` 只阻止 `/wp-admin/`，允许 `admin-ajax.php`，并声明最终 Sitemap。
+- Sitemap Index 只包含 `page-sitemap.xml`；Index `lastmod` 为 `2026-08-11T07:36:03+00:00`。
+- 16 个受主题管理页面的 Title/Meta 与 `seo-tags.md` 一致，H1 与 `docs/sitemap.md` 一致。
+- 首页和指南首屏图片使用 eager；首页主要 Hero 使用 `fetchpriority="high"`。
+- 首页 303 个图片标签均有 alt；97 个空 alt 仍对应装饰 Hero 图和隐藏的重复 Logo，不计为缺失。
+- 其余页面没有缺失 alt 或文件名式 alt。
+- Manrope 请求包含 `display=swap`，并存在 Google Fonts preconnect。
+- 产品图、指南卡片、Lookbook、Logo 等缺少 HTML 宽高的图片多数由固定容器或 CSS `aspect-ratio` 保留布局，本轮不直接判定为 CLS 错误。
+- 自动化共检查 18 个站内页面目标；唯一直接返回 404 的 `/cdn-cgi/l/email-protection` 是 Cloudflare 邮箱混淆端点，不是业务页面死链。
+- 全部 17 个页面均有站内入链；没有孤立页面。
+
+### 10.4 301 / URL notes
+
+以下是 2026-08-15 对生产域的首跳实测，不代表本轮新增了重定向：
+
+| Source | 首跳 | Target | 响应来源 |
+|---|---:|---|---|
+| `/products/sportswear/` | 301 | `/sportswear-manufacturer/` | `X-Redirect-By: WordPress` |
+| `/products/underwear/` | 301 | `/underwear-manufacturer/` | `X-Redirect-By: WordPress` |
+| `/products/outdoor-clothing/` | 301 | `/outdoor-clothing-manufacturer/` | `X-Redirect-By: WordPress` |
+| `/products/silk-wear/` | 301 | `/silk-wear-manufacturer/` | `X-Redirect-By: WordPress` |
+| `/products/knitted-fabrics/` | 301 | `/knitted-fabrics-manufacturer/` | `X-Redirect-By: WordPress` |
+| `/products/sports-accessories/` | 301 | `/sports-accessories-manufacturer/` | `X-Redirect-By: WordPress` |
+| `/products/merino-wool-apparel/` | 404 | 无 | 无跳转 |
+
+其他 URL 状态：
+
+- `/products/`、`/sustainabilty/` 和 `/contact-2/` 均返回 404。
+- `https://myathletik.com/` 与 `https://www.myathletik.com/` 均返回 410；旧域名不做跨域跳转的所有者决定没有改变。
+- `https://athletik-clothing.com/` 一跳进入 `https://www.athletikapparel.com/`。
+- `http://athletikapparel.com/` 两跳进入规范首页；其余非规范主域变体为一跳。
+
+V2 不修改任何上述行为。特别是已经存在的 301，在确认 Search Console、访问日志和数据库旧 slug 来源前不得移除。
+
+### 10.5 Suggested next actions
+
+1. 获取最新 Search Console 数据，完成 V2-001；优先检查 4 个 Technical Guides URL 的发现、抓取和收录状态。
+2. 调查 V2-005 的 WordPress 301 来源，记录它们是旧 slug 自动跳转、插件规则还是数据库历史记录；本阶段只调查，不改动。
+3. 用 GSC 查询与 CTR 数据判断 V2-002 是否值得改写，避免为了字符数改动已经准确的 Title/Meta。
+4. 所有者确认 Privacy Policy 的 Title/Meta 后，再处理 V2-003；没有批准文本前保留占位符，不编写法律页营销文案。
+5. 依据相关性补强两篇新指南的上下文内链，并在修改后重新跑页面级 SEO 审查。
+6. 只有在真实 CWV 或页面级实验室数据显示问题时，才启动 Hero 视频性能专项。
+
+### 10.6 Baseline V2 结论
+
+Baseline V2 的技术健康状态为通过：没有 Critical 问题，抓取、Canonical、页面级元数据、标题结构、Schema 可解析性、Sitemap 和基础内链均正常。
+
+下一阶段的主任务不是继续做无证据的页面微调，而是补齐 Search Console 当前数据，并围绕真实收录、查询和 CTR 处理上述 Warning。V2-003、V2-005 和 V2-008 涉及真值或历史行为，在确认来源前只记录、不自动修改。

@@ -254,6 +254,17 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 暂不制作 `llms.txt` 或所谓 AI 专用 Schema，不每日重复提示词，不以社交展示量替代 GEO 引用证据，
 也不通过低信息密度文章、购买目录链接或虚构第三方评价追求数量。
 
+### 4.6 SEO Baseline V2（2026-08-15）
+
+完整证据见 [`site/seo.md`](site/seo.md) 第 10 节。
+
+- 当前 Page Sitemap 包含 17 个唯一 URL：16 个受主题管理的核心页面，加 Privacy Policy。
+- 17 个页面全部返回 HTTP 200；每页只有一份 Title、Meta Description、H1、自引用 Canonical 和可解析 JSON-LD，未发现意外 `noindex`。
+- 16 个受管页面的 Title/Meta 与 `seo-tags.md` 一致，H1 与 `sitemap.md` 一致；没有孤立页或业务内链 404。
+- 本轮没有 Critical 问题，记录了 8 组非阻断警告。最高优先级是获取 2026-08-06 之后的 Search Console 当前数据，而不是继续做无证据的页面微调。
+- 生产域存在 6 条由 WordPress 输出的 `/products/<x>/` 301，Merino 历史路径仍为 404；在核实 Search Console、日志和旧 slug 来源前不改变这些行为。
+- Privacy Policy 专用 SEO 标签、首页社交描述、新指南上下文内链、Hero 视频性能和 SEO 字段真值来源属于后续评估项。
+
 ---
 
 ## 5. 内容分发与营销记录
@@ -537,6 +548,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-11 | Technical Guides Hub 与 3 篇基础指南全部完成、核验并部署 |
 | 2026-08-12 | GEO-07 LinkedIn/Instagram 分发完成；GEO 文档和 docs 目录完成整合；Baseline v1 冻结并建立 Baseline v2 |
 | 2026-08-13 | GEO-06 Technical Knitwear Tech Pack 完成 LinkedIn 单图帖与 Instagram Carousel 分发；公开 URL 和 Story 状态待补录 |
+| 2026-08-15 | SEO Baseline V2 完成：17 URL 技术审查通过，无 Critical 问题；最新 Search Console 数据和 8 组 Warning 待后续处理 |
 
 ---
 
@@ -544,7 +556,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
-3. 等待 Search Console 正常刷新后核对 4 个指南 URL 的索引状态。
+3. 获取最新 Search Console Page indexing、Sitemap 和 Performance 数据，并核对 4 个指南 URL 的发现、抓取和收录状态。
 4. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 5. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
 6. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。
