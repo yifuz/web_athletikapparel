@@ -261,7 +261,10 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - 当前 Page Sitemap 包含 17 个唯一 URL：16 个受主题管理的核心页面，加 Privacy Policy。
 - 17 个页面全部返回 HTTP 200；每页只有一份 Title、Meta Description、H1、自引用 Canonical 和可解析 JSON-LD，未发现意外 `noindex`。
 - 16 个受管页面的 Title/Meta 与 `seo-tags.md` 一致，H1 与 `sitemap.md` 一致；没有孤立页或业务内链 404。
-- 本轮没有 Critical 问题，记录了 8 组非阻断警告。最高优先级是获取 2026-08-06 之后的 Search Console 当前数据，而不是继续做无证据的页面微调。
+- 本轮没有 Critical 问题，记录了 8 组非阻断警告。2026-08-15 已补录首轮 Search Console 数据：3 个月视图为 5 次点击、94 次曝光、5.3% CTR、平均排名 12.7；样本不足以支持页面微调。
+- Sitemap 状态成功，2026-08-13 最后读取并发现 17 个网页；4 个 Technical Guides URL Inspection 均显示已收录、HTTPS 通过并检测到有效路径内容，无需重复申请索引。
+- Page indexing 汇总仍停留在 2026-08-07，早于指南上线；“11 个已收录 / 12 个未收录”属于所有已知网页旧快照，不能作为当前 17 个 Sitemap URL 的覆盖率。
+- Core Web Vitals 的移动端和桌面端均因过去 90 天数据不足而没有现场结论；这不是失败判定。
 - 生产域存在 6 条由 WordPress 输出的 `/products/<x>/` 301，Merino 历史路径仍为 404；在核实 Search Console、日志和旧 slug 来源前不改变这些行为。
 - Privacy Policy 专用 SEO 标签、首页社交描述、新指南上下文内链、Hero 视频性能和 SEO 字段真值来源属于后续评估项。
 
@@ -548,7 +551,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-11 | Technical Guides Hub 与 3 篇基础指南全部完成、核验并部署 |
 | 2026-08-12 | GEO-07 LinkedIn/Instagram 分发完成；GEO 文档和 docs 目录完成整合；Baseline v1 冻结并建立 Baseline v2 |
 | 2026-08-13 | GEO-06 Technical Knitwear Tech Pack 完成 LinkedIn 单图帖与 Instagram Carousel 分发；公开 URL 和 Story 状态待补录 |
-| 2026-08-15 | SEO Baseline V2 完成：17 URL 技术审查通过，无 Critical 问题；最新 Search Console 数据和 8 组 Warning 待后续处理 |
+| 2026-08-15 | SEO Baseline V2 完成：17 URL 技术审查通过，无 Critical 问题；补录 Search Console 首轮数据并确认 4 个 Technical Guides URL 全部收录 |
 
 ---
 
@@ -556,7 +559,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
-3. 获取最新 Search Console Page indexing、Sitemap 和 Performance 数据，并核对 4 个指南 URL 的发现、抓取和收录状态。
+3. 等待 Search Console Page indexing 从 2026-08-07 快照刷新，并核对“已抓取/已发现但尚未编入索引”、robots.txt 屏蔽和 404 的示例 URL。
 4. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 5. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
 6. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。

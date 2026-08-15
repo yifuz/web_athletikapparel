@@ -714,7 +714,7 @@ Google 只在 `<lastmod>` 持续且可验证地准确时使用它；主要内容
 
 - 本轮不运行 Lighthouse；真实 Core Web Vitals 仍以 Search Console / CrUX 为准。
 - 公开 HTML 只能确认页面“允许索引”，不能确认 Google 已经编入索引。
-- 本轮没有 Search Console 账户级数据，因此不更新点击、展示、查询词、平均排名或 Page indexing 数量。
+- 首轮审查完成后已于 2026-08-15 补录 Search Console 截图证据，详见 10.7；其中 Page indexing 汇总仍停留在 2026-08-07，不能视为当前覆盖率。
 
 ### 10.2 页面级结果
 
@@ -759,7 +759,7 @@ Google 只在 `<lastmod>` 持续且可验证地准确时使用它；主要内容
 
 | ID | 优先级 | 状态 | 发现 | 建议动作 |
 |---|---|---|---|---|
-| V2-001 | 高 | 待外部验证 | 当前文档没有 2026-08-06 之后的 Search Console 数据；公开页面检查不能确认实际收录 | 获取最新 Page indexing、Sitemap、Performance 和 4 个 Technical Guides URL Inspection 结果后补录 |
+| V2-001 | 高 | 首轮已补录 | 已取得 Performance、Page indexing、Sitemap、4 个 Technical Guides URL Inspection 和 Core Web Vitals 截图；4 个指南均已收录，但 Page indexing 汇总仍停留在 2026-08-07 | 等待汇总刷新，并补查“已抓取/已发现但尚未编入索引”等原因的示例 URL；当前不重复请求 4 个指南收录 |
 | V2-002 | 低 | 待评估 | `/services/` Title 为 63 字符；6 个页面 Meta 为 156–160 字符，略高于内部约 60/155 的软目标 | 先看 GSC CTR 与实际 SERP 截断；没有数据前不为长度机械改写 |
 | V2-003 | 中 | 待确认 | Privacy Policy 没有 `seo-tags.md` 真值条目；当前 Meta 只是 `Effective date...Last updated...` 拼接文本，Schema 仍含 `Article` 和个人作者 `Person` | `【NEEDS INPUT: approve a dedicated Privacy Policy SEO title and meta description】`；确认后再决定是否改为普通 `WebPage` |
 | V2-004 | 低 | 待评估 | 首页有 Open Graph / Twitter title，但没有 `og:description` 或 `twitter:description` | 若社交预览实际缺少描述，再让 Rank Math/主题复用已批准首页 Meta；不影响 Google 抓取 |
@@ -807,7 +807,7 @@ V2 不修改任何上述行为。特别是已经存在的 301，在确认 Search
 
 ### 10.5 Suggested next actions
 
-1. 获取最新 Search Console 数据，完成 V2-001；优先检查 4 个 Technical Guides URL 的发现、抓取和收录状态。
+1. 等待 Page indexing 从 2026-08-07 快照刷新；随后核对“已抓取/已发现但尚未编入索引”、robots.txt 屏蔽和 404 的示例 URL，不把旧汇总直接当作当前 Sitemap 覆盖率。
 2. 调查 V2-005 的 WordPress 301 来源，记录它们是旧 slug 自动跳转、插件规则还是数据库历史记录；本阶段只调查，不改动。
 3. 用 GSC 查询与 CTR 数据判断 V2-002 是否值得改写，避免为了字符数改动已经准确的 Title/Meta。
 4. 所有者确认 Privacy Policy 的 Title/Meta 后，再处理 V2-003；没有批准文本前保留占位符，不编写法律页营销文案。
@@ -818,4 +818,66 @@ V2 不修改任何上述行为。特别是已经存在的 301，在确认 Search
 
 Baseline V2 的技术健康状态为通过：没有 Critical 问题，抓取、Canonical、页面级元数据、标题结构、Schema 可解析性、Sitemap 和基础内链均正常。
 
-下一阶段的主任务不是继续做无证据的页面微调，而是补齐 Search Console 当前数据，并围绕真实收录、查询和 CTR 处理上述 Warning。V2-003、V2-005 和 V2-008 涉及真值或历史行为，在确认来源前只记录、不自动修改。
+下一阶段的主任务不是继续做无证据的页面微调，而是等待 Search Console 汇总刷新，并在样本增长后围绕真实收录、查询和 CTR 处理上述 Warning。V2-003、V2-005 和 V2-008 涉及真值或历史行为，在确认来源前只记录、不自动修改。
+
+### 10.7 Search Console 首轮数据（2026-08-15）
+
+#### Performance
+
+截图选择“3 个月”、搜索类型“网页”；图表中可见数据区间为 2026-07-21 至 2026-08-12：
+
+| 指标 | 数值 |
+|---|---:|
+| 总点击次数 | 5 |
+| 总曝光次数 | 94 |
+| 平均点击率 | 5.3% |
+| 平均排名 | 12.7 |
+
+查询表当前只显示 4 行：`atheletik`、`athletik`、`athletique clothing`、`sukartik clothing private limited`，每行均为 0 点击、1 次曝光。可见查询只覆盖总曝光的一小部分，且整体样本很小，因此本轮不根据这些查询改写 Title、Meta 或页面定位。后续应在样本增长后同时查看 Queries 与 Pages，而不是只依据总平均排名。
+
+#### Page indexing
+
+“所有已知网页”汇总的最后更新日期为 2026-08-07：已编入索引 11 个，未编入索引 12 个，共 5 类原因。
+
+| 原因 | 网页数 | 截图中的验证状态 |
+|---|---:|---|
+| 网页会自动重定向 | 3 | 失败 |
+| 已抓取 - 尚未编入索引 | 2 | 失败 |
+| 未找到（404） | 3 | 未启动 |
+| 已被 robots.txt 屏蔽 | 2 | 未启动 |
+| 已发现 - 尚未编入索引 | 2 | 已开始 |
+
+该汇总早于 2026-08-11 上线的 Technical Guides Hub 与 3 篇指南，因此不能用 `11 / 23` 判断当前 17 个 Sitemap URL 的收录率。“所有已知网页”还会包含历史重定向、404 或其他非 Sitemap URL。下一次复查需要进入各原因查看示例 URL，先区分预期排除项与真正需要处理的规范页面。
+
+#### Sitemap
+
+`https://www.athletikapparel.com/sitemap_index.xml` 状态为“成功”：
+
+- 提交日期：2026-07-30。
+- 上次读取时间：2026-08-13。
+- 已发现的网页：17。
+- 已发现的视频：0。
+
+这与 10.2 的生产 Sitemap 实测数量一致，说明 Google 已成功读取当前 17 个 Sitemap URL。“已发现 17”证明 Sitemap 提交和读取正常，但本身不等于 17 个页面全部已收录。
+
+#### Technical Guides URL Inspection
+
+| URL | Google 收录 | 网页索引编制 | HTTPS | 增强功能 |
+|---|---|---|---|---|
+| `/technical-guides/` | 已收录 | 已编入索引 | 通过 | 1 项有效路径内容 |
+| `/flatlock-vs-overlock-technical-knitwear/` | 已收录 | 已编入索引 | 通过 | 1 项有效路径内容 |
+| `/technical-knitwear-tech-pack-guide/` | 已收录 | 已编入索引 | 通过 | 1 项有效路径内容 |
+| `/evaluate-technical-knitwear-oem/` | 已收录 | 已编入索引 | 通过 | 1 项有效路径内容 |
+
+4 个目标 URL 均已收录，无需重复提交收录请求。FLATLOCK 指南额外显示“没有任何视频编入索引”；该页的目标是技术文章而不是视频落地页，因此目前只记录为信息，不判定为 SEO 缺陷。
+
+#### Core Web Vitals
+
+报告最后更新时间为 2026-08-13；移动设备和桌面设备在过去 90 天均没有足够的 Chrome 用户体验报告数据。该状态既不代表通过，也不代表失败，只说明当前流量不足以形成真实用户分组。V2-007 因此仍需等待现场数据，或在确有性能疑问时补充页面级实验室测试。
+
+#### 首轮结论
+
+- V2-001 的“完全缺少 Search Console 数据”已经解除。
+- Sitemap 读取正常，4 个 Technical Guides 目标 URL 已全部收录。
+- Page indexing 汇总存在时间延迟，未收录原因也缺少示例 URL；在汇总刷新和示例核对前，不据此修改页面或重定向。
+- Performance 与 Core Web Vitals 样本仍不足以支持 Title/Meta 或 Hero 视频改动。
