@@ -36,6 +36,7 @@
 - [`site/design-brief.md`](site/design-brief.md)：视觉与交互基线。
 - [`site/seo.md`](site/seo.md)：技术 SEO 审查和修复记录。
 - [`site/seo-process.md`](site/seo-process.md)：面向北美和欧洲 B2B 买家的完整 SEO 研究、实施、发布与复盘流程。
+- [`site/seo-search-language-research-v1.md`](site/seo-search-language-research-v1.md)：北美和欧洲买家搜索语言、意图歧义、排除词与首轮验证池。
 - [`site/qa-audit-2026-07-03.md`](site/qa-audit-2026-07-03.md)：历史上线前 QA 审计；当前状态仍以 `progress.md` 为准。
 
 ## `operations/`：环境与维护
