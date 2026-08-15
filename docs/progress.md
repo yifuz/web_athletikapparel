@@ -256,7 +256,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 
 ### 4.6 SEO Baseline V2（2026-08-15）
 
-完整证据见 [`site/seo.md`](site/seo.md) 第 10 节。
+完整证据见 [`seo/seo.md`](seo/seo.md) 第 10 节。
 
 - 当前 Page Sitemap 包含 17 个唯一 URL：16 个受主题管理的核心页面，加 Privacy Policy。
 - 17 个页面全部返回 HTTP 200；每页只有一份 Title、Meta Description、H1、自引用 Canonical 和可解析 JSON-LD，未发现意外 `noindex`。

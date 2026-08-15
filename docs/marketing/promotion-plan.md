@@ -11,7 +11,7 @@
 > 首轮投放品类：Sportswear Manufacturer（已确认）
 
 使用本计划时，请同时参考 `AGENTS.md`、`docs/progress.md`、
-`docs/sitemap.md` 和 `docs/site/seo.md`。本文件用于规划推广、数据归因、询盘筛选
+`docs/sitemap.md` 和 `docs/seo/seo.md`。本文件用于规划推广、数据归因、询盘筛选
 和渠道运营，不授权发布未经确认的客户名称、认证、产能、工厂数量等信息，
 也不授权更改已被索引的 URL。
 
@@ -86,7 +86,7 @@ Google Search、目标客户开发和 SEO/GEO 为主。多渠道分工、预算�
   已通过本地真实浏览器和表单提交验证：记录 UTM、GCLID、首次落地页和原始
   Referrer，并在提交表单 3 时写入 Fluent Forms Entries。
 - Search Console、Sitemap、Canonical、H1、Meta Description 和 JSON-LD
-  已完成首轮技术 SEO 整改，具体记录见 [`../site/seo.md`](../site/seo.md)。
+  已完成首轮技术 SEO 整改，具体记录见 [`../seo/seo.md`](../seo/seo.md)。
 
 ### 付费推广当前状态（2026-08-07 文档对齐）
 
