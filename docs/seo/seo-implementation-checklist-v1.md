@@ -6,7 +6,7 @@
 >
 > 当前对象：<https://www.athletikapparel.com/>
 >
-> 输入：[`Sportswear` 审计](page-audit-sportswear-manufacturer-v1.md)、[`Knitted Fabrics` 审计](page-audit-knitted-fabrics-manufacturer-v1.md)、[`Tech Pack Guide` 审计](page-audit-technical-knitwear-tech-pack-guide-v1.md)、[`关键词—页面映射`](keyword-page-mapping-v1.md)
+> 输入：[`Sportswear` 审计](page-audit-sportswear-manufacturer-v1.md)、[`Knitted Fabrics` 审计](page-audit-knitted-fabrics-manufacturer-v1.md)、[`Tech Pack Guide` 审计](page-audit-technical-knitwear-tech-pack-guide-v1.md)、[`关键词—页面映射`](keyword-page-mapping-v1.md)、[`US Performance Fabric 关键词验证`](data/keyword-planner-performance-fabric-validation-us-2026-08-17.csv)
 >
 > 状态说明：本文是实施真值表；历史审计继续保留当时快照，不回写成“已经通过”
 
@@ -26,10 +26,24 @@
 | 页面 | 已通过 | 主要缺口 | 当前决策 |
 |---|---|---|---|
 | `/sportswear-manufacturer/` | 200、可索引、URL/Title/H1/Meta/Canonical、Schema、首页入口和基本内链正常 | 约 6.97 MB 产品 PNG；若干性能/绝对化表述缺一方证据；MOQ 资格信息偏后；`ACTIVESEAM` 术语漂移；社交图仍为 Logo | 保留 URL/Title/H1；先做性能与事实核验，不拆 Activewear/Fitness 页面 |
-| `/knitted-fabrics-manufacturer/` | 200、可索引、URL/Title/H1/Canonical、页面所有权和基础面料语义正常 | 面料采购任务却复用成衣 MOQ/按件询盘；独立面料业务边界未确认；GRS、追溯、自有工艺、测试和性能声称待证据；约 11.47 MB 产品 PNG | 保留 URL/Title/H1；业务事实确认前不重写 Meta/正文，不创建近义面料页 |
+| `/knitted-fabrics-manufacturer/` | 200、可索引、URL/Title/H1/Canonical、页面所有权和基础面料语义正常 | 面料采购任务却复用成衣 MOQ/按件询盘；独立面料业务边界未确认；GRS、追溯、自有工艺、测试和性能声称待证据；约 11.47 MB 产品 PNG | 保留 URL/Title/H1；`performance knit fabric` 与 `sportswear fabric manufacturer` 作为次级词；业务事实确认前不重写 Meta/正文，不创建近义面料页 |
 | `/technical-knitwear-tech-pack-guide/` | 已收录；Title/H1/Meta、Article/FAQ/Breadcrumb、技术术语、官方参考和 Hero 性能正常 | 商业页上下文链接较少；Open Graph/Twitter/WebPage 主图使用 Logo；重复 child stylesheet | 保留页面范围；先修内链、专属主图和共享 CSS，不做通用模板页 |
 
 共同结论：当前排名上限更可能受主题连接、证据完整度、性能和域名权威影响，而不是关键词是否重复得足够多。
+
+### 2.1 Knitted Fabrics 美国关键词验证
+
+本批数据来自 Google Keyword Planner，美国、所有语言、Google 网络，区间为 2024-08 至 2026-07。`NR` 表示 Google 未报告可用数据，不等同于已经证明搜索量严格为零。`Competition` 是 Google Ads 广告竞争，不是自然搜索难度。
+
+| 关键词 | Planner 月均量 | 重算近 12 个月均量 | 意图判断 | 页面决策 |
+|---|---:|---:|---|---|
+| `knitted fabric manufacturer` | 70 | 41.7 | 明确的 B2B 针织面料制造商采购 | 保持页面主词 |
+| `sportswear fabric manufacturer` | 70 | 32.5 | 明确的运动服面料采购，但同比波动较大 | 保持次级商业词并监测 |
+| `performance knit fabric` | 30 | 35.0 | 高度相关的产品/材料词，没有明确 manufacturer 限定 | 用于现有产品分类、H2 和自然正文 |
+| `performance fabrics` | 2,400 | 2,275.0 | 高需求但混合服装、家居、室内装饰与知识型意图 | 仅作次级主题；条件式评估未来指南 |
+| Performance + `manufacturer` 变体 | NR | NR | 精确采购变体未获得需求信号 | 不替换当前主词，不新建近义商业页 |
+
+据此锁定当前页面架构：URL `/knitted-fabrics-manufacturer/`、Title 和 H1 继续由 `knitted fabric manufacturer` 承担；`performance knit fabric` 和 `sportswear fabric manufacturer` 作为同页次级词；宽泛的 `performance fabrics` 不进入 URL、Title 或 H1。搜索量高低不能覆盖业务事实门槛，SEO-IMP-009 与 SEO-IMP-010 仍是实施前置条件。
 
 ## 3. 优先级方法
 
@@ -76,6 +90,7 @@
 | SEO-IMP-014 | 复核首页及多个类目 157–165 字符 Meta、Services 63 字符 Title | 低到中：主要影响摘要截断和 CTR，不是索引问题 | 中：过早缩短可能损失意图信息 | 先取得页面级 GSC Query/CTR 数据 | 观察 |
 | SEO-IMP-015 | 审计 Underwear、Outdoor、Merino、Silk、Sports Accessories 与三篇指南剩余两篇 | 高：扩大已验证的页面级基线 | 低 | 第一批部署稳定后逐页执行 | 待处理 |
 | SEO-IMP-016 | 为类目页评估 `Service` Schema，保持可见内容和事实一致 | 低到中：增强机器可读服务关系，但不作为排名捷径 | 中 | 页面业务事实确认；通过 Schema Validator | 待评估 |
+| SEO-IMP-022 | 固化 Knitted Fabrics 主次词架构：保留现有 URL/Title/H1，以 `performance knit fabric` 和 `sportswear fabric manufacturer` 补充产品、应用和询盘语境 | 中到高：同时保留精准采购意图和 Performance 主题覆盖，不引入近义页内耗 | 低到中：事实不足时扩写会放大未证实的工艺、测试或独立供货承诺 | SEO-IMP-009/010 完成；逐项核对已有文案，不做关键词堆叠 | 数据验证完成，阻塞于事实/证据 |
 
 ### D. 第四批：内容扩展与站外权威
 
@@ -86,6 +101,7 @@
 | SEO-IMP-019 | NL / SE / NO / FI 本地语言研究 | 中：验证英语之外的欧洲买家语言 | 低 | 英语基线实施和监测稳定 | 待研究 |
 | SEO-IMP-020 | 技术指南持续分发并争取真实行业引用、供应商目录/协会资料页及合作方链接 | 高：增加独立站外提及和引用域，而不是依赖站内信号 | 中：必须是真实关系，禁止购买批量垃圾链接 | 建立目标来源、发布记录和引用 URL 台账 | 持续 |
 | SEO-IMP-021 | 每季度复核指南引用的 ASTM/AATCC/ISO 等标准版本和链接 | 中：维持技术内容可靠性和更新依据 | 低 | 指定复核日期与负责人 | 待建立节奏 |
+| SEO-IMP-023 | 条件式评估 Performance Fabrics 信息指南，明确限定 performance apparel / knit fabric，避免进入家具和室内装饰意图 | 中：有机会承接宽泛研究流量并内链到面料商业页 | 高：宽词意图混杂，过早建页可能产生无效流量和主题稀释 | 当前商业页事实完整；GSC 出现相关 Query，或独立 SERP/内容缺口验证通过；具备一方材料与测试证据 | 候选研究，未批准新 URL |
 
 ## 5. 第一批已完成的代码范围
 
@@ -147,6 +163,7 @@
 - Clicks、Impressions、CTR、Average position；
 - Query × Page × Country，北美和欧洲分开；
 - Brand / non-brand 查询分组；
+- Knitted Fabrics 将 `knitted fabric manufacturer`、`sportswear fabric manufacturer`、`performance knit fabric` 与宽泛的 `performance fabrics` 分组记录，避免用宽词曝光掩盖合格采购词表现；
 - Core Web Vitals 与移动端问题；
 - GA4 `generate_lead` 按 Landing Page 的数量和合格度。
 
@@ -166,6 +183,7 @@
 
 - 不修改已经收录且表现正常的 URL；
 - 不为 Activewear/Fitness、Clothing/Garment/Apparel Tech Pack 或单复数变体创建平行页；
+- 不因 `performance fabrics` 的宽泛高搜索量，把 Knitted Fabrics URL、Title 或 H1 改成 Performance Fabrics；
 - 不堆叠 `manufacturer`、`supplier`、`factory` 等近义词；
 - 不在证据不足时扩大认证、性能、工厂、测试、产能或客户声称；
 - 不购买批量外链、目录包或 PBN；
@@ -180,6 +198,6 @@
 1. Sportswear 响应式图片；
 2. Knitted Fabrics 响应式图片；
 3. 收集 Sportswear 与 Knitted Fabrics 事实输入；
-4. 基于事实制作两页微调简报；
-5. 建立 GSC 7 天/28 天页面级监测；
-6. 再开始剩余页面审计、欧洲本地语言研究和条件式新内容。
+4. 基于事实制作两页微调简报，并按 SEO-IMP-022 实施 Knitted Fabrics 次级词架构；
+5. 建立 GSC 7 天/28 天页面级监测，分别观察商业采购词与宽泛 Performance 词；
+6. 再开始剩余页面审计、欧洲本地语言研究和条件式新内容；Performance Fabrics Guide 仍需单独批准。

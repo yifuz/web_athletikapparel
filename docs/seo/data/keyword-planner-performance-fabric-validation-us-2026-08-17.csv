@@ -1,0 +1,10 @@
+keyword,planner_avg_monthly_searches,recomputed_last_12_month_avg,three_month_change,yoy_change,competition,competition_index,top_of_page_bid_low_cny,top_of_page_bid_high_cny,intent,decision
+functional fabric manufacturer,NR,NR,NR,NR,NR,NR,NR,NR,commercial-manufacturer,semantic-support-only
+knitted fabric manufacturer,70,41.7,-60%,0%,Low,15,12.48,17.19,commercial-manufacturer,keep-primary
+performance fabric manufacturer,NR,NR,NR,NR,NR,NR,NR,NR,commercial-manufacturer,not-primary
+performance fabrics,2400,2275,26%,0%,High,100,4.09,23.76,mixed-broad-informational,secondary-topic-not-page-primary
+performance fabrics manufacturer,NR,NR,NR,NR,NR,NR,NR,NR,commercial-manufacturer,not-primary
+performance knit fabric,30,35,0%,0%,High,98,4.52,18.21,product-category,keep-secondary
+performance knit fabric manufacturer,NR,NR,NR,NR,NR,NR,NR,NR,commercial-manufacturer,support-only
+sportswear fabric manufacturer,70,32.5,0%,-86%,High,67,NR,NR,commercial-manufacturer,keep-secondary-monitor-volatility
+technical fabric manufacturer,NR,NR,NR,NR,NR,NR,NR,NR,broad-industrial-commercial,semantic-support-only
