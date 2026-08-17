@@ -46,6 +46,7 @@
 - [`seo/keyword-discovery-commercial-us-v1.md`](seo/keyword-discovery-commercial-us-v1.md)：美国商业种子词的 289 条 Keyword Planner 扩展结果、近义聚合、错误意图清洗与保留词。
 - [`seo/keyword-discovery-product-material-us-v1.md`](seo/keyword-discovery-product-material-us-v1.md)：美国产品与材料种子词的 Compression、Outdoor、Merino 和 Knitted Fabric 意图验证。
 - [`seo/keyword-discovery-procurement-info-us-v1.md`](seo/keyword-discovery-procurement-info-us-v1.md)：美国采购信息种子词的 Tech pack、QC、供应商尽调与 FLATLOCK 意图验证。
+- [`seo/keyword-page-mapping-v1.md`](seo/keyword-page-mapping-v1.md)：三批关键词机会主表、现有页面所有权、排除边界和下一轮七国验证清单。
 
 ## `operations/`：环境与维护
 

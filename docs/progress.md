@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-08-12。
+最后更新：2026-08-17。
 
 ---
 
@@ -267,6 +267,14 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - Core Web Vitals 的移动端和桌面端均因过去 90 天数据不足而没有现场结论；这不是失败判定。
 - 生产域存在 6 条由 WordPress 输出的 `/products/<x>/` 301，Merino 历史路径仍为 404；在核实 Search Console、日志和旧 slug 来源前不改变这些行为。
 - Privacy Policy 专用 SEO 标签、首页社交描述、新指南上下文内链、Hero 视频性能和 SEO 字段真值来源属于后续评估项。
+
+### 4.7 北美与欧洲买家关键词研究（2026-08-17）
+
+- 已完成 21 个首轮候选词在美国、加拿大、英国、荷兰、瑞典、挪威和芬兰的 Keyword Planner 历史指标对照；
+- 已完成美国商业、产品/材料和采购信息三批自然变体发现，并统一重算 2025-08 至 2026-07 的 12 个月平均量；
+- 已建立 45 个搜索意图簇的机会主表和关键词—页面映射 V1，明确现有页面所有权、错配词、能力门槛和未来 QC 内容候选；
+- 本轮没有修改 URL、Title、H1、Meta、正文或 Schema；
+- 下一步按 [`seo/keyword-page-mapping-v1.md`](seo/keyword-page-mapping-v1.md) 的三组 28 个代表词补充七国指标，再做 US / CA / UK 页面级 SERP 验证。
 
 ---
 
@@ -552,6 +560,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-12 | GEO-07 LinkedIn/Instagram 分发完成；GEO 文档和 docs 目录完成整合；Baseline v1 冻结并建立 Baseline v2 |
 | 2026-08-13 | GEO-06 Technical Knitwear Tech Pack 完成 LinkedIn 单图帖与 Instagram Carousel 分发；公开 URL 和 Story 状态待补录 |
 | 2026-08-15 | SEO Baseline V2 完成：17 URL 技术审查通过，无 Critical 问题；补录 Search Console 首轮数据并确认 4 个 Technical Guides URL 全部收录 |
+| 2026-08-17 | 北美与欧洲关键词研究完成美国三批发现和关键词—页面映射 V1；形成 45 个意图簇主表与 28 词七国验证清单 |
 
 ---
 
@@ -560,6 +569,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
 3. 等待 Search Console Page indexing 从 2026-08-07 快照刷新，并核对“已抓取/已发现但尚未编入索引”、robots.txt 屏蔽和 404 的示例 URL。
-4. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
-5. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
-6. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。
+4. 按关键词—页面映射 V1 补充 28 个代表词的七国历史指标，并验证 US / CA / UK 的 P0/P1 结果页。
+5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
+6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
+7. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。
