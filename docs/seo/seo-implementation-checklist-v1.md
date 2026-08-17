@@ -1,0 +1,185 @@
+# SEO 审计汇总与实施清单 V1
+
+> 建立日期：2026-08-17
+>
+> 市场范围：北美与欧洲
+>
+> 当前对象：<https://www.athletikapparel.com/>
+>
+> 输入：[`Sportswear` 审计](page-audit-sportswear-manufacturer-v1.md)、[`Knitted Fabrics` 审计](page-audit-knitted-fabrics-manufacturer-v1.md)、[`Tech Pack Guide` 审计](page-audit-technical-knitwear-tech-pack-guide-v1.md)、[`关键词—页面映射`](keyword-page-mapping-v1.md)
+>
+> 状态说明：本文是实施真值表；历史审计继续保留当时快照，不回写成“已经通过”
+
+## 1. 执行结论
+
+当前网站没有全站抓取、索引、Canonical、Title、H1 或 Sitemap Critical 问题。下一阶段不是批量增加关键词，也不是重建更多近义页面，而是提高以下四类可积累信号：
+
+1. **主题关系**：让商业页、技术指南和 Services 通过自然上下文内链形成清晰主题网络；
+2. **页面证据**：用真实业务边界、规格、流程、测试和认证文件支持页面承诺；
+3. **交付质量**：减少重复 CSS 和超大图片，控制移动端下载量及 Core Web Vitals 风险；
+4. **外部权威与反馈**：持续获得真实引用/链接，并用 GSC 的 Query/Page 数据决定后续 Title、Meta 和正文微调。
+
+“搜索权重”不是一个可以直接填写的单项分数。可控目标是让 Google 更容易确认：页面可以稳定抓取、与搜索任务匹配、站内主题关系明确、内容有一方证据、体验可靠，并且站外存在真实提及。
+
+## 2. 三页审计汇总
+
+| 页面 | 已通过 | 主要缺口 | 当前决策 |
+|---|---|---|---|
+| `/sportswear-manufacturer/` | 200、可索引、URL/Title/H1/Meta/Canonical、Schema、首页入口和基本内链正常 | 约 6.97 MB 产品 PNG；若干性能/绝对化表述缺一方证据；MOQ 资格信息偏后；`ACTIVESEAM` 术语漂移；社交图仍为 Logo | 保留 URL/Title/H1；先做性能与事实核验，不拆 Activewear/Fitness 页面 |
+| `/knitted-fabrics-manufacturer/` | 200、可索引、URL/Title/H1/Canonical、页面所有权和基础面料语义正常 | 面料采购任务却复用成衣 MOQ/按件询盘；独立面料业务边界未确认；GRS、追溯、自有工艺、测试和性能声称待证据；约 11.47 MB 产品 PNG | 保留 URL/Title/H1；业务事实确认前不重写 Meta/正文，不创建近义面料页 |
+| `/technical-knitwear-tech-pack-guide/` | 已收录；Title/H1/Meta、Article/FAQ/Breadcrumb、技术术语、官方参考和 Hero 性能正常 | 商业页上下文链接较少；Open Graph/Twitter/WebPage 主图使用 Logo；重复 child stylesheet | 保留页面范围；先修内链、专属主图和共享 CSS，不做通用模板页 |
+
+共同结论：当前排名上限更可能受主题连接、证据完整度、性能和域名权威影响，而不是关键词是否重复得足够多。
+
+## 3. 优先级方法
+
+每个项目按四个维度排序：
+
+| 维度 | 高 | 中 | 低 |
+|---|---|---|---|
+| 预期收益 | 能影响多个目标页、抓取理解、相关性、性能或合格询盘 | 影响单页或辅助搜索展示 | 主要是维护一致性 |
+| 变更风险 | 可能改变页面搜索任务、业务承诺、URL、表单或事实合规 | 需要回归页面/Schema/资源部署 | 可回滚的链接、元数据或资源去重 |
+| 证据置信度 | 已由生产 HTML、官方资料或一方事实确认 | 有审计信号，但需生产验证 | 仅为推测或数据样本不足 |
+| 依赖成本 | 需要所有者、证书、测试、图片处理或生产部署 | 需要代码和页面回归 | 只需小型代码/文档改动 |
+
+执行原则：先做“高/中收益 + 低风险 + 高置信度”，再做“高收益 + 有事实依赖”，最后才做搜索词和页面结构实验。
+
+## 4. SEO 实施主清单
+
+### A. 第一批：高收益或中收益、低风险
+
+| ID | 项目 | 收益 | 风险 | 状态 | 验收标准 |
+|---|---|---|---|---|---|
+| SEO-IMP-001 | Tech Pack Guide 增加到 Knitted Fabrics、Sportswear、Services 的正文上下文链接；Knitted Fabrics 回链指南 | 高：加强商业页与技术内容的主题图谱，并为合格买家提供下一步路径 | 低 | **本地已完成，待部署验证** | 4 个目标 URL 均为 200；锚文本自然；页面不产生重复/错误链接 |
+| SEO-IMP-002 | Technical Guides Hub 和三篇指南使用各自批准封面作为 Open Graph、Twitter 及 WebPage `primaryImageOfPage` | 中：提高分享摘要相关性，并统一可见内容、Article 和 WebPage 图像实体 | 低 | **本地已完成，待部署验证** | 页面源代码输出专属 WebP；Logo 不再作为这些页面主图；JSON-LD 可解析 |
+| SEO-IMP-003 | 移除 GeneratePress 自动 child stylesheet 与主题手动 enqueue 造成的重复 `style.css`，同时停止加载无实际规则的父主题 `style.css` 头文件 | 中：减少两个阻塞型 CSS 请求/解析项，覆盖全站 | 低 | **本地已完成，待部署验证** | 每页只出现 `generate-style`、Google Fonts 和一份 child `style.css`；视觉无回归 |
+| SEO-IMP-004 | 将 Sitemap `lastmod` 与本次主题渲染正文/Schema 更新同步 | 低到中：帮助搜索引擎区分真实更新，不伪造全站新鲜度 | 低 | **本地已完成，待部署验证** | 只更新 Technical Guides、三篇指南和 Knitted Fabrics 等实际变化 URL |
+
+### B. 第二批：高收益、需要资源处理或所有者输入
+
+| ID | 项目 | 收益 | 风险 | 依赖 | 状态 |
+|---|---|---|---|---|---|
+| SEO-IMP-005 | Sportswear 四张产品图生成合适尺寸的 WebP/AVIF，并补 `width`/`height`、`srcset`/`sizes`、`decoding="async"` | 高：直接减少约 6.97 MB 下滚负载和移动端过度分辨率 | 中：图片位于 uploads，需单独部署并做视觉回归 | 保留源图；生成派生图；同步 uploads | 待处理 |
+| SEO-IMP-006 | Knitted Fabrics 五张产品图执行同样的响应式优化 | 高：直接处理约 11.47 MB 静态负载 | 中：细节图压缩、资源路径和上传部署必须核对 | 同上 | 待处理 |
+| SEO-IMP-007 | 建立 Sportswear 公开能力事实表并修正绝对化表述 | 高：减少不可信承诺，提高专业采购页证据质量 | 中：错误修改会弱化真实能力或制造新声称 | 所有者确认测试、材料、适用条件和公开证据 | 阻塞于事实输入 |
+| SEO-IMP-008 | 将已确认的 Sportswear `MOQ 1,000 pieces per style` 资格信号移到首屏附近 | 中：更早过滤低 MOQ/startup 错配流量，改善合格询盘率 | 中：需要页面布局和移动端回归 | 确认展示位置及英文短句 | 待简报 |
+| SEO-IMP-009 | 确认 Knitted Fabrics 是否接受独立面料订单，并建立 fabric-specific MOQ、报价单位、开发和交付流程 | 高：决定页面是否真正匹配 `knitted fabric manufacturer` 商业搜索承诺 | 高：错误答案会改变页面定位、表单和 Meta | 所有者完成第 6 节事实表 | 阻塞于业务输入 |
+| SEO-IMP-010 | 核验并重写 Knitted Fabrics 的 GRS、追溯、自有工艺、测试和性能声称 | 高：补强信任并降低认证/事实风险 | 高：必须与当前证书主体、范围和有效期一致 | scope certificate、适用实体/产品及可公开测试材料 | 阻塞于证据 |
+
+### C. 第三批：数据驱动的页面微调
+
+| ID | 项目 | 收益 | 风险 | 启动条件 | 状态 |
+|---|---|---|---|---|---|
+| SEO-IMP-011 | 统一产品页 SEO 字段真值来源，清理或注释未参与生产输出的 `meta_description` | 中：避免以后“代码已改、生产未变” | 低到中 | 先确认 Rank Math/代码各字段的最终职责 | 待处理 |
+| SEO-IMP-012 | 修正 Sportswear 中 `ACTIVESEAM`/FLATLOCK 术语，并同步规范 Meta 与生产 Rank Math 字段 | 中：语义和品牌专业度一致 | 低到中 | 与 SEO-IMP-007 同批，避免只修大小写却保留无证据表达 | 待处理 |
+| SEO-IMP-013 | 为 Sportswear、Knitted Fabrics 等类目选择批准的代表图作为社交图/Schema 主图 | 中：改善页面分享和主题图像信号 | 低到中 | 所有者确认每页代表图；生成合适派生尺寸 | 待选图 |
+| SEO-IMP-014 | 复核首页及多个类目 157–165 字符 Meta、Services 63 字符 Title | 低到中：主要影响摘要截断和 CTR，不是索引问题 | 中：过早缩短可能损失意图信息 | 先取得页面级 GSC Query/CTR 数据 | 观察 |
+| SEO-IMP-015 | 审计 Underwear、Outdoor、Merino、Silk、Sports Accessories 与三篇指南剩余两篇 | 高：扩大已验证的页面级基线 | 低 | 第一批部署稳定后逐页执行 | 待处理 |
+| SEO-IMP-016 | 为类目页评估 `Service` Schema，保持可见内容和事实一致 | 低到中：增强机器可读服务关系，但不作为排名捷径 | 中 | 页面业务事实确认；通过 Schema Validator | 待评估 |
+
+### D. 第四批：内容扩展与站外权威
+
+| ID | 项目 | 收益 | 风险 | 启动条件 | 状态 |
+|---|---|---|---|---|---|
+| SEO-IMP-017 | 基于真实 Query/Page 数据决定是否补 Tech Pack 的简短 definition/scope 段 | 中到高：承接 `clothing/garment/apparel tech pack` 的相关曝光 | 中：可能把页面拉向模板、工具或 startup 意图 | 匹配查询持续获得曝光但排名/CTR不足 | 观察 |
+| SEO-IMP-018 | QC Guide 内容简报与证据采集 | 高：独立的采购尽调任务和潜在链接资产 | 高：不能发明 QC 节点、记录或标准 | 一方 QC 流程、检查记录、图片和责任边界齐全 | 未批准新 URL |
+| SEO-IMP-019 | NL / SE / NO / FI 本地语言研究 | 中：验证英语之外的欧洲买家语言 | 低 | 英语基线实施和监测稳定 | 待研究 |
+| SEO-IMP-020 | 技术指南持续分发并争取真实行业引用、供应商目录/协会资料页及合作方链接 | 高：增加独立站外提及和引用域，而不是依赖站内信号 | 中：必须是真实关系，禁止购买批量垃圾链接 | 建立目标来源、发布记录和引用 URL 台账 | 持续 |
+| SEO-IMP-021 | 每季度复核指南引用的 ASTM/AATCC/ISO 等标准版本和链接 | 中：维持技术内容可靠性和更新依据 | 低 | 指定复核日期与负责人 | 待建立节奏 |
+
+## 5. 第一批已完成的代码范围
+
+本地第一批修改严格限制在以下范围：
+
+- `functions.php`：只保留一份 child stylesheet，并依赖 GeneratePress 的正式 `generate-style`；
+- `template-parts/technical-article/content-technical-knitwear-tech-pack-guide.php`：增加三条上下文链接；
+- `inc/product-category-data.php`：Knitted Fabrics 增加 Tech Pack Guide 回链；
+- `rank-math.php`：技术内容使用已存在的批准封面作为社交图和 Schema 主图；同步真实 `lastmod`；
+- 未改变任何 URL、Title、H1、Meta、FAQ、主要关键词归属或未经确认的能力声称；
+- 未创建或写入任何图片；uploads 目录不在本批变更范围。
+
+## 6. 第二批所需所有者事实输入
+
+### Sportswear
+
+请按“可公开的一般能力 / 仅具体材料或项目适用 / 有测试报告 / 不应公开”四种状态确认：
+
+- 洗涤后保持形状；
+- squat-proof opacity；
+- muscle-support compression；
+- `never dig` / `chafe-free`；
+- moisture-wicking / quick-dry；
+- UV-protective / antimicrobial finishes。
+
+对可公开项补充：适用材料或产品、测试方法、合格条件、报告是否可公开，以及应使用“可选能力”还是“成品性能”措辞。
+
+### Knitted Fabrics
+
+必须先回答：
+
+1. 是否接受独立面料订单，还是只为成衣 OEM 项目提供面料开发；
+2. 面料 MOQ 的单位及按色/结构规则；
+3. 是否提供 swatch、counter sample、lab dip、sample yardage，以及各节点含义；
+4. 报价需要哪些 composition、GSM、width、stretch/recovery、finish、color、quantity、testing 和 delivery 输入；
+5. 面料项目的样品周期、量产周期与服务边界；
+6. knitting、dyeing、finishing、testing 各自属于自有、关联、外协还是按项目安排；
+7. GRS 当前证书主体、编号、有效期、范围、适用产品及 transaction certificate 边界。
+
+这些问题没有确认前，不修改 Knitted Fabrics 的 Meta、成衣式 MOQ、询盘单位和认证声称。
+
+## 7. 部署与验收顺序
+
+1. 在本地运行 PHP 语法和静态链接检查；
+2. 逐页检查 Desktop 1440 px 与移动端布局，尤其是 Related links 和文章正文；
+3. 部署主题代码到 staging/production；本批不需要同步 uploads；
+4. 检查页面源代码，确认只加载一份 child `style.css`；
+5. 检查三篇指南及 Hub 的 `og:image`、`twitter:image` 与 JSON-LD `primaryImageOfPage`；
+6. 使用 Rich Results Test 与 Schema Validator 复核 Article、FAQPage、BreadcrumbList 和 ImageObject；
+7. 检查 Sitemap 中实际变化页面的 `lastmod`；
+8. 在 Search Console 对实际变化的重点 URL 执行 URL Inspection；不对未变化的全部页面机械请求重新收录；
+9. 记录部署日，并在 7 天与 28 天窗口比较数据。
+
+## 8. Search Console 与转化监测
+
+每周记录目标页的：
+
+- Indexing 状态与最后抓取时间；
+- Clicks、Impressions、CTR、Average position；
+- Query × Page × Country，北美和欧洲分开；
+- Brand / non-brand 查询分组；
+- Core Web Vitals 与移动端问题；
+- GA4 `generate_lead` 按 Landing Page 的数量和合格度。
+
+内部决策规则：
+
+| 观察 | 优先动作 |
+|---|---|
+| 页面未收录或抓取异常 | 先查状态码、Canonical、robots、Sitemap 和实际内链；不先改文案 |
+| 有匹配曝光但位置约 8–30 | 加强证据、上下文内链、页面任务完整度和外部引用 |
+| 位置较好但 CTR 持续偏低 | 结合实际 Query 测试 Title/Meta，而不是同时改 H1/正文 |
+| 有流量但无合格询盘 | 检查资格信息、搜索意图和 CTA，不把更多流量直接视为成功 |
+| 28 天仍无匹配曝光 | 复核索引、页面所有权、搜索需求和域名权威；不立即创建近义页 |
+
+建议每次 Title/Meta 测试只改一个主要变量，保留变更日期和前后 28 天对照。样本过小则继续观察，不从一两次曝光推导结论。
+
+## 9. 不做事项
+
+- 不修改已经收录且表现正常的 URL；
+- 不为 Activewear/Fitness、Clothing/Garment/Apparel Tech Pack 或单复数变体创建平行页；
+- 不堆叠 `manufacturer`、`supplier`、`factory` 等近义词；
+- 不在证据不足时扩大认证、性能、工厂、测试、产能或客户声称；
+- 不购买批量外链、目录包或 PBN；
+- 不把 uploads 图片放入主题 Git 仓库；
+- 不把 Schema 当成替代可见内容和真实证据的排名捷径；
+- 不用短期 Average position 波动频繁重写 Title/H1。
+
+## 10. 下一执行点
+
+第一批代码完成本地验证和部署后，按以下顺序继续：
+
+1. Sportswear 响应式图片；
+2. Knitted Fabrics 响应式图片；
+3. 收集 Sportswear 与 Knitted Fabrics 事实输入；
+4. 基于事实制作两页微调简报；
+5. 建立 GSC 7 天/28 天页面级监测；
+6. 再开始剩余页面审计、欧洲本地语言研究和条件式新内容。

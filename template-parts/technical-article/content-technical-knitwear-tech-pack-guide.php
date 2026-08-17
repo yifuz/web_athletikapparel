@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<li>How must it perform and be constructed?</li>
 		<li>What evidence will be used to approve the sample and bulk production?</li>
 	</ol>
-	<p>This guide uses “technical knitwear” to mean garments cut and sewn from knitted fabrics for sportswear, underwear, base layers and outdoor applications. It is not a specification for fully fashioned or whole-garment flat knitting, which requires a different set of machine and knitting-program instructions.</p>
+	<p>This guide uses “technical knitwear” to mean garments cut and sewn from <a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/' ) ); ?>">knitted fabrics</a> for <a href="<?php echo esc_url( home_url( '/sportswear-manufacturer/' ) ); ?>">sportswear</a>, underwear, base layers and outdoor applications. It is not a specification for fully fashioned or whole-garment flat knitting, which requires a different set of machine and knitting-program instructions.</p>
 </div>
 
 <section id="document-control" aria-labelledby="ma-tech-pack-document-control-title">
@@ -107,7 +107,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <section id="sample-approvals" aria-labelledby="ma-tech-pack-approvals-title">
 	<h2 id="ma-tech-pack-approvals-title">8. Define sample stages and approval authority</h2>
-	<p>The tech pack should state which samples are required and what each approval allows the manufacturer to do next. A typical sequence may include development or proto sample, fit sample, size set, color or material approval and pre-production sample. The exact sequence depends on the project.</p>
+	<p>The tech pack should state which samples are required and what each approval allows the manufacturer to do next. A typical sequence may include development or proto sample, fit sample, size set, color or material approval and pre-production sample. The exact sequence depends on the project; our <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">OEM knitwear services</a> page shows how sampling and approvals connect to bulk production, quality control and shipping.</p>
 	<p>Record comments against the current sample and tech pack version. When an approved change affects pattern, fabric, seam construction, trim, artwork or measurement, update the controlled document rather than relying on email or chat history alone.</p>
 	<p>Bulk production should use the approved pre-production sample, signed material standards and current tech pack as a coordinated reference. If they conflict, the responsible parties should resolve the conflict before cutting.</p>
 </section>

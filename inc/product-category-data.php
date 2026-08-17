@@ -371,6 +371,7 @@ function myathletik_product_category_data() {
 			'related'          => array(
 				myathletik_related_link( __( 'Sportswear Manufacturer', 'myathletik-child' ), '/sportswear-manufacturer/' ),
 				myathletik_related_link( __( 'Underwear Manufacturer', 'myathletik-child' ), '/underwear-manufacturer/' ),
+				myathletik_related_link( __( 'Technical Knitwear Tech Pack Guide', 'myathletik-child' ), '/technical-knitwear-tech-pack-guide/' ),
 				myathletik_related_link( __( 'Our Services', 'myathletik-child' ), '/services/' ),
 			),
 		),

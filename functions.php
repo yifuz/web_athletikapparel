@@ -116,22 +116,23 @@ function myathletik_start_image_url_buffer() {
 add_action( 'template_redirect', 'myathletik_start_image_url_buffer', 1 );
 
 /**
- * Enqueue parent + child stylesheets.
+ * Let this child theme own the child stylesheet enqueue.
  *
- * GeneratePress loads its own styles; we enqueue the child stylesheet
- * after it so our overrides win.
+ * GeneratePress otherwise enqueues the same style.css as `generate-child`,
+ * which duplicates the cache-busted stylesheet registered below.
+ */
+add_filter( 'generate_load_child_theme_stylesheet', '__return_false' );
+
+/**
+ * Enqueue the heading font and child stylesheet.
+ *
+ * GeneratePress owns the parent `generate-style` handle. The dependency keeps
+ * the child overrides after the parent without loading the parent's metadata-
+ * only style.css or a second copy of the child stylesheet.
  */
 function myathletik_enqueue_styles() {
 	$child = wp_get_theme();
 	$child_style_path = get_stylesheet_directory() . '/style.css';
-
-	// Parent (GeneratePress) stylesheet.
-	wp_enqueue_style(
-		'generatepress-style',
-		get_template_directory_uri() . '/style.css',
-		array(),
-		$child->parent() ? $child->parent()->get( 'Version' ) : null
-	);
 
 	// Heading font: only the weights used in this theme, with display=swap.
 	wp_enqueue_style(
@@ -145,7 +146,7 @@ function myathletik_enqueue_styles() {
 	wp_enqueue_style(
 		'myathletik-child-style',
 		get_stylesheet_uri(),
-		array( 'generatepress-style', 'myathletik-google-fonts' ),
+		array( 'generate-style', 'myathletik-google-fonts' ),
 		file_exists( $child_style_path ) ? filemtime( $child_style_path ) : $child->get( 'Version' )
 	);
 

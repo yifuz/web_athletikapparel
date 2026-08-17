@@ -97,6 +97,34 @@ add_filter( 'rank_math/opengraph/facebook/og_description', 'myathletik_rank_math
 add_filter( 'rank_math/opengraph/twitter/twitter_description', 'myathletik_rank_math_technical_article_description', 20 );
 
 /**
+ * Use each approved technical content cover for Open Graph and Twitter cards.
+ *
+ * @param array $image Rank Math image data.
+ * @return array
+ */
+function myathletik_rank_math_technical_content_social_image( $image ) {
+	$content = myathletik_rank_math_current_technical_article();
+
+	if ( ! $content ) {
+		$content = myathletik_rank_math_current_technical_guides_hub();
+	}
+
+	if ( ! $content || empty( $content['featured_image'] ) ) {
+		return $image;
+	}
+
+	return array(
+		'url'    => myathletik_images_uri() . '/' . ltrim( $content['featured_image'], '/' ),
+		'width'  => (int) $content['featured_width'],
+		'height' => (int) $content['featured_height'],
+		'alt'    => $content['featured_alt'],
+		'type'   => 'image/webp',
+	);
+}
+add_filter( 'rank_math/opengraph/facebook/image_array', 'myathletik_rank_math_technical_content_social_image', 20 );
+add_filter( 'rank_math/opengraph/twitter/image_array', 'myathletik_rank_math_technical_content_social_image', 20 );
+
+/**
  * Keep the homepage WebPage entity aligned with the document title.
  *
  * Organization and WebSite names intentionally remain the shorter brand name.
@@ -271,7 +299,18 @@ function myathletik_rank_math_technical_article_schema( $data ) {
 	$article_id   = $page_url . '#article';
 	$webpage_id   = ! empty( $data['WebPage']['@id'] ) ? $data['WebPage']['@id'] : $page_url . '#webpage';
 	$publisher_id = ! empty( $data['publisher']['@id'] ) ? $data['publisher']['@id'] : home_url( '/#organization' );
+	$image_id     = $page_url . '#primaryimage';
 	$image_url    = myathletik_images_uri() . '/' . ltrim( $article['featured_image'], '/' );
+
+	$data['technicalArticleImage'] = array(
+		'@type'      => 'ImageObject',
+		'@id'        => $image_id,
+		'url'        => $image_url,
+		'contentUrl' => $image_url,
+		'width'      => (int) $article['featured_width'],
+		'height'     => (int) $article['featured_height'],
+		'caption'    => $article['featured_alt'],
+	);
 
 	$data['technicalArticle'] = array(
 		'@type'            => 'Article',
@@ -283,12 +322,7 @@ function myathletik_rank_math_technical_article_schema( $data ) {
 		'inLanguage'       => 'en-US',
 		'articleSection'   => $article['article_section'],
 		'mainEntityOfPage' => array( '@id' => $webpage_id ),
-		'image'            => array(
-			'@type'  => 'ImageObject',
-			'url'    => $image_url,
-			'width'  => (int) $article['featured_width'],
-			'height' => (int) $article['featured_height'],
-		),
+		'image'            => array( '@id' => $image_id ),
 		'author'           => array(
 			'@type' => 'Organization',
 			'name'  => 'Athletik Clothing',
@@ -346,6 +380,7 @@ function myathletik_rank_math_technical_article_schema( $data ) {
 		$data['WebPage']['description'] = $article['meta_description'];
 		$data['WebPage']['mainEntity']  = array( '@id' => $article_id );
 		$data['WebPage']['breadcrumb']  = array( '@id' => $page_url . '#breadcrumb' );
+		$data['WebPage']['primaryImageOfPage'] = array( '@id' => $image_id );
 	}
 
 	return $data;
@@ -367,8 +402,20 @@ function myathletik_rank_math_technical_guides_schema( $data ) {
 
 	$page_url   = get_permalink( get_queried_object_id() );
 	$itemlist   = $page_url . '#itemlist';
+	$image_id   = $page_url . '#primaryimage';
+	$image_url  = myathletik_images_uri() . '/' . ltrim( $hub['featured_image'], '/' );
 	$list_items = array();
 	$position   = 1;
+
+	$data['technicalGuidesPrimaryImage'] = array(
+		'@type'      => 'ImageObject',
+		'@id'        => $image_id,
+		'url'        => $image_url,
+		'contentUrl' => $image_url,
+		'width'      => (int) $hub['featured_width'],
+		'height'     => (int) $hub['featured_height'],
+		'caption'    => $hub['featured_alt'],
+	);
 
 	foreach ( myathletik_get_published_technical_articles() as $slug => $article ) {
 		$list_items[] = array(
@@ -412,6 +459,7 @@ function myathletik_rank_math_technical_guides_schema( $data ) {
 		$data['WebPage']['description'] = $hub['meta_description'];
 		$data['WebPage']['mainEntity']  = array( '@id' => $itemlist );
 		$data['WebPage']['breadcrumb']  = array( '@id' => $page_url . '#breadcrumb' );
+		$data['WebPage']['primaryImageOfPage'] = array( '@id' => $image_id );
 	}
 
 	return $data;
@@ -423,13 +471,13 @@ add_filter( 'rank_math/json_ld', 'myathletik_rank_math_technical_guides_schema',
  *
  * The no-argument value is the latest managed-page update and is used by the
  * page Sitemap index. Passing a URL keeps unchanged pages on the previous
- * site-wide baseline while reflecting this guide and its two new inbound links.
+ * site-wide baseline while reflecting meaningful managed-page updates.
  *
  * @param string $url Optional absolute page URL.
  * @return int Unix timestamp in UTC.
  */
 function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
-	$latest = strtotime( '2026-08-11 05:00:00 UTC' );
+	$latest = strtotime( '2026-08-17 07:26:00 UTC' );
 
 	if ( '' === $url ) {
 		return $latest;
@@ -443,16 +491,20 @@ function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
 		in_array(
 			$path,
 			array(
-				'/',
 				'/technical-guides/',
 				'/flatlock-vs-overlock-technical-knitwear/',
 				'/technical-knitwear-tech-pack-guide/',
 				'/evaluate-technical-knitwear-oem/',
+				'/knitted-fabrics-manufacturer/',
 			),
 			true
 		)
 	) {
 		return $latest;
+	}
+
+	if ( '/' === $path ) {
+		return strtotime( '2026-08-11 05:00:00 UTC' );
 	}
 
 	if ( in_array( $path, array( '/sportswear-manufacturer/', '/underwear-manufacturer/' ), true ) ) {

@@ -3,7 +3,7 @@
 > 网站：<https://www.athletikapparel.com/>  
 > 首次审查日期：2026-07-29  
 > Baseline V2 审查日期：2026-08-15
-> 当前阶段：Baseline V2 线上技术审查已完成；无抓取阻断，等待最新 Search Console 数据
+> 当前阶段：Baseline V2 无抓取阻断；关键词映射和首批三页审计已完成；第一批低风险代码待部署验收，实施状态见 [`SEO 审计汇总与实施清单 V1`](seo-implementation-checklist-v1.md)
 > 文档用途：记录 SEO 基线、待处理问题、处理顺序、验证结果和后续决策
 > 状态边界：Baseline V2 的公开页面、Sitemap 和 robots 检查是 2026-08-15 当前结果；
 > 本文仍未记录 2026-08-06 之后的新一轮 Search Console 复查结果，不能把历史收录数字当作当前数字
