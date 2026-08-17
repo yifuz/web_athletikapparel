@@ -273,8 +273,11 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - 已完成 21 个首轮候选词在美国、加拿大、英国、荷兰、瑞典、挪威和芬兰的 Keyword Planner 历史指标对照；
 - 已完成美国商业、产品/材料和采购信息三批自然变体发现，并统一重算 2025-08 至 2026-07 的 12 个月平均量；
 - 已建立 45 个搜索意图簇的机会主表和关键词—页面映射 V1，明确现有页面所有权、错配词、能力门槛和未来 QC 内容候选；
+- 已完成 28 个代表词的七国英语基线 V2；本批覆盖 2024-08 至 2026-07，共 24 个月，与首轮 12 个月基线不直接比较；
+- 原始导出把输入表头 `Keyword` 当成第 29 个词，归一化数据已排除该伪关键词并按 28 个有效目标词重算；
+- 28 词合计中，北美占 73.5%，欧洲五国占 26.5%；该比例只描述当前英语代表词，不代表总体市场规模或本地语言需求；
 - 本轮没有修改 URL、Title、H1、Meta、正文或 Schema；
-- 下一步使用统一的 28 词输入 CSV，通过“获取搜索量和预测数据”为七个国家各导出一份指标，再做 US / CA / UK 页面级 SERP 验证。
+- 下一步对 P0/P1 词进行 US / CA / UK 页面级 SERP 验证，再建立 NL / SE / NO / FI 本地语言研究批次。
 
 ---
 
@@ -561,6 +564,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-13 | GEO-06 Technical Knitwear Tech Pack 完成 LinkedIn 单图帖与 Instagram Carousel 分发；公开 URL 和 Story 状态待补录 |
 | 2026-08-15 | SEO Baseline V2 完成：17 URL 技术审查通过，无 Critical 问题；补录 Search Console 首轮数据并确认 4 个 Technical Guides URL 全部收录 |
 | 2026-08-17 | 北美与欧洲关键词研究完成美国三批发现和关键词—页面映射 V1；形成 45 个意图簇主表与 28 词七国验证清单 |
+| 2026-08-17 | 28 词七国英语基线 V2 完成；排除原始导出中的 `keyword` 表头伪词，并形成 US / CA / UK 的 P0/P1 SERP 队列 |
 
 ---
 
@@ -569,7 +573,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
 3. 等待 Search Console Page indexing 从 2026-08-07 快照刷新，并核对“已抓取/已发现但尚未编入索引”、robots.txt 屏蔽和 404 的示例 URL。
-4. 按关键词—页面映射 V1 补充 28 个代表词的七国历史指标，并验证 US / CA / UK 的 P0/P1 结果页。
+4. 按英语基线 V2 验证 US / CA / UK 的 P0/P1 结果页；完成后再开展 NL / SE / NO / FI 本地语言研究。
 5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
 7. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。

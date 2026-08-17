@@ -10,7 +10,7 @@
 >
 > 七国验证输入：[`data/keyword-planner-validation-input-v2.csv`](data/keyword-planner-validation-input-v2.csv)
 >
-> 当前状态：页面映射 V1 已完成；下一步对 28 个代表词补充七国历史指标和 US / CA / UK SERP
+> 当前状态：页面映射 V1 与 28 个代表词的七国英语基线已完成；下一步进行 US / CA / UK 的 P0/P1 SERP 意图验证
 
 ## 1. 本轮产出
 
@@ -111,7 +111,13 @@ About、Sustainability 和 Contact 分别承担 Trust、Trust 和 Conversion 角
 
 ## 6. 七国验证清单
 
-下一轮只需要取得现有 28 个词的历史指标，不再运行“发现新关键字”。使用 Keyword Planner 的“获取搜索量和预测数据”，上传 [`keyword-planner-validation-input-v2.csv`](data/keyword-planner-validation-input-v2.csv) 或一次性粘贴完整列表。Google 官方说明该入口支持粘贴关键词列表或上传只有 `Keyword` 表头的 CSV；如果当前账户界面仍限制输入，再使用下列 A / B / C 三组作为后备方案。[Google Ads Help](https://support.google.com/google-ads/answer/7337243)
+完成状态：已于 2026-08-17 完成。归一化矩阵、数据周期、表头伪关键词排除和初步决策见
+[`keyword-planner-english-baseline-v2.md`](keyword-planner-english-baseline-v2.md)。以下清单继续保留为本轮输入记录，
+不再重复导出 Keyword Planner。
+
+本轮使用 Keyword Planner 的“获取搜索量和预测数据”完成七国导出，输入来自
+[`keyword-planner-validation-input-v2.csv`](data/keyword-planner-validation-input-v2.csv)。Google 将表头 `Keyword`
+也作为普通搜索词写入原始结果，归一化时已排除；以后重新上传时应优先使用无表头纯关键词文件，或在导出后继续执行同一排除规则。
 
 这样只需要按 7 个目标国家各导出一次，共 7 份 `Keyword Stats`，不需要做 3 × 7 次“发现新关键字”。下列分组主要用于人工复核和界面限制时的后备输入。
 
@@ -194,10 +200,10 @@ gym clothing manufacturers
 
 ### Suggested next actions
 
-1. 使用统一输入 CSV 完成 28 个代表词的七国数据；
-2. 对 P0/P1 词检查 US、CA、UK 自然结果页和页面类型；
-3. 获取第一方 QC 证据后再决定是否提出 QC 新页面；
-4. 等 GSC 出现可用的非品牌页面查询数据后，复核页面主词与实际匹配；
+1. 对 P0/P1 词检查 US、CA、UK 自然结果页和页面类型；
+2. 获取第一方 QC 证据后再决定是否提出 QC 新页面；
+3. 等 GSC 出现可用的非品牌页面查询数据后，复核页面主词与实际匹配；
+4. 建立 NL / SE / NO / FI 本地语言研究批次，与英语基线分开记录；
 5. 最后才提出 Title、H1、Meta 或正文调整，URL 保持不变。
 
 ## 8. 当前实施结论

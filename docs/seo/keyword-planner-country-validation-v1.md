@@ -6,7 +6,7 @@
 >
 > 覆盖地区：美国、加拿大、英国、荷兰、瑞典、挪威、芬兰；语言设置为“所有语言”
 >
-> 当前状态：21 个首轮候选词的七国指标、美国三批自然变体发现和关键词—页面映射 V1 已完成；28 个代表词的新版七国指标仍待补充
+> 当前状态：本文件保留 21 个首轮候选词的历史基线；28 个代表词的新版七国英语基线已完成，见 [`keyword-planner-english-baseline-v2.md`](keyword-planner-english-baseline-v2.md)
 >
 > 归一化数据：[`data/keyword-planner-country-matrix-2026-08-17.csv`](data/keyword-planner-country-matrix-2026-08-17.csv)
 

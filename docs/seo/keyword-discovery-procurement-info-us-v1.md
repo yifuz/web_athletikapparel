@@ -8,7 +8,7 @@
 >
 > 地区：美国；语言设置：所有语言；输入种子词：英语
 >
-> 当前状态：美国三批关键词发现和关键词—页面映射 V1 已完成；下一步补充 28 个代表词的七国历史指标
+> 当前状态：美国三批关键词发现、关键词—页面映射 V1 和 28 个代表词的七国英语基线均已完成；下一步进行 US / CA / UK 的 P0/P1 SERP 意图验证
 >
 > 归一化候选：[`data/keyword-planner-procurement-info-discovery-us-2026-08-17.csv`](data/keyword-planner-procurement-info-discovery-us-2026-08-17.csv)
 
