@@ -2,7 +2,7 @@
 
 > 验证日期：2026-08-17
 >
-> 当前状态：已完成第一阶段实时英语 SERP 意图筛查和七国 Keyword Planner 历史指标验证；逐国 SERP、GSC 增量和真实询盘语言仍待补充
+> 当前状态：已完成第一阶段实时英语 SERP 意图筛查、七国 Keyword Planner 历史指标验证及 US / CA / UK 搜索意图样本筛查；固定位置 Google 前 10 名、GSC 增量和真实询盘语言仍待补充
 >
 > 关联研究：[`seo-search-language-research-v1.md`](seo-search-language-research-v1.md)
 >
@@ -161,7 +161,11 @@
 
 结果、限制和下一轮自然变体任务见 [`keyword-planner-country-validation-v1.md`](keyword-planner-country-validation-v1.md)。归一化矩阵已保留 `keyword` 和七国 `avg monthly searches`；原始导出还包括 `3 month change`、`YoY change`、`competition`、`top of page bid low/high` 和逐月数据。广告竞争和出价只作为商业价值旁证，不等于 SEO 难度。
 
-### 8.2 逐国 SERP
+### 8.2 逐国 SERP（搜索意图样本已完成）
+
+US / CA / UK 的第一轮搜索意图样本、限制和首批三个页面级机会见
+[`serp-intent-validation-us-ca-uk-v1.md`](serp-intent-validation-us-ca-uk-v1.md)。该轮足以筛除明显错配并确定审计优先级，
+但不等于固定地理位置 Google 前 10 名。
 
 对条件通过的商业词，在目标国家环境中各记录自然前 10 名：
 

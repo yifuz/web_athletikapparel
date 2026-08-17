@@ -10,7 +10,7 @@
 >
 > 七国验证输入：[`data/keyword-planner-validation-input-v2.csv`](data/keyword-planner-validation-input-v2.csv)
 >
-> 当前状态：页面映射 V1 与 28 个代表词的七国英语基线已完成；下一步进行 US / CA / UK 的 P0/P1 SERP 意图验证
+> 当前状态：页面映射 V1、28 个代表词的七国英语基线和 US / CA / UK 的 P0/P1 搜索意图样本筛查已完成；下一步审计首批三个页面级机会
 
 ## 1. 本轮产出
 
@@ -200,7 +200,7 @@ gym clothing manufacturers
 
 ### Suggested next actions
 
-1. 对 P0/P1 词检查 US、CA、UK 自然结果页和页面类型；
+1. 对 Sportswear、Knitted Fabrics 和 Tech Pack Guide 进行逐页只读审计；
 2. 获取第一方 QC 证据后再决定是否提出 QC 新页面；
 3. 等 GSC 出现可用的非品牌页面查询数据后，复核页面主词与实际匹配；
 4. 建立 NL / SE / NO / FI 本地语言研究批次，与英语基线分开记录；
@@ -208,4 +208,5 @@ gym clothing manufacturers
 
 ## 8. 当前实施结论
 
-现在不是批量改页面的时候。V1 已经明确了页面所有权、数据缺口和排除边界；下一阶段是补齐跨国证据。只有某个词簇同时通过业务匹配、SERP、跨国需求、页面适配和事实证据检查，才进入具体页面优化。
+现在不是批量改页面的时候。V1 已经明确了页面所有权、数据缺口和排除边界；US / CA / UK 样本结论见
+[`serp-intent-validation-us-ca-uk-v1.md`](serp-intent-validation-us-ca-uk-v1.md)。首批只把 Sportswear、Knitted Fabrics 和 Tech Pack Guide 纳入页面级只读审计；只有某个词簇同时通过业务匹配、SERP、跨国需求、页面适配和事实证据检查，才进入具体页面优化。

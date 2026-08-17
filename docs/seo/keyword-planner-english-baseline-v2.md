@@ -10,7 +10,7 @@
 >
 > 归一化数据：[`data/keyword-planner-english-baseline-v2-2026-08-17.csv`](data/keyword-planner-english-baseline-v2-2026-08-17.csv)
 >
-> 当前状态：英语基线已完成；下一阶段为 US / CA / UK 的 P0/P1 SERP 意图验证
+> 当前状态：英语基线已完成；US / CA / UK 的 P0/P1 搜索意图样本筛查见 [`serp-intent-validation-us-ca-uk-v1.md`](serp-intent-validation-us-ca-uk-v1.md)
 
 ## 1. 本轮结论
 
@@ -142,9 +142,9 @@ V1 继续作为历史探索记录，V2 是当前 28 词英语基线。
 | OEM Evaluation 指南 | How to choose 50；Factory audit 30 | 搜索量低但买家阶段靠后；保留高业务价值，不以量级淘汰 |
 | QC 指南候选 | Garment QC 110；Checklist 70 | 支持继续做 SERP 和一方证据验证；仍是未批准候选，不创建 URL |
 
-## 7. 下一步验证队列
+## 7. 已完成的验证队列
 
-英语基线完成后，下一步不再重复导出 Keyword Planner。按以下顺序检查 US、CA、UK 的自然结果页：
+英语基线完成后，没有重复导出 Keyword Planner。本轮按以下顺序检查 US、CA、UK 的自然结果页：
 
 ### P0：现有商业页
 
@@ -163,5 +163,6 @@ V1 继续作为历史探索记录，V2 是当前 28 词英语基线。
 4. `how to choose a clothing manufacturer`。
 
 每个词至少记录：前 10 名页面、页面类型、服务对象、B2B/OEM 相关性、低 MOQ/startup/消费意图比例、
-本地供应商偏好、可进入的内容角度以及当前 Athletik 页面是否匹配。SERP 验证完成后，才更新关键词—页面映射
-和最多三个优先优化机会。随后再建立 NL / SE / NO / FI 的本地语言研究批次。
+本地供应商偏好、可进入的内容角度以及当前 Athletik 页面是否匹配。本队列已于 2026-08-17 完成第一轮搜索意图
+样本筛查，并选出 Sportswear、Knitted Fabrics 和 Tech Pack Guide 三个页面级机会。固定地理位置 Google 前 10 名
+仍需人工补录；随后再建立 NL / SE / NO / FI 的本地语言研究批次。
