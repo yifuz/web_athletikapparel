@@ -77,12 +77,42 @@ $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 			<div class="ma-subcategories">
 				<?php foreach ( $category['subcategories'] as $index => $sub ) : ?>
 					<?php
-					$is_even  = ( $index % 2 === 1 ); // alternate image side
-					$sub_slug = sanitize_title( $sub['title'] );
+					$is_even       = ( $index % 2 === 1 ); // alternate image side
+					$sub_slug      = sanitize_title( $sub['title'] );
+					$image_alt     = ! empty( $sub['image_alt'] ) ? $sub['image_alt'] : $sub['title'];
+					$image_width   = ! empty( $sub['image_width'] ) ? absint( $sub['image_width'] ) : 0;
+					$image_height  = ! empty( $sub['image_height'] ) ? absint( $sub['image_height'] ) : 0;
+					$image_sizes   = '(max-width: 47.99rem) calc(100vw - 3rem), 35rem';
+					$webp_srcset   = array();
+
+					if ( ! empty( $sub['image_webp'] ) && is_array( $sub['image_webp'] ) ) {
+						foreach ( $sub['image_webp'] as $variant_width => $variant_path ) {
+							$variant_width = absint( $variant_width );
+							if ( $variant_width && $variant_path ) {
+								$webp_srcset[] = esc_url( $image_base . ltrim( $variant_path, '/' ) ) . ' ' . $variant_width . 'w';
+							}
+						}
+					}
 					?>
 					<article class="ma-subcat <?php echo $is_even ? 'ma-subcat--reverse' : ''; ?>" id="subcat-<?php echo esc_attr( $sub_slug ); ?>">
 						<div class="ma-subcat__media">
-							<img src="<?php echo esc_url( $image_base . $sub['image'] ); ?>" alt="<?php echo esc_attr( $sub['title'] ); ?>" loading="lazy">
+							<?php if ( $webp_srcset ) : ?>
+								<picture>
+									<source type="image/webp" srcset="<?php echo esc_attr( implode( ', ', $webp_srcset ) ); ?>" sizes="<?php echo esc_attr( $image_sizes ); ?>">
+							<?php endif; ?>
+							<img
+								src="<?php echo esc_url( $image_base . $sub['image'] ); ?>"
+								<?php if ( $image_width && $image_height ) : ?>
+									width="<?php echo esc_attr( $image_width ); ?>"
+									height="<?php echo esc_attr( $image_height ); ?>"
+								<?php endif; ?>
+								alt="<?php echo esc_attr( $image_alt ); ?>"
+								loading="lazy"
+								decoding="async"
+							>
+							<?php if ( $webp_srcset ) : ?>
+								</picture>
+							<?php endif; ?>
 						</div>
 						<div class="ma-subcat__body">
 							<span class="ma-subcat__index"><?php echo esc_html( sprintf( '%02d', $index + 1 ) ); ?></span>

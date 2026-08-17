@@ -73,8 +73,8 @@
 
 | ID | 项目 | 收益 | 风险 | 依赖 | 状态 |
 |---|---|---|---|---|---|
-| SEO-IMP-005 | Sportswear 四张产品图生成合适尺寸的 WebP/AVIF，并补 `width`/`height`、`srcset`/`sizes`、`decoding="async"` | 高：直接减少约 6.97 MB 下滚负载和移动端过度分辨率 | 中：图片位于 uploads，需单独部署并做视觉回归 | 保留源图；生成派生图；同步 uploads | 待处理 |
-| SEO-IMP-006 | Knitted Fabrics 五张产品图执行同样的响应式优化 | 高：直接处理约 11.47 MB 静态负载 | 中：细节图压缩、资源路径和上传部署必须核对 | 同上 | 待处理 |
+| SEO-IMP-005 | Sportswear 四张产品图生成 6 档真无损 WebP，并补 `width`/`height`、`srcset`/`sizes`、`decoding="async"` | 高：480–800 px 候选相对原 PNG 合计减少 82.30%–93.68%，同时避免移动端过度分辨率 | 中：图片位于 uploads，需单独部署并做视觉回归 | 源 PNG 已保留；24 个派生图已生成；待同步 uploads | **本地已完成，待部署与生产验收** |
+| SEO-IMP-006 | Knitted Fabrics 五张产品图执行同样的响应式真无损优化 | 高：480–800 px 候选相对原 PNG 合计减少 80.32%–93.37% | 中：细节图清晰度、资源路径和上传部署必须核对 | 源 PNG 已保留；30 个派生图已生成；待同步 uploads | **本地已完成，待部署与生产验收** |
 | SEO-IMP-007 | 建立 Sportswear 公开能力事实表并修正绝对化表述 | 高：减少不可信承诺，提高专业采购页证据质量 | 中：错误修改会弱化真实能力或制造新声称 | 所有者确认测试、材料、适用条件和公开证据 | 阻塞于事实输入 |
 | SEO-IMP-008 | 将已确认的 Sportswear `MOQ 1,000 pieces per style` 资格信号移到首屏附近 | 中：更早过滤低 MOQ/startup 错配流量，改善合格询盘率 | 中：需要页面布局和移动端回归 | 确认展示位置及英文短句 | 待简报 |
 | SEO-IMP-009 | 确认 Knitted Fabrics 是否接受独立面料订单，并建立 fabric-specific MOQ、报价单位、开发和交付流程 | 高：决定页面是否真正匹配 `knitted fabric manufacturer` 商业搜索承诺 | 高：错误答案会改变页面定位、表单和 Meta | 所有者完成第 6 节事实表 | 阻塞于业务输入 |
@@ -103,7 +103,7 @@
 | SEO-IMP-021 | 每季度复核指南引用的 ASTM/AATCC/ISO 等标准版本和链接 | 中：维持技术内容可靠性和更新依据 | 低 | 指定复核日期与负责人 | 待建立节奏 |
 | SEO-IMP-023 | 条件式评估 Performance Fabrics 信息指南，明确限定 performance apparel / knit fabric，避免进入家具和室内装饰意图 | 中：有机会承接宽泛研究流量并内链到面料商业页 | 高：宽词意图混杂，过早建页可能产生无效流量和主题稀释 | 当前商业页事实完整；GSC 出现相关 Query，或独立 SERP/内容缺口验证通过；具备一方材料与测试证据 | 候选研究，未批准新 URL |
 
-## 5. 第一批已完成的代码范围
+## 5. 已完成的本地代码与资源范围
 
 本地第一批修改严格限制在以下范围：
 
@@ -111,8 +111,11 @@
 - `template-parts/technical-article/content-technical-knitwear-tech-pack-guide.php`：增加三条上下文链接；
 - `inc/product-category-data.php`：Knitted Fabrics 增加 Tech Pack Guide 回链；
 - `rank-math.php`：技术内容使用已存在的批准封面作为社交图和 Schema 主图；同步真实 `lastmod`；
+- `inc/product-category-data.php` 与 `template-parts/product-category/page.php`：Sportswear 和 Knitted Fabrics 共 9 张下滚图片接入 WebP `srcset`、PNG 回退、固有尺寸、描述性 alt、lazy loading 与 async decoding；
+- `style.css`：补充 `<picture>` 的块级布局，不改变现有图片比例和交错版式；
+- uploads：保留 9 张源 PNG，生成 54 个真无损响应式 WebP；详见 [`image-optimization-seo-imp-005-006-v1.md`](image-optimization-seo-imp-005-006-v1.md)；
 - 未改变任何 URL、Title、H1、Meta、FAQ、主要关键词归属或未经确认的能力声称；
-- 未创建或写入任何图片；uploads 目录不在本批变更范围。
+- uploads 不在主题 Git 仓库中，部署时必须单独同步图片资源。
 
 ## 6. 第二批所需所有者事实输入
 
@@ -147,7 +150,7 @@
 
 1. 在本地运行 PHP 语法和静态链接检查；
 2. 逐页检查 Desktop 1440 px 与移动端布局，尤其是 Related links 和文章正文；
-3. 部署主题代码到 staging/production；本批不需要同步 uploads；
+3. 部署主题代码到 staging/production，并单独同步 SEO-IMP-005/006 的 54 个 uploads WebP；
 4. 检查页面源代码，确认只加载一份 child `style.css`；
 5. 检查三篇指南及 Hub 的 `og:image`、`twitter:image` 与 JSON-LD `primaryImageOfPage`；
 6. 使用 Rich Results Test 与 Schema Validator 复核 Article、FAQPage、BreadcrumbList 和 ImageObject；
@@ -193,11 +196,10 @@
 
 ## 10. 下一执行点
 
-第一批代码完成本地验证和部署后，按以下顺序继续：
+当前本地修改完成验证后，按以下顺序继续：
 
-1. Sportswear 响应式图片；
-2. Knitted Fabrics 响应式图片；
-3. 收集 Sportswear 与 Knitted Fabrics 事实输入；
-4. 基于事实制作两页微调简报，并按 SEO-IMP-022 实施 Knitted Fabrics 次级词架构；
-5. 建立 GSC 7 天/28 天页面级监测，分别观察商业采购词与宽泛 Performance 词；
-6. 再开始剩余页面审计、欧洲本地语言研究和条件式新内容；Performance Fabrics Guide 仍需单独批准。
+1. 将主题代码与 SEO-IMP-005/006 的 54 个 WebP 同步到 staging/production，完成视觉、HTTP、MIME 与 Network 候选验收；
+2. 收集 Sportswear 与 Knitted Fabrics 事实输入；
+3. 基于事实制作两页微调简报，并按 SEO-IMP-022 实施 Knitted Fabrics 次级词架构；
+4. 建立 GSC 7 天/28 天页面级监测，分别观察商业采购词与宽泛 Performance 词；
+5. 再开始剩余页面审计、欧洲本地语言研究和条件式新内容；Performance Fabrics Guide 仍需单独批准。

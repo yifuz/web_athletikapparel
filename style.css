@@ -3540,6 +3540,10 @@ body.page .container.grid-container:has(.ma-product-category) {
   box-shadow: 0 10px 28px rgba(43, 39, 36, 0.1);
 }
 
+.ma-subcat__media picture {
+  display: block;
+}
+
 .ma-subcat__media img {
   display: block;
   width: 100%;
