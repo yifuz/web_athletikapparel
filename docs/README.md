@@ -49,6 +49,7 @@
 - [`seo/keyword-page-mapping-v1.md`](seo/keyword-page-mapping-v1.md)：三批关键词机会主表、现有页面所有权、排除边界和下一轮七国验证清单。
 - [`seo/keyword-planner-english-baseline-v2.md`](seo/keyword-planner-english-baseline-v2.md)：28 个英语代表词在美国、加拿大、英国、荷兰和北欧三国的 24 个月需求基线与下一轮 SERP 队列。
 - [`seo/serp-intent-validation-us-ca-uk-v1.md`](seo/serp-intent-validation-us-ca-uk-v1.md)：US / CA / UK 的 P0/P1 英语搜索意图样本、错配风险与首批三个页面级机会。
+- [`seo/page-audit-sportswear-manufacturer-v1.md`](seo/page-audit-sportswear-manufacturer-v1.md)：Sportswear 商业页的生产 HTML、搜索意图、内容证据、内链、Schema 与静态性能只读审计。
 
 ## `operations/`：环境与维护
 

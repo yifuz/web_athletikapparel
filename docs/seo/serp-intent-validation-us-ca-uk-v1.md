@@ -6,7 +6,7 @@
 >
 > 输入基线：[`keyword-planner-english-baseline-v2.md`](keyword-planner-english-baseline-v2.md)
 >
-> 当前状态：已完成 P0/P1 搜索意图样本筛查并选出最多三个页面级机会；固定地理位置 Google 前 10 名仍待人工复核
+> 当前状态：已完成 P0/P1 搜索意图样本筛查并选出最多三个页面级机会；Sportswear 页面只读审计已完成，固定地理位置 Google 前 10 名仍待人工复核
 >
 > 实施边界：本文件不授权修改 URL、Title、H1、Meta、正文或 Schema
 
@@ -126,7 +126,7 @@
 
 ## 8. 下一步执行顺序
 
-1. 对上述三个页面运行逐页只读 SEO/内容差距审计；
+1. Sportswear 页面审计见 [`page-audit-sportswear-manufacturer-v1.md`](page-audit-sportswear-manufacturer-v1.md)；继续审计 Knitted Fabrics 和 Tech Pack Guide；
 2. 每页输出“保持 / 微调 / 需要所有者事实输入”结论，不直接修改；
 3. 如确需文案变更，先由所有者确认事实与范围，再制作单页优化简报；
 4. 在无个性化环境中人工复核 US、CA、UK 的 Google 基础查询前 10 名，补全固定地点和 SERP 功能记录；
