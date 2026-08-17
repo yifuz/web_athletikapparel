@@ -1,0 +1,21 @@
+cluster,representative_keyword,avg_24m,avg_12m_recalculated,competition,competition_index,status
+Compression shirt,compression shirt manufacturer,260,473.3,High,77,product-commercial-validate
+Knit manufacturer,knit manufacturers,170,135.8,High,78,semantic-drift-do-not-target
+Outdoor company research,outdoor clothing and gear companies,70,124.2,Medium,33,brand-directory-intent
+Outdoor clothing,outdoor clothing manufacturer,90,64.2,High,73,core-category-commercial
+Knitted fabric,knitted fabric manufacturer,70,41.7,Low,15,core-fabric-commercial
+Merino wool manufacturer,merino wool manufacturers,40,32.5,High,76,ambiguous-yarn-fabric-garment
+Compression clothing,compression clothing manufacturer,20,21.7,Unknown,,supporting-commercial
+Hiking clothing,hiking clothing manufacturers,10,17.5,High,89,product-subtopic
+Merino clothing,merino clothing manufacturer,20,15,Medium,56,core-merino-commercial
+Warp knit fabric,warp knit fabric manufacturers,10,14.2,Low,0,capability-confirmation-required
+Outdoor supplier,outdoor clothing suppliers,20,13.3,Low,26,supporting-supplier-intent
+Knitted fabric factory,knitted fabric factory,10,10.8,Low,1,supporting-fabric-intent
+Knit fabric mill,knit fabric mills,10,8.3,Low,21,supporting-fabric-intent
+Waterproof clothing,waterproof clothing manufacturers,10,8.3,Low,0,capability-confirmation-required
+Jersey fabric,jersey fabric supplier,10,8.3,Low,0,supporting-fabric-intent
+Merino base layer,merino base layer manufacturer,NR,0,Unknown,,exact-phrase-not-reported
+Performance underwear,performance underwear manufacturer,NR,0,Unknown,,exact-phrase-not-reported
+Base layer,base layer manufacturer,NR,0,Unknown,,exact-phrase-not-reported
+Technical apparel,technical apparel manufacturer,NR,0,Unknown,,positioning-support
+Performance knitted fabric,performance knitted fabric manufacturer,NR,0,Unknown,,exact-phrase-not-reported

@@ -44,6 +44,7 @@
 - [`seo/keyword-validation-v1.md`](seo/keyword-validation-v1.md)：候选商业词、技术词和信息词的实时 SERP 意图验证、风险判定与待补数据台账。
 - [`seo/keyword-planner-country-validation-v1.md`](seo/keyword-planner-country-validation-v1.md)：21 个候选词在美国、加拿大、英国、荷兰和北欧三国的历史搜索量对照与决策。
 - [`seo/keyword-discovery-commercial-us-v1.md`](seo/keyword-discovery-commercial-us-v1.md)：美国商业种子词的 289 条 Keyword Planner 扩展结果、近义聚合、错误意图清洗与保留词。
+- [`seo/keyword-discovery-product-material-us-v1.md`](seo/keyword-discovery-product-material-us-v1.md)：美国产品与材料种子词的 Compression、Outdoor、Merino 和 Knitted Fabric 意图验证。
 
 ## `operations/`：环境与维护
 

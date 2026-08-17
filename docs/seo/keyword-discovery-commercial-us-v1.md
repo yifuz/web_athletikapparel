@@ -157,3 +157,5 @@ performance knitted fabric manufacturer
 ```
 
 仍先以美国为发现市场，语言保持“所有语言”，网站过滤留空。导出 `Keyword Stats` 后再清洗，不将 Google 建议词自动加入。
+
+该批次已完成，结果见 [`keyword-discovery-product-material-us-v1.md`](keyword-discovery-product-material-us-v1.md)。
