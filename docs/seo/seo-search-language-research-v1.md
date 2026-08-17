@@ -47,7 +47,7 @@
 
 - 核心定位：面向北美和欧洲 B2B 买家的技术针织服装制造伙伴；
 - 目标客户：中型品牌、批发商和技术服装买家，不以小批量初创项目为核心；
-- MOQ：每款 1,000 件；
+- MOQ：每款 500 件；
 - 当前公开产品范围：Sportswear、Underwear、Outdoor Clothing、Merino Wool Apparel、Silk Wear、Knitted Fabrics、Sports Accessories；
 - 已批准能力语言：Vertically integrated OEM、FLATLOCK、ACTIVESEAM、Carbondry、Laser perforation、sampling、bulk production、QC、export documentation；
 - 关键语义边界：当前核心是裁剪缝制类技术针织服装，不能让 `technical knitwear` 被理解为横机毛衫、fully fashioned knitwear 或整件 circular seamless knitting；
@@ -210,7 +210,7 @@ Tech pack 与质量控制相关结果显示，买家任务往往比“找制造�
 
 | 语言 | 用途 | 使用边界 |
 |---|---|---|
-| `MOQ` / `minimum order quantity` | 预筛项目规模 | 明确 1,000 pieces per style，不模糊为 flexible/low MOQ |
+| `MOQ` / `minimum order quantity` | 预筛项目规模 | 明确 500 pieces per style，不模糊为 flexible/low MOQ |
 | `bulk production` | 区分样品、试单和持续大货 | 说明批准节点，不虚构产能 |
 | `established brands` | 表达目标客户成熟度 | 适合作为定位，不假设为搜索主词 |
 | `tech pack to bulk` | 表达从规格到生产的流程 | 只承诺已确认的服务范围 |

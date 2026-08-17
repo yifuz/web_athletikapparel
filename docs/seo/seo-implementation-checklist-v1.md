@@ -76,7 +76,7 @@
 | SEO-IMP-005 | Sportswear 四张产品图生成 6 档真无损 WebP，并补 `width`/`height`、`srcset`/`sizes`、`decoding="async"` | 高：480–800 px 候选相对原 PNG 合计减少 82.30%–93.68%，同时避免移动端过度分辨率 | 中：图片位于 uploads，需单独部署并做视觉回归 | 源 PNG 已保留；24 个派生图已生成；待同步 uploads | **本地已完成，待部署与生产验收** |
 | SEO-IMP-006 | Knitted Fabrics 五张产品图执行同样的响应式真无损优化 | 高：480–800 px 候选相对原 PNG 合计减少 80.32%–93.37% | 中：细节图清晰度、资源路径和上传部署必须核对 | 源 PNG 已保留；30 个派生图已生成；待同步 uploads | **本地已完成，待部署与生产验收** |
 | SEO-IMP-007 | 建立 Sportswear 公开能力事实表并修正绝对化表述 | 高：减少不可信承诺，提高专业采购页证据质量 | 中：错误修改会弱化真实能力或制造新声称 | 所有者确认 SP-01–SP-10 均可满足，但报告按项目提供；页面改为能力/规格/测试条件表达 | **本地已完成，待部署与生产验收** |
-| SEO-IMP-008 | 将已确认的 Sportswear `MOQ 1,000 pieces per style` 资格信号移到首屏附近 | 中：更早过滤低 MOQ/startup 错配流量，改善合格询盘率 | 中：需要页面布局和移动端回归 | 确认展示位置及英文短句 | 待简报 |
+| SEO-IMP-008 | 将所有者确认的新 Sportswear `MOQ 500 pieces per style` 资格信号移到首屏附近，并同步全站业务事实 | 中：更早过滤 sub-MOQ 错配流量，改善合格询盘率并避免页面信息漂移 | 中：需要页面布局和移动端回归 | 已确认 500 件；采用独立 value/unit 元素；`Estimated Order Quantity` 与 per-style MOQ 保持分离 | **本地已完成，待部署与生产验收** |
 | SEO-IMP-009 | 确认 Knitted Fabrics 是否接受独立面料订单，并建立 fabric-specific MOQ、报价单位、开发和交付流程 | 高：决定页面是否真正匹配 `knitted fabric manufacturer` 商业搜索承诺 | 高：错误答案会改变页面定位、表单和 Meta | 所有者完成第 6 节事实表 | 阻塞于业务输入 |
 | SEO-IMP-010 | 核验并重写 Knitted Fabrics 的 GRS、追溯、自有工艺、测试和性能声称 | 高：补强信任并降低认证/事实风险 | 高：必须与当前证书主体、范围和有效期一致 | scope certificate、适用实体/产品及可公开测试材料 | 阻塞于证据 |
 

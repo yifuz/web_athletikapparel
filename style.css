@@ -3393,6 +3393,36 @@ body.page .container.grid-container:has(.ma-product-category) {
   line-height: var(--ma-lh-body);
 }
 
+.ma-product-hero__qualifier {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--ma-space-2);
+  margin-top: var(--ma-space-3);
+  padding: var(--ma-space-2) var(--ma-space-3);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-bg);
+  color: var(--ma-color-text);
+}
+
+.ma-product-hero__qualifier-label {
+  color: var(--ma-color-accent-2);
+  font-size: var(--ma-fs-small);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ma-product-hero__qualifier-value {
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-h3);
+}
+
+.ma-product-hero__qualifier-unit {
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-small);
+}
+
 .ma-product-hero__actions {
   display: flex;
   flex-wrap: wrap;

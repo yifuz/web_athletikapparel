@@ -64,7 +64,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
   也不得自行推断母子公司、签约、出口、雇佣或知识产权关系。
 - 当前确认的公开角色仅包括：美国实体是网站隐私数据控制者；中国实体名称用于中国生产设施。
 - 定位：面向中型 B2B 品牌买家的技术针织 Vertically integrated OEM。
-- 公开 MOQ：每款 1,000 件。
+- 公开 MOQ：每款 500 件（2026-08-17 由所有者确认调整）。
 - 可强调：自有生产设施、从纱线到成衣的垂直整合、FLATLOCK / ACTIVESEAM、
   Carbondry、Laser perforation、完整出口文件能力与区域覆盖。
 - 不公开工厂数量或分包安排，不杜撰认证、产能、客户或法律实体关系。
@@ -224,7 +224,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - GEO-02：可认可 technical/performance knitwear OEM/ODM 定位，但中美实体角色说明不完整。
 - GEO-03：Temporary Chat 将 Athletik 列为中国 FLATLOCK/ACTIVESEAM 供应商短名单第一，
   是当前最强的非品牌发现信号。
-- GEO-04：中性测试未出现 Athletik；通用 sportswear OEM + 1,000 件采购意图仍是缺口。
+- GEO-04：2026-08-10 冻结测试未出现 Athletik；当时的通用 sportswear OEM + 1,000 件采购意图仍是缺口，当前公开 MOQ 已调整为每款 500 件。
 - GEO-05：中性测试未出现 Athletik，且提示词容易产生消费品牌推荐；Merino wool OEM 发现仍是缺口。
 - GEO-06：中性回答偏向横机毛衫 tech pack；Athletik 未出现。已上线 cut-and-sew 技术针织指南用于纠偏。
 - GEO-07：中性回答没有引用 Athletik，且部分结论过于绝对；第一方指南和首轮社交分发已完成。
@@ -282,9 +282,12 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - Technical Knitwear Tech Pack Guide 只读审计已完成：无 Critical，URL/Title/H1/Meta 保持；官方标准与术语通过复核，通用 Tech Pack 查询边界、上下文内链、社交主图和重复 stylesheet 列为后续候选；
 - 已建立 [`SEO 审计汇总与实施清单 V1`](seo/seo-implementation-checklist-v1.md)，按收益、风险、事实依赖和验收条件划分四个实施批次；
 - 第一批低风险代码已完成：Tech Pack Guide 与商业页上下文内链、Technical Guides 专属社交/Schema 主图、重复 child stylesheet 去重及真实 Sitemap `lastmod`；待部署后做生产验收；
+- SEO-IMP-005/006 的 Sportswear 与 Knitted Fabrics 响应式真无损 WebP 已在本地完成，uploads 资源待单独部署与生产验收；
+- SEO-IMP-007 已按所有者确认的能力边界修正 Sportswear 绝对化表述，本地完成、待部署验收；
+- SEO-IMP-008 已把公开 MOQ 统一为 `500 pieces per style`，并在 Sportswear 首屏附近增加资格信号；`Estimated Order Quantity` 明确保持为独立的预计订单量字段。完整记录见 [`moq-update-seo-imp-008-v1.md`](seo/moq-update-seo-imp-008-v1.md)；
 - Underwear、Outdoor 和 FLATLOCK vs COVERSTITCH 因错配较高暂不优先，QC Guide 继续等待可公开的一方流程证据；
 - 第一批没有修改 URL、Title、H1、Meta、FAQ、关键词归属或未经确认的能力声称；
-- 搜索结果样本不能代替固定地理位置 Google 前 10 名；下一步先部署并验收第一批，再处理 Sportswear 与 Knitted Fabrics 响应式图片和事实输入。
+- 搜索结果样本不能代替固定地理位置 Google 前 10 名；下一步先部署并验收 SEO-IMP-001–008，再处理 Knitted Fabrics 的独立面料业务输入和 fabric-specific 采购口径。
 
 ---
 
@@ -383,7 +386,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - `generate_lead` 已通过 Tag Assistant 和 GA4 DebugView 验证。
 - Fluent Form 3 当前字段：Name、Email、Company、Country、Website、Product Category、
   Estimated Order Quantity、Business Type、Message。
-- 订单量选项围绕每款 1,000 件 MOQ 设计；Message 提示可附 tech pack 链接。
+- `Estimated Order Quantity` 记录预计订单量，不等同于每款 MOQ，因此保留现有数量档位，不随每款 500 件 MOQ 自动改写；Message 提示可附 tech pack 链接。
 - File Upload 是 Fluent Forms PRO 功能，当前免费方案采用链接提示。
 - 表单只保留一个启用的 `New Notification`：Send To / From Email =
   `info@athletikapparel.com`，From Name = `Athletik Clothing`，Reply-To = `{inputs.email}`。

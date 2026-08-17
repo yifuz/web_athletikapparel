@@ -43,7 +43,7 @@ Confirm against `docs/sitemap.md` for the canonical page list.
 - **Business type:** Vertically integrated OEM knitwear manufacturer
 - **Specialties:** flatlock, activeseam, self-fabric, Carbondry finishing,
   laser perforation, merino wool
-- **MOQ:** 1,000 pieces per style
+- **MOQ:** 500 pieces per style
 - **Audience:** mid-sized B2B buyers, regional merchandiser teams
   (North America / Europe / Nordics)
 

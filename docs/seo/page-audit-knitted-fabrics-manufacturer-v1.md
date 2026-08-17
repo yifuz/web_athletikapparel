@@ -13,6 +13,8 @@
 > 审计方式：生产 HTML、生产 URL/robots/Sitemap/旧路径响应、本地模板、公开声称与静态图片/资源检查
 >
 > 实施边界：只读审计；本轮没有修改 URL、Title、H1、Meta、正文、Schema、表单、图片或前端资源
+>
+> 状态更正（2026-08-17）：当前成衣公开 MOQ 已由每款 1,000 件调整为每款 500 件。Fluent Forms 的 `Estimated Order Quantity` 是预计订单量，不等同于 per-style MOQ，现有档位未随之自动改写。下文保留实施前审计快照；其核心问题仍成立，因为 `pieces per style` 不是独立面料采购的专用单位，Knitted Fabrics 仍等待 fabric-specific 业务输入。
 
 ## 1. 结论先行
 

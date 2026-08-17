@@ -18,7 +18,8 @@ $steps = array(
 	array(
 		'title' => __( 'Bulk Production', 'myathletik-child' ),
 		'url'   => '/services/',
-		'copy'  => __( 'MOQ 1,000 pcs per style, built on technical knit construction.', 'myathletik-child' ),
+		/* translators: %s: public MOQ in pieces per style. */
+		'copy'  => sprintf( __( 'MOQ %s pcs per style, built on technical knit construction.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
 	),
 	array(
 		'title' => __( 'Quality Control', 'myathletik-child' ),

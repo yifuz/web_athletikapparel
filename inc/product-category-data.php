@@ -63,6 +63,7 @@ function myathletik_product_category_data() {
 			'meta_description' => __( 'Sportswear manufacturer for gym, training, running, and yoga activewear - flatlock and activeseam construction in power-stretch and moisture-wicking knits.', 'myathletik-child' ),
 			'h1'               => __( 'Sportswear Manufacturer', 'myathletik-child' ),
 			'old_url'          => '/products/sportswear/',
+			'show_hero_moq'    => true,
 			'intro'            => __( 'Sportswear programs for gym, training, running, and studio applications, developed around the buyer\'s fit, movement, fabric, finish, and testing requirements. We produce tight, fitted, and compression silhouettes for B2B activewear brands, with specifications confirmed through material selection and approved samples.', 'myathletik-child' ),
 			'what_we_make'     => array(
 				__( 'Training tops, tanks, and tees', 'myathletik-child' ),

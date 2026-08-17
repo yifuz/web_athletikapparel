@@ -9,7 +9,7 @@ GUARDRAILS (same as rest of site):
   or subcontracting. NEVER use the old 5-million-pcs/year or "5 partner
   factories" data found on legacy sites.
 - Numbers consistent with site: 15+ yrs · 4,500+ m² · 100,000+ pcs/month · MOQ
-  1,000 pcs per style.
+  500 pcs per style.
 - No stock photos — use [IMAGE: ...] placeholders for real product/factory shots.
 - These are real product lines pulled from Athletik's actual range.
 
@@ -23,7 +23,7 @@ Shared section structure per page:
 7. Inquiry CTA
 
 Standard specs band (reuse on every page):
-- MOQ: 1,000 pcs per style
+- MOQ: 500 pcs per style
 - Sampling: 1–2 weeks depending on complexity
 - Service: OEM / ODM / full-package, to your designs, samples, or tech packs
 

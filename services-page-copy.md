@@ -9,7 +9,7 @@ GUARDRAILS:
   factory count or subcontracting.
 - Export documentation is industry-standard — mention it plainly, do NOT
   over-hype it as a differentiator.
-- Numbers consistent: 15+ yrs · 4,500+ m² · 100,000+ pcs/month · MOQ 1,000 pcs
+- Numbers consistent: 15+ yrs · 4,500+ m² · 100,000+ pcs/month · MOQ 500 pcs
   per style. Sampling 1–2 weeks.
 - Voice: professional + warm. User writes any deeper prose; placeholders for
   anything to expand. No stock photos.
@@ -50,7 +50,7 @@ GUARDRAILS:
 ### 2. Bulk Production
 > Once samples are approved, we move into bulk production in our own facility.
 > With technical knit construction and flexible, scalable capacity, we handle
-> orders from 1,000 pcs per style and scale up without compromising quality or
+> orders from 500 pcs per style and scale up without compromising quality or
 > lead times.
 
 [IMAGE: real production floor shot]

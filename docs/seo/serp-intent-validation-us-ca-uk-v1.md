@@ -57,7 +57,7 @@
 `sportswear manufacturer` 是七国英语基线中最强的商业发现词，但结果页竞争者经常用低 MOQ、startup 和 teamwear 获客。Athletik 的优势不是复制这些卖点，而是把页面资格写得更清楚：
 
 - 面向已有 tech pack、样衣或明确规格的 B2B 品牌和采购方；
-- MOQ 为每款 1,000 件；
+- MOQ 为每款 500 件；
 - 核心是功能针织成衣和技术接缝，不是空白服装批发、球队印字或小单孵化；
 - `activewear manufacturer`、`fitness clothing manufacturer`、Yoga、Gym 和 Compression 继续作为同一页面的产品语义，不创建平行页面。
 

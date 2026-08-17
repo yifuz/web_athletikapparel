@@ -42,8 +42,8 @@ GUARDRAILS:
 - Product category of interest* (dropdown — your 7 categories):
   Sportswear · Underwear · Outdoor Clothing · Merino Wool · Silk Wear ·
   Knitted Fabrics · Sports Accessories · Other
-- Estimated order quantity per style* (dropdown — softly signals scale, no MOQ
-  stated):
+- Estimated order quantity* (dropdown — captures the estimated order volume;
+  this is not the same field as MOQ per style):
   - Under 1,000 pcs
   - 1,000 – 2,000 pcs
   - 2,000 – 5,000 pcs
@@ -85,8 +85,9 @@ Note (microcopy under submit, optional):
   right on desktop; stacked on mobile).
 - File Upload is not enabled in the current free-tier setup; keep the tech pack
   link prompt in the Message field unless the form architecture changes.
-- The "Under 1,000 pcs" tier stays in the dropdown (it's the soft signal) but
-  MOQ is not presented as a hard rejection rule on the Contact page.
+- The "Under 1,000 pcs" tier stays in the order-quantity dropdown. This field
+  records estimated order volume and must not be presented as the public MOQ
+  threshold; the confirmed MOQ is 500 pcs per style.
 - `[CONTENT: ...]` / `[IMAGE: ...]` are editor placeholders — never render the
   literal text on the live page.
 

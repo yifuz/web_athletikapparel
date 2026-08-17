@@ -52,7 +52,7 @@ GEO 不等于添加特殊 AI 标记，也不承诺固定排名。当前执行环
 | Instagram | <https://www.instagram.com/athletikclothinginc/> |
 | YouTube | <https://www.youtube.com/@athletikclothinginc> |
 | 定位 | Vertically integrated OEM for technical knitwear |
-| 公开 MOQ | 每款 1,000 件 |
+| 公开 MOQ | 每款 500 件 |
 
 两家实体属于同一 Athletik 业务体系，但分别为美国和中国实体名称，运营职责不同；
 不得写成同一个法律实体，也不得自行推断母子公司、签约、出口、雇佣或知识产权关系。
@@ -113,7 +113,7 @@ GEO 不等于添加特殊 AI 标记，也不承诺固定排名。当前执行环
 - GEO-01：能识别技术针织定位和中国制造基地，但旧 LinkedIn 的 New York headquarters 字段造成实体口径干扰。
 - GEO-02：能认可规范站的 technical/performance knitwear OEM/ODM 定位，但实体角色说明仍不完整。
 - GEO-03：独立 Temporary Chat 中 Athletik 位列 FLATLOCK/ACTIVESEAM 中国供应商短名单第一，属于当前最强的非品牌提示词信号。
-- GEO-04：中性测试未出现 Athletik，说明通用 sportswear OEM + 1,000 件采购意图仍是缺口。
+- GEO-04：2026-08-10 冻结测试未出现 Athletik，说明当时的通用 sportswear OEM + 1,000 件采购意图仍是缺口；当前公开 MOQ 已调整为每款 500 件。
 - GEO-05：中性测试未出现 Athletik，且提示词容易被解释成消费品牌/产品推荐；Merino wool OEM 发现仍是缺口。
 - GEO-06：中性回答偏向横机毛衫 tech pack，Athletik 未出现；已上线 cut-and-sew technical knitwear 指南用于纠正语义。
 - GEO-07：中性回答没有引用 Athletik，且技术结论过于绝对；对应第一方指南和首轮社交分发已经完成。

@@ -16,7 +16,10 @@ if ( ! $category ) {
 	return;
 }
 
-$image_base = get_stylesheet_directory_uri() . '/assets/images/';
+$image_base      = get_stylesheet_directory_uri() . '/assets/images/';
+$public_moq      = number_format_i18n( myathletik_public_moq_pieces() );
+/* translators: %s: public MOQ in pieces per style. */
+$public_moq_aria = sprintf( __( 'Minimum order quantity: %s pieces per style', 'myathletik-child' ), $public_moq );
 ?>
 
 <main id="primary" class="site-main ma-product-category">
@@ -32,6 +35,13 @@ $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 			<p class="ma-section-kicker"><?php esc_html_e( 'OEM/ODM technical knitwear category', 'myathletik-child' ); ?></p>
 			<h1 id="ma-product-title"><?php echo esc_html( $category['h1'] ); ?></h1>
 			<p><?php echo esc_html( $category['intro'] ); ?></p>
+			<?php if ( ! empty( $category['show_hero_moq'] ) ) : ?>
+				<div class="ma-product-hero__qualifier" aria-label="<?php echo esc_attr( $public_moq_aria ); ?>">
+					<span class="ma-product-hero__qualifier-label"><?php esc_html_e( 'MOQ', 'myathletik-child' ); ?></span>
+					<strong class="ma-product-hero__qualifier-value"><?php echo esc_html( $public_moq ); ?></strong>
+					<span class="ma-product-hero__qualifier-unit"><?php esc_html_e( 'pieces per style', 'myathletik-child' ); ?></span>
+				</div>
+			<?php endif; ?>
 			<div class="ma-product-hero__actions">
 				<a class="ma-button ma-button--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Request a Quote', 'myathletik-child' ); ?></a>
 				<a class="ma-button ma-button--secondary" href="<?php echo ! empty( $category['subcategories'] ) ? '#ma-product-subcats-title' : '#product-examples'; ?>"><?php esc_html_e( 'View Examples', 'myathletik-child' ); ?></a>
@@ -171,7 +181,12 @@ $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 			<div class="ma-product-specs__grid">
 				<article>
 					<span><?php esc_html_e( 'MOQ', 'myathletik-child' ); ?></span>
-					<strong><?php esc_html_e( '1,000 pcs', 'myathletik-child' ); ?></strong>
+					<strong>
+						<?php
+						/* translators: %s: public MOQ in pieces per style. */
+						echo esc_html( sprintf( __( '%s pcs', 'myathletik-child' ), $public_moq ) );
+						?>
+					</strong>
 					<p><?php esc_html_e( 'Per style.', 'myathletik-child' ); ?></p>
 				</article>
 				<article>

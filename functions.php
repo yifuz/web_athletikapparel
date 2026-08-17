@@ -15,6 +15,18 @@ require_once get_stylesheet_directory() . '/inc/product-category-data.php';
 require_once get_stylesheet_directory() . '/inc/technical-article-data.php';
 
 /**
+ * Return the current public garment MOQ per style.
+ *
+ * Keep this business rule centralized so category, homepage, and services
+ * templates cannot drift to different public minimums.
+ *
+ * @return int MOQ in pieces per style.
+ */
+function myathletik_public_moq_pieces() {
+	return 500;
+}
+
+/**
  * Image storage has been migrated out of the theme/git repo into the
  * WordPress uploads directory. The on-disk tree is preserved 1:1:
  *   <uploads>/myathletik-theme/assets/images/...  (same structure as before)

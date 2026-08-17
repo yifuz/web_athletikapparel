@@ -84,7 +84,7 @@
 
 **H1：** `[Category] Manufacturer`，例如 “Sportswear Manufacturer”。
 
-1. 简介：说明该品类生产内容及目标客户（B2B，每款 MOQ 1,000 件）。
+1. 简介：说明该品类生产内容及目标客户（B2B，每款 MOQ 500 件）。
 2. 能力：面料、结构（适用时包括 FLATLOCK/ACTIVESEAM）和后整理选项。
 3. 产品 / 款式示例：按组展示真实图片，并配置 alt 文本。
 4. 规格条：MOQ、交期和打样可用性。

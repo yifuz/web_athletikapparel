@@ -66,7 +66,7 @@ Specifically never invent:
 - Capacity numbers (pieces/month, knit meters, etc.)
 - Client / brand names
 - An unconfirmed or altered MOQ. The current confirmed public positioning is
-  **1,000 pieces per style**; individual pages may omit the figure when their
+  **500 pieces per style**; individual pages may omit the figure when their
   approved content specification calls for softer lead filtering, but must not
   substitute a different number.
 - Awards, partnerships, media mentions
@@ -135,7 +135,7 @@ From AGENTS.md §5 + `docs/site/design-brief.md`:
 - **Specific > generic.** "Flatlock seam construction at 14 SPI" beats
   "high-quality stitching".
 - **Mid-sized B2B buyer audience** (brands/wholesalers placing technical knit
-  orders, MOQ 1,000 pieces per style). Not startups, not end consumers.
+  orders, MOQ 500 pieces per style). Not startups, not end consumers.
 
 ## Output format
 
