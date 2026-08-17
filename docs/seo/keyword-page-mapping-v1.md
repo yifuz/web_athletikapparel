@@ -8,6 +8,8 @@
 >
 > 数据主表：[`data/keyword-opportunity-master-v1.csv`](data/keyword-opportunity-master-v1.csv)
 >
+> 七国验证输入：[`data/keyword-planner-validation-input-v2.csv`](data/keyword-planner-validation-input-v2.csv)
+>
 > 当前状态：页面映射 V1 已完成；下一步对 28 个代表词补充七国历史指标和 US / CA / UK SERP
 
 ## 1. 本轮产出
@@ -109,7 +111,9 @@ About、Sustainability 和 Contact 分别承担 Trust、Trust 和 Conversion 角
 
 ## 6. 七国验证清单
 
-下一轮使用以下 28 个代表词。为适配“发现新关键字”每次最多 10 个词的界面，拆成三组；若使用“获取搜索量和预测数据”，仍保持相同分组以便核对。
+下一轮只需要取得现有 28 个词的历史指标，不再运行“发现新关键字”。使用 Keyword Planner 的“获取搜索量和预测数据”，上传 [`keyword-planner-validation-input-v2.csv`](data/keyword-planner-validation-input-v2.csv) 或一次性粘贴完整列表。Google 官方说明该入口支持粘贴关键词列表或上传只有 `Keyword` 表头的 CSV；如果当前账户界面仍限制输入，再使用下列 A / B / C 三组作为后备方案。[Google Ads Help](https://support.google.com/google-ads/answer/7337243)
+
+这样只需要按 7 个目标国家各导出一次，共 7 份 `Keyword Stats`，不需要做 3 × 7 次“发现新关键字”。下列分组主要用于人工复核和界面限制时的后备输入。
 
 ### A 组：现有商业页主词
 
@@ -154,7 +158,7 @@ yoga clothes manufacturer
 gym clothing manufacturers
 ```
 
-目标国家仍为美国、加拿大、英国、荷兰、瑞典、挪威和芬兰。英语发现数据不能代替荷兰语、瑞典语、挪威语或芬兰语的本地语言研究；本轮只是统一验证英语买家语言。
+目标国家仍为美国、加拿大、英国、荷兰、瑞典、挪威和芬兰，每个国家分别导出一份完整 `Keyword Stats`。英语发现数据不能代替荷兰语、瑞典语、挪威语或芬兰语的本地语言研究；本轮只是统一验证英语买家语言。
 
 ## 7. 映射前 SEO 审计
 
@@ -190,7 +194,7 @@ gym clothing manufacturers
 
 ### Suggested next actions
 
-1. 完成 28 个代表词的七国数据；
+1. 使用统一输入 CSV 完成 28 个代表词的七国数据；
 2. 对 P0/P1 词检查 US、CA、UK 自然结果页和页面类型；
 3. 获取第一方 QC 证据后再决定是否提出 QC 新页面；
 4. 等 GSC 出现可用的非品牌页面查询数据后，复核页面主词与实际匹配；
