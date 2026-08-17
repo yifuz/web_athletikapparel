@@ -54,6 +54,7 @@
 - [`seo/page-audit-technical-knitwear-tech-pack-guide-v1.md`](seo/page-audit-technical-knitwear-tech-pack-guide-v1.md)：Technical Knitwear Tech Pack Guide 的通用查询边界、内容覆盖、技术参考、内链、Schema 与静态性能只读审计。
 - [`seo/seo-implementation-checklist-v1.md`](seo/seo-implementation-checklist-v1.md)：首批三页审计汇总，以及按收益、风险、证据依赖和验收条件排序的网站 SEO 实施真值表。
 - [`seo/image-optimization-seo-imp-005-006-v1.md`](seo/image-optimization-seo-imp-005-006-v1.md)：Sportswear 与 Knitted Fabrics 共 9 张图片的真无损 WebP、响应式候选、质量验证和 uploads 部署记录。
+- [`seo/sportswear-public-capability-fact-sheet-v1.md`](seo/sportswear-public-capability-fact-sheet-v1.md)：SEO-IMP-007 的 Sportswear 性能声称、公开范围、证据类型、快速确认格式与保守改写草案。
 
 ## `operations/`：环境与维护
 

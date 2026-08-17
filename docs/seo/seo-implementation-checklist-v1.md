@@ -75,7 +75,7 @@
 |---|---|---|---|---|---|
 | SEO-IMP-005 | Sportswear 四张产品图生成 6 档真无损 WebP，并补 `width`/`height`、`srcset`/`sizes`、`decoding="async"` | 高：480–800 px 候选相对原 PNG 合计减少 82.30%–93.68%，同时避免移动端过度分辨率 | 中：图片位于 uploads，需单独部署并做视觉回归 | 源 PNG 已保留；24 个派生图已生成；待同步 uploads | **本地已完成，待部署与生产验收** |
 | SEO-IMP-006 | Knitted Fabrics 五张产品图执行同样的响应式真无损优化 | 高：480–800 px 候选相对原 PNG 合计减少 80.32%–93.37% | 中：细节图清晰度、资源路径和上传部署必须核对 | 源 PNG 已保留；30 个派生图已生成；待同步 uploads | **本地已完成，待部署与生产验收** |
-| SEO-IMP-007 | 建立 Sportswear 公开能力事实表并修正绝对化表述 | 高：减少不可信承诺，提高专业采购页证据质量 | 中：错误修改会弱化真实能力或制造新声称 | 所有者确认测试、材料、适用条件和公开证据 | 阻塞于事实输入 |
+| SEO-IMP-007 | 建立 Sportswear 公开能力事实表并修正绝对化表述 | 高：减少不可信承诺，提高专业采购页证据质量 | 中：错误修改会弱化真实能力或制造新声称 | [`sportswear-public-capability-fact-sheet-v1.md`](sportswear-public-capability-fact-sheet-v1.md) 已建立；等待所有者填写 SP-01–SP-10 | **事实确认中；页面尚未修改** |
 | SEO-IMP-008 | 将已确认的 Sportswear `MOQ 1,000 pieces per style` 资格信号移到首屏附近 | 中：更早过滤低 MOQ/startup 错配流量，改善合格询盘率 | 中：需要页面布局和移动端回归 | 确认展示位置及英文短句 | 待简报 |
 | SEO-IMP-009 | 确认 Knitted Fabrics 是否接受独立面料订单，并建立 fabric-specific MOQ、报价单位、开发和交付流程 | 高：决定页面是否真正匹配 `knitted fabric manufacturer` 商业搜索承诺 | 高：错误答案会改变页面定位、表单和 Meta | 所有者完成第 6 节事实表 | 阻塞于业务输入 |
 | SEO-IMP-010 | 核验并重写 Knitted Fabrics 的 GRS、追溯、自有工艺、测试和性能声称 | 高：补强信任并降低认证/事实风险 | 高：必须与当前证书主体、范围和有效期一致 | scope certificate、适用实体/产品及可公开测试材料 | 阻塞于证据 |
@@ -121,16 +121,7 @@
 
 ### Sportswear
 
-请按“可公开的一般能力 / 仅具体材料或项目适用 / 有测试报告 / 不应公开”四种状态确认：
-
-- 洗涤后保持形状；
-- squat-proof opacity；
-- muscle-support compression；
-- `never dig` / `chafe-free`；
-- moisture-wicking / quick-dry；
-- UV-protective / antimicrobial finishes。
-
-对可公开项补充：适用材料或产品、测试方法、合格条件、报告是否可公开，以及应使用“可选能力”还是“成品性能”措辞。
+已建立 [`sportswear-public-capability-fact-sheet-v1.md`](sportswear-public-capability-fact-sheet-v1.md)。所有者需为 SP-01–SP-10 确认公开范围与证据类型；收到确认后再将保守草案或经证据支持的版本写入页面。
 
 ### Knitted Fabrics
 
@@ -199,7 +190,7 @@
 当前本地修改完成验证后，按以下顺序继续：
 
 1. 将主题代码与 SEO-IMP-005/006 的 54 个 WebP 同步到 staging/production，完成视觉、HTTP、MIME 与 Network 候选验收；
-2. 收集 Sportswear 与 Knitted Fabrics 事实输入；
+2. 完成 Sportswear SP-01–SP-10 与 Knitted Fabrics 事实输入；
 3. 基于事实制作两页微调简报，并按 SEO-IMP-022 实施 Knitted Fabrics 次级词架构；
 4. 建立 GSC 7 天/28 天页面级监测，分别观察商业采购词与宽泛 Performance 词；
 5. 再开始剩余页面审计、欧洲本地语言研究和条件式新内容；Performance Fabrics Guide 仍需单独批准。
