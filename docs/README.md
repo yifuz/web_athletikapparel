@@ -42,6 +42,7 @@
 - [`seo/seo-process.md`](seo/seo-process.md)：面向北美和欧洲 B2B 买家的完整 SEO 研究、实施、发布与复盘流程。
 - [`seo/seo-search-language-research-v1.md`](seo/seo-search-language-research-v1.md)：北美和欧洲买家搜索语言、意图歧义、排除词与首轮验证池。
 - [`seo/keyword-validation-v1.md`](seo/keyword-validation-v1.md)：候选商业词、技术词和信息词的实时 SERP 意图验证、风险判定与待补数据台账。
+- [`seo/keyword-planner-country-validation-v1.md`](seo/keyword-planner-country-validation-v1.md)：21 个候选词在美国、加拿大、英国、荷兰和北欧三国的历史搜索量对照与决策。
 
 ## `operations/`：环境与维护
 

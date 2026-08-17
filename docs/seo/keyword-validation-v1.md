@@ -2,11 +2,13 @@
 
 > 验证日期：2026-08-17
 >
-> 当前状态：已完成第一阶段实时英语 SERP 意图筛查；国家级需求量、逐国 SERP、GSC 增量和真实询盘语言仍待补充
+> 当前状态：已完成第一阶段实时英语 SERP 意图筛查和七国 Keyword Planner 历史指标验证；逐国 SERP、GSC 增量和真实询盘语言仍待补充
 >
 > 关联研究：[`seo-search-language-research-v1.md`](seo-search-language-research-v1.md)
 >
 > 关联流程：[`seo-process.md`](seo-process.md) 阶段 D“关键词发现、SERP 验证与评分”
+>
+> 国家数据：[`keyword-planner-country-validation-v1.md`](keyword-planner-country-validation-v1.md)
 
 ## 1. 本轮验证目的
 
@@ -145,9 +147,9 @@
 
 ## 8. 仍需完成的验证
 
-### 8.1 国家级需求数据
+### 8.1 国家级需求数据（首批已完成）
 
-在 Google Ads Keyword Planner 中按相同词表分别导出：
+首批 21 个词已在 Google Ads Keyword Planner 中按相同词表分别导出：
 
 - 美国；
 - 加拿大；
@@ -157,7 +159,7 @@
 - 挪威；
 - 芬兰。
 
-至少保留 `keyword`、`location`、`language`、`avg monthly searches`、`3 month change`、`YoY change`、`competition`、`top of page bid low/high` 和导出日期。广告竞争和出价只作为商业价值旁证，不等于 SEO 难度。
+结果、限制和下一轮自然变体任务见 [`keyword-planner-country-validation-v1.md`](keyword-planner-country-validation-v1.md)。归一化矩阵已保留 `keyword` 和七国 `avg monthly searches`；原始导出还包括 `3 month change`、`YoY change`、`competition`、`top of page bid low/high` 和逐月数据。广告竞争和出价只作为商业价值旁证，不等于 SEO 难度。
 
 ### 8.2 逐国 SERP
 
