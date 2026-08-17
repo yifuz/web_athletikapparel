@@ -1,0 +1,23 @@
+cluster,representative_keyword,avg_24m,avg_12m_recalculated,competition,competition_index,status
+Clothing and garment tech pack,clothing tech pack,880,965,High,100,high-demand-broad-informational
+Clothing brand tech pack,clothing brand tech pack,70,66.7,High,91,brand-development-mixed-intent
+Apparel tech pack,apparel tech pack,70,59.2,High,100,professional-synonym
+Clothing design tech pack,clothing design tech pack,30,30,High,93,template-design-service-mixed
+Clothing tech pack example,clothing tech pack example,20,15.8,High,83,example-template-intent
+Activewear tech pack,activewear tech pack,10,12.5,Medium,48,existing-guide-product-support
+Sportswear tech pack,sportswear tech pack,10,8.3,Low,4,existing-guide-product-support
+Tech pack industry education,tech pack in apparel industry,10,4.2,Unknown,,educational-support
+Garment quality control,garment quality control,30,15,Low,12,future-qc-content-candidate
+Apparel quality control,apparel quality control,20,10.8,Low,1,future-qc-content-support
+Clothing QC checklist,clothing quality control checklist,20,10,Low,0,future-qc-content-candidate
+Garment quality inspection,garment quality inspection,10,10,Low,0,qc-inspection-support
+Clothing quality inspection,clothing quality inspection,10,8.3,Low,0,qc-inspection-support
+Choose clothing manufacturer,how to choose a clothing manufacturer,10,8.3,Low,0,existing-oem-evaluation-guide
+Garment QC checklist,garment qc checklist,10,6.7,Unknown,,future-qc-content-support
+Garment QC report,garment quality control report,10,5.8,Unknown,,qc-record-template-intent
+Garment factory audit,garment factory audit,10,3.3,Unknown,,existing-oem-evaluation-guide
+Apparel supplier evaluation,apparel supplier evaluation,NR,0,Unknown,,exact-phrase-not-reported
+FLATLOCK stitch vs OVERLOCK,flatlock stitch vs overlock,50,55,Low,30,existing-flatlock-guide-core
+FLATLOCK vs OVERLOCK,flatlock vs overlock,50,52.5,Low,9,existing-flatlock-guide-core
+FLATLOCK stitch vs COVERSTITCH,flatlock stitch vs coverstitch,30,30.8,Low,5,existing-guide-adjacent-question
+COVERSTITCH vs FLATLOCK,coverstitch vs flatlock,30,25.8,Low,21,existing-guide-adjacent-question

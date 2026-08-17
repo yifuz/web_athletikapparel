@@ -8,7 +8,7 @@
 >
 > 地区：美国；语言设置：所有语言；输入种子词：英语
 >
-> 当前状态：产品与材料批次已完成；下一批转向 Tech pack、QC、供应商评估和 FLATLOCK 信息词
+> 当前状态：产品与材料批次已完成；采购信息词批次亦已完成
 >
 > 归一化候选：[`data/keyword-planner-product-material-discovery-us-2026-08-17.csv`](data/keyword-planner-product-material-discovery-us-2026-08-17.csv)
 
@@ -144,3 +144,5 @@ flatlock vs overlock
 ```
 
 继续使用美国、所有语言、网站过滤留空，并下载完整 `Keyword Stats`。
+
+该批次已完成，结果见 [`keyword-discovery-procurement-info-us-v1.md`](keyword-discovery-procurement-info-us-v1.md)。
