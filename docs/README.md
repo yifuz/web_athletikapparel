@@ -43,6 +43,7 @@
 - [`seo/seo-search-language-research-v1.md`](seo/seo-search-language-research-v1.md)：北美和欧洲买家搜索语言、意图歧义、排除词与首轮验证池。
 - [`seo/keyword-validation-v1.md`](seo/keyword-validation-v1.md)：候选商业词、技术词和信息词的实时 SERP 意图验证、风险判定与待补数据台账。
 - [`seo/keyword-planner-country-validation-v1.md`](seo/keyword-planner-country-validation-v1.md)：21 个候选词在美国、加拿大、英国、荷兰和北欧三国的历史搜索量对照与决策。
+- [`seo/keyword-discovery-commercial-us-v1.md`](seo/keyword-discovery-commercial-us-v1.md)：美国商业种子词的 289 条 Keyword Planner 扩展结果、近义聚合、错误意图清洗与保留词。
 
 ## `operations/`：环境与维护
 

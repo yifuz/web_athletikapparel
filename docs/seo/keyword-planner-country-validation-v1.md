@@ -6,7 +6,7 @@
 >
 > 覆盖地区：美国、加拿大、英国、荷兰、瑞典、挪威、芬兰；语言设置为“所有语言”
 >
-> 当前状态：21 个候选词的七国历史指标已完成；相关自然变体、逐国 SERP 和一方询盘语言仍待验证
+> 当前状态：21 个候选词的七国历史指标已完成；美国商业自然变体首批发现已完成，产品/材料变体、逐国 SERP 和一方询盘语言仍待验证
 >
 > 归一化数据：[`data/keyword-planner-country-matrix-2026-08-17.csv`](data/keyword-planner-country-matrix-2026-08-17.csv)
 
@@ -174,6 +174,8 @@
 3. 采购问题：tech pack、quality control、supplier evaluation、factory audit、flatlock/overlock。
 
 先在 US、CA、UK 发现英语变体。由于当前“所有语言”设置不会自动把英语输入词翻译为当地表达，荷兰和北欧仍需另行输入本地语言种子词，并研究当地买家使用本地语言或英语搜索的切换情况，不能只复制英美词表。
+
+美国商业发现首批结果已记录在 [`keyword-discovery-commercial-us-v1.md`](keyword-discovery-commercial-us-v1.md)。该轮确认 `fitness clothing manufacturer` 是新的高优先级次级商业词，同时排除了大量 teamwear、uniform、printing、POD 和 startup/low-MOQ 扩展词。下一批转向产品与材料主题。
 
 ### 7.2 逐国 SERP 与一方数据
 

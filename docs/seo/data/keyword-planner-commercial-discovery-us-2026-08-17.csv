@@ -1,0 +1,17 @@
+cluster,representative_keyword,avg_24m,avg_12m_recalculated,competition,competition_index,status
+Sportswear core,sportswear manufacturer,1600,1560,Low,28,core-commercial
+Fitness clothing,fitness clothing manufacturer,880,1112.5,Medium,41,secondary-commercial-validate
+Yoga clothing,yoga clothes manufacturer,590,954.2,Low,20,product-subtopic-validate
+Custom sportswear,custom sportswear manufacturer,390,712.5,Low,10,caution-intent-mismatch
+Activewear core,activewear manufacturer,480,436.7,Medium,65,core-commercial
+Sports apparel synonyms,sports apparel manufacturers,390,258.3,Low,30,supporting-synonym
+Gym clothing,gym clothing manufacturers,260,185,High,82,secondary-commercial-validate
+Athletic wear,athletic wear manufacturers,170,132.5,Low,32,supporting-synonym
+Private label activewear,private label activewear manufacturer,50,46.7,High,74,caution-low-moq
+Custom activewear,custom activewear manufacturers,50,45,High,70,caution-low-moq
+Sportswear fabric,sportswear fabric manufacturer,70,32.5,High,67,separate-fabric-intent
+Private label sportswear,private label sportswear,50,23.3,High,81,caution-low-moq
+Sportswear supplier,sportswear suppliers,40,20.8,Unknown,,supporting-supplier-intent
+OEM sportswear,oem sportswear,20,15.8,Low,4,supporting-production-model
+Sustainable activewear,sustainable activewear manufacturer,20,13.3,High,77,conditional-evidence-required
+OEM sportswear manufacturer,oem sportswear manufacturer,10,13.3,Low,0,supporting-production-model
