@@ -63,7 +63,7 @@ function myathletik_product_category_data() {
 			'meta_description' => __( 'Sportswear manufacturer for gym, training, running, and yoga activewear - flatlock and activeseam construction in power-stretch and moisture-wicking knits.', 'myathletik-child' ),
 			'h1'               => __( 'Sportswear Manufacturer', 'myathletik-child' ),
 			'old_url'          => '/products/sportswear/',
-			'intro'            => __( 'Sportswear built for movement - gym, training, running, and studio wear where range of motion, moisture management, and a clean athletic finish matter most. We produce tight, fitted, and compression silhouettes for activewear brands that need garments to perform as hard as the athletes wearing them.', 'myathletik-child' ),
+			'intro'            => __( 'Sportswear programs for gym, training, running, and studio applications, developed around the buyer\'s fit, movement, fabric, finish, and testing requirements. We produce tight, fitted, and compression silhouettes for B2B activewear brands, with specifications confirmed through material selection and approved samples.', 'myathletik-child' ),
 			'what_we_make'     => array(
 				__( 'Training tops, tanks, and tees', 'myathletik-child' ),
 				__( 'Leggings, shorts, and compression pieces', 'myathletik-child' ),
@@ -76,7 +76,7 @@ function myathletik_product_category_data() {
 			'subcategories'    => array(
 				array(
 					'title'       => __( 'Training tops, tanks, and tees', 'myathletik-child' ),
-					'description' => __( 'Close-fit training tops built for range of motion. Flatlock seams stay smooth under a barbell or during bodyweight circuits, and the knit keeps its shape after repeated wash cycles.', 'myathletik-child' ),
+					'description' => __( 'Close-fit training tops developed for range-of-motion requirements. FLATLOCK construction can be specified for a low-profile seam, while fabric stretch/recovery and wash-performance targets should be confirmed against the selected material, buyer test criteria, and approved sample.', 'myathletik-child' ),
 					'image'       => 'sportswear/IMG_3515_4x3.png',
 					'image_alt'    => __( 'Model wearing a heathered performance training tank with printed leggings', 'myathletik-child' ),
 					'image_width'  => 1448,
@@ -92,7 +92,7 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Leggings, shorts, and compression pieces', 'myathletik-child' ),
-					'description' => __( 'High-stretch leggings, shorts, and graduated compression pieces with power-band waistbands. 4-way-stretch and power-stretch knits with moisture management, squat-proof opacity, and muscle-support compression where needed.', 'myathletik-child' ),
+					'description' => __( 'High-stretch leggings, shorts, and compression pieces - including graduated compression programs where specified - can be developed with power-band waistbands, 4-way-stretch, and power-stretch knits. Opacity, including squat-proof targets, compression level, moisture management, and waistband recovery should be specified for the selected material and confirmed during sampling and project-specific testing.', 'myathletik-child' ),
 					'image'       => 'sportswear/1U128568_4x3_background_extended_final_v2.png',
 					'image_alt'    => __( 'Model demonstrating stretch in black high-rise performance leggings', 'myathletik-child' ),
 					'image_width'  => 2732,
@@ -108,7 +108,7 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Yoga and studio wear', 'myathletik-child' ),
-					'description' => __( 'Soft-drape knits that move with the body through any flow. Lightweight, breathable, and finished with flatlock seams that never dig during floor work.', 'myathletik-child' ),
+					'description' => __( 'Yoga and studio styles can be developed with soft-drape knit options and FLATLOCK construction where a low-profile seam is required. Hand feel, seam placement, stretch/recovery, and next-to-skin comfort should be reviewed on the actual fabric and garment sample.', 'myathletik-child' ),
 					'image'       => 'sportswear/1U128579_4X3.png',
 					'image_alt'    => __( 'Back view of black yoga leggings with a high-rise waistband and phone pocket', 'myathletik-child' ),
 					'image_width'  => 1448,
@@ -124,7 +124,7 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Running singlets and performance layers', 'myathletik-child' ),
-					'description' => __( 'Lightweight running singlets and layering tees with mesh ventilation zones. Moisture-wicking and quick-dry finishes for sustained effort in varied conditions.', 'myathletik-child' ),
+					'description' => __( 'Running singlets and performance layers can be developed with lightweight knits, mesh ventilation zones, and project-specific moisture-wicking or quick-dry options. Required performance depends on the selected fabric and finish and should be confirmed against buyer test criteria.', 'myathletik-child' ),
 					'image'       => 'sportswear/IMG_7601_4X3.png',
 					'image_alt'    => __( 'Model wearing a red long-sleeve athletic performance layer', 'myathletik-child' ),
 					'image_width'  => 1448,
@@ -139,7 +139,7 @@ function myathletik_product_category_data() {
 					),
 				),
 			),
-			'construction'     => __( 'Flatlock and activeseam seams for chafe-free comfort during repetitive motion. Built in power-stretch and 4-way-stretch knits with moisture-wicking, UV-protective, and antimicrobial finishes - the fabrics that let sportswear move with the body and stay dry under exertion.', 'myathletik-child' ),
+			'construction'     => __( 'Construction options include FLATLOCK and, where specified for the program, ACTIVESEAM, together with power-stretch and 4-way-stretch knit options. Moisture management, quick-dry, UV protection, and antimicrobial performance can be developed through material selection and finishing options. The required result should be confirmed for the actual fabric and garment against the agreed test method and acceptance criteria.', 'myathletik-child' ),
 			'image_note'       => __( '[IMAGE: real sportswear product / production shots]', 'myathletik-child' ),
 			'gallery'          => array(
 				myathletik_gallery_item( 'sportswear/flatlock-athletic-800-17.jpg', __( 'Technical sportswear construction sample', 'myathletik-child' ) ),

@@ -3,7 +3,8 @@
 > 建立日期：2026-08-17  
 > 对应实施项：SEO-IMP-007  
 > 目标页面：`/sportswear-manufacturer/`  
-> 状态：等待所有者确认；确认前不发布性能声称改写
+> 所有者确认：2026-08-17，SP-01–SP-10 均可作为开发能力提供，但不是每项都能提供对应报告
+> 状态：本地页面已按项目级能力边界完成改写，待部署与生产验收
 
 ## 1. 目的与边界
 
@@ -40,6 +41,12 @@
 
 技术指南中的测试和样品批准原则可支持“应按实际材料、样品和验收条件确认”的采购语言，但不能证明某款产品已经通过测试。
 
+已核对的本地来源：
+
+- [`../source-content/performancefabrics-btexco/01-about-us.md`](../source-content/performancefabrics-btexco/01-about-us.md)：记录 moisture management（wicking / quick dry）、antimicrobial 和 UV protective 等功能方向；
+- [`../source-content/performancefabrics-btexco/02-products.md`](../source-content/performancefabrics-btexco/02-products.md)：记录按买家样品/技术规格开发针织面料，以及功能面料分类；
+- [`../source-content/performancefabrics-btexco/05-testing-and-inspections.md`](../source-content/performancefabrics-btexco/05-testing-and-inspections.md)：记录 BV、SGS、ITS 等第三方测试安排，但不包含本页具体成品的报告编号、样品和结果。
+
 ## 4. 所有者确认表
 
 每项请确认“公开范围”和“证据类型”。
@@ -59,39 +66,30 @@
 
 | ID | 当前公开声称 | 当前风险 | 需要确认的最小信息 | 公开范围 | 证据 |
 |---|---|---|---|---|---|
-| SP-01 | knit `keeps its shape after repeated wash cycles` | 洗后保形属于可测试结果，未给洗涤程序、次数和允许变化 | 适用材料/产品；洗涤方法和次数；尺寸或外观合格条件 | 待填 | 待填 |
-| SP-02 | `squat-proof opacity` | 对所有颜色、GSM、拉伸率和尺码作了近似保证 | 适用材料/颜色；拉伸条件；不透明度检查或测试方法 | 待填 | 待填 |
-| SP-03 | `muscle-support compression` / graduated compression | 涉及压缩效果，可能被理解为功能或健康结果 | 适用产品；压缩级别/测量方法；是否仅为 compression silhouette | 待填 | 待填 |
-| SP-04 | flatlock seams `never dig` / `chafe-free` | `never` 和 `chafe-free` 是绝对结果，受版型、线迹、材料和使用条件影响 | 可否只描述 low-profile seam option；是否有穿着或摩擦测试 | 待填 | 待填 |
-| SP-05 | `moisture-wicking` / moisture management | 可能是材料或后整理选项，不一定是所有成品表现 | 适用纤维/面料/finish；测试方法；是供应商数据还是成品测试 | 待填 | 待填 |
-| SP-06 | `quick-dry` / `stay dry under exertion` | `stay dry` 接近结果保证，缺少干燥方法和阈值 | 适用材料/finish；干燥测试方法和合格条件 | 待填 | 待填 |
-| SP-07 | `UV-protective` | 需要 UPF/UV 测试、颜色和材料范围 | 适用材料/finish；测试方法；UPF 等级或可公开范围 | 待填 | 待填 |
-| SP-08 | `antimicrobial finishes` | 需确认处理方式、目标微生物、测试方法及法规/市场边界 | finish 名称或类型；适用产品；测试方法；允许公开的措辞 | 待填 | 待填 |
-| SP-09 | mesh ventilation zones | 属于结构能力，但需确认是否为常规可提供选项 | 是自有开发能力、供应商面料选项还是只适用于历史项目 | 待填 | 待填 |
-| SP-10 | power-band waistbands | 属于具体结构能力，需确认是否可作为一般产品范围公开 | 适用产品；是否可按 tech pack 开发；是否需要改为通用 waistband construction | 待填 | 待填 |
+| SP-01 | knit `keeps its shape after repeated wash cycles` | 洗后保形属于可测试结果，未给洗涤程序、次数和允许变化 | 适用材料/产品；洗涤方法和次数；尺寸或外观合格条件 | P | E |
+| SP-02 | `squat-proof opacity` | 对所有颜色、GSM、拉伸率和尺码作了近似保证 | 适用材料/颜色；拉伸条件；不透明度检查或测试方法 | P | E |
+| SP-03 | `muscle-support compression` / graduated compression | 涉及压缩效果，可能被理解为功能或健康结果 | 适用产品；压缩级别/测量方法；是否仅为 compression silhouette | P | E |
+| SP-04 | flatlock seams `never dig` / `chafe-free` | `never` 和 `chafe-free` 是绝对结果，受版型、线迹、材料和使用条件影响 | 可否只描述 low-profile seam option；是否有穿着或摩擦测试 | G（仅 low-profile construction） | E |
+| SP-05 | `moisture-wicking` / moisture management | 可能是材料或后整理选项，不一定是所有成品表现 | 适用纤维/面料/finish；测试方法；是供应商数据还是成品测试 | G（作为项目选项） | S；报告按项目 |
+| SP-06 | `quick-dry` / `stay dry under exertion` | `stay dry` 接近结果保证，缺少干燥方法和阈值 | 适用材料/finish；干燥测试方法和合格条件 | G（作为项目选项） | S；报告按项目 |
+| SP-07 | `UV-protective` | 需要 UPF/UV 测试、颜色和材料范围 | 适用材料/finish；测试方法；UPF 等级或可公开范围 | G（作为项目选项） | S；报告按项目 |
+| SP-08 | `antimicrobial finishes` | 需确认处理方式、目标微生物、测试方法及法规/市场边界 | finish 名称或类型；适用产品；测试方法；允许公开的措辞 | G（作为项目选项） | S；报告按项目 |
+| SP-09 | mesh ventilation zones | 属于结构能力，但需确认是否为常规可提供选项 | 是自有开发能力、供应商面料选项还是只适用于历史项目 | G | E |
+| SP-10 | power-band waistbands | 属于具体结构能力，需确认是否可作为一般产品范围公开 | 适用产品；是否可按 tech pack 开发；是否需要改为通用 waistband construction | G | E |
 
-## 5. 快速回复格式
+## 5. 所有者确认与实施解释
 
-如果暂时没有报告，不需要等待资料整理完再回复。可先按以下格式给出范围与证据：
+所有者于 2026-08-17 确认 SP-01–SP-10 理论上均能满足，但并不是所有项目都能提供对应报告。因此页面采用以下统一规则：
 
-```text
-SP-01: N / 0
-SP-02: P / S — 仅适用于【材料或产品】
-SP-03: N / 0
-SP-04: G / E — 只能写 low-profile seam option，不能写 never/chafe-free
-SP-05: P / R — 【测试方法/报告范围】
-SP-06: P / S — 【适用材料】
-SP-07: N / 0
-SP-08: P / R — 【finish 与测试范围】
-SP-09: G / E
-SP-10: G / E
-```
+- 允许公开“可按项目开发/可作为材料、finish 或结构选项”；
+- 不公开“所有产品都会实现”的无条件保证；
+- 不写具体 UPF、压缩、干燥、洗后变化或抗菌合格值，除非对应项目存在可核对报告；
+- `never dig`、`chafe-free`、`stay dry` 改为 low-profile construction、买家要求、样品批准和项目测试语言；
+- 历史 performancefabrics.com 资料只支持功能面料方向与第三方测试安排，不被描述成当前某款 Sportswear 成品报告。
 
-不确定时可直接写 `N / 0`；页面将采用不声称该性能的保守版本，以后有证据再恢复。
+## 6. 已实施的页面文案
 
-## 6. 待确认的保守改写草案
-
-以下是证据不足时的默认草案，仅作为 SEO-IMP-007 实施准备，尚未写入公开页面。所有者确认后再按实际范围保留、收紧或删除具体功能词。
+以下文案已写入本地 `inc/product-category-data.php`，保留能力词，同时将结果保证改成项目开发与验证边界。
 
 ### Intro
 
@@ -99,32 +97,31 @@ SP-10: G / E
 
 ### Training tops
 
-> Close-fit training tops developed for movement-driven applications. FLATLOCK construction can be specified where a low-profile seam is required. Fabric stretch, recovery, and wash-performance requirements should be defined in the tech pack and confirmed on the selected fabric and approved sample.
+> Close-fit training tops developed for range-of-motion requirements. FLATLOCK construction can be specified for a low-profile seam, while fabric stretch/recovery and wash-performance targets should be confirmed against the selected material, buyer test criteria, and approved sample.
 
 ### Leggings and compression pieces
 
-> Leggings, shorts, and compression silhouettes in 4-way-stretch and power-stretch knits. Opacity, compression level, waistband recovery, and moisture-management requirements should be defined for the selected material and confirmed during sampling and testing.
+> High-stretch leggings, shorts, and compression pieces - including graduated compression programs where specified - can be developed with power-band waistbands, 4-way-stretch, and power-stretch knits. Opacity, including squat-proof targets, compression level, moisture management, and waistband recovery should be specified for the selected material and confirmed during sampling and project-specific testing.
 
 ### Yoga and studio wear
 
-> Yoga and studio styles developed with soft-drape knit options and low-profile seam construction. Hand feel, seam placement, stretch/recovery, and next-to-skin comfort should be approved on the actual fabric and garment sample.
+> Yoga and studio styles can be developed with soft-drape knit options and FLATLOCK construction where a low-profile seam is required. Hand feel, seam placement, stretch/recovery, and next-to-skin comfort should be reviewed on the actual fabric and garment sample.
 
 ### Running layers
 
-> Running singlets and performance layers developed in lightweight knit options, with ventilation details available where specified. Moisture-management and drying requirements depend on the selected fabric, finish, garment construction, and test criteria.
+> Running singlets and performance layers can be developed with lightweight knits, mesh ventilation zones, and project-specific moisture-wicking or quick-dry options. Required performance depends on the selected fabric and finish and should be confirmed against buyer test criteria.
 
 ### Construction
 
-> Construction options include FLATLOCK and, where specified, ACTIVESEAM, together with power-stretch and 4-way-stretch knits. Seam, stretch/recovery, comfort, and finished-performance requirements should be defined for the selected fabric and approved through sampling and testing.
+> Construction options include FLATLOCK and, where specified for the program, ACTIVESEAM, together with power-stretch and 4-way-stretch knit options. Moisture management, quick-dry, UV protection, and antimicrobial performance can be developed through material selection and finishing options. The required result should be confirmed for the actual fabric and garment against the agreed test method and acceptance criteria.
 
-## 7. 实施门槛
+## 7. 实施结果与后续证据管理
 
-收到第 4 节确认后再执行：
+1. 已只修改 `inc/product-category-data.php` 中 Sportswear 的 Intro、四个产品描述和 Construction；
+2. 已使用正确的 FLATLOCK / ACTIVESEAM 术语，但未在本项修改生产 Meta；
+3. URL、Title、H1、主要词归属、图片和 Schema 均未改变；
+4. 以后取得具体报告时，单独记录报告主体、样品、材料、测试方法、结果、有效范围和可公开限制；
+5. 报告只支持其实际项目，不自动升级为全页一般性能保证；
+6. SEO-IMP-012 的 Rank Math/Meta 真值同步仍单独执行。
 
-1. 只修改 `inc/product-category-data.php` 中 Sportswear 的 Intro、四个产品描述和 Construction；
-2. 一并使用正确的 FLATLOCK / ACTIVESEAM 术语，但不在本项修改生产 Meta；
-3. 不改变 URL、Title、H1、主要词归属、图片和 Schema；
-4. 对有报告的声称记录证据主体、适用范围和公开限制；不把报告全文放进代码；
-5. 本地检查页面正文、H1/H2/H3、内链和响应式布局，再部署生产；
-6. 更新 SEO-IMP-007 状态。SEO-IMP-012 的 Rank Math/Meta 真值同步仍单独执行。
-
+本地渲染验收：PHP 语法通过；Title、唯一 H1、Canonical、图片标记和主要词归属未变化；六组绝对化旧表达已从页面 HTML 移除；SP-01–SP-10 的能力语义均以条件式表述保留。
