@@ -278,6 +278,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - 28 词合计中，北美占 73.5%，欧洲五国占 26.5%；该比例只描述当前英语代表词，不代表总体市场规模或本地语言需求；
 - 已完成 US / CA / UK 的 P0/P1 搜索意图样本筛查；Sportswear、Knitted Fabrics 和 Tech Pack Guide 进入首批页面级只读审计；
 - Sportswear 页面只读审计已完成：无 Critical，URL/Title/H1 保持；性能图片、事实证据、术语、资格位置和重复 stylesheet 列为后续微调候选；
+- Knitted Fabrics 页面只读审计已完成：无索引 Critical，URL/Title/H1 保持；独立面料业务边界、fabric-specific MOQ/询盘单位、GRS/追溯/测试证据和 11.47 MB 产品图列为实施前输入与优化项；
 - Underwear、Outdoor 和 FLATLOCK vs COVERSTITCH 因错配较高暂不优先，QC Guide 继续等待可公开的一方流程证据；
 - 本轮没有修改 URL、Title、H1、Meta、正文或 Schema；
 - 搜索结果样本不能代替固定地理位置 Google 前 10 名；下一步逐页审计三个机会并人工补录本地 SERP，再建立 NL / SE / NO / FI 本地语言研究批次。
@@ -570,6 +571,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-17 | 28 词七国英语基线 V2 完成；排除原始导出中的 `keyword` 表头伪词，并形成 US / CA / UK 的 P0/P1 SERP 队列 |
 | 2026-08-17 | US / CA / UK 搜索意图样本筛查完成；选出 Sportswear、Knitted Fabrics 和 Tech Pack Guide 三个页面级审计机会 |
 | 2026-08-17 | Sportswear 页面只读 SEO 审计完成：无 Critical；保持 URL/Title/H1，记录内容证据与静态性能微调项 |
+| 2026-08-17 | Knitted Fabrics 页面只读 SEO 审计完成：无索引 Critical；保持 URL/Title/H1，记录面料商业边界、采购单位、证据与图片性能问题 |
 
 ---
 
@@ -578,7 +580,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
 3. 等待 Search Console Page indexing 从 2026-08-07 快照刷新，并核对“已抓取/已发现但尚未编入索引”、robots.txt 屏蔽和 404 的示例 URL。
-4. 审计 Knitted Fabrics 和 Tech Pack Guide；确认 Sportswear 性能声称的一方证据，并人工补录 US / CA / UK 固定位置 Google 前 10 名；完成后再开展 NL / SE / NO / FI 本地语言研究。
+4. 审计 Tech Pack Guide；确认 Sportswear 与 Knitted Fabrics 声称的一方证据，并人工补录 US / CA / UK 固定位置 Google 前 10 名；完成后再开展 NL / SE / NO / FI 本地语言研究。
 5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
 7. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。
