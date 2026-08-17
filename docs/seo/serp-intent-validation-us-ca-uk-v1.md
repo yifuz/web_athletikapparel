@@ -126,7 +126,7 @@
 
 ## 8. 下一步执行顺序
 
-1. Sportswear 页面审计见 [`page-audit-sportswear-manufacturer-v1.md`](page-audit-sportswear-manufacturer-v1.md)，Knitted Fabrics 页面审计见 [`page-audit-knitted-fabrics-manufacturer-v1.md`](page-audit-knitted-fabrics-manufacturer-v1.md)；继续审计 Tech Pack Guide；
+1. Sportswear 页面审计见 [`page-audit-sportswear-manufacturer-v1.md`](page-audit-sportswear-manufacturer-v1.md)，Knitted Fabrics 页面审计见 [`page-audit-knitted-fabrics-manufacturer-v1.md`](page-audit-knitted-fabrics-manufacturer-v1.md)，Tech Pack Guide 页面审计见 [`page-audit-technical-knitwear-tech-pack-guide-v1.md`](page-audit-technical-knitwear-tech-pack-guide-v1.md)；首批三页审计已完成；
 2. 每页输出“保持 / 微调 / 需要所有者事实输入”结论，不直接修改；
 3. 如确需文案变更，先由所有者确认事实与范围，再制作单页优化简报；
 4. 在无个性化环境中人工复核 US、CA、UK 的 Google 基础查询前 10 名，补全固定地点和 SERP 功能记录；

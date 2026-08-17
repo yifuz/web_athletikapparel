@@ -10,7 +10,7 @@
 >
 > 七国验证输入：[`data/keyword-planner-validation-input-v2.csv`](data/keyword-planner-validation-input-v2.csv)
 >
-> 当前状态：页面映射 V1、28 个代表词的七国英语基线和 US / CA / UK 的 P0/P1 搜索意图样本筛查已完成；Sportswear 与 Knitted Fabrics 页面审计已完成，下一步审计 Tech Pack Guide
+> 当前状态：页面映射 V1、28 个代表词的七国英语基线、US / CA / UK 的 P0/P1 搜索意图样本筛查，以及 Sportswear、Knitted Fabrics、Tech Pack Guide 首批三页审计均已完成；下一步汇总事实输入与实施候选
 
 ## 1. 本轮产出
 
@@ -200,7 +200,7 @@ gym clothing manufacturers
 
 ### Suggested next actions
 
-1. Sportswear 与 Knitted Fabrics 审计已完成；继续对 Tech Pack Guide 进行逐页只读审计；
+1. Sportswear、Knitted Fabrics 与 Tech Pack Guide 首批三页审计已完成；先汇总事实输入、上下文内链、社交图和共享性能候选，不直接批量改页；
 2. 获取第一方 QC 证据后再决定是否提出 QC 新页面；
 3. 等 GSC 出现可用的非品牌页面查询数据后，复核页面主词与实际匹配；
 4. 建立 NL / SE / NO / FI 本地语言研究批次，与英语基线分开记录；
