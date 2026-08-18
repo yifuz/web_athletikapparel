@@ -364,7 +364,7 @@ function myathletik_product_category_data() {
 		'knitted-fabrics-manufacturer' => array(
 			'title'            => __( 'Knitted Fabrics', 'myathletik-child' ),
 			'seo_title'        => __( 'Knitted Fabrics Manufacturer | Athletik Clothing', 'myathletik-child' ),
-			'meta_description' => __( 'Knitted fabrics manufacturer for performance knits, thermal knits, recycled fabrics, microfiber, merino, power stretch, and functional OEM/ODM fabric programs.', 'myathletik-child' ),
+			'meta_description' => __( 'Knitted fabrics manufacturer for performance, thermal, stretch, Merino wool, and recycled knit programs. Custom development for B2B apparel buyers.', 'myathletik-child' ),
 			'h1'               => __( 'Knitted Fabrics Manufacturer', 'myathletik-child' ),
 			'old_url'          => '/products/knitted-fabrics/',
 			'hero_kicker'      => __( 'Custom knit fabric development & supply', 'myathletik-child' ),
@@ -372,14 +372,14 @@ function myathletik_product_category_data() {
 			'what_we_make'     => array(
 				__( 'Performance knit fabrics for activewear and underwear', 'myathletik-child' ),
 				__( 'Thermal knit fabrics', 'myathletik-child' ),
-				__( 'Functional fabrics: moisture-wicking, UV-protective, antimicrobial, bamboo charcoal', 'myathletik-child' ),
-				__( '4-way stretch, power stretch, microfiber, and merino knits', 'myathletik-child' ),
-				__( 'Recycled fabrics (GRS certified)', 'myathletik-child' ),
+				__( 'Functional knit options for moisture management, UV protection, antimicrobial requirements, and bamboo charcoal programs', 'myathletik-child' ),
+				__( '4-way stretch, power stretch, microfiber, and Merino wool knits', 'myathletik-child' ),
+				__( 'Recycled knit programs with project-specific GRS documentation', 'myathletik-child' ),
 			),
 			'subcategories'    => array(
 				array(
 					'title'       => __( 'Performance knit fabrics for activewear and underwear', 'myathletik-child' ),
-					'description' => __( 'Single and double-knit performance fabrics engineered for activewear, underwear, and next-to-skin applications. Knit to specified gauge, weight, and stretch.', 'myathletik-child' ),
+					'description' => __( 'Single and double-knit performance fabrics for activewear, underwear, and next-to-skin applications can be developed to target gauge, weight, stretch, and recovery requirements.', 'myathletik-child' ),
 					'image'       => 'knitted fabrics/Performance knit fabrics.png',
 					'image_alt'    => __( 'Black, navy, grey, and blue performance knit fabric rolls and swatches', 'myathletik-child' ),
 					'image_width'  => 1448,
@@ -395,7 +395,7 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Thermal knit fabrics', 'myathletik-child' ),
-					'description' => __( 'Brushed-back and fleece-line thermal knits that trap warm air while wicking moisture. Available in a range of weights for base, mid, and outer layers.', 'myathletik-child' ),
+					'description' => __( 'Brushed-back and fleece-lined thermal knit options are available in weights suitable for base, mid, and outer layers. Thermal and moisture-management targets must be defined for the selected fabric and confirmed against the agreed test method and acceptance criteria.', 'myathletik-child' ),
 					'image'       => 'knitted fabrics/Thermal knit fabrics.png',
 					'image_alt'    => __( 'Black, grey, green, and cream thermal knit fabric rolls and swatches', 'myathletik-child' ),
 					'image_width'  => 1448,
@@ -410,8 +410,8 @@ function myathletik_product_category_data() {
 					),
 				),
 				array(
-					'title'       => __( 'Functional fabrics: moisture-wicking, UV-protective, antimicrobial, bamboo charcoal', 'myathletik-child' ),
-					'description' => __( 'Functional finishes applied at the fabric level - not just garment level. Moisture management, UV protection, antimicrobial treatment, and bamboo charcoal infusion for odor control.', 'myathletik-child' ),
+					'title'       => __( 'Functional knit options for moisture management, UV protection, antimicrobial requirements, and bamboo charcoal programs', 'myathletik-child' ),
+					'description' => __( 'Functional performance can be developed through fiber or yarn selection, knit construction, or finishing, depending on the project. Required moisture-management, UV-protection, antimicrobial, or odor-control results must be defined for the selected fabric and confirmed against the agreed test method and acceptance criteria.', 'myathletik-child' ),
 					'image'       => 'knitted fabrics/Functional Fabrics.png',
 					'image_alt'    => __( 'Navy, cream, and grey functional fabric swatches with a surface water droplet', 'myathletik-child' ),
 					'image_width'  => 1448,
@@ -426,8 +426,8 @@ function myathletik_product_category_data() {
 					),
 				),
 				array(
-					'title'       => __( '4-way stretch, power stretch, microfiber, and merino knits', 'myathletik-child' ),
-					'description' => __( 'High-stretch performance knits including power-stretch for compression, microfiber for silky hand feel, and fine-gauge merino for natural-fiber programs.', 'myathletik-child' ),
+					'title'       => __( '4-way stretch, power stretch, microfiber, and Merino wool knits', 'myathletik-child' ),
+					'description' => __( 'High-stretch knit options include power-stretch, microfiber, and fine-gauge Merino wool constructions. Target stretch and recovery, compression, hand feel, and fiber content are specified for the selected fabric and confirmed during development.', 'myathletik-child' ),
 					'image'       => 'knitted fabrics/High-stretch performance knits.png',
 					'image_alt'    => __( 'Draped navy, black, blue, and beige high-stretch knit fabrics', 'myathletik-child' ),
 					'image_width'  => 1448,
@@ -442,8 +442,8 @@ function myathletik_product_category_data() {
 					),
 				),
 				array(
-					'title'       => __( 'Recycled fabrics (GRS certified)', 'myathletik-child' ),
-					'description' => __( 'GRS-certified recycled polyester and nylon knits for brands with sustainability commitments. Full traceability documentation and the same performance specs as virgin-fiber equivalents.', 'myathletik-child' ),
+					'title'       => __( 'Recycled knit programs with project-specific GRS documentation', 'myathletik-child' ),
+					'description' => __( 'Recycled polyester and nylon knit programs can be developed when GRS-certified inputs are required. Before a GRS claim is used, certification scope, applicable material, transaction documentation, traceability records, and performance requirements must be confirmed for the specific order.', 'myathletik-child' ),
 					'image'       => 'knitted fabrics/recycled fabrics.png',
 					'image_alt'    => __( 'Recycled knit fabric rolls with yarn and recycled material samples', 'myathletik-child' ),
 					'image_width'  => 1448,
@@ -460,7 +460,7 @@ function myathletik_product_category_data() {
 			),
 			'capability_kicker' => __( 'Development & quotation', 'myathletik-child' ),
 			'capability_heading' => __( 'Start with a complete fabric brief', 'myathletik-child' ),
-			'construction'      => __( 'Send the target composition, yarn and knit structure, GSM, usable width, stretch and recovery, color reference, finish or performance requirement, testing requirement, order quantity, intended application, and delivery destination. Swatches, counter samples, lab dips, sample yardage, and approval samples can be arranged as applicable. Pricing is normally quoted per kg, while other units can be used when required. Final timing, packing, and delivery terms are confirmed in the project quotation.', 'myathletik-child' ),
+			'construction'      => __( 'Send the target composition, yarn and knit structure, GSM, usable width, stretch and recovery, color reference, finish or performance requirement, testing requirement, order quantity, intended application, and delivery destination. Knitting, dyeing, finishing, and testing are coordinated against the approved specification. Swatches, counter samples, lab dips, sample yardage, and approval samples can be arranged as applicable. When certified inputs or third-party testing are required, the applicable standard, documentation, and laboratory scope must be agreed for the selected material and order. Pricing is normally quoted per kg, while other units can be used when required. Final timing, packing, and delivery terms are confirmed in the project quotation.', 'myathletik-child' ),
 			'specs'             => array(
 				array(
 					'label'       => __( 'MOQ', 'myathletik-child' ),

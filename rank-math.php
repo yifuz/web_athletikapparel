@@ -97,6 +97,26 @@ add_filter( 'rank_math/opengraph/facebook/og_description', 'myathletik_rank_math
 add_filter( 'rank_math/opengraph/twitter/twitter_description', 'myathletik_rank_math_technical_article_description', 20 );
 
 /**
+ * Keep the Knitted Fabrics page description aligned with its evidence-reviewed
+ * category record instead of the older Rank Math database value.
+ *
+ * @param string $description Rank Math generated description.
+ * @return string
+ */
+function myathletik_rank_math_knitted_fabrics_description( $description ) {
+	if ( ! is_page( 'knitted-fabrics-manufacturer' ) ) {
+		return $description;
+	}
+
+	$category = myathletik_get_product_category_data( 'knitted-fabrics-manufacturer' );
+
+	return ! empty( $category['meta_description'] ) ? $category['meta_description'] : $description;
+}
+add_filter( 'rank_math/frontend/description', 'myathletik_rank_math_knitted_fabrics_description', 22 );
+add_filter( 'rank_math/opengraph/facebook/og_description', 'myathletik_rank_math_knitted_fabrics_description', 22 );
+add_filter( 'rank_math/opengraph/twitter/twitter_description', 'myathletik_rank_math_knitted_fabrics_description', 22 );
+
+/**
  * Use each approved technical content cover for Open Graph and Twitter cards.
  *
  * @param array $image Rank Math image data.
@@ -228,6 +248,33 @@ function myathletik_rank_math_core_page_schema( $data ) {
 	return $data;
 }
 add_filter( 'rank_math/json_ld', 'myathletik_rank_math_core_page_schema', 101 );
+
+/**
+ * Keep the Knitted Fabrics WebPage entity aligned with the visible, reviewed
+ * metadata instead of the older Rank Math database description.
+ *
+ * @param array $data Rank Math JSON-LD entities.
+ * @return array
+ */
+function myathletik_rank_math_knitted_fabrics_schema_description( $data ) {
+	if (
+		! is_page( 'knitted-fabrics-manufacturer' ) ||
+		! is_array( $data ) ||
+		empty( $data['WebPage'] ) ||
+		! is_array( $data['WebPage'] )
+	) {
+		return $data;
+	}
+
+	$category = myathletik_get_product_category_data( 'knitted-fabrics-manufacturer' );
+
+	if ( ! empty( $category['meta_description'] ) ) {
+		$data['WebPage']['description'] = $category['meta_description'];
+	}
+
+	return $data;
+}
+add_filter( 'rank_math/json_ld', 'myathletik_rank_math_knitted_fabrics_schema_description', 105 );
 
 /**
  * Keep the publisher entity aligned with the public company details.
@@ -477,7 +524,7 @@ add_filter( 'rank_math/json_ld', 'myathletik_rank_math_technical_guides_schema',
  * @return int Unix timestamp in UTC.
  */
 function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
-	$latest = strtotime( '2026-08-17 07:26:00 UTC' );
+	$latest = strtotime( '2026-08-18 01:55:02 UTC' );
 
 	if ( '' === $url ) {
 		return $latest;
@@ -487,6 +534,10 @@ function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
 	$path = is_string( $path ) ? '/' . trim( $path, '/' ) : '';
 	$path = '/' === $path ? $path : trailingslashit( $path );
 
+	if ( '/knitted-fabrics-manufacturer/' === $path ) {
+		return $latest;
+	}
+
 	if (
 		in_array(
 			$path,
@@ -495,12 +546,11 @@ function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
 				'/flatlock-vs-overlock-technical-knitwear/',
 				'/technical-knitwear-tech-pack-guide/',
 				'/evaluate-technical-knitwear-oem/',
-				'/knitted-fabrics-manufacturer/',
 			),
 			true
 		)
 	) {
-		return $latest;
+		return strtotime( '2026-08-17 07:26:00 UTC' );
 	}
 
 	if ( '/' === $path ) {

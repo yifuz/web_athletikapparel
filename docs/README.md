@@ -56,6 +56,8 @@
 - [`seo/image-optimization-seo-imp-005-006-v1.md`](seo/image-optimization-seo-imp-005-006-v1.md)：Sportswear 与 Knitted Fabrics 共 9 张图片的真无损 WebP、响应式候选、质量验证和 uploads 部署记录。
 - [`seo/sportswear-public-capability-fact-sheet-v1.md`](seo/sportswear-public-capability-fact-sheet-v1.md)：SEO-IMP-007 的 Sportswear 性能声称、公开范围、证据类型、快速确认格式与保守改写草案。
 - [`seo/moq-update-seo-imp-008-v1.md`](seo/moq-update-seo-imp-008-v1.md)：公开 MOQ 调整为每款 500 件的代码真值、文档同步、Sportswear 首屏方案撤销和部署验收记录。
+- [`seo/knitted-fabrics-business-fact-sheet-v1.md`](seo/knitted-fabrics-business-fact-sheet-v1.md)：SEO-IMP-009 的独立面料供货、MOQ、报价、开发与交付事实记录。
+- [`seo/knitted-fabrics-claim-evidence-matrix-v1.md`](seo/knitted-fabrics-claim-evidence-matrix-v1.md)：SEO-IMP-010 的 GRS、追溯、工序、测试和性能声称证据等级、公开边界与改写记录。
 
 ## `operations/`：环境与维护
 

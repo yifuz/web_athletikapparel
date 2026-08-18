@@ -63,8 +63,8 @@ with flatlock and activeseam construction. Full-package OEM. Request a quote.
 ### Knitted Fabrics  (/knitted-fabrics-manufacturer/)
 **SEO Title:** Knitted Fabrics Manufacturer | Athletik Clothing
 **Meta Description:**
-Performance knitted fabrics manufacturer with our own fabric mill & in-house
-testing. Moisture-wicking, thermal, 4-way stretch & recycled (GRS). Get a quote.
+Knitted fabrics manufacturer for performance, thermal, stretch, Merino wool,
+and recycled knit programs. Custom development for B2B apparel buyers.
 
 ### Sports Accessories  (/sports-accessories-manufacturer/)
 **SEO Title:** Sports Accessories Manufacturer | Athletik Clothing

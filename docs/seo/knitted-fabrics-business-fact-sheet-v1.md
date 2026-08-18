@@ -6,6 +6,8 @@
 > 所有者确认：2026-08-18
 > 状态：本地页面已实施，待部署与生产验收
 
+> 后续状态：SEO-IMP-010 已按 [`Knitted Fabrics 声称—证据矩阵`](knitted-fabrics-claim-evidence-matrix-v1.md) 更新 Meta、GRS、测试、追溯与性能表达；本表中“Meta 不变”仅记录 SEO-IMP-009 当时的实施边界。
+
 ## 1. 目的与边界
 
 本表用于确认 Athletik Clothing 是否能把 `/knitted-fabrics-manufacturer/` 作为独立面料采购入口，以及该页面应公开哪些 fabric-specific 商业规则。当前页面的 URL、Title 和 H1 与 `knitted fabric manufacturer` 搜索意图一致，不在本项中改变。
