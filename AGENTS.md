@@ -207,6 +207,11 @@ The rebuild reorganizes the site around search intent. Target structure:
   the main site), `betatextiles.com` and `performancefabrics.com` (Beta
   Textiles fabric sales). They exist to widen the marketing network; do not
   merge, redirect, or cross-link them without explicit owner instruction.
+- Public directory/profile registrations (Kompass, ThomasNet, etc.) use the
+  China entity `Zhangjiagang Athletik Clothing Co., Limited` (owner decision
+  2026-08-18, consistent with the Woolmark and Textile Exchange listings).
+  Legacy US-entity profiles must be updated to current messaging or retired
+  via the platform — never left live alongside a new China-entity profile.
 - Current confirmed public roles are limited to: Athletik Clothing Inc. is the
   U.S. entity and the website privacy data controller; Zhangjiagang Athletik
   Clothing Co., Limited is the China entity and the name shown for the China

@@ -62,8 +62,8 @@ Woolmark 官方 Active Licensees 公开名录已列有
 
 - **ISPO Textrends**【实时核实】：不参展也可投稿（寄 50×50cm 样布 + 在线申请），入选进全年在线 Marketplace 与 Trendbook，成本最低的编辑背书。名义已确认为 Athletik。
 - **Sourcing Journal op-ed**【实时核实】：官方 FAQ 确认接受 sourcing 主题约 750 词 op-ed；以 FLATLOCK 技术、垂直整合、出口合规为主题投稿，署名自然带品牌。长文案需所有者批准（§5）。
-- **ThomasNet**【所有者人工 / 内容未核实】：供应商档案免费，北美中型买家实际采购渠道，价值在买家触达而非链接权重；已有历史档案（见下方排查结果），走认领更新，名义建议 Athletik Clothing Inc.。
-- **Kompass / Europages**：欧洲买家覆盖，免费档案；建档实体名称建议 Zhangjiagang Athletik Clothing Co., Limited。
+- **ThomasNet**【所有者人工 / 内容未核实】：供应商档案免费，北美中型买家实际采购渠道，价值在买家触达而非链接权重；已有历史档案（见下方排查结果），按 §3A 主体决策处理。
+- **Kompass / Europages**：欧洲买家覆盖，免费档案；建档主体已确认为 Zhangjiagang Athletik Clothing Co., Limited（见 §3A）。
 - **参展**：Functional Fabric Fair 买家构成最贴合北美中型品牌采购；Performance Days 欧洲最精准且名录长期可索引【实时核实：名录在线】。均为预算决策，单独评估。
 - **AAFA / OIA**：均有供应商会员通道【实时核实】；年费待询；入会主体与预算待所有者确认。
 - **认证名录（2026-08-18 核查）**：
@@ -79,6 +79,12 @@ Woolmark 官方 Active Licensees 公开名录已列有
   - 附带：tendata.com 有自动生成的 ATHLETIK CLOTHING INC. 贸易数据画像页，仅作信息记录。
 - **链接属性**：所有目录/名录条目的 follow/nofollow 均未从公开页面确认，建档后抽查页面源码核实；上述推荐均不依赖链接属性成立（价值在买家触达、NAP 一致性与可索引品牌提及）。
 - **NAP 一致性**：公司历史公开域名多（athletik.com、athletikzjg.com、woolbaselayer.com 等），所有新建档统一使用 athletikapparel.com 与 §2 实体名称。
+
+### 3A. 建档主体决策（所有者 2026-08-18 确认）
+
+- 现有 Kompass / ThomasNet 档案均登录为纽约美国主体（Athletik Clothing Inc.）；所有者决定**新注册一律使用中国主体 Zhangjiagang Athletik Clothing Co., Limited**——与 Woolmark、Textile Exchange GRS 名录的现有主体一致。
+- **旧档案处理顺序（不得跳过）**：先完成中国主体新注册/认领 → 旧档案能改内容的更新为现行口径（实体名保留也要改内容）→ 不能改的走平台流程申请移除或合并。任何平台最终只保留一条准确档案；不允许"新档案上线、旧冲突档案继续挂着"的中间状态长期存在。
+- 旧的美国主体档案内容（工厂数量、分包、产能等）与现行披露口径冲突的，按 AGENTS.md §2/§5 删除或改写。
 
 ## 4. 不做事项
 
@@ -105,7 +111,7 @@ Woolmark 官方 Active Licensees 公开名录已列有
 
 1. ~~所有者回答本文件全部【NEEDS INPUT】~~ → 2026-08-18 已答复：认证均有效；Merrow 设备在用可授权；Textrends 用 Athletik 名义；Beta Textiles 不公开关联（互链取消）；woolbaselayer.com 为在用的同主体羊毛营销站；
 2. ~~排查历史建档与名录现状~~ → 2026-08-18 完成（§3）；已有历史档案两处：Kompass（内容已核实陈旧）与 ThomasNet（内容待所有者快照核实），认领更新优先于一切新建档；
-3. **Kompass / ThomasNet 认领更新**（所有者操作）：删除与披露口径冲突的旧文案，更新为当前技术针织 OEM 定位与主站链接；
+3. **Kompass / ThomasNet 旧档案处理**（所有者操作）：两站旧档案均为纽约美国主体；按所有者 2026-08-18 决策，新注册一律用中国主体（Zhangjiagang Athletik Clothing Co., Limited），旧档案随后更新内容或申请移除/合并，不允许新旧冲突档案并存（处理顺序见机会池 §3A）；
 4. **Merrow 案例联系邮件**（附录 A）所有者审核后发送；
 5. OEKO-TEX Buying Guide 登记、WRAP 公开列名：所有者决策后执行；
 6. ThomasNet（美国实体名义）/ Europages / Apparel Search 新建档：按 §3 口径执行；
