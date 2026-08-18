@@ -585,6 +585,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-18 | SEO-IMP-009 本地完成：Knitted Fabrics 建立独立面料供货、fabric-specific MOQ、报价输入、开发与量产周期表达；保留 URL/Title/H1/Meta 和现有 Contact Form 结构 |
 | 2026-08-18 | SEO-IMP-010 本地完成：确认 BTEXCO 一方资料可用，Knitted Fabrics 的 GRS、追溯、工序、测试和性能声称改为项目制证据表达；Meta/社交/Schema description 统一 |
 | 2026-08-18 | 接入 `iannuttall/seo` CLI（v0.2.36，只读 GSC/GA4 授权）；完成首轮自动化技术爬取（无新 Critical，新增面包屑 position 类型与 HSTS 两条观察）与 GSC 28 天页面/查询/国家基线导出；详见 [`seo/seo-cli-baseline-2026-08-18.md`](seo/seo-cli-baseline-2026-08-18.md) |
+| 2026-08-18 | 按所有者决定退役历史 `seo/seo.md`（commit `48e4f22`，可从 git 历史查阅）；GSC 周期数据改入 [`seo/gsc-data-log.md`](seo/gsc-data-log.md)；本地 .git 对象库 ACL 损坏（Codex 沙箱提交遗留）已由 Codex 修复；确立协作模式：Kimi 在独立克隆 `~/kimi-repos/web_myathletik` 的 `kimi` 分支提交推送，Codex 在本地 main，定期合并 |
 
 ---
 
