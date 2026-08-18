@@ -62,6 +62,10 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 - 中国实体：Zhangjiagang Athletik Clothing Co., Limited。
 - 两个实体属于同一 Athletik 业务体系，但运营职责不同；不得写成同一个法律实体，
   也不得自行推断母子公司、签约、出口、雇佣或知识产权关系。
+- Beta Textiles Co., Limited（betatextiles.com / performancefabrics.com）是同一运营体系内
+  独立运营的面料销售主体：**公开网络不与 Athletik 关联**（不互链、不公开声明同属关系）；
+  其材料可作为一方能力证据内部共用（2026-08-18 所有者指令）。
+- 同系营销站（woolbaselayer.com 等）意在扩大营销网络；不合并、不跳转、不互链，除非所有者另行指示。
 - 当前确认的公开角色仅包括：美国实体是网站隐私数据控制者；中国实体名称用于中国生产设施。
 - 定位：面向中型 B2B 品牌买家的技术针织 Vertically integrated OEM。
 - 公开 MOQ：每款 500 件（2026-08-17 由所有者确认调整）。
@@ -589,6 +593,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-18 | `wp-seo-audit` skill 改造：finding 必须带依据/失效判定/先行指标/修法，接入 seo CLI 复核（kimi 分支 `d6451b6`） |
 | 2026-08-18 | SEO-IMP-015 完成：Underwear/Outdoor/Merino/Silk/Sports Accessories + 两篇指南共 7 份只读审计；修复 Silk 页图片 404（大写扩展名）；新增 IMP-025（五页图片响应式批次，后按所有者确认的优先级逻辑暂缓）、IMP-026（OEM 指南内链）、IMP-027（VideoObject 评估）、IMP-028（指南阅读时长）；SEO-IMP-022 本地核验完成；汇总见 [`seo/seo-implementation-checklist-v1.md`](seo/seo-implementation-checklist-v1.md) §4A |
 | 2026-08-18 | SEO-IMP-020 站外权威机会池建立（[`seo/offsite-authority-opportunity-pool-v1.md`](seo/offsite-authority-opportunity-pool-v1.md)）：发现 Woolmark 官方名录已有 ZHANGJIAGANG ATHLETIK 条目（网址字段指向 woolbaselayer.com，待确认许可有效性后更正）；P0（Woolmark 字段、performancefabrics 互链、Merrow 案例）/P1（ISPO Textrends、Sourcing Journal、ThomasNet/Kompass）/P2（参展、AAFA/OIA）分级，排除链农场目录；全部 NEEDS INPUT 待所有者确认 |
+| 2026-08-18 | 所有者答复 IMP-020 前置问题：认证均有效；Merrow 设备在用可授权；Textrends 用 Athletik 名义；**Beta Textiles 公开独立运营、不与 Athletik 公开关联（互链取消，AGENTS.md §2 已同步）**；woolbaselayer.com 为同主体在用羊毛营销站。名录核查完成：GRS 证书 `ITS-TE-00013212-GRS-04011700` 有效至 2027-06-13（美国实体 GRS 已过期，公开引用须指向中国实体）；OEKO-TEX Buying Guide 与 WRAP 公开地图未收录（可登记/开启）；**Kompass 存在旧档案（含工厂数量等冲突表述），需认领更新**；Merrow 联系邮件草稿已附机会池附录 A |
 
 ---
 

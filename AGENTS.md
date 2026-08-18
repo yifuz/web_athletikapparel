@@ -194,10 +194,19 @@ The rebuild reorganizes the site around search intent. Target structure:
   them as one legal entity, a parent/subsidiary pair, or interchangeable legal
   names unless the owner supplies that exact legal relationship.
 - The owner confirmed on 2026-08-18 that Beta Textiles Co., Limited is also a
-  business entity within the same operation. Its `performancefabrics.com`
-  materials may be treated as first-party capability evidence. Keep the public
-  relationship broad unless the owner supplies the exact legal and operational
-  split; do not call it a parent, subsidiary, or sister company in public copy.
+  business entity within the same operation, dedicated to fabric sales. Its
+  `performancefabrics.com` / `betatextiles.com` materials may be treated as
+  first-party capability evidence. **Owner directive (2026-08-18): Beta
+  Textiles operates publicly as an independent entity — do NOT publicly
+  associate Beta Textiles with Athletik** (no cross-links between the sites,
+  no shared-entity statements in public copy, no parent/subsidiary/sister
+  wording). Marketing facts and materials may be shared internally because
+  they are the same operation, but the public web must not connect them.
+- Same-group marketing sites confirmed by the owner (2026-08-18):
+  `woolbaselayer.com` (active wool base layer marketing site, same entity as
+  the main site), `betatextiles.com` and `performancefabrics.com` (Beta
+  Textiles fabric sales). They exist to widen the marketing network; do not
+  merge, redirect, or cross-link them without explicit owner instruction.
 - Current confirmed public roles are limited to: Athletik Clothing Inc. is the
   U.S. entity and the website privacy data controller; Zhangjiagang Athletik
   Clothing Co., Limited is the China entity and the name shown for the China

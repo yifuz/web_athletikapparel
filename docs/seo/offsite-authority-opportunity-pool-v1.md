@@ -9,24 +9,24 @@
 
 Woolmark 官方 Active Licensees 公开名录已列有
 **ZHANGJIAGANG ATHLETIK CLOTHING CO., LTD.**（Licence 0030001176，Supplier License / Knitter / Apparel），
-页面：<https://my.woolmark.com/forms/s/activelicences>，但公开网址字段写的是 `woolbaselayer.com` 而非主站。
+页面：<https://my.woolmark.com/forms/s/activelicences>，公开网址字段为 `woolbaselayer.com`。
+**2026-08-18 实时复核：条目当前仍在列**，字段与此前记录一致。
 
-这是一个已经存在的、买家高度认知的权威引用资产，当前价值被错误的网址字段稀释。
+所有者 2026-08-18 确认：`woolbaselayer.com` 是公司在用的羊毛base layer 营销站，与主站同一主体——
+**现有网址字段不是错误，不需要"更正"**。剩余动作：
 
-行动（零成本、最高优先）：
-
-1. 【NEEDS INPUT: 确认 Woolmark 许可当前有效】
-2. 【NEEDS INPUT: 确认能否把公开网址字段改为或增加 athletikapparel.com】
-3. 如许可有效，同时确认是否可将品牌展示名与主站实体口径统一（§2 实体命名规则）
+1. 【NEEDS INPUT: 最终确认 Woolmark 许可 0030001176 当前有效】（所有者已概括确认认证均有效，此条为许可专项确认）
+2. 可选增强：通过 Woolmark 账户经理询问能否在条目增加 `athletikapparel.com` 作为第二网址；不可则维持现状
+3. 把该名录条目作为 Merino 页与买家沟通中的现成验证引用（销售资料可引用，不算站外链接建设成果）
 
 ## 1. 优先级总表
 
 | 优先级 | 机会 | 类型 | 成本 | 依赖 |
 |---|---|---|---|---|
-| P0 | Woolmark 名录网址字段更正 | 已有资产修复 | 零 | 许可有效性确认 |
-| P0 | performancefabrics.com 披露式互链 | 一方资产 | 零 | 关系表述确认；先修裸域 403 |
-| P0 | Merrow Customer Story / ActiveSeam 计划 | 设备方编辑案例 | 零 | 设备关系与公开授权确认 |
-| P1 | ISPO Textrends 投稿 | 展会全年在线 Marketplace | 低（寄样 + 申请） | 投稿主体名义确认 |
+| P0 | Woolmark 名录条目核实与可选增强 | 已有资产 | 零 | 网址字段指向 woolbaselayer.com 属有意安排（所有者 08-18 确认），仅需许可专项确认 |
+| ~~P0~~ | ~~performancefabrics.com 披露式互链~~ | ~~一方资产~~ | — | **已取消（所有者 2026-08-18 指令）**：Beta Textiles 公开独立运营，不与 Athletik 公开关联；资料内部共用，站点不互链 |
+| P0 | Merrow Customer Story / ActiveSeam 计划 | 设备方编辑案例 | 零 | **已解锁**：所有者确认 Merrow 设备在用、可授权公开（2026-08-18） |
+| P1 | ISPO Textrends 投稿 | 展会全年在线 Marketplace | 低（寄样 + 申请） | **以 Athletik 名义**（所有者 2026-08-18 确认） |
 | P1 | Sourcing Journal op-ed 投稿 | 行业媒体编辑渠道 | 零 | 主题与事实口径批准（§5） |
 | P1 | ThomasNet / Kompass 免费档案 | 买家实际使用的 B2B 目录 | 零 | 建档实体名称确认 |
 | P2 | Functional Fabric Fair（波特兰）/ Performance Days（慕尼黑） | 参展 + 长期可索引展商名录 | 高（展位预算） | 参展预算决策 |
@@ -41,18 +41,20 @@ Woolmark 官方 Active Licensees 公开名录已列有
 
 ## 2. P0 详录
 
-### 2.1 performancefabrics.com 披露式互链
+### 2.1 ~~performancefabrics.com 披露式互链~~ → 已取消（所有者指令）
 
-- 现状：站点在线（www 子域 200；**裸域 403，需修复**）；WordPress 5.1.12（版本老旧，有安全维护风险）；已互链同系品牌站（carbondry.com 等），尚无指向 athletikapparel.com 的链接。
-- 做法：在 About Us 或 Brand Partners 页以事实性语句披露关系（"Beta Textiles 与 Athletik Clothing 同属同一运营体系"），面料相关内容处加单条上下文链接指向主站对应品类页。
-- 红线：不做站群式全站页脚互链、不堆精确匹配锚文本、两站各自保持独立编辑价值。
-- 前置：修复裸域 403；【NEEDS INPUT: 确认可公开的关系表述措辞；确认该站是否继续维护（WP 需升级）】。
+所有者 2026-08-18 明确：Beta Textiles 是独立运营的面料销售主体，**公开网络不与 Athletik 关联**
+（不互链、不公开声明同属关系）。`performancefabrics.com` / `betatextiles.com` 的材料可作为一方
+能力证据内部共用（AGENTS.md §2 已同步该边界）。同系营销站（woolbaselayer.com 等）不合并、
+不跳转、不互链，除非所有者另行指示。
 
-### 2.2 Merrow Customer Story / ActiveSeam 计划
+### 2.2 Merrow Customer Story / ActiveSeam 计划（已解锁）
 
-- 机制：Merrow 官网有正式 Customer Stories 栏目（先例：Acme Mills）和 ActiveSeam 商标授权计划；无公开投稿表单，路径是邮件联系 + 编辑采写。
+- 所有者 2026-08-18 确认：Merrow 设备在用，可授权公开合作关系。
+- 机制：Merrow 官网有正式 Customer Stories 栏目（先例：Acme Mills）和 ActiveSeam 商标授权计划；
+  无公开投稿表单，路径是邮件联系 + 编辑采写。
 - 匹配度：ACTIVESEAM 是本站核心差异化术语（AGENTS.md §6），编辑性最强、与技术针织买家完全对口。
-- 【NEEDS INPUT: 确认 Merrow 设备采购/在用事实；是否持有或愿申请 ActiveSeam 许可；可否授权 Merrow 公开发布案例】
+- 下一步：起草联系邮件由所有者发送（邮件草稿另行提供）；发出后在 §5 台账补录。
 
 ## 3. P1/P2 要点
 
@@ -62,7 +64,14 @@ Woolmark 官方 Active Licensees 公开名录已列有
 - **Kompass / Europages**：欧洲买家覆盖，免费档案；【NEEDS INPUT: 建档实体名称（建议 Zhangjiagang Athletik Clothing Co., Limited）】。
 - **参展**：Functional Fabric Fair 买家构成最贴合北美中型品牌采购；Performance Days 欧洲最精准且名录长期可索引。均为预算决策，单独评估。
 - **AAFA / OIA**：均有供应商会员通道；年费待询；【NEEDS INPUT: 入会主体与预算】。
-- **认证名录**：OEKO-TEX Buying Guide 是买家高频验证工具，有有效证书即可收录；GRS（Textile Exchange 名录）无外链但提供验证可见性；WRAP 有公开工厂查询。均【NEEDS INPUT: 当前证书有效性】，资格不独立于证书存在。
+- **认证名录（2026-08-18 实时核查结果）**：
+  - **Textile Exchange GRS 名录：已在列且证书有效**——Zhangjiagang Athletik Clothing Co., Ltd. 的 GRS 证书 `ITS-TE-00013212-GRS-04011700` 有效期至 2027-06-13，RAF 证书至 2027-05-20。该证书号可直接支撑站内 GRS 表述（对应 SEO-IMP-010 的证据增强）。注意：**美国实体 Athletik Clothing Inc. 名下 GRS 证书已于 2025-09-12 过期**，公开引用必须指向中国实体的有效证书；一张 RAF 旧证状态与日期矛盾，建议向 Intertek 核实数据刷新。
+  - **OEKO-TEX Buying Guide：未收录**（该名录为持证企业自愿登记的推广名录，未登记≠证书无效）。动作：登记以获得买家验证入口曝光；证书真伪用 Label Check 按证书号验证。
+  - **WRAP 公开工厂地图：未在列**（申请时勾选"同意公开"才上图）。动作：如希望买家可查，在 WRAP 门户开启公开列名。
+- **B2B 平台历史建档排查（2026-08-18 实时核查结果）**：
+  - **Kompass：已有档案，必须认领更新而非新建**——`Athletik Clothing Inc.` 条目（New York 地址）存在于 kompass.com 多国镜像，但简介沿用旧站 athletik.nyc 文案，含"1 家自有工厂 + 5 家合作工厂、年产能 500 万件"等与现行披露口径（不公开工厂数量/分包/产能细节）冲突的表述，且未指向主站。页面自带 "Is this your company? Update your data" 认领入口。**这是当前唯一的品牌一致性风险点，优先处理。**
+  - ThomasNet / Europages / Apparel Search / Alibaba / Global Sources / Made-in-China：公开索引均无历史建档，可安全新建（ThomasNet 与 Global Sources 有反爬，建档前人工站内再确认一次）。
+  - 附带：tendata.com 有自动生成的 ATHLETIK CLOTHING INC. 贸易数据画像页，仅作信息记录。
 - **链接属性**：所有目录/名录条目的 follow/nofollow 均未从公开页面确认，建档后抽查页面源码核实；上述推荐均不依赖链接属性成立（价值在买家触达、NAP 一致性与可索引品牌提及）。
 - **NAP 一致性**：公司历史公开域名多（athletik.com、athletikzjg.com、woolbaselayer.com 等），所有新建档统一使用 athletikapparel.com 与 §2 实体名称。
 
@@ -78,12 +87,54 @@ Woolmark 官方 Active Licensees 公开名录已列有
 | 日期 | 动作 | 来源/目标 | 结果 URL | 状态 |
 |---|---|---|---|---|
 | 2026-08-18 | 机会池建立 | 五类来源调研 | 本文件 | 完成 |
-| — | Woolmark 字段更正 | my.woolmark.com | 待补 | 等所有者确认许可有效性 |
-| — | performancefabrics 互链 | performancefabrics.com | 待补 | 等关系表述确认 + 裸域修复 |
-| — | Merrow 案例接触 | merrow.com | 待补 | 等设备关系确认 |
+| 2026-08-18 | 所有者答复 NEEDS INPUT：认证均有效、Merrow 可授权、Textrends 用 Athletik、Beta Textiles 不公开关联 | — | 本文件 §2/§3 | 完成 |
+| 2026-08-18 | 认证名录与 B2B 平台现状核查 | TE/GRS、OEKO-TEX、WRAP、Kompass 等 10 个目标 | 本文件 §3 | 完成 |
+| — | Kompass 档案认领与更新（删除工厂数量/分包/产能旧表述，更新定位与主站链接） | kompass.com | 待补 | **待所有者认领操作** |
+| — | OEKO-TEX Buying Guide 登记 | oeko-tex.com | 待补 | 待所有者提供证书号并登记 |
+| — | WRAP 公开列名开启 | wrapcompliance.org | 待补 | 待所有者决策 |
+| — | Merrow 案例接触（邮件草稿见附录 A） | merrow.com | 待补 | 草稿待所有者审核发送 |
+| — | Woolmark 条目可选增强 | my.woolmark.com | — | 维持现状，可选 |
 
 ## 6. 下一步
 
-1. 所有者回答本文件全部【NEEDS INPUT】（集中在：Woolmark 许可、BTEXCO 关系表述、Merrow 设备关系、Textrends 名义、目录建档实体、是否已有 B2B 平台账号、各证书有效性）；
-2. 确认后按 P0 → P1 执行，每步在 §5 台账补录；
-3. 参展与协会会员（P2）单独做投入产出评估后再决策。
+1. ~~所有者回答本文件全部【NEEDS INPUT】~~ → 2026-08-18 已答复：认证均有效；Merrow 设备在用可授权；Textrends 用 Athletik 名义；Beta Textiles 不公开关联（互链取消）；woolbaselayer.com 为在用的同主体羊毛营销站；
+2. ~~排查历史建档与名录现状~~ → 2026-08-18 完成（§3）；唯一历史档案在 Kompass，认领更新优先于一切新建档；
+3. **Kompass 认领更新**（所有者操作）：删除与披露口径冲突的旧文案，更新为当前技术针织 OEM 定位与主站链接；
+4. **Merrow 案例联系邮件**（附录 A）所有者审核后发送；
+5. OEKO-TEX Buying Guide 登记、WRAP 公开列名：所有者决策后执行；
+6. ThomasNet（美国实体名义）/ Europages / Apparel Search 新建档：按 §3 口径执行；
+7. 参展与协会会员（P2）单独做投入产出评估后再决策；
+8. 每完成一项在 §5 台账补录 URL 与日期。
+
+## 附录 A：Merrow Customer Story 联系邮件草稿（待所有者审核发送）
+
+> 发送渠道：Merrow 官网联系表单或公开商务邮箱（merrow.com/contact）；发送前所有者确认事实口径。
+
+```text
+Subject: Customer story inquiry — ACTIVESEAM production at Athletik Clothing
+
+Hello Merrow team,
+
+We are Athletik Clothing (Zhangjiagang Athletik Clothing Co., Limited), a
+vertically integrated OEM knitwear manufacturer in Zhangjiagang, China. We
+run Merrow machines in our ACTIVESEAM sewing operations for technical
+knitwear programs (sportswear, underwear, outdoor base layers) serving
+brands in North America and Europe.
+
+We saw your Customer Stories series (e.g., the Acme Mills feature) and
+would like to explore whether our ACTIVESEAM production could be a fit for
+a story. We can share real production detail — machines in use, stitch
+applications, and how we use ACTIVESEAM construction in flatlock-class
+technical garments — and we're happy to follow your editorial process.
+
+We'd also appreciate information on the ActiveSeam licensing program and
+whether our use case qualifies.
+
+You can reach us at info@athletikapparel.com. Our site:
+https://www.athletikapparel.com/
+
+Best regards,
+[所有者署名]
+```
+
+注意：邮件中不出现工厂数量、产能数字、客户名称；机型清单等细节在所有者确认后再补充。
