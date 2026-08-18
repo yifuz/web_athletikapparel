@@ -75,7 +75,7 @@ GRS、追溯、测试报告、自有/关联/外协工序和具体性能声称属
 | 已确认事实 | 本地实施 |
 |---|---|
 | 接受独立面料订单 | Hero kicker 使用 `Custom knit fabric development & supply`；Intro 以 `In addition to finished-garment manufacturing` 明确面料是补充业务，同时说明 standalone fabric orders；URL、Title、H1、Meta 不变 |
-| MOQ 常见范围为 1,000–3,000 kg，按面料与项目变化 | Knitted Fabrics 使用品类专用规格卡 `Typically 1,000-3,000 kg`；其余六个成衣品类继续使用 `500 pcs per style` |
+| MOQ 按面料与项目变化，不公开固定数字范围 | Knitted Fabrics 使用品类专用规格卡 `Varies by fabric and project`；其余六个成衣品类继续使用 `500 pcs per style` |
 | 正常按 kg 报价，也可接受其他单位 | 正文使用 `Pricing is normally quoted per kg, while other units can be used when required.`，不锁定币种或 Incoterm |
 | 必须取得完整面料规格 | 正文列出 composition、yarn/knit structure、GSM、usable width、stretch/recovery、color、finish/function、testing、quantity、application 和 destination |
 | 可提供完整开发节点 | 正文列出 swatch、counter sample、lab dip、sample yardage 和 approval sample，并以 `as applicable` 限定具体项目 |

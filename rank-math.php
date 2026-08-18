@@ -524,7 +524,7 @@ add_filter( 'rank_math/json_ld', 'myathletik_rank_math_technical_guides_schema',
  * @return int Unix timestamp in UTC.
  */
 function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
-	$latest = strtotime( '2026-08-18 01:55:02 UTC' );
+	$latest = strtotime( '2026-08-18 02:21:09 UTC' );
 
 	if ( '' === $url ) {
 		return $latest;

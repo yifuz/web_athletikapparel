@@ -112,7 +112,7 @@
 - `inc/product-category-data.php`：Knitted Fabrics 增加 Tech Pack Guide 回链；
 - `rank-math.php`：技术内容使用已存在的批准封面作为社交图和 Schema 主图；同步真实 `lastmod`；
 - `inc/product-category-data.php` 与 `template-parts/product-category/page.php`：Sportswear 和 Knitted Fabrics 共 9 张下滚图片接入 WebP `srcset`、PNG 回退、固有尺寸、描述性 alt、lazy loading 与 async decoding；
-- `inc/product-category-data.php` 与 `template-parts/product-category/page.php`：Knitted Fabrics 增加品类级 Hero/能力标题/规格卡覆盖，展示独立面料供货、典型 `1,000-3,000 kg` MOQ、完整 fabric brief、开发周期和量产周期；其余六个成衣品类继续使用共用规格；
+- `inc/product-category-data.php` 与 `template-parts/product-category/page.php`：Knitted Fabrics 增加品类级 Hero/能力标题/规格卡覆盖，展示独立面料供货、按面料与项目确认的 MOQ、完整 fabric brief、开发周期和量产周期；其余六个成衣品类继续使用共用规格；
 - `inc/product-category-data.php`、`rank-math.php` 与 `seo-tags.md`：Knitted Fabrics 的 Meta、Open Graph、Twitter、WebPage Schema 和可见产品文案统一使用证据审核后的项目制表达；移除 `our own fabric mill`、`in-house testing`、`full traceability` 和跨材料性能等效承诺；
 - `style.css`：补充 `<picture>` 的块级布局，不改变现有图片比例和交错版式；
 - uploads：保留 9 张源 PNG，生成 54 个真无损响应式 WebP；详见 [`image-optimization-seo-imp-005-006-v1.md`](image-optimization-seo-imp-005-006-v1.md)；
@@ -127,7 +127,7 @@
 
 ### Knitted Fabrics
 
-所有者已完成 [`knitted-fabrics-business-fact-sheet-v1.md`](knitted-fabrics-business-fact-sheet-v1.md)：接受独立面料订单；典型 MOQ 为 `1,000-3,000 kg`，实际随成分、价格、规格和项目变化；通常按 kg 报价，也可使用其他单位；完整 fabric brief 为报价输入；swatch、counter sample、lab dip、sample yardage 和 approval sample 均可按项目提供。
+所有者已完成 [`knitted-fabrics-business-fact-sheet-v1.md`](knitted-fabrics-business-fact-sheet-v1.md)：接受独立面料订单；MOQ 按所选面料与具体项目确认，不公开固定数字范围；通常按 kg 报价，也可使用其他单位；完整 fabric brief 为报价输入；swatch、counter sample、lab dip、sample yardage 和 approval sample 均可按项目提供。
 
 所有者授权开发、量产和交付先使用行业常规表达。本地页面暂用 `Typically 2-4 weeks` 开发和 `Typically 4-6 weeks` 量产，并写明起算条件与最终 quotation 确认边界。Contact Form 已有 `Knitted Fabrics` 选项，因此不新增表单分支；`Estimated Order Quantity` 保持成衣预计订单量含义，面料买家通过 Message 提供 kg 数量和完整规格。
 

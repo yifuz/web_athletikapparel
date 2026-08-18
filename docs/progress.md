@@ -285,7 +285,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - SEO-IMP-005/006 的 Sportswear 与 Knitted Fabrics 响应式真无损 WebP 已在本地完成，uploads 资源待单独部署与生产验收；
 - SEO-IMP-007 已按所有者确认的能力边界修正 Sportswear 绝对化表述，本地完成、待部署验收；
 - SEO-IMP-008 已把公开 MOQ 统一为 `500 pieces per style`；2026-08-18 根据所有者反馈撤销 Sportswear 首屏资格条，MOQ 继续保留在页面规格栏、首页流程和 Services 中。`Estimated Order Quantity` 仍是独立的预计订单量字段。完整记录见 [`moq-update-seo-imp-008-v1.md`](seo/moq-update-seo-imp-008-v1.md)；
-- SEO-IMP-009 已按所有者确认完成 Knitted Fabrics 本地商业信息修正：保留 URL/Title/H1/Meta，以独立面料供货、典型 `1,000-3,000 kg` MOQ、完整 fabric brief、`Typically 2-4 weeks` 开发和 `Typically 4-6 weeks` 量产替换成衣式规格；现有 Contact Form 已包含 `Knitted Fabrics`，不新增表单分支；
+- SEO-IMP-009 已按所有者确认完成 Knitted Fabrics 本地商业信息修正：保留 URL/Title/H1/Meta，以独立面料供货、按面料与项目确认的 MOQ、完整 fabric brief、`Typically 2-4 weeks` 开发和 `Typically 4-6 weeks` 量产替换成衣式规格；现有 Contact Form 已包含 `Knitted Fabrics`，不新增表单分支；
 - SEO-IMP-010 已完成 Knitted Fabrics 本地证据型文案修正：所有者确认 Beta Textiles Co., Limited 也是本业务主体；移除 `our own fabric mill`、`in-house testing`、`full traceability` 和 recycled/virgin 跨材料性能等效承诺；GRS、功能性与第三方测试改为材料、标准、订单和文件级确认；Meta/社交/Schema description 已统一；
 - Underwear、Outdoor 和 FLATLOCK vs COVERSTITCH 因错配较高暂不优先，QC Guide 继续等待可公开的一方流程证据；
 - SEO-IMP-001–009 没有修改 URL、Title、H1、Meta、FAQ 或关键词归属；SEO-IMP-010 仅更新 Knitted Fabrics Meta 和相关证据型正文，URL、Title、H1 与主词归属保持；

@@ -368,7 +368,7 @@ function myathletik_product_category_data() {
 			'h1'               => __( 'Knitted Fabrics Manufacturer', 'myathletik-child' ),
 			'old_url'          => '/products/knitted-fabrics/',
 			'hero_kicker'      => __( 'Custom knit fabric development & supply', 'myathletik-child' ),
-			'intro'            => __( 'In addition to finished-garment manufacturing, we support standalone fabric orders and custom development for B2B apparel programs, including performance, thermal, stretch, and functional knits. Most orders fall within a typical 1,000-3,000 kg MOQ range; the final minimum depends on the selected composition, construction, color, finish, and project requirements.', 'myathletik-child' ),
+			'intro'            => __( 'In addition to finished-garment manufacturing, we support standalone fabric orders and custom development for B2B apparel programs, including performance, thermal, stretch, and functional knits. MOQ varies by fabric and project requirements.', 'myathletik-child' ),
 			'what_we_make'     => array(
 				__( 'Performance knit fabrics for activewear and underwear', 'myathletik-child' ),
 				__( 'Thermal knit fabrics', 'myathletik-child' ),
@@ -464,8 +464,8 @@ function myathletik_product_category_data() {
 			'specs'             => array(
 				array(
 					'label'       => __( 'MOQ', 'myathletik-child' ),
-					'value'       => __( 'Typically 1,000-3,000 kg', 'myathletik-child' ),
-					'description' => __( 'Final minimum varies by fabric specification and project.', 'myathletik-child' ),
+					'value'       => __( 'Varies by fabric and project', 'myathletik-child' ),
+					'description' => __( 'Confirmed against the selected fabric specification.', 'myathletik-child' ),
 				),
 				array(
 					'label'       => __( 'Development', 'myathletik-child' ),
