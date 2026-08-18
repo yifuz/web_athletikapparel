@@ -88,9 +88,9 @@
 | SEO-IMP-012 | 修正 Sportswear 中 `ACTIVESEAM`/FLATLOCK 术语，并同步规范 Meta 与生产 Rank Math 字段 | 中：语义和品牌专业度一致 | 低到中 | 与 SEO-IMP-007 同批，避免只修大小写却保留无证据表达 | 待处理 |
 | SEO-IMP-013 | 为 Sportswear、Knitted Fabrics 等类目选择批准的代表图作为社交图/Schema 主图 | 中：改善页面分享和主题图像信号 | 低到中 | 所有者确认每页代表图；生成合适派生尺寸 | 待选图 |
 | SEO-IMP-014 | 复核首页及多个类目 157–165 字符 Meta、Services 63 字符 Title | 低到中：主要影响摘要截断和 CTR，不是索引问题 | 中：过早缩短可能损失意图信息 | 先取得页面级 GSC Query/CTR 数据 | 观察 |
-| SEO-IMP-015 | 审计 Underwear、Outdoor、Merino、Silk、Sports Accessories 与三篇指南剩余两篇 | 高：扩大已验证的页面级基线 | 低 | 第一批部署稳定后逐页执行 | 待处理 |
+| SEO-IMP-015 | 审计 Underwear、Outdoor、Merino、Silk、Sports Accessories 与三篇指南剩余两篇 | 高：扩大已验证的页面级基线 | 低 | 第一批部署稳定后逐页执行 | **已完成（2026-08-18，7 份只读审计文档；发现汇总见本文 §4A）** |
 | SEO-IMP-016 | 为类目页评估 `Service` Schema，保持可见内容和事实一致 | 低到中：增强机器可读服务关系，但不作为排名捷径 | 中 | 页面业务事实确认；通过 Schema Validator | 待评估 |
-| SEO-IMP-022 | 固化 Knitted Fabrics 主次词架构：保留现有 URL/Title/H1，以 `performance knit fabric` 和 `sportswear fabric manufacturer` 补充产品、应用和询盘语境 | 中到高：同时保留精准采购意图和 Performance 主题覆盖，不引入近义页内耗 | 低到中：事实不足时扩写会放大未证实的工艺、测试或独立供货承诺 | SEO-IMP-009/010 已完成；后续只依据 GSC 和新增一方证据迭代，不做关键词堆叠 | **当前单页架构本地已完成，待部署与监测** |
+| SEO-IMP-022 | 固化 Knitted Fabrics 主次词架构：保留现有 URL/Title/H1，以 `performance knit fabric` 和 `sportswear fabric manufacturer` 补充产品、应用和询盘语境 | 中到高：同时保留精准采购意图和 Performance 主题覆盖，不引入近义页内耗 | 低到中：事实不足时扩写会放大未证实的工艺、测试或独立供货承诺 | SEO-IMP-009/010 已完成；后续只依据 GSC 和新增一方证据迭代，不做关键词堆叠 | **本地核验完成（2026-08-18）**：URL/Title/H1 保持；`performance knit fabric` 已进入 What we make、子类标题、正文与 alt 语境；`sportswear fabric manufacturer` 精确短语未出现，列为所有者批准的微文案候选，不自行改写；GSC 分组监测见 `gsc-data-log.md` |
 | SEO-IMP-024 | 为 Header 与 Footer 共用 Logo 补充固有 `width`/`height` | 低到中：减少共享布局的潜在 CLS，完善全站图片静态信号 | 低：需确认 GeneratePress Logo 输出与 Footer markup 的统一尺寸策略 | 当前本地页面检查发现 2 个 Logo `<img>` 缺少显式尺寸 | 待单独处理；不阻塞 SEO-IMP-010 |
 
 ### D. 第四批：内容扩展与站外权威
@@ -104,6 +104,26 @@
 | SEO-IMP-021 | 每季度复核指南引用的 ASTM/AATCC/ISO 等标准版本和链接 | 中：维持技术内容可靠性和更新依据 | 低 | 指定复核日期与负责人 | 待建立节奏 |
 | SEO-IMP-023 | 条件式评估 Performance Fabrics 信息指南，明确限定 performance apparel / knit fabric，避免进入家具和室内装饰意图 | 中：有机会承接宽泛研究流量并内链到面料商业页 | 高：宽词意图混杂，过早建页可能产生无效流量和主题稀释 | 当前商业页事实完整；GSC 出现相关 Query，或独立 SERP/内容缺口验证通过；具备一方材料与测试证据 | 候选研究，未批准新 URL |
 
+## 4A. SEO-IMP-015 审计发现汇总（2026-08-18）
+
+七份只读审计文档：`page-audit-underwear-manufacturer-v1.md`、`page-audit-outdoor-clothing-manufacturer-v1.md`、`page-audit-merino-wool-manufacturer-v1.md`、`page-audit-silk-wear-manufacturer-v1.md`、`page-audit-sports-accessories-manufacturer-v1.md`、`page-audit-flatlock-vs-overlock-v1.md`、`page-audit-evaluate-technical-knitwear-oem-v1.md`。
+
+共同结论：7 页均无索引/Canonical/Title/H1 级 Critical；各页 URL/Title/H1/Meta 全部保持。已知共享问题（生产 MOQ 1,000 旧值、重复 stylesheet、Logo 社交图、Meta 双来源）均与既有 IMP 项对应，不重复列项。
+
+### 本轮新发现与处理
+
+| ID | 项目 | 收益 | 状态 |
+|---|---|---|---|
+| （已修复） | Silk 页第三张子类图引用 `IMG_5550.JPG`（大写扩展名），生产 Linux 环境 404；Windows 本地不暴露 | 高：用户可见破图 | **本地已修复**（`inc/product-category-data.php` 改小写 `.jpg`），随批次部署 |
+| SEO-IMP-025 | 五个品类页产品图响应式批次：Underwear 约 1.36 MB、Outdoor 约 1.01 MB、Merino 约 3.79 MB（单张最大 2.73 MB PNG）、Silk 约 7.58 MB、Sports Accessories 约 6.13 MB，均缺 width/height、srcset/sizes 与 WebP 派生 | 中到高：延续 IMP-005/006 的移动端负载收益 | 待处理；参照 IMP-005/006 工艺（真无损 WebP、保留原图、产物入 uploads） |
+| SEO-IMP-026 | OEM Evaluation 指南正文零上下文出站链接，全站仅 Hub 一个正文入口（V2-006 在本页核实仍未修复；IMP-001 只覆盖了 Tech Pack Guide） | 中：两篇指南中本页内链最弱 | 待处理；最小改动：本页补 2–4 条出站 + 姊妹指南/相关品类页补入链，文案需所有者批准 |
+| SEO-IMP-027 | FLATLOCK 指南有两支第一方生产视频但无 VideoObject Schema | 低到中：视频富媒体增强空间 | 待评估；先看 GSC 视频索引报告再决定 |
+| SEO-IMP-028 | 两篇指南 Twitter/阅读时长字段显示 "Less than a minute"（Rank Math 从空 `post_content` 计算） | 低：社交卡片元数据失真 | 待处理；rank-math.php 过滤器可修 |
+| （并入 IMP-012） | 术语小写漂移不限于 Sportswear：Outdoor（`inc/product-category-data.php:248`）、Merino、Sports Accessories、Silk construction 段均有小写 `flatlock`/`activeseam` | 中 | 并入 SEO-IMP-012 同批执行，逐页修 |
+| （所有者后台项） | Fluent Forms `Estimated Order Quantity` 分档仍以 1,000 为锚点；MOQ 降至 500 后 `Under 1,000 pcs` 一档会混入合格线索 | 中：询盘过滤有效性 | 插件后台字段，需所有者手动确认调整，非主题代码 |
+
+
+
 ## 5. 已完成的本地代码与资源范围
 
 本地第一批修改严格限制在以下范围：
@@ -116,6 +136,7 @@
 - `inc/product-category-data.php` 与 `template-parts/product-category/page.php`：Knitted Fabrics 增加品类级 Hero/能力标题/规格卡覆盖，展示独立面料供货、按面料与项目确认的 MOQ、完整 fabric brief、开发周期和量产周期；其余六个成衣品类继续使用共用规格；
 - `inc/product-category-data.php`、`rank-math.php` 与 `seo-tags.md`：Knitted Fabrics 的 Meta、Open Graph、Twitter、WebPage Schema 和可见产品文案统一使用 SEO 优先的能力表达；保留 performance、functional、GRS recycled fabrics 与 testing 主题，移除 `our own fabric mill`、`in-house testing`、`full traceability` 和跨材料性能等效承诺；
 - `style.css`：补充 `<picture>` 的块级布局，不改变现有图片比例和交错版式；
+- `inc/product-category-data.php`（2026-08-18）：Silk 子类图引用 `IMG_5550.JPG` 改小写 `.jpg`，修复生产 404 破图（SEO-IMP-015 审计发现）；
 - uploads：保留 9 张源 PNG，生成 54 个真无损响应式 WebP；详见 [`image-optimization-seo-imp-005-006-v1.md`](image-optimization-seo-imp-005-006-v1.md)；
 - 未改变任何 URL、Title、H1、FAQ 或主要关键词归属；SEO-IMP-010 更新 Knitted Fabrics Meta 与相关能力正文，并让页面/社交/Schema description 使用同一代码真值；
 - uploads 不在主题 Git 仓库中，部署时必须单独同步图片资源。

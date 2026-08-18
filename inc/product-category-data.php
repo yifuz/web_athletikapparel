@@ -342,7 +342,7 @@ function myathletik_product_category_data() {
 				array(
 					'title'       => __( 'Silk-blend knit pieces', 'myathletik-child' ),
 					'description' => __( 'Silk blended with cotton, modal, or performance synthetics to add durability and stretch while preserving the silky hand feel. The practical middle ground for brands that want silk character at a more accessible price point.', 'myathletik-child' ),
-					'image'       => 'silkwear/IMG_5550.JPG',
+					'image'       => 'silkwear/IMG_5550.jpg',
 				),
 			),
 			'construction'     => __( 'Soft, breathable knitted silk finished with flatlock and activeseam seams for a smooth, next-to-skin feel. Available plain or blended for added performance.', 'myathletik-child' ),

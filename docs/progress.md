@@ -586,6 +586,8 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-18 | SEO-IMP-010 本地完成：确认 BTEXCO 一方资料可用，Knitted Fabrics 的 GRS、追溯、工序、测试和性能声称改为项目制证据表达；Meta/社交/Schema description 统一 |
 | 2026-08-18 | 接入 `iannuttall/seo` CLI（v0.2.36，只读 GSC/GA4 授权）；完成首轮自动化技术爬取（无新 Critical，新增面包屑 position 类型与 HSTS 两条观察）与 GSC 28 天页面/查询/国家基线导出；详见 [`seo/seo-cli-baseline-2026-08-18.md`](seo/seo-cli-baseline-2026-08-18.md) |
 | 2026-08-18 | 按所有者决定退役历史 `seo/seo.md`（commit `48e4f22`，可从 git 历史查阅）；GSC 周期数据改入 [`seo/gsc-data-log.md`](seo/gsc-data-log.md)；本地 .git 对象库 ACL 损坏（Codex 沙箱提交遗留）已由 Codex 修复；确立协作模式：Kimi 在独立克隆 `~/kimi-repos/web_myathletik` 的 `kimi` 分支提交推送，Codex 在本地 main，定期合并 |
+| 2026-08-18 | `wp-seo-audit` skill 改造：finding 必须带依据/失效判定/先行指标/修法，接入 seo CLI 复核（kimi 分支 `d6451b6`） |
+| 2026-08-18 | SEO-IMP-015 完成：Underwear/Outdoor/Merino/Silk/Sports Accessories + 两篇指南共 7 份只读审计；修复 Silk 页图片 404（大写扩展名）；新增 IMP-025（五页图片响应式批次）、IMP-026（OEM 指南内链）、IMP-027（VideoObject 评估）、IMP-028（指南阅读时长）；SEO-IMP-022 本地核验完成；汇总见 [`seo/seo-implementation-checklist-v1.md`](seo/seo-implementation-checklist-v1.md) §4A |
 
 ---
 
