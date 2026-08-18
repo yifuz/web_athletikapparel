@@ -70,7 +70,9 @@ Woolmark 官方 Active Licensees 公开名录已列有
   - **WRAP 公开工厂地图：未在列**（申请时勾选"同意公开"才上图）。动作：如希望买家可查，在 WRAP 门户开启公开列名。
 - **B2B 平台历史建档排查（2026-08-18 实时核查结果）**：
   - **Kompass：已有档案，必须认领更新而非新建**——`Athletik Clothing Inc.` 条目（New York 地址）存在于 kompass.com 多国镜像，但简介沿用旧站 athletik.nyc 文案，含"1 家自有工厂 + 5 家合作工厂、年产能 500 万件"等与现行披露口径（不公开工厂数量/分包/产能细节）冲突的表述，且未指向主站。页面自带 "Is this your company? Update your data" 认领入口。**这是当前唯一的品牌一致性风险点，优先处理。**
-  - ThomasNet / Europages / Apparel Search / Alibaba / Global Sources / Made-in-China：公开索引均无历史建档，可安全新建（ThomasNet 与 Global Sources 有反爬，建档前人工站内再确认一次）。
+  - **ThomasNet：已有档案（所有者 2026-08-18 人工站内确认）**——公开索引与爬虫均不可见（反爬 403），条目 URL 待所有者提供；按 Kompass 同流程认领更新，更新前需核对内容陈旧度。
+  - Europages / Apparel Search / Alibaba / Made-in-China：公开索引均无历史建档，可安全新建。
+  - **Global Sources：确认无档案（所有者 2026-08-18 人工站内确认，与公开索引一致）**。
   - 附带：tendata.com 有自动生成的 ATHLETIK CLOTHING INC. 贸易数据画像页，仅作信息记录。
 - **链接属性**：所有目录/名录条目的 follow/nofollow 均未从公开页面确认，建档后抽查页面源码核实；上述推荐均不依赖链接属性成立（价值在买家触达、NAP 一致性与可索引品牌提及）。
 - **NAP 一致性**：公司历史公开域名多（athletik.com、athletikzjg.com、woolbaselayer.com 等），所有新建档统一使用 athletikapparel.com 与 §2 实体名称。
