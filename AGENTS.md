@@ -207,17 +207,22 @@ The rebuild reorganizes the site around search intent. Target structure:
   the main site), `betatextiles.com` and `performancefabrics.com` (Beta
   Textiles fabric sales). They exist to widen the marketing network; do not
   merge, redirect, or cross-link them without explicit owner instruction.
-- Public directory/profile registrations (Kompass, ThomasNet, etc.) use the
-  China entity `Zhangjiagang Athletik Clothing Co., Limited` (owner decision
-  2026-08-18, consistent with the Woolmark and Textile Exchange listings).
-  Legacy US-entity profiles must be updated to current messaging or retired
-  via the platform — never left live alongside a new China-entity profile.
-- Current confirmed public roles are limited to: Athletik Clothing Inc. is the
-  U.S. entity and the website privacy data controller; Zhangjiagang Athletik
-  Clothing Co., Limited is the China entity and the name shown for the China
-  production facility. If content needs a more detailed responsibility split,
-  use `【NEEDS INPUT: confirm U.S./China entity responsibility】` rather than
-  inventing sales, contracting, manufacturing, export, employment, or IP roles.
+- Public directory/profile registrations may carry BOTH entities (owner
+  decision 2026-08-18): the China entity `Zhangjiagang Athletik Clothing Co.,
+  Limited` as the primary manufacturer/seller, and the U.S. entity `Athletik
+  Clothing Inc.` as the North America sales office. Both profiles must carry
+  current messaging (no factory counts, subcontracting, or capacity claims)
+  and link to athletikapparel.com; two profiles means double the freshness
+  obligation — a stale conflicting profile is worse than none.
+- Current confirmed public roles: Athletik Clothing Inc. is the
+  U.S. entity, the website privacy data controller, and — per owner decision
+  2026-08-18 — may be presented publicly as the **North America sales
+  office**; Zhangjiagang Athletik Clothing Co., Limited is the China entity,
+  the name shown for the China production facility, and — per the same
+  decision — the **primary manufacturer and seller**. If content needs a more
+  detailed responsibility split, use `【NEEDS INPUT: confirm U.S./China
+  entity responsibility】` rather than inventing contracting, export,
+  employment, or IP roles.
 - Keep the public brand distinct from all entity names. A page may name the
   relevant jurisdictional entity, but should not silently replace the public
   brand with that entity name.

@@ -80,11 +80,15 @@ Woolmark 官方 Active Licensees 公开名录已列有
 - **链接属性**：所有目录/名录条目的 follow/nofollow 均未从公开页面确认，建档后抽查页面源码核实；上述推荐均不依赖链接属性成立（价值在买家触达、NAP 一致性与可索引品牌提及）。
 - **NAP 一致性**：公司历史公开域名多（athletik.com、athletikzjg.com、woolbaselayer.com 等），所有新建档统一使用 athletikapparel.com 与 §2 实体名称。
 
-### 3A. 建档主体决策（所有者 2026-08-18 确认）
+### 3A. 建档主体与双档案策略（所有者 2026-08-18 确认）
 
-- 现有 Kompass / ThomasNet 档案均登录为纽约美国主体（Athletik Clothing Inc.）；所有者决定**新注册一律使用中国主体 Zhangjiagang Athletik Clothing Co., Limited**——与 Woolmark、Textile Exchange GRS 名录的现有主体一致。
-- **旧档案处理顺序（不得跳过）**：先完成中国主体新注册/认领 → 旧档案能改内容的更新为现行口径（实体名保留也要改内容）→ 不能改的走平台流程申请移除或合并。任何平台最终只保留一条准确档案；不允许"新档案上线、旧冲突档案继续挂着"的中间状态长期存在。
-- 旧的美国主体档案内容（工厂数量、分包、产能等）与现行披露口径冲突的，按 AGENTS.md §2/§5 删除或改写。
+- **角色口径**：美国主体 Athletik Clothing Inc. = **北美销售办公室**；中国主体 Zhangjiagang
+  Athletik Clothing Co., Limited = **主要制造商/销售商**（与 Woolmark、Textile Exchange GRS 名录的现有主体一致）。
+- **双档案策略**：同一平台允许两个实体各保留一条档案（两个独立法律实体，平台惯例允许），以扩大曝光；
+  前提是**两条都维护到现行口径**——删除工厂数量、分包、产能等冲突表述，均指向 athletikapparel.com。
+  双档案 = 双倍信息保鲜义务，纳入定期检查；任何一条烂掉都比没有更糟。
+- **执行顺序（Kompass / ThomasNet）**：认领现有美国主体档案 → 按"北美销售办公室"角色重写内容 →
+  新建中国主体档案（制造商角色）→ 核对两档信息一致。ThomasNet 档案内容待所有者快照核实后出删改清单。
 
 ## 4. 不做事项
 
@@ -100,8 +104,8 @@ Woolmark 官方 Active Licensees 公开名录已列有
 | 2026-08-18 | 机会池建立 | 五类来源调研 | 本文件 | 完成 |
 | 2026-08-18 | 所有者答复 NEEDS INPUT：认证均有效、Merrow 可授权、Textrends 用 Athletik、Beta Textiles 不公开关联 | — | 本文件 §2/§3 | 完成 |
 | 2026-08-18 | 认证名录与 B2B 平台现状核查 | TE/GRS、OEKO-TEX、WRAP、Kompass 等 10 个目标 | 本文件 §3 | 完成 |
-| — | Kompass 档案认领与更新（删除工厂数量/分包/产能旧表述，更新定位与主站链接） | kompass.com | 待补 | **待所有者认领操作** |
-| — | ThomasNet 档案认领与更新 | thomasnet.com | `company/athletik-clothing-inc-31006000/profile` | 待所有者提供内容快照后评估陈旧度 |
+| — | Kompass 双档案：认领美国主体旧档（改写为北美销售办公室口径）+ 新建中国主体制造商档案 | kompass.com | 美国旧档 `usnkc00040065` | **待所有者认领操作** |
+| — | ThomasNet 双档案：同 Kompass 流程 | thomasnet.com | 美国旧档 `company/athletik-clothing-inc-31006000/profile` | 待所有者提供内容快照后出删改清单 |
 | — | OEKO-TEX Buying Guide 登记 | oeko-tex.com | 待补 | 待所有者提供证书号并登记 |
 | — | WRAP 公开列名开启 | wrapcompliance.org | 待补 | 待所有者决策 |
 | — | Merrow 案例接触（邮件草稿见附录 A） | merrow.com | 待补 | 草稿待所有者审核发送 |
@@ -111,10 +115,10 @@ Woolmark 官方 Active Licensees 公开名录已列有
 
 1. ~~所有者回答本文件全部【NEEDS INPUT】~~ → 2026-08-18 已答复：认证均有效；Merrow 设备在用可授权；Textrends 用 Athletik 名义；Beta Textiles 不公开关联（互链取消）；woolbaselayer.com 为在用的同主体羊毛营销站；
 2. ~~排查历史建档与名录现状~~ → 2026-08-18 完成（§3）；已有历史档案两处：Kompass（内容已核实陈旧）与 ThomasNet（内容待所有者快照核实），认领更新优先于一切新建档；
-3. **Kompass / ThomasNet 旧档案处理**（所有者操作）：两站旧档案均为纽约美国主体；按所有者 2026-08-18 决策，新注册一律用中国主体（Zhangjiagang Athletik Clothing Co., Limited），旧档案随后更新内容或申请移除/合并，不允许新旧冲突档案并存（处理顺序见机会池 §3A）；
+3. **Kompass / ThomasNet 双档案执行**（所有者操作）：按 §3A——认领现有美国主体档案并按"北美销售办公室"角色重写，再新建中国主体"制造商"档案，两档信息一致；
 4. **Merrow 案例联系邮件**（附录 A）所有者审核后发送；
 5. OEKO-TEX Buying Guide 登记、WRAP 公开列名：所有者决策后执行；
-6. ThomasNet（美国实体名义）/ Europages / Apparel Search 新建档：按 §3 口径执行；
+6. Europages / Apparel Search 新建档：中国主体（制造商角色），按 §3A 口径执行；
 7. 参展与协会会员（P2）单独做投入产出评估后再决策；
 8. 每完成一项在 §5 台账补录 URL 与日期。
 

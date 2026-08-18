@@ -66,7 +66,9 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
   独立运营的面料销售主体：**公开网络不与 Athletik 关联**（不互链、不公开声明同属关系）；
   其材料可作为一方能力证据内部共用（2026-08-18 所有者指令）。
 - 同系营销站（woolbaselayer.com 等）意在扩大营销网络；不合并、不跳转、不互链，除非所有者另行指示。
-- 当前确认的公开角色仅包括：美国实体是网站隐私数据控制者；中国实体名称用于中国生产设施。
+- 当前确认的公开角色：美国实体是网站隐私数据控制者，并可公开表述为**北美销售办公室**；
+  中国实体名称用于中国生产设施，并可公开表述为**主要制造商/销售商**（2026-08-18 所有者确认）。
+  目录/平台允许双主体双档案，但两条都必须保持现行口径（不公开工厂数量/分包/产能）。
 - 定位：面向中型 B2B 品牌买家的技术针织 Vertically integrated OEM。
 - 公开 MOQ：每款 500 件（2026-08-17 由所有者确认调整）。
 - 可强调：自有生产设施、从纱线到成衣的垂直整合、FLATLOCK / ACTIVESEAM、
@@ -595,6 +597,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-18 | SEO-IMP-020 站外权威机会池建立（[`seo/offsite-authority-opportunity-pool-v1.md`](seo/offsite-authority-opportunity-pool-v1.md)）：发现 Woolmark 官方名录已有 ZHANGJIAGANG ATHLETIK 条目（网址字段指向 woolbaselayer.com，待确认许可有效性后更正）；P0（Woolmark 字段、performancefabrics 互链、Merrow 案例）/P1（ISPO Textrends、Sourcing Journal、ThomasNet/Kompass）/P2（参展、AAFA/OIA）分级，排除链农场目录；全部 NEEDS INPUT 待所有者确认 |
 | 2026-08-18 | 所有者答复 IMP-020 前置问题：认证均有效；Merrow 设备在用可授权；Textrends 用 Athletik 名义；**Beta Textiles 公开独立运营、不与 Athletik 公开关联（互链取消，AGENTS.md §2 已同步）**；woolbaselayer.com 为同主体在用羊毛营销站。名录核查完成：GRS 证书 `ITS-TE-00013212-GRS-04011700` 有效至 2027-06-13（美国实体 GRS 已过期，公开引用须指向中国实体）；OEKO-TEX Buying Guide 与 WRAP 公开地图未收录（可登记/开启）；**Kompass 存在旧档案（含工厂数量等冲突表述），需认领更新**；Merrow 联系邮件草稿已附机会池附录 A |
 | 2026-08-18 | 建档主体决策（所有者）：目录新注册一律用中国主体 Zhangjiagang Athletik Clothing Co., Limited（与 Woolmark/GRS 名录一致）；Kompass、ThomasNet 旧美国主体档案按"先新建/认领 → 更新或移除旧档"顺序处理，不允许冲突档案并存（机会池 §3A，AGENTS.md §2 已同步）；ThomasNet 档案 URL 已补录，内容待所有者快照核实 |
+| 2026-08-18 | 双主体双档案策略确立（所有者）：美国主体=北美销售办公室，中国主体=主要制造商/销售商；Kompass/ThomasNet 旧美国主体档案认领重写 + 新建中国主体制造商档案，两档均须保持现行口径；AGENTS.md §2 公开角色与目录规则、机会池 §3A、progress.md 边界章节已同步 |
 
 ---
 
