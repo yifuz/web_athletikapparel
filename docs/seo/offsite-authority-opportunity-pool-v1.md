@@ -58,21 +58,24 @@ Woolmark 官方 Active Licensees 公开名录已列有
 
 ## 3. P1/P2 要点
 
-- **ISPO Textrends**：不参展也可投稿（寄 50×50cm 样布 + 在线申请），入选进全年在线 Marketplace 与 Trendbook，成本最低的编辑背书。【NEEDS INPUT: 以 Athletik 还是 Beta Textiles 名义投稿】
-- **Sourcing Journal op-ed**：官方 FAQ 确认接受 sourcing 主题约 750 词 op-ed；以 FLATLOCK 技术、垂直整合、出口合规为主题投稿，署名自然带品牌。长文案需所有者批准（§5）。
-- **ThomasNet**：供应商档案免费，北美中型买家实际采购渠道，价值在买家触达而非链接权重；【NEEDS INPUT: 是否以 Athletik Clothing Inc. 名义认领】。
-- **Kompass / Europages**：欧洲买家覆盖，免费档案；【NEEDS INPUT: 建档实体名称（建议 Zhangjiagang Athletik Clothing Co., Limited）】。
-- **参展**：Functional Fabric Fair 买家构成最贴合北美中型品牌采购；Performance Days 欧洲最精准且名录长期可索引。均为预算决策，单独评估。
-- **AAFA / OIA**：均有供应商会员通道；年费待询；【NEEDS INPUT: 入会主体与预算】。
-- **认证名录（2026-08-18 实时核查结果）**：
-  - **Textile Exchange GRS 名录：已在列且证书有效**——Zhangjiagang Athletik Clothing Co., Ltd. 的 GRS 证书 `ITS-TE-00013212-GRS-04011700` 有效期至 2027-06-13，RAF 证书至 2027-05-20。该证书号可直接支撑站内 GRS 表述（对应 SEO-IMP-010 的证据增强）。注意：**美国实体 Athletik Clothing Inc. 名下 GRS 证书已于 2025-09-12 过期**，公开引用必须指向中国实体的有效证书；一张 RAF 旧证状态与日期矛盾，建议向 Intertek 核实数据刷新。
-  - **OEKO-TEX Buying Guide：未收录**（该名录为持证企业自愿登记的推广名录，未登记≠证书无效）。动作：登记以获得买家验证入口曝光；证书真伪用 Label Check 按证书号验证。
-  - **WRAP 公开工厂地图：未在列**（申请时勾选"同意公开"才上图）。动作：如希望买家可查，在 WRAP 门户开启公开列名。
-- **B2B 平台历史建档排查（2026-08-18 实时核查结果）**：
-  - **Kompass：已有档案，必须认领更新而非新建**——`Athletik Clothing Inc.` 条目（New York 地址）存在于 kompass.com 多国镜像，但简介沿用旧站 athletik.nyc 文案，含"1 家自有工厂 + 5 家合作工厂、年产能 500 万件"等与现行披露口径（不公开工厂数量/分包/产能细节）冲突的表述，且未指向主站。页面自带 "Is this your company? Update your data" 认领入口。**这是当前唯一的品牌一致性风险点，优先处理。**
-  - **ThomasNet：已有档案（所有者 2026-08-18 人工站内确认）**——公开索引与爬虫均不可见（反爬 403），条目 URL 待所有者提供；按 Kompass 同流程认领更新，更新前需核对内容陈旧度。
-  - Europages / Apparel Search / Alibaba / Made-in-China：公开索引均无历史建档，可安全新建。
-  - **Global Sources：确认无档案（所有者 2026-08-18 人工站内确认，与公开索引一致）**。
+> 核查状态图例（2026-08-18）：【实时核实】调研代理实时访问目标页面确认；【索引可见】仅公开搜索索引可见、目标页未能直接访问；【所有者人工】所有者人工核查结论；【未核实】受反爬/权限限制未能访问，结论待人工确认。凡涉及执行决策的条目，以【实时核实】或【所有者人工】为准。
+
+- **ISPO Textrends**【实时核实】：不参展也可投稿（寄 50×50cm 样布 + 在线申请），入选进全年在线 Marketplace 与 Trendbook，成本最低的编辑背书。名义已确认为 Athletik。
+- **Sourcing Journal op-ed**【实时核实】：官方 FAQ 确认接受 sourcing 主题约 750 词 op-ed；以 FLATLOCK 技术、垂直整合、出口合规为主题投稿，署名自然带品牌。长文案需所有者批准（§5）。
+- **ThomasNet**【所有者人工 / 内容未核实】：供应商档案免费，北美中型买家实际采购渠道，价值在买家触达而非链接权重；已有历史档案（见下方排查结果），走认领更新，名义建议 Athletik Clothing Inc.。
+- **Kompass / Europages**：欧洲买家覆盖，免费档案；建档实体名称建议 Zhangjiagang Athletik Clothing Co., Limited。
+- **参展**：Functional Fabric Fair 买家构成最贴合北美中型品牌采购；Performance Days 欧洲最精准且名录长期可索引【实时核实：名录在线】。均为预算决策，单独评估。
+- **AAFA / OIA**：均有供应商会员通道【实时核实】；年费待询；入会主体与预算待所有者确认。
+- **认证名录（2026-08-18 核查）**：
+  - **Textile Exchange GRS 名录【实时核实】：已在列且证书有效**——Zhangjiagang Athletik Clothing Co., Ltd. 的 GRS 证书 `ITS-TE-00013212-GRS-04011700` 有效期至 2027-06-13，RAF 证书至 2027-05-20。该证书号可直接支撑站内 GRS 表述（对应 SEO-IMP-010 的证据增强）。注意：**美国实体 Athletik Clothing Inc. 名下 GRS 证书已于 2025-09-12 过期**，公开引用必须指向中国实体的有效证书；一张 RAF 旧证状态与日期矛盾，建议向 Intertek 核实数据刷新。
+  - **OEKO-TEX Buying Guide【实时核实】：未收录**（该名录为持证企业自愿登记的推广名录，未登记≠证书无效）。动作：登记以获得买家验证入口曝光；证书真伪用 Label Check 按证书号验证。
+  - **WRAP 公开工厂地图【实时核实】：未在列**（申请时勾选"同意公开"才上图）。动作：如希望买家可查，在 WRAP 门户开启公开列名。
+- **B2B 平台历史建档排查（2026-08-18 核查）**：
+  - **Kompass【实时核实】：已有档案，必须认领更新而非新建**——`Athletik Clothing Inc.` 条目（New York 地址）存在于 kompass.com 多国镜像，但简介沿用旧站 athletik.nyc 文案，含"1 家自有工厂 + 5 家合作工厂、年产能 500 万件"等与现行披露口径（不公开工厂数量/分包/产能细节）冲突的表述，且未指向主站。页面自带 "Is this your company? Update your data" 认领入口。**品牌一致性风险点，优先处理。**
+  - **ThomasNet【所有者人工 / 内容未核实】：已有档案**——条目 <https://www.thomasnet.com/company/athletik-clothing-inc-31006000/profile>（所有者人工确认存在）；反爬 403 使代理无法读取内容，**档案当前内容未核实**，待所有者粘贴正文或截图后评估陈旧度；按 Kompass 同流程认领更新。
+  - Europages / Made-in-China【实时核实：站内搜索实测】、Alibaba【索引可见】：均无历史建档，可安全新建。
+  - Apparel Search【索引可见】：无历史建档。
+  - **Global Sources【所有者人工】：确认无档案**（与公开索引一致）。
   - 附带：tendata.com 有自动生成的 ATHLETIK CLOTHING INC. 贸易数据画像页，仅作信息记录。
 - **链接属性**：所有目录/名录条目的 follow/nofollow 均未从公开页面确认，建档后抽查页面源码核实；上述推荐均不依赖链接属性成立（价值在买家触达、NAP 一致性与可索引品牌提及）。
 - **NAP 一致性**：公司历史公开域名多（athletik.com、athletikzjg.com、woolbaselayer.com 等），所有新建档统一使用 athletikapparel.com 与 §2 实体名称。
@@ -92,6 +95,7 @@ Woolmark 官方 Active Licensees 公开名录已列有
 | 2026-08-18 | 所有者答复 NEEDS INPUT：认证均有效、Merrow 可授权、Textrends 用 Athletik、Beta Textiles 不公开关联 | — | 本文件 §2/§3 | 完成 |
 | 2026-08-18 | 认证名录与 B2B 平台现状核查 | TE/GRS、OEKO-TEX、WRAP、Kompass 等 10 个目标 | 本文件 §3 | 完成 |
 | — | Kompass 档案认领与更新（删除工厂数量/分包/产能旧表述，更新定位与主站链接） | kompass.com | 待补 | **待所有者认领操作** |
+| — | ThomasNet 档案认领与更新 | thomasnet.com | `company/athletik-clothing-inc-31006000/profile` | 待所有者提供内容快照后评估陈旧度 |
 | — | OEKO-TEX Buying Guide 登记 | oeko-tex.com | 待补 | 待所有者提供证书号并登记 |
 | — | WRAP 公开列名开启 | wrapcompliance.org | 待补 | 待所有者决策 |
 | — | Merrow 案例接触（邮件草稿见附录 A） | merrow.com | 待补 | 草稿待所有者审核发送 |
@@ -100,8 +104,8 @@ Woolmark 官方 Active Licensees 公开名录已列有
 ## 6. 下一步
 
 1. ~~所有者回答本文件全部【NEEDS INPUT】~~ → 2026-08-18 已答复：认证均有效；Merrow 设备在用可授权；Textrends 用 Athletik 名义；Beta Textiles 不公开关联（互链取消）；woolbaselayer.com 为在用的同主体羊毛营销站；
-2. ~~排查历史建档与名录现状~~ → 2026-08-18 完成（§3）；唯一历史档案在 Kompass，认领更新优先于一切新建档；
-3. **Kompass 认领更新**（所有者操作）：删除与披露口径冲突的旧文案，更新为当前技术针织 OEM 定位与主站链接；
+2. ~~排查历史建档与名录现状~~ → 2026-08-18 完成（§3）；已有历史档案两处：Kompass（内容已核实陈旧）与 ThomasNet（内容待所有者快照核实），认领更新优先于一切新建档；
+3. **Kompass / ThomasNet 认领更新**（所有者操作）：删除与披露口径冲突的旧文案，更新为当前技术针织 OEM 定位与主站链接；
 4. **Merrow 案例联系邮件**（附录 A）所有者审核后发送；
 5. OEKO-TEX Buying Guide 登记、WRAP 公开列名：所有者决策后执行；
 6. ThomasNet（美国实体名义）/ Europages / Apparel Search 新建档：按 §3 口径执行；
