@@ -1,10 +1,12 @@
-# SEO-IMP-008：MOQ 500 pieces per style 实施记录 V1
+# SEO-IMP-008：MOQ 500 pieces per style 实施与撤销记录 V1
 
 > 决策日期：2026-08-17
 >
 > 所有者确认：公开成衣 MOQ 从每款 1,000 件调整为每款 500 件
 >
-> 当前状态：本地代码与规范文档已同步，待 staging/production 部署和视觉验收
+> 后续决策：2026-08-18 撤销 Sportswear Hero 资格条，保留其他 MOQ 同步
+>
+> 当前状态：本地代码与规范文档已同步，待 staging/production 部署和验收
 
 ## 1. 业务口径
 
@@ -18,7 +20,7 @@
 | 位置 | 实施 |
 |---|---|
 | `functions.php` | 以 `myathletik_public_moq_pieces()` 作为公开成衣 MOQ 的代码真值源，当前返回 `500` |
-| Sportswear Hero | 在简介与 CTA 之间增加 `MOQ / 500 / pieces per style` 资格信息，value 与 unit 分离 |
+| Sportswear Hero | 2026-08-18 根据所有者视觉反馈撤销资格条，恢复标题—说明—CTA 的原有层级 |
 | 产品类目规格栏 | 由同一函数输出 `500 pcs / Per style.`，避免各模板数字漂移 |
 | 首页流程快照 | Bulk Production 同步为 `MOQ 500 pcs per style` |
 | Services | Bulk Production 同步为 `orders from 500 pcs per style` |
@@ -35,9 +37,9 @@
 
 ## 4. 风险与验收
 
-主要风险是把“每款最低起订量”和“预计订单总量”混为一谈，以及只修改某一页导致公开事实不一致。部署后需确认：
+主要风险是把“每款最低起订量”和“预计订单总量”混为一谈，以及只修改某一页导致公开事实不一致。首屏资格条并非直接排名因素，视觉层级收益不足时不应强行保留。部署后需确认：
 
-1. Sportswear 首屏在桌面和移动端均显示 `MOQ 500 pieces per style`，且不遮挡 CTA；
+1. Sportswear 首屏不再显示独立 MOQ 资格条，简介后直接进入 CTA；
 2. 首页、Services 和七个产品类目页不再输出旧的公开 1,000 件 MOQ；
 3. Contact 表单继续使用原 `Estimated Order Quantity` 标签和档位；
 4. 页面 Title、H1、Canonical、Schema 和现有 URL 保持不变；

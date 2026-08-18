@@ -284,7 +284,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - 第一批低风险代码已完成：Tech Pack Guide 与商业页上下文内链、Technical Guides 专属社交/Schema 主图、重复 child stylesheet 去重及真实 Sitemap `lastmod`；待部署后做生产验收；
 - SEO-IMP-005/006 的 Sportswear 与 Knitted Fabrics 响应式真无损 WebP 已在本地完成，uploads 资源待单独部署与生产验收；
 - SEO-IMP-007 已按所有者确认的能力边界修正 Sportswear 绝对化表述，本地完成、待部署验收；
-- SEO-IMP-008 已把公开 MOQ 统一为 `500 pieces per style`，并在 Sportswear 首屏附近增加资格信号；`Estimated Order Quantity` 明确保持为独立的预计订单量字段。完整记录见 [`moq-update-seo-imp-008-v1.md`](seo/moq-update-seo-imp-008-v1.md)；
+- SEO-IMP-008 已把公开 MOQ 统一为 `500 pieces per style`；2026-08-18 根据所有者反馈撤销 Sportswear 首屏资格条，MOQ 继续保留在页面规格栏、首页流程和 Services 中。`Estimated Order Quantity` 仍是独立的预计订单量字段。完整记录见 [`moq-update-seo-imp-008-v1.md`](seo/moq-update-seo-imp-008-v1.md)；
 - Underwear、Outdoor 和 FLATLOCK vs COVERSTITCH 因错配较高暂不优先，QC Guide 继续等待可公开的一方流程证据；
 - 第一批没有修改 URL、Title、H1、Meta、FAQ、关键词归属或未经确认的能力声称；
 - 搜索结果样本不能代替固定地理位置 Google 前 10 名；下一步先部署并验收 SEO-IMP-001–008，再处理 Knitted Fabrics 的独立面料业务输入和 fabric-specific 采购口径。

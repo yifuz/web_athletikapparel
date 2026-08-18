@@ -27,7 +27,7 @@
 | 产品范围包括 training、running、yoga/studio、leggings、shorts 和 compression silhouettes | 产品范围 | 不自动代表每款产品具有相同功能性表现 |
 | FLATLOCK 和 ACTIVESEAM 属于项目的技术制造定位 | 制造能力 | 两者必须分别表述；ACTIVESEAM 不是 FLATLOCK 的通用别名 |
 | 可使用 4-way-stretch、power-stretch 等针织材料方向 | 材料方向 | 具体 stretch/recovery、压缩级别和耐久性仍按材料与项目确认 |
-| MOQ 为每款 500 件 | 资格信息 | 2026-08-17 由所有者确认；SEO-IMP-008 已在 Sportswear 首屏附近实施 |
+| MOQ 为每款 500 件 | 资格信息 | 2026-08-17 由所有者确认；首屏资格条已于 2026-08-18 撤销，页面下方规格栏继续展示 |
 
 ## 3. 仓库证据复核结果
 
