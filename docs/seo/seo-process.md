@@ -65,7 +65,7 @@ Athletik 网站的第一目标是通过自然搜索触达北美和欧洲的潜�
 |---|---|---|
 | 页面、URL、H1 与信息架构 | [`../sitemap.md`](../sitemap.md) | 新建、删除、合并或重构页面前必读 |
 | 已批准 Title / Meta | [`../../seo-tags.md`](../../seo-tags.md) | 页面元数据真值 |
-| 技术审查与历史证据 | [`seo.md`](seo.md) | Baseline、问题、修复和 Search Console 快照 |
+| 技术审查与历史证据 | [`gsc-data-log.md`](gsc-data-log.md)、[`seo-cli-baseline-2026-08-18.md`](seo-cli-baseline-2026-08-18.md) | GSC 周期数据快照、`seo` CLI 自动化基线与取证工具用法（2026-08-18 前的历史修正记录 `seo.md` 已删除，可从 git 历史查阅） |
 | 当前项目状态 | [`../progress.md`](../progress.md) | 已完成事项、优先级和约束 |
 | GEO 状态与测试 | [`../geo/GEO.md`](../geo/GEO.md) | AI 搜索基线和独立测试流程 |
 | 长期 SEO 运营 | 本文件 | 从研究到复盘的标准流程 |

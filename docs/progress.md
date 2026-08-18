@@ -256,7 +256,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 
 ### 4.6 SEO Baseline V2（2026-08-15）
 
-完整证据见 [`seo/seo.md`](seo/seo.md) 第 10 节。
+完整证据原载于 `seo/seo.md` 第 10 节；该文件为历史修正记录，已于 2026-08-18 按所有者决定删除（可从 git 历史查阅）。当前数据基线见 [`seo/gsc-data-log.md`](seo/gsc-data-log.md) 与 [`seo/seo-cli-baseline-2026-08-18.md`](seo/seo-cli-baseline-2026-08-18.md)。
 
 - 当前 Page Sitemap 包含 17 个唯一 URL：16 个受主题管理的核心页面，加 Privacy Policy。
 - 17 个页面全部返回 HTTP 200；每页只有一份 Title、Meta Description、H1、自引用 Canonical 和可解析 JSON-LD，未发现意外 `noindex`。
@@ -584,6 +584,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-17 | 首批三页 SEO 审计汇总为实施清单；完成上下文内链、技术指南主图信号、重复 CSS 去重与真实 Sitemap `lastmod` 的第一批本地修改 |
 | 2026-08-18 | SEO-IMP-009 本地完成：Knitted Fabrics 建立独立面料供货、fabric-specific MOQ、报价输入、开发与量产周期表达；保留 URL/Title/H1/Meta 和现有 Contact Form 结构 |
 | 2026-08-18 | SEO-IMP-010 本地完成：确认 BTEXCO 一方资料可用，Knitted Fabrics 的 GRS、追溯、工序、测试和性能声称改为项目制证据表达；Meta/社交/Schema description 统一 |
+| 2026-08-18 | 接入 `iannuttall/seo` CLI（v0.2.36，只读 GSC/GA4 授权）；完成首轮自动化技术爬取（无新 Critical，新增面包屑 position 类型与 HSTS 两条观察）与 GSC 28 天页面/查询/国家基线导出；详见 [`seo/seo-cli-baseline-2026-08-18.md`](seo/seo-cli-baseline-2026-08-18.md) |
 
 ---
 

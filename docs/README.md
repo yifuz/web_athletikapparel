@@ -38,7 +38,8 @@
 
 ## `seo/`：搜索优化
 
-- [`seo/seo.md`](seo/seo.md)：技术 SEO 审查、修复记录与基线。
+- [`seo/gsc-data-log.md`](seo/gsc-data-log.md)：Search Console 周期数据快照与解读（持续更新）。
+- [`seo/seo-cli-baseline-2026-08-18.md`](seo/seo-cli-baseline-2026-08-18.md)：`seo` CLI 工具接入、网络约束与首轮自动化技术爬取基线。
 - [`seo/seo-process.md`](seo/seo-process.md)：面向北美和欧洲 B2B 买家的完整 SEO 研究、实施、发布与复盘流程。
 - [`seo/seo-search-language-research-v1.md`](seo/seo-search-language-research-v1.md)：北美和欧洲买家搜索语言、意图歧义、排除词与首轮验证池。
 - [`seo/keyword-validation-v1.md`](seo/keyword-validation-v1.md)：候选商业词、技术词和信息词的实时 SERP 意图验证、风险判定与待补数据台账。

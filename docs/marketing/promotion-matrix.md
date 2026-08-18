@@ -157,7 +157,7 @@ LinkedIn Insight Tag 在隐私政策更新后再安装，付费只从网站访�
 
 ## 5. SEO（延续 promotion-plan.md §6.4）
 
-- 技术整改已完成（见 [`../seo/seo.md`](../seo/seo.md)）；当前重点是内容供给。
+- 技术整改已完成（当前基线见 [`../seo/gsc-data-log.md`](../seo/gsc-data-log.md) 与 [`../seo/seo-cli-baseline-2026-08-18.md`](../seo/seo-cli-baseline-2026-08-18.md)）；当前重点是内容供给。
 - 基线为每月 1 篇深度技术文章，由用户编写或批准，基于真实一线制造经验。
 - 若当月文章、询盘处理和广告复盘均按时完成，可增加第 2 篇，但不自动提高下月基线。
 - 首批主题不变：FLATLOCK 对比、ACTIVESEAM 应用、Tech pack 指南、Merino base
