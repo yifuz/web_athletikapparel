@@ -285,9 +285,10 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - SEO-IMP-005/006 的 Sportswear 与 Knitted Fabrics 响应式真无损 WebP 已在本地完成，uploads 资源待单独部署与生产验收；
 - SEO-IMP-007 已按所有者确认的能力边界修正 Sportswear 绝对化表述，本地完成、待部署验收；
 - SEO-IMP-008 已把公开 MOQ 统一为 `500 pieces per style`；2026-08-18 根据所有者反馈撤销 Sportswear 首屏资格条，MOQ 继续保留在页面规格栏、首页流程和 Services 中。`Estimated Order Quantity` 仍是独立的预计订单量字段。完整记录见 [`moq-update-seo-imp-008-v1.md`](seo/moq-update-seo-imp-008-v1.md)；
+- SEO-IMP-009 已按所有者确认完成 Knitted Fabrics 本地商业信息修正：保留 URL/Title/H1/Meta，以独立面料供货、典型 `1,000-3,000 kg` MOQ、完整 fabric brief、`Typically 2-4 weeks` 开发和 `Typically 4-6 weeks` 量产替换成衣式规格；现有 Contact Form 已包含 `Knitted Fabrics`，不新增表单分支；
 - Underwear、Outdoor 和 FLATLOCK vs COVERSTITCH 因错配较高暂不优先，QC Guide 继续等待可公开的一方流程证据；
 - 第一批没有修改 URL、Title、H1、Meta、FAQ、关键词归属或未经确认的能力声称；
-- 搜索结果样本不能代替固定地理位置 Google 前 10 名；下一步先部署并验收 SEO-IMP-001–008，再处理 Knitted Fabrics 的独立面料业务输入和 fabric-specific 采购口径。
+- 搜索结果样本不能代替固定地理位置 Google 前 10 名；下一步部署并验收 SEO-IMP-001–009，再处理 Knitted Fabrics 的 GRS、追溯、自有工艺、测试和性能证据。
 
 ---
 
@@ -580,6 +581,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-17 | Knitted Fabrics 页面只读 SEO 审计完成：无索引 Critical；保持 URL/Title/H1，记录面料商业边界、采购单位、证据与图片性能问题 |
 | 2026-08-17 | Technical Knitwear Tech Pack Guide 页面只读 SEO 审计完成：无 Critical；保持 URL/Title/H1/Meta，完成技术参考、内链、Schema 与性能复核 |
 | 2026-08-17 | 首批三页 SEO 审计汇总为实施清单；完成上下文内链、技术指南主图信号、重复 CSS 去重与真实 Sitemap `lastmod` 的第一批本地修改 |
+| 2026-08-18 | SEO-IMP-009 本地完成：Knitted Fabrics 建立独立面料供货、fabric-specific MOQ、报价输入、开发与量产周期表达；保留 URL/Title/H1/Meta 和现有 Contact Form 结构 |
 
 ---
 
@@ -588,7 +590,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
 3. 等待 Search Console Page indexing 从 2026-08-07 快照刷新，并核对“已抓取/已发现但尚未编入索引”、robots.txt 屏蔽和 404 的示例 URL。
-4. 部署并验收 SEO 第一批低风险修改；随后处理 Sportswear 与 Knitted Fabrics 响应式图片、事实输入和单页微调简报，再人工补录 US / CA / UK 固定位置 Google 前 10 名。
+4. 部署并验收 SEO-IMP-001–009 与响应式图片；随后完成 Knitted Fabrics 的 SEO-IMP-010 证据核验，再人工补录 US / CA / UK 固定位置 Google 前 10 名。
 5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
 7. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。

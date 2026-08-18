@@ -18,6 +18,37 @@ if ( ! $category ) {
 
 $image_base = get_stylesheet_directory_uri() . '/assets/images/';
 $public_moq = number_format_i18n( myathletik_public_moq_pieces() );
+$hero_kicker = ! empty( $category['hero_kicker'] )
+	? $category['hero_kicker']
+	: __( 'OEM/ODM technical knitwear category', 'myathletik-child' );
+$capability_kicker = ! empty( $category['capability_kicker'] )
+	? $category['capability_kicker']
+	: __( 'Construction & fabric', 'myathletik-child' );
+$capability_heading = ! empty( $category['capability_heading'] )
+	? $category['capability_heading']
+	: __( 'Built for technical B2B production requirements', 'myathletik-child' );
+$specs = array(
+	array(
+		'label'       => __( 'MOQ', 'myathletik-child' ),
+		/* translators: %s: public MOQ in pieces per style. */
+		'value'       => sprintf( __( '%s pcs', 'myathletik-child' ), $public_moq ),
+		'description' => __( 'Per style.', 'myathletik-child' ),
+	),
+	array(
+		'label'       => __( 'Sampling', 'myathletik-child' ),
+		'value'       => __( '1-2 weeks', 'myathletik-child' ),
+		'description' => __( 'Depending on style complexity and materials.', 'myathletik-child' ),
+	),
+	array(
+		'label'       => __( 'Service', 'myathletik-child' ),
+		'value'       => __( 'OEM/ODM / full-package', 'myathletik-child' ),
+		'description' => __( 'To your designs, samples, or tech packs.', 'myathletik-child' ),
+	),
+);
+
+if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
+	$specs = $category['specs'];
+}
 ?>
 
 <main id="primary" class="site-main ma-product-category">
@@ -30,7 +61,7 @@ $public_moq = number_format_i18n( myathletik_public_moq_pieces() );
 			<div class="ma-product-hero__video-overlay" aria-hidden="true"></div>
 		<?php endif; ?>
 		<div class="ma-product-hero__content">
-			<p class="ma-section-kicker"><?php esc_html_e( 'OEM/ODM technical knitwear category', 'myathletik-child' ); ?></p>
+			<p class="ma-section-kicker"><?php echo esc_html( $hero_kicker ); ?></p>
 			<h1 id="ma-product-title"><?php echo esc_html( $category['h1'] ); ?></h1>
 			<p><?php echo esc_html( $category['intro'] ); ?></p>
 			<div class="ma-product-hero__actions">
@@ -130,8 +161,8 @@ $public_moq = number_format_i18n( myathletik_public_moq_pieces() );
 	<section class="ma-product-section ma-product-capabilities">
 		<div class="ma-section-inner ma-product-feature">
 			<div class="ma-section-heading">
-				<p class="ma-section-kicker"><?php esc_html_e( 'Construction & fabric', 'myathletik-child' ); ?></p>
-				<h2><?php esc_html_e( 'Built for technical B2B production requirements', 'myathletik-child' ); ?></h2>
+				<p class="ma-section-kicker"><?php echo esc_html( $capability_kicker ); ?></p>
+				<h2><?php echo esc_html( $capability_heading ); ?></h2>
 			</div>
 			<div class="ma-product-copy-slot">
 				<p><?php echo esc_html( $category['construction'] ); ?></p>
@@ -170,26 +201,13 @@ $public_moq = number_format_i18n( myathletik_public_moq_pieces() );
 	<section class="ma-product-section ma-product-specs">
 		<div class="ma-section-inner">
 			<div class="ma-product-specs__grid">
-				<article>
-					<span><?php esc_html_e( 'MOQ', 'myathletik-child' ); ?></span>
-					<strong>
-						<?php
-						/* translators: %s: public MOQ in pieces per style. */
-						echo esc_html( sprintf( __( '%s pcs', 'myathletik-child' ), $public_moq ) );
-						?>
-					</strong>
-					<p><?php esc_html_e( 'Per style.', 'myathletik-child' ); ?></p>
-				</article>
-				<article>
-					<span><?php esc_html_e( 'Sampling', 'myathletik-child' ); ?></span>
-					<strong><?php esc_html_e( '1-2 weeks', 'myathletik-child' ); ?></strong>
-					<p><?php esc_html_e( 'Depending on style complexity and materials.', 'myathletik-child' ); ?></p>
-				</article>
-				<article>
-					<span><?php esc_html_e( 'Service', 'myathletik-child' ); ?></span>
-					<strong><?php esc_html_e( 'OEM/ODM / full-package', 'myathletik-child' ); ?></strong>
-					<p><?php esc_html_e( 'To your designs, samples, or tech packs.', 'myathletik-child' ); ?></p>
-				</article>
+				<?php foreach ( $specs as $spec ) : ?>
+					<article>
+						<span><?php echo esc_html( $spec['label'] ); ?></span>
+						<strong><?php echo esc_html( $spec['value'] ); ?></strong>
+						<p><?php echo esc_html( $spec['description'] ); ?></p>
+					</article>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>

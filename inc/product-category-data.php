@@ -367,7 +367,8 @@ function myathletik_product_category_data() {
 			'meta_description' => __( 'Knitted fabrics manufacturer for performance knits, thermal knits, recycled fabrics, microfiber, merino, power stretch, and functional OEM/ODM fabric programs.', 'myathletik-child' ),
 			'h1'               => __( 'Knitted Fabrics Manufacturer', 'myathletik-child' ),
 			'old_url'          => '/products/knitted-fabrics/',
-			'intro'            => __( 'Beyond finished garments, we produce our own performance and thermal knit fabrics - giving brands true vertical integration from yarn to finished piece, with full in-house testing.', 'myathletik-child' ),
+			'hero_kicker'      => __( 'Custom knit fabric development & supply', 'myathletik-child' ),
+			'intro'            => __( 'In addition to finished-garment manufacturing, we support standalone fabric orders and custom development for B2B apparel programs, including performance, thermal, stretch, and functional knits. Most orders fall within a typical 1,000-3,000 kg MOQ range; the final minimum depends on the selected composition, construction, color, finish, and project requirements.', 'myathletik-child' ),
 			'what_we_make'     => array(
 				__( 'Performance knit fabrics for activewear and underwear', 'myathletik-child' ),
 				__( 'Thermal knit fabrics', 'myathletik-child' ),
@@ -457,7 +458,26 @@ function myathletik_product_category_data() {
 					),
 				),
 			),
-			'construction'     => __( 'Our own fabric mill produces the knit fabrics used in our garments, with full in-house testing for quality and performance. Brands can supply swatches for us to develop counter samples, or select from our fabric collections.', 'myathletik-child' ),
+			'capability_kicker' => __( 'Development & quotation', 'myathletik-child' ),
+			'capability_heading' => __( 'Start with a complete fabric brief', 'myathletik-child' ),
+			'construction'      => __( 'Send the target composition, yarn and knit structure, GSM, usable width, stretch and recovery, color reference, finish or performance requirement, testing requirement, order quantity, intended application, and delivery destination. Swatches, counter samples, lab dips, sample yardage, and approval samples can be arranged as applicable. Pricing is normally quoted per kg, while other units can be used when required. Final timing, packing, and delivery terms are confirmed in the project quotation.', 'myathletik-child' ),
+			'specs'             => array(
+				array(
+					'label'       => __( 'MOQ', 'myathletik-child' ),
+					'value'       => __( 'Typically 1,000-3,000 kg', 'myathletik-child' ),
+					'description' => __( 'Final minimum varies by fabric specification and project.', 'myathletik-child' ),
+				),
+				array(
+					'label'       => __( 'Development', 'myathletik-child' ),
+					'value'       => __( 'Typically 2-4 weeks', 'myathletik-child' ),
+					'description' => __( 'After a complete brief; sampling scope and approval rounds may change timing.', 'myathletik-child' ),
+				),
+				array(
+					'label'       => __( 'Bulk lead time', 'myathletik-child' ),
+					'value'       => __( 'Typically 4-6 weeks', 'myathletik-child' ),
+					'description' => __( 'After specification and color approval; final timing is confirmed in the quotation.', 'myathletik-child' ),
+				),
+			),
 			'image_note'       => __( '[IMAGE: real fabric / knitting shots]', 'myathletik-child' ),
 			'gallery'          => array(
 				myathletik_gallery_item( 'knitted fabrics/divazus-fabric-store-FkpXNuifVI0-unsplash.jpg', __( 'Knitted fabric material sample', 'myathletik-child' ) ),

@@ -88,6 +88,15 @@ Note (microcopy under submit, optional):
 - The "Under 1,000 pcs" tier stays in the order-quantity dropdown. This field
   records estimated order volume and must not be presented as the public MOQ
   threshold; the confirmed MOQ is 500 pcs per style.
+- The Product Category field already includes `Knitted Fabrics`. The owner
+  confirmed on 2026-08-18 that fabric inquiries may continue through this
+  form, so no separate branch or duplicate option is added. Fabric buyers
+  should state the quantity and unit (normally kg) plus composition, knit
+  structure, GSM, usable width, stretch/recovery, color, finish/function,
+  testing requirement, application, and delivery destination in Message.
+- The required `Estimated Order Quantity` dropdown remains garment-oriented
+  and is not presented as the fabric MOQ. This is an accepted current-form
+  limitation, not a conversion from kg to pieces.
 - `[CONTENT: ...]` / `[IMAGE: ...]` are editor placeholders — never render the
   literal text on the live page.
 

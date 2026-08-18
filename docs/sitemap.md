@@ -84,10 +84,10 @@
 
 **H1：** `[Category] Manufacturer`，例如 “Sportswear Manufacturer”。
 
-1. 简介：说明该品类生产内容及目标客户（B2B，每款 MOQ 500 件）。
+1. 简介：说明该品类生产内容及目标客户。成衣品类面向 B2B 买家，每款 MOQ 500 件；Knitted Fabrics 作为独立面料供货能力页，使用 fabric-specific 商业口径，典型 MOQ 为 1,000–3,000 kg，最终按规格与项目确认。
 2. 能力：面料、结构（适用时包括 FLATLOCK/ACTIVESEAM）和后整理选项。
 3. 产品 / 款式示例：按组展示真实图片，并配置 alt 文本。
-4. 规格条：MOQ、交期和打样可用性。
+4. 规格条：MOQ、交期和打样可用性；Knitted Fabrics 使用品类级覆盖，不复用成衣 `pieces per style`、Sampling 和 Service 字段。
 5. 相关链接：链接 `/services/` 及 1–2 个相关品类页，形成内链。
 6. 询盘 CTA。
 

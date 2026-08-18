@@ -26,7 +26,7 @@
 | 页面 | 已通过 | 主要缺口 | 当前决策 |
 |---|---|---|---|
 | `/sportswear-manufacturer/` | 200、可索引、URL/Title/H1/Meta/Canonical、Schema、首页入口和基本内链正常 | 约 6.97 MB 产品 PNG；若干性能/绝对化表述缺一方证据；MOQ 资格信息偏后；`ACTIVESEAM` 术语漂移；社交图仍为 Logo | 保留 URL/Title/H1；先做性能与事实核验，不拆 Activewear/Fitness 页面 |
-| `/knitted-fabrics-manufacturer/` | 200、可索引、URL/Title/H1/Canonical、页面所有权和基础面料语义正常 | 面料采购任务却复用成衣 MOQ/按件询盘；独立面料业务边界未确认；GRS、追溯、自有工艺、测试和性能声称待证据；约 11.47 MB 产品 PNG | 保留 URL/Title/H1；`performance knit fabric` 与 `sportswear fabric manufacturer` 作为次级词；业务事实确认前不重写 Meta/正文，不创建近义面料页 |
+| `/knitted-fabrics-manufacturer/` | 200、可索引、URL/Title/H1/Canonical、页面所有权和基础面料语义正常；独立面料供货、fabric-specific MOQ/开发/报价语境已在本地补齐 | GRS、追溯、自有工艺、测试和性能声称仍待证据；约 11.47 MB 源产品 PNG 的响应式 WebP 待部署 | 保留 URL/Title/H1/Meta；`performance knit fabric` 与 `sportswear fabric manufacturer` 作为次级词；先完成 SEO-IMP-009 部署验收和 SEO-IMP-010 证据核验，不创建近义面料页 |
 | `/technical-knitwear-tech-pack-guide/` | 已收录；Title/H1/Meta、Article/FAQ/Breadcrumb、技术术语、官方参考和 Hero 性能正常 | 商业页上下文链接较少；Open Graph/Twitter/WebPage 主图使用 Logo；重复 child stylesheet | 保留页面范围；先修内链、专属主图和共享 CSS，不做通用模板页 |
 
 共同结论：当前排名上限更可能受主题连接、证据完整度、性能和域名权威影响，而不是关键词是否重复得足够多。
@@ -77,7 +77,7 @@
 | SEO-IMP-006 | Knitted Fabrics 五张产品图执行同样的响应式真无损优化 | 高：480–800 px 候选相对原 PNG 合计减少 80.32%–93.37% | 中：细节图清晰度、资源路径和上传部署必须核对 | 源 PNG 已保留；30 个派生图已生成；待同步 uploads | **本地已完成，待部署与生产验收** |
 | SEO-IMP-007 | 建立 Sportswear 公开能力事实表并修正绝对化表述 | 高：减少不可信承诺，提高专业采购页证据质量 | 中：错误修改会弱化真实能力或制造新声称 | 所有者确认 SP-01–SP-10 均可满足，但报告按项目提供；页面改为能力/规格/测试条件表达 | **本地已完成，待部署与生产验收** |
 | SEO-IMP-008 | 评估将 Sportswear `MOQ 500 pieces per style` 资格信号移到首屏，并同步全站业务事实 | 中：资格信息有助于预筛，但不是直接排名因素 | 中：首屏信息层级和视觉节奏可能受损 | 500 件业务事实已同步；`Estimated Order Quantity` 与 per-style MOQ 保持分离 | **首屏方案已撤销；业务事实同步保留，待部署验收** |
-| SEO-IMP-009 | 确认 Knitted Fabrics 是否接受独立面料订单，并建立 fabric-specific MOQ、报价单位、开发和交付流程 | 高：决定页面是否真正匹配 `knitted fabric manufacturer` 商业搜索承诺 | 高：错误答案会改变页面定位、表单和 Meta | 所有者完成 [`Knitted Fabrics 独立面料业务事实表`](knitted-fabrics-business-fact-sheet-v1.md) | **事实表已建立，等待所有者确认** |
+| SEO-IMP-009 | 确认 Knitted Fabrics 是否接受独立面料订单，并建立 fabric-specific MOQ、报价单位、开发和交付流程 | 高：决定页面是否真正匹配 `knitted fabric manufacturer` 商业搜索承诺 | 高：错误答案会改变页面定位、表单和 Meta | 所有者已于 2026-08-18 完成 [`Knitted Fabrics 独立面料业务事实表`](knitted-fabrics-business-fact-sheet-v1.md)；URL/Title/H1/Meta 与表单结构保持不变 | **本地已完成，待部署与生产验收** |
 | SEO-IMP-010 | 核验并重写 Knitted Fabrics 的 GRS、追溯、自有工艺、测试和性能声称 | 高：补强信任并降低认证/事实风险 | 高：必须与当前证书主体、范围和有效期一致 | scope certificate、适用实体/产品及可公开测试材料 | 阻塞于证据 |
 
 ### C. 第三批：数据驱动的页面微调
@@ -90,7 +90,7 @@
 | SEO-IMP-014 | 复核首页及多个类目 157–165 字符 Meta、Services 63 字符 Title | 低到中：主要影响摘要截断和 CTR，不是索引问题 | 中：过早缩短可能损失意图信息 | 先取得页面级 GSC Query/CTR 数据 | 观察 |
 | SEO-IMP-015 | 审计 Underwear、Outdoor、Merino、Silk、Sports Accessories 与三篇指南剩余两篇 | 高：扩大已验证的页面级基线 | 低 | 第一批部署稳定后逐页执行 | 待处理 |
 | SEO-IMP-016 | 为类目页评估 `Service` Schema，保持可见内容和事实一致 | 低到中：增强机器可读服务关系，但不作为排名捷径 | 中 | 页面业务事实确认；通过 Schema Validator | 待评估 |
-| SEO-IMP-022 | 固化 Knitted Fabrics 主次词架构：保留现有 URL/Title/H1，以 `performance knit fabric` 和 `sportswear fabric manufacturer` 补充产品、应用和询盘语境 | 中到高：同时保留精准采购意图和 Performance 主题覆盖，不引入近义页内耗 | 低到中：事实不足时扩写会放大未证实的工艺、测试或独立供货承诺 | SEO-IMP-009/010 完成；逐项核对已有文案，不做关键词堆叠 | 数据验证完成，阻塞于事实/证据 |
+| SEO-IMP-022 | 固化 Knitted Fabrics 主次词架构：保留现有 URL/Title/H1，以 `performance knit fabric` 和 `sportswear fabric manufacturer` 补充产品、应用和询盘语境 | 中到高：同时保留精准采购意图和 Performance 主题覆盖，不引入近义页内耗 | 低到中：事实不足时扩写会放大未证实的工艺、测试或独立供货承诺 | SEO-IMP-009 已完成；SEO-IMP-010 证据核验后逐项复核产品与性能表述，不做关键词堆叠 | 商业语境已补齐；证据型扩写阻塞于 SEO-IMP-010 |
 
 ### D. 第四批：内容扩展与站外权威
 
@@ -112,6 +112,7 @@
 - `inc/product-category-data.php`：Knitted Fabrics 增加 Tech Pack Guide 回链；
 - `rank-math.php`：技术内容使用已存在的批准封面作为社交图和 Schema 主图；同步真实 `lastmod`；
 - `inc/product-category-data.php` 与 `template-parts/product-category/page.php`：Sportswear 和 Knitted Fabrics 共 9 张下滚图片接入 WebP `srcset`、PNG 回退、固有尺寸、描述性 alt、lazy loading 与 async decoding；
+- `inc/product-category-data.php` 与 `template-parts/product-category/page.php`：Knitted Fabrics 增加品类级 Hero/能力标题/规格卡覆盖，展示独立面料供货、典型 `1,000-3,000 kg` MOQ、完整 fabric brief、开发周期和量产周期；其余六个成衣品类继续使用共用规格；
 - `style.css`：补充 `<picture>` 的块级布局，不改变现有图片比例和交错版式；
 - uploads：保留 9 张源 PNG，生成 54 个真无损响应式 WebP；详见 [`image-optimization-seo-imp-005-006-v1.md`](image-optimization-seo-imp-005-006-v1.md)；
 - 未改变任何 URL、Title、H1、Meta、FAQ、主要关键词归属或未经确认的能力声称；
@@ -125,17 +126,11 @@
 
 ### Knitted Fabrics
 
-已建立 [`knitted-fabrics-business-fact-sheet-v1.md`](knitted-fabrics-business-fact-sheet-v1.md)，必须先回答：
+所有者已完成 [`knitted-fabrics-business-fact-sheet-v1.md`](knitted-fabrics-business-fact-sheet-v1.md)：接受独立面料订单；典型 MOQ 为 `1,000-3,000 kg`，实际随成分、价格、规格和项目变化；通常按 kg 报价，也可使用其他单位；完整 fabric brief 为报价输入；swatch、counter sample、lab dip、sample yardage 和 approval sample 均可按项目提供。
 
-1. 是否接受独立面料订单，还是只为成衣 OEM 项目提供面料开发；
-2. 面料 MOQ 的单位及按色/结构规则；
-3. 是否提供 swatch、counter sample、lab dip、sample yardage，以及各节点含义；
-4. 报价需要哪些 composition、GSM、width、stretch/recovery、finish、color、quantity、testing 和 delivery 输入；
-5. 面料项目的样品周期、量产周期与服务边界；
-6. knitting、dyeing、finishing、testing 各自属于自有、关联、外协还是按项目安排；
-7. GRS 当前证书主体、编号、有效期、范围、适用产品及 transaction certificate 边界。
+所有者授权开发、量产和交付先使用行业常规表达。本地页面暂用 `Typically 2-4 weeks` 开发和 `Typically 4-6 weeks` 量产，并写明起算条件与最终 quotation 确认边界。Contact Form 已有 `Knitted Fabrics` 选项，因此不新增表单分支；`Estimated Order Quantity` 保持成衣预计订单量含义，面料买家通过 Message 提供 kg 数量和完整规格。
 
-这些问题没有确认前，不修改 Knitted Fabrics 的 Meta、成衣式 MOQ、询盘单位和认证声称。
+SEO-IMP-010 仍需单独确认 knitting、dyeing、finishing、testing 的责任边界，以及 GRS 当前证书主体、编号、有效期、范围、适用产品和 transaction certificate 边界。在证据完成前，不扩大认证、测试、自有工艺或性能声称。
 
 ## 7. 部署与验收顺序
 
@@ -191,7 +186,7 @@
 
 1. 将主题代码与 SEO-IMP-005/006 的 54 个 WebP 同步到 staging/production，完成视觉、HTTP、MIME 与 Network 候选验收；
 2. 完成 SEO-IMP-007 的 staging/production 文案验收，并继续收集可公开的项目级测试证据；
-3. 完成 Knitted Fabrics 事实输入；
-4. 基于事实制作 Knitted Fabrics 微调简报，并按 SEO-IMP-022 实施次级词架构；
+3. 部署并验收 SEO-IMP-009 的 Knitted Fabrics fabric-specific 商业信息，确认其他六个成衣品类规格无回归；
+4. 完成 SEO-IMP-010 证据核验，再按 SEO-IMP-022 复核 Knitted Fabrics 的产品、性能和次级词语境；
 5. 建立 GSC 7 天/28 天页面级监测，分别观察商业采购词与宽泛 Performance 词；
 6. 再开始剩余页面审计、欧洲本地语言研究和条件式新内容；Performance Fabrics Guide 仍需单独批准。
