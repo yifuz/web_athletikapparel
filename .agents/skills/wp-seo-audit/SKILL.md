@@ -22,13 +22,20 @@ user explicitly asks you to fix something.
 - `seo-tags.md` — the canonical SEO Title / Meta Description for every page.
   Compare the rendered page against this file. If they differ, that's a finding.
 - `docs/sitemap.md` — every page's URL, single H1, target keyword, 301 source.
+- `docs/seo/seo-process.md` §5 — diagnostic thresholds and sample-size gates
+  (e.g. no CTR-driven Title/Meta rewrites below ~100 matched impressions).
+- `docs/seo/gsc-data-log.md` — latest GSC snapshots; check whether real
+  query/CTR data exists before recommending snippet changes.
 
 ## What to audit (in this order)
 
 ### 1. Title & meta description
 For the target page, confirm:
 - `<title>` matches `seo-tags.md` for that route (± brand suffix).
-- SEO title ≤ ~60 chars; meta description ≤ ~155 chars.
+- SEO title ≤ ~60 chars; meta description ≤ ~155 chars. These are INTERNAL
+  SOFT TARGETS (heuristics), not Google rules. Report overruns as 🟡 at most,
+  and never recommend a rewrite on length alone when GSC shows no CTR problem
+  (see `seo-process.md` §5 and finding V2-002's precedent).
 - Meta description contains the page's primary keyword naturally.
 - `<meta name="description">` is present and unique (not the site-wide default).
 - `<link rel="canonical">` points to the page's own URL.
@@ -68,6 +75,10 @@ template alone, because Rank Math may inject tags dynamically.
 ### 6. Schema / structured data
 - Confirm at least one JSON-LD block in `wp_head`. (See `wp-schema-markup`
   skill for what types each page should have.) Presence check only here.
+- If field-level validation is needed, run the `seo` CLI crawl
+  (`docs/seo/seo-cli-baseline-2026-08-18.md`) — it checks rich-result required
+  properties per block. Known acceptable deviation: Rank Math emits
+  BreadcrumbList `position` as a string; GSC URL Inspection accepts it.
 
 ### 7. Core Web Vitals signals (static checks)
 This skill does **not** run Lighthouse. It checks static signals that predict
@@ -82,26 +93,55 @@ good CWV:
 
 ## Output format
 
-Always return a structured report:
+Always return a structured report. Every 🔴/🟡 finding must be **falsifiable
+and verifiable** — a finding without evidence, a failure-mode check, and a
+verification method is not complete:
 
 ```
 ## SEO Audit — <page URL>
 
 ### Findings by severity
 🔴 Critical (blocks indexing / breaks H1 rule / missing title):
-  - <finding> — <file:line if known> — <fix>
+  - <finding> — <file:line or production URL evidence>
+    Evidence (observed): <what was actually measured/seen in rendered HTML,
+      crawl data, or GSC — never "best practice says so">
+    Falsification check: <what observation would prove this finding wrong
+      or unnecessary — e.g. "if GSC shows CTR already normal for this
+      position, do not act">
+    Leading indicator: <what signal confirms the fix worked, and when to
+      look — e.g. "re-crawl shows single H1", "28-day GSC CTR vs prior window">
+    Fix: <minimal change — or 【NEEDS INPUT: ...】 if facts are missing>
 🟡 Warning (suboptimal but not blocking):
-  - ...
+  - <same four fields>
 🟢 Passed:
-  - <what's already correct>
+  - <what's already correct> (plain list, no extra fields needed)
 
 ### 301 / URL notes
 <if any slug issues — otherwise "none">
 
 ### Suggested next actions (do NOT auto-apply)
-1. ...
+1. ... (ordered by expected gain / risk, per seo-implementation-checklist logic)
 2. ...
 ```
+
+## Evidence discipline (adapted from claude-seo / iannuttall-seo practice)
+
+- **Separate observation from inference from recommendation.** State which of
+  the three each sentence is. A rendered-HTML fact is observation; "this may
+  truncate in SERP" is inference; "shorten it" is recommendation.
+- **Label heuristics as heuristics.** Character limits, keyword-density ideas,
+  and third-party tool scores are conventions, not search-engine rules. Never
+  present them as requirements.
+- **Partial data is not zero.** If GSC/crawl data is sampled, capped, or
+  missing, say so explicitly; do not conclude "no problem" from absent data.
+- **Respect sample gates.** Below the thresholds in `seo-process.md` §5
+  (e.g. ~100 matched impressions), report direction only and recommend
+  observation, not edits.
+- **Every fix ships with a re-check.** Use whichever applies: re-render the
+  page and inspect source; run `seo crawl https://www.athletikapparel.com
+  --save` then `seo crawl-reports --compare latest --against previous`
+  (setup/proxy notes: `docs/seo/seo-cli-baseline-2026-08-18.md`); or pull fresh
+  GSC rows (commands in `docs/seo/gsc-data-log.md`).
 
 ## Rules
 
@@ -113,3 +153,7 @@ Always return a structured report:
   placeholder.
 - **No body copy.** Per AGENTS.md §5, suggest the *structure* of a meta
   description, don't author marketing prose unless explicitly asked.
+- **Respect the "do not do" list** in
+  `docs/seo/seo-implementation-checklist-v1.md` §9 — never recommend URL
+  changes on indexed pages, near-duplicate pages for keyword variants, or
+  keyword stacking, no matter what a generic audit rule says.
