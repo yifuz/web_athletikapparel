@@ -100,7 +100,7 @@
 | SEO-IMP-017 | 基于真实 Query/Page 数据决定是否补 Tech Pack 的简短 definition/scope 段 | 中到高：承接 `clothing/garment/apparel tech pack` 的相关曝光 | 中：可能把页面拉向模板、工具或 startup 意图 | 匹配查询持续获得曝光但排名/CTR不足 | 观察 |
 | SEO-IMP-018 | QC Guide 内容简报与证据采集 | 高：独立的采购尽调任务和潜在链接资产 | 高：不能发明 QC 节点、记录或标准 | 一方 QC 流程、检查记录、图片和责任边界齐全 | 未批准新 URL |
 | SEO-IMP-019 | NL / SE / NO / FI 本地语言研究 | 中：验证英语之外的欧洲买家语言 | 低 | 英语基线实施和监测稳定 | 待研究 |
-| SEO-IMP-020 | 技术指南持续分发并争取真实行业引用、供应商目录/协会资料页及合作方链接 | 高：增加独立站外提及和引用域，而不是依赖站内信号 | 中：必须是真实关系，禁止购买批量垃圾链接 | 建立目标来源、发布记录和引用 URL 台账 | 持续 |
+| SEO-IMP-020 | 技术指南持续分发并争取真实行业引用、供应商目录/协会资料页及合作方链接 | 高：增加独立站外提及和引用域，而不是依赖站内信号 | 中：必须是真实关系，禁止购买批量垃圾链接 | 建立目标来源、发布记录和引用 URL 台账 | **机会池已建立（2026-08-18，见 [`offsite-authority-opportunity-pool-v1.md`](offsite-authority-opportunity-pool-v1.md)）**：发现 Woolmark 公开名录已有 ZHANGJIAGANG ATHLETIK 条目（网址字段待更正）；P0/P1/P2 分级完成；全部【NEEDS INPUT】待所有者确认后执行 |
 | SEO-IMP-021 | 每季度复核指南引用的 ASTM/AATCC/ISO 等标准版本和链接 | 中：维持技术内容可靠性和更新依据 | 低 | 指定复核日期与负责人 | 待建立节奏 |
 | SEO-IMP-023 | 条件式评估 Performance Fabrics 信息指南，明确限定 performance apparel / knit fabric，避免进入家具和室内装饰意图 | 中：有机会承接宽泛研究流量并内链到面料商业页 | 高：宽词意图混杂，过早建页可能产生无效流量和主题稀释 | 当前商业页事实完整；GSC 出现相关 Query，或独立 SERP/内容缺口验证通过；具备一方材料与测试证据 | 候选研究，未批准新 URL |
 
@@ -115,7 +115,7 @@
 | ID | 项目 | 收益 | 状态 |
 |---|---|---|---|
 | （已修复） | Silk 页第三张子类图引用 `IMG_5550.JPG`（大写扩展名），生产 Linux 环境 404；Windows 本地不暴露 | 高：用户可见破图 | **本地已修复**（`inc/product-category-data.php` 改小写 `.jpg`），随批次部署 |
-| SEO-IMP-025 | 五个品类页产品图响应式批次：Underwear 约 1.36 MB、Outdoor 约 1.01 MB、Merino 约 3.79 MB（单张最大 2.73 MB PNG）、Silk 约 7.58 MB、Sports Accessories 约 6.13 MB，均缺 width/height、srcset/sizes 与 WebP 派生 | 中到高：延续 IMP-005/006 的移动端负载收益 | 待处理；参照 IMP-005/006 工艺（真无损 WebP、保留原图、产物入 uploads） |
+| SEO-IMP-025 | 五个品类页产品图响应式批次：Underwear 约 1.36 MB、Outdoor 约 1.01 MB、Merino 约 3.79 MB（单张最大 2.73 MB PNG）、Silk 约 7.58 MB、Sports Accessories 约 6.13 MB，均缺 width/height、srcset/sizes 与 WebP 派生 | 中到高：延续 IMP-005/006 的移动端负载收益 | **暂缓（所有者 2026-08-18 确认优先级逻辑）**：这五页 GSC 曝光接近零、主词搜索量极低或未验证（Silk 七国 NR、Accessories 未测试；Underwear/Outdoor 有量但 SERP 意图错配），图片优化预算先集中在高搜索量页面；待任一页 GSC 曝光起量或真实 CWV 报警再启动 |
 | SEO-IMP-026 | OEM Evaluation 指南正文零上下文出站链接，全站仅 Hub 一个正文入口（V2-006 在本页核实仍未修复；IMP-001 只覆盖了 Tech Pack Guide） | 中：两篇指南中本页内链最弱 | 待处理；最小改动：本页补 2–4 条出站 + 姊妹指南/相关品类页补入链，文案需所有者批准 |
 | SEO-IMP-027 | FLATLOCK 指南有两支第一方生产视频但无 VideoObject Schema | 低到中：视频富媒体增强空间 | 待评估；先看 GSC 视频索引报告再决定 |
 | SEO-IMP-028 | 两篇指南 Twitter/阅读时长字段显示 "Less than a minute"（Rank Math 从空 `post_content` 计算） | 低：社交卡片元数据失真 | 待处理；rank-math.php 过滤器可修 |

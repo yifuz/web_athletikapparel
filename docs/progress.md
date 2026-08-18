@@ -587,7 +587,8 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-18 | 接入 `iannuttall/seo` CLI（v0.2.36，只读 GSC/GA4 授权）；完成首轮自动化技术爬取（无新 Critical，新增面包屑 position 类型与 HSTS 两条观察）与 GSC 28 天页面/查询/国家基线导出；详见 [`seo/seo-cli-baseline-2026-08-18.md`](seo/seo-cli-baseline-2026-08-18.md) |
 | 2026-08-18 | 按所有者决定退役历史 `seo/seo.md`（commit `48e4f22`，可从 git 历史查阅）；GSC 周期数据改入 [`seo/gsc-data-log.md`](seo/gsc-data-log.md)；本地 .git 对象库 ACL 损坏（Codex 沙箱提交遗留）已由 Codex 修复；确立协作模式：Kimi 在独立克隆 `~/kimi-repos/web_myathletik` 的 `kimi` 分支提交推送，Codex 在本地 main，定期合并 |
 | 2026-08-18 | `wp-seo-audit` skill 改造：finding 必须带依据/失效判定/先行指标/修法，接入 seo CLI 复核（kimi 分支 `d6451b6`） |
-| 2026-08-18 | SEO-IMP-015 完成：Underwear/Outdoor/Merino/Silk/Sports Accessories + 两篇指南共 7 份只读审计；修复 Silk 页图片 404（大写扩展名）；新增 IMP-025（五页图片响应式批次）、IMP-026（OEM 指南内链）、IMP-027（VideoObject 评估）、IMP-028（指南阅读时长）；SEO-IMP-022 本地核验完成；汇总见 [`seo/seo-implementation-checklist-v1.md`](seo/seo-implementation-checklist-v1.md) §4A |
+| 2026-08-18 | SEO-IMP-015 完成：Underwear/Outdoor/Merino/Silk/Sports Accessories + 两篇指南共 7 份只读审计；修复 Silk 页图片 404（大写扩展名）；新增 IMP-025（五页图片响应式批次，后按所有者确认的优先级逻辑暂缓）、IMP-026（OEM 指南内链）、IMP-027（VideoObject 评估）、IMP-028（指南阅读时长）；SEO-IMP-022 本地核验完成；汇总见 [`seo/seo-implementation-checklist-v1.md`](seo/seo-implementation-checklist-v1.md) §4A |
+| 2026-08-18 | SEO-IMP-020 站外权威机会池建立（[`seo/offsite-authority-opportunity-pool-v1.md`](seo/offsite-authority-opportunity-pool-v1.md)）：发现 Woolmark 官方名录已有 ZHANGJIAGANG ATHLETIK 条目（网址字段指向 woolbaselayer.com，待确认许可有效性后更正）；P0（Woolmark 字段、performancefabrics 互链、Merrow 案例）/P1（ISPO Textrends、Sourcing Journal、ThomasNet/Kompass）/P2（参展、AAFA/OIA）分级，排除链农场目录；全部 NEEDS INPUT 待所有者确认 |
 
 ---
 
