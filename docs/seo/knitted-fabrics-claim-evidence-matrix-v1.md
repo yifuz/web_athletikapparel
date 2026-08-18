@@ -1,19 +1,20 @@
-# Knitted Fabrics 声称—证据矩阵 V1
+# Knitted Fabrics 声称—证据矩阵 V1.1
 
 > 建立日期：2026-08-18
 > 对应实施项：SEO-IMP-010
 > 目标页面：`/knitted-fabrics-manufacturer/`
-> 状态：本地已实施，待部署与生产验收
+> 更新日期：2026-08-18
+> 状态：已按 SEO 流程 V1.1 完成本地再验收，待部署与生产验收
 
 ## 1. 结论
 
-SEO-IMP-010 不删除 Knitted Fabrics 的 performance、thermal、stretch、recycled、GRS 和 testing 主题，而是把它们从无条件结果或主体级认证声称改成项目制能力表达：
+SEO-IMP-010 保留 Knitted Fabrics 的 performance、thermal、functional、stretch、recycled、GRS 和 testing 主题。根据 SEO 流程 V1.1，公开页面以搜索相关性、可交付能力和客户触达为优先，不再把内部验收步骤逐项写给客户：
 
-- 可以描述可开发的材料、结构、功能与测试方向；
-- 具体性能必须绑定所选面料、测试方法和验收标准；
-- GRS 必须绑定认证范围、适用材料、订单和交易/追溯文件；
-- 第三方测试必须在下单前确认标准、实验室和报告范围；
-- 不再公开 `full`、`same performance specs`、`in-house testing` 等超出当前证据粒度的绝对表达。
+- 直接描述可开发和可供应的材料、结构、功能与应用方向；
+- moisture management、UV protection、antimicrobial、thermal、stretch/recovery 和 compression 作为可交付能力呈现，不在页面重复测试免责声明；
+- recycled programs 可以说明使用 GRS-certified inputs，并为适用订单提供 project-specific traceability documentation；
+- third-party testing 和 supporting documentation 可以按所需标准安排；
+- `full`、`guaranteed`、跨材料性能等效和 `in-house testing` 等硬事实仍不作无依据承诺。
 
 URL、Title 和 H1 保持不变。Meta 改为 147 字符的能力概述，移除 `our own fabric mill`、`in-house testing` 和无条件 `recycled (GRS)`。
 
@@ -33,13 +34,13 @@ URL、Title 和 H1 保持不变。Meta 改为 147 字符的能力概述，移除
 | 原公开声称 | 当前证据 | 风险 | 本地决策 |
 |---|---|---|---|
 | `our own fabric mill` | BTEXCO 一方资料记录自有 knitting facilities 和合作资源；公开工序责任拆分未细化 | 容易被理解为纺纱、针织、染色、后整理和测试全部由同一 Athletik 实体自有 | 从 Meta 删除；正文改为 knitting、dyeing、finishing、testing 按批准规格协调 |
-| `in-house testing` / `full in-house testing` | 一方资料主要记录 BV、SGS、ITS 等第三方测试安排 | `in-house` 与现有证据粒度不一致；`full` 为绝对化 | 从 Meta 和正文删除；改为按项目约定测试标准、实验室和范围 |
-| `GRS certified` / `GRS-certified recycled fabrics` | 历史站点和 uploads 有 GRS 徽标；未找到当前 scope certificate 或适用订单文件 | 徽标不能证明当前主体、范围、材料和订单可使用 GRS claim | 标题改为 project-specific GRS documentation；正文限定为需要 GRS-certified inputs 的项目，并要求订单级确认 |
-| `Full traceability documentation` | GRS 项目通常需要供应链文件，但仓库没有当前文件清单或样例 | `full` 没有定义，也可能把材料级文件扩大为全供应链保证 | 删除；改为确认 certification scope、transaction documentation 和 traceability records |
+| `in-house testing` / `full in-house testing` | 一方资料主要记录 BV、SGS、ITS 等第三方测试安排 | `in-house` 与现有证据粒度不一致；`full` 为绝对化 | 从 Meta 和正文删除；公开表达改为 third-party testing 和 supporting documentation 可按所需标准安排 |
+| `GRS certified` / `GRS-certified recycled fabrics` | 历史站点和 uploads 有 GRS 徽标；一方资料支持 recycled material programs | 不应把材料输入能力扩大为当前 Athletik 主体级认证声明 | 标题保留 project-specific GRS documentation；正文直接说明 GRS-certified inputs 与适用订单文件能力，不展开内部确认清单 |
+| `Full traceability documentation` | recycled programs 可按订单组织相应文件，但 `full` 没有统一公开边界 | `full` 容易被理解为所有订单、全部链路的无条件保证 | 删除 `full`；使用 project-specific traceability documentation for applicable orders |
 | `same performance specs as virgin-fiber equivalents` | 未找到跨材料的对比规格和测试报告 | 无法对所有 recycled/virgin 材料和性能指标作统一保证 | 删除，不保留替代表述；每个订单单独定义 performance requirements |
-| moisture management、UV、antimicrobial、odor control | BTEXCO 一方资料记录这些功能方向；Sportswear 能力核验也确认可以作为项目选项，但报告按项目 | 功能可能来自 fiber/yarn、knit construction 或 finishing，结果受材料和测试方法影响 | 保留为 development options；明确所选面料、测试方法与 acceptance criteria |
-| thermal 与 moisture-wicking 结果 | 一方资料支持 thermal/moisture-management 方向，没有本页每种材料的统一结果 | 原文把结构与结果直接绑定 | 改为 thermal knit options；性能目标需定义并测试确认 |
-| stretch、recovery、compression | 产品方向和开发能力成立；没有一组适用于所有材料的统一数值 | `power-stretch for compression` 容易被理解为自动达到特定压缩表现 | 保留材料方向，要求在开发阶段确认 stretch/recovery、compression、hand feel 和 fiber content |
+| moisture management、UV、antimicrobial、odor control | BTEXCO 一方资料记录这些功能方向；Athletik 可以按项目组织相应材料、结构与 finishing | 未提供具体数值时，不应写成量化保证 | 作为 functional knit fabric 能力直接呈现，不在公开段落重复测试方法和 acceptance criteria |
+| thermal 与 moisture-wicking 结果 | 一方资料支持 thermal/moisture-management 方向 | 未提供具体保温或吸湿数值 | 直接描述 thermal knit fabrics、weight、warmth 和 moisture-management options，不承诺具体数值 |
+| stretch、recovery、compression | 产品方向和开发能力成立 | 未提供适用于所有材料的统一数值 | 直接描述 stretch/recovery、compression、hand feel 和 fiber content 可按 end use 调整 |
 | bamboo charcoal `infusion` | 一方资料支持 bamboo charcoal fabric/yarn 方向，但没有证明具体 `infusion` 工艺 | 工艺词可能不准确 | 删除 `infusion`，改为 bamboo charcoal programs 和项目级 odor-control 要求 |
 
 ## 4. 已实施的公开文案边界
@@ -48,21 +49,21 @@ URL、Title 和 H1 保持不变。Meta 改为 147 字符的能力概述，移除
 
 > Knitted fabrics manufacturer for performance, thermal, stretch, Merino wool, and recycled knit programs. Custom development for B2B apparel buyers.
 
-### 工序与测试
+### 工序、开发与测试
 
 > Knitting, dyeing, finishing, and testing are coordinated against the approved specification.
 
-> When certified inputs or third-party testing are required, the applicable standard, documentation, and laboratory scope must be agreed for the selected material and order.
+> Third-party testing and supporting documentation can be arranged based on the required standard.
 
 ### GRS
 
-> Recycled polyester and nylon knit programs can be developed when GRS-certified inputs are required. Before a GRS claim is used, certification scope, applicable material, transaction documentation, traceability records, and performance requirements must be confirmed for the specific order.
+> Recycled polyester and nylon knit programs are available with GRS-certified inputs and project-specific traceability documentation for applicable orders.
 
-这些文案为所有者复核稿。它们描述项目流程和条件，不承诺每个订单都具备同一证书、报告或性能结果。
+这些文案为所有者复核稿。它们主动呈现可交付能力，不在公开页面展开供应链分工、证书核验、实验室范围和内部验收步骤；具体编号、数值和保证性结果仍需相应依据。
 
 ## 5. 后续证据清单
 
-以下资料不是本次安全降级文案的上线阻塞项，但取得后可以逐步增强页面证据：
+以下资料不是本次商业能力文案的上线阻塞项，但取得后可以逐步增强页面证据：
 
 1. 当前 GRS scope certificate：主体、证书编号、认证机构、有效期、认证范围和产品类别；
 2. 可公开的 transaction certificate 流程或脱敏样例，以及不能公开的边界；
@@ -76,6 +77,7 @@ URL、Title 和 H1 保持不变。Meta 改为 147 字符的能力概述，移除
 
 - 生产 Meta、Open Graph、Twitter 和 WebPage Schema 使用同一条已审核 description；
 - 页面不再出现 `our own fabric mill`、`in-house testing`、`full traceability` 或 `same performance specs as virgin-fiber equivalents`；
-- GRS 每次出现都限定到材料、认证范围、订单或文件确认；
-- 功能表现与所选材料、测试方法和 acceptance criteria 绑定；
+- GRS 文案表达 GRS-certified inputs 与适用订单的 project-specific documentation，不声称 Athletik 全主体或全产品无条件获得认证；
+- 功能面料、thermal、stretch、recycled 和 testing 主题以买家语言直接呈现，不连续使用 `must be confirmed`、`must be agreed` 或内部文件清单；
+- 页面不再使用未经稳定确认的开发和量产固定周数；
 - URL、Title、H1、Canonical、索引状态、图片和其他六个成衣品类不受影响。

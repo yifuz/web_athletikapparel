@@ -58,17 +58,17 @@ GRS、追溯、测试报告、自有/关联/外协工序和具体性能声称属
 - [Fersan Tekstil](https://www.fersantekstil.com/en/)：在产品族页面直接给出 MOQ、交期以及样品/交付条件，并保留最终报价确认；
 - [Pine Crest Fabrics](https://pinecrestfabrics.com/catalog/)：把 made-to-order、sample yardage、request a quote 和“minimums vary by fabric”放在同一采购路径中；
 - [Apex Mills](https://www.apexmills.com/custom-solutions/)：以 custom-solutions questionnaire 收集结构、纤维成分和用途等开发输入；
-- [Youchu Textile](https://www.youchutex.com/)：公开展示样品与量产周期，作为本轮周期区间的观察样本之一。
+- [Youchu Textile](https://www.youchutex.com/)：公开展示样品与量产周期，用于观察面料买家如何理解开发与交付信息。
 
-这些页面只用于提炼买家熟悉的表达结构：先说明供货范围，再说明典型 MOQ/周期，随后要求完整规格并把最终条件留在项目报价中。它们不能证明 Athletik 的实际能力、证书或交期。
+这些页面只用于提炼买家熟悉的表达结构：先说明供货范围，再说明影响 MOQ 和周期的项目变量，随后要求完整规格并把最终条件留在项目报价中。它们不能证明 Athletik 的实际能力、证书或交期。
 
-所有者授权 KF-09-07 至 KF-09-09 暂用行业常规数字。当前本地页面采用较保守的临时区间：
+所有者于 2026-08-18 进一步确认，不确定的商业数字应使用概括性表达，不采用行业常规数字制造不必要的确定感。当前本地页面使用：
 
-- Development：`Typically 2-4 weeks`，从收到完整 fabric brief 后计算，实际受打样范围和批准轮次影响；
-- Bulk lead time：`Typically 4-6 weeks`，从规格与颜色批准后计算，最终以项目报价为准；
+- Development：不公开未经稳定验证的固定周数；根据 fabric brief、sampling scope 和 approval rounds 安排；
+- Bulk lead time：不公开未经稳定验证的固定周数；根据规格、颜色批准和订单要求在 quotation 中提供；
 - packing、delivery terms、单位切换和其他边界不写固定承诺，统一在项目报价中确认。
 
-这两个周期不是搜索关键词，也不是无条件保证；后续取得 Athletik 实际项目数据后，应以内部真实中位数或范围替换。
+开发和量产周期不是当前页面的主要搜索主题。后续取得稳定项目数据后，只有在能够帮助买家决策和提升询盘质量时，才考虑补充真实中位数或范围。
 
 ## 5. 已实施的页面落点
 
@@ -78,8 +78,8 @@ GRS、追溯、测试报告、自有/关联/外协工序和具体性能声称属
 | MOQ 按面料与项目变化，不公开固定数字范围 | Knitted Fabrics 使用品类专用规格卡 `Varies by fabric and project`；其余六个成衣品类继续使用 `500 pcs per style` |
 | 正常按 kg 报价，也可接受其他单位 | 正文使用 `Pricing is normally quoted per kg, while other units can be used when required.`，不锁定币种或 Incoterm |
 | 必须取得完整面料规格 | 正文列出 composition、yarn/knit structure、GSM、usable width、stretch/recovery、color、finish/function、testing、quantity、application 和 destination |
-| 可提供完整开发节点 | 正文列出 swatch、counter sample、lab dip、sample yardage 和 approval sample，并以 `as applicable` 限定具体项目 |
-| 周期先用行业常规数字 | 规格卡分别使用 `Typically 2-4 weeks` 和 `Typically 4-6 weeks`，同时写明起算条件与 quotation 确认边界 |
+| 可提供完整开发节点 | 正文列出 swatch、counter sample、lab dip、sample yardage 和 approval sample，并说明按 project needs 提供 |
+| 开发和量产周期按项目提供 | 规格卡分别使用 `Based on fabric brief` 和 `Based on order requirements`，避免用行业常规数字制造不必要的确定感 |
 | 继续使用现有 Contact Form | 表单已有 `Knitted Fabrics` 品类选项，因此不重复新增；不改变 `Estimated Order Quantity` 的成衣订单量含义，面料买家在 Message 中提供 kg 数量与完整规格 |
 
 ## 6. 实施与验收边界
