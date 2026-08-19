@@ -28,8 +28,8 @@ Woolmark 官方 Active Licensees 公开名录已列有
 | P0 | Merrow Customer Story / ActiveSeam 计划 | 设备方编辑案例 | 零 | **已解锁**：所有者确认 Merrow 设备在用、可授权公开（2026-08-18） |
 | P1 | ISPO Textrends 投稿 | 展会全年在线 Marketplace | 低（寄样 + 申请） | **以 Athletik 名义**（所有者 2026-08-18 确认） |
 | P1 | Sourcing Journal op-ed 投稿 | 行业媒体编辑渠道 | 零 | 主题与事实口径批准（§5） |
-| P1 | ThomasNet 双档案（美国主体认领 + 中国主体新建） | 北美 B2B 买家目录 | 零 | 所有者已提供快照；文案草案待审核后操作 |
-| P2 | Kompass 认领/更新（付费） | 欧洲 B2B 买家目录 | 待询 | 所有者预算决策；内容冲突需修复 |
+| P1 | ThomasNet 中国主体新建档案 | 北美 B2B 买家目录 | 零 | 美国主体旧档不管理；中国主体新档待所有者注册 |
+| P2 | Kompass 中国主体新建档案（付费） | 欧洲 B2B 买家目录 | $70 / 3 年 | 美国主体旧档不管理；待所有者预算决策 |
 | P2 | Functional Fabric Fair（波特兰）/ Performance Days（慕尼黑） | 参展 + 长期可索引展商名录 | 高（展位预算） | 参展预算决策 |
 | P2 | AAFA / OIA 供应商会员 | 协会会员名录 | 中（年费待询） | 入会主体与预算 |
 | P2 | Europages / Apparel Search 免费档案 | 欧洲/垂直目录 | 零 | 无 |
@@ -63,8 +63,8 @@ Woolmark 官方 Active Licensees 公开名录已列有
 
 - **ISPO Textrends**【实时核实】：不参展也可投稿（寄 50×50cm 样布 + 在线申请），入选进全年在线 Marketplace 与 Trendbook，成本最低的编辑背书。名义已确认为 Athletik。
 - **Sourcing Journal op-ed**【实时核实】：官方 FAQ 确认接受 sourcing 主题约 750 词 op-ed；以 FLATLOCK 技术、垂直整合、出口合规为主题投稿，署名自然带品牌。长文案需所有者批准（§5）。
-- **ThomasNet**【所有者人工 / 快照已核实】：供应商档案免费，北美中型买家实际采购渠道，价值在买家触达而非链接权重；已有历史档案 <https://www.thomasnet.com/company/athletik-clothing-inc-31006000/profile>（所有者 2026-08-19 快照核实）。当前内容为 Athletik Clothing Inc.（纽约地址），公司类型 "Custom Manufacturer"，Description by Thomasnet 为旧口径 "Custom manufacturer of apparel..."，未体现北美销售办公室角色，且 Quality Certifications 显示 Not available。需按 §3A 认领后重写；中国主体新建制造商档案。文案草案见附录 B。
-- **Kompass**【实时核实 + 所有者付费反馈】：已有美国主体旧档案（内容冲突，见下方），但认领/更新需付费，具体费用待所有者从平台获取报价。欧洲买家覆盖价值存在，但成本不再是零，因此从 P1 降级为 P2，纳入所有者预算决策后再执行。
+- **ThomasNet**【所有者人工 / 快照已核实】：供应商档案免费，北美中型买家实际采购渠道，价值在买家触达而非链接权重；已有美国主体历史档案 <https://www.thomasnet.com/company/athletik-clothing-inc-31006000/profile>（所有者 2026-08-19 快照核实）。**所有者 2026-08-19 决定：美国主体旧档不管理，不认领、不更新**；仅新建中国主体 Zhangjiagang Athletik Clothing Co., Limited 制造商档案，统一使用 `info@athletikapparel.com`。文案草案见附录 B。
+- **Kompass**【实时核实 + 所有者付费反馈】：已有美国主体旧档案（内容冲突，见下方），认领/更新需付费。**所有者 2026-08-19 确认费用为 $70 / 3 年**。欧洲买家覆盖价值存在，但成本不再是零。**所有者 2026-08-19 决定：美国主体旧档不管理**；是否新建中国主体档案待所有者结合下方 §7 收益评估后决策。
 - **Europages**：欧洲买家覆盖，免费档案；建档主体已确认为 Zhangjiagang Athletik Clothing Co., Limited（见 §3A）。
 - **参展**：Functional Fabric Fair 买家构成最贴合北美中型品牌采购；Performance Days 欧洲最精准且名录长期可索引【实时核实：名录在线】。均为预算决策，单独评估。
 - **AAFA / OIA**：均有供应商会员通道【实时核实】；年费待询；入会主体与预算待所有者确认。
@@ -73,8 +73,8 @@ Woolmark 官方 Active Licensees 公开名录已列有
   - **OEKO-TEX Buying Guide【实时核实】：未收录**（该名录为持证企业自愿登记的推广名录，未登记≠证书无效）。动作：登记以获得买家验证入口曝光；证书真伪用 Label Check 按证书号验证。
   - **WRAP 公开工厂地图【实时核实】：未在列**（申请时勾选"同意公开"才上图）。动作：如希望买家可查，在 WRAP 门户开启公开列名。
 - **B2B 平台历史建档排查（2026-08-18 核查）**：
-  - **Kompass【实时核实 + 所有者付费反馈】：已有档案，必须认领更新而非新建；认领/更新需付费**——`Athletik Clothing Inc.` 条目（New York 地址）存在于 kompass.com 多国镜像，但简介沿用旧站 athletik.nyc 文案，含"1 家自有工厂 + 5 家合作工厂、年产能 500 万件"等与现行披露口径（不公开工厂数量/分包/产能细节）冲突的表述，且未指向主站。页面自带 "Is this your company? Update your data" 认领入口，但所有者 2026-08-19 反馈认领/更新为付费服务。**品牌一致性风险点，但成本变为预算决策；从 P0/P1 降级为 P2，待所有者决定是否付费后执行。**
-  - **ThomasNet【所有者人工 / 快照已核实】：已有档案**——条目 <https://www.thomasnet.com/company/athletik-clothing-inc-31006000/profile>（所有者 2026-08-19 快照核实）。当前档案：公司名 Athletik Clothing Inc.，状态 Claimed，公司类型 Custom Manufacturer，地址 New York, NY 10003，Description by Thomasnet 为 "Custom manufacturer of apparel for commercial applications. Products include underwear, sportswear, activewear, and outdoor clothing. Design services are offered as secondary. Suitable for sports brand owners, wholesalers, label brands, and importers."，产品分类 Clothing / Sportswear / Fabrics and Cloths / Underwear，Quality Certifications 显示 Not available。需认领后按 §3A 北美销售办公室角色重写；中国主体新建制造商档案。具体删改清单与文案草案见附录 B。
+  - **Kompass【实时核实 + 所有者付费反馈】：已有美国主体旧档；不管理、不更新**——`Athletik Clothing Inc.` 条目（New York 地址）存在于 kompass.com 多国镜像，简介沿用旧站 athletik.nyc 文案，含"1 家自有工厂 + 5 家合作工厂、年产能 500 万件"等与现行披露口径冲突的表述。认领/更新需付费（$70 / 3 年）。**所有者 2026-08-19 决定：不认领、不更新美国主体旧档**；是否新建中国主体档案待结合 §7 收益评估后决策。
+  - **ThomasNet【所有者人工 / 快照已核实】：已有美国主体旧档；不管理、不更新**——条目 <https://www.thomasnet.com/company/athletik-clothing-inc-31006000/profile>（所有者 2026-08-19 快照核实）。当前档案：公司名 Athletik Clothing Inc.，状态 Claimed，公司类型 Custom Manufacturer，地址 New York, NY 10003，Description by Thomasnet 为 "Custom manufacturer of apparel for commercial applications. Products include underwear, sportswear, activewear, and outdoor clothing. Design services are offered as secondary. Suitable for sports brand owners, wholesalers, label brands, and importers."，产品分类 Clothing / Sportswear / Fabrics and Cloths / Underwear，Quality Certifications 显示 Not available。**所有者 2026-08-19 决定：不认领、不更新美国主体旧档**；仅新建中国主体制造商档案，文案草案见附录 B。
   - Europages / Made-in-China【实时核实：站内搜索实测】、Alibaba【索引可见】：均无历史建档，可安全新建。
   - Apparel Search【索引可见】：无历史建档。
   - **Global Sources【所有者人工】：确认无档案**（与公开索引一致）。
@@ -82,15 +82,12 @@ Woolmark 官方 Active Licensees 公开名录已列有
 - **链接属性**：所有目录/名录条目的 follow/nofollow 均未从公开页面确认，建档后抽查页面源码核实；上述推荐均不依赖链接属性成立（价值在买家触达、NAP 一致性与可索引品牌提及）。
 - **NAP 一致性**：公司历史公开域名多（athletik.com、athletikzjg.com、woolbaselayer.com 等），所有新建档统一使用 athletikapparel.com 与 §2 实体名称。
 
-### 3A. 建档主体与双档案策略（所有者 2026-08-18 确认）
+### 3A. 建档主体策略（所有者 2026-08-19 更新）
 
-- **角色口径**：美国主体 Athletik Clothing Inc. = **北美销售办公室**；中国主体 Zhangjiagang
-  Athletik Clothing Co., Limited = **主要制造商/销售商**（与 Woolmark、Textile Exchange GRS 名录的现有主体一致）。
-- **双档案策略**：同一平台允许两个实体各保留一条档案（两个独立法律实体，平台惯例允许），以扩大曝光；
-  前提是**两条都维护到现行口径**——删除工厂数量、分包、产能等冲突表述，均指向 athletikapparel.com。
-  双档案 = 双倍信息保鲜义务，纳入定期检查；任何一条烂掉都比没有更糟。
-- **执行顺序（ThomasNet）**：ThomasNet 为免费档案，优先执行；美国主体旧档按附录 B 删改清单认领重写，再新建中国主体制造商档案，两档信息一致。ThomasNet 快照已由所有者 2026-08-19 提供，文案草案见附录 B。
-- **执行顺序（Kompass）**：Kompass 认领/更新需付费，从 P1 降级为 P2；待所有者确认预算并获取平台报价后，再按"先认领美国主体旧档 → 按北美销售办公室角色重写 → 新建中国主体制造商档案"的顺序执行。内容冲突清单与 ThomasNet 一致。
+- **中国主体为唯一建档主体**：所有新注册 B2B 目录档案统一使用 **Zhangjiagang Athletik Clothing Co., Limited**（与 Woolmark、Textile Exchange GRS 名录的现有主体一致），统一联系邮箱 `info@athletikapparel.com`。
+- **美国主体旧档不管理**：ThomasNet、Kompass 等平台已有的 Athletik Clothing Inc. 旧档案**不认领、不更新、不删除**（所有者 2026-08-19 决定）。这些旧档继续存在，客户仍可通过品牌名找到公司；中国主体新档建立后，两档并行，但以中国主体为信息真值。
+- **角色口径**：中国主体 Zhangjiagang Athletik Clothing Co., Limited = **主要制造商/销售商**；美国主体 Athletik Clothing Inc. = **北美销售办公室**（仅在主动提及或中国主体档案需要补充时说明）。
+- **执行顺序**：ThomasNet（免费）→ Europages / Apparel Search（免费）→ Kompass（付费 $70/3 年，待决策）。每完成一个平台在 §5 台账补录。
 
 ## 4. 不做事项
 
@@ -106,8 +103,8 @@ Woolmark 官方 Active Licensees 公开名录已列有
 | 2026-08-18 | 机会池建立 | 五类来源调研 | 本文件 | 完成 |
 | 2026-08-18 | 所有者答复 NEEDS INPUT：认证均有效、Merrow 可授权、Textrends 用 Athletik、Beta Textiles 不公开关联 | — | 本文件 §2/§3 | 完成 |
 | 2026-08-18 | 认证名录与 B2B 平台现状核查 | TE/GRS、OEKO-TEX、WRAP、Kompass 等 10 个目标 | 本文件 §3 | 完成 |
-| — | ThomasNet 美国主体旧档认领重写 + 中国主体新建制造商档案 | thomasnet.com | 美国旧档 `company/athletik-clothing-inc-31006000/profile` | 快照已核实；文案草案见附录 B；待所有者按 ThomasNet 后台字段认领/提交 |
-| — | Kompass 美国主体旧档认领重写 + 中国主体新建制造商档案 | kompass.com | 美国旧档 `usnkc00040065` | 认领/更新需付费，待所有者预算决策与平台报价；内容冲突清单同附录 B |
+| — | ThomasNet 中国主体新建制造商档案 | thomasnet.com | 待补 | 美国主体旧档不管理；中国主体新档文案见附录 B；待所有者注册 |
+| — | Kompass 中国主体新建制造商档案 | kompass.com | 待补 | 付费 $70/3 年，待所有者结合 §7 收益评估后决策 |
 | — | OEKO-TEX Buying Guide 登记 | oeko-tex.com | 待补 | 待所有者提供证书号并登记 |
 | — | WRAP 公开列名开启 | wrapcompliance.org | 待补 | 待所有者决策 |
 | — | Merrow 案例接触（邮件草稿见附录 A） | merrow.com | 待补 | 草稿待所有者审核发送 |
@@ -117,8 +114,8 @@ Woolmark 官方 Active Licensees 公开名录已列有
 
 1. ~~所有者回答本文件全部【NEEDS INPUT】~~ → 2026-08-18 已答复：认证均有效；Merrow 设备在用可授权；Textrends 用 Athletik 名义；Beta Textiles 不公开关联（互链取消）；woolbaselayer.com 为在用的同主体羊毛营销站；
 2. ~~排查历史建档与名录现状~~ → 2026-08-19 完成（§3）；Kompass 与 ThomasNet 均已有美国主体旧档；Kompass 认领/更新需付费；ThomasNet 快照已由所有者提供并核实；
-3. **ThomasNet 双档案执行**（所有者操作）：按 §3A 与附录 B 认领现有美国主体档案并重写为"北美销售办公室"角色，再新建中国主体"制造商"档案，两档信息一致；ThomasNet 为免费档案，可优先操作；
-4. **Kompass 双档案执行**（所有者操作）：与 ThomasNet 同流程，但认领/更新需付费，待所有者预算决策后再启动；
+3. **ThomasNet 中国主体新建档执行**（所有者操作）：按 §3A 与附录 B 注册 Zhangjiagang Athletik Clothing Co., Limited 制造商档案，统一使用 `info@athletikapparel.com`；美国主体旧档不管理；
+4. **Kompass 中国主体新建档执行**（所有者操作）：付费 $70/3 年，待所有者结合 §7 收益评估后决策是否注册；
 5. **Merrow 案例联系邮件**（附录 A）所有者审核后发送；
 6. OEKO-TEX Buying Guide 登记、WRAP 公开列名：所有者决策后执行；
 7. Europages / Apparel Search 新建档：中国主体（制造商角色），按 §3A 口径执行；
@@ -158,67 +155,83 @@ Best regards,
 
 注意：邮件中不出现工厂数量、产能数字、客户名称；机型清单等细节在所有者确认后再补充。
 
-## 附录 B：ThomasNet 美国主体档案删改清单与双主体文案草案
+## 附录 B：ThomasNet 中国主体新建档案文案草案
 
 > 适用平台：www.thomasnet.com  
-> 所有者快照日期：2026-08-19  
-> 状态：草案待所有者审核；审核后由所有者按 ThomasNet 后台字段认领/提交
+> 建档主体：Zhangjiagang Athletik Clothing Co., Limited  
+> 统一联系邮箱：info@athletikapparel.com  
+> 状态：草案待所有者审核；审核后由所有者注册
 
-### B.1 当前快照要点
-
-- **URL**：<https://www.thomasnet.com/company/athletik-clothing-inc-31006000/profile>
-- **公司名**：Athletik Clothing Inc.
-- **状态**：Claimed
-- **公司类型（Primary Company Type）**：Custom Manufacturer
-- **地址**：New York, NY 10003
-- **当前 Description by Thomasnet**："Custom manufacturer of apparel for commercial applications. Products include underwear, sportswear, activewear, and outdoor clothing. Design services are offered as secondary. Suitable for sports brand owners, wholesalers, label brands, and importers."
-- **当前产品分类（Categories）**：Clothing、Sportswear、Fabrics and Cloths、Underwear
-- **Website**：指向 Homepage（需确认是否为 https://www.athletikapparel.com）
-- **Quality Certifications**：Not available
-
-### B.2 删改清单（美国主体旧档）
-
-| 项目 | 当前状态 | 建议动作 |
-|---|---|---|
-| 公司类型 | Custom Manufacturer | 若 ThomasNet 后台允许，改为 **Sales Office** 或保留 Custom Manufacturer 但 description 重写为北美销售办公室角色；不能改为制造商角色 |
-| Description by Thomasnet | "Custom manufacturer of apparel..." | 整段替换为附录 B.3 英文文案；删除 "Custom manufacturer"、"Design services are offered as secondary" 等旧口径 |
-| 工厂/产能/分包 | 旧 ThomasNet 文本未直接出现，但旧站口径可能残留 | 确保不出现工厂数量、分包安排、产能数字；只写 "North America sales office" + "bulk manufacturing handled by Zhangjiagang Athletik Clothing Co., Limited" |
-| Website | 指向 Homepage | 确认为 `https://www.athletikapparel.com` |
-| 产品分类 | Clothing / Sportswear / Fabrics and Cloths / Underwear | 可保留，如平台支持可添加 Technical Knitwear / Activewear 等更精准标签 |
-| Quality Certifications | Not available | 美国主体 GRS 已过期，**保持 Not available 或留空**；不要填写中国主体证书 |
-| 地址/电话 | New York, NY 10003 | 保持纽约销售办公室地址；不要改成中国地址 |
-
-### B.3 美国主体建议文案（Athletik Clothing Inc. — North America Sales Office）
+### B.1 建议文案
 
 ```text
-Athletik Clothing Inc. is the North America sales office for Athletik Clothing, serving mid-sized brands, wholesalers and importers across the United States, Canada and Europe. We manage sampling, product development and export documentation for technical knitwear programs built with FLATLOCK, ACTIVESEAM, Carbondry finishing and laser perforation. Bulk manufacturing is handled by Zhangjiagang Athletik Clothing Co., Limited, a vertically integrated OEM knitwear facility in Zhangjiagang, China. Standard MOQ: 500 pieces per style.
+Zhangjiagang Athletik Clothing Co., Limited is a vertically integrated OEM knitwear manufacturer in Zhangjiagang, China. We produce technical knitwear for sportswear, underwear, outdoor layering, merino wool base layers, silk wear, sports accessories and knitted performance fabrics. Construction capabilities include FLATLOCK, ACTIVESEAM, Carbondry finishing and laser perforation. Standard MOQ: 500 pieces per style. We support North American and European brands with sampling, bulk production, QC and full export documentation.
 
 Website: https://www.athletikapparel.com
+Email: info@athletikapparel.com
 ```
 
-**说明**：
-- 不声称 Athletik Clothing Inc. 与 Zhangjiagang Athletik Clothing Co., Limited 为同一法律实体或母子公司；仅描述公开运营角色（北美销售办公室 ↔ 主要制造商/销售商）。
+### B.2 填写建议
+
+| 字段 | 建议值 |
+|---|---|
+| Company Name | Zhangjiagang Athletik Clothing Co., Limited |
+| Primary Company Type | Custom Manufacturer / Manufacturer（以平台选项为准） |
+| Address | Zhangjiagang, Jiangsu, China（不要写纽约地址） |
+| Website | https://www.athletikapparel.com |
+| Email | info@athletikapparel.com |
+| Products / Services | Clothing、Sportswear、Underwear、Fabrics and Cloths / Knitted Fabrics、Activewear、Technical Knitwear（以平台可用选项为准） |
+| Quality Certifications | GRS（证书号 `ITS-TE-00013212-GRS-04011700`，有效期至 2027-06-13）、Woolmark License `0030001176`、OEKO-TEX、WRAP——**仅在所有者确认证书范围和公开使用许可后填写** |
+| Description | 使用 B.1 英文文案 |
+
+### B.3 注意事项
+
+- **不管理美国主体旧档**（所有者 2026-08-19 决定）：ThomasNet 已有的 Athletik Clothing Inc. 档案（`company/athletik-clothing-inc-31006000/profile`）不认领、不更新、不删除；客户仍可通过品牌名找到公司。
 - 不出现工厂数量、分包、产能、客户名称或未经核实的认证编号。
 - 保留 FLATLOCK / ACTIVESEAM / Carbondry / laser perforation 等技术术语（AGENTS.md §6）。
 - MOQ 500 pieces per style 为所有者确认值。
 
-### B.4 中国主体建议文案（Zhangjiagang Athletik Clothing Co., Limited — Manufacturer）
+---
 
-```text
-Zhangjiagang Athletik Clothing Co., Limited is a vertically integrated OEM knitwear manufacturer in Zhangjiagang, China, and the primary manufacturer and seller for the Athletik Clothing network. We produce technical knitwear for sportswear, underwear, outdoor layering, merino wool base layers, silk wear, sports accessories and knitted performance fabrics. Construction capabilities include FLATLOCK, ACTIVESEAM, Carbondry finishing and laser perforation. Standard MOQ: 500 pieces per style. We support North American and European brands with sampling, bulk production, QC and full export documentation.
+## 附录 C：站外引用实际收益评估（2026-08-19）
 
-Website: https://www.athletikapparel.com
+> 对所有者问题的直接回答：这些站外引用/档案对 Athletik 的实际帮助有多大？
+
+### C.1 一句话结论
+
+**多数目录/档案的直接询盘贡献很低，主要价值是品牌一致性、采购信任验证和长期 SEO 信号积累。不要指望靠它们带来大量新流量，但把它们做规范是成本很低的基础信任建设。**
+
+### C.2 分渠道评估
+
+| 渠道 | 直接询盘价值 | SEO 链接价值 | 信任/验证价值 | 建议 |
+|---|---|---|---|---|
+| **Woolmark 名录** | 低 | 中（woolmark.com 权威域名） | **高**——羊毛买家验证许可的第一入口 | 维持现状，可选增强网址字段 |
+| **GRS / Textile Exchange** | 低 | 中 | **高**——环保合规买家必查 | 已在列，无需动作 |
+| **OEKO-TEX Buying Guide** | 低 | 中 | 中——欧洲买家熟悉 | 免费登记，做 |
+| **WRAP 公开地图** | 极低 | 低 | 中——部分品牌要求 | 免费开启，做 |
+| **Merrow Customer Story** | 低 | **高**（设备方编辑内容） | **高**——技术买家认 Merrow | 优先发送邮件 |
+| **ThomasNet** | **低到中** | 低（多数 nofollow） | 中——北美采购人员真实使用 | 免费，值得做中国主体新档 |
+| **Kompass** | 低 | 低 | 中——欧洲覆盖 | $70/3 年，可做可不做 |
+| **ISPO Textrends** | 低 | 中 | **高**——行业趋势背书 | 成本极低，值得投稿 |
+| **Sourcing Journal op-ed** | 低 | 中 | **高**——行业媒体权威 | 免费，值得尝试 |
+| **参展（Functional Fabric Fair 等）** | **中到高** | 中 | **高** | 预算充足时优先考虑 |
+| **AAFA / OIA 会员** | 低 | 低 | 中 | 年费待询，优先级低 |
+
+### C.3 关键现实
+
+1. **B2B 目录不是流量入口，是信任验证工具。** 一个美国采购经理发现 Athletik 的主要路径是：Google 搜索 → 你的网站 → 看到技术内容 → 想验证真实性 → 查 Woolmark / GRS / ThomasNet。目录档案在这个环节起作用，不是在最开始的发现环节。
+2. **大多数目录链接是 nofollow 或低权重。** 不要把这些档案当外链建设做。它们的价值是"买家能搜到你、信息一致、看起来是真实企业"。
+3. **旧美国主体档案的风险可控但存在。** Kompass 旧档的"1 家自有工厂 + 5 家合作工厂、年产能 500 万件"与你现在的披露口径冲突。如果买家同时看到新档和旧档，可能产生困惑。但因为你决定不管理旧档，这个风险被接受——只要中国主体新档信息准确，长期看旧档会被新档稀释。
+4. **$70/3 年的 Kompass 成本极低。** 如果要做，做了就做了，不需要过度分析。但如果欧洲市场目前询盘为零，也可以先不做，等欧洲询盘起来再补。
+5. **最高收益动作是 Merrow + ISPO + Sourcing Journal。** 这三个是编辑性内容，不是目录档案，对技术买家和 SEO 都有更持久的价值。目录档案应该放在这三个之后做。
+
+### C.4 建议执行顺序
+
+```
+第一批（免费 + 高信任）：Woolmark 维持 → GRS 维持 → OEKO-TEX 登记 → WRAP 开启 → Merrow 邮件发送
+第二批（免费 + 低维护）：ThomasNet 中国主体新档 → Europages → Apparel Search
+第三批（编辑内容）：ISPO Textrends 投稿 → Sourcing Journal op-ed
+第四批（付费决策）：Kompass（$70/3y）→ AAFA/OIA 会员 → 参展
 ```
 
-**说明**：
-- 中国主体档案为**新建**（ThomasNet 目前只有美国主体旧档）；
-- 可补充有效认证：GRS（证书号 `ITS-TE-00013212-GRS-04011700`，有效期至 2027-06-13）、Woolmark License `0030001176`、OEKO-TEX、WRAP 等，**仅在所有者确认证书范围和公开使用许可后填写**；
-- 产品分类建议：Clothing、Sportswear、Underwear、Fabrics and Cloths / Knitted Fabrics、Activewear、Technical Knitwear（以平台可用选项为准）。
-
-### B.5 待所有者确认的问题
-
-1. ThomasNet 后台是否允许把 **Primary Company Type** 从 "Custom Manufacturer" 改为 "Sales Office"、"Regional Office" 或类似选项？若不能改，是否接受保留 Custom Manufacturer 但 description 明确为销售办公室？
-2. 美国主体档案的 **Quality Certifications** 字段保持 Not available/空白，还是填写 "N/A"？
-3. 中国主体新建 ThomasNet 档案时，是否需要独立邮箱/电话，还是统一使用 `info@athletikapparel.com`？
-4. ThomasNet 产品分类是否有 "Technical Knitwear"、"Activewear"、"Base Layers" 等更精准选项？
-5. Kompass 付费认领/更新的具体报价区间是多少？是否值得与美国主体旧档冲突修复的收益匹配？
+**ThomasNet 中国主体新档可以做，但不要期待它带来大量新询盘。它的作用是：当一个美国买家在 ThomasNet 搜 "knitwear manufacturer" 或 "flatlock manufacturer" 时，能看到一个信息准确、指向官网的中国制造商档案，而不是只有那个陈旧的纽约销售办公室档案。**
