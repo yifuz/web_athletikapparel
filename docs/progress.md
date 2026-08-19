@@ -602,6 +602,9 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-19 | 所有者调整站外建档策略：**美国主体旧档不管理（不认领、不更新、不删除），仅新建中国主体 Zhangjiagang Athletik Clothing Co., Limited 档案**，统一使用 `info@athletikapparel.com`；Kompass 费用确认为 $70/3 年；新增站外引用实际收益评估（附录 C），明确目录档案以信任验证为主、编辑内容（Merrow/ISPO/Sourcing Journal）为优先 |
 | 2026-08-19 | ThomasNet 中国主体 Zhangjiagang Athletik Clothing Co., Limited 档案已注册，等待平台内部搜索与 Google 索引；可检索后在机会池 §5 台账补录 URL |
 | 2026-08-19 | **SEO-IMP-020 收尾**：Merrow Customer Story 邮件草稿已备好但所有者决定暂缓（周期较长，待后续优先级提升）；Kompass $70/3y 待决策；OEKO-TEX/WRAP 免费登记待执行；机会池完整保留供后续启动 |
+| 2026-08-19 | SEO-IMP-012/026/011/028 本地完成：37 处 FLATLOCK/ACTIVESEAM 术语修正、OEM 指南 6 条内链补强、SEO 字段真值来源统一（含 rank-math.php 加载机制注释）、指南阅读时长修复（9/8/10 min）；已提交 kimi 分支 `f15942b` |
+| 2026-08-19 | SEO-IMP-017 本地完成：Tech Pack Guide opening 段新增通用 tech pack 定义 + scope 过渡句；`about` Schema 增加 `Apparel tech pack`；已提交 kimi 分支 `f091b2e` |
+| 2026-08-19 | SEO-IMP-018 内容简报建立（[`seo/qc-guide-content-brief-v1.md`](seo/qc-guide-content-brief-v1.md)）：提议 URL `/garment-quality-control-checklist/`；QC 节点/素材/责任边界证据清单待所有者确认；发现 Services/About/首页仍有 "in-house testing" 与 IMP-010 口径不一致，列入所有者决策项 |
 
 ---
 
