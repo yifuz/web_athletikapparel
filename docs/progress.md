@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-08-17。
+最后更新：2026-08-19。
 
 ---
 
@@ -598,6 +598,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-18 | 所有者答复 IMP-020 前置问题：认证均有效；Merrow 设备在用可授权；Textrends 用 Athletik 名义；**Beta Textiles 公开独立运营、不与 Athletik 公开关联（互链取消，AGENTS.md §2 已同步）**；woolbaselayer.com 为同主体在用羊毛营销站。名录核查完成：GRS 证书 `ITS-TE-00013212-GRS-04011700` 有效至 2027-06-13（美国实体 GRS 已过期，公开引用须指向中国实体）；OEKO-TEX Buying Guide 与 WRAP 公开地图未收录（可登记/开启）；**Kompass 存在旧档案（含工厂数量等冲突表述），需认领更新**；Merrow 联系邮件草稿已附机会池附录 A |
 | 2026-08-18 | 建档主体决策（所有者）：目录新注册一律用中国主体 Zhangjiagang Athletik Clothing Co., Limited（与 Woolmark/GRS 名录一致）；Kompass、ThomasNet 旧美国主体档案按"先新建/认领 → 更新或移除旧档"顺序处理，不允许冲突档案并存（机会池 §3A，AGENTS.md §2 已同步）；ThomasNet 档案 URL 已补录，内容待所有者快照核实 |
 | 2026-08-18 | 双主体双档案策略确立（所有者）：美国主体=北美销售办公室，中国主体=主要制造商/销售商；Kompass/ThomasNet 旧美国主体档案认领重写 + 新建中国主体制造商档案，两档均须保持现行口径；AGENTS.md §2 公开角色与目录规则、机会池 §3A、progress.md 边界章节已同步 |
+| 2026-08-19 | 所有者提供 ThomasNet 美国主体档案快照；Kompass 认领/更新确认需付费；按双主体策略起草 ThomasNet 删改清单与美国/中国主体文案草案（见 `seo/offsite-authority-opportunity-pool-v1.md` 附录 B）；Kompass 因付费从 P1 降级为 P2，待所有者预算决策；ThomasNet 仍为免费 P1，待所有者按草案认领/提交 |
 
 ---
 
