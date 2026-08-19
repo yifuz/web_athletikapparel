@@ -150,7 +150,7 @@ function myathletik_technical_article_data() {
 			'featured_width'   => 1448,
 			'featured_height'  => 1086,
 			'article_section'  => __( 'Technical knitwear product development', 'myathletik-child' ),
-			'about'            => array( 'Technical knitwear', 'Tech pack', 'Seam map', 'Garment testing' ),
+			'about'            => array( 'Technical knitwear', 'Tech pack', 'Apparel tech pack', 'Seam map', 'Garment testing' ),
 			'cta_kicker'       => __( 'Prepare a production-ready specification', 'myathletik-child' ),
 			'cta_title'        => __( 'Review the tech pack before sampling', 'myathletik-child' ),
 			'cta_copy'         => __( 'Send the current garment drawing, finished-fabric specification, measurement table, seam map, order quantity and testing requirements for a development review.', 'myathletik-child' ),

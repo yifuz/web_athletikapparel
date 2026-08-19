@@ -97,7 +97,7 @@
 
 | ID | 项目 | 收益 | 风险 | 启动条件 | 状态 |
 |---|---|---|---|---|---|
-| SEO-IMP-017 | 基于真实 Query/Page 数据决定是否补 Tech Pack 的简短 definition/scope 段 | 中到高：承接 `clothing/garment/apparel tech pack` 的相关曝光 | 中：可能把页面拉向模板、工具或 startup 意图 | 匹配查询持续获得曝光但排名/CTR不足 | 观察 |
+| SEO-IMP-017 | 基于真实 Query/Page 数据决定是否补 Tech Pack 的简短 definition/scope 段 | 中到高：承接 `clothing/garment/apparel tech pack` 的相关曝光 | 中：可能把页面拉向模板、工具或 startup 意图 | 匹配查询持续获得曝光但排名/CTR不足 | **本地已完成（2026-08-19）**：opening 段新增通用 tech pack 定义句 + "same principles apply to any cut-and-sew apparel tech pack" 过渡句；`about` Schema 增加 `Apparel tech pack`；URL/Title/H1/Meta 保持不变；待部署后观察 GSC 宽泛查询曝光变化 |
 | SEO-IMP-018 | QC Guide 内容简报与证据采集 | 高：独立的采购尽调任务和潜在链接资产 | 高：不能发明 QC 节点、记录或标准 | 一方 QC 流程、检查记录、图片和责任边界齐全 | 未批准新 URL |
 | SEO-IMP-019 | NL / SE / NO / FI 本地语言研究 | 中：验证英语之外的欧洲买家语言 | 低 | 英语基线实施和监测稳定 | 待研究 |
 | SEO-IMP-020 | 技术指南持续分发并争取真实行业引用、供应商目录/协会资料页及合作方链接 | 高：增加独立站外提及和引用域，而不是依赖站内信号 | 中：必须是真实关系，禁止购买批量垃圾链接 | 建立目标来源、发布记录和引用 URL 台账 | **已收尾（2026-08-19）**：机会池已建立（[`offsite-authority-opportunity-pool-v1.md`](offsite-authority-opportunity-pool-v1.md)）；ThomasNet 中国主体已注册；Merrow 邮件草稿已备好但所有者决定暂缓；Kompass $70/3y 待决策；OEKO-TEX/WRAP 免费登记待执行；收益评估见附录 C |

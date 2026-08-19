@@ -11,13 +11,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="ma-technical-article__opening">
-	<p>The document should answer three questions without relying on assumptions:</p>
+	<p>A tech pack is the controlled production document that tells a manufacturer exactly what to make, how to make it, and what evidence to use for approval. Whether the product is a casual T-shirt or a compression base layer, the document should answer three questions without relying on assumptions:</p>
 	<ol>
 		<li>What is being made?</li>
 		<li>How must it perform and be constructed?</li>
 		<li>What evidence will be used to approve the sample and bulk production?</li>
 	</ol>
-	<p>This guide uses “technical knitwear” to mean garments cut and sewn from <a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/' ) ); ?>">knitted fabrics</a> for <a href="<?php echo esc_url( home_url( '/sportswear-manufacturer/' ) ); ?>">sportswear</a>, underwear, base layers and outdoor applications. It is not a specification for fully fashioned or whole-garment flat knitting, which requires a different set of machine and knitting-program instructions.</p>
+	<p>This guide uses “technical knitwear” to mean garments cut and sewn from <a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/' ) ); ?>">knitted fabrics</a> for <a href="<?php echo esc_url( home_url( '/sportswear-manufacturer/' ) ); ?>">sportswear</a>, underwear, base layers and outdoor applications. The same principles apply to any cut-and-sew apparel tech pack, but the fabric, seam and testing details here are specific to knitted construction. It is not a specification for fully fashioned or whole-garment flat knitting, which requires a different set of machine and knitting-program instructions.</p>
 </div>
 
 <section id="document-control" aria-labelledby="ma-tech-pack-document-control-title">
