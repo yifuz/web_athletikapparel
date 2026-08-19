@@ -103,7 +103,7 @@ Woolmark 官方 Active Licensees 公开名录已列有
 | 2026-08-18 | 机会池建立 | 五类来源调研 | 本文件 | 完成 |
 | 2026-08-18 | 所有者答复 NEEDS INPUT：认证均有效、Merrow 可授权、Textrends 用 Athletik、Beta Textiles 不公开关联 | — | 本文件 §2/§3 | 完成 |
 | 2026-08-18 | 认证名录与 B2B 平台现状核查 | TE/GRS、OEKO-TEX、WRAP、Kompass 等 10 个目标 | 本文件 §3 | 完成 |
-| — | ThomasNet 中国主体新建制造商档案 | thomasnet.com | 待补 | 美国主体旧档不管理；中国主体新档文案见附录 B；待所有者注册 |
+| — | ThomasNet 中国主体新建制造商档案 | thomasnet.com | 待补 | **已注册（2026-08-19），平台内部搜索与 Google 索引中，待可检索后补录 URL** |
 | — | Kompass 中国主体新建制造商档案 | kompass.com | 待补 | 付费 $70/3 年，待所有者结合 §7 收益评估后决策 |
 | — | OEKO-TEX Buying Guide 登记 | oeko-tex.com | 待补 | 待所有者提供证书号并登记 |
 | — | WRAP 公开列名开启 | wrapcompliance.org | 待补 | 待所有者决策 |
@@ -114,7 +114,7 @@ Woolmark 官方 Active Licensees 公开名录已列有
 
 1. ~~所有者回答本文件全部【NEEDS INPUT】~~ → 2026-08-18 已答复：认证均有效；Merrow 设备在用可授权；Textrends 用 Athletik 名义；Beta Textiles 不公开关联（互链取消）；woolbaselayer.com 为在用的同主体羊毛营销站；
 2. ~~排查历史建档与名录现状~~ → 2026-08-19 完成（§3）；Kompass 与 ThomasNet 均已有美国主体旧档；Kompass 认领/更新需付费；ThomasNet 快照已由所有者提供并核实；
-3. **ThomasNet 中国主体新建档执行**（所有者操作）：按 §3A 与附录 B 注册 Zhangjiagang Athletik Clothing Co., Limited 制造商档案，统一使用 `info@athletikapparel.com`；美国主体旧档不管理；
+3. ~~**ThomasNet 中国主体新建档执行**~~ → 2026-08-19 已完成注册，等待平台索引；可检索后在 §5 台账补录 URL；
 4. **Kompass 中国主体新建档执行**（所有者操作）：付费 $70/3 年，待所有者结合 §7 收益评估后决策是否注册；
 5. **Merrow 案例联系邮件**（附录 A）所有者审核后发送；
 6. OEKO-TEX Buying Guide 登记、WRAP 公开列名：所有者决策后执行；
