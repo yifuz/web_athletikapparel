@@ -25,7 +25,7 @@ Woolmark 官方 Active Licensees 公开名录已列有
 |---|---|---|---|---|
 | P0 | Woolmark 名录条目核实与可选增强 | 已有资产 | 零 | 网址字段指向 woolbaselayer.com 属有意安排（所有者 08-18 确认），仅需许可专项确认 |
 | ~~P0~~ | ~~performancefabrics.com 披露式互链~~ | ~~一方资产~~ | — | **已取消（所有者 2026-08-18 指令）**：Beta Textiles 公开独立运营，不与 Athletik 公开关联；资料内部共用，站点不互链 |
-| P0 | Merrow Customer Story / ActiveSeam 计划 | 设备方编辑案例 | 零 | **已解锁**：所有者确认 Merrow 设备在用、可授权公开（2026-08-18） |
+| P0 | Merrow Customer Story / ActiveSeam 计划 | 设备方编辑案例 | 零 | **已解锁**：所有者确认 Merrow 设备在用、可授权公开（2026-08-18）；**2026-08-19 所有者决定暂缓执行，周期较长，待后续优先级提升时启动** |
 | P1 | ISPO Textrends 投稿 | 展会全年在线 Marketplace | 低（寄样 + 申请） | **以 Athletik 名义**（所有者 2026-08-18 确认） |
 | P1 | Sourcing Journal op-ed 投稿 | 行业媒体编辑渠道 | 零 | 主题与事实口径批准（§5） |
 | P1 | ThomasNet 中国主体新建档案 | 北美 B2B 买家目录 | 零 | 美国主体旧档不管理；中国主体新档待所有者注册 |
@@ -107,7 +107,7 @@ Woolmark 官方 Active Licensees 公开名录已列有
 | — | Kompass 中国主体新建制造商档案 | kompass.com | 待补 | 付费 $70/3 年，待所有者结合 §7 收益评估后决策 |
 | — | OEKO-TEX Buying Guide 登记 | oeko-tex.com | 待补 | 待所有者提供证书号并登记 |
 | — | WRAP 公开列名开启 | wrapcompliance.org | 待补 | 待所有者决策 |
-| — | Merrow 案例接触（邮件草稿见附录 A） | merrow.com | 待补 | 草稿待所有者审核发送 |
+| — | Merrow 案例接触（邮件草稿见附录 A） | merrow.com | 待补 | **所有者 2026-08-19 决定暂缓，待后续优先级提升时启动** |
 | — | Woolmark 条目可选增强 | my.woolmark.com | — | 维持现状，可选 |
 
 ## 6. 下一步
@@ -116,7 +116,7 @@ Woolmark 官方 Active Licensees 公开名录已列有
 2. ~~排查历史建档与名录现状~~ → 2026-08-19 完成（§3）；Kompass 与 ThomasNet 均已有美国主体旧档；Kompass 认领/更新需付费；ThomasNet 快照已由所有者提供并核实；
 3. ~~**ThomasNet 中国主体新建档执行**~~ → 2026-08-19 已完成注册，等待平台索引；可检索后在 §5 台账补录 URL；
 4. **Kompass 中国主体新建档执行**（所有者操作）：付费 $70/3 年，待所有者结合 §7 收益评估后决策是否注册；
-5. **Merrow 案例联系邮件**（附录 A）所有者审核后发送；
+5. ~~**Merrow 案例联系邮件**（附录 A）所有者审核后发送~~ → **2026-08-19 所有者决定暂缓，周期较长，待后续优先级提升时启动**；
 6. OEKO-TEX Buying Guide 登记、WRAP 公开列名：所有者决策后执行；
 7. Europages / Apparel Search 新建档：中国主体（制造商角色），按 §3A 口径执行；
 8. 参展与协会会员（P2）单独做投入产出评估后再决策；

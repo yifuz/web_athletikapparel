@@ -100,7 +100,7 @@
 | SEO-IMP-017 | 基于真实 Query/Page 数据决定是否补 Tech Pack 的简短 definition/scope 段 | 中到高：承接 `clothing/garment/apparel tech pack` 的相关曝光 | 中：可能把页面拉向模板、工具或 startup 意图 | 匹配查询持续获得曝光但排名/CTR不足 | 观察 |
 | SEO-IMP-018 | QC Guide 内容简报与证据采集 | 高：独立的采购尽调任务和潜在链接资产 | 高：不能发明 QC 节点、记录或标准 | 一方 QC 流程、检查记录、图片和责任边界齐全 | 未批准新 URL |
 | SEO-IMP-019 | NL / SE / NO / FI 本地语言研究 | 中：验证英语之外的欧洲买家语言 | 低 | 英语基线实施和监测稳定 | 待研究 |
-| SEO-IMP-020 | 技术指南持续分发并争取真实行业引用、供应商目录/协会资料页及合作方链接 | 高：增加独立站外提及和引用域，而不是依赖站内信号 | 中：必须是真实关系，禁止购买批量垃圾链接 | 建立目标来源、发布记录和引用 URL 台账 | **机会池已建立（2026-08-18，见 [`offsite-authority-opportunity-pool-v1.md`](offsite-authority-opportunity-pool-v1.md)）**：发现 Woolmark 公开名录已有 ZHANGJIAGANG ATHLETIK 条目（网址字段待更正）；P0/P1/P2 分级完成；全部【NEEDS INPUT】待所有者确认后执行 |
+| SEO-IMP-020 | 技术指南持续分发并争取真实行业引用、供应商目录/协会资料页及合作方链接 | 高：增加独立站外提及和引用域，而不是依赖站内信号 | 中：必须是真实关系，禁止购买批量垃圾链接 | 建立目标来源、发布记录和引用 URL 台账 | **已收尾（2026-08-19）**：机会池已建立（[`offsite-authority-opportunity-pool-v1.md`](offsite-authority-opportunity-pool-v1.md)）；ThomasNet 中国主体已注册；Merrow 邮件草稿已备好但所有者决定暂缓；Kompass $70/3y 待决策；OEKO-TEX/WRAP 免费登记待执行；收益评估见附录 C |
 | SEO-IMP-021 | 每季度复核指南引用的 ASTM/AATCC/ISO 等标准版本和链接 | 中：维持技术内容可靠性和更新依据 | 低 | 指定复核日期与负责人 | 待建立节奏 |
 | SEO-IMP-023 | 条件式评估 Performance Fabrics 信息指南，明确限定 performance apparel / knit fabric，避免进入家具和室内装饰意图 | 中：有机会承接宽泛研究流量并内链到面料商业页 | 高：宽词意图混杂，过早建页可能产生无效流量和主题稀释 | 当前商业页事实完整；GSC 出现相关 Query，或独立 SERP/内容缺口验证通过；具备一方材料与测试证据 | 候选研究，未批准新 URL |
 

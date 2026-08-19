@@ -601,6 +601,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-19 | 所有者提供 ThomasNet 美国主体档案快照；Kompass 认领/更新确认需付费（$70/3 年）；按双主体策略起草 ThomasNet 删改清单与美国/中国主体文案草案（见 `seo/offsite-authority-opportunity-pool-v1.md` 附录 B）；Kompass 因付费从 P1 降级为 P2，待所有者预算决策；ThomasNet 仍为免费 P1，待所有者按草案认领/提交 |
 | 2026-08-19 | 所有者调整站外建档策略：**美国主体旧档不管理（不认领、不更新、不删除），仅新建中国主体 Zhangjiagang Athletik Clothing Co., Limited 档案**，统一使用 `info@athletikapparel.com`；Kompass 费用确认为 $70/3 年；新增站外引用实际收益评估（附录 C），明确目录档案以信任验证为主、编辑内容（Merrow/ISPO/Sourcing Journal）为优先 |
 | 2026-08-19 | ThomasNet 中国主体 Zhangjiagang Athletik Clothing Co., Limited 档案已注册，等待平台内部搜索与 Google 索引；可检索后在机会池 §5 台账补录 URL |
+| 2026-08-19 | **SEO-IMP-020 收尾**：Merrow Customer Story 邮件草稿已备好但所有者决定暂缓（周期较长，待后续优先级提升）；Kompass $70/3y 待决策；OEKO-TEX/WRAP 免费登记待执行；机会池完整保留供后续启动 |
 
 ---
 
