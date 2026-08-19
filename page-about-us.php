@@ -16,7 +16,7 @@ $differentiators = array(
 	),
 	array(
 		'title' => __( 'Technical Construction', 'myathletik-child' ),
-		'copy'  => __( 'Specialized in flatlock seam and activeseam production with Yamato and Merrow machines, plus bonded-welded options, refined over 15+ years of technical knitwear.', 'myathletik-child' ),
+		'copy'  => __( 'Specialized in FLATLOCK seam and ACTIVESEAM production with Yamato and Merrow machines, plus bonded-welded options, refined over 15+ years of technical knitwear.', 'myathletik-child' ),
 	),
 	array(
 		'title' => __( 'Performance Fabrics', 'myathletik-child' ),
@@ -42,7 +42,7 @@ get_header();
 			<div class="ma-about-hero__copy">
 				<p class="ma-section-kicker"><?php esc_html_e( 'About Athletik', 'myathletik-child' ); ?></p>
 				<h1 id="ma-about-title"><?php esc_html_e( 'About Us', 'myathletik-child' ); ?></h1>
-				<p><?php esc_html_e( 'Athletik Clothing is a vertically integrated OEM/ODM manufacturer of technical knitwear, based in the Zhangjiagang / Suzhou area of China. For more than 15 years, we have produced full-package underwear, sportswear, outdoor clothing, and knitted fabrics for performance brands around the world, built on specialized flatlock and activeseam construction.', 'myathletik-child' ); ?></p>
+				<p><?php esc_html_e( 'Athletik Clothing is a vertically integrated OEM/ODM manufacturer of technical knitwear, based in the Zhangjiagang / Suzhou area of China. For more than 15 years, we have produced full-package underwear, sportswear, outdoor clothing, and knitted fabrics for performance brands around the world, built on specialized FLATLOCK and ACTIVESEAM construction.', 'myathletik-child' ); ?></p>
 			</div>
 		</div>
 	</section>

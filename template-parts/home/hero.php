@@ -42,7 +42,7 @@ $hero_knitting   = get_stylesheet_directory_uri() . '/assets/images/production/h
 			</div>
 			<ul class="ma-home-hero__tags" aria-label="<?php esc_attr_e( 'Homepage capability highlights', 'myathletik-child' ); ?>">
 				<li><?php esc_html_e( 'Yarn-to-Fabric Development', 'myathletik-child' ); ?></li>
-				<li><?php esc_html_e( 'Flatlock & Activeseam', 'myathletik-child' ); ?></li>
+				<li><?php esc_html_e( 'FLATLOCK & ACTIVESEAM', 'myathletik-child' ); ?></li>
 				<li><?php esc_html_e( 'In-house Testing', 'myathletik-child' ); ?></li>
 				<li><?php esc_html_e( 'Reliable Export', 'myathletik-child' ); ?></li>
 			</ul>

@@ -2,6 +2,11 @@
 /**
  * Rank Math integrations for the Athletik child theme.
  *
+ * Loading: this file is NOT required by functions.php. The Rank Math plugin
+ * auto-loads `<active-theme>/rank-math.php` itself (see
+ * seo-by-rank-math/rank-math.php ::includes()), so these filters are only
+ * registered while the Rank Math plugin is active.
+ *
  * @package MyAthletik
  */
 
@@ -95,6 +100,59 @@ function myathletik_rank_math_technical_article_description( $description ) {
 add_filter( 'rank_math/frontend/description', 'myathletik_rank_math_technical_article_description', 20 );
 add_filter( 'rank_math/opengraph/facebook/og_description', 'myathletik_rank_math_technical_article_description', 20 );
 add_filter( 'rank_math/opengraph/twitter/twitter_description', 'myathletik_rank_math_technical_article_description', 20 );
+
+/**
+ * Supply the real technical article text for Rank Math's time-to-read output.
+ *
+ * The guides are theme-rendered from data arrays and template parts, so
+ * post_content is empty and the enhanced sharing tags would otherwise report
+ * "Less than a minute". The text mirrors the visible page: metadata copy,
+ * table of contents, FAQs, references and the rendered body sections.
+ *
+ * @param string $content Text Rank Math would count words from.
+ * @return string
+ */
+function myathletik_rank_math_technical_article_time_to_read_content( $content ) {
+	$article = myathletik_rank_math_current_technical_article();
+
+	if ( ! $article ) {
+		return $content;
+	}
+
+	$slug = get_post_field( 'post_name', get_queried_object_id() );
+
+	$text = implode(
+		' ',
+		array(
+			$article['title'],
+			$article['summary'],
+			$article['intro'],
+			implode( ' ', $article['toc'] ),
+			$article['cta_kicker'],
+			$article['cta_title'],
+			$article['cta_copy'],
+		)
+	);
+
+	foreach ( $article['faq'] as $item ) {
+		$text .= ' ' . $item['question'] . ' ' . $item['answer'];
+	}
+
+	foreach ( $article['references'] as $reference ) {
+		$text .= ' ' . $reference['label'];
+	}
+
+	ob_start();
+	get_template_part( 'template-parts/technical-article/content', $slug, array( 'article' => $article ) );
+	$body = ob_get_clean();
+
+	if ( is_string( $body ) ) {
+		$text .= ' ' . wp_strip_all_tags( $body );
+	}
+
+	return trim( $text );
+}
+add_filter( 'rank_math/frontend/time_to_read_content', 'myathletik_rank_math_technical_article_time_to_read_content', 20 );
 
 /**
  * Keep the Knitted Fabrics page description aligned with its evidence-reviewed

@@ -140,7 +140,7 @@ $categories = array(
 		<div class="ma-section-heading">
 			<p class="ma-section-kicker"><?php esc_html_e( 'Product categories', 'myathletik-child' ); ?></p>
 			<h2 id="ma-home-categories-title"><?php esc_html_e( 'What we make', 'myathletik-child' ); ?></h2>
-			<p><?php esc_html_e( 'Each category is built to your designs, samples, or tech packs - with the same flatlock, activeseam, and performance-knit construction across every program.', 'myathletik-child' ); ?></p>
+			<p><?php esc_html_e( 'Each category is built to your designs, samples, or tech packs - with the same FLATLOCK, ACTIVESEAM, and performance-knit construction across every program.', 'myathletik-child' ); ?></p>
 		</div>
 
 		<div class="ma-category-bento">

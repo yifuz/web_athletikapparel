@@ -127,5 +127,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<li>Sample stages and named approval authority.</li>
 		<li>Quantity, color/size assumptions and target timing for feasibility review.</li>
 	</ol>
-	<p>The goal is not to create the longest possible document. It is to remove material ambiguity before sampling and to keep every approved change connected to one controlled product specification.</p>
+	<p>The goal is not to create the longest possible document. It is to remove material ambiguity before sampling and to keep every approved change connected to one controlled product specification. The same controlled package is also the basis for comparing candidate manufacturers; the <a href="<?php echo esc_url( home_url( '/evaluate-technical-knitwear-oem/' ) ); ?>">OEM evaluation guide</a> covers the supplier-side checks that follow.</p>
 </section>

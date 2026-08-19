@@ -12,13 +12,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="ma-technical-article__opening">
 	<p>Do not rely on a factory tour, a monthly capacity number or a collection of certificate logos alone.</p>
-	<p>This guide concerns cut-and-sew technical performance knitwear made from finished knitted fabrics. It does not use sweater-specific indicators such as flat-knitting gauge, linking or fully fashioned construction as substitutes for performance-fabric and garment-sewing evidence.</p>
+	<p>This guide concerns cut-and-sew technical performance knitwear made from finished <a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/' ) ); ?>">knitted fabrics</a>. It does not use sweater-specific indicators such as flat-knitting gauge, linking or fully fashioned construction as substitutes for performance-fabric and garment-sewing evidence.</p>
 </div>
 
 <section id="product-and-risk" aria-labelledby="ma-oem-product-risk-title">
 	<h2 id="ma-oem-product-risk-title">1. Define the product and risk before comparing suppliers</h2>
 	<p>The appropriate OEM depends on the program. Start with the product category, fabric, intended activity, fit, seam complexity, functional claims, order quantity, target market, testing and delivery requirements.</p>
-	<p>A supplier that performs well on conventional jerseys may not be the best fit for compression garments, Merino wool base layers, laminated constructions or close-fitting products with low-profile technical seams. Compare suppliers against the same tech pack, material assumptions and quotation basis.</p>
+	<p>A supplier that performs well on conventional jerseys may not be the best fit for compression garments, Merino wool base layers, laminated constructions or close-fitting products with low-profile technical seams. Compare suppliers against the same <a href="<?php echo esc_url( home_url( '/technical-knitwear-tech-pack-guide/' ) ); ?>">tech pack</a>, material assumptions and quotation basis.</p>
 	<p>Avoid universal scorecards with arbitrary weights. A product with a sensitive material claim may place traceability above price; a close-fitting base layer may place seam capability and recovery control above monthly line capacity. Set project-specific requirements and separate non-negotiable failures from factors that can be traded off.</p>
 </section>
 
@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<li>Nominated by the buyer.</li>
 		<li>Purchased as a finished material or service.</li>
 	</ul>
-	<p>Then verify the stages that matter to the program. For a performance-knit garment, this may include finished-fabric development, laboratory testing, cutting, FLATLOCK or ACTIVESEAM construction, OVERLOCK and COVERSTITCH operations, heat transfer, finishing, final inspection and export preparation.</p>
+	<p>Then verify the stages that matter to the program. For a performance-knit garment, this may include finished-fabric development, laboratory testing, cutting, <a href="<?php echo esc_url( home_url( '/flatlock-vs-overlock-technical-knitwear/' ) ); ?>">FLATLOCK or ACTIVESEAM construction</a>, OVERLOCK and COVERSTITCH operations, heat transfer, finishing, final inspection and export preparation.</p>
 	<p>The purpose is not to penalize every external process. It is to identify where technical control, lead-time risk, confidentiality and traceability sit.</p>
 </section>
 
@@ -77,7 +77,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <section id="development-system" aria-labelledby="ma-oem-development-title">
 	<h2 id="ma-oem-development-title">6. Review the development and approval system</h2>
-	<p>A capable development team should be able to identify ambiguity in the tech pack, propose a construction, record questions and control revisions. Review the workflow from initial feasibility through proto or development sample, fit approval, material approval, size set and pre-production sample as applicable.</p>
+	<p>A capable development team should be able to identify ambiguity in the tech pack, propose a construction, record questions and control revisions. Review the workflow from initial feasibility through proto or development sample, fit approval, material approval, size set and pre-production sample as applicable. The <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">OEM knitwear services</a> overview shows how these development stages connect to bulk production, quality control and export shipping.</p>
 	<p>Check whether comments are incorporated into a controlled specification rather than remaining in chat messages. Confirm who can approve pattern, fabric, construction, color, trim and artwork changes, and what happens if an approved component becomes unavailable.</p>
 	<p>Sampling speed should not be evaluated without context. A quoted calendar time may exclude fabric development, laboratory dips, nominated trims or buyer comment time. Ask for the assumptions behind the schedule.</p>
 </section>

@@ -1152,13 +1152,18 @@ add_filter( 'pre_get_document_title', 'myathletik_home_title_final', 99 );
 
 /**
  * Print the homepage meta description.
+ *
+ * This hardcoded string is the homepage description truth source; keep it in
+ * sync with seo-tags.md (Home section). The Rank Math description field for
+ * the homepage is intentionally left empty so Rank Math does not print a
+ * second, conflicting tag (verified: exactly one meta description in output).
  */
 function myathletik_home_meta_description() {
 	if ( ! is_front_page() ) {
 		return;
 	}
 	?>
-	<meta name="description" content="<?php echo esc_attr__( 'Vertically integrated OEM manufacturer of flatlock & activeseam knitwear — underwear, sportswear & outdoor for global brands. 15+ years. Request a quote.', 'myathletik-child' ); ?>">
+	<meta name="description" content="<?php echo esc_attr__( 'Vertically integrated OEM manufacturer of FLATLOCK & ACTIVESEAM knitwear — underwear, sportswear & outdoor for global brands. 15+ years. Request a quote.', 'myathletik-child' ); ?>">
 	<?php
 }
 add_action( 'wp_head', 'myathletik_home_meta_description', 2 );

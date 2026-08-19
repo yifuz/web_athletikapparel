@@ -16,7 +16,7 @@ $proof_items = array(
 	),
 	array(
 		'label' => __( 'Technical Construction', 'myathletik-child' ),
-		'copy'  => __( 'Yamato flatlock and Merrow activeseam machines.', 'myathletik-child' ),
+		'copy'  => __( 'Yamato FLATLOCK and Merrow ACTIVESEAM machines.', 'myathletik-child' ),
 	),
 	array(
 		'label' => __( "15 Years' Experience", 'myathletik-child' ),

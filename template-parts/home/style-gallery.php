@@ -20,7 +20,7 @@ $gallery_columns = array(
 		array( 'file' => 'merino wool product/merino-wool-base-layer-12.jpg', 'alt' => __( 'Merino wool apparel model sample', 'myathletik-child' ), 'size' => 'short' ),
 	),
 	array(
-		array( 'file' => 'sportswear/flatlock-athletic-800-42-1.jpg', 'alt' => __( 'Sportswear model wearing flatlock athletic garment', 'myathletik-child' ), 'size' => 'medium' ),
+		array( 'file' => 'sportswear/flatlock-athletic-800-42-1.jpg', 'alt' => __( 'Sportswear model wearing FLATLOCK athletic garment', 'myathletik-child' ), 'size' => 'medium' ),
 		array( 'file' => 'silkwear/IMG_5445.jpg', 'alt' => __( 'Technical silk wear model sample', 'myathletik-child' ), 'size' => 'medium' ),
 	),
 	array(
@@ -61,7 +61,7 @@ $gallery_columns = array(
 	// --- Extended section: more variety across all categories ---
 	array(
 		array( 'file' => 'sportswear/1U128494.jpg', 'alt' => __( 'Sportswear training top model sample', 'myathletik-child' ), 'size' => 'tall' ),
-		array( 'file' => 'outdoor clothing/flatlock-athletic-800-3.jpg', 'alt' => __( 'Outdoor clothing flatlock construction sample', 'myathletik-child' ), 'size' => 'short' ),
+		array( 'file' => 'outdoor clothing/flatlock-athletic-800-3.jpg', 'alt' => __( 'Outdoor clothing FLATLOCK construction sample', 'myathletik-child' ), 'size' => 'short' ),
 	),
 	array(
 		array( 'file' => 'underwear/IMG_5173-scaled.jpg', 'alt' => __( 'Performance underwear model sample', 'myathletik-child' ), 'size' => 'medium' ),

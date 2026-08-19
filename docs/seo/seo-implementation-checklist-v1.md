@@ -84,7 +84,7 @@
 
 | ID | 项目 | 收益 | 风险 | 启动条件 | 状态 |
 |---|---|---|---|---|---|
-| SEO-IMP-011 | 统一产品页 SEO 字段真值来源，清理或注释未参与生产输出的 `meta_description` | 中：避免以后“代码已改、生产未变” | 低到中 | 先确认 Rank Math/代码各字段的最终职责 | 待处理 |
+| SEO-IMP-011 | 统一产品页 SEO 字段真值来源，清理或注释未参与生产输出的 `meta_description` | 中：避免以后“代码已改、生产未变” | 低到中 | 先确认 Rank Math/代码各字段的最终职责 | **已完成（2026-08-19）**：本地 curl 逐页核实生产来源；`inc/product-category-data.php` 增加真值来源 docblock（六个服装品类页字段不参与生产输出，Knitted Fabrics 为唯一例外并加行内注释）；`functions.php` 首页 description 与 `rank-math.php` 头部补注释（`rank-math.php` 由 Rank Math 插件自动加载，非 functions.php）；`seo-tags.md` 新增“字段真值来源”一节作为单一规范文档 |
 | SEO-IMP-012 | 修正 Sportswear 中 `ACTIVESEAM`/FLATLOCK 术语，并同步规范 Meta 与生产 Rank Math 字段 | 中：语义和品牌专业度一致 | 低到中 | 与 SEO-IMP-007 同批，避免只修大小写却保留无证据表达 | 待处理 |
 | SEO-IMP-013 | 为 Sportswear、Knitted Fabrics 等类目选择批准的代表图作为社交图/Schema 主图 | 中：改善页面分享和主题图像信号 | 低到中 | 所有者确认每页代表图；生成合适派生尺寸 | 待选图 |
 | SEO-IMP-014 | 复核首页及多个类目 157–165 字符 Meta、Services 63 字符 Title | 低到中：主要影响摘要截断和 CTR，不是索引问题 | 中：过早缩短可能损失意图信息 | 先取得页面级 GSC Query/CTR 数据 | 观察 |

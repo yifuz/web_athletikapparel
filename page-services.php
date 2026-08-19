@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $capabilities = array(
 	__( 'Full-package OEM/ODM to your designs, samples, or tech packs', 'myathletik-child' ),
 	__( 'Vertically integrated from our own fabric mill to finished garment', 'myathletik-child' ),
-	__( 'Technical knit construction including flatlock, activeseam, and bonded-welded options', 'myathletik-child' ),
+	__( 'Technical knit construction including FLATLOCK, ACTIVESEAM, and bonded-welded options', 'myathletik-child' ),
 	__( '15+ years serving brands across North America, Europe, and the Nordics', 'myathletik-child' ),
 );
 
@@ -20,7 +20,7 @@ $stages = array(
 	array(
 		'number' => '01',
 		'title'  => __( 'Sampling & Prototyping', 'myathletik-child' ),
-		'copy'   => __( 'Every project starts with getting the sample right. We develop counter samples, prototypes, and pre-production samples from your tech packs, sketches, or reference garments - typically within 1-2 weeks, depending on complexity. Our sample room is equipped for flatlock, activeseam, and bonded-welded construction, so what you approve is what goes into production.', 'myathletik-child' ),
+		'copy'   => __( 'Every project starts with getting the sample right. We develop counter samples, prototypes, and pre-production samples from your tech packs, sketches, or reference garments - typically within 1-2 weeks, depending on complexity. Our sample room is equipped for FLATLOCK, ACTIVESEAM, and bonded-welded construction, so what you approve is what goes into production.', 'myathletik-child' ),
 	),
 	array(
 		'number' => '02',

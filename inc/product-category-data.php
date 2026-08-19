@@ -53,6 +53,16 @@ function myathletik_aux_image( $filename ) {
 /**
  * Get the product category page configuration.
  *
+ * SEO field truth source (SEO-IMP-011): the `seo_title` and `meta_description`
+ * values below are NOT the live meta tags. For the six garment categories the
+ * production <title> and meta description come from the Rank Math fields in
+ * the WordPress admin (canonical text: seo-tags.md); editing the values here
+ * does not change production output. The ONLY exception is
+ * `knitted-fabrics-manufacturer`, whose `meta_description` is read by the
+ * filters in rank-math.php (auto-loaded by the Rank Math plugin itself, not by
+ * functions.php) for the frontend/OG/Twitter description and the WebPage
+ * schema description.
+ *
  * @return array
  */
 function myathletik_product_category_data() {
@@ -60,7 +70,7 @@ function myathletik_product_category_data() {
 		'sportswear-manufacturer' => array(
 			'title'            => __( 'Sportswear', 'myathletik-child' ),
 			'seo_title'        => __( 'Sportswear Manufacturer | Athletik Clothing', 'myathletik-child' ),
-			'meta_description' => __( 'Sportswear manufacturer for gym, training, running, and yoga activewear - flatlock and activeseam construction in power-stretch and moisture-wicking knits.', 'myathletik-child' ),
+			'meta_description' => __( 'Sportswear manufacturer for gym, training, running, and yoga activewear - FLATLOCK and ACTIVESEAM construction in power-stretch and moisture-wicking knits.', 'myathletik-child' ),
 			'h1'               => __( 'Sportswear Manufacturer', 'myathletik-child' ),
 			'old_url'          => '/products/sportswear/',
 			'intro'            => __( 'Sportswear programs for gym, training, running, and studio applications, developed around the buyer\'s fit, movement, fabric, finish, and testing requirements. We produce tight, fitted, and compression silhouettes for B2B activewear brands, with specifications confirmed through material selection and approved samples.', 'myathletik-child' ),
@@ -145,8 +155,8 @@ function myathletik_product_category_data() {
 				myathletik_gallery_item( 'sportswear/flatlock-athletic-800-17.jpg', __( 'Technical sportswear construction sample', 'myathletik-child' ) ),
 				myathletik_gallery_item( 'sportswear/flatlock-athletic-800-42-1.jpg', __( 'Performance knit sportswear product detail', 'myathletik-child' ) ),
 				myathletik_gallery_item( 'sportswear/IMG_7836-1-scaled.jpg', __( 'Sportswear garment sample for activewear production', 'myathletik-child' ) ),
-				myathletik_gallery_item( myathletik_aux_image( 'flatlock-athletic-800-10.jpg' ), __( 'Flatlock activewear garment sample', 'myathletik-child' ) ),
-				myathletik_gallery_item( myathletik_aux_image( 'flatlock-athletic-800-12.jpg' ), __( 'Performance sportswear flatlock detail', 'myathletik-child' ) ),
+				myathletik_gallery_item( myathletik_aux_image( 'flatlock-athletic-800-10.jpg' ), __( 'FLATLOCK activewear garment sample', 'myathletik-child' ) ),
+				myathletik_gallery_item( myathletik_aux_image( 'flatlock-athletic-800-12.jpg' ), __( 'Performance sportswear FLATLOCK detail', 'myathletik-child' ) ),
 				myathletik_gallery_item( myathletik_aux_image( 'flatlock-athletic-800-13.jpg' ), __( 'Technical sportswear OEM/ODM sample', 'myathletik-child' ) ),
 			),
 			'related'          => array(
@@ -159,12 +169,12 @@ function myathletik_product_category_data() {
 		'underwear-manufacturer' => array(
 			'title'            => __( 'Underwear', 'myathletik-child' ),
 			'seo_title'        => __( 'Underwear Manufacturer | Athletik Clothing', 'myathletik-child' ),
-			'meta_description' => __( 'Underwear manufacturer for flatlock, activeseam, bonded-welded, microfiber, merino wool, and technical OEM/ODM underwear programs.', 'myathletik-child' ),
+			'meta_description' => __( 'Underwear manufacturer for FLATLOCK, ACTIVESEAM, bonded-welded, microfiber, merino wool, and technical OEM/ODM underwear programs.', 'myathletik-child' ),
 			'h1'               => __( 'Underwear Manufacturer', 'myathletik-child' ),
 			'old_url'          => '/products/underwear/',
 			'hero_video'       => 'underwear/underwear-hero-black-white-base-layer.mp4',
 			'hero_video_position' => 'center 18%',
-			'intro'            => __( 'We specialize in technical and performance underwear - flatlock, activeseam, and bonded-welded construction for a smooth, seamless feel against the skin. A trusted production partner for underwear brands, importers, and private labels worldwide.', 'myathletik-child' ),
+			'intro'            => __( 'We specialize in technical and performance underwear - FLATLOCK, ACTIVESEAM, and bonded-welded construction for a smooth, seamless feel against the skin. A trusted production partner for underwear brands, importers, and private labels worldwide.', 'myathletik-child' ),
 			'what_we_make'     => array(
 				__( 'Men\'s boxer shorts and briefs', 'myathletik-child' ),
 				__( 'Thermal base layers and underwear', 'myathletik-child' ),
@@ -174,12 +184,12 @@ function myathletik_product_category_data() {
 			'subcategories'    => array(
 				array(
 					'title'       => __( 'Men\'s boxer shorts and briefs', 'myathletik-child' ),
-					'description' => __( 'Classic and trunk-length boxers with flatlock seams that stay smooth against the skin. Contoured pouches and stay-put waistbands engineered for everyday comfort.', 'myathletik-child' ),
+					'description' => __( 'Classic and trunk-length boxers with FLATLOCK seams that stay smooth against the skin. Contoured pouches and stay-put waistbands engineered for everyday comfort.', 'myathletik-child' ),
 					'image'       => 'underwear/boxer-brief-4x3-1600x1200.jpg',
 				),
 				array(
 					'title'       => __( 'Thermal base layers and underwear', 'myathletik-child' ),
-					'description' => __( 'Next-to-skin thermal tops and bottoms in brushed-back, fleece-lined, and performance knits. The full base-layer program for cold-weather brands - moisture-moving against the skin, warm without bulk, flatlock seams that stay comfortable under a pack hipbelt or harness.', 'myathletik-child' ),
+					'description' => __( 'Next-to-skin thermal tops and bottoms in brushed-back, fleece-lined, and performance knits. The full base-layer program for cold-weather brands - moisture-moving against the skin, warm without bulk, FLATLOCK seams that stay comfortable under a pack hipbelt or harness.', 'myathletik-child' ),
 					'image'       => 'underwear/IMG_7661_4X3.jpg',
 				),
 				array(
@@ -189,11 +199,11 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Microfiber and merino wool underwear', 'myathletik-child' ),
-					'description' => __( 'Ultra-fine microfiber for a silky hand feel, or natural merino wool for odor resistance and temperature regulation. Both available in flatlock or seamless construction.', 'myathletik-child' ),
+					'description' => __( 'Ultra-fine microfiber for a silky hand feel, or natural merino wool for odor resistance and temperature regulation. Both available in FLATLOCK or seamless construction.', 'myathletik-child' ),
 					'image'       => 'underwear/1U153309_4x3.jpg',
 				),
 			),
-			'construction'     => __( 'Flatlock and activeseam seams for next-to-skin comfort, plus bonded-welded options for a clean seamless finish. Produced in 4-way stretch, microfiber, and merino wool, with moisture-wicking and antimicrobial finishes available.', 'myathletik-child' ),
+			'construction'     => __( 'FLATLOCK and ACTIVESEAM seams for next-to-skin comfort, plus bonded-welded options for a clean seamless finish. Produced in 4-way stretch, microfiber, and merino wool, with moisture-wicking and antimicrobial finishes available.', 'myathletik-child' ),
 			'image_note'       => __( '[IMAGE: real underwear product shots]', 'myathletik-child' ),
 			'gallery'          => array(
 				myathletik_gallery_item( 'underwear/boxer-brief-n-trunk-boxer-7.jpg', __( 'Boxer brief and trunk underwear sample', 'myathletik-child' ) ),
@@ -245,13 +255,13 @@ function myathletik_product_category_data() {
 					'image'       => 'outdoor clothing/1U153247(1)_4X3.JPG',
 				),
 			),
-			'construction'     => __( 'Same flatlock and activeseam construction as our sportswear, but in fabrics chosen for the outdoors - thermal knits, merino blends, and Genesis fleece that trap warmth and move moisture away from the skin. The seams that prevent chafing in a gym become, in heavier weights, the durability a hiker needs under a pack strap.', 'myathletik-child' ),
+			'construction'     => __( 'Same FLATLOCK and ACTIVESEAM construction as our sportswear, but in fabrics chosen for the outdoors - thermal knits, merino blends, and Genesis fleece that trap warmth and move moisture away from the skin. The seams that prevent chafing in a gym become, in heavier weights, the durability a hiker needs under a pack strap.', 'myathletik-child' ),
 			'image_note'       => __( '[IMAGE: real outdoor clothing shots]', 'myathletik-child' ),
 			'gallery'          => array(
-				myathletik_gallery_item( 'outdoor clothing/flatlock-athletic-800-4.jpg', __( 'Outdoor clothing flatlock product detail', 'myathletik-child' ) ),
+				myathletik_gallery_item( 'outdoor clothing/flatlock-athletic-800-4.jpg', __( 'Outdoor clothing FLATLOCK product detail', 'myathletik-child' ) ),
 				myathletik_gallery_item( 'outdoor clothing/flatlock-athletic-800-50-1.jpg', __( 'Outdoor technical knitwear product sample', 'myathletik-child' ) ),
 				myathletik_gallery_item( 'outdoor clothing/flatlock-athletic-800-54.jpg', __( 'Outdoor base layer garment sample', 'myathletik-child' ) ),
-				myathletik_gallery_item( myathletik_aux_image( 'flatlock-athletic-800-3-1.jpg' ), __( 'Outdoor flatlock apparel sample', 'myathletik-child' ) ),
+				myathletik_gallery_item( myathletik_aux_image( 'flatlock-athletic-800-3-1.jpg' ), __( 'Outdoor FLATLOCK apparel sample', 'myathletik-child' ) ),
 				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-17.jpg', __( 'Outdoor merino base layer product sample', 'myathletik-child' ) ),
 				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-18.jpg', __( 'Outdoor performance base layer sample', 'myathletik-child' ) ),
 			),
@@ -300,7 +310,7 @@ function myathletik_product_category_data() {
 					'image'       => 'merino wool product/Merino Yarn Sourcing.png',
 				),
 			),
-			'construction'     => __( 'Natural merino wool engineered for warmth, breathability, and odor resistance, finished with flatlock and activeseam construction. Available in jacquard and printed designs, plain or blended for added stretch and durability.', 'myathletik-child' ),
+			'construction'     => __( 'Natural merino wool engineered for warmth, breathability, and odor resistance, finished with FLATLOCK and ACTIVESEAM construction. Available in jacquard and printed designs, plain or blended for added stretch and durability.', 'myathletik-child' ),
 			'image_note'       => __( '[IMAGE: real merino wool product shots]', 'myathletik-child' ),
 			'gallery'          => array(
 				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-19.jpg', __( 'Merino wool apparel product sample', 'myathletik-child' ) ),
@@ -345,7 +355,7 @@ function myathletik_product_category_data() {
 					'image'       => 'silkwear/IMG_5550.jpg',
 				),
 			),
-			'construction'     => __( 'Soft, breathable knitted silk finished with flatlock and activeseam seams for a smooth, next-to-skin feel. Available plain or blended for added performance.', 'myathletik-child' ),
+			'construction'     => __( 'Soft, breathable knitted silk finished with FLATLOCK and ACTIVESEAM seams for a smooth, next-to-skin feel. Available plain or blended for added performance.', 'myathletik-child' ),
 			'image_note'       => __( '[IMAGE: real silk wear shots]', 'myathletik-child' ),
 			'gallery'          => array(
 				myathletik_gallery_item( 'silkwear/IMG_5362.jpg', __( 'Silk wear garment sample', 'myathletik-child' ) ),
@@ -364,6 +374,7 @@ function myathletik_product_category_data() {
 		'knitted-fabrics-manufacturer' => array(
 			'title'            => __( 'Knitted Fabrics', 'myathletik-child' ),
 			'seo_title'        => __( 'Knitted Fabrics Manufacturer | Athletik Clothing', 'myathletik-child' ),
+			// Exception: this meta_description IS the live value (rank-math.php filters; see docblock above).
 			'meta_description' => __( 'Knitted fabrics manufacturer for performance, thermal, stretch, Merino wool, and recycled knit programs. Custom development for B2B apparel buyers.', 'myathletik-child' ),
 			'h1'               => __( 'Knitted Fabrics Manufacturer', 'myathletik-child' ),
 			'old_url'          => '/products/knitted-fabrics/',
@@ -500,7 +511,7 @@ function myathletik_product_category_data() {
 			'meta_description' => __( 'Sports accessories manufacturer for balaclavas, gloves, liners, technical knit accessories, and OEM/ODM outdoor performance accessory programs.', 'myathletik-child' ),
 			'h1'               => __( 'Sports Accessories Manufacturer', 'myathletik-child' ),
 			'old_url'          => '/products/sports-accessories/',
-			'intro'            => __( 'We produce technical knit accessories that complement our apparel range - built with the same flatlock and activeseam construction and performance fabrics as our garments.', 'myathletik-child' ),
+			'intro'            => __( 'We produce technical knit accessories that complement our apparel range - built with the same FLATLOCK and ACTIVESEAM construction and performance fabrics as our garments.', 'myathletik-child' ),
 			'what_we_make'     => array(
 				__( 'Balaclavas', 'myathletik-child' ),
 				__( 'Gloves and liners', 'myathletik-child' ),
@@ -509,7 +520,7 @@ function myathletik_product_category_data() {
 			'subcategories'    => array(
 				array(
 					'title'       => __( 'Balaclavas', 'myathletik-child' ),
-					'description' => __( 'Full-coverage knit balaclavas in thermal and wind-resistant fabrics. Flatlock and activeseam construction for comfort under a helmet or hood.', 'myathletik-child' ),
+					'description' => __( 'Full-coverage knit balaclavas in thermal and wind-resistant fabrics. FLATLOCK and ACTIVESEAM construction for comfort under a helmet or hood.', 'myathletik-child' ),
 					'image'       => 'sports accessories/Balaclavas.png',
 				),
 				array(

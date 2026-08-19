@@ -12,11 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 $reasons = array(
 	array(
 		'title' => __( 'Vertical Integration', 'myathletik-child' ),
-		'copy'  => __( 'From yarn and fabric development with full in-house testing to flatlock and activeseam garment construction, we control quality at every stage.', 'myathletik-child' ),
+		'copy'  => __( 'From yarn and fabric development with full in-house testing to FLATLOCK and ACTIVESEAM garment construction, we control quality at every stage.', 'myathletik-child' ),
 	),
 	array(
 		'title' => __( 'Technical Knit Construction', 'myathletik-child' ),
-		'copy'  => __( 'Specialized in flatlock seam and activeseam production with Yamato and Merrow machines, refined over 15 years.', 'myathletik-child' ),
+		'copy'  => __( 'Specialized in FLATLOCK seam and ACTIVESEAM production with Yamato and Merrow machines, refined over 15 years.', 'myathletik-child' ),
 	),
 	array(
 		'title' => __( 'Performance Fabric Expertise', 'myathletik-child' ),
