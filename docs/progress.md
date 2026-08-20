@@ -605,6 +605,8 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-19 | SEO-IMP-012/026/011/028 本地完成：37 处 FLATLOCK/ACTIVESEAM 术语修正、OEM 指南 6 条内链补强、SEO 字段真值来源统一（含 rank-math.php 加载机制注释）、指南阅读时长修复（9/8/10 min）；已提交 kimi 分支 `f15942b` |
 | 2026-08-19 | SEO-IMP-017 本地完成：Tech Pack Guide opening 段新增通用 tech pack 定义 + scope 过渡句；`about` Schema 增加 `Apparel tech pack`；已提交 kimi 分支 `f091b2e` |
 | 2026-08-19 | SEO-IMP-018 内容简报建立（[`seo/qc-guide-content-brief-v1.md`](seo/qc-guide-content-brief-v1.md)）：提议 URL `/garment-quality-control-checklist/`；QC 节点/素材/责任边界证据清单待所有者确认；发现 Services/About/首页仍有 "in-house testing" 与 IMP-010 口径不一致，列入所有者决策项 |
+| 2026-08-20 | 所有者澄清：Beta Textiles 不是独立法律实体，只是对外使用的名称/路径（AGENTS.md §2 已更新）；"our own fabric mill" 和 "in-house testing" 为准确表述，全站保留；检测能力为自有设备 + 第三方按客户要求选择；不过度抠字眼，目标是获客 |
+| 2026-08-20 | SEO-IMP-018 正文草稿根据所有者确认事实更新：7 个 QC 节点公开、针检/测试跟踪暂不公开、责任边界（内部执行 QC、辅助第三方、AQL 买家定义、不合格品全担）已写入；QC 简报证据清单已填写 |
 
 ---
 

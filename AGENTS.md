@@ -7,10 +7,10 @@ name: myathletik-website
 description: >
   Project rules for the Athletik Clothing website on athletikapparel.com.
   Athletik Clothing operates through the U.S. entity "Athletik Clothing Inc.",
-  the China entity "Zhangjiagang Athletik Clothing Co., Limited", and the
-  textile entity "Beta Textiles Co., Limited" as a vertically integrated OEM
-  knitwear manufacturer specializing in FLATLOCK / ACTIVESEAM technical
-  knitwear. This
+  the China entity "Zhangjiagang Athletik Clothing Co., Limited" as a
+  vertically integrated OEM knitwear manufacturer specializing in FLATLOCK /
+  ACTIVESEAM technical knitwear. It also uses the Beta Textiles name for
+  fabric sales (not a separate legal entity). This
   skill encodes the site's tech stack, information architecture, URL/SEO rules,
   brand voice, and terminology standards. Apply it on ANY task that creates or
   edits theme code, page content, blocks, CSS, or redirects for this site.
@@ -188,16 +188,18 @@ The rebuild reorganizes the site around search intent. Target structure:
 - **Public brand:** Athletik Clothing.
 - **U.S. entity name:** Athletik Clothing Inc.
 - **China entity name:** Zhangjiagang Athletik Clothing Co., Limited.
-- **Textile entity name:** Beta Textiles Co., Limited (BTEXCO).
+- **Fabric sales name:** Beta Textiles (BTEXCO) — **not a separate legal
+  entity**; it is an external-facing name used by the same operation for
+  fabric sales (owner clarification 2026-08-20). Therefore "our own fabric
+  mill" is an accurate public statement.
 - The owner confirmed on 2026-08-10 that both Athletik entity names belong to the same Athletik
   business, while their operational responsibilities differ. Do not describe
   them as one legal entity, a parent/subsidiary pair, or interchangeable legal
   names unless the owner supplies that exact legal relationship.
-- The owner confirmed on 2026-08-18 that Beta Textiles Co., Limited is also a
-  business entity within the same operation, dedicated to fabric sales. Its
-  `performancefabrics.com` / `betatextiles.com` materials may be treated as
+- Beta Textiles (`performancefabrics.com` / `betatextiles.com`) is the same
+  operation's fabric sales channel. Its materials may be treated as
   first-party capability evidence. **Owner directive (2026-08-18): Beta
-  Textiles operates publicly as an independent entity — do NOT publicly
+  Textiles operates publicly as an independent name — do NOT publicly
   associate Beta Textiles with Athletik** (no cross-links between the sites,
   no shared-entity statements in public copy, no parent/subsidiary/sister
   wording). Marketing facts and materials may be shared internally because

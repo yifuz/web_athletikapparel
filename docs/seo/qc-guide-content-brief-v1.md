@@ -128,12 +128,18 @@
 
 ### 4.4 与现有页面的一致性
 
-| 问题 | 当前状态 | 需要决策 |
+| 问题 | 当前状态 | 决策 |
 |---|---|---|
-| Services 页仍有 "our own fabric mill with in-house testing" | 与 IMP-010 决定不一致 | 【NEEDS INPUT: 保留吧，或者你有什么好的建议】 |
-| About 页仍有 "our own fabric mill, with full in-house testing" | 同上 | 同上 |
-| 首页 why-myathletik 仍有 "full in-house testing" | 同上 | 同上 |
-| 首页 process-snapshot 仍有 "In-house testing and inspection at every stage" | 同上 | 同上 |
+| Services 页仍有 "our own fabric mill with in-house testing" | 与 IMP-010 决定不一致 | **保留（所有者 2026-08-20 确认）** |
+| About 页仍有 "our own fabric mill, with full in-house testing" | 同上 | **保留（同上）** |
+| 首页 why-myathletik 仍有 "full in-house testing" | 同上 | **保留（同上）** |
+| 首页 process-snapshot 仍有 "In-house testing and inspection at every stage" | 同上 | **保留（同上）** |
+
+**所有者澄清（2026-08-20）：**
+- Beta Textiles 不是独立法律实体，只是对外使用的名称/路径；因此 "our own fabric mill" 是准确表述。
+- 检测能力包含自有检测设备和第三方检测，完全根据客户要求选择；"in-house testing" 是准确表述。
+- 不过度抠字眼——目标是获客，具体细节在实际客户沟通中确认。
+- IMP-010 从 Knitted Fabrics 页移除的 "our own fabric mill" 和 "in-house testing" 表述可恢复，保持全站口径一致。
 
 ---
 
