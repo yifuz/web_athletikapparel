@@ -91,15 +91,15 @@
 
 | QC 节点 | 是否存在 | 可公开程度 | 备注 |
 |---|---|---|---|
-| 面料进厂检验（Incoming fabric inspection） | ? | ? | 是否有检验记录表？ |
-| 首件确认（First-piece approval） | ? | ? | 是否有首件签样流程？ |
-| 在线巡检（In-line / during-production inspection） | ? | ? | 是否有巡检记录？ |
-| 尾期终检（Final inspection / pre-shipment inspection） | ? | ? | 是否有终检报告模板？ |
-| AQL 抽样检验 | ? | ? | 是否使用 AQL 标准？哪个级别？ |
-| 针检（Needle detection） | ? | ? | 是否有针检机和记录？ |
-| 尺寸测量（Measurement audit） | ? | ? | 是否有尺寸检验记录？ |
-| 外观检验（Visual / workmanship inspection） | ? | ? | 是否有外观缺陷分类标准？ |
-| 测试跟踪（Testing status tracking） | ? | ? | 是否跟踪第三方测试状态？ |
+| 面料进厂检验（Incoming fabric inspection） | 存在 | 公开 | 是否有检验记录表？ |
+| 首件确认（First-piece approval） | 存在 | 公开 | 是否有首件签样流程？ |
+| 在线巡检（In-line / during-production inspection） | 存在 | 公开 | 是否有巡检记录？ |
+| 尾期终检（Final inspection / pre-shipment inspection） | 存在 | 公开 | 是否有终检报告模板？ |
+| AQL 抽样检验 | 存在 | 公开 | 是否使用 AQL 标准？哪个级别？ |
+| 针检（Needle detection） | 不确定 | 暂时不公开 | 是否有针检机和记录？ |
+| 尺寸测量（Measurement audit） | 存在 | 公开 | 是否有尺寸检验记录？ |
+| 外观检验（Visual / workmanship inspection） | 存在 | 公开 | 是否有外观缺陷分类标准？ |
+| 测试跟踪（Testing status tracking） | 不确定 | 暂时不公开 | 是否跟踪第三方测试状态？ |
 
 ### 4.2 可公开的图片/素材
 
@@ -107,12 +107,12 @@
 
 | 素材 | 可用性 | 备注 |
 |---|---|---|
-| QC 检验台/工作区域照片 | ? | 需脱敏（不出现客户品牌/标签） |
-| 检验记录表/报告模板（脱敏） | ? | 可截图或重新制作为示意图 |
-| 针检机照片 | ? | 如有 |
-| 尺寸测量操作照片 | ? | 如有 |
-| 面料检验照片 | ? | 如有 |
-| 缺陷分类示例图 | ? | 可制作为示意图 |
+| QC 检验台/工作区域照片 | 可用 | 需脱敏（不出现客户品牌/标签） |
+| 检验记录表/报告模板（脱敏） | 没有专用的记录表和报告模版 | 可截图或重新制作为示意图 |
+| 针检机照片 | 无 | 如有 |
+| 尺寸测量操作照片 | 有视频 | 如有 |
+| 面料检验照片 | 有视频 | 如有 |
+| 缺陷分类示例图 | 有图片 | 可制作为示意图 |
 
 ### 4.3 责任边界
 
@@ -120,17 +120,17 @@
 
 | 问题 | 所有者确认 |
 |---|---|
-| QC 是 Athletik 内部执行还是第三方执行？ | ? |
-| 如果客户要求第三方验货（如 SGS/BV/TÜV），Athletik 的角色是什么？ | ? |
-| 出现质量争议时的处理流程是什么？ | ? |
-| AQL 标准由谁定义？买家还是 Athletik？ | ? |
-| 不合格品的返工/报废责任和成本分担？ | ? |
+| QC 是 Athletik 内部执行还是第三方执行？ | 除非有客户指定的第三方QC，则我们自己内部执行 |
+| 如果客户要求第三方验货（如 SGS/BV/TÜV），Athletik 的角色是什么？ | 辅助第三方完成验货 |
+| 出现质量争议时的处理流程是什么？ | 修复，返工 |
+| AQL 标准由谁定义？买家还是 Athletik？ | 买家 |
+| 不合格品的返工/报废责任和成本分担？ | Athletik全部承担 |
 
 ### 4.4 与现有页面的一致性
 
 | 问题 | 当前状态 | 需要决策 |
 |---|---|---|
-| Services 页仍有 "our own fabric mill with in-house testing" | 与 IMP-010 决定不一致 | 【NEEDS INPUT: 是否统一移除或改写】 |
+| Services 页仍有 "our own fabric mill with in-house testing" | 与 IMP-010 决定不一致 | 【NEEDS INPUT: 保留吧，或者你有什么好的建议】 |
 | About 页仍有 "our own fabric mill, with full in-house testing" | 同上 | 同上 |
 | 首页 why-myathletik 仍有 "full in-house testing" | 同上 | 同上 |
 | 首页 process-snapshot 仍有 "In-house testing and inspection at every stage" | 同上 | 同上 |

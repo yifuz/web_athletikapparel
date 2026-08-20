@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="ma-technical-article__opening">
 	<p>Quality control in cut-and-sew garment manufacturing is the system of checks that verifies materials, construction, measurements, packing and documentation against one agreed specification — before, during and after production. It is not a single inspection at the end of the line. A workable garment quality control program combines incoming material checks, in-line process controls, a final pre-shipment inspection and the records that connect each result to the purchase order.</p>
 	<p>QC execution is different from supplier evaluation. Evaluation asks whether a factory <em>can</em> meet the requirement and is done before the order; the <a href="<?php echo esc_url( home_url( '/evaluate-technical-knitwear-oem/' ) ); ?>">OEM evaluation guide</a> covers that supplier-side review. This guide covers what happens after the supplier is approved: how a specific order is verified against its tech pack.</p>
+	<p>The checks described here are executed in-house by our own QC team. When a buyer nominates a third-party inspector — for example SGS, BV or TÜV — we assist and cooperate with the inspection process, providing the goods, records and working access the nominated inspector requires.</p>
 	<p>The scope is cut-and-sew technical knitwear — garments cut and sewn from finished <a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/' ) ); ?>">knitted fabrics</a> for <a href="<?php echo esc_url( home_url( '/sportswear-manufacturer/' ) ); ?>">sportswear</a>, underwear, base layers and outdoor applications. The checklist structure applies to most apparel programs, but the fabric, seam and measurement details here are specific to knitted construction.</p>
 </div>
 
@@ -91,6 +92,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</ol>
 	<p>Many programs add needle detection as a final safety check: finished garments pass through a conveyor-type metal detector before packing, with the machine's sensitivity verified at defined intervals using calibration test cards. Whether detection is required — and at what sensitivity — varies by fabric and project requirements and should be stated by the buyer, since metal trims such as zippers and snaps affect how detection is applied.</p>
 	<p>Metal contamination control extends beyond needles. Good practice restricts staples and loose pins at production workstations, controls small tools such as scissors and snips, and manages machine parts that can shed fragments into product.</p>
+	<p>Needle control requirements, including whether conveyor detection is applied, are confirmed for each project based on the product and buyer specification.</p>
 </section>
 
 <section id="qc-documentation" aria-labelledby="ma-qc-documentation-title">
@@ -105,9 +107,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<li>Final inspection report, including the sampling plan used, defect counts by class, measurement results and packing checks.</li>
 		<li>Needle-control and detection records where required.</li>
 	</ul>
-	<p>Buyers can reasonably request the records for their own purchase order, including trend or corrective-action summaries where a defect recurred. Records that would reveal another customer's styles, quantities or specifications are normally shared in redacted or summary form.</p>
+	<p>Buyers can reasonably request the records for their own purchase order, including trend or corrective-action summaries where a defect recurred. Records that would reveal another customer's styles, quantities or specifications are normally shared in redacted or summary form. Record formats and report structures are agreed per project during the development stage, so the documentation matches the buyer's own QC system rather than a fixed template.</p>
 	<p>Every record should reference the same identifiers: style number, purchase order, tech pack revision and, for final inspection, the agreed sampling plan. This is what allows a reported defect to be traced back to a material lot, a line and a specific approval.</p>
-	<p>When nonconforming product is found, the handling route should be agreed before the order, not negotiated under shipment pressure. The usual options are rework or 100% sorting with re-inspection, rejection with remake, replacement or commercial settlement per the purchase-order terms, or a written concession in which the buyer knowingly accepts a defined deviation for that lot. A concession should state exactly which defect, quantity and lot it covers.</p>
+	<p>When nonconforming product is found, the handling route should be agreed before the order, not negotiated under shipment pressure. The usual options are rework or 100% sorting with re-inspection, rejection with remake, replacement or commercial settlement per the purchase-order terms, or a written concession in which the buyer knowingly accepts a defined deviation for that lot. A concession should state exactly which defect, quantity and lot it covers. When nonconforming product is confirmed, we bear the full cost of rework, sorting, or replacement for the affected lot.</p>
 </section>
 
 <section id="tech-pack-requirements" aria-labelledby="ma-qc-tech-pack-requirements-title">
