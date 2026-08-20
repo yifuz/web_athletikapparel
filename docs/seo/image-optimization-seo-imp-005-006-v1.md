@@ -2,7 +2,7 @@
 
 > 执行日期：2026-08-17  
 > 范围：`/sportswear-manufacturer/` 与 `/knitted-fabrics-manufacturer/` 的 9 张下滚产品图  
-> 状态：本地已完成，待同步主题代码与 uploads 资源后进行生产验收
+> 状态：已于 2026-08-20 完成生产部署与 HTTP/MIME/静态标记验收
 
 ## 1. 实施结论
 
@@ -83,3 +83,10 @@ PHP 语法检查已通过：
 4. 用 390 px 和 1440 px 视口复核裁切、清晰度、交错布局和 CLS；
 5. 在浏览器 Network 面板确认实际只请求匹配视口的候选，而不是原 PNG 或全部候选；
 6. 部署稳定后记录日期，并比较 PageSpeed/Lighthouse 与 Search Console Core Web Vitals；样本不足时不把实验室分数变化直接视为排名变化。
+
+### 生产验收记录（2026-08-20）
+
+- Sportswear 4 个 `<picture>`、24 个 WebP；Knitted Fabrics 5 个 `<picture>`、30 个 WebP；
+- 54 个 WebP 全部返回 HTTP 200 和 `Content-Type: image/webp`；9 个 PNG 回退全部返回 HTTP 200 和正确图片 MIME；
+- 9 张产品图均输出固有尺寸、`loading="lazy"` 与 `decoding="async"`；
+- 视口候选的浏览器 Network 与后续真实 CWV 变化继续作为观察项，不在低样本阶段推断排名收益。

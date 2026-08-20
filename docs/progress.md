@@ -20,10 +20,10 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 - 规范站：<https://www.athletikapparel.com/>，运行于 Flywheel。
 - WordPress 重建已上线，使用 GeneratePress 父主题和 `myathletik-child` 子主题。
 - 首页、7 个产品类目页、Services、About、Contact、Sustainability 和 Privacy Policy 已上线。
-- Technical Guides 内容中心及 3 篇基础指南已在生产上线，站点导航、首页和页脚均有稳定入口；第四篇 QC Guide 已在本地完成，待生产部署。
-- Rank Math Page Sitemap 最近一次生产核验包含 17 个 URL，其中包括内容中心与 3 篇已上线指南。
-- 浏览器、Googlebot、OAI-SearchBot 和 PerplexityBot 访问 Hub 与 3 篇已上线指南共 4 个 URL 均返回 HTTP 200。
-- 上述 4 个生产 URL 已在 Google Search Console 逐个申请索引；QC Guide 尚未部署，不提交收录。
+- Technical Guides 内容中心及 4 篇指南均已在生产上线，站点导航、首页和页脚有稳定入口。
+- Rank Math Page Sitemap 于 2026-08-20 生产核验包含 19 个 URL，其中包括内容中心与 4 篇指南。
+- 浏览器、Googlebot、OAI-SearchBot 和 PerplexityBot 访问 QC Guide 均返回 HTTP 200；页面允许索引，Title/Meta/H1/Canonical、Article/FAQPage/BreadcrumbList、图片和视频正常。
+- 先前 Hub 与 3 篇基础指南已在 Google Search Console 逐个申请索引；QC Guide 的 API URL Inspection 本次返回 `internal_error: fetch failed`，属于检查不完整而非页面 SEO 缺陷，待在 GSC 网页版执行实时测试与请求编入索引。
 - `myathletik.com` 已按所有者决定完全下线，已检查入口返回 HTTP 410；不做跨域 301，也不再优化旧站。
 
 ### 1.2 GEO
@@ -608,6 +608,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-20 | 所有者澄清：Beta Textiles 不是独立法律实体，只是对外使用的名称/路径（AGENTS.md §2 已更新）；"our own fabric mill" 和 "in-house testing" 为准确表述，全站保留；检测能力为自有设备 + 第三方按客户要求选择；不过度抠字眼，目标是获客 |
 | 2026-08-20 | SEO-IMP-018 正文草稿根据所有者确认事实更新：7 个 QC 节点公开、针检/测试跟踪暂不公开、责任边界（内部执行 QC、辅助第三方、AQL 买家定义、不合格品全担）已写入；QC 简报证据清单已填写 |
 | 2026-08-20 | `main` 已安全快进对齐 `origin/kimi` 的 21 个 SEO 提交；SEO-IMP-012/018/026/028、QC Guide SEO 字段和文档状态已统一。QC Guide 本地页面与资源验收通过；生产 URL 当前仍为 404，待 Local Connect 部署后再执行生产 QA 与 GSC URL Inspection |
+| 2026-08-20 | SEO 批次完成生产部署与验收：15 个关键页面返回 200；QC Guide 索引信号、Schema、Hub/Sitemap 入口及 7 个媒体资源通过；SEO-IMP-005/006 的 54 个 WebP 与 9 个 PNG 回退全部返回 200 且 MIME 正确；15 个关键页仅加载一份 child stylesheet；MOQ、术语、内链、社交图和阅读时长已生效。保留 Warning：Header/Footer 共用 Logo 缺少固有尺寸（SEO-IMP-024） |
 
 ---
 
@@ -616,7 +617,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
 3. 等待 Search Console Page indexing 从 2026-08-07 快照刷新，并核对“已抓取/已发现但尚未编入索引”、robots.txt 屏蔽和 404 的示例 URL。
-4. 部署并验收 SEO-IMP-001–010 与响应式图片；随后收集 Knitted Fabrics 当前 GRS scope certificate、交易/追溯文件和测试报告样例，再人工补录 US / CA / UK 固定位置 Google 前 10 名。
+4. 在 GSC 网页版对新 QC Guide 执行实时测试并请求编入索引；随后启动 SEO-IMP-024，为 Header/Footer 共用 Logo 补充固有尺寸。
 5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
 7. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。

@@ -4,7 +4,7 @@
 > 对应实施项：SEO-IMP-009  
 > 目标页面：`/knitted-fabrics-manufacturer/`  
 > 所有者确认：2026-08-18
-> 状态：本地页面已实施，待部署与生产验收
+> 状态：已于 2026-08-20 完成生产部署与验收
 
 > 后续状态：SEO-IMP-010 已按 [`Knitted Fabrics 声称—证据矩阵`](knitted-fabrics-claim-evidence-matrix-v1.md) 更新 Meta、GRS、测试、追溯与性能表达；本表中“Meta 不变”仅记录 SEO-IMP-009 当时的实施边界。
 
