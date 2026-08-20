@@ -8,6 +8,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$media_base = get_stylesheet_directory_uri() . '/assets/images/production/articles/garment-qc/';
 ?>
 
 <div class="ma-technical-article__opening">
@@ -33,6 +35,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<p>Color and surface approvals come before bulk processing. Lab dips confirm shade on the nominated fabric quality; hand-feel and finish standards confirm brushing, fleece or functional finishing; a strike-off approves print or placement artwork before bulk printing. Bulk fabric should not be released against a verbal approval.</p>
 	<p>First-piece approval closes the loop between approval and production. The first complete garment from the line — cut from bulk fabric and sewn under production conditions — is measured and compared against the approved pre-production sample and the POM table. Cutting continues only after the first piece passes.</p>
 	<p>Every one of these controls depends on the same source document. The finished-fabric specification, color standard, seam map and POM table in the <a href="<?php echo esc_url( home_url( '/technical-knitwear-tech-pack-guide/' ) ); ?>">tech pack</a> are what pre-production checks are measured against; without them, incoming inspection becomes a matter of opinion.</p>
+	<figure class="ma-technical-article__media">
+		<video controls playsinline preload="metadata" width="720" height="1280" poster="<?php echo esc_url( $media_base . 'fabrics-inline-qc-poster.jpg' ); ?>">
+			<source src="<?php echo esc_url( $media_base . 'fabrics-inline-qc-web.mp4' ); ?>" type="video/mp4">
+			<p>Your browser does not support embedded video. <a href="<?php echo esc_url( $media_base . 'fabrics-inline-qc-web.mp4' ); ?>">Download the fabric incoming inspection example.</a></p>
+		</video>
+		<figcaption>Incoming fabric inspection at the QC workstation.</figcaption>
+	</figure>
 </section>
 
 <section id="in-line" aria-labelledby="ma-qc-in-line-title">
@@ -48,6 +57,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<p>Sampling is normally a mix of operator self-checks at each operation and periodic checks by dedicated QC staff, with the first output of every new operation, size or bundle reviewed before the run continues. Frequency and sample size vary by fabric, construction complexity and line stability, and are confirmed for each project; a critical or hard-to-rework operation may justify 100% checking while a stable operation may need only periodic sampling.</p>
 	<p>In-line control differs from final inspection in purpose, not just timing. In-line checks exist to find and fix the cause — a wrong folder setting, a dull knife, a drifting print registration — before the defect is multiplied across the order. Final inspection is an accept-or-reject decision on finished goods. A program that relies only on final inspection discovers problems when the only options left are rework, discount or remake.</p>
 	<p>Common in-line checkpoints for knitted garments include cutting-room panel audits, print and heat-transfer placement checks, seam audits at critical joins such as the crotch, underarm and neck rib, elastic attachment tension and join appearance, and mid-line measurement audits on half-finished and finished garments.</p>
+	<figure class="ma-technical-article__media">
+		<video controls playsinline preload="metadata" width="720" height="1280" poster="<?php echo esc_url( $media_base . 'inline-qc-260813-poster.jpg' ); ?>">
+			<source src="<?php echo esc_url( $media_base . 'inline-qc-260813-web.mp4' ); ?>" type="video/mp4">
+			<p>Your browser does not support embedded video. <a href="<?php echo esc_url( $media_base . 'inline-qc-260813-web.mp4' ); ?>">Download the in-line inspection example.</a></p>
+		</video>
+		<figcaption>In-line inspection during production.</figcaption>
+	</figure>
 </section>
 
 <section id="final-inspection" aria-labelledby="ma-qc-final-inspection-title">
@@ -63,6 +79,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<p>General inspection level II is the usual default sample size; tighter or looser levels can be agreed based on product risk and order history. Whatever the choice, the buyer should state the sampling standard, inspection level and AQL per defect class in the tech pack or purchase order — “AQL 2.5” alone does not define the plan.</p>
 	<p>The measurement audit compares sampled garments against the POM table and its tolerances, using the measurement method defined in the tech pack. For stretch knits, the stated measuring condition — relaxed, extended or otherwise — matters as much as the numbers.</p>
 	<p>Packaging, labeling and marking checks confirm folding method, polybag type and warning text, care and content labels, hangtags, size stickers, barcodes, country-of-origin marking, carton assortment and shipping marks against the packing specification.</p>
+	<figure class="ma-technical-article__media">
+		<video controls playsinline preload="metadata" width="720" height="1280" poster="<?php echo esc_url( $media_base . 'qc-before-shipment-poster.jpg' ); ?>">
+			<source src="<?php echo esc_url( $media_base . 'qc-before-shipment-web.mp4' ); ?>" type="video/mp4">
+			<p>Your browser does not support embedded video. <a href="<?php echo esc_url( $media_base . 'qc-before-shipment-web.mp4' ); ?>">Download the pre-shipment inspection example.</a></p>
+		</video>
+		<figcaption>Final pre-shipment inspection.</figcaption>
+	</figure>
 </section>
 
 <section id="testing-compliance" aria-labelledby="ma-qc-testing-compliance-title">
