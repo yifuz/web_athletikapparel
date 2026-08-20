@@ -45,7 +45,8 @@
 │   ├── /technical-guides/  （内容中心）
 │   ├── /flatlock-vs-overlock-technical-knitwear/  （已发布）
 │   ├── /technical-knitwear-tech-pack-guide/  （已发布）
-│   └── /evaluate-technical-knitwear-oem/  （已发布）
+│   ├── /evaluate-technical-knitwear-oem/  （已发布）
+│   └── /garment-quality-control-checklist/  （已发布）
 │
 ├── /sustainability/   （当前正确 slug；未实施历史重定向）
 ├── /about-us/
@@ -171,6 +172,17 @@ POM、成品面料规格、接缝图、测试和样品批准。
 **目的：** 使用面向裁剪缝制功能服装的风险评估框架纠正 GEO-08 的语义偏移。
 不把任意评分权重或未经验证的认证声明作为证明。所有者已于 2026-08-11 批准完整草稿发布。
 本页使用共用文章布局，覆盖法律主体、工序所有权、技术能力、面料控制、可追溯性、项目级产能和报价范围。
+
+---
+
+## 2E. 技术指南 — `/garment-quality-control-checklist/`（新增）
+
+**H1：** Garment Quality Control Checklist for Technical Knitwear
+
+**目的：** 承接 `garment quality control`（七国 110/月）和 `clothing quality control checklist`（七国 70/月）
+搜索意图，为买家提供可执行的 QC 检查清单。所有者已于 2026-08-20 确认证据清单并批准发布。
+本页使用共用文章布局，覆盖产前检验、在线巡检、终检/AQL、测试合规、针检、QC 记录和 tech pack QC 条款。
+包含三支第一方 QC 视频（面料进厂检验、在线巡检、终检）。
 
 ---
 

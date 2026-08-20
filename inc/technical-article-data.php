@@ -39,6 +39,10 @@ function myathletik_technical_guides_hub_data() {
 				'title' => __( 'OEM evaluation', 'myathletik-child' ),
 				'copy'  => __( 'Review process ownership, production controls, traceability and project fit.', 'myathletik-child' ),
 			),
+			array(
+				'title' => __( 'Quality control', 'myathletik-child' ),
+				'copy'  => __( 'Incoming checks, in-line controls, AQL sampling, final inspection and documentation.', 'myathletik-child' ),
+			),
 		),
 	);
 }
@@ -280,6 +284,77 @@ function myathletik_technical_article_data() {
 				array(
 					'label' => __( 'ZDHC Manufacturing Restricted Substances List', 'myathletik-child' ),
 					'url'   => 'https://www.zdhc.org/mrsl',
+				),
+			),
+		),
+		'garment-quality-control-checklist' => array(
+			'status'           => 'publish',
+			'title'            => __( 'Garment Quality Control Checklist for Technical Knitwear', 'myathletik-child' ),
+			'seo_title'        => __( 'Garment Quality Control Checklist for Knitwear | Athletik', 'myathletik-child' ),
+			'meta_description' => __( 'QC checklist for cut-and-sew technical knitwear: incoming fabric checks, in-line inspection, AQL sampling, final inspection and needle control.', 'myathletik-child' ),
+			'kicker'           => __( 'Quality control guide', 'myathletik-child' ),
+			'topic'            => __( 'Quality control', 'myathletik-child' ),
+			'summary'          => __( 'Incoming fabric checks, in-line inspection, AQL sampling, final inspection, needle control and QC documentation for technical knitwear programs.', 'myathletik-child' ),
+			'intro'            => __( 'A workable garment quality control program combines incoming material checks, in-line process controls, a final pre-shipment inspection and the records that connect each result to the purchase order.', 'myathletik-child' ),
+			'reviewed_on'      => '2026-08-20',
+			'featured_image'   => 'production/articles/covers/garment-qc-checklist-cover.webp',
+			'featured_small'   => 'production/articles/covers/garment-qc-checklist-cover-800.webp',
+			'featured_alt'     => __( 'Quality control inspector measuring a dark technical knit garment with a tape measure on a white inspection table', 'myathletik-child' ),
+			'featured_width'   => 1448,
+			'featured_height'  => 1086,
+			'article_section'  => __( 'Technical knitwear quality control', 'myathletik-child' ),
+			'about'            => array( 'Garment quality control', 'AQL sampling', 'Final inspection', 'Technical knitwear' ),
+			'cta_kicker'       => __( 'Set the QC basis before production', 'myathletik-child' ),
+			'cta_title'        => __( 'Send the tech pack and QC requirements', 'myathletik-child' ),
+			'cta_copy'         => __( 'Send the current tech pack, finished-fabric specification, POM table, order quantity and inspection or testing requirements so the quality plan can be reviewed against the actual program.', 'myathletik-child' ),
+			'toc'              => array(
+				'pre-production'        => __( 'Pre-production quality controls', 'myathletik-child' ),
+				'in-line'               => __( 'In-line production controls', 'myathletik-child' ),
+				'final-inspection'      => __( 'Final inspection before shipment', 'myathletik-child' ),
+				'testing-compliance'    => __( 'Testing and compliance verification', 'myathletik-child' ),
+				'needle-control'        => __( 'Needle control and product safety', 'myathletik-child' ),
+				'qc-documentation'      => __( 'QC documentation and records', 'myathletik-child' ),
+				'tech-pack-requirements' => __( 'Tech pack QC clauses', 'myathletik-child' ),
+				'faq'                   => __( 'Common buyer questions', 'myathletik-child' ),
+			),
+			'faq'              => array(
+				array(
+					'question' => __( 'Is third-party inspection necessary if the factory has internal QC?', 'myathletik-child' ),
+					'answer'   => __( 'They serve different purposes. Internal QC manages the process — catching and correcting issues during production. Third-party inspection provides an independent accept-or-reject decision on a finished sample. Many buyers use both: internal QC for process control, third-party for final verification before shipment.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'What does AQL 2.5 actually mean?', 'myathletik-child' ),
+					'answer'   => __( 'AQL 2.5 refers to the acceptance quality limit for major defects under ISO 2859-1 or ANSI/ASQ Z1.4 sampling at General Inspection Level II. It defines the accept and reject numbers for the sample size, not that 2.5% of the lot may be defective. The full plan requires the sampling standard, inspection level and AQL per defect class.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Should every order have the same QC coverage?', 'myathletik-child' ),
+					'answer'   => __( 'No. Inspection level and defect definitions should scale with product risk, claim sensitivity and market requirements. A premium compression garment sold under a performance claim justifies tighter inspection than a basic promotional T-shirt. State the reasoning in the program standard, then reference it per style.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'What happens when defects are found after shipment?', 'myathletik-child' ),
+					'answer'   => __( 'The handling route should be agreed before the order, not negotiated under shipment pressure. Options include rework or 100% sorting with re-inspection, rejection with remake or replacement, commercial settlement per the purchase-order terms, or a written concession in which the buyer knowingly accepts a defined deviation for that lot.', 'myathletik-child' ),
+				),
+			),
+			'references'       => array(
+				array(
+					'label' => __( 'ISO 2859-1 sampling procedures for inspection by attributes', 'myathletik-child' ),
+					'url'   => 'https://www.iso.org/obp/ui/#iso:std:iso:2859:-1:en',
+				),
+				array(
+					'label' => __( 'AATCC TM135-2025 dimensional changes after home laundering', 'myathletik-child' ),
+					'url'   => 'https://members.aatcc.org/store/tm135/543/',
+				),
+				array(
+					'label' => __( 'ISO 3759 preparation, marking and measurement for dimensional-change tests', 'myathletik-child' ),
+					'url'   => 'https://www.iso.org/standard/57309.html',
+				),
+				array(
+					'label' => __( 'Textile Exchange Content Claim Standard', 'myathletik-child' ),
+					'url'   => 'https://textileexchange.org/content-claim-standard/',
+				),
+				array(
+					'label' => __( 'OEKO-TEX STANDARD 100', 'myathletik-child' ),
+					'url'   => 'https://www.oeko-tex.com/en/our-standards/oeko-tex-standard-100',
 				),
 			),
 		),
