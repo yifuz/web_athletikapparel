@@ -1,4 +1,4 @@
-# SEO CLI 工具接入与首轮自动化基线（2026-08-18）
+# SEO CLI 工具接入、首轮与生产后基线（2026-08-18 至 2026-08-20）
 
 > 工具：[`iannuttall/seo`](https://github.com/iannuttall/seo)（Apache-2.0，本地 CLI + MCP）
 > 安装版本：v0.2.36，全局 npm 安装于本机（Node v22.23.1）
@@ -11,12 +11,13 @@
 - 匿名遥测已关闭（`seo telemetry disable`，与项目隐私纪律一致）。
 - Google 只读授权已完成：账号 `zhangyifuzjg@gmail.com`，Scope 为 Search Console 只读 + Google Analytics 只读，OAuth app 为 `SEO Skill app`。
 - GSC 属性可见：`sc-domain:athletikapparel.com`（siteOwner）。
-- GA4 属性可见：`547377703`（`www.athletikapparel.com`，账号 Athletik Clothing），尚未绑定进项目 profile。
+- 已于 2026-08-20 建立默认项目 Profile `athletikapparel`：绑定 GSC `sc-domain:athletikapparel.com`、GA4 `547377703`、规范站、品牌词与 10 个重点监控 URL。Profile 和 OAuth 留在本机，不进入 Git。
 - 原始 JSON 报告保存在本机 `~/seo-reports/`（仓库外，不进 Git）：
   - `baseline-2026-08-18.json`（技术爬取，crawl ID `crawl_49a0a4ec2cdc45f98efde6997e4464c1`）
   - `gsc-report-2026-08-18.json`（主报告）
   - `gsc-perf-overview-2026-08-18.json`（90 天表现总览）
   - `gsc-pages-28d.json` / `gsc-queries-28d.json` / `gsc-countries-28d.json`
+  - 2026-08-20 生产后 Crawl Snapshot：`crawl_3f1fc0fbb955403791272722942441a9`
 
 ## 2. 网络约束（重要操作经验）
 
@@ -48,6 +49,37 @@
 
 结论：自动化复现了 Baseline V2 的核心判断（无 Critical），零新增阻断问题；增量贡献为面包屑类型严格性与 HSTS 两条观察。
 
+### 3.1 2026-08-20 生产后 Crawl Snapshot
+
+SEO-IMP 批次完成生产部署后重新抓取：20 个 URL、0 个 fetch failure、31 个 Finding（2 High / 6 Medium / 23 Low），保存为 `crawl_3f1fc0fbb955403791272722942441a9`。
+
+与冻结的 2026-08-18 全站基线 `crawl_49a0a4ec2cdc45f98efde6997e4464c1` 显式比较：20 个页面（+1，为新 QC Guide），无新增状态码错误，`slow_response` 由 2 降为 0。工具把可比性标为 `review-required`，因为两次抓取范围、上限或定义存在差异；因此只用于逐项复核，不能把全部 Delta 归因于本次部署。
+
+| Delta | 解释与处置 |
+|---|---|
+| `hsts_missing` 18 → 19 | 新增 QC URL 延续全站同一 Cloudflare 响应头状态；仍是低优先平台配置项，不是本次页面回归 |
+| `rich_result_required_fields_missing` 4 → 5 | 新 QC Guide 加入既有严格字段检查队列；按 Finding ID 核对可见内容和 Google 类型要求，不因通用规则自动补字段 |
+| `image_oversized_candidate` 1 → 2 | 新增 Sportswear 启发式候选；页面已有响应式 WebP，需以浏览器实际候选和 Lab/Field 性能复核后再决定，不按尺寸启发式返工 |
+| `broken_internal_link` / `client_error` | 仍为 Cloudflare `/cdn-cgi/l/email-protection` 通用端点，维持已核实的 `not-needed` 处置 |
+| `x_robots_noindex` | 仍只作用于 Sitemap，维持有意控制结论 |
+
+这份 Snapshot 作为后续生产部署比较的新参考点；比较时仍必须保持抓取参数一致，并读取完整 Caveat。
+
+### 3.2 索引容量与模板性能基线（2026-08-20）
+
+`index-coverage-plan` 从 Sitemap 解析出 18 个 URL；按每日检查 10 个 URL，预计 2 天完成一轮，低于 7 天目标周期。该结果只用于安排 URL Inspection 抽样容量，不代表 18 个 URL 均已收录，也没有触发请求编入索引。
+
+四类代表页面完成首次移动端 Lighthouse Lab 基线：
+
+| 模板 | URL | 单次 Lab LCP | CrUX 字段数据 | 当前处置 |
+|---|---|---:|---|---|
+| 首页 | `/` | 10.8s | 本次未检查 | `deferred`：需可重复运行并定位 LCP 资源 |
+| 商业品类页 | `/sportswear-manufacturer/` | 5.2s | 本次未检查 | `deferred`：需可重复运行并定位 LCP 资源 |
+| Technical Guide | `/technical-knitwear-tech-pack-guide/` | 7.2s | 本次未检查 | `deferred`：需可重复运行并定位 LCP 资源 |
+| Services/Contact | `/services/` | 14.6s | 本次未检查 | `deferred`：需可重复运行并定位 LCP 资源 |
+
+四次报告均只返回 `Improve the largest visible content` 一项。数值属于受控环境中的单次 Lab 诊断，不能当作真实用户 CWV 或排名结果；在取得重复运行和可用 CrUX 数据前，不据此直接修改页面。
+
 ## 4. GSC 数据
 
 GSC 周期性数据快照已移入独立持续记录文件 [`gsc-data-log.md`](gsc-data-log.md)，
@@ -56,18 +88,27 @@ GSC 周期性数据快照已移入独立持续记录文件 [`gsc-data-log.md`](g
 ## 5. 例行命令（可重复）
 
 ```bash
+# 检查本机项目、授权和报告输入
+seo doctor --json
+seo projects list --json
+seo reports describe crawl-diff --json
+
 # 技术爬取（无需代理）
 seo crawl https://www.athletikapparel.com --save
 
-# 与上一次爬取对比（部署验收用）
-seo crawl-reports --compare latest --against previous
+# 与明确指定的同范围基线比较（部署验收用）
+seo crawl-reports --compare <after-crawl-id> --against <before-crawl-id>
 ```
 
 GSC 数据导出命令见 [`gsc-data-log.md`](gsc-data-log.md)。
 
 ## 6. 后续待办
 
-- [ ] 绑定 GA4 属性 `547377703` 进项目 profile，使报告可关联 `generate_lead` 落地页数据；
-- [ ] SEO-IMP-001–010 部署后：跑一次 `seo crawl --save` 并与本次基线 `--compare`，替代人工逐页查源代码；
+- [x] 建立默认项目 Profile 并绑定 GSC、GA4、品牌词和重点 URL；
+- [x] SEO 批次部署后保存新 Crawl Snapshot，并与 2026-08-18 全站基线显式比较；
+- [x] 建立 quota-aware `index-coverage-plan`：Sitemap 当前解析出 18 个 URL，按每日 10 个 URL 预计 2 天完成一轮，低于 7 天目标周期；该报告只制定抽样容量，不代表页面已经收录；
+- [ ] 核对 GA4 `generate_lead` 的实际事件与 Landing Page 数据，再启用转化层面的月度报告；
+- [x] 为首页、商业品类页、Technical Guide、Services/Contact 各选一个模板 URL，建立首次移动端 Lighthouse 基线；本次无 CrUX 字段数据，四项均按单次 Lab 证据标记 `deferred`；
+- [ ] 按上述容量使用代表性 URL 做周期 Index Snapshot，并为四类模板补充重复 Lab 运行与可用 CrUX 数据；
 - [ ] 每月例行 GSC 导出归档到 [`gsc-data-log.md`](gsc-data-log.md)，与 `seo-process.md` 月度复盘模板对齐；
 - [ ] Cloudflare HSTS 开启（低优先顺手项）。

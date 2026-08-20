@@ -1,159 +1,158 @@
 ---
 name: wp-seo-audit
 description: >
-  Comprehensive WordPress SEO audit for the myathletik-child theme. Checks
-  <title>/meta description presence & length, single-H1 rule, H2/H3 hierarchy,
-  image alt text, URL slug ↔ keyword alignment, internal links, canonical,
-  robots, schema presence, and Core Web Vitals signals (LCP/CLS/font loading).
-  Use whenever the user asks to 审计 SEO / 检查 SEO / 查 SEO 问题 / 优化 SEO,
-  or says "audit this page's SEO", "check SEO on", "is this page SEO-ready",
-  "检查标题/meta/H1/alt", or after creating/editing any page template,
-  category landing page, or template part. Also trigger on 批量检查 / 全站 SEO.
+  Evidence-backed SEO audit and diagnosis for the myathletik-child WordPress
+  theme. Use for page or site audits, indexing and crawl problems, Search
+  Console analysis, keyword/page opportunities, SEO regressions, Core Web
+  Vitals, internal links, schema, metadata, and post-deployment SEO acceptance.
+  Audit and diagnosis are read-only; explicit implementation requests may
+  proceed through the relevant project skill and change-control workflow.
 ---
 
-# wp-seo-audit — WordPress SEO Audit (myathletik-child)
+# wp-seo-audit — Athletik SEO Audit and Diagnosis V2
 
-Audit-type skill. **Read-only**: produce a report, do not auto-edit unless the
-user explicitly asks you to fix something.
+Produce decisions that are traceable to live-page, source, Search Console,
+analytics, or market evidence. Do not treat a generic SEO score as a result.
 
-## Source-of-truth files (read these first)
+Audit and diagnosis are read-only. If the user explicitly requests a fix,
+finish the diagnosis first, then use the relevant implementation skill. Invoke
+`wp-redirect-guard` before any current-site URL change.
 
-- `AGENTS.md` §3 — URL & SEO rules (the strictest section).
-- `seo-tags.md` — the canonical SEO Title / Meta Description for every page.
-  Compare the rendered page against this file. If they differ, that's a finding.
-- `docs/sitemap.md` — every page's URL, single H1, target keyword, 301 source.
-- `docs/seo/seo-process.md` §5 — diagnostic thresholds and sample-size gates
-  (e.g. no CTR-driven Title/Meta rewrites below ~100 matched impressions).
-- `docs/seo/gsc-data-log.md` — latest GSC snapshots; check whether real
-  query/CTR data exists before recommending snippet changes.
+## Project truth to read first
 
-## What to audit (in this order)
+Read only the files needed for the request, starting with:
 
-### 1. Title & meta description
-For the target page, confirm:
-- `<title>` matches `seo-tags.md` for that route (± brand suffix).
-- SEO title ≤ ~60 chars; meta description ≤ ~155 chars. These are INTERNAL
-  SOFT TARGETS (heuristics), not Google rules. Report overruns as 🟡 at most,
-  and never recommend a rewrite on length alone when GSC shows no CTR problem
-  (see `seo-process.md` §5 and finding V2-002's precedent).
-- Meta description contains the page's primary keyword naturally.
-- `<meta name="description">` is present and unique (not the site-wide default).
-- `<link rel="canonical">` points to the page's own URL.
+- `AGENTS.md` §2–§6 for positioning, entities, URL decisions, copy, and terms.
+- `seo-tags.md` for approved Title, Meta, H1, social image, and alt truth.
+- `docs/sitemap.md` for current information architecture and page ownership.
+- `docs/progress.md` for current deployment state.
+- `docs/seo/seo-process.md` for evidence hierarchy, sample gates, and review
+  windows.
+- `docs/seo/gsc-data-log.md` before interpreting queries, CTR, or index status.
+- `docs/seo/seo-implementation-checklist-v1.md` before proposing another item.
 
-Render the page (or grep the template + `wp_head` output) — don't trust the
-template alone, because Rank Math may inject tags dynamically.
+Do not revive a superseded historical issue merely because an old audit or
+generic checklist mentions it.
 
-### 2. Heading hierarchy
-- **Exactly one `<h1>`** per page. Flag zero or multiple.
-- H1 matches the H1 declared in `docs/sitemap.md` for that route.
-- H2/H3 nesting is logical (no H3 before an H2, no skipped levels).
-- Headings are semantic `<h1>–<h6>`, not `<div class="h2">` styled as headings.
+## Choose the smallest useful evidence path
 
-### 3. Image alt text
-- Every `<img>` has a non-empty `alt`. Flag empty `alt=""` only if the image is
-  decorative (then it should be explicitly `alt=""`, not missing).
-- alt text uses real keywords (the category/term), NOT filenames
-  (`alt="IMG_2048"` is a finding).
-- For the home page's image wall (AGENTS.md §4), specifically check the 30+
-  product images — these are known to be untitled/unlinked.
+1. Establish whether the user means local, staging, or production.
+2. For a broad audit, regression check, indexing diagnosis, performance test,
+   or Search Console opportunity analysis, read
+   [`references/seo-cli-routing.md`](references/seo-cli-routing.md) and use one
+   described structured report before manual exploration.
+3. For a narrow source-only check, inspect the relevant source and rendered
+   production HTML directly; do not run unrelated reports.
+4. Read every returned finding, coverage field, warning, caveat, and inventory
+   row. Never truncate a structured JSON result before evaluating it.
+5. Inspect theme source only where evidence requires implementation context or
+   a source-of-truth comparison.
 
-### 4. URL & slug
-- Slug follows the manufacturer pattern in `seo-tags.md` /
-  `docs/sitemap.md`: `/sportswear-manufacturer/`, etc.
-- If the page moved (old `/products/<x>/` → new top-level), confirm a 301
-  exists. If unsure, output the 301 mapping row and flag it for the user
-  (this skill doesn't manage redirects — that's `wp-redirect-guard`).
+## Project-aware audit checks
 
-### 5. Internal links
-- Page links out to at least one sibling category page (the `/products/` hub or
-  another `-manufacturer/` page).
-- Page is linked *to* from the home page and the products hub.
-- Nav menu includes the page (check `functions.php`
-  `myathletik_ensure_primary_menu` for the seeded menu items).
-- No orphan pages.
+### Indexability and metadata
 
-### 6. Schema / structured data
-- Confirm at least one JSON-LD block in `wp_head`. (See `wp-schema-markup`
-  skill for what types each page should have.) Presence check only here.
-- If field-level validation is needed, run the `seo` CLI crawl
-  (`docs/seo/seo-cli-baseline-2026-08-18.md`) — it checks rich-result required
-  properties per block. Known acceptable deviation: Rank Math emits
-  BreadcrumbList `position` as a string; GSC URL Inspection accepts it.
+- Confirm HTTP status, robots meta, X-Robots-Tag, canonical, Sitemap inclusion,
+  and discoverable internal links.
+- Compare rendered Title, Meta, and H1 with `seo-tags.md` and
+  `docs/sitemap.md`; Rank Math output, not a dormant PHP array, is production
+  truth.
+- Treat roughly 60-character titles and 155-character descriptions as soft
+  review heuristics. Do not rewrite on length alone or below the data gates in
+  `seo-process.md`.
 
-### 7. Core Web Vitals signals (static checks)
-This skill does **not** run Lighthouse. It checks static signals that predict
-good CWV:
-- Hero/LCP image is not lazy-loaded (no `loading="lazy"` on the first
-  viewport's image).
-- Below-fold images use `loading="lazy"` and `decoding="async"`.
-- Fonts use `display=swap` (already true for Manrope in `functions.php`).
-- `preconnect` hints present for any third-party origin.
-- No render-blocking CSS beyond parent + child + Google Fonts.
-- `width`/`height` (or `aspect-ratio`) on images, to prevent CLS.
+### Headings and content ownership
 
-## Output format
+- Require exactly one H1 and a logical H2/H3 hierarchy.
+- Confirm one primary search intent and one owning URL. Check GSC query-to-page
+  overlap before diagnosing cannibalisation.
+- A split-intent SERP is evidence to investigate, not automatic permission to
+  create two pages.
 
-Always return a structured report. Every 🔴/🟡 finding must be **falsifiable
-and verifiable** — a finding without evidence, a failure-mode check, and a
-verification method is not complete:
+### Images and media
 
-```
-## SEO Audit — <page URL>
+- Every `<img>` must have an `alt` attribute. Informational images need concise,
+  descriptive alt text; decorative images should use `alt=""`.
+- Flag filenames, keyword lists, or unrelated terms used as alt text.
+- Do not assume the homepage gallery is broken; verify current rendered output.
+- Check intrinsic dimensions or stable aspect ratio, responsive candidates,
+  MIME/status, loading, decoding, and LCP priority as appropriate.
 
-### Findings by severity
-🔴 Critical (blocks indexing / breaks H1 rule / missing title):
-  - <finding> — <file:line or production URL evidence>
-    Evidence (observed): <what was actually measured/seen in rendered HTML,
-      crawl data, or GSC — never "best practice says so">
-    Falsification check: <what observation would prove this finding wrong
-      or unnecessary — e.g. "if GSC shows CTR already normal for this
-      position, do not act">
-    Leading indicator: <what signal confirms the fix worked, and when to
-      look — e.g. "re-crawl shows single H1", "28-day GSC CTR vs prior window">
-    Fix: <minimal change — or 【NEEDS INPUT: ...】 if facts are missing>
-🟡 Warning (suboptimal but not blocking):
-  - <same four fields>
-🟢 Passed:
-  - <what's already correct> (plain list, no extra fields needed)
+### URL and internal-link rules
 
-### 301 / URL notes
-<if any slug issues — otherwise "none">
+- Current commercial category URLs are top-level `*-manufacturer/` routes.
+- There is no standalone `/products/` page in the current phase. Category
+  discovery comes from the homepage product section, navigation, contextual
+  links, and Sitemap.
+- The retired `myathletik.com` domain and its candidate `/products/<x>/`
+  mappings are explicitly out of redirect scope. Do not flag their absence.
+- For any future change to a live `athletikapparel.com` URL, invoke
+  `wp-redirect-guard` before editing and require an explicit 301 map.
+- A page is not an orphan when it has at least one crawlable, relevant internal
+  entry; do not require an unrelated sibling link merely to increase count.
 
-### Suggested next actions (do NOT auto-apply)
-1. ... (ordered by expected gain / risk, per seo-implementation-checklist logic)
-2. ...
-```
+### Schema and entity signals
 
-## Evidence discipline (adapted from claude-seo / iannuttall-seo practice)
+- Parse every JSON-LD block and compare types and facts with visible content.
+- Presence alone is not a pass. Validate required fields for the applicable
+  page type, while keeping optional enhancements separate from errors.
+- Keep Athletik Clothing, Athletik Clothing Inc., Zhangjiagang Athletik
+  Clothing Co., Limited, and the non-public Beta Textiles relationship within
+  the boundaries in `AGENTS.md`.
+- Schema, `llms.txt`, or AI-crawler access is not a substitute for useful,
+  indexable content or independent citations.
 
-- **Separate observation from inference from recommendation.** State which of
-  the three each sentence is. A rendered-HTML fact is observation; "this may
-  truncate in SERP" is inference; "shorten it" is recommendation.
-- **Label heuristics as heuristics.** Character limits, keyword-density ideas,
-  and third-party tool scores are conventions, not search-engine rules. Never
-  present them as requirements.
-- **Partial data is not zero.** If GSC/crawl data is sampled, capped, or
-  missing, say so explicitly; do not conclude "no problem" from absent data.
-- **Respect sample gates.** Below the thresholds in `seo-process.md` §5
-  (e.g. ~100 matched impressions), report direction only and recommend
-  observation, not edits.
-- **Every fix ships with a re-check.** Use whichever applies: re-render the
-  page and inspect source; run `seo crawl https://www.athletikapparel.com
-  --save` then `seo crawl-reports --compare latest --against previous`
-  (setup/proxy notes: `docs/seo/seo-cli-baseline-2026-08-18.md`); or pull fresh
-  GSC rows (commands in `docs/seo/gsc-data-log.md`).
+### Performance and rendering
 
-## Rules
+- Static checks cover LCP loading priority, below-fold lazy loading, dimensions,
+  responsive images, font display, preconnects, and blocking resources.
+- The accepted production baseline is one child-theme `style.css`; do not
+  restore or accept a redundant parent stylesheet without evidence.
+- When performance is material, use Lighthouse lab data and available CrUX
+  field data, clearly separated. An origin-level CrUX result is not page-level
+  evidence.
 
-- **Never auto-edit.** This skill reports; the user decides. If they then say
-  "fix it", switch to normal editing workflow (and invoke `wp-redirect-guard`
-  if any URL change is involved).
-- **Never invent facts** to fill missing titles/meta. If `seo-tags.md` is
-  missing an entry for this page, say so and insert a `【NEEDS INPUT: ...】`
-  placeholder.
-- **No body copy.** Per AGENTS.md §5, suggest the *structure* of a meta
-  description, don't author marketing prose unless explicitly asked.
-- **Respect the "do not do" list** in
-  `docs/seo/seo-implementation-checklist-v1.md` §9 — never recommend URL
-  changes on indexed pages, near-duplicate pages for keyword variants, or
-  keyword stacking, no matter what a generic audit rule says.
+## Finding contract
+
+Every Critical or Warning finding must include:
+
+- stable ID and `fix` or `review` type;
+- affected URL(s) and evidence source;
+- data status: complete, partial, sampled, capped, skipped, or unavailable;
+- observed evidence, separate from inference;
+- falsification condition;
+- minimal proposed action;
+- verification method and review window;
+- allowed outcome: `fixed`, `deferred`, `not-needed` for fixes, or `changed`,
+  `no-change`, `deferred` for reviews.
+
+Do not omit a tool finding or inventory row from the handoff. If pagination
+exists, retrieve every page or state precisely what remains unreviewed.
+
+## Output
+
+Return:
+
+1. findings by severity, with the complete finding contract above;
+2. passed checks;
+3. URL/redirect notes;
+4. ordered next actions by expected business gain, risk, and effort;
+5. evidence gaps and the exact condition for reopening each deferred action.
+
+## Evidence discipline
+
+- Keep live crawl, source code, GSC, GA4, inquiry data, SERP snapshots, and
+  third-party estimates separate.
+- Partial or missing data is never zero and cannot support an all-clear.
+- GSC grouped totals may undercount; query, page, country, and device tables
+  are not interchangeable.
+- Search volume, difficulty, authority, traffic, and AI visibility from third
+  parties are estimates, not Google measurements.
+- Do not promise indexing, rankings, traffic, leads, or AI citations.
+- Do not use fixed word counts, keyword density, generic E-E-A-T scores, or a
+  single 0–100 audit score as change triggers.
+- Never invent facts or long-form copy. Follow `AGENTS.md` approval and evidence
+  boundaries.
+- Respect the do-not-do list in the implementation checklist: no keyword
+  stacking, doorway pages, automatic near-duplicate pages, bulk low-quality
+  links, or unsupported Schema.

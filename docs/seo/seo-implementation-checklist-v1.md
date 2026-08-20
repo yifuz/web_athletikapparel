@@ -122,6 +122,16 @@
 | （并入 IMP-012） | 术语小写漂移不限于 Sportswear：Outdoor（`inc/product-category-data.php:248`）、Merino、Sports Accessories、Silk construction 段均有小写 `flatlock`/`activeseam` | 中 | 并入 SEO-IMP-012 同批执行，逐页修 |
 | （所有者后台项） | Fluent Forms `Estimated Order Quantity` 分档仍以 1,000 为锚点；MOQ 降至 500 后 `Under 1,000 pcs` 一档会混入合格线索 | 中：询盘过滤有效性 | 插件后台字段，需所有者手动确认调整，非主题代码 |
 
+### E. SEO 运营控制面
+
+| ID | 项目 | 收益 | 风险 | 状态 |
+|---|---|---|---|---|
+| SEO-IMP-029 | 将 `wp-seo-audit` 升级为项目感知的 V2：修正 `/products/`、旧域名 301、装饰图 alt、首页历史问题和 CSS 基线；增加结构化报告路由、Finding outcome 与完整覆盖要求 | 高：减少假阳性、漏项和通用规则误改 | 低：只影响内部审计方法 | **已完成（2026-08-20）**；CLI 路由采用按需 reference，不复制完整工具目录 |
+| SEO-IMP-030 | 建立本机 `athletikapparel` SEO 项目 Profile，绑定 GSC、GA4、规范站、品牌词和 10 个重点 URL | 高：让抓取、Search Console、GA4 与监控使用一致项目上下文 | 低：本机配置，不改变公开网站 | **已完成（2026-08-20）**；OAuth/Profile 不进入 Git |
+| SEO-IMP-031 | 冻结 SEO 批次部署后的生产 Crawl Snapshot，并与 2026-08-18 全站基线比较 | 高：建立以后可重复的技术回归基准 | 低：只读抓取；不同范围不得强行比较 | **已完成（2026-08-20）**：新 Crawl ID `crawl_3f1fc0fbb955403791272722942441a9`；无新增状态码错误，可比性 `review-required` 的原因已记录 |
+| SEO-IMP-032 | 在 SEO 流程中增加 Change Card，记录主要变量、基线、指标、防护指标、干扰因素、Finding 处置及 Day 7/28/90 决策 | 高：避免“修改很多但无法判断哪项有效” | 低 | **流程已完成（2026-08-20）**；从下一项 SEO 改动开始使用，数据成熟后运行 `measure-change` |
+| SEO-IMP-033 | 建立索引覆盖抽样、模板性能基线和周期报告路由 | 中到高：把 Page indexing、CWV 和增长机会从临时检查变为持续监控 | 低到中：需控制 URL Inspection 配额，并区分 Lab/Field 数据 | **基线已完成（2026-08-20）**：18 个 Sitemap URL 按每日 10 个预计 2 天一轮；首页、Sportswear、Tech Pack Guide、Services 已建立首次移动端 Lab 基线。本次无 CrUX，4 个 LCP Finding 均因需重复运行和资源归因而 `deferred`；未提交索引或修改页面 |
+
 
 
 ## 5. 已完成的本地代码与资源范围
@@ -210,8 +220,10 @@
 生产部署与验收已完成，按以下顺序继续：
 
 1. 在 GSC 网页版对 QC Guide 执行实时测试并请求编入索引；
-2. 执行 SEO-IMP-024，为 Header/Footer 共用 Logo 补充固有 `width`/`height`；
-3. 建立 GSC 7 天/28 天页面级监测，分别观察商业采购词、QC/Tech Pack 信息词与宽泛 Performance 词；
-4. 收集当前 GRS scope certificate、可公开交易/追溯文件和测试报告样例，作为后续证据增强输入；
-5. 评估 SEO-IMP-013 品类页社交图和 SEO-IMP-027 VideoObject，继续以实际收益与风险排序；
-6. 英语基线稳定后再开始欧洲本地语言研究和条件式新内容；Performance Fabrics Guide 仍需单独批准。
+2. 按 SEO-IMP-033 的容量计划执行代表性 URL Index Snapshot，并复跑四类模板性能测试、补充可用 CrUX 数据；
+3. 执行 SEO-IMP-024，为 Header/Footer 共用 Logo 补充固有 `width`/`height`，并建立首张 SEO Change Card；
+4. 建立 GSC 7 天/28 天页面级监测，分别观察商业采购词、QC/Tech Pack 信息词与宽泛 Performance 词；
+5. 核对 GA4 `generate_lead` 与 Organic Landing Page 后，再运行转化层面月度报告；
+6. 收集当前 GRS scope certificate、可公开交易/追溯文件和测试报告样例，作为后续证据增强输入；
+7. 评估 SEO-IMP-013 品类页社交图和 SEO-IMP-027 VideoObject，继续以实际收益与风险排序；
+8. 英语基线稳定后再开始欧洲本地语言研究和条件式新内容；Performance Fabrics Guide 仍需单独批准。
