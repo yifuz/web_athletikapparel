@@ -55,6 +55,7 @@
 - [`seo/page-audit-technical-knitwear-tech-pack-guide-v1.md`](seo/page-audit-technical-knitwear-tech-pack-guide-v1.md)：Technical Knitwear Tech Pack Guide 的通用查询边界、内容覆盖、技术参考、内链、Schema 与静态性能只读审计。
 - [`seo/page-audit-underwear-manufacturer-v1.md`](seo/page-audit-underwear-manufacturer-v1.md)、[`page-audit-outdoor-clothing-manufacturer-v1.md`](seo/page-audit-outdoor-clothing-manufacturer-v1.md)、[`page-audit-merino-wool-manufacturer-v1.md`](seo/page-audit-merino-wool-manufacturer-v1.md)、[`page-audit-silk-wear-manufacturer-v1.md`](seo/page-audit-silk-wear-manufacturer-v1.md)、[`page-audit-sports-accessories-manufacturer-v1.md`](seo/page-audit-sports-accessories-manufacturer-v1.md)：SEO-IMP-015 五个品类页只读审计（2026-08-18）。
 - [`seo/page-audit-flatlock-vs-overlock-v1.md`](seo/page-audit-flatlock-vs-overlock-v1.md)、[`page-audit-evaluate-technical-knitwear-oem-v1.md`](seo/page-audit-evaluate-technical-knitwear-oem-v1.md)：SEO-IMP-015 两篇指南只读审计（2026-08-18）。
+- [`seo/qc-guide-content-brief-v1.md`](seo/qc-guide-content-brief-v1.md)：SEO-IMP-018 的 QC Guide 搜索机会、所有者确认事实、页面结构、SEO 字段与发布状态记录。
 - [`seo/offsite-authority-opportunity-pool-v1.md`](seo/offsite-authority-opportunity-pool-v1.md)：SEO-IMP-020 站外权威与引用机会池，含 Woolmark 现成名录条目、分级行动清单与执行台账。
 - [`seo/seo-implementation-checklist-v1.md`](seo/seo-implementation-checklist-v1.md)：首批三页审计汇总，以及按收益、风险、证据依赖和验收条件排序的网站 SEO 实施真值表。
 - [`seo/image-optimization-seo-imp-005-006-v1.md`](seo/image-optimization-seo-imp-005-006-v1.md)：Sportswear 与 Knitted Fabrics 共 9 张图片的真无损 WebP、响应式候选、质量验证和 uploads 部署记录。

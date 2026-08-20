@@ -8,7 +8,8 @@ page. Guidelines followed:
   with a soft hook.
 - Each page targets ONE primary keyword (the long-tail "[category] manufacturer"
   pattern), avoiding broad red-ocean terms.
-- Keep claims consistent with site (no factory count, MOQ not stated as a rule).
+- Keep claims consistent with site (no factory count; apparel MOQ is 500 pieces
+  per style, while fabric MOQ varies by project and selected fabric).
 
 Keyword note: FLATLOCK / ACTIVESEAM are low-competition, high-intent technical
 terms — leaned into on the homepage. Category pages own their "[x] manufacturer"
@@ -153,6 +154,18 @@ Evaluate a cut-and-sew knitwear OEM by checking process ownership, fabric
 controls, seam capability, testing, traceability, capacity and approvals.
 
 ================================================================
+## Technical guide  (/garment-quality-control-checklist/)
+================================================================
+Primary keyword: garment quality control checklist / clothing quality control checklist
+
+**SEO Title:**
+Garment Quality Control Checklist for Knitwear | Athletik
+
+**Meta Description:**
+QC checklist for cut-and-sew technical knitwear: incoming fabric checks,
+in-line inspection, AQL sampling, final inspection and needle control.
+
+================================================================
 ## Image alt text (general rule for Codex)
 ================================================================
 Every image needs descriptive alt text with a natural keyword, e.g.:
@@ -184,7 +197,7 @@ NOT filenames, NOT "image1". Describe what's shown + relevant keyword.
 | 首页 `/` | `functions.php` 的 `myathletik_home_meta_description()` 硬编码（首页 Rank Math 描述字段保持为空，防止输出两个 description 标签） |
 | 六个服装品类页（Sportswear、Underwear、Outdoor、Merino、Silk、Sports Accessories） | **仅** Rank Math 后台字段（数据库）。`inc/product-category-data.php` 里的 `seo_title` / `meta_description` 不参与生产输出，改它们无效 |
 | Knitted Fabrics 品类页 | `inc/product-category-data.php` 的 `meta_description`（唯一例外）。主题 `rank-math.php` 的过滤器用它覆盖前端、OG/Twitter 和 WebPage Schema 描述 |
-| 三篇技术指南 + `/technical-guides/` Hub | `inc/technical-article-data.php` 的 `seo_title` / `meta_description`。`functions.php` 的 init 钩子把它们写入 Rank Math 数据库字段，`rank-math.php` 过滤器再从同一份数据覆盖输出 |
+| 四篇技术指南 + `/technical-guides/` Hub | `inc/technical-article-data.php` 的 `seo_title` / `meta_description`。`functions.php` 的 init 钩子把它们写入 Rank Math 数据库字段，`rank-math.php` 过滤器再从同一份数据覆盖输出 |
 | Services、About、Contact、Sustainability | **仅** Rank Math 后台字段（数据库），代码中没有对应字段 |
 
 关键机制说明：

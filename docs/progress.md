@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-08-19。
+最后更新：2026-08-20。
 
 ---
 
@@ -20,10 +20,10 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 - 规范站：<https://www.athletikapparel.com/>，运行于 Flywheel。
 - WordPress 重建已上线，使用 GeneratePress 父主题和 `myathletik-child` 子主题。
 - 首页、7 个产品类目页、Services、About、Contact、Sustainability 和 Privacy Policy 已上线。
-- Technical Guides 内容中心及 3 篇基础指南已上线，站点导航、首页和页脚均有稳定入口。
-- Rank Math Page Sitemap 最近一次生产核验包含 17 个 URL，其中包括内容中心与 3 篇指南。
-- 浏览器、Googlebot、OAI-SearchBot 和 PerplexityBot 访问 4 个指南 URL 均返回 HTTP 200。
-- 4 个新 URL 已在 Google Search Console 逐个申请索引；目前进入等待和观察阶段，不重复提交。
+- Technical Guides 内容中心及 3 篇基础指南已在生产上线，站点导航、首页和页脚均有稳定入口；第四篇 QC Guide 已在本地完成，待生产部署。
+- Rank Math Page Sitemap 最近一次生产核验包含 17 个 URL，其中包括内容中心与 3 篇已上线指南。
+- 浏览器、Googlebot、OAI-SearchBot 和 PerplexityBot 访问 Hub 与 3 篇已上线指南共 4 个 URL 均返回 HTTP 200。
+- 上述 4 个生产 URL 已在 Google Search Console 逐个申请索引；QC Guide 尚未部署，不提交收录。
 - `myathletik.com` 已按所有者决定完全下线，已检查入口返回 HTTP 410；不做跨域 301，也不再优化旧站。
 
 ### 1.2 GEO
@@ -607,6 +607,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-19 | SEO-IMP-018 内容简报建立（[`seo/qc-guide-content-brief-v1.md`](seo/qc-guide-content-brief-v1.md)）：提议 URL `/garment-quality-control-checklist/`；QC 节点/素材/责任边界证据清单待所有者确认；发现 Services/About/首页仍有 "in-house testing" 与 IMP-010 口径不一致，列入所有者决策项 |
 | 2026-08-20 | 所有者澄清：Beta Textiles 不是独立法律实体，只是对外使用的名称/路径（AGENTS.md §2 已更新）；"our own fabric mill" 和 "in-house testing" 为准确表述，全站保留；检测能力为自有设备 + 第三方按客户要求选择；不过度抠字眼，目标是获客 |
 | 2026-08-20 | SEO-IMP-018 正文草稿根据所有者确认事实更新：7 个 QC 节点公开、针检/测试跟踪暂不公开、责任边界（内部执行 QC、辅助第三方、AQL 买家定义、不合格品全担）已写入；QC 简报证据清单已填写 |
+| 2026-08-20 | `main` 已安全快进对齐 `origin/kimi` 的 21 个 SEO 提交；SEO-IMP-012/018/026/028、QC Guide SEO 字段和文档状态已统一。QC Guide 本地页面与资源验收通过；生产 URL 当前仍为 404，待 Local Connect 部署后再执行生产 QA 与 GSC URL Inspection |
 
 ---
 

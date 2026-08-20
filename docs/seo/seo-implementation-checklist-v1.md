@@ -65,9 +65,9 @@
 | ID | 项目 | 收益 | 风险 | 状态 | 验收标准 |
 |---|---|---|---|---|---|
 | SEO-IMP-001 | Tech Pack Guide 增加到 Knitted Fabrics、Sportswear、Services 的正文上下文链接；Knitted Fabrics 回链指南 | 高：加强商业页与技术内容的主题图谱，并为合格买家提供下一步路径 | 低 | **本地已完成，待部署验证** | 4 个目标 URL 均为 200；锚文本自然；页面不产生重复/错误链接 |
-| SEO-IMP-002 | Technical Guides Hub 和三篇指南使用各自批准封面作为 Open Graph、Twitter 及 WebPage `primaryImageOfPage` | 中：提高分享摘要相关性，并统一可见内容、Article 和 WebPage 图像实体 | 低 | **本地已完成，待部署验证** | 页面源代码输出专属 WebP；Logo 不再作为这些页面主图；JSON-LD 可解析 |
+| SEO-IMP-002 | Technical Guides Hub 和四篇指南使用各自批准封面作为 Open Graph、Twitter 及 WebPage `primaryImageOfPage` | 中：提高分享摘要相关性，并统一可见内容、Article 和 WebPage 图像实体 | 低 | **本地已完成，待部署验证** | 页面源代码输出专属 WebP；Logo 不再作为这些页面主图；JSON-LD 可解析 |
 | SEO-IMP-003 | 移除 GeneratePress 自动 child stylesheet 与主题手动 enqueue 造成的重复 `style.css`，同时停止加载无实际规则的父主题 `style.css` 头文件 | 中：减少两个阻塞型 CSS 请求/解析项，覆盖全站 | 低 | **本地已完成，待部署验证** | 每页只出现 `generate-style`、Google Fonts 和一份 child `style.css`；视觉无回归 |
-| SEO-IMP-004 | 将 Sitemap `lastmod` 与本次主题渲染正文/Schema 更新同步 | 低到中：帮助搜索引擎区分真实更新，不伪造全站新鲜度 | 低 | **本地已完成，待部署验证** | 只更新 Technical Guides、三篇指南和 Knitted Fabrics 等实际变化 URL |
+| SEO-IMP-004 | 将 Sitemap `lastmod` 与本次主题渲染正文/Schema 更新同步 | 低到中：帮助搜索引擎区分真实更新，不伪造全站新鲜度 | 低 | **本地已完成，待部署验证** | 只更新 Technical Guides、四篇指南和 Knitted Fabrics 等实际变化 URL |
 
 ### B. 第二批：高收益、需要资源处理或所有者输入
 
@@ -85,7 +85,7 @@
 | ID | 项目 | 收益 | 风险 | 启动条件 | 状态 |
 |---|---|---|---|---|---|
 | SEO-IMP-011 | 统一产品页 SEO 字段真值来源，清理或注释未参与生产输出的 `meta_description` | 中：避免以后“代码已改、生产未变” | 低到中 | 先确认 Rank Math/代码各字段的最终职责 | **已完成（2026-08-19）**：本地 curl 逐页核实生产来源；`inc/product-category-data.php` 增加真值来源 docblock（六个服装品类页字段不参与生产输出，Knitted Fabrics 为唯一例外并加行内注释）；`functions.php` 首页 description 与 `rank-math.php` 头部补注释（`rank-math.php` 由 Rank Math 插件自动加载，非 functions.php）；`seo-tags.md` 新增“字段真值来源”一节作为单一规范文档 |
-| SEO-IMP-012 | 修正 Sportswear 中 `ACTIVESEAM`/FLATLOCK 术语，并同步规范 Meta 与生产 Rank Math 字段 | 中：语义和品牌专业度一致 | 低到中 | 与 SEO-IMP-007 同批，避免只修大小写却保留无证据表达 | 待处理 |
+| SEO-IMP-012 | 修正 Sportswear 中 `ACTIVESEAM`/FLATLOCK 术语，并同步规范 Meta 与生产 Rank Math 字段 | 中：语义和品牌专业度一致 | 低到中 | 与 SEO-IMP-007 同批，避免只修大小写却保留无证据表达 | **本地已完成（2026-08-19）**：Sportswear、Outdoor、Merino、Sports Accessories、Silk、首页、About、Services 与相关指南共 37 处术语已统一；URL、文件名和 ID 未改；待生产验收 |
 | SEO-IMP-013 | 为 Sportswear、Knitted Fabrics 等类目选择批准的代表图作为社交图/Schema 主图 | 中：改善页面分享和主题图像信号 | 低到中 | 所有者确认每页代表图；生成合适派生尺寸 | 待选图 |
 | SEO-IMP-014 | 复核首页及多个类目 157–165 字符 Meta、Services 63 字符 Title | 低到中：主要影响摘要截断和 CTR，不是索引问题 | 中：过早缩短可能损失意图信息 | 先取得页面级 GSC Query/CTR 数据 | 观察 |
 | SEO-IMP-015 | 审计 Underwear、Outdoor、Merino、Silk、Sports Accessories 与三篇指南剩余两篇 | 高：扩大已验证的页面级基线 | 低 | 第一批部署稳定后逐页执行 | **已完成（2026-08-18，7 份只读审计文档；发现汇总见本文 §4A）** |
@@ -98,7 +98,7 @@
 | ID | 项目 | 收益 | 风险 | 启动条件 | 状态 |
 |---|---|---|---|---|---|
 | SEO-IMP-017 | 基于真实 Query/Page 数据决定是否补 Tech Pack 的简短 definition/scope 段 | 中到高：承接 `clothing/garment/apparel tech pack` 的相关曝光 | 中：可能把页面拉向模板、工具或 startup 意图 | 匹配查询持续获得曝光但排名/CTR不足 | **本地已完成（2026-08-19）**：opening 段新增通用 tech pack 定义句 + "same principles apply to any cut-and-sew apparel tech pack" 过渡句；`about` Schema 增加 `Apparel tech pack`；URL/Title/H1/Meta 保持不变；待部署后观察 GSC 宽泛查询曝光变化 |
-| SEO-IMP-018 | QC Guide 内容简报与证据采集 | 高：独立的采购尽调任务和潜在链接资产 | 高：不能发明 QC 节点、记录或标准 | 一方 QC 流程、检查记录、图片和责任边界齐全 | **简报已建立（2026-08-19，见 [`qc-guide-content-brief-v1.md`](qc-guide-content-brief-v1.md)）**：提议 URL `/garment-quality-control-checklist/`；QC 节点/素材/责任边界证据清单待所有者确认；发现 Services/About/首页仍有 "in-house testing" 与 IMP-010 口径不一致，已列入所有者决策项 |
+| SEO-IMP-018 | QC Guide 内容简报、事实确认、正文与页面实施 | 高：独立的采购尽调任务和潜在链接资产 | 高：不能发明 QC 节点、记录或标准 | 一方 QC 流程、素材和责任边界由所有者确认 | **本地已完成（2026-08-20）**：所有者已批准 URL、Title、Meta、H1、事实范围和正文；`/garment-quality-control-checklist/` 已注册，含 FAQ/Schema、3 支第一方 QC 视频、Hub 入口和 Sitemap；本地 SEO/资源验收通过，待生产部署与 GSC URL Inspection |
 | SEO-IMP-019 | NL / SE / NO / FI 本地语言研究 | 中：验证英语之外的欧洲买家语言 | 低 | 英语基线实施和监测稳定 | 待研究 |
 | SEO-IMP-020 | 技术指南持续分发并争取真实行业引用、供应商目录/协会资料页及合作方链接 | 高：增加独立站外提及和引用域，而不是依赖站内信号 | 中：必须是真实关系，禁止购买批量垃圾链接 | 建立目标来源、发布记录和引用 URL 台账 | **已收尾（2026-08-19）**：机会池已建立（[`offsite-authority-opportunity-pool-v1.md`](offsite-authority-opportunity-pool-v1.md)）；ThomasNet 中国主体已注册；Merrow 邮件草稿已备好但所有者决定暂缓；Kompass $70/3y 待决策；OEKO-TEX/WRAP 免费登记待执行；收益评估见附录 C |
 | SEO-IMP-021 | 每季度复核指南引用的 ASTM/AATCC/ISO 等标准版本和链接 | 中：维持技术内容可靠性和更新依据 | 低 | 指定复核日期与负责人 | 待建立节奏 |
@@ -116,9 +116,9 @@
 |---|---|---|---|
 | （已修复） | Silk 页第三张子类图引用 `IMG_5550.JPG`（大写扩展名），生产 Linux 环境 404；Windows 本地不暴露 | 高：用户可见破图 | **本地已修复**（`inc/product-category-data.php` 改小写 `.jpg`），随批次部署 |
 | SEO-IMP-025 | 五个品类页产品图响应式批次：Underwear 约 1.36 MB、Outdoor 约 1.01 MB、Merino 约 3.79 MB（单张最大 2.73 MB PNG）、Silk 约 7.58 MB、Sports Accessories 约 6.13 MB，均缺 width/height、srcset/sizes 与 WebP 派生 | 中到高：延续 IMP-005/006 的移动端负载收益 | **暂缓（所有者 2026-08-18 确认优先级逻辑）**：这五页 GSC 曝光接近零、主词搜索量极低或未验证（Silk 七国 NR、Accessories 未测试；Underwear/Outdoor 有量但 SERP 意图错配），图片优化预算先集中在高搜索量页面；待任一页 GSC 曝光起量或真实 CWV 报警再启动 |
-| SEO-IMP-026 | OEM Evaluation 指南正文零上下文出站链接，全站仅 Hub 一个正文入口（V2-006 在本页核实仍未修复；IMP-001 只覆盖了 Tech Pack Guide） | 中：两篇指南中本页内链最弱 | 待处理；最小改动：本页补 2–4 条出站 + 姊妹指南/相关品类页补入链，文案需所有者批准 |
+| SEO-IMP-026 | OEM Evaluation 指南正文零上下文出站链接，全站仅 Hub 一个正文入口（V2-006 在本页核实仍未修复；IMP-001 只覆盖了 Tech Pack Guide） | 中：两篇指南中本页内链最弱 | **本地已完成（2026-08-19）**：OEM 指南补 4 条上下文出链，Tech Pack 与 FLATLOCK 指南各补 1 条入链，共 6 条；待生产验收 |
 | SEO-IMP-027 | FLATLOCK 指南有两支第一方生产视频但无 VideoObject Schema | 低到中：视频富媒体增强空间 | 待评估；先看 GSC 视频索引报告再决定 |
-| SEO-IMP-028 | 两篇指南 Twitter/阅读时长字段显示 "Less than a minute"（Rank Math 从空 `post_content` 计算） | 低：社交卡片元数据失真 | 待处理；rank-math.php 过滤器可修 |
+| SEO-IMP-028 | 技术指南 Twitter/阅读时长字段曾显示 "Less than a minute"（Rank Math 从空 `post_content` 计算） | 低：社交卡片元数据失真 | **本地已完成（2026-08-19）**：`rank-math.php` 现在按服务端渲染正文计算；2026-08-20 本地复核四篇指南分别为 8、8、9、13 分钟；待生产验收 |
 | （并入 IMP-012） | 术语小写漂移不限于 Sportswear：Outdoor（`inc/product-category-data.php:248`）、Merino、Sports Accessories、Silk construction 段均有小写 `flatlock`/`activeseam` | 中 | 并入 SEO-IMP-012 同批执行，逐页修 |
 | （所有者后台项） | Fluent Forms `Estimated Order Quantity` 分档仍以 1,000 为锚点；MOQ 降至 500 后 `Under 1,000 pcs` 一档会混入合格线索 | 中：询盘过滤有效性 | 插件后台字段，需所有者手动确认调整，非主题代码 |
 
@@ -163,7 +163,7 @@
 2. 逐页检查 Desktop 1440 px 与移动端布局，尤其是 Related links 和文章正文；
 3. 部署主题代码到 staging/production，并单独同步 SEO-IMP-005/006 的 54 个 uploads WebP；
 4. 检查页面源代码，确认只加载一份 child `style.css`；
-5. 检查三篇指南及 Hub 的 `og:image`、`twitter:image` 与 JSON-LD `primaryImageOfPage`；
+5. 检查四篇指南及 Hub 的 `og:image`、`twitter:image` 与 JSON-LD `primaryImageOfPage`；
 6. 使用 Rich Results Test 与 Schema Validator 复核 Article、FAQPage、BreadcrumbList 和 ImageObject；
 7. 部署后先清理 Rank Math Sitemap cache，再检查实际变化页面的 `lastmod`；
 8. 在 Search Console 对实际变化的重点 URL 执行 URL Inspection；不对未变化的全部页面机械请求重新收录；

@@ -46,7 +46,7 @@
 │   ├── /flatlock-vs-overlock-technical-knitwear/  （已发布）
 │   ├── /technical-knitwear-tech-pack-guide/  （已发布）
 │   ├── /evaluate-technical-knitwear-oem/  （已发布）
-│   └── /garment-quality-control-checklist/  （已发布）
+│   └── /garment-quality-control-checklist/  （本地完成，待生产部署）
 │
 ├── /sustainability/   （当前正确 slug；未实施历史重定向）
 ├── /about-us/
@@ -180,7 +180,7 @@ POM、成品面料规格、接缝图、测试和样品批准。
 **H1：** Garment Quality Control Checklist for Technical Knitwear
 
 **目的：** 承接 `garment quality control`（七国 110/月）和 `clothing quality control checklist`（七国 70/月）
-搜索意图，为买家提供可执行的 QC 检查清单。所有者已于 2026-08-20 确认证据清单并批准发布。
+搜索意图，为买家提供可执行的 QC 检查清单。所有者已于 2026-08-20 确认证据清单、URL、Title、Meta、H1 和正文；页面已在本地完成，待生产部署与验收。
 本页使用共用文章布局，覆盖产前检验、在线巡检、终检/AQL、测试合规、针检、QC 记录和 tech pack QC 条款。
 包含三支第一方 QC 视频（面料进厂检验、在线巡检、终检）。
 
@@ -279,7 +279,7 @@ POM、成品面料规格、接缝图、测试和样品批准。
 7. ~~**逐页视觉优化与 QA 清理**~~ — ✅ 上线前完成。
 8. **生产上线** — ✅ 已在 Flywheel 完成；最终网站和 uploads 于 2026-07-28 同步。
 9. ~~**Technical Guides 内容中心**~~ — ✅ 2026-08-11 完成。内容中心、首页 / 页脚入口、
-   三篇已批准基础指南及其封面资源均已上线。最终验证确认：导航已去重，四个指南 URL 均出现在
-   17 URL 的 Page Sitemap 中，搜索与 AI 爬虫访问返回 HTTP 200，元数据、图片和 Schema 输出符合批准版本。
+   三篇已批准基础指南及其封面资源均已上线；Hub 与三篇指南共四个 URL 已在生产 Page Sitemap 和爬虫访问中验证。
+   第四篇 QC Guide 已于 2026-08-20 在本地完成，待生产部署后重新核验 Sitemap、元数据、图片、视频和 Schema。
 
 已确认 slug：`/merino-wool-manufacturer/`。

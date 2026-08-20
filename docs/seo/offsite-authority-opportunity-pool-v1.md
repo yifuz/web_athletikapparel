@@ -157,10 +157,10 @@ Best regards,
 
 ## 附录 B：ThomasNet 中国主体新建档案文案草案
 
-> 适用平台：www.thomasnet.com  
-> 建档主体：Zhangjiagang Athletik Clothing Co., Limited  
-> 统一联系邮箱：info@athletikapparel.com  
-> 状态：草案待所有者审核；审核后由所有者注册
+> 适用平台：www.thomasnet.com<br>
+> 建档主体：Zhangjiagang Athletik Clothing Co., Limited<br>
+> 统一联系邮箱：info@athletikapparel.com<br>
+> 状态：已于 2026-08-19 注册，等待平台内部搜索与 Google 索引
 
 ### B.1 建议文案
 
