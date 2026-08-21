@@ -403,6 +403,20 @@ function myathletik_header_logo() {
 add_filter( 'generate_logo', 'myathletik_header_logo' );
 
 /**
+ * Reserve the source logo's square aspect ratio before CSS is available.
+ *
+ * @param array $attributes GeneratePress logo image attributes.
+ * @return array
+ */
+function myathletik_header_logo_attributes( $attributes ) {
+	$attributes['width']  = 512;
+	$attributes['height'] = 512;
+
+	return $attributes;
+}
+add_filter( 'generate_logo_attributes', 'myathletik_header_logo_attributes' );
+
+/**
  * Disable the default page-list fallback for the primary navigation.
  * The real menu should be managed in Appearance > Menus.
  *
@@ -1378,7 +1392,7 @@ function myathletik_site_footer() {
 		<div class="ma-site-footer__inner">
 			<div class="ma-site-footer__brand">
 				<a class="ma-site-footer__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Athletik Clothing home', 'myathletik-child' ); ?>">
-					<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php esc_attr_e( 'Athletik Clothing', 'myathletik-child' ); ?>">
+					<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php esc_attr_e( 'Athletik Clothing', 'myathletik-child' ); ?>" width="512" height="512">
 					<span><?php esc_html_e( 'Athletik Clothing', 'myathletik-child' ); ?></span>
 				</a>
 				<p><?php esc_html_e( 'Technical knitwear OEM/ODM manufacturer.', 'myathletik-child' ); ?></p>

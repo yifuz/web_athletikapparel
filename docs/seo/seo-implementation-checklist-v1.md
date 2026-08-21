@@ -91,7 +91,7 @@
 | SEO-IMP-015 | 审计 Underwear、Outdoor、Merino、Silk、Sports Accessories 与三篇指南剩余两篇 | 高：扩大已验证的页面级基线 | 低 | 第一批部署稳定后逐页执行 | **已完成（2026-08-18，7 份只读审计文档；发现汇总见本文 §4A）** |
 | SEO-IMP-016 | 为类目页评估 `Service` Schema，保持可见内容和事实一致 | 低到中：增强机器可读服务关系，但不作为排名捷径 | 中 | 页面业务事实确认；通过 Schema Validator | 待评估 |
 | SEO-IMP-022 | 固化 Knitted Fabrics 主次词架构：保留现有 URL/Title/H1，以 `performance knit fabric` 和 `sportswear fabric manufacturer` 补充产品、应用和询盘语境 | 中到高：同时保留精准采购意图和 Performance 主题覆盖，不引入近义页内耗 | 低到中：事实不足时扩写会放大未证实的工艺、测试或独立供货承诺 | SEO-IMP-009/010 已完成；后续只依据 GSC 和新增一方证据迭代，不做关键词堆叠 | **本地核验完成（2026-08-18）**：URL/Title/H1 保持；`performance knit fabric` 已进入 What we make、子类标题、正文与 alt 语境；`sportswear fabric manufacturer` 精确短语未出现，列为所有者批准的微文案候选，不自行改写；GSC 分组监测见 `gsc-data-log.md` |
-| SEO-IMP-024 | 为 Header 与 Footer 共用 Logo 补充固有 `width`/`height` | 低到中：减少共享布局的潜在 CLS，完善全站图片静态信号 | 低：需确认 GeneratePress Logo 输出与 Footer markup 的统一尺寸策略 | 当前本地页面检查发现 2 个 Logo `<img>` 缺少显式尺寸 | 待单独处理；不阻塞 SEO-IMP-010 |
+| SEO-IMP-024 | 为 Header 与 Footer 共用 Logo 补充固有 `width`/`height` | 低到中：减少共享布局的潜在 CLS，完善全站图片静态信号 | 低：需确认 GeneratePress Logo 输出与 Footer markup 的统一尺寸策略 | 2026-08-21 已核对源图为 512×512，生产 Header/Footer 两处均缺尺寸属性 | **本地代码、渲染与视觉验收完成（2026-08-21）**：PHP 语法通过，本地首页 200，Header 通过 `generate_logo_attributes`、Footer 通过子主题 markup 输出 `512×512`，Desktop/Mobile Logo 显示正常；待生产验收，Change Card 见 [`SEO-IMP-024`](change-cards/seo-imp-024-logo-intrinsic-dimensions.md) |
 
 ### D. 第四批：内容扩展与站外权威
 
@@ -221,7 +221,7 @@
 
 1. 在 GSC 网页版对 QC Guide 执行实时测试并请求编入索引；
 2. 按 SEO-IMP-033 的容量计划执行代表性 URL Index Snapshot，并复跑四类模板性能测试、补充可用 CrUX 数据；
-3. 执行 SEO-IMP-024，为 Header/Footer 共用 Logo 补充固有 `width`/`height`，并建立首张 SEO Change Card；
+3. 完成 SEO-IMP-024 的生产验收，并在首张 SEO Change Card 中填写部署后 Crawl ID；
 4. 建立 GSC 7 天/28 天页面级监测，分别观察商业采购词、QC/Tech Pack 信息词与宽泛 Performance 词；
 5. 核对 GA4 `generate_lead` 与 Organic Landing Page 后，再运行转化层面月度报告；
 6. 收集当前 GRS scope certificate、可公开交易/追溯文件和测试报告样例，作为后续证据增强输入；

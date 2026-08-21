@@ -610,6 +610,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-20 | `main` 已安全快进对齐 `origin/kimi` 的 21 个 SEO 提交；SEO-IMP-012/018/026/028、QC Guide SEO 字段和文档状态已统一。QC Guide 本地页面与资源验收通过；生产 URL 当前仍为 404，待 Local Connect 部署后再执行生产 QA 与 GSC URL Inspection |
 | 2026-08-20 | SEO 批次完成生产部署与验收：15 个关键页面返回 200；QC Guide 索引信号、Schema、Hub/Sitemap 入口及 7 个媒体资源通过；SEO-IMP-005/006 的 54 个 WebP 与 9 个 PNG 回退全部返回 200 且 MIME 正确；15 个关键页仅加载一份 child stylesheet；MOQ、术语、内链、社交图和阅读时长已生效。保留 Warning：Header/Footer 共用 Logo 缺少固有尺寸（SEO-IMP-024） |
 | 2026-08-20 | SEO 运营控制面升级：`wp-seo-audit` 更新为 V2，修正过时 IA/Redirect/alt/CSS 规则并加入按需结构化报告路由；`seo-process.md` 更新为 V1.2，新增 Finding outcome、SEO Change Card、部署 Crawl Diff 与周期报告门槛；本机建立默认 `athletikapparel` Profile，绑定 GSC、GA4、品牌词和 10 个重点 URL；保存生产后 Crawl `crawl_3f1fc0fbb955403791272722942441a9`，与 2026-08-18 全站基线比较无新增状态码错误；索引抽样容量为 18 个 URL、每日 10 个、预计 2 天一轮；首页、Sportswear、Tech Pack Guide、Services 首次移动端 Lab LCP 基线已记录，本次无 CrUX，四项均按单次运行证据 `deferred`，比较范围 Caveat 已记录 |
+| 2026-08-21 | SEO-IMP-024 本地实施与验收：确认共用 Logo 源图为 512×512；Header 通过 GeneratePress `generate_logo_attributes`、Footer 通过子主题 markup 补充真实固有尺寸，保持现有 CSS 显示尺寸；PHP 语法通过，本地首页 200 且两处尺寸属性生效，Desktop/Mobile Logo 显示正常；建立首张 SEO Change Card，待生产部署验收 |
 
 ---
 
@@ -618,7 +619,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
 3. 等待 Search Console Page indexing 从 2026-08-07 快照刷新，并核对“已抓取/已发现但尚未编入索引”、robots.txt 屏蔽和 404 的示例 URL。
-4. 在 GSC 网页版对新 QC Guide 执行实时测试并请求编入索引；按 SEO-IMP-033 计划执行代表性 URL Index Snapshot，并复跑模板性能测试、补充可用 CrUX 数据；随后启动 SEO-IMP-024，并用首张 SEO Change Card 跟踪。
+4. 在 GSC 网页版对新 QC Guide 执行实时测试并请求编入索引；按 SEO-IMP-033 计划执行代表性 URL Index Snapshot，并复跑模板性能测试、补充可用 CrUX 数据；完成 SEO-IMP-024 的生产验收，并更新首张 SEO Change Card。
 5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
 7. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。

@@ -58,6 +58,7 @@
 - [`seo/qc-guide-content-brief-v1.md`](seo/qc-guide-content-brief-v1.md)：SEO-IMP-018 的 QC Guide 搜索机会、所有者确认事实、页面结构、SEO 字段与发布状态记录。
 - [`seo/offsite-authority-opportunity-pool-v1.md`](seo/offsite-authority-opportunity-pool-v1.md)：SEO-IMP-020 站外权威与引用机会池，含 Woolmark 现成名录条目、分级行动清单与执行台账。
 - [`seo/seo-implementation-checklist-v1.md`](seo/seo-implementation-checklist-v1.md)：首批三页审计汇总，以及按收益、风险、证据依赖和验收条件排序的网站 SEO 实施真值表。
+- [`seo/change-cards/`](seo/change-cards/)：SEO 改动的单一变量、基线、Finding 处置、部署验证与 Day 7/28/90 决策记录。
 - [`seo/image-optimization-seo-imp-005-006-v1.md`](seo/image-optimization-seo-imp-005-006-v1.md)：Sportswear 与 Knitted Fabrics 共 9 张图片的真无损 WebP、响应式候选、质量验证和 uploads 部署记录。
 - [`seo/sportswear-public-capability-fact-sheet-v1.md`](seo/sportswear-public-capability-fact-sheet-v1.md)：SEO-IMP-007 的 Sportswear 性能声称、公开范围、证据类型、快速确认格式与保守改写草案。
 - [`seo/moq-update-seo-imp-008-v1.md`](seo/moq-update-seo-imp-008-v1.md)：公开 MOQ 调整为每款 500 件的代码真值、文档同步、Sportswear 首屏方案撤销和部署验收记录。
