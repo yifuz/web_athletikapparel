@@ -1,7 +1,7 @@
 # SEO Change Card：SEO-IMP-036 首页 Hero 请求优先级
 
 - Change ID：`SEO-IMP-036`
-- 状态：`ready-to-deploy`
+- 状态：`production-accepted`
 - 变更日期：2026-08-25
 - 变更页面或分组：`/`
 - 唯一主要变量：首页 Hero 图片调度；保留一张主视觉为 `loading="eager"` / `fetchpriority="high"`，三张次要拼图改为 `loading="lazy"` / `fetchpriority="low"`，并为四张图片提供贴合实际显示宽度的响应式候选
@@ -10,12 +10,12 @@
 - 主要指标：部署后移动端 Lighthouse LCP 中位数；Hero 主图实际选中候选；首屏图片请求数量、优先级与总传输量
 - 防护指标：HTTP 200、图片 MIME 正确、CLS 不恶化、主图人物裁切不变、三张次图无明显延迟空白、Desktop/Mobile Bento 构图不变、H1/正文/CTA/Consent/GA4 不受影响
 - 基线窗口：2026-08-25 部署前；首页移动端 Lab LCP 7.2s，四张 Hero 图片全部 `loading="eager"`
-- Day 7 / 28 / 90 复盘日期：生产部署日期确定后填写；低流量阶段不把不足的 Field 样本解释为排名结果
+- Day 7 / 28 / 90 复盘日期：以 2026-08-25 为部署日；低流量阶段不把不足的 Field 样本解释为排名结果
 - 干扰因素：Cloudflare/Flywheel 动态 HTML、Cookiebot、Manrope 与插件阻塞链、网络波动、同期缓存或插件配置变化
 - 部署前 Crawl ID：`crawl_c3321e593dcd4a54bec9811ec8775f40`
-- 部署后 Crawl ID：待部署后填写
-- Finding / Inventory 处置：SEO-IMP-034 的首页 LCP Finding 维持 `deferred`；生产部署、三轮移动端 Lab 与视觉回归通过后改为 `fixed`
-- 最终决策及原因：待生产验收后填写 `keep` / `iterate` / `revert`
+- 部署后 Crawl ID：`crawl_40f88b6c25d74ba79ee193c7be26caf9`
+- Finding / Inventory 处置：Hero 请求调度已修复并保留；页面整体 LCP Finding 仍为 `deferred`，因为 LCP 元素已是文字、三次移动端 Lab 中位数仍为 3.68s，且本次没有 CrUX 字段数据
+- 最终决策及原因：`keep`。生产 HTML 为唯一 1 个 eager/high 主图与 3 个 lazy/low 次图，14 个新资源全部通过 HTTP/MIME；三次有效 Lab LCP 中位数由部署前单次 7.2s 降至 3.68s，TBT 42ms、CLS 0，Desktop/Mobile Bento 构图无回归。该变化仅作为同批部署后的方向性证据
 
 ## 实施内容
 
@@ -72,7 +72,8 @@
 - [x] 14 个新增 uploads 资源本地均返回 HTTP 200；
 - [x] 14 个资源的尺寸、编码块、Bytes 与 SHA-256 已验证；
 - [x] 新候选逐张视觉检查通过；布局未修改 CSS 或固有比例；
-- [ ] 所有者在 LocalWP 刷新首页后确认 1440px Desktop 与 390px Mobile 的 Bento 构图和次图加载体验；
-- [ ] 主题代码与 14 个 uploads 文件同步部署到生产；
-- [ ] 生产 HTML、资源 MIME、Desktop/Mobile 视觉与三轮移动端 Lighthouse 复测；
-- [ ] 保存部署后 Crawl ID，并填写最终决策。
+- [x] LocalWP 1440px Desktop 与 390px Mobile 的 Bento 构图和次图加载体验通过；
+- [x] 主题代码与 14 个 uploads 文件同步部署到生产；
+- [x] 生产 HTML、14 个资源 MIME、Desktop/Mobile 视觉与三轮移动端 Lighthouse 复测通过；
+- [x] 三次有效移动端 Lighthouse：LCP/FCP 中位数 3.68s、TBT 42ms、CLS 0；
+- [x] 保存部署后 Crawl ID，并填写最终决策。

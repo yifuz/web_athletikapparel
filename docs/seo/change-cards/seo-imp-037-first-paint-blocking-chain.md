@@ -1,7 +1,7 @@
 # SEO Change Card：SEO-IMP-037 首屏阻塞链
 
 - Change ID：`SEO-IMP-037`
-- 状态：`ready-to-deploy`
+- 状态：`production-accepted`
 - 变更日期：2026-08-25
 - 变更页面或分组：全站公开页面
 - 唯一主要变量：将 Manrope 从 Google Fonts 外部 CSS/字体链改为子主题内自托管 WOFF2；其他阻塞资源仅审计，不同时改动
@@ -10,12 +10,12 @@
 - 主要指标：部署后移动端 Lighthouse FCP/LCP 中位数；首屏字体请求发现时间；外部字体请求数量
 - 防护指标：HTTP 200、字体 MIME、CLS、标题字形/换行、Desktop/Mobile 视觉、Fluent Forms、Consent、GA4 与 Cookiebot 状态
 - 基线窗口：2026-08-25 部署前；所有公开页面加载 Google Fonts CSS，随后访问 `fonts.gstatic.com`
-- Day 7 / 28 / 90 复盘日期：生产部署日期确定后填写；低流量阶段不把不足的 Field 样本解释为排名结果
+- Day 7 / 28 / 90 复盘日期：以 2026-08-25 为部署日；低流量阶段不把不足的 Field 样本解释为排名结果
 - 干扰因素：SEO-IMP-035/036 同批部署、Cloudflare/Flywheel 动态 HTML、网络波动及浏览器字体缓存
 - 部署前 Crawl ID：`crawl_c3321e593dcd4a54bec9811ec8775f40`
-- 部署后 Crawl ID：待部署后填写
-- Finding / Inventory 处置：共同阻塞链 Finding 维持 `deferred`；生产字体响应、视觉和三轮 Lab 通过后改为 `fixed` 或 `partially-fixed`
-- 最终决策及原因：待生产验收后填写 `keep` / `iterate` / `revert`
+- 部署后 Crawl ID：`crawl_40f88b6c25d74ba79ee193c7be26caf9`
+- Finding / Inventory 处置：Google Fonts 外部发现链已修复；共同首屏阻塞链 Finding 仍为 `deferred`，Cookiebot、Consent 与表单依赖按风险控制保持不变，四模板 Lab LCP 仍需后续 Field/重复窗口观察
+- 最终决策及原因：`keep`。生产页面 Google Fonts 引用为 0，本地 Manrope preload 为 1；两个字体均返回 HTTP 200 与 `font/woff2`，Desktop/Mobile 字形和换行无回归。四模板同批复测未出现 TBT/CLS 回归，不把整体变化单独归因于字体
 
 ## 实施内容
 
@@ -43,7 +43,7 @@
 - [x] HTML 中仅有 1 个本地 Manrope preload 和 1 份 child stylesheet；
 - [x] 两个 WOFF2 文件本地均返回 HTTP 200，文件头均为 `wOF2`；
 - [x] 1440×1000 Chrome Headless 首页截图检查通过，标题字体、换行和布局未见回归；
-- [ ] 生产字体文件返回 HTTP 200 与 `font/woff2`；
-- [ ] 生产 Desktop/Mobile 字体和换行视觉回归通过；
-- [ ] 三轮移动端 Lighthouse 复测并保存中位数；
-- [ ] 保存部署后 Crawl ID，并填写最终决策。
+- [x] 生产字体文件返回 HTTP 200 与 `font/woff2`；
+- [x] 生产 Desktop/Mobile 字体和换行视觉回归通过；
+- [x] 首页、Services、Sportswear、Tech Pack Guide 各取得三次有效移动端 Lighthouse 中位数；
+- [x] 保存部署后 Crawl ID，并填写最终决策。

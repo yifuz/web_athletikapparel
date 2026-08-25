@@ -1,7 +1,7 @@
 # SEO Change Card：SEO-IMP-035 Services Hero 响应式 WebP
 
 - Change ID：`SEO-IMP-035`
-- 状态：`ready-to-deploy`
+- 状态：`production-accepted`
 - 变更日期：2026-08-25
 - 变更页面或分组：`/services/`
 - 唯一主要变量：将 1672×941、1,917,246 bytes 的单一 Hero PNG 请求替换为 480–1672px 的真无损响应式 WebP，并补齐 LCP preload、`srcset`、`sizes`、固有尺寸、`fetchpriority` 与 `decoding`
@@ -10,12 +10,12 @@
 - 主要指标：部署后移动端 Lighthouse LCP 与所选 Hero 候选传输大小；生产 HTML 只 preload 浏览器按 `imagesrcset/imagesizes` 选择的一个 LCP 候选
 - 防护指标：HTTP 200、正确 `image/webp` MIME、CLS 不恶化、Hero 裁切/覆盖层/文字可读性不变、Desktop/Mobile 视觉正常、Contact CTA 与 Consent/GA4 不受影响
 - 基线窗口：2026-08-25 部署前；Lab LCP 14.1s，原始图片 1,917,246 bytes
-- Day 7 / 28 / 90 复盘日期：生产部署日期确定后填写；低流量阶段不把不足的 Field 样本解释为排名结果
+- Day 7 / 28 / 90 复盘日期：以 2026-08-25 为部署日；低流量阶段不把不足的 Field 样本解释为排名结果
 - 干扰因素：Cloudflare/Flywheel 动态 HTML、Cookiebot 与字体阻塞链、网络波动、同期插件或缓存配置变更
 - 部署前 Crawl ID：`crawl_c3321e593dcd4a54bec9811ec8775f40`
-- 部署后 Crawl ID：待部署后填写
-- Finding / Inventory 处置：SEO-IMP-034 的 Services LCP Finding 维持 `deferred`，生产部署及复测通过后改为 `fixed`
-- 最终决策及原因：待生产验收后填写 `keep` / `iterate` / `revert`
+- 部署后 Crawl ID：`crawl_40f88b6c25d74ba79ee193c7be26caf9`
+- Finding / Inventory 处置：本项针对的单一超大 Hero 请求已修复并保留；页面整体 LCP Finding 仍为 `deferred`，因为三次有效移动端 Lab 的 LCP 中位数为 5.00s，仍高于 2.5s，且本次没有 CrUX 字段数据
+- 最终决策及原因：`keep`。移动端实际选择 800w、328,508 bytes 的响应式候选，替代原 1,917,246 bytes PNG；三次有效 Lab LCP 中位数由部署前单次 14.1s 降至 5.00s，CLS/TBT 均为 0，Desktop/Mobile 构图无回归。该改善是同批部署后的方向性证据，不精确归因为单项排名收益
 
 ## 实施内容
 
@@ -56,7 +56,8 @@
 - [x] `php -l functions.php` 通过；
 - [x] `php -l page-services.php` 通过；
 - [x] `git diff --check` 通过；
-- [ ] LocalWP 运行时 HTML / Desktop / Mobile 验收（本次本地站未运行）；
-- [ ] 主题代码与六个 uploads 文件部署到生产；
-- [ ] 生产 HTML、响应式候选、MIME、视觉与 Lighthouse 复测；
-- [ ] 保存部署后 Crawl ID，并填写最终决策。
+- [x] LocalWP 运行时 HTML / Desktop / Mobile 验收；
+- [x] 主题代码与六个 uploads 文件部署到生产；
+- [x] 六个生产资源均为 HTTP 200、`image/webp`，HTML 响应式 preload、6 档候选、尺寸与优先级正确；
+- [x] 生产 Desktop/Mobile 视觉通过；三次有效移动端 Lighthouse：LCP 中位数 5.00s、FCP 4.50s、TBT 0ms、CLS 0；
+- [x] 保存部署后 Crawl ID，并填写最终决策。

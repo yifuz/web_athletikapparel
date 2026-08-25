@@ -19,6 +19,7 @@
   - `gsc-pages-28d.json` / `gsc-queries-28d.json` / `gsc-countries-28d.json`
   - 2026-08-20 生产后 Crawl Snapshot：`crawl_3f1fc0fbb955403791272722942441a9`
   - 2026-08-25 SEO-IMP-024 部署后 Crawl Snapshot：`crawl_c3321e593dcd4a54bec9811ec8775f40`
+  - 2026-08-25 SEO-IMP-035–038 部署后 Crawl Snapshot：`crawl_40f88b6c25d74ba79ee193c7be26caf9`
 
 ## 2. 网络约束（重要操作经验）
 
@@ -95,6 +96,23 @@ Logo 固有尺寸部署后抓取 20 个页面、0 个 fetch failure、33 个 Fin
 
 根因优先级已经由受控资源 A/B 收敛：Services 的 1.9 MB 单一 Hero PNG 是明确 LCP 资源；首页四张 Hero 图全部 eager，阻断三张次要图时 LCP 约由 8.7s 降至 6.9s，阻断全部主题图片时约降至 4.1s。Cookiebot 单独阻断的改善约 0.6–0.8s，属于后续共同阻塞链项。详细证据、Finding outcome 与 SEO-IMP-035–038 队列见 [`performance-diagnosis-seo-imp-034-v1.md`](performance-diagnosis-seo-imp-034-v1.md)。
 
+### 3.5 SEO-IMP-035–038 部署后验收（2026-08-25）
+
+保存 Crawl `crawl_40f88b6c25d74ba79ee193c7be26caf9`：20 页、0 fetch failure、31 个 Finding（2 High / 6 Medium / 23 Low）。与 `crawl_c3321e593dcd4a54bec9811ec8775f40` 比较时工具标记 `review-required`，原因是 maxPages / 配置 ID 不同；在该 Caveat 下，页面数不变、无新增状态码错误、无 Title 或 indexability 变化，唯一改善分组是 `slow_response` 从 2 降为 0。另一次即时同参数 Crawl Diff run `56e0bbeb-466a-4079-8e80-9a16a01c9927` 覆盖 21 URL，added / removed / changed / new errors / indexability flips 均为 0；4 个 Warning 都是既有 MP4 超出工具 5 MB 响应上限。
+
+四模板各取得 3 次有效移动端 Lighthouse Lab：
+
+| 模板 | LCP 中位数 | FCP 中位数 | TBT 中位数 | CLS 中位数 | 部署前单次 LCP |
+|---|---:|---:|---:|---:|---:|
+| 首页 | 3.68s | 3.68s | 42ms | 0 | 7.2s |
+| Services | 5.00s | 4.50s | 0ms | 0 | 14.1s |
+| Sportswear | 3.43s | 3.43s | 0ms | 0 | 6.9s |
+| Tech Pack Guide | 3.30s | 3.30s | 0ms | 0 | 7.2s |
+
+Tech Pack 有 1 次 `dataStatus: partial` / `fetch-fallback` 失败样本，已排除并补跑，不计作 0。Services 移动端实际选择 800w、328,508-byte Hero；首页保持 1 个 eager/high 与 3 个 lazy/low；Google Fonts 引用为 0。上述改善是同批部署后的方向性 Lab 证据，不等同 CrUX、排名或单项因果。四页整体 LCP Finding 均继续标记 `deferred`，图片/字体实施决策为 `keep`。
+
+部署后 HTML 监测 15 个请求全部 200，各页 TTFB 中位数为 0.89–1.22s；Services 1.22s 仅轻微进入 review，没有满足 `host-escalation-ready`，继续 `keep-monitoring`。
+
 ## 4. GSC 数据
 
 GSC 周期性数据快照已移入独立持续记录文件 [`gsc-data-log.md`](gsc-data-log.md)，
@@ -125,6 +143,7 @@ GSC 数据导出命令见 [`gsc-data-log.md`](gsc-data-log.md)。
 - [ ] 核对 GA4 `generate_lead` 的实际事件与 Landing Page 数据，再启用转化层面的月度报告；
 - [x] 为首页、商业品类页、Technical Guide、Services/Contact 各选一个模板 URL，建立首次移动端 Lighthouse 基线；本次无 CrUX 字段数据，四项均按单次 Lab 证据标记 `deferred`；
 - [x] SEO-IMP-024 部署后保存 Crawl Snapshot 并完成可比回归检查；Logo 生产验收通过，慢响应转入独立诊断；
+- [x] SEO-IMP-035–038 合并部署生产验收完成：资源、字体、HTML、视觉、重复 Lab、响应窗口与 Crawl 均已归档；035–037 `keep`，038 `keep-monitoring`；
 - [ ] 按上述容量使用代表性 URL 做周期 Index Snapshot，并为四类模板补充重复 Lab 运行与可用 CrUX 数据；
 - [ ] 每月例行 GSC 导出归档到 [`gsc-data-log.md`](gsc-data-log.md)，与 `seo-process.md` 月度复盘模板对齐；
 - [ ] Cloudflare HSTS 开启（低优先顺手项）。

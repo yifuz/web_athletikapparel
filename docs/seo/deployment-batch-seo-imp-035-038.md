@@ -72,17 +72,30 @@
 
 ## 5. 生产验收
 
-- [ ] `/`、`/services/`、`/sportswear-manufacturer/`、`/technical-guides/`、`/contact/` 均返回 200；
-- [ ] 20 个 uploads 图片均返回 200 且 MIME 为 `image/webp`；
-- [ ] 两个 Manrope 文件均返回 200 且 MIME 为 `font/woff2`；
-- [ ] HTML 中 Google Fonts 引用为 0，本地 Manrope preload 为 1；
-- [ ] Services Hero 输出 6 档 `srcset`、正确 `sizes`、1672×941、eager/high；
-- [ ] 首页 Hero 输出 1 个 eager/high 与 3 个 lazy/low，Desktop/Mobile Bento 构图无回归；
-- [ ] Contact 与首页表单可提交，Cookiebot、Consent 和 GA4 无回归；
-- [ ] 首页、Services、Sportswear、Tech Pack Guide 各执行 3 次移动端 Lighthouse，记录 LCP/FCP/TBT/CLS 中位数；
-- [ ] 运行 `scripts/seo/measure-html-response.ps1 -Rounds 3`，记录新的响应窗口；
-- [ ] 执行部署后 Crawl Diff，保存 Crawl ID；
-- [ ] 分别更新 SEO-IMP-035、036、037、038 Change Card 的结果与最终决策。
+- [x] `/`、`/services/`、`/sportswear-manufacturer/`、`/technical-guides/`、`/technical-knitwear-tech-pack-guide/`、`/contact/` 均返回 200；
+- [x] 20 个 uploads 图片均返回 200 且 MIME 为 `image/webp`；
+- [x] 两个 Manrope 文件均返回 200 且 MIME 为 `font/woff2`；
+- [x] HTML 中 Google Fonts 引用为 0，本地 Manrope preload 为 1；
+- [x] Services Hero 输出 6 档 `srcset`、正确 `sizes`、1672×941、eager/high；
+- [x] 首页 Hero 输出 1 个 eager/high 与 3 个 lazy/low，Desktop/Mobile Bento 构图无回归；
+- [x] Contact 与首页表单 markup、Fluent Forms、Cookiebot、Consent 和询盘追踪脚本正常加载；为避免创建真实外部询盘，本轮未执行成功提交；
+- [x] 首页、Services、Sportswear、Tech Pack Guide 各取得 3 次有效移动端 Lighthouse，并记录 LCP/FCP/TBT/CLS 中位数；Tech Pack 有 1 次 partial/fetch-fallback 失败，已按规则排除并补跑 1 次；
+- [x] 运行 `scripts/seo/measure-html-response.ps1 -Rounds 3`，记录新的响应窗口；
+- [x] 执行部署后 Crawl Diff，保存 Crawl ID；
+- [x] 分别更新 SEO-IMP-035、036、037、038 Change Card 的结果与最终决策。
+
+### 生产验收结论（2026-08-25）
+
+| 模板 | 移动端 Lab LCP 中位数 | FCP 中位数 | TBT 中位数 | CLS 中位数 | 部署前单次 LCP |
+|---|---:|---:|---:|---:|---:|
+| 首页 | 3.68s | 3.68s | 42ms | 0 | 7.2s |
+| Services | 5.00s | 4.50s | 0ms | 0 | 14.1s |
+| Sportswear | 3.43s | 3.43s | 0ms | 0 | 6.9s |
+| Tech Pack Guide | 3.30s | 3.30s | 0ms | 0 | 7.2s |
+
+部署后 Crawl `crawl_40f88b6c25d74ba79ee193c7be26caf9` 为 20 页、0 fetch failure。与 `crawl_c3321e593dcd4a54bec9811ec8775f40` 比较时工具标记 `review-required`（抓取上限/配置不同），但页面数不变、无新增状态码错误、无 Title 或 indexability 变化，`slow_response` 由 2 降为 0。另一次同参数即时 `crawl-diff`（run `56e0bbeb-466a-4079-8e80-9a16a01c9927`）为 21 URL、0 added/removed/changed/new errors/indexability flips；4 个 Warning 均为既有大于工具 5 MB 上限的 MP4。
+
+最终决策：SEO-IMP-035、036、037 均 `keep`；SEO-IMP-038 为 `keep-monitoring`。以上 Lab 改善是同批部署后的方向性证据，不等同 CrUX 或排名变化，也不精确归因到单项。
 
 ## 6. 回滚
 

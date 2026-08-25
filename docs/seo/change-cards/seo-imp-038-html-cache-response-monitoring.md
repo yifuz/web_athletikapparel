@@ -1,7 +1,7 @@
 # SEO Change Card：SEO-IMP-038 HTML 缓存与响应监测
 
 - Change ID：`SEO-IMP-038`
-- 状态：`monitoring-ready`
+- 状态：`monitoring-active`
 - 变更日期：2026-08-25
 - 变更页面或分组：`/`、`/services/`、`/technical-guides/`、`/sportswear-manufacturer/`、`/contact/`
 - 唯一主要变量：不修改生产缓存；建立匿名 HTML 的重复响应监测、缓存头判读和升级阈值
@@ -13,7 +13,7 @@
 - Day 7 / 28 / 90 复盘日期：部署后立即复测；之后仅在 Crawl/Lighthouse 再次出现慢响应或月度性能复核时运行
 - 干扰因素：当前工作站到 SJC 边缘网络、HTTP/1.1 客户端、连接冷启动、Flywheel/Fastly 多层边缘节点、并行下载及同期主机负载
 - 部署前 Crawl ID：`crawl_c3321e593dcd4a54bec9811ec8775f40`
-- 部署后 Crawl ID：待 IMP-035–037 合并部署后填写
+- 部署后 Crawl ID：`crawl_40f88b6c25d74ba79ee193c7be26caf9`
 - Finding / Inventory 处置：HTML 缓存错误 Finding 为 `no-change`；慢响应 Finding 维持 `monitoring`，当前证据不足以修改 Cloudflare/Flywheel 配置
 - 最终决策及原因：`keep-monitoring`。Flywheel/Fastly 页面缓存有命中证据；Cloudflare HTML `DYNAMIC` 符合其默认不缓存动态 HTML 的行为。暂不启用 Cache Everything，也不增加 WordPress 缓存插件
 
@@ -88,5 +88,11 @@ pwsh -NoProfile -File .\scripts\seo\measure-html-response.ps1 -Rounds 3 -CsvPath
 - [x] HTML 的 Flywheel/Fastly HIT 与静态 CSS 的 Cloudflare HIT 已确认；
 - [x] 正常、复核、主机升级和紧急阈值已固定；
 - [x] 无生产配置、主题运行时代码或数据库改动；
-- [ ] IMP-035–037 部署后运行一轮新窗口并保存部署后 Crawl ID；
+- [x] IMP-035–037 部署后运行一轮新窗口并保存部署后 Crawl ID；
 - [ ] 若满足 `host-escalation-ready`，再由所有者携证据联系 Flywheel。
+
+## 6. 部署后窗口（2026-08-25）
+
+运行 `measure-html-response.ps1 -Rounds 3` 共取得 15 个 HTTP 200 样本。各 URL TTFB 中位数 / 最大值为：首页 0.89s / 1.23s、Services 1.22s / 1.28s、Technical Guides 1.19s / 1.25s、Sportswear 0.97s / 1.83s、Contact 0.91s / 1.20s。HTML 继续为 `cf-cache-status: DYNAMIC`、`x-cacheable: YES`，多数样本为 Flywheel/Fastly `MISS, HIT`。
+
+Services 仅轻微进入 `review` 线，没有达到连续独立窗口的 `host-escalation-ready` 条件；本轮不联系主机、不修改缓存，最终决策继续为 `keep-monitoring`。
