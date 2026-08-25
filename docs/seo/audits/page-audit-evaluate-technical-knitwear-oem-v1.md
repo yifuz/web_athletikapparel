@@ -8,7 +8,7 @@
 >
 > 次级词簇：`vertically integrated knitwear OEM`、`supplier evaluation`、cut-and-sew、traceability、process ownership
 >
-> 依据：[`../../seo-tags.md`](../../seo-tags.md)、[`../sitemap.md`](../sitemap.md)、[`seo-implementation-checklist-v1.md`](seo-implementation-checklist-v1.md)、[`page-audit-sportswear-manufacturer-v1.md`](page-audit-sportswear-manufacturer-v1.md)（结构与深度基准）
+> 依据：[`../../seo-tags.md`](../../../seo-tags.md)、[`../sitemap.md`](../../sitemap.md)、[`seo-implementation-checklist-v1.md`](../seo-implementation-checklist-v1.md)、[`page-audit-sportswear-manufacturer-v1.md`](page-audit-sportswear-manufacturer-v1.md)（结构与深度基准）
 >
 > 审计方式：生产 HTML（curl 抓取，HTTP 200，77,109 字节）、生产 Sitemap、生产相关页面入链核查与本地模板静态检查
 >

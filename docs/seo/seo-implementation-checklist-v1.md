@@ -2,17 +2,21 @@
 
 > 建立日期：2026-08-17
 >
+> 收尾日期：2026-08-25
+>
+> 状态：**已冻结；网站实施与生产验收完成**
+>
 > 市场范围：北美与欧洲
 >
 > 当前对象：<https://www.athletikapparel.com/>
 >
-> 输入：[`Sportswear` 审计](page-audit-sportswear-manufacturer-v1.md)、[`Knitted Fabrics` 审计](page-audit-knitted-fabrics-manufacturer-v1.md)、[`Tech Pack Guide` 审计](page-audit-technical-knitwear-tech-pack-guide-v1.md)、[`关键词—页面映射`](keyword-page-mapping-v1.md)、[`US Performance Fabric 关键词验证`](data/keyword-planner-performance-fabric-validation-us-2026-08-17.csv)
+> 输入：[`Sportswear` 审计](audits/page-audit-sportswear-manufacturer-v1.md)、[`Knitted Fabrics` 审计](audits/page-audit-knitted-fabrics-manufacturer-v1.md)、[`Tech Pack Guide` 审计](audits/page-audit-technical-knitwear-tech-pack-guide-v1.md)、[`关键词—页面映射`](research/keyword-page-mapping-v1.md)、[`US Performance Fabric 关键词验证`](research/data/keyword-planner-performance-fabric-validation-us-2026-08-17.csv)
 >
-> 状态说明：本文是实施真值表；历史审计继续保留当时快照，不回写成“已经通过”
+> 状态说明：本文是 V1 实施与验收真值表；历史审计继续保留当时快照，不回写成“已经通过”。新任务、持续监测和条件式项目统一进入 [`SEO V2 Backlog`](v2-backlog.md)，不再扩写本清单。
 
 ## 1. 执行结论
 
-当前网站没有全站抓取、索引、Canonical、Title、H1 或 Sitemap Critical 问题。下一阶段不是批量增加关键词，也不是重建更多近义页面，而是提高以下四类可积累信号：
+V1 已确认当前网站没有全站抓取、索引、Canonical、Title、H1 或 Sitemap Critical 问题，并完成首轮主题关系、业务证据、图片、CSS、字体、性能和运营控制面实施。下一阶段不是批量增加关键词，也不是重建更多近义页面，而是通过 V2 持续积累以下四类信号：
 
 1. **主题关系**：让商业页、技术指南和 Services 通过自然上下文内链形成清晰主题网络；
 2. **页面证据**：用真实业务边界、规格、流程、测试和认证文件支持页面承诺；
@@ -25,8 +29,8 @@
 
 | 页面 | 已通过 | 主要缺口 | 当前决策 |
 |---|---|---|---|
-| `/sportswear-manufacturer/` | 200、可索引、URL/Title/H1/Meta/Canonical、Schema、首页入口、条件式性能表达、500 pcs per style、术语和响应式 WebP 均已生产验收 | 品类页社交图仍为 Logo；Header/Footer 共用 Logo 缺少固有尺寸 | 保留 URL/Title/H1；不拆 Activewear/Fitness 页面；社交图与 Logo 尺寸分别由 SEO-IMP-013/024 处理 |
-| `/knitted-fabrics-manufacturer/` | 200、可索引；独立面料供货、fabric-specific MOQ/开发/报价、IMP-010 商业能力语境及 30 个 WebP 已生产验收 | 品类页社交图仍为 Logo；Header/Footer 共用 Logo 缺少固有尺寸 | 保留 URL/Title/H1/Meta；继续由同页承接次级词，不创建近义面料页 |
+| `/sportswear-manufacturer/` | 200、可索引、URL/Title/H1/Meta/Canonical、Schema、首页入口、条件式性能表达、500 pcs per style、术语、响应式 WebP 与 Header/Footer Logo 固有尺寸均已生产验收 | 品类页社交图仍为通用 Logo，属于可选增强 | 保留 URL/Title/H1；不拆 Activewear/Fitness 页面；社交图转入 SEO-V2-007，只有确认代表图后启动 |
+| `/knitted-fabrics-manufacturer/` | 200、可索引；独立面料供货、fabric-specific MOQ/开发/报价、IMP-010 商业能力语境、30 个 WebP 与共用 Logo 固有尺寸均已生产验收 | 品类页社交图仍为通用 Logo，属于可选增强 | 保留 URL/Title/H1/Meta；继续由同页承接次级词，不创建近义面料页；社交图转入 SEO-V2-007 |
 | `/technical-knitwear-tech-pack-guide/` | 已收录；Title/H1/Meta、Article/FAQ/Breadcrumb、definition/scope、商业页内链、专属社交图、阅读时长和单一 child stylesheet 已生产验收 | 当前无阻塞项 | 保留页面范围，进入 7/28/90 天观察，不做通用模板页 |
 
 共同结论：当前排名上限更可能受主题连接、证据完整度、性能和域名权威影响，而不是关键词是否重复得足够多。
@@ -43,7 +47,7 @@
 | `performance fabrics` | 2,400 | 2,275.0 | 高需求但混合服装、家居、室内装饰与知识型意图 | 仅作次级主题；条件式评估未来指南 |
 | Performance + `manufacturer` 变体 | NR | NR | 精确采购变体未获得需求信号 | 不替换当前主词，不新建近义商业页 |
 
-据此锁定当前页面架构：URL `/knitted-fabrics-manufacturer/`、Title 和 H1 继续由 `knitted fabric manufacturer` 承担；`performance knit fabric` 和 `sportswear fabric manufacturer` 作为同页次级词；宽泛的 `performance fabrics` 不进入 URL、Title 或 H1。SEO-IMP-009 与 SEO-IMP-010 已完成本地实施和再验收，下一阶段以部署、收录、Query 和询盘反馈验证该单页架构。
+据此锁定当前页面架构：URL `/knitted-fabrics-manufacturer/`、Title 和 H1 继续由 `knitted fabric manufacturer` 承担；`performance knit fabric` 和 `sportswear fabric manufacturer` 作为同页次级词；宽泛的 `performance fabrics` 不进入 URL、Title 或 H1。SEO-IMP-009 与 SEO-IMP-010 已完成生产部署和验收，后续只通过 GSC Query、询盘与独立 SERP 证据决定是否迭代。
 
 ## 3. 优先级方法
 
@@ -77,8 +81,8 @@
 | SEO-IMP-006 | Knitted Fabrics 五张产品图执行同样的响应式真无损优化 | 高：480–800 px 候选相对原 PNG 合计减少 80.32%–93.37% | 中：细节图清晰度、资源路径和上传部署必须核对 | 源 PNG 与 30 个派生 WebP 已部署 | **生产验收通过（2026-08-20）**：5 个 `<picture>`、30 个 WebP 和 5 个 PNG 回退均通过 HTTP/MIME 与静态标记检查 |
 | SEO-IMP-007 | 建立 Sportswear 公开能力事实表并修正绝对化表述 | 高：减少不可信承诺，提高专业采购页证据质量 | 中：错误修改会弱化真实能力或制造新声称 | 所有者确认 SP-01–SP-10 均可满足，但报告按项目提供；页面改为能力/规格/测试条件表达 | **生产验收通过（2026-08-20）**：条件式性能、买家测试标准和项目测试语境已出现在生产 HTML |
 | SEO-IMP-008 | 评估将 Sportswear `MOQ 500 pieces per style` 资格信号移到首屏，并同步全站业务事实 | 中：资格信息有助于预筛，但不是直接排名因素 | 中：首屏信息层级和视觉节奏可能受损 | 500 件业务事实已同步；`Estimated Order Quantity` 与 per-style MOQ 保持分离 | **生产验收通过（2026-08-20）**：首页 Hero 无 MOQ 资格条，六个成衣品类显示 `500 pcs`，面料页保持项目制 MOQ |
-| SEO-IMP-009 | 确认 Knitted Fabrics 是否接受独立面料订单，并建立 fabric-specific MOQ、报价单位、开发和交付流程 | 高：决定页面是否真正匹配 `knitted fabric manufacturer` 商业搜索承诺 | 高：错误答案会改变页面定位、表单和 Meta | 所有者已于 2026-08-18 完成 [`Knitted Fabrics 独立面料业务事实表`](knitted-fabrics-business-fact-sheet-v1.md)；URL/Title/H1/Meta 与表单结构保持不变 | **生产验收通过（2026-08-20）**：standalone fabric、项目制 MOQ、fabric brief、开发和量产周期字段均已核对 |
-| SEO-IMP-010 | 核验并重写 Knitted Fabrics 的 GRS、追溯、自有工艺、测试和性能声称 | 高：强化商业主题、买家相关性与信任 | 中到高：硬认证和量化结果仍需准确，服务能力不要求已有公开案例 | 所有者确认 BTEXCO 也是本业务主体；按 [`Knitted Fabrics 声称—证据矩阵`](knitted-fabrics-claim-evidence-matrix-v1.md) 保留可交付能力并缩短限定语 | **生产验收通过（2026-08-20）**：Meta 与页面能力语境一致，URL/Title/H1 保持不变 |
+| SEO-IMP-009 | 确认 Knitted Fabrics 是否接受独立面料订单，并建立 fabric-specific MOQ、报价单位、开发和交付流程 | 高：决定页面是否真正匹配 `knitted fabric manufacturer` 商业搜索承诺 | 高：错误答案会改变页面定位、表单和 Meta | 所有者已于 2026-08-18 完成 [`Knitted Fabrics 独立面料业务事实表`](evidence/knitted-fabrics-business-fact-sheet-v1.md)；URL/Title/H1/Meta 与表单结构保持不变 | **生产验收通过（2026-08-20）**：standalone fabric、项目制 MOQ、fabric brief、开发和量产周期字段均已核对 |
+| SEO-IMP-010 | 核验并重写 Knitted Fabrics 的 GRS、追溯、自有工艺、测试和性能声称 | 高：强化商业主题、买家相关性与信任 | 中到高：硬认证和量化结果仍需准确，服务能力不要求已有公开案例 | 所有者确认 BTEXCO 也是本业务主体；按 [`Knitted Fabrics 声称—证据矩阵`](evidence/knitted-fabrics-claim-evidence-matrix-v1.md) 保留可交付能力并缩短限定语 | **生产验收通过（2026-08-20）**：Meta 与页面能力语境一致，URL/Title/H1 保持不变 |
 
 ### C. 第三批：数据驱动的页面微调
 
@@ -86,41 +90,41 @@
 |---|---|---|---|---|---|
 | SEO-IMP-011 | 统一产品页 SEO 字段真值来源，清理或注释未参与生产输出的 `meta_description` | 中：避免以后“代码已改、生产未变” | 低到中 | 先确认 Rank Math/代码各字段的最终职责 | **已完成（2026-08-19）**：本地 curl 逐页核实生产来源；`inc/product-category-data.php` 增加真值来源 docblock（六个服装品类页字段不参与生产输出，Knitted Fabrics 为唯一例外并加行内注释）；`functions.php` 首页 description 与 `rank-math.php` 头部补注释（`rank-math.php` 由 Rank Math 插件自动加载，非 functions.php）；`seo-tags.md` 新增“字段真值来源”一节作为单一规范文档 |
 | SEO-IMP-012 | 修正 Sportswear 中 `ACTIVESEAM`/FLATLOCK 术语，并同步规范 Meta 与生产 Rank Math 字段 | 中：语义和品牌专业度一致 | 低到中 | 与 SEO-IMP-007 同批，避免只修大小写却保留无证据表达 | **生产验收通过（2026-08-20）**：15 个关键页面可见文本未发现小写 `flatlock`/`activeseam` 漂移；URL、文件名和 ID 未改 |
-| SEO-IMP-013 | 为 Sportswear、Knitted Fabrics 等类目选择批准的代表图作为社交图/Schema 主图 | 中：改善页面分享和主题图像信号 | 低到中 | 所有者确认每页代表图；生成合适派生尺寸 | 待选图 |
-| SEO-IMP-014 | 复核首页及多个类目 157–165 字符 Meta、Services 63 字符 Title | 低到中：主要影响摘要截断和 CTR，不是索引问题 | 中：过早缩短可能损失意图信息 | 先取得页面级 GSC Query/CTR 数据 | 观察 |
+| SEO-IMP-013 | 为 Sportswear、Knitted Fabrics 等类目选择批准的代表图作为社交图/Schema 主图 | 中：改善页面分享和主题图像信号 | 低到中 | 所有者确认每页代表图；生成合适派生尺寸 | **V1 `deferred`**：非索引阻塞，转入 [`SEO-V2-007`](v2-backlog.md) |
+| SEO-IMP-014 | 复核首页及多个类目 157–165 字符 Meta、Services 63 字符 Title | 低到中：主要影响摘要截断和 CTR，不是索引问题 | 中：过早缩短可能损失意图信息 | 先取得页面级 GSC Query/CTR 数据 | **V1 `deferred`**：样本未达门槛，转入 [`SEO-V2-002/009`](v2-backlog.md) |
 | SEO-IMP-015 | 审计 Underwear、Outdoor、Merino、Silk、Sports Accessories 与三篇指南剩余两篇 | 高：扩大已验证的页面级基线 | 低 | 第一批部署稳定后逐页执行 | **已完成（2026-08-18，7 份只读审计文档；发现汇总见本文 §4A）** |
-| SEO-IMP-016 | 为类目页评估 `Service` Schema，保持可见内容和事实一致 | 低到中：增强机器可读服务关系，但不作为排名捷径 | 中 | 页面业务事实确认；通过 Schema Validator | 待评估 |
-| SEO-IMP-022 | 固化 Knitted Fabrics 主次词架构：保留现有 URL/Title/H1，以 `performance knit fabric` 和 `sportswear fabric manufacturer` 补充产品、应用和询盘语境 | 中到高：同时保留精准采购意图和 Performance 主题覆盖，不引入近义页内耗 | 低到中：事实不足时扩写会放大未证实的工艺、测试或独立供货承诺 | SEO-IMP-009/010 已完成；后续只依据 GSC 和新增一方证据迭代，不做关键词堆叠 | **本地核验完成（2026-08-18）**：URL/Title/H1 保持；`performance knit fabric` 已进入 What we make、子类标题、正文与 alt 语境；`sportswear fabric manufacturer` 精确短语未出现，列为所有者批准的微文案候选，不自行改写；GSC 分组监测见 `gsc-data-log.md` |
-| SEO-IMP-024 | 为 Header 与 Footer 共用 Logo 补充固有 `width`/`height` | 低到中：减少共享布局的潜在 CLS，完善全站图片静态信号 | 低：需确认 GeneratePress Logo 输出与 Footer markup 的统一尺寸策略 | 2026-08-21 已核对源图为 512×512，生产 Header/Footer 两处均缺尺寸属性 | **生产验收通过（2026-08-25）**：首页与 Contact 每页两处 Logo 均输出 `512×512`，资源 200/MIME 正确，Desktop/Mobile 显示正常；部署后 Crawl 无新增状态码错误。Change Card 决策 `keep`：[`SEO-IMP-024`](change-cards/seo-imp-024-logo-intrinsic-dimensions.md) |
+| SEO-IMP-016 | 为类目页评估 `Service` Schema，保持可见内容和事实一致 | 低到中：增强机器可读服务关系，但不作为排名捷径 | 中 | 页面业务事实确认；通过 Schema Validator | **V1 `deferred`**：当前 Schema 不阻塞索引，转入 [`SEO-V2-010`](v2-backlog.md) |
+| SEO-IMP-022 | 固化 Knitted Fabrics 主次词架构：保留现有 URL/Title/H1，以 `performance knit fabric` 和 `sportswear fabric manufacturer` 补充产品、应用和询盘语境 | 中到高：同时保留精准采购意图和 Performance 主题覆盖，不引入近义页内耗 | 低到中：事实不足时扩写会放大未证实的工艺、测试或独立供货承诺 | SEO-IMP-009/010 已完成；后续只依据 GSC 和新增一方证据迭代，不做关键词堆叠 | **V1 `no-change`**：现有页面已覆盖 `performance knit fabric`；精确短语不为堆词而添加，后续监测转入 [`SEO-V2-005/009`](v2-backlog.md) |
+| SEO-IMP-024 | 为 Header 与 Footer 共用 Logo 补充固有 `width`/`height` | 低到中：减少共享布局的潜在 CLS，完善全站图片静态信号 | 低：需确认 GeneratePress Logo 输出与 Footer markup 的统一尺寸策略 | 2026-08-21 已核对源图为 512×512，生产 Header/Footer 两处均缺尺寸属性 | **生产验收通过（2026-08-25）**：首页与 Contact 每页两处 Logo 均输出 `512×512`，资源 200/MIME 正确，Desktop/Mobile 显示正常；部署后 Crawl 无新增状态码错误。Change Card 决策 `keep`：[`SEO-IMP-024`](implementation/change-cards/seo-imp-024-logo-intrinsic-dimensions.md) |
 
 ### D. 第四批：内容扩展与站外权威
 
 | ID | 项目 | 收益 | 风险 | 启动条件 | 状态 |
 |---|---|---|---|---|---|
 | SEO-IMP-017 | 基于真实 Query/Page 数据决定是否补 Tech Pack 的简短 definition/scope 段 | 中到高：承接 `clothing/garment/apparel tech pack` 的相关曝光 | 中：可能把页面拉向模板、工具或 startup 意图 | 匹配查询持续获得曝光但排名/CTR不足 | **生产验收通过（2026-08-20）**：definition、cut-and-sew apparel scope 和 Schema `Apparel tech pack` 均已生效；URL/Title/H1/Meta 保持不变 |
-| SEO-IMP-018 | QC Guide 内容简报、事实确认、正文与页面实施 | 高：独立的采购尽调任务和潜在链接资产 | 高：不能发明 QC 节点、记录或标准 | 一方 QC 流程、素材和责任边界由所有者确认 | **生产验收通过（2026-08-20）**：URL 200 且可索引；Title/Meta/H1/Canonical、Article/FAQPage/BreadcrumbList、3 支视频、7 个媒体资源、Hub 与 Sitemap 入口均通过。GSC API Inspection 暂时 `fetch failed`，待网页版实时测试与请求编入索引 |
-| SEO-IMP-019 | NL / SE / NO / FI 本地语言研究 | 中：验证英语之外的欧洲买家语言 | 低 | 英语基线实施和监测稳定 | 待研究 |
-| SEO-IMP-020 | 技术指南持续分发并争取真实行业引用、供应商目录/协会资料页及合作方链接 | 高：增加独立站外提及和引用域，而不是依赖站内信号 | 中：必须是真实关系，禁止购买批量垃圾链接 | 建立目标来源、发布记录和引用 URL 台账 | **已收尾（2026-08-19）**：机会池已建立（[`offsite-authority-opportunity-pool-v1.md`](offsite-authority-opportunity-pool-v1.md)）；ThomasNet 中国主体已注册；Merrow 邮件草稿已备好但所有者决定暂缓；Kompass $70/3y 待决策；OEKO-TEX/WRAP 免费登记待执行；收益评估见附录 C |
-| SEO-IMP-021 | 每季度复核指南引用的 ASTM/AATCC/ISO 等标准版本和链接 | 中：维持技术内容可靠性和更新依据 | 低 | 指定复核日期与负责人 | 待建立节奏 |
-| SEO-IMP-023 | 条件式评估 Performance Fabrics 信息指南，明确限定 performance apparel / knit fabric，避免进入家具和室内装饰意图 | 中：有机会承接宽泛研究流量并内链到面料商业页 | 高：宽词意图混杂，过早建页可能产生无效流量和主题稀释 | 当前商业页事实完整；GSC 出现相关 Query，或独立 SERP/内容缺口验证通过；具备一方材料与测试证据 | 候选研究，未批准新 URL |
+| SEO-IMP-018 | QC Guide 内容简报、事实确认、正文与页面实施 | 高：独立的采购尽调任务和潜在链接资产 | 高：不能发明 QC 节点、记录或标准 | 一方 QC 流程、素材和责任边界由所有者确认 | **生产验收通过（2026-08-20）**：URL 200 且可索引；Title/Meta/H1/Canonical、Article/FAQPage/BreadcrumbList、3 支视频、7 个媒体资源、Hub 与 Sitemap 入口均通过。GSC 网页版操作转入 [`SEO-V2-001`](v2-backlog.md)，不阻塞 V1 收尾 |
+| SEO-IMP-019 | NL / SE / NO / FI 本地语言研究 | 中：验证英语之外的欧洲买家语言 | 低 | 英语基线实施和监测稳定 | **V1 `deferred`**：需具体国家需求和母语审核资源，转入 [`SEO-V2-011`](v2-backlog.md) |
+| SEO-IMP-020 | 技术指南持续分发并争取真实行业引用、供应商目录/协会资料页及合作方链接 | 高：增加独立站外提及和引用域，而不是依赖站内信号 | 中：必须是真实关系，禁止购买批量垃圾链接 | 建立目标来源、发布记录和引用 URL 台账 | **V1 已收尾（2026-08-19）**：机会池与主体决策已建立；长期执行转入 [`SEO-V2-006`](v2-backlog.md) 和 [`站外权威工作台`](authority/README.md) |
+| SEO-IMP-021 | 每季度复核指南引用的 ASTM/AATCC/ISO 等标准版本和链接 | 中：维持技术内容可靠性和更新依据 | 低 | 指定复核日期与负责人 | **V1 `scheduled`**：转入 [`SEO-V2-013`](v2-backlog.md)，每季度记录 `no-change` 或变更 |
+| SEO-IMP-023 | 条件式评估 Performance Fabrics 信息指南，明确限定 performance apparel / knit fabric，避免进入家具和室内装饰意图 | 中：有机会承接宽泛研究流量并内链到面料商业页 | 高：宽词意图混杂，过早建页可能产生无效流量和主题稀释 | 当前商业页事实完整；GSC 出现相关 Query，或独立 SERP/内容缺口验证通过；具备一方材料与测试证据 | **V1 `deferred`**：未批准新 URL，转入 [`SEO-V2-012`](v2-backlog.md) |
 
 ## 4A. SEO-IMP-015 审计发现汇总（2026-08-18）
 
-七份只读审计文档：`page-audit-underwear-manufacturer-v1.md`、`page-audit-outdoor-clothing-manufacturer-v1.md`、`page-audit-merino-wool-manufacturer-v1.md`、`page-audit-silk-wear-manufacturer-v1.md`、`page-audit-sports-accessories-manufacturer-v1.md`、`page-audit-flatlock-vs-overlock-v1.md`、`page-audit-evaluate-technical-knitwear-oem-v1.md`。
+七份只读审计文档已归入 [`audits/`](audits/README.md)：Underwear、Outdoor、Merino、Silk、Sports Accessories、FLATLOCK vs OVERLOCK 与 OEM Evaluation。
 
-共同结论：7 页均无索引/Canonical/Title/H1 级 Critical；各页 URL/Title/H1/Meta 全部保持。已知共享问题（生产 MOQ 1,000 旧值、重复 stylesheet、Logo 社交图、Meta 双来源）均与既有 IMP 项对应，不重复列项。
+共同结论：7 页均无索引/Canonical/Title/H1 级 Critical；各页 URL/Title/H1/Meta 全部保持。历史共享问题中的 MOQ 旧值、重复 stylesheet、Meta 真值与 Logo 固有尺寸均已处理；品类社交图属于 V2 可选增强。
 
 ### 本轮新发现与处理
 
 | ID | 项目 | 收益 | 状态 |
 |---|---|---|---|
-| （已修复） | Silk 页第三张子类图引用 `IMG_5550.JPG`（大写扩展名），生产 Linux 环境 404；Windows 本地不暴露 | 高：用户可见破图 | **本地已修复**（`inc/product-category-data.php` 改小写 `.jpg`），随批次部署 |
-| SEO-IMP-025 | 五个品类页产品图响应式批次：Underwear 约 1.36 MB、Outdoor 约 1.01 MB、Merino 约 3.79 MB（单张最大 2.73 MB PNG）、Silk 约 7.58 MB、Sports Accessories 约 6.13 MB，均缺 width/height、srcset/sizes 与 WebP 派生 | 中到高：延续 IMP-005/006 的移动端负载收益 | **暂缓（所有者 2026-08-18 确认优先级逻辑）**：这五页 GSC 曝光接近零、主词搜索量极低或未验证（Silk 七国 NR、Accessories 未测试；Underwear/Outdoor 有量但 SERP 意图错配），图片优化预算先集中在高搜索量页面；待任一页 GSC 曝光起量或真实 CWV 报警再启动 |
+| （已修复） | Silk 页第三张子类图引用 `IMG_5550.JPG`（大写扩展名），生产 Linux 环境 404；Windows 本地不暴露 | 高：用户可见破图 | **生产验收通过（2026-08-20）**：引用改为小写 `.jpg`，资源返回 200 |
+| SEO-IMP-025 | 五个品类页产品图响应式批次：Underwear 约 1.36 MB、Outdoor 约 1.01 MB、Merino 约 3.79 MB（单张最大 2.73 MB PNG）、Silk 约 7.58 MB、Sports Accessories 约 6.13 MB，均缺 width/height、srcset/sizes 与 WebP 派生 | 中到高：延续 IMP-005/006 的移动端负载收益 | **V1 `deferred`**：这些页面当时曝光接近零或意图错配；待 GSC/CWV/业务优先级触发 [`SEO-V2-008`](v2-backlog.md) |
 | SEO-IMP-026 | OEM Evaluation 指南正文零上下文出站链接，全站仅 Hub 一个正文入口（V2-006 在本页核实仍未修复；IMP-001 只覆盖了 Tech Pack Guide） | 中：两篇指南中本页内链最弱 | **生产验收通过（2026-08-20）**：OEM 指南 4 条上下文出链及 Tech Pack/FLATLOCK 两条入链均已在生产确认 |
-| SEO-IMP-027 | FLATLOCK 指南有两支第一方生产视频但无 VideoObject Schema | 低到中：视频富媒体增强空间 | 待评估；先看 GSC 视频索引报告再决定 |
+| SEO-IMP-027 | FLATLOCK 指南有两支第一方生产视频但无 VideoObject Schema | 低到中：视频富媒体增强空间 | **V1 `deferred`**：先看 GSC 视频索引证据，转入 [`SEO-V2-010`](v2-backlog.md) |
 | SEO-IMP-028 | 技术指南 Twitter/阅读时长字段曾显示 "Less than a minute"（Rank Math 从空 `post_content` 计算） | 低：社交卡片元数据失真 | **生产验收通过（2026-08-20）**：四篇指南分别输出 8、8、9、13 分钟 |
 | （并入 IMP-012） | 术语小写漂移不限于 Sportswear：Outdoor（`inc/product-category-data.php:248`）、Merino、Sports Accessories、Silk construction 段均有小写 `flatlock`/`activeseam` | 中 | 并入 SEO-IMP-012 同批执行，逐页修 |
-| （所有者后台项） | Fluent Forms `Estimated Order Quantity` 分档仍以 1,000 为锚点；MOQ 降至 500 后 `Under 1,000 pcs` 一档会混入合格线索 | 中：询盘过滤有效性 | 插件后台字段，需所有者手动确认调整，非主题代码 |
+| （已核清） | Fluent Forms `Estimated Order Quantity` 是项目预计订单量字段，不是公开 `MOQ per style` 声明 | 中：避免误把两个业务概念强行同步 | **`not-needed`**：所有者已明确两者保持分离，不修改表单字段 |
 
 ### E. SEO 运营控制面
 
@@ -130,41 +134,36 @@
 | SEO-IMP-030 | 建立本机 `athletikapparel` SEO 项目 Profile，绑定 GSC、GA4、规范站、品牌词和 10 个重点 URL | 高：让抓取、Search Console、GA4 与监控使用一致项目上下文 | 低：本机配置，不改变公开网站 | **已完成（2026-08-20）**；OAuth/Profile 不进入 Git |
 | SEO-IMP-031 | 冻结 SEO 批次部署后的生产 Crawl Snapshot，并与 2026-08-18 全站基线比较 | 高：建立以后可重复的技术回归基准 | 低：只读抓取；不同范围不得强行比较 | **已完成（2026-08-20）**：新 Crawl ID `crawl_3f1fc0fbb955403791272722942441a9`；无新增状态码错误，可比性 `review-required` 的原因已记录 |
 | SEO-IMP-032 | 在 SEO 流程中增加 Change Card，记录主要变量、基线、指标、防护指标、干扰因素、Finding 处置及 Day 7/28/90 决策 | 高：避免“修改很多但无法判断哪项有效” | 低 | **流程已完成（2026-08-20）**；从下一项 SEO 改动开始使用，数据成熟后运行 `measure-change` |
-| SEO-IMP-033 | 建立索引覆盖抽样、模板性能基线和周期报告路由 | 中到高：把 Page indexing、CWV 和增长机会从临时检查变为持续监控 | 低到中：需控制 URL Inspection 配额，并区分 Lab/Field 数据 | **基线已完成（2026-08-20）**：18 个 Sitemap URL 按每日 10 个预计 2 天一轮；首页、Sportswear、Tech Pack Guide、Services 已建立首次移动端 Lab 基线。本次无 CrUX，4 个 LCP Finding 均因需重复运行和资源归因而 `deferred`；未提交索引或修改页面 |
-| SEO-IMP-034 | 定位生产 HTML 慢响应与四类模板 LCP 根因，区分页面代码、WordPress、Cloudflare 缓存和主机响应 | 高：如果可复现，可直接改善抓取效率与用户体验；比继续扩写内容更接近当前性能上限 | 中：单次 Lab 与外部网络波动不能直接触发代码改动；主机/CDN 项需要所有者执行 | **诊断完成（2026-08-25）**：HTML 为 Cloudflare/Flywheel 动态响应，但本轮首字节约 0.70–1.02s、Lab Root Document 280–540ms，慢响应未稳定复现；Services 1.9 MB Hero PNG 与首页四张 eager Hero 图为主要可控 LCP 根因；共同阻塞链次之。详见 [`performance-diagnosis-seo-imp-034-v1.md`](performance-diagnosis-seo-imp-034-v1.md) |
-| SEO-IMP-035 | Services Hero 改为保持最大实用清晰度的响应式 WebP，补齐固有尺寸与 LCP 优先级 | 高：直接处理 14.1s Lab LCP 与约 1.8 MB 可减少传输 | 低到中：uploads 与代码必须同步部署，需验证裁切和回退 | **生产验收通过（2026-08-25）**：6 个 WebP、HTML/MIME/视觉通过；移动端选中 800w 328,508-byte 候选，三轮有效 Lab LCP 中位数 5.00s、TBT/CLS 为 0；决策 `keep`，整体 LCP Finding 继续 `deferred`。见 [`Change Card`](change-cards/seo-imp-035-services-hero-responsive-webp.md) |
-| SEO-IMP-036 | 首页 Hero 仅保留一个关键高优先级图片，三张次要拼图延后并补较小响应式候选 | 高：受控 A/B 显示次要 Hero 图片约影响 1.8s LCP，全部主题图约影响 4.6s | 中：需同时保护桌面构图和移动端首屏视觉 | **生产验收通过（2026-08-25）**：14 个 WebP、1 eager/high + 3 lazy/low、HTML/MIME/Desktop/Mobile 视觉通过；三轮 Lab LCP 中位数 3.68s、TBT 42ms、CLS 0；决策 `keep`。见 [`Change Card`](change-cards/seo-imp-036-home-hero-request-priority.md) |
-| SEO-IMP-037 | 优化全站首屏阻塞链：Manrope、Fluent Forms CSS、jQuery、WP Consent API、Cookiebot 与 CSS minify | 中到高：影响多模板 FCP/LCP | 中到高：Consent、GA4、表单和插件依赖不可破坏 | **生产验收通过（2026-08-25）**：Google Fonts 引用归零，本地 preload 为 1，两个 WOFF2 均为 200/`font/woff2`，Desktop/Mobile 字形无回归；决策 `keep`，Consent/表单等共同阻塞链继续 `deferred`。见 [`Change Card`](change-cards/seo-imp-037-first-paint-blocking-chain.md) |
-| SEO-IMP-038 | 核实 Flywheel / Cloudflare HTML 页面缓存策略并建立慢响应升级阈值 | 中：可能改善 HTML 交付稳定性与抓取体验 | 中到高：错误页面缓存会影响登录、Consent、表单或个性化响应 | **监测运行中（2026-08-25）**：部署后 15 个请求均为 200；5 页 TTFB 中位数 0.89–1.22s，仅 Services 轻微进入 review，未达到主机升级条件；不改 Cache Rule，决策 `keep-monitoring`。见 [`Change Card`](change-cards/seo-imp-038-html-cache-response-monitoring.md) |
+| SEO-IMP-033 | 建立索引覆盖抽样、模板性能基线和周期报告路由 | 中到高：把 Page indexing、CWV 和增长机会从临时检查变为持续监控 | 低到中：需控制 URL Inspection 配额，并区分 Lab/Field 数据 | **V1 基线完成**：索引容量、四模板重复 Lab、Crawl 和报告路由已建立；持续运行转入 [`SEO-V2-002–004`](v2-backlog.md) |
+| SEO-IMP-034 | 定位生产 HTML 慢响应与四类模板 LCP 根因，区分页面代码、WordPress、Cloudflare 缓存和主机响应 | 高：如果可复现，可直接改善抓取效率与用户体验；比继续扩写内容更接近当前性能上限 | 中：单次 Lab 与外部网络波动不能直接触发代码改动；主机/CDN 项需要所有者执行 | **诊断完成（2026-08-25）**：HTML 为 Cloudflare/Flywheel 动态响应，但本轮首字节约 0.70–1.02s、Lab Root Document 280–540ms，慢响应未稳定复现；Services 1.9 MB Hero PNG 与首页四张 eager Hero 图为主要可控 LCP 根因；共同阻塞链次之。详见 [`performance-diagnosis-seo-imp-034-v1.md`](implementation/performance-diagnosis-seo-imp-034-v1.md) |
+| SEO-IMP-035 | Services Hero 改为保持最大实用清晰度的响应式 WebP，补齐固有尺寸与 LCP 优先级 | 高：直接处理 14.1s Lab LCP 与约 1.8 MB 可减少传输 | 低到中：uploads 与代码必须同步部署，需验证裁切和回退 | **生产验收通过（2026-08-25）**：6 个 WebP、HTML/MIME/视觉通过；移动端选中 800w 328,508-byte 候选，三轮有效 Lab LCP 中位数 5.00s、TBT/CLS 为 0；决策 `keep`，整体 LCP Finding 继续 `deferred`。见 [`Change Card`](implementation/change-cards/seo-imp-035-services-hero-responsive-webp.md) |
+| SEO-IMP-036 | 首页 Hero 仅保留一个关键高优先级图片，三张次要拼图延后并补较小响应式候选 | 高：受控 A/B 显示次要 Hero 图片约影响 1.8s LCP，全部主题图约影响 4.6s | 中：需同时保护桌面构图和移动端首屏视觉 | **生产验收通过（2026-08-25）**：14 个 WebP、1 eager/high + 3 lazy/low、HTML/MIME/Desktop/Mobile 视觉通过；三轮 Lab LCP 中位数 3.68s、TBT 42ms、CLS 0；决策 `keep`。见 [`Change Card`](implementation/change-cards/seo-imp-036-home-hero-request-priority.md) |
+| SEO-IMP-037 | 优化全站首屏阻塞链：Manrope、Fluent Forms CSS、jQuery、WP Consent API、Cookiebot 与 CSS minify | 中到高：影响多模板 FCP/LCP | 中到高：Consent、GA4、表单和插件依赖不可破坏 | **生产验收通过（2026-08-25）**：Google Fonts 引用归零，本地 preload 为 1，两个 WOFF2 均为 200/`font/woff2`，Desktop/Mobile 字形无回归；决策 `keep`，Consent/表单等共同阻塞链继续 `deferred`。见 [`Change Card`](implementation/change-cards/seo-imp-037-first-paint-blocking-chain.md) |
+| SEO-IMP-038 | 核实 Flywheel / Cloudflare HTML 页面缓存策略并建立慢响应升级阈值 | 中：可能改善 HTML 交付稳定性与抓取体验 | 中到高：错误页面缓存会影响登录、Consent、表单或个性化响应 | **V1 `keep-monitoring`（2026-08-25）**：部署后 15 个请求均为 200；5 页 TTFB 中位数 0.89–1.22s，仅 Services 轻微进入 review，未达到主机升级条件；持续监测转入 [`SEO-V2-003/004`](v2-backlog.md)。见 [`Change Card`](implementation/change-cards/seo-imp-038-html-cache-response-monitoring.md) |
 
 
 
-## 5. 已完成的本地代码与资源范围
+## 5. V1 已完成的代码与资源范围
 
-本地第一批修改严格限制在以下范围：
-
-- `functions.php`：只保留一份 child stylesheet，并依赖 GeneratePress 的正式 `generate-style`；
-- `template-parts/technical-article/content-technical-knitwear-tech-pack-guide.php`：增加三条上下文链接；
-- `inc/product-category-data.php`：Knitted Fabrics 增加 Tech Pack Guide 回链；
-- `rank-math.php`：技术内容使用已存在的批准封面作为社交图和 Schema 主图；同步真实 `lastmod`；
-- `inc/product-category-data.php` 与 `template-parts/product-category/page.php`：Sportswear 和 Knitted Fabrics 共 9 张下滚图片接入 WebP `srcset`、PNG 回退、固有尺寸、描述性 alt、lazy loading 与 async decoding；
-- `inc/product-category-data.php` 与 `template-parts/product-category/page.php`：Knitted Fabrics 增加品类级 Hero/能力标题/规格卡覆盖，展示独立面料供货、按面料与项目确认的 MOQ、完整 fabric brief、开发周期和量产周期；其余六个成衣品类继续使用共用规格；
-- `inc/product-category-data.php`、`rank-math.php` 与 `seo-tags.md`：Knitted Fabrics 的 Meta、Open Graph、Twitter、WebPage Schema 和可见产品文案统一使用 SEO 优先的能力表达；保留 performance、functional、GRS recycled fabrics 与 testing 主题，移除 `our own fabric mill`、`in-house testing`、`full traceability` 和跨材料性能等效承诺；
-- `style.css`：补充 `<picture>` 的块级布局，不改变现有图片比例和交错版式；
-- `inc/product-category-data.php`（2026-08-18）：Silk 子类图引用 `IMG_5550.JPG` 改小写 `.jpg`，修复生产 404 破图（SEO-IMP-015 审计发现）；
-- uploads：保留 9 张源 PNG，生成 54 个真无损响应式 WebP；详见 [`image-optimization-seo-imp-005-006-v1.md`](image-optimization-seo-imp-005-006-v1.md)；
-- 未改变任何 URL、Title、H1、FAQ 或主要关键词归属；SEO-IMP-010 更新 Knitted Fabrics Meta 与相关能力正文，并让页面/社交/Schema description 使用同一代码真值；
-- uploads 不在主题 Git 仓库中，部署时必须单独同步图片资源。
+- 主题关系：商业页、Services 与 Technical Guides 增加经过核准的上下文内链；
+- 元数据与 Schema：技术内容使用批准封面，Meta、Open Graph、Twitter、WebPage/Article 使用一致真值，并同步真实 `lastmod`；
+- 页面事实：公开成衣 MOQ 统一为 500 pieces per style；Sportswear 和 Knitted Fabrics 的能力、报价、项目制 MOQ、测试和证据语境完成核验；
+- 文案边界：所有者确认 `our own fabric mill` 和 `in-house testing` 可作为当前能力表达；不公开关联 Beta Textiles，不使用未经证据支持的保证性结果、精确数值或跨材料性能等效承诺；
+- 图片：Sportswear / Knitted Fabrics 共 54 个响应式 WebP，以及 Services / 首页 Hero 共 20 个 WebP 已单独部署到 uploads；源 PNG/JPG 保留；
+- 前端：只保留一份 child stylesheet；Header/Footer Logo 补齐 512×512 固有尺寸；Manrope 改为本地 WOFF2；首页和 Services Hero 优先级、`srcset/sizes` 与固有尺寸完成生产验收；
+- 质量修复：Silk 大写扩展名 404、术语漂移、指南阅读时长和 OEM Evaluation 内链均已生产修复；
+- URL 决策：没有改变现有 URL、H1 或主要页面所有权；未创建 Activewear/Fitness 或 Performance Fabrics 近义页；
+- 详细实施与 Change Cards 见 [`implementation/`](implementation/README.md)。uploads 不在主题 Git 仓库中，环境同步仍需单独部署。
 
 ## 6. 第二批所需所有者事实输入
 
 ### Sportswear
 
-已建立并完成 [`sportswear-public-capability-fact-sheet-v1.md`](sportswear-public-capability-fact-sheet-v1.md)。所有者确认 SP-01–SP-10 均可作为开发能力满足，但报告不是每项、每个项目都能提供。页面已保留能力词并移除无条件结果保证；具体数值或合格结果只在对应报告可核对时使用。
+已建立并完成 [`sportswear-public-capability-fact-sheet-v1.md`](evidence/sportswear-public-capability-fact-sheet-v1.md)。所有者确认 SP-01–SP-10 均可作为开发能力满足，但报告不是每项、每个项目都能提供。页面已保留能力词并移除无条件结果保证；具体数值或合格结果只在对应报告可核对时使用。
 
 ### Knitted Fabrics
 
-所有者已完成 [`knitted-fabrics-business-fact-sheet-v1.md`](knitted-fabrics-business-fact-sheet-v1.md)：接受独立面料订单；MOQ 按所选面料与具体项目确认，不公开固定数字范围；通常按 kg 报价，也可使用其他单位；完整 fabric brief 为报价输入；swatch、counter sample、lab dip、sample yardage 和 approval sample 均可按项目提供。
+所有者已完成 [`knitted-fabrics-business-fact-sheet-v1.md`](evidence/knitted-fabrics-business-fact-sheet-v1.md)：接受独立面料订单；MOQ 按所选面料与具体项目确认，不公开固定数字范围；通常按 kg 报价，也可使用其他单位；完整 fabric brief 为报价输入；swatch、counter sample、lab dip、sample yardage 和 approval sample 均可按项目提供。
 
 开发和量产周期不再使用未经稳定验证的行业常规周数。页面分别使用 `Based on fabric brief` 与 `Based on order requirements`，具体周期在 quotation 中提供。Contact Form 已有 `Knitted Fabrics` 选项，因此不新增表单分支；`Estimated Order Quantity` 保持成衣预计订单量含义，面料买家通过 Message 提供 kg 数量和完整规格。
 
@@ -172,17 +171,11 @@
 
 当前 GRS scope certificate、脱敏 transaction certificate、process ownership map 和测试报告样例仍值得收集，但不阻塞这版商业能力文案。取得文件后只增强与文件直接对应的段落，不恢复跨项目绝对承诺。
 
-## 7. 部署与验收顺序
+## 7. 部署与验收收尾
 
-1. 在本地运行 PHP 语法和静态链接检查；
-2. 逐页检查 Desktop 1440 px 与移动端布局，尤其是 Related links 和文章正文；
-3. 部署主题代码到 staging/production，并单独同步 SEO-IMP-005/006 的 54 个 uploads WebP；
-4. 检查页面源代码，确认只加载一份 child `style.css`；
-5. 检查四篇指南及 Hub 的 `og:image`、`twitter:image` 与 JSON-LD `primaryImageOfPage`；
-6. 使用 Rich Results Test 与 Schema Validator 复核 Article、FAQPage、BreadcrumbList 和 ImageObject；
-7. 部署后先清理 Rank Math Sitemap cache，再检查实际变化页面的 `lastmod`；
-8. 在 Search Console 对实际变化的重点 URL 执行 URL Inspection；不对未变化的全部页面机械请求重新收录；
-9. 记录部署日，并在 7 天与 28 天窗口比较数据。
+V1 所有主题代码、字体和 uploads 批次均已完成生产部署。最终批次验收包括 HTTP/MIME、Desktop/Mobile 视觉、表单与 Consent 依赖、移动端 Lighthouse、HTML 响应窗口和 Crawl Diff。最新冻结 Crawl 为 `crawl_40f88b6c25d74ba79ee193c7be26caf9`：20 页、0 fetch failure，没有新增状态码错误、Title 变化或 indexability flip。
+
+SEO-IMP-035、036、037 最终决策为 `keep`；SEO-IMP-038 为 `keep-monitoring`。生产表单依赖已验证，但为避免创建真实询盘，验收时没有提交测试线索；后续以真实询盘和 GA4 `generate_lead` 数据完成运营层验证。
 
 ## 8. Search Console 与转化监测
 
@@ -220,15 +213,13 @@
 - 不把 Schema 当成替代可见内容和真实证据的排名捷径；
 - 不用短期 Average position 波动频繁重写 Title/H1。
 
-## 10. 下一执行点
+## 10. V1 收尾与 V2 交接
 
-生产部署与验收已完成，按以下顺序继续：
+V1 于 2026-08-25 收尾。已完成项目保持历史 ID 和验收记录；未执行项目已经逐项获得 `deferred`、`no-change`、`not-needed`、`scheduled` 或 `monitoring` 处置，不再以“清空所有候选项”为收尾条件。
 
-1. 在 GSC 网页版对 QC Guide 执行实时测试并请求编入索引；
-2. 按 SEO-IMP-033 的容量计划执行代表性 URL Index Snapshot，并复跑四类模板性能测试、补充可用 CrUX 数据；
-3. 执行 SEO-IMP-034，只读定位生产 HTML 响应与四类模板 LCP 资源，再决定代码或主机/CDN 动作；
-4. 建立 GSC 7 天/28 天页面级监测，分别观察商业采购词、QC/Tech Pack 信息词与宽泛 Performance 词；
-5. 核对 GA4 `generate_lead` 与 Organic Landing Page 后，再运行转化层面月度报告；
-6. 收集当前 GRS scope certificate、可公开交易/追溯文件和测试报告样例，作为后续证据增强输入；
-7. 评估 SEO-IMP-013 品类页社交图和 SEO-IMP-027 VideoObject，继续以实际收益与风险排序；
-8. 英语基线稳定后再开始欧洲本地语言研究和条件式新内容；Performance Fabrics Guide 仍需单独批准。
+后续唯一执行入口为 [`SEO V2 Backlog`](v2-backlog.md)。近期顺序是：
+
+1. 所有者在 GSC 网页版完成 QC Guide 实时测试；
+2. 到达完整窗口后刷新 GSC / GA4 / 询盘基线；
+3. 持续运行索引、Crawl、HTML 响应与 Field/Lab 性能监测；
+4. 只有满足 Backlog 触发条件时，才启动社交图、剩余图片、Schema、当地语言或新内容项目。

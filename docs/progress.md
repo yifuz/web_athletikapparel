@@ -282,20 +282,12 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - 已完成 28 个代表词的七国英语基线 V2；本批覆盖 2024-08 至 2026-07，共 24 个月，与首轮 12 个月基线不直接比较；
 - 原始导出把输入表头 `Keyword` 当成第 29 个词，归一化数据已排除该伪关键词并按 28 个有效目标词重算；
 - 28 词合计中，北美占 73.5%，欧洲五国占 26.5%；该比例只描述当前英语代表词，不代表总体市场规模或本地语言需求；
-- 已完成 US / CA / UK 的 P0/P1 搜索意图样本筛查；Sportswear、Knitted Fabrics 和 Tech Pack Guide 进入首批页面级只读审计；
-- Sportswear 页面只读审计已完成：无 Critical，URL/Title/H1 保持；性能图片、事实证据、术语、资格位置和重复 stylesheet 列为后续微调候选；
-- Knitted Fabrics 页面只读审计已完成：无索引 Critical，URL/Title/H1 保持；独立面料业务边界、fabric-specific MOQ/询盘单位、GRS/追溯/测试证据和 11.47 MB 产品图列为实施前输入与优化项；
-- Technical Knitwear Tech Pack Guide 只读审计已完成：无 Critical，URL/Title/H1/Meta 保持；官方标准与术语通过复核，通用 Tech Pack 查询边界、上下文内链、社交主图和重复 stylesheet 列为后续候选；
-- 已建立 [`SEO 审计汇总与实施清单 V1`](seo/seo-implementation-checklist-v1.md)，按收益、风险、事实依赖和验收条件划分四个实施批次；
-- 第一批低风险代码已完成：Tech Pack Guide 与商业页上下文内链、Technical Guides 专属社交/Schema 主图、重复 child stylesheet 去重及真实 Sitemap `lastmod`；待部署后做生产验收；
-- SEO-IMP-005/006 的 Sportswear 与 Knitted Fabrics 响应式真无损 WebP 已在本地完成，uploads 资源待单独部署与生产验收；
-- SEO-IMP-007 已按所有者确认的能力边界修正 Sportswear 绝对化表述，本地完成、待部署验收；
-- SEO-IMP-008 已把公开 MOQ 统一为 `500 pieces per style`；2026-08-18 根据所有者反馈撤销 Sportswear 首屏资格条，MOQ 继续保留在页面规格栏、首页流程和 Services 中。`Estimated Order Quantity` 仍是独立的预计订单量字段。完整记录见 [`moq-update-seo-imp-008-v1.md`](seo/moq-update-seo-imp-008-v1.md)；
-- SEO-IMP-009 已按所有者确认完成 Knitted Fabrics 本地商业信息修正：保留 URL/Title/H1/Meta，以独立面料供货、按面料与项目确认的 MOQ、完整 fabric brief，以及按 fabric brief / order requirements 提供的开发和量产周期替换成衣式规格；现有 Contact Form 已包含 `Knitted Fabrics`，不新增表单分支；
-- SEO-IMP-010 已按 SEO 流程 V1.1 完成 Knitted Fabrics 商业表达复核：所有者确认 Beta Textiles Co., Limited 也是本业务主体；保留 performance、thermal、functional、stretch、recycled、GRS 和 testing 搜索主题，删除连续的内部验收式限定语；仍不使用 `our own fabric mill`、`in-house testing`、`full traceability` 或 recycled/virgin 跨材料性能等效承诺；Meta/社交/Schema description 已统一；
-- Underwear、Outdoor 和 FLATLOCK vs COVERSTITCH 因错配较高暂不优先，QC Guide 继续等待可公开的一方流程证据；
-- SEO-IMP-001–009 没有修改 URL、Title、H1、Meta、FAQ 或关键词归属；SEO-IMP-010 仅更新 Knitted Fabrics Meta 和相关能力正文，URL、Title、H1 与主词归属保持；
-- 搜索结果样本不能代替固定地理位置 Google 前 10 名；下一步部署并验收 SEO-IMP-001–010，再以当前 GRS scope certificate、交易/追溯文件和测试报告样例做证据增强。
+- 已完成 US / CA / UK 的 P0/P1 搜索意图筛查，以及 10 个商业页/指南页的只读审计；均无索引、Canonical、Title 或 H1 级 Critical；
+- V1 已完成并通过生产验收：上下文内链、技术指南社交/Schema 主图、真实 Sitemap `lastmod`、单一 child stylesheet、500 pieces per style、术语与商业事实、Sportswear/Knitted Fabrics 响应式 WebP、Logo 固有尺寸、指南阅读时长及 OEM Evaluation 内链；
+- Services/Home Hero、Manrope 自托管和 HTML 响应监测已在 SEO-IMP-035–038 完成生产验收；035–037 决策为 `keep`，038 为 `keep-monitoring`；
+- 所有者已确认 `our own fabric mill` 与 `in-house testing` 可以作为当前能力表达；Beta Textiles 资料可作为内部一方证据，但公开页面不关联两个品牌；
+- V1 没有改变现有 URL、H1 或主要页面所有权，也没有创建 Activewear/Fitness、Performance Fabrics 等近义平行页；
+- V1 于 2026-08-25 正式关闭，完整范围与逐项处置见 [`SEO 审计汇总与实施清单 V1`](seo/seo-implementation-checklist-v1.md)；后续工作统一进入 [`SEO V2 Backlog`](seo/v2-backlog.md)。
 
 ---
 
@@ -594,17 +586,17 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-18 | 按所有者决定退役历史 `seo/seo.md`（commit `48e4f22`，可从 git 历史查阅）；GSC 周期数据改入 [`seo/gsc-data-log.md`](seo/gsc-data-log.md)；本地 .git 对象库 ACL 损坏（Codex 沙箱提交遗留）已由 Codex 修复；确立协作模式：Kimi 在独立克隆 `~/kimi-repos/web_myathletik` 的 `kimi` 分支提交推送，Codex 在本地 main，定期合并 |
 | 2026-08-18 | `wp-seo-audit` skill 改造：finding 必须带依据/失效判定/先行指标/修法，接入 seo CLI 复核（kimi 分支 `d6451b6`） |
 | 2026-08-18 | SEO-IMP-015 完成：Underwear/Outdoor/Merino/Silk/Sports Accessories + 两篇指南共 7 份只读审计；修复 Silk 页图片 404（大写扩展名）；新增 IMP-025（五页图片响应式批次，后按所有者确认的优先级逻辑暂缓）、IMP-026（OEM 指南内链）、IMP-027（VideoObject 评估）、IMP-028（指南阅读时长）；SEO-IMP-022 本地核验完成；汇总见 [`seo/seo-implementation-checklist-v1.md`](seo/seo-implementation-checklist-v1.md) §4A |
-| 2026-08-18 | SEO-IMP-020 站外权威机会池建立（[`seo/offsite-authority-opportunity-pool-v1.md`](seo/offsite-authority-opportunity-pool-v1.md)）：发现 Woolmark 官方名录已有 ZHANGJIAGANG ATHLETIK 条目（网址字段指向 woolbaselayer.com，待确认许可有效性后更正）；P0（Woolmark 字段、performancefabrics 互链、Merrow 案例）/P1（ISPO Textrends、Sourcing Journal、ThomasNet/Kompass）/P2（参展、AAFA/OIA）分级，排除链农场目录；全部 NEEDS INPUT 待所有者确认 |
+| 2026-08-18 | SEO-IMP-020 [`站外权威机会池`](seo/authority/offsite-authority-opportunity-pool-v1.md) 建立：发现 Woolmark 官方名录已有 ZHANGJIAGANG ATHLETIK 条目（网址字段指向 woolbaselayer.com，待确认许可有效性后更正）；P0（Woolmark 字段、performancefabrics 互链、Merrow 案例）/P1（ISPO Textrends、Sourcing Journal、ThomasNet/Kompass）/P2（参展、AAFA/OIA）分级，排除链农场目录；全部 NEEDS INPUT 待所有者确认 |
 | 2026-08-18 | 所有者答复 IMP-020 前置问题：认证均有效；Merrow 设备在用可授权；Textrends 用 Athletik 名义；**Beta Textiles 公开独立运营、不与 Athletik 公开关联（互链取消，AGENTS.md §2 已同步）**；woolbaselayer.com 为同主体在用羊毛营销站。名录核查完成：GRS 证书 `ITS-TE-00013212-GRS-04011700` 有效至 2027-06-13（美国实体 GRS 已过期，公开引用须指向中国实体）；OEKO-TEX Buying Guide 与 WRAP 公开地图未收录（可登记/开启）；**Kompass 存在旧档案（含工厂数量等冲突表述），需认领更新**；Merrow 联系邮件草稿已附机会池附录 A |
 | 2026-08-18 | 建档主体决策（所有者）：目录新注册一律用中国主体 Zhangjiagang Athletik Clothing Co., Limited（与 Woolmark/GRS 名录一致）；Kompass、ThomasNet 旧美国主体档案按"先新建/认领 → 更新或移除旧档"顺序处理，不允许冲突档案并存（机会池 §3A，AGENTS.md §2 已同步）；ThomasNet 档案 URL 已补录，内容待所有者快照核实 |
 | 2026-08-18 | 双主体双档案策略确立（所有者）：美国主体=北美销售办公室，中国主体=主要制造商/销售商；Kompass/ThomasNet 旧美国主体档案认领重写 + 新建中国主体制造商档案，两档均须保持现行口径；AGENTS.md §2 公开角色与目录规则、机会池 §3A、progress.md 边界章节已同步 |
-| 2026-08-19 | 所有者提供 ThomasNet 美国主体档案快照；Kompass 认领/更新确认需付费（$70/3 年）；按双主体策略起草 ThomasNet 删改清单与美国/中国主体文案草案（见 `seo/offsite-authority-opportunity-pool-v1.md` 附录 B）；Kompass 因付费从 P1 降级为 P2，待所有者预算决策；ThomasNet 仍为免费 P1，待所有者按草案认领/提交 |
+| 2026-08-19 | 所有者提供 ThomasNet 美国主体档案快照；Kompass 认领/更新确认需付费（$70/3 年）；按双主体策略起草 ThomasNet 删改清单与美国/中国主体文案草案（见 [`站外权威机会池`](seo/authority/offsite-authority-opportunity-pool-v1.md) 附录 B）；Kompass 因付费从 P1 降级为 P2，待所有者预算决策；ThomasNet 仍为免费 P1，待所有者按草案认领/提交 |
 | 2026-08-19 | 所有者调整站外建档策略：**美国主体旧档不管理（不认领、不更新、不删除），仅新建中国主体 Zhangjiagang Athletik Clothing Co., Limited 档案**，统一使用 `info@athletikapparel.com`；Kompass 费用确认为 $70/3 年；新增站外引用实际收益评估（附录 C），明确目录档案以信任验证为主、编辑内容（Merrow/ISPO/Sourcing Journal）为优先 |
 | 2026-08-19 | ThomasNet 中国主体 Zhangjiagang Athletik Clothing Co., Limited 档案已注册，等待平台内部搜索与 Google 索引；可检索后在机会池 §5 台账补录 URL |
 | 2026-08-19 | **SEO-IMP-020 收尾**：Merrow Customer Story 邮件草稿已备好但所有者决定暂缓（周期较长，待后续优先级提升）；Kompass $70/3y 待决策；OEKO-TEX/WRAP 免费登记待执行；机会池完整保留供后续启动 |
 | 2026-08-19 | SEO-IMP-012/026/011/028 本地完成：37 处 FLATLOCK/ACTIVESEAM 术语修正、OEM 指南 6 条内链补强、SEO 字段真值来源统一（含 rank-math.php 加载机制注释）、指南阅读时长修复（9/8/10 min）；已提交 kimi 分支 `f15942b` |
 | 2026-08-19 | SEO-IMP-017 本地完成：Tech Pack Guide opening 段新增通用 tech pack 定义 + scope 过渡句；`about` Schema 增加 `Apparel tech pack`；已提交 kimi 分支 `f091b2e` |
-| 2026-08-19 | SEO-IMP-018 内容简报建立（[`seo/qc-guide-content-brief-v1.md`](seo/qc-guide-content-brief-v1.md)）：提议 URL `/garment-quality-control-checklist/`；QC 节点/素材/责任边界证据清单待所有者确认；发现 Services/About/首页仍有 "in-house testing" 与 IMP-010 口径不一致，列入所有者决策项 |
+| 2026-08-19 | SEO-IMP-018 [`QC Guide 内容简报`](seo/evidence/qc-guide-content-brief-v1.md) 建立：提议 URL `/garment-quality-control-checklist/`；QC 节点/素材/责任边界证据清单待所有者确认；发现 Services/About/首页仍有 "in-house testing" 与 IMP-010 口径不一致，列入所有者决策项 |
 | 2026-08-20 | 所有者澄清：Beta Textiles 不是独立法律实体，只是对外使用的名称/路径（AGENTS.md §2 已更新）；"our own fabric mill" 和 "in-house testing" 为准确表述，全站保留；检测能力为自有设备 + 第三方按客户要求选择；不过度抠字眼，目标是获客 |
 | 2026-08-20 | SEO-IMP-018 正文草稿根据所有者确认事实更新：7 个 QC 节点公开、针检/测试跟踪暂不公开、责任边界（内部执行 QC、辅助第三方、AQL 买家定义、不合格品全担）已写入；QC 简报证据清单已填写 |
 | 2026-08-20 | `main` 已安全快进对齐 `origin/kimi` 的 21 个 SEO 提交；SEO-IMP-012/018/026/028、QC Guide SEO 字段和文档状态已统一。QC Guide 本地页面与资源验收通过；生产 URL 当前仍为 404，待 Local Connect 部署后再执行生产 QA 与 GSC URL Inspection |
@@ -618,6 +610,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-25 | SEO-IMP-037 本地实施完成：Manrope 改为主题内 Latin/Latin-ext WOFF2 自托管，移除 Google Fonts 外部 CSS、字体域与 preconnect，只预加载首屏 Latin 文件；Fluent Forms CSS/jQuery 已确认按表单页加载，Cookiebot/Consent 保持早期加载，CSS minify 因收益低不改。PHP、HTML、字体文件与 1440px 首页截图验收通过，待与 IMP-035/036 合并部署后复测生产 Lab 与视觉 |
 | 2026-08-25 | SEO-IMP-038 监测基线完成：确认 Cloudflare 外层 HTML `DYNAMIC` 不等于 Flywheel 缓存失效；匿名 GET 与 Chrome 响应显示 `x-cacheable: YES`、`x-cache: MISS, HIT`，静态 CSS 为 Cloudflare HIT。建立 5 个代表 URL × 3 轮的 PowerShell 监测脚本与 normal/review/host-escalation-ready 阈值，不执行 Cache Everything；IMP-035–038 合并部署清单已建立 |
 | 2026-08-25 | SEO-IMP-035–038 生产验收完成：6 个关键页、20 个 WebP 与 2 个 WOFF2 均为 200 且 MIME 正确；Google Fonts 引用归零，Services/Home 响应式 Hero 与 Desktop/Mobile 视觉通过；四模板三次有效移动端 Lab LCP 中位数为 5.00s / 3.68s / 3.43s / 3.30s，TBT/CLS 无回归。部署后 Crawl `crawl_40f88b6c25d74ba79ee193c7be26caf9` 为 20 页、0 fetch failure、无新增状态码或 indexability 回归；035–037 决策 `keep`，038 `keep-monitoring`。表单依赖与 Consent 已检查，为避免创建真实询盘未执行成功提交 |
+| 2026-08-25 | SEO 文档完成系统整理：V1 清单冻结并关闭；建立 [`SEO V2 Backlog`](seo/v2-backlog.md) 作为唯一后续执行入口；研究、历史审计、证据、实施记录和站外权威分别归档并建立目录级结论页，历史证据未删除 |
 
 ---
 
@@ -625,8 +618,8 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
-3. 等待 Search Console Page indexing 从 2026-08-07 快照刷新，并核对“已抓取/已发现但尚未编入索引”、robots.txt 屏蔽和 404 的示例 URL。
-4. SEO-IMP-035–038 已完成生产验收；下一步在 GSC 网页版对新 QC Guide 执行实时测试并请求编入索引，按 SEO-IMP-033 计划执行代表性 URL Index Snapshot，并补充可用 CrUX 数据。
+3. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：先在 GSC 网页版对 QC Guide 做实时测试并请求编入索引，再刷新完整 28 天 GSC / GA4 / 询盘基线。
+4. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动。
 5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
 7. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。

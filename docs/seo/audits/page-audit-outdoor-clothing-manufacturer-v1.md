@@ -8,7 +8,7 @@
 >
 > 次级词簇：`base layers`、`mid-layers`、`outerwear`、hiking、trekking、cold-weather layering、merino-blend、Genesis fleece
 >
-> 依据：[`../../seo-tags.md`](../../seo-tags.md)、[`../sitemap.md`](../sitemap.md)、[`seo-implementation-checklist-v1.md`](seo-implementation-checklist-v1.md)、[`Sportswear` 审计](page-audit-sportswear-manufacturer-v1.md)
+> 依据：[`../../seo-tags.md`](../../../seo-tags.md)、[`../sitemap.md`](../../sitemap.md)、[`seo-implementation-checklist-v1.md`](../seo-implementation-checklist-v1.md)、[`Sportswear` 审计](page-audit-sportswear-manufacturer-v1.md)
 >
 > 审计方式：生产 HTML（curl）、生产 URL/robots/Sitemap/旧路径响应与本地模板静态检查（`inc/product-category-data.php`、`template-parts/product-category/page.php`、`functions.php`）
 >

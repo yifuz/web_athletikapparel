@@ -10,7 +10,7 @@
 >
 > 关键词决策背景：`clothing` 变体有七国搜索信号，但已明确决策**不立即改**现有 `Apparel` Title/H1；在 GSC 出现足够的非品牌 Query/Page 数据前保持现字段
 >
-> 依据：[`page-audit-sportswear-manufacturer-v1.md`](page-audit-sportswear-manufacturer-v1.md)（审计结构与深度基准）、[`../../seo-tags.md`](../../seo-tags.md)、[`../sitemap.md`](../sitemap.md)、[`seo-implementation-checklist-v1.md`](seo-implementation-checklist-v1.md)
+> 依据：[`page-audit-sportswear-manufacturer-v1.md`](page-audit-sportswear-manufacturer-v1.md)（审计结构与深度基准）、[`../../seo-tags.md`](../../../seo-tags.md)、[`../sitemap.md`](../../sitemap.md)、[`seo-implementation-checklist-v1.md`](../seo-implementation-checklist-v1.md)
 >
 > 审计方式：生产 HTML（curl）、生产旧路径/Sitemap/首页与相邻品类页响应、本地模板与数据静态检查
 >

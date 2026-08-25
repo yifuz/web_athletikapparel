@@ -8,7 +8,7 @@
 >
 > 次级词簇：Performance underwear / Base layer 意图簇（归属本页，当前最大验证缺口之一）
 >
-> 依据：[`serp-intent-validation-us-ca-uk-v1.md`](serp-intent-validation-us-ca-uk-v1.md)、keyword-page-mapping-v1、[`../../seo-tags.md`](../../seo-tags.md)、[`../sitemap.md`](../sitemap.md)
+> 依据：[`serp-intent-validation-us-ca-uk-v1.md`](../research/serp-intent-validation-us-ca-uk-v1.md)、keyword-page-mapping-v1、[`../../seo-tags.md`](../../../seo-tags.md)、[`../sitemap.md`](../../sitemap.md)
 >
 > 审计方式：生产 HTML（curl 实测）、生产 URL/robots/Sitemap/旧路径响应与本地模板静态检查
 >

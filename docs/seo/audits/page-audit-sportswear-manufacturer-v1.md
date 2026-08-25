@@ -8,7 +8,7 @@
 >
 > 次级词簇：`activewear manufacturer`、`fitness clothing manufacturer`、Gym、Training、Running、Yoga、Compression
 >
-> 依据：[`serp-intent-validation-us-ca-uk-v1.md`](serp-intent-validation-us-ca-uk-v1.md)、[`keyword-planner-english-baseline-v2.md`](keyword-planner-english-baseline-v2.md)、[`../../seo-tags.md`](../../seo-tags.md)、[`../sitemap.md`](../sitemap.md)
+> 依据：[`serp-intent-validation-us-ca-uk-v1.md`](../research/serp-intent-validation-us-ca-uk-v1.md)、[`keyword-planner-english-baseline-v2.md`](../research/keyword-planner-english-baseline-v2.md)、[`../../seo-tags.md`](../../../seo-tags.md)、[`../sitemap.md`](../../sitemap.md)
 >
 > 审计方式：生产 HTML、生产 URL/robots/Sitemap/旧路径响应与本地模板静态检查
 >

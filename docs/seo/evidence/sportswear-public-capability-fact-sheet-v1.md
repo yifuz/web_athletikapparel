@@ -43,9 +43,9 @@
 
 已核对的本地来源：
 
-- [`../source-content/performancefabrics-btexco/01-about-us.md`](../source-content/performancefabrics-btexco/01-about-us.md)：记录 moisture management（wicking / quick dry）、antimicrobial 和 UV protective 等功能方向；
-- [`../source-content/performancefabrics-btexco/02-products.md`](../source-content/performancefabrics-btexco/02-products.md)：记录按买家样品/技术规格开发针织面料，以及功能面料分类；
-- [`../source-content/performancefabrics-btexco/05-testing-and-inspections.md`](../source-content/performancefabrics-btexco/05-testing-and-inspections.md)：记录 BV、SGS、ITS 等第三方测试安排，但不包含本页具体成品的报告编号、样品和结果。
+- [`../source-content/performancefabrics-btexco/01-about-us.md`](../../source-content/performancefabrics-btexco/01-about-us.md)：记录 moisture management（wicking / quick dry）、antimicrobial 和 UV protective 等功能方向；
+- [`../source-content/performancefabrics-btexco/02-products.md`](../../source-content/performancefabrics-btexco/02-products.md)：记录按买家样品/技术规格开发针织面料，以及功能面料分类；
+- [`../source-content/performancefabrics-btexco/05-testing-and-inspections.md`](../../source-content/performancefabrics-btexco/05-testing-and-inspections.md)：记录 BV、SGS、ITS 等第三方测试安排，但不包含本页具体成品的报告编号、样品和结果。
 
 ## 4. 所有者确认表
 

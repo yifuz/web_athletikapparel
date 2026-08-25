@@ -8,8 +8,8 @@
 >
 > 页面类型：技术指南（Article + FAQPage + BreadcrumbList Schema）
 >
-> 依据：[`../../seo-tags.md`](../../seo-tags.md)（第 120–129 行）、[`../sitemap.md`](../sitemap.md) §2B、
-> [`seo-implementation-checklist-v1.md`](seo-implementation-checklist-v1.md) §9、AGENTS.md §5/§6
+> 依据：[`../../seo-tags.md`](../../../seo-tags.md)（第 120–129 行）、[`../sitemap.md`](../../sitemap.md) §2B、
+> [`seo-implementation-checklist-v1.md`](../seo-implementation-checklist-v1.md) §9、AGENTS.md §5/§6
 >
 > 本地数据源：`inc/technical-article-data.php:57-136`、
 > `template-parts/technical-article/page.php`、

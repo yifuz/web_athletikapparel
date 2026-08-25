@@ -38,33 +38,12 @@
 
 ## `seo/`：搜索优化
 
+- [`seo/README.md`](seo/README.md)：SEO 中央工作台、当前状态、阅读顺序与分类入口；进入 SEO 文档时先读。
+- [`seo/v2-backlog.md`](seo/v2-backlog.md)：V2 唯一执行清单，按优先级、状态、触发条件和验收标准管理后续工作。
 - [`seo/gsc-data-log.md`](seo/gsc-data-log.md)：Search Console 周期数据快照与解读（持续更新）。
-- [`seo/seo-cli-baseline-2026-08-18.md`](seo/seo-cli-baseline-2026-08-18.md)：`seo` CLI 工具接入、网络约束与首轮自动化技术爬取基线。
-- [`seo/seo-process.md`](seo/seo-process.md)：面向北美和欧洲 B2B 买家的完整 SEO 研究、实施、发布与复盘流程。
-- [`seo/seo-search-language-research-v1.md`](seo/seo-search-language-research-v1.md)：北美和欧洲买家搜索语言、意图歧义、排除词与首轮验证池。
-- [`seo/keyword-validation-v1.md`](seo/keyword-validation-v1.md)：候选商业词、技术词和信息词的实时 SERP 意图验证、风险判定与待补数据台账。
-- [`seo/keyword-planner-country-validation-v1.md`](seo/keyword-planner-country-validation-v1.md)：21 个候选词在美国、加拿大、英国、荷兰和北欧三国的历史搜索量对照与决策。
-- [`seo/keyword-discovery-commercial-us-v1.md`](seo/keyword-discovery-commercial-us-v1.md)：美国商业种子词的 289 条 Keyword Planner 扩展结果、近义聚合、错误意图清洗与保留词。
-- [`seo/keyword-discovery-product-material-us-v1.md`](seo/keyword-discovery-product-material-us-v1.md)：美国产品与材料种子词的 Compression、Outdoor、Merino 和 Knitted Fabric 意图验证。
-- [`seo/keyword-discovery-procurement-info-us-v1.md`](seo/keyword-discovery-procurement-info-us-v1.md)：美国采购信息种子词的 Tech pack、QC、供应商尽调与 FLATLOCK 意图验证。
-- [`seo/keyword-page-mapping-v1.md`](seo/keyword-page-mapping-v1.md)：三批关键词机会主表、现有页面所有权、排除边界和下一轮七国验证清单。
-- [`seo/keyword-planner-english-baseline-v2.md`](seo/keyword-planner-english-baseline-v2.md)：28 个英语代表词在美国、加拿大、英国、荷兰和北欧三国的 24 个月需求基线与下一轮 SERP 队列。
-- [`seo/serp-intent-validation-us-ca-uk-v1.md`](seo/serp-intent-validation-us-ca-uk-v1.md)：US / CA / UK 的 P0/P1 英语搜索意图样本、错配风险与首批三个页面级机会。
-- [`seo/page-audit-sportswear-manufacturer-v1.md`](seo/page-audit-sportswear-manufacturer-v1.md)：Sportswear 商业页的生产 HTML、搜索意图、内容证据、内链、Schema 与静态性能只读审计。
-- [`seo/page-audit-knitted-fabrics-manufacturer-v1.md`](seo/page-audit-knitted-fabrics-manufacturer-v1.md)：Knitted Fabrics 商业页的面料采购意图、商业单位、事实证据、认证、询盘路径与静态性能只读审计。
-- [`seo/page-audit-technical-knitwear-tech-pack-guide-v1.md`](seo/page-audit-technical-knitwear-tech-pack-guide-v1.md)：Technical Knitwear Tech Pack Guide 的通用查询边界、内容覆盖、技术参考、内链、Schema 与静态性能只读审计。
-- [`seo/page-audit-underwear-manufacturer-v1.md`](seo/page-audit-underwear-manufacturer-v1.md)、[`page-audit-outdoor-clothing-manufacturer-v1.md`](seo/page-audit-outdoor-clothing-manufacturer-v1.md)、[`page-audit-merino-wool-manufacturer-v1.md`](seo/page-audit-merino-wool-manufacturer-v1.md)、[`page-audit-silk-wear-manufacturer-v1.md`](seo/page-audit-silk-wear-manufacturer-v1.md)、[`page-audit-sports-accessories-manufacturer-v1.md`](seo/page-audit-sports-accessories-manufacturer-v1.md)：SEO-IMP-015 五个品类页只读审计（2026-08-18）。
-- [`seo/page-audit-flatlock-vs-overlock-v1.md`](seo/page-audit-flatlock-vs-overlock-v1.md)、[`page-audit-evaluate-technical-knitwear-oem-v1.md`](seo/page-audit-evaluate-technical-knitwear-oem-v1.md)：SEO-IMP-015 两篇指南只读审计（2026-08-18）。
-- [`seo/qc-guide-content-brief-v1.md`](seo/qc-guide-content-brief-v1.md)：SEO-IMP-018 的 QC Guide 搜索机会、所有者确认事实、页面结构、SEO 字段与发布状态记录。
-- [`seo/offsite-authority-opportunity-pool-v1.md`](seo/offsite-authority-opportunity-pool-v1.md)：SEO-IMP-020 站外权威与引用机会池，含 Woolmark 现成名录条目、分级行动清单与执行台账。
-- [`seo/seo-implementation-checklist-v1.md`](seo/seo-implementation-checklist-v1.md)：首批三页审计汇总，以及按收益、风险、证据依赖和验收条件排序的网站 SEO 实施真值表。
-- [`seo/change-cards/`](seo/change-cards/)：SEO 改动的单一变量、基线、Finding 处置、部署验证与 Day 7/28/90 决策记录。
-- [`seo/image-optimization-seo-imp-005-006-v1.md`](seo/image-optimization-seo-imp-005-006-v1.md)：Sportswear 与 Knitted Fabrics 共 9 张图片的真无损 WebP、响应式候选、质量验证和 uploads 部署记录。
-- [`seo/sportswear-public-capability-fact-sheet-v1.md`](seo/sportswear-public-capability-fact-sheet-v1.md)：SEO-IMP-007 的 Sportswear 性能声称、公开范围、证据类型、快速确认格式与保守改写草案。
-- [`seo/moq-update-seo-imp-008-v1.md`](seo/moq-update-seo-imp-008-v1.md)：公开 MOQ 调整为每款 500 件的代码真值、文档同步、Sportswear 首屏方案撤销和部署验收记录。
-- [`seo/knitted-fabrics-business-fact-sheet-v1.md`](seo/knitted-fabrics-business-fact-sheet-v1.md)：SEO-IMP-009 的独立面料供货、MOQ、报价、开发与交付事实记录。
-- [`seo/knitted-fabrics-claim-evidence-matrix-v1.md`](seo/knitted-fabrics-claim-evidence-matrix-v1.md)：SEO-IMP-010 的 GRS、追溯、工序、测试和性能声称证据等级、公开边界与改写记录。
-- [`seo/performance-diagnosis-seo-imp-034-v1.md`](seo/performance-diagnosis-seo-imp-034-v1.md)：SEO-IMP-034 的生产 HTML、Cloudflare/Flywheel 缓存、四类模板移动端 LCP 与受控资源 A/B 根因诊断。
+- [`seo/seo-process.md`](seo/seo-process.md)：面向北美和欧洲 B2B 买家的研究、实施、发布与复盘流程。
+- [`seo/seo-implementation-checklist-v1.md`](seo/seo-implementation-checklist-v1.md)：已关闭的 V1 实施与验收真值表，只保留历史 ID 和处置记录。
+- `seo/research/`、`seo/audits/`、`seo/evidence/`、`seo/implementation/`、`seo/authority/`：各目录均有 `README.md`，分别承接研究、历史审计、事实证据、实施记录和站外权威工作。
 
 ## `operations/`：环境与维护
 

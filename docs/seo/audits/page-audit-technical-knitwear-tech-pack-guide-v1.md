@@ -8,7 +8,7 @@
 >
 > 已验证扩展词簇：`clothing tech pack`、`garment tech pack`、`apparel tech pack`、`activewear tech pack`、`sportswear tech pack`
 >
-> 依据：[`serp-intent-validation-us-ca-uk-v1.md`](serp-intent-validation-us-ca-uk-v1.md)、[`keyword-planner-english-baseline-v2.md`](keyword-planner-english-baseline-v2.md)、[`../../seo-tags.md`](../../seo-tags.md)、[`../sitemap.md`](../sitemap.md)
+> 依据：[`serp-intent-validation-us-ca-uk-v1.md`](../research/serp-intent-validation-us-ca-uk-v1.md)、[`keyword-planner-english-baseline-v2.md`](../research/keyword-planner-english-baseline-v2.md)、[`../../seo-tags.md`](../../../seo-tags.md)、[`../sitemap.md`](../../sitemap.md)
 >
 > 审计方式：生产 HTML、URL/robots/Sitemap、Search Console 已记录状态、本地模板、当前搜索结果类型、官方技术标准与静态图片/资源检查
 >

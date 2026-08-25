@@ -8,7 +8,7 @@
 >
 > 适用买家：采购技术针织服装的品牌、批发商、进口商及其他中型 B2B 买家
 >
-> 关联流程：[`seo-process.md`](seo-process.md) 阶段 C“买家与搜索语言研究”和阶段 D“关键词发现、SERP 验证与评分”
+> 关联流程：[`seo-process.md`](../seo-process.md) 阶段 C“买家与搜索语言研究”和阶段 D“关键词发现、SERP 验证与评分”
 >
 > 首轮验证：[`keyword-validation-v1.md`](keyword-validation-v1.md)
 

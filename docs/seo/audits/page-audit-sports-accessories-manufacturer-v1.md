@@ -8,7 +8,7 @@
 >
 > 次级语义：Balaclavas、Gloves and liners、Knit accessories（neck gaiters、headbands、arm sleeves）
 >
-> 依据：[`page-audit-sportswear-manufacturer-v1.md`](page-audit-sportswear-manufacturer-v1.md)（结构与深度基准）、[`../../seo-tags.md`](../../seo-tags.md)、[`../sitemap.md`](../sitemap.md)、[`AGENTS.md`](../../AGENTS.md) §5/§6、[`seo-implementation-checklist-v1.md`](seo-implementation-checklist-v1.md) §9
+> 依据：[`page-audit-sportswear-manufacturer-v1.md`](page-audit-sportswear-manufacturer-v1.md)（结构与深度基准）、[`../../seo-tags.md`](../../../seo-tags.md)、[`../sitemap.md`](../../sitemap.md)、[`AGENTS.md`](../../../AGENTS.md) §5/§6、[`seo-implementation-checklist-v1.md`](../seo-implementation-checklist-v1.md) §9
 >
 > 审计方式：生产 HTML（`curl` 抓取，HTTP 200）、生产 robots/Sitemap/旧路径响应与本地模板静态检查（`inc/product-category-data.php:497-541`、`template-parts/product-category/page.php`、`rank-math.php`、`functions.php`）
 >

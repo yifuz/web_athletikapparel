@@ -22,9 +22,9 @@ URL、Title 和 H1 保持不变。Meta 改为 147 字符的能力概述，移除
 
 所有者于 2026-08-18 确认 Beta Textiles Co., Limited（BTEXCO）也是本业务主体。因此，以下 `performancefabrics.com` 快照可作为一方能力证据，但公开页面不展开 Athletik Clothing Inc.、Zhangjiagang Athletik Clothing Co., Limited 与 BTEXCO 的具体法律或工序责任拆分：
 
-- [`01-about-us.md`](../source-content/performancefabrics-btexco/01-about-us.md)：记录 knitting facilities、合作针织资源、dyeing/finishing houses，以及 moisture management、antimicrobial、UV protection 等功能方向；
-- [`02-products.md`](../source-content/performancefabrics-btexco/02-products.md)：记录 performance/normal knitted fabrics、recycled polyester、bamboo charcoal、Merino wool 和多类功能面料方向；
-- [`05-testing-and-inspections.md`](../source-content/performancefabrics-btexco/05-testing-and-inspections.md)：记录第三方测试安排与 Four Point System 检验；
+- [`01-about-us.md`](../../source-content/performancefabrics-btexco/01-about-us.md)：记录 knitting facilities、合作针织资源、dyeing/finishing houses，以及 moisture management、antimicrobial、UV protection 等功能方向；
+- [`02-products.md`](../../source-content/performancefabrics-btexco/02-products.md)：记录 performance/normal knitted fabrics、recycled polyester、bamboo charcoal、Merino wool 和多类功能面料方向；
+- [`05-testing-and-inspections.md`](../../source-content/performancefabrics-btexco/05-testing-and-inspections.md)：记录第三方测试安排与 Four Point System 检验；
 - uploads 中的 GRS 徽标：只能证明历史页面展示过该标识，不能替代当前 scope certificate、适用主体、有效期或 transaction certificate。
 
 上述站点快照抓取于 2026-07-06。所有者的当前主体确认提高了其一方证据等级，但具体证书状态、报告编号和项目测试结果仍需以当前文件为准。

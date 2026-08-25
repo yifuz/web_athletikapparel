@@ -8,7 +8,7 @@
 >
 > 次级词簇：`sportswear fabric manufacturer`、`knit fabric mill`、`knitted fabric factory`、`jersey fabric supplier`、Performance / Thermal / Stretch / Recycled Knit Fabrics
 >
-> 依据：[`serp-intent-validation-us-ca-uk-v1.md`](serp-intent-validation-us-ca-uk-v1.md)、[`keyword-planner-english-baseline-v2.md`](keyword-planner-english-baseline-v2.md)、[`../../seo-tags.md`](../../seo-tags.md)、[`../sitemap.md`](../sitemap.md)
+> 依据：[`serp-intent-validation-us-ca-uk-v1.md`](../research/serp-intent-validation-us-ca-uk-v1.md)、[`keyword-planner-english-baseline-v2.md`](../research/keyword-planner-english-baseline-v2.md)、[`../../seo-tags.md`](../../../seo-tags.md)、[`../sitemap.md`](../../sitemap.md)
 >
 > 审计方式：生产 HTML、生产 URL/robots/Sitemap/旧路径响应、本地模板、公开声称与静态图片/资源检查
 >
@@ -16,7 +16,7 @@
 >
 > 状态更正（2026-08-17）：当前成衣公开 MOQ 已由每款 1,000 件调整为每款 500 件。Fluent Forms 的 `Estimated Order Quantity` 是预计订单量，不等同于 per-style MOQ，现有档位未随之自动改写。下文保留实施前审计快照；其核心问题仍成立，因为 `pieces per style` 不是独立面料采购的专用单位，Knitted Fabrics 仍等待 fabric-specific 业务输入。
 
-> 实施更新（2026-08-18）：SEO-IMP-009 已解决独立面料供货、MOQ、报价输入、开发与量产语境；SEO-IMP-010 已按 [`Knitted Fabrics 声称—证据矩阵`](knitted-fabrics-claim-evidence-matrix-v1.md) 处理 GRS、追溯、工序、测试和性能强声称。下文继续保留 2026-08-17 的只读审计快照，不能再视为当前本地页面状态。
+> 实施更新（2026-08-18）：SEO-IMP-009 已解决独立面料供货、MOQ、报价输入、开发与量产语境；SEO-IMP-010 已按 [`Knitted Fabrics 声称—证据矩阵`](../evidence/knitted-fabrics-claim-evidence-matrix-v1.md) 处理 GRS、追溯、工序、测试和性能强声称。下文继续保留 2026-08-17 的只读审计快照，不能再视为当前本地页面状态。
 
 ## 1. 结论先行
 

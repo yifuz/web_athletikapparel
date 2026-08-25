@@ -8,7 +8,7 @@
 >
 > 次级词簇：`silk base layers`、`silk underwear`、`silk-blend knit`
 >
-> 依据：[`seo-tags.md`](../../seo-tags.md)、[`../sitemap.md`](../sitemap.md)、[`seo-implementation-checklist-v1.md`](seo-implementation-checklist-v1.md)、Sportswear/Knitted Fabrics 既有审计的结构基准
+> 依据：[`seo-tags.md`](../../../seo-tags.md)、[`../sitemap.md`](../../sitemap.md)、[`seo-implementation-checklist-v1.md`](../seo-implementation-checklist-v1.md)、Sportswear/Knitted Fabrics 既有审计的结构基准
 >
 > 审计方式：生产 HTML（`curl` 直连，83,277 字节）、生产图片 URL/旧路径/Sitemap/首页入链响应与本地模板静态检查
 >
@@ -60,7 +60,7 @@
 **依据（观察）：**
 
 - 生产 HTML 规格条输出 `<span>MOQ</span><strong>1,000 pcs</strong><p>Per style.</p>`；
-- 业务真值：所有者已于 2026-08-18 将公开成衣 MOQ 调整为 **500 pieces per style**（见 Sportswear 审计状态更正与 `docs/seo/moq-update-seo-imp-008-v1.md`）；
+- 业务真值：所有者已于 2026-08-18 将公开成衣 MOQ 调整为 **500 pieces per style**（见 Sportswear 审计状态更正与 [`MOQ 更新记录`](../implementation/moq-update-seo-imp-008-v1.md)）；
 - 本地代码真值源 `functions.php:25-27` `myathletik_public_moq_pieces()` 已返回 `500`，共用模板 `template-parts/product-category/page.php:20,31-36` 从该函数取值——**本地已修复，属 SEO-IMP-008 业务事实同步的待部署部分**；
 - 附带观察：询盘表 `Estimated Order Quantity` 下拉仍以 1,000 为分档边界（`Under 1,000 pcs` / `1,000–2,000 pcs` …）。该字段是 Fluent Forms 管理配置、含义是"预计订单量"而非 per-style MOQ，二者按既定决策保持分离；但 MOQ 降到 500 后，最低档同时混入合格（500–999）与不合格（<500）询盘，筛选粒度变粗。表单选项调整属站点管理配置，不在主题代码范围。
 

@@ -6,7 +6,7 @@
 >
 > 关联研究：[`seo-search-language-research-v1.md`](seo-search-language-research-v1.md)
 >
-> 关联流程：[`seo-process.md`](seo-process.md) 阶段 D“关键词发现、SERP 验证与评分”
+> 关联流程：[`seo-process.md`](../seo-process.md) 阶段 D“关键词发现、SERP 验证与评分”
 >
 > 国家数据：[`keyword-planner-country-validation-v1.md`](keyword-planner-country-validation-v1.md)
 
@@ -110,7 +110,7 @@
 
 ## 6. 临时评分
 
-按 [`seo-process.md`](seo-process.md) 的 0–3 分模型记录当前可判断维度。`需求信号` 暂不评分，因此不计算加权总分，避免制造虚假精度。
+按 [`seo-process.md`](../seo-process.md) 的 0–3 分模型记录当前可判断维度。`需求信号` 暂不评分，因此不计算加权总分，避免制造虚假精度。
 
 | 主题集群 | 业务匹配 30% | 采购意图 25% | 证据优势 20% | 可竞争性 15% | 需求信号 10% | 当前状态 |
 |---|---:|---:|---:|---:|---:|---|
