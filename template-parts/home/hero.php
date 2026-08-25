@@ -13,14 +13,44 @@ $hero_garment_a  = get_stylesheet_directory_uri() . '/assets/images/sportswear/p
 $hero_garment_a_srcset = implode(
 	', ',
 	array(
+		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-knitwear-hero-480-lossless.webp 480w',
+		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-knitwear-hero-640-lossless.webp 640w',
 		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-knitwear-hero-720-lossless.webp 720w',
 		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-knitwear-hero-960-lossless.webp 960w',
 		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-knitwear-hero-1280-lossless.webp 1280w',
 	)
 );
-$hero_garment_d  = get_stylesheet_directory_uri() . '/assets/images/sportswear/hero_bento_d.jpg';
-$hero_sewing     = get_stylesheet_directory_uri() . '/assets/images/production/hero_bento_b.jpg';
-$hero_knitting   = get_stylesheet_directory_uri() . '/assets/images/production/hero_bento_c.jpg';
+$hero_sewing = get_stylesheet_directory_uri() . '/assets/images/production/sewing-floor-bento-400-q100.webp';
+$hero_sewing_srcset = implode(
+	', ',
+	array(
+		get_stylesheet_directory_uri() . '/assets/images/production/sewing-floor-bento-160-q100.webp 160w',
+		get_stylesheet_directory_uri() . '/assets/images/production/sewing-floor-bento-240-q100.webp 240w',
+		get_stylesheet_directory_uri() . '/assets/images/production/sewing-floor-bento-320-q100.webp 320w',
+		get_stylesheet_directory_uri() . '/assets/images/production/sewing-floor-bento-400-q100.webp 400w',
+	)
+);
+$hero_knitting = get_stylesheet_directory_uri() . '/assets/images/production/circular-knitting-bento-400-q100.webp';
+$hero_knitting_srcset = implode(
+	', ',
+	array(
+		get_stylesheet_directory_uri() . '/assets/images/production/circular-knitting-bento-160-q100.webp 160w',
+		get_stylesheet_directory_uri() . '/assets/images/production/circular-knitting-bento-240-q100.webp 240w',
+		get_stylesheet_directory_uri() . '/assets/images/production/circular-knitting-bento-320-q100.webp 320w',
+		get_stylesheet_directory_uri() . '/assets/images/production/circular-knitting-bento-400-q100.webp 400w',
+	)
+);
+$hero_garment_d = get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-garment-bento-400-q100.webp';
+$hero_garment_d_srcset = implode(
+	', ',
+	array(
+		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-garment-bento-160-q100.webp 160w',
+		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-garment-bento-240-q100.webp 240w',
+		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-garment-bento-320-q100.webp 320w',
+		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-garment-bento-400-q100.webp 400w',
+	)
+);
+$hero_secondary_sizes = '(max-width: 47.9375rem) calc((100vw - 3rem) / 3), 13rem';
 ?>
 
 <section class="ma-home-hero" aria-label="<?php esc_attr_e( 'myathletik homepage introduction', 'myathletik-child' ); ?>">
@@ -53,7 +83,7 @@ $hero_knitting   = get_stylesheet_directory_uri() . '/assets/images/production/h
 					<img
 						src="<?php echo esc_url( $hero_garment_a ); ?>"
 						srcset="<?php echo esc_attr( $hero_garment_a_srcset ); ?>"
-						sizes="(max-width: 47.9375rem) calc(100vw - 2rem), 25rem"
+						sizes="(max-width: 29.99rem) calc(100vw - 2rem), (max-width: 47.9375rem) 26rem, 22rem"
 						alt=""
 						width="1280"
 						height="2240"
@@ -63,13 +93,43 @@ $hero_knitting   = get_stylesheet_directory_uri() . '/assets/images/production/h
 					>
 				</figure>
 				<figure class="ma-bento ma-bento--b">
-					<img src="<?php echo esc_url( $hero_sewing ); ?>" alt="" width="800" height="800" loading="eager">
+					<img
+						src="<?php echo esc_url( $hero_sewing ); ?>"
+						srcset="<?php echo esc_attr( $hero_sewing_srcset ); ?>"
+						sizes="<?php echo esc_attr( $hero_secondary_sizes ); ?>"
+						alt=""
+						width="400"
+						height="400"
+						loading="lazy"
+						fetchpriority="low"
+						decoding="async"
+					>
 				</figure>
 				<figure class="ma-bento ma-bento--c">
-					<img src="<?php echo esc_url( $hero_knitting ); ?>" alt="" width="506" height="506" loading="eager">
+					<img
+						src="<?php echo esc_url( $hero_knitting ); ?>"
+						srcset="<?php echo esc_attr( $hero_knitting_srcset ); ?>"
+						sizes="<?php echo esc_attr( $hero_secondary_sizes ); ?>"
+						alt=""
+						width="400"
+						height="400"
+						loading="lazy"
+						fetchpriority="low"
+						decoding="async"
+					>
 				</figure>
 				<figure class="ma-bento ma-bento--d">
-					<img src="<?php echo esc_url( $hero_garment_d ); ?>" alt="" width="800" height="800" loading="eager">
+					<img
+						src="<?php echo esc_url( $hero_garment_d ); ?>"
+						srcset="<?php echo esc_attr( $hero_garment_d_srcset ); ?>"
+						sizes="<?php echo esc_attr( $hero_secondary_sizes ); ?>"
+						alt=""
+						width="400"
+						height="400"
+						loading="lazy"
+						fetchpriority="low"
+						decoding="async"
+					>
 				</figure>
 			</div>
 		</div>

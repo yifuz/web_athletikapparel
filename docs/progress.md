@@ -614,6 +614,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-25 | SEO-IMP-024 生产验收通过：生产首页与 Contact 每页两处 Logo 均输出 512×512，资源返回 200/image/jpeg，Desktop/Mobile 显示正常；部署后 Crawl `crawl_c3321e593dcd4a54bec9811ec8775f40` 为 20 页、0 fetch failure、无新增状态码错误，Change Card 决策 `keep`。Crawl 唯一新增规则为 Services 与 Technical Guides 的 `slow_response`，重复请求约 1.2–3.0 秒且 Cloudflare 为 DYNAMIC，转入 SEO-IMP-034 独立诊断 |
 | 2026-08-25 | SEO-IMP-034 只读诊断完成：本轮 HTML 首字节约 0.70–1.02s、Lab Root Document 280–540ms，慢响应未稳定复现；四模板移动端 Lab LCP 为首页 7.2s、Sportswear 6.9s、Tech Pack Guide 7.2s、Services 14.1s，TBT/CLS 均为 0；Services 1.9 MB Hero PNG 与首页四张 eager Hero 图确认为主要可控根因，Cookiebot/字体/插件阻塞链与动态 HTML 缓存列为后续项；建立 SEO-IMP-035–038 实施队列 |
 | 2026-08-25 | SEO-IMP-035 本地实施完成：Services Hero 从单一 1.9 MB PNG 改为 480–1672px 六档 VP8L 真无损响应式 WebP；模板补齐 `srcset/sizes`、1672×941 固有尺寸、eager/high priority、async decode，并增加仅限 Services 的响应式 preload；完整尺寸 PSNR=`inf`，960px 视觉检查与 PHP 语法通过。六个资源位于 uploads、不进入 Git，待与主题代码同步部署后做生产 HTML/MIME/视觉/Lighthouse/Crawl 验收 |
+| 2026-08-25 | SEO-IMP-036 本地实施完成：首页 Hero 主图新增 480w / 640w VP8L 候选并保持唯一 eager/high；三张次图各新增 160–400w Q100 WebP，改为 lazy/low/async；因实测 LCP 为文字，没有新增图片 preload。PHP、渲染 HTML、14 个本地资源与候选图视觉检查通过；资源位于 uploads、不进入 Git，待所有者确认 Local Desktop/Mobile 构图并与主题代码同步部署后执行生产 Lighthouse/Crawl 验收 |
 
 ---
 
@@ -622,7 +623,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
 3. 等待 Search Console Page indexing 从 2026-08-07 快照刷新，并核对“已抓取/已发现但尚未编入索引”、robots.txt 屏蔽和 404 的示例 URL。
-4. 在 GSC 网页版对新 QC Guide 执行实时测试并请求编入索引；优先执行 SEO-IMP-035（Services Hero 响应式 WebP），再执行 SEO-IMP-036（首页 Hero 图片优先级）；按 SEO-IMP-033 计划执行代表性 URL Index Snapshot，并补充可用 CrUX 数据。
+4. 在 GSC 网页版对新 QC Guide 执行实时测试并请求编入索引；同步部署并验收 SEO-IMP-035 / 036 的主题代码与 uploads 资源，再按单一变量原则启动 SEO-IMP-037 的首屏阻塞链测试；按 SEO-IMP-033 计划执行代表性 URL Index Snapshot，并补充可用 CrUX 数据。
 5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
 7. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。
