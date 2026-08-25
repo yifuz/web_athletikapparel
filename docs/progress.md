@@ -613,6 +613,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-21 | SEO-IMP-024 本地实施与验收：确认共用 Logo 源图为 512×512；Header 通过 GeneratePress `generate_logo_attributes`、Footer 通过子主题 markup 补充真实固有尺寸，保持现有 CSS 显示尺寸；PHP 语法通过，本地首页 200 且两处尺寸属性生效，Desktop/Mobile Logo 显示正常；建立首张 SEO Change Card，待生产部署验收 |
 | 2026-08-25 | SEO-IMP-024 生产验收通过：生产首页与 Contact 每页两处 Logo 均输出 512×512，资源返回 200/image/jpeg，Desktop/Mobile 显示正常；部署后 Crawl `crawl_c3321e593dcd4a54bec9811ec8775f40` 为 20 页、0 fetch failure、无新增状态码错误，Change Card 决策 `keep`。Crawl 唯一新增规则为 Services 与 Technical Guides 的 `slow_response`，重复请求约 1.2–3.0 秒且 Cloudflare 为 DYNAMIC，转入 SEO-IMP-034 独立诊断 |
 | 2026-08-25 | SEO-IMP-034 只读诊断完成：本轮 HTML 首字节约 0.70–1.02s、Lab Root Document 280–540ms，慢响应未稳定复现；四模板移动端 Lab LCP 为首页 7.2s、Sportswear 6.9s、Tech Pack Guide 7.2s、Services 14.1s，TBT/CLS 均为 0；Services 1.9 MB Hero PNG 与首页四张 eager Hero 图确认为主要可控根因，Cookiebot/字体/插件阻塞链与动态 HTML 缓存列为后续项；建立 SEO-IMP-035–038 实施队列 |
+| 2026-08-25 | SEO-IMP-035 本地实施完成：Services Hero 从单一 1.9 MB PNG 改为 480–1672px 六档 VP8L 真无损响应式 WebP；模板补齐 `srcset/sizes`、1672×941 固有尺寸、eager/high priority、async decode，并增加仅限 Services 的响应式 preload；完整尺寸 PSNR=`inf`，960px 视觉检查与 PHP 语法通过。六个资源位于 uploads、不进入 Git，待与主题代码同步部署后做生产 HTML/MIME/视觉/Lighthouse/Crawl 验收 |
 
 ---
 

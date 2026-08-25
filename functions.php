@@ -97,6 +97,40 @@ function myathletik_preload_technical_guide_cover() {
 add_action( 'wp_head', 'myathletik_preload_technical_guide_cover', 3 );
 
 /**
+ * Preload the responsive Services hero image selected for the current viewport.
+ */
+function myathletik_preload_services_hero() {
+	if ( ! is_page( 'services' ) ) {
+		return;
+	}
+
+	$base_url = myathletik_images_uri() . '/services/';
+	$srcset   = implode(
+		', ',
+		array(
+			$base_url . 'services-production-line-480-lossless.webp 480w',
+			$base_url . 'services-production-line-640-lossless.webp 640w',
+			$base_url . 'services-production-line-800-lossless.webp 800w',
+			$base_url . 'services-production-line-960-lossless.webp 960w',
+			$base_url . 'services-production-line-1280-lossless.webp 1280w',
+			$base_url . 'services-production-line-1672-lossless.webp 1672w',
+		)
+	);
+	?>
+	<link
+		rel="preload"
+		as="image"
+		type="image/webp"
+		href="<?php echo esc_url( $base_url . 'services-production-line-1672-lossless.webp' ); ?>"
+		imagesrcset="<?php echo esc_attr( $srcset ); ?>"
+		imagesizes="100vw"
+		fetchpriority="high"
+	>
+	<?php
+}
+add_action( 'wp_head', 'myathletik_preload_services_hero', 3 );
+
+/**
  * Rewrite theme-relative image URLs in the final HTML to point at uploads.
  *
  * Images were moved out of the theme (and out of git) into

@@ -83,8 +83,10 @@ Lab 运行 ID：
 
 ### P0 — SEO-IMP-035：Services Hero 响应式图片
 
+状态：2026-08-25 本地实施完成，待主题代码与 uploads 资源同步部署和生产验收。
+
 - 生成保持最大实用清晰度的 WebP 响应式候选，文件放在 uploads，不进入 Git；
-- 用 `<picture>` / `srcset` / `sizes` 让移动端不再下载 1672px PNG；
+- 用 `srcset` / `sizes` 让移动端不再下载 1672px PNG；
 - 输出真实 `width`、`height`、`decoding="async"`、`loading="eager"`、`fetchpriority="high"`；
 - 保留 PNG 作为必要回退，不改变页面 URL、文案或视觉构图；
 - 预期收益最高、代码风险低，必须同时部署 uploads 文件与主题代码。

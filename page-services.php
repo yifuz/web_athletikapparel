@@ -42,12 +42,34 @@ $stages = array(
 
 get_header();
 
-$services_hero_image = get_stylesheet_directory_uri() . '/assets/images/services/hero.png';
+$services_hero_image = get_stylesheet_directory_uri() . '/assets/images/services/services-production-line-1672-lossless.webp';
+$services_hero_srcset = implode(
+	', ',
+	array(
+		get_stylesheet_directory_uri() . '/assets/images/services/services-production-line-480-lossless.webp 480w',
+		get_stylesheet_directory_uri() . '/assets/images/services/services-production-line-640-lossless.webp 640w',
+		get_stylesheet_directory_uri() . '/assets/images/services/services-production-line-800-lossless.webp 800w',
+		get_stylesheet_directory_uri() . '/assets/images/services/services-production-line-960-lossless.webp 960w',
+		get_stylesheet_directory_uri() . '/assets/images/services/services-production-line-1280-lossless.webp 1280w',
+		get_stylesheet_directory_uri() . '/assets/images/services/services-production-line-1672-lossless.webp 1672w',
+	)
+);
 ?>
 
 <main id="primary" class="site-main ma-services-page">
 	<section class="ma-services-hero ma-services-hero--bg" aria-labelledby="ma-services-title">
-		<img class="ma-services-hero__bg" src="<?php echo esc_url( $services_hero_image ); ?>" alt="<?php esc_attr_e( 'Athletik Clothing production line for full-package knitwear manufacturing', 'myathletik-child' ); ?>" loading="eager">
+		<img
+			class="ma-services-hero__bg"
+			src="<?php echo esc_url( $services_hero_image ); ?>"
+			srcset="<?php echo esc_attr( $services_hero_srcset ); ?>"
+			sizes="100vw"
+			width="1672"
+			height="941"
+			alt="<?php esc_attr_e( 'Athletik Clothing production line for full-package knitwear manufacturing', 'myathletik-child' ); ?>"
+			loading="eager"
+			fetchpriority="high"
+			decoding="async"
+		>
 		<div class="ma-services-hero__overlay" aria-hidden="true"></div>
 		<div class="ma-section-inner">
 			<p class="ma-section-kicker"><?php esc_html_e( 'From sample to shipment', 'myathletik-child' ); ?></p>
