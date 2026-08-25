@@ -170,7 +170,7 @@ add_action( 'template_redirect', 'myathletik_start_image_url_buffer', 1 );
 add_filter( 'generate_load_child_theme_stylesheet', '__return_false' );
 
 /**
- * Enqueue the heading font and child stylesheet.
+ * Enqueue the child stylesheet.
  *
  * GeneratePress owns the parent `generate-style` handle. The dependency keeps
  * the child overrides after the parent without loading the parent's metadata-
@@ -180,19 +180,11 @@ function myathletik_enqueue_styles() {
 	$child = wp_get_theme();
 	$child_style_path = get_stylesheet_directory() . '/style.css';
 
-	// Heading font: only the weights used in this theme, with display=swap.
-	wp_enqueue_style(
-		'myathletik-google-fonts',
-		'https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap',
-		array(),
-		null
-	);
-
 	// Child stylesheet.
 	wp_enqueue_style(
 		'myathletik-child-style',
 		get_stylesheet_uri(),
-		array( 'generate-style', 'myathletik-google-fonts' ),
+		array( 'generate-style' ),
 		file_exists( $child_style_path ) ? filemtime( $child_style_path ) : $child->get( 'Version' )
 	);
 
@@ -208,6 +200,24 @@ function myathletik_enqueue_styles() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_styles' );
+
+/**
+ * Preload the Latin Manrope file used by the above-the-fold heading.
+ *
+ * The Latin-ext file remains available through unicode-range in style.css and
+ * is fetched only when the rendered copy needs those glyphs.
+ */
+function myathletik_preload_heading_font() {
+	$font_path = get_stylesheet_directory() . '/assets/fonts/manrope-latin-600-800.woff2';
+
+	if ( ! file_exists( $font_path ) ) {
+		return;
+	}
+	?>
+	<link rel="preload" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/fonts/manrope-latin-600-800.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
+	<?php
+}
+add_action( 'wp_head', 'myathletik_preload_heading_font', 2 );
 
 /**
  * Enqueue successful inquiry tracking wherever form 3 is rendered.
@@ -385,28 +395,6 @@ function myathletik_add_inquiry_attribution( $form_data, $form_id ) {
 	return $form_data;
 }
 add_filter( 'fluentform/insert_response_data', 'myathletik_add_inquiry_attribution', 10, 2 );
-
-/**
- * Add preconnect hints for Google Fonts.
- *
- * @param array  $urls          Resource hint URLs.
- * @param string $relation_type Hint relation type.
- * @return array
- */
-function myathletik_resource_hints( $urls, $relation_type ) {
-	if ( 'preconnect' === $relation_type ) {
-		$urls[] = array(
-			'href' => 'https://fonts.googleapis.com',
-		);
-		$urls[] = array(
-			'href'        => 'https://fonts.gstatic.com',
-			'crossorigin' => 'anonymous',
-		);
-	}
-
-	return $urls;
-}
-add_filter( 'wp_resource_hints', 'myathletik_resource_hints', 10, 2 );
 
 /**
  * Theme supports / setup.

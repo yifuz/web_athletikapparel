@@ -615,6 +615,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-25 | SEO-IMP-034 只读诊断完成：本轮 HTML 首字节约 0.70–1.02s、Lab Root Document 280–540ms，慢响应未稳定复现；四模板移动端 Lab LCP 为首页 7.2s、Sportswear 6.9s、Tech Pack Guide 7.2s、Services 14.1s，TBT/CLS 均为 0；Services 1.9 MB Hero PNG 与首页四张 eager Hero 图确认为主要可控根因，Cookiebot/字体/插件阻塞链与动态 HTML 缓存列为后续项；建立 SEO-IMP-035–038 实施队列 |
 | 2026-08-25 | SEO-IMP-035 本地实施完成：Services Hero 从单一 1.9 MB PNG 改为 480–1672px 六档 VP8L 真无损响应式 WebP；模板补齐 `srcset/sizes`、1672×941 固有尺寸、eager/high priority、async decode，并增加仅限 Services 的响应式 preload；完整尺寸 PSNR=`inf`，960px 视觉检查与 PHP 语法通过。六个资源位于 uploads、不进入 Git，待与主题代码同步部署后做生产 HTML/MIME/视觉/Lighthouse/Crawl 验收 |
 | 2026-08-25 | SEO-IMP-036 本地实施完成：首页 Hero 主图新增 480w / 640w VP8L 候选并保持唯一 eager/high；三张次图各新增 160–400w Q100 WebP，改为 lazy/low/async；因实测 LCP 为文字，没有新增图片 preload。PHP、渲染 HTML、14 个本地资源与候选图视觉检查通过；资源位于 uploads、不进入 Git，待所有者确认 Local Desktop/Mobile 构图并与主题代码同步部署后执行生产 Lighthouse/Crawl 验收 |
+| 2026-08-25 | SEO-IMP-037 本地实施完成：Manrope 改为主题内 Latin/Latin-ext WOFF2 自托管，移除 Google Fonts 外部 CSS、字体域与 preconnect，只预加载首屏 Latin 文件；Fluent Forms CSS/jQuery 已确认按表单页加载，Cookiebot/Consent 保持早期加载，CSS minify 因收益低不改。PHP、HTML、字体文件与 1440px 首页截图验收通过，待与 IMP-035/036 合并部署后复测生产 Lab 与视觉 |
 
 ---
 
