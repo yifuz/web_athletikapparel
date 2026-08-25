@@ -89,6 +89,12 @@ Logo 固有尺寸部署后抓取 20 个页面、0 个 fetch failure、33 个 Fin
 
 其余既有 Finding 分组未变：Cloudflare 邮箱混淆端点维持 `not-needed`；Sitemap `noindex` 为有意控制；Rich Result 严格字段、HSTS、首页 `og:description`、图片尺寸启发式和 `/wp-sitemap.xml` 跳转继续按原结论处理。
 
+### 3.4 SEO-IMP-034 性能根因诊断（2026-08-25）
+
+五个代表 URL 的三次新连接测量中，HTML `time_starttransfer` 约为 0.70–1.02s；Cloudflare/Flywheel 仍返回 `DYNAMIC`，但此前 1.2–3.0s 的慢响应未稳定复现。本轮四模板移动端 Lab 为：首页 LCP 7.2s、Sportswear 6.9s、Tech Pack Guide 7.2s、Services 14.1s；TBT 与 CLS 均为 0，Root Document 为 280–540ms，本次仍无 CrUX。
+
+根因优先级已经由受控资源 A/B 收敛：Services 的 1.9 MB 单一 Hero PNG 是明确 LCP 资源；首页四张 Hero 图全部 eager，阻断三张次要图时 LCP 约由 8.7s 降至 6.9s，阻断全部主题图片时约降至 4.1s。Cookiebot 单独阻断的改善约 0.6–0.8s，属于后续共同阻塞链项。详细证据、Finding outcome 与 SEO-IMP-035–038 队列见 [`performance-diagnosis-seo-imp-034-v1.md`](performance-diagnosis-seo-imp-034-v1.md)。
+
 ## 4. GSC 数据
 
 GSC 周期性数据快照已移入独立持续记录文件 [`gsc-data-log.md`](gsc-data-log.md)，

@@ -64,6 +64,7 @@
 - [`seo/moq-update-seo-imp-008-v1.md`](seo/moq-update-seo-imp-008-v1.md)：公开 MOQ 调整为每款 500 件的代码真值、文档同步、Sportswear 首屏方案撤销和部署验收记录。
 - [`seo/knitted-fabrics-business-fact-sheet-v1.md`](seo/knitted-fabrics-business-fact-sheet-v1.md)：SEO-IMP-009 的独立面料供货、MOQ、报价、开发与交付事实记录。
 - [`seo/knitted-fabrics-claim-evidence-matrix-v1.md`](seo/knitted-fabrics-claim-evidence-matrix-v1.md)：SEO-IMP-010 的 GRS、追溯、工序、测试和性能声称证据等级、公开边界与改写记录。
+- [`seo/performance-diagnosis-seo-imp-034-v1.md`](seo/performance-diagnosis-seo-imp-034-v1.md)：SEO-IMP-034 的生产 HTML、Cloudflare/Flywheel 缓存、四类模板移动端 LCP 与受控资源 A/B 根因诊断。
 
 ## `operations/`：环境与维护
 
