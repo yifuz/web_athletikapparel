@@ -616,6 +616,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-25 | SEO-IMP-035 本地实施完成：Services Hero 从单一 1.9 MB PNG 改为 480–1672px 六档 VP8L 真无损响应式 WebP；模板补齐 `srcset/sizes`、1672×941 固有尺寸、eager/high priority、async decode，并增加仅限 Services 的响应式 preload；完整尺寸 PSNR=`inf`，960px 视觉检查与 PHP 语法通过。六个资源位于 uploads、不进入 Git，待与主题代码同步部署后做生产 HTML/MIME/视觉/Lighthouse/Crawl 验收 |
 | 2026-08-25 | SEO-IMP-036 本地实施完成：首页 Hero 主图新增 480w / 640w VP8L 候选并保持唯一 eager/high；三张次图各新增 160–400w Q100 WebP，改为 lazy/low/async；因实测 LCP 为文字，没有新增图片 preload。PHP、渲染 HTML、14 个本地资源与候选图视觉检查通过；资源位于 uploads、不进入 Git，待所有者确认 Local Desktop/Mobile 构图并与主题代码同步部署后执行生产 Lighthouse/Crawl 验收 |
 | 2026-08-25 | SEO-IMP-037 本地实施完成：Manrope 改为主题内 Latin/Latin-ext WOFF2 自托管，移除 Google Fonts 外部 CSS、字体域与 preconnect，只预加载首屏 Latin 文件；Fluent Forms CSS/jQuery 已确认按表单页加载，Cookiebot/Consent 保持早期加载，CSS minify 因收益低不改。PHP、HTML、字体文件与 1440px 首页截图验收通过，待与 IMP-035/036 合并部署后复测生产 Lab 与视觉 |
+| 2026-08-25 | SEO-IMP-038 监测基线完成：确认 Cloudflare 外层 HTML `DYNAMIC` 不等于 Flywheel 缓存失效；匿名 GET 与 Chrome 响应显示 `x-cacheable: YES`、`x-cache: MISS, HIT`，静态 CSS 为 Cloudflare HIT。建立 5 个代表 URL × 3 轮的 PowerShell 监测脚本与 normal/review/host-escalation-ready 阈值，不执行 Cache Everything；IMP-035–038 合并部署清单已建立 |
 
 ---
 
@@ -624,7 +625,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
 3. 等待 Search Console Page indexing 从 2026-08-07 快照刷新，并核对“已抓取/已发现但尚未编入索引”、robots.txt 屏蔽和 404 的示例 URL。
-4. 在 GSC 网页版对新 QC Guide 执行实时测试并请求编入索引；同步部署并验收 SEO-IMP-035 / 036 的主题代码与 uploads 资源，再按单一变量原则启动 SEO-IMP-037 的首屏阻塞链测试；按 SEO-IMP-033 计划执行代表性 URL Index Snapshot，并补充可用 CrUX 数据。
+4. 按 [`seo/deployment-batch-seo-imp-035-038.md`](seo/deployment-batch-seo-imp-035-038.md) 同步部署并验收 SEO-IMP-035–037 的主题代码、字体与 20 个 uploads 资源；用 SEO-IMP-038 脚本记录部署后响应窗口并保存 Crawl ID。另在 GSC 网页版对新 QC Guide 执行实时测试并请求编入索引，按 SEO-IMP-033 计划执行代表性 URL Index Snapshot，并补充可用 CrUX 数据。
 5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
 7. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。
