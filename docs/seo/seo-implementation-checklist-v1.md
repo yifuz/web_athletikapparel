@@ -91,7 +91,7 @@
 | SEO-IMP-015 | 审计 Underwear、Outdoor、Merino、Silk、Sports Accessories 与三篇指南剩余两篇 | 高：扩大已验证的页面级基线 | 低 | 第一批部署稳定后逐页执行 | **已完成（2026-08-18，7 份只读审计文档；发现汇总见本文 §4A）** |
 | SEO-IMP-016 | 为类目页评估 `Service` Schema，保持可见内容和事实一致 | 低到中：增强机器可读服务关系，但不作为排名捷径 | 中 | 页面业务事实确认；通过 Schema Validator | 待评估 |
 | SEO-IMP-022 | 固化 Knitted Fabrics 主次词架构：保留现有 URL/Title/H1，以 `performance knit fabric` 和 `sportswear fabric manufacturer` 补充产品、应用和询盘语境 | 中到高：同时保留精准采购意图和 Performance 主题覆盖，不引入近义页内耗 | 低到中：事实不足时扩写会放大未证实的工艺、测试或独立供货承诺 | SEO-IMP-009/010 已完成；后续只依据 GSC 和新增一方证据迭代，不做关键词堆叠 | **本地核验完成（2026-08-18）**：URL/Title/H1 保持；`performance knit fabric` 已进入 What we make、子类标题、正文与 alt 语境；`sportswear fabric manufacturer` 精确短语未出现，列为所有者批准的微文案候选，不自行改写；GSC 分组监测见 `gsc-data-log.md` |
-| SEO-IMP-024 | 为 Header 与 Footer 共用 Logo 补充固有 `width`/`height` | 低到中：减少共享布局的潜在 CLS，完善全站图片静态信号 | 低：需确认 GeneratePress Logo 输出与 Footer markup 的统一尺寸策略 | 2026-08-21 已核对源图为 512×512，生产 Header/Footer 两处均缺尺寸属性 | **本地代码、渲染与视觉验收完成（2026-08-21）**：PHP 语法通过，本地首页 200，Header 通过 `generate_logo_attributes`、Footer 通过子主题 markup 输出 `512×512`，Desktop/Mobile Logo 显示正常；待生产验收，Change Card 见 [`SEO-IMP-024`](change-cards/seo-imp-024-logo-intrinsic-dimensions.md) |
+| SEO-IMP-024 | 为 Header 与 Footer 共用 Logo 补充固有 `width`/`height` | 低到中：减少共享布局的潜在 CLS，完善全站图片静态信号 | 低：需确认 GeneratePress Logo 输出与 Footer markup 的统一尺寸策略 | 2026-08-21 已核对源图为 512×512，生产 Header/Footer 两处均缺尺寸属性 | **生产验收通过（2026-08-25）**：首页与 Contact 每页两处 Logo 均输出 `512×512`，资源 200/MIME 正确，Desktop/Mobile 显示正常；部署后 Crawl 无新增状态码错误。Change Card 决策 `keep`：[`SEO-IMP-024`](change-cards/seo-imp-024-logo-intrinsic-dimensions.md) |
 
 ### D. 第四批：内容扩展与站外权威
 
@@ -131,6 +131,7 @@
 | SEO-IMP-031 | 冻结 SEO 批次部署后的生产 Crawl Snapshot，并与 2026-08-18 全站基线比较 | 高：建立以后可重复的技术回归基准 | 低：只读抓取；不同范围不得强行比较 | **已完成（2026-08-20）**：新 Crawl ID `crawl_3f1fc0fbb955403791272722942441a9`；无新增状态码错误，可比性 `review-required` 的原因已记录 |
 | SEO-IMP-032 | 在 SEO 流程中增加 Change Card，记录主要变量、基线、指标、防护指标、干扰因素、Finding 处置及 Day 7/28/90 决策 | 高：避免“修改很多但无法判断哪项有效” | 低 | **流程已完成（2026-08-20）**；从下一项 SEO 改动开始使用，数据成熟后运行 `measure-change` |
 | SEO-IMP-033 | 建立索引覆盖抽样、模板性能基线和周期报告路由 | 中到高：把 Page indexing、CWV 和增长机会从临时检查变为持续监控 | 低到中：需控制 URL Inspection 配额，并区分 Lab/Field 数据 | **基线已完成（2026-08-20）**：18 个 Sitemap URL 按每日 10 个预计 2 天一轮；首页、Sportswear、Tech Pack Guide、Services 已建立首次移动端 Lab 基线。本次无 CrUX，4 个 LCP Finding 均因需重复运行和资源归因而 `deferred`；未提交索引或修改页面 |
+| SEO-IMP-034 | 定位生产 HTML 慢响应与四类模板 LCP 根因，区分页面代码、WordPress、Cloudflare 缓存和主机响应 | 高：如果可复现，可直接改善抓取效率与用户体验；比继续扩写内容更接近当前性能上限 | 中：单次 Lab 与外部网络波动不能直接触发代码改动；主机/CDN 项需要所有者执行 | **待诊断（2026-08-25）**：部署后 Crawl 在 Services、Technical Guides 新增 `slow_response`；三次重复请求仍约 1.2–3.0s 且 `CF-Cache-Status: DYNAMIC`，结合既有四模板 Lab LCP 基线做只读取证 |
 
 
 
@@ -221,7 +222,7 @@
 
 1. 在 GSC 网页版对 QC Guide 执行实时测试并请求编入索引；
 2. 按 SEO-IMP-033 的容量计划执行代表性 URL Index Snapshot，并复跑四类模板性能测试、补充可用 CrUX 数据；
-3. 完成 SEO-IMP-024 的生产验收，并在首张 SEO Change Card 中填写部署后 Crawl ID；
+3. 执行 SEO-IMP-034，只读定位生产 HTML 响应与四类模板 LCP 资源，再决定代码或主机/CDN 动作；
 4. 建立 GSC 7 天/28 天页面级监测，分别观察商业采购词、QC/Tech Pack 信息词与宽泛 Performance 词；
 5. 核对 GA4 `generate_lead` 与 Organic Landing Page 后，再运行转化层面月度报告；
 6. 收集当前 GRS scope certificate、可公开交易/追溯文件和测试报告样例，作为后续证据增强输入；

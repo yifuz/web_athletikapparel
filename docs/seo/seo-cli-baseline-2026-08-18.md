@@ -1,4 +1,4 @@
-# SEO CLI 工具接入、首轮与生产后基线（2026-08-18 至 2026-08-20）
+# SEO CLI 工具接入、首轮与生产后基线（2026-08-18 至 2026-08-25）
 
 > 工具：[`iannuttall/seo`](https://github.com/iannuttall/seo)（Apache-2.0，本地 CLI + MCP）
 > 安装版本：v0.2.36，全局 npm 安装于本机（Node v22.23.1）
@@ -18,6 +18,7 @@
   - `gsc-perf-overview-2026-08-18.json`（90 天表现总览）
   - `gsc-pages-28d.json` / `gsc-queries-28d.json` / `gsc-countries-28d.json`
   - 2026-08-20 生产后 Crawl Snapshot：`crawl_3f1fc0fbb955403791272722942441a9`
+  - 2026-08-25 SEO-IMP-024 部署后 Crawl Snapshot：`crawl_c3321e593dcd4a54bec9811ec8775f40`
 
 ## 2. 网络约束（重要操作经验）
 
@@ -80,6 +81,14 @@ SEO-IMP 批次完成生产部署后重新抓取：20 个 URL、0 个 fetch failu
 
 四次报告均只返回 `Improve the largest visible content` 一项。数值属于受控环境中的单次 Lab 诊断，不能当作真实用户 CWV 或排名结果；在取得重复运行和可用 CrUX 数据前，不据此直接修改页面。
 
+### 3.3 2026-08-25 SEO-IMP-024 部署后 Crawl Snapshot
+
+Logo 固有尺寸部署后抓取 20 个页面、0 个 fetch failure、33 个 Finding（2 High / 6 Medium / 25 Low），保存为 `crawl_c3321e593dcd4a54bec9811ec8775f40`。与 2026-08-20 Snapshot `crawl_3f1fc0fbb955403791272722942441a9` 比较结果为 `comparable / complete`：页面数不变、无新增或修复的状态码错误，唯一变差的规则是 `slow_response` 由 0 增至 2。
+
+受影响 URL 为 `/services/` 与 `/technical-guides/`。部署后各重复请求三次：Services 约 2962 / 1247 / 1188ms，Technical Guides 约 1566 / 1243 / 1243ms，Cloudflare 均返回 `CF-Cache-Status: DYNAMIC`。该信号可以复现，但与 SEO-IMP-024 只增加两处图片固有尺寸属性的变量不匹配，因此不归因于 Logo 改动，转入 SEO-IMP-034 做 HTML 响应、缓存与 LCP 根因诊断。
+
+其余既有 Finding 分组未变：Cloudflare 邮箱混淆端点维持 `not-needed`；Sitemap `noindex` 为有意控制；Rich Result 严格字段、HSTS、首页 `og:description`、图片尺寸启发式和 `/wp-sitemap.xml` 跳转继续按原结论处理。
+
 ## 4. GSC 数据
 
 GSC 周期性数据快照已移入独立持续记录文件 [`gsc-data-log.md`](gsc-data-log.md)，
@@ -109,6 +118,7 @@ GSC 数据导出命令见 [`gsc-data-log.md`](gsc-data-log.md)。
 - [x] 建立 quota-aware `index-coverage-plan`：Sitemap 当前解析出 18 个 URL，按每日 10 个 URL 预计 2 天完成一轮，低于 7 天目标周期；该报告只制定抽样容量，不代表页面已经收录；
 - [ ] 核对 GA4 `generate_lead` 的实际事件与 Landing Page 数据，再启用转化层面的月度报告；
 - [x] 为首页、商业品类页、Technical Guide、Services/Contact 各选一个模板 URL，建立首次移动端 Lighthouse 基线；本次无 CrUX 字段数据，四项均按单次 Lab 证据标记 `deferred`；
+- [x] SEO-IMP-024 部署后保存 Crawl Snapshot 并完成可比回归检查；Logo 生产验收通过，慢响应转入独立诊断；
 - [ ] 按上述容量使用代表性 URL 做周期 Index Snapshot，并为四类模板补充重复 Lab 运行与可用 CrUX 数据；
 - [ ] 每月例行 GSC 导出归档到 [`gsc-data-log.md`](gsc-data-log.md)，与 `seo-process.md` 月度复盘模板对齐；
 - [ ] Cloudflare HSTS 开启（低优先顺手项）。
