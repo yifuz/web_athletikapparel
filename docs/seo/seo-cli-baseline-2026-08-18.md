@@ -25,11 +25,13 @@
 
 - 本机直连 Google API 不通；`seo auth login` 初始报 `fetch failed` 的原因即此。
 - Fastlink（Clash 内核）系统代理端口为 `127.0.0.1:7892`，实测可连通 `accounts.google.com` 与 `oauth2.googleapis.com`。
-- 所有需要访问 Google 的 `seo` 命令必须带代理环境变量运行：
+- 所有需要访问 Google 的 `seo` 命令必须通过 Fastlink 代理运行。仅设置下列环境变量适用于原有 shell 环境：
 
   ```bash
   HTTPS_PROXY=http://127.0.0.1:7892 HTTP_PROXY=http://127.0.0.1:7892 seo <command>
   ```
+
+- 2026-08-26 在当前 PowerShell 7 + Node v22.23.1 环境复核发现：`seo` 使用自带的 `undici`，只设置 `HTTPS_PROXY` / `HTTP_PROXY` 仍会报 `fetch failed`。本轮采用一次性进程级 `EnvHttpProxyAgent` 注入后成功读取 GSC / GA4；没有改动 CLI、OAuth 或项目配置。以后若复现，先用 `seo doctor --json` 核对授权，再采用同一临时注入方式，不把代理凭据写入仓库。
 
 - `seo auth login` 是交互式流程（浏览器 + 本地回调），必须在真实终端中运行，不能放在无 TTY 的后台进程。
 - 纯爬取目标站（`seo crawl` / `seo report --url`）不访问 Google，不需要代理。
@@ -140,10 +142,10 @@ GSC 数据导出命令见 [`gsc-data-log.md`](gsc-data-log.md)。
 - [x] 建立默认项目 Profile 并绑定 GSC、GA4、品牌词和重点 URL；
 - [x] SEO 批次部署后保存新 Crawl Snapshot，并与 2026-08-18 全站基线显式比较；
 - [x] 建立 quota-aware `index-coverage-plan`：Sitemap 当前解析出 18 个 URL，按每日 10 个 URL 预计 2 天完成一轮，低于 7 天目标周期；该报告只制定抽样容量，不代表页面已经收录；
-- [ ] 核对 GA4 `generate_lead` 的实际事件与 Landing Page 数据，再启用转化层面的月度报告；
+- [x] 核对 GA4 `generate_lead` 与 Organic Landing Page：2026-07-26 至 08-22 的 Organic Search 为 2 sessions、0 `generate_lead`；全站 8 次事件已按日期/渠道/落地页归档，真实与合格询盘数仍由所有者人工核对；
 - [x] 为首页、商业品类页、Technical Guide、Services/Contact 各选一个模板 URL，建立首次移动端 Lighthouse 基线；本次无 CrUX 字段数据，四项均按单次 Lab 证据标记 `deferred`；
 - [x] SEO-IMP-024 部署后保存 Crawl Snapshot 并完成可比回归检查；Logo 生产验收通过，慢响应转入独立诊断；
 - [x] SEO-IMP-035–038 合并部署生产验收完成：资源、字体、HTML、视觉、重复 Lab、响应窗口与 Crawl 均已归档；035–037 `keep`，038 `keep-monitoring`；
 - [ ] 按上述容量使用代表性 URL 做周期 Index Snapshot，并为四类模板补充重复 Lab 运行与可用 CrUX 数据；
-- [ ] 每月例行 GSC 导出归档到 [`gsc-data-log.md`](gsc-data-log.md)，与 `seo-process.md` 月度复盘模板对齐；
+- [x] 首次完整 GSC / GA4 28 天基线已归档到 [`gsc-data-log.md`](gsc-data-log.md)，并与 `seo-process.md` 月度复盘模板对齐；后续继续按月追加；
 - [ ] Cloudflare HSTS 开启（低优先顺手项）。

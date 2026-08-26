@@ -288,6 +288,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - 所有者已确认 `our own fabric mill` 与 `in-house testing` 可以作为当前能力表达；Beta Textiles 资料可作为内部一方证据，但公开页面不关联两个品牌；
 - V1 没有改变现有 URL、H1 或主要页面所有权，也没有创建 Activewear/Fitness、Performance Fabrics 等近义平行页；
 - V1 于 2026-08-25 正式关闭，完整范围与逐项处置见 [`SEO 审计汇总与实施清单 V1`](seo/seo-implementation-checklist-v1.md)；后续工作统一进入 [`SEO V2 Backlog`](seo/v2-backlog.md)。
+- SEO-V2-002 已于 2026-08-26 完成 2026-07-26 至 08-22 的数据层刷新：GSC 为 5 点击 / 184 曝光，GA4 Organic Search 为 2 sessions / 0 `generate_lead`；全部页面与可见查询低于 100 曝光门槛，决策为 `no-change / deferred`。8 次全站 `generate_lead` 仍需所有者从表单、收件箱或 CRM 汇总真实、合格及测试/垃圾数量后关闭。
 
 ---
 
@@ -612,6 +613,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-25 | SEO-IMP-035–038 生产验收完成：6 个关键页、20 个 WebP 与 2 个 WOFF2 均为 200 且 MIME 正确；Google Fonts 引用归零，Services/Home 响应式 Hero 与 Desktop/Mobile 视觉通过；四模板三次有效移动端 Lab LCP 中位数为 5.00s / 3.68s / 3.43s / 3.30s，TBT/CLS 无回归。部署后 Crawl `crawl_40f88b6c25d74ba79ee193c7be26caf9` 为 20 页、0 fetch failure、无新增状态码或 indexability 回归；035–037 决策 `keep`，038 `keep-monitoring`。表单依赖与 Consent 已检查，为避免创建真实询盘未执行成功提交 |
 | 2026-08-25 | SEO 文档完成系统整理：V1 清单冻结并关闭；建立 [`SEO V2 Backlog`](seo/v2-backlog.md) 作为唯一后续执行入口；研究、历史审计、证据、实施记录和站外权威分别归档并建立目录级结论页，历史证据未删除 |
 | 2026-08-26 | SEO-V2-001 完成：所有者确认已在 GSC 网页版对 QC Guide 请求编入索引；未提供精确实时测试结论、当前覆盖分类或最后抓取状态，均按 `unavailable` 记录。后续转入 SEO-V2-003 常规监测，不重复请求或改写页面 |
+| 2026-08-26 | SEO-V2-002 数据层完成：最新 final 28 天窗口为 2026-07-26 至 08-22；GSC 5 点击 / 184 曝光，GA4 Organic Search 2 sessions / 0 `generate_lead`。Page / Query 均低于 100 曝光门槛，不改页面；全站 8 次 `generate_lead` 待所有者用询盘后台核对业务真实性和合格度 |
 
 ---
 
@@ -619,7 +621,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
-3. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001 已完成；达到完整窗口后刷新 28 天 GSC / GA4 / 询盘基线，并继续 SEO-V2-003 索引监测。
+3. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001 已完成；SEO-V2-002 的 GSC / GA4 数据层已完成，等待所有者补齐询盘人工汇总；同时继续 SEO-V2-003 索引监测。
 4. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动。
 5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。

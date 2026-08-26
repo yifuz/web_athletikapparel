@@ -12,7 +12,7 @@
 
 1. [`../progress.md`](../progress.md)：全项目当前状态和下一步；
 2. [`v2-backlog.md`](v2-backlog.md)：当前 SEO 待办、优先级和重开条件；
-3. [`gsc-data-log.md`](gsc-data-log.md)：GSC 周期数据和样本门槛；
+3. [`gsc-data-log.md`](gsc-data-log.md)：GSC / GA4 / 询盘周期数据和样本门槛；
 4. [`seo-process.md`](seo-process.md)：研究、实施、发布和复盘规则；
 5. 只有需要历史实施依据时，才读取 [`seo-implementation-checklist-v1.md`](seo-implementation-checklist-v1.md) 或对应子目录。
 
@@ -23,7 +23,7 @@ URL、H1 和页面所有权仍以 [`../sitemap.md`](../sitemap.md) 为准；Titl
 | 文件 | 状态 | 用途 |
 |---|---|---|
 | [`v2-backlog.md`](v2-backlog.md) | 活跃 | 当前优先级、触发条件、依赖和关闭标准 |
-| [`gsc-data-log.md`](gsc-data-log.md) | 持续更新 | Search Console 周期快照与数据解读 |
+| [`gsc-data-log.md`](gsc-data-log.md) | 持续更新 | Search Console、GA4 与人工询盘核验的周期快照和数据解读 |
 | [`seo-process.md`](seo-process.md) | 规范 | SEO 证据层级、样本门槛、Change Card 和复盘流程 |
 | [`seo-cli-baseline-2026-08-18.md`](seo-cli-baseline-2026-08-18.md) | 基线 / 持续补录 | `seo` CLI、Crawl、性能和索引自动化基线 |
 | [`seo-implementation-checklist-v1.md`](seo-implementation-checklist-v1.md) | 已冻结 | V1 审计、实施、Finding 处置与生产验收记录 |
@@ -42,6 +42,7 @@ URL、H1 和页面所有权仍以 [`../sitemap.md`](../sitemap.md) 为准；Titl
 
 - V1 生产实施已经完成，SEO-IMP-035–037 决策为 `keep`，SEO-IMP-038 为 `keep-monitoring`；
 - 最新冻结 Crawl 为 `crawl_40f88b6c25d74ba79ee193c7be26caf9`：20 页、0 fetch failure；没有新增状态码错误、Title 变化或 indexability flip；
+- SEO-V2-002 已完成 2026-07-26 至 08-22 的 GSC / GA4 数据层：GSC 5 点击 / 184 曝光；GA4 Organic Search 2 sessions、0 `generate_lead`。页面与查询均未达到修改门槛，当前只等待不含个人数据的真实/合格询盘人工汇总；
 - Cloudflare `/cdn-cgi/l/email-protection`、Sitemap `noindex` 和 `/wp-sitemap.xml` 跳转均已有明确 `not-needed` / 有意控制处置；
 - Breadcrumb 严格字段、HSTS、剩余大图、品类社交图和可选 Schema 不是 V1 阻塞项，重开条件统一记录在 V2 Backlog；
 - 当前没有批准新的商业页面或近义页面。任何新 URL 必须重新经过业务匹配、SERP、页面所有权和 301 决策。
