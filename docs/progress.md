@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-08-20。
+最后更新：2026-08-26。
 
 ---
 
@@ -23,7 +23,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 - Technical Guides 内容中心及 4 篇指南均已在生产上线，站点导航、首页和页脚有稳定入口。
 - Rank Math Page Sitemap 于 2026-08-20 生产核验包含 19 个 URL，其中包括内容中心与 4 篇指南。
 - 浏览器、Googlebot、OAI-SearchBot 和 PerplexityBot 访问 QC Guide 均返回 HTTP 200；页面允许索引，Title/Meta/H1/Canonical、Article/FAQPage/BreadcrumbList、图片和视频正常。
-- 先前 Hub 与 3 篇基础指南已在 Google Search Console 逐个申请索引；QC Guide 的 API URL Inspection 本次返回 `internal_error: fetch failed`，属于检查不完整而非页面 SEO 缺陷，待在 GSC 网页版执行实时测试与请求编入索引。
+- 先前 Hub 与 3 篇基础指南已在 Google Search Console 逐个申请索引；QC Guide 的 API URL Inspection 曾返回 `internal_error: fetch failed`。2026-08-26 所有者确认已在 GSC 网页版请求编入索引；精确实时测试结论和最后抓取状态未提供，后续按 SEO-V2-003 正常监测，不重复请求或改写页面。
 - `myathletik.com` 已按所有者决定完全下线，已检查入口返回 HTTP 410；不做跨域 301，也不再优化旧站。
 
 ### 1.2 GEO
@@ -611,6 +611,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-25 | SEO-IMP-038 监测基线完成：确认 Cloudflare 外层 HTML `DYNAMIC` 不等于 Flywheel 缓存失效；匿名 GET 与 Chrome 响应显示 `x-cacheable: YES`、`x-cache: MISS, HIT`，静态 CSS 为 Cloudflare HIT。建立 5 个代表 URL × 3 轮的 PowerShell 监测脚本与 normal/review/host-escalation-ready 阈值，不执行 Cache Everything；IMP-035–038 合并部署清单已建立 |
 | 2026-08-25 | SEO-IMP-035–038 生产验收完成：6 个关键页、20 个 WebP 与 2 个 WOFF2 均为 200 且 MIME 正确；Google Fonts 引用归零，Services/Home 响应式 Hero 与 Desktop/Mobile 视觉通过；四模板三次有效移动端 Lab LCP 中位数为 5.00s / 3.68s / 3.43s / 3.30s，TBT/CLS 无回归。部署后 Crawl `crawl_40f88b6c25d74ba79ee193c7be26caf9` 为 20 页、0 fetch failure、无新增状态码或 indexability 回归；035–037 决策 `keep`，038 `keep-monitoring`。表单依赖与 Consent 已检查，为避免创建真实询盘未执行成功提交 |
 | 2026-08-25 | SEO 文档完成系统整理：V1 清单冻结并关闭；建立 [`SEO V2 Backlog`](seo/v2-backlog.md) 作为唯一后续执行入口；研究、历史审计、证据、实施记录和站外权威分别归档并建立目录级结论页，历史证据未删除 |
+| 2026-08-26 | SEO-V2-001 完成：所有者确认已在 GSC 网页版对 QC Guide 请求编入索引；未提供精确实时测试结论、当前覆盖分类或最后抓取状态，均按 `unavailable` 记录。后续转入 SEO-V2-003 常规监测，不重复请求或改写页面 |
 
 ---
 
@@ -618,7 +619,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
-3. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：先在 GSC 网页版对 QC Guide 做实时测试并请求编入索引，再刷新完整 28 天 GSC / GA4 / 询盘基线。
+3. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001 已完成；达到完整窗口后刷新 28 天 GSC / GA4 / 询盘基线，并继续 SEO-V2-003 索引监测。
 4. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动。
 5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。

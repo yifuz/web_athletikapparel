@@ -12,6 +12,12 @@
 > - 样本低于 100 曝光门槛时只记录方向，不触发页面修改（`seo-process.md` §5）。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-08-26：QC Guide 已请求编入索引
+
+- 所有者确认已在 GSC 网页版对 `/garment-quality-control-checklist/` 请求编入索引；SEO-V2-001 的平台操作已完成。
+- 证据来源为所有者操作确认，数据状态为 `partial`：本次未提供 GSC 截图，因此“测试实际网址”的精确结论、当前索引覆盖分类、最后抓取日期与状态均为 `unavailable`，不得据此写成已收录。
+- 处置结论：SEO-V2-001 标记为 `completed`；不重复请求、不改写页面，后续发现、抓取、收录和首次曝光统一归入 SEO-V2-003 的正常监测窗口。未收录或报告延迟本身不等于页面失败。
+
 ## 2026-08-20：QC Guide 部署与 URL Inspection 尝试
 
 - `/garment-quality-control-checklist/` 已完成生产部署，普通浏览器、Googlebot、OAI-SearchBot 和 PerplexityBot 请求均返回 HTTP 200；Canonical 自指，robots meta 为 `follow, index`，Page Sitemap 已包含该 URL。

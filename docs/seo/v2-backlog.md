@@ -12,7 +12,7 @@ V2 不以增加任务数量为目标。所有项目必须有一方数据、生�
 
 | ID | 工作项 | 来源 | 优先级 | 当前状态 | 启动条件 / 下一步 | 完成标准 |
 |---|---|---|---|---|---|---|
-| SEO-V2-001 | QC Guide GSC 网页版实时测试与索引记录 | IMP-018 | P0 | `owner-action` | 在 GSC 对 `/garment-quality-control-checklist/` 执行“测试实际网址”；测试通过后可请求编入索引 | 在 [`gsc-data-log.md`](gsc-data-log.md) 记录检查日期、结果和最后抓取状态；未收录不等于失败，不反复改文案 |
+| SEO-V2-001 | QC Guide GSC 网页版实时测试与索引记录 | IMP-018 | P0 | `completed` | 2026-08-26 所有者确认已在 GSC 网页版请求编入索引；精确实时测试结论和最后抓取状态未提供，按 `unavailable` 记录 | 已在 [`gsc-data-log.md`](gsc-data-log.md) 记录日期、已确认操作和证据缺口；后续转入 SEO-V2-003 常规监测，不重复提交或改写页面 |
 | SEO-V2-002 | 28 天 GSC / GA4 / 询盘基线刷新 | IMP-014/022/033 | P0 | `ready` | 到达完整 28 天窗口后导出 Page / Query / Country / Device；核对 GA4 `generate_lead` 与 Organic Landing Page | 数据完整性和样本门槛明确；形成页面级决策，样本不足时只记录方向 |
 | SEO-V2-003 | 索引、Crawl 与 HTML 响应持续监测 | IMP-033/038 | P0 | `monitoring` | 按月或部署后运行；慢响应达到既定独立窗口阈值才升级主机 | 保存 Crawl / Index Snapshot；Finding 均有 `fixed`、`deferred`、`not-needed` 或 `monitoring` 结论 |
 | SEO-V2-004 | 剩余 LCP 与 Field CWV 复核 | IMP-035–038 | P0 | `monitoring` | Services Lab LCP 中位数 5.00s，首页 3.68s；取得可用 CrUX 或同环境重复恶化后重开 | 分开记录 Lab 与 Field；确认最小变量、回归防护和 keep / iterate / revert 决策 |
