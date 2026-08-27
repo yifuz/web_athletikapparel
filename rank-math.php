@@ -203,6 +203,32 @@ add_filter( 'rank_math/opengraph/facebook/image_array', 'myathletik_rank_math_te
 add_filter( 'rank_math/opengraph/twitter/image_array', 'myathletik_rank_math_technical_content_social_image', 20 );
 
 /**
+ * Use each owner-approved product-category image for social cards.
+ *
+ * @param array $image Rank Math image data.
+ * @return array
+ */
+function myathletik_rank_math_product_category_social_image( $image ) {
+	$category = myathletik_get_current_product_category();
+
+	if ( ! is_array( $category ) || empty( $category['social_image'] ) ) {
+		return $image;
+	}
+
+	$image_url = esc_url_raw( myathletik_images_uri() . '/' . ltrim( $category['social_image'], '/' ) );
+
+	return array(
+		'url'    => $image_url,
+		'width'  => (int) $category['social_image_width'],
+		'height' => (int) $category['social_image_height'],
+		'alt'    => $category['social_image_alt'],
+		'type'   => $category['social_image_type'],
+	);
+}
+add_filter( 'rank_math/opengraph/facebook/image_array', 'myathletik_rank_math_product_category_social_image', 21 );
+add_filter( 'rank_math/opengraph/twitter/image_array', 'myathletik_rank_math_product_category_social_image', 21 );
+
+/**
  * Keep the homepage WebPage entity aligned with the document title.
  *
  * Organization and WebSite names intentionally remain the shorter brand name.
@@ -570,6 +596,41 @@ function myathletik_rank_math_technical_guides_schema( $data ) {
 	return $data;
 }
 add_filter( 'rank_math/json_ld', 'myathletik_rank_math_technical_guides_schema', 104 );
+
+/**
+ * Keep each product-category WebPage image aligned with its social-card image.
+ *
+ * @param array $data Rank Math JSON-LD entities.
+ * @return array
+ */
+function myathletik_rank_math_product_category_schema_image( $data ) {
+	$category = myathletik_get_current_product_category();
+
+	if ( ! is_array( $category ) || empty( $category['social_image'] ) || ! is_array( $data ) ) {
+		return $data;
+	}
+
+	$page_url  = get_permalink( get_queried_object_id() );
+	$image_id  = $page_url . '#primaryimage';
+	$image_url = esc_url_raw( myathletik_images_uri() . '/' . ltrim( $category['social_image'], '/' ) );
+
+	$data['productCategoryPrimaryImage'] = array(
+		'@type'      => 'ImageObject',
+		'@id'        => $image_id,
+		'url'        => $image_url,
+		'contentUrl' => $image_url,
+		'width'      => (int) $category['social_image_width'],
+		'height'     => (int) $category['social_image_height'],
+		'caption'    => $category['social_image_alt'],
+	);
+
+	if ( ! empty( $data['WebPage'] ) && is_array( $data['WebPage'] ) ) {
+		$data['WebPage']['primaryImageOfPage'] = array( '@id' => $image_id );
+	}
+
+	return $data;
+}
+add_filter( 'rank_math/json_ld', 'myathletik_rank_math_product_category_schema_image', 105 );
 
 /**
  * Return the last significant update for theme-rendered core pages.

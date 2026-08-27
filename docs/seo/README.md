@@ -45,7 +45,7 @@ URL、H1 和页面所有权仍以 [`../sitemap.md`](../sitemap.md) 为准；Titl
 - SEO-V2-003 首轮 Index Snapshot 的 10 个受控样本全部为 indexed / PASS，QC Guide 已确认收录；全站监测 Crawl `crawl_25cbeefdbea740e2b2a571976e535de7` 无状态码或 indexability 回归。GOTS 外链 Finding 已通过定向 Crawl 标记 `fixed`；第二批 8 个 URL 在 2026-08-27 因本机保守 UTC 日配额未发送请求，当前 `deferred / quota`，北京时间 2026-08-28 08:00 后重试；
 - SEO-V2-004 于 2026-08-27 完成当前轮 Lab 复核：首页 LCP 3.66s，无恶化；Services 3 次有效 LCP 中位数 4.44s，较既有 5.00s 改善。CrUX 因未配置 API key 且匿名接口 429 仍为 unavailable，当前 `no-change / monitoring`，不触发代码改动；
 - SEO-V2-006 已按所有者 2026-08-27 决定暂时跳过：ThomasNet 中国主体表单无法选择真实 Zhangjiagang 地址，错误候选指向天津，且自助入口呈现明显北美范围约束；当前为 `deferred / platform-eligibility`，只有平台确认境外供应商资格或提供人工地址录入方式才重开；
-- SEO-V2-007 已进入执行：7 个品类页生产 OG/Twitter/Schema 主图仍统一使用 270×270 Logo；现有代表图候选已完成核对，当前为 `in-progress / owner-input`，等待所有者逐页批准后实施；
+- SEO-V2-007 已完成本地实施：所有者批准的 7 张代表图已写入品类数据，OG/Twitter/Schema 使用同一图；PHP、函数桩、文件尺寸及生产资源 200/MIME 均通过，当前为 `local-complete / production-pending`，待部署两个 PHP 文件后验收；
 - SEO-V2-002 已完成 2026-07-26 至 08-22 的 GSC / GA4 / 询盘基线：GSC 5 点击 / 184 曝光；GA4 Organic Search 2 sessions、0 `generate_lead`、0 有效询盘；全站 8 次 `generate_lead` 中有效询盘 1 次，来自 Organic Social。页面与查询均未达到修改门槛；
 - Cloudflare `/cdn-cgi/l/email-protection`、Sitemap `noindex` 和 `/wp-sitemap.xml` 跳转均已有明确 `not-needed` / 有意控制处置；
 - Breadcrumb 严格字段、HSTS、剩余大图、品类社交图和可选 Schema 不是 V1 阻塞项，重开条件统一记录在 V2 Backlog；

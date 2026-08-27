@@ -18,7 +18,7 @@ V2 不以增加任务数量为目标。所有项目必须有一方数据、生�
 | SEO-V2-004 | 剩余 LCP 与 Field CWV 复核 | IMP-035–038 | P0 | `monitoring` | 2026-08-27 首页 Lab LCP 3.66s，与既有 3.68s 一致；Services 3 次有效 Lab LCP 中位数 4.44s，较既有 5.00s 改善。CrUX 未配置且匿名 PageSpeed API 返回 429，Field 数据仍 unavailable；当前 `no-change / monitoring` | 分开记录 Lab 与 Field；只有取得 scope 明确的 CrUX，或同环境重复稳定恶化才重开代码优化 |
 | SEO-V2-005 | 用非品牌 Query 扩充现有页面证据与内链 | IMP-014/022 | P1 | `conditional` | 页面或 Query 达到流程样本门槛，且排名约 8–30、意图和页面所有权匹配 | 只优化一个主要变量；完成 28 天前后窗口，不创建近义页 |
 | SEO-V2-006 | 站外行业引用与可信目录运营 | IMP-020 | P1 | `deferred / platform-eligibility` | 2026-08-27 ThomasNet 中国主体自助建档表单只能选择地址联想结果，未返回真实 Zhangjiagang 地址且候选误指天津；表单同时固定 `+1` 电话前缀，官方资料将供应商网络定位为 North American。所有者决定先跳过；仅在 ThomasNet 书面确认境外供应商资格或提供人工地址录入方式后重开 | 获得可核实公开 URL 并记录维护责任；不以链接总数作为成功指标 |
-| SEO-V2-007 | 品类页社交图 / Schema 主图 | IMP-013 | P1 | `in-progress / owner-input` | 2026-08-27 生产定向审计确认 7/7 品类页仍统一输出 270×270 Logo；现有品类素材候选已核对，等待所有者逐页确认。Sports Accessories 首页卡片图含 `BTEXCO` 字样，不作为 Athletik 社交图候选 | OG/Twitter/Schema 图一致，生产资源、尺寸、MIME 和分享预览通过 |
+| SEO-V2-007 | 品类页社交图 / Schema 主图 | IMP-013 | P1 | `local-complete / production-pending` | 所有者已于 2026-08-27 批准 7 张代表图；本地已完成 OG/Twitter/Schema 统一逻辑并通过 PHP、函数桩、真实尺寸与生产资源 200/MIME 检查。待部署两个 PHP 文件后进行逐页生产和分享预览验收 | OG/Twitter/Schema 图一致，生产资源、尺寸、MIME 和分享预览通过 |
 | SEO-V2-008 | 五个低曝光品类的响应式图片批次 | IMP-025 | P1 | `deferred` | 任一目标页 GSC 曝光起量、真实 CWV 报警，或该页进入明确获客优先级 | 使用 uploads 响应式资源并完成视觉、MIME、Lab 与部署回归 |
 | SEO-V2-009 | Title / Meta 或 Knitted Fabrics 次级词实验 | IMP-014/022 | P2 | `deferred` | 单页达到至少 100 曝光观察门槛，且 Query 与 CTR 能支持一个明确假设 | 一次只改 Title 或 Meta 的一个主要变量；保留 28 天比较窗口 |
 | SEO-V2-010 | Service Schema 与 VideoObject 可选增强 | IMP-016/027 | P2 | `conditional` | 可见内容与事实完整；GSC 视频索引或 Rich Results 证据显示实际缺口 | Validator 通过且 Schema 与可见内容一致；没有证据时允许 `not-needed` |

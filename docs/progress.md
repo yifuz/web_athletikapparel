@@ -293,7 +293,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - SEO-V2-003 第二批 8 个 URL Inspection 于 2026-08-27 尝试执行，但本机保守 UTC 日配额尚未重置：`attempted=0`、`inspected=0`、`quotaBlocked=1`、`deferred=7`、`currentIssues=0`，所有项目均未向 Google 发送请求。当前为 `deferred / quota`，北京时间 2026-08-28 08:00 后重试，不据此判断索引状态。
 - SEO-V2-004 于 2026-08-27 完成当前轮只读复核：首页移动端 Lab LCP 3.66s，与既有 3.68s 中位数一致；Services 3 次有效 LCP 为 5.44s / 4.44s / 4.40s，中位数 4.44s，较既有 5.00s 改善。两页 TBT/CLS 无回归；CrUX 因未配置 API key 且匿名 PageSpeed API 返回 429 仍为 unavailable。结论为 `no-change / monitoring`，不改代码。
 - SEO-V2-006 已于 2026-08-27 暂时跳过：ThomasNet 中国主体自助建档表单无法选择真实 Zhangjiagang 地址，候选误指天津且表单固定 `+1` 电话前缀；不得使用错误地址或混用美国主体地址。当前为 `deferred / platform-eligibility`，只有平台确认境外供应商资格或提供人工地址录入方式后重开。OEKO-TEX / WRAP 输入仍保留，但本轮不继续推进。
-- SEO-V2-007 已于 2026-08-27 启动：生产定向 `audit-urls` 完整抓取 7/7 品类页，全部 HTTP 200、可索引、0 fetch failure；手工解析确认 7 页 `og:image`、`twitter:image` 和 `primaryImageOfPage` 均仍使用 270×270 Logo。现有品类代表图候选已核对，当前 `in-progress / owner-input`；Sports Accessories 首页卡片图因可见 `BTEXCO` 字样不进入 Athletik 社交图候选。
+- SEO-V2-007 已于 2026-08-27 完成本地实施：生产基线为 7/7 品类页均使用 270×270 Logo；所有者批准 7 张代表图后，已在品类数据和 Rank Math 过滤器中统一 OG/Twitter/Schema 主图。PHP 8.2、7 页函数桩映射、真实尺寸及生产资源 HTTP 200/MIME 均通过；Organization Logo 保持不变，Sports Accessories 未使用带 `BTEXCO` 字样的首页图。当前为 `local-complete / production-pending`，仅需部署两个 PHP 文件后做生产验收。
 
 ---
 
@@ -627,6 +627,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-27 | SEO-V2-006 启动：ThomasNet 公开索引仍只找到美国主体旧档，未找到中国主体新档 URL；站内自动检查受 403 / 登录墙限制。OEKO-TEX / WRAP 官方入口仍有效，但缺少 Athletik 可核实条目。转为 `operational / owner-input`，先补平台 Dashboard 和证书门户状态，不追求目录数量 |
 | 2026-08-27 | SEO-V2-006 暂停：ThomasNet 中国主体自助表单无法选择真实 Zhangjiagang 地址，错误候选指向天津，且入口显示北美范围约束；所有者决定先跳过，状态改为 `deferred / platform-eligibility` |
 | 2026-08-27 | SEO-V2-007 启动：7/7 品类页定向审计均为 200、可索引、0 fetch failure；生产 OG/Twitter/Schema 主图全部仍为通用 Logo。现有代表图候选已核对，等待所有者确认后实施 |
+| 2026-08-27 | SEO-V2-007 本地完成：所有者批准 7 张代表图；`inc/product-category-data.php` 与 `rank-math.php` 已统一 OG/Twitter/Schema 主图，PHP、函数桩、真实尺寸和生产资源 200/MIME 均通过，待部署后逐页验收 |
 
 ---
 

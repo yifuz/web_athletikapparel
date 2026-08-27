@@ -186,6 +186,14 @@ NOT filenames, NOT "image1". Describe what's shown + relevant keyword.
   under the page editor. Aim for the green/“good” score but don't obsess —
   readable and accurate beats keyword-stuffed.
 
+### 品类页社交图真值（SEO-V2-007，2026-08-27 所有者批准）
+
+7 个 `*-manufacturer/` 品类页的 Facebook OG、Twitter 与 WebPage
+`primaryImageOfPage` 统一由 `inc/product-category-data.php` 的
+`social_image*` 字段控制，并由 `rank-math.php` 输出。Organization Logo 保持独立。
+具体映射与验收见
+[`docs/seo/implementation/change-cards/seo-v2-007-category-social-images.md`](docs/seo/implementation/change-cards/seo-v2-007-category-social-images.md)。
+
 ================================================================
 ## 字段真值来源（SEO-IMP-011，2026-08-19 核定）
 ================================================================
