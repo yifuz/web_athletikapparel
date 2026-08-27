@@ -42,7 +42,7 @@ URL、H1 和页面所有权仍以 [`../sitemap.md`](../sitemap.md) 为准；Titl
 
 - V1 生产实施已经完成，SEO-IMP-035–037 决策为 `keep`，SEO-IMP-038 为 `keep-monitoring`；
 - 最新冻结 Crawl 为 `crawl_40f88b6c25d74ba79ee193c7be26caf9`：20 页、0 fetch failure；没有新增状态码错误、Title 变化或 indexability flip；
-- SEO-V2-002 已完成 2026-07-26 至 08-22 的 GSC / GA4 数据层：GSC 5 点击 / 184 曝光；GA4 Organic Search 2 sessions、0 `generate_lead`。页面与查询均未达到修改门槛，当前只等待不含个人数据的真实/合格询盘人工汇总；
+- SEO-V2-002 已完成 2026-07-26 至 08-22 的 GSC / GA4 / 询盘基线：GSC 5 点击 / 184 曝光；GA4 Organic Search 2 sessions、0 `generate_lead`、0 有效询盘；全站 8 次 `generate_lead` 中有效询盘 1 次，来自 Organic Social。页面与查询均未达到修改门槛；
 - Cloudflare `/cdn-cgi/l/email-protection`、Sitemap `noindex` 和 `/wp-sitemap.xml` 跳转均已有明确 `not-needed` / 有意控制处置；
 - Breadcrumb 严格字段、HSTS、剩余大图、品类社交图和可选 Schema 不是 V1 阻塞项，重开条件统一记录在 V2 Backlog；
 - 当前没有批准新的商业页面或近义页面。任何新 URL 必须重新经过业务匹配、SERP、页面所有权和 301 决策。

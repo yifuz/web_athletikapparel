@@ -13,7 +13,7 @@ V2 不以增加任务数量为目标。所有项目必须有一方数据、生�
 | ID | 工作项 | 来源 | 优先级 | 当前状态 | 启动条件 / 下一步 | 完成标准 |
 |---|---|---|---|---|---|---|
 | SEO-V2-001 | QC Guide GSC 网页版实时测试与索引记录 | IMP-018 | P0 | `completed` | 2026-08-26 所有者确认已在 GSC 网页版请求编入索引；精确实时测试结论和最后抓取状态未提供，按 `unavailable` 记录 | 已在 [`gsc-data-log.md`](gsc-data-log.md) 记录日期、已确认操作和证据缺口；后续转入 SEO-V2-003 常规监测，不重复提交或改写页面 |
-| SEO-V2-002 | 28 天 GSC / GA4 / 询盘基线刷新 | IMP-014/022/033 | P0 | `owner-input` | 2026-08-26 已完成 2026-07-26 至 08-22 的 GSC 全维度与 GA4 Organic Landing / `generate_lead` 基线；所有者按 [`gsc-data-log.md`](gsc-data-log.md) 的 8 个事件日期核对真实、合格及测试/垃圾询盘数 | GSC / GA4 数据完整性与低样本 `no-change` 决策已记录；补齐不含个人数据的人工询盘汇总后关闭 |
+| SEO-V2-002 | 28 天 GSC / GA4 / 询盘基线刷新 | IMP-014/022/033 | P0 | `completed` | 2026-08-27 已完成 2026-07-26 至 08-22 的 GSC、GA4 与询盘人工核验：8 次 `generate_lead` 中有效询盘 1 次，其余 7 次为不合格、测试或无效 | 数据完整性、样本门槛与页面级 `no-change` 决策已记录；唯一有效询盘来自 Organic Social，Organic Search 为 0 lead / 0 有效询盘 |
 | SEO-V2-003 | 索引、Crawl 与 HTML 响应持续监测 | IMP-033/038 | P0 | `monitoring` | 按月或部署后运行；慢响应达到既定独立窗口阈值才升级主机 | 保存 Crawl / Index Snapshot；Finding 均有 `fixed`、`deferred`、`not-needed` 或 `monitoring` 结论 |
 | SEO-V2-004 | 剩余 LCP 与 Field CWV 复核 | IMP-035–038 | P0 | `monitoring` | Services Lab LCP 中位数 5.00s，首页 3.68s；取得可用 CrUX 或同环境重复恶化后重开 | 分开记录 Lab 与 Field；确认最小变量、回归防护和 keep / iterate / revert 决策 |
 | SEO-V2-005 | 用非品牌 Query 扩充现有页面证据与内链 | IMP-014/022 | P1 | `conditional` | 页面或 Query 达到流程样本门槛，且排名约 8–30、意图和页面所有权匹配 | 只优化一个主要变量；完成 28 天前后窗口，不创建近义页 |

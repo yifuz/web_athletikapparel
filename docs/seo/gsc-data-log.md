@@ -22,7 +22,7 @@
 
 - GSC：总量、Page、Query、Country、Device 与 Query × Page 均完成全量 API 读取；Page 19 行、Query 6 行、Country 34 行、Device 2 行，均无分页截断。Query 仍受低量匿名化影响，缺失查询不等于零需求。
 - GA4：同一窗口完成 Channel、Organic Landing Page 与 `generate_lead` 读取；API 未返回 sampling metadata。Property 时区为 `Asia/Shanghai`。Consent 和埋点口径仍可能使 GA4 与 GSC 不一一对应。
-- 询盘：状态为 `partial / owner-input`。本轮无表单后台、最终收件箱或 CRM 读取权限；下方 8 次 `generate_lead` 只能作为待核对事件，不能直接写成 8 条真实或合格询盘。
+- 询盘：初次导出时为 `partial / owner-input`；2026-08-27 已由所有者完成业务核验，当前状态为 `complete`。核验结果见下方，仅保存汇总，不记录联系人个人数据。
 
 ### GSC 总量与设备
 
@@ -115,12 +115,20 @@ Organic Search 只有一个 Landing Page 行：`/` 为 2 sessions、2 users、10
 
 `eventCount` 与 `keyEvents` 的 8 / 4 差异与窗口内可能存在的事件配置启用时间相容，但本轮未取得管理界面变更记录，不能确定原因。月度基线继续以 `eventName = generate_lead` 的 event count 作技术信号，以人工确认的有效/合格询盘作业务结果。
 
+### 2026-08-27：询盘人工核验
+
+- 所有者确认 2026-08-01 的 Organic Social → `/` 事件对应 1 次有效询盘。
+- 所有者确认 2026-08-10 的 Organic Social → `/` 事件对应 1 次不合格询盘。
+- 其余 6 次事件均为测试或无效询盘；本次未进一步拆分测试与无效数量，因此只按“未计入有效询盘”汇总，不推断明细。
+- 本窗口业务基线：8 次 `generate_lead` 中有效询盘 1 次，未计入有效询盘 7 次。唯一有效询盘归因为 Organic Social；Organic Search 仍为 0 次 `generate_lead`、0 次有效询盘。
+- 数据状态为 `complete`：GA4 事件与所有者业务核验已经对齐，未记录联系人个人数据。SEO-V2-002 可关闭。
+
 ### 页面级决策与 Finding outcome
 
 - `no-change / deferred`：没有单页或可比较 Query × Page 达到 100 曝光门槛；不修改 URL、Title、Meta、H1、正文或页面所有权，不新增近义页面。
 - `monitoring`：首页、About、Sports Accessories 与 Sportswear 已出现靠前但低量曝光；Merino 获得 1 次点击；FLATLOCK 指南出现首批非品牌查询。以上只建立方向，不形成因果结论。
 - `monitoring`：最近 7 天曝光相对前 21 天日均上升 92.9%，点击下降 25%；只有曝光达到异常阈值。报告识别到算法更新时间重叠，但未建立归因，不据此改站。
-- `owner-input`：请所有者对上表 8 个日期/渠道/落地页在 Fluent Forms、最终收件箱或 CRM 中核对，并仅返回汇总：真实询盘数、合格 B2B 询盘数、测试/垃圾数；无需把联系人个人数据写入 Git。
+- `no-change / completed`：询盘业务核验已补齐；唯一有效询盘来自 Organic Social，Organic Search 没有 lead event 或有效询盘。SEO-V2-002 关闭，不把社交流量成果归因给 SEO。
 
 ## 2026-08-26：QC Guide 已请求编入索引
 
