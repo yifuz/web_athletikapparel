@@ -89,6 +89,14 @@ Woolmark 官方 Active Licensees 公开名录已列有
 - **角色口径**：中国主体 Zhangjiagang Athletik Clothing Co., Limited = **主要制造商/销售商**；美国主体 Athletik Clothing Inc. = **北美销售办公室**（仅在主动提及或中国主体档案需要补充时说明）。
 - **执行顺序**：ThomasNet（免费）→ Europages / Apparel Search（免费）→ Kompass（付费 $70/3 年，待决策）。每完成一个平台在 §5 台账补录。
 
+### 3B. SEO-V2-006 实时复核（2026-08-27）
+
+- **ThomasNet 中国主体：`partial / owner-input`**。公开搜索索引仍只找到 Athletik Clothing Inc. 美国主体旧档及其 Dress & Sportswear Fabrics 分类露出；对 `Zhangjiagang Athletik Clothing Co., Limited`、`athletikapparel.com` 和中国主体名称组合的公开检索均未找到新档 URL。ThomasNet 站内搜索与档案页对自动请求返回 403 / 登录墙，因此公开端只能确认“尚未发现”，不能证明平台内部注册失败或审核未通过。最小下一步是所有者登录 2026-08-19 的注册账户，提供 Dashboard 的审核状态或已发布 Profile URL；在此之前不重复注册。
+- **OEKO-TEX Buying Guide：`owner-input`**。官方当前仍把 Buying Guide 定义为认证产品、制造商和品牌的在线目录；公开索引未发现 Athletik 条目，但搜索界面和持证登记由其门户管理，缺少公开结果不能证明未登记。执行前需要当前有效的 OEKO-TEX certificate / label number、对应持证主体和账户入口；不得把概括性的“认证有效”替代为具体编号。
+- **WRAP Certified Facilities Map：`owner-input`**。WRAP 当前 Facility Handbook 说明：有效认证设施只有在申请/门户中选择公开列名后才会出现在地图，通常最早可在认证后 48 小时加入；证书过期会移除。公开索引未发现 Athletik 条目，但地图为交互式工具，公开搜索缺失不是最终判定。执行前需要当前 WRAP ID、有效期和门户中 `to be listed upon certification` 的勾选状态；若已勾选仍未显示，再联系 WRAP Compliance Administration。
+- **Merrow：继续 `deferred`**。没有出现推翻 2026-08-19 暂缓决定的新触发条件，本轮不发送邮件、不提交案例。
+- **Generic directories：`no-change`**。ThomasNet、OEKO-TEX 与 WRAP 尚未闭环前，不以增加目录数量为目标；Europages / Apparel Search 保留为后续低维护选项，Kompass 继续等待付费决策。
+
 ## 4. 不做事项
 
 - 不购买任何传递排名权重的链接、目录包或赞助位链接；
@@ -104,6 +112,7 @@ Woolmark 官方 Active Licensees 公开名录已列有
 | 2026-08-18 | 所有者答复 NEEDS INPUT：认证均有效、Merrow 可授权、Textrends 用 Athletik、Beta Textiles 不公开关联 | — | 本文件 §2/§3 | 完成 |
 | 2026-08-18 | 认证名录与 B2B 平台现状核查 | TE/GRS、OEKO-TEX、WRAP、Kompass 等 10 个目标 | 本文件 §3 | 完成 |
 | — | ThomasNet 中国主体新建制造商档案 | thomasnet.com | 待补 | **已注册（2026-08-19），平台内部搜索与 Google 索引中，待可检索后补录 URL** |
+| 2026-08-27 | ThomasNet / OEKO-TEX / WRAP 可见性复核 | 三个高信任来源 | 公开端尚无中国主体可核实 URL | `partial / owner-input`：ThomasNet 需 Dashboard 状态或 Profile URL；OEKO-TEX 需 certificate / label number；WRAP 需 WRAP ID、有效期和公开列名勾选状态 |
 | — | Kompass 中国主体新建制造商档案 | kompass.com | 待补 | 付费 $70/3 年，待所有者结合 §7 收益评估后决策 |
 | — | OEKO-TEX Buying Guide 登记 | oeko-tex.com | 待补 | 待所有者提供证书号并登记 |
 | — | WRAP 公开列名开启 | wrapcompliance.org | 待补 | 待所有者决策 |
@@ -114,10 +123,10 @@ Woolmark 官方 Active Licensees 公开名录已列有
 
 1. ~~所有者回答本文件全部【NEEDS INPUT】~~ → 2026-08-18 已答复：认证均有效；Merrow 设备在用可授权；Textrends 用 Athletik 名义；Beta Textiles 不公开关联（互链取消）；woolbaselayer.com 为在用的同主体羊毛营销站；
 2. ~~排查历史建档与名录现状~~ → 2026-08-19 完成（§3）；Kompass 与 ThomasNet 均已有美国主体旧档；Kompass 认领/更新需付费；ThomasNet 快照已由所有者提供并核实；
-3. ~~**ThomasNet 中国主体新建档执行**~~ → 2026-08-19 已完成注册，等待平台索引；可检索后在 §5 台账补录 URL；
+3. ~~**ThomasNet 中国主体新建档执行**~~ → 2026-08-19 已完成注册；2026-08-27 公开端仍未发现新档，下一步由所有者在 Dashboard 核对审核状态并提供已发布 Profile URL，不重复注册；
 4. **Kompass 中国主体新建档执行**（所有者操作）：付费 $70/3 年，待所有者结合 §7 收益评估后决策是否注册；
 5. ~~**Merrow 案例联系邮件**（附录 A）所有者审核后发送~~ → **2026-08-19 所有者决定暂缓，周期较长，待后续优先级提升时启动**；
-6. OEKO-TEX Buying Guide 登记、WRAP 公开列名：所有者决策后执行；
+6. OEKO-TEX Buying Guide 登记、WRAP 公开列名：所有者提供当前 certificate / label number、WRAP ID / 有效期和门户列名状态后执行；
 7. Europages / Apparel Search 新建档：中国主体（制造商角色），按 §3A 口径执行；
 8. 参展与协会会员（P2）单独做投入产出评估后再决策；
 9. 每完成一项在 §5 台账补录 URL 与日期。

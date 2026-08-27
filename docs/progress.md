@@ -292,6 +292,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - SEO-V2-003 首轮监测已于 2026-08-27 完成：10 个 URL Inspection 样本全部 indexed / PASS；全站 Crawl `crawl_25cbeefdbea740e2b2a571976e535de7` 为 20 页、0 fetch failure，无状态码或 indexability 回归。唯一新增的 OEM Evaluation Guide 旧 GOTS 外链 404 已完成生产部署，并由定向 Crawl `crawl_44a15b2ff9d84b4e8324057f94bd67b1` 确认新 URL 为 200、`confirmed-broken=0`，Finding 为 `fixed`。
 - SEO-V2-003 第二批 8 个 URL Inspection 于 2026-08-27 尝试执行，但本机保守 UTC 日配额尚未重置：`attempted=0`、`inspected=0`、`quotaBlocked=1`、`deferred=7`、`currentIssues=0`，所有项目均未向 Google 发送请求。当前为 `deferred / quota`，北京时间 2026-08-28 08:00 后重试，不据此判断索引状态。
 - SEO-V2-004 于 2026-08-27 完成当前轮只读复核：首页移动端 Lab LCP 3.66s，与既有 3.68s 中位数一致；Services 3 次有效 LCP 为 5.44s / 4.44s / 4.40s，中位数 4.44s，较既有 5.00s 改善。两页 TBT/CLS 无回归；CrUX 因未配置 API key 且匿名 PageSpeed API 返回 429 仍为 unavailable。结论为 `no-change / monitoring`，不改代码。
+- SEO-V2-006 已于 2026-08-27 启动实时核查：公开索引仍只发现 ThomasNet 美国主体旧档，未发现 2026-08-19 注册的中国主体 Profile URL；ThomasNet 站内自动核查受 403 / 登录墙限制。OEKO-TEX Buying Guide 与 WRAP Facilities Map 仍是有效高信任入口，但公开端未取得 Athletik 可核实条目。当前为 `operational / owner-input`，等待 ThomasNet Dashboard 状态或 URL、OEKO-TEX certificate / label number、WRAP ID / 有效期 / 列名勾选状态；不重复注册、不重开 Merrow、不扩充低价值目录。
 
 ---
 
@@ -622,6 +623,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-27 | OEM Guide GOTS 外链完成生产验收：定向 Crawl `crawl_44a15b2ff9d84b4e8324057f94bd67b1` 为 1 页、HTTP 200、可索引、0 fetch failure；生产 HTML 已输出新 URL，外链验证为 200，`confirmed-broken=0`，Finding 改为 `fixed` |
 | 2026-08-27 | SEO-V2-003 第二批 Inspection 尝试：剩余 8 个 URL 因本机保守 UTC 日配额 `attempted=0`，Services 为 quota-blocked，其余 7 个 deferred，0 current issue；统一 `retryAt=2026-08-28T00:00:00Z`。同轮 coverage 经一次性 `EnvHttpProxyAgent` 注入后成功刷新，跨源数量与 completeness 均无变化、无新增 Finding |
 | 2026-08-27 | SEO-V2-004 当前轮复核：移动端 Lab 首页 LCP 3.66s、Services 3 次有效 LCP 中位数 4.44s，均未出现相对既有基线的重复恶化；TBT/CLS 无回归。1 次 Services `fetch-fallback` 已排除；CrUX 为 not-configured，匿名 PageSpeed API 返回 429。结论 `no-change / monitoring`，不触发代码实施 |
+| 2026-08-27 | SEO-V2-006 启动：ThomasNet 公开索引仍只找到美国主体旧档，未找到中国主体新档 URL；站内自动检查受 403 / 登录墙限制。OEKO-TEX / WRAP 官方入口仍有效，但缺少 Athletik 可核实条目。转为 `operational / owner-input`，先补平台 Dashboard 和证书门户状态，不追求目录数量 |
 
 ---
 
