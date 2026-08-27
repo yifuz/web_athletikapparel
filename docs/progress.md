@@ -289,7 +289,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - V1 没有改变现有 URL、H1 或主要页面所有权，也没有创建 Activewear/Fitness、Performance Fabrics 等近义平行页；
 - V1 于 2026-08-25 正式关闭，完整范围与逐项处置见 [`SEO 审计汇总与实施清单 V1`](seo/seo-implementation-checklist-v1.md)；后续工作统一进入 [`SEO V2 Backlog`](seo/v2-backlog.md)。
 - SEO-V2-002 已于 2026-08-27 完成 2026-07-26 至 08-22 的 GSC / GA4 / 询盘基线：GSC 为 5 点击 / 184 曝光，GA4 Organic Search 为 2 sessions / 0 `generate_lead` / 0 有效询盘；8 次全站 `generate_lead` 中有效询盘 1 次，来自 Organic Social，其余 7 次未计入有效询盘。全部页面与可见查询低于 100 曝光门槛，决策为 `no-change / completed`。
-- SEO-V2-003 首轮监测已于 2026-08-27 完成：10 个 URL Inspection 样本全部 indexed / PASS；新 Crawl `crawl_25cbeefdbea740e2b2a571976e535de7` 为 20 页、0 fetch failure，无状态码或 indexability 回归。唯一新增 Finding 是 OEM Evaluation Guide 的旧 GOTS 外链返回 404，已找到 200 的当前官方来源，本轮按只读审计标记 `deferred`。
+- SEO-V2-003 首轮监测已于 2026-08-27 完成：10 个 URL Inspection 样本全部 indexed / PASS；新 Crawl `crawl_25cbeefdbea740e2b2a571976e535de7` 为 20 页、0 fetch failure，无状态码或 indexability 回归。唯一新增 Finding 是 OEM Evaluation Guide 的旧 GOTS 外链返回 404；当前官方来源已核实为 200，本地代码已替换，生产部署与复抓前保持 `deferred / pending-production`。
 
 ---
 
@@ -616,7 +616,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-26 | SEO-V2-001 完成：所有者确认已在 GSC 网页版对 QC Guide 请求编入索引；未提供精确实时测试结论、当前覆盖分类或最后抓取状态，均按 `unavailable` 记录。后续转入 SEO-V2-003 常规监测，不重复请求或改写页面 |
 | 2026-08-26 | SEO-V2-002 数据层完成：最新 final 28 天窗口为 2026-07-26 至 08-22；GSC 5 点击 / 184 曝光，GA4 Organic Search 2 sessions / 0 `generate_lead`。Page / Query 均低于 100 曝光门槛，不改页面；全站 8 次 `generate_lead` 待所有者用询盘后台核对业务真实性和合格度 |
 | 2026-08-27 | SEO-V2-002 完成：所有者确认 2026-08-01 Organic Social 事件为 1 次有效询盘，2026-08-10 Organic Social 事件为不合格询盘，其余 6 次为测试或无效；Organic Search 为 0 lead / 0 有效询盘。询盘核验不含个人数据，本轮不触发 SEO 页面修改 |
-| 2026-08-27 | SEO-V2-003 首轮监测完成：Index Snapshot 10/10 indexed / PASS，QC Guide 已确认收录；Crawl `crawl_25cbeefdbea740e2b2a571976e535de7` 无状态码或 indexability 回归。新增 OEM Guide 旧 GOTS 外链 404，当前官方替代 URL 已核实为 200；本轮只读测试未修改页面，Finding 为 `deferred` |
+| 2026-08-27 | SEO-V2-003 首轮监测完成：Index Snapshot 10/10 indexed / PASS，QC Guide 已确认收录；Crawl `crawl_25cbeefdbea740e2b2a571976e535de7` 无状态码或 indexability 回归。新增 OEM Guide 旧 GOTS 外链 404，当前官方替代 URL 已核实为 200；本地代码和 owner-approved publication source 已同步更新，实时生产页仍输出旧 URL，Finding 为 `deferred / pending-production` |
 
 ---
 
@@ -624,7 +624,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
-3. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 下一配额窗口补查剩余 8 个 URL，并在授权后更新 OEM Guide 的失效 GOTS 官方外链。
+3. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 下一步先部署 OEM Guide 的 GOTS 外链修复并复抓验收，下一配额窗口再补查剩余 8 个 URL。
 4. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动，响应时间需使用同配置窗口比较。
 5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。

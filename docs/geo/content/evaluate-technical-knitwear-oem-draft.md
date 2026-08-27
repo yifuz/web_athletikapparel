@@ -178,7 +178,7 @@ describes chain-of-custody controls including documentation, volume
 reconciliation, segregation, scope certificates and transaction certificates.
 
 For GOTS-labelled products, the official
-[GOTS certification guidance](https://global-standard.org/certification-and-labelling/who-needs-to-be-certified)
+[GOTS certification guidance](https://global-standards.org/our-standards/gots/how-it-works)
 states that relevant processors, manufacturers and traders must meet the
 certification requirements for the final product to carry the label. Verify the
 current scope and product eligibility rather than relying on a logo in a sales

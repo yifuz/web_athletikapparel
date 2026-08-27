@@ -267,7 +267,7 @@ function myathletik_technical_article_data() {
 				),
 				array(
 					'label' => __( 'GOTS certification and labelling guidance', 'myathletik-child' ),
-					'url'   => 'https://global-standard.org/certification-and-labelling/who-needs-to-be-certified',
+					'url'   => 'https://global-standards.org/our-standards/gots/how-it-works',
 				),
 				array(
 					'label' => __( 'OEKO-TEX STANDARD 100', 'myathletik-child' ),
