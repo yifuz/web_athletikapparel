@@ -42,7 +42,7 @@ URL、H1 和页面所有权仍以 [`../sitemap.md`](../sitemap.md) 为准；Titl
 
 - V1 生产实施已经完成，SEO-IMP-035–037 决策为 `keep`，SEO-IMP-038 为 `keep-monitoring`；
 - 最新冻结 Crawl 为 `crawl_40f88b6c25d74ba79ee193c7be26caf9`：20 页、0 fetch failure；没有新增状态码错误、Title 变化或 indexability flip；
-- SEO-V2-003 首轮 Index Snapshot 的 10 个受控样本全部为 indexed / PASS，QC Guide 已确认收录；全站监测 Crawl `crawl_25cbeefdbea740e2b2a571976e535de7` 无状态码或 indexability 回归。新增的 GOTS 外链 404 已完成生产部署，并通过定向 Crawl `crawl_44a15b2ff9d84b4e8324057f94bd67b1` 验收：新 URL 为 200、`confirmed-broken=0`，Finding 为 `fixed`；
+- SEO-V2-003 首轮 Index Snapshot 的 10 个受控样本全部为 indexed / PASS，QC Guide 已确认收录；全站监测 Crawl `crawl_25cbeefdbea740e2b2a571976e535de7` 无状态码或 indexability 回归。GOTS 外链 Finding 已通过定向 Crawl 标记 `fixed`；第二批 8 个 URL 在 2026-08-27 因本机保守 UTC 日配额未发送请求，当前 `deferred / quota`，北京时间 2026-08-28 08:00 后重试；
 - SEO-V2-002 已完成 2026-07-26 至 08-22 的 GSC / GA4 / 询盘基线：GSC 5 点击 / 184 曝光；GA4 Organic Search 2 sessions、0 `generate_lead`、0 有效询盘；全站 8 次 `generate_lead` 中有效询盘 1 次，来自 Organic Social。页面与查询均未达到修改门槛；
 - Cloudflare `/cdn-cgi/l/email-protection`、Sitemap `noindex` 和 `/wp-sitemap.xml` 跳转均已有明确 `not-needed` / 有意控制处置；
 - Breadcrumb 严格字段、HSTS、剩余大图、品类社交图和可选 Schema 不是 V1 阻塞项，重开条件统一记录在 V2 Backlog；

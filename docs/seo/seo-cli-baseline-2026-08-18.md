@@ -138,6 +138,12 @@ Tech Pack 有 1 次 `dataStatus: partial` / `fetch-fallback` 失败样本，已�
 
 全站 Crawl 当时的外链验证状态为 `partial`：27 个保留 URL 中 15 available、1 confirmed-broken、6 provider-blocked、5 unavailable。provider-blocked / unavailable 不计作死链，也不触发删除；其中唯一 confirmed-broken 的 GOTS URL 已通过上述生产定向验收关闭。
 
+### 3.7 SEO-V2-003 第二批 URL Inspection 尝试（2026-08-27）
+
+对首轮未选择的 8 个 Sitemap URL 运行定向 `index-watch`。本次返回 `dataStatus=partial`：`requested=8`、`unique=8`、`attempted=0`、`inspected=0`、`failed=0`、`quotaBlocked=1`、`deferred=7`、`currentIssues=0`。Services 先命中本机保守 UTC 日配额，其余 7 个 URL 随后 deferred；所有项目均为 `requestSent=false`、`indexStatus=unknown`，没有产生新的 Google URL Inspection 证据。统一重试时间为 `2026-08-28T00:00:00Z`（北京时间 08:00）。
+
+同轮完整 `index-coverage` 的直连与仅设置代理环境变量调用先返回 `INTERNAL_ERROR: fetch failed`；按本文件第 2 节的既有网络约束改用一次性 `EnvHttpProxyAgent` 注入后刷新成功。结果仍为 21 个跨源唯一 URL、18 个有保留 Search Analytics 可见性、1 个可抓取但无保留可见性的 QC Guide、2 个预期非索引端点，Crawl / Sitemap / Search Console completeness 均为 `complete`，没有新增 coverage Finding。8 个目标 URL 继续沿用首轮完整清单，第二批 Inspection 处置为 `deferred / quota`。重开动作是在上述时间后只重试这 8 个 URL；验收标准是 8 个 URL 均返回可读 Inspection 结果，并逐项记录 verdict、canonical 与最后抓取时间。
+
 ## 4. GSC 数据
 
 GSC 周期性数据快照已移入独立持续记录文件 [`gsc-data-log.md`](gsc-data-log.md)，

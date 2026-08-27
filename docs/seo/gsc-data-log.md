@@ -14,6 +14,14 @@
 > - 样本低于 100 曝光门槛时只记录方向，不触发页面修改（`seo-process.md` §5）。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-08-27：SEO-V2-003 第二批 URL Inspection 尝试
+
+按首轮清单对剩余 8 个 URL 运行只读 `index-watch`。本机保守 UTC 日配额尚未重置：8 个 URL 均未向 Google 发送 Inspection 请求，汇总为 `requested=8`、`unique=8`、`attempted=0`、`inspected=0`、`failed=0`、`quotaBlocked=1`、`deferred=7`、`currentIssues=0`。Services 首先返回 `inspection_quota_blocked`，其余 7 个 URL 随后按同一属性配额状态 deferred。
+
+本次结果的数据状态为 `partial / operational`，不提供新的 Google 索引快照，也不代表任何页面未收录或发生索引故障。工具给出的统一 `retryAt` 为 `2026-08-28T00:00:00Z`（北京时间 2026-08-28 08:00）。在该时间之后只重试这 8 个 URL，不重复检查首批 10 个 URL，不改页面或请求编入索引。
+
+同轮 `index-coverage` 的直连与仅设置代理环境变量调用先返回 `INTERNAL_ERROR: fetch failed`；按既有网络约束改用一次性 `EnvHttpProxyAgent` 注入后刷新成功。完整结果与首轮一致：21 个跨源唯一 URL、18 个有保留 Search Analytics 可见性、1 个可抓取但无保留可见性的 QC Guide、2 个预期非索引端点，Crawl / Sitemap / Search Console 三方 completeness 均为 `complete`。前两次失败调用不作为 coverage 证据，也不写成零覆盖或新 Finding。第二批 Inspection 处置仍为 `deferred`，失效条件是配额重置后 8 个 URL 均取得可读 URL Inspection 结果。
+
 ## 2026-08-27：SEO-V2-003 首轮 Index Snapshot
 
 `index-coverage` 完整读取冻结 Crawl、Page Sitemap 与 2026-07-26 至 08-22 的 GSC Page 数据：21 个跨源唯一 URL 中，18 个有保留的 Search Analytics 可见性；唯一“可抓取但无保留可见性”的页面是 `/garment-quality-control-checklist/`。这只是 URL Inspection 候选，不是未收录判定。
