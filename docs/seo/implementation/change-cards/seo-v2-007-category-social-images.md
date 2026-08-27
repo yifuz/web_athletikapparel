@@ -1,7 +1,7 @@
 # SEO Change Card：SEO-V2-007 品类页社交图与 Schema 主图
 
 - Change ID：`SEO-V2-007`
-- 状态：`local-complete / production-pending`
+- 状态：`production-accepted / share-preview-pending`
 - 变更日期：2026-08-27
 - 目标页面：7 个现有 `*-manufacturer/` 品类页
 - 搜索意图：保持各页既有 B2B 制造商搜索意图不变，仅让分享摘要与结构化数据使用与页面主题一致的产品/面料图
@@ -11,7 +11,7 @@
 - 风险：社交平台缓存旧图；非 1.91:1 图片可能在不同平台裁切；图片路径含空格时需正确 URL 编码；不得把带 `BTEXCO` 字样的 Sports Accessories 首页卡片图用于 Athletik 社交摘要
 - 失效判定：任一页面仍输出 Logo、OG/Twitter 与 Schema 不一致、图片非 200、MIME/尺寸与声明不符，或分享预览发生不可接受裁切
 - 验收标准：7 页 OG/Twitter/Schema 图逐页一致；7 个资源均为 HTTP 200；声明尺寸与真实文件一致；MIME 正确；JSON-LD 可解析且 Organization Logo 不变；至少完成实际分享预览抽查
-- Finding outcome：代码与资源引用当前为 `local-fixed / production-pending`；部署和生产验收通过后才可改为 `fixed / keep`
+- Finding outcome：生产 HTML、JSON-LD、资源与定向审计已通过，当前为 `production-accepted / share-preview-pending`；只有登录态社交平台实际预览抽查待完成，通过后可改为 `fixed / keep`
 - 复盘窗口：本项为即时技术验收，不以排名或询盘变化归因；部署后立即复核 HTML、资源与分享预览，后续仅在图片变更或平台预览异常时重开
 
 ## 批准的页面映射
@@ -42,7 +42,17 @@
 - [x] 本地文件真实尺寸与配置 7/7 一致；
 - [x] 生产资源 HEAD 检查 7/7 为 HTTP 200，MIME 与配置一致；
 - [x] `git diff --check` 通过；
-- [ ] 部署 `inc/product-category-data.php` 与 `rank-math.php`；
-- [ ] 生产 HTML 逐页确认 OG/Twitter/Schema 一致；
-- [ ] 生产 JSON-LD 可解析且 Organization Logo 保持不变；
+- [x] 部署 `inc/product-category-data.php` 与 `rank-math.php`；
+- [x] 生产 HTML 逐页确认 OG/Twitter/Schema 一致；
+- [x] 生产 JSON-LD 可解析且 Organization Logo 保持不变；
 - [ ] 完成分享预览抽查并填写最终 Finding outcome。
+
+## 生产验收记录
+
+- 2026-08-27 逐页读取 7/7 生产原始 HTML：`og:image`、`og:image:secure_url`、`twitter:image` 与 `primaryImageOfPage` 皆指向各页批准图片，路径中空格已正确编码；
+- 7/7 页面返回 HTTP 200；7/7 图片返回 HTTP 200，生产二进制读取的实际尺寸和 MIME 与声明值完全一致；
+- 7/7 JSON-LD 解析无错，每页 `ImageObject` 的 URL、尺寸和 caption 正确；Organization Logo 仍为 `cropped-ATHLETIK_R_512.jpg`；
+- 同一 7 URL 的部署后 `audit-urls` 定向报告：7 requested / 7 attempted / 7 fetched / 0 failed，7 页均为 200 且可索引，0 个 high/medium issue；报告 coverage 字段仍为 `unknown`，但本次明确 URL 集合已全部实际抓取；
+- 报告保留两个部署前已存在的 low review：`hsts_missing` 与本项无关，结论 `no-change`；Sportswear 的 `image_oversized_candidate` 未显示为本次发布新增回归，且当前证据不支持在 SEO-V2-007 内改图，结论 `deferred / separate image-performance review`；
+- 报告附带 Caveat：1 个外部 URL 阻止自动验证、3 个外部 URL 在有界重试后不可达，GSC page/query 联接失败。这些不影响 SEO-V2-007 的页面 HTML、JSON-LD 和图片资源验收；
+- LinkedIn Post Inspector 未在当前自动化环境返回可见预览，Meta Sharing Debugger 也未取得可用的登录态结果；因此不虚假声称平台缓存与实际裁切已通过。重开条件为所有者在任一实际社交平台预览中发现旧 Logo、取图失败或不可接受裁切。

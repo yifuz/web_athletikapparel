@@ -293,7 +293,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - SEO-V2-003 第二批 8 个 URL Inspection 于 2026-08-27 尝试执行，但本机保守 UTC 日配额尚未重置：`attempted=0`、`inspected=0`、`quotaBlocked=1`、`deferred=7`、`currentIssues=0`，所有项目均未向 Google 发送请求。当前为 `deferred / quota`，北京时间 2026-08-28 08:00 后重试，不据此判断索引状态。
 - SEO-V2-004 于 2026-08-27 完成当前轮只读复核：首页移动端 Lab LCP 3.66s，与既有 3.68s 中位数一致；Services 3 次有效 LCP 为 5.44s / 4.44s / 4.40s，中位数 4.44s，较既有 5.00s 改善。两页 TBT/CLS 无回归；CrUX 因未配置 API key 且匿名 PageSpeed API 返回 429 仍为 unavailable。结论为 `no-change / monitoring`，不改代码。
 - SEO-V2-006 已于 2026-08-27 暂时跳过：ThomasNet 中国主体自助建档表单无法选择真实 Zhangjiagang 地址，候选误指天津且表单固定 `+1` 电话前缀；不得使用错误地址或混用美国主体地址。当前为 `deferred / platform-eligibility`，只有平台确认境外供应商资格或提供人工地址录入方式后重开。OEKO-TEX / WRAP 输入仍保留，但本轮不继续推进。
-- SEO-V2-007 已于 2026-08-27 完成本地实施：生产基线为 7/7 品类页均使用 270×270 Logo；所有者批准 7 张代表图后，已在品类数据和 Rank Math 过滤器中统一 OG/Twitter/Schema 主图。PHP 8.2、7 页函数桩映射、真实尺寸及生产资源 HTTP 200/MIME 均通过；Organization Logo 保持不变，Sports Accessories 未使用带 `BTEXCO` 字样的首页图。当前为 `local-complete / production-pending`，仅需部署两个 PHP 文件后做生产验收。
+- SEO-V2-007 已于 2026-08-27 完成部署和 7/7 生产技术验收：OG/Twitter/Schema 主图逐页一致，页面与图片均为 HTTP 200，生产二进制实际尺寸/MIME 与声明一致，7/7 JSON-LD 解析无错，Organization Logo 保持不变。同 URL `audit-urls` 为 7/7 fetched、0 failed、0 high/medium issue；既有 HSTS 与 Sportswear 大图 low review 分别保持 `no-change` 与独立 `deferred`。当前为 `production-accepted / share-preview-pending`，只待登录态社交平台实际预览抽查。
 
 ---
 
@@ -628,6 +628,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-27 | SEO-V2-006 暂停：ThomasNet 中国主体自助表单无法选择真实 Zhangjiagang 地址，错误候选指向天津，且入口显示北美范围约束；所有者决定先跳过，状态改为 `deferred / platform-eligibility` |
 | 2026-08-27 | SEO-V2-007 启动：7/7 品类页定向审计均为 200、可索引、0 fetch failure；生产 OG/Twitter/Schema 主图全部仍为通用 Logo。现有代表图候选已核对，等待所有者确认后实施 |
 | 2026-08-27 | SEO-V2-007 本地完成：所有者批准 7 张代表图；`inc/product-category-data.php` 与 `rank-math.php` 已统一 OG/Twitter/Schema 主图，PHP、函数桩、真实尺寸和生产资源 200/MIME 均通过，待部署后逐页验收 |
+| 2026-08-27 | SEO-V2-007 生产技术验收通过：7/7 OG/Twitter/Schema 图一致，页面和图片 200，生产实际尺寸/MIME 正确，JSON-LD 可解析且 Organization Logo 不变；定向审计 7/7 fetched、0 failed、0 high/medium issue。因当前环境无登录态平台预览证据，状态为 `production-accepted / share-preview-pending` |
 
 ---
 
