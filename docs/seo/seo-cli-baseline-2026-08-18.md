@@ -115,6 +115,27 @@ Tech Pack 有 1 次 `dataStatus: partial` / `fetch-fallback` 失败样本，已�
 
 部署后 HTML 监测 15 个请求全部 200，各页 TTFB 中位数为 0.89–1.22s；Services 1.22s 仅轻微进入 review，没有满足 `host-escalation-ready`，继续 `keep-monitoring`。
 
+### 3.6 SEO-V2-003 首轮监测（2026-08-27）
+
+索引侧先运行完整 `index-coverage`，再按既定每日 10 个 URL 配额运行 `index-monitor`。18 个 Sitemap URL 中首批选择 10 个，全部成功返回 `indexed / PASS`，0 failed、0 quota blocked、0 current issue。QC Guide 的 Google 最后抓取时间为 `2026-08-26T13:41:31Z`，Google Canonical 与用户 Canonical 均为规范 URL；其余 8 个 URL 因本批上限标记为 `unselectedDue`，不是失败。逐 URL 结果见 [`gsc-data-log.md`](gsc-data-log.md)。
+
+保存新生产 Crawl `crawl_25cbeefdbea740e2b2a571976e535de7`：20 页、0 fetch failure、18 个可索引页面、2 个预期非索引端点；19 × HTTP 200 + 1 × Cloudflare `/cdn-cgi/l/email-protection` 404。Page Sitemap 完整返回 18 个 URL，所有业务页面均为单一 H1、自引用 Canonical、允许索引。与冻结 Crawl `crawl_40f88b6c25d74ba79ee193c7be26caf9` 比较：页面数、状态码错误、Title 和 indexability 均无变化；工具把可比性标为 `review-required`，因为本轮使用 `refresh=true`、concurrency 4，而基线为缓存读取、concurrency 8。因此平均响应 85ms → 1030ms 不作为性能回归或主机升级证据。
+
+| Finding | 本轮数量 | 证据与处置 |
+|---|---:|---|
+| `broken_internal_link` / `client_error` | 各 1 | 仍只指向 Cloudflare `/cdn-cgi/l/email-protection`；`not-needed` |
+| `rich_result_required_fields_missing` | 5 | 仍为 Breadcrumb `position` 字符串的已知严格类型检查；`not-needed`，不为工具分数添加过滤器 |
+| `x_robots_noindex` | 1 | 仍只作用于 Sitemap；有意控制，`not-needed` |
+| `hsts_missing` | 19 | 无变化；保持 SEO-V2-014 `owner-action / deferred` |
+| `og_description_missing` | 1 | 首页既有低优先社交字段观察；`deferred` |
+| `image_oversized_candidate` | 2 | 首页和 Sportswear 的既有启发式候选；响应式实现与既有验收不变，`not-needed / monitoring` |
+| `redirected_url` | 1 | `/wp-sitemap.xml` 单跳到 Rank Math Sitemap；有意控制，`not-needed` |
+| `broken_external_link` | 1 | **新增**：OEM Evaluation Guide 的旧 GOTS URL 对 HEAD/GET 均返回 404；`deferred`，等待实施授权 |
+
+新增外链 Finding 的失效条件是旧 URL 恢复 2xx/有效跳转，或页面改用仍支持原陈述的官方来源。2026-08-27 实时核验确认当前 GOTS 官方说明已迁移至 `https://global-standards.org/our-standards/gots/how-it-works`，该 URL 返回 200，且内容仍覆盖加工、制造和贸易阶段的认证要求。最小修法是同步更新 `inc/technical-article-data.php` 与 `template-parts/technical-article/content-evaluate-technical-knitwear-oem.php` 的同一外链；本轮是只读监测，未修改生产内容。修复后需重新抓取 OEM Guide 并确认 `broken_external_link` 归零。
+
+外链验证整体状态为 `partial`：27 个保留 URL 中 15 available、1 confirmed-broken、6 provider-blocked、5 unavailable。provider-blocked / unavailable 不计作死链，也不触发删除；只有上述 GOTS URL 具备双方法 404 与可用官方替代来源。
+
 ## 4. GSC 数据
 
 GSC 周期性数据快照已移入独立持续记录文件 [`gsc-data-log.md`](gsc-data-log.md)，

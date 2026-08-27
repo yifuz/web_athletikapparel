@@ -14,6 +14,29 @@
 > - 样本低于 100 曝光门槛时只记录方向，不触发页面修改（`seo-process.md` §5）。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-08-27：SEO-V2-003 首轮 Index Snapshot
+
+`index-coverage` 完整读取冻结 Crawl、Page Sitemap 与 2026-07-26 至 08-22 的 GSC Page 数据：21 个跨源唯一 URL 中，18 个有保留的 Search Analytics 可见性；唯一“可抓取但无保留可见性”的页面是 `/garment-quality-control-checklist/`。这只是 URL Inspection 候选，不是未收录判定。
+
+`index-monitor` 按每日 10 个 URL 的保守配额执行首批检查：10 次调用全部成功，0 failed、0 quota blocked、0 deferred、0 current issue。每个 URL 均为 `PASS / Submitted and indexed / INDEXING_ALLOWED / ALLOWED / SUCCESSFUL`，Google Canonical 与用户 Canonical 一致：
+
+| URL | Google 最后抓取时间（UTC） | 结论 |
+|---|---|---|
+| `/` | 2026-08-22T19:35:48Z | indexed / PASS |
+| `/about-us/` | 2026-08-22T18:36:29Z | indexed / PASS |
+| `/contact/` | 2026-08-12T16:37:01Z | indexed / PASS |
+| `/evaluate-technical-knitwear-oem/` | 2026-08-11T08:56:15Z | indexed / PASS |
+| `/flatlock-vs-overlock-technical-knitwear/` | 2026-08-12T19:07:28Z | indexed / PASS |
+| `/garment-quality-control-checklist/` | 2026-08-26T13:41:31Z | indexed / PASS |
+| `/knitted-fabrics-manufacturer/` | 2026-08-22T23:20:47Z | indexed / PASS |
+| `/merino-wool-manufacturer/` | 2026-08-15T01:58:03Z | indexed / PASS |
+| `/outdoor-clothing-manufacturer/` | 2026-08-12T11:36:38Z | indexed / PASS |
+| `/privacy-policy/` | 2026-08-15T04:28:01Z | indexed / PASS |
+
+本批未选择的 8 个 Sitemap URL 为 Services、Silk Wear、Sports Accessories、Sportswear、Sustainability、Technical Guides Hub、Tech Pack Guide 与 Underwear；状态是 `unselectedDue / skipped`，不是检查失败或未收录。它们均在同窗口有保留的 GSC Page 行，并在最新 Crawl 中保持 200、可索引和自引用 Canonical；后续配额窗口再补 URL Inspection，不据此推断完整站点覆盖率。
+
+QC Guide 已确认进入 Google 索引，最后抓取发生在所有者请求编入索引当日。处置为 `no-change / monitoring`：不重复请求编入索引，不修改页面；继续观察首次保留曝光与查询。
+
 ## 2026-08-26：SEO-V2-002 28 天基线（2026-07-26 至 2026-08-22）
 
 这是 GSC 可返回 `dataState: final` 的最新完整 28 天窗口。对比窗口 2026-06-28 至 07-25 大部分位于 2026-07-22 正式上线前，因此本轮建立上线后基线，不把前后差异写成自然增长或改版因果。
