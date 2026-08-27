@@ -130,11 +130,13 @@ Tech Pack 有 1 次 `dataStatus: partial` / `fetch-fallback` 失败样本，已�
 | `og_description_missing` | 1 | 首页既有低优先社交字段观察；`deferred` |
 | `image_oversized_candidate` | 2 | 首页和 Sportswear 的既有启发式候选；响应式实现与既有验收不变，`not-needed / monitoring` |
 | `redirected_url` | 1 | `/wp-sitemap.xml` 单跳到 Rank Math Sitemap；有意控制，`not-needed` |
-| `broken_external_link` | 1 | **新增**：OEM Evaluation Guide 的旧 GOTS URL 对 HEAD/GET 均返回 404；本地代码已更新，生产尚未部署，暂为 `deferred / pending-production` |
+| `broken_external_link` | 0 | OEM Evaluation Guide 的旧 GOTS URL 曾对 HEAD/GET 均返回 404；生产部署后定向 Crawl 已确认当前官方 URL 为 200，`fixed` |
 
-新增外链 Finding 的失效条件是旧 URL 恢复 2xx/有效跳转，或页面改用仍支持原陈述的官方来源。2026-08-27 实时核验确认当前 GOTS 官方说明已迁移至 `https://global-standards.org/our-standards/gots/how-it-works`，该 URL 返回 200，且内容仍覆盖加工、制造和贸易阶段的认证要求。同日已同步更新 `inc/technical-article-data.php`、`template-parts/technical-article/content-evaluate-technical-knitwear-oem.php` 与 owner-approved publication source；没有修改正文、页面 URL、Title、H1 或主要页面所有权。实时生产页检查仍输出旧 URL，因此 Finding 在部署前保持 `deferred / pending-production`。部署后需重新抓取 OEM Guide，确认新 URL 已输出且 `broken_external_link` 归零，再改为 `fixed`。
+新增外链 Finding 的失效条件是旧 URL 恢复 2xx/有效跳转，或页面改用仍支持原陈述的官方来源。2026-08-27 实时核验确认当前 GOTS 官方说明已迁移至 `https://global-standards.org/our-standards/gots/how-it-works`，该 URL 返回 200，且内容仍覆盖加工、制造和贸易阶段的认证要求。同日已同步更新 `inc/technical-article-data.php`、`template-parts/technical-article/content-evaluate-technical-knitwear-oem.php` 与 owner-approved publication source；没有修改正文、页面 URL、Title、H1 或主要页面所有权。
 
-外链验证整体状态为 `partial`：27 个保留 URL 中 15 available、1 confirmed-broken、6 provider-blocked、5 unavailable。provider-blocked / unavailable 不计作死链，也不触发删除；只有上述 GOTS URL 具备双方法 404 与可用官方替代来源。
+生产部署后保存定向验收 Crawl `crawl_44a15b2ff9d84b4e8324057f94bd67b1`：`mode=page`、`refresh=true`、1 页、HTTP 200、可索引、0 fetch failure。完整 HTML 已输出新 GOTS URL，外链 HEAD 验证为 200，`confirmed-broken=0`，因此该 Finding 结论为 `fixed`。外链验证整体仍为 `partial`，原因是 1 个社交平台 URL provider-blocked、3 个社交/消息 URL unavailable，与 GOTS 修复无关；Breadcrumb 严格 `position` 与 HSTS 仍沿用既有 `not-needed` / `deferred` 处置。本 Finding 的重开条件是生产 HTML 再次输出旧 URL，或当前 GOTS URL 在后续受控验证中成为 confirmed-broken。
+
+全站 Crawl 当时的外链验证状态为 `partial`：27 个保留 URL 中 15 available、1 confirmed-broken、6 provider-blocked、5 unavailable。provider-blocked / unavailable 不计作死链，也不触发删除；其中唯一 confirmed-broken 的 GOTS URL 已通过上述生产定向验收关闭。
 
 ## 4. GSC 数据
 
