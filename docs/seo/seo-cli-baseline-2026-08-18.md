@@ -144,6 +144,14 @@ Tech Pack 有 1 次 `dataStatus: partial` / `fetch-fallback` 失败样本，已�
 
 同轮完整 `index-coverage` 的直连与仅设置代理环境变量调用先返回 `INTERNAL_ERROR: fetch failed`；按本文件第 2 节的既有网络约束改用一次性 `EnvHttpProxyAgent` 注入后刷新成功。结果仍为 21 个跨源唯一 URL、18 个有保留 Search Analytics 可见性、1 个可抓取但无保留可见性的 QC Guide、2 个预期非索引端点，Crawl / Sitemap / Search Console completeness 均为 `complete`，没有新增 coverage Finding。8 个目标 URL 继续沿用首轮完整清单，第二批 Inspection 处置为 `deferred / quota`。重开动作是在上述时间后只重试这 8 个 URL；验收标准是 8 个 URL 均返回可读 Inspection 结果，并逐项记录 verdict、canonical 与最后抓取时间。
 
+### 3.8 SEO-V2-004 LCP 与 Field CWV 复核（2026-08-27）
+
+按既有移动端 Lighthouse 环境复核首页与 Services。首页取得 1 次完整 Lab：LCP/FCP 3.66s、TBT 0ms、CLS 0、Root Document 267ms，与 2026-08-25 的 3.68s LCP 中位数一致，没有恶化。Services 首次运行进入 `fetch-fallback`，该 3373ms 完整抓取耗时不计作 LCP、TTFB 或 CWV；补跑后取得 3 次完整 Lab，LCP 为 5.44s / 4.44s / 4.40s，中位数 4.44s，比既有 5.00s 中位数改善约 11%。Services 的 TBT 中位数 0ms、CLS 中位数 0、Root Document 中位数 246ms。
+
+首页 LCP 仍为 Hero subhead 文字；Services LCP 仍为 800w、328,508-byte 的响应式 Hero WebP。Lighthouse 继续提示 Cookiebot / 页面 CSS 等 render-blocking 以及图片交付启发式机会，但本轮没有重复 Lab 恶化，且没有 Field CWV 证据，不能据此重开代码优化或把 Lab 分数解释为排名结果。
+
+CrUX 数据状态为 `unavailable`：两页报告均返回 `fieldDataStatus=not_configured`，本机没有配置 `SEO_CRUX_API_KEY`；官方 PageSpeed 接口的匿名请求返回 HTTP 429，未取得 URL 级或 Origin 级字段数据。该缺口不等于 CWV 为 0 或通过。SEO-V2-004 当前结论为 `no-change / monitoring`；重开条件仍是取得可用且 scope 明确的 CrUX 字段数据，或同环境重复 Lab 出现稳定恶化。若以后只有 Origin 级 CrUX，必须与页面级 Lab 分开记录。
+
 ## 4. GSC 数据
 
 GSC 周期性数据快照已移入独立持续记录文件 [`gsc-data-log.md`](gsc-data-log.md)，
