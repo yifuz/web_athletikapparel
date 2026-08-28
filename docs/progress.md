@@ -294,6 +294,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - SEO-V2-004 于 2026-08-27 完成当前轮只读复核：首页移动端 Lab LCP 3.66s，与既有 3.68s 中位数一致；Services 3 次有效 LCP 为 5.44s / 4.44s / 4.40s，中位数 4.44s，较既有 5.00s 改善。两页 TBT/CLS 无回归；CrUX 因未配置 API key 且匿名 PageSpeed API 返回 429 仍为 unavailable。结论为 `no-change / monitoring`，不改代码。
 - SEO-V2-006 已于 2026-08-27 暂时跳过：ThomasNet 中国主体自助建档表单无法选择真实 Zhangjiagang 地址，候选误指天津且表单固定 `+1` 电话前缀；不得使用错误地址或混用美国主体地址。当前为 `deferred / platform-eligibility`，只有平台确认境外供应商资格或提供人工地址录入方式后重开。OEKO-TEX / WRAP 输入仍保留，但本轮不继续推进。
 - SEO-V2-007 已于 2026-08-27 因 LinkedIn Post Inspector 实际抽查失败而重开：工具能读取 Title、Description 和 Canonical，但 WebP 社交图显示 `No image found`。已从 7 张原批准素材制作 1200×627 JPG，全部通过 JPEG codec、尺寸、文件大小和视觉裁切检查，本地配置已统一为 `image/jpeg`。当前为 `reopened / local-fix-pending-deployment`，待部署一个 PHP 文件与 7 张 uploads JPG 后重做生产和 LinkedIn 验收。
+- SEO-V2-008 已于 2026-08-27 本地完成：五个品类页 18 张子类图新增 54 个 480/800/1200w `q85` WebP、描述性 alt、固有尺寸和响应式映射。五页源图约 19.91 MB；各页 800w 候选合计相对减少约 92.8%–98.4%。PHP、54 个资源 MIME/宽度、五组视觉、18/18 模板渲染与生产前 5 URL 定向审计通过，当前待部署代码和 uploads 后验收。
 
 ---
 
@@ -630,6 +631,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-27 | SEO-V2-007 本地完成：所有者批准 7 张代表图；`inc/product-category-data.php` 与 `rank-math.php` 已统一 OG/Twitter/Schema 主图，PHP、函数桩、真实尺寸和生产资源 200/MIME 均通过，待部署后逐页验收 |
 | 2026-08-27 | SEO-V2-007 生产技术验收通过：7/7 OG/Twitter/Schema 图一致，页面和图片 200，生产实际尺寸/MIME 正确，JSON-LD 可解析且 Organization Logo 不变；定向审计 7/7 fetched、0 failed、0 high/medium issue。因当前环境无登录态平台预览证据，状态为 `production-accepted / share-preview-pending` |
 | 2026-08-27 | SEO-V2-007 LinkedIn 验收失败并重开：所有者提供的 Post Inspector 新抓取截图显示 `No image found`，但 Title/Description/Canonical 正常。本地已制作和检查 7 张 1200×627 JPG 兼容图，并将品类社交图配置改为 `image/jpeg`；待部署后重测 |
+| 2026-08-27 | SEO-V2-008 本地完成：五页 18 张子类图生成 54 个 480/800/1200w WebP，并补 alt、固有尺寸与响应式映射；生产前 5 URL 审计 5/5 fetched、0 failed，待部署 `inc/product-category-data.php` 与 uploads 后进行生产验收 |
 
 ---
 

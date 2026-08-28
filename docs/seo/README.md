@@ -46,6 +46,7 @@ URL、H1 和页面所有权仍以 [`../sitemap.md`](../sitemap.md) 为准；Titl
 - SEO-V2-004 于 2026-08-27 完成当前轮 Lab 复核：首页 LCP 3.66s，无恶化；Services 3 次有效 LCP 中位数 4.44s，较既有 5.00s 改善。CrUX 因未配置 API key 且匿名接口 429 仍为 unavailable，当前 `no-change / monitoring`，不触发代码改动；
 - SEO-V2-006 已按所有者 2026-08-27 决定暂时跳过：ThomasNet 中国主体表单无法选择真实 Zhangjiagang 地址，错误候选指向天津，且自助入口呈现明显北美范围约束；当前为 `deferred / platform-eligibility`，只有平台确认境外供应商资格或提供人工地址录入方式才重开；
 - SEO-V2-007 已因 LinkedIn Post Inspector 实际抽查显示 `No image found` 而重开：首轮 WebP 方案的 HTML/Schema/资源验收虽通过，但平台兼容验收失败。现已制作 7 张 1200×627 JPG 兼容图并更新本地配置，当前为 `reopened / local-fix-pending-deployment`；
+- SEO-V2-008 已进入 `local-complete / production-pending`：五个低曝光品类页的 18 张子类图已增加 54 个 480/800/1200w WebP 映射、描述性 alt 与固有尺寸；本地资源、视觉、PHP、函数桩和生产前 5 URL 定向审计已通过，待部署代码与 uploads 后完成生产验收；
 - SEO-V2-002 已完成 2026-07-26 至 08-22 的 GSC / GA4 / 询盘基线：GSC 5 点击 / 184 曝光；GA4 Organic Search 2 sessions、0 `generate_lead`、0 有效询盘；全站 8 次 `generate_lead` 中有效询盘 1 次，来自 Organic Social。页面与查询均未达到修改门槛；
 - Cloudflare `/cdn-cgi/l/email-protection`、Sitemap `noindex` 和 `/wp-sitemap.xml` 跳转均已有明确 `not-needed` / 有意控制处置；
 - Breadcrumb 严格字段、HSTS、剩余大图、品类社交图和可选 Schema 不是 V1 阻塞项，重开条件统一记录在 V2 Backlog；
