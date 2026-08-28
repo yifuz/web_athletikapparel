@@ -40,8 +40,8 @@
 - GSC 实时测试：所有者提供的 2026-08-28 17:28 GSC“测试实际版本”截图显示绿色通过，结论为“网址可编入 Google 索引”，网页可用性为“网页可以编入索引”，没有增强功能阻塞；该结果证明当前实时版本可索引，但不等于 indexed snapshot 已更新；
 - 推断：现有证据没有显示代码、robots、canonical、Sitemap 或发现路径阻塞。仅凭 `Discovered - currently not indexed` 不支持改 URL、Title、H1、Meta 或正文；
 - 失效判定：后续 Inspection 变为 `PASS / Submitted and indexed`，或 Google 后续返回明确抓取/索引阻塞；
-- 最小动作：实时测试已通过；所有者点击“请求编入索引”一次并记录操作日期。若平台拒绝请求，保存精确错误再诊断；
-- 验收与窗口：请求后不重复提交；在合理抓取窗口内按 SEO-V2-003 复查。允许 outcome 为 `changed`、`no-change` 或 `deferred`；当前为 `changed / request-pending`。
+- 最小动作：实时测试已通过；所有者确认已于 2026-08-28 点击“请求编入索引”一次，平台操作完成；
+- 验收与窗口：不重复提交；在合理抓取窗口内按 SEO-V2-003 复查 indexed snapshot。允许 outcome 为 `changed`、`no-change` 或 `deferred`；当前为 `changed / monitoring`。
 
 ### Finding：SEO-V2-003-SITEMAP-DUPLICATE
 
