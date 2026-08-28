@@ -293,7 +293,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - SEO-V2-003 第二批 8 个 URL Inspection 于 2026-08-27 尝试执行，但本机保守 UTC 日配额尚未重置：`attempted=0`、`inspected=0`、`quotaBlocked=1`、`deferred=7`、`currentIssues=0`，所有项目均未向 Google 发送请求。当前为 `deferred / quota`，北京时间 2026-08-28 08:00 后重试，不据此判断索引状态。
 - SEO-V2-004 于 2026-08-27 完成当前轮只读复核：首页移动端 Lab LCP 3.66s，与既有 3.68s 中位数一致；Services 3 次有效 LCP 为 5.44s / 4.44s / 4.40s，中位数 4.44s，较既有 5.00s 改善。两页 TBT/CLS 无回归；CrUX 因未配置 API key 且匿名 PageSpeed API 返回 429 仍为 unavailable。结论为 `no-change / monitoring`，不改代码。
 - SEO-V2-006 已于 2026-08-27 暂时跳过：ThomasNet 中国主体自助建档表单无法选择真实 Zhangjiagang 地址，候选误指天津且表单固定 `+1` 电话前缀；不得使用错误地址或混用美国主体地址。当前为 `deferred / platform-eligibility`，只有平台确认境外供应商资格或提供人工地址录入方式后重开。OEKO-TEX / WRAP 输入仍保留，但本轮不继续推进。
-- SEO-V2-007 已于 2026-08-27 完成部署和 7/7 生产技术验收：OG/Twitter/Schema 主图逐页一致，页面与图片均为 HTTP 200，生产二进制实际尺寸/MIME 与声明一致，7/7 JSON-LD 解析无错，Organization Logo 保持不变。同 URL `audit-urls` 为 7/7 fetched、0 failed、0 high/medium issue；既有 HSTS 与 Sportswear 大图 low review 分别保持 `no-change` 与独立 `deferred`。当前为 `production-accepted / share-preview-pending`，只待登录态社交平台实际预览抽查。
+- SEO-V2-007 已于 2026-08-27 因 LinkedIn Post Inspector 实际抽查失败而重开：工具能读取 Title、Description 和 Canonical，但 WebP 社交图显示 `No image found`。已从 7 张原批准素材制作 1200×627 JPG，全部通过 JPEG codec、尺寸、文件大小和视觉裁切检查，本地配置已统一为 `image/jpeg`。当前为 `reopened / local-fix-pending-deployment`，待部署一个 PHP 文件与 7 张 uploads JPG 后重做生产和 LinkedIn 验收。
 
 ---
 
@@ -629,6 +629,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-27 | SEO-V2-007 启动：7/7 品类页定向审计均为 200、可索引、0 fetch failure；生产 OG/Twitter/Schema 主图全部仍为通用 Logo。现有代表图候选已核对，等待所有者确认后实施 |
 | 2026-08-27 | SEO-V2-007 本地完成：所有者批准 7 张代表图；`inc/product-category-data.php` 与 `rank-math.php` 已统一 OG/Twitter/Schema 主图，PHP、函数桩、真实尺寸和生产资源 200/MIME 均通过，待部署后逐页验收 |
 | 2026-08-27 | SEO-V2-007 生产技术验收通过：7/7 OG/Twitter/Schema 图一致，页面和图片 200，生产实际尺寸/MIME 正确，JSON-LD 可解析且 Organization Logo 不变；定向审计 7/7 fetched、0 failed、0 high/medium issue。因当前环境无登录态平台预览证据，状态为 `production-accepted / share-preview-pending` |
+| 2026-08-27 | SEO-V2-007 LinkedIn 验收失败并重开：所有者提供的 Post Inspector 新抓取截图显示 `No image found`，但 Title/Description/Canonical 正常。本地已制作和检查 7 张 1200×627 JPG 兼容图，并将品类社交图配置改为 `image/jpeg`；待部署后重测 |
 
 ---
 

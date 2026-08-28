@@ -190,7 +190,7 @@ NOT filenames, NOT "image1". Describe what's shown + relevant keyword.
 
 7 个 `*-manufacturer/` 品类页的 Facebook OG、Twitter 与 WebPage
 `primaryImageOfPage` 统一由 `inc/product-category-data.php` 的
-`social_image*` 字段控制，并由 `rank-math.php` 输出。Organization Logo 保持独立。
+`social_image*` 字段控制，并由 `rank-math.php` 输出。当前社交平台兼容基线为每页一张 1200×627 `image/jpeg`；Organization Logo 保持独立。
 具体映射与验收见
 [`docs/seo/implementation/change-cards/seo-v2-007-category-social-images.md`](docs/seo/implementation/change-cards/seo-v2-007-category-social-images.md)。
 
