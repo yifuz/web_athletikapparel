@@ -144,6 +144,12 @@ Tech Pack 有 1 次 `dataStatus: partial` / `fetch-fallback` 失败样本，已�
 
 同轮完整 `index-coverage` 的直连与仅设置代理环境变量调用先返回 `INTERNAL_ERROR: fetch failed`；按本文件第 2 节的既有网络约束改用一次性 `EnvHttpProxyAgent` 注入后刷新成功。结果仍为 21 个跨源唯一 URL、18 个有保留 Search Analytics 可见性、1 个可抓取但无保留可见性的 QC Guide、2 个预期非索引端点，Crawl / Sitemap / Search Console completeness 均为 `complete`，没有新增 coverage Finding。8 个目标 URL 继续沿用首轮完整清单，第二批 Inspection 处置为 `deferred / quota`。重开动作是在上述时间后只重试这 8 个 URL；验收标准是 8 个 URL 均返回可读 Inspection 结果，并逐项记录 verdict、canonical 与最后抓取时间。
 
+2026-08-28 配额重置后只重试同一 8 个 URL。本次 `dataStatus=complete`：8/8 attempted、8/8 inspected、0 failed、0 quota blocked、0 deferred。Silk Wear、Sports Accessories、Sportswear、Sustainability、Technical Guides Hub、Tech Pack Guide 与 Underwear 共 7 个 URL 均为 `PASS / Submitted and indexed`，Google Canonical 与用户 Canonical 一致；Services 为 `NEUTRAL / Discovered - currently not indexed`，未返回 canonical 或最后抓取时间。两批合计 18 个 Sitemap 页面中 17 个 PASS、1 个 Services 待复核。
+
+Services 的生产 targeted 复核为 HTTP 200、`index,follow`、自引用 canonical、无 X-Robots-Tag，存在于 `page-sitemap.xml` 且首页有 5 个入口。当前无代码、robots、canonical、Sitemap 或发现路径阻塞证据；不改页面，转为 GSC 网页版“测试实际网址”，通过后只请求编入索引一次。逐 URL 结果与 Finding 处置见 [`gsc-data-log.md`](gsc-data-log.md)。
+
+同轮完整读取生产 `page-sitemap.xml` 时确认 19 个条目对应 18 个唯一 URL；QC Guide 以相同 URL 和 lastmod 重复两次。该项不造成唯一 URL 缺失，且 QC Guide 已 indexed / PASS，因此按 Info / P3 转为独立 Rank Math Sitemap 缓存与对象来源复核，不与 Services 未收录混合归因。
+
 ### 3.8 SEO-V2-004 LCP 与 Field CWV 复核（2026-08-27）
 
 按既有移动端 Lighthouse 环境复核首页与 Services。首页取得 1 次完整 Lab：LCP/FCP 3.66s、TBT 0ms、CLS 0、Root Document 267ms，与 2026-08-25 的 3.68s LCP 中位数一致，没有恶化。Services 首次运行进入 `fetch-fallback`，该 3373ms 完整抓取耗时不计作 LCP、TTFB 或 CWV；补跑后取得 3 次完整 Lab，LCP 为 5.44s / 4.44s / 4.40s，中位数 4.44s，比既有 5.00s 中位数改善约 11%。Services 的 TBT 中位数 0ms、CLS 中位数 0、Root Document 中位数 246ms。

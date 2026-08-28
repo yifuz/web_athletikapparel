@@ -264,12 +264,12 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 
 完整证据原载于 `seo/seo.md` 第 10 节；该文件为历史修正记录，已于 2026-08-18 按所有者决定删除（可从 git 历史查阅）。当前数据基线见 [`seo/gsc-data-log.md`](seo/gsc-data-log.md) 与 [`seo/seo-cli-baseline-2026-08-18.md`](seo/seo-cli-baseline-2026-08-18.md)。
 
-- 当前 Page Sitemap 包含 17 个唯一 URL：16 个受主题管理的核心页面，加 Privacy Policy。
-- 17 个页面全部返回 HTTP 200；每页只有一份 Title、Meta Description、H1、自引用 Canonical 和可解析 JSON-LD，未发现意外 `noindex`。
-- 16 个受管页面的 Title/Meta 与 `seo-tags.md` 一致，H1 与 `sitemap.md` 一致；没有孤立页或业务内链 404。
+- 当前 Page Sitemap 包含 18 个唯一 URL：17 个受主题管理的核心页面，加 Privacy Policy。生产 XML 当前共有 19 个 `<url>` 条目，因为 QC Guide 被完全重复列出两次；该低优先 Finding 不改变唯一 URL 覆盖，转为独立 Sitemap 清理复核。
+- 18 个页面全部返回 HTTP 200；每页只有一份 Title、Meta Description、H1、自引用 Canonical 和可解析 JSON-LD，未发现意外 `noindex`。
+- 17 个受管页面的 Title/Meta 与 `seo-tags.md` 一致，H1 与 `sitemap.md` 一致；没有孤立页或业务内链 404。
 - 本轮没有 Critical 问题，记录了 8 组非阻断警告。2026-08-15 已补录首轮 Search Console 数据：3 个月视图为 5 次点击、94 次曝光、5.3% CTR、平均排名 12.7；样本不足以支持页面微调。
 - Sitemap 状态成功，2026-08-13 最后读取并发现 17 个网页；4 个 Technical Guides URL Inspection 均显示已收录、HTTPS 通过并检测到有效路径内容，无需重复申请索引。
-- Page indexing 汇总仍停留在 2026-08-07，早于指南上线；“11 个已收录 / 12 个未收录”属于所有已知网页旧快照，不能作为当前 17 个 Sitemap URL 的覆盖率。
+- Page indexing 汇总仍停留在 2026-08-07，早于指南上线；“11 个已收录 / 12 个未收录”属于所有已知网页旧快照，不能作为当前 18 个 Sitemap 唯一 URL 的覆盖率。
 - Core Web Vitals 的移动端和桌面端均因过去 90 天数据不足而没有现场结论；这不是失败判定。
 - 生产域存在 6 条由 WordPress 输出的 `/products/<x>/` 301，Merino 历史路径仍为 404；在核实 Search Console、日志和旧 slug 来源前不改变这些行为。
 - Privacy Policy 专用 SEO 标签、首页社交描述、新指南上下文内链、Hero 视频性能和 SEO 字段真值来源属于后续评估项。
@@ -289,8 +289,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - V1 没有改变现有 URL、H1 或主要页面所有权，也没有创建 Activewear/Fitness、Performance Fabrics 等近义平行页；
 - V1 于 2026-08-25 正式关闭，完整范围与逐项处置见 [`SEO 审计汇总与实施清单 V1`](seo/seo-implementation-checklist-v1.md)；后续工作统一进入 [`SEO V2 Backlog`](seo/v2-backlog.md)。
 - SEO-V2-002 已于 2026-08-27 完成 2026-07-26 至 08-22 的 GSC / GA4 / 询盘基线：GSC 为 5 点击 / 184 曝光，GA4 Organic Search 为 2 sessions / 0 `generate_lead` / 0 有效询盘；8 次全站 `generate_lead` 中有效询盘 1 次，来自 Organic Social，其余 7 次未计入有效询盘。全部页面与可见查询低于 100 曝光门槛，决策为 `no-change / completed`。
-- SEO-V2-003 首轮监测已于 2026-08-27 完成：10 个 URL Inspection 样本全部 indexed / PASS；全站 Crawl `crawl_25cbeefdbea740e2b2a571976e535de7` 为 20 页、0 fetch failure，无状态码或 indexability 回归。唯一新增的 OEM Evaluation Guide 旧 GOTS 外链 404 已完成生产部署，并由定向 Crawl `crawl_44a15b2ff9d84b4e8324057f94bd67b1` 确认新 URL 为 200、`confirmed-broken=0`，Finding 为 `fixed`。
-- SEO-V2-003 第二批 8 个 URL Inspection 于 2026-08-27 尝试执行，但本机保守 UTC 日配额尚未重置：`attempted=0`、`inspected=0`、`quotaBlocked=1`、`deferred=7`、`currentIssues=0`，所有项目均未向 Google 发送请求。当前为 `deferred / quota`，北京时间 2026-08-28 08:00 后重试，不据此判断索引状态。
+- SEO-V2-003 两批 URL Inspection 已覆盖当前 18 个 Sitemap 页面：17 个 `PASS / Submitted and indexed`；Services 为 `NEUTRAL / Discovered - currently not indexed`。Services 生产端 HTTP 200、index/follow、自引用 canonical、Sitemap 与首页入口均正常，没有代码阻塞证据；当前为 `monitoring / owner-action`，需所有者在 GSC 网页版执行“测试实际网址”，通过后只请求编入索引一次。
 - SEO-V2-004 于 2026-08-27 完成当前轮只读复核：首页移动端 Lab LCP 3.66s，与既有 3.68s 中位数一致；Services 3 次有效 LCP 为 5.44s / 4.44s / 4.40s，中位数 4.44s，较既有 5.00s 改善。两页 TBT/CLS 无回归；CrUX 因未配置 API key 且匿名 PageSpeed API 返回 429 仍为 unavailable。结论为 `no-change / monitoring`，不改代码。
 - SEO-V2-006 已于 2026-08-27 暂时跳过：ThomasNet 中国主体自助建档表单无法选择真实 Zhangjiagang 地址，候选误指天津且表单固定 `+1` 电话前缀；不得使用错误地址或混用美国主体地址。当前为 `deferred / platform-eligibility`，只有平台确认境外供应商资格或提供人工地址录入方式后重开。OEKO-TEX / WRAP 输入仍保留，但本轮不继续推进。
 - SEO-V2-007 的 1200×627 JPG 兼容修复已于 2026-08-28 通过网站端生产技术验收，但所有者随后提供的 LinkedIn Post Inspector 重新抓取截图仍显示 `No image found`；当前为 `platform-failed / diagnosis-monitoring`。模拟 LinkedInBot 可正常访问页面和图片，根因尚未证实；满 48 小时复验后再按准确时间查 Cloudflare Security Events，必要时只做 Sportswear 单页标准 JPEG 受控实验。
@@ -635,6 +634,8 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-28 | SEO-V2-007 JPG 兼容修复完成生产技术验收：7 页 HTML/Schema、7 个 1200×627 JPEG 与同一 7 URL 定向审计通过；等待 LinkedIn Post Inspector 实际重新抓取后再决定最终 `fixed / keep` |
 | 2026-08-28 | SEO-V2-008 生产验收完成：18/18 响应式节点、54/54 WebP、生产二进制一致性、Desktop/Mobile 视觉、同一 5 URL 审计与三次移动端 Lab 通过，决策 `fixed / keep` |
 | 2026-08-28 | SEO-V2-007 LinkedIn JPG 复验仍失败：Post Inspector 可读取 Title/Description 与页面提供的 OG image 值，但仍显示 `No image found`。网站端与模拟 LinkedInBot 访问通过，根因未证实；状态改为 `platform-failed / diagnosis-monitoring`，按 48 小时复验、Cloudflare 事件、Sportswear 单页标准 JPEG 的顺序排查 |
+| 2026-08-28 | SEO-V2-003 第二批 URL Inspection 完成：8/8 inspected、0 failed、0 quota blocked；7 个 indexed / PASS，Services 为 `Discovered - currently not indexed`。两批合计 18 个 Sitemap 页面中 17 个 PASS；Services 生产索引信号与发现路径正常，转为 GSC 网页版实时测试和一次性请求收录的 owner action |
+| 2026-08-28 | SEO-V2-003 Sitemap 复核发现 19 个条目对应 18 个唯一 URL，QC Guide 以相同 URL/lastmod 重复两次；QC Guide 已 indexed / PASS，重复项不解释 Services 状态。当前为 Info / P3，转入独立 Rank Math Sitemap 缓存与对象来源复核，不改 URL 或正文 |
 
 ---
 
@@ -642,7 +643,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
-3. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 的 GOTS 外链 Finding 已关闭，北京时间 2026-08-28 08:00 后只重试剩余 8 个 URL Inspection。
+3. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 两批 URL Inspection 已覆盖 18 个 Sitemap 页面，当前仅 Services 需要所有者在 GSC 网页版实时测试并在通过后请求编入索引一次。
 4. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动，响应时间需使用同配置窗口比较。
 5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。

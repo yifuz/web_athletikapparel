@@ -14,6 +14,44 @@
 > - 样本低于 100 曝光门槛时只记录方向，不触发页面修改（`seo-process.md` §5）。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-08-28：SEO-V2-003 第二批 URL Inspection 完成
+
+在本机保守 UTC 日配额重置后，只对首轮未选择的 8 个 Sitemap URL 重跑只读 `index-watch`。本次结果为 `dataStatus=complete`：`requested=8`、`unique=8`、`attempted=8`、`inspected=8`、`failed=0`、`quotaBlocked=0`、`deferred=0`、`currentIssues=1`、`regressions=0`。没有重复检查首批 10 个 URL，也没有向 Google 请求编入索引。
+
+| URL | Verdict / Coverage | Google / User Canonical | Google 最后抓取时间（UTC） | 处置 |
+|---|---|---|---|---|
+| `/services/` | `NEUTRAL / Discovered - currently not indexed` | 未返回 | 未返回 | `deferred / owner-action` |
+| `/silk-wear-manufacturer/` | `PASS / Submitted and indexed` | 一致、自引用 | `2026-08-11T09:14:20Z` | `no-change` |
+| `/sports-accessories-manufacturer/` | `PASS / Submitted and indexed` | 一致、自引用 | `2026-08-08T01:20:53Z` | `no-change` |
+| `/sportswear-manufacturer/` | `PASS / Submitted and indexed` | 一致、自引用 | `2026-08-27T17:44:58Z` | `no-change` |
+| `/sustainability/` | `PASS / Submitted and indexed` | 一致、自引用 | `2026-08-22T11:50:44Z` | `no-change` |
+| `/technical-guides/` | `PASS / Submitted and indexed` | 一致、自引用 | `2026-08-11T08:52:14Z` | `no-change` |
+| `/technical-knitwear-tech-pack-guide/` | `PASS / Submitted and indexed` | 一致、自引用 | `2026-08-11T08:56:16Z` | `no-change` |
+| `/underwear-manufacturer/` | `PASS / Submitted and indexed` | 一致、自引用 | `2026-08-22T17:46:29Z` | `no-change` |
+
+首批与第二批合计覆盖当前 18 个 Sitemap 页面：17 个 `PASS / Submitted and indexed`，1 个 Services 为 `NEUTRAL / Discovered - currently not indexed`。这是当前 Google indexed snapshot，不是实时抓取或搜索结果展示保证。
+
+### Finding：SEO-V2-003-SERVICES-INDEX
+
+- 类型：`review`；严重度：Info；业务优先级：P1；信心：Confirmed；
+- 数据状态：Google URL Inspection 为 `complete`；生产复核为 targeted；
+- 观察：Google 已发现 `/services/`，但当前快照尚未编入索引，且没有返回最后抓取时间或 canonical；这不是从既有 PASS 快照发生的 regression；
+- 生产证据：Googlebot User-Agent 请求返回 HTTP 200；页面输出 `index,follow`、自引用 canonical、无 X-Robots-Tag；`page-sitemap.xml` 包含该 URL 并输出 `lastmod=2026-08-08T02:30:00+00:00`；首页有 5 个指向 Services 的可抓取链接；
+- 推断：现有证据没有显示代码、robots、canonical、Sitemap 或发现路径阻塞。仅凭 `Discovered - currently not indexed` 不支持改 URL、Title、H1、Meta 或正文；
+- 失效判定：GSC 网页版“测试实际网址”通过并在后续 Inspection 变为 `PASS / Submitted and indexed`，或实时测试暴露具体抓取/索引阻塞；
+- 最小动作：所有者在 GSC 网页版对 `/services/` 执行“测试实际网址”；若测试通过，请求编入索引一次并记录操作日期。若测试失败，先保存精确错误再诊断；
+- 验收与窗口：请求后不重复提交；在合理抓取窗口内按 SEO-V2-003 复查。允许 outcome 为 `changed`、`no-change` 或 `deferred`；当前为 `deferred / owner-action`。
+
+### Finding：SEO-V2-003-SITEMAP-DUPLICATE
+
+- 类型：`review`；严重度：Info；业务优先级：P3；信心：Confirmed；
+- 数据状态：2026-08-28 生产 `page-sitemap.xml` 完整读取；
+- 观察：Page Sitemap 有 19 个 `<url>` 条目和 18 个唯一 URL；`/garment-quality-control-checklist/` 以完全相同的 URL 与 `lastmod=2026-08-20T08:31:05+00:00` 重复两次；
+- 影响判断：重复条目不产生新 URL、重定向、canonical 冲突或索引阻塞，不能解释 Services 未收录；QC Guide 本次首批 Inspection 已为 indexed / PASS；
+- 失效判定：刷新 Rank Math Sitemap 缓存后只剩一个 QC Guide 条目，或查明两个不同公开对象确实需要不同规范 URL；
+- 最小动作：单独核对生产 WordPress 中对应 Page 对象和 Rank Math Sitemap 缓存/生成链，优先刷新缓存后复验，不在 SEO-V2-003 内改 URL 或页面正文；
+- 当前 outcome：`deferred / separate sitemap cleanup`。
+
 ## 2026-08-27：SEO-V2-003 第二批 URL Inspection 尝试
 
 按首轮清单对剩余 8 个 URL 运行只读 `index-watch`。本机保守 UTC 日配额尚未重置：8 个 URL 均未向 Google 发送 Inspection 请求，汇总为 `requested=8`、`unique=8`、`attempted=0`、`inspected=0`、`failed=0`、`quotaBlocked=1`、`deferred=7`、`currentIssues=0`。Services 首先返回 `inspection_quota_blocked`，其余 7 个 URL 随后按同一属性配额状态 deferred。
