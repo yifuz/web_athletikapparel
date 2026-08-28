@@ -148,6 +148,8 @@ Tech Pack 有 1 次 `dataStatus: partial` / `fetch-fallback` 失败样本，已�
 
 Services 的生产 targeted 复核为 HTTP 200、`index,follow`、自引用 canonical、无 X-Robots-Tag，存在于 `page-sitemap.xml` 且首页有 5 个入口。当前无代码、robots、canonical、Sitemap 或发现路径阻塞证据；不改页面，转为 GSC 网页版“测试实际网址”，通过后只请求编入索引一次。逐 URL 结果与 Finding 处置见 [`gsc-data-log.md`](gsc-data-log.md)。
 
+所有者随后提供的 2026-08-28 17:28 GSC“测试实际版本”截图已绿色通过，显示“网址可编入 Google 索引”且网页可用性正常。该实时证据通过，不覆盖此前 indexed snapshot 的 `Discovered - currently not indexed`；下一步仅为点击“请求编入索引”一次并确认，然后进入常规复查窗口。
+
 同轮完整读取生产 `page-sitemap.xml` 时确认 19 个条目对应 18 个唯一 URL；QC Guide 以相同 URL 和 lastmod 重复两次。该项不造成唯一 URL 缺失，且 QC Guide 已 indexed / PASS，因此按 Info / P3 转为独立 Rank Math Sitemap 缓存与对象来源复核，不与 Services 未收录混合归因。
 
 ### 3.8 SEO-V2-004 LCP 与 Field CWV 复核（2026-08-27）

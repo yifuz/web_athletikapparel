@@ -37,10 +37,11 @@
 - 数据状态：Google URL Inspection 为 `complete`；生产复核为 targeted；
 - 观察：Google 已发现 `/services/`，但当前快照尚未编入索引，且没有返回最后抓取时间或 canonical；这不是从既有 PASS 快照发生的 regression；
 - 生产证据：Googlebot User-Agent 请求返回 HTTP 200；页面输出 `index,follow`、自引用 canonical、无 X-Robots-Tag；`page-sitemap.xml` 包含该 URL 并输出 `lastmod=2026-08-08T02:30:00+00:00`；首页有 5 个指向 Services 的可抓取链接；
+- GSC 实时测试：所有者提供的 2026-08-28 17:28 GSC“测试实际版本”截图显示绿色通过，结论为“网址可编入 Google 索引”，网页可用性为“网页可以编入索引”，没有增强功能阻塞；该结果证明当前实时版本可索引，但不等于 indexed snapshot 已更新；
 - 推断：现有证据没有显示代码、robots、canonical、Sitemap 或发现路径阻塞。仅凭 `Discovered - currently not indexed` 不支持改 URL、Title、H1、Meta 或正文；
-- 失效判定：GSC 网页版“测试实际网址”通过并在后续 Inspection 变为 `PASS / Submitted and indexed`，或实时测试暴露具体抓取/索引阻塞；
-- 最小动作：所有者在 GSC 网页版对 `/services/` 执行“测试实际网址”；若测试通过，请求编入索引一次并记录操作日期。若测试失败，先保存精确错误再诊断；
-- 验收与窗口：请求后不重复提交；在合理抓取窗口内按 SEO-V2-003 复查。允许 outcome 为 `changed`、`no-change` 或 `deferred`；当前为 `deferred / owner-action`。
+- 失效判定：后续 Inspection 变为 `PASS / Submitted and indexed`，或 Google 后续返回明确抓取/索引阻塞；
+- 最小动作：实时测试已通过；所有者点击“请求编入索引”一次并记录操作日期。若平台拒绝请求，保存精确错误再诊断；
+- 验收与窗口：请求后不重复提交；在合理抓取窗口内按 SEO-V2-003 复查。允许 outcome 为 `changed`、`no-change` 或 `deferred`；当前为 `changed / request-pending`。
 
 ### Finding：SEO-V2-003-SITEMAP-DUPLICATE
 
