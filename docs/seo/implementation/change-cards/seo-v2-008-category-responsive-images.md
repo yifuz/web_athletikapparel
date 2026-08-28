@@ -1,13 +1,13 @@
 # SEO Change Card：SEO-V2-008 五个品类页响应式图片
 
 - Change ID：`SEO-V2-008`
-- 状态：`local-complete / production-pending`
+- 状态：`fixed / keep`
 - 变更日期：2026-08-27
 - 目标页面：`/underwear-manufacturer/`、`/outdoor-clothing-manufacturer/`、`/merino-wool-manufacturer/`、`/silk-wear-manufacturer/`、`/sports-accessories-manufacturer/`
 - 搜索意图：保持五页现有 B2B 品类制造商意图与页面所有权不变，降低子类产品图在移动端和高密度屏幕上的传输负担
 - 唯一主要变量：为 18 张现有子类产品图增加 480 / 800 / 1200w `q85` WebP 候选、`srcset` / `sizes`、真实固有尺寸、`loading="lazy"`、`decoding="async"` 与描述性 alt
 - 不变项：URL、Title、Meta Description、H1、正文、内链、Hero 媒体、OG/Twitter/Schema 主图与页面所有权
-- Finding outcome：SEO-IMP-025 的已确认图片负载问题进入 `fixed-pending-production`；部署后需用同一 5 URL `audit-urls`、资源检查、视觉检查和受控 Lab 复验后决定 `fixed / keep` 或回滚
+- Finding outcome：`fixed / keep`。SEO-IMP-025 的已确认图片负载问题已通过生产 HTML、54 个资源、Desktop/Mobile 视觉、同一 5 URL `audit-urls` 与受控 Lab 复验；没有状态码、indexability、布局或性能回归
 - 复盘窗口：部署后立即完成资源与 HTML 验收；Lab 只作同环境方向性比较；Field CWV 仍为 unavailable，不把 Lab 或排名变化写成因果
 
 ## 触发证据与生产前基线
@@ -86,9 +86,19 @@
 - [x] 共享模板渲染检查：18/18 `<picture>`、`source`、`img` 数量一致，全部具备 3 档 `srcset`、`sizes`、width/height、alt、lazy 与 async；
 - [x] 品牌术语与反虚构检查：本批只新增图片 alt 与技术字段，没有新增长篇营销正文、认证、产能、客户或法律关系声称；
 - [x] 生产前 `audit-urls` 5/5 fetched、0 failed、全部 200 且可索引；
-- [ ] 部署 `inc/product-category-data.php` 与 54 个 uploads WebP；
-- [ ] 生产 HTML 确认 18/18 `<picture>`、三档候选、尺寸、alt 与加载属性；
-- [ ] 54 个生产资源全部 HTTP 200、`image/webp`，无 URL 编码错误；
-- [ ] Desktop/Mobile 视觉检查通过；
-- [ ] 用同一 5 URL 重跑 `audit-urls`，并在同环境重复 Sports Accessories Lab；
-- [ ] 填写最终 Finding outcome 与 `keep` / rollback 决策。
+- [x] 部署 `inc/product-category-data.php` 与 54 个 uploads WebP；
+- [x] 生产 HTML 确认 18/18 `<picture>`、三档候选、尺寸、alt 与加载属性；
+- [x] 54 个生产资源全部 HTTP 200、`image/webp`，无 URL 编码错误；
+- [x] Desktop/Mobile 视觉检查通过；
+- [x] 用同一 5 URL 重跑 `audit-urls`，并在同环境重复 Sports Accessories Lab；
+- [x] 最终 Finding outcome：`fixed / keep`。
+
+## 生产验收记录（2026-08-28）
+
+- 五个目标页全部为 HTTP 200、可索引、自引用 Canonical；Title、Meta Description、单一 H1、OG/Twitter/Schema 主图均无回归；
+- 生产 HTML 输出 18/18 `<picture>`、18 个 `image/webp` `<source>` 和 18 个 fallback `<img>`；全部具有 480/800/1200w 三档 `srcset`、规范 `sizes`、真实 width/height、描述性 alt、`loading="lazy"` 与 `decoding="async"`；
+- 54 个生产 WebP 全部返回 HTTP 200 / `image/webp`，总计 2,186,422 bytes；生产二进制与本地已验收文件 SHA-256 54/54 一致，本地 codec 与声明宽度复核 54/54 通过；
+- Sports Accessories Desktop/Mobile 生产截图通过；第三张仍为 `sports-accessory-product-category.png`，原构图、原路径及 `technical-knit-accessories` 三档响应式版本均未改变；
+- 同一 5 URL 的部署后 `audit-urls` 为 5 requested / 5 attempted / 5 fetched / 0 failed，全部 200 且可索引，0 high/medium issue；唯一 low review `hsts_missing` 与本批无关，结论 `no-change / owner-action SEO-V2-014`；
+- Sports Accessories 三次部署后移动端 Lighthouse Lab LCP 为 3318ms、3283ms、3305ms，中位数 3305ms；TBT 为 24ms / 0ms / 10ms，CLS 均为 0。相对部署前数值中位数 3213ms 约增加 92ms（2.9%），属于 Lab 正常波动，且 LCP 三次均为 Hero 文字而非子类图片，因此不归因于本批；
+- CrUX Field CWV 仍为 `not_configured / unavailable`；不把 Lab 结果写成真实用户体验或排名因果。

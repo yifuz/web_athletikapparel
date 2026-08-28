@@ -1,7 +1,7 @@
 # SEO Change Card：SEO-V2-007 品类页社交图与 Schema 主图
 
 - Change ID：`SEO-V2-007`
-- 状态：`reopened / local-fix-pending-deployment`
+- 状态：`production-accepted / LinkedIn-preview-pending`
 - 变更日期：2026-08-27
 - 目标页面：7 个现有 `*-manufacturer/` 品类页
 - 搜索意图：保持各页既有 B2B 制造商搜索意图不变，仅让分享摘要与结构化数据使用与页面主题一致的产品/面料图
@@ -11,7 +11,7 @@
 - 风险：社交平台缓存旧图；WebP 在 LinkedIn 桌面端/分享抓取中兼容性不足；非 1.91:1 图片可能在不同平台裁切；图片路径含空格时需正确 URL 编码；不得把带 `BTEXCO` 字样的 Sports Accessories 首页卡片图用于 Athletik 社交摘要
 - 失效判定：任一页面仍输出 Logo、OG/Twitter 与 Schema 不一致、图片非 200、MIME/尺寸与声明不符，或分享预览发生不可接受裁切
 - 验收标准：7 页 OG/Twitter/Schema 图逐页一致；7 个资源均为 HTTP 200；声明尺寸与真实文件一致；MIME 正确；JSON-LD 可解析且 Organization Logo 不变；至少完成实际分享预览抽查
-- Finding outcome：2026-08-27 所有者提供的 LinkedIn Post Inspector 新抓取截图显示 `No image found`，已满足重开条件；当前为 `reopened / local-fix-pending-deployment`。已从原批准素材制作 7 张 1200×627 JPG 兼容图，只有部署后 LinkedIn 能取图且裁切可接受时才能改为 `fixed / keep`
+- Finding outcome：2026-08-28 JPG 兼容修复已通过生产 HTML、Schema、资源与定向审计验收，当前为 `production-accepted / LinkedIn-preview-pending`。只有 LinkedIn Post Inspector 重新抓取后能显示图片且裁切可接受，才能最终改为 `fixed / keep`
 - 复盘窗口：本项为即时技术验收，不以排名或询盘变化归因；部署后立即复核 HTML、资源与分享预览，后续仅在图片变更或平台预览异常时重开
 
 ## 批准的页面映射
@@ -31,7 +31,7 @@
 - `inc/product-category-data.php`：为 7 个品类记录增加批准的 `social_image`、真实尺寸、MIME 与描述性 alt；
 - `rank-math.php`：页面级过滤 Facebook/Twitter image array，并增加对应 `ImageObject`，让 `WebPage.primaryImageOfPage` 引用同一图片；
 - Organization 的 Logo 图像实体保持原值，不把产品图误设为企业 Logo；
-- 未新增、改写或复制 uploads 资源，以上 7 张图在实施前已存在于生产 uploads 并逐一确认 HTTP 200 与 MIME。
+- 首轮 WebP 使用既有 uploads 资源；LinkedIn 兼容修复另从原批准素材制作并部署 7 张 1200×627 JPG，未改变图片主题、alt 或 Organization Logo。
 
 ## 本地验收记录
 
@@ -63,7 +63,15 @@
 - 生产 `og:image` 当时为 WebP。LinkedIn 官方分享图建议为 1200×627、1.91:1，其公开媒体支持表中 WebP 不支持桌面端而 JPEG/PNG 支持；“当前 LinkedIn 桌面分享抓取不接受该 WebP”为 Probable 根因；
 - 已用 FFmpeg 从七张原批准素材制作同主题 1200×627 JPG。Underwear、Outdoor、Silk 与 Knitted Fabrics 使用安全中心裁切；Sportswear、Merino 与 Sports Accessories 使用背景补边保留完整人物/产品；
 - 7/7 新图均为 1200×627 JPEG，约 41–185 KB，已完成视觉检查；alt、页面主题和 Organization Logo 不变；
-- [ ] 部署 `inc/product-category-data.php` 和 7 张 uploads JPG；
-- [ ] 生产 HTML 逐页确认 OG/Twitter/Schema 统一为 1200×627 `image/jpeg`；
+- [x] 部署 `inc/product-category-data.php` 和 7 张 uploads JPG；
+- [x] 生产 HTML 逐页确认 OG/Twitter/Schema 统一为 1200×627 `image/jpeg`；
 - [ ] LinkedIn Post Inspector 重新抽查能显示图片且裁切可接受；
 - 证伪条件：部署 JPG 并重新抓取后仍显示 `No image found`；若发生，改查 LinkedIn bot 回源响应、资源头、缓存和 Cloudflare 规则，不继续盲目换图。
+
+## JPG 兼容修复生产复验（2026-08-28）
+
+- 7/7 页面均为 HTTP 200、可索引、自引用 Canonical，Title、Meta Description 与单一 H1 均与规范真值一致；
+- 7/7 页面 `og:image`、`og:image:secure_url`、`twitter:image` 与 `CollectionPage.primaryImageOfPage` 均指向各自 1200×627 JPG，声明 MIME 为 `image/jpeg`；Organization Logo 仍为独立的 `cropped-ATHLETIK_R_512.jpg`；
+- 7 张生产 JPG 全部返回 HTTP 200 / `image/jpeg`，生产二进制与本地验收文件 SHA-256 逐一一致；本地复核均为 1200×627 JPEG；
+- 同一 7 URL 的 `audit-urls` 为 7 requested / 7 attempted / 7 fetched / 0 failed，全部 200 且可索引，0 high/medium issue；`hsts_missing` 继续 `no-change / owner-action SEO-V2-014`，Sportswear 的 `image_oversized_candidate` 不属于本批，继续 `deferred`；
+- LinkedIn Post Inspector 属于仍缺的实际平台证据；在所有者重新抓取并提供可见图片结果前，不把本项误写为最终 `fixed / keep`。
