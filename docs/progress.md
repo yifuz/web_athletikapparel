@@ -293,7 +293,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - SEO-V2-003 第二批 8 个 URL Inspection 于 2026-08-27 尝试执行，但本机保守 UTC 日配额尚未重置：`attempted=0`、`inspected=0`、`quotaBlocked=1`、`deferred=7`、`currentIssues=0`，所有项目均未向 Google 发送请求。当前为 `deferred / quota`，北京时间 2026-08-28 08:00 后重试，不据此判断索引状态。
 - SEO-V2-004 于 2026-08-27 完成当前轮只读复核：首页移动端 Lab LCP 3.66s，与既有 3.68s 中位数一致；Services 3 次有效 LCP 为 5.44s / 4.44s / 4.40s，中位数 4.44s，较既有 5.00s 改善。两页 TBT/CLS 无回归；CrUX 因未配置 API key 且匿名 PageSpeed API 返回 429 仍为 unavailable。结论为 `no-change / monitoring`，不改代码。
 - SEO-V2-006 已于 2026-08-27 暂时跳过：ThomasNet 中国主体自助建档表单无法选择真实 Zhangjiagang 地址，候选误指天津且表单固定 `+1` 电话前缀；不得使用错误地址或混用美国主体地址。当前为 `deferred / platform-eligibility`，只有平台确认境外供应商资格或提供人工地址录入方式后重开。OEKO-TEX / WRAP 输入仍保留，但本轮不继续推进。
-- SEO-V2-007 的 1200×627 JPG 兼容修复已于 2026-08-28 通过生产技术验收：7 页 OG/Twitter/Schema、7 个 JPEG 资源、Title/Meta/H1/Canonical 与定向审计均正常；当前为 `production-accepted / LinkedIn-preview-pending`，仍需所有者在 LinkedIn Post Inspector 重新抓取确认图片显示与裁切。
+- SEO-V2-007 的 1200×627 JPG 兼容修复已于 2026-08-28 通过网站端生产技术验收，但所有者随后提供的 LinkedIn Post Inspector 重新抓取截图仍显示 `No image found`；当前为 `platform-failed / diagnosis-monitoring`。模拟 LinkedInBot 可正常访问页面和图片，根因尚未证实；满 48 小时复验后再按准确时间查 Cloudflare Security Events，必要时只做 Sportswear 单页标准 JPEG 受控实验。
 - SEO-V2-008 已于 2026-08-28 完成生产验收并决定 `fixed / keep`：五页 18/18 响应式节点、54/54 WebP、生产二进制一致性、Desktop/Mobile 视觉、同一 5 URL 审计及 Sports Accessories 三次移动端 Lab 均通过，无状态码、indexability、布局或可归因性能回归。
 
 ---
@@ -634,6 +634,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-27 | SEO-V2-008 本地完成：五页 18 张子类图生成 54 个 480/800/1200w WebP，并补 alt、固有尺寸与响应式映射；生产前 5 URL 审计 5/5 fetched、0 failed，待部署 `inc/product-category-data.php` 与 uploads 后进行生产验收 |
 | 2026-08-28 | SEO-V2-007 JPG 兼容修复完成生产技术验收：7 页 HTML/Schema、7 个 1200×627 JPEG 与同一 7 URL 定向审计通过；等待 LinkedIn Post Inspector 实际重新抓取后再决定最终 `fixed / keep` |
 | 2026-08-28 | SEO-V2-008 生产验收完成：18/18 响应式节点、54/54 WebP、生产二进制一致性、Desktop/Mobile 视觉、同一 5 URL 审计与三次移动端 Lab 通过，决策 `fixed / keep` |
+| 2026-08-28 | SEO-V2-007 LinkedIn JPG 复验仍失败：Post Inspector 可读取 Title/Description 与页面提供的 OG image 值，但仍显示 `No image found`。网站端与模拟 LinkedInBot 访问通过，根因未证实；状态改为 `platform-failed / diagnosis-monitoring`，按 48 小时复验、Cloudflare 事件、Sportswear 单页标准 JPEG 的顺序排查 |
 
 ---
 

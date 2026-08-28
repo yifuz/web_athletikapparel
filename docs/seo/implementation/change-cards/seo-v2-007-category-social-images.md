@@ -1,7 +1,7 @@
 # SEO Change Card：SEO-V2-007 品类页社交图与 Schema 主图
 
 - Change ID：`SEO-V2-007`
-- 状态：`production-accepted / LinkedIn-preview-pending`
+- 状态：`platform-failed / diagnosis-monitoring`
 - 变更日期：2026-08-27
 - 目标页面：7 个现有 `*-manufacturer/` 品类页
 - 搜索意图：保持各页既有 B2B 制造商搜索意图不变，仅让分享摘要与结构化数据使用与页面主题一致的产品/面料图
@@ -11,7 +11,7 @@
 - 风险：社交平台缓存旧图；WebP 在 LinkedIn 桌面端/分享抓取中兼容性不足；非 1.91:1 图片可能在不同平台裁切；图片路径含空格时需正确 URL 编码；不得把带 `BTEXCO` 字样的 Sports Accessories 首页卡片图用于 Athletik 社交摘要
 - 失效判定：任一页面仍输出 Logo、OG/Twitter 与 Schema 不一致、图片非 200、MIME/尺寸与声明不符，或分享预览发生不可接受裁切
 - 验收标准：7 页 OG/Twitter/Schema 图逐页一致；7 个资源均为 HTTP 200；声明尺寸与真实文件一致；MIME 正确；JSON-LD 可解析且 Organization Logo 不变；至少完成实际分享预览抽查
-- Finding outcome：2026-08-28 JPG 兼容修复已通过生产 HTML、Schema、资源与定向审计验收，当前为 `production-accepted / LinkedIn-preview-pending`。只有 LinkedIn Post Inspector 重新抓取后能显示图片且裁切可接受，才能最终改为 `fixed / keep`
+- Finding outcome：2026-08-28 JPG 兼容修复已通过生产 HTML、Schema、资源与定向审计验收，但所有者随后提供的 LinkedIn Post Inspector 重新抓取截图仍显示 `No image found`。当前为 `platform-failed / diagnosis-monitoring`；根因尚未证实，不改为 `fixed / keep`
 - 复盘窗口：本项为即时技术验收，不以排名或询盘变化归因；部署后立即复核 HTML、资源与分享预览，后续仅在图片变更或平台预览异常时重开
 
 ## 批准的页面映射
@@ -75,3 +75,15 @@
 - 7 张生产 JPG 全部返回 HTTP 200 / `image/jpeg`，生产二进制与本地验收文件 SHA-256 逐一一致；本地复核均为 1200×627 JPEG；
 - 同一 7 URL 的 `audit-urls` 为 7 requested / 7 attempted / 7 fetched / 0 failed，全部 200 且可索引，0 high/medium issue；`hsts_missing` 继续 `no-change / owner-action SEO-V2-014`，Sportswear 的 `image_oversized_candidate` 不属于本批，继续 `deferred`；
 - LinkedIn Post Inspector 属于仍缺的实际平台证据；在所有者重新抓取并提供可见图片结果前，不把本项误写为最终 `fixed / keep`。
+
+## LinkedIn JPG 平台复验失败与诊断（2026-08-28）
+
+- 所有者提供的最新 Post Inspector 截图仍显示 `Image: No image found`；同一结果中 Title 与 Description 可读取，且 LinkedIn 明确表示已采用页面提供的 Open Graph image 值。平台取图失败为 Confirmed；
+- 生产页及 JPG 在模拟 `LinkedInBot/1.0` User-Agent 下均返回 HTTP 200；页面为 `text/html`，图片为 `image/jpeg`，未复现普通 User-Agent 级阻断；`robots.txt` 也未禁止 LinkedIn 或图片目录；
+- Sportswear 生产图与本地文件 SHA-256 一致，可解码为 1200×627 Baseline JPEG，约 41 KB，满足 LinkedIn 官方公开的尺寸、比例与文件体积要求；因此不能再把“仍在使用 WebP”作为当前根因；
+- 当前 JPEG 由 FFmpeg 输出为 `yuvj444p`，文件头未见常规 JFIF/Exif 标记。这是一个待受控验证的兼容性假设，不是已证实根因；
+- 图片响应存在 HEAD/Range 元数据不一致：无压缩 HEAD 与 Range 报告 37,235 bytes，普通 GET 实际返回 41,646 bytes；完整 GET 文件仍可正常解码。这可能影响严格抓取器，但当前没有 LinkedIn 侧日志证明其为根因；
+- 仍需排除 LinkedIn 实际 crawler IP 被 Cloudflare/Flywheel 挑战、平台缓存/处理延迟，以及 JPEG 编码容器兼容性。模拟 User-Agent 通过不能证明实际 LinkedIn crawler IP 已获准；
+- LinkedIn 官方说明标签更新后可能需要最多 48 小时，并建议使用 Post Inspector 刷新新分享缓存。因此先在 JPG 部署满 48 小时后再做一次同 URL 复验；若仍失败，按复验时间检查 Cloudflare Security Events 中页面与图片请求；
+- 若日志未显示阻断且所有者批准实施，只对 Sportswear 制作一个标准 `yuv420p`、常规 JFIF/sRGB、全新 ASCII 文件名的 JPEG 受控样本。该单页通过后才扩展到另外 6 页；若仍失败，停止换图并转查 Flywheel/Fastly/Cloudflare 的 HEAD、Range、压缩与缓存链路；
+- 当前验收结论：网站端技术信号通过，但 LinkedIn 实际平台验收失败；SEO-V2-007 保持开启。
