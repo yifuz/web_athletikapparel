@@ -291,7 +291,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - SEO-V2-002 已于 2026-08-27 完成 2026-07-26 至 08-22 的 GSC / GA4 / 询盘基线：GSC 为 5 点击 / 184 曝光，GA4 Organic Search 为 2 sessions / 0 `generate_lead` / 0 有效询盘；8 次全站 `generate_lead` 中有效询盘 1 次，来自 Organic Social，其余 7 次未计入有效询盘。全部页面与可见查询低于 100 曝光门槛，决策为 `no-change / completed`。
 - SEO-V2-003 两批 URL Inspection 已覆盖当前 18 个 Sitemap 页面：17 个 `PASS / Submitted and indexed`；Services 为 `NEUTRAL / Discovered - currently not indexed`。Services 生产索引信号正常，所有者提供的 2026-08-28 17:28 GSC 实时测试已绿色通过，随后确认已请求编入索引一次；当前为 `monitoring`，不重复提交，后续复查 indexed snapshot。
 - SEO-V2-004 于 2026-08-27 完成当前轮只读复核：首页移动端 Lab LCP 3.66s，与既有 3.68s 中位数一致；Services 3 次有效 LCP 为 5.44s / 4.44s / 4.40s，中位数 4.44s，较既有 5.00s 改善。两页 TBT/CLS 无回归；CrUX 因未配置 API key 且匿名 PageSpeed API 返回 429 仍为 unavailable。结论为 `no-change / monitoring`，不改代码。
-- SEO-V2-006 已于 2026-08-27 暂时跳过：ThomasNet 中国主体自助建档表单无法选择真实 Zhangjiagang 地址，候选误指天津且表单固定 `+1` 电话前缀；不得使用错误地址或混用美国主体地址。当前为 `deferred / platform-eligibility`，只有平台确认境外供应商资格或提供人工地址录入方式后重开。OEKO-TEX / WRAP 输入仍保留，但本轮不继续推进。
+- SEO-V2-006 当前为 `deferred / external-input`：ThomasNet 中国主体因真实 Zhangjiagang 地址无法选择和平台资格不明而暂缓；2026-08-29 所有者确认 OEKO-TEX Buying Guide / WRAP 公开列名所需 certificate / label number、持证主体、WRAP ID、有效期及门户列名状态短期无法提供，因此同步暂缓。不得以不完整认证信息继续登记；仅在对应外部条件或可核验凭据到位后重开。
 - SEO-V2-007 的 1200×627 JPG 兼容修复已于 2026-08-28 通过网站端生产技术验收，但所有者随后提供的 LinkedIn Post Inspector 重新抓取截图仍显示 `No image found`；当前为 `platform-failed / diagnosis-monitoring`。模拟 LinkedInBot 可正常访问页面和图片，根因尚未证实；满 48 小时复验后再按准确时间查 Cloudflare Security Events，必要时只做 Sportswear 单页标准 JPEG 受控实验。
 - SEO-V2-008 已于 2026-08-28 完成生产验收并决定 `fixed / keep`：五页 18/18 响应式节点、54/54 WebP、生产二进制一致性、Desktop/Mobile 视觉、同一 5 URL 审计及 Sports Accessories 三次移动端 Lab 均通过，无状态码、indexability、布局或可归因性能回归。
 
@@ -639,6 +639,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-28 | SEO-V2-003 Services GSC 实时测试通过：17:28 截图显示“网址可编入 Google 索引”且网页可用性正常，无增强功能阻塞；indexed snapshot 仍沿用此前 `Discovered - currently not indexed`，等待所有者点击“请求编入索引”一次后进入常规复查窗口 |
 | 2026-08-28 | SEO-V2-003 Services 已请求编入索引：所有者确认在实时测试通过后完成一次性请求；owner action 关闭，状态转为 `monitoring`，不重复提交，等待后续 URL Inspection 更新 indexed snapshot |
 | 2026-08-29 | SEO-V2-003 QC Guide Sitemap 重复项已修复：生产 REST API 证实 Page ID `79`、`80` 为同 slug 的重复已发布对象，前台实际渲染 ID `79`；所有者将 ID `80` 移入回收站后，生产 Sitemap 恢复为 18/18 唯一 URL，QC Guide 保持 HTTP 200、自引用 canonical、无 `noindex`，Finding outcome 为 `fixed / keep` |
+| 2026-08-29 | SEO-V2-006 外部认证名录继续暂缓：所有者确认短期无法提供 OEKO-TEX certificate / label number、持证主体、WRAP ID、有效期及门户公开列名状态；与 ThomasNet 一并维持 `deferred / external-input`，不使用不完整或不可核验信息提交 |
 
 ---
 

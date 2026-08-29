@@ -44,7 +44,7 @@ URL、H1 和页面所有权仍以 [`../sitemap.md`](../sitemap.md) 为准；Titl
 - 最新冻结 Crawl 为 `crawl_40f88b6c25d74ba79ee193c7be26caf9`：20 页、0 fetch failure；没有新增状态码错误、Title 变化或 indexability flip；
 - SEO-V2-003 两批 URL Inspection 已覆盖 18 个 Sitemap 页面：17 个 indexed / PASS，Services 为 `Discovered - currently not indexed`；Services 生产索引信号正常，2026-08-28 17:28 GSC 实时测试已绿色通过，所有者随后确认已请求编入索引一次。当前不重复提交，只在合理窗口复查 indexed snapshot。QC Guide Sitemap 重复项已于 2026-08-29 定位为生产重复 Page ID `80` 并移入回收站；复验为 18 个条目 / 18 个唯一 URL，Finding 为 `fixed / keep`。全站监测 Crawl 无状态码或 indexability 回归，GOTS 外链 Finding 已 `fixed`；
 - SEO-V2-004 于 2026-08-27 完成当前轮 Lab 复核：首页 LCP 3.66s，无恶化；Services 3 次有效 LCP 中位数 4.44s，较既有 5.00s 改善。CrUX 因未配置 API key 且匿名接口 429 仍为 unavailable，当前 `no-change / monitoring`，不触发代码改动；
-- SEO-V2-006 已按所有者 2026-08-27 决定暂时跳过：ThomasNet 中国主体表单无法选择真实 Zhangjiagang 地址，错误候选指向天津，且自助入口呈现明显北美范围约束；当前为 `deferred / platform-eligibility`，只有平台确认境外供应商资格或提供人工地址录入方式才重开；
+- SEO-V2-006 当前为 `deferred / external-input`：ThomasNet 因真实 Zhangjiagang 地址无法选择和平台资格不明而暂缓；所有者于 2026-08-29 进一步确认 OEKO-TEX Buying Guide / WRAP 公开列名短期无法提供 certificate / label number、持证主体、WRAP ID、有效期及门户列名状态。只有对应外部条件或完整可核验凭据到位后才重开；
 - SEO-V2-007 的 7 张 1200×627 JPG 已通过生产 HTML、Schema、资源和 7 URL 定向审计，但 LinkedIn Post Inspector 实际重新抓取仍显示 `No image found`；当前为 `platform-failed / diagnosis-monitoring`。模拟 LinkedInBot 可访问页面和图片，根因未证实；先等部署满 48 小时复验，再查 Cloudflare Security Events，必要时只做 Sportswear 单页标准 JPEG 受控实验；
 - SEO-V2-008 已完成生产验收并决定 `fixed / keep`：五页 18/18 响应式节点、54/54 WebP、生产二进制一致性、Desktop/Mobile 视觉、同一 5 URL 审计与三次 Sports Accessories 移动端 Lab 均通过；
 - SEO-V2-002 已完成 2026-07-26 至 08-22 的 GSC / GA4 / 询盘基线：GSC 5 点击 / 184 曝光；GA4 Organic Search 2 sessions、0 `generate_lead`、0 有效询盘；全站 8 次 `generate_lead` 中有效询盘 1 次，来自 Organic Social。页面与查询均未达到修改门槛；
