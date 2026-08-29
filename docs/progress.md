@@ -264,7 +264,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 
 完整证据原载于 `seo/seo.md` 第 10 节；该文件为历史修正记录，已于 2026-08-18 按所有者决定删除（可从 git 历史查阅）。当前数据基线见 [`seo/gsc-data-log.md`](seo/gsc-data-log.md) 与 [`seo/seo-cli-baseline-2026-08-18.md`](seo/seo-cli-baseline-2026-08-18.md)。
 
-- 当前 Page Sitemap 包含 18 个唯一 URL：17 个受主题管理的核心页面，加 Privacy Policy。生产 XML 当前共有 19 个 `<url>` 条目，因为 QC Guide 被完全重复列出两次；该低优先 Finding 不改变唯一 URL 覆盖，转为独立 Sitemap 清理复核。
+- 当前 Page Sitemap 包含 18 个唯一 URL：17 个受主题管理的核心页面，加 Privacy Policy。2026-08-29 已移除造成 QC Guide 重复条目的生产重复 Page ID `80`；生产 XML 复验为 18 个 `<url>` 条目 / 18 个唯一 URL，Finding 为 `fixed / keep`。
 - 18 个页面全部返回 HTTP 200；每页只有一份 Title、Meta Description、H1、自引用 Canonical 和可解析 JSON-LD，未发现意外 `noindex`。
 - 17 个受管页面的 Title/Meta 与 `seo-tags.md` 一致，H1 与 `sitemap.md` 一致；没有孤立页或业务内链 404。
 - 本轮没有 Critical 问题，记录了 8 组非阻断警告。2026-08-15 已补录首轮 Search Console 数据：3 个月视图为 5 次点击、94 次曝光、5.3% CTR、平均排名 12.7；样本不足以支持页面微调。
@@ -638,6 +638,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-28 | SEO-V2-003 Sitemap 复核发现 19 个条目对应 18 个唯一 URL，QC Guide 以相同 URL/lastmod 重复两次；QC Guide 已 indexed / PASS，重复项不解释 Services 状态。当前为 Info / P3，转入独立 Rank Math Sitemap 缓存与对象来源复核，不改 URL 或正文 |
 | 2026-08-28 | SEO-V2-003 Services GSC 实时测试通过：17:28 截图显示“网址可编入 Google 索引”且网页可用性正常，无增强功能阻塞；indexed snapshot 仍沿用此前 `Discovered - currently not indexed`，等待所有者点击“请求编入索引”一次后进入常规复查窗口 |
 | 2026-08-28 | SEO-V2-003 Services 已请求编入索引：所有者确认在实时测试通过后完成一次性请求；owner action 关闭，状态转为 `monitoring`，不重复提交，等待后续 URL Inspection 更新 indexed snapshot |
+| 2026-08-29 | SEO-V2-003 QC Guide Sitemap 重复项已修复：生产 REST API 证实 Page ID `79`、`80` 为同 slug 的重复已发布对象，前台实际渲染 ID `79`；所有者将 ID `80` 移入回收站后，生产 Sitemap 恢复为 18/18 唯一 URL，QC Guide 保持 HTTP 200、自引用 canonical、无 `noindex`，Finding outcome 为 `fixed / keep` |
 
 ---
 

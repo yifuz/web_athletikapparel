@@ -46,12 +46,14 @@
 ### Finding：SEO-V2-003-SITEMAP-DUPLICATE
 
 - 类型：`review`；严重度：Info；业务优先级：P3；信心：Confirmed；
-- 数据状态：2026-08-28 生产 `page-sitemap.xml` 完整读取；
-- 观察：Page Sitemap 有 19 个 `<url>` 条目和 18 个唯一 URL；`/garment-quality-control-checklist/` 以完全相同的 URL 与 `lastmod=2026-08-20T08:31:05+00:00` 重复两次；
-- 影响判断：重复条目不产生新 URL、重定向、canonical 冲突或索引阻塞，不能解释 Services 未收录；QC Guide 本次首批 Inspection 已为 indexed / PASS；
-- 失效判定：刷新 Rank Math Sitemap 缓存后只剩一个 QC Guide 条目，或查明两个不同公开对象确实需要不同规范 URL；
-- 最小动作：单独核对生产 WordPress 中对应 Page 对象和 Rank Math Sitemap 缓存/生成链，优先刷新缓存后复验，不在 SEO-V2-003 内改 URL 或页面正文；
-- 当前 outcome：`deferred / separate sitemap cleanup`。
+- 目标页面：`/garment-quality-control-checklist/`；搜索意图：technical knitwear buyer 的 garment quality control checklist 信息型意图；
+- 初始证据：2026-08-28 生产 `page-sitemap.xml` 有 19 个 `<url>` 条目和 18 个唯一 URL；QC Guide 以相同 URL 与 `lastmod=2026-08-20T08:31:05+00:00` 重复两次；
+- 根因证据：2026-08-29 生产 WordPress REST API 返回两个同 slug、同发布时间和同内容的已发布 Page（ID `79`、`80`）；生产前台实际渲染 ID `79`，shortlink 为 `?p=79`。随机查询参数、`no-cache` 请求和 CDN 双 MISS 后重复仍存在，排除浏览器/CDN 旧缓存；本地数据库和本地 Sitemap 均只有一个 QC Guide 对象；
+- 主要变量：仅将生产重复 Page ID `80` 移至回收站，保留实际渲染和已收录的 ID `79`；未改 URL、正文、Title、canonical、模板或主题代码；
+- 风险：误删 ID `79` 会影响现有页面；因此按前台 `page-id-79` 与 shortlink 证据锁定保留对象，并在操作后复查 HTTP、canonical、robots 与 Sitemap；
+- 验收标准：生产 Page Sitemap 全部 URL 唯一、QC Guide 只出现一次、REST API 只返回一个已发布对象、页面保持 HTTP 200、自引用 canonical 且无 `noindex`；
+- 2026-08-29 验收：生产 Sitemap 为 18 个条目 / 18 个唯一 URL，QC Guide 计数为 1；REST API 只返回 ID `79`；页面 HTTP 200、canonical 为规范 URL、前台仍渲染 ID `79` 且未检测到 `noindex`；
+- Finding outcome：`fixed / keep`。该重复项未产生 canonical 或索引回归，也不解释 Services 的既有收录状态。
 
 ## 2026-08-27：SEO-V2-003 第二批 URL Inspection 尝试
 

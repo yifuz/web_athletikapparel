@@ -42,7 +42,7 @@ URL、H1 和页面所有权仍以 [`../sitemap.md`](../sitemap.md) 为准；Titl
 
 - V1 生产实施已经完成，SEO-IMP-035–037 决策为 `keep`，SEO-IMP-038 为 `keep-monitoring`；
 - 最新冻结 Crawl 为 `crawl_40f88b6c25d74ba79ee193c7be26caf9`：20 页、0 fetch failure；没有新增状态码错误、Title 变化或 indexability flip；
-- SEO-V2-003 两批 URL Inspection 已覆盖 18 个 Sitemap 页面：17 个 indexed / PASS，Services 为 `Discovered - currently not indexed`；Services 生产索引信号正常，2026-08-28 17:28 GSC 实时测试已绿色通过，所有者随后确认已请求编入索引一次。当前不重复提交，只在合理窗口复查 indexed snapshot。Page Sitemap 另有一个 QC Guide 完全重复条目，当前为 Info / P3 的独立清理复核；全站监测 Crawl 无状态码或 indexability 回归，GOTS 外链 Finding 已 `fixed`；
+- SEO-V2-003 两批 URL Inspection 已覆盖 18 个 Sitemap 页面：17 个 indexed / PASS，Services 为 `Discovered - currently not indexed`；Services 生产索引信号正常，2026-08-28 17:28 GSC 实时测试已绿色通过，所有者随后确认已请求编入索引一次。当前不重复提交，只在合理窗口复查 indexed snapshot。QC Guide Sitemap 重复项已于 2026-08-29 定位为生产重复 Page ID `80` 并移入回收站；复验为 18 个条目 / 18 个唯一 URL，Finding 为 `fixed / keep`。全站监测 Crawl 无状态码或 indexability 回归，GOTS 外链 Finding 已 `fixed`；
 - SEO-V2-004 于 2026-08-27 完成当前轮 Lab 复核：首页 LCP 3.66s，无恶化；Services 3 次有效 LCP 中位数 4.44s，较既有 5.00s 改善。CrUX 因未配置 API key 且匿名接口 429 仍为 unavailable，当前 `no-change / monitoring`，不触发代码改动；
 - SEO-V2-006 已按所有者 2026-08-27 决定暂时跳过：ThomasNet 中国主体表单无法选择真实 Zhangjiagang 地址，错误候选指向天津，且自助入口呈现明显北美范围约束；当前为 `deferred / platform-eligibility`，只有平台确认境外供应商资格或提供人工地址录入方式才重开；
 - SEO-V2-007 的 7 张 1200×627 JPG 已通过生产 HTML、Schema、资源和 7 URL 定向审计，但 LinkedIn Post Inspector 实际重新抓取仍显示 `No image found`；当前为 `platform-failed / diagnosis-monitoring`。模拟 LinkedInBot 可访问页面和图片，根因未证实；先等部署满 48 小时复验，再查 Cloudflare Security Events，必要时只做 Sportswear 单页标准 JPEG 受控实验；
