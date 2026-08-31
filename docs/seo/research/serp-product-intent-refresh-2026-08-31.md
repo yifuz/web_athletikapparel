@@ -125,6 +125,8 @@ Athletik 的 Merino 页面未进入上述美国快照的前 10 Organic Results�
 - 不把消费品牌或传统 flat-knit 结果误判为 Athletik 的直接 B2B 竞争集；
 - 只有 GSC 出现相关 Query 并达到门槛，或跨周期 SERP 显示更稳定的工厂任务，才为现有 Merino 页建立 Change Card。
 
+同日恢复 GSC 代理链路后，`/merino-wool-manufacturer/` 在 2026-07-31 至 08-27 final 窗口返回 `merino wool clothing manufacturer` 1 曝光、0 点击、平均排名 23。该一方信号与既有页面所有权一致，也位于 SEO-V2-005 的观察排名范围内，但只有 1 次曝光，不能触发页面修改。SERP 与 GSC 当前共同支持“继续观察现有页”，不支持新 URL 或立即扩写。
+
 Task ID：
 
 - US 四个首轮词：`08310519-2417-0139-0000-3cf2b76b18f3`、`08310519-2417-0139-0000-a9077f485724`、`08310519-2417-0139-0000-331880473019`、`08310519-2417-0139-0000-1b1649eb2526`；

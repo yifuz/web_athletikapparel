@@ -14,16 +14,31 @@
 > - 样本低于 100 曝光门槛时只记录方向，不触发页面修改（`seo-process.md` §5）。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
-## 2026-08-31：SEO-V2-005 GSC 刷新暂不可用
+## 2026-08-31：SEO-V2-005 GSC 代理故障修复与 Underwear 检查
 
 为核对 Underwear、Merino、Outdoor 与 Sportswear 页是否达到 SEO-V2-005 门槛，先运行 `seo --version` 与 `seo doctor --json`。CLI 版本为项目已验证的 `0.2.36`，Google 登录、Search Console `webmasters.readonly` scope 和默认属性 `sc-domain:athletikapparel.com` 均通过。
 
-随后两个不同只读报告均在取数阶段返回相同的非重试型错误：
+初次裸跑两个不同只读报告时，均在取数阶段返回相同的非重试型错误：
 
 - `page-opportunities`，目标 `/underwear-manufacturer/`：`INTERNAL_ERROR / fetch failed / retryable=false`；
 - `search-performance-overview`，最新 28 天、非品牌范围：`INTERNAL_ERROR / fetch failed / retryable=false`。
 
-本轮 GSC 数据状态为 `unavailable / report-service failure`，不解释为零曝光、零 Query 或授权失败。按照停止规则不再重复请求；继续沿用 2026-07-26 至 08-22 的最新完整 final 28 天基线，不启动页面修改。报告服务恢复后，先重跑一次 Underwear 页非品牌 Query 检查，再决定是否扩展到其余三个页面。
+诊断确认本机直连 `searchconsole.googleapis.com:443` 失败，Fastlink 系统代理 `127.0.0.1:7892` 正常，但重启后当前进程没有注入既有 `EnvHttpProxyAgent`。在同一 PowerShell 进程内设置 `HTTP_PROXY`、`HTTPS_PROXY` 和 `NODE_OPTIONS=--import=.../undici-proxy-loader.mjs` 后：
+
+- `seo sites --json` 成功返回 `sc-domain:athletikapparel.com / siteOwner`；
+- 同参数重跑 Underwear `page-opportunities` 成功，数据状态 `available`、GSC `dataState: final`、页面验证 `verified`；
+- 窗口为 2026-07-31 至 08-27，Query × Page 为 2 行：`underwear` 1 曝光 / 0 点击 / 平均排名 2，`mens underwear` 1 曝光 / 0 点击 / 平均排名 20；
+- 目标页 HTTP 200，Title 与 H1 均为 `Underwear Manufacturer`；报告无分页截断，唯一 Warning 为排除 1 个 non-HTTP link。
+
+恢复后以相同 final 28 天、非品牌、最低 1 曝光参数完成其余三个候选页：
+
+| 页面 | 可见 Query × Page | 点击 | 曝光 | 平均排名 | 处置 |
+|---|---|---:|---:|---:|---|
+| `/merino-wool-manufacturer/` | `merino wool clothing manufacturer` | 0 | 1 | 23 | `no-change / below-threshold`；意图和页面所有权匹配，但不足以改页 |
+| `/outdoor-clothing-manufacturer/` | 未返回可见非品牌 Query 行 | — | — | — | `no-change / sparse-data`；不解释为页面零曝光 |
+| `/sportswear-manufacturer/` | `sukartik clothing private limited` | 0 | 1 | 45 | `not-needed / mismatched-query`；这是其他公司品牌，不扩写页面 |
+
+根因是代理注入遗漏，不是 GSC、OAuth 或报告服务故障。四页均未达到 100 曝光门槛；工具对 Underwear 的 CTR/serp-framing、Merino 的 content-gap 与 Sportswear 的 content-gap 建议均不能直接触发修改。Merino 查询只确认当前页面所有权方向；Sportswear 建议已被意图核验推翻。四份报告均无分页截断，页面验证范围中的重复 Warning 仅为各排除 1 个 non-HTTP link。
 
 ## 2026-08-28：SEO-V2-003 第二批 URL Inspection 完成
 

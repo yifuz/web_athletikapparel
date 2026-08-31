@@ -33,6 +33,17 @@
 
 - 2026-08-26 在当前 PowerShell 7 + Node v22.23.1 环境复核发现：`seo` 使用自带的 `undici`，只设置 `HTTPS_PROXY` / `HTTP_PROXY` 仍会报 `fetch failed`。本轮采用一次性进程级 `EnvHttpProxyAgent` 注入后成功读取 GSC / GA4；没有改动 CLI、OAuth 或项目配置。以后若复现，先用 `seo doctor --json` 核对授权，再采用同一临时注入方式，不把代理凭据写入仓库。
 
+  PowerShell 7 的完整调用方式如下。三个环境变量必须与 `seo` 命令位于同一个进程块；重启终端或启动新的非继承进程后需要重新注入：
+
+  ```powershell
+  $env:HTTP_PROXY = 'http://127.0.0.1:7892'
+  $env:HTTPS_PROXY = 'http://127.0.0.1:7892'
+  $env:NODE_OPTIONS = '--import=file:///C:/Users/Administrator/AppData/Roaming/seo/Config/undici-proxy-loader.mjs'
+  seo <command>
+  ```
+
+  先用 `Test-NetConnection 127.0.0.1 -Port 7892` 确认 Fastlink 端口可用，再用 `seo sites --json` 验证 Google API。不要把 `NODE_OPTIONS` 永久写成用户级全局变量，也不要修改自动生成的 `seo.ps1`；两种做法都会影响其他 Node 进程或在 CLI 更新时失效。
+
 - `seo auth login` 是交互式流程（浏览器 + 本地回调），必须在真实终端中运行，不能放在无 TTY 的后台进程。
 - 纯爬取目标站（`seo crawl` / `seo report --url`）不访问 Google，不需要代理。
 
