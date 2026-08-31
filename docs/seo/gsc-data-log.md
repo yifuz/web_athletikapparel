@@ -14,6 +14,17 @@
 > - 样本低于 100 曝光门槛时只记录方向，不触发页面修改（`seo-process.md` §5）。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-08-31：SEO-V2-005 GSC 刷新暂不可用
+
+为核对 Underwear、Merino、Outdoor 与 Sportswear 页是否达到 SEO-V2-005 门槛，先运行 `seo --version` 与 `seo doctor --json`。CLI 版本为项目已验证的 `0.2.36`，Google 登录、Search Console `webmasters.readonly` scope 和默认属性 `sc-domain:athletikapparel.com` 均通过。
+
+随后两个不同只读报告均在取数阶段返回相同的非重试型错误：
+
+- `page-opportunities`，目标 `/underwear-manufacturer/`：`INTERNAL_ERROR / fetch failed / retryable=false`；
+- `search-performance-overview`，最新 28 天、非品牌范围：`INTERNAL_ERROR / fetch failed / retryable=false`。
+
+本轮 GSC 数据状态为 `unavailable / report-service failure`，不解释为零曝光、零 Query 或授权失败。按照停止规则不再重复请求；继续沿用 2026-07-26 至 08-22 的最新完整 final 28 天基线，不启动页面修改。报告服务恢复后，先重跑一次 Underwear 页非品牌 Query 检查，再决定是否扩展到其余三个页面。
+
 ## 2026-08-28：SEO-V2-003 第二批 URL Inspection 完成
 
 在本机保守 UTC 日配额重置后，只对首轮未选择的 8 个 Sitemap URL 重跑只读 `index-watch`。本次结果为 `dataStatus=complete`：`requested=8`、`unique=8`、`attempted=8`、`inspected=8`、`failed=0`、`quotaBlocked=0`、`deferred=0`、`currentIssues=1`、`regressions=0`。没有重复检查首批 10 个 URL，也没有向 Google 请求编入索引。

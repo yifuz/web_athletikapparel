@@ -90,3 +90,43 @@
 - US / GB / CA `performance underwear manufacturer`：`08310459-2417-0139-0000-78e2dbad25c2`、`08310500-2417-0139-0000-f2a156a1f7b9`、`08310500-2417-0139-0000-5fc512a11a5f`；
 - US `compression clothing manufacturer`：`08310459-2417-0139-0000-cc4e36927923`；
 - US `thermal underwear manufacturer`：`08310459-2417-0139-0000-367f7ab25cb3`。
+
+## 8. Merino 产品词后续验证
+
+周报把 Merino Base Layer 识别为产品与销售方向，但市场机会不自动等于搜索意图。为验证现有 `/merino-wool-manufacturer/` 是否具备可执行的搜索机会，本轮追加 8 个 Live SERP 快照，实际 API 成本为 USD 0.016。
+
+### 8.1 美国泛 Merino 制造词
+
+| 查询 | 结果类型 | 判断 |
+|---|---|---|
+| `merino base layer manufacturer` | 消费品牌、零售集合、Reddit、榜单为主，仅少量制造商 | 偏消费发现，不是干净 B2B 工厂词 |
+| `merino wool clothing manufacturer` | 消费品牌占多数，混合采购讨论、制造商和行业榜单 | 商业意图存在但不纯 |
+| `merino apparel manufacturer` | 消费品牌、制造商、Reddit 与榜单混合 | `apparel` 没有明显改善页面任务 |
+| `thermal base layer manufacturer` | 少量 Custom/Technical Base Layer 工厂，混合评测、零售和军品 | 有制造意图但歧义明显 |
+| `merino wool clothing OEM` | 仍由消费品牌主导，`OEM` 没有清洗结果 | 停止扩展 |
+
+Athletik 的 Merino 页面未进入上述美国快照的前 10 Organic Results。该观察只覆盖本次地点与设备，不代表稳定排名或完全不可见。
+
+### 8.2 `custom` 修饰词的跨市场结果
+
+`custom merino wool clothing manufacturer` 是本轮唯一明显改善 B2B 意图的表达：
+
+- US 前部出现 Merinotex、Thai Son、Jiayan 等制造商，也有 Reddit 采购讨论；后部仍混入定制服装零售和消费品牌；
+- GB 前部出现制造商与 Europages B2B 目录，但同时出现传统 Merino knitwear manufacturer，存在 flat-knit / sweater 语义漂移；
+- CA 前部同样由数个制造商占据，后部混入消费品牌、榜单和目录；
+- Athletik 未进入 US / GB / CA 本次前 10 Organic Results。
+
+因此该词可作为现有 Merino 页的条件式次级观察词，但不支持新页面、URL、Title 或 H1 修改。周报中的 Merino 商业方向更适合先推动真实样品、面料规格和生产证据，再等待 GSC 或后续跨周期 SERP 信号。
+
+### 8.3 执行结论与 Task ID
+
+- Finding outcome：`no-change / conditional-monitoring`；
+- 不建立 Merino Base Layer 平行页；
+- 不把消费品牌或传统 flat-knit 结果误判为 Athletik 的直接 B2B 竞争集；
+- 只有 GSC 出现相关 Query 并达到门槛，或跨周期 SERP 显示更稳定的工厂任务，才为现有 Merino 页建立 Change Card。
+
+Task ID：
+
+- US 四个首轮词：`08310519-2417-0139-0000-3cf2b76b18f3`、`08310519-2417-0139-0000-a9077f485724`、`08310519-2417-0139-0000-331880473019`、`08310519-2417-0139-0000-1b1649eb2526`；
+- US 两个采购修饰词：`08310520-2417-0139-0000-d2a26b5351d3`、`08310520-2417-0139-0000-d19b952282ba`；
+- GB / CA `custom merino wool clothing manufacturer`：`08310521-2417-0139-0000-098b2effe490`、`08310521-2417-0139-0000-58afee0af3bf`。
