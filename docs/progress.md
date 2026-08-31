@@ -640,7 +640,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-28 | SEO-V2-003 Services 已请求编入索引：所有者确认在实时测试通过后完成一次性请求；owner action 关闭，状态转为 `monitoring`，不重复提交，等待后续 URL Inspection 更新 indexed snapshot |
 | 2026-08-29 | SEO-V2-003 QC Guide Sitemap 重复项已修复：生产 REST API 证实 Page ID `79`、`80` 为同 slug 的重复已发布对象，前台实际渲染 ID `79`；所有者将 ID `80` 移入回收站后，生产 Sitemap 恢复为 18/18 唯一 URL，QC Guide 保持 HTTP 200、自引用 canonical、无 `noindex`，Finding outcome 为 `fixed / keep` |
 | 2026-08-29 | SEO-V2-006 外部认证名录继续暂缓：所有者确认短期无法提供 OEKO-TEX certificate / label number、持证主体、WRAP ID、有效期及门户公开列名状态；与 ThomasNet 一并维持 `deferred / external-input`，不使用不完整或不可核验信息提交 |
-| 2026-08-31 | SEO-V2-015 本地实施完成、待部署：所有者确认核心业务是使用针织面料生产 underwear、base layers、sportswear 与 yoga apparel，并批准进入实施。Title/H1 已改为 `Performance Apparel Manufacturer`，首屏改用 `Performance apparel OEM/ODM partner` 并明确 knitted fabric 与目标品类；同步对齐 Meta、OG/Twitter、WebPage Schema 和 Sitemap lastmod。URL、页面所有权、品类页与技术指南不变；不使用 `Cut-and-Sew` 作为首页主定位 |
+| 2026-08-31 | SEO-V2-015 首次生产验收：Title/Meta/H1、OG/Twitter、WebPage Schema、HTTP 200、Canonical、robots 与 21 URL Crawl 均通过；Rank Math Page Sitemap 仍保留旧首页 `lastmod`，且响应为 Cloudflare `DYNAMIC` / Flywheel `MISS`，定位为插件内部 Sitemap cache 未因主题部署失效。已增加一次性 page/index Sitemap 缓存失效逻辑，等待补充部署 `functions.php` 后关闭 Day 0 验收。URL、页面所有权、品类页与技术指南不变；不使用 `Cut-and-Sew` 作为首页主定位 |
 
 ---
 
@@ -648,7 +648,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 
 1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
 2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
-3. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 已本地实施，下一步为部署与生产 HTML/Crawl/Schema 验收。
+3. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 的页面与 Crawl 已通过，下一步只需补充部署 Sitemap cache fix 并复验 `lastmod`。
 4. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动，响应时间需使用同配置窗口比较。
 5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
 6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。

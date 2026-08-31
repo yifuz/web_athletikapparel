@@ -3,8 +3,8 @@
 - Change ID：`SEO-V2-015`
 - Finding type：`fix`
 - 优先级：P1
-- 状态：`planned`
-- 实施阶段：`implemented / pending-deployment`
+- 状态：`deployed`
+- 实施阶段：`deployed / sitemap-cache-fix pending`
 - 实施日期：2026-08-31
 - 目标页面：`/`
 - 目标市场：美国、英国、加拿大，并覆盖北美与欧洲英语 B2B 买家
@@ -71,12 +71,21 @@
 
 ### 生产 / 部署后
 
-- [ ] `/` 返回 HTTP 200、`index, follow`、自引用 Canonical；
-- [ ] 生产 HTML 只有一个 H1，并输出新 Title 与唯一 Meta Description；
-- [ ] OG/Twitter Title 与 Description、WebPage `name` 与 `description` 与规范值一致；
+- [x] `/` 返回 HTTP 200、`index, follow`、自引用 Canonical；
+- [x] 生产 HTML 只有一个 H1，并输出新 Title 与唯一 Meta Description；
+- [x] OG/Twitter Title 与 Description、WebPage `name` 与 `description` 与规范值一致；
 - [ ] Page Sitemap 首页 `lastmod` 与 Sitemap index 时间不早于本次部署；
-- [ ] 重跑生产 Crawl，确认无 fetch failure、状态码或 indexability 回归；
+- [x] 重跑生产 Crawl，确认无新增 URL、移除 URL、error 或 indexability flip；
 - [ ] 最终 Finding outcome 写回本卡与 V2 Backlog。
+
+## 首次生产验收记录（2026-08-31）
+
+- 原始 HTML 与 `audit-page` 均确认首页 HTTP 200、`follow, index`、单一自引用 Canonical、单一 Title、单一 Meta Description 和单一 H1；Title、Meta、H1 均为本次规范值；
+- OG/Twitter Title 与 Description 已与规范值一致；JSON-LD 只有 1 个可解析脚本、0 invalid JSON-LD，WebPage `name` 与 `description` 均为本次规范值；`audit-page` 返回 0 issue、0 recommendation，数据为网络 bypass fetch，不代表 Google 已抓取新版本；
+- 首轮 `crawl-diff` 抓取 21 URL：0 added、0 removed、0 new error、0 indexability flip。Finding `action-9dfc0e6ed077` 是本次计划内首页 Title/H1 变化，处置为 `not-needed / expected release change`，后续只按 Day 7 / 28 / 90 观察；
+- 同轮 `action-ba74be3d0f21` 指向未在本次代码 diff 中修改的 Sportswear main content，处置为 `not-needed / unrelated to SEO-V2-015`。紧接的同范围复跑只剩 Cloudflare `/cdn-cgi/l/email-protection` 动态内容 hash 变化，仍沿用既有 `not-needed`；4 个 MP4 超过工具 5 MB 抓取上限的 Warning 也为已知限制，不是本次回归；
+- Page Sitemap 为 HTTP 200、18 个唯一 URL，但首页 `lastmod` 仍为 `2026-08-20T08:31:05+00:00`。带 cache-busting query 与 `Cache-Control: no-cache` 的请求结果相同；响应为 Cloudflare `DYNAMIC`、Flywheel `MISS`、`X-Cacheable: NO`，排除外部缓存命中；
+- 本地 Rank Math 插件源码确认 XML Sitemap 另有最多 100 天的文件/Transient 缓存，主题文件发布不会触发其 `save_post` watcher。已在 `functions.php` 加入 release-marker 控制的一次性 `page` 与 index Sitemap cache invalidation；不改 Sitemap 设置、URL 或页面内容，等待补充部署后复验。
 
 ## 复盘窗口
 
