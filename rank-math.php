@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  * @return string
  */
 function myathletik_rank_math_home_title() {
-	return 'Technical Knitwear Manufacturer | Athletik Clothing';
+	return myathletik_home_seo_title();
 }
 
 /**
@@ -36,6 +36,22 @@ function myathletik_rank_math_home_social_title( $title ) {
 }
 add_filter( 'rank_math/opengraph/facebook/og_title', 'myathletik_rank_math_home_social_title', 20 );
 add_filter( 'rank_math/opengraph/twitter/twitter_title', 'myathletik_rank_math_home_social_title', 20 );
+
+/**
+ * Keep the homepage social description aligned with the canonical meta.
+ *
+ * @param string $description Rank Math's generated social description.
+ * @return string
+ */
+function myathletik_rank_math_home_social_description( $description ) {
+	if ( is_front_page() ) {
+		return myathletik_home_seo_description();
+	}
+
+	return $description;
+}
+add_filter( 'rank_math/opengraph/facebook/og_description', 'myathletik_rank_math_home_social_description', 19 );
+add_filter( 'rank_math/opengraph/twitter/twitter_description', 'myathletik_rank_math_home_social_description', 19 );
 
 /**
  * Return the current technical article record when applicable.
@@ -229,23 +245,24 @@ add_filter( 'rank_math/opengraph/facebook/image_array', 'myathletik_rank_math_pr
 add_filter( 'rank_math/opengraph/twitter/image_array', 'myathletik_rank_math_product_category_social_image', 21 );
 
 /**
- * Keep the homepage WebPage entity aligned with the document title.
+ * Keep the homepage WebPage entity aligned with canonical metadata.
  *
  * Organization and WebSite names intentionally remain the shorter brand name.
  *
  * @param array $data Rank Math JSON-LD entities.
  * @return array
  */
-function myathletik_rank_math_home_schema_title( $data ) {
+function myathletik_rank_math_home_schema_metadata( $data ) {
 	if ( ! is_front_page() || ! is_array( $data ) || empty( $data['WebPage'] ) || ! is_array( $data['WebPage'] ) ) {
 		return $data;
 	}
 
-	$data['WebPage']['name'] = myathletik_rank_math_home_title();
+	$data['WebPage']['name']        = myathletik_rank_math_home_title();
+	$data['WebPage']['description'] = myathletik_home_seo_description();
 
 	return $data;
 }
-add_filter( 'rank_math/json_ld', 'myathletik_rank_math_home_schema_title', 100 );
+add_filter( 'rank_math/json_ld', 'myathletik_rank_math_home_schema_metadata', 100 );
 
 /**
  * Return the appropriate WebPage type for the site's core pages.
@@ -643,7 +660,7 @@ add_filter( 'rank_math/json_ld', 'myathletik_rank_math_product_category_schema_i
  * @return int Unix timestamp in UTC.
  */
 function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
-	$latest = strtotime( '2026-08-18 02:53:50 UTC' );
+	$latest = strtotime( '2026-08-31 03:37:11 UTC' );
 
 	if ( '' === $url ) {
 		return $latest;
@@ -673,7 +690,7 @@ function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
 	}
 
 	if ( '/' === $path ) {
-		return strtotime( '2026-08-11 05:00:00 UTC' );
+		return $latest;
 	}
 
 	if ( in_array( $path, array( '/sportswear-manufacturer/', '/underwear-manufacturer/' ), true ) ) {

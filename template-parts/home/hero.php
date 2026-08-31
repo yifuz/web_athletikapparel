@@ -56,12 +56,12 @@ $hero_secondary_sizes = '(max-width: 47.9375rem) calc((100vw - 3rem) / 3), 13rem
 <section class="ma-home-hero" aria-label="<?php esc_attr_e( 'myathletik homepage introduction', 'myathletik-child' ); ?>">
 	<div class="ma-home-hero__inner">
 		<div class="ma-home-hero__content">
-			<p class="ma-home-hero__eyebrow"><?php esc_html_e( 'Technical knitwear OEM/ODM partner', 'myathletik-child' ); ?></p>
+			<p class="ma-home-hero__eyebrow"><?php esc_html_e( 'Performance apparel OEM/ODM partner', 'myathletik-child' ); ?></p>
 			<h1 class="ma-home-hero__title">
-				<span><?php esc_html_e( 'Performance Knitwear', 'myathletik-child' ); ?></span>
+				<span><?php esc_html_e( 'Performance Apparel', 'myathletik-child' ); ?></span>
 				<span><?php esc_html_e( 'Manufacturer', 'myathletik-child' ); ?></span>
 			</h1>
-			<p class="ma-home-hero__subhead"><?php esc_html_e( 'From yarn and fabric development to finished garments, we support underwear, sportswear, outdoor, and performance knitwear programs with integrated production and technical sewing capabilities.', 'myathletik-child' ); ?></p>
+			<p class="ma-home-hero__subhead"><?php esc_html_e( 'From knitted fabric development to finished garments, we support underwear, base layer, sportswear and yoga apparel programs with integrated production, FLATLOCK and ACTIVESEAM construction.', 'myathletik-child' ); ?></p>
 			<div class="ma-home-hero__actions" aria-label="<?php esc_attr_e( 'Primary homepage actions', 'myathletik-child' ); ?>">
 				<a class="ma-button ma-button--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
 					<?php esc_html_e( 'Request a Quote', 'myathletik-child' ); ?>

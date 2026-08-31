@@ -57,7 +57,7 @@
 
 ## 1. 首页 — `/`（保留）
 
-**当前 H1：** Performance Knitwear Manufacturer
+**当前 H1：** Performance Apparel Manufacturer
 
 **目的：** 在 5 秒内建立定位、把买家引导至正确品类页并承接询盘。
 

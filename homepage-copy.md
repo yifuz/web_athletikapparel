@@ -15,13 +15,13 @@ partner," not just a factory. Never state the real number of factories.
 
 ## 1. Hero — `template-parts/home/hero.php`
 
-Current production copy:
+Current theme copy (pending production deployment):
 
-- Eyebrow: `Technical knitwear OEM/ODM partner`
-- H1: `Performance Knitwear Manufacturer`
-- Subhead: `From yarn and fabric development to finished garments, we support
-  underwear, sportswear, outdoor, and performance knitwear programs with
-  integrated production and technical sewing capabilities.`
+- Eyebrow: `Performance apparel OEM/ODM partner`
+- H1: `Performance Apparel Manufacturer`
+- Subhead: `From knitted fabric development to finished garments, we support
+  underwear, base layer, sportswear and yoga apparel programs with integrated
+  production, FLATLOCK and ACTIVESEAM construction.`
 
 ---
 

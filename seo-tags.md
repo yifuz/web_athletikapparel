@@ -18,14 +18,14 @@ long-tails.
 ================================================================
 ## Home  (/)
 ================================================================
-Primary keyword: technical knitwear manufacturer / FLATLOCK manufacturer
+Primary keyword: performance apparel manufacturer
 
 **SEO Title:**
-Technical Knitwear Manufacturer | Athletik Clothing
+Performance Apparel Manufacturer | Athletik Clothing
 
 **Meta Description:**
-Vertically integrated OEM manufacturer of FLATLOCK & ACTIVESEAM knitwear —
-underwear, sportswear & outdoor for global brands. 15+ years. Request a quote.
+Performance apparel manufacturer for underwear, base layers, sportswear and
+yoga apparel. Integrated knit fabric development, FLATLOCK and ACTIVESEAM.
 
 ================================================================
 ## Product category pages

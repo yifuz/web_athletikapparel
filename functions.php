@@ -1154,6 +1154,24 @@ function myathletik_about_document_title( $parts ) {
 add_filter( 'document_title_parts', 'myathletik_about_document_title', 26 );
 
 /**
+ * Return the canonical homepage SEO title.
+ *
+ * @return string
+ */
+function myathletik_home_seo_title() {
+	return 'Performance Apparel Manufacturer | Athletik Clothing';
+}
+
+/**
+ * Return the canonical homepage meta description.
+ *
+ * @return string
+ */
+function myathletik_home_seo_description() {
+	return 'Performance apparel manufacturer for underwear, base layers, sportswear and yoga apparel. Integrated knit fabric development, FLATLOCK and ACTIVESEAM.';
+}
+
+/**
  * Use homepage-specific document title.
  *
  * @param array $parts Document title parts.
@@ -1161,7 +1179,7 @@ add_filter( 'document_title_parts', 'myathletik_about_document_title', 26 );
  */
 function myathletik_home_document_title( $parts ) {
 	if ( is_front_page() ) {
-		$parts['title'] = 'Technical Knitwear Manufacturer | Athletik Clothing';
+		$parts['title'] = myathletik_home_seo_title();
 		unset( $parts['site'] );
 		unset( $parts['tagline'] );
 	}
@@ -1179,7 +1197,7 @@ add_filter( 'document_title_parts', 'myathletik_home_document_title', 28 );
  */
 function myathletik_home_title_final( $title ) {
 	if ( is_front_page() ) {
-		return 'Technical Knitwear Manufacturer | Athletik Clothing';
+		return myathletik_home_seo_title();
 	}
 
 	return $title;
@@ -1199,10 +1217,30 @@ function myathletik_home_meta_description() {
 		return;
 	}
 	?>
-	<meta name="description" content="<?php echo esc_attr__( 'Vertically integrated OEM manufacturer of FLATLOCK & ACTIVESEAM knitwear — underwear, sportswear & outdoor for global brands. 15+ years. Request a quote.', 'myathletik-child' ); ?>">
+	<meta name="description" content="<?php echo esc_attr( myathletik_home_seo_description() ); ?>">
 	<?php
 }
 add_action( 'wp_head', 'myathletik_home_meta_description', 2 );
+
+/**
+ * Keep the homepage Rank Math database title aligned with the code-first
+ * production title. Its Rank Math description remains empty because the
+ * theme prints the single canonical meta description above.
+ */
+function myathletik_sync_home_rank_math_title() {
+	$page_id = (int) get_option( 'page_on_front' );
+
+	if ( $page_id <= 0 ) {
+		return;
+	}
+
+	$title = myathletik_home_seo_title();
+
+	if ( get_post_meta( $page_id, 'rank_math_title', true ) !== $title ) {
+		update_post_meta( $page_id, 'rank_math_title', $title );
+	}
+}
+add_action( 'init', 'myathletik_sync_home_rank_math_title', 30 );
 
 /**
  * Use the sustainability-page-specific document title.
