@@ -26,6 +26,7 @@ V2 不以增加任务数量为目标。所有项目必须有一方数据、生�
 | SEO-V2-012 | Performance Fabrics 信息指南条件式评估 | IMP-023 | P2 | `deferred` | GSC 出现相关 Query，或独立 SERP 研究证明 performance apparel / knit fabric 内容缺口，并有一方材料证据 | 先批准页面任务和 URL；避免家具、室内装饰意图与现有面料商业页内耗 |
 | SEO-V2-013 | 技术指南标准与外链季度复核 | IMP-021 | P2 | `scheduled` | 每季度检查 ASTM / AATCC / ISO 等引用版本、链接和适用范围 | 记录复核日期、变动和负责人；没有变化也记录 `no-change` |
 | SEO-V2-014 | HSTS 基础设施评估 | Crawl Low Finding | P3 | `owner-action` | 在 Cloudflare Edge Certificates 评估 HSTS；先确认子域、预加载和回滚影响 | 配置由所有者执行并验证响应头；不是排名实验，不与内容 SEO 混合归因 |
+| SEO-V2-015 | 首页 `Technical Knitwear` 定位语义纠偏 | 所有者 Google 截图、业务确认与 US / GB / CA Live SERP | P1 | `research-completed / owner-approval` | 2026-08-31 已确认 Athletik 为使用针织面料的 cut-and-sew underwear、base layer、sportswear 与 yoga apparel 工厂；`technical knitwear manufacturer` 在三市场由 flat-knit / sweater / technical knitting 意图主导。候选为 Title/H1 `Performance Apparel Manufacturer`，首屏用 `Cut-and-Sew Knit Apparel OEM/ODM` 限定范围 | 所有者批准后只修改首页 umbrella terminology；URL、页面所有权和品类页不变；部署后完成 HTML/Crawl/Schema 验收，并按 Day 7 / 28 / 90 观察 GSC 与有效询盘 |
 
 ## 2. 不进入 V2 的项目
 
