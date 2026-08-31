@@ -3,8 +3,8 @@
 - Change ID：`SEO-V2-015`
 - Finding type：`fix`
 - 优先级：P1
-- 状态：`deployed`
-- 实施阶段：`deployed / sitemap-cache-fix pending`
+- 状态：`measuring`
+- 实施阶段：`fixed / measuring`
 - 实施日期：2026-08-31
 - 目标页面：`/`
 - 目标市场：美国、英国、加拿大，并覆盖北美与欧洲英语 B2B 买家
@@ -31,7 +31,7 @@
 - 基线窗口：2026-07-26 至 2026-08-22，是当时 GSC 可返回 `dataState: final` 的最新完整 28 天窗口；
 - GSC Property 总量为 5 clicks / 184 impressions；首页可见 Query 只有三个品牌或拼写变体、各 1 impression，低量匿名化 Query 未返回，因此没有可支持首页词级因果判断的完整 Query 样本；
 - GA4 Organic Search 的首页为 2 sessions / 2 users / 0 `generate_lead`；同窗口 8 次全站 `generate_lead` 经所有者核验后只有 1 次有效询盘，来源为 Organic Social，不归因于 SEO；
-- 部署前 Crawl ID：`crawl_40f88b6c25d74ba79ee193c7be26caf9`；部署后 Crawl ID：`pending`；
+- 部署前 Crawl ID：`crawl_40f88b6c25d74ba79ee193c7be26caf9`；部署后 `crawl-diff` run：`c93cf1f3-35c3-4da8-ac8d-c04e5ea74666`（21 URL）；
 - 已知干扰因素：Google 算法更新、季节性、GEO / 社交分发、广告、其他站点部署、GSC 低量匿名化与 GA4 consent / attribution 口径。
 
 ## 实施内容
@@ -74,9 +74,9 @@
 - [x] `/` 返回 HTTP 200、`index, follow`、自引用 Canonical；
 - [x] 生产 HTML 只有一个 H1，并输出新 Title 与唯一 Meta Description；
 - [x] OG/Twitter Title 与 Description、WebPage `name` 与 `description` 与规范值一致；
-- [ ] Page Sitemap 首页 `lastmod` 与 Sitemap index 时间不早于本次部署；
+- [x] Page Sitemap 首页 `lastmod` 与 Sitemap index 时间均更新为 `2026-08-31T03:37:11+00:00`；
 - [x] 重跑生产 Crawl，确认无新增 URL、移除 URL、error 或 indexability flip；
-- [ ] 最终 Finding outcome 写回本卡与 V2 Backlog。
+- [x] 技术 Finding outcome 已写回本卡与 V2 Backlog：`fixed / measuring`；商业结果保留到 Day 28 / 90 决策。
 
 ## 首次生产验收记录（2026-08-31）
 
@@ -86,6 +86,15 @@
 - 同轮 `action-ba74be3d0f21` 指向未在本次代码 diff 中修改的 Sportswear main content，处置为 `not-needed / unrelated to SEO-V2-015`。紧接的同范围复跑只剩 Cloudflare `/cdn-cgi/l/email-protection` 动态内容 hash 变化，仍沿用既有 `not-needed`；4 个 MP4 超过工具 5 MB 抓取上限的 Warning 也为已知限制，不是本次回归；
 - Page Sitemap 为 HTTP 200、18 个唯一 URL，但首页 `lastmod` 仍为 `2026-08-20T08:31:05+00:00`。带 cache-busting query 与 `Cache-Control: no-cache` 的请求结果相同；响应为 Cloudflare `DYNAMIC`、Flywheel `MISS`、`X-Cacheable: NO`，排除外部缓存命中；
 - 本地 Rank Math 插件源码确认 XML Sitemap 另有最多 100 天的文件/Transient 缓存，主题文件发布不会触发其 `save_post` watcher。已在 `functions.php` 加入 release-marker 控制的一次性 `page` 与 index Sitemap cache invalidation；不改 Sitemap 设置、URL 或页面内容，等待补充部署后复验。
+
+## Sitemap cache fix 补充部署复验（2026-08-31）
+
+- 补充部署后先请求首页触发一次性 release marker，再以 cache-busting query 与 `Cache-Control: no-cache` 请求 Page Sitemap 和 Sitemap index；
+- Page Sitemap 返回 HTTP 200、18 个唯一 URL，首页 `lastmod` 更新为 `2026-08-31T03:37:11+00:00`；Sitemap index 中 Page Sitemap 的 `lastmod` 同步为相同时间；
+- 响应仍为 Cloudflare `DYNAMIC`、Flywheel `MISS`，说明结果来自 Rank Math 重新生成，而不是外部缓存旧响应；
+- 首页快速复验仍为 HTTP 200、单一 Title、单一 Meta Description、单一 H1、自引用 Canonical 与 `follow, index`；Title、H1、Meta 和 OG 字段保持新规范值；
+- 部署后再次运行 `audit-page` action view：0 fix、0 review、0 open finding；唯一 Warning 为排除 1 个 non-HTTP link，不影响本次验收；
+- Day 0 技术结论：`fixed / measuring`。本次只证明生产输出与技术防护通过，不证明 Google 已抓取新版本，也不承诺排名、流量或询盘增长。
 
 ## 复盘窗口
 

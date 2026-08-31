@@ -26,7 +26,7 @@ V2 不以增加任务数量为目标。所有项目必须有一方数据、生�
 | SEO-V2-012 | Performance Fabrics 信息指南条件式评估 | IMP-023 | P2 | `deferred` | GSC 出现相关 Query，或独立 SERP 研究证明 performance apparel / knit fabric 内容缺口，并有一方材料证据 | 先批准页面任务和 URL；避免家具、室内装饰意图与现有面料商业页内耗 |
 | SEO-V2-013 | 技术指南标准与外链季度复核 | IMP-021 | P2 | `scheduled` | 每季度检查 ASTM / AATCC / ISO 等引用版本、链接和适用范围 | 记录复核日期、变动和负责人；没有变化也记录 `no-change` |
 | SEO-V2-014 | HSTS 基础设施评估 | Crawl Low Finding | P3 | `owner-action` | 在 Cloudflare Edge Certificates 评估 HSTS；先确认子域、预加载和回滚影响 | 配置由所有者执行并验证响应头；不是排名实验，不与内容 SEO 混合归因 |
-| SEO-V2-015 | 首页 `Technical Knitwear` 定位语义纠偏 | 所有者 Google 截图、业务确认与 US / GB / CA Live SERP | P1 | `deployed / sitemap-cache-fix pending` | 2026-08-31 首次部署后页面 HTML、Title/Meta/H1、OG/Twitter、WebPage Schema 与 Crawl 已通过；Rank Math Page Sitemap 仍输出旧首页 `lastmod`，已定位为主题部署未触发插件内部 Sitemap cache invalidation，并加入一次性 page/index Sitemap 缓存失效逻辑，等待补充部署 `functions.php` | 补充部署后确认首页与 Sitemap index 时间更新、Crawl 无回归；随后进入 Day 7 / 28 / 90 GSC 与有效询盘观察 |
+| SEO-V2-015 | 首页 `Technical Knitwear` 定位语义纠偏 | 所有者 Google 截图、业务确认与 US / GB / CA Live SERP | P1 | `fixed / measuring` | 2026-08-31 Day 0 生产验收完成：页面 HTML、Title/Meta/H1、OG/Twitter、WebPage Schema、21 URL Crawl 与 Rank Math Sitemap cache fix 均通过；Page Sitemap 保持 18 个唯一 URL，首页及 Sitemap index `lastmod` 均更新为 `2026-08-31T03:37:11+00:00` | 不重复修改首页；Day 7 检查抓取、索引和 Google Title 采用情况，Day 28 / 90 比较同口径 GSC、GA4 与有效询盘后决定 `keep`、`iterate` 或 `revert` |
 
 ## 2. 不进入 V2 的项目
 
