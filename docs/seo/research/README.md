@@ -20,6 +20,7 @@
 
 | 目的 | 文件 |
 |---|---|
+| 查看 2026-08-31 US / GB / CA 产品型商业查询刷新 | [`serp-product-intent-refresh-2026-08-31.md`](serp-product-intent-refresh-2026-08-31.md) |
 | 理解北美与欧洲买家任务和搜索语言 | [`seo-search-language-research-v1.md`](seo-search-language-research-v1.md) |
 | 查看首轮候选词和实时 SERP 风险 | [`keyword-validation-v1.md`](keyword-validation-v1.md) |
 | 查看七国首轮历史量 | [`keyword-planner-country-validation-v1.md`](keyword-planner-country-validation-v1.md) |

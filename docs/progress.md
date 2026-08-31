@@ -641,6 +641,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-29 | SEO-V2-003 QC Guide Sitemap 重复项已修复：生产 REST API 证实 Page ID `79`、`80` 为同 slug 的重复已发布对象，前台实际渲染 ID `79`；所有者将 ID `80` 移入回收站后，生产 Sitemap 恢复为 18/18 唯一 URL，QC Guide 保持 HTTP 200、自引用 canonical、无 `noindex`，Finding outcome 为 `fixed / keep` |
 | 2026-08-29 | SEO-V2-006 外部认证名录继续暂缓：所有者确认短期无法提供 OEKO-TEX certificate / label number、持证主体、WRAP ID、有效期及门户公开列名状态；与 ThomasNet 一并维持 `deferred / external-input`，不使用不完整或不可核验信息提交 |
 | 2026-08-31 | SEO-V2-015 Day 0 生产验收完成：Title/Meta/H1、OG/Twitter、WebPage Schema、HTTP 200、Canonical、robots 与 21 URL Crawl 均通过；一次性 Rank Math page/index Sitemap cache invalidation 补充部署后，Page Sitemap 仍为 18 个唯一 URL，首页和 Sitemap index `lastmod` 均更新为 `2026-08-31T03:37:11+00:00`。当前结论 `fixed / measuring`；URL、页面所有权、品类页与技术指南不变，不使用 `Cut-and-Sew` 作为首页主定位 |
+| 2026-08-31 | 完成 US / GB / CA 产品型商业查询 Live SERP 刷新：Yoga 制造词簇跨市场呈现稳定 B2B 意图，Base Layer 保持 Underwear 主承接及 Outdoor/Merino 支持边界；`/underwear-manufacturer/` 在 GB `performance underwear manufacturer` 单次快照位于第 10，登记为 SEO-V2-005 第一观察候选。因 GSC 页面/Query 样本门槛尚未满足，不改页面、不建近义 URL，outcome 为 `keep / conditional-monitoring` |
 
 ---
 
