@@ -650,6 +650,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-01 | SEO-V2-005 Day 0 生产验收通过：7/7 品类页均为 HTTP 200、单一 H1、可索引、自引用 Canonical、JSON-LD 可解析；Underwear 新正文、Customization / QC、4 个 Buyer Questions、技术指南内链与 Construction 卡均已生效。规格条在 1440×900 / 390×844 渲染为 232px / 542px，无文字截断或横向溢出；Title、Meta、Schema 类型、图片和 Hero 视频数量不变。`seo audit-page --js` 的 `fetch failed` 按 unavailable 记录，独立 HTML、Playwright、Sitemap、首页内链和 CSS 证据均通过。状态转为 `fixed / measuring` |
 | 2026-09-01 | SEO-V2-003 Services 单页 indexed snapshot 复查完成：只读 `index-watch` 为 complete，1/1 inspected、0 failed；结果仍为 `NEUTRAL / Discovered - currently not indexed`，相对 2026-08-28 unchanged、无 regression。生产页 HTTP 200、`index`、自引用 Canonical、无 X-Robots-Tag、Sitemap 与首页入口均正常；Finding 保持 `no-change / monitoring`，不重复请求编入索引或改页，后续按周度节奏复查 |
 | 2026-09-01 | FLATLOCK Guide US / GB / CA Live SERP 研究完成：DataForSEO 15 个可用快照均 complete；核心比较词在三国为稳定技术教育意图，混合 sewing tutorial、社区、出版物与少量制造商内容，Athletik 未进入本次核心词 Desktop 前 20。所有者明确该 Guide 属于 GEO 技术教育任务，不进入当前 SEO 对话的内容实施范围；SEO 仅保留 GSC / SERP 观测，outcome 为 `no-change / routed-to-GEO`，不扩充 V2 Backlog，不修改页面 |
+| 2026-09-01 | SEO-V2-005 三个低曝光品类复筛完成：Sportswear 仅见 1 次不匹配公司品牌词曝光，Sports Accessories 无可见 Query 行，均 `no-change`；Knitted Fabrics 的 `functional knitted fabrics factory` 为 2 impressions / average position 37，US / GB / CA Live SERP 均确认功能针织面料厂、开发、应用与测试意图。经所有者批准，本地只增强 `/knitted-fabrics-manufacturer/` 的 own fabric mill、in-house testing 与 approved specification 正文证据，保留 URL、Title、Meta、H1、图片和 Schema 类型，状态 `ready-to-deploy` |
 
 ---
 

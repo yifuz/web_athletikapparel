@@ -600,7 +600,8 @@ function myathletik_product_category_data() {
 			'social_image_alt'    => __( 'Performance knitted fabric swatch collection', 'myathletik-child' ),
 			'social_image_type'   => 'image/jpeg',
 			'hero_kicker'      => __( 'Custom knit fabric development & supply', 'myathletik-child' ),
-			'intro'            => __( 'In addition to finished-garment manufacturing, we support standalone fabric orders and custom development for B2B apparel programs, including performance, thermal, stretch, and functional knits. MOQ varies by fabric and project requirements.', 'myathletik-child' ),
+			'intro'            => __( 'Through our own fabric mill, we support standalone fabric orders and custom development for B2B apparel programs, including performance, thermal, stretch, and functional knits. Development can be checked through in-house testing against the agreed fabric specification, while MOQ varies by fabric and project requirements.', 'myathletik-child' ),
+			'overview_heading' => __( 'Functional knitted fabrics for performance apparel', 'myathletik-child' ),
 			'what_we_make'     => array(
 				__( 'Performance knit fabrics for activewear and underwear', 'myathletik-child' ),
 				__( 'Thermal knit fabrics', 'myathletik-child' ),
@@ -691,8 +692,8 @@ function myathletik_product_category_data() {
 				),
 			),
 			'capability_kicker' => __( 'Development & quotation', 'myathletik-child' ),
-			'capability_heading' => __( 'Start with a complete fabric brief', 'myathletik-child' ),
-			'construction'      => __( 'Send the target composition, yarn and knit structure, GSM, usable width, stretch and recovery, color reference, finish or performance requirement, testing requirement, order quantity, intended application, and delivery destination. Knitting, dyeing, finishing, and testing are coordinated against the approved specification. Swatches, counter samples, lab dips, sample yardage, and approval samples are available based on project needs. Third-party testing and supporting documentation can be arranged based on the required standard. Pricing is normally quoted per kg, while other units can be used when required. Final timing, packing, and delivery terms are set in the project quotation.', 'myathletik-child' ),
+			'capability_heading' => __( 'Develop functional knits against an approved specification', 'myathletik-child' ),
+			'construction'      => __( 'Send the target composition, yarn and knit structure, GSM, usable width, stretch and recovery, color reference, finish or performance requirement, testing requirement, order quantity, intended application, and delivery destination. Development is managed through our own fabric mill, with knitting, dyeing, finishing, and in-house testing coordinated against the approved specification. Swatches, counter samples, lab dips, sample yardage, and approval samples are available based on project needs. Third-party testing and supporting documentation can be arranged based on the required standard. Pricing is normally quoted per kg, while other units can be used when required. Final timing, packing, and delivery terms are set in the project quotation.', 'myathletik-child' ),
 			'specs'             => array(
 				array(
 					'label'       => __( 'MOQ', 'myathletik-child' ),
