@@ -643,6 +643,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-31 | SEO-V2-015 Day 0 生产验收完成：Title/Meta/H1、OG/Twitter、WebPage Schema、HTTP 200、Canonical、robots 与 21 URL Crawl 均通过；一次性 Rank Math page/index Sitemap cache invalidation 补充部署后，Page Sitemap 仍为 18 个唯一 URL，首页和 Sitemap index `lastmod` 均更新为 `2026-08-31T03:37:11+00:00`。当前结论 `fixed / measuring`；URL、页面所有权、品类页与技术指南不变，不使用 `Cut-and-Sew` 作为首页主定位 |
 | 2026-08-31 | 完成 US / GB / CA 产品型商业查询 Live SERP 刷新：Yoga 制造词簇跨市场呈现稳定 B2B 意图，Base Layer 保持 Underwear 主承接及 Outdoor/Merino 支持边界；`/underwear-manufacturer/` 在 GB `performance underwear manufacturer` 单次快照位于第 10，登记为 SEO-V2-005 第一观察候选。因 GSC 页面/Query 样本门槛尚未满足，不改页面、不建近义 URL，outcome 为 `keep / conditional-monitoring` |
 | 2026-08-31 | SEO-V2-005 后续验证：初次 GSC `fetch failed` 已确认是重启后遗漏既有 `EnvHttpProxyAgent` 注入，不是 GSC、OAuth 或报告服务故障；通过 Fastlink `127.0.0.1:7892` 恢复后完成四页 final 28 天检查。Underwear 合计 2 曝光；Merino 的 `merino wool clothing manufacturer` 为 1 曝光 / 排名 23；Outdoor 无可见非品牌 Query 行；Sportswear 唯一行是不匹配的其他公司品牌。结合追加 8 个 Merino Live SERP，结论 `no-change / conditional-monitoring`，不改页面、不建平行 URL |
+| 2026-09-01 | SEO-V2-005 Underwear 受控优化已在本地完成：所有者在低曝光策略下批准优先增强 `/underwear-manufacturer/`；保留 URL、Title、Meta、H1、图片和 Schema 类型，只扩充 performance underwear / base layer 产品证据、材料与接缝开发输入，并增加 Tech Pack Guide 内链。当前状态 `ready-to-deploy`，待生产 Day 0 验收；不建立 Performance Underwear / Base Layer 平行页 |
 
 ---
 
