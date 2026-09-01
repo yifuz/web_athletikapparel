@@ -186,6 +186,8 @@ function myathletik_product_category_data() {
 			'hero_video_position' => 'center 18%',
 			'hero_kicker'      => __( 'Performance underwear OEM/ODM', 'myathletik-child' ),
 			'intro'            => __( 'We manufacture performance underwear, men\'s boxer briefs, and thermal base layers from knitted fabrics for brands, importers, and private-label programs. Development can combine FLATLOCK, ACTIVESEAM, or bonded-welded construction with microfiber, stretch, and Merino wool materials, based on the intended use, fit, and approved specification.', 'myathletik-child' ),
+			'overview_heading' => __( 'Performance underwear programs', 'myathletik-child' ),
+			'product_range_heading' => __( 'Performance underwear products we manufacture', 'myathletik-child' ),
 			'what_we_make'     => array(
 				__( 'Men\'s boxer briefs, trunks, and briefs', 'myathletik-child' ),
 				__( 'Thermal base layers and underwear', 'myathletik-child' ),
@@ -248,7 +250,53 @@ function myathletik_product_category_data() {
 			),
 			'capability_kicker'  => __( 'Development inputs', 'myathletik-child' ),
 			'capability_heading' => __( 'Define fit, fabric, and seam performance before sampling', 'myathletik-child' ),
-			'construction'      => sprintf( __( 'Send the intended use, size range, target fit, garment drawing or tech pack, reference sample, fabric composition and weight, stretch and recovery targets, seam map, waistband and trim requirements, artwork, order quantity, and required testing. Our team can coordinate knitted fabric development through our own fabric mill, review FLATLOCK, ACTIVESEAM, and bonded-welded options, develop samples, and use in-house testing to check the agreed material and garment criteria before bulk production. Public garment MOQ is %s pieces per style; final sampling, testing, and production terms are confirmed for the project.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+			'construction'      => sprintf( __( 'Send the product type, intended activity and climate, target market and delivery destination, size range, target fit, garment drawing or tech pack, reference sample, fabric composition and weight, stretch and recovery targets, seam map, waistband and trim requirements, artwork, private-label packaging requirements, target price range, order quantity, and required testing. Our team can coordinate knitted fabric development through our own fabric mill, review FLATLOCK, ACTIVESEAM, and bonded-welded options, develop samples, and use in-house testing to check the agreed material and garment criteria before bulk production. Public garment MOQ is %s pieces per style; final sampling, testing, and production terms are confirmed for the project.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+			'assurance_kicker'  => __( 'Program execution', 'myathletik-child' ),
+			'assurance_heading' => __( 'Private-label customization and underwear quality control', 'myathletik-child' ),
+			'assurance_intro'   => __( 'Customization and inspection criteria are recorded in the approved specification so the sample and bulk order can be reviewed against the same requirements.', 'myathletik-child' ),
+			'assurance_cards'   => array(
+				array(
+					'title'       => __( 'Private-label customization', 'myathletik-child' ),
+					'description' => __( 'Men\'s and women\'s performance underwear and base-layer programs can be developed to the buyer\'s design, tech pack, or approved reference sample.', 'myathletik-child' ),
+					'items'       => array(
+						__( 'Custom elastic waistbands with woven or printed branding', 'myathletik-child' ),
+						__( 'Main labels, care labels, and private-label packaging', 'myathletik-child' ),
+						__( 'Supportive pouch development and mesh ventilation panels', 'myathletik-child' ),
+						__( 'Artwork, placement, dimensions, and material compatibility confirmed during sampling', 'myathletik-child' ),
+					),
+				),
+				array(
+					'title'       => __( 'Underwear quality checkpoints', 'myathletik-child' ),
+					'description' => __( 'The inspection plan is set against the approved sample, specification, and buyer acceptance criteria for the program.', 'myathletik-child' ),
+					'items'       => array(
+						__( 'Fit and measurements against the approved sample', 'myathletik-child' ),
+						__( 'Pouch and panel symmetry, including mesh placement', 'myathletik-child' ),
+						__( 'Waistband attachment and recovery', 'myathletik-child' ),
+						__( 'Seam appearance and elasticity for the specified construction', 'myathletik-child' ),
+						__( 'Fabric stretch, recovery, and agreed testing criteria', 'myathletik-child' ),
+					),
+					'link'        => myathletik_related_link( __( 'Review the Garment Quality Control Checklist', 'myathletik-child' ), '/garment-quality-control-checklist/' ),
+				),
+			),
+			'buyer_questions_heading' => __( 'Questions buyers ask before starting a performance underwear program', 'myathletik-child' ),
+			'buyer_questions' => array(
+				array(
+					'question' => __( 'What is the MOQ for performance underwear?', 'myathletik-child' ),
+					'answer'   => sprintf( __( 'The public garment MOQ is %s pieces per style. Material, color, size allocation, sampling, and final production terms are confirmed in the project quotation.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				),
+				array(
+					'question' => __( 'What should a buyer provide before sampling?', 'myathletik-child' ),
+					'answer'   => __( 'Provide the product type, intended activity and climate, target market, delivery destination, size range, fit target, tech pack or reference sample, fabric and performance requirements, testing criteria, artwork, packaging requirements, target price range, and estimated quantity.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Which private-label options can be developed?', 'myathletik-child' ),
+					'answer'   => __( 'Options include custom elastic waistbands with woven or printed branding, main and care labels, supportive pouch construction, mesh ventilation panels, and private-label packaging. Final details are confirmed through the approved specification and sample.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'How are performance requirements confirmed?', 'myathletik-child' ),
+					'answer'   => __( 'The buyer defines the intended use, material requirement, test method, and acceptance criteria. Fabric and garment development can then be checked through in-house testing and approved samples before bulk production.', 'myathletik-child' ),
+				),
+			),
 			'image_note'       => __( '[IMAGE: real underwear product shots]', 'myathletik-child' ),
 			'gallery'          => array(
 				myathletik_gallery_item( 'underwear/boxer-brief-n-trunk-boxer-7.jpg', __( 'Boxer brief and trunk underwear sample', 'myathletik-child' ) ),

@@ -3528,6 +3528,65 @@ body.page .container.grid-container:has(.ma-product-category) {
   gap: var(--ma-space-4);
 }
 
+/* Optional category-specific buyer evidence blocks. These render only when
+   their data is present, so the shared template remains stable for siblings. */
+.ma-product-assurance {
+  background: var(--ma-color-bg);
+}
+
+.ma-product-questions {
+  background: var(--ma-color-surface);
+}
+
+.ma-product-assurance__grid,
+.ma-product-questions__grid {
+  display: grid;
+  gap: var(--ma-space-4);
+}
+
+.ma-product-assurance-card,
+.ma-product-question {
+  min-width: 0;
+  padding: var(--ma-space-4);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+}
+
+.ma-product-assurance-card h3,
+.ma-product-question h3 {
+  margin: 0;
+  color: var(--ma-color-text);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-h3);
+  line-height: 1.3;
+}
+
+.ma-product-assurance-card p,
+.ma-product-question p {
+  margin: var(--ma-space-2) 0 0;
+  color: var(--ma-color-muted);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-product-assurance-card ul {
+  margin: var(--ma-space-3) 0 0;
+  padding-left: var(--ma-space-4);
+  color: var(--ma-color-text);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-product-assurance-card li + li {
+  margin-top: var(--ma-space-2);
+}
+
+.ma-product-assurance-card .ma-text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ma-touch-target);
+  margin-top: var(--ma-space-3);
+}
+
 /* --- Product sub-category showcase (image + title + description) ---
    Alternating left/right layout. Each sub-category gets a large image on
    one side and its title + description on the other. Odd items = image
@@ -3784,6 +3843,11 @@ body.page .container.grid-container:has(.ma-product-category) {
 
   .ma-product-capabilities__grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .ma-product-assurance__grid,
+  .ma-product-questions__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .ma-product-examples__grid,

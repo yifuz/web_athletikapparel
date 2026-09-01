@@ -27,6 +27,12 @@ $capability_kicker = ! empty( $category['capability_kicker'] )
 $capability_heading = ! empty( $category['capability_heading'] )
 	? $category['capability_heading']
 	: __( 'Built for technical B2B production requirements', 'myathletik-child' );
+$overview_heading = ! empty( $category['overview_heading'] )
+	? $category['overview_heading']
+	: __( 'What we make', 'myathletik-child' );
+$product_range_heading = ! empty( $category['product_range_heading'] )
+	? $category['product_range_heading']
+	: __( 'Explore what we manufacture', 'myathletik-child' );
 $specs = array(
 	array(
 		'label'       => __( 'MOQ', 'myathletik-child' ),
@@ -75,7 +81,7 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 		<div class="ma-section-inner ma-product-intro__grid">
 			<div>
 				<p class="ma-section-kicker"><?php esc_html_e( 'Category overview', 'myathletik-child' ); ?></p>
-				<h2><?php esc_html_e( 'What we make', 'myathletik-child' ); ?></h2>
+				<h2><?php echo esc_html( $overview_heading ); ?></h2>
 			</div>
 			<div class="ma-product-copy-slot">
 				<ul class="ma-product-list">
@@ -104,7 +110,7 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 		<div class="ma-section-inner">
 			<div class="ma-section-heading">
 				<p class="ma-section-kicker"><?php esc_html_e( 'Product range', 'myathletik-child' ); ?></p>
-				<h2 id="ma-product-subcats-title"><?php esc_html_e( 'Explore what we manufacture', 'myathletik-child' ); ?></h2>
+				<h2 id="ma-product-subcats-title"><?php echo esc_html( $product_range_heading ); ?></h2>
 			</div>
 			<div class="ma-subcategories">
 				<?php foreach ( $category['subcategories'] as $index => $sub ) : ?>
@@ -169,6 +175,59 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 			</div>
 		</div>
 	</section>
+
+	<?php if ( ! empty( $category['assurance_cards'] ) && is_array( $category['assurance_cards'] ) ) : ?>
+	<section class="ma-product-section ma-product-assurance" aria-labelledby="ma-product-assurance-title">
+		<div class="ma-section-inner">
+			<div class="ma-section-heading">
+				<p class="ma-section-kicker"><?php echo esc_html( ! empty( $category['assurance_kicker'] ) ? $category['assurance_kicker'] : __( 'Program execution', 'myathletik-child' ) ); ?></p>
+				<h2 id="ma-product-assurance-title"><?php echo esc_html( $category['assurance_heading'] ); ?></h2>
+				<?php if ( ! empty( $category['assurance_intro'] ) ) : ?>
+					<p><?php echo esc_html( $category['assurance_intro'] ); ?></p>
+				<?php endif; ?>
+			</div>
+			<div class="ma-product-assurance__grid">
+				<?php foreach ( $category['assurance_cards'] as $card ) : ?>
+					<article class="ma-product-assurance-card">
+						<h3><?php echo esc_html( $card['title'] ); ?></h3>
+						<?php if ( ! empty( $card['description'] ) ) : ?>
+							<p><?php echo esc_html( $card['description'] ); ?></p>
+						<?php endif; ?>
+						<?php if ( ! empty( $card['items'] ) && is_array( $card['items'] ) ) : ?>
+							<ul>
+								<?php foreach ( $card['items'] as $item ) : ?>
+									<li><?php echo esc_html( $item ); ?></li>
+								<?php endforeach; ?>
+							</ul>
+						<?php endif; ?>
+						<?php if ( ! empty( $card['link']['url'] ) && ! empty( $card['link']['label'] ) ) : ?>
+							<a class="ma-text-link" href="<?php echo esc_url( home_url( $card['link']['url'] ) ); ?>"><?php echo esc_html( $card['link']['label'] ); ?> <span aria-hidden="true">→</span></a>
+						<?php endif; ?>
+					</article>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</section>
+	<?php endif; ?>
+
+	<?php if ( ! empty( $category['buyer_questions'] ) && is_array( $category['buyer_questions'] ) ) : ?>
+	<section class="ma-product-section ma-product-questions" aria-labelledby="ma-product-questions-title">
+		<div class="ma-section-inner">
+			<div class="ma-section-heading">
+				<p class="ma-section-kicker"><?php esc_html_e( 'Buyer questions', 'myathletik-child' ); ?></p>
+				<h2 id="ma-product-questions-title"><?php echo esc_html( $category['buyer_questions_heading'] ); ?></h2>
+			</div>
+			<div class="ma-product-questions__grid">
+				<?php foreach ( $category['buyer_questions'] as $question ) : ?>
+					<article class="ma-product-question">
+						<h3><?php echo esc_html( $question['question'] ); ?></h3>
+						<p><?php echo esc_html( $question['answer'] ); ?></p>
+					</article>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</section>
+	<?php endif; ?>
 
 	<?php if ( empty( $category['subcategories'] ) ) : ?>
 	<section id="product-examples" class="ma-product-section ma-product-examples">
