@@ -3,8 +3,10 @@
 - Change ID：`SEO-V2-005-KF`
 - Finding type：`opportunity`
 - 优先级：P1
-- 状态：`ready-to-deploy`
+- 状态：`fixed / measuring`
+- 实施阶段：`production-accepted / measurement-open`
 - 实施日期：2026-09-01
+- 生产验收日期：2026-09-01
 - 目标页面：`/knitted-fabrics-manufacturer/`
 - 目标市场：美国、英国、加拿大
 - 搜索意图：寻找可开发和供应 performance、thermal、stretch 与 functional knitted fabrics 的 B2B fabric mill / manufacturer
@@ -52,15 +54,19 @@
 
 ### 生产 / 部署后
 
-- [ ] 页面返回 HTTP 200、可索引、自引用 Canonical，只有一个 H1；
-- [ ] Title、Meta、H1、OG/Twitter、图片与 Schema 类型保持不变；
-- [ ] 三处新正文正常渲染，桌面与移动端无溢出或异常空白；
-- [ ] Page Sitemap 与首页现有入口保持正常；
-- [ ] Day 0 outcome 写回本卡和 V2 Backlog。
+- [x] 页面返回 HTTP 200、`follow, index`、无 X-Robots-Tag、自引用 Canonical，只有一个 `Knitted Fabrics Manufacturer` H1；
+- [x] Title、Meta、H1、OG/Twitter 图片与 Schema 类型保持不变；OG/Twitter 继续使用既有 Knitted Fabrics 1200×627 JPEG；
+- [x] Intro、`Functional knitted fabrics for performance apparel`、`Develop functional knits against an approved specification` 与 capability 正文均在生产 HTML 生效；第三方测试边界仍保留；
+- [x] 生产页无 Beta Textiles / BTEXCO 公开关联、未解决占位符或营销空话；1 个 JSON-LD block 解析通过，Schema 类型保持 CollectionPage、WebSite、ImageObject 与 PostalAddress；
+- [x] Microsoft Edge + Playwright 在 1440×900 与 390×844 完成 full-page 渲染检查；两种 viewport 的 `scrollWidth / innerWidth` 分别为 `1440 / 1440` 与 `390 / 390`，滚动触发 lazy loading 后均为 7/7 图片加载、0 broken image。首屏、新 H2、能力正文、规格条、相关链接和询盘表单均正常，无文字截断、横向溢出或异常空白；
+- [x] Page Sitemap 保留该规范 URL，生产首页保留现有品类入口；
+- [x] Day 0 outcome 已写回本卡、V2 Backlog 与进度记录。
+
+Day 0 说明：最初使用 Edge `--window-size=390,844` 截取外窗时出现右侧裁切；随后使用 Playwright 通过系统 Edge 建立真实 390×844 viewport 并完成 full-page 复验，页面没有相同裁切。前一截图属于工具外窗与 CSS viewport 不一致，不作为生产回归证据。
 
 ## 复盘窗口
 
 - Day 0：生产 HTML、索引信号、正文边界和视觉验收；
-- Day 7：只检查抓取、索引与明显 Query 偏移，不继续改文案；
-- Day 28：按相同口径比较页面 GSC clicks / impressions / Query / country、GA4 Organic Search 与人工核验询盘；
-- Day 90：结合季节性和其他发布记录决定 `keep`、`iterate` 或 `revert`。
+- Day 7（2026-09-08）：只检查抓取、索引与明显 Query 偏移，不继续改文案；
+- Day 28（2026-09-29）：按相同口径比较页面 GSC clicks / impressions / Query / country、GA4 Organic Search 与人工核验询盘；
+- Day 90（2026-11-30）：结合季节性和其他发布记录决定 `keep`、`iterate` 或 `revert`。
