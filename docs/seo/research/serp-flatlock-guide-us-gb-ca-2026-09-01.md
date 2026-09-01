@@ -91,17 +91,13 @@ Athletik 当前页面已经覆盖：
 - 当前 59 impressions 低于项目 100 impressions 的 Title / Meta 实验门槛，不启动摘要实验；
 - 不因 SERP 出现 Video 模块立即增加 `VideoObject`，继续遵守 SEO-V2-010 的 GSC 视频索引 / Rich Results 触发条件。
 
-### 受控正文候选
+### 归属边界与处置
 
-只建议一个低风险、买家相关的正文候选：在现有 FLATLOCK 定义或比较段中增加短小的工业术语澄清，区分：
+本轮 SERP 研究仅作为 SEO 观测证据，不能在当前 SEO 执行对话中启动该页正文修改。FLATLOCK Guide 是 GEO 技术教育与内容分发资产；后续正文迭代、工业术语澄清和内容再分发统一回到 GEO 工作流评估。
 
-1. 工业 four-needle, six-thread stitch type 607；
-2. 家用 serger / overlocker 制作的 mock / faux flatlock；
-3. COVERSTITCH 在 hems / finishing 中的任务。
+SEO 路线只继续观察该页的 GSC impressions、clicks、Query、index status 与同口径 SERP，不将 industrial 607 / mock flatlock / COVERSTITCH 的内容建议加入 V2 Backlog，也不修改 URL、Title、Meta、H1、正文或 Schema。
 
-该补充不改页面主词，不增加未经确认的测试、成本、速度或认证数字。正式英文文案须经所有者批准，并在实施后保留原 URL、Title、Meta 与 H1，执行 Day 0 技术验收和后续同口径观察。
-
-Finding outcome：`keep / controlled-body-improvement-candidate`。当前研究支持正文小幅澄清，不支持 Title / Meta 实验、新页面或全面改写。
+Finding outcome：`no-change / routed-to-GEO`。本轮没有 SEO 网站改动，也不扩充 SEO Backlog。
 
 ## 6. 代表性 DataForSEO Task ID
 
