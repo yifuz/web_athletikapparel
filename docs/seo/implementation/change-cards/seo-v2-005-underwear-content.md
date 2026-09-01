@@ -24,6 +24,7 @@
 - 生产页上线前审计为 HTTP 200、`index, follow`、单一自引用 Canonical、单一 H1、0 issue；正文抽取为 237 words。技术索引并非当前阻塞，缺口主要在买家判断所需的产品、材料、接缝和开发输入信息；
 - 所有者确认核心成衣业务包括各类 underwear、base layer、sportswear 与 yoga apparel，均使用针织面料；公开成衣 MOQ 为每款 500 pieces；`our own fabric mill` 和 `in-house testing` 可公开使用；
 - 2026-09-01 所有者进一步确认 Athletik 可稳定提供 men's / women's performance underwear、custom elastic waistband、woven or printed branding、main / care labels、private-label packaging、supportive pouch development 与 mesh ventilation panels；这些能力按项目 specification 和 approved sample 表述，不延伸为未确认的材料参数或测试结果；
+- 2026-09-01 所有者确认 Athletik 可稳定提供真正的 `seamless construction`。因此当前生产 Meta 中该能力表述准确，Finding outcome 为 `keep`；`seamless construction` 与 `bonded-welded construction` 是不同能力，不互相替换；
 - 因曝光不足，当前数据不能支持 Title / Meta CTR 实验，也不能证明新增近义 URL 有收益。本次由所有者批准在既有页面内做受控正文增强，不把低曝光本身当作关键词替换证据。
 
 ## 实施内容

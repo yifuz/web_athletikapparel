@@ -645,6 +645,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-08-31 | SEO-V2-005 后续验证：初次 GSC `fetch failed` 已确认是重启后遗漏既有 `EnvHttpProxyAgent` 注入，不是 GSC、OAuth 或报告服务故障；通过 Fastlink `127.0.0.1:7892` 恢复后完成四页 final 28 天检查。Underwear 合计 2 曝光；Merino 的 `merino wool clothing manufacturer` 为 1 曝光 / 排名 23；Outdoor 无可见非品牌 Query 行；Sportswear 唯一行是不匹配的其他公司品牌。结合追加 8 个 Merino Live SERP，结论 `no-change / conditional-monitoring`，不改页面、不建平行 URL |
 | 2026-09-01 | SEO-V2-005 Underwear 受控优化已在本地完成：所有者在低曝光策略下批准优先增强 `/underwear-manufacturer/`；保留 URL、Title、Meta、H1、图片和 Schema 类型，只扩充 performance underwear / base layer 产品证据、材料与接缝开发输入，并增加 Tech Pack Guide 内链。当前状态 `ready-to-deploy`，待生产 Day 0 验收；不建立 Performance Underwear / Base Layer 平行页 |
 | 2026-09-01 | SEO-V2-005 SERP 补充实施完成：US Live SERP 复核 7 个 Underwear / Base Layer 变体后，所有者确认 Athletik 可稳定提供男/女 performance underwear、custom waistband、woven/printed branding、labels、private-label packaging、supportive pouch 与 mesh panels。本地已加入 Underwear 专属 H2、Customization / QC、4 个 Buyer Questions、QC Guide 内链及完整 buyer inputs；共享模板为条件式，Sportswear 桩无新增区块。状态保持 `ready-to-deploy` |
+| 2026-09-01 | SEO-V2-005 能力事实补充确认：所有者确认 Athletik 可稳定提供真正的 `seamless construction`；现有 Underwear Meta 中该表述准确，结论为 `keep / no-change`。`seamless construction` 与 `bonded-welded construction` 分开记录，本轮无生产代码或部署文件 |
 
 ---
 
