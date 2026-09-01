@@ -24,7 +24,7 @@ URL、H1 和页面所有权仍以 [`../sitemap.md`](../sitemap.md) 为准；Titl
 |---|---|---|
 | [`v2-backlog.md`](v2-backlog.md) | 活跃 | 当前优先级、触发条件、依赖和关闭标准 |
 | [`gsc-data-log.md`](gsc-data-log.md) | 持续更新 | Search Console、GA4 与人工询盘核验的周期快照和数据解读 |
-| [`seo-process.md`](seo-process.md) | 规范 | SEO 证据层级、样本门槛、Change Card 和复盘流程 |
+| [`seo-process.md`](seo-process.md) | 规范 | V1.3：SEO 证据层级、采购决策任务、A/B 改动门槛、Change Card 和复盘流程 |
 | [`seo-cli-baseline-2026-08-18.md`](seo-cli-baseline-2026-08-18.md) | 基线 / 持续补录 | `seo` CLI、Crawl、性能和索引自动化基线 |
 | [`seo-implementation-checklist-v1.md`](seo-implementation-checklist-v1.md) | 已冻结 | V1 审计、实施、Finding 处置与生产验收记录 |
 

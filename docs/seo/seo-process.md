@@ -1,10 +1,10 @@
 # Athletik Clothing SEO 全流程
 
-> 版本：V1.2
+> 版本：V1.3
 >
 > 建立日期：2026-08-15
 >
-> 最近更新：2026-08-20
+> 最近更新：2026-09-01
 >
 > 适用网站：`https://www.athletikapparel.com/`
 >
@@ -57,6 +57,21 @@ Athletik 网站的第一目标是通过自然搜索触达北美和欧洲的潜�
 4. 页面负责建立相关性、专业度和询盘动机，项目级条件在后续沟通、Tech pack、quotation、sampling 或合同阶段确认；
 5. 必要限定语保持简短，避免连续使用 `must be confirmed`、`subject to` 等措辞削弱商业表达。
 
+### 1.2 官网采购决策基调
+
+Athletik 官网不是单纯的企业宣传册，也不是只追求流量的信息媒体。它应作为一个可被买家、Google 和 AI 系统读取的供应商筛选、风险验证与项目启动系统。每个重要页面或主要内容区块至少承担以下一项任务：
+
+| 任务 | 页面应帮助买家完成什么 |
+|---|---|
+| `Discover` | 发现 Athletik、正确的产品品类、制造关系或技术能力 |
+| `Qualify` | 判断产品范围、MOQ、材料、construction、市场和项目条件是否匹配 |
+| `Verify` | 核实制造、QC、测试、实体、流程、图片和交付证据，降低供应商风险 |
+| `Start` | 准备 tech pack / spec sheet、样品或 RFQ 输入，并进入合适的 Contact / quotation 路径 |
+
+如果一个区块不能帮助买家完成以上任何任务，也没有必要的品牌、法律、可访问性或导航作用，应缩减、合并或删除。不得用大面积视觉、重复卡片或通用营销句替代采购信息；也不要求每个页面机械复制相同区块。
+
+官网仍只是完整采购旅程的一部分。搜索、AI、行业目录、社交分发、第三方提及和销售沟通共同影响 shortlist；公开实体、能力、MOQ 和项目口径必须跨渠道一致。网站负责回答稳定问题并暴露需要进一步确认的项目变量，销售人员负责处理具体 fit、quotation、sampling 和合同判断。
+
 ## 2. 文档与数据真值层级
 
 ### 2.1 项目真值
@@ -95,6 +110,8 @@ Athletik 网站的第一目标是通过自然搜索触达北美和欧洲的潜�
 - 询盘是否符合 MOQ 500 pieces per style；
 - Organic 询盘进入报价、打样或后续沟通的比例；
 - 北美与欧洲分别产生的有效机会，其中美国和加拿大单独记录。
+- 在隐私与可用数据允许时，区分首次可识别来源、最终提交来源和重要辅助触点；Direct、Referral、Organic Social 或品牌搜索不得在没有证据时自动归功于 SEO，但也不能因不是最后点击而从采购旅程中删除。
+- 观察商业页进入 Contact、表单开始、`generate_lead`、有效询盘和后续报价/打样之间的漏斗；事件未配置或数据不完整时标记 `unavailable`，不能写成零。
 
 ### 3.2 二级：搜索结果
 
@@ -104,6 +121,7 @@ Athletik 网站的第一目标是通过自然搜索触达北美和欧洲的潜�
 - 目标主题进入前 20、前 10 和前 3 的页面数量；
 - Organic 访问到 Contact 和表单提交的转化；
 - 新页面发现、抓取、收录和首次曝光所需时间。
+- 当 GSC Generative AI performance report 对当前属性开放时，单独记录生成式搜索 impressions，以及可用的 Pages、Countries、Devices 和 Dates 维度；当前报告未提供的 Clicks、Queries 或转化不得推断。该报告与传统 Web Search、独立 GEO 固定提示词测试及第三方 AI Visibility 分开，不混算成绩。
 
 ### 3.3 三级：健康与领先信号
 
@@ -113,6 +131,7 @@ Athletik 网站的第一目标是通过自然搜索触达北美和欧洲的潜�
 - LCP、INP、CLS 和移动体验；
 - 相关行业网站的自然提及和引用域；
 - 品牌名称、公开实体和制造定位的一致性。
+- 官网、目录、社交资料与销售沟通中的产品范围、MOQ、实体和能力口径一致性。
 
 ### 3.4 不作为核心 KPI
 
@@ -189,6 +208,8 @@ Athletik 网站的第一目标是通过自然搜索触达北美和欧洲的潜�
 | 尽调 | 比较供应商、QC、垂直整合和出口能力 | evaluate、audit、quality control、sampling、lead time |
 | 行动 | 联系、索取报价或准备打样 | contact、request quote、send tech pack、sampling inquiry |
 
+买家阶段与官网任务不是一一绑定，但通常可按以下关系检查：发现对应 `Discover`，筛选对应 `Qualify`，技术确认和尽调主要对应 `Verify`，行动对应 `Start`。内容 Brief 必须说明页面主要减少哪一种采购不确定性，而不只是覆盖哪个关键词。
+
 #### 研究来源
 
 - 去标识化的历史询盘、RFQ、Tech pack 和销售问题；
@@ -226,7 +247,11 @@ Athletik 网站的第一目标是通过自然搜索触达北美和欧洲的潜�
 - 排名页面使用何种页面类型和证据；
 - Athletik 是否有真实能力和独特信息提供更合适的结果；
 - 是否会吸引低 MOQ、个人消费者、求职或缝纫教学等不匹配流量；
-- 同义词在美国、加拿大与欧洲是否存在明显差异。
+- 同义词在美国、加拿大与欧洲是否存在明显差异；
+- 当前 SERP 是否出现 AI Overview / AI Mode、目录、Marketplace、比较模块或其他可能减少网站点击的结果形态；
+- AI 或普通搜索摘要是否可以在不访问供应商网站的情况下完整回答该问题；
+- 买家仍需要访问 Athletik 的具体理由是什么，例如供应商特有的产品、工艺、MOQ、项目输入、测试边界、真实图片或 RFQ 路径；
+- 该主题是在帮助 Athletik 进入供应商 shortlist，还是只提供可由任意网站复述的通用知识。
 
 竞争结果同时按页面角色分类：制造商、目录、媒体/信息发布者、Marketplace、零售品牌及其他。只有在同一市场、同一意图下跨多个目标词反复出现的真实制造商，才进入页面结构或关键词差距比较；目录、媒体和零售页面可以说明 SERP 形态，但不直接作为 Athletik 的内容模板。
 
@@ -240,7 +265,7 @@ Competitor Gap 只产生研究候选，不自动产生页面。任何候选仍�
 |---|---:|---|
 | 业务匹配 | 30% | 是否对应可生产且希望获得的订单？ |
 | 采购意图 | 25% | 搜索者是否可能参与供应商发现或采购决策？ |
-| 证据优势 | 20% | 是否有真实工厂、产品、工艺或经验可以证明？ |
+| 非商品化证据优势 | 20% | 是否有 Athletik-specific 的真实产品、工艺、流程、图片、采购输入或经确认能力，而不是可由 AI 或任意 OEM 网站复述的通用知识？ |
 | 可竞争性 | 15% | 当前站点是否有合理机会进入可见位置？ |
 | 需求信号 | 10% | GSC、SERP、趋势、客户语言或工具是否显示需求？ |
 
@@ -257,11 +282,14 @@ Competitor Gap 只产生研究候选，不自动产生页面。任何候选仍�
 | Market | 美国、加拿大或具体欧洲国家 |
 | Language | 当前为 English；未来语言版本单独记录 |
 | Buyer stage | 发现、筛选、技术确认、尽调或行动 |
+| Site function | `Discover`、`Qualify`、`Verify` 或 `Start`，可有一个主要任务和必要的辅助任务 |
 | Intent cluster | 聚类后的主要搜索意图 |
 | Query variants | 自然同义词和修饰词 |
 | Target URL | 当前规范页面或候选新页面 |
 | Page role | Commercial、Guide、Trust、Process 或 Conversion |
 | Evidence | 页面可使用的已确认事实和资产 |
+| Reason to visit | AI 或搜索摘要之外，买家访问该页面可以获得的供应商特有价值 |
+| Zero-click / AI risk | 当前 SERP 的 AI、目录、Marketplace、比较模块和点击必要性判断 |
 | Current performance | GSC 点击、曝光、CTR、排名和国家 |
 | Gap | 缺少内容、证据、内链、页面或无缺口 |
 | Priority | P0–P3 |
@@ -284,14 +312,14 @@ Competitor Gap 只产生研究候选，不自动产生页面。任何候选仍�
 
 #### 页面组合
 
-| 层级 | 当前页面 | SEO 任务 |
+| 层级 | 当前页面 | 主要采购职责 |
 |---|---|---|
-| 品牌与总定位 | 首页 | 承接品牌、总体技术针织制造定位和主要入口 |
-| 商业承接 | 7 个 `*-manufacturer/` 品类页 | 承接产品、材料和制造商采购意图 |
-| 流程承接 | `/services/` | 解释 Sampling、Bulk Production、QC、Export & Shipping |
-| 技术教育 | Technical Guides Hub 与指南 | 回答采购和技术问题，并把读者送往商业页 |
-| 信任证明 | About、Sustainability | 提供实体、制造、区域和责任证据 |
-| 转化 | Contact | 收集可以判断匹配度的询盘信息 |
+| 品牌与总定位 | 首页 | `Discover` 总体定位并完成初步 `Verify`，把买家送往正确品类或流程 |
+| 商业承接 | 7 个 `*-manufacturer/` 品类页 | `Qualify` 产品、材料、construction、MOQ 与项目 fit，并引导 `Start` |
+| 流程承接 | `/services/` | `Verify` Sampling、Bulk Production、QC、Export & Shipping 的衔接与责任边界 |
+| 技术教育 | Technical Guides Hub 与指南 | 帮助买家准备规格、比较工艺、评估供应商或降低采购风险，再连接对应商业页 |
+| 信任证明 | About、Sustainability | `Verify` 实体、制造、区域与责任证据 |
+| 转化 | Contact | `Start` 项目并收集可以判断匹配度的询盘信息 |
 
 #### 内容队列优先方向
 
@@ -307,9 +335,13 @@ Competitor Gap 只产生研究候选，不自动产生页面。任何候选仍�
 
 - 目标买家与市场；
 - 买家任务和主要搜索意图；
+- 主要官网任务：`Discover`、`Qualify`、`Verify` 或 `Start`；
+- 页面要减少的采购不确定性；
+- Zero-click / AI SERP 风险与买家仍需访问页面的理由；
 - Target URL 与页面角色；
 - Primary topic 和自然相关问题；
 - 可主动营销的交付能力；
+- Athletik-specific 的非商品化证据和可用资产；
 - 需要证据支持的硬事实及其来源；
 - 应使用概括性表达或留到询盘阶段确认的变量；
 - 推荐结构和读者完成页面后应采取的动作；
@@ -346,12 +378,15 @@ Title 和 Meta 用于准确表达页面价值，不机械追求字符数，也�
 #### 内容质量
 
 - 回答该意图下最重要的采购问题；
+- 每个主要区块应对应 `Discover`、`Qualify`、`Verify` 或 `Start` 中至少一项任务；没有采购、品牌、法律、可访问性或导航价值的区块应缩减或删除；
 - 优先使用一方知识、图片、工艺和流程建立专业度，同时允许描述 Athletik 能够组织交付但暂时没有公开案例的服务；
+- 明确买家为什么需要访问 Athletik 页面，而不是只提供可由 AI 摘要或竞争页面替代的行业常识；
 - 区分可主动营销的交付能力、需要硬证据的具体声称，以及应留到询盘阶段确认的项目变量；
 - 对 MOQ、交期、价格、测试范围和材料表现等不稳定变量使用概括性表达，不用未经确认的具体数字装饰页面；
 - 不复制竞争对手，不拼接通用资料，不捏造客户经历、认证、报告或量化结果；
 - 限定语只保留到控制风险所需的最低程度，避免因过度解释削弱关键词主题和商业吸引力；
 - 不要求固定字数；以完整解决问题为停止条件；
+- 不要求所有商业页机械复制相同 FAQ、卡片或流程模块；模块数量和信息密度应由页面负责的采购任务决定；
 - 更新日期只在内容发生实质变化时更新。
 
 #### 图片与媒体
@@ -476,6 +511,7 @@ URL 删除、改名、合并或移动前必须：
 - 与技术针织或目标买家是否相关；
 - 页面是否真实、可索引且有编辑价值；
 - 品牌和实体名称是否准确；
+- 官网、目录、社交资料和销售口径是否一致，是否会向买家或 AI 提供冲突的产品范围、MOQ、实体或能力信息；
 - 链接是否自然置于相关上下文；
 - 是否要求购买传递排名权重的链接、交换链接或自动生成链接；
 - 是否可能损害品牌或引入错误事实。
@@ -517,6 +553,8 @@ URL 删除、改名、合并或移动前必须：
 - 北美与欧洲分开，其中美国、加拿大和欧洲重点国家分别查看；
 - 检查曝光增长但未点击的主题；
 - 检查有点击但无转化的落地页；
+- 在数据可用时检查商业页 → Contact → form start → `generate_lead` → 有效询盘的漏斗，以及首次来源与最终提交来源；
+- 当 GSC Generative AI performance report 可用时，单独检查生成式搜索 impressions 和出现页面，不推断报告未提供的 Clicks 或 Queries，也不把第三方 AI Visibility 分数替代为一方数据；
 - 检查一个意图是否出现多个竞争页面；
 - 把新查询加入研究池，不直接变成页面；
 - 更新机会队列和下一月唯一优先级。
@@ -549,6 +587,26 @@ URL 删除、改名、合并或移动前必须：
 | 有点击但无询盘 | 流量意图、页面证明、CTA、表单和市场匹配 | 优化转化或停止追逐不匹配查询 |
 | 多页获得同一查询 | 页面目的、Canonical、内部锚文本 | 判断正常覆盖还是关键词蚕食 |
 | 排名或点击下降 | 站点改动、季节、算法、竞争、索引和需求 | 找到页面/查询范围后再处理 |
+
+### 5.1 两类网站改动与不同触发条件
+
+为避免“小样本不改页面”与“真实采购信息需要补全”发生冲突，网站改动分为两类：
+
+#### A 类：搜索可见性实验
+
+包括 URL、新页面、页面所有权、SEO Title、Meta Description、H1 或主要关键词定位变化。此类改动必须依赖足够的 GSC、SERP、询盘或市场证据，并遵守曝光样本、单一变量、完整比较窗口和回滚门槛。低曝光本身不能成为关键词替换或新建页面的理由。
+
+#### B 类：采购决策完整性改进
+
+包括补全经确认的产品范围、MOQ、材料、construction、开发输入、Sampling、QC、测试边界、交付流程、真实证据、相关内链和项目启动信息。即使 GSC 样本较低，只要同时具备以下条件，也可以在现有页面内受控实施：
+
+1. 所有者确认的当前业务事实或可交付能力；
+2. 真实买家问题、询盘、Tech pack、跨市场 SERP 或采购任务证据；
+3. 明确的目标页面与采购职责，不改变 URL 和页面所有权；
+4. 一个可说明的主要变量、事实边界、验收标准和回滚条件；
+5. SEO Change Card 与 Day 0 / 28 / 90 记录。
+
+B 类不是绕过数据门槛的通道。它不能仅凭低曝光、关键词工具建议或通用竞争文案改动 Title、Meta、H1、URL，不能批量扩写其他低样本页面，也不能创建近义平行页。
 
 默认样本门槛：
 
@@ -603,11 +661,14 @@ Google 的 AI 搜索功能仍建立在抓取、索引、质量和核心搜索系
 
 GEO 的中性测试、分发和月度比较继续在 [`../geo/GEO.md`](../geo/GEO.md) 中独立执行。
 
+当 GSC Generative AI performance report 对当前属性开放时，它属于 Google 一方搜索表现数据，可进入 SEO 月度报告；但仍须与传统 Web Search、独立 GEO 提示词测试和第三方 AI Visibility 估算分开记录。报告不可用时标记 `unavailable`，不使用第三方估算填补成 Google 数据。
+
 ## 8. 工具栈：必需、免费与可选
 
 ### 必需
 
 - Google Search Console；
+- GSC Generative AI performance report（仅在当前属性实际开放时使用）；
 - GA4 和表单/询盘记录；
 - Google/Bing 实际搜索结果；
 - 浏览器开发者工具和生产 HTML；
@@ -660,11 +721,12 @@ GEO 的中性测试、分发和月度比较继续在 [`../geo/GEO.md`](../geo/GE
 ### 31–90 天：现有页面与首轮增长
 
 1. 优先强化最符合业务、证据最完整的现有商业页；
-2. 补强 Tech Pack 与 OEM Evaluation 指南的上下文内链；
-3. 按研究结果发布最多 1–2 篇新技术指南；
-4. 建立相关行业提及与自然链接机会池；
-5. 在 Day 28 和 Day 90 记录 GSC、GA4 与询盘结果；
-6. 不因早期第三方分数低而改变方向。
+2. 使用 `Discover / Qualify / Verify / Start` 检查现有页面的采购决策完整性；
+3. 补强 Tech Pack 与 OEM Evaluation 指南的上下文内链；
+4. 按研究结果发布最多 1–2 篇新技术指南；
+5. 建立相关行业提及与自然链接机会池；
+6. 在 Day 28 和 Day 90 记录 GSC、GA4 与询盘结果；
+7. 不因早期第三方分数低而改变方向。
 
 ### 4–6 个月：主题集群与市场差异
 
@@ -695,8 +757,13 @@ GEO 的中性测试、分发和月度比较继续在 [`../geo/GEO.md`](../geo/GE
 目标市场/国家：
 买家角色与任务：
 搜索意图：
+主要官网任务（Discover / Qualify / Verify / Start）：
+要减少的采购不确定性：
+Zero-click / AI SERP 风险：
+买家仍需访问页面的理由：
 真实客户/搜索证据：
 可主动营销的交付能力：
+Athletik-specific 非商品化证据：
 需证据支持的硬事实：
 留到询盘阶段确认的变量：
 现有承接页面：
@@ -714,8 +781,11 @@ Query variants：
 Market / Language：
 Target URL：
 Page role：
+Site function：
 Current GSC data：
 SERP result type：
+Zero-click / AI risk：
+Reason to visit：
 Evidence：
 Gap：
 Internal links：
@@ -771,6 +841,8 @@ Change ID：
 变更页面或分组：
 唯一主要变量：
 业务假设：
+改动类型：A 类搜索可见性实验 / B 类采购决策完整性改进
+主要官网任务：Discover / Qualify / Verify / Start
 证据来源与数据状态：
 主要指标：
 防护指标：
@@ -790,6 +862,7 @@ Finding / Inventory 处置：
 - Google Search Essentials：<https://developers.google.com/search/docs/essentials>
 - Google People-first Content：<https://developers.google.com/search/docs/fundamentals/creating-helpful-content>
 - Google AI Search Optimization Guide：<https://developers.google.com/search/docs/fundamentals/ai-optimization-guide>
+- GSC Generative AI performance report：<https://support.google.com/webmasters/answer/16984139>
 - Google Search Console Performance：<https://support.google.com/webmasters/answer/10268906>
 - Google Sitemaps：<https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview>
 - Google International / Multilingual Sites：<https://developers.google.com/search/docs/advanced/crawling/managing-multi-regional-sites>

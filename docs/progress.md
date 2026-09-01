@@ -651,6 +651,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-01 | SEO-V2-003 Services 单页 indexed snapshot 复查完成：只读 `index-watch` 为 complete，1/1 inspected、0 failed；结果仍为 `NEUTRAL / Discovered - currently not indexed`，相对 2026-08-28 unchanged、无 regression。生产页 HTTP 200、`index`、自引用 Canonical、无 X-Robots-Tag、Sitemap 与首页入口均正常；Finding 保持 `no-change / monitoring`，不重复请求编入索引或改页，后续按周度节奏复查 |
 | 2026-09-01 | FLATLOCK Guide US / GB / CA Live SERP 研究完成：DataForSEO 15 个可用快照均 complete；核心比较词在三国为稳定技术教育意图，混合 sewing tutorial、社区、出版物与少量制造商内容，Athletik 未进入本次核心词 Desktop 前 20。所有者明确该 Guide 属于 GEO 技术教育任务，不进入当前 SEO 对话的内容实施范围；SEO 仅保留 GSC / SERP 观测，outcome 为 `no-change / routed-to-GEO`，不扩充 V2 Backlog，不修改页面 |
 | 2026-09-01 | SEO-V2-005 三个低曝光品类复筛完成：Sportswear 仅见 1 次不匹配公司品牌词曝光，Sports Accessories 无可见 Query 行，均 `no-change`；Knitted Fabrics 的 `functional knitted fabrics factory` 为 2 impressions / average position 37，US / GB / CA Live SERP 均确认功能针织面料厂、开发、应用与测试意图。经所有者批准，本地只增强 `/knitted-fabrics-manufacturer/` 的 own fabric mill、in-house testing 与 approved specification 正文证据，保留 URL、Title、Meta、H1、图片和 Schema 类型，状态 `ready-to-deploy` |
+| 2026-09-01 | `seo-process.md` 升级到 V1.3：保留 A–L 架构、100 impressions CTR 门槛和 90 天内容观察规则；新增官网 `Discover / Qualify / Verify / Start` 采购决策基调、Zero-click / AI SERP 判断、Athletik-specific 非商品化证据门槛、A 类搜索可见性实验与 B 类采购决策完整性改进、辅助转化与条件式 GSC Generative AI performance report 记录。该升级只修改内部运营规则，不扩充 V2 Backlog、不修改网站或降低事实与 URL 控制。 |
 
 ---
 
