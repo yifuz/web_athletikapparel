@@ -647,6 +647,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-01 | SEO-V2-005 SERP 补充实施完成：US Live SERP 复核 7 个 Underwear / Base Layer 变体后，所有者确认 Athletik 可稳定提供男/女 performance underwear、custom waistband、woven/printed branding、labels、private-label packaging、supportive pouch 与 mesh panels。本地已加入 Underwear 专属 H2、Customization / QC、4 个 Buyer Questions、QC Guide 内链及完整 buyer inputs；共享模板为条件式，Sportswear 桩无新增区块。状态保持 `ready-to-deploy` |
 | 2026-09-01 | SEO-V2-005 能力事实补充确认：所有者确认 Athletik 可稳定提供真正的 `seamless construction`；现有 Underwear Meta 中该表述准确，结论为 `keep / no-change`。`seamless construction` 与 `bonded-welded construction` 分开记录，本轮无生产代码或部署文件 |
 | 2026-09-01 | SEO-V2-005 规格条视觉优化完成：所有者决定暂不增加页面工艺视频，保留既有 Underwear Hero 与全站 Instagram 入口；规格条修复外层和容器双重纵向 padding，数字/单位独立排版，并仅在 Underwear 将重复的 Service 卡改为已确认的 Construction 能力。7/7 本地品类页 HTTP 200、内容边界与 PHP/CSS 基础检查通过，状态保持 `ready-to-deploy` |
+| 2026-09-01 | SEO-V2-005 Day 0 生产验收通过：7/7 品类页均为 HTTP 200、单一 H1、可索引、自引用 Canonical、JSON-LD 可解析；Underwear 新正文、Customization / QC、4 个 Buyer Questions、技术指南内链与 Construction 卡均已生效。规格条在 1440×900 / 390×844 渲染为 232px / 542px，无文字截断或横向溢出；Title、Meta、Schema 类型、图片和 Hero 视频数量不变。`seo audit-page --js` 的 `fetch failed` 按 unavailable 记录，独立 HTML、Playwright、Sitemap、首页内链和 CSS 证据均通过。状态转为 `fixed / measuring` |
 
 ---
 

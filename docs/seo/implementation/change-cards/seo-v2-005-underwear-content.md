@@ -3,9 +3,10 @@
 - Change ID：`SEO-V2-005`
 - Finding type：`opportunity`
 - 优先级：P1
-- 状态：`ready-to-deploy`
-- 实施阶段：`local-complete / production-pending`
+- 状态：`fixed / measuring`
+- 实施阶段：`production-accepted / measurement-open`
 - 实施日期：2026-09-01
+- 生产验收日期：2026-09-01
 - 目标页面：`/underwear-manufacturer/`
 - 目标市场：美国、英国、加拿大，并覆盖北美与欧洲英语 B2B 买家
 - 搜索意图：寻找可承接 performance underwear、men's boxer briefs、thermal base layers 与相关 OEM/ODM 项目的制造商
@@ -71,14 +72,16 @@
 
 ### 生产 / 部署后
 
-- [ ] `/underwear-manufacturer/` 返回 HTTP 200、`index, follow`、自引用 Canonical；
-- [ ] 生产 HTML 只有一个 H1，Title、Meta、H1、OG/Twitter 与部署前规范值保持不变；
-- [ ] 新正文、四个产品模块、能力模块、2 个 Assurance cards、4 个 Buyer Questions 和 5 个 related links 正常渲染；
-- [ ] Underwear 规格条显示 `MOQ 500 pcs`、`Sampling 1-2 weeks` 与 `Construction FLATLOCK / ACTIVESEAM`，深色区块上下留白明显收紧；
-- [ ] 其余 6 个品类页规格条无内容、换行或移动端回归；
-- [ ] 桌面与移动端布局无回归，既有图片均返回 200；
-- [ ] 定向 Crawl / audit 无新增状态码、indexability、结构化数据或内部链接回归；
-- [ ] Day 0 技术 outcome 写回本卡与 V2 Backlog；商业结果保留至 Day 28 / 90。
+- [x] `/underwear-manufacturer/` 返回 HTTP 200、`index, follow`、自引用 Canonical；
+- [x] 生产 HTML 只有一个 H1，Title、Meta、H1、OG/Twitter 与部署前规范值保持不变；
+- [x] 新正文、四个产品模块、能力模块、2 个 Assurance cards、4 个 Buyer Questions 和 5 个 related links 正常渲染；
+- [x] Underwear 规格条显示 `MOQ 500 pcs`、`Sampling 1-2 weeks` 与 `Construction FLATLOCK / ACTIVESEAM`，深色区块上下留白明显收紧；
+- [x] 其余 6 个品类页规格条内容边界正确；所有 7 个品类页均为 HTTP 200、单一 H1、自引用 Canonical、可索引且 JSON-LD 可解析；
+- [x] Playwright 在 1440×900 与 390×844 完成生产渲染验收：规格条分别高 232px 与 542px，桌面三卡均高 152px，移动端单列文字完整，两种视口均无横向溢出；
+- [x] 生产 `style.css` 已包含紧凑 padding 与数字/单位样式；Page Sitemap 和首页均保留 Underwear 入口，无 LocalWP / localhost 泄漏；
+- [x] Day 0 技术 outcome 已写回本卡与 V2 Backlog；商业结果保留至 Day 28 / 90。
+
+补充限制：`seo audit-page --js --refresh` 在本轮返回 `fetch failed`，因此该结构化报告为 `unavailable`，不是 0 issue 证据。生产原始 HTML、独立 Playwright 渲染 DOM、7 URL 定向清单、Sitemap、首页内链与实际 CSS 已分别验证并一致通过；周期 Crawl 继续由 SEO-V2-003 承接。
 
 ## 复盘窗口
 
