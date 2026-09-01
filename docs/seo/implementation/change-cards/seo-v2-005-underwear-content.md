@@ -11,8 +11,8 @@
 - 搜索意图：寻找可承接 performance underwear、men's boxer briefs、thermal base layers 与相关 OEM/ODM 项目的制造商
 - 买家任务：判断供应商的产品范围、材料与接缝能力、开发输入和 MOQ 是否适合项目
 - 业务动作：进入技术指南或提交符合 MOQ 的询盘
-- 唯一主要变量：现有 Underwear 页正文证据深度与采购语义覆盖
-- 不变项：URL、Canonical、SEO Title、Meta Description、H1、图片、Schema 类型、导航、CTA、其他品类页与站点信息架构
+- 唯一主要变量：现有 Underwear 页采购证据与买家决策模块的完整性，包括正文和规格条
+- 不变项：URL、Canonical、SEO Title、Meta Description、H1、图片、Schema 类型、导航、CTA、其他品类页正文与站点信息架构
 - 允许 outcome：`fixed / measuring`、`iterate`、`revert`
 
 ## 触发证据与数据状态
@@ -37,7 +37,9 @@
 - 增加 4 个可见 Buyer Questions，回答 MOQ、采样输入、private-label options 与性能要求确认方式；不添加 FAQ Schema；
 - 补充 intended activity / climate、target market、delivery destination、packaging requirements 与 target price range 等开发输入；
 - 增加到 `/technical-knitwear-tech-pack-guide/` 与 `/garment-quality-control-checklist/` 的上下文相关内链；保留 Sportswear、Merino、FLATLOCK guide 与 Services 链接；
-- 删除旧文案中把有接缝结构概括为 `seamless feel` 的模糊表达，所有性能要求均改为依赖实际材料、成衣、测试方法和买家标准确认的条件式表述。
+- 删除旧文案中把有接缝结构概括为 `seamless feel` 的模糊表达，所有性能要求均改为依赖实际材料、成衣、测试方法和买家标准确认的条件式表述；
+- 将深色规格条从双重纵向 padding 收紧为单层紧凑布局，数字与单位拆为独立元素；仅在 Underwear 中把重复的 `Service` 卡改为 `Construction`，展示 `FLATLOCK / ACTIVESEAM`，并以 `Seamless and bonded-welded options by project.` 说明已确认的不同结构能力；
+- 所有者决定暂不增加第二组页面视频：既有 Hero 已承担动态展示，工艺视频继续通过 Instagram 入口提供。页面不嵌入 Instagram Feed，不新增视频 URL、Schema 或第三方脚本。
 
 ## 风险与控制
 
@@ -45,6 +47,7 @@
 - Cannibalization 控制：不新建 Performance Underwear、Base Layer 或关键词单复数平行页；Underwear 仍为 performance underwear 与一般 base layer 的主承接页，Outdoor / Merino 保持材料或应用支持角色；
 - 事实控制：不声明认证编号、精确产能、客户、测试结果或未确认的法律关系；不把可选性能直接写成保证结果；
 - 变量控制：本轮不改 Title、Meta、H1、图片或 Schema 类型；专属 H2、Buyer Questions、Customization / QC 与技术指南内链均属于同一正文证据变量，不拆成独立排名实验；
+- 共享模板控制：数字/单位拆分和规格条紧凑样式会作用于 7 个品类页，但只有 Underwear 覆盖第三张卡的内容；Knitted Fabrics 的 fabric-specific 三卡内容不变；
 - 回滚边界：出现索引、渲染、结构、品牌事实错误，或完整窗口显示页面主题明显偏离目标 B2B Query 且无其他因素可解释时，恢复本次数据字段；URL 不变。
 
 ## 验收标准
@@ -59,6 +62,9 @@
 - [x] Tech Pack Guide 与 QC Guide 内链指向既有 URL；
 - [x] 无未解决占位符、虚构认证、精确产能、客户、测试结果或法律关系；
 - [x] 新样式只使用现有 `--ma-*` token，并在 48rem 断点从单列切换为双列；无 `!important` 或新图片；
+- [x] 规格条删除外层重复 padding，内部使用 `--ma-space-5`；卡片使用 `--ma-space-3` / `--ma-space-4`，没有新增硬编码颜色、间距或断点；
+- [x] 默认成衣规格把 `500` / `pcs` 与 `1-2` / `weeks` 拆成独立元素；Underwear 第三张卡为 `Construction`，其余成衣品类仍为 `Service`，Knitted Fabrics 三张自定义卡保持原内容；
+- [x] 本地 7/7 品类页规格条均正常输出且 HTTP 200；CSS 花括号 716/716 平衡；
 - [x] Git diff 仅包含本 Change Card、Underwear 数据、共享条件式模板、对应样式与执行状态记录。
 
 补充区块实施后的本地 WordPress URL 已恢复响应：7/7 品类页均返回 HTTP 200 且各有 1 个 H1；Underwear 输出 6 个页面主体 H2、2 个 Assurance cards、4 个 Buyer Questions 和 5 个 related links，其余 6 个品类的 Assurance / Buyer Questions 均为 0。QC Guide 使用 Assurance card 内的一条上下文链接，不在 Related 区重复。受当前命令行浏览器截图不可用限制，桌面/移动端视觉检查仍保留到部署预览与 Day 0 生产验收，不把源码断点检查写成视觉通过。
@@ -68,6 +74,8 @@
 - [ ] `/underwear-manufacturer/` 返回 HTTP 200、`index, follow`、自引用 Canonical；
 - [ ] 生产 HTML 只有一个 H1，Title、Meta、H1、OG/Twitter 与部署前规范值保持不变；
 - [ ] 新正文、四个产品模块、能力模块、2 个 Assurance cards、4 个 Buyer Questions 和 5 个 related links 正常渲染；
+- [ ] Underwear 规格条显示 `MOQ 500 pcs`、`Sampling 1-2 weeks` 与 `Construction FLATLOCK / ACTIVESEAM`，深色区块上下留白明显收紧；
+- [ ] 其余 6 个品类页规格条无内容、换行或移动端回归；
 - [ ] 桌面与移动端布局无回归，既有图片均返回 200；
 - [ ] 定向 Crawl / audit 无新增状态码、indexability、结构化数据或内部链接回归；
 - [ ] Day 0 技术 outcome 写回本卡与 V2 Backlog；商业结果保留至 Day 28 / 90。

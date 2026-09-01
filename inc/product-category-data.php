@@ -251,6 +251,25 @@ function myathletik_product_category_data() {
 			'capability_kicker'  => __( 'Development inputs', 'myathletik-child' ),
 			'capability_heading' => __( 'Define fit, fabric, and seam performance before sampling', 'myathletik-child' ),
 			'construction'      => sprintf( __( 'Send the product type, intended activity and climate, target market and delivery destination, size range, target fit, garment drawing or tech pack, reference sample, fabric composition and weight, stretch and recovery targets, seam map, waistband and trim requirements, artwork, private-label packaging requirements, target price range, order quantity, and required testing. Our team can coordinate knitted fabric development through our own fabric mill, review FLATLOCK, ACTIVESEAM, and bonded-welded options, develop samples, and use in-house testing to check the agreed material and garment criteria before bulk production. Public garment MOQ is %s pieces per style; final sampling, testing, and production terms are confirmed for the project.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+			'specs'             => array(
+				array(
+					'label'       => __( 'MOQ', 'myathletik-child' ),
+					'value'       => number_format_i18n( myathletik_public_moq_pieces() ),
+					'unit'        => __( 'pcs', 'myathletik-child' ),
+					'description' => __( 'Per style.', 'myathletik-child' ),
+				),
+				array(
+					'label'       => __( 'Sampling', 'myathletik-child' ),
+					'value'       => __( '1-2', 'myathletik-child' ),
+					'unit'        => __( 'weeks', 'myathletik-child' ),
+					'description' => __( 'Depending on style complexity and materials.', 'myathletik-child' ),
+				),
+				array(
+					'label'       => __( 'Construction', 'myathletik-child' ),
+					'value'       => __( 'FLATLOCK / ACTIVESEAM', 'myathletik-child' ),
+					'description' => __( 'Seamless and bonded-welded options by project.', 'myathletik-child' ),
+				),
+			),
 			'assurance_kicker'  => __( 'Program execution', 'myathletik-child' ),
 			'assurance_heading' => __( 'Private-label customization and underwear quality control', 'myathletik-child' ),
 			'assurance_intro'   => __( 'Customization and inspection criteria are recorded in the approved specification so the sample and bulk order can be reviewed against the same requirements.', 'myathletik-child' ),

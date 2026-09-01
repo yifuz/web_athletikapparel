@@ -36,13 +36,14 @@ $product_range_heading = ! empty( $category['product_range_heading'] )
 $specs = array(
 	array(
 		'label'       => __( 'MOQ', 'myathletik-child' ),
-		/* translators: %s: public MOQ in pieces per style. */
-		'value'       => sprintf( __( '%s pcs', 'myathletik-child' ), $public_moq ),
+		'value'       => $public_moq,
+		'unit'        => __( 'pcs', 'myathletik-child' ),
 		'description' => __( 'Per style.', 'myathletik-child' ),
 	),
 	array(
 		'label'       => __( 'Sampling', 'myathletik-child' ),
-		'value'       => __( '1-2 weeks', 'myathletik-child' ),
+		'value'       => __( '1-2', 'myathletik-child' ),
+		'unit'        => __( 'weeks', 'myathletik-child' ),
 		'description' => __( 'Depending on style complexity and materials.', 'myathletik-child' ),
 	),
 	array(
@@ -263,7 +264,12 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 				<?php foreach ( $specs as $spec ) : ?>
 					<article>
 						<span><?php echo esc_html( $spec['label'] ); ?></span>
-						<strong><?php echo esc_html( $spec['value'] ); ?></strong>
+						<strong>
+							<span class="ma-product-specs__value"><?php echo esc_html( $spec['value'] ); ?></span>
+							<?php if ( ! empty( $spec['unit'] ) ) : ?>
+								<span class="ma-product-specs__unit"><?php echo esc_html( $spec['unit'] ); ?></span>
+							<?php endif; ?>
+						</strong>
 						<p><?php echo esc_html( $spec['description'] ); ?></p>
 					</article>
 				<?php endforeach; ?>
