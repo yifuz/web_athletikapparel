@@ -14,6 +14,16 @@
 > - 样本低于 100 曝光门槛时只记录方向，不触发页面修改（`seo-process.md` §5）。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-09-01：SEO-V2-003 Services indexed snapshot 复查
+
+只对 `https://www.athletikapparel.com/services/` 运行只读 `index-watch`。CLI 版本为项目已验证的 `0.2.36`，Search Console OAuth、`webmasters.readonly` scope 与默认属性均正常；报告 `dataStatus=complete`，`requested=1`、`attempted=1`、`inspected=1`、`failed=0`、`quotaBlocked=0`、`deferred=0`。
+
+Google URL Inspection indexed snapshot 仍为 `NEUTRAL / Discovered - currently not indexed`，未返回 Google canonical、最后抓取时间或具体抓取状态。与 2026-08-28 快照相比 `changeKind=unchanged`，没有 regression、recovery 或 alert。该结果是 Google 的索引快照，不是实时测试，也不能证明当前页面存在技术阻塞。
+
+同轮生产定向复核结果：Googlebot User-Agent 请求 HTTP 200；页面输出 `follow, index` 与自引用 canonical；无 `X-Robots-Tag`；robots.txt 未屏蔽 `/services/`；`page-sitemap.xml` 包含该 URL；首页仍有可抓取 Services 链接。结合 2026-08-28 GSC 实时测试通过和一次性请求编入索引记录，没有出现新的代码、robots、canonical、Sitemap 或发现路径问题。
+
+Finding `SEO-V2-003-SERVICES-INDEX` outcome 保持 `no-change / monitoring`。不重复请求编入索引，不改 URL、Title、Meta、H1、正文或 Schema；下一次按周度 indexed snapshot 节奏复查，若变为 `PASS / Submitted and indexed` 则关闭该单页观察，若 Google 返回明确抓取或 canonical 阻塞再进入诊断。
+
 ## 2026-08-31：SEO-V2-005 GSC 代理故障修复与 Underwear 检查
 
 为核对 Underwear、Merino、Outdoor 与 Sportswear 页是否达到 SEO-V2-005 门槛，先运行 `seo --version` 与 `seo doctor --json`。CLI 版本为项目已验证的 `0.2.36`，Google 登录、Search Console `webmasters.readonly` scope 和默认属性 `sc-domain:athletikapparel.com` 均通过。
