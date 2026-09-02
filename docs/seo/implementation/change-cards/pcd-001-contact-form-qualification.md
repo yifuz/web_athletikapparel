@@ -4,8 +4,9 @@
 - Finding type：`review`
 - 变更类型：V1.3 B 类采购决策完整性改进
 - 优先级：P1
-- 状态：`local-owner-approved / ready-to-deploy`
+- 状态：`production-accepted / changed-measuring`
 - 本地实施日期：2026-09-02
+- 生产验收日期：2026-09-02
 - 目标表单：Fluent Forms `inquiry form`，Form ID `3`
 - 目标页面：`/`、7 个产品品类页、`/contact/`
 - 搜索与采购意图：B2B supplier qualification、RFQ preparation 与 `Start`
@@ -26,7 +27,7 @@
 
 ### 数量字段
 
-- 字段名：`estimated_order_quantity`
+- 本地字段名：`estimated_order_quantity`；生产 Fluent Forms 自动字段名：`numeric_field_1`
 - 类型：required numeric input
 - 标签：`Estimated Order Quantity`
 - placeholder：`e.g. 1000`
@@ -37,10 +38,10 @@
 
 ### Tech pack 状态
 
-- 字段名：`tech_pack_status`
-- 类型：required select，与 `Business Type` 同处两列容器
+- 本地字段名：`tech_pack_status`；生产 Fluent Forms 自动字段名：`dropdown_3`
+- 类型：required select，与 `Business Type` 同处两列容器；生产可见标签为 `Tech Pack`
 - 选项：
-  - `Yes — ready to share`
+  - `Ready to share`
   - `In development`
   - `No`
 
@@ -95,4 +96,14 @@
 6. 验证空值错误、500 的有效输入和 tech pack 必选状态；
 7. 如执行一次受控成功提交，必须标记为测试询盘并从询盘基线排除。
 
-生产验收通过后，Finding outcome 由 `deferred` 更新为 `changed / measuring`；后续按 28 天窗口观察不合格询盘识别率、字段完整度和有效询盘，不把表单变化解释为自然搜索排名原因。
+## 生产验收
+
+- [x] 主题代码与 Form ID `3` 配置已部署；
+- [x] 首页、7 个品类页与 Contact 共 9/9 返回 HTTP 200，继续输出 `index`；
+- [x] 9/9 页面输出短标签 `Estimated Order Quantity`、required Numeric Field、`min=1`、`step=1`；
+- [x] 9/9 页面输出 required `Tech Pack` Select，并与 required `Business Type` 同行；
+- [x] 生产首页输出四张采购准备卡片，1440px 表单约 754px，Desktop/Mobile 无横向溢出；
+- [x] 客户端空值验证只产生 `Estimated Order Quantity` 与 `Tech Pack` 两个错误，未进入成功状态；
+- [x] 未执行成功提交，未产生测试询盘或 GA4 lead。
+
+Finding outcome 更新为 `changed / measuring`。后续在 28 个完整自然日后观察不合格询盘识别率、字段完整度和有效询盘；该 B 类采购决策改进不解释为自然搜索排名变化。
