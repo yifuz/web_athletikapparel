@@ -21,22 +21,46 @@ $stages = array(
 		'number' => '01',
 		'title'  => __( 'Sampling & Prototyping', 'myathletik-child' ),
 		'copy'   => __( 'Every project starts with getting the sample right. We develop counter samples, prototypes, and pre-production samples from your tech packs, sketches, or reference garments - typically within 1-2 weeks, depending on complexity. Our sample room is equipped for FLATLOCK, ACTIVESEAM, and bonded-welded construction, so what you approve is what goes into production.', 'myathletik-child' ),
+		'decisions' => array(
+			__( 'Buyer provides', 'myathletik-child' )              => __( 'Product type, tech pack or drawing, reference sample if available, target fabric, fit, construction, testing requirements, estimated quantity, and required timing.', 'myathletik-child' ),
+			__( 'Athletik reviews', 'myathletik-child' )            => __( 'Material and construction feasibility, the sample route, required performance criteria, and any inputs still needed to build the sample.', 'myathletik-child' ),
+			__( 'Approval before next stage', 'myathletik-child' ) => __( 'The applicable sample, material, trims, measurements, construction, and test criteria are aligned before bulk production is released.', 'myathletik-child' ),
+			__( 'Quotation variables', 'myathletik-child' )         => __( 'Style complexity, fabric and trims, construction, sample requirements, testing scope, order quantity, and required timing.', 'myathletik-child' ),
+		),
 	),
 	array(
 		'number' => '02',
 		'title'  => __( 'Bulk Production', 'myathletik-child' ),
 		/* translators: %s: public MOQ in pieces per style. */
-		'copy'   => sprintf( __( 'Once samples are approved, we move into bulk production in our own facility. With technical knit construction and flexible, scalable capacity, we handle orders from %s pcs per style and scale up without compromising quality or lead times.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+		'copy'   => sprintf( __( 'Once the sample and current specification are approved, the project can move into bulk production in our own facility. Public garment MOQ is %s pieces per style; final production terms depend on the style, material, testing scope, order breakdown, and required timing.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+		'decisions' => array(
+			__( 'Buyer provides', 'myathletik-child' )              => __( 'The approved sample and current specification or tech pack, final quantity, color and size breakdown, packaging requirements, and delivery target.', 'myathletik-child' ),
+			__( 'Athletik reviews', 'myathletik-child' )            => __( 'Material and trim readiness, production method, QC checkpoints, order allocation, and schedule assumptions.', 'myathletik-child' ),
+			__( 'Approval before next stage', 'myathletik-child' ) => __( 'The current specification, approved sample, materials, order breakdown, packaging, and production terms are aligned before cutting and assembly.', 'myathletik-child' ),
+			__( 'Quotation variables', 'myathletik-child' )         => __( 'Quantity by style and color, material and finish, construction, testing, packaging, and production timing.', 'myathletik-child' ),
+		),
 	),
 	array(
 		'number' => '03',
 		'title'  => __( 'Quality Control', 'myathletik-child' ),
-		'copy'   => __( 'Quality is built in at every stage, not just inspected at the end. From our own fabric mill with in-house testing to in-line and final garment inspection, we control quality from yarn to finished piece so every shipment meets the standard your brand depends on.', 'myathletik-child' ),
+		'copy'   => __( 'Quality control starts with the approved material and production references rather than only the finished shipment. Our workflow can combine fabric checks and in-house testing with in-line and final garment inspection against the current specification, approved sample, and agreed acceptance criteria.', 'myathletik-child' ),
+		'decisions' => array(
+			__( 'Buyer provides', 'myathletik-child' )              => __( 'The approved sample and specification, measurement tolerances, appearance and defect criteria, test methods, acceptance criteria, and any reporting requirements.', 'myathletik-child' ),
+			__( 'Athletik reviews', 'myathletik-child' )            => __( 'Incoming fabric checks, in-line garment inspection, final inspection, and the agreed material and garment criteria.', 'myathletik-child' ),
+			__( 'Approval before next stage', 'myathletik-child' ) => __( 'Inspection and test outcomes are reviewed against the agreed acceptance criteria before shipment release.', 'myathletik-child' ),
+			__( 'Quotation variables', 'myathletik-child' )         => __( 'Testing, inspection, reporting, and documentation scope required for the project.', 'myathletik-child' ),
+		),
 	),
 	array(
 		'number' => '04',
 		'title'  => __( 'Export & Shipping', 'myathletik-child' ),
-		'copy'   => __( 'We handle export and logistics in-house, booking freight directly. We support FOB and DDP terms and prepare the standard export documentation, so your order ships smoothly from our facility to your destination.', 'myathletik-child' ),
+		'copy'   => __( 'We handle export preparation and logistics in-house, including direct freight booking. FOB and DDP terms are available by project, with the standard export documentation and delivery scope confirmed before dispatch.', 'myathletik-child' ),
+		'decisions' => array(
+			__( 'Buyer provides', 'myathletik-child' )              => __( 'Destination, Incoterm, delivery window, packing and labeling instructions, shipping marks, and consignee or broker details.', 'myathletik-child' ),
+			__( 'Athletik reviews', 'myathletik-child' )            => __( 'The packing plan, standard export documents, freight booking information, and the delivery scope included in the quotation.', 'myathletik-child' ),
+			__( 'Approval before next stage', 'myathletik-child' ) => __( 'Final packing and shipping instructions are aligned before dispatch.', 'myathletik-child' ),
+			__( 'Quotation variables', 'myathletik-child' )         => __( 'FOB or DDP scope, destination, shipment size, packaging, required documentation, and delivery timing.', 'myathletik-child' ),
+		),
 	),
 );
 
@@ -107,6 +131,16 @@ $services_hero_srcset = implode(
 						<div class="ma-services-stage__copy">
 							<h3 class="ma-services-stage__title"><?php echo esc_html( $stage['title'] ); ?></h3>
 							<p><?php echo esc_html( $stage['copy'] ); ?></p>
+							<?php if ( ! empty( $stage['decisions'] ) && is_array( $stage['decisions'] ) ) : ?>
+								<dl class="ma-services-stage__decision-grid">
+									<?php foreach ( $stage['decisions'] as $label => $detail ) : ?>
+										<div class="ma-services-stage__decision">
+											<dt><?php echo esc_html( $label ); ?></dt>
+											<dd><?php echo esc_html( $detail ); ?></dd>
+										</div>
+									<?php endforeach; ?>
+								</dl>
+							<?php endif; ?>
 						</div>
 					</article>
 				<?php endforeach; ?>

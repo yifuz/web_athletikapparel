@@ -155,6 +155,51 @@ function myathletik_product_category_data() {
 				),
 			),
 			'construction'     => __( 'Construction options include FLATLOCK and, where specified for the program, ACTIVESEAM, together with power-stretch and 4-way-stretch knit options. Moisture management, quick-dry, UV protection, and antimicrobial performance can be developed through material selection and finishing options. The required result should be confirmed for the actual fabric and garment against the agreed test method and acceptance criteria.', 'myathletik-child' ),
+			'assurance_kicker'  => __( 'Program execution', 'myathletik-child' ),
+			'assurance_heading' => __( 'Sportswear customization and quality checkpoints', 'myathletik-child' ),
+			'assurance_intro'   => __( 'Fit, construction, material, finish, and inspection criteria should be recorded in the current specification and approved sample so bulk production can be reviewed against the same requirements.', 'myathletik-child' ),
+			'assurance_cards'   => array(
+				array(
+					'title'       => __( 'Program customization', 'myathletik-child' ),
+					'description' => __( 'Training, running, yoga, and compression programs can be developed around the buyer\'s tech pack, approved reference sample, intended activity, and target fit.', 'myathletik-child' ),
+					'items'       => array(
+						__( 'FLATLOCK or ACTIVESEAM construction specified by garment location and material', 'myathletik-child' ),
+						__( 'Power-band waistbands and mesh ventilation zones where specified', 'myathletik-child' ),
+						__( '4-way-stretch and power-stretch knit selection for the intended silhouette', 'myathletik-child' ),
+						__( 'Moisture management, quick-dry, UV protection, or antimicrobial targets confirmed for the selected fabric and finish', 'myathletik-child' ),
+					),
+				),
+				array(
+					'title'       => __( 'Sportswear quality checkpoints', 'myathletik-child' ),
+					'description' => __( 'Inspection criteria are set against the current tech pack or specification, approved sample, and buyer acceptance criteria for the program.', 'myathletik-child' ),
+					'items'       => array(
+						__( 'Measurements and fit against the approved sample', 'myathletik-child' ),
+						__( 'Seam placement, appearance, and extension for the specified construction', 'myathletik-child' ),
+						__( 'Waistband attachment and recovery, including specified mesh placement', 'myathletik-child' ),
+						__( 'Fabric stretch, recovery, opacity, and agreed performance criteria', 'myathletik-child' ),
+					),
+					'link'        => myathletik_related_link( __( 'Review the Garment Quality Control Checklist', 'myathletik-child' ), '/garment-quality-control-checklist/' ),
+				),
+			),
+			'buyer_questions_heading' => __( 'Questions buyers ask before starting a sportswear program', 'myathletik-child' ),
+			'buyer_questions' => array(
+				array(
+					'question' => __( 'What is the MOQ for sportswear?', 'myathletik-child' ),
+					'answer'   => sprintf( __( 'The public garment MOQ is %s pieces per style. Material, color and size allocation, sampling, testing, and final production terms are confirmed in the project quotation.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				),
+				array(
+					'question' => __( 'What should a buyer define before sportswear sampling?', 'myathletik-child' ),
+					'answer'   => __( 'Provide the product type, intended activity, target market, size range, fit target, tech pack or reference sample, fabric and construction requirements, performance and testing criteria, estimated quantity, and required timing.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'How are sportswear performance targets confirmed?', 'myathletik-child' ),
+					'answer'   => __( 'Opacity, compression, moisture management, quick-dry, wash performance, and other targets should be defined for the actual material and garment with an agreed test method and acceptance criteria. The result is then confirmed through approved samples and project-specific testing.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Can a program combine technical construction and custom panels?', 'myathletik-child' ),
+					'answer'   => __( 'FLATLOCK, ACTIVESEAM, power-band waistbands, mesh ventilation zones, and stretch-knit options can be developed where they suit the design. The final combination is confirmed against the garment location, selected material, tech pack, and approved sample.', 'myathletik-child' ),
+				),
+			),
 			'image_note'       => __( '[IMAGE: real sportswear product / production shots]', 'myathletik-child' ),
 			'gallery'          => array(
 				myathletik_gallery_item( 'sportswear/flatlock-athletic-800-17.jpg', __( 'Technical sportswear construction sample', 'myathletik-child' ) ),
@@ -168,6 +213,8 @@ function myathletik_product_category_data() {
 				myathletik_related_link( __( 'Underwear Manufacturer', 'myathletik-child' ), '/underwear-manufacturer/' ),
 				myathletik_related_link( __( 'Outdoor Clothing Manufacturer', 'myathletik-child' ), '/outdoor-clothing-manufacturer/' ),
 				myathletik_related_link( __( 'FLATLOCK vs OVERLOCK Guide', 'myathletik-child' ), '/flatlock-vs-overlock-technical-knitwear/' ),
+				myathletik_related_link( __( 'Technical Knitwear Tech Pack Guide', 'myathletik-child' ), '/technical-knitwear-tech-pack-guide/' ),
+				myathletik_related_link( __( 'Garment Quality Control Checklist', 'myathletik-child' ), '/garment-quality-control-checklist/' ),
 				myathletik_related_link( __( 'Our Services', 'myathletik-child' ), '/services/' ),
 			),
 		),

@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $badge_base = get_stylesheet_directory_uri() . '/assets/images/audit&certificates/';
 $badge_groups = array(
 	array(
-		'title'  => __( 'Environmental & material certifications', 'myathletik-child' ),
+		'title'  => __( 'Material and environmental programs', 'myathletik-child' ),
 		'badges' => array(
 			array( 'file' => 'OEKO-100-300x300-150x150-1.png', 'alt' => __( 'OEKO-TEX Standard 100 badge', 'myathletik-child' ) ),
 			array( 'file' => 'GRS-300x300-150x150-1.png', 'alt' => __( 'GRS certification badge', 'myathletik-child' ) ),
@@ -22,7 +22,7 @@ $badge_groups = array(
 		),
 	),
 	array(
-		'title'  => __( 'Social compliance & responsible sourcing', 'myathletik-child' ),
+		'title'  => __( 'Social compliance and assessment programs', 'myathletik-child' ),
 		'badges' => array(
 			array( 'file' => 'audit-bsci-sm-150x150-1.jpg', 'alt' => __( 'BSCI audit badge', 'myathletik-child' ) ),
 			array( 'file' => 'audit-sedex-150x150-1.jpg', 'alt' => __( 'Sedex audit badge', 'myathletik-child' ) ),
@@ -38,7 +38,8 @@ $badge_groups = array(
 	<div class="ma-section-inner">
 		<div class="ma-section-heading ma-section-heading--center">
 			<p class="ma-section-kicker"><?php esc_html_e( 'Audits and certifications', 'myathletik-child' ); ?></p>
-			<h2 id="ma-home-certifications-title"><?php esc_html_e( 'Verified badges, grouped by purpose', 'myathletik-child' ); ?></h2>
+			<h2 id="ma-home-certifications-title"><?php esc_html_e( 'Program references, grouped by purpose', 'myathletik-child' ); ?></h2>
+			<p><?php esc_html_e( 'Certification and audit applicability depends on the legal entity, production site, material or product, program scope, and current validity. Confirm the documents applicable to your order during supplier review.', 'myathletik-child' ); ?></p>
 		</div>
 
 		<div class="ma-certification-groups">

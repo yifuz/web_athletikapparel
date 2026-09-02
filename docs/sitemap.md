@@ -68,7 +68,7 @@
 3. 产品品类网格：7 张卡片，分别链接对应的 `*-manufacturer/` 页面；取代原来的 30 张无标题图片墙。
 4. Why myathletik：3 个差异点（技术结构、Carbondry 与 Laser perforation 等后整理能力、区域跟单团队）。
 5. 流程概览：四步流程条（Sample → Production → QC → Export），链接到 `/services/`。
-6. 认证 / 审核条：保留现有徽章行。
+6. 认证 / 审核条：保留现有徽章行，但不使用无范围依据的 `Verified` 表述；公开说明适用性取决于法律主体、生产地点、材料或产品、项目范围和当前有效期，具体文件在项目审核时确认。
 7. Technical Guides：稳定的内容中心入口和最新一篇已批准技术指南；通用 WordPress 文章流保持关闭。
 8. 询盘 CTA：共用 Fluent Form 3，包含产品类别、预计订单量、业务类型、公司信息和项目说明。
 
@@ -199,7 +199,14 @@ POM、成品面料规格、接缝图、测试和样品批准。
 
 **H1：** Our Services
 
-单页展示四阶段流程（Sample → Production → QC → Export）。
+单页展示四阶段流程（Sample → Production → QC → Export）。每个阶段同时说明：
+
+1. `Buyer provides`；
+2. `Athletik reviews`；
+3. `Approval before next stage`；
+4. `Quotation variables`。
+
+这些字段用于减少买家在打样、大货、QC 和出口衔接上的不确定性，不代表所有项目使用完全相同的交付条件；最终范围以项目 specification、approved sample 和 quotation 为准。
 
 **❌ 已取消（2026-07）：** 子页面 `/sampling-prototyping/`、`/bulk-production/`、
 `/quality-control/`、`/export-shipping/` 已并入单一 `/services/` 概览。
