@@ -76,6 +76,13 @@ Text Domain:  myathletik-child
   --ma-reading-width: 68ch;
   --ma-article-media-width: 30rem;
   --ma-article-title-width: 20ch;
+  --ma-home-collage-width: 35rem;
+  --ma-home-collage-compact-width: 26rem;
+  --ma-home-desktop-chrome-height: 7.605rem; /* desktop header + social bar */
+  --ma-client-logo-strip-height: 8.25rem;
+  --ma-client-logo-frame-height: calc(var(--ma-space-6) + var(--ma-space-3) + var(--ma-space-1));
+  --ma-client-logo-image-height: calc(var(--ma-space-6) + var(--ma-space-2));
+  --ma-client-logo-max-width: 15rem;
 }
 
 html,
@@ -826,7 +833,7 @@ body.home .container.grid-container {
      the visual column. Tuned to 35rem (560px) as a balance: collage gets
      ~80px wider than original (so bento_a reads bigger) without pushing
      client-logos below the fold. */
-  width: min(100%, 35rem);
+  width: min(100%, var(--ma-home-collage-width));
   /* 1.75:1 makes the full-height A card approximately 4:7 while preserving
      three near-square manufacturing/product cards in the right column. */
   grid-template-columns: 1.75fr 1fr;
@@ -964,6 +971,38 @@ body.home .container.grid-container {
   }
 }
 
+/* Keep the hero and logo strip together within the first PC viewport. */
+@media (min-width: 64rem) and (max-width: 74.9375rem) {
+  :root {
+    --ma-home-desktop-chrome-height: 7.25rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .ma-home-hero {
+    height: calc(100vh - var(--ma-home-desktop-chrome-height) - var(--ma-client-logo-strip-height));
+    height: calc(100svh - var(--ma-home-desktop-chrome-height) - var(--ma-client-logo-strip-height));
+    min-height: 0;
+    margin-bottom: 0;
+    padding-block: var(--ma-space-2);
+  }
+
+  .ma-home-hero__inner {
+    height: 100%;
+    min-height: 0;
+  }
+}
+
+@media (min-width: 64rem) and (max-height: 50rem) {
+  .ma-home-hero {
+    padding-block: 0;
+  }
+
+  .ma-home-hero__collage {
+    width: min(100%, var(--ma-home-collage-compact-width));
+  }
+}
+
 @media (max-width: 47.9375rem) {
   .ma-home-hero__eyebrow::after {
     width: 3.5rem;
@@ -1013,16 +1052,16 @@ body.home .container.grid-container {
   width: 100%;
   max-width: none;
   margin: 0 auto;
-  padding: 1.6rem 0 1.9rem;
+  padding: var(--ma-space-1) 0 var(--ma-space-2);
   box-sizing: border-box;
 }
 
 .ma-client-logos__heading {
   max-width: var(--ma-container);
-  margin: 0 auto 1.25rem;
+  margin: 0 auto var(--ma-space-2);
   padding: 0 var(--ma-space-4);
   color: var(--ma-color-muted);
-  font-size: 0.78rem;
+  font-size: var(--ma-fs-social);
   font-weight: 800;
   letter-spacing: 0.08em;
   line-height: 1.4;
@@ -1056,7 +1095,7 @@ body.home .container.grid-container {
   justify-content: center;
   flex: 0 0 auto;
   width: auto;
-  height: 5.25rem;
+  height: var(--ma-client-logo-frame-height);
   margin: 0;
   padding: 0;
   border: 0;
@@ -1069,9 +1108,9 @@ body.home .container.grid-container {
 .ma-client-logo img {
   display: block;
   width: auto;
-  max-width: 15rem;
-  height: 4.5rem;
-  max-height: 4.5rem;
+  max-width: var(--ma-client-logo-max-width);
+  height: var(--ma-client-logo-image-height);
+  max-height: var(--ma-client-logo-image-height);
   object-fit: contain;
   filter: none;
   opacity: 1;
@@ -1095,13 +1134,33 @@ body.home .container.grid-container {
   }
 }
 
+@media (min-width: 64rem) {
+  .ma-client-logos {
+    height: var(--ma-client-logo-strip-height);
+    box-sizing: border-box;
+  }
+
+  .ma-client-logos__inner {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: 100%;
+    padding: var(--ma-space-2) 0 calc(var(--ma-space-2) + var(--ma-space-1));
+  }
+
+  .ma-client-logos__viewport {
+    display: flex;
+    align-items: center;
+    min-height: 0;
+  }
+}
+
 @media (max-width: 48rem) {
   .ma-client-logos__inner {
-    padding: 1.3rem 0 1.45rem;
+    padding: var(--ma-space-3) 0 var(--ma-space-4);
   }
 
   .ma-client-logos__heading {
-    margin-bottom: 1rem;
+    margin-bottom: var(--ma-space-2);
     font-size: 0.64rem;
     letter-spacing: 0.05em;
     line-height: 1.45;
@@ -1112,14 +1171,14 @@ body.home .container.grid-container {
     animation-duration: 105s;
   }
 
-  .ma-client-logo {
-    height: 4.25rem;
+  .ma-client-logo img {
+    max-width: calc(var(--ma-client-logo-max-width) - var(--ma-space-5) - var(--ma-space-3));
+    height: calc(var(--ma-space-5) + var(--ma-space-2));
+    max-height: calc(var(--ma-space-5) + var(--ma-space-2));
   }
 
-  .ma-client-logo img {
-    max-width: 11.5rem;
-    height: 3.5rem;
-    max-height: 3.5rem;
+  .ma-client-logo {
+    height: calc(var(--ma-space-5) + var(--ma-space-3));
   }
 }
 
