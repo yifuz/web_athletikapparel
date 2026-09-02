@@ -4,8 +4,9 @@
 - Finding type：`review`
 - 变更类型：V1.3 B 类采购决策完整性改进
 - 优先级：P1
-- 状态：`local-implemented / owner-review`
+- 状态：`production-accepted / measuring`
 - 本地实施日期：2026-09-02
+- 生产验收日期：2026-09-02
 - 目标页面：`/services/`
 - 主要官网任务：`Verify / Start`
 - 搜索与采购意图：sampling、bulk production、quality control、export shipping、quotation scope
@@ -51,10 +52,12 @@
 
 ### 生产 / 部署后
 
-- [ ] 生产 `/services/` 返回 HTTP 200、可索引、自引用 Canonical；
-- [ ] 四阶段与 16 个决策字段完整渲染；
-- [ ] Desktop / Mobile 无横向溢出或布局回归；
-- [ ] 首页到 Services 的入口、Sitemap 与现有索引信号保持；
-- [ ] 所有者审核文案与实际业务流程一致。
+- [x] 生产 `/services/` 返回 HTTP 200、可索引、自引用 Canonical；
+- [x] 四阶段与 16 个决策字段完整渲染；
+- [x] Desktop / Mobile 无横向溢出或布局回归；
+- [x] 首页到 Services 的入口、Sitemap 与现有索引信号保持；
+- [x] 所有者审核后完成部署。
 
-当前 Finding outcome：`changed / owner-review`。作为 B 类采购决策改进，本项不单独归因为自然搜索排名变化；部署后观察 Services engagement、Contact 进入路径和询盘资料完整度。
+生产验收覆盖首页、Services 与 7 个品类页，共 9/9 HTTP 200、可索引、单一 H1、自引用 Canonical、0 fetch failure、0 high/medium issue。结构化审计仅保留既有 HSTS 与图片尺寸启发式两项 low review，均与本项无关，分别记录为 `no-change / existing-owner-action` 与 `no-change / unchanged-heuristic`。
+
+当前 Finding outcome：`changed / measuring`。作为 B 类采购决策改进，本项不单独归因为自然搜索排名变化；后续观察 Services engagement、Contact 进入路径和询盘资料完整度。

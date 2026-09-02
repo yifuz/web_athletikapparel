@@ -4,8 +4,9 @@
 - Finding type：`review`
 - 变更类型：V1.3 B 类采购决策完整性改进
 - 优先级：P2
-- 状态：`risk-mitigated / external-input`
+- 状态：`production-accepted / external-input`
 - 本地实施日期：2026-09-02
+- 生产验收日期：2026-09-02
 - 目标页面：`/` 认证与审核区块
 - 主要官网任务：`Verify`
 - 对应外部项目：`SEO-V2-006`
@@ -37,8 +38,8 @@
 
 ### 生产 / 部署后
 
-- [ ] 新 H2、分组标题和范围说明正常渲染；
-- [ ] 认证区块图片与布局无回归；
-- [ ] 首页 Title、Meta、H1、Schema、Canonical 与索引信号不变。
+- [x] 新 H2、分组标题和范围说明正常渲染；
+- [x] 认证区块图片与布局无回归；
+- [x] 首页 Title、Meta、H1、Schema、Canonical 与索引信号不变。
 
-当前 Finding outcome：`copy-risk-mitigated / external-verification-deferred`。
+生产 Desktop / Mobile 视觉验收确认 10 张 program reference 图片均按原分组显示，范围说明可见，无截断或横向溢出。当前 Finding outcome：`copy-risk-mitigated / external-verification-deferred`；页面风险缓解已经上线，但外部名录与证书凭据验证仍未完成。

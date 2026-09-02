@@ -10,7 +10,7 @@
 | [`moq-update-seo-imp-008-v1.md`](moq-update-seo-imp-008-v1.md) | SEO-IMP-008 | 成衣 MOQ 500 pieces per style 已同步；Hero 资格条撤销 |
 | [`performance-diagnosis-seo-imp-034-v1.md`](performance-diagnosis-seo-imp-034-v1.md) | SEO-IMP-034 | 根因诊断完成，形成 035–038 |
 | [`deployment-batch-seo-imp-035-038.md`](deployment-batch-seo-imp-035-038.md) | SEO-IMP-035–038 | 生产验收完成；035–037 `keep`，038 `keep-monitoring` |
-| [`change-cards/`](change-cards/) | SEO-IMP-024/035/036/037/038、SEO-V2-007/008/015、PCD-001/003/004/005 | 单一变量、基线、Crawl 和最终决策；PCD-001 已完成生产验收并 `changed / measuring`；PCD-003/004 已完成本地实施，等待所有者审核与部署；PCD-005 已移除无范围依据的 `Verified` 表述并增加适用范围边界，证书门户核验仍为 `deferred / external-input` |
+| [`change-cards/`](change-cards/) | SEO-IMP-024/035/036/037/038、SEO-V2-007/008/015、PCD-001/003/004/005 | 单一变量、基线、Crawl 和最终决策；PCD-001/003/004 已完成生产验收并进入 `measuring`；PCD-005 的范围文案风险缓解已通过生产验收，证书门户核验仍为 `deferred / external-input` |
 
 最新部署后 Crawl：`crawl_40f88b6c25d74ba79ee193c7be26caf9`，20 页、0 fetch failure。历史部署记录不得作为当前生产状态的替代；新增变更建立新的 Change Card，并在部署后补回归证据。
 

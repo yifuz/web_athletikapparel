@@ -4,8 +4,9 @@
 - Finding type：`review`
 - 变更类型：V1.3 B 类采购决策完整性改进
 - 优先级：P1
-- 状态：`local-implemented / owner-review`
+- 状态：`production-accepted / measuring`
 - 本地实施日期：2026-09-02
+- 生产验收日期：2026-09-02
 - 目标页面：`/sportswear-manufacturer/`
 - 主要官网任务：`Qualify / Verify / Start`
 - 搜索与采购意图：sportswear OEM、activewear development、custom sportswear、sportswear QC
@@ -44,10 +45,12 @@ Sportswear 已覆盖 Training、Running、Yoga、Compression、FLATLOCK、ACTIVE
 
 ### 生产 / 部署后
 
-- [ ] 页面返回 HTTP 200、可索引、自引用 Canonical；
-- [ ] 新区块、Questions 与内链完整；
-- [ ] 其余六个品类页无内容或布局回归；
-- [ ] Desktop / Mobile 无横向溢出；
-- [ ] 所有者确认公开能力和业务流程准确。
+- [x] 页面返回 HTTP 200、可索引、自引用 Canonical；
+- [x] 新区块、Questions 与内链完整；
+- [x] 其余六个品类页无内容或布局回归；
+- [x] Desktop / Mobile 无横向溢出；
+- [x] 所有者确认后完成部署。
 
-当前 Finding outcome：`changed / owner-review`。部署后按 28 / 90 天同口径观察，不把本项与 Title / Meta 或关键词实验混合归因。
+生产验收确认 Sportswear 新增两张执行卡、四个 Buyer Questions、Tech Pack Guide 与 QC Guide 内链均已生效；其他六个品类页未输出该专属区块。Title、Meta、H1、Schema 类型、图片与页面所有权未变。生产 Meta 中既有的小写 `flatlock / activeseam` 不属于本批次变量或新增回归，另行按受控文案流程处理。
+
+当前 Finding outcome：`changed / measuring`。部署后按 28 / 90 天同口径观察，不把本项与 Title / Meta 或关键词实验混合归因。

@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-08-28。
+最后更新：2026-09-02。
 
 ---
 
@@ -655,6 +655,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-01 | SEO-V2-005 Knitted Fabrics Day 0 生产验收通过：页面 HTTP 200、`follow, index`、无 X-Robots-Tag、自引用 Canonical、单一 H1；Title、Meta、OG/Twitter、图片和 Schema 类型不变。own fabric mill、in-house testing、两个新 H2 与 approved specification 正文已生效，第三方测试边界保留，无 Beta Textiles 公开关联。Playwright 通过系统 Edge 在 1440×900 / 390×844 full-page 渲染正常；Page Sitemap 与首页入口保持。状态转为 `fixed / measuring`，Day 7 / 28 / 90 为 2026-09-08 / 09-29 / 11-30。 |
 | 2026-09-02 | V1.3 采购决策审计 PCD-001 完成生产验收：Form ID `3` 的预计数量已改为 required Numeric Field，标签为 `Estimated Order Quantity`，`min=1`、`step=1`；required `Tech Pack` 三状态 Select 与 Business Type 同行。首页四张暖深灰采购准备卡片与 Desktop 约 1200px、35% / 65%、40px 间距布局已生效；9/9 共用页面 HTTP 200、继续输出 `index`，Desktop/Mobile 无横向溢出。客户端空值验证只产生数量与 Tech Pack 两个错误，未成功提交、未产生测试询盘或 GA4 lead。文件上传维持 `deferred`；PCD-002 `no-change`。Finding outcome 为 `changed / measuring`，28 个完整自然日后复查字段完整度、不合格询盘识别率与有效询盘。 |
 | 2026-09-02 | V1.3 采购决策审计 PCD-003/004/005 本地实施完成：Services 四阶段各增加 `Buyer provides / Athletik reviews / Approval before next stage / Quotation variables`；Sportswear 基于已确认 SP-01–SP-10 增加 customization、QC、四个 Buyer Questions 与 Tech Pack/QC Guide 内链；首页认证区移除无范围依据的 `Verified`，增加 entity/site/product/scope/validity 适用边界。三页本地 HTTP 200、单一 H1 与 Desktop/Mobile 渲染通过，URL、Title、Meta、H1、Schema 和图片不变。PCD-003/004 当前 `changed / owner-review`；PCD-005 为 `copy-risk-mitigated / external-verification-deferred`，不扩充 V2 Backlog。 |
+| 2026-09-02 | PCD-003/004/005 生产验收通过：首页、Services 与 7 个品类页共 9/9 HTTP 200、可索引、单一 H1、自引用 Canonical，0 fetch failure、0 high/medium issue；Services 16 个决策字段、Sportswear 专属采购区与内链、首页范围说明均完整，Desktop/Mobile 无布局回归，其他六个品类页保持隔离。PCD-003/004 转为 `changed / measuring`；PCD-005 保持 `copy-risk-mitigated / external-verification-deferred`。既有 HSTS 与图片尺寸启发式 low review 均非本批次回归。 |
 
 ---
 
