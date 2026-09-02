@@ -94,7 +94,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
   字体、间距和尺寸变量，减少硬编码颜色。
 - 标题字体使用 Manrope，Google Fonts 设置 `display=swap` 并配置预连接。
 - Header 品牌字标通过 `generate_site_title_output` 过滤器实现双色排版。
-- 响应式桌面导航和移动菜单已完成；`Contact` 是最后一项和唯一填充色 CTA。
+- 响应式桌面导航和移动菜单已完成；`Contact` 保持为最后一项，与其他普通导航入口使用一致样式。
 - `Guides` 为普通导航项，紧邻并位于 `Contact` 前。
 - 自定义 B2B 页脚包含品牌介绍、服务/公司导航、联系方式、询盘 CTA、Instagram、YouTube 和 WhatsApp。
 - WhatsApp 链接为 <https://wa.me/16044049819>，页脚社交链接已全部解决。

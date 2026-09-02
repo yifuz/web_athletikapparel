@@ -652,12 +652,11 @@ function myathletik_menu_url_path( $url ) {
 }
 
 /**
- * Keep Guides available while preserving Contact as the final priority CTA.
+ * Keep Guides available while preserving Contact as the final menu item.
  *
  * Existing installations already have an assigned menu. New items are added
  * without rebuilding that menu, then Guides and Contact are moved to the final
- * two top-level positions so the existing last-item CTA styling always belongs
- * to Contact.
+ * two top-level positions to keep the navigation order deterministic.
  */
 function myathletik_ensure_technical_guides_menu_item() {
 	$locations = get_nav_menu_locations();

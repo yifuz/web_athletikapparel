@@ -268,22 +268,6 @@ body {
   color: var(--ma-color-accent-2);
 }
 
-.main-navigation:not(.toggled) .main-nav > ul > li:last-child > a,
-.main-navigation.toggled .main-nav > ul > li:last-child > a {
-  margin-left: 0.2rem;
-  background: var(--ma-color-accent);
-  color: var(--ma-color-bg);
-  box-shadow: 0 10px 22px rgba(196, 96, 47, 0.22);
-}
-
-.main-navigation:not(.toggled) .main-nav > ul > li:last-child:hover > a,
-.main-navigation:not(.toggled) .main-nav > ul > li:last-child:focus > a,
-.main-navigation.toggled .main-nav > ul > li:last-child:hover > a,
-.main-navigation.toggled .main-nav > ul > li:last-child:focus > a {
-  background: var(--ma-color-accent-2);
-  color: var(--ma-color-bg);
-}
-
 .main-navigation ul ul {
   border: 1px solid var(--ma-color-border);
   border-radius: var(--ma-radius);
@@ -635,9 +619,6 @@ body {
     margin: 0 0 0 auto;
   }
 
-  .main-navigation:not(.toggled) .main-nav > ul > li:last-child > a {
-    margin-left: 0;
-  }
 }
 
 /* --- Home: Hero (split layout: text left, image right) --- */
