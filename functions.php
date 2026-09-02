@@ -1427,7 +1427,7 @@ function myathletik_social_links( $context = 'footer', $show_labels = false ) {
 }
 
 /**
- * Give social channels a prominent, homepage-only entry below the site header.
+ * Give social channels a compact, homepage-only entry below the site header.
  */
 function myathletik_home_social_bar() {
 	if ( ! is_front_page() ) {
