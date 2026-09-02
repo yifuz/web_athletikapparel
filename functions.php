@@ -871,6 +871,49 @@ function myathletik_fix_products_menu_url() {
 add_action( 'init', 'myathletik_fix_products_menu_url', 30 );
 
 /**
+ * Prevent the homepage Products anchor from duplicating the Home active state.
+ *
+ * WordPress compares custom menu URLs without treating the fragment as a
+ * separate destination, so both "/" and "/#ma-home-categories-title" are
+ * marked current on the front page. Clear the false Products state while
+ * preserving its parent/ancestor state on product category pages.
+ *
+ * @param array    $items Sorted menu item objects.
+ * @param stdClass $args  wp_nav_menu() arguments.
+ * @return array
+ */
+function myathletik_fix_home_products_menu_state( $items, $args ) {
+	if ( ! is_front_page() || empty( $args->theme_location ) || 'primary' !== $args->theme_location ) {
+		return $items;
+	}
+
+	$false_current_classes = array(
+		'current-menu-item',
+		'current_page_item',
+		'current-menu-parent',
+		'current_page_parent',
+		'current-menu-ancestor',
+		'current_page_ancestor',
+	);
+
+	foreach ( $items as $item ) {
+		$fragment = wp_parse_url( $item->url, PHP_URL_FRAGMENT );
+
+		if ( 'Products' !== $item->title || 'ma-home-categories-title' !== $fragment ) {
+			continue;
+		}
+
+		$item->current               = false;
+		$item->current_item_parent   = false;
+		$item->current_item_ancestor = false;
+		$item->classes               = array_values( array_diff( $item->classes, $false_current_classes ) );
+	}
+
+	return $items;
+}
+add_filter( 'wp_nav_menu_objects', 'myathletik_fix_home_products_menu_state', 10, 2 );
+
+/**
  * Seed empty WordPress pages for the code-rendered category templates.
  *
  * WordPress only loads page-{slug}.php templates when a matching Page exists.
