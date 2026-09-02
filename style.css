@@ -83,6 +83,7 @@ Text Domain:  myathletik-child
   --ma-client-logo-frame-height: calc(var(--ma-space-6) + var(--ma-space-3) + var(--ma-space-1));
   --ma-client-logo-image-height: calc(var(--ma-space-6) + var(--ma-space-2));
   --ma-client-logo-max-width: 15rem;
+  --ma-services-stage-number-width: calc(var(--ma-space-6) + var(--ma-space-3) + var(--ma-space-3));
 }
 
 html,
@@ -2860,9 +2861,10 @@ body.page .container.grid-container:has(.ma-services-page) {
   font-size: clamp(2.4rem, 6vw, 4.25rem);
   font-weight: 700;
   line-height: 0.9;
+  white-space: nowrap;
 }
 
-.ma-services-stage__copy h2 {
+.ma-services-stage__title {
   margin: 0;
   font-size: clamp(1.45rem, 3vw, 2rem);
   line-height: 1.15;
@@ -2877,7 +2879,7 @@ body.page .container.grid-container:has(.ma-services-page) {
 .ma-services-stage__decision-grid {
   display: grid;
   gap: var(--ma-space-3);
-  margin: var(--ma-space-4) 0 0;
+  margin: 0;
 }
 
 .ma-services-stage__decision {
@@ -2942,11 +2944,12 @@ body.page .container.grid-container:has(.ma-services-page) {
   }
 
   .ma-services-stage {
-    grid-template-columns: minmax(5rem, 0.24fr) minmax(0, 1fr);
+    grid-template-columns: var(--ma-services-stage-number-width) minmax(0, 1fr);
     align-items: start;
   }
 
   .ma-services-stage__decision-grid {
+    grid-column: 1 / -1;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -2954,19 +2957,6 @@ body.page .container.grid-container:has(.ma-services-page) {
 @media (min-width: 64rem) {
   .ma-services-capabilities__grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .ma-services-process__list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--ma-space-4);
-  }
-
-  .ma-services-stage {
-    width: 100%;
-  }
-
-  .ma-services-stage:nth-child(even) {
-    justify-self: end;
   }
 
   .ma-services-cta__inner {

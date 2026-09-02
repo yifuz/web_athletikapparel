@@ -131,17 +131,17 @@ $services_hero_srcset = implode(
 						<div class="ma-services-stage__copy">
 							<h3 class="ma-services-stage__title"><?php echo esc_html( $stage['title'] ); ?></h3>
 							<p><?php echo esc_html( $stage['copy'] ); ?></p>
-							<?php if ( ! empty( $stage['decisions'] ) && is_array( $stage['decisions'] ) ) : ?>
-								<dl class="ma-services-stage__decision-grid">
-									<?php foreach ( $stage['decisions'] as $label => $detail ) : ?>
-										<div class="ma-services-stage__decision">
-											<dt><?php echo esc_html( $label ); ?></dt>
-											<dd><?php echo esc_html( $detail ); ?></dd>
-										</div>
-									<?php endforeach; ?>
-								</dl>
-							<?php endif; ?>
 						</div>
+						<?php if ( ! empty( $stage['decisions'] ) && is_array( $stage['decisions'] ) ) : ?>
+							<dl class="ma-services-stage__decision-grid">
+								<?php foreach ( $stage['decisions'] as $label => $detail ) : ?>
+									<div class="ma-services-stage__decision">
+										<dt><?php echo esc_html( $label ); ?></dt>
+										<dd><?php echo esc_html( $detail ); ?></dd>
+									</div>
+								<?php endforeach; ?>
+							</dl>
+						<?php endif; ?>
 					</article>
 				<?php endforeach; ?>
 			</div>
