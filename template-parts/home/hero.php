@@ -56,7 +56,7 @@ $hero_secondary_sizes = '(max-width: 47.9375rem) calc((100vw - 3rem) / 3), 13rem
 <section class="ma-home-hero" aria-label="<?php esc_attr_e( 'myathletik homepage introduction', 'myathletik-child' ); ?>">
 	<div class="ma-home-hero__inner">
 		<div class="ma-home-hero__content">
-			<p class="ma-home-hero__eyebrow"><?php esc_html_e( 'Performance apparel OEM/ODM partner', 'myathletik-child' ); ?></p>
+			<p class="ma-home-hero__eyebrow"><?php esc_html_e( 'Yarn-to-Garment Integration', 'myathletik-child' ); ?></p>
 			<h1 class="ma-home-hero__title">
 				<span><?php esc_html_e( 'Performance Apparel', 'myathletik-child' ); ?></span>
 				<span><?php esc_html_e( 'Manufacturer', 'myathletik-child' ); ?></span>

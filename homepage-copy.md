@@ -17,7 +17,7 @@ partner," not just a factory. Never state the real number of factories.
 
 Current theme copy (pending production deployment):
 
-- Eyebrow: `Performance apparel OEM/ODM partner`
+- Eyebrow: `Yarn-to-Garment Integration`
 - H1: `Performance Apparel Manufacturer`
 - Subhead: `From knitted fabric development to finished garments, we support
   underwear, base layer, sportswear and yoga apparel programs with integrated
