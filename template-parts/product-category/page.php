@@ -33,6 +33,9 @@ $overview_heading = ! empty( $category['overview_heading'] )
 $product_range_heading = ! empty( $category['product_range_heading'] )
 	? $category['product_range_heading']
 	: __( 'Explore what we manufacture', 'myathletik-child' );
+$examples_button_class = ! empty( $category['hero_video'] )
+	? 'ma-button--secondary'
+	: 'ma-button--outline';
 $specs = array(
 	array(
 		'label'       => __( 'MOQ', 'myathletik-child' ),
@@ -73,7 +76,7 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 			<p><?php echo esc_html( $category['intro'] ); ?></p>
 			<div class="ma-product-hero__actions">
 				<a class="ma-button ma-button--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Request a Quote', 'myathletik-child' ); ?></a>
-				<a class="ma-button ma-button--secondary" href="<?php echo ! empty( $category['subcategories'] ) ? '#ma-product-subcats-title' : '#product-examples'; ?>"><?php esc_html_e( 'View Examples', 'myathletik-child' ); ?></a>
+				<a class="ma-button <?php echo esc_attr( $examples_button_class ); ?>" href="<?php echo ! empty( $category['subcategories'] ) ? '#ma-product-subcats-title' : '#product-examples'; ?>"><?php esc_html_e( 'View Examples', 'myathletik-child' ); ?></a>
 			</div>
 		</div>
 	</section>
