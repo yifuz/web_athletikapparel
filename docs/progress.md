@@ -656,15 +656,17 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-02 | V1.3 采购决策审计 PCD-001 完成生产验收：Form ID `3` 的预计数量已改为 required Numeric Field，标签为 `Estimated Order Quantity`，`min=1`、`step=1`；required `Tech Pack` 三状态 Select 与 Business Type 同行。首页四张暖深灰采购准备卡片与 Desktop 约 1200px、35% / 65%、40px 间距布局已生效；9/9 共用页面 HTTP 200、继续输出 `index`，Desktop/Mobile 无横向溢出。客户端空值验证只产生数量与 Tech Pack 两个错误，未成功提交、未产生测试询盘或 GA4 lead。文件上传维持 `deferred`；PCD-002 `no-change`。Finding outcome 为 `changed / measuring`，28 个完整自然日后复查字段完整度、不合格询盘识别率与有效询盘。 |
 | 2026-09-02 | V1.3 采购决策审计 PCD-003/004/005 本地实施完成：Services 四阶段各增加 `Buyer provides / Athletik reviews / Approval before next stage / Quotation variables`；Sportswear 基于已确认 SP-01–SP-10 增加 customization、QC、四个 Buyer Questions 与 Tech Pack/QC Guide 内链；首页认证区移除无范围依据的 `Verified`，增加 entity/site/product/scope/validity 适用边界。三页本地 HTTP 200、单一 H1 与 Desktop/Mobile 渲染通过，URL、Title、Meta、H1、Schema 和图片不变。PCD-003/004 当前 `changed / owner-review`；PCD-005 为 `copy-risk-mitigated / external-verification-deferred`，不扩充 V2 Backlog。 |
 | 2026-09-02 | PCD-003/004/005 生产验收通过：首页、Services 与 7 个品类页共 9/9 HTTP 200、可索引、单一 H1、自引用 Canonical，0 fetch failure、0 high/medium issue；Services 16 个决策字段、Sportswear 专属采购区与内链、首页范围说明均完整，Desktop/Mobile 无布局回归，其他六个品类页保持隔离。PCD-003/004 转为 `changed / measuring`；PCD-005 保持 `copy-risk-mitigated / external-verification-deferred`。既有 HSTS 与图片尺寸启发式 low review 均非本批次回归。 |
+| 2026-09-03 | GEO Baseline v2 首轮月度测试启动：ChatGPT Search V2-E01 第一次回答已暂存。回答正确识别 technical knitwear OEM/ODM、张家港生产地及规范站，但未说明中美实体角色，并把 `athletik.com.cn` 表述为当前 China manufacturing site、引用其圆机历史声明。定向核验确认该域名仍可访问，但其当前控制权与业务角色尚未获所有者核准；同时因 Temporary Chat、模型/模式、个性化设置、地区及来源面板证据未补齐，本次暂不计入完整中性基线。首批测试结束前暂缓 GEO-08 发布及影响实体/指南/导航/Schema 的部署。 |
 
 ---
 
 ## 13. 下一步优先级
 
-1. 完成 GEO-07 发布 URL、Story 状态和七日数据记录。
-2. 审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包；补录 GEO-06 公开帖子 URL 与 Story 状态。
-3. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 Day 0 已关闭，下一步按 Day 7 / 28 / 90 观察，不继续修改首页。
-4. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动，响应时间需使用同配置窗口比较。
-5. 在 2026 年 9 月窗口运行 Baseline v2；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行。
-6. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
-7. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。
+1. 在连续 3 个自然日内完成 2026 年 9 月 Baseline v2 首批测试；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行，批次期间不部署会改变 GEO 观察条件的更新。
+2. 补齐 V2-E01 的模型/模式、Temporary Chat、个性化设置、实际地区、设备和来源面板证据，再继续 V2-E02～C08。
+3. Baseline v2 首批测试结束后，审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包。
+4. 完成 GEO-07 发布 URL、Story 状态和七日数据记录；补录 GEO-06 公开帖子 URL、Story 状态和七日数据。
+5. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 Day 0 已关闭，下一步按 Day 7 / 28 / 90 观察，不继续修改首页。
+6. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动，响应时间需使用同配置窗口比较。
+7. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
+8. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。
