@@ -33,9 +33,22 @@ $overview_heading = ! empty( $category['overview_heading'] )
 $product_range_heading = ! empty( $category['product_range_heading'] )
 	? $category['product_range_heading']
 	: __( 'Explore what we manufacture', 'myathletik-child' );
-$examples_button_class = ! empty( $category['hero_video'] )
+$hero_video_variant = ! empty( $category['hero_video_variant'] )
+	? sanitize_html_class( $category['hero_video_variant'] )
+	: '';
+$has_dark_video_hero = ! empty( $category['hero_video'] ) && 'split' !== $hero_video_variant;
+$examples_button_class = $has_dark_video_hero
 	? 'ma-button--secondary'
 	: 'ma-button--outline';
+$hero_classes = array( 'ma-product-hero' );
+
+if ( ! empty( $category['hero_video'] ) ) {
+	$hero_classes[] = 'ma-product-hero--video';
+
+	if ( $hero_video_variant ) {
+		$hero_classes[] = 'ma-product-hero--video-' . $hero_video_variant;
+	}
+}
 $specs = array(
 	array(
 		'label'       => __( 'MOQ', 'myathletik-child' ),
@@ -62,10 +75,11 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 ?>
 
 <main id="primary" class="site-main ma-product-category">
-	<section class="ma-product-hero<?php echo ! empty( $category['hero_video'] ) ? ' ma-product-hero--video' : ''; ?>" aria-labelledby="ma-product-title">
+	<section class="<?php echo esc_attr( implode( ' ', $hero_classes ) ); ?>" aria-labelledby="ma-product-title">
 		<?php if ( ! empty( $category['hero_video'] ) ) : ?>
 			<?php $video_pos = ! empty( $category['hero_video_position'] ) ? $category['hero_video_position'] : 'center'; ?>
-			<video class="ma-product-hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true" style="object-position: <?php echo esc_attr( $video_pos ); ?>;">
+			<?php $video_poster = ! empty( $category['hero_video_poster'] ) ? $image_base . $category['hero_video_poster'] : ''; ?>
+			<video class="ma-product-hero__video" autoplay muted loop playsinline preload="auto"<?php echo $video_poster ? ' poster="' . esc_url( $video_poster ) . '"' : ''; ?> aria-hidden="true" style="object-position: <?php echo esc_attr( $video_pos ); ?>;">
 				<source src="<?php echo esc_url( $image_base . $category['hero_video'] ); ?>" type="video/mp4">
 			</video>
 			<div class="ma-product-hero__video-overlay" aria-hidden="true"></div>

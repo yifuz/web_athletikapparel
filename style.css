@@ -3629,6 +3629,34 @@ body.page .container.grid-container:has(.ma-product-category) {
   max-width: 40rem;
 }
 
+/* Bright studio footage works as a right-hand product panel instead of a
+   darkened background. This keeps the garment visible and the copy readable. */
+.ma-product-hero--video-split .ma-product-hero__video {
+  inset: 0 0 0 50%;
+  width: 50%;
+}
+
+.ma-product-hero--video-split .ma-product-hero__video-overlay {
+  background: linear-gradient(90deg,
+    var(--ma-color-surface) 0%,
+    var(--ma-color-surface) 46%,
+    color-mix(in srgb, var(--ma-color-surface) 92%, transparent) 50%,
+    transparent 62%);
+}
+
+.ma-product-hero--video-split .ma-section-kicker {
+  color: var(--ma-color-accent-2);
+}
+
+.ma-product-hero--video-split h1 {
+  color: var(--ma-color-text);
+}
+
+.ma-product-hero--video-split .ma-product-hero__content > p:not(.ma-section-kicker) {
+  color: var(--ma-color-muted);
+  max-width: 40rem;
+}
+
 .ma-product-section {
   padding: var(--ma-section-y) 0;
 }
@@ -4035,6 +4063,28 @@ body.page .container.grid-container:has(.ma-product-category) {
 }
 
 @media (max-width: 48rem) {
+	.ma-product-hero--video-split {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.ma-product-hero--video-split .ma-product-hero__content {
+		order: 2;
+	}
+
+	.ma-product-hero--video-split .ma-product-hero__video {
+		position: relative;
+		inset: auto;
+		order: 1;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+	}
+
+	.ma-product-hero--video-split .ma-product-hero__video-overlay {
+		display: none;
+	}
+
   .ma-product-hero h1 {
     max-width: 11ch;
   }

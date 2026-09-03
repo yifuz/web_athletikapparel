@@ -78,6 +78,10 @@ function myathletik_product_category_data() {
 			'social_image_height' => 627,
 			'social_image_alt'    => __( 'Model wearing a red technical sportswear set', 'myathletik-child' ),
 			'social_image_type'   => 'image/jpeg',
+			'hero_video'          => 'sportswear/sportswear-mens-olive-training-set-hero.mp4',
+			'hero_video_poster'   => 'sportswear/sportswear-mens-olive-training-set-hero-poster.webp',
+			'hero_video_position' => 'center center',
+			'hero_video_variant'  => 'split',
 			'intro'            => __( 'Sportswear programs for gym, training, running, and studio applications, developed around the buyer\'s fit, movement, fabric, finish, and testing requirements. We produce tight, fitted, and compression silhouettes for B2B activewear brands, with specifications confirmed through material selection and approved samples.', 'myathletik-child' ),
 			'what_we_make'     => array(
 				__( 'Training tops, tanks, and tees', 'myathletik-child' ),
