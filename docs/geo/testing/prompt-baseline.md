@@ -149,12 +149,20 @@ v1 的已知限制：V1-02 已点名域名，不能衡量自然发现；V1-05 �
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | — | — | — | 登录状态；临时/隐私；搜索；语言；实际地区 | — | — | — | — | — | — | — | — | 首次 / 待确认 / 初步确认 |
 | 2026-09-03 | ChatGPT Search（可见模型/模式待补录） | V2-E01 | 英文回答；Temporary Chat、登录状态、搜索模式、个性化设置、实际地区和设备待补录 | 暂存，尚不计入完整中性基线；固定原文与第一次回答已提供，未见个性化关系措辞，但环境元数据和来源面板不完整 | 核心识别准确：公开品牌、technical knitwear OEM/ODM、张家港生产地与规范站均正确；未说明中美实体名称及角色 | 是 | <https://www.athletikapparel.com/> | 部分支持：规范站支持主营品类、FLATLOCK/ACTIVESEAM、地址与 4,500+ m²；不支持回答中的次级域名关系和圆机当前状态 | 将 `athletik.com.cn` 表述为公司仍在运营的 China manufacturing site，但未保留该来源链接，且其当前角色/所有权尚未经所有者在本项目中核准；圆机表述来自该次级站而非当前规范站，应视为待确认的历史一方声明 | 提及 `athletik.com.cn`，回答中未保存可点击来源 | 所有者在 GEO 工作对话粘贴第一次完整回答；未提供来源面板截图 | 首次运行；环境待确认 |
+| 2026-09-05 | ChatGPT Search（可见推理设置为“高”；模型名称未显示） | V2-E02 | 已登录；Temporary Chat；搜索/联网开启；中文界面、英文回答；Desktop；Custom Instructions、个性化设置和实际地区待所有者确认 | `partial / environment-metadata`：固定原文、第一次完整回答、Temporary Chat 和来源面板均有证据；缺少 Custom Instructions 与实际地区确认 | 指定网站理解总体准确：正确识别 vertically integrated technical-knitwear OEM/ODM、主要产品、own fabric mill、FLATLOCK/ACTIVESEAM、服务流程、规模与材料能力 | 是；这是指定域名控制题，不计自然发现 | 首页、About、Services、Sportswear、Underwear、Outdoor、Merino Wool、Knitted Fabrics、Silk Wear、Sports Accessories、Sustainability 共 11 个规范 URL | 强支持：回答末尾逐页列出规范 URL，截图显示 Sources 面板共 20 项且可见项均为 Athletik Apparel；2026-09-05 对上述 11 个生产 URL 定向复核均为 HTTP 200，主体声明可在当前可见正文找到 | MOQ 例外错误：回答称 Outdoor Clothing 与 Sports Accessories 页面列出 1,000-piece MOQ；当日两个生产页面均显示公共 garment MOQ 500 pieces/style，且未找到 1,000 pieces。`yarn-to-finished-garment` 可由当前站支持为一体化开发与生产，但不应扩展解释为自有纺纱 | 未提及其他供应商；来源为规范站一方页面 | 所有者在 GEO 工作对话提供第一次完整回答和 Sources 面板截图；面板显示 Temporary Chat、Desktop 与 20 个来源，回答正文保留 11 个 Athletik URL | 首次运行；待补环境字段后转为 valid |
 
 #### 2026-09-03 V2-E01 核验备注
 
 - 当日定向核验确认，规范站首页和 About Us 页面支持 technical knitwear OEM/ODM、主要产品类别、FLATLOCK/ACTIVESEAM、张家港地址及 4,500+ m² 等核心表述；因此规范站引用与回答主体相关。
 - `https://athletik.com.cn/` 当日仍可访问，并公开使用 Zhangjiagang Athletik Clothing Co., Limited、相同地址以及圆机表述。但当前项目真值只把 `athletikapparel.com` 作为规范站，尚未确认该域名当前由谁控制、是否继续代表现行业务或未来如何处置。因此本次回答中的“also operates”不能直接升级为核准实体事实。
 - 回答没有出现 `your own`、历史聊天或用户关系措辞，但缺少 Temporary Chat、搜索模式、个性化设置、模型和实际地区证据。补齐环境信息前，本行只保留为 V2 首次运行的暂存结果。
+
+#### 2026-09-05 V2-E02 核验备注
+
+- 本次结果是指定 `athletikapparel.com` 的站内理解控制题。规范站引用覆盖强、产品和能力提取整体准确，但不能因此计为未点名自然发现、独立引用或供应商推荐。
+- 当日对回答明确列出的 11 个规范 URL 做了生产定向复核，全部返回 HTTP 200。首页、About 和 Services 支持 15+ 年、4,500+ m²、100,000+ pieces/month、1–2 周样品、FOB/DDP、own fabric mill、in-house testing、FLATLOCK/ACTIVESEAM 和 bonded-welded 等主体表述；各品类页与 Sustainability 支持回答中的产品和材料范围。
+- 回答中的“some categories, such as outdoor clothing and sports accessories, list a 1,000-piece MOQ”与当前生产正文冲突。Outdoor Clothing 和 Sports Accessories 当日均显示 500 pieces/style，因此该句记录为模型使用过期页面信息、缓存或错误合并的可能信号；在没有来源链路证据前不指定根因，也不反向修改当前网站。
+- 截图可确认已登录、Temporary Chat、Desktop、中文界面、英文回答、搜索来源面板和可见推理设置“高”；模型名称、Custom Instructions/个性化设置及实际地区仍不可见。所有者补齐后再决定是否升级为有效中性运行。
 
 ### 5.4 Baseline v1 历史结果（冻结）
 
