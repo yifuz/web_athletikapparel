@@ -2,13 +2,13 @@
 
 > 建立日期：2026-08-12
 >
-> 规划更新：2026-09-03
+> 规划更新：2026-09-05
 >
 > 规范站：<https://www.athletikapparel.com/>
 >
 > 最终目的：**被 AI 找到 → 被 AI 准确提取 → 被 AI 引用 → 在匹配的 B2B 采购问题中被 AI 推荐**
 >
-> 当前阶段：站内发现与提取基础已基本建立，Baseline v2 首轮月度测试正在进行；当前主要缺口已经从“能否抓取”转为“未点名供应商问题中的稳定引用与独立推荐证据”。
+> 当前阶段：GSC 已确认规范站获得 Google 生成式 AI 链接曝光，站内发现基础从技术资格升级为实际展示证据；Baseline v2 首轮月度测试仍在进行，当前主要缺口是引用相关性、实体提取准确性和未点名供应商问题中的独立推荐证据。
 
 本文件是 Athletik Clothing GEO 的中央工作台。以后有关目标、阶段判断、优先级和执行顺序的结论先更新本文件；逐次测试、站外发布和平台数据继续写入对应证据日志。
 
@@ -87,7 +87,7 @@ Beta Textiles / BTEXCO 是同一运营体系的面料销售名称，但对外独
 
 当前规划采用以下官方平台边界，不采用未经证明的“GEO 捷径”：
 
-- Google 说明 AI Overviews / AI Mode 继续依赖常规搜索基础；页面需可索引并可展示摘要，不需要特殊 AI Schema、`llms.txt` 或把正文强行切成固定长度片段。参见 [Google AI features and your website](https://developers.google.com/search/docs/appearance/ai-features) 与 [Google generative AI optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)。
+- Google 说明 AI Overviews / AI Mode 继续依赖常规搜索基础；页面需可索引并可展示摘要，不需要特殊 AI Schema、`llms.txt` 或把正文强行切成固定长度片段。GSC 当前已为本属性开放 Generative AI Beta 专用报表，可观察 impressions、Pages、Countries、Devices 和 Dates，但没有 Query、答案原文、推荐位置或转化。参见 [Google AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)、[Google generative AI optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) 与 [Generative AI performance report](https://support.google.com/webmasters/answer/16984139)。
 - OpenAI 说明允许 `OAI-SearchBot` 有助于内容在 ChatGPT 搜索中被发现、摘要和引用；ChatGPT 引荐流量可在 Analytics 中观察。参见 [OpenAI Publishers and Developers FAQ](https://help.openai.com/en/articles/12627856-publishers-and-developers-faq)。
 - Perplexity 将 `PerplexityBot` 定义为用于在搜索结果中发现和链接网页的 crawler；其访问状态需要与其他搜索 crawler 分开验证。参见 [Perplexity Crawlers](https://docs.perplexity.ai/docs/resources/perplexity-crawlers)。
 - Bing Webmaster Tools 已提供 AI Performance 公开预览，可观察 citation count、cited pages 和 grounding queries；若当前账户可用，应把它作为引用证据源，而不是购买第三方“可见性分数”。参见 [Bing AI Performance](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)。
@@ -118,6 +118,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 - 同日以 Googlebot、OAI-SearchBot、PerplexityBot、Claude-SearchBot 和 ChatGPT-User 抽查 Tech Pack Guide，均返回 HTTP 200。该测试只排除明显的 UA/robots/CDN 阻拦，不代替真实爬虫日志。
 - 当前仓库中的 GSC 最新索引快照为 18 个 Sitemap 页面中 17 个 `PASS / Submitted and indexed`；`/services/` 为 `Discovered - currently not indexed`，实时测试曾通过并已请求一次，当前按周监测，不重复提交或改页。
 - Technical Guides Hub、首页、导航、页脚、品类页和指南之间已有稳定内链。
+- 2026-09-05 首次 GSC Generative AI 导出返回 2026-07-21 至 09-02 共 29 次 Property impressions，证明本站链接已在实际 AI Overviews / AI Mode 结果中展示；这比 crawler/索引资格更强，但仍不证明答案准确提取或推荐了 Athletik。
 
 ### 5.2 提取与引用层：结构完成，结果仍需复测
 
@@ -128,6 +129,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
   - <https://www.athletikapparel.com/garment-quality-control-checklist/>
 - 四篇指南使用可见正文、唯一 H1、文章目录、内部链接、外部技术参考、可见复核日期和 Organization 作者；JSON-LD 与页面正文对应，包含 Article、FAQPage 和 BreadcrumbList，Hub 使用 ItemList。
 - Baseline v1 已证明规范站在品牌点名和指定网站问题中可以被识别与引用；这不能外推为未点名推荐。
+- GSC Generative AI Page 表返回 13 个规范 URL；四篇 Technical Guides 均至少出现一次，FLATLOCK Guide 7 次、QC Guide 4 次。它们属于页面级链接曝光和 citation-surface evidence；报表没有 Query 与答案原文，不能验证链接支持的具体结论。
 - Baseline v2 已于 2026-09-03 启动。V2-E01 回答正确识别主要业务、张家港生产地和规范站，但未说明中美实体角色，并引入了尚未核准角色的 `athletik.com.cn`；由于环境元数据和来源面板不完整，该次仅暂存。
 
 ### 5.3 站外分发层：两篇完成，一篇待发布，证据补录滞后
@@ -152,9 +154,9 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 | 阶段 | 当前判断 | 主要理由 | 下一道门槛 |
 |---|---|---|---|
-| 找到 | 基础就绪，持续监测 | 生产 200、Sitemap、Canonical、内链、主要 crawler 可访问；17/18 GSC indexed | Services 转为 indexed；无新的抓取/indexability 回归 |
+| 找到 | 已获得 Google 实际展示证据，持续监测 | 生产 200、Sitemap、Canonical、内链、主要 crawler 可访问；17/18 GSC indexed；Generative AI 首个基线 29 impressions | Services 转为 indexed；完整可比窗口持续出现目标页面；无新的抓取/indexability 回归 |
 | 提取 | 部分达成 | 品牌题可提取核心业务与地点，但实体角色和历史站点仍可能混淆 | E01/E02 在三个产品中准确覆盖规范实体口径，且不引入未核准站点关系 |
-| 引用 | 品牌题已出现，非品牌内容引用待验证 | 规范站可被引用，四篇指南结构完整；C06～C08 新基线尚未完成 | 同一固定内容题在至少两个独立产品/月份出现相关规范指南引用，且引用支持结论 |
+| 引用 | Google 链接曝光已出现，引用相关性待验证 | GSC 中四篇指南均获页面级链接曝光；品牌题可引用规范站；C06～C08 新基线尚未完成 | 同一固定内容题在至少两个独立产品/月份出现相关规范指南引用，且引用支持结论 |
 | 推荐 | 尚未稳定，是主瓶颈 | D03 有单次正向信号；D04/D05 历史缺失；独立站外佐证不足 | Athletik 在匹配业务边界的 D03～D05 中跨产品/月份进入短名单，并给出准确理由 |
 
 不建立一个把四阶段相加的“GEO 总分”。四阶段分别记录，否则品牌题的高准确率会掩盖未点名推荐的缺口。
@@ -186,7 +188,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 1. 发布已准备的 GEO-08 LinkedIn 单图与 Instagram Carousel，并记录公开 URL、实际时间、UTM 和 Story 状态。
 2. 补录 GEO-07、GEO-06 的公开帖子 URL、Story 状态和已到期的七日平台/GA4 数据；无法取得的字段明确写 `unavailable`。
 3. 将网站加入或核对 Bing Webmaster Tools；若账户出现 AI Performance，记录 total citations、cited pages 和 grounding queries 的月度快照。
-4. 继续 GSC / GA4 现有监测；Google AI 功能数据若只汇总在 Web 搜索，不把无法拆分的流量写成 GEO 成果。
+4. 每月导出 GSC Generative AI 的 Property impressions、Pages、Countries、Devices 和 Dates；与传统 Web Search、GA4、固定提示词和第三方估算分开。Page 明细不与 Property 总量机械相加，也不把链接曝光直接写成准确提取或推荐。
 
 ### P1 — 建立“可被推荐”的证据链（未来 30～60 天）
 
@@ -218,6 +220,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-007 | ACTIVESEAM 原创技术内容立项判断 | 提取/引用/推荐 | P1 | `conditional` | 原创生产证据和事实审核完成后批准 brief；不满足则 not-needed |
 | GEO-V2-008 | Merino 历史站与规范页冲突审计 | 提取/推荐 | P1 | `planned` | 确认所有权、索引、流量、引用、重复声明及处置建议；未经批准不改 URL/重定向 |
 | GEO-V2-009 | 每月一个可信站外佐证动作 | 推荐 | P1 | `external-input` | 获得可公开、可索引、信息准确的真实条目/编辑内容；未成功不写完成 |
+| GEO-V2-010 | 建立 GSC Generative AI 月度观测 | 找到/引用入口 | P0 | `baseline-established` | 首个三个月导出完整入档；以后使用完整 28 天可比窗口并保持各维度口径分离 |
 
 ## 10. 统一记录与判断口径
 
@@ -235,6 +238,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 - **实体准确性 E01/E02**：关键事实正确率和冲突类型；不计算自然推荐率。
 - **供应商发现 D03～D05**：入选题数/有效运行数、平均名单位置、第一推荐次数、推荐理由准确性、规范站与第三方引用覆盖。
 - **内容权威性 C06～C08**：Athletik 指南被引用题数/有效运行数、引用相关性、错误结论和竞品来源。
+- **Google 生成式搜索展示**：GSC Property impressions、获得页面级链接曝光的规范 URL、Countries、Devices 和 Dates；不推断报表未提供的 Query、Clicks、答案内容或推荐位置。
 - **访问与业务结果**：AI referral sessions、engaged sessions、有效询盘；样本不足时只报绝对值，不报趋势。
 
 “稳定改善”的最低工作定义是：同一固定意图在至少两个独立产品或连续两个月出现同方向变化，且没有依赖品牌点名、历史聊天或错误事实。它仍不是永久排名保证。
@@ -252,8 +256,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 ## 12. 当前准确状态
 
-截至 2026-09-03，Athletik 已完成规范站、实体基础、四篇技术指南、主要 Schema、索引和两轮社交分发，
-具备被搜索与 AI 系统发现和提取的良好基础；Baseline v2 正在建立新的中性时间序列。
-下一阶段不应继续无差别增加页面，而应先完成 24 次基线，再用结果确定哪一项需要修正，并集中建立 D03～D05 所需的原创生产证据和可信第三方佐证。
+截至 2026-09-05，Athletik 已完成规范站、实体基础、四篇技术指南、主要 Schema、索引和两轮社交分发；GSC 首个专用报表进一步确认 29 次 Google 生成式 AI Property impressions，四篇指南均出现页面级链接曝光。找到层已获得实际展示证据，但该报表不能证明答案提取内容、引用相关性或供应商推荐。
+下一阶段不应因为首个低量快照继续无差别增加页面或修改现有页面，而应先完成 24 次 Baseline v2，用干净会话补齐提取、引用和推荐语境；同时按完整 28 天窗口复查 GSC，并集中建立 D03～D05 所需的原创生产证据和可信第三方佐证。
 
 本对话可以用于规划、分析用户带回的 Temporary Chat 结果、更新证据和制定内容；不得作为中性测试环境。

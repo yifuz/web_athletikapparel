@@ -6,13 +6,68 @@
 > 作为 Title/Meta 测试、页面优先级、获客质量和月度复盘的一方数据真值。
 > 数据获取：2026-08-18 起通过 `seo` CLI 只读 API 导出（接入记录见
 > [`seo-cli-baseline-2026-08-18.md`](seo-cli-baseline-2026-08-18.md)）；更早的数据为网页版手工截图。
-> 原始 JSON 存于本机 `~/seo-reports/`（不进 Git）。
+> GSC Generative AI Beta 的专用数据当前使用网页版导出。原始 JSON / XLSX 存于本机 `~/seo-reports/`（不进 Git）。
 >
 > 记录纪律：
 > - GSC 对低量查询做匿名化处理；某维度单行缺失不等于零流量，各维度合计口径可能不同。
 > - GA4 `generate_lead` 是分析事件，不自动等于真实、有效或合格 B2B 询盘；必须与表单、收件箱或 CRM 人工核对。
 > - 样本低于 100 曝光门槛时只记录方向，不触发页面修改（`seo-process.md` §5）。
+> - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
+
+## 2026-09-05：GSC Generative AI 首个三个月基线
+
+### 来源与覆盖
+
+- 来源：所有者从 GSC `效果 > 生成式 AI 功能（Beta）` 导出的 XLSX；过滤器为 `搜索类型：网络`、`日期：过去 3 个月`。
+- 导出日期：2026-09-05；图表实际返回 2026-07-21 至 2026-09-02 共 44 个日期行。
+- 数据范围：日期、网页、国家/地区、设备和过滤器五个工作表均存在；本次视为 `complete / owner-export`。
+- 本地归档：`~/seo-reports/gsc-generative-ai/athletikapparel-generative-ai-baseline-2026-09-05.xlsx`（不进 Git）。
+- SHA-256：`EF33D0FE565081F3970DE4EA9B7EDDC372F3297A6D61E4FEFD18C6207740A165`。
+
+Google 对该报表的定义是：生成式 AI 功能向用户展示本站链接时计一次 impression；Search 报告覆盖 AI Overviews 和 AI Mode，但不提供触发 Query、答案原文、Clicks、推荐位置或转化。若同一生成式结果展示同一站点的多个页面，Property 图表计一次，Page 表会为各页面分别计数。因此以下 Page 数值只称为“页面级链接曝光”，不称为独立回答数或已验证推荐。参见 [Google Generative AI performance report](https://support.google.com/webmasters/answer/16984139) 与 [功能公告](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)。
+
+### Property、日期与设备
+
+- Property 总曝光：**29**。
+- 设备：Desktop 22（75.9%），Mobile 7（24.1%）。
+- 2026-08-29 至 09-02 集中了 18 次（62.1%）；其中 08-31 至 09-02 为 15 次（51.7%）。这是低量首个快照中的后段集中，只记录为方向，不能写成持续增长或由某次内容发布造成。
+- Google 曾在 2026-08-13 至 08-17 记录 Generative AI Search impressions 日志故障；该区间的零值不用于建立自然趋势。参见 [Search Console data anomalies](https://support.google.com/webmasters/answer/6211453?hl=zh-Hans)。
+
+### 页面级链接曝光
+
+Page 表返回 13 个 URL、合计 36 次页面级曝光；该合计高于 Property 的 29 次符合上述聚合规则。
+
+| 页面组 | 页面级曝光 | 明细 |
+|---|---:|---|
+| Technical Guides | 13 | FLATLOCK vs OVERLOCK 7；QC Checklist 4；OEM Evaluation 1；Tech Pack 1 |
+| 商业品类页 | 9 | Sports Accessories 4；Underwear 2；Knitted Fabrics 1；Merino Wool 1；Sportswear 1 |
+| 品牌/转化入口 | 9 | Home 7；About 1；Contact 1 |
+| 法律/非目标页 | 5 | Privacy Policy 5 |
+
+关键观察：
+
+- 四篇已上线 Technical Guides 均至少获得 1 次页面级链接曝光；FLATLOCK Guide 以 7 次成为并列最高页面，QC Guide 获得 4 次。第一方技术内容已经获得 Google 生成式结果中的实际展示证据，不再只是“可抓取/可索引”的理论资格。
+- Product category 页面也已进入生成式结果，但当前不能知道它们对应品牌查询、产品查询还是采购查询。
+- Privacy Policy 的 5 次归入法律/非目标曝光，不作为 B2B 买家发现、内容权威或推荐成果。
+- 未返回的 Sitemap 页面只表示本次 Page 表没有可见行，不解释为没有需求、无法提取或页面失败。
+
+### 国家/地区
+
+国家/地区表的 29 次与 Property 总量一致：美国 5、印度 4、孟加拉 3、英国 3、中国香港 3、越南 3；澳大利亚、加拿大、瑞士、法国、印度尼西亚、新西兰、菲律宾、土耳其各 1。
+
+北美和欧洲目标市场可见行为美国 5、英国 3、加拿大 1、瑞士 1、法国 1，合计 11 次（37.9%）。这只证明链接在对应地区被展示；没有 Query 和答案上下文，不能据此判断访问者身份、采购意图或市场质量。
+
+### GEO Audit 结论与处置
+
+| 阶段 | 本次能证明什么 | 本次不能证明什么 |
+|---|---|---|
+| 被 AI 找到 | Google 已在实际 AI Overviews / AI Mode 结果中展示规范站链接 | 不知道触发 Query 和检索链路 |
+| 被 AI 提取 | 无直接字段 | 不知道答案采用或准确复述了哪些事实 |
+| 被 AI 引用 | 13 个规范 URL 获得页面级链接曝光，可作为 citation-surface evidence | 不知道链接支持哪项结论，不能完成引用相关性审核 |
+| 被 AI 推荐 | 无直接字段 | 不知道 Athletik 是否进入供应商短名单、名单位置或推荐理由 |
+
+Finding outcome：`no-change / baseline-established`。当前样本小、没有 Query/答案上下文且是首个专用报表快照，不修改 URL、Title、Meta、H1、正文、Schema 或内部链接。GSC 用于持续量化 Google 端链接曝光；`docs/geo/testing/prompt-baseline.md` 的干净 Temporary Chat 测试继续负责提取准确性、引用相关性和推荐结果。下一次在 2026-09-03 至 09-30 的完整 28 天数据可用后建立首个可比窗口。
 
 ## 2026-09-01：SEO-V2-003 Services indexed snapshot 复查
 
