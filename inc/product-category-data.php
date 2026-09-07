@@ -487,30 +487,17 @@ function myathletik_product_category_data() {
 			// object-position for the hero video crop. 'center top' keeps the
 			// head in frame when a portrait subject is cropped to a wide hero.
 			'hero_video_position' => 'center 20%',
-			'intro'            => __( 'We produce premium merino wool apparel - base layers, underwear, and performance pieces that combine natural temperature regulation and breathability with technical knit construction.', 'myathletik-child' ),
+			'intro'            => __( 'We manufacture custom Merino wool clothing for base-layer tops and bottoms, underwear, T-shirts, hoodies, mid-layers, balaclavas, neck warmers, and other performance programs. Each project is developed around the buyer\'s composition, micron, yarn, GSM, knit structure, fit, construction, and testing requirements.', 'myathletik-child' ),
 			'what_we_make'     => array(
-				__( 'Jacquard merino wool apparel', 'myathletik-child' ),
-				__( 'Printed merino wool apparel', 'myathletik-child' ),
-				__( 'Merino blend performance pieces', 'myathletik-child' ),
-				__( 'Merino yarn sourcing and fabric development', 'myathletik-child' ),
+				__( 'Merino wool base layers and underwear', 'myathletik-child' ),
+				__( 'Merino wool T-shirts, hoodies, and mid-layers', 'myathletik-child' ),
+				__( 'Merino wool balaclavas, neck warmers, and accessories', 'myathletik-child' ),
+				__( 'Custom Merino fabrics, blends, prints, and jacquards', 'myathletik-child' ),
 			),
 			'subcategories'    => array(
 				array(
-					'title'       => __( 'Jacquard merino wool apparel', 'myathletik-child' ),
-					'description' => __( 'Jacquard-knit merino with woven-in patterns and structural textures. The design is knit into the fabric - not printed - so it will not crack, fade, or peel over time. A capability unique to merino programs with our gauge range.', 'myathletik-child' ),
-					'image'       => 'merino wool product/showcase_4X3.jpeg',
-					'image_alt'    => __( 'Close-up of a black and white jacquard-patterned Merino wool top', 'myathletik-child' ),
-					'image_width'  => 1600,
-					'image_height' => 1200,
-					'image_webp'   => array(
-						480  => 'merino wool product/jacquard-merino-apparel-480-q85.webp',
-						800  => 'merino wool product/jacquard-merino-apparel-800-q85.webp',
-						1200 => 'merino wool product/jacquard-merino-apparel-1200-q85.webp',
-					),
-				),
-				array(
-					'title'       => __( 'Printed merino wool apparel', 'myathletik-child' ),
-					'description' => __( 'All-over and placement-printed merino for brands that need custom graphics on natural-fiber knitwear. Prints are developed and tested in-house for color fastness on protein fibers.', 'myathletik-child' ),
+					'title'       => __( 'Merino wool base layers and underwear', 'myathletik-child' ),
+					'description' => __( 'Base-layer tops and bottoms, thermal underwear, and other next-to-skin styles can be developed in 100% Merino wool or buyer-specified blends. Composition, micron, GSM, fit, seam placement, and care requirements are set for the intended activity and climate.', 'myathletik-child' ),
 					'image'       => 'merino wool product/1U153433_4X3.JPG',
 					'image_alt'    => __( 'Model wearing a printed camouflage Merino wool base-layer set', 'myathletik-child' ),
 					'image_width'  => 1600,
@@ -522,8 +509,8 @@ function myathletik_product_category_data() {
 					),
 				),
 				array(
-					'title'       => __( 'Merino blend performance pieces', 'myathletik-child' ),
-					'description' => __( 'Merino blended with synthetic fibers for added stretch, durability, and shape retention. The performance of technical knit with the hand feel of natural wool - engineered for brands that need merino warmth without merino fragility.', 'myathletik-child' ),
+					'title'       => __( 'Merino wool T-shirts, hoodies, and mid-layers', 'myathletik-child' ),
+					'description' => __( 'Lightweight T-shirts through warmer hooded and mid-layer styles can be developed for outdoor, training, travel, and everyday programs. The fabric and garment are balanced for the required warmth, hand feel, stretch, recovery, and durability.', 'myathletik-child' ),
 					'image'       => 'merino wool product/1U153813_4X3.JPG',
 					'image_alt'    => __( 'Model wearing a blue Merino-blend hooded performance top', 'myathletik-child' ),
 					'image_width'  => 1600,
@@ -535,8 +522,21 @@ function myathletik_product_category_data() {
 					),
 				),
 				array(
+					'title'       => __( 'Jacquard, print, and accessory development', 'myathletik-child' ),
+					'description' => __( 'Programs can include knitted-in jacquard patterns, all-over or placement prints, balaclavas, neck warmers, and related performance accessories. A jacquard pattern is built into the fabric rather than applied as a surface print, so there is no print layer to crack or peel.', 'myathletik-child' ),
+					'image'       => 'merino wool product/showcase_4X3.jpeg',
+					'image_alt'    => __( 'Close-up of a black and white jacquard-patterned Merino wool top', 'myathletik-child' ),
+					'image_width'  => 1600,
+					'image_height' => 1200,
+					'image_webp'   => array(
+						480  => 'merino wool product/jacquard-merino-apparel-480-q85.webp',
+						800  => 'merino wool product/jacquard-merino-apparel-800-q85.webp',
+						1200 => 'merino wool product/jacquard-merino-apparel-1200-q85.webp',
+					),
+				),
+				array(
 					'title'       => __( 'Merino yarn sourcing and fabric development', 'myathletik-child' ),
-					'description' => __( 'The merino capability starts at the yarn - we source fine-micron merino and develop the knit structure, gauge, and finish in-house. Brands can specify micron count, yarn count, and fabric weight, and we produce counter samples from swatches.', 'myathletik-child' ),
+					'description' => __( 'Buyers can specify composition, micron, yarn count, GSM, and structures such as single jersey, interlock, rib, and jacquard. Finer Merino wool below about 19.5 microns is a common starting point for next-to-skin products, but the final specification is selected for the required hand feel, warmth, durability, stretch, and care performance.', 'myathletik-child' ),
 					'image'       => 'merino wool product/Merino Yarn Sourcing.png',
 					'image_alt'    => __( 'Merino wool yarn cones, knit swatches, fibers, and gauge tools', 'myathletik-child' ),
 					'image_width'  => 1448,
@@ -548,7 +548,73 @@ function myathletik_product_category_data() {
 					),
 				),
 			),
-			'construction'     => __( 'Natural merino wool engineered for warmth, breathability, and odor resistance, finished with FLATLOCK and ACTIVESEAM construction. Available in jacquard and printed designs, plain or blended for added stretch and durability.', 'myathletik-child' ),
+			'capability_kicker'  => __( 'Development inputs', 'myathletik-child' ),
+			'capability_heading' => __( 'Define the Merino fiber, fabric, and garment before sampling', 'myathletik-child' ),
+			'construction'      => sprintf( __( 'Send the product type, intended activity and climate, target market, composition, micron, yarn count, GSM, knit structure, stretch and recovery targets, fit, seam map, artwork, branding, care requirements, test methods and acceptance criteria, order quantity, and tech pack or reference sample. We can develop 100%% Merino wool and blended programs in single jersey, interlock, rib, jacquard, and other project-specific structures, with FLATLOCK or ACTIVESEAM where appropriate. Colorfastness, shrinkage, pilling, GSM, fiber composition, and stretch/recovery can be checked in-house; customer-specified third-party testing can be arranged when required. Public garment MOQ is %s pieces per style, with final development and testing terms confirmed for the project.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+			'specs'             => array(
+				array(
+					'label'       => __( 'MOQ', 'myathletik-child' ),
+					'value'       => number_format_i18n( myathletik_public_moq_pieces() ),
+					'unit'        => __( 'pcs', 'myathletik-child' ),
+					'description' => __( 'Per style.', 'myathletik-child' ),
+				),
+				array(
+					'label'       => __( 'Sampling', 'myathletik-child' ),
+					'value'       => __( '1-2', 'myathletik-child' ),
+					'unit'        => __( 'weeks', 'myathletik-child' ),
+					'description' => __( 'Depending on style complexity and materials.', 'myathletik-child' ),
+				),
+				array(
+					'label'       => __( 'Testing', 'myathletik-child' ),
+					'value'       => __( 'In-house', 'myathletik-child' ),
+					'description' => __( 'Customer-specified third-party testing can be arranged.', 'myathletik-child' ),
+				),
+			),
+			'assurance_kicker'  => __( 'Program execution', 'myathletik-child' ),
+			'assurance_heading' => __( 'Merino wool customization and quality checkpoints', 'myathletik-child' ),
+			'assurance_intro'   => __( 'Material, garment, and test requirements are recorded in the current specification and approved sample so development and bulk production can be reviewed against the same criteria.', 'myathletik-child' ),
+			'assurance_cards'   => array(
+				array(
+					'title'       => __( 'Program customization', 'myathletik-child' ),
+					'description' => __( 'Merino wool clothing programs are developed around the buyer\'s end use, target climate, fit, care requirements, and approved specification.', 'myathletik-child' ),
+					'items'       => array(
+						__( 'Base-layer tops and bottoms, underwear, T-shirts, hoodies, mid-layers, balaclavas, and neck warmers', 'myathletik-child' ),
+						__( '100% Merino wool and blended compositions by buyer specification', 'myathletik-child' ),
+						__( 'Micron, yarn count, GSM, and knit structure selected for the intended use', 'myathletik-child' ),
+						__( 'FLATLOCK, ACTIVESEAM, jacquard, print, branding, and trim options where specified', 'myathletik-child' ),
+					),
+				),
+				array(
+					'title'       => __( 'Merino wool quality checkpoints', 'myathletik-child' ),
+					'description' => __( 'The quality plan is set against the approved material and garment specification, sample, test method, and buyer acceptance criteria.', 'myathletik-child' ),
+					'items'       => array(
+						__( 'Fiber composition, GSM, colorfastness, shrinkage, and pilling', 'myathletik-child' ),
+						__( 'Stretch and recovery for blended performance fabrics', 'myathletik-child' ),
+						__( 'Measurements, seam appearance, and construction against the approved sample', 'myathletik-child' ),
+						__( 'Customer-specified third-party testing when required', 'myathletik-child' ),
+					),
+					'link'        => myathletik_related_link( __( 'Review the Garment Quality Control Checklist', 'myathletik-child' ), '/garment-quality-control-checklist/' ),
+				),
+			),
+			'buyer_questions_heading' => __( 'Questions buyers ask before starting a Merino wool program', 'myathletik-child' ),
+			'buyer_questions' => array(
+				array(
+					'question' => __( 'What is the MOQ for Merino wool clothing?', 'myathletik-child' ),
+					'answer'   => sprintf( __( 'The public garment MOQ is %s pieces per style. Material, color, size allocation, sampling, testing, and final production terms are confirmed in the project quotation.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				),
+				array(
+					'question' => __( 'What should a buyer provide before Merino sampling?', 'myathletik-child' ),
+					'answer'   => __( 'Provide the garment type, intended activity and climate, target market, composition, micron, yarn count, GSM, knit structure, fit and seam requirements, artwork and branding, care requirements, testing criteria, estimated quantity, and tech pack or reference sample.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'How should micron and GSM be selected?', 'myathletik-child' ),
+					'answer'   => __( 'Finer Merino wool below about 19.5 microns is commonly used for next-to-skin base layers and underwear, but there is no single micron or GSM for every program. The final specification should balance hand feel, warmth, durability, stretch, target climate, and care requirements.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Which Merino wool requirements can be tested?', 'myathletik-child' ),
+					'answer'   => __( 'Colorfastness, shrinkage, pilling, GSM, fiber composition, and stretch/recovery can be checked in-house against the agreed method and acceptance criteria. Customer-specified third-party testing can be arranged when required.', 'myathletik-child' ),
+				),
+			),
 			'image_note'       => __( '[IMAGE: real merino wool product shots]', 'myathletik-child' ),
 			'gallery'          => array(
 				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-19.jpg', __( 'Merino wool apparel product sample', 'myathletik-child' ) ),
@@ -561,6 +627,9 @@ function myathletik_product_category_data() {
 			'related'          => array(
 				myathletik_related_link( __( 'Underwear Manufacturer', 'myathletik-child' ), '/underwear-manufacturer/' ),
 				myathletik_related_link( __( 'Outdoor Clothing Manufacturer', 'myathletik-child' ), '/outdoor-clothing-manufacturer/' ),
+				myathletik_related_link( __( 'FLATLOCK vs OVERLOCK Guide', 'myathletik-child' ), '/flatlock-vs-overlock-technical-knitwear/' ),
+				myathletik_related_link( __( 'Technical Knitwear Tech Pack Guide', 'myathletik-child' ), '/technical-knitwear-tech-pack-guide/' ),
+				myathletik_related_link( __( 'Garment Quality Control Checklist', 'myathletik-child' ), '/garment-quality-control-checklist/' ),
 				myathletik_related_link( __( 'Our Services', 'myathletik-child' ), '/services/' ),
 			),
 		),

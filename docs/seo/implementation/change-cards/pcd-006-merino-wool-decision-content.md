@@ -1,0 +1,94 @@
+# PCD-006 Merino Wool 采购决策内容
+
+- Change ID：`PCD-006`
+- Finding type：`review`
+- 变更类型：V1.3 B 类采购决策完整性改进
+- 优先级：P1
+- 状态：`local-implemented / owner-review`
+- 本地实施日期：2026-09-07
+- 目标页面：`/merino-wool-manufacturer/`
+- 主要官网任务：`Qualify / Verify / Start`
+- 搜索与采购意图：Merino wool clothing manufacturer、Merino wool base layer manufacturer、custom Merino wool apparel
+
+## 观察与证据
+
+生产页技术状态健康：HTTP 200、可索引、自引用 Canonical、单一 H1、JSON-LD 可解析，图片 alt 完整。最近 28 个 GSC 最终日为 2026-08-06 至 2026-09-02，页面合计 2 clicks / 36 impressions / average position 20.92；可见非品牌 Query 行中：
+
+- `merino wool clothing manufacturer`：0 clicks / 6 impressions / average position 25.67；
+- `merino wool clothing manufacturers`：0 clicks / 2 impressions / average position 45。
+
+Query 行不包含 GSC 匿名查询，因此 8 次可见 Query 曝光不能替代 36 次页面总曝光。当前样本只支持页面所有权和内容缺口判断，不支持 CTR 或排名效果归因。
+
+2026-09-07 使用 DataForSEO 对 US / GB / CA 的 `merino wool clothing manufacturer` 与 US 的 `merino wool base layer manufacturer` 做 Desktop Top 10 Live SERP。四次快照均为 `complete`，总成本 USD 0.008。SERP 同时包含制造商、零售品牌、目录、媒体和社区，属于混合意图；Thai Son 与 Merinotex 等制造商跨市场出现，说明该词仍包含 OEM 采购意图。制造商结果通常公开产品范围、composition、micron、yarn/gauge、GSM、结构、MOQ、开发输入和质量流程，而不是只解释 Merino wool 的通用优点。
+
+原页面约 303 words，能完成 Discover，但存在以下采购缺口：
+
+1. 产品卡首先展示 Jacquard、Printed、Blend 和 Yarn sourcing，未突出实际可稳定生产的 base layers、underwear、T-shirts、hoodies、mid-layers、balaclavas 和 neck warmers；
+2. 未集中说明买家可指定 composition、micron、yarn count、GSM、single jersey、interlock、rib 和 jacquard；
+3. 未说明 colorfastness、shrinkage、pilling、GSM、fiber composition、stretch/recovery 可 in-house testing，以及客户可指定 third-party testing；
+4. `will not ... fade` 属于无法成立的绝对承诺；`A capability unique to merino programs` 也缺少明确比较边界；
+5. 页面只有产品与 Services 内链，缺少 Tech Pack Guide、QC Guide 和 seam construction 指南的采购上下文入口。
+
+## 一方业务确认
+
+所有者于 2026-09-07 确认：
+
+1. Athletik 有稳定生产 Merino wool base-layer tops、bottoms、underwear、T-shirts、hoodies、mid-layers、balaclavas 和 neck warmers 的经验；
+2. 买家可以按项目指定 composition、micron、yarn count、GSM、single jersey、interlock、rib、jacquard 等结构；
+3. colorfastness、shrinkage、pilling、GSM、fiber composition、stretch/recovery 均可进行 in-house testing；需要第三方测试时由客户指定。
+
+行业范围只作为选材判断，不作为 Athletik 的固定上下限。Woolmark 的 fibre/end-use 说明将低于约 19.5 microns 的 finer Merino wool 对应到 base layers、underwear 和 fine knitwear，同时指出其他 micron 区间适用于更广的 apparel 和 outerwear。公开页面因此使用 `below about 19.5 microns is a common starting point`，并明确最终 composition、micron、GSM 与结构按项目要求确定，不发布未经必要的固定 GSM 范围。
+
+参考来源：
+
+- Woolmark：<https://www.woolmark.com/fibre/what-is-the-wool-fibre/>
+- Paul James Merino manufacturer page：<https://www.pauljamesknitwear.com/pages/merino-wool-knitwear-manufacturer>
+- Thai Son Merino manufacturer page：<https://thaisonsp.com/sustainable-fabrics/merino-wool-choosing-the-right-natural-fiber-for-your-lifestyle/>
+- Sansansun Base Layer manufacturer page：<https://sansansports.com/product-category/base-layers/>
+
+## 主要变量
+
+唯一主要变量是现有 Merino Wool 页面中的采购决策内容：
+
+1. 首段自然承接 `custom Merino wool clothing`，并列明已确认的成衣范围；
+2. 四个产品模块改为 base layers/underwear、T-shirts/hoodies/mid-layers、jacquard/print/accessory development、yarn/fabric development；继续复用原有四张图片和响应式资源，不新增或更换图片文件；
+3. 增加 `Development inputs`，说明 composition、micron、yarn count、GSM、knit structure、fit、construction、testing 和项目输入；
+4. 第三张规格卡从通用 Service 改为已确认的 `Testing / In-house`，保留客户指定 third-party testing 的边界；
+5. 增加两张 customization / quality checkpoint 卡和四个 Buyer Questions；
+6. 增加 FLATLOCK Guide、Tech Pack Guide 和 QC Guide 内链；
+7. 删除 `will not fade`、无边界的 `unique` 与 `merino fragility` 等绝对化或含糊表达。
+
+URL、Title、Meta、H1、Canonical、Schema 类型、Hero、图片数量、MOQ 和页面所有权均不改变，也不创建 Merino Base Layer 平行页。
+
+## 风险与控制
+
+- 风险：`below about 19.5 microns` 被误解为 Athletik 的固定供货范围。
+  - 控制：明确标注为 next-to-skin products 的 common starting point，并说明最终规格按 hand feel、warmth、durability、stretch、climate 和 care requirements 决定。
+- 风险：测试项目被理解为所有产品自动通过同一标准。
+  - 控制：所有测试均绑定 agreed method、acceptance criteria、approved specification 和具体项目；第三方测试由客户指定。
+- 风险：产品范围扩充吸引个人消费者或低 MOQ 询盘。
+  - 控制：保留 500 pieces per style，并继续使用 OEM/ODM、buyer specification、tech pack 和 project quotation 语言。
+- 风险：低曝光内容改动被解释为排名实验成功。
+  - 控制：本项属于 B 类采购决策完整性改进；28 / 90 天只观察 Query、合格询盘和页面行为，不把自然波动归因于单次改写。
+
+## 验收标准
+
+### 本地
+
+- [x] PHP 8.2 语法与 `git diff --check` 通过；
+- [x] 数据桩确认 Merino 仍为原 H1，包含 4 个产品模块、2 张 assurance cards、4 个 Buyer Questions 和 6 个 related links；
+- [x] `sprintf` 正确输出 `100% Merino wool` 与 `500 pieces per style`；
+- [x] 未修改共享模板、CSS、URL、Title、Meta、H1、Schema、Hero 或图片文件；
+- [ ] 所有者完成英文草稿与页面视觉审核；
+- [ ] LocalWP 启动后完成 1440 × 900 与 390 × 844 渲染复核。
+
+### 生产 / 部署后
+
+- [ ] 页面返回 HTTP 200、可索引、自引用 Canonical且保持单一 H1；
+- [ ] 新产品范围、Development inputs、Testing 规格卡、两张执行卡、四个 Buyer Questions 和三条新增指南内链完整；
+- [ ] 四张原图及其响应式 WebP 正常加载；
+- [ ] 其他六个品类页不输出 Merino 专属内容且无布局回归；
+- [ ] Desktop / Mobile 无横向溢出或文字截断；
+- [ ] 所有者确认后完成部署。
+
+当前 Finding outcome：`changed / owner-review`。生产部署后转为 `changed / measuring`；Day 28 / 90 分别复查 GSC Query、页面互动与有效询盘，不与 Title / Meta 实验混合归因。
