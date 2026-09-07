@@ -15,6 +15,44 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-09-07：本周 SEO 监测与 SEO-V2-015 Day 7
+
+### 来源与覆盖
+
+- `seo` CLI 版本为项目已验证的 `0.2.36`；Google 登录、GSC `webmasters.readonly` scope 与属性 `sc-domain:athletikapparel.com` 均通过。
+- 初次 `index-watch` 因当前进程未注入本机代理而对首页和 Services 返回 `fetch failed`，数据状态为 `partial`；按同一来源只重试一次，在注入既有 `EnvHttpProxyAgent` 后成功。有效复验为 `complete`：2/2 inspected、0 failed、0 quota blocked、0 deferred。
+- GSC Search Performance 使用 `dataState: final`，窗口为 2026-08-06 至 09-02；最近 7 天比较段为 2026-08-27 至 09-02。页面和国家跨窗口保留行不完整、Query 跨窗口没有匹配保留行，因此综合报告为 `partial`；日期总量 28/28 完整。
+- 生产技术检查为 targeted：`/`、`/services/`、`/contact/` 三页；3/3 HTTP 200、可索引、单一 H1、自引用 Canonical，0 fetch failure、0 high/medium issue。Page Sitemap 为 18 个条目 / 18 个唯一 URL，三页均在 Sitemap，`robots.txt` 正常声明 Sitemap。Contact 原始 HTML 仍包含 `Estimated Order Quantity` 与 `Tech Pack` 字段；本轮未提交表单，不能据此声明邮件投递链路已重新测试。
+
+### SEO-V2-015 首页 Day 7
+
+- URL Inspection 为 `PASS / Submitted and indexed`，`INDEXING_ALLOWED / ALLOWED / SUCCESSFUL`；Google Canonical 与用户 Canonical 均为 `https://www.athletikapparel.com/`。
+- Google 最后抓取时间为 `2026-09-04T20:21:54Z`，发生在 2026-08-31 首页语义纠偏部署之后，证明 Google 已重新抓取部署后的规范 URL。
+- 生产 HTML 继续输出 `Performance Apparel Manufacturer | Athletik Clothing`、单一 H1、自引用 Canonical 与 `follow, index`；当前 `site:` 搜索快照也展示新 Title。该快照只说明本次可见搜索结果采用了新标题，不保证所有 Query、国家、设备或时间均使用同一标题。
+- 2026-08-27 至 09-02 全站为 5 clicks / 184 impressions；此前 21 天为 4 clicks / 213 impressions，日均点击从 0.19 升至 0.714、日均曝光从 10.143 升至 26.286。首页在 2026-08-06 至 09-02 窗口为 4 clicks / 99 impressions / average position 4.343，相邻前 28 天保留行为 2 / 23 / 9.739。
+- 以上方向为正，但 9 月 2 日是当前最终数据截止日，只有 8 月 31 日至 9 月 2 日三个最终日处于改版后；首页精确 Query × Page 返回 0 个保留行，低量匿名化查询不可见。因此 Day 7 不做搜索效果归因，也不修改 Title、Meta、H1 或正文。
+
+Finding outcome：`fixed / measuring`。Day 7 技术与抓取目标通过；SEO-V2-015 保持当前版本，下一检查点为 2026-09-28 的 Day 28 同口径 GSC / GA4 / 有效询盘复盘。
+
+### SEO-V2-003 Services 周度复查
+
+- Services 仍为 `NEUTRAL / Discovered - currently not indexed`，没有返回 Google Canonical、最后抓取时间或具体抓取状态；与既有快照相同，`changeKind=unchanged`，0 regression、0 alert。
+- 生产页面继续为 HTTP 200、`follow, index`、自引用 Canonical、单一 H1；Page Sitemap 和站内入口保持。当前仍没有代码、robots、Canonical、Sitemap 或发现路径阻塞证据。
+
+Finding `SEO-V2-003-SERVICES-INDEX` outcome 保持 `no-change / monitoring`。此前实时测试已经通过并请求编入索引一次，本周不重复提交、不改 URL 或正文；下一周继续只读 indexed snapshot。
+
+### 报告 Finding reconciliation
+
+- `action-732c2e495464`、`action-ab69d21aba40`、`action-a9749051ee50`：均为同一首页页面移动复核建议；已核对 URL Inspection、生产 HTML、近期部署和 Query 数据，outcome 为 `not-needed / verified-monitoring`，不重复计为三个缺陷。
+- `action-45e69e2c016a`：报告本身未发现 URL overlap，outcome 为 `not-needed`。
+- `action-d6944e3a6ca6`：未发现 retained-row content decay，outcome 为 `not-needed`。
+- `action-b17a80462de0`：不为制造低置信机会而降低最小曝光门槛，outcome 为 `not-needed / sample-gate`。
+- `action-1058f37bea64`：没有 striking-distance row，outcome 为 `not-needed`。
+- `action-485ffd6ad089`：已核对近期站点变更、索引和页面分段；没有官方 Google Ranking update 窗口重叠，也没有因果证据，outcome 为 `not-needed / investigated`。
+- `hsts_missing`：3 页 low review，延续 SEO-V2-014，outcome 为 `deferred / existing-owner-action`；它是基础设施安全评估，不是本周排名缺陷。
+- `image_oversized_candidate`：首页 1 页 low review；响应式 Hero 已完成既有生产验收，当前没有稳定 Field 或同环境 Lab 回归，outcome 为 `no-change / unchanged-heuristic`。
+- 报告另有 1 个外部 URL 阻止自动验证、4 个外部 URL 在有限重试后不可达，以及定向 Crawl 的 GSC join 因未注入代理而 `partial`；这些不改变上述生产页面、Sitemap 与单独成功取得的 GSC 证据。
+
 ## 2026-09-05：GSC Generative AI 首个三个月基线
 
 ### 来源与覆盖

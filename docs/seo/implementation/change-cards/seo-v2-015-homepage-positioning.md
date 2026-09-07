@@ -99,6 +99,6 @@
 ## 复盘窗口
 
 - Day 0：完成生产 HTML、Schema、Sitemap 与 Crawl 验收；
-- Day 7：只检查抓取、索引、Title 采用情况和明显技术回归，不因小样本回滚；
+- Day 7：2026-09-07 已完成；Google 于 `2026-09-04T20:21:54Z` 重新抓取首页，URL Inspection 为 `PASS / Submitted and indexed`，Canonical 一致，生产 HTML 与当前搜索快照均显示新 Title，未发现明显技术回归。GSC 最终数据只覆盖三个改版后自然日且首页 Query 明细不可见，因此不作效果归因、不回滚；
 - Day 28：比较同口径 GSC Query/Page/Country、GA4 Organic Search 与人工核验有效询盘；
 - Day 90：在跨季节与其他发布因素记录完整时，决定 `keep`、`iterate` 或 `revert`。
