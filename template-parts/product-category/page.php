@@ -72,6 +72,12 @@ $specs = array(
 if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 	$specs = $category['specs'];
 }
+
+$specs_classes = array( 'ma-product-section', 'ma-product-specs' );
+
+if ( ! empty( $category['specs_variant'] ) ) {
+	$specs_classes[] = 'ma-product-specs--' . sanitize_html_class( $category['specs_variant'] );
+}
 ?>
 
 <main id="primary" class="site-main ma-product-category">
@@ -336,8 +342,17 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 	</section>
 	<?php endif; ?>
 
-	<section class="ma-product-section ma-product-specs">
+	<section class="<?php echo esc_attr( implode( ' ', $specs_classes ) ); ?>"<?php echo ! empty( $category['specs_heading'] ) ? ' aria-labelledby="ma-product-specs-title"' : ''; ?>>
 		<div class="ma-section-inner">
+			<?php if ( ! empty( $category['specs_heading'] ) ) : ?>
+				<div class="ma-product-specs__heading">
+					<p class="ma-section-kicker"><?php echo esc_html( ! empty( $category['specs_kicker'] ) ? $category['specs_kicker'] : __( 'Program snapshot', 'myathletik-child' ) ); ?></p>
+					<h2 id="ma-product-specs-title"><?php echo esc_html( $category['specs_heading'] ); ?></h2>
+					<?php if ( ! empty( $category['specs_intro'] ) ) : ?>
+						<p><?php echo esc_html( $category['specs_intro'] ); ?></p>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
 			<div class="ma-product-specs__grid">
 				<?php foreach ( $specs as $spec ) : ?>
 					<article>

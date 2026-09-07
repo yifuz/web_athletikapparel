@@ -4105,6 +4105,58 @@ body.page .container.grid-container:has(.ma-product-category) {
   color: rgba(250, 248, 245, 0.76);
 }
 
+/* Procurement-summary variant: a compact heading plus a 2x2 decision grid.
+   Enabled by category data so existing three-card strips remain unchanged. */
+.ma-product-specs--decision-summary {
+  background: var(--ma-color-dark);
+}
+
+.ma-product-specs--decision-summary .ma-section-inner {
+  display: grid;
+  gap: var(--ma-space-5);
+}
+
+.ma-product-specs__heading {
+  min-width: 0;
+}
+
+.ma-product-specs__heading .ma-section-kicker {
+  color: color-mix(in srgb, var(--ma-color-bg) 72%, transparent);
+}
+
+.ma-product-specs__heading h2 {
+  max-width: 16ch;
+  margin: 0;
+  color: var(--ma-color-bg);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-h2);
+  line-height: 1.15;
+}
+
+.ma-product-specs__heading > p:not(.ma-section-kicker) {
+  max-width: var(--ma-reading-width);
+  margin: var(--ma-space-3) 0 0;
+  color: color-mix(in srgb, var(--ma-color-bg) 76%, transparent);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-product-specs--decision-summary article {
+  position: relative;
+  padding: var(--ma-space-4);
+  border-color: color-mix(in srgb, var(--ma-color-bg) 18%, transparent);
+  border-top: var(--ma-space-1) solid var(--ma-color-accent);
+  background: color-mix(in srgb, var(--ma-color-bg) 8%, transparent);
+  box-shadow: none;
+}
+
+.ma-product-specs--decision-summary article > span {
+  color: color-mix(in srgb, var(--ma-color-bg) 74%, transparent);
+}
+
+.ma-product-specs--decision-summary article p {
+  max-width: 40ch;
+}
+
 .ma-product-related__links {
   display: flex;
   flex-wrap: wrap;
@@ -4168,6 +4220,15 @@ body.page .container.grid-container:has(.ma-product-category) {
   .ma-product-showcase__grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--ma-space-4);
+  }
+
+  .ma-product-specs--decision-summary .ma-section-inner {
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+    align-items: start;
+  }
+
+  .ma-product-specs--decision-summary .ma-product-specs__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .ma-product-examples__grid,

@@ -648,23 +648,32 @@ function myathletik_product_category_data() {
 					)
 				),
 			),
+			'specs_variant'     => 'decision-summary',
+			'specs_kicker'      => __( 'Program snapshot', 'myathletik-child' ),
+			'specs_heading'     => __( 'Key parameters for Merino wool development', 'myathletik-child' ),
+			'specs_intro'       => __( 'Commercial and technical requirements are reviewed against the project specification before sampling and quotation.', 'myathletik-child' ),
 			'specs'             => array(
 				array(
 					'label'       => __( 'MOQ', 'myathletik-child' ),
 					'value'       => number_format_i18n( myathletik_public_moq_pieces() ),
 					'unit'        => __( 'pcs', 'myathletik-child' ),
-					'description' => __( 'Per style.', 'myathletik-child' ),
+					'description' => __( 'Per style for finished garments.', 'myathletik-child' ),
 				),
 				array(
 					'label'       => __( 'Sampling', 'myathletik-child' ),
 					'value'       => __( '1-2', 'myathletik-child' ),
 					'unit'        => __( 'weeks', 'myathletik-child' ),
-					'description' => __( 'Depending on style complexity and materials.', 'myathletik-child' ),
+					'description' => __( 'Timing depends on style complexity, selected materials, trims, and approval inputs.', 'myathletik-child' ),
+				),
+				array(
+					'label'       => __( 'Specification', 'myathletik-child' ),
+					'value'       => __( 'Buyer-defined', 'myathletik-child' ),
+					'description' => __( 'Composition, micron, yarn count, GSM, knit structure, fit, and care requirements.', 'myathletik-child' ),
 				),
 				array(
 					'label'       => __( 'Testing', 'myathletik-child' ),
-					'value'       => __( 'In-house', 'myathletik-child' ),
-					'description' => __( 'Customer-specified third-party testing can be arranged.', 'myathletik-child' ),
+					'value'       => __( 'In-house checks', 'myathletik-child' ),
+					'description' => __( 'Colorfastness, shrinkage, pilling, GSM, fiber composition, and stretch/recovery; customer-specified third-party testing can be arranged.', 'myathletik-child' ),
 				),
 			),
 			'assurance_kicker'  => __( 'Program execution', 'myathletik-child' ),
