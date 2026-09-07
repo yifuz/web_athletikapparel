@@ -60,7 +60,7 @@ Query 行不包含 GSC 匿名查询，因此 8 次可见 Query 曝光不能替�
 7. 删除 `will not fade`、无边界的 `unique` 与 `merino fragility` 等绝对化或含糊表达。
 8. 在 `Development inputs` 后增加 8 张真实产品立体图，分别覆盖 printed base layer、long-sleeve base layer、base-layer bottom、T-shirt、hooded mid-layer、neck warmer、beanie 和 balaclava；Desktop 为 4 × 2，Mobile 为 2 列。每张图片提供 480 / 800 WebP 与 800 JPG fallback、固定宽高、`srcset` / `sizes`、lazy loading、语义化 caption 和描述性 alt。
 9. Merino 专属 `Buyer Questions` 改为原生 `<details>` 折叠显示，减少页面初始文字密度；共享模板通过数据开关控制，其他品类继续使用原卡片结构。
-10. 将原三卡规格条升级为 Merino 专属采购摘要：增加 `Program snapshot` 标题与项目规格说明，右侧改为 2 × 2 的 MOQ、Sampling、Buyer-defined Specification、In-house Testing 参数矩阵。Specification 列出 composition、micron、yarn count、GSM、knit structure、fit 和 care requirements；Testing 列出已确认的六类 in-house checks 及客户指定第三方测试边界。
+10. 将原三卡规格条替换为 Merino 专属完整采购流程：`Project Brief & Quotation` → `Material & Sample Development` → `Approval & Order Confirmation` → `Bulk Production & Quality Control` → `Export & Delivery`。MOQ、1–2 周典型打样、已确认 testing 能力和 FOB / DDP 边界分别进入对应阶段，并增加 `/services/` 深入入口；未确认的付款节点不公开。
 
 URL、Title、Meta、H1、Canonical、Schema 类型、Hero、MOQ 和页面所有权均不改变，也不创建 Merino Base Layer 平行页。图片变化仅限新增的页面内视觉证明，不替换 Hero 或既有四张产品范围图片。
 
@@ -78,8 +78,10 @@ URL、Title、Meta、H1、Canonical、Schema 类型、Hero、MOQ 和页面所有
   - 控制：只选 8 个互不重复的产品类型；原图不进入生产，网页端 WebP 组合在 480w 为约 75.5 KB、800w 为约 201.7 KB，全部首屏以下 lazy-load。
 - 风险：共享模板改动影响其他品类页的问题卡片。
   - 控制：产品图与折叠问答都由 Merino 数据字段显式启用；其他品类不输出 `product_showcase`，也不启用 `buyer_questions_collapsible`。
-- 风险：规格条全局视觉调整改变其他产品页已经验收的三卡布局。
-  - 控制：新标题、四卡内容与 2 × 2 布局均由 `specs_variant = decision-summary` 启用；其他品类继续使用原规格条结构和三列布局。
+- 风险：共享模板新增采购流程后改变其他产品页已经验收的三卡规格条。
+  - 控制：模板仅在分类数据提供 `process_steps` 时输出有序流程；当前只有 Merino 启用，其他品类继续使用原规格条结构和三列布局。
+- 风险：把完整采购流程写成所有项目固定不变的 SOP，或擅自补充付款节点。
+  - 控制：页面使用 `review`、`align`、`confirm` 和 `available by project`，时间、testing、commercial terms 与 delivery responsibilities 均绑定具体 quotation；付款节点因没有已确认口径而省略。
 
 ## 验收标准
 
@@ -92,7 +94,7 @@ URL、Title、Meta、H1、Canonical、Schema 类型、Hero、MOQ 和页面所有
 - [x] 24 个图片衍生 URL 全部返回 HTTP 200；
 - [x] 1440px Desktop 与 390px Mobile full-page 截图检查通过，无横向溢出，产品图均为固定 1:1 比例；
 - [x] 共享模板与 CSS 只增加可选模块；URL、Title、Meta、H1、Schema 与 Hero 未修改；
-- [x] Merino 采购摘要在 Desktop 为标题 + 2 × 2 参数矩阵，在 Mobile 为单列；新增内容均来自已确认的 MOQ、sampling、定制规格和 testing 能力；
+- [x] Merino 采购流程在 Desktop 为五阶段横向顺序卡、Tablet 为 2 列、Mobile 为单列；阶段内容与 Services、Tech Pack、QC 和出口口径一致；
 - [ ] 所有者完成英文草稿与页面视觉审核；
 
 ### 生产 / 部署后
@@ -101,7 +103,7 @@ URL、Title、Meta、H1、Canonical、Schema 类型、Hero、MOQ 和页面所有
 - [ ] 新产品范围、Development inputs、Testing 规格卡、两张执行卡、四个 Buyer Questions 和三条新增指南内链完整；
 - [ ] 四张原产品范围图片与新增 8 张产品立体图的响应式资源正常加载；
 - [ ] Merino `Buyer Questions` 可通过键盘展开，其他品类保持原卡片结构；
-- [ ] Merino 四项采购摘要完整，其他六个品类的既有三卡规格条保持不变；
+- [ ] Merino 五阶段采购流程与 `/services/` 内链完整，其他六个品类的既有三卡规格条保持不变；
 - [ ] 其他六个品类页不输出 Merino 专属内容且无布局回归；
 - [ ] Desktop / Mobile 无横向溢出或文字截断；
 - [ ] 所有者确认后完成部署。

@@ -72,12 +72,6 @@ $specs = array(
 if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 	$specs = $category['specs'];
 }
-
-$specs_classes = array( 'ma-product-section', 'ma-product-specs' );
-
-if ( ! empty( $category['specs_variant'] ) ) {
-	$specs_classes[] = 'ma-product-specs--' . sanitize_html_class( $category['specs_variant'] );
-}
 ?>
 
 <main id="primary" class="site-main ma-product-category">
@@ -342,17 +336,33 @@ if ( ! empty( $category['specs_variant'] ) ) {
 	</section>
 	<?php endif; ?>
 
-	<section class="<?php echo esc_attr( implode( ' ', $specs_classes ) ); ?>"<?php echo ! empty( $category['specs_heading'] ) ? ' aria-labelledby="ma-product-specs-title"' : ''; ?>>
+	<?php if ( ! empty( $category['process_steps'] ) && is_array( $category['process_steps'] ) ) : ?>
+	<section class="ma-product-section ma-product-procurement" aria-labelledby="ma-product-procurement-title">
 		<div class="ma-section-inner">
-			<?php if ( ! empty( $category['specs_heading'] ) ) : ?>
-				<div class="ma-product-specs__heading">
-					<p class="ma-section-kicker"><?php echo esc_html( ! empty( $category['specs_kicker'] ) ? $category['specs_kicker'] : __( 'Program snapshot', 'myathletik-child' ) ); ?></p>
-					<h2 id="ma-product-specs-title"><?php echo esc_html( $category['specs_heading'] ); ?></h2>
-					<?php if ( ! empty( $category['specs_intro'] ) ) : ?>
-						<p><?php echo esc_html( $category['specs_intro'] ); ?></p>
-					<?php endif; ?>
-				</div>
+			<div class="ma-product-procurement__heading">
+				<p class="ma-section-kicker"><?php echo esc_html( ! empty( $category['process_kicker'] ) ? $category['process_kicker'] : __( 'Procurement workflow', 'myathletik-child' ) ); ?></p>
+				<h2 id="ma-product-procurement-title"><?php echo esc_html( $category['process_heading'] ); ?></h2>
+				<?php if ( ! empty( $category['process_intro'] ) ) : ?>
+					<p><?php echo esc_html( $category['process_intro'] ); ?></p>
+				<?php endif; ?>
+			</div>
+			<ol class="ma-product-procurement__steps">
+				<?php foreach ( $category['process_steps'] as $index => $step ) : ?>
+					<li>
+						<span class="ma-product-procurement__index" aria-hidden="true"><?php echo esc_html( sprintf( '%02d', $index + 1 ) ); ?></span>
+						<h3><?php echo esc_html( $step['title'] ); ?></h3>
+						<p><?php echo esc_html( $step['description'] ); ?></p>
+					</li>
+				<?php endforeach; ?>
+			</ol>
+			<?php if ( ! empty( $category['process_link']['url'] ) && ! empty( $category['process_link']['label'] ) ) : ?>
+				<a class="ma-product-procurement__link" href="<?php echo esc_url( home_url( $category['process_link']['url'] ) ); ?>"><?php echo esc_html( $category['process_link']['label'] ); ?> <span aria-hidden="true">→</span></a>
 			<?php endif; ?>
+		</div>
+	</section>
+	<?php else : ?>
+	<section class="ma-product-section ma-product-specs">
+		<div class="ma-section-inner">
 			<div class="ma-product-specs__grid">
 				<?php foreach ( $specs as $spec ) : ?>
 					<article>
@@ -369,6 +379,7 @@ if ( ! empty( $category['specs_variant'] ) ) {
 			</div>
 		</div>
 	</section>
+	<?php endif; ?>
 
 	<section class="ma-product-section ma-product-related">
 		<div class="ma-section-inner ma-product-related__layout">

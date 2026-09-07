@@ -4105,27 +4105,28 @@ body.page .container.grid-container:has(.ma-product-category) {
   color: rgba(250, 248, 245, 0.76);
 }
 
-/* Procurement-summary variant: a compact heading plus a 2x2 decision grid.
-   Enabled by category data so existing three-card strips remain unchanged. */
-.ma-product-specs--decision-summary {
+/* Optional category procurement workflow. The ordered cards explain the full
+   buyer path while category pages without process data keep the specs strip. */
+.ma-product-procurement {
+  padding: 0;
   background: var(--ma-color-dark);
+  color: var(--ma-color-bg);
 }
 
-.ma-product-specs--decision-summary .ma-section-inner {
-  display: grid;
-  gap: var(--ma-space-5);
+.ma-product-procurement .ma-section-inner {
+  padding-block: var(--ma-space-6);
 }
 
-.ma-product-specs__heading {
-  min-width: 0;
+.ma-product-procurement__heading {
+  max-width: var(--ma-reading-width);
+  margin-bottom: var(--ma-space-5);
 }
 
-.ma-product-specs__heading .ma-section-kicker {
+.ma-product-procurement__heading .ma-section-kicker {
   color: color-mix(in srgb, var(--ma-color-bg) 72%, transparent);
 }
 
-.ma-product-specs__heading h2 {
-  max-width: 16ch;
+.ma-product-procurement__heading h2 {
   margin: 0;
   color: var(--ma-color-bg);
   font-family: var(--ma-font-head);
@@ -4133,28 +4134,74 @@ body.page .container.grid-container:has(.ma-product-category) {
   line-height: 1.15;
 }
 
-.ma-product-specs__heading > p:not(.ma-section-kicker) {
+.ma-product-procurement__heading > p:not(.ma-section-kicker) {
   max-width: var(--ma-reading-width);
   margin: var(--ma-space-3) 0 0;
   color: color-mix(in srgb, var(--ma-color-bg) 76%, transparent);
   line-height: var(--ma-lh-body);
 }
 
-.ma-product-specs--decision-summary article {
+.ma-product-procurement__steps {
+  display: grid;
+  gap: var(--ma-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ma-product-procurement__steps li {
   position: relative;
   padding: var(--ma-space-4);
-  border-color: color-mix(in srgb, var(--ma-color-bg) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ma-color-bg) 18%, transparent);
   border-top: var(--ma-space-1) solid var(--ma-color-accent);
+  border-radius: var(--ma-radius);
   background: color-mix(in srgb, var(--ma-color-bg) 8%, transparent);
-  box-shadow: none;
 }
 
-.ma-product-specs--decision-summary article > span {
-  color: color-mix(in srgb, var(--ma-color-bg) 74%, transparent);
+.ma-product-procurement__index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--ma-touch-target);
+  min-height: var(--ma-touch-target);
+  margin-bottom: var(--ma-space-3);
+  border: 1px solid color-mix(in srgb, var(--ma-color-bg) 24%, transparent);
+  border-radius: 999px;
+  color: var(--ma-color-bg);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-small);
+  font-weight: 800;
 }
 
-.ma-product-specs--decision-summary article p {
-  max-width: 40ch;
+.ma-product-procurement__steps h3 {
+  margin: 0;
+  color: var(--ma-color-bg);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-h3);
+  line-height: 1.3;
+}
+
+.ma-product-procurement__steps p {
+  margin: var(--ma-space-2) 0 0;
+  color: color-mix(in srgb, var(--ma-color-bg) 76%, transparent);
+  font-size: var(--ma-fs-small);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-product-procurement__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ma-touch-target);
+  margin-top: var(--ma-space-4);
+  color: var(--ma-color-bg);
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+  text-underline-offset: var(--ma-space-1);
+}
+
+.ma-product-procurement__link:hover,
+.ma-product-procurement__link:focus-visible {
+  color: color-mix(in srgb, var(--ma-color-accent) 76%, var(--ma-color-bg));
 }
 
 .ma-product-related__links {
@@ -4222,12 +4269,7 @@ body.page .container.grid-container:has(.ma-product-category) {
     gap: var(--ma-space-4);
   }
 
-  .ma-product-specs--decision-summary .ma-section-inner {
-    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
-    align-items: start;
-  }
-
-  .ma-product-specs--decision-summary .ma-product-specs__grid {
+  .ma-product-procurement__steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -4292,6 +4334,12 @@ body.page .container.grid-container:has(.ma-product-category) {
 	.ma-home-inquiry__brief {
 		grid-template-columns: 1fr;
 	}
+}
+
+@media (min-width: 64rem) {
+  .ma-product-procurement__steps {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
 }
 
 /* --- Technical Guides hub --- */
