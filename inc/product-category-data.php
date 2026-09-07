@@ -38,6 +38,26 @@ function myathletik_gallery_item( $image, $alt ) {
 }
 
 /**
+ * Get one responsive product showcase image.
+ *
+ * @param string $image   JPEG fallback path under assets/images.
+ * @param string $alt     Descriptive image alt text.
+ * @param string $caption Short visible product label.
+ * @param array  $webp    Responsive WebP paths keyed by pixel width.
+ * @return array
+ */
+function myathletik_product_showcase_item( $image, $alt, $caption, $webp ) {
+	return array(
+		'image'        => $image,
+		'alt'          => $alt,
+		'caption'      => $caption,
+		'image_width'  => 800,
+		'image_height' => 800,
+		'image_webp'   => $webp,
+	);
+}
+
+/**
  * Get an image path from the auxiliary image folder.
  *
  * The folder name is stored as an HTML entity so Windows encoding does not
@@ -551,6 +571,83 @@ function myathletik_product_category_data() {
 			'capability_kicker'  => __( 'Development inputs', 'myathletik-child' ),
 			'capability_heading' => __( 'Define the Merino fiber, fabric, and garment before sampling', 'myathletik-child' ),
 			'construction'      => sprintf( __( 'Send the product type, intended activity and climate, target market, composition, micron, yarn count, GSM, knit structure, stretch and recovery targets, fit, seam map, artwork, branding, care requirements, test methods and acceptance criteria, order quantity, and tech pack or reference sample. We can develop 100%% Merino wool and blended programs in single jersey, interlock, rib, jacquard, and other project-specific structures, with FLATLOCK or ACTIVESEAM where appropriate. Colorfastness, shrinkage, pilling, GSM, fiber composition, and stretch/recovery can be checked in-house; customer-specified third-party testing can be arranged when required. Public garment MOQ is %s pieces per style, with final development and testing terms confirmed for the project.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+			'showcase_kicker'    => __( 'Product examples', 'myathletik-child' ),
+			'showcase_heading'   => __( 'Merino wool product programs', 'myathletik-child' ),
+			'showcase_intro'     => __( 'Representative garment and accessory formats from Merino wool development programs.', 'myathletik-child' ),
+			'product_showcase'   => array(
+				myathletik_product_showcase_item(
+					'merino wool product/merino-printed-half-zip-top-800.jpg',
+					__( 'Printed Merino wool long-sleeve half-zip base-layer top', 'myathletik-child' ),
+					__( 'Printed Base Layer', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-printed-half-zip-top-480.webp',
+						800 => 'merino wool product/merino-printed-half-zip-top-800.webp',
+					)
+				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-long-sleeve-base-layer-800.jpg',
+					__( 'Navy Merino wool long-sleeve base-layer top', 'myathletik-child' ),
+					__( 'Long-Sleeve Base Layer', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-long-sleeve-base-layer-480.webp',
+						800 => 'merino wool product/merino-long-sleeve-base-layer-800.webp',
+					)
+				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-base-layer-bottom-800.jpg',
+					__( 'Grey Merino wool base-layer bottom with branded waistband', 'myathletik-child' ),
+					__( 'Base-Layer Bottom', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-base-layer-bottom-480.webp',
+						800 => 'merino wool product/merino-base-layer-bottom-800.webp',
+					)
+				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-short-sleeve-tshirt-800.jpg',
+					__( 'Lavender Merino wool short-sleeve T-shirt', 'myathletik-child' ),
+					__( 'Short-Sleeve T-Shirt', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-short-sleeve-tshirt-480.webp',
+						800 => 'merino wool product/merino-short-sleeve-tshirt-800.webp',
+					)
+				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-hooded-mid-layer-800.jpg',
+					__( 'Burgundy Merino wool hooded half-zip mid-layer', 'myathletik-child' ),
+					__( 'Hooded Mid-Layer', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-hooded-mid-layer-480.webp',
+						800 => 'merino wool product/merino-hooded-mid-layer-800.webp',
+					)
+				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-neck-warmer-800.jpg',
+					__( 'Black Merino wool neck warmer', 'myathletik-child' ),
+					__( 'Neck Warmer', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-neck-warmer-480.webp',
+						800 => 'merino wool product/merino-neck-warmer-800.webp',
+					)
+				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-knit-beanie-800.jpg',
+					__( 'Rust-colored Merino wool knit beanie', 'myathletik-child' ),
+					__( 'Knit Beanie', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-knit-beanie-480.webp',
+						800 => 'merino wool product/merino-knit-beanie-800.webp',
+					)
+				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-balaclava-800.jpg',
+					__( 'Black Merino wool balaclava with face opening', 'myathletik-child' ),
+					__( 'Balaclava', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-balaclava-480.webp',
+						800 => 'merino wool product/merino-balaclava-800.webp',
+					)
+				),
+			),
 			'specs'             => array(
 				array(
 					'label'       => __( 'MOQ', 'myathletik-child' ),
@@ -597,6 +694,7 @@ function myathletik_product_category_data() {
 				),
 			),
 			'buyer_questions_heading' => __( 'Questions buyers ask before starting a Merino wool program', 'myathletik-child' ),
+			'buyer_questions_collapsible' => true,
 			'buyer_questions' => array(
 				array(
 					'question' => __( 'What is the MOQ for Merino wool clothing?', 'myathletik-child' ),

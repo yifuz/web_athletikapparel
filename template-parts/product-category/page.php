@@ -194,6 +194,57 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 		</div>
 	</section>
 
+	<?php if ( ! empty( $category['product_showcase'] ) && is_array( $category['product_showcase'] ) ) : ?>
+	<section class="ma-product-section ma-product-showcase" aria-labelledby="ma-product-showcase-title">
+		<div class="ma-section-inner">
+			<div class="ma-section-heading">
+				<p class="ma-section-kicker"><?php echo esc_html( ! empty( $category['showcase_kicker'] ) ? $category['showcase_kicker'] : __( 'Product examples', 'myathletik-child' ) ); ?></p>
+				<h2 id="ma-product-showcase-title"><?php echo esc_html( $category['showcase_heading'] ); ?></h2>
+				<?php if ( ! empty( $category['showcase_intro'] ) ) : ?>
+					<p><?php echo esc_html( $category['showcase_intro'] ); ?></p>
+				<?php endif; ?>
+			</div>
+			<div class="ma-product-showcase__grid">
+				<?php foreach ( $category['product_showcase'] as $image ) : ?>
+					<?php
+					$image_sizes = '(max-width: 47.99rem) 50vw, 25vw';
+					$webp_srcset = array();
+
+					if ( ! empty( $image['image_webp'] ) && is_array( $image['image_webp'] ) ) {
+						foreach ( $image['image_webp'] as $variant_width => $variant_path ) {
+							$variant_width = absint( $variant_width );
+							if ( $variant_width && $variant_path ) {
+								$webp_srcset[] = esc_url( $image_base . ltrim( $variant_path, '/' ) ) . ' ' . $variant_width . 'w';
+							}
+						}
+					}
+					?>
+					<figure class="ma-product-showcase-card">
+						<div class="ma-product-showcase-card__media">
+							<?php if ( $webp_srcset ) : ?>
+								<picture>
+									<source type="image/webp" srcset="<?php echo esc_attr( implode( ', ', $webp_srcset ) ); ?>" sizes="<?php echo esc_attr( $image_sizes ); ?>">
+							<?php endif; ?>
+							<img
+								src="<?php echo esc_url( $image_base . $image['image'] ); ?>"
+								width="<?php echo esc_attr( absint( $image['image_width'] ) ); ?>"
+								height="<?php echo esc_attr( absint( $image['image_height'] ) ); ?>"
+								alt="<?php echo esc_attr( $image['alt'] ); ?>"
+								loading="lazy"
+								decoding="async"
+							>
+							<?php if ( $webp_srcset ) : ?>
+								</picture>
+							<?php endif; ?>
+						</div>
+						<figcaption><?php echo esc_html( $image['caption'] ); ?></figcaption>
+					</figure>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</section>
+	<?php endif; ?>
+
 	<?php if ( ! empty( $category['assurance_cards'] ) && is_array( $category['assurance_cards'] ) ) : ?>
 	<section class="ma-product-section ma-product-assurance" aria-labelledby="ma-product-assurance-title">
 		<div class="ma-section-inner">
@@ -237,10 +288,20 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 			</div>
 			<div class="ma-product-questions__grid">
 				<?php foreach ( $category['buyer_questions'] as $question ) : ?>
-					<article class="ma-product-question">
-						<h3><?php echo esc_html( $question['question'] ); ?></h3>
-						<p><?php echo esc_html( $question['answer'] ); ?></p>
-					</article>
+					<?php if ( ! empty( $category['buyer_questions_collapsible'] ) ) : ?>
+						<details class="ma-product-question ma-product-question--collapsible">
+							<summary>
+								<span class="ma-product-question__title"><?php echo esc_html( $question['question'] ); ?></span>
+								<span class="ma-product-question__icon" aria-hidden="true"></span>
+							</summary>
+							<p><?php echo esc_html( $question['answer'] ); ?></p>
+						</details>
+					<?php else : ?>
+						<article class="ma-product-question">
+							<h3><?php echo esc_html( $question['question'] ); ?></h3>
+							<p><?php echo esc_html( $question['answer'] ); ?></p>
+						</article>
+					<?php endif; ?>
 				<?php endforeach; ?>
 			</div>
 		</div>

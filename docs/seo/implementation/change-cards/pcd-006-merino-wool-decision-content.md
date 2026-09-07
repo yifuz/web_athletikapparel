@@ -36,6 +36,7 @@ Query 行不包含 GSC 匿名查询，因此 8 次可见 Query 曝光不能替�
 1. Athletik 有稳定生产 Merino wool base-layer tops、bottoms、underwear、T-shirts、hoodies、mid-layers、balaclavas 和 neck warmers 的经验；
 2. 买家可以按项目指定 composition、micron、yarn count、GSM、single jersey、interlock、rib、jacquard 等结构；
 3. colorfastness、shrinkage、pilling、GSM、fiber composition、stretch/recovery 均可进行 in-house testing；需要第三方测试时由客户指定。
+4. 同日所有者提供 `D:\C-网站素材\merino wool product\羊毛立体照片-2025.4.18` 的真实产品立体图，并明确可用于页面展示、无需因图片中的 logo 排除素材。
 
 行业范围只作为选材判断，不作为 Athletik 的固定上下限。Woolmark 的 fibre/end-use 说明将低于约 19.5 microns 的 finer Merino wool 对应到 base layers、underwear 和 fine knitwear，同时指出其他 micron 区间适用于更广的 apparel 和 outerwear。公开页面因此使用 `below about 19.5 microns is a common starting point`，并明确最终 composition、micron、GSM 与结构按项目要求确定，不发布未经必要的固定 GSM 范围。
 
@@ -51,14 +52,16 @@ Query 行不包含 GSC 匿名查询，因此 8 次可见 Query 曝光不能替�
 唯一主要变量是现有 Merino Wool 页面中的采购决策内容：
 
 1. 首段自然承接 `custom Merino wool clothing`，并列明已确认的成衣范围；
-2. 四个产品模块改为 base layers/underwear、T-shirts/hoodies/mid-layers、jacquard/print/accessory development、yarn/fabric development；继续复用原有四张图片和响应式资源，不新增或更换图片文件；
+2. 四个产品模块改为 base layers/underwear、T-shirts/hoodies/mid-layers、jacquard/print/accessory development、yarn/fabric development；继续复用原有四张图片和响应式资源；
 3. 增加 `Development inputs`，说明 composition、micron、yarn count、GSM、knit structure、fit、construction、testing 和项目输入；
 4. 第三张规格卡从通用 Service 改为已确认的 `Testing / In-house`，保留客户指定 third-party testing 的边界；
 5. 增加两张 customization / quality checkpoint 卡和四个 Buyer Questions；
 6. 增加 FLATLOCK Guide、Tech Pack Guide 和 QC Guide 内链；
 7. 删除 `will not fade`、无边界的 `unique` 与 `merino fragility` 等绝对化或含糊表达。
+8. 在 `Development inputs` 后增加 8 张真实产品立体图，分别覆盖 printed base layer、long-sleeve base layer、base-layer bottom、T-shirt、hooded mid-layer、neck warmer、beanie 和 balaclava；Desktop 为 4 × 2，Mobile 为 2 列。每张图片提供 480 / 800 WebP 与 800 JPG fallback、固定宽高、`srcset` / `sizes`、lazy loading、语义化 caption 和描述性 alt。
+9. Merino 专属 `Buyer Questions` 改为原生 `<details>` 折叠显示，减少页面初始文字密度；共享模板通过数据开关控制，其他品类继续使用原卡片结构。
 
-URL、Title、Meta、H1、Canonical、Schema 类型、Hero、图片数量、MOQ 和页面所有权均不改变，也不创建 Merino Base Layer 平行页。
+URL、Title、Meta、H1、Canonical、Schema 类型、Hero、MOQ 和页面所有权均不改变，也不创建 Merino Base Layer 平行页。图片变化仅限新增的页面内视觉证明，不替换 Hero 或既有四张产品范围图片。
 
 ## 风险与控制
 
@@ -70,6 +73,10 @@ URL、Title、Meta、H1、Canonical、Schema 类型、Hero、图片数量、MOQ 
   - 控制：保留 500 pieces per style，并继续使用 OEM/ODM、buyer specification、tech pack 和 project quotation 语言。
 - 风险：低曝光内容改动被解释为排名实验成功。
   - 控制：本项属于 B 类采购决策完整性改进；28 / 90 天只观察 Query、合格询盘和页面行为，不把自然波动归因于单次改写。
+- 风险：直接部署 67 张 4000 × 4000 源图造成页面过长和图片负载回归。
+  - 控制：只选 8 个互不重复的产品类型；原图不进入生产，网页端 WebP 组合在 480w 为约 75.5 KB、800w 为约 201.7 KB，全部首屏以下 lazy-load。
+- 风险：共享模板改动影响其他品类页的问题卡片。
+  - 控制：产品图与折叠问答都由 Merino 数据字段显式启用；其他品类不输出 `product_showcase`，也不启用 `buyer_questions_collapsible`。
 
 ## 验收标准
 
@@ -78,15 +85,18 @@ URL、Title、Meta、H1、Canonical、Schema 类型、Hero、图片数量、MOQ 
 - [x] PHP 8.2 语法与 `git diff --check` 通过；
 - [x] 数据桩确认 Merino 仍为原 H1，包含 4 个产品模块、2 张 assurance cards、4 个 Buyer Questions 和 6 个 related links；
 - [x] `sprintf` 正确输出 `100% Merino wool` 与 `500 pieces per style`；
-- [x] 未修改共享模板、CSS、URL、Title、Meta、H1、Schema、Hero 或图片文件；
+- [x] LocalWP HTTP 200，新增 gallery 与 collapsible question markup 均已输出；
+- [x] 24 个图片衍生 URL 全部返回 HTTP 200；
+- [x] 1440px Desktop 与 390px Mobile full-page 截图检查通过，无横向溢出，产品图均为固定 1:1 比例；
+- [x] 共享模板与 CSS 只增加可选模块；URL、Title、Meta、H1、Schema 与 Hero 未修改；
 - [ ] 所有者完成英文草稿与页面视觉审核；
-- [ ] LocalWP 启动后完成 1440 × 900 与 390 × 844 渲染复核。
 
 ### 生产 / 部署后
 
 - [ ] 页面返回 HTTP 200、可索引、自引用 Canonical且保持单一 H1；
 - [ ] 新产品范围、Development inputs、Testing 规格卡、两张执行卡、四个 Buyer Questions 和三条新增指南内链完整；
-- [ ] 四张原图及其响应式 WebP 正常加载；
+- [ ] 四张原产品范围图片与新增 8 张产品立体图的响应式资源正常加载；
+- [ ] Merino `Buyer Questions` 可通过键盘展开，其他品类保持原卡片结构；
 - [ ] 其他六个品类页不输出 Merino 专属内容且无布局回归；
 - [ ] Desktop / Mobile 无横向溢出或文字截断；
 - [ ] 所有者确认后完成部署。
