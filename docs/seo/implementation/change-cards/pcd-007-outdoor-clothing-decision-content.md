@@ -4,12 +4,12 @@
 - Finding type：`review`
 - 变更类型：V1.3 B 类采购决策完整性改进候选
 - 优先级：P1
-- 状态：`audit-complete / needs-owner-input`
+- 状态：`implemented-local / owner-review`
 - 审计日期：2026-09-08
 - 目标页面：`/outdoor-clothing-manufacturer/`
 - 目标市场：美国、英国、加拿大
 - 主要官网任务：`Discover / Qualify / Verify / Start`
-- 当前 Finding outcome：`deferred / owner-capability-input`
+- 当前 Finding outcome：`changed / owner-review`
 
 ## 数据与技术状态
 
@@ -94,13 +94,27 @@
 - 最小动作：仅在相应正文能够解释链接用途时增加上下文内链，不机械增加链接数量。
 - 允许 outcome：`changed`、`no-change`、`deferred`。
 
-## 需要所有者确认的一方能力
+## 所有者确认的一方能力
 
-实施前需要确认：
+所有者于 2026-09-08 确认：
 
-1. 可稳定生产的准确 Outdoor 产品范围，尤其是 base-layer tops/bottoms、thermal underwear、fleece tops/hoodies、mid-layers、jackets、softshell/hardshell、waterproof or seam-taped outerwear、hiking pants，以及 balaclavas / neck warmers / beanies；
-2. 买家可指定的材料和结构，例如 composition、GSM、single jersey、interlock、rib、fleece / brushed-back / grid structures、stretch/recovery、lamination or membrane、DWR 及 insulation；
-3. 可稳定提供的工艺与 customization，例如 FLATLOCK、ACTIVESEAM、COVERSTITCH、OVERLOCK、seamless、bonded-welded、taped seams、zippers、thumbholes、pockets、reinforced panels、printing、branding、labels 与 packaging；
-4. in-house 与第三方 testing 的真实边界，尤其是 colorfastness、shrinkage、pilling、GSM、fiber composition、stretch/recovery，以及 abrasion、thermal、moisture management、hydrostatic head / MVTR 是否可做、由谁做、是否必须客户指定标准。
+1. 审计列出的 Outdoor 产品均可稳定生产，包括 base-layer tops/bottoms、thermal underwear、fleece tops/hoodies、mid-layers、jackets、softshell/hardshell、waterproof or seam-taped outerwear、hiking pants，以及 balaclavas / neck warmers / beanies；
+2. 买家可以指定 composition、GSM、single jersey、interlock、rib、fleece / brushed-back / grid structures、stretch/recovery、lamination or membrane、DWR 与 insulation；但 Athletik 的制造范围限于针织和 knit-based 结构，非针织面料结构无法承接；
+3. 审计列出的 FLATLOCK、ACTIVESEAM、COVERSTITCH、OVERLOCK、seamless、bonded-welded、taped seams、zippers、thumbholes、pockets、reinforced panels、printing、branding、labels 与 packaging 均可提供；
+4. colorfastness、shrinkage、pilling、GSM、fiber composition、stretch/recovery、abrasion、thermal、moisture management、hydrostatic head 与 MVTR 均可提供测试；需要独立第三方测试时，由客户指定要求。
 
-在上述输入完成前，不实施正文，不修改 URL、Title、Meta、H1、Schema 或图片，也不把 PCD-007 加入 SEO V2 Backlog。
+## 本地实施
+
+2026-09-08 在 `inc/product-category-data.php` 完成以下受控修改：
+
+- 重写 Hero intro 与 4 个既有产品说明，把性能结果绑定 intended use、approved specification、agreed test method 与 acceptance criteria，移除无条件的对比和性能承诺；
+- 将 Development inputs 扩展到 activity / climate、composition、GSM、knit structure、stretch/recovery、weather protection、construction、testing、quantity 与 tech pack / reference sample，并明确非针织面料结构不属于本页生产范围；
+- 新增 2 张 Outdoor customization / quality control 执行卡，覆盖已确认的产品、工艺、配件、测试与第三方测试边界；
+- 新增 4 个折叠 Buyer Questions，回答 MOQ、sampling inputs、knit-based jackets / hiking pants / waterproof styles 与性能验证；
+- 以 5 阶段采购流程替换 Outdoor 的通用三卡规格条，从 Project Brief & Quotation 到 Export & Delivery；
+- 增加 FLATLOCK、Tech Pack 与 QC 三条上下文技术指南内链；
+- 保留 URL、Title、Meta、H1、Schema 类型、图片和 4 个既有产品卡结构，不创建 Outdoor Apparel、Base Layer 或其他平行 URL。
+
+本地验收：PHP 8.2.30 语法通过；数据层仍为 7 个品类，Outdoor 输出 4 个既有产品卡、2 张执行卡、4 个 Buyer Questions、5 个采购步骤和 6 条 Related 链接；`git diff --check` 通过。LocalWP 未监听 80/443，因此浏览器级渲染与生产 HTTP、Canonical、H1、Schema、响应式布局验收留到部署后 Day 0。
+
+当前需要所有者审核英文正文。审核通过并部署后，将 Finding outcome 转为 `changed / measuring`；本项不加入 SEO V2 Backlog。

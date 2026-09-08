@@ -415,7 +415,7 @@ function myathletik_product_category_data() {
 			'social_image_height' => 627,
 			'social_image_alt'    => __( 'Cycling apparel and outdoor performance knitwear', 'myathletik-child' ),
 			'social_image_type'   => 'image/jpeg',
-			'intro'            => __( 'Outdoor clothing built for the elements - hiking, skiing, trekking, and cold-weather layering systems where warmth, moisture transport, and abrasion resistance come first. We produce base layers, mid-layers, and performance tops for outdoor brands whose customers push into conditions sportswear was never meant to handle.', 'myathletik-child' ),
+			'intro'            => __( 'Outdoor clothing programs for hiking, skiing, trekking, and cold-weather use, developed in knitted and knit-based fabrics. We manufacture base layers, thermal underwear, mid-layers, fleece tops and hoodies, outdoor jackets, hiking pants, and accessories such as balaclavas, neck warmers, and beanies. Material, construction, protection, and testing requirements are defined against the buyer\'s intended activity, climate, and approved specification.', 'myathletik-child' ),
 			'what_we_make'     => array(
 				__( 'Mid-layer tops and hoodies', 'myathletik-child' ),
 				__( 'Cold-weather layering pieces', 'myathletik-child' ),
@@ -425,7 +425,7 @@ function myathletik_product_category_data() {
 			'subcategories'    => array(
 				array(
 					'title'       => __( 'Mid-layer tops and hoodies', 'myathletik-child' ),
-					'description' => __( 'Insulating mid-layers in Genesis fleece and thermal knits that trap warm air without restricting movement. Hooded and crew options for layering over a base layer and under a shell.', 'myathletik-child' ),
+					'description' => __( 'Hooded, crew, and zip-front mid-layers can be developed in Genesis fleece, brushed-back fabrics, grid structures, and other thermal knits. Fabric weight, stretch, construction, and warmth targets are selected for the intended layering system and confirmed through sampling.', 'myathletik-child' ),
 					'image'       => 'outdoor clothing/IMG_7776(1)_4X3.JPG',
 					'image_alt'    => __( 'Model wearing a coral zip-front performance mid-layer', 'myathletik-child' ),
 					'image_width'  => 1600,
@@ -438,7 +438,7 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Cold-weather layering pieces', 'myathletik-child' ),
-					'description' => __( 'Heavier-weight knit tops and bottoms designed for stationary and low-output cold-weather use. Brushed interiors for warmth in hunting blinds, ski lifts, and winter commuting.', 'myathletik-child' ),
+					'description' => __( 'Knit tops, bottoms, and thermal underwear can be developed for stationary, low-output, or active cold-weather use. Composition, GSM, brushed or fleece surfaces, fit, and layering clearance are specified for the target climate and activity.', 'myathletik-child' ),
 					'image'       => 'outdoor clothing/IMG_7874(1)_4X3.JPG',
 					'image_alt'    => __( 'Model wearing a gray marl zip-front outdoor mid-layer', 'myathletik-child' ),
 					'image_width'  => 1600,
@@ -451,7 +451,7 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Hiking and trekking knitwear', 'myathletik-child' ),
-					'description' => __( 'Durable, abrasion-resistant knits built for repeated days on trail. Merino blends and synthetic performance knits that regulate temperature across long ascents and variable conditions.', 'myathletik-child' ),
+					'description' => __( 'Knit hiking tops, layers, jackets, and pants can be developed around the required fit, stretch, pocket layout, reinforcement, and weather-protection details. Abrasion, thermal, moisture-management, and recovery requirements are checked against the agreed test method and acceptance criteria.', 'myathletik-child' ),
 					'image'       => 'outdoor clothing/1U153835(1)_4X3.JPG',
 					'image_alt'    => __( 'Model wearing a blue hooded hiking mid-layer', 'myathletik-child' ),
 					'image_width'  => 1600,
@@ -464,7 +464,7 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Merino-blend and Genesis fleece insulation layers', 'myathletik-child' ),
-					'description' => __( 'Hybrid insulation blending natural merino warmth with synthetic durability. Genesis fleece options add loft and structure for technical layering systems.', 'myathletik-child' ),
+					'description' => __( 'Merino wool blends, synthetic thermal knits, and Genesis fleece can be specified for next-to-skin, insulation, or mid-layer applications. Composition, structure, loft, hand feel, stretch, and care requirements are confirmed for each program.', 'myathletik-child' ),
 					'image'       => 'outdoor clothing/1U153247(1)_4X3.JPG',
 					'image_alt'    => __( 'Model wearing a gray thermal base-layer set', 'myathletik-child' ),
 					'image_width'  => 1600,
@@ -476,7 +476,33 @@ function myathletik_product_category_data() {
 					),
 				),
 			),
-			'construction'     => __( 'Same FLATLOCK and ACTIVESEAM construction as our sportswear, but in fabrics chosen for the outdoors - thermal knits, merino blends, and Genesis fleece that trap warmth and move moisture away from the skin. The seams that prevent chafing in a gym become, in heavier weights, the durability a hiker needs under a pack strap.', 'myathletik-child' ),
+			'construction'     => sprintf( __( 'Send the product type, intended activity and climate, target market, size range, fit, composition, GSM, knit structure, stretch and recovery targets, weather-protection requirements, seam map, trims, artwork, testing criteria, order quantity, and tech pack or reference sample. Buyers can specify single jersey, interlock, rib, fleece, brushed-back or grid structures, together with knit-based lamination or membrane, DWR, and insulation requirements. Construction options include FLATLOCK, ACTIVESEAM, COVERSTITCH, OVERLOCK, seamless, bonded-welded, and taped seams, plus project-specific zippers, thumbholes, pockets, reinforcement, branding, labels, and packaging. Our manufacturing scope is knitted and knit-based outdoor clothing; non-knit fabric constructions are outside this page\'s production scope. Public garment MOQ is %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+			'process_kicker'    => __( 'Procurement workflow', 'myathletik-child' ),
+			'process_heading'   => __( 'From outdoor product brief to delivered order', 'myathletik-child' ),
+			'process_intro'     => __( 'Each outdoor program moves through defined material, construction, testing, and approval points. Exact timing, test methods, acceptance criteria, commercial terms, and delivery responsibilities are confirmed in the project quotation.', 'myathletik-child' ),
+			'process_steps'     => array(
+				array(
+					'title'       => __( 'Project Brief & Quotation', 'myathletik-child' ),
+					'description' => __( 'Share the product type, target activity and climate, market, material and protection requirements, fit, features, testing needs, quantity, timing, and delivery destination. We review the knitted or knit-based route, missing inputs, and quotation variables.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Material & Sample Development', 'myathletik-child' ),
+					'description' => __( 'Composition, GSM, knit structure, color, finish, lamination or membrane requirements, construction, trims, and sample route are developed against the brief. Sampling timing depends on material and style complexity.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Approval & Order Confirmation', 'myathletik-child' ),
+					'description' => sprintf( __( 'Approve the material, fit, measurements, construction, test methods, acceptance criteria, and packaging. Confirm final quantity, color and size breakdown, and production terms; public garment MOQ is %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				),
+				array(
+					'title'       => __( 'Bulk Production & Quality Control', 'myathletik-child' ),
+					'description' => __( 'Bulk production follows the approved sample and current specification. Incoming material, in-line and final garment checks, together with agreed performance testing, are reviewed before shipment release.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Export & Delivery', 'myathletik-child' ),
+					'description' => __( 'Packing instructions, standard export documents, freight booking information, and delivery scope are aligned before dispatch. Final shipping terms are confirmed for the order.', 'myathletik-child' ),
+				),
+			),
+			'process_link'      => myathletik_related_link( __( 'Review the full OEM/ODM service workflow', 'myathletik-child' ), '/services/' ),
 			'image_note'       => __( '[IMAGE: real outdoor clothing shots]', 'myathletik-child' ),
 			'gallery'          => array(
 				myathletik_gallery_item( 'outdoor clothing/flatlock-athletic-800-4.jpg', __( 'Outdoor clothing FLATLOCK product detail', 'myathletik-child' ) ),
@@ -486,9 +512,58 @@ function myathletik_product_category_data() {
 				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-17.jpg', __( 'Outdoor merino base layer product sample', 'myathletik-child' ) ),
 				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-18.jpg', __( 'Outdoor performance base layer sample', 'myathletik-child' ) ),
 			),
+			'assurance_kicker'  => __( 'Program execution', 'myathletik-child' ),
+			'assurance_heading' => __( 'Outdoor customization and quality checkpoints', 'myathletik-child' ),
+			'assurance_intro'   => __( 'Product scope, material, construction, and testing requirements are recorded in the current specification and approved sample so development and bulk production can be reviewed against the same criteria.', 'myathletik-child' ),
+			'assurance_cards'   => array(
+				array(
+					'title'       => __( 'Knit product and construction scope', 'myathletik-child' ),
+					'description' => __( 'Outdoor programs are developed in knitted and knit-based fabrics for the buyer\'s intended activity, climate, fit, protection level, and branding requirements.', 'myathletik-child' ),
+					'items'       => array(
+						__( 'Base layers, thermal underwear, mid-layers, fleece tops, hoodies, outdoor jackets, and hiking pants', 'myathletik-child' ),
+						__( 'Balaclavas, neck warmers, beanies, and related knit accessories', 'myathletik-child' ),
+						__( 'FLATLOCK, ACTIVESEAM, COVERSTITCH, OVERLOCK, seamless, bonded-welded, and taped-seam options by project', 'myathletik-child' ),
+						__( 'Zippers, thumbholes, pockets, reinforced panels, printing, branding, labels, and packaging', 'myathletik-child' ),
+					),
+				),
+				array(
+					'title'       => __( 'Outdoor quality and testing checkpoints', 'myathletik-child' ),
+					'description' => __( 'The quality plan is set against the approved material and garment specification, sample, test method, and buyer acceptance criteria.', 'myathletik-child' ),
+					'items'       => array(
+						__( 'Material identity, GSM, color, shrinkage, pilling, stretch, and recovery', 'myathletik-child' ),
+						__( 'Construction, measurements, seam placement, trims, workmanship, and packaging', 'myathletik-child' ),
+						__( 'Abrasion, thermal, moisture-management, hydrostatic head, and MVTR requirements against the agreed method', 'myathletik-child' ),
+						__( 'In-house testing, with customer-specified third-party testing when required', 'myathletik-child' ),
+					),
+					'link'        => myathletik_related_link( __( 'Review the Garment Quality Control Checklist', 'myathletik-child' ), '/garment-quality-control-checklist/' ),
+				),
+			),
+			'buyer_questions_heading'     => __( 'Questions buyers ask before starting an outdoor clothing program', 'myathletik-child' ),
+			'buyer_questions_collapsible' => true,
+			'buyer_questions'             => array(
+				array(
+					'question' => __( 'What is the MOQ for outdoor clothing?', 'myathletik-child' ),
+					'answer'   => sprintf( __( 'The public garment MOQ is %s pieces per style. Material, color, size allocation, sampling, testing, and final production terms are confirmed in the project quotation.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				),
+				array(
+					'question' => __( 'What should a buyer provide before outdoor sampling?', 'myathletik-child' ),
+					'answer'   => __( 'Provide the product type, intended activity and climate, target market, size range, fit, composition, GSM, knit structure, stretch and recovery targets, protection requirements, feature and seam details, artwork, testing criteria, quantity, and tech pack or reference sample.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Can Athletik produce outdoor jackets, hiking pants, and waterproof styles?', 'myathletik-child' ),
+					'answer'   => __( 'Yes, when the program uses knitted or knit-based fabric construction. Jackets, hiking pants, laminated or membrane-based layers, DWR requirements, and taped-seam options are developed against the buyer\'s specification. Non-knit fabric constructions are outside this page\'s production scope.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'How are outdoor performance requirements verified?', 'myathletik-child' ),
+					'answer'   => __( 'The buyer defines the intended use, test method, and acceptance criteria. Testing can cover colorfastness, shrinkage, pilling, GSM, fiber composition, stretch/recovery, abrasion, thermal performance, moisture management, hydrostatic head, and MVTR. Customer-specified third-party testing can be arranged when required.', 'myathletik-child' ),
+				),
+			),
 			'related'          => array(
 				myathletik_related_link( __( 'Sportswear Manufacturer', 'myathletik-child' ), '/sportswear-manufacturer/' ),
 				myathletik_related_link( __( 'Merino Wool Manufacturer', 'myathletik-child' ), '/merino-wool-manufacturer/' ),
+				myathletik_related_link( __( 'FLATLOCK vs OVERLOCK Guide', 'myathletik-child' ), '/flatlock-vs-overlock-technical-knitwear/' ),
+				myathletik_related_link( __( 'Technical Knitwear Tech Pack Guide', 'myathletik-child' ), '/technical-knitwear-tech-pack-guide/' ),
+				myathletik_related_link( __( 'Garment Quality Control Checklist', 'myathletik-child' ), '/garment-quality-control-checklist/' ),
 				myathletik_related_link( __( 'Our Services', 'myathletik-child' ), '/services/' ),
 			),
 		),
