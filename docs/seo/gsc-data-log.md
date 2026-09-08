@@ -15,6 +15,39 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-09-08：SEO-V2-005 Underwear Day 7
+
+### 来源与覆盖
+
+- 本次为 `/underwear-manufacturer/` targeted Day 7 复查；`seo` CLI `0.2.36`、Google 登录、GSC readonly scope 与 GA4 readonly scope 均通过。
+- `measure-change` 请求部署前后各 7 天，但 GSC `dataState: final` 当前只到 2026-09-04，因此实际比较 2026-08-28 至 08-31 与 2026-09-01 至 09-04 各 4 个完整日。报告为 `partial`、`afterWindowTruncated=true`，结论为 `not-enough-data / low confidence`。
+- `page-opportunities` 使用 2026-08-08 至 09-04 的 final 28 天 Query × Page 数据；精确 URL 返回 3 行、无截断，生产内容验证为 `verified`。
+- `index-watch` 为 `complete`：1/1 inspected、0 failed、0 quota blocked、0 current issue、0 regression。
+
+### 搜索表现与 Query
+
+部署前 4 个最终日为 0 clicks / 1 impression / average position 10；部署后 4 个最终日为 0 clicks / 2 impressions / average position 36。绝对样本只有 1–2 impressions，不能把排名差异解释为下降、趋势或改版因果。GA4 同一 before / after 窗口均为 0 landing-page sessions / 0 engaged sessions / 0 conversions。
+
+生产页当前 28 天 Page 汇总为 0 clicks / 24 impressions / average position 24.04。可见 Query × Page 仅有 3 行，均为 1 impression：
+
+| Query | Clicks | Impressions | Average position | 处置 |
+|---|---:|---:|---:|---|
+| `underwear` | 0 | 1 | 2 | 宽泛且单次曝光，不做 CTR 或 Title 实验 |
+| `mens underwear` | 0 | 1 | 20 | 页面正文已覆盖 men's underwear；不因机械词面提示修改 Title / H1 |
+| `stretch performance base layers oem` | 0 | 1 | 45 | 与页面 performance / base layer / OEM 范围相容；继续观察 |
+
+Query 明细受低量匿名化影响，3 次可见曝光不是 24 次 Page impressions 的完整解释。报告把三行均列为 `serp-framing` 或 CTR review，并估算 0.15 click lift；在每行仅 1 impression、没有 peer sample 且低于项目 100 impressions 门槛时，这些是机械建议，不构成改页证据。
+
+### 索引与生产状态
+
+- URL Inspection：`PASS / Submitted and indexed`，`INDEXING_ALLOWED / ALLOWED / SUCCESSFUL`；Google Canonical 与用户 Canonical 均为规范 URL。
+- Google 最后抓取时间为 `2026-09-07T05:02:43Z`，晚于 2026-09-01 部署；此前快照最后抓取为 `2026-08-22T17:46:29Z`。这证明 Google 已抓取部署后页面，但不证明新增正文产生排名提升。
+- 生产页 HTTP 200、`follow, index`、无 X-Robots-Tag、自引用 Canonical、单一 `Underwear Manufacturer` H1；Title 与 Meta 保持既有核准值。
+- JSON-LD 0 invalid，主图、Open Graph 与 Twitter 图为既有 1200 × 627 JPEG；页面 6 张图片均有 alt，未发现 oversized candidate 或 mixed content。
+- Page Sitemap 包含规范 URL，首页保留可抓取入口；页面级审计为 0 issues / 0 recommendations。唯一 Warning 是工具排除 1 个 non-HTTP link，不是页面缺陷。
+
+Finding outcome：`no-change / measuring`。Day 7 的发现、抓取、索引和生产健康目标通过；效果比较因只有 4 个最终日且绝对样本极低保持 `not-enough-data`。不修改 URL、Title、Meta、H1、正文、Schema、图片或页面所有权；下一正式复盘为 2026-09-29 的 Day 28。
+
 ## 2026-09-08：2026 年 8 月自然月 GSC / GA4 / 询盘基线
 
 ### 来源与口径

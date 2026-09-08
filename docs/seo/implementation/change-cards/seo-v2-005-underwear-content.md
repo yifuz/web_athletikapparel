@@ -86,6 +86,6 @@
 ## 复盘窗口
 
 - Day 0：生产 HTML、索引信号、正文、内链与视觉验收；
-- Day 7：检查抓取、索引、Google Title 采用和明显 Query 偏移，不因小样本继续改页；
-- Day 28：按相同口径比较页面 GSC clicks / impressions / Query / country、GA4 Organic Search 与人工核验有效询盘；
-- Day 90：结合季节性和其他发布记录决定 `keep`、`iterate` 或 `revert`。
+- Day 7（2026-09-08）：已完成。URL Inspection 为 `PASS / Submitted and indexed`，Google 于 2026-09-07 重新抓取部署后页面，Canonical 一致且无索引回归。生产页 HTTP 200、可索引、单一 H1、0 invalid JSON-LD，Sitemap 与首页入口保持。GSC final 只到 09-04，部署前后各只有 4 个完整日且绝对样本为 1–2 impressions，报告为 `partial / not-enough-data`；当前 final 28 天页面为 0 clicks / 24 impressions，可见 3 个 Query 各 1 impression。GA4 同一 before / after 均为 0 landing sessions。工具生成的 Title / Meta 建议低于 100 impressions 门槛，处置为 `not-needed / low-sample`；outcome 保持 `no-change / measuring`；
+- Day 28（2026-09-29）：按相同口径比较页面 GSC clicks / impressions / Query / country、GA4 Organic Search 与人工核验有效询盘；
+- Day 90（2026-11-30）：结合季节性和其他发布记录决定 `keep`、`iterate` 或 `revert`。
