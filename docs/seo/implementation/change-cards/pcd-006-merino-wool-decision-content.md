@@ -4,8 +4,10 @@
 - Finding type：`review`
 - 变更类型：V1.3 B 类采购决策完整性改进
 - 优先级：P1
-- 状态：`local-implemented / owner-review`
+- 状态：`production-accepted / measuring`
 - 本地实施日期：2026-09-07
+- 生产部署日期：2026-09-07
+- 生产验收日期：2026-09-08
 - 目标页面：`/merino-wool-manufacturer/`
 - 主要官网任务：`Qualify / Verify / Start`
 - 搜索与采购意图：Merino wool clothing manufacturer、Merino wool base layer manufacturer、custom Merino wool apparel
@@ -95,17 +97,17 @@ URL、Title、Meta、H1、Canonical、Schema 类型、Hero、MOQ 和页面所有
 - [x] 1440px Desktop 与 390px Mobile full-page 截图检查通过，无横向溢出，产品图均为固定 1:1 比例；
 - [x] 共享模板与 CSS 只增加可选模块；URL、Title、Meta、H1、Schema 与 Hero 未修改；
 - [x] Merino 采购流程在 Desktop 为五阶段横向顺序卡、Tablet 为 2 列、Mobile 为单列；阶段内容与 Services、Tech Pack、QC 和出口口径一致；
-- [ ] 所有者完成英文草稿与页面视觉审核；
+- [x] 所有者完成英文草稿与页面视觉审核并部署；
 
 ### 生产 / 部署后
 
-- [ ] 页面返回 HTTP 200、可索引、自引用 Canonical且保持单一 H1；
-- [ ] 新产品范围、Development inputs、Testing 规格卡、两张执行卡、四个 Buyer Questions 和三条新增指南内链完整；
-- [ ] 四张原产品范围图片与新增 8 张产品立体图的响应式资源正常加载；
-- [ ] Merino `Buyer Questions` 可通过键盘展开，其他品类保持原卡片结构；
-- [ ] Merino 五阶段采购流程与 `/services/` 内链完整，其他六个品类的既有三卡规格条保持不变；
-- [ ] 其他六个品类页不输出 Merino 专属内容且无布局回归；
-- [ ] Desktop / Mobile 无横向溢出或文字截断；
-- [ ] 所有者确认后完成部署。
+- [x] 页面返回 HTTP 200、可索引、自引用 Canonical且保持单一 H1；
+- [x] 新产品范围、Development inputs、Testing 规格卡、两张执行卡、四个 Buyer Questions 和三条新增指南内链完整；
+- [x] 四张原产品范围图片与新增 8 张产品立体图的响应式资源正常加载；页面引用的 42 个 Merino 图像/视频资源均返回 HTTP 200，其中 24 个新增衍生图片 URL 全部返回正确 WebP/JPEG MIME；
+- [x] Merino `Buyer Questions` 继续使用原生 `<details>` / `<summary>` 键盘语义，其他品类保持原卡片结构；
+- [x] Merino 五阶段采购流程与 `/services/` 内链完整，其他六个品类的既有三卡规格条保持不变；
+- [x] 其他六个品类页不输出 Merino 专属内容且无布局回归；7/7 品类页均返回 HTTP 200 并保持单一 H1；
+- [x] 1440 × 900 Desktop 与 390 × 844 Mobile 生产渲染无横向溢出或文字截断；
+- [x] 所有者确认后完成部署。
 
-当前 Finding outcome：`changed / owner-review`。生产部署后转为 `changed / measuring`；Day 28 / 90 分别复查 GSC Query、页面互动与有效询盘，不与 Title / Meta 实验混合归因。
+当前 Finding outcome：`changed / measuring`。以 2026-09-07 生产部署为观察起点，Day 7 / 28 / 90 分别为 2026-09-14、2026-10-05、2026-12-06；复查 GSC Query、页面互动与有效询盘，不与 Title / Meta 实验混合归因。
