@@ -4,12 +4,12 @@
 - Finding type：`review`
 - 变更类型：V1.3 B 类采购决策完整性改进候选
 - 优先级：P1
-- 状态：`implemented-local / owner-review`
+- 状态：`deployed / measuring`
 - 审计日期：2026-09-08
 - 目标页面：`/outdoor-clothing-manufacturer/`
 - 目标市场：美国、英国、加拿大
 - 主要官网任务：`Discover / Qualify / Verify / Start`
-- 当前 Finding outcome：`changed / owner-review`
+- 当前 Finding outcome：`changed / measuring`
 
 ## 数据与技术状态
 
@@ -117,4 +117,16 @@
 
 本地验收：PHP 8.2.30 语法通过；数据层仍为 7 个品类，Outdoor 输出 4 个既有产品卡、2 张执行卡、4 个 Buyer Questions、5 个采购步骤和 6 条 Related 链接；`git diff --check` 通过。LocalWP 未监听 80/443，因此浏览器级渲染与生产 HTTP、Canonical、H1、Schema、响应式布局验收留到部署后 Day 0。
 
-当前需要所有者审核英文正文。审核通过并部署后，将 Finding outcome 转为 `changed / measuring`；本项不加入 SEO V2 Backlog。
+## Day 0 生产验收
+
+所有者于 2026-09-08 确认部署。生产验收采用 targeted coverage，结果如下：
+
+- 页面 HTTP 200、无重定向、`index`、自引用 Canonical、单一 H1；Title、Meta、H1、OG/Twitter 与 JSON-LD 类型保持不变，1 个 JSON-LD block 可解析且无 invalid JSON-LD；
+- 新 intro、4 个条件化产品说明、Development inputs、2 张执行卡、4 个折叠 Buyer Questions、5 个采购步骤和 6 条 Related 链接均由服务器端 HTML 输出；页面正文提取从审计前约 286 words 增至约 904 words；
+- QC Guide、Tech Pack Guide、FLATLOCK Guide 与 Services 四个目标 URL 均返回 HTTP 200；Page Sitemap 与首页继续提供 Outdoor 的可抓取入口；
+- 7/7 品类页均返回 HTTP 200 并保持单一 H1；Outdoor 专属范围、问答和流程标记只在目标页出现，没有泄漏到其他六页；
+- 页面解析出的 34 个 CSS、JS、字体和图片资源中，33 个返回 HTTP 200；唯一 404 是 Cloudflare 注入的 `/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js`。同一控制台 404 与 Turnstile `async/defer` 提示也出现在未改动的 Merino 控制页，判定为既有全站脚本问题，不是 PCD-007 回归，也不阻止本次验收；
+- 1440 × 900 与 390 × 844 浏览器检查通过。移动端 `innerWidth / clientWidth / document scrollWidth / body scrollWidth` 均为 390，0 个真实越界元素；桌面端 document/body scrollWidth 均为 1440。2 张执行卡、4 个问答和 5 个采购步骤均正常布局，问答可展开并显示答案；
+- URL Inspection 数据状态 `complete`，1/1 inspected、0 failed、0 issue、0 regression；结果仍为 `PASS / Submitted and indexed`，Canonical 一致，最后抓取时间 `2026-09-03T20:21:04Z`。该索引快照早于本次部署，只证明既有索引状态，不证明 Google 已抓取新正文。
+
+验收结论：`changed / measuring`。以 2026-09-08 为观察起点，Day 7 / 28 / 90 分别为 2026-09-15、2026-10-06、2026-12-07；在数据门槛或明确范围问题出现前，不修改 URL、Title、Meta、H1 或页面所有权，也不把本项加入 SEO V2 Backlog。
