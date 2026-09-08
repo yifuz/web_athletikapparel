@@ -67,6 +67,6 @@ Day 0 说明：最初使用 Edge `--window-size=390,844` 截取外窗时出现�
 ## 复盘窗口
 
 - Day 0：生产 HTML、索引信号、正文边界和视觉验收；
-- Day 7（2026-09-08）：只检查抓取、索引与明显 Query 偏移，不继续改文案；
+- Day 7（2026-09-08）：已完成。URL Inspection 为 `PASS / Submitted and indexed`，Google 于 2026-09-05 重新抓取部署后页面，Canonical 一致且无索引回归。GSC final 数据只到 2026-09-03，部署后仅 3 个完整日，搜索比较为 `partial / not-enough-data`；当前 28 天可见 Query 为 0 clicks / 7 impressions，其中目标词 `functional knitted fabrics factory` 占 5 impressions，另外两个 Query 各 1 impression，不构成明确主题偏移。生产 HTTP、Sitemap、首页入口、结构化数据、能力文案和 36 个图片候选 URL 均通过，outcome 为 `no-change / measuring`；
 - Day 28（2026-09-29）：按相同口径比较页面 GSC clicks / impressions / Query / country、GA4 Organic Search 与人工核验询盘；
 - Day 90（2026-11-30）：结合季节性和其他发布记录决定 `keep`、`iterate` 或 `revert`。

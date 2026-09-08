@@ -15,6 +15,42 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-09-08：SEO-V2-005 Knitted Fabrics Day 7
+
+### 来源与覆盖
+
+- `seo` CLI 版本为项目已验证的 `0.2.36`；`seo doctor` 通过 Google 登录、GSC readonly scope 与默认属性检查。
+- `measure-change` 请求部署前后各 7 天，但 GSC `dataState: final` 当前只到 2026-09-03，因此实际只能比较 2026-08-29 至 08-31 与 2026-09-01 至 09-03 各 3 个完整日；报告状态为 `partial`、`afterWindowTruncated=true`，结论为 `not-enough-data / low confidence`。
+- `page-opportunities` 使用 2026-08-07 至 09-03 的 final 28 天 Query × Page 数据，精确 URL 共 3 行、无分页截断，生产页面验证为 `verified`。
+- `index-watch` 为 `complete`：1/1 inspected、0 failed、0 quota blocked、0 current issue、0 regression。
+- 生产页面定向检查覆盖 HTTP、robots、Canonical、H1、JSON-LD、Sitemap、首页入口、已部署能力表达和页面媒体资源。
+
+### 搜索表现与 Query
+
+部署前 3 个完整日为 0 clicks / 9 impressions / average position 49.222；部署后 3 个完整日为 0 clicks / 4 impressions / average position 31.75。曝光差值 -5、平均排名方向改善 17.472，但只有 3 个部署后最终日，不能据此判断增长、下降或因果。
+
+当前 final 28 天精确 URL 可见 Query 为 0 clicks / 7 impressions：
+
+| Query | Clicks | Impressions | Average position | 处置 |
+|---|---:|---:|---:|---|
+| `functional knitted fabrics factory` | 0 | 5 | 32.6 | 与页面所有权和已部署 functional knits / own fabric mill 内容一致；继续观察 |
+| `acetate knit fabric manufacturer` | 0 | 1 | 73 | 单次曝光且 Acetate 能力未获一方确认；不追加正文 |
+| `lightweight performance knit tops factory` | 0 | 1 | 95 | 单次、偏成衣意图；不足以判定主题偏移或改变页面所有权 |
+
+GSC Query 受低量匿名化影响，以上 7 次可见 Query 曝光不是页面总曝光的替代。工具生成的三个 `content-gap` 建议均属于机械词项覆盖提示；页面已明确覆盖 `functional knitted fabrics`，不因缺少精确单词 `factory`、Acetate 或 `tops` 而堆词或扩页。
+
+GA4 同一 3 日 before / after 落地页均返回 0 sessions / 0 engaged sessions / 0 conversions。数据源状态为 `complete`，但极低样本不能支持转化判断。
+
+### 索引与生产状态
+
+- URL Inspection：`PASS / Submitted and indexed`，`INDEXING_ALLOWED / ALLOWED / SUCCESSFUL`；Google Canonical 与用户 Canonical 均为规范 URL。
+- Google 最后抓取时间为 `2026-09-05T00:01:46Z`，晚于 2026-09-01 部署；此前快照最后抓取为 `2026-08-22T23:20:47Z`。
+- 当前搜索结果快照展示既有 Title `Knitted Fabrics Manufacturer | Athletik Clothing`，并已提取新 H2 与 own fabric mill / in-house testing 正文。该快照不保证所有 Query、地区和设备都采用相同摘要。
+- 生产页 HTTP 200、`follow, index`、无 X-Robots-Tag、自引用 Canonical、单一 H1、1/1 JSON-LD 可解析；Page Sitemap 保留规范 URL，首页有 2 个可抓取入口。
+- 新 H2、`our own fabric mill` 与 `in-house testing` 均存在，Beta Textiles / BTEXCO 公开提及为 0；页面发现的 36 个唯一图片候选 URL 全部返回 HTTP 200。
+
+Finding outcome：`no-change / measuring`。Day 7 的抓取、索引和生产健康目标通过；搜索效果比较因只有 3 个最终日保持 `not-enough-data`，不修改 URL、Title、Meta、H1、正文、Schema 或页面所有权。下一正式复盘为 2026-09-29 的 Day 28。
+
 ## 2026-09-07：本周 SEO 监测与 SEO-V2-015 Day 7
 
 ### 来源与覆盖
