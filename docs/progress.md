@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-09-07。
+最后更新：2026-09-08。
 
 ---
 
@@ -288,7 +288,7 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 - 所有者已确认 `our own fabric mill` 与 `in-house testing` 可以作为当前能力表达；Beta Textiles 资料可作为内部一方证据，但公开页面不关联两个品牌；
 - V1 没有改变现有 URL、H1 或主要页面所有权，也没有创建 Activewear/Fitness、Performance Fabrics 等近义平行页；
 - V1 于 2026-08-25 正式关闭，完整范围与逐项处置见 [`SEO 审计汇总与实施清单 V1`](seo/seo-implementation-checklist-v1.md)；后续工作统一进入 [`SEO V2 Backlog`](seo/v2-backlog.md)。
-- SEO-V2-002 已于 2026-08-27 完成 2026-07-26 至 08-22 的 GSC / GA4 / 询盘基线：GSC 为 5 点击 / 184 曝光，GA4 Organic Search 为 2 sessions / 0 `generate_lead` / 0 有效询盘；8 次全站 `generate_lead` 中有效询盘 1 次，来自 Organic Social，其余 7 次未计入有效询盘。全部页面与可见查询低于 100 曝光门槛，决策为 `no-change / completed`。
+- SEO-V2-002 已完成并于 2026-09-08 补齐 8 月自然月基线：GSC 为 8 clicks / 329 impressions，GA4 为 112 sessions，Organic Search 为 2 sessions / 0 `generate_lead`。所有者最新确认 2026 年 8 月正式/有效询盘为 0，该结论取代此前将 08-01 事件记为有效询盘的旧分类；旧滚动快照仅作为历史审计轨迹保留。全部页面与可见查询低于 100 impressions 门槛，决策为 `no-change / baseline-established`。
 - SEO-V2-003 两批 URL Inspection 已覆盖当前 18 个 Sitemap 页面：17 个 `PASS / Submitted and indexed`；Services 为 `NEUTRAL / Discovered - currently not indexed`。Services 生产索引信号正常，所有者提供的 2026-08-28 17:28 GSC 实时测试已绿色通过，随后确认已请求编入索引一次；当前为 `monitoring`，不重复提交，后续复查 indexed snapshot。
 - SEO-V2-004 于 2026-08-27 完成当前轮只读复核：首页移动端 Lab LCP 3.66s，与既有 3.68s 中位数一致；Services 3 次有效 LCP 为 5.44s / 4.44s / 4.40s，中位数 4.44s，较既有 5.00s 改善。两页 TBT/CLS 无回归；CrUX 因未配置 API key 且匿名 PageSpeed API 返回 429 仍为 unavailable。结论为 `no-change / monitoring`，不改代码。
 - SEO-V2-006 当前为 `deferred / external-input`：ThomasNet 中国主体因真实 Zhangjiagang 地址无法选择和平台资格不明而暂缓；2026-08-29 所有者确认 OEKO-TEX Buying Guide / WRAP 公开列名所需 certificate / label number、持证主体、WRAP ID、有效期及门户列名状态短期无法提供，因此同步暂缓。不得以不完整认证信息继续登记；仅在对应外部条件或可核验凭据到位后重开。
@@ -664,6 +664,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-08 | V1.3 采购决策审计 PCD-007 Outdoor Clothing 完成诊断：生产页 HTTP 200、URL Inspection `PASS / Submitted and indexed`、Canonical 一致，GSC final 28 天为 0 clicks / 25 impressions / average position 22.64，但无可见 Query × Page 行，未达到 Title / Meta 实验门槛。DataForSEO 完成 US / GB / CA 两组核心词及 4 个 US 边界词共 10 次 Top 20 Live SERP，均为 complete，总成本 USD 0.040；核心词为 OEM、品牌、零售、目录与 AI Overview 混合意图，广义结果覆盖 jackets、pants、waterproof outerwear，而 Athletik 当前页面主要证明 technical knit base/mid layers。形成范围边界、采购决策信息、性能文案条件化与技术指南内链四项 review；状态 `audit-complete / needs-owner-input`，未改页面、未扩充 V2 Backlog。 |
 | 2026-09-08 | PCD-007 Outdoor Clothing 本地实施完成：所有者确认审计列出的 Outdoor 产品、针织材料/结构、工艺与测试均可稳定提供；制造范围限于 knitted / knit-based constructions，非针织面料结构不承接，需要第三方测试时由客户指定。页面草稿据此条件化既有性能文案，补充产品与 Development inputs、2 张 customization / QC 执行卡、4 个折叠 Buyer Questions、FLATLOCK / Tech Pack / QC 指南内链及 5 阶段采购流程。URL、Title、Meta、H1、Schema、图片和既有产品卡结构不变；PHP 语法、7 品类数据隔离与 diff 检查通过，状态 `changed / owner-review`，待英文审核、部署和 Day 0 生产验收。 |
 | 2026-09-08 | PCD-007 Outdoor Clothing Day 0 生产验收通过：HTTP 200、`index`、Canonical、单一 H1、Title/Meta/OG/Twitter 与 JSON-LD 均无回归；新增采购正文、2 张执行卡、4 个折叠问答、5 个流程步骤和 3 条技术指南内链完整，相关目标 URL 均为 200。7/7 品类页保持单一 H1，Outdoor 条件式数据未泄漏到其他页面；34 个解析资源仅 Cloudflare 全站邮箱解码脚本为既有 404，且 Turnstile 提示在 Merino 控制页同样存在，不归因于本次部署。1440 × 900 与 390 × 844 布局无真实横向溢出，问答可展开。URL Inspection 仍为 `PASS / Submitted and indexed`，但最后抓取 2026-09-03 早于部署；状态转为 `changed / measuring`，Day 7 / 28 / 90 为 2026-09-15、2026-10-06、2026-12-07。 |
+| 2026-09-08 | SEO-V2-002 补齐 2026 年 8 月自然月 GSC / GA4 / 询盘基线：GSC final 为 8 clicks / 329 impressions / 2.43% CTR / average position 23.27；GA4 为 112 sessions / 82 users / 48 engaged sessions，Organic Search 仅 2 sessions 且 0 `generate_lead`。全站记录 6 次 `generate_lead`，但所有者最新确认 8 月正式/有效询盘为 0；该业务真值取代此前将 08-01 事件记为有效询盘的旧分类。样本未达到页面或 Query 修改门槛，outcome 为 `no-change / baseline-established`。 |
 
 ---
 

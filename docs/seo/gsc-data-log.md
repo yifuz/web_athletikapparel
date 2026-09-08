@@ -15,6 +15,67 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-09-08：2026 年 8 月自然月 GSC / GA4 / 询盘基线
+
+### 来源与口径
+
+- 窗口统一为 2026-08-01 至 2026-08-31；GSC 使用 `dataState: final`，总量、Page、Query、Country 与 Device 均为完整 API 返回，无分页截断。GA4 Property `547377703` 返回 `complete`，Property 时区为 `Asia/Shanghai`。
+- 这是完整自然月补充基线，不替换 2026-07-26 至 08-22 的 28 天滚动基线；后者继续作为当时 SEO-V2-002 的执行快照。
+- 2026-09-08 所有者最新确认：**2026 年 8 月正式/有效询盘为 0**。该业务真值取代 2026-08-27 将 08-01 事件记为 1 次有效询盘的旧分类；旧条目保留为历史审计轨迹，后续月度比较统一使用 0。
+
+### GSC 自然搜索基线
+
+全站 Web Search 为 **8 clicks / 329 impressions / 2.43% CTR / average position 23.27**。
+
+| Device | Clicks | Impressions | CTR | Average position |
+|---|---:|---:|---:|---:|
+| Desktop | 6 | 277 | 2.17% | 26.00 |
+| Mobile | 2 | 52 | 3.85% | 8.71 |
+
+主要市场中，美国为 4 clicks / 164 impressions，英国为 1 / 14，加拿大为 0 / 3。美国贡献约一半 Property impressions，但总样本仍小，不据此判断市场质量或设备差异。
+
+Page 维度曝光靠前的规范页面如下。Page 行可能因同一搜索结果展示多个本站 URL 而与 Property 总量口径不同，不机械相加：
+
+| Page | Clicks | Impressions | CTR | Average position |
+|---|---:|---:|---:|---:|
+| `/` | 5 | 79 | 6.33% | 4.15 |
+| `/flatlock-vs-overlock-technical-knitwear/` | 0 | 68 | 0% | 18.13 |
+| `/about-us/` | 0 | 47 | 0% | 9.45 |
+| `/knitted-fabrics-manufacturer/` | 0 | 41 | 0% | 48.56 |
+| `/sportswear-manufacturer/` | 0 | 39 | 0% | 10.05 |
+| `/sports-accessories-manufacturer/` | 1 | 32 | 3.13% | 6.03 |
+| `/contact/` | 0 | 32 | 0% | 20.53 |
+| `/garment-quality-control-checklist/` | 1 | 31 | 3.23% | 31.58 |
+| `/merino-wool-manufacturer/` | 1 | 31 | 3.23% | 21.35 |
+
+Query 维度只返回 17 行、合计 45 impressions，且这些可见行均为 0 clicks；其余低量 Query 受 GSC 匿名化影响。可见量相对较高的查询为 `overlock vs flatlock`（9 impressions / position 9）、`flatlock vs overlock`（7 / 16.14）、`garment inspection checklist`（5 / 61.6）、`merino wool clothing manufacturer`（5 / 25.2）与 `flatlock stitch vs overlock`（4 / 9.75）。这些信号与现有页面所有权基本一致，但没有任何单页或 Query 达到 100 impressions 门槛。
+
+### GA4 流量与事件基线
+
+全站为 **112 sessions / 82 total users / 79 new users / 48 engaged sessions**；engagement rate 为 **42.86%**，average session duration 为 **158.60 seconds**，event count 为 503，key events 为 4。
+
+| Default channel group | Sessions | Total users | Engaged sessions | Event count |
+|---|---:|---:|---:|---:|
+| Direct | 54 | 48 | 12 | 214 |
+| Organic Social | 28 | 18 | 23 | 162 |
+| Paid Search | 24 | 16 | 12 | 104 |
+| Unassigned | 3 | 1 | 0 | 11 |
+| Organic Search | 2 | 2 | 1 | 10 |
+| AI Assistant | 1 | 1 | 0 | 2 |
+
+GA4 全站 Landing Page 以 `/` 73 sessions、`/sportswear-manufacturer` 18、`(not set)` 6、`/contact` 3 和 `/technical-knitwear-tech-pack-guide` 3 为主。Organic Search 只有 `/` 这一行，为 2 sessions / 2 users / 1 engaged session / 10 events；没有 `generate_lead` 行。
+
+8 月共记录 6 次 `generate_lead`、涉及 5 users：08-01 为 1 次、08-05 为 4 次、08-10 为 1 次；渠道拆分为 Direct 2、Organic Social 2、Paid Search 2。Landing Page 拆分为 `/` 2、`/contact` 2、`/outdoor-clothing-manufacturer` 1、`/sportswear-manufacturer` 1。同期另有 9 次 `form_start` 与 4 次 `form_submit`；这些事件计数不等于去重表单、可联系买家或合格询盘。
+
+### 询盘真值与决策
+
+- 正式/有效询盘：**0**。
+- Organic Search：2 sessions、0 `generate_lead`、0 正式/有效询盘。
+- GA4 的 6 次 `generate_lead` 全部不计入正式/有效询盘；它们只能作为测试、无效或不合格互动的技术信号，不能作为获客成果。
+- `eventCount` 6 与全站 `keyEvents` 4 的差异继续按事件配置时间或定义差异的未决项记录；没有 GA4 管理界面变更证据，不自行归因。
+
+Finding outcome：`no-change / baseline-established`。8 月搜索可见性仍处于低样本期，Organic Search 尚未产生正式询盘；本基线不支持修改 URL、Title、Meta、H1、页面所有权或新增近义页。后续按既定 Day 28 / Day 90 节点和完整自然月复盘，重点观察非品牌 impressions、Organic Search engaged sessions、`generate_lead` 与人工确认正式询盘是否同时改善。
+
 ## 2026-09-08：SEO-V2-005 Knitted Fabrics Day 7
 
 ### 来源与覆盖
