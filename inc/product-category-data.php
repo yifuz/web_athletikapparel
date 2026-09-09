@@ -1119,16 +1119,19 @@ function myathletik_product_category_data() {
 			'social_image_height' => 627,
 			'social_image_alt'    => __( 'Technical balaclavas for cold-weather sports', 'myathletik-child' ),
 			'social_image_type'   => 'image/jpeg',
-			'intro'            => __( 'We produce technical knit accessories that complement our apparel range - built with the same FLATLOCK and ACTIVESEAM construction and performance fabrics as our garments.', 'myathletik-child' ),
+			'hero_kicker'      => __( 'Technical knit accessories OEM/ODM', 'myathletik-child' ),
+			'intro'            => __( 'We manufacture technical knit and textile accessories for sportswear, outdoor, and performance apparel collections. Programs include balaclavas, ski masks, neck gaiters, neck warmers, glove liners, lightweight gloves, headbands, ear warmers, arm and leg sleeves, compression sleeves, beanies, and wristbands, developed to the buyer\'s material, fit, construction, branding, and testing requirements.', 'myathletik-child' ),
+			'overview_heading' => __( 'Textile accessories for sportswear and outdoor collections', 'myathletik-child' ),
+			'product_range_heading' => __( 'Technical sports accessories we manufacture', 'myathletik-child' ),
 			'what_we_make'     => array(
-				__( 'Balaclavas', 'myathletik-child' ),
+				__( 'Balaclavas, ski masks, and neckwear', 'myathletik-child' ),
 				__( 'Gloves and liners', 'myathletik-child' ),
-				__( 'Knit accessories for activewear and outdoor use', 'myathletik-child' ),
+				__( 'Sleeves and performance knit accessories', 'myathletik-child' ),
 			),
 			'subcategories'    => array(
 				array(
-					'title'       => __( 'Balaclavas', 'myathletik-child' ),
-					'description' => __( 'Full-coverage knit balaclavas in thermal and wind-resistant fabrics. FLATLOCK and ACTIVESEAM construction for comfort under a helmet or hood.', 'myathletik-child' ),
+					'title'       => __( 'Balaclavas, ski masks, and neckwear', 'myathletik-child' ),
+					'description' => __( 'Balaclavas, ski masks, neck gaiters, and neck warmers developed around the intended activity, climate, face opening, helmet or hood interface, coverage, fit, and material specification. Thermal, stretch, wind-resistant, FLATLOCK, and ACTIVESEAM options are selected and verified by project.', 'myathletik-child' ),
 					'image'       => 'sports accessories/Balaclavas.png',
 					'image_alt'    => __( 'Black and navy technical balaclavas displayed with a sports helmet', 'myathletik-child' ),
 					'image_width'  => 1448,
@@ -1141,7 +1144,7 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Gloves and liners', 'myathletik-child' ),
-					'description' => __( 'Technical knit glove liners with touchscreen-compatible tips and grip-print palms. Lightweight enough to layer under shell gloves, warm enough to wear alone in mild cold.', 'myathletik-child' ),
+					'description' => __( 'Glove liners and lightweight gloves developed for standalone or layering use according to the buyer\'s warmth, fit, dexterity, stretch, and shell-glove requirements. Touchscreen tips, grip print, reinforcement, and branding are specified and tested when required.', 'myathletik-child' ),
 					'image'       => 'sports accessories/gloves.png',
 					'image_alt'    => __( 'Technical knit glove liners with grip palms and touchscreen fingertips', 'myathletik-child' ),
 					'image_width'  => 1448,
@@ -1153,8 +1156,8 @@ function myathletik_product_category_data() {
 					),
 				),
 				array(
-					'title'       => __( 'Knit accessories for activewear and outdoor use', 'myathletik-child' ),
-					'description' => __( 'Neck gaiters, headbands, arm sleeves, and other technical knit accessories. Built with the same performance fabrics as our apparel lines - moisture-wicking, thermal, and stretch.', 'myathletik-child' ),
+					'title'       => __( 'Sleeves and performance knit accessories', 'myathletik-child' ),
+					'description' => __( 'Arm sleeves, hand-cover sleeves, leg and compression sleeves, headbands, ear warmers, beanies, and wristbands developed for the target activity and apparel collection. Fabric, compression, UPF, thermal, moisture-management, grip, and stretch requirements are confirmed in the approved specification.', 'myathletik-child' ),
 					'image'       => 'sports accessories/sports-accessory-product-category.png',
 					'image_alt'    => __( 'Light blue technical arm sleeve with extended hand coverage', 'myathletik-child' ),
 					'image_width'  => 1402,
@@ -1166,7 +1169,81 @@ function myathletik_product_category_data() {
 					),
 				),
 			),
-			'construction'     => __( 'Made with the same technical knit construction and functional fabrics as our apparel - moisture-wicking, thermal, and stretch options for cold-weather and performance use.', 'myathletik-child' ),
+			'capability_kicker'  => __( 'Development inputs', 'myathletik-child' ),
+			'capability_heading' => __( 'Define fit, function, and construction before sampling', 'myathletik-child' ),
+			'construction'      => sprintf( __( 'Send the accessory type, intended sport or activity, climate, target market, size range, measurements, fit, tech pack or reference sample, composition, GSM, knit structure, stretch and recovery, thermal or wind target, compression or UPF requirement, helmet and face-opening details, touchscreen or grip requirement, seam map, thumbholes and other functional details, color and artwork, labels, packaging, testing criteria, quantity, timeline, and delivery destination. Available construction and decoration include FLATLOCK, ACTIVESEAM, OVERLOCK, COVERSTITCH, seamless and bonded-welded options, sublimation, SCREENPRINT, silicone grip, and reflective details where suitable. Public garment MOQ is %s pieces per style; final material, sampling, testing, and production terms are confirmed in the quotation.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+			'assurance_kicker'  => __( 'Program execution', 'myathletik-child' ),
+			'assurance_heading' => __( 'Sports accessory customization and quality checkpoints', 'myathletik-child' ),
+			'assurance_intro'   => __( 'Functional details and acceptance criteria are recorded in the current specification and approved sample so material, fit, decoration, and workmanship can be reviewed consistently through bulk production.', 'myathletik-child' ),
+			'assurance_cards'   => array(
+				array(
+					'title'       => __( 'Product and private-label customization', 'myathletik-child' ),
+					'description' => __( 'Technical textile accessories are developed around the buyer\'s activity, climate, apparel collection, functional requirements, and brand presentation.', 'myathletik-child' ),
+					'items'       => array(
+						__( 'Head and neck accessories, gloves and liners, sleeves, beanies, headbands, and wristbands', 'myathletik-child' ),
+						__( 'Composition, GSM, knit structure, fit, coverage, compression, stretch, thermal, wind, and UPF targets by specification', 'myathletik-child' ),
+						__( 'Touchscreen tips, grip print, silicone grip, thumbholes, reflective details, and reinforcement where required', 'myathletik-child' ),
+						__( 'Sublimation, SCREENPRINT, labels, branding, and private-label packaging', 'myathletik-child' ),
+					),
+				),
+				array(
+					'title'       => __( 'Accessory quality checkpoints', 'myathletik-child' ),
+					'description' => __( 'The quality plan is set against the approved material and product specification, sample, test method, and buyer acceptance criteria.', 'myathletik-child' ),
+					'items'       => array(
+						__( 'Fiber composition, GSM, colorfastness, shrinkage, and pilling', 'myathletik-child' ),
+						__( 'Stretch and recovery, seam strength and elasticity, abrasion, measurements, fit, and workmanship', 'myathletik-child' ),
+						__( 'Touchscreen function, grip adhesion, thermal, wind resistance, UPF, and compression where specified', 'myathletik-child' ),
+						__( 'Customer-specified third-party testing when required', 'myathletik-child' ),
+					),
+					'link'        => myathletik_related_link( __( 'Review the Garment Quality Control Checklist', 'myathletik-child' ), '/garment-quality-control-checklist/' ),
+				),
+			),
+			'buyer_questions_heading' => __( 'Questions buyers ask before starting a sports accessory program', 'myathletik-child' ),
+			'buyer_questions_collapsible' => true,
+			'buyer_questions' => array(
+				array(
+					'question' => __( 'What is the MOQ for technical sports accessories?', 'myathletik-child' ),
+					'answer'   => sprintf( __( 'The public garment MOQ is %s pieces per style. Material, color, size allocation, sampling, testing, and final production terms are confirmed in the project quotation.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				),
+				array(
+					'question' => __( 'What should a buyer provide before accessory sampling?', 'myathletik-child' ),
+					'answer'   => __( 'Provide the product type, intended activity and climate, target market, size and fit requirements, tech pack or reference sample, material and performance specification, functional details, artwork, labels and packaging, testing criteria, estimated quantity, timeline, and delivery destination.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Which products are included in this sports accessories range?', 'myathletik-child' ),
+					'answer'   => __( 'This page covers textile accessories for sportswear and outdoor collections, including balaclavas, ski masks, neck gaiters, neck warmers, glove liners, lightweight gloves, arm and leg sleeves, compression sleeves, headbands, ear warmers, beanies, and wristbands. It does not cover hard sports equipment.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'How are accessory performance requirements confirmed?', 'myathletik-child' ),
+					'answer'   => __( 'The buyer defines the intended use, product specification, test method, and acceptance criteria. Applicable material, seam, fit, touchscreen, grip, thermal, wind, UPF, compression, and workmanship requirements can then be checked during development and before shipment. Customer-specified third-party testing can be arranged when required.', 'myathletik-child' ),
+				),
+			),
+			'process_kicker'    => __( 'Procurement workflow', 'myathletik-child' ),
+			'process_heading'   => __( 'From sports accessory brief to delivered order', 'myathletik-child' ),
+			'process_intro'     => __( 'Each program moves through defined review and approval points. Exact timing, testing scope, commercial terms, and delivery responsibilities are confirmed in the project quotation.', 'myathletik-child' ),
+			'process_steps'     => array(
+				array(
+					'title'       => __( 'Project Brief & Quotation', 'myathletik-child' ),
+					'description' => __( 'Share the accessory type, target activity, material and performance specification, fit, functional details, artwork, testing needs, quantity, timing, and delivery destination. We review feasibility, missing inputs, and quotation variables.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Material & Sample Development', 'myathletik-child' ),
+					'description' => __( 'Material, color, knit structure, construction, sizing, functional details, decoration, trims, and the sample route are developed against the brief. Typical sampling is 1-2 weeks after the required inputs are aligned, depending on product and material complexity.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Approval & Order Confirmation', 'myathletik-child' ),
+					'description' => sprintf( __( 'Approve the material, fit, measurements, construction, functionality, artwork, test criteria, labels, and packaging. Confirm final quantity, color and size breakdown, and production terms; public garment MOQ is %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				),
+				array(
+					'title'       => __( 'Bulk Production & Quality Control', 'myathletik-child' ),
+					'description' => __( 'Bulk production follows the approved sample and current specification. Incoming material, in-line and final product checks, together with agreed testing, are reviewed before shipment release.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Export & Delivery', 'myathletik-child' ),
+					'description' => __( 'Packing instructions, standard export documents, freight booking information, and delivery scope are aligned before dispatch. FOB and DDP terms are available by project.', 'myathletik-child' ),
+				),
+			),
+			'process_link'      => myathletik_related_link( __( 'Review the full OEM/ODM service workflow', 'myathletik-child' ), '/services/' ),
 			'image_note'       => __( '[IMAGE: real accessories shots]', 'myathletik-child' ),
 			'gallery'          => array(
 				myathletik_gallery_item( 'sports accessories/andrew-putman-BzYeoxbJBXI-unsplash.jpg', __( 'Sports accessories program image', 'myathletik-child' ) ),
@@ -1179,6 +1256,9 @@ function myathletik_product_category_data() {
 			'related'          => array(
 				myathletik_related_link( __( 'Outdoor Clothing Manufacturer', 'myathletik-child' ), '/outdoor-clothing-manufacturer/' ),
 				myathletik_related_link( __( 'Sportswear Manufacturer', 'myathletik-child' ), '/sportswear-manufacturer/' ),
+				myathletik_related_link( __( 'FLATLOCK vs OVERLOCK Guide', 'myathletik-child' ), '/flatlock-vs-overlock-technical-knitwear/' ),
+				myathletik_related_link( __( 'Technical Knitwear Tech Pack Guide', 'myathletik-child' ), '/technical-knitwear-tech-pack-guide/' ),
+				myathletik_related_link( __( 'Garment Quality Control Checklist', 'myathletik-child' ), '/garment-quality-control-checklist/' ),
 				myathletik_related_link( __( 'Our Services', 'myathletik-child' ), '/services/' ),
 			),
 		),
