@@ -824,16 +824,20 @@ function myathletik_product_category_data() {
 			'social_image_height' => 627,
 			'social_image_alt'    => __( 'Model wearing a silk top and printed scarf', 'myathletik-child' ),
 			'social_image_type'   => 'image/jpeg',
-			'intro'            => __( 'We manufacture knitted silk wear - lightweight, breathable base layers and apparel that pair the natural comfort of silk with technical garment construction for premium brands.', 'myathletik-child' ),
+			'hero_kicker'      => __( 'Silk apparel OEM/ODM', 'myathletik-child' ),
+			'intro'            => __( 'We manufacture knitted silk base layers, underwear, T-shirts, camisoles, leggings, long underwear, and lightweight apparel for brands and private-label programs. Woven silk garment programs can also be supported by project. Composition, yarn, fabric weight, construction, finish, and testing are developed against the buyer\'s specification and approved samples.', 'myathletik-child' ),
+			'overview_heading' => __( 'Knitted silk apparel and supported woven programs', 'myathletik-child' ),
+			'product_range_heading' => __( 'Silk apparel products we manufacture', 'myathletik-child' ),
 			'what_we_make'     => array(
-				__( 'Silk base layers and underwear', 'myathletik-child' ),
-				__( 'Lightweight silk performance apparel', 'myathletik-child' ),
-				__( 'Silk-blend knit pieces', 'myathletik-child' ),
+				__( 'Knitted silk base-layer tops and bottoms', 'myathletik-child' ),
+				__( 'Silk underwear, camisoles, leggings, and long underwear', 'myathletik-child' ),
+				__( 'Lightweight silk T-shirts and performance apparel', 'myathletik-child' ),
+				__( 'Silk-blend knit pieces and woven silk programs by project', 'myathletik-child' ),
 			),
 			'subcategories'    => array(
 				array(
-					'title'       => __( 'Silk base layers and underwear', 'myathletik-child' ),
-					'description' => __( 'Ultra-lightweight knitted silk base layers unique to silk programs - pack down smaller and feel lighter on the body than any other fiber we work with. Natural temperature regulation for travel and four-season layering.', 'myathletik-child' ),
+					'title'       => __( 'Knitted silk base layers and underwear', 'myathletik-child' ),
+					'description' => __( 'Base-layer tops and bottoms, underwear, leggings, and long underwear developed for lightweight next-to-skin use. Composition, fabric weight, fit, seam placement, stretch, care requirements, and the intended layering system are confirmed before sampling.', 'myathletik-child' ),
 					'image'       => 'silkwear/IMG_5784.jpg',
 					'image_alt'    => __( 'Close-up of lightweight white silk base-layer leggings', 'myathletik-child' ),
 					'image_width'  => 1920,
@@ -845,8 +849,8 @@ function myathletik_product_category_data() {
 					),
 				),
 				array(
-					'title'       => __( 'Lightweight silk performance apparel', 'myathletik-child' ),
-					'description' => __( 'Breathable silk tops and bottoms for warm-weather and indoor activity. The natural luster and drape of silk give a finish no synthetic fiber can replicate - for premium brands where hand feel is the differentiator.', 'myathletik-child' ),
+					'title'       => __( 'Silk T-shirts and lightweight apparel', 'myathletik-child' ),
+					'description' => __( 'T-shirts, camisoles, tops, and lightweight apparel developed around the buyer\'s target hand feel, drape, opacity, fit, color, and end use. Material and garment approval criteria are set for the selected silk construction rather than assumed across every program.', 'myathletik-child' ),
 					'image'       => 'silkwear/IMG_5393.jpg',
 					'image_alt'    => __( 'Close-up of a lightweight black silk knit top neckline', 'myathletik-child' ),
 					'image_width'  => 1920,
@@ -859,7 +863,7 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Silk-blend knit pieces', 'myathletik-child' ),
-					'description' => __( 'Silk blended with cotton, modal, or performance synthetics to add durability and stretch while preserving the silky hand feel. The practical middle ground for brands that want silk character at a more accessible price point.', 'myathletik-child' ),
+					'description' => __( 'Silk can be blended with cotton, modal, or performance fibers when the program needs a different balance of hand feel, stretch, recovery, durability, care, or cost. Final composition, yarn, GSM, knit structure, and performance criteria are confirmed in the approved specification.', 'myathletik-child' ),
 					'image'       => 'silkwear/IMG_5550.jpg',
 					'image_alt'    => __( 'Close-up of a beige silk-blend knit top neckline', 'myathletik-child' ),
 					'image_width'  => 1920,
@@ -871,7 +875,81 @@ function myathletik_product_category_data() {
 					),
 				),
 			),
-			'construction'     => __( 'Soft, breathable knitted silk finished with FLATLOCK and ACTIVESEAM seams for a smooth, next-to-skin feel. Available plain or blended for added performance.', 'myathletik-child' ),
+			'capability_kicker'  => __( 'Development inputs', 'myathletik-child' ),
+			'capability_heading' => __( 'Define the silk material, construction, and approval criteria', 'myathletik-child' ),
+			'construction'      => sprintf( __( 'Send the product type, intended use, target market, size range, fit, tech pack or reference sample, silk composition, yarn requirement, GSM, knit or woven construction, color and artwork, seam map, trims, labels, packaging, care requirements, testing criteria, target price range, quantity, timeline, and delivery destination. Knitted silk programs can use FLATLOCK, ACTIVESEAM, and other construction options where suitable; woven silk garments are supported according to the project specification. Public garment MOQ is %s pieces per style, with final material, sampling, testing, and production terms confirmed in the quotation.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+			'assurance_kicker'  => __( 'Program execution', 'myathletik-child' ),
+			'assurance_heading' => __( 'Silk apparel customization and quality checkpoints', 'myathletik-child' ),
+			'assurance_intro'   => __( 'Material, construction, appearance, and testing requirements are recorded in the current specification and approved sample so development and bulk production can be reviewed against the same criteria.', 'myathletik-child' ),
+			'assurance_cards'   => array(
+				array(
+					'title'       => __( 'Program customization', 'myathletik-child' ),
+					'description' => __( 'Knitted silk apparel and supported woven silk programs are developed around the buyer\'s product brief, end use, target market, and approved specification.', 'myathletik-child' ),
+					'items'       => array(
+						__( 'Base layers, underwear, T-shirts, camisoles, leggings, long underwear, and lightweight apparel', 'myathletik-child' ),
+						__( 'Silk composition and blends, yarn, GSM, knit or woven construction, color, and finish by specification', 'myathletik-child' ),
+						__( 'FLATLOCK, ACTIVESEAM, printing, trims, labels, and branding where suitable for the design', 'myathletik-child' ),
+						__( 'Private-label packaging and care information aligned during development', 'myathletik-child' ),
+					),
+				),
+				array(
+					'title'       => __( 'Silk apparel quality checkpoints', 'myathletik-child' ),
+					'description' => __( 'The quality plan is set against the approved material and garment specification, sample, test method, and buyer acceptance criteria.', 'myathletik-child' ),
+					'items'       => array(
+						__( 'Fiber composition, GSM, colorfastness, shrinkage, and pilling', 'myathletik-child' ),
+						__( 'Stretch and recovery for applicable knitted silk blends', 'myathletik-child' ),
+						__( 'Snagging, seam slippage, seam appearance, measurements, and workmanship where applicable', 'myathletik-child' ),
+						__( 'Customer-specified third-party testing when required', 'myathletik-child' ),
+					),
+					'link'        => myathletik_related_link( __( 'Review the Garment Quality Control Checklist', 'myathletik-child' ), '/garment-quality-control-checklist/' ),
+				),
+			),
+			'buyer_questions_heading' => __( 'Questions buyers ask before starting a silk apparel program', 'myathletik-child' ),
+			'buyer_questions_collapsible' => true,
+			'buyer_questions' => array(
+				array(
+					'question' => __( 'What is the MOQ for silk apparel?', 'myathletik-child' ),
+					'answer'   => sprintf( __( 'The public garment MOQ is %s pieces per style. Material, color, size allocation, sampling, testing, and final production terms are confirmed in the project quotation.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				),
+				array(
+					'question' => __( 'What should a buyer provide before silk sampling?', 'myathletik-child' ),
+					'answer'   => __( 'Provide the product type, intended use, target market, size range, fit, tech pack or reference sample, composition, yarn and GSM requirements, knit or woven construction, color and artwork, seam and trim details, care requirements, testing criteria, estimated quantity, timeline, and delivery destination.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Can Athletik support both knitted and woven silk garments?', 'myathletik-child' ),
+					'answer'   => __( 'Yes. Knitted silk apparel is a core part of this category, and woven silk garment programs can also be supported by project. The material construction, garment design, production route, approval criteria, and commercial terms are confirmed for the individual program.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Which silk apparel requirements can be tested?', 'myathletik-child' ),
+					'answer'   => __( 'Fiber composition, GSM, colorfastness, shrinkage, pilling, stretch and recovery, snagging, seam slippage, seam appearance, measurements, and workmanship can be checked where applicable against the agreed method and acceptance criteria. Customer-specified third-party testing can be arranged when required.', 'myathletik-child' ),
+				),
+			),
+			'process_kicker'    => __( 'Procurement workflow', 'myathletik-child' ),
+			'process_heading'   => __( 'From silk apparel brief to delivered order', 'myathletik-child' ),
+			'process_intro'     => __( 'Each program moves through defined review and approval points. Exact timing, testing scope, commercial terms, and delivery responsibilities are confirmed in the project quotation.', 'myathletik-child' ),
+			'process_steps'     => array(
+				array(
+					'title'       => __( 'Project Brief & Quotation', 'myathletik-child' ),
+					'description' => __( 'Share the product type, target use, material and construction specification, fit, artwork, testing needs, quantity, timing, and delivery destination. We review feasibility, missing inputs, and quotation variables.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Material & Sample Development', 'myathletik-child' ),
+					'description' => __( 'Material, color, knit or woven construction, garment construction, trims, care requirements, and the sample route are developed against the brief. Typical sampling is 1-2 weeks after the required inputs are aligned, depending on style and material complexity.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Approval & Order Confirmation', 'myathletik-child' ),
+					'description' => sprintf( __( 'Approve the material, fit, measurements, construction, appearance, test criteria, labels, and packaging. Confirm final quantity, color and size breakdown, and production terms; public garment MOQ is %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				),
+				array(
+					'title'       => __( 'Bulk Production & Quality Control', 'myathletik-child' ),
+					'description' => __( 'Bulk production follows the approved sample and current specification. Incoming material, in-line and final garment checks, together with agreed testing, are reviewed before shipment release.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Export & Delivery', 'myathletik-child' ),
+					'description' => __( 'Packing instructions, standard export documents, freight booking information, and delivery scope are aligned before dispatch. FOB and DDP terms are available by project.', 'myathletik-child' ),
+				),
+			),
+			'process_link'      => myathletik_related_link( __( 'Review the full OEM/ODM service workflow', 'myathletik-child' ), '/services/' ),
 			'image_note'       => __( '[IMAGE: real silk wear shots]', 'myathletik-child' ),
 			'gallery'          => array(
 				myathletik_gallery_item( 'silkwear/IMG_5362.jpg', __( 'Silk wear garment sample', 'myathletik-child' ) ),
@@ -884,6 +962,9 @@ function myathletik_product_category_data() {
 			'related'          => array(
 				myathletik_related_link( __( 'Merino Wool Manufacturer', 'myathletik-child' ), '/merino-wool-manufacturer/' ),
 				myathletik_related_link( __( 'Underwear Manufacturer', 'myathletik-child' ), '/underwear-manufacturer/' ),
+				myathletik_related_link( __( 'FLATLOCK vs OVERLOCK Guide', 'myathletik-child' ), '/flatlock-vs-overlock-technical-knitwear/' ),
+				myathletik_related_link( __( 'Technical Knitwear Tech Pack Guide', 'myathletik-child' ), '/technical-knitwear-tech-pack-guide/' ),
+				myathletik_related_link( __( 'Garment Quality Control Checklist', 'myathletik-child' ), '/garment-quality-control-checklist/' ),
 				myathletik_related_link( __( 'Our Services', 'myathletik-child' ), '/services/' ),
 			),
 		),
