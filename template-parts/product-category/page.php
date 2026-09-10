@@ -243,13 +243,15 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 							<?php endif; ?>
 						</div>
 						<p class="ma-product-buying-path__description"><?php echo esc_html( $path['description'] ); ?></p>
-						<a class="ma-text-link" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Request a program review', 'myathletik-child' ); ?> <span aria-hidden="true">→</span></a>
 					</article>
 				<?php endforeach; ?>
 			</div>
-			<?php if ( ! empty( $category['buying_paths_note'] ) ) : ?>
-				<p class="ma-product-buying-paths__note"><?php echo esc_html( $category['buying_paths_note'] ); ?></p>
-			<?php endif; ?>
+			<div class="ma-product-buying-paths__footer">
+				<?php if ( ! empty( $category['buying_paths_note'] ) ) : ?>
+					<p class="ma-product-buying-paths__note"><?php echo esc_html( $category['buying_paths_note'] ); ?></p>
+				<?php endif; ?>
+				<a class="ma-button ma-button--outline" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Request a program review', 'myathletik-child' ); ?> <span aria-hidden="true">→</span></a>
+			</div>
 		</div>
 	</section>
 	<?php endif; ?>

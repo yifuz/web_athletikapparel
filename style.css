@@ -3833,23 +3833,27 @@ body.page .container.grid-container:has(.ma-product-category) {
   line-height: var(--ma-lh-body);
 }
 
-.ma-product-buying-path .ma-text-link {
-  align-self: flex-start;
-  min-height: var(--ma-touch-target);
-  margin-top: auto;
-  padding-top: var(--ma-space-4);
-  border-bottom: 2px solid currentColor;
-  text-decoration: none;
+.ma-product-buying-paths__footer {
+  display: grid;
+  gap: var(--ma-space-3);
+  align-items: center;
+  margin-top: var(--ma-space-4);
 }
 
 .ma-product-buying-paths__note {
   max-width: var(--ma-reading-width);
-  margin: var(--ma-space-4) 0 0;
+  margin: 0;
   padding-left: var(--ma-space-3);
   border-left: var(--ma-space-1) solid var(--ma-color-border);
   color: var(--ma-color-muted);
   font-size: var(--ma-fs-small);
   line-height: var(--ma-lh-body);
+}
+
+.ma-product-buying-paths__footer .ma-button {
+  width: 100%;
+  gap: var(--ma-space-2);
+  justify-content: center;
 }
 
 /* Category-specific product proof gallery. Product data controls whether the
@@ -4481,6 +4485,15 @@ body.page .container.grid-container:has(.ma-product-category) {
 
   .ma-product-buying-path__facts {
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  }
+
+  .ma-product-buying-paths__footer {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .ma-product-buying-paths__footer .ma-button {
+    width: auto;
+    justify-self: end;
   }
 
   .ma-product-showcase__grid {
