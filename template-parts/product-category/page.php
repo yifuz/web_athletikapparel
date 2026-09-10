@@ -203,22 +203,46 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 	<section class="ma-product-section ma-product-buying-paths" aria-labelledby="ma-product-buying-paths-title">
 		<div class="ma-section-inner">
 			<div class="ma-section-heading ma-product-buying-paths__heading">
-				<p class="ma-section-kicker"><?php echo esc_html( ! empty( $category['buying_paths_kicker'] ) ? $category['buying_paths_kicker'] : __( 'Procurement entry points', 'myathletik-child' ) ); ?></p>
-				<h2 id="ma-product-buying-paths-title"><?php echo esc_html( $category['buying_paths_heading'] ); ?></h2>
+				<div class="ma-product-buying-paths__heading-copy">
+					<p class="ma-section-kicker"><?php echo esc_html( ! empty( $category['buying_paths_kicker'] ) ? $category['buying_paths_kicker'] : __( 'Procurement entry points', 'myathletik-child' ) ); ?></p>
+					<h2 id="ma-product-buying-paths-title"><?php echo esc_html( $category['buying_paths_heading'] ); ?></h2>
+				</div>
 				<?php if ( ! empty( $category['buying_paths_intro'] ) ) : ?>
 					<p><?php echo esc_html( $category['buying_paths_intro'] ); ?></p>
 				<?php endif; ?>
 			</div>
 			<div class="ma-product-buying-paths__grid">
-				<?php foreach ( $category['buying_paths'] as $path ) : ?>
+				<?php foreach ( $category['buying_paths'] as $path_index => $path ) : ?>
+					<?php
+					$spec_label = '';
+					$spec_value = $path['spec'];
+					$spec_parts = array_map( 'trim', explode( ':', $path['spec'], 2 ) );
+
+					if ( 2 === count( $spec_parts ) ) {
+						$spec_label = $spec_parts[0];
+						$spec_value = $spec_parts[1];
+					}
+					?>
 					<article class="ma-product-buying-path">
-						<p class="ma-product-buying-path__label"><?php echo esc_html( $path['label'] ); ?></p>
-						<h3><?php echo esc_html( $path['title'] ); ?></h3>
-						<p class="ma-product-buying-path__spec"><?php echo esc_html( $path['spec'] ); ?></p>
-						<?php if ( ! empty( $path['material'] ) ) : ?>
-							<p class="ma-product-buying-path__material"><strong><?php esc_html_e( 'Material direction:', 'myathletik-child' ); ?></strong> <?php echo esc_html( $path['material'] ); ?></p>
-						<?php endif; ?>
-						<p><?php echo esc_html( $path['description'] ); ?></p>
+						<header class="ma-product-buying-path__header">
+							<div>
+								<p class="ma-product-buying-path__label"><?php echo esc_html( $path['label'] ); ?></p>
+								<h3><?php echo esc_html( $path['title'] ); ?></h3>
+							</div>
+							<span class="ma-product-buying-path__index" aria-hidden="true"><?php echo esc_html( sprintf( '%02d', $path_index + 1 ) ); ?></span>
+						</header>
+						<div class="ma-product-buying-path__facts">
+							<p class="ma-product-buying-path__spec">
+								<?php if ( $spec_label ) : ?>
+									<span><?php echo esc_html( $spec_label ); ?></span>
+								<?php endif; ?>
+								<strong><?php echo esc_html( $spec_value ); ?></strong>
+							</p>
+							<?php if ( ! empty( $path['material'] ) ) : ?>
+								<p class="ma-product-buying-path__material"><strong><?php esc_html_e( 'Material direction:', 'myathletik-child' ); ?></strong> <span><?php echo esc_html( $path['material'] ); ?></span></p>
+							<?php endif; ?>
+						</div>
+						<p class="ma-product-buying-path__description"><?php echo esc_html( $path['description'] ); ?></p>
 						<a class="ma-text-link" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Request a program review', 'myathletik-child' ); ?> <span aria-hidden="true">→</span></a>
 					</article>
 				<?php endforeach; ?>

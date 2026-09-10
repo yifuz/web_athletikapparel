@@ -3734,6 +3734,7 @@ body.page .container.grid-container:has(.ma-product-category) {
 
 .ma-product-buying-paths__heading {
   max-width: var(--ma-reading-width);
+  margin-bottom: 0;
 }
 
 .ma-product-buying-paths__grid {
@@ -3748,8 +3749,16 @@ body.page .container.grid-container:has(.ma-product-category) {
   flex-direction: column;
   padding: var(--ma-space-4);
   border: 1px solid var(--ma-color-border);
+  border-top: var(--ma-space-1) solid var(--ma-color-accent);
   border-radius: var(--ma-radius);
   background: var(--ma-color-white);
+}
+
+.ma-product-buying-path__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--ma-space-4);
+  align-items: start;
 }
 
 .ma-product-buying-path__label {
@@ -3770,28 +3779,55 @@ body.page .container.grid-container:has(.ma-product-category) {
   line-height: 1.3;
 }
 
-.ma-product-buying-path__spec {
-  margin: var(--ma-space-3) 0 0;
-  padding-top: var(--ma-space-3);
+.ma-product-buying-path__index {
+  color: var(--ma-color-border);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-h2);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ma-product-buying-path__facts {
+  display: grid;
+  gap: var(--ma-space-3);
+  margin-top: var(--ma-space-4);
+  padding: var(--ma-space-3) 0;
   border-top: 1px solid var(--ma-color-border);
+  border-bottom: 1px solid var(--ma-color-border);
+}
+
+.ma-product-buying-path__spec {
+  margin: 0;
   color: var(--ma-color-text);
   font-family: var(--ma-font-head);
   font-size: var(--ma-fs-small);
-  font-weight: 700;
+}
+
+.ma-product-buying-path__spec span,
+.ma-product-buying-path__material strong {
+  display: block;
+  margin-bottom: var(--ma-space-1);
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-small);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.ma-product-buying-path__spec strong {
+  display: block;
+  color: var(--ma-color-text);
+  font-size: var(--ma-fs-h3);
+  line-height: 1.3;
 }
 
 .ma-product-buying-path__material {
-  margin: var(--ma-space-3) 0 0;
+  margin: 0;
   color: var(--ma-color-muted);
   font-size: var(--ma-fs-small);
   line-height: var(--ma-lh-body);
 }
 
-.ma-product-buying-path__material strong {
-  color: var(--ma-color-text);
-}
-
-.ma-product-buying-path > p:not(.ma-product-buying-path__label):not(.ma-product-buying-path__spec):not(.ma-product-buying-path__material) {
+.ma-product-buying-path__description {
   margin: var(--ma-space-3) 0 0;
   color: var(--ma-color-muted);
   line-height: var(--ma-lh-body);
@@ -3809,6 +3845,8 @@ body.page .container.grid-container:has(.ma-product-category) {
 .ma-product-buying-paths__note {
   max-width: var(--ma-reading-width);
   margin: var(--ma-space-4) 0 0;
+  padding-left: var(--ma-space-3);
+  border-left: var(--ma-space-1) solid var(--ma-color-border);
   color: var(--ma-color-muted);
   font-size: var(--ma-fs-small);
   line-height: var(--ma-lh-body);
@@ -4441,6 +4479,10 @@ body.page .container.grid-container:has(.ma-product-category) {
     min-block-size: 2.6em;
   }
 
+  .ma-product-buying-path__facts {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  }
+
   .ma-product-showcase__grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--ma-space-4);
@@ -4518,17 +4560,28 @@ body.page .container.grid-container:has(.ma-product-category) {
 	}
 }
 
-@media (min-width: 75rem) {
-  .ma-product-buying-paths__grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .ma-product-buying-path__material {
-    min-block-size: 5.1em;
-  }
-}
-
 @media (min-width: 64rem) {
+  .ma-product-buying-paths__heading {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: var(--ma-space-6);
+    align-items: end;
+    max-width: none;
+  }
+
+  .ma-section-heading.ma-product-buying-paths__heading > p:not(.ma-section-kicker) {
+    margin: 0;
+    max-width: var(--ma-reading-width);
+  }
+
+  .ma-product-buying-path h3 {
+    min-block-size: 0;
+  }
+
+  .ma-product-buying-path {
+    padding: var(--ma-space-5);
+  }
+
   .ma-product-procurement__steps {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
