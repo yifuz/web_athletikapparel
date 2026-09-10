@@ -215,6 +215,9 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 						<p class="ma-product-buying-path__label"><?php echo esc_html( $path['label'] ); ?></p>
 						<h3><?php echo esc_html( $path['title'] ); ?></h3>
 						<p class="ma-product-buying-path__spec"><?php echo esc_html( $path['spec'] ); ?></p>
+						<?php if ( ! empty( $path['material'] ) ) : ?>
+							<p class="ma-product-buying-path__material"><strong><?php esc_html_e( 'Material direction:', 'myathletik-child' ); ?></strong> <?php echo esc_html( $path['material'] ); ?></p>
+						<?php endif; ?>
 						<p><?php echo esc_html( $path['description'] ); ?></p>
 						<a class="ma-text-link" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Request a program review', 'myathletik-child' ); ?> <span aria-hidden="true">→</span></a>
 					</article>

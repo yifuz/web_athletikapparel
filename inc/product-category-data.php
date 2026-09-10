@@ -595,22 +595,32 @@ function myathletik_product_category_data() {
 			'buying_paths_note'    => __( 'The GSM ranges shown are common briefing starting points, not fixed production limits. Final material and garment specifications are confirmed against the buyer\'s requirements and approved sample.', 'myathletik-child' ),
 			'buying_paths'         => array(
 				array(
-					'label'       => __( 'Lightweight program', 'myathletik-child' ),
-					'title'       => __( 'Merino Wool Base Layers', 'myathletik-child' ),
-					'spec'        => __( 'Common starting brief: 150-170 GSM', 'myathletik-child' ),
-					'description' => __( 'Next-to-skin tops and bottoms for outdoor, training, ski, and cold-weather layering programs. The brief should define composition, micron, fit, stretch/recovery, seam placement, target climate, and care requirements.', 'myathletik-child' ),
-				),
-				array(
-					'label'       => __( 'Thermal program', 'myathletik-child' ),
-					'title'       => __( 'Midweight Merino Thermal Layers', 'myathletik-child' ),
-					'spec'        => __( 'Common starting brief: 180-210 GSM', 'myathletik-child' ),
-					'description' => __( 'Base-layer and light mid-layer tops or bottoms developed for added warmth. Buyers can specify 100% Merino wool or blends, single jersey, interlock, rib, or another project-specific knit structure.', 'myathletik-child' ),
-				),
-				array(
 					'label'       => __( 'Underwear program', 'myathletik-child' ),
-					'title'       => __( 'Merino Wool Performance Underwear', 'myathletik-child' ),
-					'spec'        => __( 'Common starting brief: 150-180 GSM', 'myathletik-child' ),
-					'description' => __( 'Underwear programs developed around next-to-skin comfort, fit, waistband construction, stretch/recovery, seam selection, care requirements, and the buyer\'s agreed test criteria.', 'myathletik-child' ),
+					'title'       => __( 'Performance Merino Underwear', 'myathletik-child' ),
+					'spec'        => __( 'Recommended starting range: 140–160 GSM', 'myathletik-child' ),
+					'material'    => __( 'Merino wool / nylon / elastane', 'myathletik-child' ),
+					'description' => __( 'For next-to-skin briefs, trunks, leggings, and tops. Define fit, stretch/recovery, waistband construction, seam placement, care, and testing requirements.', 'myathletik-child' ),
+				),
+				array(
+					'label'       => __( 'Lightweight program', 'myathletik-child' ),
+					'title'       => __( 'Lightweight Merino Base Layer', 'myathletik-child' ),
+					'spec'        => __( 'Recommended starting range: 150–175 GSM', 'myathletik-child' ),
+					'material'    => __( 'Merino wool / nylon or a Merino blend', 'myathletik-child' ),
+					'description' => __( 'For all-season base-layer tops and bottoms. Define composition, micron, knit structure, stretch, fit, seam placement, and target climate.', 'myathletik-child' ),
+				),
+				array(
+					'label'       => __( 'Midweight program', 'myathletik-child' ),
+					'title'       => __( 'Midweight Merino Base Layer', 'myathletik-child' ),
+					'spec'        => __( 'Recommended starting range: 195–210 GSM', 'myathletik-child' ),
+					'material'    => __( 'Merino wool or a Merino wool / synthetic blend', 'myathletik-child' ),
+					'description' => __( 'For cooler-weather base-layer tops and bottoms. Define warmth target, micron, knit structure, stretch/recovery, fit, construction, and care requirements.', 'myathletik-child' ),
+				),
+				array(
+					'label'       => __( 'Cold-weather program', 'myathletik-child' ),
+					'title'       => __( 'Cold-Weather Thermal', 'myathletik-child' ),
+					'spec'        => __( 'Recommended starting range: 240–260 GSM', 'myathletik-child' ),
+					'material'    => __( 'Merino wool or a technical Merino blend', 'myathletik-child' ),
+					'description' => __( 'For cold-weather base layers and thermal sets. Define insulation target, moisture management, layering fit, seam selection, durability, and testing requirements.', 'myathletik-child' ),
 				),
 			),
 			'subcategories'    => array(

@@ -26,11 +26,12 @@ SERP 为制造商、零售品牌、目录和编辑内容混合意图，但三组
 
 唯一主要变量是在既有 Merino 页面 Category overview 与完整 Product range 之间增加一个条件式采购入口区块：
 
-1. `Merino Wool Base Layers`：常见起始 brief 为 150–170 GSM；
-2. `Midweight Merino Thermal Layers`：常见起始 brief 为 180–210 GSM；
-3. `Merino Wool Performance Underwear`：常见起始 brief 为 150–180 GSM。
+1. `Performance Merino Underwear`：推荐起始范围为 140–160 GSM，材料方向为 Merino wool / nylon / elastane；
+2. `Lightweight Merino Base Layer`：推荐起始范围为 150–175 GSM，材料方向为 Merino wool / nylon 或 Merino blend；
+3. `Midweight Merino Base Layer`：推荐起始范围为 195–210 GSM，材料方向为 Merino wool 或 Merino wool / synthetic blend；
+4. `Cold-Weather Thermal`：推荐起始范围为 240–260 GSM，材料方向为 Merino wool 或 technical Merino blend。
 
-每张卡说明对应产品任务、首次报价需确认的规格，并进入现有 `/contact/`。区块明确 GSM 只属于行业常见 briefing starting points，不是 Athletik 固定生产上下限；最终 composition、micron、GSM、structure、fit、construction 与 testing 继续按买家规格和 approved sample 确认。
+每张卡说明对应产品任务、推荐 GSM、材料方向与首次报价需确认的规格，并进入现有 `/contact/`。区块明确 GSM 只属于行业常见 briefing starting points，不是 Athletik 固定生产上下限；最终 composition、micron、GSM、structure、fit、construction 与 testing 继续按买家规格和 approved sample 确认。所有者提供的 Icebreaker、Aclima、Smartwool 与 Devold 对标只作为内部梯度校准证据，不在公开页面使用竞品名称。
 
 保持不变：URL、Title、Meta、H1、Canonical、Schema 类型、Hero、MOQ、既有产品范围与 UltraMerino 网站。
 
@@ -38,7 +39,7 @@ SERP 为制造商、零售品牌、目录和编辑内容混合意图，但三组
 
 预期收益：
 
-- 让页面更直接对应已验证的三个商业采购词簇；
+- 让页面更直接对应已验证的三个商业采购词簇，并用四档产品梯度覆盖 underwear、lightweight、midweight 与 cold-weather thermal 采购任务；
 - 帮助采购方以产品角色、GSM 和关键开发输入开始报价；
 - 在不创建平行页的情况下，建立 Athletik 主站的 Merino OEM 项目入口。
 
@@ -55,9 +56,9 @@ SERP 为制造商、零售品牌、目录和编辑内容混合意图，但三组
 
 - [x] PHP 8.2 语法与 `git diff --check` 通过；
 - [x] 本地目标 URL 返回 HTTP 200、保持单一 H1；
-- [x] 三张采购入口卡、三组 GSM 起始范围、三个 Contact 入口和范围说明完整输出；
+- [x] 四张采购入口卡、四组 GSM 起始范围、四组材料方向、四个 Contact 入口和范围说明完整输出；
 - [x] 共享模板只在提供 `buying_paths` 数据时输出新模块；其他六个品类页保持原结构；
-- [x] Desktop 三张卡的两行标题轨道统一，分隔线、GSM、正文与底部 CTA 对齐；CTA 改用连续 `border-bottom`，避免浏览器文本下划线在 100% 缩放下因字形避让和子像素取整出现割裂；
+- [x] Desktop 四张卡的两行标题轨道统一，分隔线、GSM、材料方向、正文与底部 CTA 对齐；Tablet 为两列，Mobile 为单列；CTA 继续使用连续 `border-bottom`；
 - [ ] 所有者完成英文文案和视觉审核。
 
 ### 生产
