@@ -123,6 +123,82 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 		</div>
 	</section>
 
+	<?php if ( ! empty( $category['product_showcase'] ) && is_array( $category['product_showcase'] ) ) : ?>
+	<?php $has_showcase_carousel = count( $category['product_showcase'] ) > 8; ?>
+	<section class="ma-product-section ma-product-showcase" aria-labelledby="ma-product-showcase-title"<?php echo $has_showcase_carousel ? ' data-ma-product-carousel' : ''; ?>>
+		<div class="ma-section-inner">
+			<div class="ma-section-heading">
+				<p class="ma-section-kicker"><?php echo esc_html( ! empty( $category['showcase_kicker'] ) ? $category['showcase_kicker'] : __( 'Product examples', 'myathletik-child' ) ); ?></p>
+				<h2 id="ma-product-showcase-title"><?php echo esc_html( $category['showcase_heading'] ); ?></h2>
+				<?php if ( ! empty( $category['showcase_intro'] ) ) : ?>
+					<p><?php echo esc_html( $category['showcase_intro'] ); ?></p>
+				<?php endif; ?>
+			</div>
+			<?php if ( $has_showcase_carousel ) : ?>
+				<div class="ma-product-showcase__toolbar">
+					<p id="ma-product-showcase-help"><?php esc_html_e( 'Drag the gallery or use the arrow buttons to view more products.', 'myathletik-child' ); ?></p>
+					<div class="ma-product-showcase__controls">
+						<button type="button" data-ma-carousel-prev aria-controls="ma-product-showcase-track" disabled>
+							<span aria-hidden="true">←</span>
+							<span class="screen-reader-text"><?php esc_html_e( 'View previous Merino wool products', 'myathletik-child' ); ?></span>
+						</button>
+						<button type="button" data-ma-carousel-next aria-controls="ma-product-showcase-track">
+							<span aria-hidden="true">→</span>
+							<span class="screen-reader-text"><?php esc_html_e( 'View more Merino wool products', 'myathletik-child' ); ?></span>
+						</button>
+					</div>
+				</div>
+			<?php endif; ?>
+			<div
+				class="ma-product-showcase__grid<?php echo $has_showcase_carousel ? ' ma-product-showcase__grid--carousel' : ''; ?>"
+				<?php if ( $has_showcase_carousel ) : ?>
+					id="ma-product-showcase-track"
+					tabindex="0"
+					aria-label="<?php esc_attr_e( 'Merino wool product gallery', 'myathletik-child' ); ?>"
+					aria-describedby="ma-product-showcase-help"
+				<?php endif; ?>
+			>
+				<?php foreach ( $category['product_showcase'] as $image ) : ?>
+					<?php
+					$image_sizes = '(max-width: 47.99rem) 50vw, 25vw';
+					$webp_srcset = array();
+
+					if ( ! empty( $image['image_webp'] ) && is_array( $image['image_webp'] ) ) {
+						foreach ( $image['image_webp'] as $variant_width => $variant_path ) {
+							$variant_width = absint( $variant_width );
+							if ( $variant_width && $variant_path ) {
+								$webp_srcset[] = esc_url( $image_base . ltrim( $variant_path, '/' ) ) . ' ' . $variant_width . 'w';
+							}
+						}
+					}
+					?>
+					<figure class="ma-product-showcase-card">
+						<div class="ma-product-showcase-card__media">
+							<?php if ( $webp_srcset ) : ?>
+								<picture>
+									<source type="image/webp" srcset="<?php echo esc_attr( implode( ', ', $webp_srcset ) ); ?>" sizes="<?php echo esc_attr( $image_sizes ); ?>">
+							<?php endif; ?>
+							<img
+								src="<?php echo esc_url( $image_base . $image['image'] ); ?>"
+								width="<?php echo esc_attr( absint( $image['image_width'] ) ); ?>"
+								height="<?php echo esc_attr( absint( $image['image_height'] ) ); ?>"
+								alt="<?php echo esc_attr( $image['alt'] ); ?>"
+								loading="lazy"
+								decoding="async"
+								<?php if ( $has_showcase_carousel ) : ?>draggable="false"<?php endif; ?>
+							>
+							<?php if ( $webp_srcset ) : ?>
+								</picture>
+							<?php endif; ?>
+						</div>
+						<figcaption><?php echo esc_html( $image['caption'] ); ?></figcaption>
+					</figure>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</section>
+	<?php endif; ?>
+
 	<?php if ( ! empty( $category['buying_paths'] ) && is_array( $category['buying_paths'] ) ) : ?>
 	<section class="ma-product-section ma-product-buying-paths" aria-labelledby="ma-product-buying-paths-title">
 		<div class="ma-section-inner">
@@ -221,82 +297,6 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 			</div>
 		</div>
 	</section>
-
-	<?php if ( ! empty( $category['product_showcase'] ) && is_array( $category['product_showcase'] ) ) : ?>
-	<?php $has_showcase_carousel = count( $category['product_showcase'] ) > 8; ?>
-	<section class="ma-product-section ma-product-showcase" aria-labelledby="ma-product-showcase-title"<?php echo $has_showcase_carousel ? ' data-ma-product-carousel' : ''; ?>>
-		<div class="ma-section-inner">
-			<div class="ma-section-heading">
-				<p class="ma-section-kicker"><?php echo esc_html( ! empty( $category['showcase_kicker'] ) ? $category['showcase_kicker'] : __( 'Product examples', 'myathletik-child' ) ); ?></p>
-				<h2 id="ma-product-showcase-title"><?php echo esc_html( $category['showcase_heading'] ); ?></h2>
-				<?php if ( ! empty( $category['showcase_intro'] ) ) : ?>
-					<p><?php echo esc_html( $category['showcase_intro'] ); ?></p>
-				<?php endif; ?>
-			</div>
-			<?php if ( $has_showcase_carousel ) : ?>
-				<div class="ma-product-showcase__toolbar">
-					<p id="ma-product-showcase-help"><?php esc_html_e( 'Drag the gallery or use the arrow buttons to view more products.', 'myathletik-child' ); ?></p>
-					<div class="ma-product-showcase__controls">
-						<button type="button" data-ma-carousel-prev aria-controls="ma-product-showcase-track" disabled>
-							<span aria-hidden="true">←</span>
-							<span class="screen-reader-text"><?php esc_html_e( 'View previous Merino wool products', 'myathletik-child' ); ?></span>
-						</button>
-						<button type="button" data-ma-carousel-next aria-controls="ma-product-showcase-track">
-							<span aria-hidden="true">→</span>
-							<span class="screen-reader-text"><?php esc_html_e( 'View more Merino wool products', 'myathletik-child' ); ?></span>
-						</button>
-					</div>
-				</div>
-			<?php endif; ?>
-			<div
-				class="ma-product-showcase__grid<?php echo $has_showcase_carousel ? ' ma-product-showcase__grid--carousel' : ''; ?>"
-				<?php if ( $has_showcase_carousel ) : ?>
-					id="ma-product-showcase-track"
-					tabindex="0"
-					aria-label="<?php esc_attr_e( 'Merino wool product gallery', 'myathletik-child' ); ?>"
-					aria-describedby="ma-product-showcase-help"
-				<?php endif; ?>
-			>
-				<?php foreach ( $category['product_showcase'] as $image ) : ?>
-					<?php
-					$image_sizes = '(max-width: 47.99rem) 50vw, 25vw';
-					$webp_srcset = array();
-
-					if ( ! empty( $image['image_webp'] ) && is_array( $image['image_webp'] ) ) {
-						foreach ( $image['image_webp'] as $variant_width => $variant_path ) {
-							$variant_width = absint( $variant_width );
-							if ( $variant_width && $variant_path ) {
-								$webp_srcset[] = esc_url( $image_base . ltrim( $variant_path, '/' ) ) . ' ' . $variant_width . 'w';
-							}
-						}
-					}
-					?>
-					<figure class="ma-product-showcase-card">
-						<div class="ma-product-showcase-card__media">
-							<?php if ( $webp_srcset ) : ?>
-								<picture>
-									<source type="image/webp" srcset="<?php echo esc_attr( implode( ', ', $webp_srcset ) ); ?>" sizes="<?php echo esc_attr( $image_sizes ); ?>">
-							<?php endif; ?>
-							<img
-								src="<?php echo esc_url( $image_base . $image['image'] ); ?>"
-								width="<?php echo esc_attr( absint( $image['image_width'] ) ); ?>"
-								height="<?php echo esc_attr( absint( $image['image_height'] ) ); ?>"
-								alt="<?php echo esc_attr( $image['alt'] ); ?>"
-								loading="lazy"
-								decoding="async"
-								<?php if ( $has_showcase_carousel ) : ?>draggable="false"<?php endif; ?>
-							>
-							<?php if ( $webp_srcset ) : ?>
-								</picture>
-							<?php endif; ?>
-						</div>
-						<figcaption><?php echo esc_html( $image['caption'] ); ?></figcaption>
-					</figure>
-				<?php endforeach; ?>
-			</div>
-		</div>
-	</section>
-	<?php endif; ?>
 
 	<?php if ( ! empty( $category['assurance_cards'] ) && is_array( $category['assurance_cards'] ) ) : ?>
 	<section class="ma-product-section ma-product-assurance" aria-labelledby="ma-product-assurance-title">

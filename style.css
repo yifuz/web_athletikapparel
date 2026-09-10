@@ -91,6 +91,12 @@ body {
   overflow-x: hidden;
 }
 
+/* Keep native link underlines continuous across glyphs at every browser zoom.
+   This changes underline rendering only; links that opt out remain unchanged. */
+a {
+  text-decoration-skip-ink: none;
+}
+
 /* =========================================================
    Custom styles below. Keep organized and commented.
    Agents: add clear section comments for each block.

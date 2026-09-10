@@ -21,6 +21,7 @@
 唯一主要变量是把既有 8 图静态网格扩展为 16 图产品轨道：
 
 - Desktop 首屏继续显示 4 × 2 共 8 张；Mobile 显示 2 × 2 共 4 张，避免卡片过小；
+- 区块从能力正文之后前移至 `Category overview` 之后、采购入口之前，让真实产品视觉证据优先于长篇采购说明出现；
 - 支持鼠标拖动、触屏原生横向滑动、左右方向键和可访问的前后按钮；
 - 新增图片继续使用 480 / 800 WebP、800 JPG fallback、固定 800 × 800 尺寸、`srcset` / `sizes`、lazy loading、async decoding 与语义化 caption；
 - JavaScript 只在 `/merino-wool-manufacturer/` 加载；无 JavaScript 时仍可通过原生横向滚动查看。
@@ -42,6 +43,7 @@
 
 - [x] PHP 8.2、JavaScript 语法与 `git diff --check` 通过；
 - [x] 页面 HTTP 200、单一 H1、16 张 figure、carousel markup、两个控制按钮和专属脚本完整；
+- [x] 页面顺序为 Hero → Category overview → Product Programs 图片轨道 → Procurement Entry Points；
 - [x] 新增 24 个响应式图片资源均可访问，单个文件小于 200 KB；
 - [x] 1440px 实际浏览器轨道 `clientWidth=1152`、`scrollWidth=2328`，首屏显示 8 张；真实鼠标拖动后 `scrollLeft` 从 0 变为 294，Previous 按钮进入可用状态；
 - [x] 390px 实际浏览器为两列双排、页面无横向溢出；箭头可从 `scrollLeft=0` 移动至终点 `1074`，终点 Previous / Next 状态分别为 enabled / disabled；
