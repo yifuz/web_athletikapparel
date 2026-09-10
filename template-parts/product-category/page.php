@@ -123,6 +123,34 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 		</div>
 	</section>
 
+	<?php if ( ! empty( $category['buying_paths'] ) && is_array( $category['buying_paths'] ) ) : ?>
+	<section class="ma-product-section ma-product-buying-paths" aria-labelledby="ma-product-buying-paths-title">
+		<div class="ma-section-inner">
+			<div class="ma-section-heading ma-product-buying-paths__heading">
+				<p class="ma-section-kicker"><?php echo esc_html( ! empty( $category['buying_paths_kicker'] ) ? $category['buying_paths_kicker'] : __( 'Procurement entry points', 'myathletik-child' ) ); ?></p>
+				<h2 id="ma-product-buying-paths-title"><?php echo esc_html( $category['buying_paths_heading'] ); ?></h2>
+				<?php if ( ! empty( $category['buying_paths_intro'] ) ) : ?>
+					<p><?php echo esc_html( $category['buying_paths_intro'] ); ?></p>
+				<?php endif; ?>
+			</div>
+			<div class="ma-product-buying-paths__grid">
+				<?php foreach ( $category['buying_paths'] as $path ) : ?>
+					<article class="ma-product-buying-path">
+						<p class="ma-product-buying-path__label"><?php echo esc_html( $path['label'] ); ?></p>
+						<h3><?php echo esc_html( $path['title'] ); ?></h3>
+						<p class="ma-product-buying-path__spec"><?php echo esc_html( $path['spec'] ); ?></p>
+						<p><?php echo esc_html( $path['description'] ); ?></p>
+						<a class="ma-text-link" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Request a program review', 'myathletik-child' ); ?> <span aria-hidden="true">→</span></a>
+					</article>
+				<?php endforeach; ?>
+			</div>
+			<?php if ( ! empty( $category['buying_paths_note'] ) ) : ?>
+				<p class="ma-product-buying-paths__note"><?php echo esc_html( $category['buying_paths_note'] ); ?></p>
+			<?php endif; ?>
+		</div>
+	</section>
+	<?php endif; ?>
+
 	<?php if ( ! empty( $category['subcategories'] ) ) : ?>
 	<section class="ma-product-section ma-product-subcategories" aria-labelledby="ma-product-subcats-title">
 		<div class="ma-section-inner">

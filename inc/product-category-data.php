@@ -589,6 +589,30 @@ function myathletik_product_category_data() {
 				__( 'Merino wool balaclavas, neck warmers, and accessories', 'myathletik-child' ),
 				__( 'Custom Merino fabrics, blends, prints, and jacquards', 'myathletik-child' ),
 			),
+			'buying_paths_kicker'  => __( 'Procurement entry points', 'myathletik-child' ),
+			'buying_paths_heading' => __( 'Merino wool programs for specific layering needs', 'myathletik-child' ),
+			'buying_paths_intro'   => __( 'Start the quotation with the product role and intended climate, then define the composition, micron, GSM, knit structure, fit, construction, and testing requirements for the program.', 'myathletik-child' ),
+			'buying_paths_note'    => __( 'The GSM ranges shown are common briefing starting points, not fixed production limits. Final material and garment specifications are confirmed against the buyer\'s requirements and approved sample.', 'myathletik-child' ),
+			'buying_paths'         => array(
+				array(
+					'label'       => __( 'Lightweight program', 'myathletik-child' ),
+					'title'       => __( 'Merino Wool Base Layers', 'myathletik-child' ),
+					'spec'        => __( 'Common starting brief: 150-170 GSM', 'myathletik-child' ),
+					'description' => __( 'Next-to-skin tops and bottoms for outdoor, training, ski, and cold-weather layering programs. The brief should define composition, micron, fit, stretch/recovery, seam placement, target climate, and care requirements.', 'myathletik-child' ),
+				),
+				array(
+					'label'       => __( 'Thermal program', 'myathletik-child' ),
+					'title'       => __( 'Midweight Merino Thermal Layers', 'myathletik-child' ),
+					'spec'        => __( 'Common starting brief: 180-210 GSM', 'myathletik-child' ),
+					'description' => __( 'Base-layer and light mid-layer tops or bottoms developed for added warmth. Buyers can specify 100% Merino wool or blends, single jersey, interlock, rib, or another project-specific knit structure.', 'myathletik-child' ),
+				),
+				array(
+					'label'       => __( 'Underwear program', 'myathletik-child' ),
+					'title'       => __( 'Merino Wool Performance Underwear', 'myathletik-child' ),
+					'spec'        => __( 'Common starting brief: 150-180 GSM', 'myathletik-child' ),
+					'description' => __( 'Underwear programs developed around next-to-skin comfort, fit, waistband construction, stretch/recovery, seam selection, care requirements, and the buyer\'s agreed test criteria.', 'myathletik-child' ),
+				),
+			),
 			'subcategories'    => array(
 				array(
 					'title'       => __( 'Merino wool base layers and underwear', 'myathletik-child' ),
