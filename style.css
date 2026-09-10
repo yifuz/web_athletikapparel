@@ -3785,6 +3785,8 @@ body.page .container.grid-container:has(.ma-product-category) {
   min-height: var(--ma-touch-target);
   margin-top: auto;
   padding-top: var(--ma-space-4);
+  border-bottom: 2px solid currentColor;
+  text-decoration: none;
 }
 
 .ma-product-buying-paths__note {
@@ -4341,6 +4343,10 @@ body.page .container.grid-container:has(.ma-product-category) {
 
   .ma-product-buying-paths__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ma-product-buying-path h3 {
+    min-block-size: 2.6em;
   }
 
   .ma-product-showcase__grid {
