@@ -3809,6 +3809,81 @@ body.page .container.grid-container:has(.ma-product-category) {
   gap: var(--ma-space-3);
 }
 
+.ma-product-showcase__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ma-space-3);
+  margin: var(--ma-space-4) 0 var(--ma-space-3);
+}
+
+.ma-product-showcase__toolbar p {
+  margin: 0;
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-small);
+}
+
+.ma-product-showcase__controls {
+  display: flex;
+  flex: 0 0 auto;
+  gap: var(--ma-space-2);
+}
+
+.ma-product-showcase__controls button {
+  display: inline-flex;
+  width: var(--ma-touch-target);
+  height: var(--ma-touch-target);
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  color: var(--ma-color-accent-2);
+  cursor: pointer;
+}
+
+.ma-product-showcase__controls button:hover,
+.ma-product-showcase__controls button:focus-visible {
+  border-color: var(--ma-color-accent-2);
+}
+
+.ma-product-showcase__controls button:focus-visible {
+  outline: 2px solid var(--ma-color-accent);
+  outline-offset: var(--ma-space-1);
+}
+
+.ma-product-showcase__controls button:disabled {
+  color: var(--ma-color-muted);
+  cursor: default;
+  opacity: 0.45;
+}
+
+.ma-product-showcase__grid--carousel {
+  grid-template-columns: none;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - var(--ma-space-3)) / 2);
+  overflow-x: auto;
+  padding-bottom: var(--ma-space-3);
+  cursor: grab;
+  overscroll-behavior-inline: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: inline mandatory;
+  scrollbar-color: var(--ma-color-border) var(--ma-color-surface);
+}
+
+.ma-product-showcase__grid--carousel.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.ma-product-showcase__grid--carousel .ma-product-showcase-card {
+  scroll-snap-align: start;
+}
+
 .ma-product-showcase-card {
   min-width: 0;
   margin: 0;
@@ -4352,6 +4427,11 @@ body.page .container.grid-container:has(.ma-product-category) {
   .ma-product-showcase__grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--ma-space-4);
+  }
+
+  .ma-product-showcase__grid--carousel {
+    grid-template-columns: none;
+    grid-auto-columns: calc((100% - var(--ma-space-4) - var(--ma-space-4) - var(--ma-space-4)) / 4);
   }
 
   .ma-product-procurement__steps {

@@ -746,6 +746,78 @@ function myathletik_product_category_data() {
 						800 => 'merino wool product/merino-balaclava-800.webp',
 					)
 				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-printed-crew-base-layer-800.jpg',
+					__( 'Printed Merino wool crew-neck base-layer top', 'myathletik-child' ),
+					__( 'Printed Crew Base Layer', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-printed-crew-base-layer-480.webp',
+						800 => 'merino wool product/merino-printed-crew-base-layer-800.webp',
+					)
+				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-blue-half-zip-thermal-top-800.jpg',
+					__( 'Blue Merino wool half-zip thermal top', 'myathletik-child' ),
+					__( 'Half-Zip Thermal Top', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-blue-half-zip-thermal-top-480.webp',
+						800 => 'merino wool product/merino-blue-half-zip-thermal-top-800.webp',
+					)
+				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-two-tone-hooded-base-layer-800.jpg',
+					__( 'Two-tone Merino wool hooded base-layer top', 'myathletik-child' ),
+					__( 'Two-Tone Hooded Base Layer', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-two-tone-hooded-base-layer-480.webp',
+						800 => 'merino wool product/merino-two-tone-hooded-base-layer-800.webp',
+					)
+				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-performance-base-layer-bottom-800.jpg',
+					__( 'Gray Merino wool performance base-layer bottom with contrasting waistband', 'myathletik-child' ),
+					__( 'Performance Base-Layer Bottom', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-performance-base-layer-bottom-480.webp',
+						800 => 'merino wool product/merino-performance-base-layer-bottom-800.webp',
+					)
+				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-jogger-bottom-800.jpg',
+					__( 'Black Merino wool jogger bottom with drawcord waist', 'myathletik-child' ),
+					__( 'Merino Jogger Bottom', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-jogger-bottom-480.webp',
+						800 => 'merino wool product/merino-jogger-bottom-800.webp',
+					)
+				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-womens-vneck-base-layer-800.jpg',
+					__( 'Women\'s black Merino wool V-neck base-layer top', 'myathletik-child' ),
+					__( 'Women\'s V-Neck Base Layer', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-womens-vneck-base-layer-480.webp',
+						800 => 'merino wool product/merino-womens-vneck-base-layer-800.webp',
+					)
+				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-womens-turtleneck-base-layer-800.jpg',
+					__( 'Women\'s gray Merino wool turtleneck base-layer top', 'myathletik-child' ),
+					__( 'Women\'s Turtleneck Base Layer', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-womens-turtleneck-base-layer-480.webp',
+						800 => 'merino wool product/merino-womens-turtleneck-base-layer-800.webp',
+					)
+				),
+				myathletik_product_showcase_item(
+					'merino wool product/merino-full-zip-hooded-mid-layer-800.jpg',
+					__( 'Navy Merino wool full-zip hooded mid-layer', 'myathletik-child' ),
+					__( 'Full-Zip Hooded Mid-Layer', 'myathletik-child' ),
+					array(
+						480 => 'merino wool product/merino-full-zip-hooded-mid-layer-480.webp',
+						800 => 'merino wool product/merino-full-zip-hooded-mid-layer-800.webp',
+					)
+				),
 			),
 			'process_kicker'    => __( 'Procurement workflow', 'myathletik-child' ),
 			'process_heading'   => __( 'From Merino wool brief to delivered order', 'myathletik-child' ),

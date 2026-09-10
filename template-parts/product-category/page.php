@@ -223,7 +223,8 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 	</section>
 
 	<?php if ( ! empty( $category['product_showcase'] ) && is_array( $category['product_showcase'] ) ) : ?>
-	<section class="ma-product-section ma-product-showcase" aria-labelledby="ma-product-showcase-title">
+	<?php $has_showcase_carousel = count( $category['product_showcase'] ) > 8; ?>
+	<section class="ma-product-section ma-product-showcase" aria-labelledby="ma-product-showcase-title"<?php echo $has_showcase_carousel ? ' data-ma-product-carousel' : ''; ?>>
 		<div class="ma-section-inner">
 			<div class="ma-section-heading">
 				<p class="ma-section-kicker"><?php echo esc_html( ! empty( $category['showcase_kicker'] ) ? $category['showcase_kicker'] : __( 'Product examples', 'myathletik-child' ) ); ?></p>
@@ -232,7 +233,30 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 					<p><?php echo esc_html( $category['showcase_intro'] ); ?></p>
 				<?php endif; ?>
 			</div>
-			<div class="ma-product-showcase__grid">
+			<?php if ( $has_showcase_carousel ) : ?>
+				<div class="ma-product-showcase__toolbar">
+					<p id="ma-product-showcase-help"><?php esc_html_e( 'Drag the gallery or use the arrow buttons to view more products.', 'myathletik-child' ); ?></p>
+					<div class="ma-product-showcase__controls">
+						<button type="button" data-ma-carousel-prev aria-controls="ma-product-showcase-track" disabled>
+							<span aria-hidden="true">←</span>
+							<span class="screen-reader-text"><?php esc_html_e( 'View previous Merino wool products', 'myathletik-child' ); ?></span>
+						</button>
+						<button type="button" data-ma-carousel-next aria-controls="ma-product-showcase-track">
+							<span aria-hidden="true">→</span>
+							<span class="screen-reader-text"><?php esc_html_e( 'View more Merino wool products', 'myathletik-child' ); ?></span>
+						</button>
+					</div>
+				</div>
+			<?php endif; ?>
+			<div
+				class="ma-product-showcase__grid<?php echo $has_showcase_carousel ? ' ma-product-showcase__grid--carousel' : ''; ?>"
+				<?php if ( $has_showcase_carousel ) : ?>
+					id="ma-product-showcase-track"
+					tabindex="0"
+					aria-label="<?php esc_attr_e( 'Merino wool product gallery', 'myathletik-child' ); ?>"
+					aria-describedby="ma-product-showcase-help"
+				<?php endif; ?>
+			>
 				<?php foreach ( $category['product_showcase'] as $image ) : ?>
 					<?php
 					$image_sizes = '(max-width: 47.99rem) 50vw, 25vw';
@@ -260,6 +284,7 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 								alt="<?php echo esc_attr( $image['alt'] ); ?>"
 								loading="lazy"
 								decoding="async"
+								<?php if ( $has_showcase_carousel ) : ?>draggable="false"<?php endif; ?>
 							>
 							<?php if ( $webp_srcset ) : ?>
 								</picture>

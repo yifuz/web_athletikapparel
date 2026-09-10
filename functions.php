@@ -251,6 +251,30 @@ function myathletik_enqueue_inquiry_tracking() {
 add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_inquiry_tracking' );
 
 /**
+ * Enable mouse drag, keyboard and arrow controls for the Merino product rail.
+ */
+function myathletik_enqueue_merino_product_carousel() {
+	if ( ! is_page( 'merino-wool-manufacturer' ) ) {
+		return;
+	}
+
+	$script_path = get_stylesheet_directory() . '/assets/js/merino-product-carousel.js';
+
+	if ( ! file_exists( $script_path ) ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'myathletik-merino-product-carousel',
+		get_stylesheet_directory_uri() . '/assets/js/merino-product-carousel.js',
+		array(),
+		filemtime( $script_path ),
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_merino_product_carousel' );
+
+/**
  * Track deliberate email and WhatsApp contact clicks as secondary GA4 events.
  *
  * These events are diagnostic only. A successful form submission remains the
