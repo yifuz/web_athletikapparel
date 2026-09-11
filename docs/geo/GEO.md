@@ -130,15 +130,15 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 - 四篇指南使用可见正文、唯一 H1、文章目录、内部链接、外部技术参考、可见复核日期和 Organization 作者；JSON-LD 与页面正文对应，包含 Article、FAQPage 和 BreadcrumbList，Hub 使用 ItemList。
 - Baseline v1 已证明规范站在品牌点名和指定网站问题中可以被识别与引用；这不能外推为未点名推荐。
 - GSC Generative AI Page 表返回 13 个规范 URL；四篇 Technical Guides 均至少出现一次，FLATLOCK Guide 7 次、QC Guide 4 次。它们属于页面级链接曝光和 citation-surface evidence；报表没有 Query 与答案原文，不能验证链接支持的具体结论。
-- Baseline v2 已于 2026-09-03 启动。ChatGPT Search 的八条首轮结果已全部记录：D03～D05 均把 Athletik 列为第 1，但 D05 的核心引用来自旧 `ultramerino.com`；C06～C08 均未形成可验证的对应 Athletik Guide 引用。Google AI Mode E01/E02 均找到规范站，但仍受旧站候选或旧口径影响。Google AI Mode 推荐题中，D03 第 1但只引用历史矩阵站、D04 完全未出现、D05 第 3并首次直接引用当前规范 Merino 页面；C06 没有引用目标 Tech Pack Guide，C07 虽引用规范站首页却没有引用目标 FLATLOCK Guide，两个内容意图均跨产品复现 source-selection 缺口。推荐已跨产品复现，但排序和证据归属明显随采购意图变化。Perplexity 因当前账户无会员权限记为工具不可用，不使用替代产品。
+- Baseline v2 首批可执行测试已完成：ChatGPT Search 8/8、Google AI Mode 8/8；Perplexity 8 条按 `unavailable / plan-access` 记录。ChatGPT D03～D05 均把 Athletik 列第 1，但 D05 的核心引用来自旧 `ultramerino.com`；C06～C08 为 0/3 个已验证对应 Guide 引用。Google AI Mode E01/E02 找到规范站但仍受旧站候选/旧口径影响；D03 第 1但引用历史矩阵站、D04 未出现、D05 第 3并引用当前规范 Merino 页面；C06 未引目标 Guide，C07 只引首页，C08 的 Sources 面板把 Athletik LinkedIn 尽调帖列为第一张卡片，但仍未引用官网目标 Guide。推荐已跨产品复现，站外分发已进入 Google 来源候选；规范内容引用、证据归属和语义稳定性仍是主要缺口。
 
-### 5.3 站外分发层：两篇完成，一篇待发布，证据补录滞后
+### 5.3 站外分发层：三项均有发布信号，证据补录滞后
 
 | 对应意图 | 官网母文章 | LinkedIn / Instagram 状态 | 证据缺口 |
 |---|---|---|---|
 | V2-C07 | FLATLOCK vs OVERLOCK | 2026-08-12 已发布 | 两个平台公开 URL、Story 状态和七日数据待补录 |
 | V2-C06 | Technical Knitwear Tech Pack | 2026-08-13 已发布 | 两个平台公开 URL、Story 状态和七日数据待补录 |
-| V2-C08 | Evaluate a Vertically Integrated Knitwear OEM | 内容包已准备 | Baseline v2 本批结束后审核、发布并建档 |
+| V2-C08 | Evaluate a Vertically Integrated Knitwear OEM | Google AI Mode Sources 面板已发现 2026-08-14 Athletik LinkedIn 尽调帖；Instagram 状态待确认 | LinkedIn 实际公开 URL、Instagram 发布状态、Story 状态和七日数据待补录 |
 
 社交分发有助于真实用户发现和实体/主题一致性，但 LinkedIn/Instagram 的自身帖子仍属于品牌可控内容，
 不能替代独立行业来源，也不能用展示量证明 AI 已经引用或推荐。
@@ -157,7 +157,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 |---|---|---|---|
 | 找到 | 已获得 Google 实际展示证据，持续监测 | 生产 200、Sitemap、Canonical、内链、主要 crawler 可访问；17/18 GSC indexed；Generative AI 首个基线 29 impressions | Services 转为 indexed；完整可比窗口持续出现目标页面；无新的抓取/indexability 回归 |
 | 提取 | 部分达成，历史来源污染已复现 | 品牌题可提取核心业务、地点与规范站，但 Google AI Mode E01 混入 `athletik.nyc` 的 5 家伙伴工厂、年产 500 万件及未核准区域域名关系 | E01/E02 在两个可用产品或跨月份准确覆盖规范实体口径，且不引入未核准站点关系 |
-| 引用 | Google 链接曝光已出现，但内容题尚未取得规范指南引用 | GSC 中四篇指南均获页面级链接曝光；品牌题可引用规范站；ChatGPT C06～C08 为 0/3 个已验证对应 Guide 引用；Google AI Mode C06 未引用目标 Guide，C07 只引用首页而未引用目标 Guide，两个内容意图均跨产品复现 source-selection 缺口 | 同一固定内容题在至少两个独立产品/月份出现相关规范指南引用，且引用支持结论 |
+| 引用 | Google 链接曝光与站外来源候选已出现，但内容题尚未取得规范指南引用 | GSC 中四篇指南均有页面级链接曝光；ChatGPT C06～C08 为 0/3；Google C06 未引目标 Guide、C07 只引首页、C08 只在 Sources 面板出现 Athletik LinkedIn 尽调帖，三题均未取得对应官网 Guide 引用 | 同一固定内容题在至少两个独立产品/月份出现相关规范指南引用，且引用支持结论 |
 | 推荐 | 跨产品出现但排序不稳定，规范引用开始形成 | ChatGPT D03～D05 均为第 1；Google AI Mode D03 第 1/历史站引用、D04 未出现、D05 第 3/规范 Merino 页面引用 | 下一月在独立会话中继续进入匹配短名单；规范站与可信独立来源支持准确理由，且不混淆实体关系 |
 
 不建立一个把四阶段相加的“GEO 总分”。四阶段分别记录，否则品牌题的高准确率会掩盖未点名推荐的缺口。
@@ -173,20 +173,20 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | V2-D05 | 推荐 | Merino Wool、Underwear、About、FLATLOCK Guide | Google AI Mode 已直接引用规范 Merino 页面并列第 3，证明当前页可承接该意图；ChatGPT 仍依赖旧 `ultramerino.com`，批次后重点转为历史站冲突治理和可信独立佐证，不机械新建重复指南 |
 | V2-C06 | 引用 | Tech Pack Guide | ChatGPT 与 Google AI Mode 均准确进入 cut-and-sew performance knitwear 语境，但都未引用目标 Guide，citation source-selection 缺口已跨产品复现；Google 回答还出现 stitch type 命名、固定 SPI/tolerance/extended measurement 等过度概括。本批结束前不改页，完成 C07/C08 后再统一判断可引用摘要、原创生产证据、标准来源或站外引用入口 |
 | V2-C07 | 引用 | FLATLOCK vs OVERLOCK Guide | ChatGPT 与 Google AI Mode 都未选择目标 Guide；Google 只引用规范首页，source-to-claim 支持不足，并采用制造商博客中的固定 SPI 与未经透明验证的 8%–18% 成本数字。完成 C08 后再结合 GSC、Bing grounding query 与跨产品结果判断可引用摘要、原创生产证据、一手标准来源和外部引用入口 |
-| V2-C08 | 引用 | OEM Evaluation + QC Guide | ChatGPT 首轮采用 OECD、ZDHC、ILO、DHS、IAF 等强来源并扩展到完整供应链尽调，但两篇 Athletik Guide 引用未证明；不添加任意固定评分，待跨产品对照后再判断内容边界和引用入口 |
+| V2-C08 | 引用 | OEM Evaluation + QC Guide | Google Sources 面板已把 Athletik LinkedIn 尽调帖列为首张卡片，证明站外分发可被找到；但正文未提品牌、两篇官网 Guide 未被引用，并回漂到 9GG–16GG/Stoll/Shima fully fashioned 语境。批后优先区分站外发现、规范引用和技术准确性，再决定是否强化 cut-and-sew 定义块、一手证据和外部引用入口 |
 
 ## 8. 单人执行计划
 
-### P0 — 先建立有效测量基线（当前立即执行）
+### P0 — 有效测量基线（首批完成）
 
 1. 完成 8 条 Baseline v2 × ChatGPT Search、Perplexity、Google AI Mode 的首批记录；Perplexity 因当前无会员权限按 8 条 `unavailable / plan-access` 记录，不付费、不换产品替代。
 2. 每条提示词使用独立干净会话，保存第一次回答、全部引用 URL、来源面板和环境元数据；缺项结果标为 `partial`，不补猜。
-3. 本批结束前冻结会影响实体、指南正文、导航或 Schema 的上线修改，也不发布 GEO-08，避免改变观察条件。
-4. 批次结束后只形成阶段诊断，不因为一次未出现就立刻改页；关键变化至少需要另一产品或下一月复现。
+3. 首批测试期间冻结了会影响实体、指南正文、导航或 Schema 的上线修改；该冻结现已随 Google C08 完成而结束。
+4. 先形成批后阶段诊断和最小改动清单，不因为一次未出现就立刻改页；关键变化至少需要另一产品或下一月复现。
 
 ### P1 — 清掉证据债务并补引用观测（本批结束后 1 周内）
 
-1. 发布已准备的 GEO-08 LinkedIn 单图与 Instagram Carousel，并记录公开 URL、实际时间、UTM 和 Story 状态。
+1. 核实 GEO-08 的实际发布状态：Google 已发现 2026-08-14 Athletik LinkedIn 尽调帖；补录其公开 URL、实际时间和 UTM，并确认 Instagram Carousel/Story 是否已发布，未发布部分再审核执行。
 2. 补录 GEO-07、GEO-06 的公开帖子 URL、Story 状态和已到期的七日平台/GA4 数据；无法取得的字段明确写 `unavailable`。
 3. 将网站加入或核对 Bing Webmaster Tools；若账户出现 AI Performance，记录 total citations、cited pages 和 grounding queries 的月度快照。
 4. 每月导出 GSC Generative AI 的 Property impressions、Pages、Countries、Devices 和 Dates；与传统 Web Search、GA4、固定提示词和第三方估算分开。Page 明细不与 Property 总量机械相加，也不把链接曝光直接写成准确提取或推荐。
@@ -212,9 +212,9 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 | ID | 行动 | 对应阶段 | 优先级 | 状态 | 完成标准 |
 |---|---|---|---|---|---|
-| GEO-V2-001 | 完成首批 24 条 Baseline v2 记录 | 全漏斗测量 | P0 | `in-progress / ChatGPT 8 of 8; Google AI Mode 7 of 8; Perplexity unavailable` | 目标为 ChatGPT Search 与 Google AI Mode 共 16 条实际运行；Perplexity 8 条按 `unavailable / plan-access` 记录；不混用替代品 |
+| GEO-V2-001 | 完成首批 24 条 Baseline v2 记录 | 全漏斗测量 | P0 | `complete / ChatGPT 8 of 8; Google AI Mode 8 of 8; Perplexity unavailable` | ChatGPT Search 与 Google AI Mode 共 16 条实际运行已记录；Perplexity 8 条按 `unavailable / plan-access` 记录；未混用替代品 |
 | GEO-V2-002 | 补齐 V2-E01 环境和来源证据 | 测量有效性 | P0 | `partial` | Temporary Chat、模式、个性化、地区、设备和来源面板均已记录；否则保留 partial |
-| GEO-V2-003 | 发布 GEO-08 分发包 | 引用发现入口 | P1 | `blocked-by-test-freeze` | 本批测试完成后发布，公开 URL、UTM、时间和 Story 状态入日志 |
+| GEO-V2-003 | 核实并完成 GEO-08 分发 | 引用发现入口 | P1 | `partial / LinkedIn-source-card` | 补录已被 Google 找到的 LinkedIn 帖子公开 URL、UTM 和时间；确认 Instagram/Story 状态，未发布部分审核执行 |
 | GEO-V2-004 | 补录 GEO-06/07 发布与七日数据 | 运营证据 | P1 | `overdue / owner-input` | 可得字段全部补录，不可得字段写 unavailable |
 | GEO-V2-005 | 启用 Bing Webmaster Tools AI 引用观测 | 引用 | P1 | `owner-action` | 站点已验证；AI Performance 可用则建立首个快照，不可用则记录 unavailable |
 | GEO-V2-006 | 建立 D03～D05 推荐证据矩阵 | 推荐 | P1 | `planned` | 每题至少有匹配事实、第一方 URL、第三方候选、缺失证据和公开边界 |
