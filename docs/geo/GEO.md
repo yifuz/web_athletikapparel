@@ -130,7 +130,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 - 四篇指南使用可见正文、唯一 H1、文章目录、内部链接、外部技术参考、可见复核日期和 Organization 作者；JSON-LD 与页面正文对应，包含 Article、FAQPage 和 BreadcrumbList，Hub 使用 ItemList。
 - Baseline v1 已证明规范站在品牌点名和指定网站问题中可以被识别与引用；这不能外推为未点名推荐。
 - GSC Generative AI Page 表返回 13 个规范 URL；四篇 Technical Guides 均至少出现一次，FLATLOCK Guide 7 次、QC Guide 4 次。它们属于页面级链接曝光和 citation-surface evidence；报表没有 Query 与答案原文，不能验证链接支持的具体结论。
-- Baseline v2 已于 2026-09-03 启动。ChatGPT Search 的八条首轮结果已全部记录：E02 对规范站提取总体准确；D03～D05 均把 Athletik 列为第一推荐，但各次仍有环境元数据缺项，且 D05 的核心引用来自旧 `ultramerino.com`，不能将推荐成功等同于规范站引用成功。C06～C08 均准确进入目标 cut-and-sew 语境，答案主要由标准机构、政府/国际组织、设备商和行业平台支撑，但三轮都没有形成可验证的对应 Athletik Guide 引用。下一步是保持页面冻结并完成 Perplexity 与 Google AI Mode 对照。
+- Baseline v2 已于 2026-09-03 启动。ChatGPT Search 的八条首轮结果已全部记录：E02 对规范站提取总体准确；D03～D05 均把 Athletik 列为第一推荐，但各次仍有环境元数据缺项，且 D05 的核心引用来自旧 `ultramerino.com`，不能将推荐成功等同于规范站引用成功。C06～C08 均准确进入目标 cut-and-sew 语境，但三轮都没有形成可验证的对应 Athletik Guide 引用。Google AI Mode V2-E01 已正确找到规范站、产品和生产地区，同时混入 `athletik.nyc` 的 5 家伙伴工厂与年产 500 万件旧口径，形成明确的历史来源污染证据。Perplexity 因当前账户无会员权限记为工具不可用，不使用替代产品。
 
 ### 5.3 站外分发层：两篇完成，一篇待发布，证据补录滞后
 
@@ -156,7 +156,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | 阶段 | 当前判断 | 主要理由 | 下一道门槛 |
 |---|---|---|---|
 | 找到 | 已获得 Google 实际展示证据，持续监测 | 生产 200、Sitemap、Canonical、内链、主要 crawler 可访问；17/18 GSC indexed；Generative AI 首个基线 29 impressions | Services 转为 indexed；完整可比窗口持续出现目标页面；无新的抓取/indexability 回归 |
-| 提取 | 部分达成 | 品牌题可提取核心业务与地点，但实体角色和历史站点仍可能混淆 | E01/E02 在三个产品中准确覆盖规范实体口径，且不引入未核准站点关系 |
+| 提取 | 部分达成，历史来源污染已复现 | 品牌题可提取核心业务、地点与规范站，但 Google AI Mode E01 混入 `athletik.nyc` 的 5 家伙伴工厂、年产 500 万件及未核准区域域名关系 | E01/E02 在两个可用产品或跨月份准确覆盖规范实体口径，且不引入未核准站点关系 |
 | 引用 | Google 链接曝光已出现，ChatGPT 三个内容题均未取得规范指南引用证据 | GSC 中四篇指南均获页面级链接曝光；品牌题可引用规范站；ChatGPT C06～C08 首轮语义正确，但为 0/3 个已验证对应 Guide 引用 | 同一固定内容题在至少两个独立产品/月份出现相关规范指南引用，且引用支持结论 |
 | 推荐 | ChatGPT 首轮强正向，尚未稳定 | V2-D03～D05 均为第一推荐且理由匹配，但只覆盖一个产品的一轮；D05 依赖旧站并出现实体关系泄漏，独立站外佐证仍不足 | Athletik 在 D03～D05 中跨产品或跨月份继续进入短名单，规范站/独立来源支持准确理由，且不混淆实体关系 |
 
@@ -166,7 +166,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 | Prompt | 目标阶段 | 当前主要承接资产 | 当前缺口/决策 |
 |---|---|---|---|
-| V2-E01 | 提取 | 首页、About、Organization Schema | 中美实体角色与历史站关系仍可能被混淆；先完成测试，不在批次中改页 |
+| V2-E01 | 提取 | 首页、About、Organization Schema | Google AI Mode 已复现旧 `athletik.nyc` 工厂数量/年产能污染；先完成八题，再审计历史域名和旧档案，不在批次中改页 |
 | V2-E02 | 提取 + 引用 | 首页、七个品类页、About、Services | 指定站点题是站内理解控制组，不计自然发现 |
 | V2-D03 | 推荐 | 首页、FLATLOCK Guide、生产证据 | 需要更直接的 FLATLOCK 与 Merrow ACTIVESEAM 第一方证据；后续条件式建立专门内容 |
 | V2-D04 | 推荐 | Sportswear、Underwear、Services、OEM Evaluation | 不再写泛化“best supplier”自荐文；优先补强项目匹配与独立佐证 |
@@ -179,7 +179,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 ### P0 — 先建立有效测量基线（当前立即执行）
 
-1. 在连续 3 个自然日内完成 8 条 Baseline v2 × ChatGPT Search、Perplexity、Google AI Mode 的首批 24 次测试。
+1. 完成 8 条 Baseline v2 × ChatGPT Search、Perplexity、Google AI Mode 的首批记录；Perplexity 因当前无会员权限按 8 条 `unavailable / plan-access` 记录，不付费、不换产品替代。
 2. 每条提示词使用独立干净会话，保存第一次回答、全部引用 URL、来源面板和环境元数据；缺项结果标为 `partial`，不补猜。
 3. 本批结束前冻结会影响实体、指南正文、导航或 Schema 的上线修改，也不发布 GEO-08，避免改变观察条件。
 4. 批次结束后只形成阶段诊断，不因为一次未出现就立刻改页；关键变化至少需要另一产品或下一月复现。
@@ -212,7 +212,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 | ID | 行动 | 对应阶段 | 优先级 | 状态 | 完成标准 |
 |---|---|---|---|---|---|
-| GEO-V2-001 | 完成首批 24 次 Baseline v2 | 全漏斗测量 | P0 | `in-progress / ChatGPT 8 of 8 complete` | ChatGPT Search 八条已完成；继续完成 Perplexity 与 Google AI Mode，24 行结果完整；不可用产品按规则记录，不混用替代品 |
+| GEO-V2-001 | 完成首批 24 条 Baseline v2 记录 | 全漏斗测量 | P0 | `in-progress / ChatGPT 8 of 8; Google AI Mode 1 of 8; Perplexity unavailable` | ChatGPT Search 与 Google AI Mode 共 16 条实际运行完成；Perplexity 8 条按 `unavailable / plan-access` 记录；不混用替代品 |
 | GEO-V2-002 | 补齐 V2-E01 环境和来源证据 | 测量有效性 | P0 | `partial` | Temporary Chat、模式、个性化、地区、设备和来源面板均已记录；否则保留 partial |
 | GEO-V2-003 | 发布 GEO-08 分发包 | 引用发现入口 | P1 | `blocked-by-test-freeze` | 本批测试完成后发布，公开 URL、UTM、时间和 Story 状态入日志 |
 | GEO-V2-004 | 补录 GEO-06/07 发布与七日数据 | 运营证据 | P1 | `overdue / owner-input` | 可得字段全部补录，不可得字段写 unavailable |
