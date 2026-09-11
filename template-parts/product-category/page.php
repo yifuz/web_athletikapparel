@@ -17,7 +17,6 @@ if ( ! $category ) {
 }
 
 $image_base = get_stylesheet_directory_uri() . '/assets/images/';
-$public_moq = number_format_i18n( myathletik_public_moq_pieces() );
 $hero_kicker = ! empty( $category['hero_kicker'] )
 	? $category['hero_kicker']
 	: __( 'OEM/ODM technical knitwear category', 'myathletik-child' );
@@ -51,10 +50,9 @@ if ( ! empty( $category['hero_video'] ) ) {
 }
 $specs = array(
 	array(
-		'label'       => __( 'MOQ', 'myathletik-child' ),
-		'value'       => $public_moq,
-		'unit'        => __( 'pcs', 'myathletik-child' ),
-		'description' => __( 'Per style.', 'myathletik-child' ),
+		'label'       => __( 'Production basis', 'myathletik-child' ),
+		'value'       => __( 'Approved sample', 'myathletik-child' ),
+		'description' => __( 'Bulk production follows the current specification.', 'myathletik-child' ),
 	),
 	array(
 		'label'       => __( 'Sampling', 'myathletik-child' ),
@@ -521,5 +519,5 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 		</div>
 	</section>
 
-	<?php get_template_part( 'template-parts/home/inquiry-cta' ); ?>
+	<?php get_template_part( 'template-parts/home/inquiry-cta', null, array( 'show_garment_moq' => false ) ); ?>
 </main>

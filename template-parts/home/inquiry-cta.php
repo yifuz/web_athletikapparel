@@ -10,6 +10,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$show_garment_moq = ! isset( $args['show_garment_moq'] ) || (bool) $args['show_garment_moq'];
 ?>
 
 <section class="ma-home-inquiry" aria-labelledby="ma-home-inquiry-title">
@@ -36,7 +38,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</span>
 					<span>
 						<strong><?php esc_html_e( 'Order scope', 'myathletik-child' ); ?></strong>
-						<small><?php esc_html_e( 'Quantity per style and required timeline. Garment MOQ: 500 pieces per style.', 'myathletik-child' ); ?></small>
+						<small>
+							<?php
+							if ( $show_garment_moq ) {
+								esc_html_e( 'Quantity per style and required timeline. Garment MOQ: 500 pieces per style.', 'myathletik-child' );
+							} else {
+								esc_html_e( 'Quantity per style and required timeline.', 'myathletik-child' );
+							}
+							?>
+						</small>
 					</span>
 				</li>
 

@@ -105,7 +105,7 @@ function myathletik_product_category_data() {
 			'intro'            => __( 'Sportswear programs for gym, training, running, and studio applications, developed around the buyer\'s fit, movement, fabric, finish, and testing requirements. We produce tight, fitted, and compression silhouettes for B2B activewear brands, with specifications confirmed through material selection and approved samples.', 'myathletik-child' ),
 			'buyer_fit'        => array(
 				'heading' => __( 'Is Athletik a fit for your sportswear program?', 'myathletik-child' ),
-				'summary' => sprintf( __( 'Athletik is a China-based OEM/ODM manufacturer for cut-and-sew knitted sportswear, with production in Zhangjiagang. Its program is best suited to established and mid-sized activewear brands, wholesalers, and importers working from a tech pack, approved reference sample, or defined product brief. It supports coordinated fabric development, fit, technical seam selection, testing criteria, and bulk production from %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				'summary' => __( 'Athletik is a China-based OEM/ODM manufacturer for cut-and-sew knitted sportswear, with production in Zhangjiagang. Its program is best suited to established and mid-sized activewear brands, wholesalers, and importers working from a tech pack, approved reference sample, or defined product brief. It supports coordinated fabric development, fit, technical seam selection, and testing criteria.', 'myathletik-child' ),
 				'facts'   => array(
 					array(
 						'label' => __( 'Best suited to', 'myathletik-child' ),
@@ -277,7 +277,7 @@ function myathletik_product_category_data() {
 			'intro'            => __( 'We manufacture performance underwear, men\'s boxer briefs, and thermal base layers from knitted fabrics for brands, importers, and private-label programs. Development can combine FLATLOCK, ACTIVESEAM, or bonded-welded construction with microfiber, stretch, and Merino wool materials, based on the intended use, fit, and approved specification.', 'myathletik-child' ),
 			'buyer_fit'        => array(
 				'heading' => __( 'Is Athletik a fit for your underwear program?', 'myathletik-child' ),
-				'summary' => sprintf( __( 'Athletik is a China-based OEM/ODM manufacturer for close-fitting knitted underwear and base layers, with production in Zhangjiagang. Its program is best suited to established and mid-sized brands, wholesalers, and importers with defined fit, fabric, waistband, seam-map, and testing requirements. Development can coordinate materials, sample approval, technical construction, private-label details, and bulk production from %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				'summary' => __( 'Athletik is a China-based OEM/ODM manufacturer for close-fitting knitted underwear and base layers, with production in Zhangjiagang. Its program is best suited to established and mid-sized brands, wholesalers, and importers with defined fit, fabric, waistband, seam-map, and testing requirements. Development can coordinate materials, sample approval, technical construction, and private-label details.', 'myathletik-child' ),
 				'facts'   => array(
 					array(
 						'label' => __( 'Best suited to', 'myathletik-child' ),
@@ -357,13 +357,12 @@ function myathletik_product_category_data() {
 			),
 			'capability_kicker'  => __( 'Development inputs', 'myathletik-child' ),
 			'capability_heading' => __( 'Define fit, fabric, and seam performance before sampling', 'myathletik-child' ),
-			'construction'      => sprintf( __( 'Send the product type, intended activity and climate, target market and delivery destination, size range, target fit, garment drawing or tech pack, reference sample, fabric composition and weight, stretch and recovery targets, seam map, waistband and trim requirements, artwork, private-label packaging requirements, target price range, order quantity, and required testing. Our team can coordinate knitted fabric development through our own fabric mill, review FLATLOCK, ACTIVESEAM, and bonded-welded options, develop samples, and use in-house testing to check the agreed material and garment criteria before bulk production. Public garment MOQ is %s pieces per style; final sampling, testing, and production terms are confirmed for the project.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+			'construction'      => __( 'Send the product type, intended activity and climate, target market and delivery destination, size range, target fit, garment drawing or tech pack, reference sample, fabric composition and weight, stretch and recovery targets, seam map, waistband and trim requirements, artwork, private-label packaging requirements, target price range, order quantity, and required testing. Our team can coordinate knitted fabric development through our own fabric mill, review FLATLOCK, ACTIVESEAM, and bonded-welded options, develop samples, and use in-house testing to check the agreed material and garment criteria before bulk production. Final sampling, testing, and production terms are confirmed for the project.', 'myathletik-child' ),
 			'specs'             => array(
 				array(
-					'label'       => __( 'MOQ', 'myathletik-child' ),
-					'value'       => number_format_i18n( myathletik_public_moq_pieces() ),
-					'unit'        => __( 'pcs', 'myathletik-child' ),
-					'description' => __( 'Per style.', 'myathletik-child' ),
+					'label'       => __( 'Production basis', 'myathletik-child' ),
+					'value'       => __( 'Approved sample', 'myathletik-child' ),
+					'description' => __( 'Bulk production follows the current specification.', 'myathletik-child' ),
 				),
 				array(
 					'label'       => __( 'Sampling', 'myathletik-child' ),
@@ -454,7 +453,7 @@ function myathletik_product_category_data() {
 			'intro'            => __( 'Outdoor clothing programs for hiking, skiing, trekking, and cold-weather use, developed in knitted and knit-based fabrics. We manufacture base layers, thermal underwear, mid-layers, fleece tops and hoodies, outdoor jackets, hiking pants, and accessories such as balaclavas, neck warmers, and beanies. Material, construction, protection, and testing requirements are defined against the buyer\'s intended activity, climate, and approved specification.', 'myathletik-child' ),
 			'buyer_fit'        => array(
 				'heading' => __( 'Is Athletik a fit for your outdoor clothing program?', 'myathletik-child' ),
-				'summary' => sprintf( __( 'Athletik is a China-based OEM/ODM manufacturer for knitted and knit-based outdoor clothing, with production in Zhangjiagang. Its program is best suited to established and mid-sized outdoor brands, wholesalers, and importers developing specification-led layers for a defined activity and climate, with coordinated fabrics, construction, features, testing criteria, and bulk production from %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				'summary' => __( 'Athletik is a China-based OEM/ODM manufacturer for knitted and knit-based outdoor clothing, with production in Zhangjiagang. Its program is best suited to established and mid-sized outdoor brands, wholesalers, and importers developing specification-led layers for a defined activity and climate, with coordinated fabrics, construction, features, and testing criteria.', 'myathletik-child' ),
 				'facts'   => array(
 					array(
 						'label' => __( 'Best suited to', 'myathletik-child' ),
@@ -530,7 +529,7 @@ function myathletik_product_category_data() {
 					),
 				),
 			),
-			'construction'     => sprintf( __( 'Send the product type, intended activity and climate, target market, size range, fit, composition, GSM, knit structure, stretch and recovery targets, weather-protection requirements, seam map, trims, artwork, testing criteria, order quantity, and tech pack or reference sample. Buyers can specify single jersey, interlock, rib, fleece, brushed-back or grid structures, together with knit-based lamination or membrane, DWR, and insulation requirements. Construction options include FLATLOCK, ACTIVESEAM, COVERSTITCH, OVERLOCK, seamless, bonded-welded, and taped seams, plus project-specific zippers, thumbholes, pockets, reinforcement, branding, labels, and packaging. Our manufacturing scope is knitted and knit-based outdoor clothing; non-knit fabric constructions are outside this page\'s production scope. Public garment MOQ is %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+			'construction'     => __( 'Send the product type, intended activity and climate, target market, size range, fit, composition, GSM, knit structure, stretch and recovery targets, weather-protection requirements, seam map, trims, artwork, testing criteria, order quantity, and tech pack or reference sample. Buyers can specify single jersey, interlock, rib, fleece, brushed-back or grid structures, together with knit-based lamination or membrane, DWR, and insulation requirements. Construction options include FLATLOCK, ACTIVESEAM, COVERSTITCH, OVERLOCK, seamless, bonded-welded, and taped seams, plus project-specific zippers, thumbholes, pockets, reinforcement, branding, labels, and packaging. Our manufacturing scope is knitted and knit-based outdoor clothing; non-knit fabric constructions are outside this page\'s production scope.', 'myathletik-child' ),
 			'process_kicker'    => __( 'Procurement workflow', 'myathletik-child' ),
 			'process_heading'   => __( 'From outdoor product brief to delivered order', 'myathletik-child' ),
 			'process_intro'     => __( 'Each outdoor program moves through defined material, construction, testing, and approval points. Exact timing, test methods, acceptance criteria, commercial terms, and delivery responsibilities are confirmed in the project quotation.', 'myathletik-child' ),
@@ -545,7 +544,7 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Approval & Order Confirmation', 'myathletik-child' ),
-					'description' => sprintf( __( 'Approve the material, fit, measurements, construction, test methods, acceptance criteria, and packaging. Confirm final quantity, color and size breakdown, and production terms; public garment MOQ is %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+					'description' => __( 'Approve the material, fit, measurements, construction, test methods, acceptance criteria, and packaging. Confirm final quantity, color and size breakdown, and production terms.', 'myathletik-child' ),
 				),
 				array(
 					'title'       => __( 'Bulk Production & Quality Control', 'myathletik-child' ),
@@ -639,7 +638,7 @@ function myathletik_product_category_data() {
 			'intro'            => __( 'We manufacture custom Merino wool clothing for base-layer tops and bottoms, underwear, T-shirts, hoodies, mid-layers, balaclavas, neck warmers, and other performance programs. Each project is developed around the buyer\'s composition, micron, yarn, GSM, knit structure, fit, construction, and testing requirements.', 'myathletik-child' ),
 			'buyer_fit'        => array(
 				'heading' => __( 'Is Athletik a fit for your Merino wool program?', 'myathletik-child' ),
-				'summary' => sprintf( __( 'Athletik is a China-based OEM/ODM manufacturer for Merino wool apparel, with production in Zhangjiagang. Its program is best suited to established and mid-sized apparel and outdoor brands, wholesalers, and importers developing specification-led base layers, underwear, mid-layers, or accessories with defined composition, micron, GSM, knit structure, fit, construction, care, and testing requirements. Bulk programs start at %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				'summary' => __( 'Athletik is a China-based OEM/ODM manufacturer for Merino wool apparel, with production in Zhangjiagang. Its program is best suited to established and mid-sized apparel and outdoor brands, wholesalers, and importers developing specification-led base layers, underwear, mid-layers, or accessories with defined composition, micron, GSM, knit structure, fit, construction, care, and testing requirements.', 'myathletik-child' ),
 				'facts'   => array(
 					array(
 						'label' => __( 'Best suited to', 'myathletik-child' ),
@@ -751,7 +750,7 @@ function myathletik_product_category_data() {
 			),
 			'capability_kicker'  => __( 'Development inputs', 'myathletik-child' ),
 			'capability_heading' => __( 'Define the Merino fiber, fabric, and garment before sampling', 'myathletik-child' ),
-			'construction'      => sprintf( __( 'Send the product type, intended activity and climate, target market, composition, micron, yarn count, GSM, knit structure, stretch and recovery targets, fit, seam map, artwork, branding, care requirements, test methods and acceptance criteria, order quantity, and tech pack or reference sample. We can develop 100%% Merino wool and blended programs in single jersey, interlock, rib, jacquard, and other project-specific structures, with FLATLOCK or ACTIVESEAM where appropriate. Colorfastness, shrinkage, pilling, GSM, fiber composition, and stretch/recovery can be checked in-house; customer-specified third-party testing can be arranged when required. Public garment MOQ is %s pieces per style, with final development and testing terms confirmed for the project.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+			'construction'      => __( 'Send the product type, intended activity and climate, target market, composition, micron, yarn count, GSM, knit structure, stretch and recovery targets, fit, seam map, artwork, branding, care requirements, test methods and acceptance criteria, order quantity, and tech pack or reference sample. We can develop 100% Merino wool and blended programs in single jersey, interlock, rib, jacquard, and other project-specific structures, with FLATLOCK or ACTIVESEAM where appropriate. Colorfastness, shrinkage, pilling, GSM, fiber composition, and stretch/recovery can be checked in-house; customer-specified third-party testing can be arranged when required. Final development and testing terms are confirmed for the project.', 'myathletik-child' ),
 			'showcase_kicker'    => __( 'Product examples', 'myathletik-child' ),
 			'showcase_heading'   => __( 'Merino wool product programs', 'myathletik-child' ),
 			'showcase_intro'     => __( 'Representative garment and accessory formats from Merino wool development programs.', 'myathletik-child' ),
@@ -915,7 +914,7 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Approval & Order Confirmation', 'myathletik-child' ),
-					'description' => sprintf( __( 'Approve the material, fit, measurements, construction, test criteria, and packaging. Confirm final quantity, color and size breakdown, and production terms; public garment MOQ is %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+					'description' => __( 'Approve the material, fit, measurements, construction, test criteria, and packaging. Confirm final quantity, color and size breakdown, and production terms.', 'myathletik-child' ),
 				),
 				array(
 					'title'       => __( 'Bulk Production & Quality Control', 'myathletik-child' ),
@@ -1006,7 +1005,7 @@ function myathletik_product_category_data() {
 			'intro'            => __( 'We manufacture knitted silk base layers, underwear, T-shirts, camisoles, leggings, long underwear, and lightweight apparel for brands and private-label programs. Woven silk garment programs can also be supported by project. Composition, yarn, fabric weight, construction, finish, and testing are developed against the buyer\'s specification and approved samples.', 'myathletik-child' ),
 			'buyer_fit'        => array(
 				'heading' => __( 'Is Athletik a fit for your silk apparel program?', 'myathletik-child' ),
-				'summary' => sprintf( __( 'Athletik is a China-based OEM/ODM manufacturer for knitted silk apparel, with production in Zhangjiagang. Its program is best suited to established and mid-sized brands, wholesalers, and importers developing next-to-skin or lightweight garments to an approved specification. Composition, fabric weight, fit, construction, care, and testing can be coordinated from %s pieces per style; woven silk garments are reviewed by project.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				'summary' => __( 'Athletik is a China-based OEM/ODM manufacturer for knitted silk apparel, with production in Zhangjiagang. Its program is best suited to established and mid-sized brands, wholesalers, and importers developing next-to-skin or lightweight garments to an approved specification. Composition, fabric weight, fit, construction, care, and testing are coordinated to the approved specification; woven silk garments are reviewed by project.', 'myathletik-child' ),
 				'facts'   => array(
 					array(
 						'label' => __( 'Best suited to', 'myathletik-child' ),
@@ -1073,7 +1072,7 @@ function myathletik_product_category_data() {
 			),
 			'capability_kicker'  => __( 'Development inputs', 'myathletik-child' ),
 			'capability_heading' => __( 'Define the silk material, construction, and approval criteria', 'myathletik-child' ),
-			'construction'      => sprintf( __( 'Send the product type, intended use, target market, size range, fit, tech pack or reference sample, silk composition, yarn requirement, GSM, knit or woven construction, color and artwork, seam map, trims, labels, packaging, care requirements, testing criteria, target price range, quantity, timeline, and delivery destination. Knitted silk programs can use FLATLOCK, ACTIVESEAM, and other construction options where suitable; woven silk garments are supported according to the project specification. Public garment MOQ is %s pieces per style, with final material, sampling, testing, and production terms confirmed in the quotation.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+			'construction'      => __( 'Send the product type, intended use, target market, size range, fit, tech pack or reference sample, silk composition, yarn requirement, GSM, knit or woven construction, color and artwork, seam map, trims, labels, packaging, care requirements, testing criteria, target price range, quantity, timeline, and delivery destination. Knitted silk programs can use FLATLOCK, ACTIVESEAM, and other construction options where suitable; woven silk garments are supported according to the project specification. Final material, sampling, testing, and production terms are confirmed in the quotation.', 'myathletik-child' ),
 			'assurance_kicker'  => __( 'Program execution', 'myathletik-child' ),
 			'assurance_heading' => __( 'Silk apparel customization and quality checkpoints', 'myathletik-child' ),
 			'assurance_intro'   => __( 'Material, construction, appearance, and testing requirements are recorded in the current specification and approved sample so development and bulk production can be reviewed against the same criteria.', 'myathletik-child' ),
@@ -1134,7 +1133,7 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Approval & Order Confirmation', 'myathletik-child' ),
-					'description' => sprintf( __( 'Approve the material, fit, measurements, construction, appearance, test criteria, labels, and packaging. Confirm final quantity, color and size breakdown, and production terms; public garment MOQ is %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+					'description' => __( 'Approve the material, fit, measurements, construction, appearance, test criteria, labels, and packaging. Confirm final quantity, color and size breakdown, and production terms.', 'myathletik-child' ),
 				),
 				array(
 					'title'       => __( 'Bulk Production & Quality Control', 'myathletik-child' ),
@@ -1177,10 +1176,10 @@ function myathletik_product_category_data() {
 			'social_image_alt'    => __( 'Performance knitted fabric swatch collection', 'myathletik-child' ),
 			'social_image_type'   => 'image/jpeg',
 			'hero_kicker'      => __( 'Custom knit fabric development & supply', 'myathletik-child' ),
-			'intro'            => __( 'Through our own fabric mill, we support standalone fabric orders and custom development for B2B apparel programs, including performance, thermal, stretch, and functional knits. Development can be checked through in-house testing against the agreed fabric specification, while MOQ varies by fabric and project requirements.', 'myathletik-child' ),
+			'intro'            => __( 'Through our own fabric mill, we support standalone fabric orders and custom development for B2B apparel programs, including performance, thermal, stretch, and functional knits. Development can be checked through in-house testing against the agreed fabric specification, with commercial terms confirmed for the selected fabric and project requirements.', 'myathletik-child' ),
 			'buyer_fit'        => array(
 				'heading' => __( 'Is Athletik a fit for your knitted-fabric program?', 'myathletik-child' ),
-				'summary' => __( 'Athletik is a China-based knitted-fabric manufacturer and full-package apparel OEM/ODM, with production in Zhangjiagang. Its standalone fabric program is best suited to established and mid-sized apparel brands, garment manufacturers, wholesalers, and importers that can define end use, composition, GSM, knit structure, stretch and recovery, finish, color, testing criteria, and forecast quantity. MOQ is quoted by the selected fabric specification and project requirements.', 'myathletik-child' ),
+				'summary' => __( 'Athletik is a China-based knitted-fabric manufacturer and full-package apparel OEM/ODM, with production in Zhangjiagang. Its standalone fabric program is best suited to established and mid-sized apparel brands, garment manufacturers, wholesalers, and importers that can define end use, composition, GSM, knit structure, stretch and recovery, finish, color, testing criteria, and forecast quantity.', 'myathletik-child' ),
 				'facts'   => array(
 					array(
 						'label' => __( 'Best suited to', 'myathletik-child' ),
@@ -1291,9 +1290,9 @@ function myathletik_product_category_data() {
 			'construction'      => __( 'Send the target composition, yarn and knit structure, GSM, usable width, stretch and recovery, color reference, finish or performance requirement, testing requirement, order quantity, intended application, and delivery destination. Development is managed through our own fabric mill, with knitting, dyeing, finishing, and in-house testing coordinated against the approved specification. Swatches, counter samples, lab dips, sample yardage, and approval samples are available based on project needs. Third-party testing and supporting documentation can be arranged based on the required standard. Pricing is normally quoted per kg, while other units can be used when required. Final timing, packing, and delivery terms are set in the project quotation.', 'myathletik-child' ),
 			'specs'             => array(
 				array(
-					'label'       => __( 'MOQ', 'myathletik-child' ),
-					'value'       => __( 'Varies by fabric and project', 'myathletik-child' ),
-					'description' => __( 'Confirmed against the selected fabric specification.', 'myathletik-child' ),
+					'label'       => __( 'Pricing basis', 'myathletik-child' ),
+					'value'       => __( 'Normally quoted per kg', 'myathletik-child' ),
+					'description' => __( 'Other units can be used when required.', 'myathletik-child' ),
 				),
 				array(
 					'label'       => __( 'Development', 'myathletik-child' ),
@@ -1337,7 +1336,7 @@ function myathletik_product_category_data() {
 			'intro'            => __( 'We manufacture technical knit and textile accessories for sportswear, outdoor, and performance apparel collections. Programs include balaclavas, ski masks, neck gaiters, neck warmers, glove liners, lightweight gloves, headbands, ear warmers, arm and leg sleeves, compression sleeves, beanies, and wristbands, developed to the buyer\'s material, fit, construction, branding, and testing requirements.', 'myathletik-child' ),
 			'buyer_fit'        => array(
 				'heading' => __( 'Is Athletik a fit for your sports-accessories program?', 'myathletik-child' ),
-				'summary' => sprintf( __( 'Athletik is a China-based OEM/ODM manufacturer for technical knit and textile sports accessories, with production in Zhangjiagang. Its program is best suited to established and mid-sized sportswear and outdoor brands, wholesalers, and importers defining material, fit, coverage, construction, branding, packaging, testing, and compatibility with an intended activity or layering system. Bulk programs start at %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				'summary' => __( 'Athletik is a China-based OEM/ODM manufacturer for technical knit and textile sports accessories, with production in Zhangjiagang. Its program is best suited to established and mid-sized sportswear and outdoor brands, wholesalers, and importers defining material, fit, coverage, construction, branding, packaging, testing, and compatibility with an intended activity or layering system.', 'myathletik-child' ),
 				'facts'   => array(
 					array(
 						'label' => __( 'Best suited to', 'myathletik-child' ),
@@ -1403,7 +1402,7 @@ function myathletik_product_category_data() {
 			),
 			'capability_kicker'  => __( 'Development inputs', 'myathletik-child' ),
 			'capability_heading' => __( 'Define fit, function, and construction before sampling', 'myathletik-child' ),
-			'construction'      => sprintf( __( 'Send the accessory type, intended sport or activity, climate, target market, size range, measurements, fit, tech pack or reference sample, composition, GSM, knit structure, stretch and recovery, thermal or wind target, compression or UPF requirement, helmet and face-opening details, touchscreen or grip requirement, seam map, thumbholes and other functional details, color and artwork, labels, packaging, testing criteria, quantity, timeline, and delivery destination. Available construction and decoration include FLATLOCK, ACTIVESEAM, OVERLOCK, COVERSTITCH, seamless and bonded-welded options, sublimation, SCREENPRINT, silicone grip, and reflective details where suitable. Public garment MOQ is %s pieces per style; final material, sampling, testing, and production terms are confirmed in the quotation.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+			'construction'      => __( 'Send the accessory type, intended sport or activity, climate, target market, size range, measurements, fit, tech pack or reference sample, composition, GSM, knit structure, stretch and recovery, thermal or wind target, compression or UPF requirement, helmet and face-opening details, touchscreen or grip requirement, seam map, thumbholes and other functional details, color and artwork, labels, packaging, testing criteria, quantity, timeline, and delivery destination. Available construction and decoration include FLATLOCK, ACTIVESEAM, OVERLOCK, COVERSTITCH, seamless and bonded-welded options, sublimation, SCREENPRINT, silicone grip, and reflective details where suitable. Final material, sampling, testing, and production terms are confirmed in the quotation.', 'myathletik-child' ),
 			'assurance_kicker'  => __( 'Program execution', 'myathletik-child' ),
 			'assurance_heading' => __( 'Sports accessory customization and quality checkpoints', 'myathletik-child' ),
 			'assurance_intro'   => __( 'Functional details and acceptance criteria are recorded in the current specification and approved sample so material, fit, decoration, and workmanship can be reviewed consistently through bulk production.', 'myathletik-child' ),
@@ -1464,7 +1463,7 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Approval & Order Confirmation', 'myathletik-child' ),
-					'description' => sprintf( __( 'Approve the material, fit, measurements, construction, functionality, artwork, test criteria, labels, and packaging. Confirm final quantity, color and size breakdown, and production terms; public garment MOQ is %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+					'description' => __( 'Approve the material, fit, measurements, construction, functionality, artwork, test criteria, labels, and packaging. Confirm final quantity, color and size breakdown, and production terms.', 'myathletik-child' ),
 				),
 				array(
 					'title'       => __( 'Bulk Production & Quality Control', 'myathletik-child' ),

@@ -3697,7 +3697,7 @@ body.page .container.grid-container:has(.ma-product-category) {
 .ma-product-fit {
   padding: var(--ma-space-5) 0;
   border-block: 1px solid var(--ma-color-border);
-  background: var(--ma-color-surface);
+  background: var(--ma-color-white);
 }
 
 .ma-product-fit__layout {
@@ -3752,7 +3752,7 @@ body.page .container.grid-container:has(.ma-product-category) {
 }
 
 .ma-product-fit__facts > div:last-child {
-  background: var(--ma-color-white);
+  background: var(--ma-color-surface);
 }
 
 .ma-product-fit__facts dt {
