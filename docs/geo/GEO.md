@@ -151,6 +151,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 - D03 已确认 About Us 规范 URL；D04 来源面板可见 About、Sportswear 和 Sustainability 规范站卡片；D05 虽然实体名称与推荐理由准确，核心来源却是旧 `ultramerino.com`，并产生 Beta Textiles 与 Athletik 的未核准关系推断。规范站引用质量和实体隔离仍未稳定。
 - Broad Discovery v1 的 BD-01 已在 Google AI Mode 与 ChatGPT Search 各完成一次：两边均未提 Athletik。Google 偏向由制造商自建榜单支持的区域供应商，ChatGPT 偏向大型 Tier-1 集团；两次均缺完整环境/来源面板证据，因此只记录为全球宽泛问题下的初步缺席，不与 D03～D05 的专业匹配推荐结果合并。
 - BD-02 在限定 China 后，两边仍未提 Athletik，但候选已经收敛到中国 activewear OEM/ODM；Google 继续依赖制造商榜单/roundup，ChatGPT 主要引用候选官网。ChatGPT 额外把 `mid-sized` 自行限定为约 100–500 units/style/color，并出现 HUCAI 200 与引用页当前 100 pcs/style 的不一致，因此此次缺席不能触发网站改动；先用 BD-03 的明确 500 pieces/style 条件完成商业匹配测试。
+- Broad Discovery v1 首轮现已完成 6/6：BD-01～BD-03 在 Google AI Mode 与 ChatGPT Search 中均未出现 Athletik，也未引用规范站。BD-03 已明确 China、activewear/performance apparel 和 500 pieces/style，缺席仍然持续；这说明品牌在泛 sportswear supplier discovery 中存在真实可见性缺口。它与专业 D03～D05 的强推荐信号并存，当前应优化“宽泛买家匹配入口”和第三方证据，而不是稀释 technical knitwear 定位或发布自建最佳厂商榜单。
 - 站外权威机会池已经识别 Woolmark 条目、认证名录、Merrow、行业媒体和制造商目录等来源，但 ThomasNet、OEKO-TEX、WRAP 和 Merrow 等当前分别受平台资格、可核验输入或所有者优先级限制，不能写成已完成。
 - 当前缺少的是“与具体采购判断相关的独立佐证”，不是链接总数。更多低质量目录、付费链接或自建推荐榜单不会解决该问题。
 
@@ -179,7 +180,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | V2-C08 | 引用 | OEM Evaluation + QC Guide | Google Sources 面板已把 Athletik LinkedIn 尽调帖列为首张卡片，证明站外分发可被找到；但正文未提品牌、两篇官网 Guide 未被引用，并回漂到 9GG–16GG/Stoll/Shima fully fashioned 语境。批后优先区分站外发现、规范引用和技术准确性，再决定是否强化 cut-and-sew 定义块、一手证据和外部引用入口 |
 | BD-01 | 宽泛推荐 | 首页、Sportswear、站外实体信号 | 无国家、无技术和无 MOQ 限定；用于观察全球 sportswear OEM/ODM 候选池，不用未出现否定专业匹配 |
 | BD-02 | 宽泛推荐 | 首页、Sportswear、About、站外实体信号 | 只限定中国与 mid-sized brand；观察 Athletik 是否进入通用中国 sportswear OEM/ODM 短名单及主要竞争者 |
-| BD-03 | 商业匹配推荐 | Sportswear、Services、Contact、当前 MOQ 500 口径 | 加入 activewear/performance apparel 与 500 pieces/style；观察真实采购门槛是否改善候选匹配，不推断每色 MOQ 或价格 |
+| BD-03 | 商业匹配推荐 | Sportswear、Services、Contact、当前 MOQ 500 口径 | 两个产品均未出现 Athletik；站内事实已存在但分散。审核页面靠前的 buyer-fit answer block，把 China、OEM/ODM、activewear/performance apparel、500 pieces/style 与目标买家集中表达；不推断每色 MOQ 或价格 |
 
 ## 8. 单人执行计划
 
@@ -229,7 +230,8 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-009 | 每月一个可信站外佐证动作 | 推荐 | P1 | `external-input` | 获得可公开、可索引、信息准确的真实条目/编辑内容；未成功不写完成 |
 | GEO-V2-010 | 建立 GSC Generative AI 月度观测 | 找到/引用入口 | P0 | `baseline-established` | 首个三个月导出完整入档；以后使用完整 28 天可比窗口并保持各维度口径分离 |
 | GEO-V2-011 | 完成 Baseline v2 首批测试后四阶段诊断 | 全漏斗决策 | P0 | `complete` | 诊断分别覆盖找到、提取、引用与推荐；技术阻断、来源归属、证据债务和最小行动已分开记录 |
-| GEO-V2-012 | 建立并运行 Broad Discovery v1 | 宽泛推荐发现 | P0 | `in-progress / BD-01/02 4 of 4 complete; BD-03 pending` | BD-01～BD-03 固定原文已建立；ChatGPT Search 与 Google AI Mode 共 6 次独立首次回答完成记录，Perplexity 无权限则 3 条记 unavailable；结果不与 Baseline v2 合并 |
+| GEO-V2-012 | 建立并运行 Broad Discovery v1 | 宽泛推荐发现 | P0 | `complete / Google 3 of 3; ChatGPT 3 of 3; Perplexity unavailable` | BD-01～BD-03 共 6 次独立首次回答已记录；Athletik 正文出现与规范站引用均为 0/6；环境元数据不完整的运行保持 partial；结果不与 Baseline v2 合并 |
+| GEO-V2-013 | 审核 Sportswear buyer-fit answer block | 宽泛推荐入口 | P0 | `planned / owner-review` | 只在已有页面靠前位置集中表达 China、OEM/ODM、activewear/performance apparel、适合 established/mid-sized B2B buyer 与 500 pieces/style；不改变 URL，不承诺每色拆分，不建立自有最佳厂商榜单；作为单一变量部署后按月复测 BD-02/03 |
 
 ## 10. 统一记录与判断口径
 

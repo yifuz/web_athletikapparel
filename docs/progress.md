@@ -675,6 +675,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-11 | Merino 梯度与视觉批次生产验收部分完成：页面 HTTP 200、`follow, index`、自引用 Canonical、单一 H1、四档 GSM / 材料方向、16 图及 48 个响应式候选、图片区块前移、Desktop / Tablet 两列与 Mobile 单列均通过；其他六个品类页隔离正常。首页、Contact、QC Guide 与 Merino 的 39 个原生下划线链接均计算为 `skip-ink: none`。发现 `assets/js/merino-product-carousel.js` 在生产返回 404，页面未 enqueue 专属脚本，导致箭头、鼠标拖动和键盘增强未生效；需补部署 `functions.php` 与该脚本后再完成 URL Inspection，当前 outcome `partial / deployment-gap`。 |
 | 2026-09-11 | GEO Broad Discovery v1 的 BD-01 首轮完成：Google AI Mode 与 ChatGPT Search 均未提 Athletik。Google 候选为 Thygesen Textile Vietnam、HUCAI、Wearzio、Ingor 和 Billoomi，来源以制造商自建榜单/roundup 为主；ChatGPT 候选为 Eclat、Makalot、MAS、Hirdaramani 和 Regina Miracle，偏向大型 Tier-1 集团。两次环境元数据与 Sources 面板均不完整，ChatGPT 回答未保留引用 URL，因此记录为 `partial / first observation`，不与 V2-D03～D05 合并、不解释为稳定缺席。下一步按相同独立会话规则运行 BD-02。 |
 | 2026-09-11 | GEO Broad Discovery v1 的 BD-02 首轮完成：Google AI Mode 与 ChatGPT Search 均未提 Athletik，但候选池已从全球集团收敛到中国 activewear OEM/ODM。Google 主要依赖制造商榜单/roundup；ChatGPT 主要引用候选官网并识别 Eation 证书日期及 Sansansun MOQ 冲突，但自行把 mid-sized 限定为 100–500 units/style/color，且把 HUCAI 引用页当前的 100 pcs/style 写成 200。两次均保存完整回答、主要 URL 和 Sources 面板截图，环境元数据仍不完整，状态 `partial / environment`。下一步运行固定 BD-03；完成前不因本次缺席修改网站。 |
+| 2026-09-11 | GEO Broad Discovery v1 首轮完成：BD-03 在 Google AI Mode 与 ChatGPT Search 中仍未提 Athletik，至此 BD-01～BD-03 为 `0/6 answer mentions`、`0/6 canonical citations`。Google 继续依赖制造商榜单/roundup，并把 500 件泛化为高级能力统一门槛；ChatGPT 更准确地区分 per style 与 per color，但 Ingor、Bella 等引用仍有内部冲突或证据缺口。与专业 D03～D05 的强推荐并列判断后，结论是 Athletik 在泛 sportswear supplier discovery 中存在真实缺口，而不是专业匹配失败。下一步审核 Sportswear 页靠前的 buyer-fit answer block，并继续建立可信第三方证据；不发布自建最佳厂商榜单。 |
 
 ---
 
@@ -683,7 +684,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 1. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
 2. 建立 D03～D05 推荐证据矩阵，并完成历史/矩阵域名事实冲突审计；未经所有者批准不建立跨域重定向或公开实体关联。
 3. 只在真实设备、样品、测试方法与公开边界完成核验后，决定是否立项 `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 原创证据内容。
-4. 使用 3 条固定 Broad Discovery v1 提示词完成首次宽泛供应商发现：ChatGPT Search 与 Google AI Mode 各 3 次独立干净会话；Perplexity 保持 `unavailable / plan-access`，不使用替代产品填充；结果不与 Baseline v2 合并。
+4. 审核 Sportswear 页靠前的 buyer-fit answer block：用一个可独立提取的短段落集中表达 China、OEM/ODM、activewear/performance apparel、目标 B2B 买家与 500 pieces/style；不改变 URL、不承诺每色拆分、不建立自有最佳厂商榜单。所有者批准后作为单一变量部署，并在下月复测 BD-02/03。
 5. 下一个月继续使用完全相同的 Baseline v2 与 Broad Discovery v1 提示词复测，不在同一会话连续运行多题。
 6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 Day 0 已关闭，下一步按 Day 7 / 28 / 90 观察，不继续修改首页。
 7. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动，响应时间需使用同配置窗口比较。
