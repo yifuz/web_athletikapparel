@@ -101,6 +101,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 |---|---|
 | 本文件 `GEO.md` | GEO 目标漏斗、公司背景、现状诊断、优先级和执行计划 |
 | [`testing/prompt-baseline.md`](testing/prompt-baseline.md) | Baseline v1 历史快照、Baseline v2 固定提示词、逐次结果和实体冲突证据 |
+| [`testing/baseline-v2-post-batch-diagnosis-2026-09-11.md`](testing/baseline-v2-post-batch-diagnosis-2026-09-11.md) | Baseline v2 首批测试后的四阶段诊断、finding、证据缺口和最小行动顺序 |
 | [`distribution/social-content-sop.md`](distribution/social-content-sop.md) | 官网指南改编为 LinkedIn / Instagram 内容的执行 SOP |
 | [`distribution/publishing-log.md`](distribution/publishing-log.md) | 每次站外分发的发布时间、链接和七日数据 |
 | [`../seo/authority/offsite-authority-opportunity-pool-v1.md`](../seo/authority/offsite-authority-opportunity-pool-v1.md) | 站外行业引用、目录、认证名录和编辑机会的证据与状态 |
@@ -182,7 +183,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 1. 完成 8 条 Baseline v2 × ChatGPT Search、Perplexity、Google AI Mode 的首批记录；Perplexity 因当前无会员权限按 8 条 `unavailable / plan-access` 记录，不付费、不换产品替代。
 2. 每条提示词使用独立干净会话，保存第一次回答、全部引用 URL、来源面板和环境元数据；缺项结果标为 `partial`，不补猜。
 3. 首批测试期间冻结了会影响实体、指南正文、导航或 Schema 的上线修改；该冻结现已随 Google C08 完成而结束。
-4. 先形成批后阶段诊断和最小改动清单，不因为一次未出现就立刻改页；关键变化至少需要另一产品或下一月复现。
+4. 批后阶段诊断和最小改动清单已形成，见 [`testing/baseline-v2-post-batch-diagnosis-2026-09-11.md`](testing/baseline-v2-post-batch-diagnosis-2026-09-11.md)；不因为一次未出现就立刻改页，关键变化至少需要另一产品或下一月复现。
 
 ### P1 — 清掉证据债务并补引用观测（本批结束后 1 周内）
 
@@ -222,6 +223,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-008 | Merino 历史站与规范页冲突审计 | 提取/推荐 | P1 | `planned` | 确认所有权、索引、流量、引用、重复声明及处置建议；未经批准不改 URL/重定向 |
 | GEO-V2-009 | 每月一个可信站外佐证动作 | 推荐 | P1 | `external-input` | 获得可公开、可索引、信息准确的真实条目/编辑内容；未成功不写完成 |
 | GEO-V2-010 | 建立 GSC Generative AI 月度观测 | 找到/引用入口 | P0 | `baseline-established` | 首个三个月导出完整入档；以后使用完整 28 天可比窗口并保持各维度口径分离 |
+| GEO-V2-011 | 完成 Baseline v2 首批测试后四阶段诊断 | 全漏斗决策 | P0 | `complete` | 诊断分别覆盖找到、提取、引用与推荐；技术阻断、来源归属、证据债务和最小行动已分开记录 |
 
 ## 10. 统一记录与判断口径
 

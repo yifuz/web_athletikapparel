@@ -75,21 +75,21 @@
 - 单独确认 Instagram Story Link Sticker 是否发布；不根据 Carousel 状态推断。
 - 2026-08-21 起记录两个 Feed 帖满七个完整自然日的数据。
 
-## 2026-08-12 — Technical Knitwear OEM Evaluation（素材准备）
+## 2026-08-14 — Technical Knitwear OEM Evaluation（LinkedIn 已被 Google 发现）
 
 | 字段 | 记录 |
 |---|---|
 | 内部 Campaign | `2026-08-evaluate-technical-knitwear-oem` |
 | 官网母文章 | <https://www.athletikapparel.com/evaluate-technical-knitwear-oem/> |
 | 主题 | How to Evaluate a Vertically Integrated Knitwear OEM |
-| 当前状态 | Instagram 七图和 LinkedIn 单图已生成并完成技术/视觉初检；等待所有者审核，尚未发布 |
+| 当前状态 | Google AI Mode V2-C08 Sources 面板已发现日期为 2026-08-14 的 Athletik LinkedIn 帖 `Verify Suppliers with a 6-Part Due Diligence Structure`；截图未保留实际 href，因此公开 URL 待补录。Instagram Carousel/Story 状态仍待所有者或后台确认 |
 | LinkedIn 计划格式 | 1 张 1080 × 1350 信息总览图 + 正文；不制作 PDF/PPT |
 | LinkedIn UTM content | `technical_knitwear_oem_evaluation_single_image` |
 | Instagram 计划格式 | 7 张 1080 × 1350 JPG Carousel + 1080 × 1920 Story |
 | Instagram UTM content | `technical_knitwear_oem_evaluation_story` |
 | 发布素材包 | `D:\B-视频素材\营销内容包\2026-08-evaluate-technical-knitwear-oem\`（Git 外运营资产） |
 | 素材来源 | 官网已批准文章封面 + 买家尽调信息图；本主题未使用额外生产视频 |
-| 数据复盘日 | 待实际发布日期确定后填写 |
+| 数据复盘日 | LinkedIn 以 2026-08-14 为可见发布日期，七日数据待后台补录；Instagram 待实际状态确认 |
 
 ### 已准备文件
 
@@ -97,9 +97,8 @@
 - LinkedIn 技术教育正文、Instagram 精简正文和两个渠道的独立 UTM。
 - 图片 alt text、联系表、发布说明、发布记录和七日数据模板。
 
-### 发布前待办
+### 待补录与后续动作
 
-- 所有者审核 LinkedIn 单图、Instagram 七图顺序、Story CTA 和两版英文正文。
-- 审核通过后分别发布 LinkedIn 与 Instagram，并补录公开帖子 URL 和实际发布时间。
-- Instagram Carousel 发布后确认 Story Link Sticker 是否完成。
-- 按实际发布时间计算满七个自然日的数据复盘日。
+- 从 LinkedIn 后台或公开主页复制实际帖子 URL，核对 UTM 与发布时间；不从 Google 来源卡猜测 href。
+- 确认 Instagram Carousel 与 Story Link Sticker 是否发布；未确认项不得根据 LinkedIn 状态推断。
+- 补录 LinkedIn 已到期的七日数据；Instagram 如确认发布，再按实际发布时间补录相同窗口。

@@ -29,10 +29,10 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 ### 1.2 GEO
 
 - [`geo/GEO.md`](geo/GEO.md) 是 GEO 中央工作台和路由文档。
-- Baseline v1（原 GEO-01～08）的第一轮 Temporary Chat 中性基线已经完成并冻结；Baseline v2 已建立，等待首次月度运行。
-- 实体、技术可抓取性、三篇指南和 GEO-07 首轮 LinkedIn/Instagram 分发已经完成。
-- GEO-06 LinkedIn 单图帖和 Instagram Carousel 已于 2026-08-13 发布；公开帖子 URL 与 Story 状态待补录。GEO-08 分发包已准备并完成初检，等待所有者审核和发布；
-  GEO-07/GEO-06 七日数据、Search Console 索引观察和后续月度复测仍待进行。
+- Baseline v1（原 GEO-01～08）的第一轮 Temporary Chat 中性基线已经完成并冻结；Baseline v2 首批可执行测试已完成：ChatGPT Search 8/8、Google AI Mode 8/8，Perplexity 8 条按 `unavailable / plan-access` 记录。
+- 实体、技术可抓取性、四篇指南和 GEO-06/07 首轮 LinkedIn/Instagram 分发已经完成。
+- GEO-06 LinkedIn 单图帖和 Instagram Carousel 已于 2026-08-13 发布；公开帖子 URL 与 Story 状态待补录。Google AI Mode 已在 V2-C08 Sources 面板发现日期为 2026-08-14 的 Athletik LinkedIn OEM 尽调帖；实际 LinkedIn URL、Instagram/Story 状态和七日数据仍待补录。
+- 2026-09-11 首批测试后诊断已完成：当前主瓶颈是规范来源归属、目标 Guide 的 source selection 和独立佐证，不是技术访问或索引阻断；完整 finding 见 [`geo/testing/baseline-v2-post-batch-diagnosis-2026-09-11.md`](geo/testing/baseline-v2-post-batch-diagnosis-2026-09-11.md)。
 - 当前长期 GEO 对话只用于规划和证据分析，不能作为中性测试环境。
 
 ### 1.3 营销与广告
@@ -678,10 +678,10 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 
 ## 13. 下一步优先级
 
-1. 在连续 3 个自然日内完成 2026 年 9 月 Baseline v2 首批测试；ChatGPT Search 使用全新 Temporary Chat，其余产品按各自中性环境规则执行，批次期间不部署会改变 GEO 观察条件的更新。
-2. 补齐 V2-E01 的模型/模式、Temporary Chat、个性化设置、实际地区、设备和来源面板证据，再继续 V2-E02～C08。
-3. Baseline v2 首批测试结束后，审核并发布已经准备好的 GEO-08 OEM Evaluation 内容包。
-4. 完成 GEO-07 发布 URL、Story 状态和七日数据记录；补录 GEO-06 公开帖子 URL、Story 状态和七日数据。
+1. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
+2. 建立 D03～D05 推荐证据矩阵，并完成历史/矩阵域名事实冲突审计；未经所有者批准不建立跨域重定向或公开实体关联。
+3. 只在真实设备、样品、测试方法与公开边界完成核验后，决定是否立项 `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 原创证据内容。
+4. 下一个月继续使用完全相同的 Baseline v2 提示词与干净环境复测；Perplexity 保持 `unavailable / plan-access`，不使用替代产品填充。
 5. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 Day 0 已关闭，下一步按 Day 7 / 28 / 90 观察，不继续修改首页。
 6. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动，响应时间需使用同配置窗口比较。
 7. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
