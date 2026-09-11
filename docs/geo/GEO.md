@@ -232,8 +232,9 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-010 | 建立 GSC Generative AI 月度观测 | 找到/引用入口 | P0 | `baseline-established` | 首个三个月导出完整入档；以后使用完整 28 天可比窗口并保持各维度口径分离 |
 | GEO-V2-011 | 完成 Baseline v2 首批测试后四阶段诊断 | 全漏斗决策 | P0 | `complete` | 诊断分别覆盖找到、提取、引用与推荐；技术阻断、来源归属、证据债务和最小行动已分开记录 |
 | GEO-V2-012 | 建立并运行 Broad Discovery v1 | 宽泛推荐发现 | P0 | `complete / Google 3 of 3; ChatGPT 3 of 3; Perplexity unavailable` | BD-01～BD-03 共 6 次独立首次回答已记录；Athletik 正文出现与规范站引用均为 0/6；环境元数据不完整的运行保持 partial；结果不与 Baseline v2 合并 |
-| GEO-V2-013 | 审核 Sportswear buyer-fit answer block | 宽泛推荐入口 | P0 | `planned / owner-review` | 只在已有页面靠前位置集中表达 China、OEM/ODM、activewear/performance apparel、适合 established/mid-sized B2B buyer 与 500 pieces/style；不改变 URL，不承诺每色拆分，不建立自有最佳厂商榜单；作为单一变量部署后按月复测 BD-02/03 |
+| GEO-V2-013 | 审核 Sportswear buyer-fit answer block | 宽泛推荐入口 | P1 | `deferred / sequence` | 保留为 About Us 综合段落之后的独立实验；只在已有页面靠前位置集中表达 China、OEM/ODM、activewear/performance apparel、适合 established/mid-sized B2B buyer 与 500 pieces/style，不与 GEO-V2-015 同时部署 |
 | GEO-V2-014 | 完成全部 Baseline 数据综合诊断与 90 天方案 | 全漏斗决策 | P0 | `complete` | 已分别判断找到、提取、规范引用、专业推荐、宽泛推荐和业务结果；行动按单变量、证据依赖和复测门槛排序 |
+| GEO-V2-015 | About Us 综合 buyer-fit paragraph | 提取/宽泛推荐入口 | P0 | `implemented / owner-review` | 用一个公司级段落覆盖生产地点、目标 B2B 买家、完整产品范围、FLATLOCK/ACTIVESEAM、成衣 MOQ 500 pieces/style 与独立面料项目边界；不改 URL、Title、H1、Schema 或页面结构，所有者批准后部署并单独观察 |
 
 ## 10. 统一记录与判断口径
 
@@ -272,6 +273,6 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 截至 2026-09-11，Athletik 已完成规范站、实体基础、四篇技术指南、主要 Schema、索引和首轮社交分发；GSC 首个专用报表确认 29 次 Google 生成式 AI Property impressions，四篇指南均出现页面级链接曝光。Baseline v2 已完成 ChatGPT Search 8/8 与 Google AI Mode 8/8，Perplexity 因权限 unavailable；专业 D03～D05 已出现跨产品推荐，但 C06～C08 对应官网 Guide 在 6 次可用运行中仍为 0 次引用。
 
-Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。下一步只把 Sportswear buyer-fit paragraph 作为首个站内单变量进入审核，同时推进 claim-to-source 矩阵、历史站冲突治理和可信第三方佐证；完整诊断与 90 天方案见 [`testing/baseline-integrated-diagnosis-2026-09-11.md`](testing/baseline-integrated-diagnosis-2026-09-11.md)。
+Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。所有者已决定先以 About Us comprehensive buyer-fit paragraph 建立公司级完整提取入口；Sportswear 专项段落保留为后续独立实验，避免两个变量同时部署。claim-to-source 矩阵、历史站冲突治理和可信第三方佐证继续并行推进；完整诊断与 90 天方案见 [`testing/baseline-integrated-diagnosis-2026-09-11.md`](testing/baseline-integrated-diagnosis-2026-09-11.md)。
 
 本对话可以用于规划、分析用户带回的 Temporary Chat 结果、更新证据和制定内容；不得作为中性测试环境。

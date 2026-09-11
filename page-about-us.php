@@ -42,7 +42,7 @@ get_header();
 			<div class="ma-about-hero__copy">
 				<p class="ma-section-kicker"><?php esc_html_e( 'About Athletik', 'myathletik-child' ); ?></p>
 				<h1 id="ma-about-title"><?php esc_html_e( 'About Us', 'myathletik-child' ); ?></h1>
-				<p><?php esc_html_e( 'Athletik Clothing is a vertically integrated OEM/ODM manufacturer of technical knitwear, based in the Zhangjiagang / Suzhou area of China. For more than 15 years, we have produced full-package underwear, sportswear, outdoor clothing, and knitted fabrics for performance brands around the world, built on specialized FLATLOCK and ACTIVESEAM construction.', 'myathletik-child' ); ?></p>
+				<p><?php esc_html_e( 'Athletik Clothing is a vertically integrated OEM/ODM manufacturer specializing in technical knitwear, with its production operation in Zhangjiagang, China, serving established and mid-sized apparel brands, wholesalers, and importers. We develop performance underwear and base layers, sportswear and activewear, knitted outdoor clothing, Merino wool apparel, knitted silk wear, sports accessories, and functional knitted fabrics, with FLATLOCK and ACTIVESEAM construction where appropriate. Public garment programs start at 500 pieces per style; standalone knitted-fabric projects are quoted separately according to the selected specification.', 'myathletik-child' ); ?></p>
 			</div>
 		</div>
 	</section>

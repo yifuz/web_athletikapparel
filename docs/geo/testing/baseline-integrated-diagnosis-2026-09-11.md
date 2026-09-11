@@ -138,12 +138,12 @@ FLATLOCK、ACTIVESEAM、technical knitwear、base layers 和 Merino wool 的组�
 
 ### 阶段 A：7～14 天，完成两个 P0 单变量准备
 
-1. **Sportswear buyer-fit 段落审计与草稿**
-   - 页面：`/sportswear-manufacturer/`。
-   - 必须同时覆盖：China、OEM/ODM、activewear/performance apparel、适合 established/mid-sized B2B buyers、MOQ 500 pieces/style。
-   - 以一个简短、自包含段落表达；约 40～70 个英文词仅作为编辑约束，不是排名规则。
-   - 不改 URL、Title、Meta、H1 或 Schema，不承诺 per-color split，不建立自有“best manufacturers”榜单。
-   - 所有者审核后作为单一变量部署。
+1. **About Us 综合 buyer-fit 段落审计与草稿**
+   - 页面：`/about-us/`。
+   - 必须同时覆盖：China production operation、OEM/ODM technical knitwear、适合 established/mid-sized B2B apparel brands、完整产品范围、FLATLOCK/ACTIVESEAM，以及 garment MOQ 500 pieces/style。
+   - 独立面料项目与成衣 MOQ 分开表达，避免把 500 件口径错误套用到 fabric programs。
+   - 复用现有 Hero 公司摘要位置，不新增重复定义；不改 URL、Title、Meta、H1、Schema 或页面结构。
+   - 所有者审核后作为首个公司级 buyer-fit 单变量部署；Sportswear 专项段落保留为后续独立实验，不与本项同时上线。
 
 2. **建立 claim-to-source 证据矩阵**
    - 覆盖 D03～D05 和 C06～C08。
@@ -195,7 +195,7 @@ FLATLOCK、ACTIVESEAM、technical knitwear、base layers 和 Merino wool 的组�
 
 | 优先级 | 内容/资产 | 类型 | 目的 | 启动条件 |
 |---|---|---|---|---|
-| 1 | Sportswear buyer-fit paragraph | 现有商业页增强 | 承接 BD-02/03 | 所有者审核事实与英文 |
+| 1 | About Us comprehensive buyer-fit paragraph | 现有实体页增强 | 建立覆盖完整产品与商业边界的公司级提取入口 | 所有者审核事实与英文 |
 | 2 | D03～D05 / C06～C08 claim-to-source matrix | 内部证据资产 | 规范来源与第三方缺口治理 | 立即 |
 | 3 | Industrial FLATLOCK vs Merrow ACTIVESEAM | 原创技术证据 | 提升 C07/D03 可引用性与专业推荐 | 真实设备、样品、应用与测试输入齐全 |
 | 4 | 匿名项目流程或 QC evidence module | 第一方过程证据 | 支撑 D04/C08 | 有可公开记录且不涉及客户授权风险 |
@@ -227,7 +227,7 @@ FLATLOCK、ACTIVESEAM、technical knitwear、base layers 和 Merino wool 的组�
 
 ## 11. 立即执行顺序
 
-1. 先起草并审核 Sportswear buyer-fit paragraph；这是唯一建议立即进入生产审查的站内变量。
+1. 先起草并审核 About Us comprehensive buyer-fit paragraph；这是当前唯一建议立即进入生产审查的站内变量。Sportswear 专项段落等待本项形成独立观察窗口后再决定。
 2. 同步建立 D03～D05 / C06～C08 claim-to-source matrix，并开始历史站声明审计。
 3. 向所有者收集 ACTIVESEAM 原创证据所需的机器、样品、seam application 和测试输入，再决定是否写文章。
 4. 补齐社交发布备案与 GSC 月度窗口。
