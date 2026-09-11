@@ -106,10 +106,20 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 				<p><?php echo esc_html( $category['buyer_fit']['summary'] ); ?></p>
 			</div>
 			<dl class="ma-product-fit__facts">
-				<?php foreach ( $category['buyer_fit']['facts'] as $fact ) : ?>
+				<?php
+				$fit_icons = array( 'audience', 'garment', 'commercial' );
+				foreach ( $category['buyer_fit']['facts'] as $fact_index => $fact ) :
+				?>
 					<?php if ( ! empty( $fact['label'] ) && ! empty( $fact['value'] ) ) : ?>
 						<div>
-							<dt><?php echo esc_html( $fact['label'] ); ?></dt>
+							<dt>
+								<?php if ( isset( $fit_icons[ $fact_index ] ) ) : ?>
+									<span class="ma-feature-icon ma-product-fit__fact-icon" aria-hidden="true">
+										<?php get_template_part( 'template-parts/ui/line-icon', null, array( 'name' => $fit_icons[ $fact_index ] ) ); ?>
+									</span>
+								<?php endif; ?>
+								<span><?php echo esc_html( $fact['label'] ); ?></span>
+							</dt>
 							<dd><?php echo esc_html( $fact['value'] ); ?></dd>
 						</div>
 					<?php endif; ?>
@@ -362,9 +372,19 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 				<?php endif; ?>
 			</div>
 			<div class="ma-product-assurance__grid">
-				<?php foreach ( $category['assurance_cards'] as $card ) : ?>
+				<?php
+				$assurance_icons = array( 'customize', 'quality' );
+				foreach ( $category['assurance_cards'] as $card_index => $card ) :
+				?>
 					<article class="ma-product-assurance-card">
-						<h3><?php echo esc_html( $card['title'] ); ?></h3>
+						<header class="ma-product-assurance-card__heading">
+							<?php if ( isset( $assurance_icons[ $card_index ] ) ) : ?>
+								<span class="ma-feature-icon" aria-hidden="true">
+									<?php get_template_part( 'template-parts/ui/line-icon', null, array( 'name' => $assurance_icons[ $card_index ] ) ); ?>
+								</span>
+							<?php endif; ?>
+							<h3><?php echo esc_html( $card['title'] ); ?></h3>
+						</header>
 						<?php if ( ! empty( $card['description'] ) ) : ?>
 							<p><?php echo esc_html( $card['description'] ); ?></p>
 						<?php endif; ?>
