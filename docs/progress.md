@@ -673,6 +673,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-10 | 全站视觉修复与 Merino 区块顺序调整：所有原生文字链接统一关闭 `skip-ink` 字形避让，修复不同浏览器缩放下的下划线割裂，不改变按钮与无下划线链接；`Merino wool product programs` 图片轨道前移到 Category overview 之后、采购入口之前，让真实产品证据更早出现。URL、Title、Meta、H1、Schema、图片资源和轮播交互保持不变，当前状态 `fixed / owner-review`。 |
 | 2026-09-10 | SEO-V2-005 Merino 产品梯度按所有者最新业务输入修订：采购入口由三档改为 Performance Underwear 140–160 GSM、Lightweight Base Layer 150–175 GSM、Midweight Base Layer 195–210 GSM、Cold-Weather Thermal 240–260 GSM，并分别公开条件式材料方向；竞品名称仅作为内部定位证据，不写入生产页面。Desktop 四列、Tablet 两列、Mobile 单列，URL、Title、Meta、H1、Schema、图片和页面所有权保持不变，状态 `changed / owner-review`。 |
 | 2026-09-11 | Merino 梯度与视觉批次生产验收部分完成：页面 HTTP 200、`follow, index`、自引用 Canonical、单一 H1、四档 GSM / 材料方向、16 图及 48 个响应式候选、图片区块前移、Desktop / Tablet 两列与 Mobile 单列均通过；其他六个品类页隔离正常。首页、Contact、QC Guide 与 Merino 的 39 个原生下划线链接均计算为 `skip-ink: none`。发现 `assets/js/merino-product-carousel.js` 在生产返回 404，页面未 enqueue 专属脚本，导致箭头、鼠标拖动和键盘增强未生效；需补部署 `functions.php` 与该脚本后再完成 URL Inspection，当前 outcome `partial / deployment-gap`。 |
+| 2026-09-11 | GEO Broad Discovery v1 的 BD-01 首轮完成：Google AI Mode 与 ChatGPT Search 均未提 Athletik。Google 候选为 Thygesen Textile Vietnam、HUCAI、Wearzio、Ingor 和 Billoomi，来源以制造商自建榜单/roundup 为主；ChatGPT 候选为 Eclat、Makalot、MAS、Hirdaramani 和 Regina Miracle，偏向大型 Tier-1 集团。两次环境元数据与 Sources 面板均不完整，ChatGPT 回答未保留引用 URL，因此记录为 `partial / first observation`，不与 V2-D03～D05 合并、不解释为稳定缺席。下一步按相同独立会话规则运行 BD-02。 |
 
 ---
 
