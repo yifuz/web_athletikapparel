@@ -130,7 +130,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 - 四篇指南使用可见正文、唯一 H1、文章目录、内部链接、外部技术参考、可见复核日期和 Organization 作者；JSON-LD 与页面正文对应，包含 Article、FAQPage 和 BreadcrumbList，Hub 使用 ItemList。
 - Baseline v1 已证明规范站在品牌点名和指定网站问题中可以被识别与引用；这不能外推为未点名推荐。
 - GSC Generative AI Page 表返回 13 个规范 URL；四篇 Technical Guides 均至少出现一次，FLATLOCK Guide 7 次、QC Guide 4 次。它们属于页面级链接曝光和 citation-surface evidence；报表没有 Query 与答案原文，不能验证链接支持的具体结论。
-- Baseline v2 已于 2026-09-03 启动。ChatGPT Search 的八条首轮结果已全部记录：D03～D05 均把 Athletik 列为第 1，但 D05 的核心引用来自旧 `ultramerino.com`；C06～C08 均未形成可验证的对应 Athletik Guide 引用。Google AI Mode E01/E02 均找到规范站，但仍受旧站候选或旧口径影响。Google AI Mode D03 把 Athletik 列为第 1，却只引用 `athletik.com.cn` 和 `powermerino.com`；D04 的五家名单完全没有 Athletik，且多项 MOQ/技术匹配理由缺少可验证来源。推荐已出现跨产品正向复现，也出现明显产品间不一致。Perplexity 因当前账户无会员权限记为工具不可用，不使用替代产品。
+- Baseline v2 已于 2026-09-03 启动。ChatGPT Search 的八条首轮结果已全部记录：D03～D05 均把 Athletik 列为第 1，但 D05 的核心引用来自旧 `ultramerino.com`；C06～C08 均未形成可验证的对应 Athletik Guide 引用。Google AI Mode E01/E02 均找到规范站，但仍受旧站候选或旧口径影响。Google AI Mode 推荐题中，D03 第 1但只引用历史矩阵站、D04 完全未出现、D05 第 3并首次直接引用当前规范 Merino 页面。推荐已跨产品复现，但排序和证据归属明显随采购意图变化。Perplexity 因当前账户无会员权限记为工具不可用，不使用替代产品。
 
 ### 5.3 站外分发层：两篇完成，一篇待发布，证据补录滞后
 
@@ -158,7 +158,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | 找到 | 已获得 Google 实际展示证据，持续监测 | 生产 200、Sitemap、Canonical、内链、主要 crawler 可访问；17/18 GSC indexed；Generative AI 首个基线 29 impressions | Services 转为 indexed；完整可比窗口持续出现目标页面；无新的抓取/indexability 回归 |
 | 提取 | 部分达成，历史来源污染已复现 | 品牌题可提取核心业务、地点与规范站，但 Google AI Mode E01 混入 `athletik.nyc` 的 5 家伙伴工厂、年产 500 万件及未核准区域域名关系 | E01/E02 在两个可用产品或跨月份准确覆盖规范实体口径，且不引入未核准站点关系 |
 | 引用 | Google 链接曝光已出现，ChatGPT 三个内容题均未取得规范指南引用证据 | GSC 中四篇指南均获页面级链接曝光；品牌题可引用规范站；ChatGPT C06～C08 首轮语义正确，但为 0/3 个已验证对应 Guide 引用 | 同一固定内容题在至少两个独立产品/月份出现相关规范指南引用，且引用支持结论 |
-| 推荐 | 跨产品出现但不稳定，来源质量不合格 | ChatGPT D03～D05 均为第 1；Google AI Mode D03 为第 1、D04 未出现，且 D03 引用被历史矩阵站占据 | Google AI Mode D05 或下一月继续进入短名单；规范站/独立来源支持准确理由，且不混淆实体关系 |
+| 推荐 | 跨产品出现但排序不稳定，规范引用开始形成 | ChatGPT D03～D05 均为第 1；Google AI Mode D03 第 1/历史站引用、D04 未出现、D05 第 3/规范 Merino 页面引用 | 下一月在独立会话中继续进入匹配短名单；规范站与可信独立来源支持准确理由，且不混淆实体关系 |
 
 不建立一个把四阶段相加的“GEO 总分”。四阶段分别记录，否则品牌题的高准确率会掩盖未点名推荐的缺口。
 
@@ -170,7 +170,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | V2-E02 | 提取 + 引用 | 首页、七个品类页、About、Services | Google AI Mode 当前事实提取准确，但只列首页且来源候选混入旧站；指定站点题不计自然发现 |
 | V2-D03 | 推荐 | 首页、FLATLOCK Guide、生产证据 | 已跨产品第 1，但 Google 引用落在 `athletik.com.cn`/`powermerino.com`；完成批次后优先治理规范站证据归属，再判断是否建立原创 ACTIVESEAM 内容 |
 | V2-D04 | 推荐 | Sportswear、Underwear、Services、OEM Evaluation | Google AI Mode 首轮未出现且竞品多为泛 activewear/规模叙述；先完成 D05，再决定是否补强 1,000+ 件项目匹配摘要与独立佐证 |
-| V2-D05 | 推荐 | Merino Wool、Underwear、About、FLATLOCK Guide | 已确认旧 `ultramerino.com` 抢占核心引用并引发 Beta 关系泄漏；完成本批测试后评估强化规范站证据入口和历史站冲突治理，不机械新建重复指南 |
+| V2-D05 | 推荐 | Merino Wool、Underwear、About、FLATLOCK Guide | Google AI Mode 已直接引用规范 Merino 页面并列第 3，证明当前页可承接该意图；ChatGPT 仍依赖旧 `ultramerino.com`，批次后重点转为历史站冲突治理和可信独立佐证，不机械新建重复指南 |
 | V2-C06 | 引用 | Tech Pack Guide | ChatGPT 首轮语义纠偏成功、技术答案质量强，但截图可见来源未含 Athletik，规范指南引用未证明；本批结束前不改页，之后与 C07/C08 对照来源结构，再判断是否需要强化可引用摘要、原创生产证据或外部引用入口 |
 | V2-C07 | 引用 | FLATLOCK vs OVERLOCK Guide | ChatGPT 首轮答案准确且采用 ISO、Yamato、Pegasus、Coats 等强相关来源，但规范指南引用未证明；先完成 C08，再结合 GSC、Bing grounding query 与跨产品结果判断是否需要强化原创生产证据或外部引用入口 |
 | V2-C08 | 引用 | OEM Evaluation + QC Guide | ChatGPT 首轮采用 OECD、ZDHC、ILO、DHS、IAF 等强来源并扩展到完整供应链尽调，但两篇 Athletik Guide 引用未证明；不添加任意固定评分，待跨产品对照后再判断内容边界和引用入口 |
@@ -212,7 +212,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 | ID | 行动 | 对应阶段 | 优先级 | 状态 | 完成标准 |
 |---|---|---|---|---|---|
-| GEO-V2-001 | 完成首批 24 条 Baseline v2 记录 | 全漏斗测量 | P0 | `in-progress / ChatGPT 8 of 8; Google AI Mode 4 of 8; Perplexity unavailable` | 目标为 ChatGPT Search 与 Google AI Mode 共 16 条实际运行；Perplexity 8 条按 `unavailable / plan-access` 记录；不混用替代品 |
+| GEO-V2-001 | 完成首批 24 条 Baseline v2 记录 | 全漏斗测量 | P0 | `in-progress / ChatGPT 8 of 8; Google AI Mode 5 of 8; Perplexity unavailable` | 目标为 ChatGPT Search 与 Google AI Mode 共 16 条实际运行；Perplexity 8 条按 `unavailable / plan-access` 记录；不混用替代品 |
 | GEO-V2-002 | 补齐 V2-E01 环境和来源证据 | 测量有效性 | P0 | `partial` | Temporary Chat、模式、个性化、地区、设备和来源面板均已记录；否则保留 partial |
 | GEO-V2-003 | 发布 GEO-08 分发包 | 引用发现入口 | P1 | `blocked-by-test-freeze` | 本批测试完成后发布，公开 URL、UTM、时间和 Story 状态入日志 |
 | GEO-V2-004 | 补录 GEO-06/07 发布与七日数据 | 运营证据 | P1 | `overdue / owner-input` | 可得字段全部补录，不可得字段写 unavailable |
