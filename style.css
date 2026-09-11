@@ -3667,6 +3667,63 @@ body.page .container.grid-container:has(.ma-product-category) {
   padding: var(--ma-section-y) 0;
 }
 
+/* Category buyer-fit answer: a compact decision block between the hero and
+   product detail, rendered from the shared category data. */
+.ma-product-fit {
+  padding: var(--ma-space-5) 0;
+  border-block: 1px solid var(--ma-color-border);
+  background: var(--ma-color-surface);
+}
+
+.ma-product-fit__layout {
+  display: grid;
+  gap: var(--ma-space-5);
+}
+
+.ma-product-fit__answer {
+  max-width: var(--ma-reading-width);
+}
+
+.ma-product-fit__answer h2 {
+  margin-bottom: var(--ma-space-3);
+}
+
+.ma-product-fit__answer > p:last-child {
+  margin: 0;
+  color: var(--ma-color-muted);
+  font-size: 1.04rem;
+  line-height: var(--ma-lh-body);
+}
+
+.ma-product-fit__facts {
+  display: grid;
+  gap: var(--ma-space-3);
+  margin: 0;
+}
+
+.ma-product-fit__facts > div {
+  padding: var(--ma-space-3) var(--ma-space-4);
+  border-left: 3px solid var(--ma-color-accent);
+  background: var(--ma-color-bg);
+}
+
+.ma-product-fit__facts dt {
+  margin-bottom: var(--ma-space-2);
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-small);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.ma-product-fit__facts dd {
+  margin: 0;
+  color: var(--ma-color-text);
+  font-weight: 700;
+  line-height: var(--ma-lh-body);
+}
+
 .ma-product-intro__grid,
 .ma-product-related__layout {
   display: grid;
@@ -4457,6 +4514,11 @@ body.page .container.grid-container:has(.ma-product-category) {
 @media (min-width: 48rem) {
   .ma-product-hero__content {
     padding-top: var(--ma-space-6);
+  }
+
+  .ma-product-fit__layout {
+    grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
+    align-items: start;
   }
 
   .ma-product-intro__grid,

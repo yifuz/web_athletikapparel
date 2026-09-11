@@ -103,6 +103,24 @@ function myathletik_product_category_data() {
 			'hero_video_position' => 'center center',
 			'hero_video_variant'  => 'split',
 			'intro'            => __( 'Sportswear programs for gym, training, running, and studio applications, developed around the buyer\'s fit, movement, fabric, finish, and testing requirements. We produce tight, fitted, and compression silhouettes for B2B activewear brands, with specifications confirmed through material selection and approved samples.', 'myathletik-child' ),
+			'buyer_fit'        => array(
+				'heading' => __( 'Is Athletik a fit for your sportswear program?', 'myathletik-child' ),
+				'summary' => sprintf( __( 'Athletik is a China-based OEM/ODM manufacturer for cut-and-sew knitted sportswear, with production in Zhangjiagang. Its program is best suited to established and mid-sized activewear brands, wholesalers, and importers working from a tech pack, approved reference sample, or defined product brief. It supports coordinated fabric development, fit, technical seam selection, testing criteria, and bulk production from %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				'facts'   => array(
+					array(
+						'label' => __( 'Best suited to', 'myathletik-child' ),
+						'value' => __( 'Established and mid-sized activewear brands, wholesalers, and importers', 'myathletik-child' ),
+					),
+					array(
+						'label' => __( 'Program scope', 'myathletik-child' ),
+						'value' => __( 'Gym, training, running, yoga, and compression apparel', 'myathletik-child' ),
+					),
+					array(
+						'label' => __( 'Commercial starting point', 'myathletik-child' ),
+						'value' => sprintf( __( '%s pieces per style', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+					),
+				),
+			),
 			'what_we_make'     => array(
 				__( 'Training tops, tanks, and tees', 'myathletik-child' ),
 				__( 'Leggings, shorts, and compression pieces', 'myathletik-child' ),
@@ -257,6 +275,24 @@ function myathletik_product_category_data() {
 			'hero_video_position' => 'center 18%',
 			'hero_kicker'      => __( 'Performance underwear OEM/ODM', 'myathletik-child' ),
 			'intro'            => __( 'We manufacture performance underwear, men\'s boxer briefs, and thermal base layers from knitted fabrics for brands, importers, and private-label programs. Development can combine FLATLOCK, ACTIVESEAM, or bonded-welded construction with microfiber, stretch, and Merino wool materials, based on the intended use, fit, and approved specification.', 'myathletik-child' ),
+			'buyer_fit'        => array(
+				'heading' => __( 'Is Athletik a fit for your underwear program?', 'myathletik-child' ),
+				'summary' => sprintf( __( 'Athletik is a China-based OEM/ODM manufacturer for close-fitting knitted underwear and base layers, with production in Zhangjiagang. Its program is best suited to established and mid-sized brands, wholesalers, and importers with defined fit, fabric, waistband, seam-map, and testing requirements. Development can coordinate materials, sample approval, technical construction, private-label details, and bulk production from %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				'facts'   => array(
+					array(
+						'label' => __( 'Best suited to', 'myathletik-child' ),
+						'value' => __( 'Performance underwear and base-layer brands, wholesalers, and importers', 'myathletik-child' ),
+					),
+					array(
+						'label' => __( 'Program scope', 'myathletik-child' ),
+						'value' => __( 'Boxer briefs, performance underwear, thermal sets, and base layers', 'myathletik-child' ),
+					),
+					array(
+						'label' => __( 'Commercial starting point', 'myathletik-child' ),
+						'value' => sprintf( __( '%s pieces per style', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+					),
+				),
+			),
 			'overview_heading' => __( 'Performance underwear programs', 'myathletik-child' ),
 			'product_range_heading' => __( 'Performance underwear products we manufacture', 'myathletik-child' ),
 			'what_we_make'     => array(
@@ -416,6 +452,24 @@ function myathletik_product_category_data() {
 			'social_image_alt'    => __( 'Cycling apparel and outdoor performance knitwear', 'myathletik-child' ),
 			'social_image_type'   => 'image/jpeg',
 			'intro'            => __( 'Outdoor clothing programs for hiking, skiing, trekking, and cold-weather use, developed in knitted and knit-based fabrics. We manufacture base layers, thermal underwear, mid-layers, fleece tops and hoodies, outdoor jackets, hiking pants, and accessories such as balaclavas, neck warmers, and beanies. Material, construction, protection, and testing requirements are defined against the buyer\'s intended activity, climate, and approved specification.', 'myathletik-child' ),
+			'buyer_fit'        => array(
+				'heading' => __( 'Is Athletik a fit for your outdoor clothing program?', 'myathletik-child' ),
+				'summary' => sprintf( __( 'Athletik is a China-based OEM/ODM manufacturer for knitted and knit-based outdoor clothing, with production in Zhangjiagang. Its program is best suited to established and mid-sized outdoor brands, wholesalers, and importers developing specification-led layers for a defined activity and climate, with coordinated fabrics, construction, features, testing criteria, and bulk production from %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				'facts'   => array(
+					array(
+						'label' => __( 'Best suited to', 'myathletik-child' ),
+						'value' => __( 'Outdoor and thermal-apparel brands, wholesalers, and importers', 'myathletik-child' ),
+					),
+					array(
+						'label' => __( 'Program scope', 'myathletik-child' ),
+						'value' => __( 'Knitted and knit-based base layers, mid-layers, fleece pieces, and textile accessories', 'myathletik-child' ),
+					),
+					array(
+						'label' => __( 'Commercial starting point', 'myathletik-child' ),
+						'value' => sprintf( __( '%s pieces per style', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+					),
+				),
+			),
 			'what_we_make'     => array(
 				__( 'Mid-layer tops and hoodies', 'myathletik-child' ),
 				__( 'Cold-weather layering pieces', 'myathletik-child' ),
@@ -583,6 +637,24 @@ function myathletik_product_category_data() {
 			// head in frame when a portrait subject is cropped to a wide hero.
 			'hero_video_position' => 'center 20%',
 			'intro'            => __( 'We manufacture custom Merino wool clothing for base-layer tops and bottoms, underwear, T-shirts, hoodies, mid-layers, balaclavas, neck warmers, and other performance programs. Each project is developed around the buyer\'s composition, micron, yarn, GSM, knit structure, fit, construction, and testing requirements.', 'myathletik-child' ),
+			'buyer_fit'        => array(
+				'heading' => __( 'Is Athletik a fit for your Merino wool program?', 'myathletik-child' ),
+				'summary' => sprintf( __( 'Athletik is a China-based OEM/ODM manufacturer for Merino wool apparel, with production in Zhangjiagang. Its program is best suited to established and mid-sized apparel and outdoor brands, wholesalers, and importers developing specification-led base layers, underwear, mid-layers, or accessories with defined composition, micron, GSM, knit structure, fit, construction, care, and testing requirements. Bulk programs start at %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				'facts'   => array(
+					array(
+						'label' => __( 'Best suited to', 'myathletik-child' ),
+						'value' => __( 'Performance, outdoor, and Merino wool brands, wholesalers, and importers', 'myathletik-child' ),
+					),
+					array(
+						'label' => __( 'Program scope', 'myathletik-child' ),
+						'value' => __( 'Merino wool base layers, underwear, mid-layers, and textile accessories', 'myathletik-child' ),
+					),
+					array(
+						'label' => __( 'Commercial starting point', 'myathletik-child' ),
+						'value' => sprintf( __( '%s pieces per style', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+					),
+				),
+			),
 			'what_we_make'     => array(
 				__( 'Merino wool base layers and underwear', 'myathletik-child' ),
 				__( 'Merino wool T-shirts, hoodies, and mid-layers', 'myathletik-child' ),
@@ -932,6 +1004,24 @@ function myathletik_product_category_data() {
 			'social_image_type'   => 'image/jpeg',
 			'hero_kicker'      => __( 'Silk apparel OEM/ODM', 'myathletik-child' ),
 			'intro'            => __( 'We manufacture knitted silk base layers, underwear, T-shirts, camisoles, leggings, long underwear, and lightweight apparel for brands and private-label programs. Woven silk garment programs can also be supported by project. Composition, yarn, fabric weight, construction, finish, and testing are developed against the buyer\'s specification and approved samples.', 'myathletik-child' ),
+			'buyer_fit'        => array(
+				'heading' => __( 'Is Athletik a fit for your silk apparel program?', 'myathletik-child' ),
+				'summary' => sprintf( __( 'Athletik is a China-based OEM/ODM manufacturer for knitted silk apparel, with production in Zhangjiagang. Its program is best suited to established and mid-sized brands, wholesalers, and importers developing next-to-skin or lightweight garments to an approved specification. Composition, fabric weight, fit, construction, care, and testing can be coordinated from %s pieces per style; woven silk garments are reviewed by project.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				'facts'   => array(
+					array(
+						'label' => __( 'Best suited to', 'myathletik-child' ),
+						'value' => __( 'Apparel, underwear, and layering brands, wholesalers, and importers', 'myathletik-child' ),
+					),
+					array(
+						'label' => __( 'Program scope', 'myathletik-child' ),
+						'value' => __( 'Knitted silk base layers, underwear, lightweight apparel, and woven programs by project', 'myathletik-child' ),
+					),
+					array(
+						'label' => __( 'Commercial starting point', 'myathletik-child' ),
+						'value' => sprintf( __( '%s pieces per style', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+					),
+				),
+			),
 			'overview_heading' => __( 'Knitted silk apparel and supported woven programs', 'myathletik-child' ),
 			'product_range_heading' => __( 'Silk apparel products we manufacture', 'myathletik-child' ),
 			'what_we_make'     => array(
@@ -1088,6 +1178,24 @@ function myathletik_product_category_data() {
 			'social_image_type'   => 'image/jpeg',
 			'hero_kicker'      => __( 'Custom knit fabric development & supply', 'myathletik-child' ),
 			'intro'            => __( 'Through our own fabric mill, we support standalone fabric orders and custom development for B2B apparel programs, including performance, thermal, stretch, and functional knits. Development can be checked through in-house testing against the agreed fabric specification, while MOQ varies by fabric and project requirements.', 'myathletik-child' ),
+			'buyer_fit'        => array(
+				'heading' => __( 'Is Athletik a fit for your knitted-fabric program?', 'myathletik-child' ),
+				'summary' => __( 'Athletik is a China-based knitted-fabric manufacturer and full-package apparel OEM/ODM, with production in Zhangjiagang. Its standalone fabric program is best suited to established and mid-sized apparel brands, garment manufacturers, wholesalers, and importers that can define end use, composition, GSM, knit structure, stretch and recovery, finish, color, testing criteria, and forecast quantity. MOQ is quoted by the selected fabric specification and project requirements.', 'myathletik-child' ),
+				'facts'   => array(
+					array(
+						'label' => __( 'Best suited to', 'myathletik-child' ),
+						'value' => __( 'Apparel brands, garment manufacturers, wholesalers, and fabric importers', 'myathletik-child' ),
+					),
+					array(
+						'label' => __( 'Program scope', 'myathletik-child' ),
+						'value' => __( 'Performance, thermal, stretch, Merino wool, recycled, and functional knitted fabrics', 'myathletik-child' ),
+					),
+					array(
+						'label' => __( 'Commercial starting point', 'myathletik-child' ),
+						'value' => __( 'MOQ quoted by selected fabric specification and project requirements', 'myathletik-child' ),
+					),
+				),
+			),
 			'overview_heading' => __( 'Functional knitted fabrics for performance apparel', 'myathletik-child' ),
 			'what_we_make'     => array(
 				__( 'Performance knit fabrics for activewear and underwear', 'myathletik-child' ),
@@ -1227,6 +1335,24 @@ function myathletik_product_category_data() {
 			'social_image_type'   => 'image/jpeg',
 			'hero_kicker'      => __( 'Technical knit accessories OEM/ODM', 'myathletik-child' ),
 			'intro'            => __( 'We manufacture technical knit and textile accessories for sportswear, outdoor, and performance apparel collections. Programs include balaclavas, ski masks, neck gaiters, neck warmers, glove liners, lightweight gloves, headbands, ear warmers, arm and leg sleeves, compression sleeves, beanies, and wristbands, developed to the buyer\'s material, fit, construction, branding, and testing requirements.', 'myathletik-child' ),
+			'buyer_fit'        => array(
+				'heading' => __( 'Is Athletik a fit for your sports-accessories program?', 'myathletik-child' ),
+				'summary' => sprintf( __( 'Athletik is a China-based OEM/ODM manufacturer for technical knit and textile sports accessories, with production in Zhangjiagang. Its program is best suited to established and mid-sized sportswear and outdoor brands, wholesalers, and importers defining material, fit, coverage, construction, branding, packaging, testing, and compatibility with an intended activity or layering system. Bulk programs start at %s pieces per style.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+				'facts'   => array(
+					array(
+						'label' => __( 'Best suited to', 'myathletik-child' ),
+						'value' => __( 'Sportswear and outdoor brands, wholesalers, and importers', 'myathletik-child' ),
+					),
+					array(
+						'label' => __( 'Program scope', 'myathletik-child' ),
+						'value' => __( 'Technical knit and textile accessories, not hard sports equipment', 'myathletik-child' ),
+					),
+					array(
+						'label' => __( 'Commercial starting point', 'myathletik-child' ),
+						'value' => sprintf( __( '%s pieces per style', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+					),
+				),
+			),
 			'overview_heading' => __( 'Textile accessories for sportswear and outdoor collections', 'myathletik-child' ),
 			'product_range_heading' => __( 'Technical sports accessories we manufacture', 'myathletik-child' ),
 			'what_we_make'     => array(

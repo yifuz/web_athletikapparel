@@ -181,7 +181,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | V2-C08 | 引用 | OEM Evaluation + QC Guide | Google Sources 面板已把 Athletik LinkedIn 尽调帖列为首张卡片，证明站外分发可被找到；但正文未提品牌、两篇官网 Guide 未被引用，并回漂到 9GG–16GG/Stoll/Shima fully fashioned 语境。批后优先区分站外发现、规范引用和技术准确性，再决定是否强化 cut-and-sew 定义块、一手证据和外部引用入口 |
 | BD-01 | 宽泛推荐 | 首页、Sportswear、站外实体信号 | 无国家、无技术和无 MOQ 限定；用于观察全球 sportswear OEM/ODM 候选池，不用未出现否定专业匹配 |
 | BD-02 | 宽泛推荐 | 首页、Sportswear、About、站外实体信号 | 只限定中国与 mid-sized brand；观察 Athletik 是否进入通用中国 sportswear OEM/ODM 短名单及主要竞争者 |
-| BD-03 | 商业匹配推荐 | Sportswear、Services、Contact、当前 MOQ 500 口径 | 两个产品均未出现 Athletik；站内事实已存在但分散。审核页面靠前的 buyer-fit answer block，把 China、OEM/ODM、activewear/performance apparel、500 pieces/style 与目标买家集中表达；不推断每色 MOQ 或价格 |
+| BD-03 | 商业匹配推荐 | About、七个品类页、Services、Contact、当前 MOQ 500 口径 | 两个产品均未出现 Athletik；公司级 About buyer-fit 与七品类 Program Fit 已在本地形成整批优化，分别集中表达目标买家、项目范围和商业起点；不推断每色 MOQ 或价格，待所有者审核后统一部署并按月复测 |
 
 ## 8. 单人执行计划
 
@@ -232,9 +232,10 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-010 | 建立 GSC Generative AI 月度观测 | 找到/引用入口 | P0 | `baseline-established` | 首个三个月导出完整入档；以后使用完整 28 天可比窗口并保持各维度口径分离 |
 | GEO-V2-011 | 完成 Baseline v2 首批测试后四阶段诊断 | 全漏斗决策 | P0 | `complete` | 诊断分别覆盖找到、提取、引用与推荐；技术阻断、来源归属、证据债务和最小行动已分开记录 |
 | GEO-V2-012 | 建立并运行 Broad Discovery v1 | 宽泛推荐发现 | P0 | `complete / Google 3 of 3; ChatGPT 3 of 3; Perplexity unavailable` | BD-01～BD-03 共 6 次独立首次回答已记录；Athletik 正文出现与规范站引用均为 0/6；环境元数据不完整的运行保持 partial；结果不与 Baseline v2 合并 |
-| GEO-V2-013 | 审核 Sportswear buyer-fit answer block | 宽泛推荐入口 | P1 | `deferred / sequence` | 保留为 About Us 综合段落之后的独立实验；只在已有页面靠前位置集中表达 China、OEM/ODM、activewear/performance apparel、适合 established/mid-sized B2B buyer 与 500 pieces/style，不与 GEO-V2-015 同时部署 |
-| GEO-V2-014 | 完成全部 Baseline 数据综合诊断与 90 天方案 | 全漏斗决策 | P0 | `complete` | 已分别判断找到、提取、规范引用、专业推荐、宽泛推荐和业务结果；行动按单变量、证据依赖和复测门槛排序 |
+| GEO-V2-013 | 审核 Sportswear buyer-fit answer block | 宽泛推荐入口 | P1 | `superseded by GEO-V2-016` | 原单页实验方案已由所有者调整为七品类整批结构优化；Sportswear 仍包含在新批次中，不再单独等待低样本前后差异 |
+| GEO-V2-014 | 完成全部 Baseline 数据综合诊断与 90 天方案 | 全漏斗决策 | P0 | `complete / strategy-adjusted` | 已分别判断找到、提取、规范引用、专业推荐、宽泛推荐和业务结果；低曝光阶段由严格单变量调整为可审计的整批结构优化，仍保留证据依赖和固定复测门槛 |
 | GEO-V2-015 | About Us 综合 buyer-fit paragraph | 提取/宽泛推荐入口 | P0 | `implemented / owner-review` | 用一个公司级段落覆盖生产地点、目标 B2B 买家、完整产品范围、FLATLOCK/ACTIVESEAM、成衣 MOQ 500 pieces/style 与独立面料项目边界；不改 URL、Title、H1、Schema 或页面结构，所有者批准后部署并单独观察 |
+| GEO-V2-016 | 七品类 Program Fit 整批优化 | 提取/宽泛推荐入口 | P0 | `implemented / owner-review` | 七个品类页在 Hero 后通过同一共享模板增加可独立提取的 buyer-fit 答案与 Best suited to / Program scope / Commercial starting point 三项事实；六个成衣品类使用 500 pieces/style，Knitted Fabrics 按面料规格与项目报价；不改 URL、Title、H1 或 Schema |
 
 ## 10. 统一记录与判断口径
 
@@ -273,6 +274,6 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 截至 2026-09-11，Athletik 已完成规范站、实体基础、四篇技术指南、主要 Schema、索引和首轮社交分发；GSC 首个专用报表确认 29 次 Google 生成式 AI Property impressions，四篇指南均出现页面级链接曝光。Baseline v2 已完成 ChatGPT Search 8/8 与 Google AI Mode 8/8，Perplexity 因权限 unavailable；专业 D03～D05 已出现跨产品推荐，但 C06～C08 对应官网 Guide 在 6 次可用运行中仍为 0 次引用。
 
-Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。所有者已决定先以 About Us comprehensive buyer-fit paragraph 建立公司级完整提取入口；Sportswear 专项段落保留为后续独立实验，避免两个变量同时部署。claim-to-source 矩阵、历史站冲突治理和可信第三方佐证继续并行推进；完整诊断与 90 天方案见 [`testing/baseline-integrated-diagnosis-2026-09-11.md`](testing/baseline-integrated-diagnosis-2026-09-11.md)。
+Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。考虑到当前整体曝光样本不足，所有者决定不再把 About Us 与 Sportswear 当作需要逐项等待的严格单变量实验，而是先完成公司级 About buyer-fit 与七品类 Program Fit 整批结构优化，再按月观察整体、页面和固定提示词变化，不从低样本强行归因。claim-to-source 矩阵、历史站冲突治理和可信第三方佐证继续并行推进；完整诊断与 90 天方案见 [`testing/baseline-integrated-diagnosis-2026-09-11.md`](testing/baseline-integrated-diagnosis-2026-09-11.md)。
 
 本对话可以用于规划、分析用户带回的 Temporary Chat 结果、更新证据和制定内容；不得作为中性测试环境。

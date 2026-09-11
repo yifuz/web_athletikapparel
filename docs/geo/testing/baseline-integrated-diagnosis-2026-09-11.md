@@ -14,7 +14,9 @@ Athletik 当前已经完成从“不可见”到“能够被找到、被提取�
 1. 让 Sportswear 页面更清楚地承接宽泛但符合业务条件的买家意图；
 2. 让官网规范页面取代历史矩阵站和社交帖子，成为结论的主要证据来源；
 3. 用真实、可核验的独立来源补足“为什么值得推荐”，而不只是“公司自己说能做”；
-4. 把后续改动设计成单变量实验，并使用固定 Baseline 按月验证。
+4. 在低曝光阶段采用可审计的整批结构优化，并使用固定 Baseline 按月验证；不从低样本强行归因到单一页面。
+
+> **所有者策略调整（2026-09-11）：** 当前整体曝光不足以高效区分 About 与单个品类页的前后效果，因此不再逐项等待严格单变量结果。About 综合 buyer-fit 与七品类 Program Fit 作为同一批结构优化推进；部署日期、页面清单和固定提示词保持可追踪，后续分别观察整体、页面与提示词变化。
 
 ## 2. 本次诊断使用的数据
 
@@ -136,25 +138,31 @@ FLATLOCK、ACTIVESEAM、technical knitwear、base layers 和 Merino wool 的组�
 
 ## 7. 后续执行方案
 
-### 阶段 A：7～14 天，完成两个 P0 单变量准备
+### 阶段 A：7～14 天，完成 P0 结构优化与证据准备
 
 1. **About Us 综合 buyer-fit 段落审计与草稿**
    - 页面：`/about-us/`。
    - 必须同时覆盖：China production operation、OEM/ODM technical knitwear、适合 established/mid-sized B2B apparel brands、完整产品范围、FLATLOCK/ACTIVESEAM，以及 garment MOQ 500 pieces/style。
    - 独立面料项目与成衣 MOQ 分开表达，避免把 500 件口径错误套用到 fabric programs。
    - 复用现有 Hero 公司摘要位置，不新增重复定义；不改 URL、Title、Meta、H1、Schema 或页面结构。
-   - 所有者审核后作为首个公司级 buyer-fit 单变量部署；Sportswear 专项段落保留为后续独立实验，不与本项同时上线。
+   - 与七品类 Program Fit 作为同一批结构优化审核和部署；不从低曝光样本拆分 About 与单个品类页的因果效果。
 
-2. **建立 claim-to-source 证据矩阵**
+2. **七品类 Program Fit 整批优化**
+   - 页面：全部七个规范品类 URL。
+   - 在 Hero 后使用共享模板输出一段可独立提取的适配答案，以及 `Best suited to`、`Program scope`、`Commercial starting point` 三项事实。
+   - 六个成衣品类使用 500 pieces/style；Knitted Fabrics 按所选面料规格与项目要求报价。
+   - 不改 URL、Title、H1、Schema 或图片；每个品类保留自身产品与范围边界。
+
+3. **建立 claim-to-source 证据矩阵**
    - 覆盖 D03～D05 和 C06～C08。
    - 每一项记录：买家问题、允许公开的事实、规范第一方 URL、当前被 AI 采用的 URL、可信第三方候选、冲突、缺失输入和负责人。
    - 先修高风险冲突：实体角色、工厂地址、MOQ、设备型号/工艺、产能、认证范围。
 
-3. **完成历史/矩阵站审计**
+4. **完成历史/矩阵站审计**
    - 最低覆盖：`athletik.com.cn`、`athletik.nyc`、`ultramerino.com`、`powermerino.com`。
    - 输出逐声明处置建议，不擅自合并网站、不改变 URL、不实施跨域重定向。
 
-4. **补齐分发证据**
+5. **补齐分发证据**
    - 补录 GEO-06/07/08 的 LinkedIn / Instagram URL、发布时间、UTM、Story 状态和可得七日数据。
    - 无法取得的字段写 `unavailable`，不推断。
 
@@ -211,7 +219,7 @@ FLATLOCK、ACTIVESEAM、technical knitwear、base layers 和 Merino wool 的组�
 | 提取 | E01/E02 核心事实准确率；历史站/实体冲突次数 | 核心事实总体可提取；旧站污染已复现 | 下一月同提示词 |
 | 引用 | C06～C08 对应规范 Guide 引用题数；D03～D05 规范站引用覆盖 | C06～C08 为 0/6 次运行 | 下一月与原创证据上线后的 28～90 天 |
 | 专业推荐 | D03～D05 入选题数、第一名次数、平均位置、理由准确性 | ChatGPT 3/3 第 1；Google 2/3 入选 | 下一月复测 |
-| 宽泛推荐 | BD-01～BD-03 提及率与规范引用率，分题报告 | 0/6；0/6 | buyer-fit 单变量被抓取后的下一月 |
+| 宽泛推荐 | BD-01～BD-03 提及率与规范引用率，分题报告 | 0/6；0/6 | buyer-fit 整批页面被抓取后的下一完整月度窗口 |
 | 业务 | AI referral sessions、engaged sessions、有效询盘 | 样本不足 | 每月自然月复核 |
 
 “稳定改善”的最低工作定义继续保持：同一固定意图在至少两个独立产品或连续两个月出现同方向变化，并且没有依赖品牌点名、历史聊天或错误事实。

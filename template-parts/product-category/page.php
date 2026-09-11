@@ -95,6 +95,30 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 		</div>
 	</section>
 
+	<?php if ( ! empty( $category['buyer_fit']['summary'] ) && ! empty( $category['buyer_fit']['facts'] ) && is_array( $category['buyer_fit']['facts'] ) ) : ?>
+	<section class="ma-product-section ma-product-fit" aria-labelledby="ma-product-fit-title">
+		<div class="ma-section-inner ma-product-fit__layout">
+			<div class="ma-product-fit__answer">
+				<p class="ma-section-kicker"><?php esc_html_e( 'Program fit', 'myathletik-child' ); ?></p>
+				<h2 id="ma-product-fit-title">
+					<?php echo esc_html( ! empty( $category['buyer_fit']['heading'] ) ? $category['buyer_fit']['heading'] : __( 'Is this program a fit?', 'myathletik-child' ) ); ?>
+				</h2>
+				<p><?php echo esc_html( $category['buyer_fit']['summary'] ); ?></p>
+			</div>
+			<dl class="ma-product-fit__facts">
+				<?php foreach ( $category['buyer_fit']['facts'] as $fact ) : ?>
+					<?php if ( ! empty( $fact['label'] ) && ! empty( $fact['value'] ) ) : ?>
+						<div>
+							<dt><?php echo esc_html( $fact['label'] ); ?></dt>
+							<dd><?php echo esc_html( $fact['value'] ); ?></dd>
+						</div>
+					<?php endif; ?>
+				<?php endforeach; ?>
+			</dl>
+		</div>
+	</section>
+	<?php endif; ?>
+
 	<section class="ma-product-section ma-product-intro">
 		<div class="ma-section-inner ma-product-intro__grid">
 			<div>
