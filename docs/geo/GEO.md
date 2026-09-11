@@ -175,6 +175,9 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | V2-C06 | 引用 | Tech Pack Guide | ChatGPT 与 Google AI Mode 均准确进入 cut-and-sew performance knitwear 语境，但都未引用目标 Guide，citation source-selection 缺口已跨产品复现；Google 回答还出现 stitch type 命名、固定 SPI/tolerance/extended measurement 等过度概括。本批结束前不改页，完成 C07/C08 后再统一判断可引用摘要、原创生产证据、标准来源或站外引用入口 |
 | V2-C07 | 引用 | FLATLOCK vs OVERLOCK Guide | ChatGPT 与 Google AI Mode 都未选择目标 Guide；Google 只引用规范首页，source-to-claim 支持不足，并采用制造商博客中的固定 SPI 与未经透明验证的 8%–18% 成本数字。完成 C08 后再结合 GSC、Bing grounding query 与跨产品结果判断可引用摘要、原创生产证据、一手标准来源和外部引用入口 |
 | V2-C08 | 引用 | OEM Evaluation + QC Guide | Google Sources 面板已把 Athletik LinkedIn 尽调帖列为首张卡片，证明站外分发可被找到；但正文未提品牌、两篇官网 Guide 未被引用，并回漂到 9GG–16GG/Stoll/Shima fully fashioned 语境。批后优先区分站外发现、规范引用和技术准确性，再决定是否强化 cut-and-sew 定义块、一手证据和外部引用入口 |
+| BD-01 | 宽泛推荐 | 首页、Sportswear、站外实体信号 | 无国家、无技术和无 MOQ 限定；用于观察全球 sportswear OEM/ODM 候选池，不用未出现否定专业匹配 |
+| BD-02 | 宽泛推荐 | 首页、Sportswear、About、站外实体信号 | 只限定中国与 mid-sized brand；观察 Athletik 是否进入通用中国 sportswear OEM/ODM 短名单及主要竞争者 |
+| BD-03 | 商业匹配推荐 | Sportswear、Services、Contact、当前 MOQ 500 口径 | 加入 activewear/performance apparel 与 500 pieces/style；观察真实采购门槛是否改善候选匹配，不推断每色 MOQ 或价格 |
 
 ## 8. 单人执行计划
 
@@ -224,6 +227,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-009 | 每月一个可信站外佐证动作 | 推荐 | P1 | `external-input` | 获得可公开、可索引、信息准确的真实条目/编辑内容；未成功不写完成 |
 | GEO-V2-010 | 建立 GSC Generative AI 月度观测 | 找到/引用入口 | P0 | `baseline-established` | 首个三个月导出完整入档；以后使用完整 28 天可比窗口并保持各维度口径分离 |
 | GEO-V2-011 | 完成 Baseline v2 首批测试后四阶段诊断 | 全漏斗决策 | P0 | `complete` | 诊断分别覆盖找到、提取、引用与推荐；技术阻断、来源归属、证据债务和最小行动已分开记录 |
+| GEO-V2-012 | 建立并运行 Broad Discovery v1 | 宽泛推荐发现 | P0 | `ready-to-run` | BD-01～BD-03 固定原文已建立；ChatGPT Search 与 Google AI Mode 共 6 次独立首次回答完成记录，Perplexity 无权限则 3 条记 unavailable；结果不与 Baseline v2 合并 |
 
 ## 10. 统一记录与判断口径
 
@@ -240,6 +244,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 - **实体准确性 E01/E02**：关键事实正确率和冲突类型；不计算自然推荐率。
 - **供应商发现 D03～D05**：入选题数/有效运行数、平均名单位置、第一推荐次数、推荐理由准确性、规范站与第三方引用覆盖。
+- **宽泛供应商发现 BD-01～BD-03**：按全球宽泛、中国宽泛、500 pieces/style 商业匹配分别报告；记录短名单位置、规范站/矩阵站/第三方来源类型与竞品，不与 D03～D05 合并。
 - **内容权威性 C06～C08**：Athletik 指南被引用题数/有效运行数、引用相关性、错误结论和竞品来源。
 - **Google 生成式搜索展示**：GSC Property impressions、获得页面级链接曝光的规范 URL、Countries、Devices 和 Dates；不推断报表未提供的 Query、Clicks、答案内容或推荐位置。
 - **访问与业务结果**：AI referral sessions、engaged sessions、有效询盘；样本不足时只报绝对值，不报趋势。

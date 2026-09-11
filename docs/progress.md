@@ -681,8 +681,9 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 1. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
 2. 建立 D03～D05 推荐证据矩阵，并完成历史/矩阵域名事实冲突审计；未经所有者批准不建立跨域重定向或公开实体关联。
 3. 只在真实设备、样品、测试方法与公开边界完成核验后，决定是否立项 `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 原创证据内容。
-4. 下一个月继续使用完全相同的 Baseline v2 提示词与干净环境复测；Perplexity 保持 `unavailable / plan-access`，不使用替代产品填充。
-5. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 Day 0 已关闭，下一步按 Day 7 / 28 / 90 观察，不继续修改首页。
-6. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动，响应时间需使用同配置窗口比较。
-7. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
-8. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。
+4. 使用 3 条固定 Broad Discovery v1 提示词完成首次宽泛供应商发现：ChatGPT Search 与 Google AI Mode 各 3 次独立干净会话；Perplexity 保持 `unavailable / plan-access`，不使用替代产品填充；结果不与 Baseline v2 合并。
+5. 下一个月继续使用完全相同的 Baseline v2 与 Broad Discovery v1 提示词复测，不在同一会话连续运行多题。
+6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 Day 0 已关闭，下一步按 Day 7 / 28 / 90 观察，不继续修改首页。
+7. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动，响应时间需使用同配置窗口比较。
+8. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
+9. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。

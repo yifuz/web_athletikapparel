@@ -117,6 +117,25 @@ v1 的已知限制：V1-02 已点名域名，不能衡量自然发现；V1-05 �
 - V2-C06～C08 是未点名的内容权威性；即使 Athletik 没被列为供应商，只要相关第一方指南被准确引用，也属于正向结果。
 - v2 修正了 v1 的意图歧义，因此不能把 `V1-05 未出现` 与 `V2-D05 出现` 直接表述为排名提升。v2 第一次完整运行是新时间序列的起点。
 
+### 4.4 Broad Discovery v1 — 模拟宽泛买家搜索（独立测试组）
+
+> 以下 3 条固定英文原文于 2026-09-11 建立。它们不替换 Baseline v2，也不计入原 8 条 v2 或首批 24 条运行。
+> 这一组故意不使用 FLATLOCK、ACTIVESEAM、Merino wool 或 cut-and-sew 等 Athletik 强项限定，模拟买家从宽泛供应商发现到加入中国和真实 MOQ 条件的搜索过程。
+
+| BD ID | 固定提示词 | 模拟的买家阶段 | 主要成功条件 |
+|---|---|---|---|
+| BD-01 | Can you recommend up to five reliable OEM/ODM sportswear manufacturers for a mid-sized brand? Explain why each is a fit and cite the sources you used. | 尚未限定国家或具体技术的最宽泛供应商发现 | Athletik 是否在全球候选中自然出现；模型如何定义 `reliable`；是否有可核验证据而非泛化声誉判断 |
+| BD-02 | Which OEM/ODM sportswear manufacturers in China should a mid-sized brand consider? List up to five, explain why each is a fit, and cite sources. | 已确定中国供应链，但尚未提供品类细节或订单条件 | Athletik 是否进入中国 sportswear OEM/ODM 短名单、位置、理由、规范站引用及主要竞争者 |
+| BD-03 | I am looking for an OEM/ODM manufacturer in China for activewear and performance apparel, with an order starting at 500 pieces per style. Which suppliers should I contact and why? Cite sources. | 买家加入真实产品方向和当前起订规模后的采购筛选 | Athletik 是否因 500 pieces/style、performance apparel 与 mid-sized buyer fit 进入候选；不得把公开 MOQ 推导成每色规则或固定报价 |
+
+执行边界：
+
+- 三条提示词共同模拟买家逐步收窄需求，但每条仍须在**独立干净会话**中运行，不能在同一对话连续追问，否则前题会影响后题候选。
+- 保留第一次完整回答、来源 URL、Sources 面板与环境元数据；不追加“你为什么没提 Athletik”等品牌诱导问题。
+- ChatGPT Search 与 Google AI Mode 各运行一次；Perplexity 当前无权限时，三条均记录 `unavailable / plan-access`，不使用其他产品代替。
+- 首轮建立后按月使用相同原文；任何措辞调整都建立 `Broad Discovery v2`，不覆盖本组。
+- `BD-01` 的未出现不等于专业采购匹配失败；`BD-03` 的出现也不能证明全球宽泛品类知名度。三条结果分开解释。
+
 ## 5. 结果记录与评分口径
 
 ### 5.1 运行有效性
@@ -140,6 +159,7 @@ v1 的已知限制：V1-02 已点名域名，不能衡量自然发现；V1-05 �
 | 实体准确性 V2-E01/E02 | 公开品牌、规范站、中国生产地点、中美实体角色、产品/能力概括、错误或过时信息 |
 | 供应商发现 V2-D03～D05 | 未出现 / 普通提及 / 进入短名单 / 第一推荐、名单位置、规范站引用、匹配理由、竞品 |
 | 内容权威性 V2-C06～C08 | 是否引用 Athletik 指南、引用 URL、引用相关性、证据是否支持结论、技术准确性 |
+| 宽泛供应商发现 BD-01～BD-03 | 未出现 / 普通提及 / 进入短名单 / 第一推荐、名单位置、地域与 MOQ 条件、规范站/矩阵站/第三方来源类型、主要竞争者、可靠性理由是否有证据 |
 
 ### 5.3 Baseline v2 月度记录表
 
@@ -310,7 +330,22 @@ v1 的已知限制：V1-02 已点名域名，不能衡量自然发现；V1-05 �
 - [EU Forced Labour Regulation](https://single-market-economy.ec.europa.eu/single-market/goods/forced-labour-regulation_en)从 2027-12-14 起适用；当前 2026 年可以准备，但不能写成已经生效的欧盟海关要求。原料地区风险必须按目标市场的当前法规、实体清单、供应链证据和交易时间评估，不能用一个全球通用的地名排除规则替代尽调。
 - 首批可执行基线现已完成：ChatGPT Search 8/8、Google AI Mode 8/8；Perplexity 8 条按 `unavailable / plan-access` 记录。测试冻结结束，但先形成批后诊断和最小改动清单，再决定是否修改指南、Schema、导航或发布状态，避免一次性同时改变多个变量。
 
-### 5.4 Baseline v1 历史结果（冻结）
+### 5.4 Broad Discovery v1 月度记录表
+
+Broad Discovery 与 Baseline v2 分开报告。每条提示词/产品使用一行；供应商名称出现在 Sources 面板但未进入回答正文时，记录为“来源候选”，不计入短名单。
+
+| 运行日期 | 产品 + 模型/模式 | BD ID | 环境摘要 | 运行有效性 | Athletik 结果/位置 | 是否引用规范站 | Athletik 引用 URL | 来源类型 | 推荐理由与证据支持 | 主要竞争者 | 错误/过时/意图错位 | 完整证据 | 变化确认 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| — | — | BD-01 / BD-02 / BD-03 | 登录状态；临时/隐私；搜索；语言；实际地区 | — | 未出现 / 来源候选 / 普通提及 / 短名单第 N / 第一推荐 | — | — | 规范站 / 矩阵站 / 品牌自有社交 / 独立第三方 | — | — | — | 第一次完整回答 + 全部来源 URL + Sources 面板 | 首次 / 待确认 / 初步确认 |
+
+Broad Discovery 首轮完成前不建立出现率结论。首轮完成后分别报告：
+
+- `BD-01`：无地域、无技术条件下的全球宽泛发现。
+- `BD-02`：中国 sportswear OEM/ODM 宽泛发现。
+- `BD-03`：中国 activewear/performance apparel + 500 pieces/style 商业匹配发现。
+- 三条均单独列出 Athletik 位置、规范站引用、来源类型和竞争者；不与 V2-D03～D05 合并为一个推荐率。
+
+### 5.5 Baseline v1 历史结果（冻结）
 
 以下结果全部属于 v1。为保留原始历史，旧表中的 `GEO-01～08` 应理解为 `V1-01～08`；不回写或改写原始证据行。
 
