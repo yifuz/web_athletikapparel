@@ -1,7 +1,7 @@
 # 全站链接下划线渲染修复 Change Card
 
 > 建立日期：2026-09-10  
-> 当前状态：`fixed / owner-review`
+> 当前状态：`fixed / production-verified`
 
 ## 目标页面与搜索意图
 
@@ -16,7 +16,7 @@
 
 - 全站锚点统一设置 `text-decoration-skip-ink: none`，关闭字形避让，让原生下划线连续穿过字母下伸部；
 - 不给所有链接改用 `border-bottom`，避免破坏多行正文链接、按钮、导航及 inline child 布局；
-- 已使用 `text-decoration: none` 的按钮、卡片和导航不受影响；Merino 采购卡 CTA 保留既有连续 `border-bottom` 表现。
+- 已使用 `text-decoration: none` 的按钮、卡片和导航不受影响；Merino 当前合并后的 outline button CTA 同样不受影响。
 
 保持不变：链接文字、URL、Title、Meta、H1、Canonical、Schema、颜色、粗细、offset、hover/focus 行为和页面内容。
 
@@ -32,8 +32,8 @@
 - [x] 代表性文字链接的 computed `text-decoration-skip-ink` 为 `none`；
 - [x] 原有 `text-decoration: none` 的按钮、卡片与导航保持无下划线；
 - [ ] 所有者在 Desktop 90% / 100% / 110% 缩放下完成视觉审核；
-- [ ] 部署后抽查首页、Contact、一个品类页和一个 Technical Guide。
+- [x] 生产抽查首页、Contact、Merino 品类页和 QC Technical Guide；共 39 个原生下划线链接的 computed `text-decoration-skip-ink` 均为 `none`，四页无横向溢出。
 
 ## Finding outcome
 
-当前 outcome：`fixed / owner-review`。所有者完成生产视觉验收后转为 `fixed / keep`。
+当前 outcome：`fixed / production-verified`。浏览器计算样式与代表性页面布局已通过；所有者完成 90% / 100% / 110% 主观视觉复核后转为 `fixed / keep`。

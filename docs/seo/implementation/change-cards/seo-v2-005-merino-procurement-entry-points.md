@@ -1,7 +1,7 @@
 # SEO-V2-005 Merino Wool 采购入口强化 Change Card
 
 > 建立日期：2026-09-10  
-> 当前状态：`changed / owner-review`
+> 当前状态：`changed / production-verified`
 
 ## 目标页面与买家任务
 
@@ -56,19 +56,19 @@ SERP 为制造商、零售品牌、目录和编辑内容混合意图，但三组
 
 - [x] PHP 8.2 语法与 `git diff --check` 通过；
 - [x] 本地目标 URL 返回 HTTP 200、保持单一 H1；
-- [x] 四张采购入口卡、四组 GSM 起始范围、四组材料方向、四个 Contact 入口和范围说明完整输出；
+- [x] 四张采购入口卡、四组 GSM 起始范围、四组材料方向、一个共享 Contact 入口和范围说明完整输出；
 - [x] 共享模板只在提供 `buying_paths` 数据时输出新模块；其他六个品类页保持原结构；
-- [x] Desktop 四张卡的两行标题轨道统一，分隔线、GSM、材料方向、正文与底部 CTA 对齐；Tablet 为两列，Mobile 为单列；CTA 继续使用连续 `border-bottom`；
+- [x] Desktop / Tablet 为两列、Mobile 为单列；卡片以编号、规格事实区和顶部强调线建立层级，单一共享 CTA 避免四次重复；
 - [ ] 所有者完成英文文案和视觉审核。
 
 ### 生产
 
-- [ ] 部署 `inc/product-category-data.php`、`template-parts/product-category/page.php` 与 `style.css`；
-- [ ] 页面 HTTP 200、可索引、自引用 Canonical、单一 H1 与 JSON-LD 无回归；
-- [ ] Desktop / Mobile 无横向溢出、卡片高度或触控入口问题；
-- [ ] 其他六个品类页不输出 Merino 专属采购入口；
+- [x] 已部署 `inc/product-category-data.php`、`template-parts/product-category/page.php` 与 `style.css`；
+- [x] 页面 HTTP 200、`follow, index`、自引用 Canonical、单一 H1 与 JSON-LD 无回归；
+- [x] 1440 / 1200 / 1199 / 768 / 390px 均无横向溢出；Desktop / Tablet 两列、Mobile 单列；
+- [x] 其他六个品类页 HTTP 200、单一 H1，且不输出 Merino 专属采购入口；
 - [ ] 部署后在 GSC 执行“测试实际网址”，通过后请求编入索引一次。
 
 ## Finding outcome
 
-当前 outcome：`changed / owner-review`。所有者审核并完成生产验收后转为 `changed / measuring`；计划从生产部署日重新计算 Day 7 / 28 / 90。
+当前 outcome：`changed / production-verified`。生产页面内容与技术信号已通过；待同批产品轨道脚本缺口修复并完成 URL Inspection 后转为 `changed / measuring`，从完整部署验收日计算 Day 7 / 28 / 90。

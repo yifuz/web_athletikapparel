@@ -1,7 +1,7 @@
 # SEO-V2-005 Merino Wool 产品轨道 Change Card
 
 > 建立日期：2026-09-10  
-> 当前状态：`changed / owner-review`
+> 当前状态：`partial / deployment-gap`
 
 ## 目标页面与买家任务
 
@@ -51,12 +51,13 @@
 
 ### 生产
 
-- [ ] 单独部署主题代码文件与 uploads 图片文件；
-- [ ] 16 张图片及全部 48 个响应式候选返回 HTTP 200 和正确 MIME；
+- [ ] 完整部署主题代码文件；`assets/js/merino-product-carousel.js` 当前生产返回 HTTP 404，页面未输出专属脚本；
+- [x] 16 张图片及全部 48 个响应式候选返回 HTTP 200 和正确 MIME；
 - [ ] Desktop 首屏 8 张，Mobile 2 × 2，鼠标、触屏、键盘和按钮均可查看剩余图片；
-- [ ] 页面无横向溢出、CLS、控制台错误或其他品类回归；
-- [ ] 部署后 Crawl / HTML / URL Inspection 无 indexability 回归。
+- [x] 页面在 Desktop / Mobile 无横向溢出，其他六个品类页未输出 Merino 专属模块；
+- [x] 生产 HTML 为 HTTP 200、`follow, index`、自引用 Canonical、单一 H1、16 张 figure，Title / Meta / Schema 无回归；
+- [ ] 补齐脚本后完成最终交互验收，再运行 URL Inspection。
 
 ## Finding outcome
 
-当前 outcome：`changed / owner-review`。完成生产验收后转为 `changed / measuring`；该变更按采购验证与页面互动观察，不与 Title / Meta 排名实验混合归因。
+当前 outcome：`partial / deployment-gap`。2026-09-11 生产内容、图片与索引信号已通过，但 `assets/js/merino-product-carousel.js` 返回 HTTP 404，页面因 `file_exists()` 保护未 enqueue 脚本；原生横向滚动仍可用，箭头、鼠标拖动与键盘增强未生效。补齐 `functions.php` 与脚本文件并复验后转为 `changed / measuring`。
