@@ -150,6 +150,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 - Baseline v2 的首次 ChatGPT Search 结果中，D03、D04 和 D05 均把 Athletik 列为第一推荐，并给出与 technical knitwear、base layers、FLATLOCK/ACTIVESEAM 和 Merino wool 相关的明确理由。这是同一产品内跨三个采购意图的强正向信号，但不是跨产品或跨月份稳定性证明。
 - D03 已确认 About Us 规范 URL；D04 来源面板可见 About、Sportswear 和 Sustainability 规范站卡片；D05 虽然实体名称与推荐理由准确，核心来源却是旧 `ultramerino.com`，并产生 Beta Textiles 与 Athletik 的未核准关系推断。规范站引用质量和实体隔离仍未稳定。
 - Broad Discovery v1 的 BD-01 已在 Google AI Mode 与 ChatGPT Search 各完成一次：两边均未提 Athletik。Google 偏向由制造商自建榜单支持的区域供应商，ChatGPT 偏向大型 Tier-1 集团；两次均缺完整环境/来源面板证据，因此只记录为全球宽泛问题下的初步缺席，不与 D03～D05 的专业匹配推荐结果合并。
+- BD-02 在限定 China 后，两边仍未提 Athletik，但候选已经收敛到中国 activewear OEM/ODM；Google 继续依赖制造商榜单/roundup，ChatGPT 主要引用候选官网。ChatGPT 额外把 `mid-sized` 自行限定为约 100–500 units/style/color，并出现 HUCAI 200 与引用页当前 100 pcs/style 的不一致，因此此次缺席不能触发网站改动；先用 BD-03 的明确 500 pieces/style 条件完成商业匹配测试。
 - 站外权威机会池已经识别 Woolmark 条目、认证名录、Merrow、行业媒体和制造商目录等来源，但 ThomasNet、OEKO-TEX、WRAP 和 Merrow 等当前分别受平台资格、可核验输入或所有者优先级限制，不能写成已完成。
 - 当前缺少的是“与具体采购判断相关的独立佐证”，不是链接总数。更多低质量目录、付费链接或自建推荐榜单不会解决该问题。
 
@@ -228,7 +229,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-009 | 每月一个可信站外佐证动作 | 推荐 | P1 | `external-input` | 获得可公开、可索引、信息准确的真实条目/编辑内容；未成功不写完成 |
 | GEO-V2-010 | 建立 GSC Generative AI 月度观测 | 找到/引用入口 | P0 | `baseline-established` | 首个三个月导出完整入档；以后使用完整 28 天可比窗口并保持各维度口径分离 |
 | GEO-V2-011 | 完成 Baseline v2 首批测试后四阶段诊断 | 全漏斗决策 | P0 | `complete` | 诊断分别覆盖找到、提取、引用与推荐；技术阻断、来源归属、证据债务和最小行动已分开记录 |
-| GEO-V2-012 | 建立并运行 Broad Discovery v1 | 宽泛推荐发现 | P0 | `in-progress / BD-01 2 of 2 complete; BD-02/03 pending` | BD-01～BD-03 固定原文已建立；ChatGPT Search 与 Google AI Mode 共 6 次独立首次回答完成记录，Perplexity 无权限则 3 条记 unavailable；结果不与 Baseline v2 合并 |
+| GEO-V2-012 | 建立并运行 Broad Discovery v1 | 宽泛推荐发现 | P0 | `in-progress / BD-01/02 4 of 4 complete; BD-03 pending` | BD-01～BD-03 固定原文已建立；ChatGPT Search 与 Google AI Mode 共 6 次独立首次回答完成记录，Perplexity 无权限则 3 条记 unavailable；结果不与 Baseline v2 合并 |
 
 ## 10. 统一记录与判断口径
 
