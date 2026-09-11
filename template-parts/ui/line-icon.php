@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $icon_name = isset( $args['name'] ) ? sanitize_key( $args['name'] ) : '';
 
-if ( ! in_array( $icon_name, array( 'audience', 'garment', 'commercial', 'customize', 'quality' ), true ) ) {
+if ( ! in_array( $icon_name, array( 'audience', 'garment', 'commercial', 'customize', 'quality', 'inquiry', 'sampling', 'production', 'shipping' ), true ) ) {
 	return;
 }
 ?>
@@ -35,5 +35,18 @@ if ( ! in_array( $icon_name, array( 'audience', 'garment', 'commercial', 'custom
 	<?php elseif ( 'quality' === $icon_name ) : ?>
 		<path d="M12 3 19 6v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"></path>
 		<path d="m9 12 2 2 4-4"></path>
+	<?php elseif ( 'inquiry' === $icon_name ) : ?>
+		<path d="M4 5h11v8H8l-4 3V5Z"></path>
+		<path d="M12 16h4l4 3V9h-2"></path>
+		<path class="ma-line-icon__accent" d="M8 9h.01M11 9h.01"></path>
+	<?php elseif ( 'sampling' === $icon_name ) : ?>
+		<path d="M10 3h4v3c0 1 1 2 2 3l1 2-2 3 2 6H7l2-6-2-3 1-2c1-1 2-2 2-3V3Z"></path>
+		<path class="ma-line-icon__accent" d="M5 11h14M12 20v2M9 22h6"></path>
+	<?php elseif ( 'production' === $icon_name ) : ?>
+		<path d="M4 20V9l5 3V9l5 3V5h3v15H4Z"></path>
+		<path class="ma-line-icon__accent" d="M7 16h2M12 16h2M17 16h1"></path>
+	<?php elseif ( 'shipping' === $icon_name ) : ?>
+		<path d="M4 14h16l-2 5H7l-3-5Zm3 0V8h4v6m0 0V5h4v9m0-4h3v4"></path>
+		<path class="ma-line-icon__accent" d="M3 21c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1"></path>
 	<?php endif; ?>
 </svg>

@@ -89,7 +89,7 @@
 2. Program Fit：Hero 后使用共用轻量区块，分别回答适合的买家、项目范围和商业起点。成衣品类面向 established / mid-sized B2B 买家，每款 MOQ 500 件；Knitted Fabrics 作为独立面料供货能力页，使用 fabric-specific 商业口径，MOQ 按所选面料与具体项目确认，不公开未经稳定验证的固定数字范围。
 3. 能力：面料、结构（适用时包括 FLATLOCK/ACTIVESEAM）和后整理选项。
 4. 产品 / 款式示例：按组展示真实图片，并配置 alt 文本。
-5. 规格条：MOQ、交期和打样可用性；Knitted Fabrics 使用品类级覆盖，不复用成衣 `pieces per style`、Sampling 和 Service 字段。
+5. 四步流程：项目简报与报价 → 开发、打样与批准 → 大货生产与质量控制 → 出口与交付；Knitted Fabrics 使用面料简报、开发批准、针织染整与包装交付口径，不复用成衣表达。
 6. 相关链接：链接 `/services/` 及 1–2 个相关品类页，形成内链。
 7. 询盘 CTA。
 

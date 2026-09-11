@@ -48,28 +48,6 @@ if ( ! empty( $category['hero_video'] ) ) {
 		$hero_classes[] = 'ma-product-hero--video-' . $hero_video_variant;
 	}
 }
-$specs = array(
-	array(
-		'label'       => __( 'Production basis', 'myathletik-child' ),
-		'value'       => __( 'Approved sample', 'myathletik-child' ),
-		'description' => __( 'Bulk production follows the current specification.', 'myathletik-child' ),
-	),
-	array(
-		'label'       => __( 'Sampling', 'myathletik-child' ),
-		'value'       => __( '1-2', 'myathletik-child' ),
-		'unit'        => __( 'weeks', 'myathletik-child' ),
-		'description' => __( 'Depending on style complexity and materials.', 'myathletik-child' ),
-	),
-	array(
-		'label'       => __( 'Service', 'myathletik-child' ),
-		'value'       => __( 'OEM/ODM / full-package', 'myathletik-child' ),
-		'description' => __( 'To your designs, samples, or tech packs.', 'myathletik-child' ),
-	),
-);
-
-if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
-	$specs = $category['specs'];
-}
 ?>
 
 <main id="primary" class="site-main ma-product-category">
@@ -461,6 +439,7 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 	<?php endif; ?>
 
 	<?php if ( ! empty( $category['process_steps'] ) && is_array( $category['process_steps'] ) ) : ?>
+	<?php $process_icons = array( 'inquiry', 'sampling', 'production', 'shipping' ); ?>
 	<section class="ma-product-section ma-product-procurement" aria-labelledby="ma-product-procurement-title">
 		<div class="ma-section-inner">
 			<div class="ma-product-procurement__heading">
@@ -473,6 +452,9 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 			<ol class="ma-product-procurement__steps">
 				<?php foreach ( $category['process_steps'] as $index => $step ) : ?>
 					<li>
+						<span class="ma-product-procurement__icon" aria-hidden="true">
+							<?php get_template_part( 'template-parts/ui/line-icon', null, array( 'name' => $process_icons[ $index ] ?? 'production' ) ); ?>
+						</span>
 						<span class="ma-product-procurement__index" aria-hidden="true"><?php echo esc_html( sprintf( '%02d', $index + 1 ) ); ?></span>
 						<h3><?php echo esc_html( $step['title'] ); ?></h3>
 						<p><?php echo esc_html( $step['description'] ); ?></p>
@@ -482,25 +464,6 @@ if ( ! empty( $category['specs'] ) && is_array( $category['specs'] ) ) {
 			<?php if ( ! empty( $category['process_link']['url'] ) && ! empty( $category['process_link']['label'] ) ) : ?>
 				<a class="ma-product-procurement__link" href="<?php echo esc_url( home_url( $category['process_link']['url'] ) ); ?>"><?php echo esc_html( $category['process_link']['label'] ); ?> <span aria-hidden="true">→</span></a>
 			<?php endif; ?>
-		</div>
-	</section>
-	<?php else : ?>
-	<section class="ma-product-section ma-product-specs">
-		<div class="ma-section-inner">
-			<div class="ma-product-specs__grid">
-				<?php foreach ( $specs as $spec ) : ?>
-					<article>
-						<span><?php echo esc_html( $spec['label'] ); ?></span>
-						<strong>
-							<span class="ma-product-specs__value"><?php echo esc_html( $spec['value'] ); ?></span>
-							<?php if ( ! empty( $spec['unit'] ) ) : ?>
-								<span class="ma-product-specs__unit"><?php echo esc_html( $spec['unit'] ); ?></span>
-							<?php endif; ?>
-						</strong>
-						<p><?php echo esc_html( $spec['description'] ); ?></p>
-					</article>
-				<?php endforeach; ?>
-			</div>
 		</div>
 	</section>
 	<?php endif; ?>

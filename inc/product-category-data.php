@@ -223,6 +223,28 @@ function myathletik_product_category_data() {
 					'link'        => myathletik_related_link( __( 'Review the Garment Quality Control Checklist', 'myathletik-child' ), '/garment-quality-control-checklist/' ),
 				),
 			),
+			'process_kicker'    => __( 'Four-step workflow', 'myathletik-child' ),
+			'process_heading'   => __( 'From sportswear brief to delivered order', 'myathletik-child' ),
+			'process_intro'     => __( 'Each sportswear program moves through four defined commercial and technical stages. Exact timing, testing scope, approval criteria, and delivery responsibilities are confirmed in the project quotation.', 'myathletik-child' ),
+			'process_steps'     => array(
+				array(
+					'title'       => __( 'Project Brief & Quotation', 'myathletik-child' ),
+					'description' => __( 'Share the product type, intended activity, target fit, tech pack or reference sample, material and construction requirements, testing needs, quantity, timing, and delivery destination. We review the production route, missing inputs, and quotation variables.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Development, Sampling & Approval', 'myathletik-child' ),
+					'description' => __( 'Fabric, fit, seam mapping, functional details, trims, and artwork are developed through samples. Material, measurements, construction, testing criteria, and packaging are approved before final order terms are confirmed. Typical sampling is 1-2 weeks after the required inputs are aligned, depending on style and material complexity.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Bulk Production & Quality Control', 'myathletik-child' ),
+					'description' => __( 'Bulk production follows the approved sample and current specification. Incoming material, in-line and final garment checks, together with agreed testing, are reviewed before shipment release.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Export & Delivery', 'myathletik-child' ),
+					'description' => __( 'Packing instructions, standard export documents, freight booking information, and delivery scope are aligned before dispatch. Final shipping terms are confirmed for the order.', 'myathletik-child' ),
+				),
+			),
+			'process_link'      => myathletik_related_link( __( 'Review the full OEM/ODM service workflow', 'myathletik-child' ), '/services/' ),
 			'buyer_questions_heading' => __( 'Questions buyers ask before starting a sportswear program', 'myathletik-child' ),
 			'buyer_questions' => array(
 				array(
@@ -358,24 +380,6 @@ function myathletik_product_category_data() {
 			'capability_kicker'  => __( 'Development inputs', 'myathletik-child' ),
 			'capability_heading' => __( 'Define fit, fabric, and seam performance before sampling', 'myathletik-child' ),
 			'construction'      => __( 'Send the product type, intended activity and climate, target market and delivery destination, size range, target fit, garment drawing or tech pack, reference sample, fabric composition and weight, stretch and recovery targets, seam map, waistband and trim requirements, artwork, private-label packaging requirements, target price range, order quantity, and required testing. Our team can coordinate knitted fabric development through our own fabric mill, review FLATLOCK, ACTIVESEAM, and bonded-welded options, develop samples, and use in-house testing to check the agreed material and garment criteria before bulk production. Final sampling, testing, and production terms are confirmed for the project.', 'myathletik-child' ),
-			'specs'             => array(
-				array(
-					'label'       => __( 'Production basis', 'myathletik-child' ),
-					'value'       => __( 'Approved sample', 'myathletik-child' ),
-					'description' => __( 'Bulk production follows the current specification.', 'myathletik-child' ),
-				),
-				array(
-					'label'       => __( 'Sampling', 'myathletik-child' ),
-					'value'       => __( '1-2', 'myathletik-child' ),
-					'unit'        => __( 'weeks', 'myathletik-child' ),
-					'description' => __( 'Depending on style complexity and materials.', 'myathletik-child' ),
-				),
-				array(
-					'label'       => __( 'Construction', 'myathletik-child' ),
-					'value'       => __( 'FLATLOCK / ACTIVESEAM', 'myathletik-child' ),
-					'description' => __( 'Seamless and bonded-welded options by project.', 'myathletik-child' ),
-				),
-			),
 			'assurance_kicker'  => __( 'Program execution', 'myathletik-child' ),
 			'assurance_heading' => __( 'Private-label customization and underwear quality control', 'myathletik-child' ),
 			'assurance_intro'   => __( 'Customization and inspection criteria are recorded in the approved specification so the sample and bulk order can be reviewed against the same requirements.', 'myathletik-child' ),
@@ -403,6 +407,28 @@ function myathletik_product_category_data() {
 					'link'        => myathletik_related_link( __( 'Review the Garment Quality Control Checklist', 'myathletik-child' ), '/garment-quality-control-checklist/' ),
 				),
 			),
+			'process_kicker'    => __( 'Four-step workflow', 'myathletik-child' ),
+			'process_heading'   => __( 'From underwear brief to delivered order', 'myathletik-child' ),
+			'process_intro'     => __( 'Each underwear and base-layer program moves through four defined commercial and technical stages. Exact timing, testing scope, approval criteria, and delivery responsibilities are confirmed in the project quotation.', 'myathletik-child' ),
+			'process_steps'     => array(
+				array(
+					'title'       => __( 'Project Brief & Quotation', 'myathletik-child' ),
+					'description' => __( 'Share the product type, intended activity and climate, fit, tech pack or reference sample, material, seam, waistband, testing, artwork, packaging, quantity, timing, and delivery requirements. We review feasibility, missing inputs, and quotation variables.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Development, Sampling & Approval', 'myathletik-child' ),
+					'description' => __( 'Fabric, fit, pouch and panel construction, waistband, seam mapping, labels, and packaging are developed through samples. Material, measurements, construction, artwork, and testing criteria are approved before final order terms are confirmed. Typical sampling is 1-2 weeks after the required inputs are aligned, depending on style and material complexity.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Bulk Production & Quality Control', 'myathletik-child' ),
+					'description' => __( 'Bulk production follows the approved sample and current specification. Incoming material, in-line and final garment checks, together with agreed testing, are reviewed before shipment release.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Export & Delivery', 'myathletik-child' ),
+					'description' => __( 'Packing instructions, standard export documents, freight booking information, and delivery scope are aligned before dispatch. Final shipping terms are confirmed for the order.', 'myathletik-child' ),
+				),
+			),
+			'process_link'      => myathletik_related_link( __( 'Review the full OEM/ODM service workflow', 'myathletik-child' ), '/services/' ),
 			'buyer_questions_heading' => __( 'Questions buyers ask before starting a performance underwear program', 'myathletik-child' ),
 			'buyer_questions' => array(
 				array(
@@ -530,7 +556,7 @@ function myathletik_product_category_data() {
 				),
 			),
 			'construction'     => __( 'Send the product type, intended activity and climate, target market, size range, fit, composition, GSM, knit structure, stretch and recovery targets, weather-protection requirements, seam map, trims, artwork, testing criteria, order quantity, and tech pack or reference sample. Buyers can specify single jersey, interlock, rib, fleece, brushed-back or grid structures, together with knit-based lamination or membrane, DWR, and insulation requirements. Construction options include FLATLOCK, ACTIVESEAM, COVERSTITCH, OVERLOCK, seamless, bonded-welded, and taped seams, plus project-specific zippers, thumbholes, pockets, reinforcement, branding, labels, and packaging. Our manufacturing scope is knitted and knit-based outdoor clothing; non-knit fabric constructions are outside this page\'s production scope.', 'myathletik-child' ),
-			'process_kicker'    => __( 'Procurement workflow', 'myathletik-child' ),
+			'process_kicker'    => __( 'Four-step workflow', 'myathletik-child' ),
 			'process_heading'   => __( 'From outdoor product brief to delivered order', 'myathletik-child' ),
 			'process_intro'     => __( 'Each outdoor program moves through defined material, construction, testing, and approval points. Exact timing, test methods, acceptance criteria, commercial terms, and delivery responsibilities are confirmed in the project quotation.', 'myathletik-child' ),
 			'process_steps'     => array(
@@ -539,12 +565,8 @@ function myathletik_product_category_data() {
 					'description' => __( 'Share the product type, target activity and climate, market, material and protection requirements, fit, features, testing needs, quantity, timing, and delivery destination. We review the knitted or knit-based route, missing inputs, and quotation variables.', 'myathletik-child' ),
 				),
 				array(
-					'title'       => __( 'Material & Sample Development', 'myathletik-child' ),
-					'description' => __( 'Composition, GSM, knit structure, color, finish, lamination or membrane requirements, construction, trims, and sample route are developed against the brief. Sampling timing depends on material and style complexity.', 'myathletik-child' ),
-				),
-				array(
-					'title'       => __( 'Approval & Order Confirmation', 'myathletik-child' ),
-					'description' => __( 'Approve the material, fit, measurements, construction, test methods, acceptance criteria, and packaging. Confirm final quantity, color and size breakdown, and production terms.', 'myathletik-child' ),
+					'title'       => __( 'Development, Sampling & Approval', 'myathletik-child' ),
+					'description' => __( 'Composition, GSM, knit structure, color, finish, protection requirements, construction, trims, and the sample route are developed against the brief. Material, fit, measurements, test criteria, and packaging are approved before final order terms are confirmed. Sampling timing depends on material and style complexity.', 'myathletik-child' ),
 				),
 				array(
 					'title'       => __( 'Bulk Production & Quality Control', 'myathletik-child' ),
@@ -900,7 +922,7 @@ function myathletik_product_category_data() {
 					)
 				),
 			),
-			'process_kicker'    => __( 'Procurement workflow', 'myathletik-child' ),
+			'process_kicker'    => __( 'Four-step workflow', 'myathletik-child' ),
 			'process_heading'   => __( 'From Merino wool brief to delivered order', 'myathletik-child' ),
 			'process_intro'     => __( 'Each program moves through defined review and approval points. Exact timing, testing scope, commercial terms, and delivery responsibilities are confirmed in the project quotation.', 'myathletik-child' ),
 			'process_steps'     => array(
@@ -909,12 +931,8 @@ function myathletik_product_category_data() {
 					'description' => __( 'Share the product type, target use, material specification, fit, artwork, testing needs, quantity, timing, and delivery destination. We review feasibility, missing inputs, and quotation variables.', 'myathletik-child' ),
 				),
 				array(
-					'title'       => __( 'Material & Sample Development', 'myathletik-child' ),
-					'description' => __( 'Material, color, knit structure, construction, trims, and the sample route are developed against the brief. Typical sampling is 1-2 weeks after the required inputs are aligned, depending on style and material complexity.', 'myathletik-child' ),
-				),
-				array(
-					'title'       => __( 'Approval & Order Confirmation', 'myathletik-child' ),
-					'description' => __( 'Approve the material, fit, measurements, construction, test criteria, and packaging. Confirm final quantity, color and size breakdown, and production terms.', 'myathletik-child' ),
+					'title'       => __( 'Development, Sampling & Approval', 'myathletik-child' ),
+					'description' => __( 'Material, color, knit structure, construction, trims, and the sample route are developed against the brief. Material, fit, measurements, test criteria, and packaging are approved before final order terms are confirmed. Typical sampling is 1-2 weeks after the required inputs are aligned, depending on style and material complexity.', 'myathletik-child' ),
 				),
 				array(
 					'title'       => __( 'Bulk Production & Quality Control', 'myathletik-child' ),
@@ -1119,7 +1137,7 @@ function myathletik_product_category_data() {
 					'answer'   => __( 'Fiber composition, GSM, colorfastness, shrinkage, pilling, stretch and recovery, snagging, seam slippage, seam appearance, measurements, and workmanship can be checked where applicable against the agreed method and acceptance criteria. Customer-specified third-party testing can be arranged when required.', 'myathletik-child' ),
 				),
 			),
-			'process_kicker'    => __( 'Procurement workflow', 'myathletik-child' ),
+			'process_kicker'    => __( 'Four-step workflow', 'myathletik-child' ),
 			'process_heading'   => __( 'From silk apparel brief to delivered order', 'myathletik-child' ),
 			'process_intro'     => __( 'Each program moves through defined review and approval points. Exact timing, testing scope, commercial terms, and delivery responsibilities are confirmed in the project quotation.', 'myathletik-child' ),
 			'process_steps'     => array(
@@ -1128,12 +1146,8 @@ function myathletik_product_category_data() {
 					'description' => __( 'Share the product type, target use, material and construction specification, fit, artwork, testing needs, quantity, timing, and delivery destination. We review feasibility, missing inputs, and quotation variables.', 'myathletik-child' ),
 				),
 				array(
-					'title'       => __( 'Material & Sample Development', 'myathletik-child' ),
-					'description' => __( 'Material, color, knit or woven construction, garment construction, trims, care requirements, and the sample route are developed against the brief. Typical sampling is 1-2 weeks after the required inputs are aligned, depending on style and material complexity.', 'myathletik-child' ),
-				),
-				array(
-					'title'       => __( 'Approval & Order Confirmation', 'myathletik-child' ),
-					'description' => __( 'Approve the material, fit, measurements, construction, appearance, test criteria, labels, and packaging. Confirm final quantity, color and size breakdown, and production terms.', 'myathletik-child' ),
+					'title'       => __( 'Development, Sampling & Approval', 'myathletik-child' ),
+					'description' => __( 'Material, color, knit or woven construction, trims, care requirements, and the sample route are developed against the brief. Material, fit, measurements, appearance, test criteria, labels, and packaging are approved before final order terms are confirmed. Typical sampling is 1-2 weeks after the required inputs are aligned, depending on style and material complexity.', 'myathletik-child' ),
 				),
 				array(
 					'title'       => __( 'Bulk Production & Quality Control', 'myathletik-child' ),
@@ -1288,23 +1302,28 @@ function myathletik_product_category_data() {
 			'capability_kicker' => __( 'Development & quotation', 'myathletik-child' ),
 			'capability_heading' => __( 'Develop functional knits against an approved specification', 'myathletik-child' ),
 			'construction'      => __( 'Send the target composition, yarn and knit structure, GSM, usable width, stretch and recovery, color reference, finish or performance requirement, testing requirement, order quantity, intended application, and delivery destination. Development is managed through our own fabric mill, with knitting, dyeing, finishing, and in-house testing coordinated against the approved specification. Swatches, counter samples, lab dips, sample yardage, and approval samples are available based on project needs. Third-party testing and supporting documentation can be arranged based on the required standard. Pricing is normally quoted per kg, while other units can be used when required. Final timing, packing, and delivery terms are set in the project quotation.', 'myathletik-child' ),
-			'specs'             => array(
+			'process_kicker'    => __( 'Four-step workflow', 'myathletik-child' ),
+			'process_heading'   => __( 'From knitted-fabric brief to delivered order', 'myathletik-child' ),
+			'process_intro'     => __( 'Each standalone fabric program moves through four specification-led stages. Development scope, testing, pricing, production timing, packing, and delivery terms are confirmed for the selected fabric and project requirements.', 'myathletik-child' ),
+			'process_steps'     => array(
 				array(
-					'label'       => __( 'Pricing basis', 'myathletik-child' ),
-					'value'       => __( 'Normally quoted per kg', 'myathletik-child' ),
-					'description' => __( 'Other units can be used when required.', 'myathletik-child' ),
+					'title'       => __( 'Fabric Brief & Quotation', 'myathletik-child' ),
+					'description' => __( 'Share the target composition, yarn and knit structure, GSM, usable width, stretch and recovery, color, finish, testing, forecast quantity, application, and delivery requirements. We review development scope and quotation variables.', 'myathletik-child' ),
 				),
 				array(
-					'label'       => __( 'Development', 'myathletik-child' ),
-					'value'       => __( 'Based on fabric brief', 'myathletik-child' ),
-					'description' => __( 'Sampling and approval steps are planned for each project.', 'myathletik-child' ),
+					'title'       => __( 'Development, Sampling & Approval', 'myathletik-child' ),
+					'description' => __( 'Swatches, counter samples, lab dips, sample yardage, and approval samples are developed as required. The fabric specification, color, finish, test criteria, and approval route are confirmed before bulk terms are finalized.', 'myathletik-child' ),
 				),
 				array(
-					'label'       => __( 'Bulk lead time', 'myathletik-child' ),
-					'value'       => __( 'Based on order requirements', 'myathletik-child' ),
-					'description' => __( 'Production timing is provided with the quotation.', 'myathletik-child' ),
+					'title'       => __( 'Bulk Production & Quality Control', 'myathletik-child' ),
+					'description' => __( 'Knitting, dyeing, and finishing follow the approved fabric specification. In-house checks review the agreed material criteria, with customer-specified third-party testing arranged when required.', 'myathletik-child' ),
+				),
+				array(
+					'title'       => __( 'Packing & Delivery', 'myathletik-child' ),
+					'description' => __( 'Pricing unit, packing method, standard documentation, delivery scope, and production timing are aligned in the quotation and confirmed for the order before dispatch.', 'myathletik-child' ),
 				),
 			),
+			'process_link'      => myathletik_related_link( __( 'Review the full OEM/ODM service workflow', 'myathletik-child' ), '/services/' ),
 			'image_note'       => __( '[IMAGE: real fabric / knitting shots]', 'myathletik-child' ),
 			'gallery'          => array(
 				myathletik_gallery_item( 'knitted fabrics/divazus-fabric-store-FkpXNuifVI0-unsplash.jpg', __( 'Knitted fabric material sample', 'myathletik-child' ) ),
@@ -1449,7 +1468,7 @@ function myathletik_product_category_data() {
 					'answer'   => __( 'The buyer defines the intended use, product specification, test method, and acceptance criteria. Applicable material, seam, fit, touchscreen, grip, thermal, wind, UPF, compression, and workmanship requirements can then be checked during development and before shipment. Customer-specified third-party testing can be arranged when required.', 'myathletik-child' ),
 				),
 			),
-			'process_kicker'    => __( 'Procurement workflow', 'myathletik-child' ),
+			'process_kicker'    => __( 'Four-step workflow', 'myathletik-child' ),
 			'process_heading'   => __( 'From sports accessory brief to delivered order', 'myathletik-child' ),
 			'process_intro'     => __( 'Each program moves through defined review and approval points. Exact timing, testing scope, commercial terms, and delivery responsibilities are confirmed in the project quotation.', 'myathletik-child' ),
 			'process_steps'     => array(
@@ -1458,12 +1477,8 @@ function myathletik_product_category_data() {
 					'description' => __( 'Share the accessory type, target activity, material and performance specification, fit, functional details, artwork, testing needs, quantity, timing, and delivery destination. We review feasibility, missing inputs, and quotation variables.', 'myathletik-child' ),
 				),
 				array(
-					'title'       => __( 'Material & Sample Development', 'myathletik-child' ),
-					'description' => __( 'Material, color, knit structure, construction, sizing, functional details, decoration, trims, and the sample route are developed against the brief. Typical sampling is 1-2 weeks after the required inputs are aligned, depending on product and material complexity.', 'myathletik-child' ),
-				),
-				array(
-					'title'       => __( 'Approval & Order Confirmation', 'myathletik-child' ),
-					'description' => __( 'Approve the material, fit, measurements, construction, functionality, artwork, test criteria, labels, and packaging. Confirm final quantity, color and size breakdown, and production terms.', 'myathletik-child' ),
+					'title'       => __( 'Development, Sampling & Approval', 'myathletik-child' ),
+					'description' => __( 'Material, color, knit structure, construction, sizing, functional details, decoration, trims, and the sample route are developed against the brief. Fit, measurements, functionality, artwork, test criteria, labels, and packaging are approved before final order terms are confirmed. Typical sampling is 1-2 weeks after the required inputs are aligned, depending on product and material complexity.', 'myathletik-child' ),
 				),
 				array(
 					'title'       => __( 'Bulk Production & Quality Control', 'myathletik-child' ),
