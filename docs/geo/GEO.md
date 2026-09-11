@@ -130,7 +130,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 - 四篇指南使用可见正文、唯一 H1、文章目录、内部链接、外部技术参考、可见复核日期和 Organization 作者；JSON-LD 与页面正文对应，包含 Article、FAQPage 和 BreadcrumbList，Hub 使用 ItemList。
 - Baseline v1 已证明规范站在品牌点名和指定网站问题中可以被识别与引用；这不能外推为未点名推荐。
 - GSC Generative AI Page 表返回 13 个规范 URL；四篇 Technical Guides 均至少出现一次，FLATLOCK Guide 7 次、QC Guide 4 次。它们属于页面级链接曝光和 citation-surface evidence；报表没有 Query 与答案原文，不能验证链接支持的具体结论。
-- Baseline v2 已于 2026-09-03 启动。V2-E01 回答正确识别主要业务、张家港生产地和规范站，但未说明中美实体角色，并引入了尚未核准角色的 `athletik.com.cn`；由于环境元数据和来源面板不完整，该次仅暂存。
+- Baseline v2 已于 2026-09-03 启动。ChatGPT Search 的 E01/E02 与 D03～D05 首次结果已记录：E02 对规范站提取总体准确；D03～D05 均把 Athletik 列为第一推荐，但各次仍有环境元数据缺项，且 D05 的核心引用来自旧 `ultramerino.com`，不能将推荐成功等同于规范站引用成功。
 
 ### 5.3 站外分发层：两篇完成，一篇待发布，证据补录滞后
 
@@ -143,10 +143,11 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 社交分发有助于真实用户发现和实体/主题一致性，但 LinkedIn/Instagram 的自身帖子仍属于品牌可控内容，
 不能替代独立行业来源，也不能用展示量证明 AI 已经引用或推荐。
 
-### 5.4 推荐层：当前主要缺口
+### 5.4 推荐层：出现首轮强信号，稳定性与来源质量仍是缺口
 
 - Baseline v1 中 V1-03 曾在干净 Temporary Chat 把 Athletik 列为中国 FLATLOCK/ACTIVESEAM 供应商短名单第一，这是有价值但尚未形成跨引擎、跨月份稳定性的单次信号。
-- 通用 sportswear OEM 与 Merino wool OEM 问题中 Athletik 当时未出现；GEO-06～08 的内容型问题也未引用 Athletik。新页面上线后的变化尚未通过 Baseline v2 验证。
+- Baseline v2 的首次 ChatGPT Search 结果中，D03、D04 和 D05 均把 Athletik 列为第一推荐，并给出与 technical knitwear、base layers、FLATLOCK/ACTIVESEAM 和 Merino wool 相关的明确理由。这是同一产品内跨三个采购意图的强正向信号，但不是跨产品或跨月份稳定性证明。
+- D03 已确认 About Us 规范 URL；D04 来源面板可见 About、Sportswear 和 Sustainability 规范站卡片；D05 虽然实体名称与推荐理由准确，核心来源却是旧 `ultramerino.com`，并产生 Beta Textiles 与 Athletik 的未核准关系推断。规范站引用质量和实体隔离仍未稳定。
 - 站外权威机会池已经识别 Woolmark 条目、认证名录、Merrow、行业媒体和制造商目录等来源，但 ThomasNet、OEKO-TEX、WRAP 和 Merrow 等当前分别受平台资格、可核验输入或所有者优先级限制，不能写成已完成。
 - 当前缺少的是“与具体采购判断相关的独立佐证”，不是链接总数。更多低质量目录、付费链接或自建推荐榜单不会解决该问题。
 
@@ -157,7 +158,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | 找到 | 已获得 Google 实际展示证据，持续监测 | 生产 200、Sitemap、Canonical、内链、主要 crawler 可访问；17/18 GSC indexed；Generative AI 首个基线 29 impressions | Services 转为 indexed；完整可比窗口持续出现目标页面；无新的抓取/indexability 回归 |
 | 提取 | 部分达成 | 品牌题可提取核心业务与地点，但实体角色和历史站点仍可能混淆 | E01/E02 在三个产品中准确覆盖规范实体口径，且不引入未核准站点关系 |
 | 引用 | Google 链接曝光已出现，引用相关性待验证 | GSC 中四篇指南均获页面级链接曝光；品牌题可引用规范站；C06～C08 新基线尚未完成 | 同一固定内容题在至少两个独立产品/月份出现相关规范指南引用，且引用支持结论 |
-| 推荐 | 尚未稳定，是主瓶颈 | D03 有单次正向信号；D04/D05 历史缺失；独立站外佐证不足 | Athletik 在匹配业务边界的 D03～D05 中跨产品/月份进入短名单，并给出准确理由 |
+| 推荐 | ChatGPT 首轮强正向，尚未稳定 | V2-D03～D05 均为第一推荐且理由匹配，但只覆盖一个产品的一轮；D05 依赖旧站并出现实体关系泄漏，独立站外佐证仍不足 | Athletik 在 D03～D05 中跨产品或跨月份继续进入短名单，规范站/独立来源支持准确理由，且不混淆实体关系 |
 
 不建立一个把四阶段相加的“GEO 总分”。四阶段分别记录，否则品牌题的高准确率会掩盖未点名推荐的缺口。
 
@@ -169,7 +170,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | V2-E02 | 提取 + 引用 | 首页、七个品类页、About、Services | 指定站点题是站内理解控制组，不计自然发现 |
 | V2-D03 | 推荐 | 首页、FLATLOCK Guide、生产证据 | 需要更直接的 FLATLOCK 与 Merrow ACTIVESEAM 第一方证据；后续条件式建立专门内容 |
 | V2-D04 | 推荐 | Sportswear、Underwear、Services、OEM Evaluation | 不再写泛化“best supplier”自荐文；优先补强项目匹配与独立佐证 |
-| V2-D05 | 推荐 | Merino Wool 品类页、FLATLOCK Guide | 先审计 `ultramerino.com` 等历史矩阵站冲突和现有 Merino 证据，再决定是否建新指南，避免重复与内耗 |
+| V2-D05 | 推荐 | Merino Wool、Underwear、About、FLATLOCK Guide | 已确认旧 `ultramerino.com` 抢占核心引用并引发 Beta 关系泄漏；完成本批测试后评估强化规范站证据入口和历史站冲突治理，不机械新建重复指南 |
 | V2-C06 | 引用 | Tech Pack Guide | 等待 v2 复测；未出现引用前先判断来源覆盖和搜索意图，不机械改写 |
 | V2-C07 | 引用 | FLATLOCK vs OVERLOCK Guide | 内容完整但核心词自然 SERP 尚弱；观察引用、GSC 和 Bing grounding query 后再迭代 |
 | V2-C08 | 引用 | OEM Evaluation + QC Guide | 本批测试后发布已有社交包；不把品牌社交帖当独立背书 |
@@ -256,7 +257,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 ## 12. 当前准确状态
 
-截至 2026-09-05，Athletik 已完成规范站、实体基础、四篇技术指南、主要 Schema、索引和两轮社交分发；GSC 首个专用报表进一步确认 29 次 Google 生成式 AI Property impressions，四篇指南均出现页面级链接曝光。找到层已获得实际展示证据，但该报表不能证明答案提取内容、引用相关性或供应商推荐。
-下一阶段不应因为首个低量快照继续无差别增加页面或修改现有页面，而应先完成 24 次 Baseline v2，用干净会话补齐提取、引用和推荐语境；同时按完整 28 天窗口复查 GSC，并集中建立 D03～D05 所需的原创生产证据和可信第三方佐证。
+截至 2026-09-11，Athletik 已完成规范站、实体基础、四篇技术指南、主要 Schema、索引和两轮社交分发；GSC 首个专用报表确认 29 次 Google 生成式 AI Property impressions，四篇指南均出现页面级链接曝光。ChatGPT Search 的首轮 V2-D03～D05 又连续给出第一推荐，说明找到、提取和推荐链条已出现正向信号，但尚未获得跨产品/月份稳定性。
+下一阶段不应因为首轮第一推荐立刻扩大宣传或无差别增加页面，而应先完成 24 次 Baseline v2。D05 已明确暴露旧 `ultramerino.com` 抢占规范站引用及 Beta 实体关系泄漏；本批结束后再决定规范站证据强化与历史矩阵站治理，并继续补充可信第三方佐证。
 
 本对话可以用于规划、分析用户带回的 Temporary Chat 结果、更新证据和制定内容；不得作为中性测试环境。
