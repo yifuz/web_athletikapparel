@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-09-08。
+最后更新：2026-09-11。
 
 ---
 
@@ -679,6 +679,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-11 | GEO 全量 Baseline 综合诊断完成：综合 Baseline v1、v2、Broad Discovery v1、GSC Generative AI 和站外分发后，确认“找到较强、提取部分达成、规范引用最弱、专业推荐首轮较强、宽泛推荐弱”的分层状态。原方案先按单变量推进 Sportswear buyer-fit；所有者随后基于当前低曝光样本调整为 About 与七品类 buyer-fit 整批结构优化，统一部署后按月观察整体与页面级变化，不从低样本强行归因。D03～D05/C06～C08 claim-to-source 矩阵、历史矩阵站冲突审计、原创 ACTIVESEAM 证据与高质量第三方佐证继续推进；不批量增文、不改 URL、不建立自有最佳厂商榜单。完整方案见 [`GEO Baseline 综合诊断与后续方案`](geo/testing/baseline-integrated-diagnosis-2026-09-11.md)。 |
 | 2026-09-11 | GEO-V2-015 About Us 综合 buyer-fit paragraph 本地实施：在现有 Hero 公司摘要位置集中表达 Zhangjiagang, China 生产运营、established/mid-sized apparel brands、wholesalers/importers、七类产品、FLATLOCK/ACTIVESEAM、成衣 500 pieces/style 与 standalone fabric project 报价边界；同步更新 About copy source。未新增重复区块，URL、Title、H1、Schema、图片和页面结构不变；状态 `implemented / owner-review`，待所有者文案与视觉审核后部署。 |
 | 2026-09-11 | GEO-V2-016 七品类 Program Fit 本地实施：通过 `template-parts/product-category/page.php` 共用模板在 Hero 后增加轻量 buyer-fit 区块，每页分别提供可独立提取的适配段落及 Best suited to / Program scope / Commercial starting point 三项事实。Sportswear、Underwear、Outdoor Clothing、Merino Wool、Silk Wear 和 Sports Accessories 使用已确认的 500 pieces/style；Knitted Fabrics 保持按所选面料规格与项目要求报价。7/7 页面本地 HTTP 200、单一 H1、自引用 Canonical、单一 Program Fit 与内容隔离通过；Desktop 视觉抽查通过，窄屏使用单列响应式布局。URL、Title、H1、Schema 和图片不变，状态 `implemented / owner-review`。 |
+| 2026-09-11 | 七品类 Program Fit 视觉优化完成：保持共用模板、现有英文文案和语义化 `<dl>` 不变，仅在 `style.css` 将原“左长文 + 右侧三张竖卡”重排为标题/说明双栏与统一三列决策信息带；Tablet 使用 2+1、Mobile 使用单列分隔布局，并移除该区块继承的重复纵向内边距。7/7 页面本地 HTTP 200、单一 H1 与 1024px 渲染通过；1440 / 1024 / 768 / 390 / 360px 代表性检查无横向溢出，最长的 Knitted Fabrics 商业条款无截断。URL、Title、Meta、H1、Schema、图片和正文不变，状态 `fixed / owner-review`。 |
 
 ---
 
