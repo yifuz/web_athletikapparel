@@ -130,7 +130,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 - 四篇指南使用可见正文、唯一 H1、文章目录、内部链接、外部技术参考、可见复核日期和 Organization 作者；JSON-LD 与页面正文对应，包含 Article、FAQPage 和 BreadcrumbList，Hub 使用 ItemList。
 - Baseline v1 已证明规范站在品牌点名和指定网站问题中可以被识别与引用；这不能外推为未点名推荐。
 - GSC Generative AI Page 表返回 13 个规范 URL；四篇 Technical Guides 均至少出现一次，FLATLOCK Guide 7 次、QC Guide 4 次。它们属于页面级链接曝光和 citation-surface evidence；报表没有 Query 与答案原文，不能验证链接支持的具体结论。
-- Baseline v2 已于 2026-09-03 启动。ChatGPT Search 的 E01/E02 与 D03～D05 首次结果已记录：E02 对规范站提取总体准确；D03～D05 均把 Athletik 列为第一推荐，但各次仍有环境元数据缺项，且 D05 的核心引用来自旧 `ultramerino.com`，不能将推荐成功等同于规范站引用成功。
+- Baseline v2 已于 2026-09-03 启动。ChatGPT Search 的 E01/E02、D03～D05 与 C06 首次结果已记录：E02 对规范站提取总体准确；D03～D05 均把 Athletik 列为第一推荐，但各次仍有环境元数据缺项，且 D05 的核心引用来自旧 `ultramerino.com`，不能将推荐成功等同于规范站引用成功。C06 已准确进入 cut-and-sew performance knitwear 语境，回答主要由 ISO、ASTM、AATCC、FTC、Browzwear 和 Shopify 等来源支撑，但本轮没有形成可验证的 Athletik Tech Pack Guide 引用。
 
 ### 5.3 站外分发层：两篇完成，一篇待发布，证据补录滞后
 
@@ -157,7 +157,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 |---|---|---|---|
 | 找到 | 已获得 Google 实际展示证据，持续监测 | 生产 200、Sitemap、Canonical、内链、主要 crawler 可访问；17/18 GSC indexed；Generative AI 首个基线 29 impressions | Services 转为 indexed；完整可比窗口持续出现目标页面；无新的抓取/indexability 回归 |
 | 提取 | 部分达成 | 品牌题可提取核心业务与地点，但实体角色和历史站点仍可能混淆 | E01/E02 在三个产品中准确覆盖规范实体口径，且不引入未核准站点关系 |
-| 引用 | Google 链接曝光已出现，引用相关性待验证 | GSC 中四篇指南均获页面级链接曝光；品牌题可引用规范站；C06～C08 新基线尚未完成 | 同一固定内容题在至少两个独立产品/月份出现相关规范指南引用，且引用支持结论 |
+| 引用 | Google 链接曝光已出现，ChatGPT 内容题尚未取得规范指南引用证据 | GSC 中四篇指南均获页面级链接曝光；品牌题可引用规范站；C06 首轮语义正确但未证明引用 Tech Pack Guide，C07～C08 待测 | 同一固定内容题在至少两个独立产品/月份出现相关规范指南引用，且引用支持结论 |
 | 推荐 | ChatGPT 首轮强正向，尚未稳定 | V2-D03～D05 均为第一推荐且理由匹配，但只覆盖一个产品的一轮；D05 依赖旧站并出现实体关系泄漏，独立站外佐证仍不足 | Athletik 在 D03～D05 中跨产品或跨月份继续进入短名单，规范站/独立来源支持准确理由，且不混淆实体关系 |
 
 不建立一个把四阶段相加的“GEO 总分”。四阶段分别记录，否则品牌题的高准确率会掩盖未点名推荐的缺口。
@@ -171,7 +171,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | V2-D03 | 推荐 | 首页、FLATLOCK Guide、生产证据 | 需要更直接的 FLATLOCK 与 Merrow ACTIVESEAM 第一方证据；后续条件式建立专门内容 |
 | V2-D04 | 推荐 | Sportswear、Underwear、Services、OEM Evaluation | 不再写泛化“best supplier”自荐文；优先补强项目匹配与独立佐证 |
 | V2-D05 | 推荐 | Merino Wool、Underwear、About、FLATLOCK Guide | 已确认旧 `ultramerino.com` 抢占核心引用并引发 Beta 关系泄漏；完成本批测试后评估强化规范站证据入口和历史站冲突治理，不机械新建重复指南 |
-| V2-C06 | 引用 | Tech Pack Guide | 等待 v2 复测；未出现引用前先判断来源覆盖和搜索意图，不机械改写 |
+| V2-C06 | 引用 | Tech Pack Guide | ChatGPT 首轮语义纠偏成功、技术答案质量强，但截图可见来源未含 Athletik，规范指南引用未证明；本批结束前不改页，之后与 C07/C08 对照来源结构，再判断是否需要强化可引用摘要、原创生产证据或外部引用入口 |
 | V2-C07 | 引用 | FLATLOCK vs OVERLOCK Guide | 内容完整但核心词自然 SERP 尚弱；观察引用、GSC 和 Bing grounding query 后再迭代 |
 | V2-C08 | 引用 | OEM Evaluation + QC Guide | 本批测试后发布已有社交包；不把品牌社交帖当独立背书 |
 
