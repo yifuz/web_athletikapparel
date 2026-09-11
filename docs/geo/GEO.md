@@ -2,13 +2,13 @@
 
 > 建立日期：2026-08-12
 >
-> 规划更新：2026-09-05
+> 规划更新：2026-09-11
 >
 > 规范站：<https://www.athletikapparel.com/>
 >
 > 最终目的：**被 AI 找到 → 被 AI 准确提取 → 被 AI 引用 → 在匹配的 B2B 采购问题中被 AI 推荐**
 >
-> 当前阶段：GSC 已确认规范站获得 Google 生成式 AI 链接曝光，站内发现基础从技术资格升级为实际展示证据；Baseline v2 首轮月度测试仍在进行，当前主要缺口是引用相关性、实体提取准确性和未点名供应商问题中的独立推荐证据。
+> 当前阶段：Baseline v2 与 Broad Discovery v1 首轮均已完成。Athletik 在 FLATLOCK / ACTIVESEAM / Merino 等专业采购题中已有强推荐信号，但 Broad Discovery 为 `0/6 answer mentions`、`0/6 canonical citations`；当前主要瓶颈是宽泛 buyer-fit、规范来源归属、对应 Guide 引用和独立第三方佐证。
 
 本文件是 Athletik Clothing GEO 的中央工作台。以后有关目标、阶段判断、优先级和执行顺序的结论先更新本文件；逐次测试、站外发布和平台数据继续写入对应证据日志。
 
@@ -102,6 +102,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | 本文件 `GEO.md` | GEO 目标漏斗、公司背景、现状诊断、优先级和执行计划 |
 | [`testing/prompt-baseline.md`](testing/prompt-baseline.md) | Baseline v1 历史快照、Baseline v2 固定提示词、逐次结果和实体冲突证据 |
 | [`testing/baseline-v2-post-batch-diagnosis-2026-09-11.md`](testing/baseline-v2-post-batch-diagnosis-2026-09-11.md) | Baseline v2 首批测试后的四阶段诊断、finding、证据缺口和最小行动顺序 |
+| [`testing/baseline-integrated-diagnosis-2026-09-11.md`](testing/baseline-integrated-diagnosis-2026-09-11.md) | 汇总 Baseline v1、v2、Broad Discovery、GSC 生成式曝光和分发证据的综合诊断与 90 天方案 |
 | [`distribution/social-content-sop.md`](distribution/social-content-sop.md) | 官网指南改编为 LinkedIn / Instagram 内容的执行 SOP |
 | [`distribution/publishing-log.md`](distribution/publishing-log.md) | 每次站外分发的发布时间、链接和七日数据 |
 | [`../seo/authority/offsite-authority-opportunity-pool-v1.md`](../seo/authority/offsite-authority-opportunity-pool-v1.md) | 站外行业引用、目录、认证名录和编辑机会的证据与状态 |
@@ -232,6 +233,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-011 | 完成 Baseline v2 首批测试后四阶段诊断 | 全漏斗决策 | P0 | `complete` | 诊断分别覆盖找到、提取、引用与推荐；技术阻断、来源归属、证据债务和最小行动已分开记录 |
 | GEO-V2-012 | 建立并运行 Broad Discovery v1 | 宽泛推荐发现 | P0 | `complete / Google 3 of 3; ChatGPT 3 of 3; Perplexity unavailable` | BD-01～BD-03 共 6 次独立首次回答已记录；Athletik 正文出现与规范站引用均为 0/6；环境元数据不完整的运行保持 partial；结果不与 Baseline v2 合并 |
 | GEO-V2-013 | 审核 Sportswear buyer-fit answer block | 宽泛推荐入口 | P0 | `planned / owner-review` | 只在已有页面靠前位置集中表达 China、OEM/ODM、activewear/performance apparel、适合 established/mid-sized B2B buyer 与 500 pieces/style；不改变 URL，不承诺每色拆分，不建立自有最佳厂商榜单；作为单一变量部署后按月复测 BD-02/03 |
+| GEO-V2-014 | 完成全部 Baseline 数据综合诊断与 90 天方案 | 全漏斗决策 | P0 | `complete` | 已分别判断找到、提取、规范引用、专业推荐、宽泛推荐和业务结果；行动按单变量、证据依赖和复测门槛排序 |
 
 ## 10. 统一记录与判断口径
 
@@ -268,7 +270,8 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 ## 12. 当前准确状态
 
-截至 2026-09-11，Athletik 已完成规范站、实体基础、四篇技术指南、主要 Schema、索引和两轮社交分发；GSC 首个专用报表确认 29 次 Google 生成式 AI Property impressions，四篇指南均出现页面级链接曝光。ChatGPT Search 的首轮 V2-D03～D05 又连续给出第一推荐，说明找到、提取和推荐链条已出现正向信号，但尚未获得跨产品/月份稳定性。
-下一阶段不应因为首轮第一推荐立刻扩大宣传或无差别增加页面，而应先完成 24 次 Baseline v2。D05 已明确暴露旧 `ultramerino.com` 抢占规范站引用及 Beta 实体关系泄漏；本批结束后再决定规范站证据强化与历史矩阵站治理，并继续补充可信第三方佐证。
+截至 2026-09-11，Athletik 已完成规范站、实体基础、四篇技术指南、主要 Schema、索引和首轮社交分发；GSC 首个专用报表确认 29 次 Google 生成式 AI Property impressions，四篇指南均出现页面级链接曝光。Baseline v2 已完成 ChatGPT Search 8/8 与 Google AI Mode 8/8，Perplexity 因权限 unavailable；专业 D03～D05 已出现跨产品推荐，但 C06～C08 对应官网 Guide 在 6 次可用运行中仍为 0 次引用。
+
+Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。下一步只把 Sportswear buyer-fit paragraph 作为首个站内单变量进入审核，同时推进 claim-to-source 矩阵、历史站冲突治理和可信第三方佐证；完整诊断与 90 天方案见 [`testing/baseline-integrated-diagnosis-2026-09-11.md`](testing/baseline-integrated-diagnosis-2026-09-11.md)。
 
 本对话可以用于规划、分析用户带回的 Temporary Chat 结果、更新证据和制定内容；不得作为中性测试环境。
