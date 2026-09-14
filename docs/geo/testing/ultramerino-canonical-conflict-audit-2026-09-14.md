@@ -1,7 +1,9 @@
 # UltraMerino 与 Athletik 规范 Merino 页面冲突审计（2026-09-14）
 
-> 审计对象：`https://www.ultramerino.com/` 与 `https://www.athletikapparel.com/merino-wool-manufacturer/`  
-> 对应行动：`GEO-V2-008`  
+> 审计对象：`https://www.ultramerino.com/` 与 `https://www.athletikapparel.com/merino-wool-manufacturer/`
+>
+> 对应行动：`GEO-V2-008`
+>
 > 审计性质：只读；本轮未修改、合并、Canonical 或重定向任何域名
 
 ## 1. 结论
