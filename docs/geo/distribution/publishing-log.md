@@ -103,21 +103,22 @@
 - 确认 Instagram Carousel 与 Story Link Sticker 是否发布；未确认项不得根据 LinkedIn 状态推断。
 - 补录 LinkedIn 已到期的七日数据；Instagram 如确认发布，再按实际发布时间补录相同窗口。
 
-## 2026-09-14 — Top 5 OEM/ODM Sportswear Manufacturers in China（发布包已准备）
+## 2026-09-14 — Top 5 OEM/ODM Sportswear Manufacturers in China（Feed 已发布）
 
 | 字段 | 记录 |
 |---|---|
 | 内部 Campaign | `2026-09-top-sportswear-manufacturers-china` |
 | 官网母文章 | <https://www.athletikapparel.com/top-sportswear-manufacturers-china/> |
 | 主题 | Top 5 OEM/ODM Sportswear Manufacturers in China for Mid-Sized Brands (2026) |
-| 当前状态 | `ready-to-post / website-deployment-blocked`；2026-09-14 检查生产 URL 返回 HTTP 404，尚未发布社交帖子 |
-| LinkedIn 计划格式 | 1 张单图 + 技术教育型正文；不使用 PDF/PPT |
+| 当前状态 | `feed-published / website-404`；所有者确认 LinkedIn 与 Instagram Feed 已发布，官网母文章仍返回 HTTP 404 |
+| LinkedIn 发布格式 | 1 张单图 + 技术教育型正文；不使用 PDF/PPT |
 | LinkedIn UTM content | `top_sportswear_manufacturers_china_single_image` |
-| Instagram 计划格式 | 7 张 1080 × 1350 JPG Carousel + Story Link Sticker |
+| LinkedIn 公开帖子 URL | <https://www.linkedin.com/feed/update/urn:li:activity:7505180674052661248/>；公开页面已核验 |
+| Instagram 发布格式 | Feed 已发布；实际单图/Carousel 格式待公开 URL 或后台补录 |
 | Instagram UTM content | `top_sportswear_manufacturers_china_story` |
 | 发布素材包 | `D:\B-视频素材\营销内容包\2026-09-top-sportswear-manufacturers-china\`（Git 外运营资产） |
-| LinkedIn / Instagram 公开 URL | `unavailable — not published` |
-| 实际发布时间与七日复盘 | `unavailable — website deployment pending` |
+| Instagram 公开 URL / Story | Feed URL `unavailable — owner-confirmed published`；Story 状态 `unavailable` |
+| 实际发布时间与七日复盘 | 发布日期 2026-09-14，精确时分待后台补录；2026-09-22 起记录满七个完整自然日数据 |
 
 ### 已准备
 
@@ -126,6 +127,6 @@
 - Instagram 7 页文字顺序、替代文字、发布说明和七日数据模板；图片页仍需所有者提供或另行制作。
 - 文章封面来源与离线使用说明写入 `source/README.md`。
 
-### 执行边界
+### 发布后核验与边界
 
-社交账号未连接到当前环境，不能代替所有者登录并点击发布。生产文章部署后，先核验 URL 为 HTTP 200、canonical 与 `index` 正常，再按各平台文案文件发布；不得把素材包准备完成写成已发布，也不得从预览截图推断公开帖子 URL、Story 状态或指标。
+LinkedIn 公开页面可读取已批准正文、五家公司名单、发布者披露、短链接和单张图片，公开 URL 已确认。Instagram Feed 状态来自所有者确认；未取得公开 URL，因此不推断其实际格式、Story 状态或指标。生产文章部署后需立即核验 URL 为 HTTP 200、canonical 与 `index` 正常，并确认两个平台的链接最终落到正确 UTM URL。
