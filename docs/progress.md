@@ -696,6 +696,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-14 | GEO-V2-020 封面按所有者要求替换：将提供的生产工艺图转为 `technical-knitwear-sewing-machine-cover.webp`（1536×1024，约 138 KB）及 `technical-knitwear-sewing-machine-cover-800.webp`（800×534，约 50 KB），写入 uploads 的文章封面目录；更新文章注册表路径和描述性 alt 文本。该二进制图片不在 Git 中，生产部署时需单独同步两个 uploads 文件。 |
 | 2026-09-14 | GEO-V2-020 表格布局优化：将快速比较表从六列合并为四列（Manufacturer、Location and best public fit、Public MOQ signal、Capability and evidence），保留全部已审核事实并为桌面与移动端设置稳定列宽，减少窄列换行和右侧内容截断；文章正文、URL、Schema 语义和候选名单不变。 |
 | 2026-09-14 | GEO-V2-020 社交分发包完成：为已审核的供应商比较指南准备 LinkedIn 单图正文与 1200 × 627 JPG、Instagram Carousel/Story 正文、独立 UTM、替代文字、发布说明和七日数据模板，保留 Athletik 作为发布者及候选之一的披露。检查生产母文章 URL 返回 HTTP 404，因此 LinkedIn/Instagram 未发布，状态记录为 `ready-to-post / website-deployment-blocked`；Instagram 7 张 Carousel 图片仍需所有者提供或另行制作，不能把素材包完成写成平台已发布。素材包位于 `D:\B-视频素材\营销内容包\2026-09-top-sportswear-manufacturers-china\`。 |
+| 2026-09-14 | 技术文章阅读与宽表布局优化：共享文章内容框架从站点通用 1200px 容器独立扩展为 87.5rem，桌面目录改为固定 15rem 窄栏并缩小栏间距；正文取消整体 68ch 上限，段落、标题、列表与提示框改用 72ch 阅读宽度，而比较表可使用完整内容栏并保持 60rem 最小宽度。双栏断点从 48rem 延后到 64rem，平板与手机保持单栏，宽表通过已有可聚焦横向滚动容器浏览。共享模板的 5 篇技术文章自动受益；新增 Top 5 页面本地 HTTP 200、单一 H1、目录和表格结构通过，正文、URL、Title、Meta、Schema 和图片不变，状态 `implemented / owner-review`。 |
 
 ---
 
