@@ -246,7 +246,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-017 | UltraMerino 事实同步 | 提取/来源归属 | P2 | `deferred / outside-project-control` | 该站当前不由本项目负责；保留冲突记录，不在本项目修改。若未来职责改变，再核对 MOQ、产能、设备/员工数量、工艺边界、认证、材料来源和 Schema |
 | GEO-V2-018 | 建立 AI 实际引用来源模式审计 | 全漏斗决策 | P0 | `operational` | 已按实际 Sources 面板完成首轮审计并建立月度模板；以后随固定 Baseline 每月增量更新，不按单次样本大改网站 |
 | GEO-V2-019 | 主站可引用事实与设备证据补强 | 提取/引用/推荐 | P0 | `deployed / production-verified / measuring` | 2026-09-14 生产验收：首页、About、Merino 均 HTTP 200、单一 H1、自引用 Canonical、`index` 且 JSON-LD 可解析；新增事实完整出现。Page Sitemap 为 18/18 唯一 URL，三页及 Sitemap index 的 `lastmod` 已更新为 `2026-09-14T02:50:00+00:00`；AI 相关爬虫未被 robots.txt 屏蔽 |
-| GEO-V2-020 | 自有 Top 5 供应商指南受控试验 | 宽泛发现/引用/推荐 | P1 | `draft / owner-review / not-published` | 已起草 `/top-sportswear-manufacturers-china/`；比较 Athletik、HUCAI、SANSANSUN、INGORSPORTS 与 Bellasports，公开发布者利益关系、筛选方法、来源和事实限制。所有者批准前不加入文章注册表、Hub、Schema 或 Sitemap；上线后分别测量抓取、引用、品牌提及和推荐，不用引用代替推荐 |
+| GEO-V2-020 | 自有 Top 5 供应商指南受控试验 | 宽泛发现/引用/推荐 | P1 | `implemented / owner-approved / deployment-pending` | `/top-sportswear-manufacturers-china/` 已接入共用 Technical Guides 架构；比较 Athletik、HUCAI、SANSANSUN、INGORSPORTS 与 Bellasports，首屏公开发布者利益关系，并提供筛选方法、MOQ 冲突、来源和事实限制。已加入 Hub、Sportswear 内链、Article/FAQPage/BreadcrumbList/ItemList Schema 与 Sitemap 管理；生产部署和上线复核待完成，上线后分别测量抓取、引用、品牌提及和推荐，不用引用代替推荐 |
 
 ## 10. 统一记录与判断口径
 
@@ -273,7 +273,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 ## 11. 内容与站外工作的硬边界
 
 - 不制作 `llms.txt`、所谓 AI 专用 Schema 或固定字数“答案块”来追求捷径。
-- 不把自有页面上的“best manufacturers”榜单当作推荐建设；它容易缺乏独立性并替竞争者导流。
+- 不把自有“best manufacturers”名单伪装成独立评级或批量复制。允许将其作为宽泛发现的受控试验，但必须披露发布者利益关系、公开筛选方法、事实来源与验证边界，并单独衡量抓取、引用、品牌提及和推荐。
 - 不批量生成低信息密度文章，不为了覆盖提示词建立近义页面。
 - 不采购传递排名权重的链接、目录包、虚假评论或伪装成用户的社区提及。
 - Reddit/论坛只用于真实身份下解决问题和参与讨论，不做脚本化品牌植入。
@@ -283,8 +283,8 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 ## 12. 当前准确状态
 
-截至 2026-09-14，Athletik 已完成规范站、实体基础、四篇技术指南、主要 Schema、索引和首轮社交分发；GSC 首个专用报表确认 29 次 Google 生成式 AI Property impressions，四篇指南均出现页面级链接曝光。Baseline v2 已完成 ChatGPT Search 8/8 与 Google AI Mode 8/8，Perplexity 因权限 unavailable；专业 D03～D05 已出现跨产品推荐，但 C06～C08 对应官网 Guide 在 6 次可用运行中仍为 0 次引用。
+截至 2026-09-14，Athletik 已完成规范站、实体基础、四篇已上线技术指南、主要 Schema、索引和首轮社交分发；第五篇供应商比较指南已通过所有者审核并在本地实施，等待生产部署。GSC 首个专用报表确认 29 次 Google 生成式 AI Property impressions，四篇已上线指南均出现页面级链接曝光。Baseline v2 已完成 ChatGPT Search 8/8 与 Google AI Mode 8/8，Perplexity 因权限 unavailable；专业 D03～D05 已出现跨产品推荐，但 C06～C08 对应官网 Guide 在 6 次可用运行中仍为 0 次引用。
 
-Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。七品类 Program Fit 已上线并完成生产复核，About 综合 buyer-fit 段落仍在本地等待所有者审核；前端 agent 的视觉改动作为当前基线保留。D03～D05 / C06～C08 [`claim-to-source 证据矩阵`](testing/claim-to-source-matrix-2026-09-14.md)、[`UltraMerino 冲突审计`](testing/ultramerino-canonical-conflict-audit-2026-09-14.md)和 [`AI 实际引用来源模式审计`](testing/ai-cited-source-pattern-audit-2026-09-14.md)均已完成。UltraMerino 当前不由本项目负责，因此事实同步降为外部范围；下一项站内 P0 是完成 About 综合段落审核，并把实际引用站点中反复出现的“精确意图、靠前直接答案、独有第一方事实、原始权威佐证”映射到规范站。刚完成的 Athletik 品类页暂不重复修改，后续按月观察整体、页面和固定提示词变化，不从低样本强行归因。
+Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。七品类 Program Fit 与 About 综合 buyer-fit 已上线并完成生产复核；GEO-V2-020 将名单型页面作为下一项受控试验，但不把它当作独立背书。D03～D05 / C06～C08 [`claim-to-source 证据矩阵`](testing/claim-to-source-matrix-2026-09-14.md)、[`UltraMerino 冲突审计`](testing/ultramerino-canonical-conflict-audit-2026-09-14.md)和 [`AI 实际引用来源模式审计`](testing/ai-cited-source-pattern-audit-2026-09-14.md)均已完成。UltraMerino 当前不由本项目负责，因此事实同步降为外部范围；下一步是部署并复核供应商比较指南，再等待可比抓取和月度观测窗口，不从低样本强行归因。
 
 本对话可以用于规划、分析用户带回的 Temporary Chat 结果、更新证据和制定内容；不得作为中性测试环境。

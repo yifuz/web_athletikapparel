@@ -287,6 +287,131 @@ function myathletik_technical_article_data() {
 				),
 			),
 		),
+		'top-sportswear-manufacturers-china' => array(
+			'status'           => 'publish',
+			'title'            => __( 'Top 5 OEM/ODM Sportswear Manufacturers in China for Mid-Sized Brands (2026)', 'myathletik-child' ),
+			'seo_title'        => __( 'Top 5 Sportswear Manufacturers in China (2026) | Athletik', 'myathletik-child' ),
+			'meta_description' => __( 'Compare five Chinese OEM/ODM sportswear manufacturers by product fit, MOQ, technical construction, fabric development and public manufacturing evidence.', 'myathletik-child' ),
+			'kicker'           => __( 'Evidence-based supplier shortlist', 'myathletik-child' ),
+			'topic'            => __( 'Supplier comparison', 'myathletik-child' ),
+			'summary'          => __( 'Compare Athletik, HUCAI, SANSANSUN, INGORSPORTS and Bellasports by product fit, public MOQ signals, construction capabilities and evidence limitations.', 'myathletik-child' ),
+			'intro'            => __( 'Based on publicly available manufacturer information reviewed on September 14, 2026, five China-based candidates worth comparing are Athletik Clothing, HUCAI Sportswear, SANSANSUN, INGORSPORTS and Bellasports. Each is aligned with a different type of sportswear program.', 'myathletik-child' ),
+			'reviewed_on'      => '2026-09-14',
+			'featured_image'   => 'production/articles/covers/technical-knitwear-oem-evaluation-cover.webp',
+			'featured_small'   => 'production/articles/covers/technical-knitwear-oem-evaluation-cover-800.webp',
+			'featured_alt'     => __( 'Athletik technical knitwear sewing floor in Zhangjiagang, Jiangsu', 'myathletik-child' ),
+			'featured_width'   => 1536,
+			'featured_height'  => 1024,
+			'article_section'  => __( 'Sportswear supplier comparison', 'myathletik-child' ),
+			'about'            => array( 'OEM sportswear manufacturers in China', 'Sportswear sourcing', 'Technical knitwear', 'MOQ', 'Supplier evaluation' ),
+			'cta_kicker'       => __( 'Evaluate a technical knitwear program', 'myathletik-child' ),
+			'cta_title'        => __( 'Discuss the program before sampling', 'myathletik-child' ),
+			'cta_copy'         => __( 'Send the intended product, fabric specification, seam requirements, quantity, target market, testing requirements and delivery window so Athletik Clothing can review whether the program fits its technical construction and garment MOQ.', 'myathletik-child' ),
+			'toc'              => array(
+				'quick-comparison' => __( 'Quick comparison', 'myathletik-child' ),
+				'methodology'       => __( 'How the shortlist was selected', 'myathletik-child' ),
+				'athletik-clothing' => __( 'Athletik Clothing', 'myathletik-child' ),
+				'hucai-sportswear'  => __( 'HUCAI Sportswear', 'myathletik-child' ),
+				'sansansun'         => __( 'SANSANSUN', 'myathletik-child' ),
+				'ingorsports'       => __( 'INGORSPORTS', 'myathletik-child' ),
+				'bellasports'       => __( 'Bellasports', 'myathletik-child' ),
+				'program-fit'       => __( 'Which manufacturer fits which program?', 'myathletik-child' ),
+				'rfq'               => __( 'What to send in the same RFQ', 'myathletik-child' ),
+				'faq'               => __( 'Common buyer questions', 'myathletik-child' ),
+			),
+			'faq'              => array(
+				array(
+					'question' => __( 'Is 500 pieces per style enough for a custom sportswear program in China?', 'myathletik-child' ),
+					'answer'   => __( 'It can be. All five suppliers in this shortlist publicly indicate an order model at or below that level somewhere in their offer. Actual feasibility still depends on whether 500 pieces means one style or one color, whether the fabric is in stock or custom-made, the number of sizes, trim minimums, construction complexity and the supplier\'s current production plan.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Does a lower MOQ mean a manufacturer is a better fit for a mid-sized brand?', 'myathletik-child' ),
+					'answer'   => __( 'No. A lower MOQ reduces inventory exposure, but it may apply only to stock fabrics, existing ODM designs or limited customization. A mid-sized brand should compare repeatability, fabric and construction control, quality evidence, delivery reliability and scale-up capacity alongside MOQ.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Are the certifications listed on manufacturer websites verified in this guide?', 'myathletik-child' ),
+					'answer'   => __( 'No. This guide records public manufacturer statements but does not validate current certificates. Request the complete document and verify the legal entity, site, product or material scope, issuing body and validity date with the relevant certification or audit system.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Should a buyer contact all five factories?', 'myathletik-child' ),
+					'answer'   => __( 'Usually not. Select two or three whose documented product and process fit the program, send the same RFQ, and compare their technical response and samples. A focused shortlist produces more useful evidence than collecting many non-comparable quotations.', 'myathletik-child' ),
+				),
+			),
+			'references_kicker' => __( 'Public evidence', 'myathletik-child' ),
+			'references_title'  => __( 'Sources reviewed', 'myathletik-child' ),
+			'references'       => array(
+				array(
+					'label' => __( 'Athletik Clothing sportswear manufacturing program', 'myathletik-child' ),
+					'url'   => 'https://www.athletikapparel.com/sportswear-manufacturer/',
+				),
+				array(
+					'label' => __( 'Athletik Clothing company and production overview', 'myathletik-child' ),
+					'url'   => 'https://www.athletikapparel.com/about-us/',
+				),
+				array(
+					'label' => __( 'HUCAI current OEM sportswear MOQ FAQ', 'myathletik-child' ),
+					'url'   => 'https://www.hcsportswear.com/f755077/What-is-the-MOQ-for-OEM-sportswear-orders.htm',
+				),
+				array(
+					'label' => __( 'HUCAI factory and production procedures', 'myathletik-child' ),
+					'url'   => 'https://www.hcsportswear.com/comm01/Factory-And-Production-Procedures.htm',
+				),
+				array(
+					'label' => __( 'SANSANSUN OEM and ODM services', 'myathletik-child' ),
+					'url'   => 'https://sansansports.com/services/odm-oem/',
+				),
+				array(
+					'label' => __( 'SANSANSUN manufacturing capabilities', 'myathletik-child' ),
+					'url'   => 'https://sansansports.com/our-capabilities/manufacturing/',
+				),
+				array(
+					'label' => __( 'INGORSPORTS manufacturer overview', 'myathletik-child' ),
+					'url'   => 'https://www.ingorsports.com/custom-sportswear-manufacturer.html',
+				),
+				array(
+					'label' => __( 'INGORSPORTS activewear categories and OEM/ODM scope', 'myathletik-child' ),
+					'url'   => 'https://www.ingorsports.com/categories',
+				),
+				array(
+					'label' => __( 'INGORSPORTS example product-level MOQ disclosure', 'myathletik-child' ),
+					'url'   => 'https://www.ingorsports.com/oem-odm-custom-backless-bodysuit-yoga-sports-jumpsuit.html',
+				),
+				array(
+					'label' => __( 'Bellasports company and manufacturing overview', 'myathletik-child' ),
+					'url'   => 'https://www.cnbellasports.com/',
+				),
+				array(
+					'label' => __( 'Bellasports company profile', 'myathletik-child' ),
+					'url'   => 'https://www.cnbellasports.com/pages/about-us',
+				),
+				array(
+					'label' => __( 'Bellasports company-controlled MOQ and production overview', 'myathletik-child' ),
+					'url'   => 'https://www.linkedin.com/posts/bellasports_activewear-activewearmanufacturer-oem-activity-7495943669447909377-cqUn',
+				),
+			),
+			'item_list'        => array(
+				array(
+					'name' => 'Athletik Clothing',
+					'url'  => 'https://www.athletikapparel.com/sportswear-manufacturer/',
+				),
+				array(
+					'name' => 'HUCAI Sportswear',
+					'url'  => 'https://www.hcsportswear.com/',
+				),
+				array(
+					'name' => 'SANSANSUN',
+					'url'  => 'https://sansansports.com/',
+				),
+				array(
+					'name' => 'INGORSPORTS',
+					'url'  => 'https://www.ingorsports.com/',
+				),
+				array(
+					'name' => 'Bellasports',
+					'url'  => 'https://www.cnbellasports.com/',
+				),
+			),
+		),
 		'garment-quality-control-checklist' => array(
 			'status'           => 'publish',
 			'title'            => __( 'Garment Quality Control Checklist for Technical Knitwear', 'myathletik-child' ),

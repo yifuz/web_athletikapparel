@@ -23,6 +23,8 @@ $reviewed_display  = wp_date( 'F j, Y', strtotime( $reviewed_iso ) );
 $media             = get_stylesheet_directory_uri() . '/assets/images/';
 $image_url         = $media . ltrim( $article['featured_image'], '/' );
 $image_small_url   = $media . ltrim( $article['featured_small'], '/' );
+$references_kicker = ! empty( $article['references_kicker'] ) ? $article['references_kicker'] : __( 'Primary sources', 'myathletik-child' );
+$references_title  = ! empty( $article['references_title'] ) ? $article['references_title'] : __( 'Technical references', 'myathletik-child' );
 ?>
 
 <main id="primary" class="site-main ma-technical-article">
@@ -98,8 +100,8 @@ $image_small_url   = $media . ltrim( $article['featured_small'], '/' );
 				</section>
 
 				<section class="ma-technical-article__references" aria-labelledby="ma-technical-article-references-title">
-					<p class="ma-section-kicker"><?php esc_html_e( 'Primary sources', 'myathletik-child' ); ?></p>
-					<h2 id="ma-technical-article-references-title"><?php esc_html_e( 'Technical references', 'myathletik-child' ); ?></h2>
+					<p class="ma-section-kicker"><?php echo esc_html( $references_kicker ); ?></p>
+					<h2 id="ma-technical-article-references-title"><?php echo esc_html( $references_title ); ?></h2>
 					<ul>
 						<?php foreach ( $article['references'] as $reference ) : ?>
 							<li><a href="<?php echo esc_url( $reference['url'] ); ?>"><?php echo esc_html( $reference['label'] ); ?></a></li>

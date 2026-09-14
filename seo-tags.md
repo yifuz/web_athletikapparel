@@ -166,6 +166,18 @@ QC checklist for cut-and-sew technical knitwear: incoming fabric checks,
 in-line inspection, AQL sampling, final inspection and needle control.
 
 ================================================================
+## Technical guide  (/top-sportswear-manufacturers-china/)
+================================================================
+Primary keyword: sportswear manufacturers in China / OEM sportswear manufacturers
+
+**SEO Title:**
+Top 5 Sportswear Manufacturers in China (2026) | Athletik
+
+**Meta Description:**
+Compare five Chinese OEM/ODM sportswear manufacturers by product fit, MOQ,
+technical construction, fabric development and public manufacturing evidence.
+
+================================================================
 ## Image alt text (general rule for Codex)
 ================================================================
 Every image needs descriptive alt text with a natural keyword, e.g.:
@@ -205,7 +217,7 @@ NOT filenames, NOT "image1". Describe what's shown + relevant keyword.
 | 首页 `/` | `functions.php` 的 `myathletik_home_meta_description()` 硬编码（首页 Rank Math 描述字段保持为空，防止输出两个 description 标签） |
 | 六个服装品类页（Sportswear、Underwear、Outdoor、Merino、Silk、Sports Accessories） | **仅** Rank Math 后台字段（数据库）。`inc/product-category-data.php` 里的 `seo_title` / `meta_description` 不参与生产输出，改它们无效 |
 | Knitted Fabrics 品类页 | `inc/product-category-data.php` 的 `meta_description`（唯一例外）。主题 `rank-math.php` 的过滤器用它覆盖前端、OG/Twitter 和 WebPage Schema 描述 |
-| 四篇技术指南 + `/technical-guides/` Hub | `inc/technical-article-data.php` 的 `seo_title` / `meta_description`。`functions.php` 的 init 钩子把它们写入 Rank Math 数据库字段，`rank-math.php` 过滤器再从同一份数据覆盖输出 |
+| 五篇技术指南 + `/technical-guides/` Hub | `inc/technical-article-data.php` 的 `seo_title` / `meta_description`。`functions.php` 的 init 钩子把它们写入 Rank Math 数据库字段，`rank-math.php` 过滤器再从同一份数据覆盖输出 |
 | Services、About、Contact、Sustainability | **仅** Rank Math 后台字段（数据库），代码中没有对应字段 |
 
 关键机制说明：

@@ -1,13 +1,13 @@
 # Top 5 OEM/ODM Sportswear Manufacturers in China for Mid-Sized Brands（草稿）
 
-> 状态：`draft / owner-review / not-published`
+> 状态：`owner-approved / implemented / deployment-pending`
 > GEO 实验：`GEO-V2-020`
 > 拟用 URL：`/top-sportswear-manufacturers-china/`
 > 拟用 SEO Title：`Top 5 Sportswear Manufacturers in China (2026) | Athletik`
 > 拟用 Meta Description：`Compare five Chinese OEM/ODM sportswear manufacturers by product fit, MOQ, technical construction, fabric development and public manufacturing evidence.`
 > 拟用 H1：`Top 5 OEM/ODM Sportswear Manufacturers in China for Mid-Sized Brands (2026)`
 > 事实复核日期：2026-09-14
-> 发布边界：以下英文正文须经所有者审核后，才可加入文章注册表、Technical Guides Hub、Schema、Sitemap 或生产站。
+> 发布边界：所有者已于 2026-09-14 审核英文正文；现已加入文章注册表、Technical Guides Hub、Schema 与 Sitemap，等待生产部署和上线复核。
 
 ## 编辑方法与边界
 

@@ -46,7 +46,8 @@
 │   ├── /flatlock-vs-overlock-technical-knitwear/  （已发布）
 │   ├── /technical-knitwear-tech-pack-guide/  （已发布）
 │   ├── /evaluate-technical-knitwear-oem/  （已发布）
-│   └── /garment-quality-control-checklist/  （已发布，2026-08-20 生产验收）
+│   ├── /garment-quality-control-checklist/  （已发布，2026-08-20 生产验收）
+│   └── /top-sportswear-manufacturers-china/  （所有者已审核，本地实施，待部署）
 │
 ├── /sustainability/   （当前正确 slug；未实施历史重定向）
 ├── /about-us/
@@ -184,6 +185,29 @@ POM、成品面料规格、接缝图、测试和样品批准。
 搜索意图，为买家提供可执行的 QC 检查清单。所有者已于 2026-08-20 确认证据清单、URL、Title、Meta、H1 和正文；同日完成生产部署与验收。
 本页使用共用文章布局，覆盖产前检验、在线巡检、终检/AQL、测试合规、针检、QC 记录和 tech pack QC 条款。
 包含三支第一方 QC 视频（面料进厂检验、在线巡检、终检）。
+
+---
+
+## 2F. 供应商比较指南 — `/top-sportswear-manufacturers-china/`（新增）
+
+**H1：** Top 5 OEM/ODM Sportswear Manufacturers in China for Mid-Sized Brands (2026)
+
+**目的：** 以 Broad Discovery 中真实出现的供应商名单型搜索意图为受控试验，比较 Athletik、HUCAI、
+SANSANSUN、INGORSPORTS 与 Bellasports 的公开产品适配、MOQ、工艺能力和证据边界。页面不把 `Top 5`
+表述为独立审计、绝对质量排名或全中国穷尽式调查。
+
+**区块结构：**
+
+1. 首屏发布者披露：Athletik 是页面发布者，也是五个候选之一。
+2. 五家公司快速对比表及公开 MOQ 冲突说明。
+3. 公开筛选方法、纳入标准和未独立验证事项。
+4. 每家公司的 buyer-fit、公开能力与采购前核实事项。
+5. 按项目类型选择候选的决策提示，以及统一 RFQ 输入清单。
+6. 可见 FAQ、公开来源清单和询盘 CTA。
+7. Article、FAQPage、BreadcrumbList 和与可见五家公司一致的 ItemList Schema。
+
+所有者已于 2026-09-14 审核正文。本页复用 Technical Guides 共用布局和现有生产实拍封面；
+Sportswear 品类页增加相关内链。当前状态为本地实施完成、待部署。
 
 ---
 

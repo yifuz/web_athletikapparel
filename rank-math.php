@@ -498,6 +498,39 @@ function myathletik_rank_math_technical_article_schema( $data ) {
 		'mainEntity' => $questions,
 	);
 
+	if ( ! empty( $article['item_list'] ) && is_array( $article['item_list'] ) ) {
+		$list_id    = $page_url . '#manufacturer-shortlist';
+		$list_items = array();
+
+		foreach ( array_values( $article['item_list'] ) as $position => $item ) {
+			if ( empty( $item['name'] ) || empty( $item['url'] ) ) {
+				continue;
+			}
+
+			$list_items[] = array(
+				'@type'    => 'ListItem',
+				'position' => $position + 1,
+				'item'     => array(
+					'@type' => 'Organization',
+					'name'  => $item['name'],
+					'url'   => $item['url'],
+				),
+			);
+		}
+
+		if ( $list_items ) {
+			$data['technicalArticleItemList'] = array(
+				'@type'           => 'ItemList',
+				'@id'             => $list_id,
+				'name'            => $article['title'],
+				'itemListOrder'   => 'https://schema.org/ItemListUnordered',
+				'numberOfItems'   => count( $list_items ),
+				'itemListElement' => $list_items,
+			);
+			$data['technicalArticle']['mainEntity'] = array( '@id' => $list_id );
+		}
+	}
+
 	$data['technicalArticleBreadcrumb'] = array(
 		'@type'           => 'BreadcrumbList',
 		'@id'             => $page_url . '#breadcrumb',
@@ -660,7 +693,7 @@ add_filter( 'rank_math/json_ld', 'myathletik_rank_math_product_category_schema_i
  * @return int Unix timestamp in UTC.
  */
 function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
-	$latest = strtotime( '2026-09-14 02:50:00 UTC' );
+	$latest = strtotime( '2026-09-14 05:50:00 UTC' );
 
 	if ( '' === $url ) {
 		return $latest;
@@ -674,7 +707,6 @@ function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
 		in_array(
 			$path,
 			array(
-				'/technical-guides/',
 				'/flatlock-vs-overlock-technical-knitwear/',
 				'/technical-knitwear-tech-pack-guide/',
 				'/evaluate-technical-knitwear-oem/',
@@ -686,10 +718,14 @@ function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
 	}
 
 	if ( '/' === $path ) {
-		return $latest;
+		return strtotime( '2026-09-14 02:50:00 UTC' );
 	}
 
 	if ( in_array( $path, array( '/about-us/', '/merino-wool-manufacturer/' ), true ) ) {
+		return strtotime( '2026-09-14 02:50:00 UTC' );
+	}
+
+	if ( in_array( $path, array( '/technical-guides/', '/top-sportswear-manufacturers-china/', '/sportswear-manufacturer/' ), true ) ) {
 		return $latest;
 	}
 
@@ -714,7 +750,7 @@ function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
 }
 
 /**
- * Check whether a Sitemap URL belongs to one of the 16 managed core pages.
+ * Check whether a Sitemap URL belongs to a managed core page.
  *
  * @param string $url Absolute Sitemap URL.
  * @return bool
@@ -734,6 +770,7 @@ function myathletik_rank_math_is_core_sitemap_url( $url ) {
 		array(
 			'/',
 			'/technical-guides/',
+			'/top-sportswear-manufacturers-china/',
 			'/flatlock-vs-overlock-technical-knitwear/',
 			'/technical-knitwear-tech-pack-guide/',
 			'/evaluate-technical-knitwear-oem/',
