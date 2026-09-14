@@ -690,15 +690,16 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-12 | 首页轻量图标扩展完成：复用共用线性 SVG 组件，将 Manufacturing Proof Points 原 01–04 编号替换为 Vertical Integration、Technical Construction、Experience、Full-Package OEM/ODM 四种制造语义图标；Process Snapshot 保留 01–04 顺序，同时增加 Sampling、Production、Quality、Shipping 图标。图标均为装饰性 `aria-hidden`，沿用主题双色与间距变量，不新增图片或 uploads 部署依赖；首页 HTTP 200、单一 H1、两组各 4 张卡片/4 个图标、旧 Proof 编号移除，代表性产品页流程图标保持正常。正文、模块顺序、URL、Title、Meta、Schema 和图片不变，状态 `implemented / owner-review`。 |
 | 2026-09-14 | 所有者确认同方站点中的机器数量、员工数字、产能和已发布认证范围可作为 Athletik 规范站的一方事实使用；当前统一产能为 `100,000+ pieces per month`，可公开 `30+ Yamato FLATLOCK machines` 与约 100 名缝纫员工。Merrow ACTIVESEAM 与 HSAT-K5 可公开设备类型和用途，未确认的台数、型号或性能数字不推断。 |
 | 2026-09-14 | GEO-V2-019 主站证据增强本地实施：About Us 综合 buyer-fit 与生产设施段落统一到 Zhangjiagang、500 pieces/style、约 100 名缝纫员工和 100,000+ pieces/month；Merino FAQ 增加可独立提取的 Merino base layers + 30+ Yamato FLATLOCK + stitch type 607 + OEM/ODM + MOQ 直接答案；首页 Manufacturing Proof Points 改为 own integrated facility、30+ Yamato、Merrow ACTIVESEAM 与 HSAT-K5 四类一方证据，并补充按面料、部位、伸长要求和批准样衣选择工艺的边界。Rank Math Page Sitemap 为首页、About、Merino 写入本次真实更新时间，其余页面保留各自批次时间并升级一次性缓存标记；建立月度 AI 引用来源审计模板。URL、Title、H1 和页面所有权不变，状态 `implemented / owner-approved / deployment-pending`。 |
+| 2026-09-14 | GEO-V2-019 Day 0 生产验收通过：首页、About、Merino 均为 HTTP 200、单一 H1、自引用 Canonical、`index`、无 X-Robots-Tag 阻断，且各自 JSON-LD 1/1 可解析；首页四项生产证据与约 100 名缝纫员工、About 综合 buyer-fit/员工/产能、Merino 直接问答/30+ Yamato/stitch type 607/两处 500 pieces per style 均已生效。robots.txt 声明 Sitemap，未屏蔽 GPTBot、ChatGPT-User、Google-Extended 或 PerplexityBot；Page Sitemap 为 18/18 唯一 URL，首页、About、Merino 及 Sitemap index `lastmod` 均为 `2026-09-14T02:50:00+00:00`。状态转为 `deployed / production-verified / measuring`；URL、Title、H1 与页面所有权无变化。 |
 
 ---
 
 ## 13. 下一步优先级
 
-1. 部署并执行 GEO-V2-019 Day 0 验收：核对首页、About、Merino 的可见事实、单一 H1、Canonical、robots、结构化数据和 Page Sitemap `lastmod`，再按需提交 GSC 重新抓取。
+1. 在 GSC URL Inspection 中分别检查首页、About 与 Merino；如实时测试可编入索引，各提交一次重新抓取。请求成功不等于已重新索引，后续记录实际最后抓取时间和 indexed snapshot。
 2. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
 3. 以首页四类生产证据为入口，收集 Yamato FLATLOCK、Merrow ACTIVESEAM 与 HSAT-K5 的当前实拍、铭牌、样品和测试边界；材料齐备后再决定是否立项 `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 原创证据内容。
-4. 七个品类页 Program Fit 已上线并通过生产复核，不再重复修改。About 与 Merino 被重新抓取后，按下一个完整月度窗口复测 Baseline v2 与 Broad Discovery v1，并分别记录整体、页面和固定提示词结果，不把低样本波动归因到单一页面。
+4. 七个品类页 Program Fit、About 综合段落与 GEO-V2-019 已上线并通过生产复核，不再立即重复修改。页面被重新抓取后，按下一个完整月度窗口复测 Baseline v2 与 Broad Discovery v1，并分别记录整体、页面和固定提示词结果，不把低样本波动归因到单一页面。
 5. 下一个月使用完全相同的 Baseline v2 与 Broad Discovery v1 提示词及 [`AI 引用来源月度审计模板`](geo/testing/ai-cited-source-monthly-template.md)复测，不在同一会话连续运行多题。
 6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 Day 0 已关闭，下一步按 Day 7 / 28 / 90 观察，不继续修改首页。
 7. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动，响应时间需使用同配置窗口比较。

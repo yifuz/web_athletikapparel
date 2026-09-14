@@ -241,11 +241,11 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-012 | 建立并运行 Broad Discovery v1 | 宽泛推荐发现 | P0 | `complete / Google 3 of 3; ChatGPT 3 of 3; Perplexity unavailable` | BD-01～BD-03 共 6 次独立首次回答已记录；Athletik 正文出现与规范站引用均为 0/6；环境元数据不完整的运行保持 partial；结果不与 Baseline v2 合并 |
 | GEO-V2-013 | 审核 Sportswear buyer-fit answer block | 宽泛推荐入口 | P1 | `superseded by GEO-V2-016` | 原单页实验方案已由所有者调整为七品类整批结构优化；Sportswear 仍包含在新批次中，不再单独等待低样本前后差异 |
 | GEO-V2-014 | 完成全部 Baseline 数据综合诊断与 90 天方案 | 全漏斗决策 | P0 | `complete / strategy-adjusted` | 已分别判断找到、提取、规范引用、专业推荐、宽泛推荐和业务结果；低曝光阶段由严格单变量调整为可审计的整批结构优化，仍保留证据依赖和固定复测门槛 |
-| GEO-V2-015 | About Us 综合 buyer-fit paragraph | 提取/宽泛推荐入口 | P0 | `implemented / owner-approved / deployment-pending` | 用一个公司级段落覆盖生产地点、目标 B2B 买家、完整产品范围、FLATLOCK/ACTIVESEAM、成衣 MOQ 500 pieces/style 与独立面料项目边界；所有者已授权本批主站优化，待随本批同步生产并验收 |
+| GEO-V2-015 | About Us 综合 buyer-fit paragraph | 提取/宽泛推荐入口 | P0 | `deployed / production-verified / measuring` | 2026-09-14 生产验收：综合段落已上线；页面 HTTP 200、单一 H1、自引用 Canonical、`index` 且 JSON-LD 可解析。后续只按完整月度窗口观察，不从低样本即时波动归因 |
 | GEO-V2-016 | 七品类 Program Fit 整批优化 | 提取/宽泛推荐入口 | P0 | `deployed / production-verified` | 2026-09-14 线上复核：七个品类页均 HTTP 200、单一 H1、单一 Program Fit；六个成衣品类各有两处 500 pieces/pcs，Knitted Fabrics 没有成衣 500 口径；不改 URL、Title、H1 或 Schema |
 | GEO-V2-017 | UltraMerino 事实同步 | 提取/来源归属 | P2 | `deferred / outside-project-control` | 该站当前不由本项目负责；保留冲突记录，不在本项目修改。若未来职责改变，再核对 MOQ、产能、设备/员工数量、工艺边界、认证、材料来源和 Schema |
 | GEO-V2-018 | 建立 AI 实际引用来源模式审计 | 全漏斗决策 | P0 | `operational` | 已按实际 Sources 面板完成首轮审计并建立月度模板；以后随固定 Baseline 每月增量更新，不按单次样本大改网站 |
-| GEO-V2-019 | 主站可引用事实与设备证据补强 | 提取/引用/推荐 | P0 | `implemented / owner-approved / deployment-pending` | About 使用当前量化证据；Merino FAQ 直接连接 OEM/ODM、工业 FLATLOCK、适用边界和 500 pieces/style；首页 Manufacturing Proof Points 公开 30+ Yamato、Merrow ACTIVESEAM 和 HSAT-K5；真实更新页同步 Sitemap `lastmod` 并触发一次 Rank Math 缓存失效 |
+| GEO-V2-019 | 主站可引用事实与设备证据补强 | 提取/引用/推荐 | P0 | `deployed / production-verified / measuring` | 2026-09-14 生产验收：首页、About、Merino 均 HTTP 200、单一 H1、自引用 Canonical、`index` 且 JSON-LD 可解析；新增事实完整出现。Page Sitemap 为 18/18 唯一 URL，三页及 Sitemap index 的 `lastmod` 已更新为 `2026-09-14T02:50:00+00:00`；AI 相关爬虫未被 robots.txt 屏蔽 |
 
 ## 10. 统一记录与判断口径
 
