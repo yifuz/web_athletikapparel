@@ -81,7 +81,7 @@ GEO 内容需要帮助目标买家依次完成四个任务，而不只是获取�
 Beta Textiles / BTEXCO 是同一运营体系的面料销售名称，但对外独立运营；公开页面、站外资料和内容中不得把它与 Athletik 关联、互链或描述为关联公司。
 
 `myathletik.com` 已按所有者决定完全下线，已检查入口返回 HTTP 410，不做跨域 301，后续出现只记录为过期缓存信号。
-所有者已确认 `ultramerino.com` 为同方控制的 Merino 专业站，并要求它与 Athletik 主站同时运营和争取排名。两站当前不做跨域 Canonical、301 合并或内容复制；UltraMerino 负责 Merino 专业深度，Athletik 规范站负责跨品类 full-package OEM/ODM 采购入口。UltraMerino 的历史商业和能力声明仍须同步到当前核准事实，不能自动升级为 Athletik 规范站事实。
+所有者已确认 `ultramerino.com` 为同方控制的 Merino 专业站，但该站当前不由本项目负责。GEO 主执行范围只优化 Athletik 规范站；UltraMerino 只作为来源冲突和历史事实样本，不在本项目中安排页面修改、跨域 Canonical、301 或内容复制。其生产知识只有在被当前证据独立复核后才可用于规范站，历史商业和能力声明不能自动升级为现行事实。
 
 `athletik.com.cn` 和其他历史/类目矩阵站的所有权、当前角色和去留仍须逐站核验；它们不是规范站事实的自动来源，也不能在未确认时被描述为 Athletik 当前官方子站。
 
@@ -107,6 +107,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | [`testing/baseline-integrated-diagnosis-2026-09-11.md`](testing/baseline-integrated-diagnosis-2026-09-11.md) | 汇总 Baseline v1、v2、Broad Discovery、GSC 生成式曝光和分发证据的综合诊断与 90 天方案 |
 | [`testing/claim-to-source-matrix-2026-09-14.md`](testing/claim-to-source-matrix-2026-09-14.md) | D03～D05 / C06～C08 的规范来源、实际 AI 来源、公开边界、独立证据缺口和优先级 |
 | [`testing/ultramerino-canonical-conflict-audit-2026-09-14.md`](testing/ultramerino-canonical-conflict-audit-2026-09-14.md) | UltraMerino 的可访问性、Sitemap、Canonical、AI 来源选择、冲突声明和双站治理建议 |
+| [`testing/ai-cited-source-pattern-audit-2026-09-14.md`](testing/ai-cited-source-pattern-audit-2026-09-14.md) | AI 实际引用站点的页面模式、可迁移做法、风险边界和 Athletik 优先改进项 |
 | [`distribution/social-content-sop.md`](distribution/social-content-sop.md) | 官网指南改编为 LinkedIn / Instagram 内容的执行 SOP |
 | [`distribution/publishing-log.md`](distribution/publishing-log.md) | 每次站外分发的发布时间、链接和七日数据 |
 | [`../seo/authority/offsite-authority-opportunity-pool-v1.md`](../seo/authority/offsite-authority-opportunity-pool-v1.md) | 站外行业引用、目录、认证名录和编辑机会的证据与状态 |
@@ -240,7 +241,8 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-014 | 完成全部 Baseline 数据综合诊断与 90 天方案 | 全漏斗决策 | P0 | `complete / strategy-adjusted` | 已分别判断找到、提取、规范引用、专业推荐、宽泛推荐和业务结果；低曝光阶段由严格单变量调整为可审计的整批结构优化，仍保留证据依赖和固定复测门槛 |
 | GEO-V2-015 | About Us 综合 buyer-fit paragraph | 提取/宽泛推荐入口 | P0 | `implemented / owner-review` | 用一个公司级段落覆盖生产地点、目标 B2B 买家、完整产品范围、FLATLOCK/ACTIVESEAM、成衣 MOQ 500 pieces/style 与独立面料项目边界；不改 URL、Title、H1、Schema 或页面结构，所有者批准后部署并单独观察 |
 | GEO-V2-016 | 七品类 Program Fit 整批优化 | 提取/宽泛推荐入口 | P0 | `deployed / production-verified` | 2026-09-14 线上复核：七个品类页均 HTTP 200、单一 H1、单一 Program Fit；六个成衣品类各有两处 500 pieces/pcs，Knitted Fabrics 没有成衣 500 口径；不改 URL、Title、H1 或 Schema |
-| GEO-V2-017 | UltraMerino 事实同步 | 提取/来源归属 | P0 | `owner-action / external-site` | MOQ、产能、设备/员工数量、FLATLOCK 适用边界、认证、材料来源和性能承诺与当前证据一致；Organization Schema 和单一 H1 清晰；保持双站自引用 Canonical，未经批准不重定向或复制主站内容 |
+| GEO-V2-017 | UltraMerino 事实同步 | 提取/来源归属 | P2 | `deferred / outside-project-control` | 该站当前不由本项目负责；保留冲突记录，不在本项目修改。若未来职责改变，再核对 MOQ、产能、设备/员工数量、工艺边界、认证、材料来源和 Schema |
+| GEO-V2-018 | 建立 AI 实际引用来源模式审计 | 全漏斗决策 | P0 | `initial-audit-complete` | 已按实际 Sources 面板抽查制造商能力页、自建 roundup、技术指南和设备商页面；形成可迁移模式、禁止项和 Athletik P0/P1 建议。以后随固定 Baseline 每月增量更新，不按单次样本大改网站 |
 
 ## 10. 统一记录与判断口径
 
@@ -279,6 +281,6 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 截至 2026-09-14，Athletik 已完成规范站、实体基础、四篇技术指南、主要 Schema、索引和首轮社交分发；GSC 首个专用报表确认 29 次 Google 生成式 AI Property impressions，四篇指南均出现页面级链接曝光。Baseline v2 已完成 ChatGPT Search 8/8 与 Google AI Mode 8/8，Perplexity 因权限 unavailable；专业 D03～D05 已出现跨产品推荐，但 C06～C08 对应官网 Guide 在 6 次可用运行中仍为 0 次引用。
 
-Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。七品类 Program Fit 已上线并完成生产复核，About 综合 buyer-fit 段落仍在本地等待所有者审核；前端 agent 的视觉改动作为当前基线保留。D03～D05 / C06～C08 [`claim-to-source 证据矩阵`](testing/claim-to-source-matrix-2026-09-14.md)和 [`UltraMerino 冲突审计`](testing/ultramerino-canonical-conflict-audit-2026-09-14.md)均已完成。审计确认 UltraMerino 是仍可索引、自引用 Canonical 的活跃专业站，其旧 MOQ、产能和绝对能力措辞会直接影响 AI 来源选择；下一项 P0 是外部站事实同步，而不是合并域名。刚完成的 Athletik 品类页暂不重复修改，后续按月观察整体、页面和固定提示词变化，不从低样本强行归因。
+Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。七品类 Program Fit 已上线并完成生产复核，About 综合 buyer-fit 段落仍在本地等待所有者审核；前端 agent 的视觉改动作为当前基线保留。D03～D05 / C06～C08 [`claim-to-source 证据矩阵`](testing/claim-to-source-matrix-2026-09-14.md)、[`UltraMerino 冲突审计`](testing/ultramerino-canonical-conflict-audit-2026-09-14.md)和 [`AI 实际引用来源模式审计`](testing/ai-cited-source-pattern-audit-2026-09-14.md)均已完成。UltraMerino 当前不由本项目负责，因此事实同步降为外部范围；下一项站内 P0 是完成 About 综合段落审核，并把实际引用站点中反复出现的“精确意图、靠前直接答案、独有第一方事实、原始权威佐证”映射到规范站。刚完成的 Athletik 品类页暂不重复修改，后续按月观察整体、页面和固定提示词变化，不从低样本强行归因。
 
 本对话可以用于规划、分析用户带回的 Temporary Chat 结果、更新证据和制定内容；不得作为中性测试环境。

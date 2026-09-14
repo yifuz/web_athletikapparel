@@ -16,6 +16,7 @@
 - [`geo/testing/prompt-baseline.md`](geo/testing/prompt-baseline.md)：冻结的 Baseline v1、当前 Baseline v2、测试结果和实体冲突证据。
 - [`geo/testing/claim-to-source-matrix-2026-09-14.md`](geo/testing/claim-to-source-matrix-2026-09-14.md)：六个核心推荐/内容问题的规范来源、AI 实际来源与证据缺口矩阵。
 - [`geo/testing/ultramerino-canonical-conflict-audit-2026-09-14.md`](geo/testing/ultramerino-canonical-conflict-audit-2026-09-14.md)：UltraMerino 与规范 Merino 页的技术状态、冲突事实和双站治理审计。
+- [`geo/testing/ai-cited-source-pattern-audit-2026-09-14.md`](geo/testing/ai-cited-source-pattern-audit-2026-09-14.md)：AI 实际引用页面的共性模式、可借鉴做法、风险边界和主站优先级。
 - `geo/content/`：三篇 GEO 基础指南的批准草稿和内容简报。
 - `geo/distribution/`：LinkedIn/Instagram 分发 SOP 与发布日志。
 

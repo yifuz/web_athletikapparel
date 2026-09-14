@@ -682,6 +682,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-14 | GEO-V2-006 claim-to-source 证据矩阵完成：对 V2-D03～D05 与 V2-C06～C08 分别映射规范站支持、ChatGPT / Google 实际采用来源、允许公开边界、独立佐证和下一动作。结论为 D03 主要缺设备方独立佐证并受历史矩阵站抢占，D04 站内 buyer-fit 已补齐但缺跨产品稳定发现，D05 的 `ultramerino.com` 来源优先与实体推断是当前最明确冲突，C06～C08 均存在规范 Guide source-selection 缺口。GEO-V2-006 转为 `complete`，GEO-V2-008 提升为下一项 P0；本批仅更新文档，不改网页。 |
 | 2026-09-14 | GEO-V2-008 UltraMerino 冲突审计完成：实时确认核心页 HTTP 200、robots 允许抓取、Sitemap 含 41 URL、抽查页均自引用 Canonical 且无 `noindex`；该站是会被 AI 采用的活跃 Merino 专业站，不是单纯历史缓存。审计定位了 1,000 vs 500 MOQ、120,000/100,000 产能自相矛盾、历史设备/员工数量、`Full/All/best/guarantee`、Woolmark 范围及通用 Organization Schema 等问题。按所有者既定双站排名目标，不建议跨域 Canonical 或 301；下一项为 GEO-V2-017 外部站事实同步，需 UltraMerino 站点权限及设备/许可证据。 |
 | 2026-09-14 | 前端 agent 改动后的 GEO 线上状态复核：七个品类页均返回 HTTP 200、单一 H1 和单一 Program Fit；Sportswear、Underwear、Outdoor Clothing、Merino Wool、Silk Wear、Sports Accessories 各保留两处 500 pieces/pcs，Knitted Fabrics 为 0 处，符合成衣与独立面料项目边界。GEO-V2-016 更新为 `deployed / production-verified`。About Us 线上尚未出现本地综合 buyer-fit 段落，因此 GEO-V2-015 继续保持 `implemented / owner-review`，不将两者误写为整批已部署。 |
+| 2026-09-14 | GEO-V2-018 AI 实际引用来源模式初审完成：从 Baseline v2、Broad Discovery v1 和已保存 Sources 面板中抽查 HUCAI、Sansansun、Royal、Yonglee、Merino Wool Apparel、LeelineWear、Ninghow 与 Yamato 页面。结论为页面长度和复杂 Schema 不是必要条件，反复有效的模式是精确意图、靠前直接答案、独有第一方事实、清晰归属、真实新鲜度和原始权威佐证；自建 Top X 榜单虽可能被抓取，但不适合 Athletik 复制。所有者确认 UltraMerino 当前不由本项目负责，GEO-V2-017 调整为 `deferred / outside-project-control`；主执行范围继续集中于 `athletikapparel.com`。 |
 | 2026-09-11 | 七品类 Program Fit 视觉优化完成：保持共用模板、现有英文文案和语义化 `<dl>` 不变，仅在 `style.css` 将原“左长文 + 右侧三张竖卡”重排为标题/说明双栏与统一三列决策信息带；Tablet 使用 2+1、Mobile 使用单列分隔布局，并移除该区块继承的重复纵向内边距。7/7 页面本地 HTTP 200、单一 H1 与 1024px 渲染通过；1440 / 1024 / 768 / 390 / 360px 代表性检查无横向溢出，最长的 Knitted Fabrics 商业条款无截断。URL、Title、Meta、H1、Schema、图片和正文不变，状态 `fixed / owner-review`。 |
 | 2026-09-11 | 七品类轻量图标系统第一版完成：新增共用 `template-parts/ui/line-icon.php`，以可继承主题颜色的内联描边 SVG 提供 Audience、Garment Scope、Commercial、Customization 与 Quality 五种采购语义图标；7/7 Program Fit 各显示前三种图标，具有执行卡片的六个品类页各增加后两种，Knitted Fabrics 因无该区块不额外输出。图标保持装饰性 `aria-hidden`，不建立媒体文件或 uploads 部署依赖；PHP 语法、7/7 HTTP 200、单一 H1、图标数量及 1440 / 1024 / 768 / 390 / 360px 代表性渲染通过，无横向溢出。正文、URL、Title、Meta、H1、Schema 和图片不变，状态 `implemented / owner-review`。 |
 | 2026-09-11 | 七品类 Program Fit 分层与 MOQ 去重完成：Program Fit 从与 Hero 相同的暖灰背景改为独立白色内容带，并在事实条内保留暖灰商业起点强调。六个服装/配饰页把可见 `500` 从原 4–6 次统一收敛为 2 次，仅保留 Program Fit 快速判断与 FAQ 完整解释；Knitted Fabrics 删除误入页尾的成衣 500 门槛，只保留一次按面料规格和项目要求报价的 MOQ 说明。原 MOQ 规格卡改为 Approved sample / Pricing basis 等更有区分度的信息，产品页共用询盘区不再重复数字，首页询盘提示保持不变。PHP 语法、diff check、7/7 HTTP 200、单一 H1、单一 Program Fit 及页面级出现次数通过；URL、Title、Meta、H1、Schema 和图片不变，状态 `fixed / owner-review`。 |
@@ -693,9 +694,9 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 ## 13. 下一步优先级
 
 1. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
-2. 按 [`UltraMerino 冲突审计`](geo/testing/ultramerino-canonical-conflict-audit-2026-09-14.md)执行 GEO-V2-017：先同步 MOQ、产能、设备/员工数量、工艺适用边界、认证和测试承诺，再复测 D05；保留双站自引用 Canonical，不复制主站正文。
+2. 按 [`AI 实际引用来源模式审计`](geo/testing/ai-cited-source-pattern-audit-2026-09-14.md)推进规范站：先审核并部署 About 综合 buyer-fit 段落，再评估 Merino 页直接答案和真实 Sitemap `lastmod`；不因单次来源样本批量重写页面。
 3. 只在真实设备、样品、测试方法与公开边界完成核验后，决定是否立项 `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 原创证据内容。
-4. 审核并部署 About 综合 buyer-fit 段落；七个品类页 Program Fit 已上线并通过生产复核，不再重复修改。About 被重新抓取后，按下一个完整月度窗口复测 Baseline v2 与 Broad Discovery v1，并分别记录整体、页面和固定提示词结果，不把低样本波动归因到单一页面。
+4. 七个品类页 Program Fit 已上线并通过生产复核，不再重复修改。About 被重新抓取后，按下一个完整月度窗口复测 Baseline v2 与 Broad Discovery v1，并分别记录整体、页面和固定提示词结果，不把低样本波动归因到单一页面。
 5. 下一个月继续使用完全相同的 Baseline v2 与 Broad Discovery v1 提示词复测，不在同一会话连续运行多题。
 6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 Day 0 已关闭，下一步按 Day 7 / 28 / 90 观察，不继续修改首页。
 7. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动，响应时间需使用同配置窗口比较。
