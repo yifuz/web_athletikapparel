@@ -108,14 +108,13 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 2. Client logos
 3. Product categories
 4. Capability proof
-5. Fabric-production equipment proof
-6. Why Athletik
-7. Style gallery / Lookbook
-8. Numbers proof
-9. Process snapshot
-10. Partnership trust
-11. Certifications
-12. Inquiry CTA
+5. Why Athletik
+6. Style gallery / Lookbook
+7. Numbers proof
+8. Process snapshot
+9. Partnership trust
+10. Certifications
+11. Inquiry CTA
 
 此外已增加稳定的 Technical Guides 入口。`latest-posts` 在没有普通博客文章时保持禁用。
 
@@ -705,7 +704,6 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-14 | GEO-V2-020 社交分发包完成：为已审核的供应商比较指南准备 LinkedIn 单图正文与 1200 × 627 JPG、Instagram Carousel/Story 正文、独立 UTM、替代文字、发布说明和七日数据模板，保留 Athletik 作为发布者及候选之一的披露。检查生产母文章 URL 返回 HTTP 404，因此 LinkedIn/Instagram 未发布，状态记录为 `ready-to-post / website-deployment-blocked`；Instagram 7 张 Carousel 图片仍需所有者提供或另行制作，不能把素材包完成写成平台已发布。素材包位于 `D:\B-视频素材\营销内容包\2026-09-top-sportswear-manufacturers-china\`。 |
 | 2026-09-14 | 技术文章阅读、宽表与轨道对齐优化：共享文章内容框架从站点通用 1200px 容器独立扩展为 87.5rem，宽屏 Hero 使用“15rem 目录占位轨道 + 标题内容 + 30rem 封面图”三列，Breadcrumb、H1、摘要与下方正文精确共用右侧起始线；正文区对应为固定目录栏与主内容栏。正文取消整体 68ch 上限，段落、标题、列表与提示框改用 72ch 阅读宽度，比较表可使用完整内容栏并保持 60rem 最小宽度。目录双栏断点延后到 80rem，较小桌面、平板和手机保持单栏，宽表通过已有可聚焦横向滚动容器浏览。共享模板的 5 篇技术文章自动受益；Top 5 页面本地 HTTP 200、单一 H1、目录和表格结构通过，1440 / 1280px 标题与正文左边线一致，1024 / 768 / 360px 无整页横向溢出。正文、URL、Title、Meta、Schema 和图片不变，状态 `implemented / owner-review`。 |
 | 2026-09-14 | GEO-V2-020 社交 Feed 发布确认：LinkedIn 单图帖公开 URL 为 <https://www.linkedin.com/feed/update/urn:li:activity:7505180674052661248/>，公开页面可读取已批准正文、五家公司名单、发布者披露、短链接和单张图片；Instagram Feed 由所有者确认同日发布，但公开 URL、实际格式和 Story 状态尚未提供，保持 `unavailable`。两个 Feed 从 2026-09-22 起记录满七个完整自然日数据。母文章生产 URL 在发布后复核仍返回 HTTP 404，当前首要动作是部署 `/top-sportswear-manufacturers-china/` 并确认社交链接最终落到正确 UTM URL。 |
-| 2026-09-14 | 新增设备摄影素材完成本地全站分配：7 张原始 PNG 依据可见内容归为纱线准备、送纱、经编成形和卷装环节，不误标为 FLATLOCK / ACTIVESEAM；生成 21 个 480 / 800 / 1536w WebP，存放于 uploads 的 `production/equipment/`。共用 `equipment-gallery.php` 将 3 张精选图加入首页、Services 和 7 个产品页，将完整 7 图加入 About；Desktop 为 2–4 列网格，Mobile 为原生横向滑动，所有图片带固有尺寸、响应式候选、lazy/async 和描述性 alt。未新增 Equipment URL，URL、Title、Meta、H1 与 Schema 不变；当前状态 `implemented / owner-review / deployment-pending`，部署时需分别同步主题代码与 uploads 媒体。 |
 
 ---
 
