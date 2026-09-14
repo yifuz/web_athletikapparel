@@ -74,7 +74,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 - 可强调：自有生产设施、从纱线到成衣的垂直整合、FLATLOCK / ACTIVESEAM、
   Carbondry、Laser perforation、完整出口文件能力与区域覆盖。
 - 不公开工厂数量或分包安排，不杜撰认证、产能、客户或法律实体关系。
-- 已确认的网站数字：15+ 年、4,500+ sq m 自有设施、100,000+ pcs/month、3 continents。
+- 已确认的网站数字：15+ 年、4,500+ sq m 自有设施、30+ Yamato FLATLOCK machines、约 100 名缝纫员工、100,000+ pcs/month；Merrow ACTIVESEAM 与 HSAT-K5 可公开设备类型和用途，但不推断未提供的数量或型号。
 - 区域统一写作 `North America, Europe, and Asia-Pacific`，不再列出俄罗斯。
 - 正式网站文案使用面向北美和欧洲 B2B 买家的英文；内部 Markdown 文档默认使用简体中文。
 - agent 只有在用户明确要求或授权时才能起草长篇正文，且必须经过所有者审核后才能发布。
@@ -688,16 +688,18 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-11 | 七品类 Program Fit 分层与 MOQ 去重完成：Program Fit 从与 Hero 相同的暖灰背景改为独立白色内容带，并在事实条内保留暖灰商业起点强调。六个服装/配饰页把可见 `500` 从原 4–6 次统一收敛为 2 次，仅保留 Program Fit 快速判断与 FAQ 完整解释；Knitted Fabrics 删除误入页尾的成衣 500 门槛，只保留一次按面料规格和项目要求报价的 MOQ 说明。原 MOQ 规格卡改为 Approved sample / Pricing basis 等更有区分度的信息，产品页共用询盘区不再重复数字，首页询盘提示保持不变。PHP 语法、diff check、7/7 HTTP 200、单一 H1、单一 Program Fit 及页面级出现次数通过；URL、Title、Meta、H1、Schema 和图片不变，状态 `fixed / owner-review`。 |
 | 2026-09-11 | 七品类四步流程视觉统一完成：Sportswear、Underwear、Knitted Fabrics 原三项规格条改为品类化四步流程；Outdoor Clothing、Merino Wool、Silk Wear、Sports Accessories 原五个节点将 Sample Development 与 Approval 合并，在不删除批准门槛的前提下统一为 Project Brief & Quotation → Development, Sampling & Approval → Bulk Production & Quality Control → Export / Packing & Delivery。共用模板采用深色舞台、居中标题、四张暖白图标卡和说明分隔线，新增 Inquiry、Sampling、Production、Shipping 四种双色线性 SVG。7/7 页面 HTTP 200、四步/四图标、无旧 Specs 区块、单一 H1 和原 MOQ 出现次数通过；1440 / 1024 为四列、768 为两列、360 为单列，代表性最长页面无横向或卡片内容溢出。新增流程英文为 `draft / owner-review`；URL、Title、Meta、H1、Schema、图片及首页流程保持不变。 |
 | 2026-09-12 | 首页轻量图标扩展完成：复用共用线性 SVG 组件，将 Manufacturing Proof Points 原 01–04 编号替换为 Vertical Integration、Technical Construction、Experience、Full-Package OEM/ODM 四种制造语义图标；Process Snapshot 保留 01–04 顺序，同时增加 Sampling、Production、Quality、Shipping 图标。图标均为装饰性 `aria-hidden`，沿用主题双色与间距变量，不新增图片或 uploads 部署依赖；首页 HTTP 200、单一 H1、两组各 4 张卡片/4 个图标、旧 Proof 编号移除，代表性产品页流程图标保持正常。正文、模块顺序、URL、Title、Meta、Schema 和图片不变，状态 `implemented / owner-review`。 |
+| 2026-09-14 | 所有者确认同方站点中的机器数量、员工数字、产能和已发布认证范围可作为 Athletik 规范站的一方事实使用；当前统一产能为 `100,000+ pieces per month`，可公开 `30+ Yamato FLATLOCK machines` 与约 100 名缝纫员工。Merrow ACTIVESEAM 与 HSAT-K5 可公开设备类型和用途，未确认的台数、型号或性能数字不推断。 |
+| 2026-09-14 | GEO-V2-019 主站证据增强本地实施：About Us 综合 buyer-fit 与生产设施段落统一到 Zhangjiagang、500 pieces/style、约 100 名缝纫员工和 100,000+ pieces/month；Merino FAQ 增加可独立提取的 Merino base layers + 30+ Yamato FLATLOCK + stitch type 607 + OEM/ODM + MOQ 直接答案；首页 Manufacturing Proof Points 改为 own integrated facility、30+ Yamato、Merrow ACTIVESEAM 与 HSAT-K5 四类一方证据，并补充按面料、部位、伸长要求和批准样衣选择工艺的边界。Rank Math Page Sitemap 为首页、About、Merino 写入本次真实更新时间，其余页面保留各自批次时间并升级一次性缓存标记；建立月度 AI 引用来源审计模板。URL、Title、H1 和页面所有权不变，状态 `implemented / owner-approved / deployment-pending`。 |
 
 ---
 
 ## 13. 下一步优先级
 
-1. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
-2. 按 [`AI 实际引用来源模式审计`](geo/testing/ai-cited-source-pattern-audit-2026-09-14.md)推进规范站：先审核并部署 About 综合 buyer-fit 段落，再评估 Merino 页直接答案和真实 Sitemap `lastmod`；不因单次来源样本批量重写页面。
-3. 只在真实设备、样品、测试方法与公开边界完成核验后，决定是否立项 `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 原创证据内容。
-4. 七个品类页 Program Fit 已上线并通过生产复核，不再重复修改。About 被重新抓取后，按下一个完整月度窗口复测 Baseline v2 与 Broad Discovery v1，并分别记录整体、页面和固定提示词结果，不把低样本波动归因到单一页面。
-5. 下一个月继续使用完全相同的 Baseline v2 与 Broad Discovery v1 提示词复测，不在同一会话连续运行多题。
+1. 部署并执行 GEO-V2-019 Day 0 验收：核对首页、About、Merino 的可见事实、单一 H1、Canonical、robots、结构化数据和 Page Sitemap `lastmod`，再按需提交 GSC 重新抓取。
+2. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
+3. 以首页四类生产证据为入口，收集 Yamato FLATLOCK、Merrow ACTIVESEAM 与 HSAT-K5 的当前实拍、铭牌、样品和测试边界；材料齐备后再决定是否立项 `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 原创证据内容。
+4. 七个品类页 Program Fit 已上线并通过生产复核，不再重复修改。About 与 Merino 被重新抓取后，按下一个完整月度窗口复测 Baseline v2 与 Broad Discovery v1，并分别记录整体、页面和固定提示词结果，不把低样本波动归因到单一页面。
+5. 下一个月使用完全相同的 Baseline v2 与 Broad Discovery v1 提示词及 [`AI 引用来源月度审计模板`](geo/testing/ai-cited-source-monthly-template.md)复测，不在同一会话连续运行多题。
 6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 Day 0 已关闭，下一步按 Day 7 / 28 / 90 观察，不继续修改首页。
 7. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动，响应时间需使用同配置窗口比较。
 8. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。

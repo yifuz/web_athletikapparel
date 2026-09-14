@@ -1309,14 +1309,15 @@ function myathletik_sync_home_rank_math_title() {
 add_action( 'init', 'myathletik_sync_home_rank_math_title', 30 );
 
 /**
- * Invalidate the Rank Math page and index Sitemap caches once for SEO-V2-015.
+ * Invalidate the Rank Math page and index Sitemap caches once per managed
+ * Sitemap release.
  *
  * Rank Math stores generated XML independently of the page response, so a
  * code-first template change does not trigger its normal save_post watcher.
  * The release marker keeps this invalidation scoped to one deployment.
  */
-function myathletik_invalidate_rank_math_sitemap_cache_v2_015() {
-	$release = 'seo-v2-015-20260831';
+function myathletik_invalidate_rank_math_sitemap_cache_release() {
+	$release = 'geo-v2-019-20260914';
 
 	if ( get_option( '_myathletik_sitemap_cache_release' ) === $release ) {
 		return;
@@ -1330,7 +1331,7 @@ function myathletik_invalidate_rank_math_sitemap_cache_v2_015() {
 	\RankMath\Sitemap\Cache::invalidate_storage( '1' );
 	update_option( '_myathletik_sitemap_cache_release', $release, false );
 }
-add_action( 'init', 'myathletik_invalidate_rank_math_sitemap_cache_v2_015', 99 );
+add_action( 'init', 'myathletik_invalidate_rank_math_sitemap_cache_release', 99 );
 
 /**
  * Use the sustainability-page-specific document title.

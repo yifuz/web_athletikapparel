@@ -7,7 +7,8 @@ team size.
 GUARDRAILS (strict on this page):
 - "Vertically integrated / our own facility / our own fabric mill" only. NEVER
   state factory count or that orders are subcontracted.
-- Do NOT discuss team size or the regional merchandiser team headcount.
+- The owner-approved public production figure is around 100 sewing workers.
+  Do not add other team-size or regional merchandiser headcount claims.
 - Location may be stated: Zhangjiagang / Suzhou area, China.
 - Numbers consistent: 15+ yrs · 4,500+ m² own facility · 100,000+ pcs/month.
 - Voice: professional + warm. No stock photos. `[CONTENT]`/`[IMAGE]` are
@@ -63,8 +64,8 @@ company started, milestones, what you specialize in. Optional.]
 > (including bamboo charcoal).
 
 **Our Own Facility**
-> A 4,500+ m² production facility with the capacity to handle 100,000+ pieces
-> per month, scaling with your order without compromising quality or lead times.
+> A 4,500+ m² production facility with around 100 sewing workers and capacity
+> of 100,000+ pieces per month for approved production programs.
 
 ================================================================
 ## Who we serve

@@ -102,7 +102,7 @@ Yonglee 和 Merino Wool Apparel 的样本说明，短页面也能被采用；原
 
 ### P1：建立主站原创生产证据层
 
-1. 为 D03 设备能力准备不依赖数量的当前证据：Yamato FLATLOCK、Merrow ACTIVESEAM、HSAT-K5 的机器类型、实际用途、可公开现场图片或视频，以及可确认的型号/铭牌。
+1. 为 D03 建立当前设备证据：公开所有者确认的 30+ Yamato FLATLOCK machines、Merrow ACTIVESEAM 和 HSAT-K5 设备类型及实际用途；未提供的 Merrow/HSAT 台数和具体型号不推断。后续补充可公开现场图片、视频或铭牌。
 2. 对 C06～C08 做“证据补强”而非全文重写：工艺对比使用真实样品两面，tech pack 使用已脱敏样张或检查项，OEM 尽调使用现场过程记录。
 3. 技术定义优先连接设备商和标准机构；商业能力由 Athletik 自己的生产证据支持。
 

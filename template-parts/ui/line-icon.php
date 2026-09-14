@@ -22,6 +22,8 @@ $allowed_icons = array(
 	'shipping',
 	'integration',
 	'construction',
+	'activeseam',
+	'elastic',
 	'experience',
 	'oem',
 );
@@ -72,6 +74,12 @@ if ( ! in_array( $icon_name, $allowed_icons, true ) ) {
 	<?php elseif ( 'construction' === $icon_name ) : ?>
 		<path d="M4 5v14M20 5v14M4 8h16M4 16h16"></path>
 		<path class="ma-line-icon__accent" d="M8 5v14m4-14v14m4-14v14"></path>
+	<?php elseif ( 'activeseam' === $icon_name ) : ?>
+		<path d="M4 7h16M4 17h16"></path>
+		<path class="ma-line-icon__accent" d="m5 12 2-2 2 4 2-4 2 4 2-4 2 4 2-2"></path>
+	<?php elseif ( 'elastic' === $icon_name ) : ?>
+		<rect x="3" y="7" width="18" height="10" rx="5"></rect>
+		<path class="ma-line-icon__accent" d="M7 7v10m3-10v10m4-10v10m3-10v10"></path>
 	<?php elseif ( 'experience' === $icon_name ) : ?>
 		<circle cx="12" cy="12" r="8"></circle>
 		<path d="M12 4V2m0 20v-2m8-8h2M2 12h2"></path>

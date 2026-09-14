@@ -1403,6 +1403,19 @@ body.home .container.grid-container {
   line-height: var(--ma-lh-body);
 }
 
+.ma-home-proof__note {
+  max-width: var(--ma-reading-width);
+  margin: var(--ma-space-5) 0 0;
+  color: var(--ma-color-muted);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-home-proof__note a {
+  display: inline;
+  margin-left: var(--ma-space-1);
+  font-weight: 700;
+}
+
 @media (min-width: 48rem) {
   .ma-home-proof__grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));

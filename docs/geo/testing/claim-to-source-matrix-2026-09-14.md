@@ -37,7 +37,7 @@
 | 推荐所需声明 | 当前规范第一方证据 | AI 当前采用情况 | 允许公开的边界 | 缺失证据 / 动作 |
 |---|---|---|---|---|
 | Athletik 是中国 cut-and-sew technical knitwear OEM/ODM | [About Us](https://www.athletikapparel.com/about-us/)、[首页](https://www.athletikapparel.com/) | 两个产品均第 1；ChatGPT 使用 About，Google 使用历史站 | 使用公开品牌 Athletik Clothing；生产运营位于 Zhangjiagang, China | 不需要新增重复公司定义 |
-| 使用 Yamato FLATLOCK 与 Merrow ACTIVESEAM 设备 | [About Us](https://www.athletikapparel.com/about-us/) | ChatGPT 的规范与历史来源混合；Google 只采用历史站 | 可写当前设备能力；不公开未经核准的机器数量、型号、序列号或固定产能 | 最高价值独立证据是 Merrow Customer Story / 技术案例；当前仍受既有 deferred 决策约束 |
+| 使用 Yamato FLATLOCK 与 Merrow ACTIVESEAM 设备 | [About Us](https://www.athletikapparel.com/about-us/) | ChatGPT 的规范与历史来源混合；Google 只采用历史站 | 可公开 30+ Yamato FLATLOCK machines、Merrow ACTIVESEAM 和 HSAT-K5 设备类型；未提供的 Merrow/HSAT 台数、具体型号或序列号不推断；公开产能统一为 100,000+ pieces/month | 最高价值独立证据仍是 Merrow Customer Story / 技术案例；当前受既有 deferred 决策约束 |
 | 工业参考为四针六线 stitch type 607 | [FLATLOCK vs OVERLOCK Guide](https://www.athletikapparel.com/flatlock-vs-overlock-technical-knitwear/) | 两个产品都未把该 Guide 作为 D03 的主要规范来源 | 写 `stitch type 607`，不写 `ISO 607 standard/certification` | 保留 ISO 4915、Yamato 与 Coats 等一手技术来源；不新增无条件强度/舒适度数字 |
 | ACTIVESEAM 与常规 FLATLOCK 是不同结构 | 同一 FLATLOCK Guide | D03 回答基本能区分，但来源归属不稳定 | ACTIVESEAM 是 Merrow 命名平台；具体效果取决于面料、线材、设置和测试 | 原创内容需有真实设备、样品、应用部位和测试边界后再立项 |
 
@@ -91,7 +91,7 @@
 
 | 优先级 | 缺口 | 为什么现在做 | 完成标准 |
 |---|---|---|---|
-| P0 | `ultramerino.com` 与规范 Merino 页冲突审计 | 已实际影响 ChatGPT D05 来源选择和实体推断 | 已完成；见 [`UltraMerino 冲突审计`](ultramerino-canonical-conflict-audit-2026-09-14.md)。下一步同步外部站事实，不自动重定向 |
+| P0 | `ultramerino.com` 与规范 Merino 页冲突审计 | 已实际影响 ChatGPT D05 来源选择和实体推断 | 已完成；事实可作为所有者确认的一方输入，但该站不由本项目负责；主站产能统一为 100,000+，不自动重定向或安排外站修改 |
 | P1 | 历史矩阵站 D03 证据入口审计 | Google D03 第 1但完全未引规范站 | 至少覆盖 `athletik.com.cn` 与 `powermerino.com` 的相关声明、索引和规范替代路径 |
 | P1 | Merrow 独立编辑佐证决策 | 一项高质量设备方案例可同时支持 D03、C07 和推荐可信度 | 所有者重新确认是否解除 deferred；未解除则保持不发送、不提交 |
 | P1 | C06 / C08 原创证据补充 | 规范指南可抓取但跨产品未被选择 | 先形成真实、可公开的样例/记录清单；没有材料则不改正文 |
@@ -100,6 +100,6 @@
 ## 7. 当前决策
 
 1. GEO-V2-006 的矩阵工作完成；不再把“规范页存在”与“AI 实际引用规范页”混写。
-2. GEO-V2-008 已完成；下一项执行 GEO-V2-017 UltraMerino 事实同步，再扩展到 D03 的历史矩阵站。
+2. GEO-V2-008 已完成；UltraMerino 当前不由本项目负责，GEO-V2-017 保持 deferred。下一项执行 GEO-V2-019 主站可引用事实与设备证据补强。
 3. 暂不新增另一篇 top-list 或泛供应商指南；现阶段的推荐缺口主要是独立佐证和规范来源归属。
 4. 暂不修改刚完成的七品类 Program Fit；等待部署、抓取和下一个完整月度复测窗口。

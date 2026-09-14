@@ -660,7 +660,7 @@ add_filter( 'rank_math/json_ld', 'myathletik_rank_math_product_category_schema_i
  * @return int Unix timestamp in UTC.
  */
 function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
-	$latest = strtotime( '2026-08-31 03:37:11 UTC' );
+	$latest = strtotime( '2026-09-14 02:50:00 UTC' );
 
 	if ( '' === $url ) {
 		return $latest;
@@ -669,10 +669,6 @@ function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
 	$path = wp_parse_url( $url, PHP_URL_PATH );
 	$path = is_string( $path ) ? '/' . trim( $path, '/' ) : '';
 	$path = '/' === $path ? $path : trailingslashit( $path );
-
-	if ( '/knitted-fabrics-manufacturer/' === $path ) {
-		return $latest;
-	}
 
 	if (
 		in_array(
@@ -693,8 +689,25 @@ function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
 		return $latest;
 	}
 
-	if ( in_array( $path, array( '/sportswear-manufacturer/', '/underwear-manufacturer/' ), true ) ) {
-		return strtotime( '2026-08-11 02:30:00 UTC' );
+	if ( in_array( $path, array( '/about-us/', '/merino-wool-manufacturer/' ), true ) ) {
+		return $latest;
+	}
+
+	if (
+		in_array(
+			$path,
+			array(
+				'/sportswear-manufacturer/',
+				'/underwear-manufacturer/',
+				'/outdoor-clothing-manufacturer/',
+				'/silk-wear-manufacturer/',
+				'/knitted-fabrics-manufacturer/',
+				'/sports-accessories-manufacturer/',
+			),
+			true
+		)
+	) {
+		return strtotime( '2026-09-11 02:30:00 UTC' );
 	}
 
 	return strtotime( '2026-08-08 02:30:00 UTC' );

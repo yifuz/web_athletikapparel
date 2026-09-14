@@ -974,8 +974,8 @@ function myathletik_product_category_data() {
 			'buyer_questions_collapsible' => true,
 			'buyer_questions' => array(
 				array(
-					'question' => __( 'What is the MOQ for Merino wool clothing?', 'myathletik-child' ),
-					'answer'   => sprintf( __( 'The public garment MOQ is %s pieces per style. Material, color, size allocation, sampling, testing, and final production terms are confirmed in the project quotation.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
+					'question' => __( 'Can Athletik manufacture Merino wool base layers with industrial FLATLOCK, and what is the MOQ?', 'myathletik-child' ),
+					'answer'   => sprintf( __( 'Yes. Athletik manufactures Merino wool base-layer tops and bottoms on an OEM/ODM basis and operates more than 30 Yamato FLATLOCK machines for four-needle, six-thread stitch type 607 construction. FLATLOCK is assigned by seam location, fabric, stretch requirements, and the approved sample rather than applied automatically to every seam. The public garment MOQ is %s pieces per style; material, color, size allocation, sampling, testing, and final production terms are confirmed in the project quotation.', 'myathletik-child' ), number_format_i18n( myathletik_public_moq_pieces() ) ),
 				),
 				array(
 					'question' => __( 'What should a buyer provide before Merino sampling?', 'myathletik-child' ),

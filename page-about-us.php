@@ -24,7 +24,7 @@ $differentiators = array(
 	),
 	array(
 		'title' => __( 'Our Own Facility', 'myathletik-child' ),
-		'copy'  => __( 'A 4,500+ sq m production facility with the capacity to handle 100,000+ pieces per month, scaling with your order without compromising quality or lead times.', 'myathletik-child' ),
+		'copy'  => __( 'A 4,500+ sq m production facility with around 100 sewing workers and capacity of 100,000+ pieces per month for approved production programs.', 'myathletik-child' ),
 	),
 );
 

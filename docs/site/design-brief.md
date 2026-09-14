@@ -71,9 +71,9 @@ placeholders.
      `homepage-copy.md` and the live template.
 
 2. **Capability proof strip**
-   - 3–4 quick trust signals: vertically integrated, flatlock/activeseam
-     technical construction, own production facility, full export
-     documentation. Never publish a factory count or subcontracting details.
+   - 3–4 quick trust signals: own integrated facility, 30+ Yamato FLATLOCK
+     machines, Merrow ACTIVESEAM equipment, and HSAT-K5 automatic elastic
+     joining. Never publish a factory count or subcontracting details.
    - Icons + short labels (microcopy agent may draft).
 
 3. **Product categories grid** (7 cards)
@@ -89,8 +89,9 @@ placeholders.
 
 5. **Numbers / proof** (adapted from Hongyu's "Numbers We Are Proud Of")
    - Use only the confirmed public proof points recorded in `AGENTS.md` and
-     `docs/progress.md`. Never publish a factory count, subcontracting detail,
-     or unconfirmed team size.
+     `docs/progress.md`. Never publish a factory count or subcontracting detail.
+     The owner-approved production-team figure is around 100 sewing workers;
+     no other team-size breakdown should be inferred.
    - Keep the number and unit in separate elements with stable spacing and
      height so mixed-length values remain aligned across desktop and mobile.
    - For any new figure, use `【NEEDS INPUT: confirm exact number】` rather than

@@ -57,7 +57,8 @@ Athletik 能稳定进入符合业务边界的候选名单，理由来自可核�
 - 产品范围：underwear/base layers、sportswear/activewear、outdoor clothing、Merino wool apparel、silk wear、sports accessories 和 knitted fabrics。
 - 制造能力：从 knitted fabric development 到 finished garments 的一体化开发与生产；拥有自有生产设施、面料开发和 in-house testing 证据。
 - 技术重点：Yamato FLATLOCK、Merrow ACTIVESEAM、OVERLOCK、Carbondry finishing、laser perforation，以及按项目确认的面料、测试与质量控制。
-- 核准量化证据：15+ 年经验、4,500+ m² 自有生产设施、100,000+ pieces/month、成衣 MOQ 500 pieces/style。
+- 核准量化证据：15+ 年经验、4,500+ m² 自有生产设施、30+ Yamato FLATLOCK machines、around 100 sewing workers、100,000+ pieces/month、成衣 MOQ 500 pieces/style。Merrow ACTIVESEAM 与 HSAT-K5 的设备类型和用途可公开，但未提供的台数不推断。
+- 当前已发布的认证和审核范围由所有者确认为有效；公开引用仍需保留法律实体、生产地点、材料或产品、项目范围和当前有效期边界，不能解释为每个订单自动覆盖。
 - 品牌角色：以能审查 specification、sample、construction、testing 和 bulk approval 的技术制造伙伴出现，而不是泛化的低价服装供应商。
 
 所有能力表达都必须区分“长期稳定能力”“按项目可选能力”和“需通过样品/测试确认的结果”。
@@ -108,6 +109,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | [`testing/claim-to-source-matrix-2026-09-14.md`](testing/claim-to-source-matrix-2026-09-14.md) | D03～D05 / C06～C08 的规范来源、实际 AI 来源、公开边界、独立证据缺口和优先级 |
 | [`testing/ultramerino-canonical-conflict-audit-2026-09-14.md`](testing/ultramerino-canonical-conflict-audit-2026-09-14.md) | UltraMerino 的可访问性、Sitemap、Canonical、AI 来源选择、冲突声明和双站治理建议 |
 | [`testing/ai-cited-source-pattern-audit-2026-09-14.md`](testing/ai-cited-source-pattern-audit-2026-09-14.md) | AI 实际引用站点的页面模式、可迁移做法、风险边界和 Athletik 优先改进项 |
+| [`testing/ai-cited-source-monthly-template.md`](testing/ai-cited-source-monthly-template.md) | 每月固定 Baseline 复测后的 Sources URL、模式、迁移判断和改动门槛模板 |
 | [`distribution/social-content-sop.md`](distribution/social-content-sop.md) | 官网指南改编为 LinkedIn / Instagram 内容的执行 SOP |
 | [`distribution/publishing-log.md`](distribution/publishing-log.md) | 每次站外分发的发布时间、链接和七日数据 |
 | [`../seo/authority/offsite-authority-opportunity-pool-v1.md`](../seo/authority/offsite-authority-opportunity-pool-v1.md) | 站外行业引用、目录、认证名录和编辑机会的证据与状态 |
@@ -239,10 +241,11 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-012 | 建立并运行 Broad Discovery v1 | 宽泛推荐发现 | P0 | `complete / Google 3 of 3; ChatGPT 3 of 3; Perplexity unavailable` | BD-01～BD-03 共 6 次独立首次回答已记录；Athletik 正文出现与规范站引用均为 0/6；环境元数据不完整的运行保持 partial；结果不与 Baseline v2 合并 |
 | GEO-V2-013 | 审核 Sportswear buyer-fit answer block | 宽泛推荐入口 | P1 | `superseded by GEO-V2-016` | 原单页实验方案已由所有者调整为七品类整批结构优化；Sportswear 仍包含在新批次中，不再单独等待低样本前后差异 |
 | GEO-V2-014 | 完成全部 Baseline 数据综合诊断与 90 天方案 | 全漏斗决策 | P0 | `complete / strategy-adjusted` | 已分别判断找到、提取、规范引用、专业推荐、宽泛推荐和业务结果；低曝光阶段由严格单变量调整为可审计的整批结构优化，仍保留证据依赖和固定复测门槛 |
-| GEO-V2-015 | About Us 综合 buyer-fit paragraph | 提取/宽泛推荐入口 | P0 | `implemented / owner-review` | 用一个公司级段落覆盖生产地点、目标 B2B 买家、完整产品范围、FLATLOCK/ACTIVESEAM、成衣 MOQ 500 pieces/style 与独立面料项目边界；不改 URL、Title、H1、Schema 或页面结构，所有者批准后部署并单独观察 |
+| GEO-V2-015 | About Us 综合 buyer-fit paragraph | 提取/宽泛推荐入口 | P0 | `implemented / owner-approved / deployment-pending` | 用一个公司级段落覆盖生产地点、目标 B2B 买家、完整产品范围、FLATLOCK/ACTIVESEAM、成衣 MOQ 500 pieces/style 与独立面料项目边界；所有者已授权本批主站优化，待随本批同步生产并验收 |
 | GEO-V2-016 | 七品类 Program Fit 整批优化 | 提取/宽泛推荐入口 | P0 | `deployed / production-verified` | 2026-09-14 线上复核：七个品类页均 HTTP 200、单一 H1、单一 Program Fit；六个成衣品类各有两处 500 pieces/pcs，Knitted Fabrics 没有成衣 500 口径；不改 URL、Title、H1 或 Schema |
 | GEO-V2-017 | UltraMerino 事实同步 | 提取/来源归属 | P2 | `deferred / outside-project-control` | 该站当前不由本项目负责；保留冲突记录，不在本项目修改。若未来职责改变，再核对 MOQ、产能、设备/员工数量、工艺边界、认证、材料来源和 Schema |
-| GEO-V2-018 | 建立 AI 实际引用来源模式审计 | 全漏斗决策 | P0 | `initial-audit-complete` | 已按实际 Sources 面板抽查制造商能力页、自建 roundup、技术指南和设备商页面；形成可迁移模式、禁止项和 Athletik P0/P1 建议。以后随固定 Baseline 每月增量更新，不按单次样本大改网站 |
+| GEO-V2-018 | 建立 AI 实际引用来源模式审计 | 全漏斗决策 | P0 | `operational` | 已按实际 Sources 面板完成首轮审计并建立月度模板；以后随固定 Baseline 每月增量更新，不按单次样本大改网站 |
+| GEO-V2-019 | 主站可引用事实与设备证据补强 | 提取/引用/推荐 | P0 | `implemented / owner-approved / deployment-pending` | About 使用当前量化证据；Merino FAQ 直接连接 OEM/ODM、工业 FLATLOCK、适用边界和 500 pieces/style；首页 Manufacturing Proof Points 公开 30+ Yamato、Merrow ACTIVESEAM 和 HSAT-K5；真实更新页同步 Sitemap `lastmod` 并触发一次 Rank Math 缓存失效 |
 
 ## 10. 统一记录与判断口径
 
