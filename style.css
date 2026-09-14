@@ -5115,12 +5115,12 @@ body.page .site-main.ma-technical-article {
 }
 
 .ma-technical-article__hero-inner,
-.ma-technical-article__cta-inner {
-  max-width: var(--ma-container);
-}
-
 .ma-technical-article__layout {
   max-width: var(--ma-article-container);
+}
+
+.ma-technical-article__cta-inner {
+  max-width: var(--ma-container);
 }
 
 .ma-technical-article__hero-inner {
@@ -5421,7 +5421,20 @@ body.page .site-main.ma-technical-article {
   justify-self: start;
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 80rem) {
+  .ma-technical-article__hero-inner {
+    grid-template-columns: var(--ma-article-sidebar-width) minmax(0, 1fr) minmax(0, var(--ma-article-media-width));
+    align-items: center;
+  }
+
+  .ma-technical-article__hero-copy {
+    grid-column: 2;
+  }
+
+  .ma-technical-article__hero-media {
+    grid-column: 3;
+  }
+
   .ma-technical-article__layout {
     grid-template-columns: var(--ma-article-sidebar-width) minmax(0, 1fr);
     gap: var(--ma-space-5);
