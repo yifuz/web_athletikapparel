@@ -103,6 +103,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | [`testing/prompt-baseline.md`](testing/prompt-baseline.md) | Baseline v1 历史快照、Baseline v2 固定提示词、逐次结果和实体冲突证据 |
 | [`testing/baseline-v2-post-batch-diagnosis-2026-09-11.md`](testing/baseline-v2-post-batch-diagnosis-2026-09-11.md) | Baseline v2 首批测试后的四阶段诊断、finding、证据缺口和最小行动顺序 |
 | [`testing/baseline-integrated-diagnosis-2026-09-11.md`](testing/baseline-integrated-diagnosis-2026-09-11.md) | 汇总 Baseline v1、v2、Broad Discovery、GSC 生成式曝光和分发证据的综合诊断与 90 天方案 |
+| [`testing/claim-to-source-matrix-2026-09-14.md`](testing/claim-to-source-matrix-2026-09-14.md) | D03～D05 / C06～C08 的规范来源、实际 AI 来源、公开边界、独立证据缺口和优先级 |
 | [`distribution/social-content-sop.md`](distribution/social-content-sop.md) | 官网指南改编为 LinkedIn / Instagram 内容的执行 SOP |
 | [`distribution/publishing-log.md`](distribution/publishing-log.md) | 每次站外分发的发布时间、链接和七日数据 |
 | [`../seo/authority/offsite-authority-opportunity-pool-v1.md`](../seo/authority/offsite-authority-opportunity-pool-v1.md) | 站外行业引用、目录、认证名录和编辑机会的证据与状态 |
@@ -225,9 +226,9 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-003 | 核实并完成 GEO-08 分发 | 引用发现入口 | P1 | `partial / LinkedIn-source-card` | 补录已被 Google 找到的 LinkedIn 帖子公开 URL、UTM 和时间；确认 Instagram/Story 状态，未发布部分审核执行 |
 | GEO-V2-004 | 补录 GEO-06/07 发布与七日数据 | 运营证据 | P1 | `overdue / owner-input` | 可得字段全部补录，不可得字段写 unavailable |
 | GEO-V2-005 | 启用 Bing Webmaster Tools AI 引用观测 | 引用 | P1 | `owner-action` | 站点已验证；AI Performance 可用则建立首个快照，不可用则记录 unavailable |
-| GEO-V2-006 | 建立 D03～D05 推荐证据矩阵 | 推荐 | P1 | `planned` | 每题至少有匹配事实、第一方 URL、第三方候选、缺失证据和公开边界 |
+| GEO-V2-006 | 建立 D03～D05 / C06～C08 claim-to-source 证据矩阵 | 引用/推荐 | P1 | `complete` | 已记录六题的匹配事实、规范第一方 URL、AI 实际来源、第三方候选、缺失证据与公开边界；见日期化矩阵 |
 | GEO-V2-007 | ACTIVESEAM 原创技术内容立项判断 | 提取/引用/推荐 | P1 | `conditional` | 原创生产证据和事实审核完成后批准 brief；不满足则 not-needed |
-| GEO-V2-008 | Merino 历史站与规范页冲突审计 | 提取/推荐 | P1 | `planned` | 确认所有权、索引、流量、引用、重复声明及处置建议；未经批准不改 URL/重定向 |
+| GEO-V2-008 | Merino 历史站与规范页冲突审计 | 提取/推荐 | P0 | `next` | 确认 `ultramerino.com` 所有权、可访问性、索引/Canonical、流量、引用、重复与冲突声明及处置建议；未经批准不改 URL/重定向 |
 | GEO-V2-009 | 每月一个可信站外佐证动作 | 推荐 | P1 | `external-input` | 获得可公开、可索引、信息准确的真实条目/编辑内容；未成功不写完成 |
 | GEO-V2-010 | 建立 GSC Generative AI 月度观测 | 找到/引用入口 | P0 | `baseline-established` | 首个三个月导出完整入档；以后使用完整 28 天可比窗口并保持各维度口径分离 |
 | GEO-V2-011 | 完成 Baseline v2 首批测试后四阶段诊断 | 全漏斗决策 | P0 | `complete` | 诊断分别覆盖找到、提取、引用与推荐；技术阻断、来源归属、证据债务和最小行动已分开记录 |
@@ -272,8 +273,8 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 ## 12. 当前准确状态
 
-截至 2026-09-11，Athletik 已完成规范站、实体基础、四篇技术指南、主要 Schema、索引和首轮社交分发；GSC 首个专用报表确认 29 次 Google 生成式 AI Property impressions，四篇指南均出现页面级链接曝光。Baseline v2 已完成 ChatGPT Search 8/8 与 Google AI Mode 8/8，Perplexity 因权限 unavailable；专业 D03～D05 已出现跨产品推荐，但 C06～C08 对应官网 Guide 在 6 次可用运行中仍为 0 次引用。
+截至 2026-09-14，Athletik 已完成规范站、实体基础、四篇技术指南、主要 Schema、索引和首轮社交分发；GSC 首个专用报表确认 29 次 Google 生成式 AI Property impressions，四篇指南均出现页面级链接曝光。Baseline v2 已完成 ChatGPT Search 8/8 与 Google AI Mode 8/8，Perplexity 因权限 unavailable；专业 D03～D05 已出现跨产品推荐，但 C06～C08 对应官网 Guide 在 6 次可用运行中仍为 0 次引用。
 
-Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。考虑到当前整体曝光样本不足，所有者决定不再把 About Us 与 Sportswear 当作需要逐项等待的严格单变量实验，而是先完成公司级 About buyer-fit 与七品类 Program Fit 整批结构优化，再按月观察整体、页面和固定提示词变化，不从低样本强行归因。claim-to-source 矩阵、历史站冲突治理和可信第三方佐证继续并行推进；完整诊断与 90 天方案见 [`testing/baseline-integrated-diagnosis-2026-09-11.md`](testing/baseline-integrated-diagnosis-2026-09-11.md)。
+Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。About 综合 buyer-fit 与七品类 Program Fit 已完成本地整批优化，前端视觉方案随后在共享结构上继续统一。D03～D05 / C06～C08 [`claim-to-source 证据矩阵`](testing/claim-to-source-matrix-2026-09-14.md)已完成，确认下一项 P0 是 `ultramerino.com` 与规范 Merino 页冲突审计；刚完成的品类页暂不重复修改，后续按月观察整体、页面和固定提示词变化，不从低样本强行归因。
 
 本对话可以用于规划、分析用户带回的 Temporary Chat 结果、更新证据和制定内容；不得作为中性测试环境。
