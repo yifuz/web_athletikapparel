@@ -118,6 +118,8 @@ $services_hero_srcset = implode(
 		</div>
 	</section>
 
+	<?php get_template_part( 'template-parts/shared/equipment-gallery', null, array( 'variant' => 'services' ) ); ?>
+
 	<section class="ma-services-process" aria-labelledby="ma-services-process-title">
 		<div class="ma-section-inner">
 			<div class="ma-section-heading">

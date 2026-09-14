@@ -337,6 +337,20 @@ if ( ! empty( $category['hero_video'] ) ) {
 		</div>
 	</section>
 
+	<?php
+	$equipment_heading = 'knitted-fabrics-manufacturer' === $category_slug
+		? __( 'Fabric production behind the material specification', 'myathletik-child' )
+		: __( 'Fabric production behind the product program', 'myathletik-child' );
+	get_template_part(
+		'template-parts/shared/equipment-gallery',
+		null,
+		array(
+			'variant' => 'product',
+			'heading' => $equipment_heading,
+		)
+	);
+	?>
+
 	<?php if ( ! empty( $category['assurance_cards'] ) && is_array( $category['assurance_cards'] ) ) : ?>
 	<section class="ma-product-section ma-product-assurance" aria-labelledby="ma-product-assurance-title">
 		<div class="ma-section-inner">

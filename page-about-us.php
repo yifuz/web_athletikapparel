@@ -76,6 +76,8 @@ get_header();
 		</div>
 	</section>
 
+	<?php get_template_part( 'template-parts/shared/equipment-gallery', null, array( 'variant' => 'about' ) ); ?>
+
 	<section class="ma-about-serve" aria-labelledby="ma-about-serve-title">
 		<div class="ma-section-inner ma-about-serve__grid">
 			<figure class="ma-about-image-slot ma-about-image-slot--secondary">

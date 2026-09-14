@@ -1359,6 +1359,121 @@ body.home .container.grid-container {
   text-underline-offset: 0.25em;
 }
 
+/* --- Shared: Fabric-production equipment proof --- */
+.ma-equipment-proof {
+  background: var(--ma-color-bg);
+}
+
+.ma-equipment-proof--home,
+.ma-equipment-proof--about {
+  background: var(--ma-color-surface);
+}
+
+.ma-equipment-proof__heading {
+  display: grid;
+  gap: var(--ma-space-4);
+  margin-bottom: var(--ma-space-5);
+}
+
+.ma-equipment-proof__heading h2 {
+  max-width: 18ch;
+  margin: 0;
+  color: var(--ma-color-text);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-h2);
+  line-height: 1.15;
+}
+
+.ma-equipment-proof__heading > p {
+  max-width: var(--ma-reading-width);
+  margin: 0;
+  padding-left: var(--ma-space-3);
+  border-left: 2px solid var(--ma-color-accent);
+  color: var(--ma-color-muted);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-equipment-proof__grid {
+  display: grid;
+  grid-auto-columns: 84%;
+  grid-auto-flow: column;
+  gap: var(--ma-space-3);
+  padding-bottom: var(--ma-space-2);
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ma-color-border) transparent;
+}
+
+.ma-equipment-proof__card {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  box-shadow: 0 12px 30px rgba(43, 39, 36, 0.07);
+  scroll-snap-align: start;
+}
+
+.ma-equipment-proof__card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.ma-equipment-proof__card figcaption {
+  padding: var(--ma-space-3) var(--ma-space-4);
+  color: var(--ma-color-text);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-small);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.ma-equipment-proof--services {
+  background: var(--ma-color-dark);
+}
+
+.ma-equipment-proof--services .ma-section-kicker {
+  color: rgba(250, 248, 245, 0.7);
+}
+
+.ma-equipment-proof--services .ma-equipment-proof__heading h2 {
+  color: var(--ma-color-white);
+}
+
+.ma-equipment-proof--services .ma-equipment-proof__heading > p {
+  color: rgba(250, 248, 245, 0.72);
+}
+
+@media (min-width: 48rem) {
+  .ma-equipment-proof__heading {
+    grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+    align-items: end;
+  }
+
+  .ma-equipment-proof__grid {
+    grid-auto-columns: auto;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-bottom: 0;
+    overflow: visible;
+  }
+}
+
+@media (min-width: 64rem) {
+  .ma-equipment-proof__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ma-equipment-proof--about .ma-equipment-proof__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 /* --- Home: Capability Proof --- */
 .ma-home-proof {
   background: var(--ma-color-bg);
