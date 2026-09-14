@@ -25,6 +25,15 @@ $image_url         = $media . ltrim( $article['featured_image'], '/' );
 $image_small_url   = $media . ltrim( $article['featured_small'], '/' );
 $references_kicker = ! empty( $article['references_kicker'] ) ? $article['references_kicker'] : __( 'Primary sources', 'myathletik-child' );
 $references_title  = ! empty( $article['references_title'] ) ? $article['references_title'] : __( 'Technical references', 'myathletik-child' );
+$related_articles  = array();
+
+foreach ( $article['related_articles'] ?? array() as $related_slug ) {
+	$related_article = myathletik_get_technical_article_data( $related_slug );
+
+	if ( $related_article && 'publish' === ( $related_article['status'] ?? '' ) ) {
+		$related_articles[ $related_slug ] = $related_article;
+	}
+}
 ?>
 
 <main id="primary" class="site-main ma-technical-article">
@@ -42,6 +51,8 @@ $references_title  = ! empty( $article['references_title'] ) ? $article['referen
 
 					<p class="ma-section-kicker"><?php echo esc_html( $article['kicker'] ); ?></p>
 					<h1 id="ma-technical-article-title"><?php echo esc_html( $article['title'] ); ?></h1>
+				</div>
+				<div class="ma-technical-article__hero-support">
 					<p class="ma-technical-article__lede"><?php echo esc_html( $article['intro'] ); ?></p>
 					<p class="ma-technical-article__meta">
 						<?php esc_html_e( 'Published by', 'myathletik-child' ); ?>
@@ -70,14 +81,40 @@ $references_title  = ! empty( $article['references_title'] ) ? $article['referen
 		</header>
 
 		<div class="ma-technical-article__layout">
-			<aside class="ma-technical-article__toc" aria-label="<?php esc_attr_e( 'Article contents', 'myathletik-child' ); ?>">
-				<p class="ma-technical-article__toc-title"><?php esc_html_e( 'On this page', 'myathletik-child' ); ?></p>
-				<ol>
-					<?php foreach ( $article['toc'] as $anchor => $label ) : ?>
-						<li><a href="#<?php echo esc_attr( $anchor ); ?>"><?php echo esc_html( $label ); ?></a></li>
-					<?php endforeach; ?>
-				</ol>
-			</aside>
+			<div class="ma-technical-article__rail">
+				<aside class="ma-technical-article__toc" aria-label="<?php esc_attr_e( 'Article contents', 'myathletik-child' ); ?>">
+					<p class="ma-technical-article__toc-title"><?php esc_html_e( 'On this page', 'myathletik-child' ); ?></p>
+					<ol>
+						<?php foreach ( $article['toc'] as $anchor => $label ) : ?>
+							<li><a href="#<?php echo esc_attr( $anchor ); ?>"><?php echo esc_html( $label ); ?></a></li>
+						<?php endforeach; ?>
+					</ol>
+				</aside>
+
+				<?php if ( $related_articles ) : ?>
+					<aside class="ma-technical-article__related" aria-labelledby="ma-technical-article-related-title">
+						<p id="ma-technical-article-related-title" class="ma-technical-article__related-title"><?php esc_html_e( 'Recommended guides', 'myathletik-child' ); ?></p>
+						<div class="ma-technical-article__related-list">
+							<?php foreach ( $related_articles as $related_slug => $related_article ) : ?>
+								<?php
+								$related_image_url    = $media . ltrim( $related_article['featured_small'], '/' );
+								$related_image_height = (int) round( 800 * $related_article['featured_height'] / $related_article['featured_width'] );
+								?>
+								<a class="ma-technical-article__related-card" href="<?php echo esc_url( home_url( '/' . $related_slug . '/' ) ); ?>">
+									<span class="ma-technical-article__related-media" aria-hidden="true">
+										<img src="<?php echo esc_url( $related_image_url ); ?>" width="800" height="<?php echo esc_attr( $related_image_height ); ?>" loading="lazy" decoding="async" alt="">
+									</span>
+									<span class="ma-technical-article__related-copy">
+										<span class="ma-technical-article__related-topic"><?php echo esc_html( $related_article['topic'] ); ?></span>
+										<span class="ma-technical-article__related-name"><?php echo esc_html( $related_article['title'] ); ?></span>
+									</span>
+								</a>
+							<?php endforeach; ?>
+						</div>
+						<a class="ma-technical-article__related-all" href="<?php echo esc_url( home_url( '/technical-guides/' ) ); ?>"><?php esc_html_e( 'View all technical guides', 'myathletik-child' ); ?> <span aria-hidden="true">→</span></a>
+					</aside>
+				<?php endif; ?>
+			</div>
 
 			<div class="ma-technical-article__body">
 				<?php

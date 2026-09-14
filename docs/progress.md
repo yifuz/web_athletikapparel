@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-09-11。
+最后更新：2026-09-14。
 
 ---
 
@@ -179,18 +179,24 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 2. <https://www.athletikapparel.com/flatlock-vs-overlock-technical-knitwear/>
 3. <https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/>
 4. <https://www.athletikapparel.com/evaluate-technical-knitwear-oem/>
+5. <https://www.athletikapparel.com/garment-quality-control-checklist/>
+
+本地新增、待视觉审核和部署：
+
+- `/top-sportswear-manufacturers-china/`
 
 实施要点：
 
 - 内容中心为稳定的数据驱动 Hub，只读取状态为 `publish` 的核准条目。
 - 首页、主导航、页脚和文章面包屑均有入口。
-- 三篇文章共用技术文章模板；每页只有一个 H1，并包含目录、正文、FAQ、参考资料、内部链接和询盘 CTA。
+- 当前本地 5 篇文章共用技术文章模板；每页只有一个 H1，并包含目录、正文、FAQ、参考资料、内部链接和询盘 CTA。
 - Rank Math 输出独立 title、description、canonical 以及对应的 Article、FAQPage、BreadcrumbList；
   Hub 输出 ItemList。
 - 未提供个人作者身份，因此公开 Organization 作为 Article 作者。
 - Publisher Schema 不再把美国实体法律名称与中国生产地址错误混用。
 - Hub 与文章 Hero 已压缩文字长度、统一全宽页面外壳，并减少桌面和移动端的面包屑、导语及元数据间距。
-- 三篇正文均经所有者审核后上线。
+- 2026-09-14 本地完成文章版式优化：H1 在正文轨道整行展开，摘要与主图位于下一行；左侧目录下增加两篇主题相关指南，不新增右栏，避免再次压缩正文和比较表格。
+- 既有四篇正文均经所有者审核后上线；新增供应商比较文章仍处于本地视觉审核阶段。
 - FLATLOCK vs OVERLOCK 文章使用真实 Yamato FLATLOCK 与 OVERLOCK 生产视频；
   Web 文件为静音 720 × 1280 H.264，并配有 JPEG poster。
 - Merrow ACTIVESEAM 与 HSAT-K5 在该文章中只作文字说明，没有使用视频。
