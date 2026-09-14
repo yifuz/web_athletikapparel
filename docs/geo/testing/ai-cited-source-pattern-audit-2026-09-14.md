@@ -32,7 +32,7 @@
 | 来源类型 | AI 可能采用的原因 | 对 Athletik 的意义 |
 |---|---|---|
 | 制造商产品/能力页 | 直接提供产品、设备、工艺、地点、MOQ 或产能事实 | 最适合借鉴页面意图和第一方证据组织 |
-| 制造商自建 Top X / roundup | 标题与宽泛推荐问题高度一致，便于抽取候选名单 | 可研究结构，但不适合复制其自我排名和竞品导流模式 |
+| 制造商自建 Top X / roundup | 标题与宽泛推荐问题高度一致，便于抽取候选名单 | 有真实检索与引用价值，但必须披露发布者利益关系、给出透明方法与来源，并用受控试验验证是否改善 Athletik 的发现和推荐，而非批量自我排名 |
 | 设备商、标准机构和行业权威 | 对机器、线迹、测试和合规事实具有更高原始权威 | 应作为技术声明的外部佐证，而不是把制造商博客互相引用当作验证 |
 | LinkedIn、目录和第三方资料 | 提供独立发现入口、实体线索和新鲜度信号 | 可补足宽泛发现，但资料必须与规范站当前事实一致 |
 
@@ -42,7 +42,7 @@
 
 | 页面 | 页面形态与主要结构 | 可能被采用的核心原因 | 可迁移性 |
 |---|---|---|---|
-| [HUCAI：Top Reliable OEM/ODM Sportswear Manufacturers](https://m.hcactivewear.com/blog/Top-Reliable-OEM-ODM-Sportswear-Manufacturers-in-China-for-Premium-Brands_b15909) | 制造商自建 roundup；H1 与宽泛推荐意图高度一致，含 Top 5 和选择标准 | 直接给出可抽取名单，覆盖 broad discovery 的答案格式 | **只借鉴买家筛选维度**；不制作 Athletik 自有最佳厂商榜单 |
+| [HUCAI：Top Reliable OEM/ODM Sportswear Manufacturers](https://m.hcactivewear.com/blog/Top-Reliable-OEM-ODM-Sportswear-Manufacturers-in-China-for-Premium-Brands_b15909) | 制造商自建 roundup；H1 与宽泛推荐意图高度一致，含 Top 5 和选择标准 | 直接给出可抽取名单，覆盖 broad discovery 的答案格式 | 借鉴买家筛选维度与可抽取比较结构；以一篇明确披露发布者身份、无绝对名次的候选指南做受控试验，不批量复制 |
 | [Sansansun：Custom Merino Wool & Performance Base Layer Manufacturer](https://sansansports.com/product-category/base-layers/) | 精确品类页；覆盖产品、定制、流程、QC 与 FAQ | 页面完整拥有 “custom Merino base layer manufacturer” 意图 | 借鉴单页意图完整性和采购路径，不复制其未核验商业声明 |
 | [Royal：Merino wool base layer](https://royalapac.com/merino-wool-base-layer/) | 长篇品类页；标题直接对应供应商意图，并在 H2 中直接写 Yamato 4-needle/6-thread 和 Merrow ACTIVESEAM | Merino 产品与具体机器/工艺证据在同页出现，适合 D03/D05 抽取 | 借鉴产品—工艺—设备证据的同页组织；避免绝对化和关键词堆叠 |
 | [Yonglee：Baselayer factory](https://yonglee.com/factory/baselayer) | 页面较短，结构简单，Schema 和 FAQ 并不突出 | 具有量化的 Yamato 与 ACTIVESEAM 设备声明，事实独特且高度贴题 | 证明“独特证据密度”可以比篇幅更重要；机器数量须有当前证据才可使用 |
@@ -85,7 +85,7 @@ Yonglee 和 Merino Wool Apparel 的样本说明，短页面也能被采用；原
 
 ## 5. 不值得复制的模式
 
-1. **自建 Top 5 / Top 10 供应商榜单**：它可能进入 AI 来源，但独立性弱、容易形成循环自证，也会免费强化竞品实体。
+1. **不透明或批量化的自建 Top 5 / Top 10 榜单**：它可能进入 AI 来源，但独立性弱、容易形成循环自证，也会免费强化竞品实体。允许用一篇披露利益关系、说明方法、逐项标注来源和限制的供应商比较指南做受控试验；引用和推荐必须分别测量。
 2. **把 Title/H1 写成不自然的关键词串**：精确意图有价值，语法生硬和重复关键词没有品牌价值。
 3. **绝对化声明**：`best`、`all`、`full control`、`guaranteed`、固定性能提升等必须有可审计证据和适用边界。
 4. **照搬机器数量、SPI、成本和交期数字**：行业常见值不是 Athletik 的事实；材料、线迹、机器设置和订单条件不同会改变结果。
@@ -108,7 +108,7 @@ Yonglee 和 Merino Wool Apparel 的样本说明，短页面也能被采用；原
 
 ### P1：补足 broad discovery 的独立发现入口
 
-Broad Discovery 目前的主要缺口不是 Athletik 没有足够长的 sportswear 页面，而是宽泛问题中缺乏可靠第三方候选信号。优先维护准确的 LinkedIn 公司资料、可验证行业/展会/认证目录和真实编辑报道；不购买目录包或发布伪装中立的自有榜单。
+Broad Discovery 目前的主要缺口不是 Athletik 没有足够长的 sportswear 页面，而是宽泛问题中缺乏可靠候选信号。优先维护准确的 LinkedIn 公司资料、可验证行业/展会/认证目录和真实编辑报道；同时允许一篇不伪装中立、公开利益关系和筛选方法的自有候选指南进入试验。该页面只能证明可检索性和品牌—品类关联，不替代第三方背书。
 
 ## 7. 建议建立的长期工作流
 
