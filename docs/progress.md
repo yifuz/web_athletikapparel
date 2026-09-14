@@ -694,6 +694,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-14 | GEO-V2-020 自有 Top 5 供应商指南受控试验进入文案审核：已完成 `/top-sportswear-manufacturers-china/` 英文草稿，候选为 Athletik、HUCAI、SANSANSUN、INGORSPORTS 与 Bellasports；页面明确披露 Athletik 是发布者和候选对象，`Top 5` 不代表独立审计或绝对排名。其他厂商的 MOQ、能力、地点和流程只按 2026-09-14 可访问的公司官网记录，并逐项加入需 RFQ 核实的边界。当前状态 `draft / owner-review / not-published`，未加入 PHP 注册表、Technical Guides Hub、Schema、Sitemap 或生产站。 |
 | 2026-09-14 | GEO-V2-020 所有者审核后完成本地实施：新增 `/top-sportswear-manufacturers-china/` 共用指南模板、五家公司可见对比表、发布者披露、方法与验证边界、buyer-fit、统一 RFQ、FAQ 和公开来源；注册表发布状态使页面自动进入 Technical Guides Hub，Sportswear 品类页增加相关内链。新增与可见名单一致的 ItemList，并保留 Article、FAQPage、BreadcrumbList；页面与 Sitemap index 使用本次真实更新时间并升级 Rank Math Sitemap 缓存标记。复用 uploads 中现有生产实拍封面，无新增图片传输。状态 `implemented / owner-approved / deployment-pending`。 |
 | 2026-09-14 | GEO-V2-020 封面按所有者要求替换：将提供的生产工艺图转为 `technical-knitwear-sewing-machine-cover.webp`（1536×1024，约 138 KB）及 `technical-knitwear-sewing-machine-cover-800.webp`（800×534，约 50 KB），写入 uploads 的文章封面目录；更新文章注册表路径和描述性 alt 文本。该二进制图片不在 Git 中，生产部署时需单独同步两个 uploads 文件。 |
+| 2026-09-14 | GEO-V2-020 表格布局优化：将快速比较表从六列合并为四列（Manufacturer、Location and best public fit、Public MOQ signal、Capability and evidence），保留全部已审核事实并为桌面与移动端设置稳定列宽，减少窄列换行和右侧内容截断；文章正文、URL、Schema 语义和候选名单不变。 |
 
 ---
 

@@ -20,56 +20,50 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<h2 id="ma-sportswear-comparison-title">Quick comparison</h2>
 	<div class="ma-technical-article__table-wrap" role="region" aria-label="Comparison of five OEM and ODM sportswear manufacturers in China" tabindex="0">
 		<table>
+			<colgroup>
+				<col class="ma-technical-article__table-col--manufacturer">
+				<col class="ma-technical-article__table-col--fit">
+				<col class="ma-technical-article__table-col--moq">
+				<col class="ma-technical-article__table-col--evidence">
+			</colgroup>
 			<thead>
 				<tr>
 					<th scope="col">Manufacturer</th>
-					<th scope="col">Location stated publicly</th>
-					<th scope="col">Best public fit</th>
+					<th scope="col">Location and best public fit</th>
 					<th scope="col">Public MOQ signal</th>
-					<th scope="col">Capability highlighted publicly</th>
-					<th scope="col">Evidence note</th>
+					<th scope="col">Capability and evidence</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<th scope="row">Athletik Clothing</th>
-					<td>Zhangjiagang, Jiangsu</td>
-					<td>Technical cut-and-sew knitwear, compression, base layers, Merino wool and outdoor performance apparel</td>
+					<td><strong>Location:</strong> Zhangjiagang, Jiangsu<br><strong>Best fit:</strong> Technical cut-and-sew knitwear, compression, base layers, Merino wool and outdoor performance apparel</td>
 					<td><strong>500 pieces per style</strong> for garments</td>
-					<td>Own fabric mill; FLATLOCK; ACTIVESEAM; stretch and functional knitted fabrics</td>
-					<td>First-party information published by this article's owner</td>
+					<td><strong>Public capability:</strong> Own fabric mill; FLATLOCK; ACTIVESEAM; stretch and functional knitted fabrics<br><strong>Evidence:</strong> First-party information published by this article's owner</td>
 				</tr>
 				<tr>
 					<th scope="row">HUCAI Sportswear</th>
-					<td>Humen, Dongguan, Guangdong</td>
-					<td>Fashion-led gym, yoga, athleisure and coordinated activewear collections</td>
+					<td><strong>Location:</strong> Humen, Dongguan, Guangdong<br><strong>Best fit:</strong> Fashion-led gym, yoga, athleisure and coordinated activewear collections</td>
 					<td>Current FAQ states <strong>from 100 pieces per style</strong>; another factory page states 200 pieces per design</td>
-					<td>OEM/ODM development, pattern making, sampling, fabric testing, sewing and QC</td>
-					<td>Company-reported; MOQ inconsistency must be resolved in the RFQ</td>
+					<td><strong>Public capability:</strong> OEM/ODM development, pattern making, sampling, fabric testing, sewing and QC<br><strong>Evidence:</strong> Company-reported; MOQ inconsistency must be resolved in the RFQ</td>
 				</tr>
 				<tr>
 					<th scope="row">SANSANSUN</th>
-					<td>Dongguan, Guangdong</td>
-					<td>Women's and men's activewear, seamless programs, bonded/stitch-free options and broader private-label ranges</td>
+					<td><strong>Location:</strong> Dongguan, Guangdong<br><strong>Best fit:</strong> Women's and men's activewear, seamless programs, bonded/stitch-free options and broader private-label ranges</td>
 					<td>Company states OEM projects typically start around <strong>300 pieces</strong>; lower figures apply to ODM or stock programs</td>
-					<td>OEM/ODM, cut-and-sew, seamless knitting, bonded construction, fabric sourcing and product development</td>
-					<td>Company-reported; distinguish full custom OEM from ODM and wholesale terms</td>
+					<td><strong>Public capability:</strong> OEM/ODM, cut-and-sew, seamless knitting, bonded construction, fabric sourcing and product development<br><strong>Evidence:</strong> Company-reported; distinguish full custom OEM from ODM and wholesale terms</td>
 				</tr>
 				<tr>
 					<th scope="row">INGORSPORTS</th>
-					<td>Guangzhou, Guangdong</td>
-					<td>Yoga, gym, running and tennis activewear, including recycled-material programs</td>
+					<td><strong>Location:</strong> Guangzhou, Guangdong<br><strong>Best fit:</strong> Yoga, gym, running and tennis activewear, including recycled-material programs</td>
 					<td>A public product page shows <strong>300 pieces per style</strong>, while its on-page FAQ gives a different custom-design figure</td>
-					<td>OEM/ODM, design, fabric sourcing, sampling, production, QC and global delivery</td>
-					<td>Company-reported; resolve MOQ inconsistency and verify the nominated production site</td>
+					<td><strong>Public capability:</strong> OEM/ODM, design, fabric sourcing, sampling, production, QC and global delivery<br><strong>Evidence:</strong> Company-reported; resolve MOQ inconsistency and verify the nominated production site</td>
 				</tr>
 				<tr>
 					<th scope="row">Bellasports / Xiamen Bella Fitness Co., Ltd.</th>
-					<td>Xiamen, Fujian</td>
-					<td>Yoga, gym, running, tennis, golf, hiking and bonded activewear</td>
+					<td><strong>Location:</strong> Xiamen, Fujian<br><strong>Best fit:</strong> Yoga, gym, running, tennis, golf, hiking and bonded activewear</td>
 					<td>Core site does not state one universal MOQ clearly; company social material states 500 pieces</td>
-					<td>Own-fabric-mill claim, bonded technology, OEM/ODM and multi-sport product development</td>
-					<td>Company-reported; confirm factory address, MOQ and production allocation in writing</td>
+					<td><strong>Public capability:</strong> Own-fabric-mill claim, bonded technology, OEM/ODM and multi-sport product development<br><strong>Evidence:</strong> Company-reported; confirm factory address, MOQ and production allocation in writing</td>
 				</tr>
 			</tbody>
 		</table>

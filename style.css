@@ -5305,7 +5305,24 @@ body.page .site-main.ma-technical-article {
   width: 100%;
   margin: 0;
   border-collapse: collapse;
+  table-layout: fixed;
   font-size: var(--ma-fs-small);
+}
+
+.ma-technical-article__table-col--manufacturer {
+  width: 20%;
+}
+
+.ma-technical-article__table-col--fit {
+  width: 28%;
+}
+
+.ma-technical-article__table-col--moq {
+  width: 22%;
+}
+
+.ma-technical-article__table-col--evidence {
+  width: 30%;
 }
 
 .ma-technical-article__table-wrap th,
