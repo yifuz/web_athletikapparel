@@ -79,7 +79,7 @@ $services_hero_srcset = implode(
 	)
 );
 $services_process_base      = get_stylesheet_directory_uri() . '/assets/images/production/garment-process/';
-$services_capability_image  = $services_process_base . 'garment-sewing-operator';
+$services_capability_image  = $services_process_base . 'blue-garment-seam-sewing-operation';
 $services_capability_srcset = $services_capability_image . '-480.webp 480w, ' . $services_capability_image . '-800.webp 800w, ' . $services_capability_image . '-1536.webp 1536w';
 $services_cutting_image     = $services_process_base . 'garment-cutting-workshop';
 $services_cutting_srcset    = $services_cutting_image . '-480.webp 480w, ' . $services_cutting_image . '-800.webp 800w, ' . $services_cutting_image . '-1536.webp 1536w';
@@ -120,10 +120,10 @@ $services_cutting_srcset    = $services_cutting_image . '-480.webp 480w, ' . $se
 						srcset="<?php echo esc_attr( $services_capability_srcset ); ?>"
 						sizes="(max-width: 63.99rem) calc(100vw - 3rem), 32rem"
 						width="1536"
-						height="880"
+						height="1024"
 						loading="lazy"
 						decoding="async"
-						alt="<?php esc_attr_e( 'Sewing operator assembling a black garment at an industrial sewing station', 'myathletik-child' ); ?>"
+						alt="<?php esc_attr_e( 'Operator guiding light blue garment fabric through an industrial sewing machine', 'myathletik-child' ); ?>"
 					>
 				</figure>
 				<div class="ma-services-capabilities__grid">
