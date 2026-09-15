@@ -6,7 +6,6 @@
  */
 
 @media (max-width: 63.9375rem) {
-  .ma-home-hero__poster,
   .ma-home-hero__video {
     object-position: center;
   }
