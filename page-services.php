@@ -78,6 +78,7 @@ $services_hero_srcset = implode(
 		get_stylesheet_directory_uri() . '/assets/images/services/services-production-line-1672-lossless.webp 1672w',
 	)
 );
+$services_capability_media = get_stylesheet_directory_uri() . '/assets/images/production/equipment/warp-knitting-machine-front';
 ?>
 
 <main id="primary" class="site-main ma-services-page">
@@ -108,12 +109,26 @@ $services_hero_srcset = implode(
 				<p class="ma-section-kicker"><?php esc_html_e( 'Capabilities', 'myathletik-child' ); ?></p>
 				<h2 id="ma-services-capabilities-title"><?php esc_html_e( 'A full-package production workflow', 'myathletik-child' ); ?></h2>
 			</div>
-			<div class="ma-services-capabilities__grid">
-				<?php foreach ( $capabilities as $capability ) : ?>
-					<article class="ma-services-capability">
-						<p><?php echo esc_html( $capability ); ?></p>
-					</article>
-				<?php endforeach; ?>
+			<div class="ma-services-capabilities__body">
+				<figure class="ma-context-image ma-services-capabilities__media">
+					<img
+						src="<?php echo esc_url( $services_capability_media . '-800.webp' ); ?>"
+						srcset="<?php echo esc_attr( $services_capability_media . '-480.webp 480w, ' . $services_capability_media . '-800.webp 800w, ' . $services_capability_media . '-1536.webp 1536w' ); ?>"
+						sizes="(max-width: 63.99rem) calc(100vw - 3rem), 28rem"
+						width="1536"
+						height="1024"
+						loading="lazy"
+						decoding="async"
+						alt="<?php esc_attr_e( 'Front view of a warp knitting machine forming white knitted fabric', 'myathletik-child' ); ?>"
+					>
+				</figure>
+				<div class="ma-services-capabilities__grid">
+					<?php foreach ( $capabilities as $capability ) : ?>
+						<article class="ma-services-capability">
+							<p><?php echo esc_html( $capability ); ?></p>
+						</article>
+					<?php endforeach; ?>
+				</div>
 			</div>
 		</div>
 	</section>
