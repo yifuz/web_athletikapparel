@@ -75,9 +75,9 @@ function myathletik_preload_home_hero() {
 	$srcset   = implode(
 		', ',
 		array(
-			$base_url . 'home-hero-baselayer-standing-320.webp 320w',
-			$base_url . 'home-hero-baselayer-standing-480.webp 480w',
-			$base_url . 'home-hero-baselayer-standing-560.webp 560w',
+			$base_url . 'home-hero-baselayer-relaxed-v2-360.webp 360w',
+			$base_url . 'home-hero-baselayer-relaxed-v2-540.webp 540w',
+			$base_url . 'home-hero-baselayer-relaxed-v2-720.webp 720w',
 		)
 	);
 	?>
@@ -85,7 +85,7 @@ function myathletik_preload_home_hero() {
 		rel="preload"
 		as="image"
 		type="image/webp"
-		href="<?php echo esc_url( $base_url . 'home-hero-baselayer-standing-560.webp' ); ?>"
+		href="<?php echo esc_url( $base_url . 'home-hero-baselayer-relaxed-v2-720.webp' ); ?>"
 		imagesrcset="<?php echo esc_attr( $srcset ); ?>"
 		imagesizes="(max-width: 47.9375rem) 82vw, 32vw"
 		fetchpriority="high"
