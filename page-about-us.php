@@ -30,21 +30,6 @@ $differentiators = array(
 
 $about_hero_image     = get_stylesheet_directory_uri() . '/assets/images/production/%E5%B7%A5%E5%8E%82%E5%85%A8%E6%99%AF.png';
 $about_workshop_image = get_stylesheet_directory_uri() . '/assets/images/production/%E8%BD%A6%E9%97%B4.png';
-$about_equipment_base = get_stylesheet_directory_uri() . '/assets/images/production/equipment/';
-$about_equipment_images = array(
-	array(
-		'file' => 'warp-knitting-machine-row',
-		'alt'  => __( 'Rows of warp knitting machines forming white knitted fabric', 'myathletik-child' ),
-	),
-	array(
-		'file' => 'yarn-preparation-line',
-		'alt'  => __( 'Yarn preparation line guiding multiple yarn ends toward fabric production equipment', 'myathletik-child' ),
-	),
-	array(
-		'file' => 'yarn-feeding-close-up',
-		'alt'  => __( 'Close-up of a yarn feeding system guiding parallel yarn ends', 'myathletik-child' ),
-	),
-);
 
 get_header();
 ?>
@@ -80,37 +65,13 @@ get_header();
 				<p class="ma-section-kicker"><?php esc_html_e( 'What makes us different', 'myathletik-child' ); ?></p>
 				<h2 id="ma-about-difference-title"><?php esc_html_e( 'Capability that supports long-term production', 'myathletik-child' ); ?></h2>
 			</div>
-			<div class="ma-about-difference__layout">
-				<div class="ma-about-difference__media" aria-label="<?php esc_attr_e( 'Fabric production equipment', 'myathletik-child' ); ?>">
-					<?php foreach ( $about_equipment_images as $image_index => $equipment_image ) : ?>
-						<?php
-						$image_src = $about_equipment_base . $equipment_image['file'];
-						$image_sizes = 0 === $image_index
-							? '(max-width: 63.99rem) calc(100vw - 3rem), 26rem'
-							: '(max-width: 63.99rem) calc(50vw - 2rem), 13rem';
-						?>
-						<figure class="ma-context-image<?php echo 0 === $image_index ? ' ma-about-difference__media-main' : ''; ?>">
-							<img
-								src="<?php echo esc_url( $image_src . '-800.webp' ); ?>"
-								srcset="<?php echo esc_attr( $image_src . '-480.webp 480w, ' . $image_src . '-800.webp 800w, ' . $image_src . '-1536.webp 1536w' ); ?>"
-								sizes="<?php echo esc_attr( $image_sizes ); ?>"
-								width="1536"
-								height="1024"
-								loading="lazy"
-								decoding="async"
-								alt="<?php echo esc_attr( $equipment_image['alt'] ); ?>"
-							>
-						</figure>
-					<?php endforeach; ?>
-				</div>
-				<div class="ma-about-difference__grid">
-					<?php foreach ( $differentiators as $item ) : ?>
-						<article class="ma-about-difference-card">
-							<h3><?php echo esc_html( $item['title'] ); ?></h3>
-							<p><?php echo esc_html( $item['copy'] ); ?></p>
-						</article>
-					<?php endforeach; ?>
-				</div>
+			<div class="ma-about-difference__grid">
+				<?php foreach ( $differentiators as $item ) : ?>
+					<article class="ma-about-difference-card">
+						<h3><?php echo esc_html( $item['title'] ); ?></h3>
+						<p><?php echo esc_html( $item['copy'] ); ?></p>
+					</article>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>

@@ -2913,23 +2913,9 @@ body.page .container.grid-container:has(.ma-services-page) {
   padding: var(--ma-section-y) 0;
 }
 
-.ma-services-capabilities > .ma-section-inner {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 .ma-services-capabilities__grid {
   display: grid;
   gap: var(--ma-space-3);
-}
-
-.ma-services-capabilities__body {
-  display: grid;
-  gap: var(--ma-space-4);
-}
-
-.ma-services-capabilities__media {
-  aspect-ratio: 3 / 2;
 }
 
 .ma-services-capability {
@@ -3067,17 +3053,8 @@ body.page .container.grid-container:has(.ma-services-page) {
 }
 
 @media (min-width: 64rem) {
-  .ma-services-capabilities__body {
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    align-items: stretch;
-  }
-
-  .ma-services-capabilities__media {
-    aspect-ratio: auto;
-  }
-
   .ma-services-capabilities__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .ma-services-cta__inner {
@@ -3263,33 +3240,9 @@ body.page .container.grid-container:has(.ma-about-page) {
   background: var(--ma-color-surface);
 }
 
-.ma-about-difference > .ma-section-inner {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 .ma-about-difference__grid {
   display: grid;
   gap: var(--ma-space-4);
-}
-
-.ma-about-difference__layout {
-  display: grid;
-  gap: var(--ma-space-5);
-}
-
-.ma-about-difference__media {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--ma-space-3);
-}
-
-.ma-about-difference__media .ma-context-image {
-  aspect-ratio: 3 / 2;
-}
-
-.ma-about-difference__media-main {
-  grid-column: 1 / -1;
 }
 
 .ma-about-difference-card {
@@ -3355,26 +3308,6 @@ body.page .container.grid-container:has(.ma-about-page) {
 }
 
 @media (min-width: 64rem) {
-  .ma-about-difference__layout {
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-    align-items: stretch;
-  }
-
-  .ma-about-difference__grid {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .ma-about-difference__media {
-    grid-column: 2;
-    grid-row: 1;
-    grid-template-rows: minmax(0, 1.25fr) minmax(0, 0.75fr);
-  }
-
-  .ma-about-difference__media .ma-context-image {
-    aspect-ratio: auto;
-  }
-
   /* Two-column hero only on the non-bg variant (the bg variant is single-column). */
   .ma-about-hero:not(.ma-about-hero--bg) .ma-about-hero__grid {
     grid-template-columns: minmax(0, 0.85fr) minmax(30rem, 1.15fr);
