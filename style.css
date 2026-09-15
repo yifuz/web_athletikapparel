@@ -84,13 +84,9 @@ Text Domain:  myathletik-child
   --ma-home-hero-content-width: 34rem;
   --ma-home-hero-badge-size: clamp(3.75rem, 4.8vw, 4.5rem);
   --ma-home-hero-bg: linear-gradient(110deg, var(--ma-color-bg) 0%, var(--ma-color-surface) 100%);
-  --ma-home-hero-video-overlay: linear-gradient(90deg, rgba(12, 11, 10, 0.9) 0%, rgba(12, 11, 10, 0.8) 38%, rgba(12, 11, 10, 0.48) 62%, rgba(12, 11, 10, 0.14) 100%);
-  --ma-home-hero-video-overlay-mobile: linear-gradient(180deg, rgba(12, 11, 10, 0.66) 0%, rgba(12, 11, 10, 0.82) 100%);
-  --ma-home-hero-video-copy: rgba(250, 248, 245, 0.84);
-  --ma-home-hero-video-label: rgba(250, 248, 245, 0.8);
-  --ma-home-hero-video-line: rgba(250, 248, 245, 0.34);
-  --ma-home-hero-badge-panel: rgba(250, 248, 245, 0.88);
-  --ma-home-hero-badge-panel-border: rgba(250, 248, 245, 0.46);
+  --ma-home-hero-video-overlay: linear-gradient(90deg, rgba(24, 21, 19, 0.62) 0%, rgba(24, 21, 19, 0.28) 34%, rgba(24, 21, 19, 0) 52%), linear-gradient(90deg, rgba(250, 248, 245, 0) 38%, rgba(250, 248, 245, 0.78) 66%, rgba(250, 248, 245, 0.97) 100%);
+  --ma-home-hero-video-overlay-mobile: linear-gradient(180deg, rgba(250, 248, 245, 0.76) 0%, rgba(250, 248, 245, 0.92) 100%);
+  --ma-home-hero-video-line: rgba(154, 74, 35, 0.3);
   --ma-home-desktop-chrome-height: 7.605rem; /* desktop header + social bar */
   --ma-client-logo-strip-height: 8.25rem;
   --ma-client-logo-frame-height: calc(var(--ma-space-6) + var(--ma-space-3) + var(--ma-space-1));
@@ -736,7 +732,7 @@ body.home .container.grid-container {
   min-width: 0;
   max-width: var(--ma-home-hero-content-width);
   padding: var(--ma-space-3) 0;
-  color: var(--ma-color-bg);
+  color: var(--ma-color-text);
 }
 
 .ma-home-hero__eyebrow {
@@ -745,7 +741,7 @@ body.home .container.grid-container {
   gap: 0.75rem;
   width: fit-content;
   margin: 0 0 var(--ma-space-2);
-  color: var(--ma-home-hero-video-label);
+  color: var(--ma-color-accent-2);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -763,7 +759,7 @@ body.home .container.grid-container {
 
 .ma-home-hero__title {
   margin: 0;
-  color: var(--ma-color-bg);
+  color: var(--ma-color-text);
   font-family: var(--ma-font-head);
   max-width: 18ch;
   font-size: var(--ma-fs-h1);
@@ -777,14 +773,14 @@ body.home .container.grid-container {
 }
 
 .ma-home-hero__title span + span {
-  color: var(--ma-color-bg);
+  color: var(--ma-color-accent-2);
   font-weight: 500;
 }
 
 .ma-home-hero__subhead {
   max-width: var(--ma-home-hero-content-width);
   margin: var(--ma-space-3) 0 0;
-  color: var(--ma-home-hero-video-copy);
+  color: var(--ma-color-muted);
   font-size: 1.02rem;
   line-height: 1.58;
 }
@@ -804,11 +800,7 @@ body.home .container.grid-container {
   gap: var(--ma-space-3);
   width: fit-content;
   margin: var(--ma-space-3) 0 0;
-  padding: var(--ma-space-2) var(--ma-space-3);
-  border: 1px solid var(--ma-home-hero-badge-panel-border);
-  border-radius: var(--ma-radius);
-  background: var(--ma-home-hero-badge-panel);
-  backdrop-filter: blur(var(--ma-space-2));
+  padding: 0;
   list-style: none;
 }
 
@@ -904,14 +896,15 @@ body.home .container.grid-container {
   color: var(--ma-color-bg);
 }
 
-/* --- Desktop: copy sits over the darker side of the full-bleed video --- */
+/* --- Desktop: garment stays left while copy uses the warm, quiet side --- */
 @media (min-width: 64rem) {
   .ma-home-hero__inner {
     min-height: clamp(27rem, 50vh, 32rem);
   }
 
   .ma-home-hero__content {
-    margin-right: auto;
+    margin-right: 0;
+    margin-left: auto;
   }
 
   .ma-home-hero__subhead {
@@ -919,8 +912,8 @@ body.home .container.grid-container {
   }
 
   .ma-home-hero__video {
-    inset: 0 -6% 0 auto;
-    width: 110%;
+    inset: 0 auto 0 -24%;
+    width: 124%;
   }
 }
 
@@ -928,6 +921,15 @@ body.home .container.grid-container {
 @media (min-width: 64rem) and (max-width: 74.9375rem) {
   :root {
     --ma-home-desktop-chrome-height: 7.25rem;
+  }
+
+  .ma-home-hero__content {
+    max-width: 31rem;
+  }
+
+  .ma-home-hero__video {
+    inset: 0 auto 0 -30%;
+    width: 126%;
   }
 }
 

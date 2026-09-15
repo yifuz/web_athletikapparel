@@ -60,7 +60,7 @@ $hero_badges     = array(
 				<a class="ma-button ma-button--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
 					<?php esc_html_e( 'Request a Quote', 'myathletik-child' ); ?>
 				</a>
-				<a class="ma-button ma-button--secondary" href="<?php echo esc_url( home_url( '/#ma-home-categories-title' ) ); ?>">
+				<a class="ma-button ma-button--outline" href="<?php echo esc_url( home_url( '/#ma-home-categories-title' ) ); ?>">
 					<?php esc_html_e( 'View Products', 'myathletik-child' ); ?>
 				</a>
 			</div>
