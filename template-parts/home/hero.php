@@ -13,8 +13,8 @@ $hero_media_base    = get_stylesheet_directory_uri() . '/assets/images/sportswea
 $hero_video_desktop = $hero_media_base . 'home-hero-black-base-layer-desktop.mp4';
 $hero_video_mobile  = $hero_media_base . 'home-hero-black-base-layer-mobile.mp4';
 $hero_video_poster  = $hero_media_base . 'home-hero-black-base-layer-poster.webp';
-$hero_badge_base   = get_stylesheet_directory_uri() . '/assets/images/audit&certificates/hero-transparent/';
-$hero_badges       = array(
+$hero_badge_base = get_stylesheet_directory_uri() . '/assets/images/audit&certificates/hero-transparent/';
+$hero_badges     = array(
 	array( 'file' => 'hero-bsci.png', 'alt' => __( 'BSCI audit program', 'myathletik-child' ) ),
 	array( 'file' => 'hero-oeko-tex.png', 'alt' => __( 'OEKO-TEX Standard 100 program', 'myathletik-child' ) ),
 	array( 'file' => 'hero-grs.png', 'alt' => __( 'Global Recycled Standard program', 'myathletik-child' ) ),
@@ -25,6 +25,40 @@ $hero_badges       = array(
 ?>
 
 <section class="ma-home-hero" aria-label="<?php esc_attr_e( 'Athletik Clothing homepage introduction', 'myathletik-child' ); ?>">
+	<img
+		class="ma-home-hero__poster"
+		src="<?php echo esc_url( $hero_video_poster ); ?>"
+		alt=""
+		width="1280"
+		height="720"
+		loading="eager"
+		fetchpriority="high"
+		decoding="async"
+	>
+	<video
+		class="ma-home-hero__video"
+		autoplay
+		muted
+		loop
+		playsinline
+		preload="metadata"
+		poster="<?php echo esc_url( $hero_video_poster ); ?>"
+		aria-hidden="true"
+		tabindex="-1"
+		data-ma-home-hero-video
+	>
+		<source
+			media="(max-width: 63.9375rem)"
+			src="<?php echo esc_url( $hero_video_mobile ); ?>"
+			type="video/mp4"
+		>
+		<source
+			src="<?php echo esc_url( $hero_video_desktop ); ?>"
+			type="video/mp4"
+		>
+	</video>
+	<div class="ma-home-hero__video-overlay" aria-hidden="true"></div>
+
 	<div class="ma-home-hero__inner">
 		<div class="ma-home-hero__content">
 			<p class="ma-home-hero__eyebrow"><?php esc_html_e( 'Yarn-to-Garment Integration', 'myathletik-child' ); ?></p>
@@ -37,7 +71,7 @@ $hero_badges       = array(
 				<a class="ma-button ma-button--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
 					<?php esc_html_e( 'Request a Quote', 'myathletik-child' ); ?>
 				</a>
-				<a class="ma-button ma-button--outline" href="<?php echo esc_url( home_url( '/#ma-home-categories-title' ) ); ?>">
+				<a class="ma-button ma-button--secondary" href="<?php echo esc_url( home_url( '/#ma-home-categories-title' ) ); ?>">
 					<?php esc_html_e( 'View Products', 'myathletik-child' ); ?>
 				</a>
 			</div>
@@ -56,43 +90,6 @@ $hero_badges       = array(
 					</li>
 				<?php endforeach; ?>
 			</ul>
-		</div>
-
-		<div class="ma-home-hero__visual">
-			<div class="ma-home-hero__stage">
-				<img
-					class="ma-home-hero__poster"
-					src="<?php echo esc_url( $hero_video_poster ); ?>"
-					alt=""
-					width="1280"
-					height="720"
-					loading="eager"
-					fetchpriority="high"
-					decoding="async"
-				>
-				<video
-					class="ma-home-hero__video"
-					autoplay
-					muted
-					loop
-					playsinline
-					preload="metadata"
-					poster="<?php echo esc_url( $hero_video_poster ); ?>"
-					aria-hidden="true"
-					tabindex="-1"
-					data-ma-home-hero-video
-				>
-					<source
-						media="(max-width: 63.9375rem)"
-						src="<?php echo esc_url( $hero_video_mobile ); ?>"
-						type="video/mp4"
-					>
-					<source
-						src="<?php echo esc_url( $hero_video_desktop ); ?>"
-						type="video/mp4"
-					>
-				</video>
-			</div>
 		</div>
 	</div>
 </section>

@@ -1,19 +1,11 @@
 /**
  * Homepage Hero mobile art direction.
  *
- * Keep the real garment video above the conversion copy while preserving a
- * compact 16:9 frame on narrow screens.
+ * Keep conversion copy readable over the full-bleed garment video on narrow
+ * screens, following the product-page video hero pattern.
  */
 
 @media (max-width: 63.9375rem) {
-  .ma-home-hero__visual {
-    grid-row: 1;
-  }
-
-  .ma-home-hero__content {
-    grid-row: 2;
-  }
-
   .ma-home-hero__poster,
   .ma-home-hero__video {
     object-position: center;

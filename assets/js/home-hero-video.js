@@ -16,7 +16,6 @@
 
 	const showPoster = () => {
 		video.pause();
-		video.classList.remove( 'is-playing' );
 	};
 
 	const playVideo = () => {
@@ -28,11 +27,7 @@
 		const playback = video.play();
 
 		if ( playback ) {
-			playback
-				.then( () => video.classList.add( 'is-playing' ) )
-				.catch( showPoster );
-		} else if ( ! video.paused ) {
-			video.classList.add( 'is-playing' );
+			playback.catch( showPoster );
 		}
 	};
 
@@ -41,7 +36,6 @@
 		video.preload = 'none';
 		showPoster();
 	} else {
-		video.addEventListener( 'playing', () => video.classList.add( 'is-playing' ) );
 		video.addEventListener( 'error', showPoster );
 		playVideo();
 	}

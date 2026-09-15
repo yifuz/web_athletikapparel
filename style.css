@@ -82,13 +82,14 @@ Text Domain:  myathletik-child
   --ma-article-sidebar-width: 15rem;
   --ma-article-table-min-width: 60rem;
   --ma-home-hero-content-width: 34rem;
-  --ma-home-hero-visual-width: 36rem;
-  --ma-home-hero-visual-compact-width: 30rem;
-  --ma-home-hero-stage-height: clamp(25rem, 48vw, 34rem);
-  --ma-home-hero-stage-compact-height: 27rem;
-  --ma-home-hero-stage-mobile-height: clamp(18rem, 84vw, 23rem);
   --ma-home-hero-badge-size: clamp(3.75rem, 4.8vw, 4.5rem);
   --ma-home-hero-bg: linear-gradient(110deg, var(--ma-color-bg) 0%, var(--ma-color-surface) 100%);
+  --ma-home-hero-video-overlay: linear-gradient(90deg, rgba(12, 11, 10, 0.9) 0%, rgba(12, 11, 10, 0.8) 38%, rgba(12, 11, 10, 0.48) 62%, rgba(12, 11, 10, 0.14) 100%);
+  --ma-home-hero-video-overlay-mobile: linear-gradient(180deg, rgba(12, 11, 10, 0.66) 0%, rgba(12, 11, 10, 0.82) 100%);
+  --ma-home-hero-video-copy: rgba(250, 248, 245, 0.84);
+  --ma-home-hero-video-label: rgba(250, 248, 245, 0.8);
+  --ma-home-hero-video-line: rgba(250, 248, 245, 0.34);
+  --ma-home-hero-video-badge-glow: rgba(250, 248, 245, 0.72);
   --ma-home-desktop-chrome-height: 7.605rem; /* desktop header + social bar */
   --ma-client-logo-strip-height: 8.25rem;
   --ma-client-logo-frame-height: calc(var(--ma-space-6) + var(--ma-space-3) + var(--ma-space-1));
@@ -665,7 +666,7 @@ a {
 
 }
 
-/* --- Home: Hero (split layout: text left, image right) --- */
+/* --- Home: Hero (full-bleed garment video with content overlay) --- */
 .ma-home {
   width: 100%;
   margin: 0;
@@ -704,6 +705,8 @@ body.home .container.grid-container {
 }
 
 .ma-home-hero {
+  position: relative;
+  isolation: isolate;
   width: 100%;
   min-height: 0;
   padding: clamp(1.75rem, 3.6vw, 3rem) var(--ma-space-4);
@@ -713,14 +716,15 @@ body.home .container.grid-container {
 }
 
 .ma-home-hero__inner {
-  display: grid;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
   width: 100%;
   max-width: var(--ma-container);
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-  gap: clamp(1.75rem, 4vw, 3.5rem);
-  align-items: center;
 }
 
 /* --- Text panel --- */
@@ -731,7 +735,7 @@ body.home .container.grid-container {
   min-width: 0;
   max-width: var(--ma-home-hero-content-width);
   padding: var(--ma-space-3) 0;
-  color: var(--ma-color-text);
+  color: var(--ma-color-bg);
 }
 
 .ma-home-hero__eyebrow {
@@ -740,7 +744,7 @@ body.home .container.grid-container {
   gap: 0.75rem;
   width: fit-content;
   margin: 0 0 var(--ma-space-2);
-  color: var(--ma-color-accent-2);
+  color: var(--ma-home-hero-video-label);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -753,12 +757,12 @@ body.home .container.grid-container {
   display: block;
   width: clamp(4rem, 12vw, 10rem);
   height: 1px;
-  background: rgba(154, 74, 35, 0.28);
+  background: var(--ma-home-hero-video-line);
 }
 
 .ma-home-hero__title {
   margin: 0;
-  color: var(--ma-color-text);
+  color: var(--ma-color-bg);
   font-family: var(--ma-font-head);
   max-width: 18ch;
   font-size: var(--ma-fs-h1);
@@ -772,14 +776,14 @@ body.home .container.grid-container {
 }
 
 .ma-home-hero__title span + span {
-  color: var(--ma-color-accent-2);
+  color: var(--ma-color-bg);
   font-weight: 500;
 }
 
 .ma-home-hero__subhead {
   max-width: var(--ma-home-hero-content-width);
   margin: var(--ma-space-3) 0 0;
-  color: var(--ma-color-muted);
+  color: var(--ma-home-hero-video-copy);
   font-size: 1.02rem;
   line-height: 1.58;
 }
@@ -816,30 +820,10 @@ body.home .container.grid-container {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: drop-shadow(0 0 var(--ma-space-2) var(--ma-home-hero-video-badge-glow));
 }
 
-/* --- Visual panel: real garment video over a preloaded poster --- */
-.ma-home-hero__visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  width: 100%;
-  max-width: var(--ma-home-hero-visual-width);
-  min-height: var(--ma-home-hero-stage-height);
-}
-
-.ma-home-hero__stage {
-  position: relative;
-  width: 100%;
-  height: var(--ma-home-hero-stage-height);
-  overflow: hidden;
-  border: 1px solid var(--ma-color-border);
-  border-radius: var(--ma-radius);
-  background: var(--ma-color-surface);
-}
-
+/* --- Full-bleed garment video over a preloaded poster --- */
 .ma-home-hero__poster,
 .ma-home-hero__video {
   position: absolute;
@@ -857,12 +841,14 @@ body.home .container.grid-container {
 
 .ma-home-hero__video {
   z-index: 1;
-  opacity: 0;
-  transition: opacity 180ms ease-out;
 }
 
-.ma-home-hero__video.is-playing {
-  opacity: 1;
+.ma-home-hero__video-overlay {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background: var(--ma-home-hero-video-overlay);
+  pointer-events: none;
 }
 
 /* --- Buttons --- */
@@ -919,27 +905,24 @@ body.home .container.grid-container {
   color: var(--ma-color-bg);
 }
 
-/* --- Desktop: side-by-side --- */
+/* --- Desktop: copy sits over the darker side of the full-bleed video --- */
 @media (min-width: 64rem) {
   .ma-home-hero__inner {
-    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
     min-height: clamp(27rem, 50vh, 32rem);
   }
 
-  .ma-home-hero__visual {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: center;
-  }
-
   .ma-home-hero__content {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: end;
+    margin-right: auto;
   }
 
   .ma-home-hero__subhead {
     font-size: 1.08rem;
+  }
+
+  .ma-home-hero__poster,
+  .ma-home-hero__video {
+    inset: 0 -6% 0 auto;
+    width: 110%;
   }
 }
 
@@ -973,15 +956,6 @@ body.home .container.grid-container {
   .ma-home-hero {
     padding-block: 0;
   }
-
-  .ma-home-hero__visual {
-    max-width: var(--ma-home-hero-visual-compact-width);
-    min-height: var(--ma-home-hero-stage-compact-height);
-  }
-
-  .ma-home-hero__stage {
-    height: var(--ma-home-hero-stage-compact-height);
-  }
 }
 
 @media (max-width: 63.9375rem) {
@@ -993,22 +967,14 @@ body.home .container.grid-container {
     font-size: clamp(2.1rem, 11vw, 2.9rem);
   }
 
-  .ma-home-hero__visual {
-    max-width: var(--ma-home-hero-visual-compact-width);
-    min-height: 0;
-    margin-inline: auto;
-  }
-
   .ma-home-hero__content {
     width: 100%;
     margin-inline: auto;
   }
 
-  .ma-home-hero__stage {
-    height: auto;
-    aspect-ratio: 16 / 9;
+  .ma-home-hero__video-overlay {
+    background: var(--ma-home-hero-video-overlay-mobile);
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
