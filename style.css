@@ -84,7 +84,11 @@ Text Domain:  myathletik-child
   --ma-home-hero-content-width: 34rem;
   --ma-home-hero-badge-size: clamp(3.75rem, 4.8vw, 4.5rem);
   --ma-home-hero-bg: linear-gradient(110deg, var(--ma-color-bg) 0%, var(--ma-color-surface) 100%);
-  --ma-home-hero-video-overlay: linear-gradient(90deg, rgba(24, 21, 19, 0.62) 0%, rgba(24, 21, 19, 0.28) 34%, rgba(24, 21, 19, 0) 52%), linear-gradient(90deg, rgba(250, 248, 245, 0) 38%, rgba(250, 248, 245, 0.78) 66%, rgba(250, 248, 245, 0.97) 100%);
+  --ma-home-hero-video-width: 112%;
+  --ma-home-hero-video-offset: -18%;
+  --ma-home-hero-video-width-compact: 114%;
+  --ma-home-hero-video-offset-compact: -24%;
+  --ma-home-hero-video-overlay: linear-gradient(90deg, rgba(24, 21, 19, 0.75) 0%, rgba(24, 21, 19, 0.38) 34%, rgba(24, 21, 19, 0) 52%), linear-gradient(90deg, rgba(250, 248, 245, 0) 38%, rgba(250, 248, 245, 0.78) 66%, rgba(250, 248, 245, 0.97) 100%);
   --ma-home-hero-video-overlay-mobile: linear-gradient(180deg, rgba(250, 248, 245, 0.76) 0%, rgba(250, 248, 245, 0.92) 100%);
   --ma-home-hero-video-line: rgba(154, 74, 35, 0.3);
   --ma-home-desktop-chrome-height: 7.605rem; /* desktop header + social bar */
@@ -912,8 +916,8 @@ body.home .container.grid-container {
   }
 
   .ma-home-hero__video {
-    inset: 0 auto 0 -24%;
-    width: 124%;
+    inset: 0 auto 0 var(--ma-home-hero-video-offset);
+    width: var(--ma-home-hero-video-width);
   }
 }
 
@@ -928,8 +932,8 @@ body.home .container.grid-container {
   }
 
   .ma-home-hero__video {
-    inset: 0 auto 0 -30%;
-    width: 126%;
+    inset: 0 auto 0 var(--ma-home-hero-video-offset-compact);
+    width: var(--ma-home-hero-video-width-compact);
   }
 }
 
