@@ -64,30 +64,20 @@ function myathletik_images_uri() {
 }
 
 /**
- * Preload the responsive transparent model used as the homepage LCP image.
+ * Preload the lightweight poster used as the homepage LCP image.
  */
 function myathletik_preload_home_hero() {
 	if ( ! is_front_page() ) {
 		return;
 	}
 
-	$base_url = myathletik_images_uri() . '/sportswear/';
-	$srcset   = implode(
-		', ',
-		array(
-			$base_url . 'home-hero-baselayer-relaxed-v2-360.webp 360w',
-			$base_url . 'home-hero-baselayer-relaxed-v2-540.webp 540w',
-			$base_url . 'home-hero-baselayer-relaxed-v2-720.webp 720w',
-		)
-	);
+	$poster_url = myathletik_images_uri() . '/sportswear/home-hero-black-base-layer-poster.webp';
 	?>
 	<link
 		rel="preload"
 		as="image"
 		type="image/webp"
-		href="<?php echo esc_url( $base_url . 'home-hero-baselayer-relaxed-v2-720.webp' ); ?>"
-		imagesrcset="<?php echo esc_attr( $srcset ); ?>"
-		imagesizes="(max-width: 47.9375rem) 82vw, 32vw"
+		href="<?php echo esc_url( $poster_url ); ?>"
 		fetchpriority="high"
 	>
 	<?php
@@ -231,6 +221,33 @@ function myathletik_enqueue_styles() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_styles' );
+
+/**
+ * Control homepage hero playback without blocking the first render.
+ */
+function myathletik_enqueue_home_hero_video() {
+	if ( ! is_front_page() ) {
+		return;
+	}
+
+	$script_path = get_stylesheet_directory() . '/assets/js/home-hero-video.js';
+
+	if ( ! file_exists( $script_path ) ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'myathletik-home-hero-video',
+		get_stylesheet_directory_uri() . '/assets/js/home-hero-video.js',
+		array(),
+		filemtime( $script_path ),
+		array(
+			'in_footer' => true,
+			'strategy'  => 'defer',
+		)
+	);
+}
+add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_home_hero_video' );
 
 /**
  * Preload the Latin Manrope file used by the above-the-fold heading.

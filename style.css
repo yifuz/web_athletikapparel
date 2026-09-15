@@ -87,13 +87,8 @@ Text Domain:  myathletik-child
   --ma-home-hero-stage-height: clamp(25rem, 48vw, 34rem);
   --ma-home-hero-stage-compact-height: 27rem;
   --ma-home-hero-stage-mobile-height: clamp(18rem, 84vw, 23rem);
-  --ma-home-hero-mark-width: 44rem;
-  --ma-home-hero-mark-opacity: 0.13;
-  --ma-home-hero-model-height: 108%;
-  --ma-home-hero-model-mobile-height: 100%;
   --ma-home-hero-badge-size: clamp(3.75rem, 4.8vw, 4.5rem);
   --ma-home-hero-bg: linear-gradient(110deg, var(--ma-color-bg) 0%, var(--ma-color-surface) 100%);
-  --ma-home-hero-model-shadow: drop-shadow(0 1.25rem 1.5rem rgba(43, 39, 36, 0.16));
   --ma-home-desktop-chrome-height: 7.605rem; /* desktop header + social bar */
   --ma-client-logo-strip-height: 8.25rem;
   --ma-client-logo-frame-height: calc(var(--ma-space-6) + var(--ma-space-3) + var(--ma-space-1));
@@ -823,7 +818,7 @@ body.home .container.grid-container {
   object-fit: contain;
 }
 
-/* --- Visual panel: official brand mark behind the real garment model --- */
+/* --- Visual panel: real garment video over a preloaded poster --- */
 .ma-home-hero__visual {
   position: relative;
   display: flex;
@@ -837,45 +832,37 @@ body.home .container.grid-container {
 
 .ma-home-hero__stage {
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
   width: 100%;
   height: var(--ma-home-hero-stage-height);
-  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-surface);
 }
 
-.ma-home-hero__brand-mark {
+.ma-home-hero__poster,
+.ma-home-hero__video {
   position: absolute;
-  z-index: 0;
-  top: 48%;
-  left: 50%;
+  inset: 0;
   display: block;
-  width: min(125%, var(--ma-home-hero-mark-width));
-  height: auto;
-  opacity: var(--ma-home-hero-mark-opacity);
-  mix-blend-mode: multiply;
-  transform: translate(-50%, -50%);
-}
-
-.ma-home-hero__model {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  width: auto;
-  height: var(--ma-home-hero-model-height);
-}
-
-.ma-home-hero__model img {
-  display: block;
-  width: auto;
-  max-width: 100%;
+  width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center bottom;
-  filter: var(--ma-home-hero-model-shadow);
+  object-fit: cover;
+  object-position: center;
+}
+
+.ma-home-hero__poster {
+  z-index: 0;
+}
+
+.ma-home-hero__video {
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 180ms ease-out;
+}
+
+.ma-home-hero__video.is-playing {
+  opacity: 1;
 }
 
 /* --- Buttons --- */
@@ -933,7 +920,7 @@ body.home .container.grid-container {
 }
 
 /* --- Desktop: side-by-side --- */
-@media (min-width: 48rem) {
+@media (min-width: 64rem) {
   .ma-home-hero__inner {
     grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
     min-height: clamp(27rem, 50vh, 32rem);
@@ -997,7 +984,7 @@ body.home .container.grid-container {
   }
 }
 
-@media (max-width: 47.9375rem) {
+@media (max-width: 63.9375rem) {
   .ma-home-hero__eyebrow::after {
     width: 3.5rem;
   }
@@ -1008,23 +995,26 @@ body.home .container.grid-container {
 
   .ma-home-hero__visual {
     max-width: var(--ma-home-hero-visual-compact-width);
-    min-height: var(--ma-home-hero-stage-mobile-height);
+    min-height: 0;
+    margin-inline: auto;
+  }
+
+  .ma-home-hero__content {
+    width: 100%;
     margin-inline: auto;
   }
 
   .ma-home-hero__stage {
-    height: var(--ma-home-hero-stage-mobile-height);
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 
-  .ma-home-hero__brand-mark {
-    width: min(92%, var(--ma-home-hero-mark-width));
-    opacity: calc(var(--ma-home-hero-mark-opacity) * 0.78);
-  }
+}
 
-  .ma-home-hero__model {
-    height: var(--ma-home-hero-model-mobile-height);
+@media (prefers-reduced-motion: reduce) {
+  .ma-home-hero__video {
+    display: none;
   }
-
 }
 /* --- Home: Client Logos --- */
 .ma-client-logos {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Homepage hero section — layered brand mark, product model, and buyer CTA.
+ * Homepage hero section — real garment video, buyer CTA, and trust programs.
  *
  * @package myathletik-child
  */
@@ -9,20 +9,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$hero_model_base   = get_stylesheet_directory_uri() . '/assets/images/sportswear/';
-$hero_model_png    = $hero_model_base . 'home-hero-baselayer-relaxed-v2.png';
-$hero_model_srcset = implode(
-	', ',
-	array(
-		$hero_model_base . 'home-hero-baselayer-relaxed-v2-360.webp 360w',
-		$hero_model_base . 'home-hero-baselayer-relaxed-v2-540.webp 540w',
-		$hero_model_base . 'home-hero-baselayer-relaxed-v2-720.webp 720w',
-	)
-);
-
-$hero_brand_mark = get_stylesheet_directory_uri() . '/assets/images/brand/athletik-hero-mark.png';
-$hero_badge_base = get_stylesheet_directory_uri() . '/assets/images/audit&certificates/hero-transparent/';
-$hero_badges     = array(
+$hero_media_base    = get_stylesheet_directory_uri() . '/assets/images/sportswear/';
+$hero_video_desktop = $hero_media_base . 'home-hero-black-base-layer-desktop.mp4';
+$hero_video_mobile  = $hero_media_base . 'home-hero-black-base-layer-mobile.mp4';
+$hero_video_poster  = $hero_media_base . 'home-hero-black-base-layer-poster.webp';
+$hero_badge_base   = get_stylesheet_directory_uri() . '/assets/images/audit&certificates/hero-transparent/';
+$hero_badges       = array(
 	array( 'file' => 'hero-bsci.png', 'alt' => __( 'BSCI audit program', 'myathletik-child' ) ),
 	array( 'file' => 'hero-oeko-tex.png', 'alt' => __( 'OEKO-TEX Standard 100 program', 'myathletik-child' ) ),
 	array( 'file' => 'hero-grs.png', 'alt' => __( 'Global Recycled Standard program', 'myathletik-child' ) ),
@@ -69,32 +61,37 @@ $hero_badges     = array(
 		<div class="ma-home-hero__visual">
 			<div class="ma-home-hero__stage">
 				<img
-					class="ma-home-hero__brand-mark"
-					src="<?php echo esc_url( $hero_brand_mark ); ?>"
+					class="ma-home-hero__poster"
+					src="<?php echo esc_url( $hero_video_poster ); ?>"
 					alt=""
-					width="470"
-					height="285"
+					width="1280"
+					height="720"
 					loading="eager"
-					fetchpriority="low"
+					fetchpriority="high"
 					decoding="async"
-					aria-hidden="true"
 				>
-				<picture class="ma-home-hero__model">
+				<video
+					class="ma-home-hero__video"
+					autoplay
+					muted
+					loop
+					playsinline
+					preload="metadata"
+					poster="<?php echo esc_url( $hero_video_poster ); ?>"
+					aria-hidden="true"
+					tabindex="-1"
+					data-ma-home-hero-video
+				>
 					<source
-						type="image/webp"
-						srcset="<?php echo esc_attr( $hero_model_srcset ); ?>"
-						sizes="(max-width: 47.9375rem) 82vw, 32vw"
+						media="(max-width: 63.9375rem)"
+						src="<?php echo esc_url( $hero_video_mobile ); ?>"
+						type="video/mp4"
 					>
-					<img
-						src="<?php echo esc_url( $hero_model_png ); ?>"
-						alt="<?php esc_attr_e( 'Female model in a relaxed standing pose wearing a charcoal technical base layer and black performance leggings', 'myathletik-child' ); ?>"
-						width="720"
-						height="1080"
-						loading="eager"
-						fetchpriority="high"
-						decoding="async"
+					<source
+						src="<?php echo esc_url( $hero_video_desktop ); ?>"
+						type="video/mp4"
 					>
-				</picture>
+				</video>
 			</div>
 		</div>
 	</div>

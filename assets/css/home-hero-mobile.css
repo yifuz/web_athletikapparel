@@ -1,11 +1,11 @@
 /**
  * Homepage Hero mobile art direction.
  *
- * Keep the transparent full-body model intact below the conversion copy and
- * reduce the background brand mark so it supports rather than dominates.
+ * Keep the real garment video above the conversion copy while preserving a
+ * compact 16:9 frame on narrow screens.
  */
 
-@media (max-width: 47.9375rem) {
+@media (max-width: 63.9375rem) {
   .ma-home-hero__visual {
     grid-row: 1;
   }
@@ -14,8 +14,9 @@
     grid-row: 2;
   }
 
-  .ma-home-hero__model img {
-    object-position: center bottom;
+  .ma-home-hero__poster,
+  .ma-home-hero__video {
+    object-position: center;
   }
 
   .ma-home-hero__actions {
