@@ -81,8 +81,17 @@ Text Domain:  myathletik-child
   --ma-article-reading-width: 72ch;
   --ma-article-sidebar-width: 15rem;
   --ma-article-table-min-width: 60rem;
-  --ma-home-collage-width: 35rem;
-  --ma-home-collage-compact-width: 26rem;
+  --ma-home-hero-content-width: 34rem;
+  --ma-home-hero-visual-width: 36rem;
+  --ma-home-hero-visual-compact-width: 30rem;
+  --ma-home-hero-stage-height: clamp(25rem, 48vw, 34rem);
+  --ma-home-hero-stage-compact-height: 27rem;
+  --ma-home-hero-stage-mobile-height: clamp(18rem, 84vw, 23rem);
+  --ma-home-hero-mark-width: 44rem;
+  --ma-home-hero-mark-opacity: 0.13;
+  --ma-home-hero-badge-size: 2.75rem;
+  --ma-home-hero-bg: linear-gradient(110deg, var(--ma-color-bg) 0%, var(--ma-color-surface) 100%);
+  --ma-home-hero-model-shadow: drop-shadow(0 1.25rem 1.5rem rgba(43, 39, 36, 0.16));
   --ma-home-desktop-chrome-height: 7.605rem; /* desktop header + social bar */
   --ma-client-logo-strip-height: 8.25rem;
   --ma-client-logo-frame-height: calc(var(--ma-space-6) + var(--ma-space-3) + var(--ma-space-1));
@@ -703,7 +712,7 @@ body.home .container.grid-container {
   padding: clamp(1.75rem, 3.6vw, 3rem) var(--ma-space-4);
   overflow: hidden;
   box-sizing: border-box;
-  background: var(--ma-color-surface);
+  background: var(--ma-home-hero-bg);
 }
 
 .ma-home-hero__inner {
@@ -717,15 +726,13 @@ body.home .container.grid-container {
   align-items: center;
 }
 
-/* --- Text panel (left) --- */
+/* --- Text panel --- */
 .ma-home-hero__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-width: 0;
-  /* Was 35rem (560px). Tightened to 30rem so the text column reads as a
-     narrower panel against the now-wider bento collage. */
-  max-width: 30rem;
+  max-width: var(--ma-home-hero-content-width);
   padding: var(--ma-space-3) 0;
   color: var(--ma-color-text);
 }
@@ -757,11 +764,8 @@ body.home .container.grid-container {
   color: var(--ma-color-text);
   font-family: var(--ma-font-head);
   max-width: 18ch;
-  /* Was clamp(2.15rem, 4.3vw, 3.45rem). Upper cap lowered to 2.9rem so the
-     first line ("Performance Knitwear") stays on one line without crowding
-     the 30rem text panel. Mid and floor kept responsive. */
-  font-size: clamp(2rem, 3.6vw, 2.9rem);
-  font-weight: 600;
+  font-size: var(--ma-fs-h1);
+  font-weight: 700;
   letter-spacing: 0;
   line-height: 1.05;
 }
@@ -776,7 +780,7 @@ body.home .container.grid-container {
 }
 
 .ma-home-hero__subhead {
-  max-width: 36rem;
+  max-width: var(--ma-home-hero-content-width);
   margin: var(--ma-space-3) 0 0;
   color: var(--ma-color-muted);
   font-size: 1.02rem;
@@ -791,37 +795,70 @@ body.home .container.grid-container {
   margin-top: var(--ma-space-4);
 }
 
-.ma-home-hero__tags {
+.ma-home-hero__assurance {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
+  align-items: center;
+  gap: var(--ma-space-3);
   margin: var(--ma-space-3) 0 0;
   padding: var(--ma-space-3) 0 0;
   border-top: 1px solid rgba(111, 103, 95, 0.18);
-  list-style: none;
+  color: var(--ma-color-muted);
+  text-decoration: none;
 }
 
-.ma-home-hero__tags li {
-  position: relative;
+.ma-home-hero__assurance:hover,
+.ma-home-hero__assurance:focus {
+  color: var(--ma-color-accent-2);
+}
+
+.ma-home-hero__assurance:focus-visible {
+  outline: 3px solid rgba(194, 96, 47, 0.5);
+  outline-offset: var(--ma-space-2);
+}
+
+.ma-home-hero__assurance-label {
   color: var(--ma-color-muted);
   font-size: 0.78rem;
   font-weight: 700;
+  letter-spacing: 0.08em;
   line-height: 1.35;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
-.ma-home-hero__tags li:not(:last-child)::after {
-  content: "";
-  display: inline-block;
-  width: 0.28rem;
-  height: 0.28rem;
-  margin-left: 0.55rem;
-  border-radius: 999px;
-  background: rgba(194, 96, 47, 0.55);
-  vertical-align: middle;
+.ma-home-hero__badges {
+  display: flex;
+  align-items: center;
+  gap: var(--ma-space-2);
 }
 
-/* --- Visual panel (right): Bento collage --- */
+.ma-home-hero__badge {
+  display: grid;
+  width: var(--ma-home-hero-badge-size);
+  aspect-ratio: 1;
+  place-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid var(--ma-color-border);
+  border-radius: 50%;
+  background: var(--ma-color-white);
+  transition: border-color 180ms ease;
+}
+
+.ma-home-hero__assurance:hover .ma-home-hero__badge,
+.ma-home-hero__assurance:focus .ma-home-hero__badge {
+  border-color: var(--ma-color-accent);
+}
+
+.ma-home-hero__badge img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* --- Visual panel: official brand mark behind the real garment model --- */
 .ma-home-hero__visual {
   position: relative;
   display: flex;
@@ -829,86 +866,51 @@ body.home .container.grid-container {
   justify-content: center;
   min-width: 0;
   width: 100%;
+  max-width: var(--ma-home-hero-visual-width);
+  min-height: var(--ma-home-hero-stage-height);
 }
 
-/*
- * Bento grid �� 4 cells, products vs manufacturing balanced.
- * Desktop layout (min-width 48rem):
- *   �������������������������������Щ�������������������
- *   ��              ��   C     ��  C: circular knitting (manufacturing)
- *   ��      A       ����������������������
- *   ��  garment A   ��   B     ��  B: sewing floor (manufacturing)
- *   ��  (large)     ����������������������
- *   ��              ��   D     ��  D: garment D (product)
- *   �������������������������������ة�������������������
- *  A spans the full height on the left; C/B/D stack on the right.
- */
-.ma-home-hero__collage {
-  display: grid;
-  /* Was min(100%, 30rem) = capped at 480px, which left empty space inside
-     the visual column. Tuned to 35rem (560px) as a balance: collage gets
-     ~80px wider than original (so bento_a reads bigger) without pushing
-     client-logos below the fold. */
-  width: min(100%, var(--ma-home-collage-width));
-  /* 1.75:1 makes the full-height A card approximately 4:7 while preserving
-     three near-square manufacturing/product cards in the right column. */
-  grid-template-columns: 1.75fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0.6rem;
-}
-
-.ma-bento {
+.ma-home-hero__stage {
   position: relative;
-  margin: 0;
-  overflow: hidden;
-  border-radius: 0.9rem;
-  border: 3px solid var(--ma-color-bg);
-  background: var(--ma-color-border);
-  box-shadow: 0 14px 34px rgba(43, 39, 36, 0.14);
-}
-
-/* A: large garment image �� fills the left column, spans all 3 rows */
-.ma-bento--a {
-  grid-column: 1;
-  grid-row: 1 / span 3;
-  border-radius: 0 2.5rem 0 2.5rem;
-}
-
-/* B, C, D: right column squares */
-.ma-bento--c { grid-column: 2; grid-row: 1; }
-.ma-bento--b { grid-column: 2; grid-row: 2; }
-.ma-bento--d { grid-column: 2; grid-row: 3; }
-
-.ma-bento img {
-  display: block;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  height: var(--ma-home-hero-stage-height);
+  isolation: isolate;
 }
 
-/* Soft inner edge for definition on light backgrounds */
-.ma-bento::after {
-  content: "";
+.ma-home-hero__brand-mark {
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  box-shadow: inset 0 0 0 1px rgba(43, 39, 36, 0.05);
+  z-index: 0;
+  top: 48%;
+  left: 50%;
+  display: block;
+  width: min(125%, var(--ma-home-hero-mark-width));
+  height: auto;
+  opacity: var(--ma-home-hero-mark-opacity);
+  mix-blend-mode: multiply;
+  transform: translate(-50%, -50%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .ma-bento {
-    opacity: 0;
-    animation: ma-bento-in 520ms ease-out forwards;
-  }
-  .ma-bento--a { animation-delay: 60ms; }
-  .ma-bento--c { animation-delay: 180ms; }
-  .ma-bento--b { animation-delay: 280ms; }
-  .ma-bento--d { animation-delay: 380ms; }
-  @keyframes ma-bento-in {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+.ma-home-hero__model {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: auto;
+  height: 100%;
+}
+
+.ma-home-hero__model img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: var(--ma-home-hero-model-shadow);
 }
 
 /* --- Buttons --- */
@@ -968,18 +970,20 @@ body.home .container.grid-container {
 /* --- Desktop: side-by-side --- */
 @media (min-width: 48rem) {
   .ma-home-hero__inner {
-    /* Was 0.92fr / 1.08fr (near 50/50). Narrowed the text column and
-       widened the visual column so the bento collage gets more room ��
-       the model image was the tightest element in the hero. */
-    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
     min-height: clamp(27rem, 50vh, 32rem);
   }
 
-  /* Reduce internal whitespace without distorting the model. Bottom-center
-     anchoring keeps the shoes stable while trimming the top and side space. */
-  .ma-bento--a img {
-    transform: scale(1.15);
-    transform-origin: center bottom;
+  .ma-home-hero__visual {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+  }
+
+  .ma-home-hero__content {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
   }
 
   .ma-home-hero__subhead {
@@ -1014,8 +1018,13 @@ body.home .container.grid-container {
     padding-block: 0;
   }
 
-  .ma-home-hero__collage {
-    width: min(100%, var(--ma-home-collage-compact-width));
+  .ma-home-hero__visual {
+    max-width: var(--ma-home-hero-visual-compact-width);
+    min-height: var(--ma-home-hero-stage-compact-height);
+  }
+
+  .ma-home-hero__stage {
+    height: var(--ma-home-hero-stage-compact-height);
   }
 }
 
@@ -1028,27 +1037,26 @@ body.home .container.grid-container {
     font-size: clamp(2.1rem, 11vw, 2.9rem);
   }
 
-  /* Bento: stack into A on top (wide), B/C/D in a row below */
-  .ma-home-hero__collage {
-    width: 100%;
-    max-width: 26rem;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 0.5rem;
+  .ma-home-hero__visual {
+    max-width: var(--ma-home-hero-visual-compact-width);
+    min-height: var(--ma-home-hero-stage-mobile-height);
+    margin-inline: auto;
   }
 
-  .ma-bento--a {
-    grid-column: 1 / span 3;
-    grid-row: 1;
-    aspect-ratio: 16 / 10;
-    border-radius: 0 2rem 0 2rem;
+  .ma-home-hero__stage {
+    height: var(--ma-home-hero-stage-mobile-height);
   }
 
-  .ma-bento--c { grid-column: 1; grid-row: 2; }
-  .ma-bento--b { grid-column: 2; grid-row: 2; }
-  .ma-bento--d { grid-column: 3; grid-row: 2; }
+  .ma-home-hero__brand-mark {
+    width: min(92%, var(--ma-home-hero-mark-width));
+    opacity: calc(var(--ma-home-hero-mark-opacity) * 0.78);
+  }
 
-  .ma-bento { border-width: 2px; }
+  .ma-home-hero__assurance {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--ma-space-2);
+  }
 }
 /* --- Home: Client Logos --- */
 .ma-client-logos {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Homepage hero section — left-right layout.
+ * Homepage hero section — layered brand mark, product model, and buyer CTA.
  *
  * @package myathletik-child
  */
@@ -9,51 +9,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$hero_garment_a  = get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-knitwear-hero-1280-lossless.webp';
-$hero_garment_a_srcset = implode(
+$hero_model_base   = get_stylesheet_directory_uri() . '/assets/images/sportswear/';
+$hero_model_png    = $hero_model_base . 'home-hero-baselayer-model.png';
+$hero_model_srcset = implode(
 	', ',
 	array(
-		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-knitwear-hero-480-lossless.webp 480w',
-		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-knitwear-hero-640-lossless.webp 640w',
-		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-knitwear-hero-720-lossless.webp 720w',
-		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-knitwear-hero-960-lossless.webp 960w',
-		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-knitwear-hero-1280-lossless.webp 1280w',
+		$hero_model_base . 'home-hero-baselayer-model-320.webp 320w',
+		$hero_model_base . 'home-hero-baselayer-model-480.webp 480w',
+		$hero_model_base . 'home-hero-baselayer-model-560.webp 560w',
 	)
 );
-$hero_sewing = get_stylesheet_directory_uri() . '/assets/images/production/sewing-floor-bento-400-q100.webp';
-$hero_sewing_srcset = implode(
-	', ',
-	array(
-		get_stylesheet_directory_uri() . '/assets/images/production/sewing-floor-bento-160-q100.webp 160w',
-		get_stylesheet_directory_uri() . '/assets/images/production/sewing-floor-bento-240-q100.webp 240w',
-		get_stylesheet_directory_uri() . '/assets/images/production/sewing-floor-bento-320-q100.webp 320w',
-		get_stylesheet_directory_uri() . '/assets/images/production/sewing-floor-bento-400-q100.webp 400w',
-	)
+
+$hero_brand_mark = get_stylesheet_directory_uri() . '/assets/images/brand/athletik-hero-mark.png';
+$hero_badge_base = get_stylesheet_directory_uri() . '/assets/images/audit&certificates/';
+$hero_badges     = array(
+	'OEKO-100-300x300-150x150-1.png',
+	'GRS-300x300-150x150-1.png',
+	'audit-bsci-sm-150x150-1.jpg',
+	'audit-SMETA-150by150.png',
 );
-$hero_knitting = get_stylesheet_directory_uri() . '/assets/images/production/circular-knitting-bento-400-q100.webp';
-$hero_knitting_srcset = implode(
-	', ',
-	array(
-		get_stylesheet_directory_uri() . '/assets/images/production/circular-knitting-bento-160-q100.webp 160w',
-		get_stylesheet_directory_uri() . '/assets/images/production/circular-knitting-bento-240-q100.webp 240w',
-		get_stylesheet_directory_uri() . '/assets/images/production/circular-knitting-bento-320-q100.webp 320w',
-		get_stylesheet_directory_uri() . '/assets/images/production/circular-knitting-bento-400-q100.webp 400w',
-	)
-);
-$hero_garment_d = get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-garment-bento-400-q100.webp';
-$hero_garment_d_srcset = implode(
-	', ',
-	array(
-		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-garment-bento-160-q100.webp 160w',
-		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-garment-bento-240-q100.webp 240w',
-		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-garment-bento-320-q100.webp 320w',
-		get_stylesheet_directory_uri() . '/assets/images/sportswear/performance-garment-bento-400-q100.webp 400w',
-	)
-);
-$hero_secondary_sizes = '(max-width: 47.9375rem) calc((100vw - 3rem) / 3), 13rem';
 ?>
 
-<section class="ma-home-hero" aria-label="<?php esc_attr_e( 'myathletik homepage introduction', 'myathletik-child' ); ?>">
+<section class="ma-home-hero" aria-label="<?php esc_attr_e( 'Athletik Clothing homepage introduction', 'myathletik-child' ); ?>">
 	<div class="ma-home-hero__inner">
 		<div class="ma-home-hero__content">
 			<p class="ma-home-hero__eyebrow"><?php esc_html_e( 'Yarn-to-Garment Integration', 'myathletik-child' ); ?></p>
@@ -70,67 +47,55 @@ $hero_secondary_sizes = '(max-width: 47.9375rem) calc((100vw - 3rem) / 3), 13rem
 					<?php esc_html_e( 'View Products', 'myathletik-child' ); ?>
 				</a>
 			</div>
-			<ul class="ma-home-hero__tags" aria-label="<?php esc_attr_e( 'Homepage capability highlights', 'myathletik-child' ); ?>">
-				<li><?php esc_html_e( 'Yarn-to-Fabric Development', 'myathletik-child' ); ?></li>
-				<li><?php esc_html_e( 'FLATLOCK & ACTIVESEAM', 'myathletik-child' ); ?></li>
-				<li><?php esc_html_e( 'In-house Testing', 'myathletik-child' ); ?></li>
-				<li><?php esc_html_e( 'Reliable Export', 'myathletik-child' ); ?></li>
-			</ul>
+
+			<a class="ma-home-hero__assurance" href="<?php echo esc_url( home_url( '/#ma-home-certifications-title' ) ); ?>" aria-label="<?php esc_attr_e( 'Review audit and certification program applicability', 'myathletik-child' ); ?>">
+				<span class="ma-home-hero__assurance-label"><?php esc_html_e( 'Program references', 'myathletik-child' ); ?></span>
+				<span class="ma-home-hero__badges" aria-hidden="true">
+					<?php foreach ( $hero_badges as $badge_file ) : ?>
+						<span class="ma-home-hero__badge">
+							<img
+								src="<?php echo esc_url( $hero_badge_base . $badge_file ); ?>"
+								alt=""
+								width="150"
+								height="150"
+								loading="lazy"
+								decoding="async"
+							>
+						</span>
+					<?php endforeach; ?>
+				</span>
+			</a>
 		</div>
-		<div class="ma-home-hero__visual" aria-hidden="true">
-			<div class="ma-home-hero__collage">
-				<figure class="ma-bento ma-bento--a">
+
+		<div class="ma-home-hero__visual">
+			<div class="ma-home-hero__stage">
+				<img
+					class="ma-home-hero__brand-mark"
+					src="<?php echo esc_url( $hero_brand_mark ); ?>"
+					alt=""
+					width="470"
+					height="285"
+					loading="eager"
+					fetchpriority="low"
+					decoding="async"
+					aria-hidden="true"
+				>
+				<picture class="ma-home-hero__model">
+					<source
+						type="image/webp"
+						srcset="<?php echo esc_attr( $hero_model_srcset ); ?>"
+						sizes="(max-width: 47.9375rem) 82vw, 32vw"
+					>
 					<img
-						src="<?php echo esc_url( $hero_garment_a ); ?>"
-						srcset="<?php echo esc_attr( $hero_garment_a_srcset ); ?>"
-						sizes="(max-width: 29.99rem) calc(100vw - 2rem), (max-width: 47.9375rem) 26rem, 22rem"
-						alt=""
-						width="1280"
-						height="2240"
+						src="<?php echo esc_url( $hero_model_png ); ?>"
+						alt="<?php esc_attr_e( 'Female model wearing a charcoal technical base layer and black performance leggings', 'myathletik-child' ); ?>"
+						width="560"
+						height="942"
 						loading="eager"
 						fetchpriority="high"
 						decoding="async"
 					>
-				</figure>
-				<figure class="ma-bento ma-bento--b">
-					<img
-						src="<?php echo esc_url( $hero_sewing ); ?>"
-						srcset="<?php echo esc_attr( $hero_sewing_srcset ); ?>"
-						sizes="<?php echo esc_attr( $hero_secondary_sizes ); ?>"
-						alt=""
-						width="400"
-						height="400"
-						loading="lazy"
-						fetchpriority="low"
-						decoding="async"
-					>
-				</figure>
-				<figure class="ma-bento ma-bento--c">
-					<img
-						src="<?php echo esc_url( $hero_knitting ); ?>"
-						srcset="<?php echo esc_attr( $hero_knitting_srcset ); ?>"
-						sizes="<?php echo esc_attr( $hero_secondary_sizes ); ?>"
-						alt=""
-						width="400"
-						height="400"
-						loading="lazy"
-						fetchpriority="low"
-						decoding="async"
-					>
-				</figure>
-				<figure class="ma-bento ma-bento--d">
-					<img
-						src="<?php echo esc_url( $hero_garment_d ); ?>"
-						srcset="<?php echo esc_attr( $hero_garment_d_srcset ); ?>"
-						sizes="<?php echo esc_attr( $hero_secondary_sizes ); ?>"
-						alt=""
-						width="400"
-						height="400"
-						loading="lazy"
-						fetchpriority="low"
-						decoding="async"
-					>
-				</figure>
+				</picture>
 			</div>
 		</div>
 	</div>

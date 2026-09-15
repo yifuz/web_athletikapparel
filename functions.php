@@ -64,6 +64,37 @@ function myathletik_images_uri() {
 }
 
 /**
+ * Preload the responsive transparent model used as the homepage LCP image.
+ */
+function myathletik_preload_home_hero() {
+	if ( ! is_front_page() ) {
+		return;
+	}
+
+	$base_url = myathletik_images_uri() . '/sportswear/';
+	$srcset   = implode(
+		', ',
+		array(
+			$base_url . 'home-hero-baselayer-model-320.webp 320w',
+			$base_url . 'home-hero-baselayer-model-480.webp 480w',
+			$base_url . 'home-hero-baselayer-model-560.webp 560w',
+		)
+	);
+	?>
+	<link
+		rel="preload"
+		as="image"
+		type="image/webp"
+		href="<?php echo esc_url( $base_url . 'home-hero-baselayer-model-560.webp' ); ?>"
+		imagesrcset="<?php echo esc_attr( $srcset ); ?>"
+		imagesizes="(max-width: 47.9375rem) 82vw, 32vw"
+		fetchpriority="high"
+	>
+	<?php
+}
+add_action( 'wp_head', 'myathletik_preload_home_hero', 3 );
+
+/**
  * Preload the responsive editorial cover used above the fold on guide pages.
  */
 function myathletik_preload_technical_guide_cover() {
