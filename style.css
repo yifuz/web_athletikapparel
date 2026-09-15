@@ -89,6 +89,10 @@ Text Domain:  myathletik-child
   --ma-client-logo-image-height: calc(var(--ma-space-6) + var(--ma-space-2));
   --ma-client-logo-max-width: 15rem;
   --ma-services-stage-number-width: calc(var(--ma-space-6) + var(--ma-space-3) + var(--ma-space-3));
+  --ma-home-proof-content-width: 56rem;
+  --ma-home-proof-overlay: linear-gradient(90deg, rgba(250, 248, 245, 0.97) 0%, rgba(250, 248, 245, 0.9) 58%, rgba(250, 248, 245, 0.42) 100%);
+  --ma-home-proof-overlay-compact: linear-gradient(rgba(250, 248, 245, 0.91), rgba(250, 248, 245, 0.91));
+  --ma-home-proof-card-bg: rgba(255, 255, 255, 0.82);
 }
 
 html,
@@ -1378,15 +1382,43 @@ body.home .container.grid-container {
 
 /* --- Home: Capability Proof --- */
 .ma-home-proof {
-  background: var(--ma-color-bg);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--ma-color-surface);
 }
 
-.ma-home-proof__layout {
-  display: grid;
-  gap: var(--ma-space-5);
+.ma-home-proof::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: var(--ma-home-proof-overlay);
+  content: "";
+}
+
+.ma-home-proof__background {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  margin: 0;
+  line-height: 0;
+}
+
+.ma-home-proof .ma-section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.ma-home-proof__background img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .ma-home-proof__content {
+  max-width: var(--ma-home-proof-content-width);
   min-width: 0;
 }
 
@@ -1403,7 +1435,7 @@ body.home .container.grid-container {
   padding: var(--ma-space-4);
   border: 1px solid var(--ma-color-border);
   border-radius: var(--ma-radius);
-  background: rgba(255, 255, 255, 0.42);
+  background: var(--ma-home-proof-card-bg);
   box-shadow: 0 10px 24px rgba(43, 39, 36, 0.06);
 }
 
@@ -1456,21 +1488,9 @@ body.home .container.grid-container {
   }
 }
 
-@media (min-width: 64rem) {
-  .ma-home-proof__layout {
-    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
-    align-items: stretch;
-  }
-
-  .ma-home-proof__content {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .ma-home-proof__media {
-    grid-column: 2;
-    grid-row: 1;
-    aspect-ratio: auto;
+@media (max-width: 47.99rem) {
+  .ma-home-proof::before {
+    background: var(--ma-home-proof-overlay-compact);
   }
 }
 
