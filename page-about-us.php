@@ -28,8 +28,12 @@ $differentiators = array(
 	),
 );
 
-$about_hero_image     = get_stylesheet_directory_uri() . '/assets/images/production/%E5%B7%A5%E5%8E%82%E5%85%A8%E6%99%AF.png';
-$about_workshop_image = get_stylesheet_directory_uri() . '/assets/images/production/%E8%BD%A6%E9%97%B4.png';
+$about_hero_image   = get_stylesheet_directory_uri() . '/assets/images/production/%E5%B7%A5%E5%8E%82%E5%85%A8%E6%99%AF.png';
+$about_process_base = get_stylesheet_directory_uri() . '/assets/images/production/garment-process/';
+$about_story_image  = $about_process_base . 'garment-sewing-workshop-overview';
+$about_story_srcset = $about_story_image . '-480.webp 480w, ' . $about_story_image . '-800.webp 800w, ' . $about_story_image . '-1536.webp 1536w';
+$about_serve_image  = $about_process_base . 'technical-garment-sewing-detail';
+$about_serve_srcset = $about_serve_image . '-480.webp 480w, ' . $about_serve_image . '-800.webp 800w, ' . $about_serve_image . '-1536.webp 1536w';
 
 get_header();
 ?>
@@ -48,13 +52,25 @@ get_header();
 	</section>
 
 	<section class="ma-about-story" aria-labelledby="ma-about-story-title">
-		<div class="ma-section-inner ma-about-split">
-			<div>
+		<div class="ma-section-inner ma-about-story__layout">
+			<figure class="ma-context-image ma-about-story__media">
+				<img
+					src="<?php echo esc_url( $about_story_image . '-800.webp' ); ?>"
+					srcset="<?php echo esc_attr( $about_story_srcset ); ?>"
+					sizes="(max-width: 63.99rem) calc(100vw - 3rem), 40rem"
+					width="1536"
+					height="864"
+					loading="lazy"
+					decoding="async"
+					alt="<?php esc_attr_e( 'Sewing operator working at an industrial machine inside the Athletik Clothing garment workshop', 'myathletik-child' ); ?>"
+				>
+			</figure>
+			<div class="ma-about-story__copy">
 				<p class="ma-section-kicker"><?php esc_html_e( 'Our story', 'myathletik-child' ); ?></p>
 				<h2 id="ma-about-story-title"><?php esc_html_e( 'Integrated from yarn to shipment', 'myathletik-child' ); ?></h2>
-			</div>
-			<div class="ma-about-copy-slot">
-				<p><?php esc_html_e( 'What sets us apart is integration. From our own fabric mill to finished-garment construction, we control the process from yarn to shipment, giving brands a single, reliable production partner instead of a chain of separate suppliers. Over 15 years we have refined our technical capabilities around the seams and fabrics that performance apparel depends on.', 'myathletik-child' ); ?></p>
+				<div class="ma-about-copy-slot">
+					<p><?php esc_html_e( 'What sets us apart is integration. From our own fabric mill to finished-garment construction, we control the process from yarn to shipment, giving brands a single, reliable production partner instead of a chain of separate suppliers. Over 15 years we have refined our technical capabilities around the seams and fabrics that performance apparel depends on.', 'myathletik-child' ); ?></p>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -78,8 +94,17 @@ get_header();
 
 	<section class="ma-about-serve" aria-labelledby="ma-about-serve-title">
 		<div class="ma-section-inner ma-about-serve__grid">
-			<figure class="ma-about-image-slot ma-about-image-slot--secondary">
-				<img src="<?php echo esc_url( $about_workshop_image ); ?>" alt="<?php esc_attr_e( 'Athletik Clothing production workshop', 'myathletik-child' ); ?>" loading="lazy">
+			<figure class="ma-about-image-slot ma-about-image-slot--secondary ma-about-serve__media">
+				<img
+					src="<?php echo esc_url( $about_serve_image . '-800.webp' ); ?>"
+					srcset="<?php echo esc_attr( $about_serve_srcset ); ?>"
+					sizes="(max-width: 63.99rem) calc(100vw - 3rem), 38rem"
+					width="1536"
+					height="1024"
+					loading="lazy"
+					decoding="async"
+					alt="<?php esc_attr_e( 'Sewing operator assembling an olive garment at an industrial sewing machine', 'myathletik-child' ); ?>"
+				>
 			</figure>
 			<div class="ma-about-serve__copy">
 				<p class="ma-section-kicker"><?php esc_html_e( 'Who we serve', 'myathletik-child' ); ?></p>

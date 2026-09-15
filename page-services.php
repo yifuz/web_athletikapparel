@@ -78,6 +78,11 @@ $services_hero_srcset = implode(
 		get_stylesheet_directory_uri() . '/assets/images/services/services-production-line-1672-lossless.webp 1672w',
 	)
 );
+$services_process_base      = get_stylesheet_directory_uri() . '/assets/images/production/garment-process/';
+$services_capability_image  = $services_process_base . 'garment-sewing-operator';
+$services_capability_srcset = $services_capability_image . '-480.webp 480w, ' . $services_capability_image . '-800.webp 800w, ' . $services_capability_image . '-1536.webp 1536w';
+$services_cutting_image     = $services_process_base . 'garment-cutting-workshop';
+$services_cutting_srcset    = $services_cutting_image . '-480.webp 480w, ' . $services_cutting_image . '-800.webp 800w, ' . $services_cutting_image . '-1536.webp 1536w';
 ?>
 
 <main id="primary" class="site-main ma-services-page">
@@ -108,21 +113,49 @@ $services_hero_srcset = implode(
 				<p class="ma-section-kicker"><?php esc_html_e( 'Capabilities', 'myathletik-child' ); ?></p>
 				<h2 id="ma-services-capabilities-title"><?php esc_html_e( 'A full-package production workflow', 'myathletik-child' ); ?></h2>
 			</div>
-			<div class="ma-services-capabilities__grid">
-				<?php foreach ( $capabilities as $capability ) : ?>
-					<article class="ma-services-capability">
-						<p><?php echo esc_html( $capability ); ?></p>
-					</article>
-				<?php endforeach; ?>
+			<div class="ma-services-capabilities__layout">
+				<figure class="ma-context-image ma-services-capabilities__media">
+					<img
+						src="<?php echo esc_url( $services_capability_image . '-800.webp' ); ?>"
+						srcset="<?php echo esc_attr( $services_capability_srcset ); ?>"
+						sizes="(max-width: 63.99rem) calc(100vw - 3rem), 32rem"
+						width="1536"
+						height="880"
+						loading="lazy"
+						decoding="async"
+						alt="<?php esc_attr_e( 'Sewing operator assembling a black garment at an industrial sewing station', 'myathletik-child' ); ?>"
+					>
+				</figure>
+				<div class="ma-services-capabilities__grid">
+					<?php foreach ( $capabilities as $capability ) : ?>
+						<article class="ma-services-capability">
+							<p><?php echo esc_html( $capability ); ?></p>
+						</article>
+					<?php endforeach; ?>
+				</div>
 			</div>
 		</div>
 	</section>
 
 	<section class="ma-services-process" aria-labelledby="ma-services-process-title">
 		<div class="ma-section-inner">
-			<div class="ma-section-heading">
-				<p class="ma-section-kicker"><?php esc_html_e( 'Process', 'myathletik-child' ); ?></p>
-				<h2 id="ma-services-process-title"><?php esc_html_e( 'How your order moves through production', 'myathletik-child' ); ?></h2>
+			<div class="ma-services-process__intro">
+				<div class="ma-section-heading">
+					<p class="ma-section-kicker"><?php esc_html_e( 'Process', 'myathletik-child' ); ?></p>
+					<h2 id="ma-services-process-title"><?php esc_html_e( 'How your order moves through production', 'myathletik-child' ); ?></h2>
+				</div>
+				<figure class="ma-context-image ma-services-process__media">
+					<img
+						src="<?php echo esc_url( $services_cutting_image . '-800.webp' ); ?>"
+						srcset="<?php echo esc_attr( $services_cutting_srcset ); ?>"
+						sizes="(max-width: 63.99rem) calc(100vw - 3rem), 30rem"
+						width="1536"
+						height="1024"
+						loading="lazy"
+						decoding="async"
+						alt="<?php esc_attr_e( 'Operator cutting stacked black garment panels in the Athletik Clothing cutting workshop', 'myathletik-child' ); ?>"
+					>
+				</figure>
 			</div>
 			<div class="ma-services-process__list">
 				<?php foreach ( $stages as $stage ) : ?>
