@@ -1382,13 +1382,20 @@ body.home .container.grid-container {
 
 /* --- Home: Capability Proof --- */
 .ma-home-proof {
+  background: var(--ma-color-bg);
+}
+
+.ma-home-proof__panel {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  padding: var(--ma-space-5);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
   background: var(--ma-color-surface);
 }
 
-.ma-home-proof::before {
+.ma-home-proof__panel::before {
   position: absolute;
   z-index: 1;
   inset: 0;
@@ -1404,7 +1411,7 @@ body.home .container.grid-container {
   line-height: 0;
 }
 
-.ma-home-proof .ma-section-inner {
+.ma-home-proof__foreground {
   position: relative;
   z-index: 2;
 }
@@ -1425,10 +1432,6 @@ body.home .container.grid-container {
 .ma-home-proof__grid {
   display: grid;
   gap: var(--ma-space-4);
-}
-
-.ma-home-proof__media {
-  aspect-ratio: 3 / 2;
 }
 
 .ma-home-proof__item {
@@ -1489,7 +1492,11 @@ body.home .container.grid-container {
 }
 
 @media (max-width: 47.99rem) {
-  .ma-home-proof::before {
+  .ma-home-proof__panel {
+    padding: var(--ma-space-3);
+  }
+
+  .ma-home-proof__panel::before {
     background: var(--ma-home-proof-overlay-compact);
   }
 }

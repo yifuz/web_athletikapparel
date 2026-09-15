@@ -44,36 +44,40 @@ $proof_media_srcset = implode(
 ?>
 
 <section class="ma-home-proof" aria-labelledby="ma-home-proof-title">
-	<picture class="ma-home-proof__background" aria-hidden="true">
-		<img
-			src="<?php echo esc_url( $proof_media_base . '-800.webp' ); ?>"
-			srcset="<?php echo esc_attr( $proof_media_srcset ); ?>"
-			sizes="100vw"
-			width="1536"
-			height="1024"
-			loading="lazy"
-			decoding="async"
-			alt=""
-		>
-	</picture>
 	<div class="ma-section-inner">
-		<h2 id="ma-home-proof-title" class="ma-section-kicker"><?php esc_html_e( 'Manufacturing proof points', 'myathletik-child' ); ?></h2>
-		<div class="ma-home-proof__content">
-			<div class="ma-home-proof__grid">
-				<?php foreach ( $proof_items as $item ) : ?>
-					<article class="ma-home-proof__item">
-						<span class="ma-home-proof__icon" aria-hidden="true">
-							<?php get_template_part( 'template-parts/ui/line-icon', null, array( 'name' => $item['icon'] ) ); ?>
-						</span>
-						<h3><?php echo esc_html( $item['label'] ); ?></h3>
-						<p><?php echo esc_html( $item['copy'] ); ?></p>
-					</article>
-				<?php endforeach; ?>
+		<div class="ma-home-proof__panel">
+			<picture class="ma-home-proof__background" aria-hidden="true">
+				<img
+					src="<?php echo esc_url( $proof_media_base . '-800.webp' ); ?>"
+					srcset="<?php echo esc_attr( $proof_media_srcset ); ?>"
+					sizes="(max-width: 75rem) calc(100vw - 3rem), 72rem"
+					width="1536"
+					height="1024"
+					loading="lazy"
+					decoding="async"
+					alt=""
+				>
+			</picture>
+			<div class="ma-home-proof__foreground">
+				<h2 id="ma-home-proof-title" class="ma-section-kicker"><?php esc_html_e( 'Manufacturing proof points', 'myathletik-child' ); ?></h2>
+				<div class="ma-home-proof__content">
+					<div class="ma-home-proof__grid">
+						<?php foreach ( $proof_items as $item ) : ?>
+							<article class="ma-home-proof__item">
+								<span class="ma-home-proof__icon" aria-hidden="true">
+									<?php get_template_part( 'template-parts/ui/line-icon', null, array( 'name' => $item['icon'] ) ); ?>
+								</span>
+								<h3><?php echo esc_html( $item['label'] ); ?></h3>
+								<p><?php echo esc_html( $item['copy'] ); ?></p>
+							</article>
+						<?php endforeach; ?>
+					</div>
+					<p class="ma-home-proof__note">
+						<?php esc_html_e( 'Equipment and stitch construction are assigned by fabric, seam location, stretch requirement, and approved sample rather than applied as a blanket specification.', 'myathletik-child' ); ?>
+						<a href="<?php echo esc_url( home_url( '/flatlock-vs-overlock-technical-knitwear/' ) ); ?>"><?php esc_html_e( 'Review the FLATLOCK vs OVERLOCK production guide', 'myathletik-child' ); ?> <span aria-hidden="true">→</span></a>
+					</p>
+				</div>
 			</div>
-			<p class="ma-home-proof__note">
-				<?php esc_html_e( 'Equipment and stitch construction are assigned by fabric, seam location, stretch requirement, and approved sample rather than applied as a blanket specification.', 'myathletik-child' ); ?>
-				<a href="<?php echo esc_url( home_url( '/flatlock-vs-overlock-technical-knitwear/' ) ); ?>"><?php esc_html_e( 'Review the FLATLOCK vs OVERLOCK production guide', 'myathletik-child' ); ?> <span aria-hidden="true">→</span></a>
-			</p>
 		</div>
 	</div>
 </section>
