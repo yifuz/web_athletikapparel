@@ -10,23 +10,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $hero_model_base   = get_stylesheet_directory_uri() . '/assets/images/sportswear/';
-$hero_model_png    = $hero_model_base . 'home-hero-baselayer-model.png';
+$hero_model_png    = $hero_model_base . 'home-hero-baselayer-standing.png';
 $hero_model_srcset = implode(
 	', ',
 	array(
-		$hero_model_base . 'home-hero-baselayer-model-320.webp 320w',
-		$hero_model_base . 'home-hero-baselayer-model-480.webp 480w',
-		$hero_model_base . 'home-hero-baselayer-model-560.webp 560w',
+		$hero_model_base . 'home-hero-baselayer-standing-320.webp 320w',
+		$hero_model_base . 'home-hero-baselayer-standing-480.webp 480w',
+		$hero_model_base . 'home-hero-baselayer-standing-560.webp 560w',
 	)
 );
 
 $hero_brand_mark = get_stylesheet_directory_uri() . '/assets/images/brand/athletik-hero-mark.png';
 $hero_badge_base = get_stylesheet_directory_uri() . '/assets/images/audit&certificates/';
 $hero_badges     = array(
-	'OEKO-100-300x300-150x150-1.png',
-	'GRS-300x300-150x150-1.png',
-	'audit-bsci-sm-150x150-1.jpg',
-	'audit-SMETA-150by150.png',
+	array( 'file' => 'audit-bsci-sm-150x150-1.jpg', 'alt' => __( 'BSCI audit program', 'myathletik-child' ) ),
+	array( 'file' => 'OEKO-100-300x300-150x150-1.png', 'alt' => __( 'OEKO-TEX Standard 100 program', 'myathletik-child' ) ),
+	array( 'file' => 'GRS-300x300-150x150-1.png', 'alt' => __( 'Global Recycled Standard program', 'myathletik-child' ) ),
+	array( 'file' => 'audit-SMETA-150by150.png', 'alt' => __( 'SMETA audit program', 'myathletik-child' ) ),
+	array( 'file' => 'audit-RWS-150by150.png', 'alt' => __( 'Responsible Wool Standard program', 'myathletik-child' ) ),
+	array( 'file' => 'Higg_300X300-150x150-1.jpg', 'alt' => __( 'Higg Index assessment program', 'myathletik-child' ) ),
 );
 ?>
 
@@ -48,23 +50,20 @@ $hero_badges     = array(
 				</a>
 			</div>
 
-			<a class="ma-home-hero__assurance" href="<?php echo esc_url( home_url( '/#ma-home-certifications-title' ) ); ?>" aria-label="<?php esc_attr_e( 'Review audit and certification program applicability', 'myathletik-child' ); ?>">
-				<span class="ma-home-hero__assurance-label"><?php esc_html_e( 'Program references', 'myathletik-child' ); ?></span>
-				<span class="ma-home-hero__badges" aria-hidden="true">
-					<?php foreach ( $hero_badges as $badge_file ) : ?>
-						<span class="ma-home-hero__badge">
-							<img
-								src="<?php echo esc_url( $hero_badge_base . $badge_file ); ?>"
-								alt=""
-								width="150"
-								height="150"
-								loading="lazy"
-								decoding="async"
-							>
-						</span>
-					<?php endforeach; ?>
-				</span>
-			</a>
+			<ul class="ma-home-hero__badges" aria-label="<?php esc_attr_e( 'Audit, certification, and assessment programs', 'myathletik-child' ); ?>">
+				<?php foreach ( $hero_badges as $badge ) : ?>
+					<li class="ma-home-hero__badge">
+						<img
+							src="<?php echo esc_url( $hero_badge_base . $badge['file'] ); ?>"
+							alt="<?php echo esc_attr( $badge['alt'] ); ?>"
+							width="150"
+							height="150"
+							loading="eager"
+							decoding="async"
+						>
+					</li>
+				<?php endforeach; ?>
+			</ul>
 		</div>
 
 		<div class="ma-home-hero__visual">
@@ -88,7 +87,7 @@ $hero_badges     = array(
 					>
 					<img
 						src="<?php echo esc_url( $hero_model_png ); ?>"
-						alt="<?php esc_attr_e( 'Female model wearing a charcoal technical base layer and black performance leggings', 'myathletik-child' ); ?>"
+						alt="<?php esc_attr_e( 'Female model standing in a charcoal technical base layer and black performance leggings', 'myathletik-child' ); ?>"
 						width="560"
 						height="942"
 						loading="eager"

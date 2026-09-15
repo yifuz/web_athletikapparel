@@ -89,7 +89,9 @@ Text Domain:  myathletik-child
   --ma-home-hero-stage-mobile-height: clamp(18rem, 84vw, 23rem);
   --ma-home-hero-mark-width: 44rem;
   --ma-home-hero-mark-opacity: 0.13;
-  --ma-home-hero-badge-size: 2.75rem;
+  --ma-home-hero-model-height: 108%;
+  --ma-home-hero-model-mobile-height: 100%;
+  --ma-home-hero-badge-size: clamp(3.75rem, 4.8vw, 4.5rem);
   --ma-home-hero-bg: linear-gradient(110deg, var(--ma-color-bg) 0%, var(--ma-color-surface) 100%);
   --ma-home-hero-model-shadow: drop-shadow(0 1.25rem 1.5rem rgba(43, 39, 36, 0.16));
   --ma-home-desktop-chrome-height: 7.605rem; /* desktop header + social bar */
@@ -795,60 +797,25 @@ body.home .container.grid-container {
   margin-top: var(--ma-space-4);
 }
 
-.ma-home-hero__assurance {
-  display: flex;
-  flex-wrap: wrap;
+.ma-home-hero__badges {
+  display: grid;
+  grid-template-columns: repeat(3, var(--ma-home-hero-badge-size));
   align-items: center;
   gap: var(--ma-space-3);
+  width: fit-content;
   margin: var(--ma-space-3) 0 0;
-  padding: var(--ma-space-3) 0 0;
-  border-top: 1px solid rgba(111, 103, 95, 0.18);
-  color: var(--ma-color-muted);
-  text-decoration: none;
-}
-
-.ma-home-hero__assurance:hover,
-.ma-home-hero__assurance:focus {
-  color: var(--ma-color-accent-2);
-}
-
-.ma-home-hero__assurance:focus-visible {
-  outline: 3px solid rgba(194, 96, 47, 0.5);
-  outline-offset: var(--ma-space-2);
-}
-
-.ma-home-hero__assurance-label {
-  color: var(--ma-color-muted);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  line-height: 1.35;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.ma-home-hero__badges {
-  display: flex;
-  align-items: center;
-  gap: var(--ma-space-2);
+  padding: var(--ma-space-2);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  list-style: none;
 }
 
 .ma-home-hero__badge {
   display: grid;
   width: var(--ma-home-hero-badge-size);
   aspect-ratio: 1;
+  margin: 0;
   place-items: center;
-  overflow: hidden;
-  box-sizing: border-box;
-  border: 1px solid var(--ma-color-border);
-  border-radius: 50%;
-  background: var(--ma-color-white);
-  transition: border-color 180ms ease;
-}
-
-.ma-home-hero__assurance:hover .ma-home-hero__badge,
-.ma-home-hero__assurance:focus .ma-home-hero__badge {
-  border-color: var(--ma-color-accent);
 }
 
 .ma-home-hero__badge img {
@@ -900,7 +867,7 @@ body.home .container.grid-container {
   align-items: flex-end;
   justify-content: center;
   width: auto;
-  height: 100%;
+  height: var(--ma-home-hero-model-height);
 }
 
 .ma-home-hero__model img {
@@ -999,6 +966,10 @@ body.home .container.grid-container {
 }
 
 @media (min-width: 64rem) {
+  .ma-home-hero__badges {
+    grid-template-columns: repeat(6, var(--ma-home-hero-badge-size));
+  }
+
   .ma-home-hero {
     height: calc(100vh - var(--ma-home-desktop-chrome-height) - var(--ma-client-logo-strip-height));
     height: calc(100svh - var(--ma-home-desktop-chrome-height) - var(--ma-client-logo-strip-height));
@@ -1052,11 +1023,10 @@ body.home .container.grid-container {
     opacity: calc(var(--ma-home-hero-mark-opacity) * 0.78);
   }
 
-  .ma-home-hero__assurance {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: var(--ma-space-2);
+  .ma-home-hero__model {
+    height: var(--ma-home-hero-model-mobile-height);
   }
+
 }
 /* --- Home: Client Logos --- */
 .ma-client-logos {
