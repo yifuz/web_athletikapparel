@@ -1,6 +1,6 @@
 # 证据 Brief — Industrial FLATLOCK vs Merrow ACTIVESEAM
 
-> 状态：`evidence-ready / draft-authorization-pending`
+> 状态：`draft-complete / owner-review-required`
 >
 > 建立日期：2026-09-16
 >
@@ -119,7 +119,7 @@
 - [x] Slim / Comfort / Infused 的当前具体版本不能确认，已决定从公开正文中排除，不再作为起草阻断项；
 - [x] 视频中的操作人员、车间和成衣部件均已取得公开使用同意；
 - [x] Merrow 铭牌特写改为可选素材；型号来自所有者确认，正文不得写成“画面可见”；
-- [ ] 所有者明确授权后再起草完整英文正文；完成所有者 copy 与视觉审核后才能实施到网站。
+- [x] 所有者已于 2026-09-16 明确授权完整英文初稿；初稿见 [`flatlock-vs-activeseam-draft.md`](flatlock-vs-activeseam-draft.md)。完成所有者 copy 与视觉审核后才能实施到网站。
 
 ## 7. 素材处理规则
 
