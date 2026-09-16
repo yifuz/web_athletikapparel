@@ -83,11 +83,14 @@ Text Domain:  myathletik-child
   --ma-article-table-min-width: 60rem;
   --ma-home-hero-content-width: 34rem;
   --ma-home-hero-badge-size: clamp(3.75rem, 4.8vw, 4.5rem);
-  --ma-home-hero-bg: linear-gradient(110deg, var(--ma-color-bg) 0%, var(--ma-color-surface) 100%);
+  --ma-home-hero-video-backdrop: #d2c9bd;
+  --ma-home-hero-bg: linear-gradient(90deg, var(--ma-home-hero-video-backdrop) 0%, var(--ma-color-bg) 74%);
   --ma-home-hero-video-height: 92%;
   --ma-home-hero-video-offset: -5%;
   --ma-home-hero-video-height-compact: 90%;
   --ma-home-hero-video-offset-compact: -12%;
+  --ma-home-hero-video-mask-x: linear-gradient(90deg, #000 0%, #000 70%, transparent 100%);
+  --ma-home-hero-video-mask-y: linear-gradient(180deg, transparent 0%, #000 9%, #000 100%);
   --ma-home-hero-video-overlay: linear-gradient(90deg, rgba(24, 21, 19, 0.84) 0%, rgba(24, 21, 19, 0.48) 34%, rgba(24, 21, 19, 0) 52%), linear-gradient(90deg, rgba(250, 248, 245, 0) 38%, rgba(250, 248, 245, 0.78) 66%, rgba(250, 248, 245, 0.97) 100%);
   --ma-home-hero-video-overlay-mobile: linear-gradient(180deg, rgba(250, 248, 245, 0.76) 0%, rgba(250, 248, 245, 0.92) 100%);
   --ma-home-hero-video-line: rgba(154, 74, 35, 0.3);
@@ -921,6 +924,10 @@ body.home .container.grid-container {
     max-width: none;
     height: var(--ma-home-hero-video-height);
     object-fit: contain;
+    -webkit-mask-image: var(--ma-home-hero-video-mask-x), var(--ma-home-hero-video-mask-y);
+    -webkit-mask-composite: source-in;
+    mask-image: var(--ma-home-hero-video-mask-x), var(--ma-home-hero-video-mask-y);
+    mask-composite: intersect;
   }
 }
 
