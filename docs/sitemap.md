@@ -47,7 +47,7 @@
 │   ├── /technical-knitwear-tech-pack-guide/  （已发布）
 │   ├── /evaluate-technical-knitwear-oem/  （已发布）
 │   ├── /garment-quality-control-checklist/  （已发布，2026-08-20 生产验收）
-│   └── /top-sportswear-manufacturers-china/  （所有者已审核，本地实施，待部署）
+│   └── /top-sportswear-manufacturers-china/  （已发布，2026-09-16 生产与 GSC 实时测试通过）
 │
 ├── /sustainability/   （当前正确 slug；未实施历史重定向）
 ├── /about-us/
@@ -206,8 +206,10 @@ SANSANSUN、INGORSPORTS 与 Bellasports 的公开产品适配、MOQ、工艺能�
 6. 可见 FAQ、公开来源清单和询盘 CTA。
 7. Article、FAQPage、BreadcrumbList 和与可见五家公司一致的 ItemList Schema。
 
-所有者已于 2026-09-14 审核正文。本页复用 Technical Guides 共用布局和现有生产实拍封面；
-Sportswear 品类页增加相关内链。当前状态为本地实施完成、待部署。
+所有者已于 2026-09-14 审核正文。本页复用 Technical Guides 共用布局和生产实拍封面；
+Sportswear 品类页增加相关内链。2026-09-16 生产复核确认页面、封面、Canonical、`index`、Schema、
+Hub/品类内链与 Page Sitemap 条目正常；GSC 实时测试确认页面可编入索引并检测到 1 项有效增强内容。
+截图仍显示“请求编入索引”，因此当前记录为 `live-test-passed / indexing-request-pending`，不视为已经收录。
 
 ---
 

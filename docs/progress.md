@@ -180,23 +180,20 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 3. <https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/>
 4. <https://www.athletikapparel.com/evaluate-technical-knitwear-oem/>
 5. <https://www.athletikapparel.com/garment-quality-control-checklist/>
-
-本地新增、待视觉审核和部署：
-
-- `/top-sportswear-manufacturers-china/`
+6. <https://www.athletikapparel.com/top-sportswear-manufacturers-china/>
 
 实施要点：
 
 - 内容中心为稳定的数据驱动 Hub，只读取状态为 `publish` 的核准条目。
 - 首页、主导航、页脚和文章面包屑均有入口。
-- 当前本地 5 篇文章共用技术文章模板；每页只有一个 H1，并包含目录、正文、FAQ、参考资料、内部链接和询盘 CTA。
+- 当前 5 篇文章共用技术文章模板；每页只有一个 H1，并包含目录、正文、FAQ、参考资料、内部链接和询盘 CTA。
 - Rank Math 输出独立 title、description、canonical 以及对应的 Article、FAQPage、BreadcrumbList；
   Hub 输出 ItemList。
 - 未提供个人作者身份，因此公开 Organization 作为 Article 作者。
 - Publisher Schema 不再把美国实体法律名称与中国生产地址错误混用。
 - Hub 与文章 Hero 已压缩文字长度、统一全宽页面外壳，并减少桌面和移动端的面包屑、导语及元数据间距。
 - 2026-09-14 本地完成文章版式优化：H1 在标准居中内容轨道整行展开，摘要与主图位于下一行；Hero 不再为左侧目录预留空列。正文区域的左侧目录下增加两篇主题相关指南，不新增右栏，避免再次压缩正文和比较表格。
-- 既有四篇正文均经所有者审核后上线；新增供应商比较文章仍处于本地视觉审核阶段。
+- 五篇正文均经所有者审核后上线；供应商比较文章已完成生产技术复核并进入测量阶段。
 - FLATLOCK vs OVERLOCK 文章使用真实 Yamato FLATLOCK 与 OVERLOCK 生产视频；
   Web 文件为静音 720 × 1280 H.264，并配有 JPEG poster。
 - Merrow ACTIVESEAM 与 HSAT-K5 在该文章中只作文字说明，没有使用视频。
@@ -707,15 +704,16 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-15 | 设备图片方案 A 收敛为首页局部背景：仅在首页 Manufacturing Proof Points 保留 2×2 能力卡，并将所有者指定的真实纱线设备照片从右侧窄幅配图改为居中内容面板的背景，而非横跨整个页面区块；外层恢复暖白底与常规留白，背景面板使用圆角和边框。桌面端使用左强右弱的暖色遮罩，使卡片保持清晰并在右侧展示设备纵深，手机端提高遮罩强度以避免机械纹理干扰阅读。About 与 Services 不受影响，7 个产品页继续保持无设备图。新源图对应的 480 / 800 / 1536w 三个 WebP 候选存放于 uploads 的 `production/equipment/`，模板保留 srcset、sizes、固有尺寸及 lazy/async；背景为装饰性图像，使用空 alt 并从辅助技术中隐藏。原 `fabric-production-floor` 三个本地候选暂时保留以便所有者预览后快速回退。URL、Title、Meta、H1、Schema 和现有正文不变，状态 `implemented / owner-review / deployment-pending`。 |
 | 2026-09-15 | About / Services 真实生产摄影重新编排：所有者确认 `production/工艺/` 图片均源于真实车间，仅经 ChatGPT 做画面与光线优化，不涉及虚构。About 保留厂房 Hero，在 Our Story 嵌入“工人 + 缝制车间”全景，并将 Who We Serve 配图替换为橄榄绿色成衣缝制近景；Services 保留原 Hero，在 Capabilities 嵌入浅蓝色成衣面料缝制近景，在 Process 标题区加入裁剪车间图。Capabilities 最初候选与首页 Hero 使用同一原图，经视觉复核后已替换并删除其 3 个重复派生文件。未创建独立设备图库，也未向 7 个产品页加入设备图；4 张最终源图生成 12 个 480 / 800 / 1536w WebP，存放于 uploads 的 `production/garment-process/`，模板包含 srcset、sizes、固有尺寸、lazy/async 与描述性 alt。现有正文、URL、Title、Meta、H1 和 Schema 不变，状态 `implemented / owner-review / deployment-pending`。 |
 | 2026-09-15 | 首页 Why Myathletik 增加局部生产背景：沿用 Manufacturing Proof Points 已确认的居中圆角背景面板语言，选用未在首页、About 或 Services 出现的真实白色成衣缝制近景；宽屏端五张理由卡保持 3+2 布局，并利用空余网格区域展示操作人员、面料和设备，平板改为两列以避免文字拥挤，手机为单列并通过暖色遮罩将画面弱化为辅助纹理。新增 480 / 800 / 1536w 三个 WebP，存放于 uploads 的 `production/garment-process/`，使用 srcset、sizes、固有尺寸、lazy/async、空 alt 与 `aria-hidden`。现有正文、URL、Title、Meta、H1 和 Schema 不变，状态 `implemented / owner-review / deployment-pending`。 |
+| 2026-09-16 | GEO-V2-020 生产与 GSC 实时测试闭环：`/top-sportswear-manufacturers-china/` 连续生产检查为 HTTP 200，单一 H1、自引用 Canonical、`index`、发布者披露、ItemList / FAQPage、Technical Guides Hub 与 Sportswear 内链、Page Sitemap 唯一条目及两张封面 WebP 均通过；LinkedIn 短链接的最终 UTM 目标正确。所有者提供的 GSC“测试实际版本”截图时间为 2026-09-16 11:26，显示“网址可编入 Google 索引”“网页可以编入索引”，并在增强功能中检测到 1 项有效内容。截图右侧仍显示“请求编入索引”，因此记录为 `live-test-passed / indexing-request-pending`，不把可收录性误写为已提交或已收录。GEO-V2-020 转为 `deployed / production-verified / social-feed-published / measuring`。 |
 
 ---
 
 ## 13. 下一步优先级
 
-1. 在 GSC URL Inspection 中分别检查首页、About 与 Merino；如实时测试可编入索引，各提交一次重新抓取。请求成功不等于已重新索引，后续记录实际最后抓取时间和 indexed snapshot。
+1. 在 GSC URL Inspection 中为 `/top-sportswear-manufacturers-china/` 点击一次“请求编入索引”；只有界面确认提交成功后才把状态改为 `indexing-requested`。请求成功不等于已经进入索引，后续仍需记录实际 indexed snapshot 与最后抓取时间。首页、About 与 Merino 沿用原定复查窗口，不重复提交。
 2. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
 3. 以首页四类生产证据为入口，收集 Yamato FLATLOCK、Merrow ACTIVESEAM 与 HSAT-K5 的当前实拍、铭牌、样品和测试边界；材料齐备后再决定是否立项 `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 原创证据内容。
-4. 七个品类页 Program Fit、About 综合段落与 GEO-V2-019 已上线并通过生产复核，不再立即重复修改。页面被重新抓取后，按下一个完整月度窗口复测 Baseline v2 与 Broad Discovery v1，并分别记录整体、页面和固定提示词结果，不把低样本波动归因到单一页面。
+4. 七个品类页 Program Fit、About 综合段落、GEO-V2-019 与 GEO-V2-020 已上线并通过生产复核，不再立即重复修改。2026-09-22 起补录 GEO-V2-020 的 LinkedIn、Instagram、GA4/UTM 七日数据；页面被重新抓取后，按下一个完整月度窗口复测 Baseline v2 与 Broad Discovery v1，并分别记录整体、页面和固定提示词结果，不把低样本波动归因到单一页面。
 5. 下一个月使用完全相同的 Baseline v2 与 Broad Discovery v1 提示词及 [`AI 引用来源月度审计模板`](geo/testing/ai-cited-source-monthly-template.md)复测，不在同一会话连续运行多题。
 6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 Day 0 已关闭，下一步按 Day 7 / 28 / 90 观察，不继续修改首页。
 7. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动，响应时间需使用同配置窗口比较。
