@@ -1338,7 +1338,7 @@ add_action( 'init', 'myathletik_sync_home_rank_math_title', 30 );
  * The release marker keeps this invalidation scoped to one deployment.
  */
 function myathletik_invalidate_rank_math_sitemap_cache_release() {
-	$release = 'geo-v2-020-20260914';
+	$release = 'geo-v2-021-20260916';
 
 	if ( get_option( '_myathletik_sitemap_cache_release' ) === $release ) {
 		return;

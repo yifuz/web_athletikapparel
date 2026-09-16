@@ -44,6 +44,7 @@
 ├── 技术指南
 │   ├── /technical-guides/  （内容中心）
 │   ├── /flatlock-vs-overlock-technical-knitwear/  （已发布）
+│   ├── /flatlock-vs-activeseam-technical-knitwear/  （已批准，本地实施完成）
 │   ├── /technical-knitwear-tech-pack-guide/  （已发布）
 │   ├── /evaluate-technical-knitwear-oem/  （已发布）
 │   ├── /garment-quality-control-checklist/  （已发布，2026-08-20 生产验收）
@@ -211,6 +212,28 @@ Sportswear 品类页增加相关内链。2026-09-16 生产复核确认页面、�
 Hub/品类内链与 Page Sitemap 条目正常；GSC 实时测试确认页面可编入索引并检测到 1 项有效增强内容。
 所有者随后确认已成功提交一次索引请求，因此当前记录为 `live-test-passed / indexing-requested`；
 请求成功不等于已经收录，后续以 GSC indexed snapshot 和最后抓取时间为准，不重复提交。
+
+---
+
+## 2G. 技术指南 — `/flatlock-vs-activeseam-technical-knitwear/`（新增）
+
+**H1：** Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear
+
+**目的：** 明确工业 FLATLOCK 与 Merrow ACTIVESEAM 是两个不同的低轮廓接缝系统，并用设备厂官方资料、
+Athletik 当前生产视频和受控证据边界回答机器平台、针线配置、成衣应用、tech pack 写法及样品批准要求。
+
+**区块结构：**
+
+1. 直接答案及两种工艺不可互换的原因。
+2. Yamato 四针六线 FLATLOCK 参考结构与现有生产视频。
+3. Merrow MB-4DFO 2.0、2 线/3 线配置及正面、侧面生产视频。
+4. 自然未拉伸状态的成衣接缝展示与证据限制。
+5. 工艺对比表、base layers / compression / Merino wool / outdoor 应用判断。
+6. 选型流程、tech pack 清单和 Athletik 样品验证流程。
+7. 可见 FAQ、官方技术参考资料、相关指南内链和询盘 CTA。
+
+所有者于 2026-09-16 完成正文与视觉审核。本地页面、Technical Guides Hub、Article / FAQPage /
+BreadcrumbList Schema 和 Sitemap 接入已完成；生产状态需在主题代码与 uploads 媒体同步后复核，未复核前不写成已上线。
 
 ---
 

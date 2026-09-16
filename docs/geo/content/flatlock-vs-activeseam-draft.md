@@ -1,12 +1,12 @@
 # Draft Article — Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear
 
-> Status: `draft-complete / owner-review-required`
+> Status: `owner-approved / implemented / deployment-pending`
 >
 > Drafted: 2026-09-16
 >
 > Owner authorization: the owner explicitly authorized the complete first draft on 2026-09-16.
 >
-> Publication boundary: this draft is not approved for implementation or publication. It must receive owner copy and visual approval before it is added to the article registry, Technical Guides Hub, Schema or Sitemap.
+> Publication boundary: the owner completed copy and visual review on 2026-09-16. The approved copy has been implemented in the article registry, Technical Guides Hub, Schema and Sitemap; production status remains pending until code and uploads media are synchronized and verified.
 
 ## Proposed page metadata
 
@@ -16,7 +16,7 @@
 - Article topic: `Technical seam construction`
 - Suggested excerpt: `Industrial FLATLOCK and Merrow ACTIVESEAM are separate low-profile seam systems. Compare their machine platforms, thread configurations, garment applications and the requirements buyers should approve before bulk production.`
 - Author: `Athletik Clothing` (Organization; no public individual author supplied)
-- Technical review: `Owner review pending`
+- Technical review: `Owner-approved 2026-09-16`
 
 # Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear
 

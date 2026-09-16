@@ -211,7 +211,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 每月只推进一个主主题，维持网站 1 篇深度内容/月的保守基线：
 
 1. 建立 D03～D05 推荐证据矩阵：买家问题、Athletik 匹配事实、站内原始证据、可信第三方佐证、缺失输入、可公开边界。
-2. 第一优先候选 `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 已完成证据 intake 与英文初稿，现为 `draft-complete / owner-review-required`。初稿使用原创生产证据，不把自然状态展示写成拉伸测试，也不列未确认的 Slim / Comfort / Infused 版本；所有者完成 copy 与视觉审核前不实施页面、Hub、Schema 或 Sitemap。
+2. `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 已完成证据 intake、英文正文及所有者 copy/视觉审核，本地页面、Hub、Schema 与 Sitemap 接入均已完成，现为 `owner-approved / implemented / deployment-pending`。正文使用原创生产证据，不把自然状态展示写成拉伸测试，也不列未确认的 Slim / Comfort / Infused 版本；待代码与 uploads 媒体同步后进行生产验收。
 3. D04 不再优先增加另一篇泛化供应商清单。更有价值的是经授权的项目案例，或不披露客户名称的可核验开发/QC 流程证据；没有授权和真实结果时不建案例。
 4. D05 先审计 Merino Wool 规范页与历史矩阵站的重复、冲突、索引和引用，再决定是增强现页、建立技术指南还是保持不变。
 5. 站外每月只推进一项：优先真实设备方/认证方/行业编辑来源，其次是可维护的高质量制造商资料页；不以目录数量为 KPI。当前被外部输入阻塞的项目保持 deferred，不使用错误地址或不完整证书提交。
@@ -233,7 +233,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-004 | 补录 GEO-06/07 发布与七日数据 | 运营证据 | P1 | `overdue / owner-input` | 可得字段全部补录，不可得字段写 unavailable |
 | GEO-V2-005 | 启用 Bing Webmaster Tools AI 引用观测 | 引用 | P1 | `owner-action` | 站点已验证；AI Performance 可用则建立首个快照，不可用则记录 unavailable |
 | GEO-V2-006 | 建立 D03～D05 / C06～C08 claim-to-source 证据矩阵 | 引用/推荐 | P1 | `complete` | 已记录六题的匹配事实、规范第一方 URL、AI 实际来源、第三方候选、缺失证据与公开边界；见日期化矩阵 |
-| GEO-V2-007 | ACTIVESEAM 原创技术内容立项判断 | 提取/引用/推荐 | P1 | `draft-complete / owner-review-required` | 已核验两支 Merrow ACTIVESEAM 实际操作视频、一支自然状态成衣接缝展示和一支 Yamato FLATLOCK 对照视频；所有者确认 Merrow 型号为 `MB-4DFO 2.0`，2 线与 3 线均按项目要求使用，人物/车间/成衣素材均已取得公开使用同意。具体 Slim / Comfort / Infused 版本与 Athletik 实测性能数字均未写入正文。英文初稿见 [`flatlock-vs-activeseam-draft.md`](content/flatlock-vs-activeseam-draft.md)；所有者完成 copy 与视觉审核前不实施页面、Hub、Schema 或 Sitemap |
+| GEO-V2-007 | ACTIVESEAM 原创技术内容立项判断 | 提取/引用/推荐 | P1 | `owner-approved / implemented / deployment-pending` | 已核验两支 Merrow ACTIVESEAM 实际操作视频、一支自然状态成衣接缝展示和一支 Yamato FLATLOCK 对照视频；所有者确认 Merrow 型号为 `MB-4DFO 2.0`，2 线与 3 线均按项目要求使用，人物/车间/成衣素材均已取得公开使用同意。具体 Slim / Comfort / Infused 版本与 Athletik 实测性能数字均未写入正文。所有者于 2026-09-16 完成 copy 与视觉审核；页面、Technical Guides Hub、Article / FAQPage / BreadcrumbList Schema、Sitemap 和真实生产媒体均已在本地接入，待代码与 uploads 媒体同步后完成生产验收 |
 | GEO-V2-008 | Merino 专业站与规范页冲突审计 | 提取/推荐 | P0 | `complete / remediation-required` | 已确认 UltraMerino 为同方控制、双站同时运营；完成 HTTP、robots、41 URL Sitemap、自引用 Canonical、页面结构、AI 引用和冲突声明审计；未取得该域名 GSC/Bing、反链和当前设备/许可专项证据 |
 | GEO-V2-009 | 每月一个可信站外佐证动作 | 推荐 | P1 | `external-input` | 获得可公开、可索引、信息准确的真实条目/编辑内容；未成功不写完成 |
 | GEO-V2-010 | 建立 GSC Generative AI 月度观测 | 找到/引用入口 | P0 | `baseline-established` | 首个三个月导出完整入档；以后使用完整 28 天可比窗口并保持各维度口径分离 |
@@ -283,7 +283,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 ## 12. 当前准确状态
 
-截至 2026-09-16，Athletik 已完成规范站、实体基础、五篇已上线指南、主要 Schema、索引基础和首轮社交分发。第五篇供应商比较指南已部署，LinkedIn 与 Instagram Feed 已发布；生产页及社交 UTM 目标均为 HTTP 200。GSC 实时测试确认该页可编入索引、网页可用性通过并检测到 1 项有效增强内容，所有者随后确认已成功提交一次索引请求；这仍不等于页面已经进入 Google 索引，后续以 indexed snapshot 和最后抓取时间为准。GSC 首个专用报表确认 29 次 Google 生成式 AI Property impressions，部署前四篇指南均出现页面级链接曝光。Baseline v2 已完成 ChatGPT Search 8/8 与 Google AI Mode 8/8，Perplexity 因权限 unavailable；专业 D03～D05 已出现跨产品推荐，但 C06～C08 对应官网 Guide 在 6 次可用运行中仍为 0 次引用。
+截至 2026-09-16，Athletik 已完成规范站、实体基础、五篇已上线指南，并完成第六篇 ACTIVESEAM 技术指南的所有者审核和本地实施；主要 Schema、索引基础和首轮社交分发均已建立。第五篇供应商比较指南已部署，LinkedIn 与 Instagram Feed 已发布；生产页及社交 UTM 目标均为 HTTP 200。GSC 实时测试确认该页可编入索引、网页可用性通过并检测到 1 项有效增强内容，所有者随后确认已成功提交一次索引请求；这仍不等于页面已经进入 Google 索引，后续以 indexed snapshot 和最后抓取时间为准。GSC 首个专用报表确认 29 次 Google 生成式 AI Property impressions，部署前四篇指南均出现页面级链接曝光。Baseline v2 已完成 ChatGPT Search 8/8 与 Google AI Mode 8/8，Perplexity 因权限 unavailable；专业 D03～D05 已出现跨产品推荐，但 C06～C08 对应官网 Guide 在 6 次可用运行中仍为 0 次引用。
 
 Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。七品类 Program Fit 与 About 综合 buyer-fit 已上线并完成生产复核；GEO-V2-020 已进入抓取与效果测量阶段，但不把自有名单型页面当作独立背书。D03～D05 / C06～C08 [`claim-to-source 证据矩阵`](testing/claim-to-source-matrix-2026-09-14.md)、[`UltraMerino 冲突审计`](testing/ultramerino-canonical-conflict-audit-2026-09-14.md)和 [`AI 实际引用来源模式审计`](testing/ai-cited-source-pattern-audit-2026-09-14.md)均已完成。UltraMerino 当前不由本项目负责，因此事实同步降为外部范围；索引请求已完成一次，下一步从 2026-09-22 起记录社交与站内七日数据，并等待 indexed snapshot、可比抓取和月度观测窗口，不重复提交、不从低样本强行归因。
 

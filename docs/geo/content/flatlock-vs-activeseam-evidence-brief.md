@@ -1,10 +1,10 @@
 # 证据 Brief — Industrial FLATLOCK vs Merrow ACTIVESEAM
 
-> 状态：`draft-complete / owner-review-required`
+> 状态：`owner-approved / implemented / deployment-pending`
 >
 > 建立日期：2026-09-16
 >
-> 边界：本文件只建立事实、素材和文章结构，不是已批准的英文正文，也不代表页面已经立项或发布。
+> 边界：本文件保留事实、素材和声明边界。所有者已于 2026-09-16 完成正文与视觉审核；本地实现已完成，生产状态需在代码与 uploads 媒体同步后复核。
 
 ## 1. 内容目标
 
@@ -119,12 +119,12 @@
 - [x] Slim / Comfort / Infused 的当前具体版本不能确认，已决定从公开正文中排除，不再作为起草阻断项；
 - [x] 视频中的操作人员、车间和成衣部件均已取得公开使用同意；
 - [x] Merrow 铭牌特写改为可选素材；型号来自所有者确认，正文不得写成“画面可见”；
-- [x] 所有者已于 2026-09-16 明确授权完整英文初稿；初稿见 [`flatlock-vs-activeseam-draft.md`](flatlock-vs-activeseam-draft.md)。完成所有者 copy 与视觉审核后才能实施到网站。
+- [x] 所有者已于 2026-09-16 明确授权完整英文初稿，并于同日完成 copy 与视觉审核；已实施到网站代码，待生产同步与验收。
 
 ## 7. 素材处理规则
 
 - 原视频保留在 `D:` 盘，不移动、不重命名、不修改；本轮只在系统临时目录生成检查帧。
 - 临时 contact sheet 和检查帧不是网站资产，不提交 Git，也不部署。
-- 后续批准使用时，网页视频、poster 和图片必须写入
-  `wp-content/uploads/myathletik-theme/assets/images/` 的合适目录，而不是 child theme。
+- 网页视频、poster 和封面已写入
+  `wp-content/uploads/myathletik-theme/assets/images/production/articles/`，未放入 child theme；部署时必须与主题代码分开同步。
 - 正式剪辑保持同一真实机器、操作人员、面料和工序；只允许裁切、调色、降噪、稳定、字幕和隐私遮挡，不生成或替换设备结构。

@@ -693,7 +693,7 @@ add_filter( 'rank_math/json_ld', 'myathletik_rank_math_product_category_schema_i
  * @return int Unix timestamp in UTC.
  */
 function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
-	$latest = strtotime( '2026-09-14 05:50:00 UTC' );
+	$latest = strtotime( '2026-09-16 08:10:00 UTC' );
 
 	if ( '' === $url ) {
 		return $latest;
@@ -702,6 +702,10 @@ function myathletik_rank_math_core_sitemap_baseline( $url = '' ) {
 	$path = wp_parse_url( $url, PHP_URL_PATH );
 	$path = is_string( $path ) ? '/' . trim( $path, '/' ) : '';
 	$path = '/' === $path ? $path : trailingslashit( $path );
+
+	if ( '/flatlock-vs-activeseam-technical-knitwear/' === $path ) {
+		return $latest;
+	}
 
 	if (
 		in_array(
@@ -772,6 +776,7 @@ function myathletik_rank_math_is_core_sitemap_url( $url ) {
 			'/technical-guides/',
 			'/top-sportswear-manufacturers-china/',
 			'/flatlock-vs-overlock-technical-knitwear/',
+			'/flatlock-vs-activeseam-technical-knitwear/',
 			'/technical-knitwear-tech-pack-guide/',
 			'/evaluate-technical-knitwear-oem/',
 			'/sportswear-manufacturer/',
