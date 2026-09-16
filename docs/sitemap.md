@@ -209,7 +209,8 @@ SANSANSUN、INGORSPORTS 与 Bellasports 的公开产品适配、MOQ、工艺能�
 所有者已于 2026-09-14 审核正文。本页复用 Technical Guides 共用布局和生产实拍封面；
 Sportswear 品类页增加相关内链。2026-09-16 生产复核确认页面、封面、Canonical、`index`、Schema、
 Hub/品类内链与 Page Sitemap 条目正常；GSC 实时测试确认页面可编入索引并检测到 1 项有效增强内容。
-截图仍显示“请求编入索引”，因此当前记录为 `live-test-passed / indexing-request-pending`，不视为已经收录。
+所有者随后确认已成功提交一次索引请求，因此当前记录为 `live-test-passed / indexing-requested`；
+请求成功不等于已经收录，后续以 GSC indexed snapshot 和最后抓取时间为准，不重复提交。
 
 ---
 
