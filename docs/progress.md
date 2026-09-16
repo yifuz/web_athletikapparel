@@ -706,6 +706,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-15 | 首页 Why Myathletik 增加局部生产背景：沿用 Manufacturing Proof Points 已确认的居中圆角背景面板语言，选用未在首页、About 或 Services 出现的真实白色成衣缝制近景；宽屏端五张理由卡保持 3+2 布局，并利用空余网格区域展示操作人员、面料和设备，平板改为两列以避免文字拥挤，手机为单列并通过暖色遮罩将画面弱化为辅助纹理。新增 480 / 800 / 1536w 三个 WebP，存放于 uploads 的 `production/garment-process/`，使用 srcset、sizes、固有尺寸、lazy/async、空 alt 与 `aria-hidden`。现有正文、URL、Title、Meta、H1 和 Schema 不变，状态 `implemented / owner-review / deployment-pending`。 |
 | 2026-09-16 | GEO-V2-020 生产与 GSC 实时测试闭环：`/top-sportswear-manufacturers-china/` 连续生产检查为 HTTP 200，单一 H1、自引用 Canonical、`index`、发布者披露、ItemList / FAQPage、Technical Guides Hub 与 Sportswear 内链、Page Sitemap 唯一条目及两张封面 WebP 均通过；LinkedIn 短链接的最终 UTM 目标正确。所有者提供的 GSC“测试实际版本”截图时间为 2026-09-16 11:26，显示“网址可编入 Google 索引”“网页可以编入索引”，并在增强功能中检测到 1 项有效内容；随后确认已成功提交一次索引请求。记录为 `live-test-passed / indexing-requested`，不把请求成功误写为已收录，也不重复提交。GEO-V2-020 转为 `deployed / production-verified / social-feed-published / indexing-requested / measuring`。 |
 | 2026-09-16 | GEO-V2-007 ACTIVESEAM 原创证据 intake：核验两支 Merrow 视频均为 3840×2160、约 60 fps、10-bit HEVC，分别提供侧面与正面实际操作角度；所有者确认型号为 `MB-4DFO 2.0`。同步复核现有 Yamato FLATLOCK 视频为 1080×1920、60 fps、39.85 秒。Merrow 与 Yamato 官方资料确认 MB-4DFO 2.0 平台和四针六线 FLATLOCK 参考结构的技术区别。另核验一支国产海淮扒密缝机视频并独立归档，不混入 ACTIVESEAM 主比较；其完整品牌英文、型号和工艺英文名仍待确认。已建立 [`Industrial FLATLOCK vs Merrow ACTIVESEAM 证据 Brief`](geo/content/flatlock-vs-activeseam-evidence-brief.md)，状态 `evidence-intake / outline-ready / owner-input`；当前缺口为 ACTIVESEAM 接缝正反面近照、实际 2/3 线配置、公开 stitch version 及人物/成衣素材授权边界，未进入英文正文或网站实施。 |
+| 2026-09-16 | GEO-V2-007 证据门槛补齐：新增核验 `微信视频2026-08-17_135130_400.mp4`，为 3840×2160、约 60 fps、10-bit HEVC、21.38 秒的实际成衣接缝展示；画面覆盖接缝外观面与内侧面的自然铺放状态，但没有拉伸状态或性能测试。所有者确认 Athletik 按项目要求同时使用 2 线和 3 线 ACTIVESEAM 配置，并确认人物、车间和成衣素材均已取得公开使用同意；具体 Slim / Comfort / Infused 版本不能确认，因此从公开正文排除。状态更新为 `evidence-ready / draft-authorization-pending`：可在授权后起草完整英文正文，但不得从画面推断单件成衣针线配置，也不得声明 Athletik 已实测延伸率、强度或耐久性。 |
 
 ---
 
@@ -713,7 +714,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 
 1. `/top-sportswear-manufacturers-china/` 的 GSC 实时测试与一次索引请求已经完成；不再重复提交。后续按常规窗口复查实际 indexed snapshot 与最后抓取时间。首页、About 与 Merino 沿用原定复查窗口。
 2. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
-3. GEO-V2-007 已取得 Yamato FLATLOCK 与 Merrow ACTIVESEAM 当前实拍并建立证据 Brief；下一步补 ACTIVESEAM 接缝正反面近照、实际 2/3 线配置、可公开 stitch version 及人物/成衣素材授权边界。HSAT-K5 和国产海淮扒密缝机保持独立证据线，不混入 FLATLOCK vs ACTIVESEAM 主比较。材料齐备并经所有者授权后再起草完整英文正文。
+3. GEO-V2-007 已完成 Yamato FLATLOCK、Merrow ACTIVESEAM 实际操作、自然状态成衣接缝和公开许可的证据 intake；2 线与 3 线均按项目要求使用，具体 Slim / Comfort / Infused 版本不公开。下一步仅待所有者授权完整英文正文；没有拉伸状态素材时不写 Athletik 实测延伸、强度或耐久声明。HSAT-K5 和国产海淮扒密缝机保持独立证据线，不混入 FLATLOCK vs ACTIVESEAM 主比较。
 4. 七个品类页 Program Fit、About 综合段落、GEO-V2-019 与 GEO-V2-020 已上线并通过生产复核，不再立即重复修改。2026-09-22 起补录 GEO-V2-020 的 LinkedIn、Instagram、GA4/UTM 七日数据；页面被重新抓取后，按下一个完整月度窗口复测 Baseline v2 与 Broad Discovery v1，并分别记录整体、页面和固定提示词结果，不把低样本波动归因到单一页面。
 5. 下一个月使用完全相同的 Baseline v2 与 Broad Discovery v1 提示词及 [`AI 引用来源月度审计模板`](geo/testing/ai-cited-source-monthly-template.md)复测，不在同一会话连续运行多题。
 6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 Day 0 已关闭，下一步按 Day 7 / 28 / 90 观察，不继续修改首页。

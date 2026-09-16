@@ -211,7 +211,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 每月只推进一个主主题，维持网站 1 篇深度内容/月的保守基线：
 
 1. 建立 D03～D05 推荐证据矩阵：买家问题、Athletik 匹配事实、站内原始证据、可信第三方佐证、缺失输入、可公开边界。
-2. 第一优先候选为 `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear`：仅在设备画面、应用部位、机器/线迹口径、样品和测试边界完成所有者核验后立项。它必须提供原创生产证据，而不是改写通用定义。
+2. 第一优先候选为 `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear`：设备画面、自然状态接缝展示、机器/线迹口径、素材许可和测试边界已完成所有者核验，现为 `evidence-ready / draft-authorization-pending`。正文必须使用原创生产证据，不得把自然状态展示写成拉伸测试，也不列未确认的 Slim / Comfort / Infused 版本。
 3. D04 不再优先增加另一篇泛化供应商清单。更有价值的是经授权的项目案例，或不披露客户名称的可核验开发/QC 流程证据；没有授权和真实结果时不建案例。
 4. D05 先审计 Merino Wool 规范页与历史矩阵站的重复、冲突、索引和引用，再决定是增强现页、建立技术指南还是保持不变。
 5. 站外每月只推进一项：优先真实设备方/认证方/行业编辑来源，其次是可维护的高质量制造商资料页；不以目录数量为 KPI。当前被外部输入阻塞的项目保持 deferred，不使用错误地址或不完整证书提交。
@@ -233,7 +233,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-004 | 补录 GEO-06/07 发布与七日数据 | 运营证据 | P1 | `overdue / owner-input` | 可得字段全部补录，不可得字段写 unavailable |
 | GEO-V2-005 | 启用 Bing Webmaster Tools AI 引用观测 | 引用 | P1 | `owner-action` | 站点已验证；AI Performance 可用则建立首个快照，不可用则记录 unavailable |
 | GEO-V2-006 | 建立 D03～D05 / C06～C08 claim-to-source 证据矩阵 | 引用/推荐 | P1 | `complete` | 已记录六题的匹配事实、规范第一方 URL、AI 实际来源、第三方候选、缺失证据与公开边界；见日期化矩阵 |
-| GEO-V2-007 | ACTIVESEAM 原创技术内容立项判断 | 提取/引用/推荐 | P1 | `evidence-intake / outline-ready / owner-input` | 已核验两支当前 Merrow ACTIVESEAM 生产视频和一支 Yamato FLATLOCK 对照视频；所有者确认 Merrow 型号为 `MB-4DFO 2.0`。官方平台定义、视频能证明与不能证明的边界已写入 [`证据 Brief`](content/flatlock-vs-activeseam-evidence-brief.md)。完整正文仍需 ACTIVESEAM 接缝正反面近照、当前 2/3 线配置、可公开 stitch version 和人物/成衣素材使用边界；未补齐前不进入发布实施 |
+| GEO-V2-007 | ACTIVESEAM 原创技术内容立项判断 | 提取/引用/推荐 | P1 | `evidence-ready / draft-authorization-pending` | 已核验两支 Merrow ACTIVESEAM 实际操作视频、一支自然状态成衣接缝展示和一支 Yamato FLATLOCK 对照视频；所有者确认 Merrow 型号为 `MB-4DFO 2.0`，并确认 2 线与 3 线均按项目要求使用，人物/车间/成衣素材均已取得公开使用同意。具体 Slim / Comfort / Infused 版本不能确认，已从公开口径排除；没有拉伸状态素材，因此不作 Athletik 实测延伸、强度或耐久声明。完整边界见 [`证据 Brief`](content/flatlock-vs-activeseam-evidence-brief.md)，待所有者授权后起草英文正文 |
 | GEO-V2-008 | Merino 专业站与规范页冲突审计 | 提取/推荐 | P0 | `complete / remediation-required` | 已确认 UltraMerino 为同方控制、双站同时运营；完成 HTTP、robots、41 URL Sitemap、自引用 Canonical、页面结构、AI 引用和冲突声明审计；未取得该域名 GSC/Bing、反链和当前设备/许可专项证据 |
 | GEO-V2-009 | 每月一个可信站外佐证动作 | 推荐 | P1 | `external-input` | 获得可公开、可索引、信息准确的真实条目/编辑内容；未成功不写完成 |
 | GEO-V2-010 | 建立 GSC Generative AI 月度观测 | 找到/引用入口 | P0 | `baseline-established` | 首个三个月导出完整入档；以后使用完整 28 天可比窗口并保持各维度口径分离 |
