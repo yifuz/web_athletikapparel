@@ -104,6 +104,10 @@ Text Domain:  myathletik-child
   --ma-home-proof-overlay: linear-gradient(90deg, rgba(250, 248, 245, 0.97) 0%, rgba(250, 248, 245, 0.9) 58%, rgba(250, 248, 245, 0.42) 100%);
   --ma-home-proof-overlay-compact: linear-gradient(rgba(250, 248, 245, 0.91), rgba(250, 248, 245, 0.91));
   --ma-home-proof-card-bg: rgba(255, 255, 255, 0.82);
+  --ma-home-why-card-bg: rgba(255, 255, 255, 0.9);
+  --ma-home-why-card-shadow: 0 10px 24px rgba(43, 39, 36, 0.06);
+  --ma-home-why-index-column: var(--ma-space-5);
+  --ma-home-why-index-size: 1.35rem;
 }
 
 html,
@@ -1830,49 +1834,73 @@ body.home .container.grid-container {
   gap: var(--ma-space-5);
 }
 
+.ma-home-why__layout > .ma-section-heading {
+  margin-bottom: 0;
+}
+
 .ma-home-why__list {
   display: grid;
-  gap: var(--ma-space-4);
+  gap: var(--ma-space-3);
 }
 
 .ma-reason-card {
-  padding: var(--ma-space-4);
-  border-left: 3px solid var(--ma-color-accent);
-  background: var(--ma-color-white);
+  display: grid;
+  grid-template-columns: var(--ma-home-why-index-column) minmax(0, 1fr);
+  column-gap: var(--ma-space-3);
+  padding: var(--ma-space-3) var(--ma-space-4);
+  border: 1px solid var(--ma-color-border);
+  background: var(--ma-home-why-card-bg);
   border-radius: var(--ma-radius);
-  box-shadow: 0 12px 26px rgba(43, 39, 36, 0.07);
+  box-shadow: var(--ma-home-why-card-shadow);
 }
 
 .ma-reason-card span {
   display: inline-block;
+  align-self: start;
   color: var(--ma-color-accent);
   font-family: var(--ma-font-head);
-  font-size: 1.35rem;
+  font-size: var(--ma-home-why-index-size);
   font-weight: 700;
   letter-spacing: 0.04em;
   opacity: 0.7;
 }
 
 .ma-reason-card h3 {
-  margin: var(--ma-space-2) 0 0;
+  grid-column: 2;
+  margin: 0;
   font-size: var(--ma-fs-h3);
 }
 
 .ma-reason-card p {
-  margin: var(--ma-space-2) 0 0;
+  grid-column: 1 / -1;
+  margin: var(--ma-space-3) 0 0;
   color: var(--ma-color-muted);
   line-height: var(--ma-lh-body);
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
   .ma-home-why__list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ma-reason-card:last-child {
+    grid-column: 1 / -1;
   }
 }
 
 @media (min-width: 64rem) {
-  .ma-home-why__list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .ma-home-why__layout {
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    align-items: start;
+  }
+
+  .ma-reason-card span {
+    grid-row: 1 / span 2;
+  }
+
+  .ma-reason-card p {
+    grid-column: 2;
+    margin-top: var(--ma-space-2);
   }
 }
 
