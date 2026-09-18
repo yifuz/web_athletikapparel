@@ -1,7 +1,7 @@
 # SEO Change Card：SEO-V2-004 首页视频 Hero LCP
 
 - Change ID：`SEO-V2-004-HERO`
-- 状态：`implemented / deployment-pending`
+- 状态：`deployed / playback-verified / performance-pending`
 - 变更日期：2026-09-18
 - 变更页面或分组：`/`
 - 搜索与采购意图：保持首页 `Performance Apparel Manufacturer` 的 B2B 供应商发现和采购入口职责，不改变页面主题或关键词所有权
@@ -15,7 +15,7 @@
 - 干扰因素：Cookiebot 与 jQuery 阻塞链、Cloudflare/Flywheel 响应、网络波动、首页其他 eager 资源、Lighthouse 运行环境
 - 部署前 Crawl ID：`crawl_40f88b6c25d74ba79ee193c7be26caf9`（最近冻结 Crawl，仅作无回归参考）
 - 部署后 Crawl ID：`【DEPLOYMENT PENDING】`
-- Finding / Inventory 处置：首页 Hero Lab LCP Finding 从 `review / lab-regression` 转为 `fixed-locally / production-verification-pending`；Cookiebot、jQuery 与首页下方产品图不并入本次变量
+- Finding / Inventory 处置：首页 Hero Lab LCP Finding 转为 `deployed / performance-verification-pending`；所有者报告的“视频一直不会播放”经生产浏览器复现判定为 `not-a-code-defect / environment-expected`：正常 motion 的 Desktop / Mobile 均播放，当前 Windows 的系统动画状态关闭，触发站点既定 reduced-motion poster-only 分支。Cookiebot、jQuery 与首页下方产品图不并入本次变量
 - 最终决策及原因：`【PENDING：生产三轮 Lab、网络请求顺序与视觉验收后填写】`
 
 ## 实施内容
@@ -59,9 +59,11 @@
 
 ### 生产 / Day 0
 
-- [ ] 首页返回 HTTP 200，单一 H1、Canonical、robots 与 Sitemap 状态不变；
-- [ ] HTML 只有一个 eager/high poster，两个 MP4 初始为 `data-src`，控制器只在首页 defer 加载；
+- [x] 首页、控制器、poster 与两个 MP4 均返回 HTTP 200；
+- [x] HTML 只有一个 eager/high poster，两个 MP4 初始为 `data-src`，控制器只在首页 defer 加载；
+- [x] 正常 motion 的 1440×900 Desktop 与 390×844 Mobile 浏览器运行态均成功播放；MP4 分别在 load 后约 467ms / 266ms 发起，6.5 秒观察点的 `currentTime` 为 5.75s / 5.45s，`readyState=4`、`paused=false`、`is-playing` 与 opacity 1；
+- [x] 强制 reduced-motion 的生产浏览器为 0 个 MP4 请求、`currentSrc=""`、`paused=true`、poster-only；当前 Windows `SPI_GETCLIENTAREAANIMATION Enabled=False` 且 `MinAnimate=0`，与所有者浏览器不播放现象一致；
 - [ ] Desktop 与 Mobile 的 poster 构图、覆盖层、文字和 CTA 无视觉回归；视频在首屏稳定后静音循环播放且无闪黑；
-- [ ] reduced-motion 与 Save-Data 验收为 poster-only；后台标签页和离屏状态暂停；
+- [ ] Save-Data、后台标签页和离屏状态完成真实浏览器验收；
 - [ ] 三次相同条件移动 Lighthouse 记录 LCP / FCP / TBT / CLS 与 LCP 节点；
 - [ ] 使用同范围 Crawl Diff 处置所有新增、消失与持续 Finding，并填写部署后 Crawl ID 和最终决策。
