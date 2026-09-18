@@ -110,7 +110,7 @@
 | 内部 Campaign | `2026-09-top-sportswear-manufacturers-china` |
 | 官网母文章 | <https://www.athletikapparel.com/top-sportswear-manufacturers-china/> |
 | 主题 | Top 5 OEM/ODM Sportswear Manufacturers in China for Mid-Sized Brands (2026) |
-| 当前状态 | `feed-published / website-404`；所有者确认 LinkedIn 与 Instagram Feed 已发布，官网母文章仍返回 HTTP 404 |
+| 当前状态 | `feed-published / production-verified / indexing-requested / measuring`；所有者确认 LinkedIn 与 Instagram Feed 已发布；2026-09-16 官网母文章已恢复 HTTP 200，并完成 GSC 实时测试和一次索引请求 |
 | LinkedIn 发布格式 | 1 张单图 + 技术教育型正文；不使用 PDF/PPT |
 | LinkedIn UTM content | `top_sportswear_manufacturers_china_single_image` |
 | LinkedIn 公开帖子 URL | <https://www.linkedin.com/feed/update/urn:li:activity:7505180674052661248/>；公开页面已核验 |
@@ -129,4 +129,33 @@
 
 ### 发布后核验与边界
 
-LinkedIn 公开页面可读取已批准正文、五家公司名单、发布者披露、短链接和单张图片，公开 URL 已确认。Instagram Feed 状态来自所有者确认；未取得公开 URL，因此不推断其实际格式、Story 状态或指标。生产文章部署后需立即核验 URL 为 HTTP 200、canonical 与 `index` 正常，并确认两个平台的链接最终落到正确 UTM URL。
+LinkedIn 公开页面可读取已批准正文、五家公司名单、发布者披露、短链接和单张图片，公开 URL 已确认。Instagram Feed 状态来自所有者确认；未取得公开 URL，因此不推断其实际格式、Story 状态或指标。2026-09-16 生产页和社交 UTM 目标均已复核为 HTTP 200，canonical 与 `index` 正常；GSC 索引请求只表示已提交，不等于已经收录。
+
+## 2026-09-18 — Industrial FLATLOCK vs Merrow ACTIVESEAM（Feed 已发布）
+
+| 字段 | 记录 |
+|---|---|
+| 内部 Campaign | `2026-09-flatlock-vs-activeseam` |
+| 官网母文章 | <https://www.athletikapparel.com/flatlock-vs-activeseam-technical-knitwear/> |
+| 主题 | Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear |
+| 当前状态 | `feed-published / owner-confirmed / public-urls-pending`；所有者确认 LinkedIn 与 Instagram 已发布，公开帖子 URL 和精确时分待补录 |
+| LinkedIn 发布格式 | 22.57 秒、720 × 1280、H.264 的真实 Merrow ACTIVESEAM 生产视频 + 技术教育型正文；视频无音轨 |
+| LinkedIn UTM content | `flatlock_activeseam_video` |
+| Instagram 发布格式 | 6 张 1080 × 1350 JPG Carousel + 精简正文；未制作 Story |
+| Instagram UTM content | `flatlock_activeseam_carousel` |
+| 发布素材包 | `D:\B-视频素材\营销内容包\2026-09-flatlock-vs-activeseam\`（Git 外运营资产） |
+| 素材来源 | Athletik 已批准的 Yamato FLATLOCK、Merrow ACTIVESEAM `MB-4DFO 2.0` 真实生产画面与自然状态成衣接缝展示 |
+| 实际发布时间与七日复盘 | 发布日期 2026-09-18，精确时分待后台补录；2026-09-26 起记录满七个完整自然日的数据 |
+
+### 发布事实与边界
+
+- LinkedIn 视频只证明 Merrow ACTIVESEAM 实际生产，不写成同一视频同时展示 FLATLOCK，也不写成同面料对照测试。
+- Carousel 区分常见的 4-needle / 6-thread / ISO stitch type 607 industrial FLATLOCK 与 Merrow `MB-4DFO 2.0`、2-needle、2- or 3-thread ACTIVESEAM 配置。
+- 不发布未确认的 Slim / Comfort / Infused 版本或 Athletik 自测性能百分比；自然状态画面不写成拉伸或强度测试。
+- 静态图片没有仿按钮；末页使用普通文本 URL。
+
+### 待补录与后续动作
+
+- 取得 LinkedIn 与 Instagram 公开帖子 URL 后，核对账号、正文、媒体、实际发布时间和 UTM 最终落地页。
+- 确认本次母文章是否已在 GSC 提交索引请求；未提交时只提交一次，不把“可编入索引”或“已请求”写成“已收录”。
+- 2026-09-26 起补录两个 Feed 帖及 GA4 的七日数据；不可取得字段写 `unavailable`。
