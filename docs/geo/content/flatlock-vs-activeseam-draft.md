@@ -1,8 +1,10 @@
 # Draft Article — Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear
 
-> Status: `deployed / production-verified / social-feed-published / measuring`
+> Status: `deployed / production-verified / social-feed-published / indexing-requested / measuring`
 >
 > Drafted: 2026-09-16
+>
+> GSC: 2026-09-18 已完成一次索引申请；该操作不代表页面已经被 Google 收录，实际 indexed snapshot 与最后抓取时间待后续复查。
 >
 > Owner authorization: the owner explicitly authorized the complete first draft on 2026-09-16.
 >
