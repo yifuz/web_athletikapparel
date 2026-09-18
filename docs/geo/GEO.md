@@ -211,7 +211,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 每月只推进一个主主题，维持网站 1 篇深度内容/月的保守基线：
 
 1. 建立 D03～D05 推荐证据矩阵：买家问题、Athletik 匹配事实、站内原始证据、可信第三方佐证、缺失输入、可公开边界。
-2. `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 已完成证据 intake、英文正文及所有者 copy/视觉审核，本地页面、Hub、Schema 与 Sitemap 接入均已完成，现为 `owner-approved / implemented / deployment-pending`。正文使用原创生产证据，不把自然状态展示写成拉伸测试，也不列未确认的 Slim / Comfort / Infused 版本；待代码与 uploads 媒体同步后进行生产验收。
+2. `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 已完成证据 intake、英文正文、所有者 copy/视觉审核、生产部署与技术验收，现为 `deployed / production-verified / social-feed-published / measuring`。正文使用原创生产证据，不把自然状态展示写成拉伸测试，也不列未确认的 Slim / Comfort / Infused 版本；下一步补录公开社交 URL，并从 2026-09-26 起记录七日数据。
 3. D04 不再优先增加另一篇泛化供应商清单。更有价值的是经授权的项目案例，或不披露客户名称的可核验开发/QC 流程证据；没有授权和真实结果时不建案例。
 4. D05 先审计 Merino Wool 规范页与历史矩阵站的重复、冲突、索引和引用，再决定是增强现页、建立技术指南还是保持不变。
 5. 站外每月只推进一项：优先真实设备方/认证方/行业编辑来源，其次是可维护的高质量制造商资料页；不以目录数量为 KPI。当前被外部输入阻塞的项目保持 deferred，不使用错误地址或不完整证书提交。

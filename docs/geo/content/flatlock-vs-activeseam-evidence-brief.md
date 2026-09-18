@@ -1,10 +1,10 @@
 # 证据 Brief — Industrial FLATLOCK vs Merrow ACTIVESEAM
 
-> 状态：`owner-approved / implemented / deployment-pending`
+> 状态：`deployed / production-verified / social-feed-published / measuring`
 >
 > 建立日期：2026-09-16
 >
-> 边界：本文件保留事实、素材和声明边界。所有者已于 2026-09-16 完成正文与视觉审核；本地实现已完成，生产状态需在代码与 uploads 媒体同步后复核。
+> 边界：本文件保留事实、素材和声明边界。所有者已于 2026-09-16 完成正文与视觉审核；代码与 uploads 媒体已同步，并于 2026-09-18 完成生产技术验收。公开社交 URL 与七日数据仍待补录。
 
 ## 1. 内容目标
 

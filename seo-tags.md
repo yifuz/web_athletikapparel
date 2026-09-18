@@ -130,6 +130,18 @@ Compare FLATLOCK and OVERLOCK for technical knitwear: seam profile, 607/514
 stitch references, garment applications, testing and tech pack callouts.
 
 ================================================================
+## Technical guide  (/flatlock-vs-activeseam-technical-knitwear/)
+================================================================
+Primary keyword: FLATLOCK vs ACTIVESEAM / Merrow ACTIVESEAM
+
+**SEO Title:**
+FLATLOCK vs Merrow ACTIVESEAM for Technical Knitwear | Athletik
+
+**Meta Description:**
+Compare industrial 4-needle 6-thread FLATLOCK with Merrow MB-4DFO
+ACTIVESEAM: construction, applications, tech pack callouts and sample approval.
+
+================================================================
 ## Technical guide  (/technical-knitwear-tech-pack-guide/)
 ================================================================
 Primary keyword: technical knitwear tech pack
@@ -217,7 +229,7 @@ NOT filenames, NOT "image1". Describe what's shown + relevant keyword.
 | 首页 `/` | `functions.php` 的 `myathletik_home_meta_description()` 硬编码（首页 Rank Math 描述字段保持为空，防止输出两个 description 标签） |
 | 六个服装品类页（Sportswear、Underwear、Outdoor、Merino、Silk、Sports Accessories） | **仅** Rank Math 后台字段（数据库）。`inc/product-category-data.php` 里的 `seo_title` / `meta_description` 不参与生产输出，改它们无效 |
 | Knitted Fabrics 品类页 | `inc/product-category-data.php` 的 `meta_description`（唯一例外）。主题 `rank-math.php` 的过滤器用它覆盖前端、OG/Twitter 和 WebPage Schema 描述 |
-| 五篇技术指南 + `/technical-guides/` Hub | `inc/technical-article-data.php` 的 `seo_title` / `meta_description`。`functions.php` 的 init 钩子把它们写入 Rank Math 数据库字段，`rank-math.php` 过滤器再从同一份数据覆盖输出 |
+| 六篇技术指南 + `/technical-guides/` Hub | `inc/technical-article-data.php` 的 `seo_title` / `meta_description`。`functions.php` 的 init 钩子把它们写入 Rank Math 数据库字段，`rank-math.php` 过滤器再从同一份数据覆盖输出 |
 | Services、About、Contact、Sustainability | **仅** Rank Math 后台字段（数据库），代码中没有对应字段 |
 
 关键机制说明：

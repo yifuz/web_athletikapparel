@@ -44,7 +44,7 @@
 ├── 技术指南
 │   ├── /technical-guides/  （内容中心）
 │   ├── /flatlock-vs-overlock-technical-knitwear/  （已发布）
-│   ├── /flatlock-vs-activeseam-technical-knitwear/  （已批准，本地实施完成）
+│   ├── /flatlock-vs-activeseam-technical-knitwear/  （已发布，2026-09-18 生产验收）
 │   ├── /technical-knitwear-tech-pack-guide/  （已发布）
 │   ├── /evaluate-technical-knitwear-oem/  （已发布）
 │   ├── /garment-quality-control-checklist/  （已发布，2026-08-20 生产验收）
