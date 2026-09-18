@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-09-14。
+最后更新：2026-09-18。
 
 ---
 
@@ -712,6 +712,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-18 | 六篇 Technical Guides 与内容中心生产技术验收完成：7/7 URL 为 HTTP 200、`index, follow`、无 X-Robots-Tag、自引用 Canonical、单一 H1，并唯一进入 Page Sitemap；Hub 的 `CollectionPage + ItemList(6)`、六篇 Article、各页 FAQPage、BreadcrumbList 及 Top 5 的 ItemList(5) 均可解析，6/6 可见 FAQ 与 Schema 逐题一致。首页存在 Hub 入口，Hub 完整链接六篇文章；检查到的 30 个站内目标、9 个 MP4、7 个视频 poster、favicon 与 Organization Logo 均有效，ISO 的 4 个自动化 403 经浏览器复核为可访问的反自动化限制。390px 下 7/7 无整页横向溢出，3 个宽表使用可聚焦且带 ARIA 的独立横向滚动容器。GPTBot、ChatGPT-User、PerplexityBot、ClaudeBot、Googlebot 与 Bingbot 请求均返回 200。批量工具的“富结果必填字段缺失”经逐页解析确认为误报，处置 `not-needed`；ACTIVESEAM Title 宽度提示处置 `no-change`；HSTS 为全站基础设施项，处置 `deferred`。单次移动 Lighthouse 分数为 72–88、LCP 约 3.07–4.60 秒、CLS 均为 0，因无 CrUX 页面级数据且主要为共享 CSS / Cookiebot 渲染链，转入独立性能批次，不阻断本次验收。GEO-V2-007 转为 `deployed / production-verified / social-feed-published / measuring`；本次只确认可抓取与可编入索引，不写成 Google 已收录。 |
 | 2026-09-18 | GEO-V2-007 GSC 索引申请完成：所有者确认已对 `/flatlock-vs-activeseam-technical-knitwear/` 提交一次索引请求。状态更新为 `indexing-requested`；请求成功只证明操作已提交，不等于页面已经被 Google 收录，因此不重复提交，后续按常规窗口复查 indexed snapshot 与最后抓取时间。 |
 | 2026-09-18 | GEO-V2-007 社交公开 URL 闭环：补录 LinkedIn 视频帖 `activity-7506545366570512384` 与 Instagram Carousel `Ddaao5dFAj-` 的稳定公开 URL。LinkedIn 匿名公开页可读取 Athletik Clothing 账号、ACTIVESEAM / FLATLOCK 正文与指南短链接；Instagram URL 返回 HTTP 200，但匿名正文抓取受平台限流，因此只记录所有者确认与可访问性，不推断正文、精确发布时间或互动数据。状态更新为 `public-urls-confirmed / measuring`；下一测量节点仍为 2026-09-26。 |
+| 2026-09-18 | 本周 SEO 监测完成：一次性 `EnvHttpProxyAgent` 注入后恢复 GSC 只读 API；final 数据截至 09-13，最近 7 日相对前 21 日日均 clicks 0.524 → 1.286、impressions 20.524 → 40.286，但 retained 维度为 partial，不作因果归因。Merino 为最大页面增量（+4 clicks / +65 impressions），Google 于 09-14 重新抓取并保持 indexed / Canonical 一致；可见 Query 仅 21 impressions，低于修改门槛，处置 `no-change / measuring`。Services 仍为 unchanged 的 NEUTRAL，20/20 Sitemap URL 的 HTTP、robots、Canonical 与单一 H1 全部通过。首页视频 Hero 三次移动 Lab LCP 中位数 4.532s，较 08-27 的 3.66s 稳定慢约 0.87s，LCP 节点均为 Hero video；SEO-V2-004 重开为 `review / lab-regression`，CrUX 仍 unavailable，不写成 Field CWV 回归。 |
 
 ---
 

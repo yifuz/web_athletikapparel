@@ -15,6 +15,28 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-09-18：周度 SEO 监测、Merino 增长复核与首页视频 Hero Lab
+
+### 来源与覆盖
+
+- `seo` CLI 版本为项目已验证的 `0.2.36`；Google 登录、GSC `webmasters.readonly` scope 与属性 `sc-domain:athletikapparel.com` 均通过。初次调用因当前进程缺少既有 `EnvHttpProxyAgent` 注入而返回 `fetch failed`；按项目基线使用一次性进程级注入后恢复，未修改 Windows、VS Code、CLI 或仓库配置。
+- GSC Search Performance 使用 `dataState: final`，主窗口为 2026-08-17 至 09-13；最近比较段为 2026-09-07 至 09-13。日期总量 28/28 完整，但 Page / Query / Country / Device 均包含只存在于单一窗口的 retained rows，因此综合诊断为 `partial`，缺失行不按零处理。
+- 生产技术检查覆盖 Page Sitemap 的 20/20 URL：全部 HTTP 200、可索引、单一 H1、自引用 Canonical；Sitemap index 与 Page Sitemap 均为 200。Services 在首页有 5 个可抓取入口。
+- GA4 未纳入本次周度报告；有效询盘仍以所有者业务核验为准。本条不提供新的询盘结论。
+
+### 搜索表现与页面信号
+
+- 最近 7 个最终日相对前 21 日，日均点击由 `0.524` 升至 `1.286`，日均曝光由 `20.524` 升至 `40.286`；对应窗口总量为 11 → 9 clicks、431 → 282 impressions。由于比较窗口长度不同、多个站点改动和分发活动并存，只记录为增长信号，不作因果归因。
+- 相邻 28 天 retained Page 行中，Merino 为最大增量：0 → 4 clicks、11 → 76 impressions、average position 18.818 → 17.592；首页为 3 → 6 clicks、59 → 103 impressions；Silk Wear 为 0 → 2 clicks、5 → 32 impressions；Sports Accessories 为 0 → 2 clicks、13 → 34 impressions。
+- Merino 精确 URL 的 final 28 天 Query × Page 仅返回 3 行，其中 2 行可操作候选合计 21 impressions、0 clicks：`merino wool clothing manufacturer` 为 18 impressions / position 26.22，复数变体为 3 impressions / position 43.67。页面总量中的 4 clicks 未出现在 retained Query 行，不能猜测匿名 Query。样本低于 100 impressions，且当前 Title / H1 已由 `Merino Wool Apparel Manufacturer` 承接同一商业意图；Finding outcome 为 `no-change / measuring`，不改 Title、Meta、H1、URL 或正文。
+- Merino URL Inspection 为 `PASS / Submitted and indexed`，Google 与用户 Canonical 一致，最后抓取时间为 `2026-09-14T04:48:32Z`；说明 Google 已抓取当前批次，不重复请求索引。
+
+### Services 与首页性能
+
+- Services URL Inspection 为 `NEUTRAL / URL is unknown to Google`，工具判定 `changeKind=unchanged`、0 regression。生产页继续为 HTTP 200、`index`、自引用 Canonical、无 X-Robots-Tag、在 Page Sitemap 中且首页有 5 个入口。SEO-V2-003 保持 `no-change / monitoring`，不重复请求索引或改页。
+- 首页视频 Hero 完成三次同条件 Lighthouse 13.4.1 移动端 Lab：LCP 分别为 4.529s、4.612s、4.532s，中位数 4.532s；三次 LCP 节点均为 `video.ma-home-hero__video`。相对 2026-08-27 的 3.66s Lab 基线稳定慢约 0.87s；CLS 三次均为 0，TBT 为 0–140ms，服务器响应约 0.43–0.46s。
+- CrUX Phone Field 数据仍为 `not_configured`。因此 SEO-V2-004 重新进入 `review / lab-regression`，只确认同环境 Lab 回归，不声称真实用户 CWV 已恶化。下一步应先针对 poster、视频启动时机和 render path 建立单变量修复，再以相同三次移动 Lab 验证；Cookiebot 与共享图片仍是独立干扰项。
+
 ## 2026-09-08：SEO-V2-005 Underwear Day 7
 
 ### 来源与覆盖
