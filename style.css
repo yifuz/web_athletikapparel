@@ -830,7 +830,8 @@ body.home .container.grid-container {
   object-fit: contain;
 }
 
-/* --- Full-bleed garment video over a preloaded poster --- */
+/* --- Full-bleed garment video over an eager LCP poster --- */
+.ma-home-hero__poster,
 .ma-home-hero__video {
   position: absolute;
   inset: 0;
@@ -841,8 +842,18 @@ body.home .container.grid-container {
   object-position: center;
 }
 
-.ma-home-hero__video {
+.ma-home-hero__poster {
   z-index: 0;
+}
+
+.ma-home-hero__video {
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 180ms ease-out;
+}
+
+.ma-home-hero__video.is-playing {
+  opacity: 1;
 }
 
 .ma-home-hero__video-overlay {
@@ -922,6 +933,7 @@ body.home .container.grid-container {
     font-size: 1.08rem;
   }
 
+  .ma-home-hero__poster,
   .ma-home-hero__video {
     inset: auto auto 0 var(--ma-home-hero-video-offset);
     width: auto;
@@ -935,6 +947,12 @@ body.home .container.grid-container {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .ma-home-hero__video {
+    display: none;
+  }
+}
+
 /* Keep the hero and logo strip together within the first PC viewport. */
 @media (min-width: 64rem) and (max-width: 74.9375rem) {
   :root {
@@ -945,6 +963,7 @@ body.home .container.grid-container {
     max-width: 31rem;
   }
 
+  .ma-home-hero__poster,
   .ma-home-hero__video {
     left: var(--ma-home-hero-video-offset-compact);
     height: var(--ma-home-hero-video-height-compact);

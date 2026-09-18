@@ -25,24 +25,34 @@ $hero_badges     = array(
 ?>
 
 <section class="ma-home-hero" aria-label="<?php esc_attr_e( 'Athletik Clothing homepage introduction', 'myathletik-child' ); ?>">
+	<img
+		class="ma-home-hero__poster"
+		src="<?php echo esc_url( $hero_video_poster ); ?>"
+		alt=""
+		width="1280"
+		height="720"
+		loading="eager"
+		fetchpriority="high"
+		decoding="async"
+		aria-hidden="true"
+	>
 	<video
 		class="ma-home-hero__video"
-		autoplay
 		muted
 		loop
 		playsinline
-		preload="auto"
-		poster="<?php echo esc_url( $hero_video_poster ); ?>"
+		preload="none"
 		aria-hidden="true"
 		tabindex="-1"
+		data-ma-home-hero-video
 	>
 		<source
 			media="(max-width: 63.9375rem)"
-			src="<?php echo esc_url( $hero_video_mobile ); ?>"
+			data-src="<?php echo esc_url( $hero_video_mobile ); ?>"
 			type="video/mp4"
 		>
 		<source
-			src="<?php echo esc_url( $hero_video_desktop ); ?>"
+			data-src="<?php echo esc_url( $hero_video_desktop ); ?>"
 			type="video/mp4"
 		>
 	</video>

@@ -223,6 +223,37 @@ function myathletik_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_styles' );
 
 /**
+ * Start the homepage hero video only after the initial page load.
+ *
+ * The poster remains the eager LCP asset. The deferred script promotes the
+ * selected video source from data-src only when motion and data preferences
+ * allow it, preventing MP4 downloads from competing with the first render.
+ */
+function myathletik_enqueue_home_hero_video() {
+	if ( ! is_front_page() ) {
+		return;
+	}
+
+	$script_path = get_stylesheet_directory() . '/assets/js/home-hero-video.js';
+
+	if ( ! file_exists( $script_path ) ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'myathletik-home-hero-video',
+		get_stylesheet_directory_uri() . '/assets/js/home-hero-video.js',
+		array(),
+		filemtime( $script_path ),
+		array(
+			'in_footer' => true,
+			'strategy'  => 'defer',
+		)
+	);
+}
+add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_home_hero_video' );
+
+/**
  * Preload the Latin Manrope file used by the above-the-fold heading.
  *
  * The Latin-ext file remains available through unicode-range in style.css and
