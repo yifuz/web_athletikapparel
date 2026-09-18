@@ -711,6 +711,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-16 | GEO-V2-007 所有者审核与本地实施完成：所有者确认正文与视觉后，新增 `/flatlock-vs-activeseam-technical-knitwear/`，接入共用 Technical Guides 数据层、Hub、Article / FAQPage / BreadcrumbList Schema、相关指南内链和 Sitemap。三支 Merrow 原视频保留不动，另生成 720×1280、30 fps、H.264、静音、SDR 网页副本及真实帧 poster；封面由真实 Yamato FLATLOCK 与 Merrow ACTIVESEAM 生产画面组成，不添加虚构设备或参数。公开正文继续明确不同视频不是同布种受控比较、自然状态成衣视频不是拉伸/强力测试、单件成衣的 2/3 线配置未知。主题代码与 uploads 媒体待同步生产后验收，状态 `owner-approved / implemented / deployment-pending`。 |
 | 2026-09-18 | 六篇 Technical Guides 与内容中心生产技术验收完成：7/7 URL 为 HTTP 200、`index, follow`、无 X-Robots-Tag、自引用 Canonical、单一 H1，并唯一进入 Page Sitemap；Hub 的 `CollectionPage + ItemList(6)`、六篇 Article、各页 FAQPage、BreadcrumbList 及 Top 5 的 ItemList(5) 均可解析，6/6 可见 FAQ 与 Schema 逐题一致。首页存在 Hub 入口，Hub 完整链接六篇文章；检查到的 30 个站内目标、9 个 MP4、7 个视频 poster、favicon 与 Organization Logo 均有效，ISO 的 4 个自动化 403 经浏览器复核为可访问的反自动化限制。390px 下 7/7 无整页横向溢出，3 个宽表使用可聚焦且带 ARIA 的独立横向滚动容器。GPTBot、ChatGPT-User、PerplexityBot、ClaudeBot、Googlebot 与 Bingbot 请求均返回 200。批量工具的“富结果必填字段缺失”经逐页解析确认为误报，处置 `not-needed`；ACTIVESEAM Title 宽度提示处置 `no-change`；HSTS 为全站基础设施项，处置 `deferred`。单次移动 Lighthouse 分数为 72–88、LCP 约 3.07–4.60 秒、CLS 均为 0，因无 CrUX 页面级数据且主要为共享 CSS / Cookiebot 渲染链，转入独立性能批次，不阻断本次验收。GEO-V2-007 转为 `deployed / production-verified / social-feed-published / measuring`；本次只确认可抓取与可编入索引，不写成 Google 已收录。 |
 | 2026-09-18 | GEO-V2-007 GSC 索引申请完成：所有者确认已对 `/flatlock-vs-activeseam-technical-knitwear/` 提交一次索引请求。状态更新为 `indexing-requested`；请求成功只证明操作已提交，不等于页面已经被 Google 收录，因此不重复提交，后续按常规窗口复查 indexed snapshot 与最后抓取时间。 |
+| 2026-09-18 | GEO-V2-007 社交公开 URL 闭环：补录 LinkedIn 视频帖 `activity-7506545366570512384` 与 Instagram Carousel `Ddaao5dFAj-` 的稳定公开 URL。LinkedIn 匿名公开页可读取 Athletik Clothing 账号、ACTIVESEAM / FLATLOCK 正文与指南短链接；Instagram URL 返回 HTTP 200，但匿名正文抓取受平台限流，因此只记录所有者确认与可访问性，不推断正文、精确发布时间或互动数据。状态更新为 `public-urls-confirmed / measuring`；下一测量节点仍为 2026-09-26。 |
 
 ---
 
@@ -718,7 +719,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 
 1. `/top-sportswear-manufacturers-china/` 的 GSC 实时测试与一次索引请求已经完成；不再重复提交。后续按常规窗口复查实际 indexed snapshot 与最后抓取时间。首页、About 与 Merino 沿用原定复查窗口。
 2. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
-3. GEO-V2-007 已完成生产部署、技术验收与一次 GSC 索引申请，不立即重写页面或重复提交。下一步补录 LinkedIn / Instagram 公开 URL，并从 2026-09-26 起记录满七个完整自然日的平台与 GA4/UTM 数据；同时按常规窗口复查实际 indexed snapshot 与最后抓取时间。没有拉伸状态素材，因此继续不写 Athletik 实测延伸、强度或耐久声明，HSAT-K5 和国产海淮扒密缝机保持独立证据线。
+3. GEO-V2-007 已完成生产部署、技术验收、LinkedIn / Instagram 公开 URL 补录与一次 GSC 索引申请，不立即重写页面或重复提交。下一步从 2026-09-26 起记录满七个完整自然日的平台与 GA4/UTM 数据，并按常规窗口复查实际 indexed snapshot 与最后抓取时间。没有拉伸状态素材，因此继续不写 Athletik 实测延伸、强度或耐久声明，HSAT-K5 和国产海淮扒密缝机保持独立证据线。
 4. 七个品类页 Program Fit、About 综合段落、GEO-V2-019 与 GEO-V2-020 已上线并通过生产复核，不再立即重复修改。2026-09-22 起补录 GEO-V2-020 的 LinkedIn、Instagram、GA4/UTM 七日数据；页面被重新抓取后，按下一个完整月度窗口复测 Baseline v2 与 Broad Discovery v1，并分别记录整体、页面和固定提示词结果，不把低样本波动归因到单一页面。
 5. 下一个月使用完全相同的 Baseline v2 与 Broad Discovery v1 提示词及 [`AI 引用来源月度审计模板`](geo/testing/ai-cited-source-monthly-template.md)复测，不在同一会话连续运行多题。
 6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 Day 0 已关闭，下一步按 Day 7 / 28 / 90 观察，不继续修改首页。

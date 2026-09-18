@@ -1,6 +1,6 @@
 # Draft Article — Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear
 
-> Status: `deployed / production-verified / social-feed-published / indexing-requested / measuring`
+> Status: `deployed / production-verified / social-feed-published / public-urls-confirmed / indexing-requested / measuring`
 >
 > Drafted: 2026-09-16
 >
@@ -8,7 +8,7 @@
 >
 > Owner authorization: the owner explicitly authorized the complete first draft on 2026-09-16.
 >
-> Publication boundary: the owner completed copy and visual review on 2026-09-16. The approved copy, Technical Guides Hub entry, Schema, Sitemap and production media were deployed and technically verified on 2026-09-18. Public social post URLs remain to be recorded; seven-day measurement begins on 2026-09-26.
+> Publication boundary: the owner completed copy and visual review on 2026-09-16. The approved copy, Technical Guides Hub entry, Schema, Sitemap and production media were deployed and technically verified on 2026-09-18. LinkedIn and Instagram public post URLs were recorded on 2026-09-18; seven-day measurement begins on 2026-09-26.
 
 ## Proposed page metadata
 

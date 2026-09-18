@@ -138,11 +138,13 @@ LinkedIn 公开页面可读取已批准正文、五家公司名单、发布者�
 | 内部 Campaign | `2026-09-flatlock-vs-activeseam` |
 | 官网母文章 | <https://www.athletikapparel.com/flatlock-vs-activeseam-technical-knitwear/> |
 | 主题 | Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear |
-| 当前状态 | `feed-published / owner-confirmed / public-urls-pending`；所有者确认 LinkedIn 与 Instagram 已发布，公开帖子 URL 和精确时分待补录 |
+| 当前状态 | `feed-published / public-urls-confirmed / measuring`；LinkedIn 公开页面已核验，Instagram 公开 URL 已由所有者提供且返回 HTTP 200；精确时分与平台数据待补录 |
 | LinkedIn 发布格式 | 22.57 秒、720 × 1280、H.264 的真实 Merrow ACTIVESEAM 生产视频 + 技术教育型正文；视频无音轨 |
 | LinkedIn UTM content | `flatlock_activeseam_video` |
+| LinkedIn 公开帖子 URL | <https://www.linkedin.com/posts/athletik-apparel_technicalknitwear-flatlock-activeseam-activity-7506545366570512384-FnoT>；公开页已核验为 Athletik Clothing 帖子，正文、主题与指南短链接一致 |
 | Instagram 发布格式 | 6 张 1080 × 1350 JPG Carousel + 精简正文；未制作 Story |
 | Instagram UTM content | `flatlock_activeseam_carousel` |
+| Instagram 公开帖子 URL | <https://www.instagram.com/p/Ddaao5dFAj-/>；所有者提供，匿名访问返回 HTTP 200；平台限流导致本次无法独立读取正文与 Carousel 页面内容 |
 | 发布素材包 | `D:\B-视频素材\营销内容包\2026-09-flatlock-vs-activeseam\`（Git 外运营资产） |
 | 素材来源 | Athletik 已批准的 Yamato FLATLOCK、Merrow ACTIVESEAM `MB-4DFO 2.0` 真实生产画面与自然状态成衣接缝展示 |
 | 实际发布时间与七日复盘 | 发布日期 2026-09-18，精确时分待后台补录；2026-09-26 起记录满七个完整自然日的数据 |
@@ -156,6 +158,6 @@ LinkedIn 公开页面可读取已批准正文、五家公司名单、发布者�
 
 ### 待补录与后续动作
 
-- 取得 LinkedIn 与 Instagram 公开帖子 URL 后，核对账号、正文、媒体、实际发布时间和 UTM 最终落地页。
-- 确认本次母文章是否已在 GSC 提交索引请求；未提交时只提交一次，不把“可编入索引”或“已请求”写成“已收录”。
+- LinkedIn 公开页已核验账号、正文主题与指南短链接；Instagram 正文与 Carousel 内容受匿名抓取限制，保留所有者确认边界。两端精确发布时间和可得后台指标待补录；不可取得字段写 `unavailable`。
+- 母文章已在 GSC 完成一次索引申请；不重复提交，也不把“已请求”写成“已收录”。
 - 2026-09-26 起补录两个 Feed 帖及 GA4 的七日数据；不可取得字段写 `unavailable`。

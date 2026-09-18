@@ -1,12 +1,12 @@
 # 证据 Brief — Industrial FLATLOCK vs Merrow ACTIVESEAM
 
-> 状态：`deployed / production-verified / social-feed-published / indexing-requested / measuring`
+> 状态：`deployed / production-verified / social-feed-published / public-urls-confirmed / indexing-requested / measuring`
 >
 > 建立日期：2026-09-16
 >
 > GSC：2026-09-18 已完成一次索引申请；该操作不代表页面已经被 Google 收录，实际 indexed snapshot 与最后抓取时间待后续复查。
 >
-> 边界：本文件保留事实、素材和声明边界。所有者已于 2026-09-16 完成正文与视觉审核；代码与 uploads 媒体已同步，并于 2026-09-18 完成生产技术验收。公开社交 URL 与七日数据仍待补录。
+> 边界：本文件保留事实、素材和声明边界。所有者已于 2026-09-16 完成正文与视觉审核；代码与 uploads 媒体已同步，并于 2026-09-18 完成生产技术验收。LinkedIn 与 Instagram 公开帖子 URL 已于 2026-09-18 补录；七日数据仍待补录。
 
 ## 1. 内容目标
 
