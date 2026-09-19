@@ -720,6 +720,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-19 | SEO-V2-016 生产验收完成：主页 200、单一 H1，HTML 仅引用 8 个新 q80 候选且 8/8 生产文件为 HTTP 200；真实浏览器在 Desktop DPR 1 选择 Merino 480w / Knitted Fabrics 640w，在 390px Mobile DPR 3 选择 1280w / 1200w，视觉清晰且无横向溢出。三次有效移动 Lab 的 image delivery 估算浪费稳定为约 1,379 KiB，较部署前约 2,339 KiB 减少约 960 KiB（41%），目标两图不再进入重复证据；LCP 中位数 4.566s → 4.494s、TBT 153ms → 122ms、CLS 仍为 0，变化不足以归因为提速。一次初始 Lighthouse 失败仅返回 unscored fetch，按数据状态排除。首轮部署后 Crawl Diff 有 8 个低优先级 content-hash 变化但 0 new errors / flips，随后的同范围稳定复核 Run `df1f29f4-a015-4f02-977a-be091a16605b` 为 25 URL、0 changed / new errors / indexability flips。最终状态 `fixed / keep`；页面级 LCP Finding 继续 deferred，CrUX 仍 unavailable。 |
 | 2026-09-19 | SEO-V2-017 首页 Outdoor 图片交付启动：SEO-V2-016 的三次有效移动 Lab 均重复列出 `cat-outdoor-1200-q100.webp`，传输约 100 KB、估算浪费约 75,565 bytes。保持同一源图、构图、`sizes`、文字、alt 与链接，仅生成 q80 的 480 / 640 / 960 / 1200w WebP（约 7.1 / 10.7 / 19.7 / 27.7 KB）并更新 Outdoor 的 `src` / `srcset`；原 q100 文件保留回滚。报告首项 Sports Accessories 使用带 BETXCO 标记的受保护图片，所有者此前明确要求该图不准改动，因此记录为 `deferred / owner-protected`，本批未重编码、替换或改路径。状态 `implemented / deployment-pending`。 |
 | 2026-09-19 | SEO-V2-017 生产验收完成：主页 200、单一 H1，4 个 Outdoor q80 WebP 均为 HTTP 200，HTML 不再引用其 q100 候选；真实浏览器在 1440px / DPR 1 选择 640w、390px / DPR 3 选择 1200w，Desktop/Mobile 视觉清晰且无横向溢出。三次有效移动 Lab 的 image delivery 估算浪费由约 1,379 KiB 降至约 1,305 KiB，减少约 74 KiB（约 5.4%），Outdoor 连续退出证据；LCP 中位数 3.356s、TBT 64ms、CLS 0，但该变化不归因成本次下方图片提速。稳定 Crawl Diff Run `8fc3102b-06ff-4139-9105-8b898fe1925d` 检查 25 URL，0 changed / new errors / indexability flips。Sports Accessories 的 q100 URL、137,242-byte 960w 文件和视觉保持不变，继续 `deferred / owner-protected`；最终状态 `fixed / keep`。 |
+| 2026-09-19 | SEO 优先级重排：所有者决定当前阶段跳过增量性能优化；SEO-V2-004 转为 `deferred / monitor-only`，仅在 Field CWV、抓取/渲染/indexability 或明显体验回归达到触发条件时重开。90 天 GSC 页面/Query 复查显示 Sportswear 仍缺少可用于改 Title / Meta / H1 的相关商业 Query 样本；DataForSEO 估算与 US / GB / CA Live SERP 同时显示 Sportswear 商业词需求较大，但宽泛词混有本地供应、teamwear、零售与榜单意图。启动 SEO-V2-018，只研究更贴合 Athletik 的 OEM / private label / technical / China 修饰词和现有页所有权；保持 URL、Title、Meta、H1，不新建近义页，允许研究结果为 `no-change`。 |
 
 ---
 
@@ -730,7 +731,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 3. GEO-V2-007 已完成生产部署、技术验收、LinkedIn / Instagram 公开 URL 补录与一次 GSC 索引申请，不立即重写页面或重复提交。下一步从 2026-09-26 起记录满七个完整自然日的平台与 GA4/UTM 数据，并按常规窗口复查实际 indexed snapshot 与最后抓取时间。没有拉伸状态素材，因此继续不写 Athletik 实测延伸、强度或耐久声明，HSAT-K5 和国产海淮扒密缝机保持独立证据线。
 4. 七个品类页 Program Fit、About 综合段落、GEO-V2-019 与 GEO-V2-020 已上线并通过生产复核，不再立即重复修改。2026-09-22 起补录 GEO-V2-020 的 LinkedIn、Instagram、GA4/UTM 七日数据；页面被重新抓取后，按下一个完整月度窗口复测 Baseline v2 与 Broad Discovery v1，并分别记录整体、页面和固定提示词结果，不把低样本波动归因到单一页面。
 5. 下一个月使用完全相同的 Baseline v2 与 Broad Discovery v1 提示词及 [`AI 引用来源月度审计模板`](geo/testing/ai-cited-source-monthly-template.md)复测，不在同一会话连续运行多题。
-6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-001、SEO-V2-002 已完成；SEO-V2-003 进入常规 indexed snapshot 复查窗口；SEO-V2-015 Day 0 已关闭，下一步按 Day 7 / 28 / 90 观察，不继续修改首页。
-7. 持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据；只有达到 V2 触发条件才启动页面或性能改动，响应时间需使用同配置窗口比较。
+6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-018 为当前主动研究项，先验证 Sportswear 的 OEM / private label / technical / China 商业修饰词与现有页所有权，不改 URL、Title、Meta、H1，不新建近义页；SEO-V2-015 等既有改动继续按原 Day 28 / 90 窗口观察。
+7. SEO-V2-004 转为性能监控项，不再主动投入增量优化；持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据，只有达到重新触发条件才启动页面或性能改动。
 8. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
 9. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。
