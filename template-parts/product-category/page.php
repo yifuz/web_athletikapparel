@@ -101,6 +101,35 @@ if ( ! empty( $category['hero_video'] ) ) {
 					<?php endif; ?>
 				<?php endforeach; ?>
 			</dl>
+			<?php if ( ! empty( $category['engagement_models']['items'] ) && is_array( $category['engagement_models']['items'] ) ) : ?>
+				<div class="ma-product-fit__engagement" aria-labelledby="ma-product-engagement-title">
+					<div class="ma-product-fit__engagement-heading">
+						<p class="ma-section-kicker"><?php esc_html_e( 'Program model', 'myathletik-child' ); ?></p>
+						<h3 id="ma-product-engagement-title"><?php echo esc_html( $category['engagement_models']['heading'] ); ?></h3>
+						<?php if ( ! empty( $category['engagement_models']['intro'] ) ) : ?>
+							<p><?php echo esc_html( $category['engagement_models']['intro'] ); ?></p>
+						<?php endif; ?>
+					</div>
+					<div class="ma-product-fit__engagement-grid">
+						<?php foreach ( $category['engagement_models']['items'] as $model ) : ?>
+							<?php if ( ! empty( $model['label'] ) && ! empty( $model['title'] ) && ! empty( $model['description'] ) ) : ?>
+								<article class="ma-product-fit__engagement-card">
+									<?php if ( ! empty( $model['icon'] ) ) : ?>
+										<span class="ma-feature-icon" aria-hidden="true">
+											<?php get_template_part( 'template-parts/ui/line-icon', null, array( 'name' => $model['icon'] ) ); ?>
+										</span>
+									<?php endif; ?>
+									<div>
+										<p class="ma-product-fit__engagement-label"><?php echo esc_html( $model['label'] ); ?></p>
+										<h4><?php echo esc_html( $model['title'] ); ?></h4>
+										<p><?php echo esc_html( $model['description'] ); ?></p>
+									</div>
+								</article>
+							<?php endif; ?>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			<?php endif; ?>
 		</div>
 	</section>
 	<?php endif; ?>

@@ -723,6 +723,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-19 | SEO 优先级重排：所有者决定当前阶段跳过增量性能优化；SEO-V2-004 转为 `deferred / monitor-only`，仅在 Field CWV、抓取/渲染/indexability 或明显体验回归达到触发条件时重开。90 天 GSC 页面/Query 复查显示 Sportswear 仍缺少可用于改 Title / Meta / H1 的相关商业 Query 样本；DataForSEO 估算与 US / GB / CA Live SERP 同时显示 Sportswear 商业词需求较大，但宽泛词混有本地供应、teamwear、零售与榜单意图。启动 SEO-V2-018，只研究更贴合 Athletik 的 OEM / private label / technical / China 修饰词和现有页所有权；保持 URL、Title、Meta、H1，不新建近义页，允许研究结果为 `no-change`。 |
 | 2026-09-19 | SEO-V2-018 teamwear 业务边界确认：Athletik 可以承接 teamwear、team uniforms 和 custom sports kits，但这类询盘通常不能达到公开 MOQ 500 pieces per style，历史上基本没有形成订单。因此将其归类为“技术上可承接、商业上非主动获客范围”，后续 Sportswear SERP 研究排除以小批量球队定制、本地印字和零售为主的结果；不为 teamwear 建页，不把该词作为主词，也不公开声称 Athletik 无法生产。 |
 | 2026-09-19 | SEO-V2-018 第二轮验证启动：GSC `page-opportunities` 复跑覆盖 2026-06-17 至 09-14，Sportswear 仅 2 条可见 exact-URL Query 行，唯一 eligible 行仍为其他公司名 `sukartik clothing private limited`、1 impression，自动 Finding `action-5772d7be34e7` 处置 `not-needed / mismatched-query`。DataForSEO 五词请求因当前 UTC 日有效消耗 96,800 micros、预计新增 12,600 micros 会超过硬限额而停止，不重试或绕过；公开搜索抽样仅用于初筛，不能替代 US / GB / CA exact SERP。初筛显示 `OEM activewear manufacturer` 最接近 Athletik 的规格驱动采购任务；`private label sportswear manufacturer` 明显混入低 MOQ、startup 与 teamwear；`technical sportswear manufacturer` 语义不稳定；`performance apparel manufacturer` 继续归首页，Sportswear 页与 Top 5 指南分别承接交易和 China supplier comparison。现有 Sportswear 页主体覆盖充分，下一决策输入为合作模式及 labels / hangtags / packaging 的真实服务边界，未改网站。 |
+| 2026-09-19 | SEO-V2-018 Sportswear 合作模式单变量实施完成：所有者确认 Athletik 可按完整 tech pack 或 reference sample 做 OEM，可从明确概念或不完整规格协助开发型 ODM，可稳定提供 main labels、care labels、hangtags、artwork 与 custom packaging，并且不做 ready-stock white label。仅在 Sportswear Buyer Fit 后新增 OEM、Development-led ODM、Private label 三卡模块，明确三条采购入口与非现货边界；URL、Title、Meta、H1、图片、Schema 及其他六个品类不变。PHP 语法、7 品类数据隔离和 Sportswear-only 3 卡断言通过；LocalWP 当前返回 502，视觉未伪造为通过。风险为新增正文长度与响应式排版，部署后验收 200、单一 H1、三卡内容、Desktop/Mobile、其他品类隔离及 Crawl Diff；Finding outcome 为 `changed / owner-review / local-render-unavailable`，状态 `implemented / deployment-pending`。 |
 
 ---
 
@@ -733,7 +734,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 3. GEO-V2-007 已完成生产部署、技术验收、LinkedIn / Instagram 公开 URL 补录与一次 GSC 索引申请，不立即重写页面或重复提交。下一步从 2026-09-26 起记录满七个完整自然日的平台与 GA4/UTM 数据，并按常规窗口复查实际 indexed snapshot 与最后抓取时间。没有拉伸状态素材，因此继续不写 Athletik 实测延伸、强度或耐久声明，HSAT-K5 和国产海淮扒密缝机保持独立证据线。
 4. 七个品类页 Program Fit、About 综合段落、GEO-V2-019 与 GEO-V2-020 已上线并通过生产复核，不再立即重复修改。2026-09-22 起补录 GEO-V2-020 的 LinkedIn、Instagram、GA4/UTM 七日数据；页面被重新抓取后，按下一个完整月度窗口复测 Baseline v2 与 Broad Discovery v1，并分别记录整体、页面和固定提示词结果，不把低样本波动归因到单一页面。
 5. 下一个月使用完全相同的 Baseline v2 与 Broad Discovery v1 提示词及 [`AI 引用来源月度审计模板`](geo/testing/ai-cited-source-monthly-template.md)复测，不在同一会话连续运行多题。
-6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-018 为当前主动研究项，先验证 Sportswear 的 OEM / private label / technical / China 商业修饰词与现有页所有权，不改 URL、Title、Meta、H1，不新建近义页；SEO-V2-015 等既有改动继续按原 Day 28 / 90 窗口观察。
+6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-018 已完成 Sportswear 合作模式单变量本地实施，待所有者审核并部署后完成生产验收；DataForSEO 额度恢复后再补 US / GB / CA 同配置快照。保持 URL、Title、Meta、H1，不新建近义页；SEO-V2-015 等既有改动继续按原 Day 28 / 90 窗口观察。
 7. SEO-V2-004 转为性能监控项，不再主动投入增量优化；持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据，只有达到重新触发条件才启动页面或性能改动。
 8. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
 9. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。

@@ -121,6 +121,30 @@ function myathletik_product_category_data() {
 					),
 				),
 			),
+			'engagement_models' => array(
+				'heading' => __( 'OEM, ODM, and private-label routes for sportswear programs', 'myathletik-child' ),
+				'intro'   => __( 'Athletik reviews each program against the product information available. Every route is built to an approved specification and confirmed production order; we do not offer ready-stock white-label garments.', 'myathletik-child' ),
+				'items'   => array(
+					array(
+						'label'       => __( 'OEM', 'myathletik-child' ),
+						'title'       => __( 'From a tech pack or reference sample', 'myathletik-child' ),
+						'description' => __( 'Best suited to buyers with a complete tech pack or approved reference sample. We review manufacturability, develop samples, and reproduce the approved standard in bulk.', 'myathletik-child' ),
+						'icon'        => 'oem',
+					),
+					array(
+						'label'       => __( 'Development-led ODM', 'myathletik-child' ),
+						'title'       => __( 'From a defined concept or partial specification', 'myathletik-child' ),
+						'description' => __( 'We can support fabric, fit, construction, and sample development from a defined product brief, with buyer approval before bulk production.', 'myathletik-child' ),
+						'icon'        => 'sampling',
+					),
+					array(
+						'label'       => __( 'Private label', 'myathletik-child' ),
+						'title'       => __( 'Brand execution for custom programs', 'myathletik-child' ),
+						'description' => __( 'Main labels, care labels, hangtags, artwork, and custom packaging can be developed for the approved sportswear program. This is not a ready-stock relabeling service.', 'myathletik-child' ),
+						'icon'        => 'customize',
+					),
+				),
+			),
 			'what_we_make'     => array(
 				__( 'Training tops, tanks, and tees', 'myathletik-child' ),
 				__( 'Leggings, shorts, and compression pieces', 'myathletik-child' ),
