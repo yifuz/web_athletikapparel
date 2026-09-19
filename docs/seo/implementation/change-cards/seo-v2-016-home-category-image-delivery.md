@@ -1,7 +1,7 @@
 # SEO Change Card：SEO-V2-016 首页类目卡图片交付
 
 - Change ID：`SEO-V2-016-HOME-CATEGORY-IMAGES`
-- 状态：`implemented / deployment-pending`
+- 状态：`fixed / keep`
 - 变更日期：2026-09-19
 - 变更页面或分组：`/` 的 `What we make`；仅 Merino Wool 与 Knitted Fabrics 两张类目卡
 - 搜索与采购意图：保持首页产品品类发现和对应采购入口，不改变品类名称、链接、替代文字或页面所有权
@@ -13,9 +13,9 @@
 - 基线窗口：2026-09-19 部署前；Merino 640 / 960 / 1280 分别约 314 / 782 / 1502 KB，Knitted Fabrics 640 / 1200 分别约 82 / 285 KB
 - 干扰因素：Cloudflare 缓存、设备 DPR、视口宽度、浏览器候选选择、网络与 Lighthouse 波动
 - 部署前 Crawl / Lab：Crawl Diff Run `2b028751-ef61-4650-bb49-f2c54e2f2b36`；SEO-V2-004 部署后三次移动 Lab
-- 部署后 Crawl ID：`【DEPLOYMENT PENDING】`
-- Finding / Inventory 处置：三轮重复的 image delivery Finding 转为 `implemented / deployment-pending`；其他五张卡片没有并入本次变量
-- 最终决策及原因：`【PENDING：生产视觉、响应式候选、同条件 Lab 与 Crawl Diff 后填写】`
+- 部署后 Crawl Diff Run ID：`df1f29f4-a015-4f02-977a-be091a16605b`（25 个 URL；0 added / removed / changed / new errors / indexability flips）
+- Finding / Inventory 处置：本批次 Merino / Knitted Fabrics 的 image delivery 子项为 `fixed / keep`：两张图均从三次部署后报告的重复证据中消失，三轮估算图片浪费由部署前约 2,339 KiB 稳定降至 1,379 KiB，减少约 960 KiB（41%）。页面级 LCP Finding `action-1a2a7aafa456` 仍为 `deferred`，因为 LCP 节点仍是 Hero poster，剩余渲染阻塞与其他类目图不属于本次变量
+- 最终决策及原因：`fixed / keep`。生产 HTML、8 个候选、浏览器实际选图和 Desktop / Mobile 视觉均通过；目标图片传输显著减少且无 CLS、状态码或 indexability 回归。LCP 中位数从 4.566s 变为 4.494s，仅减少约 72ms（1.6%），属于 Lab 波动，不能作为提速结论，也不影响保留本次图片优化
 
 ## 实施内容
 
@@ -43,8 +43,10 @@
 - [x] 960w 新文件人工检查保持原构图、主体和可接受细节；
 - [x] `template-parts/home/product-categories.php` 通过 LocalWP PHP 8.2.30 语法检查，`git diff --check` 通过；
 - [ ] LocalWP 全页验收：本地域名当前返回 502，转生产部署后验证，不把 unavailable 写成通过；
-- [ ] 生产 8 个新 WebP 均为 HTTP 200，HTML `srcset` 只引用已部署候选；
-- [ ] 1440px Desktop 与 390px Mobile 卡片构图、清晰度、文字、链接和布局无回归；
-- [ ] 浏览器按视口 / DPR 选择合理候选，Merino 与 Knitted Fabrics 不再传输旧 lossless / q100 文件；
-- [ ] 三次同条件移动 Lighthouse 记录 image delivery、LCP、TBT 与 CLS；
-- [ ] 同范围 Crawl Diff 无新增状态码、Canonical 或 indexability 回归，并填写最终 Finding outcome。
+- [x] 生产 8 个新 WebP 均为 HTTP 200、`image/webp`，字节数与本地文件一致；HTML 恰好包含 8 个 q80 引用，0 个旧 lossless / q100 引用；
+- [x] 1440×900 Desktop 与 390×844 Mobile 截图中两张卡片构图、清晰度、文字、链接和布局无回归，页面无横向溢出；
+- [x] Desktop DPR 1 实际选择 Merino 480w（约 7 KB）与 Knitted Fabrics 640w（约 26 KB）；Mobile DPR 3 选择 Merino 1280w（约 30 KB）与 Knitted Fabrics 1200w（约 89 KB）；
+- [x] 三次有效移动 Lighthouse 完成：LCP 为 3.279s / 4.605s / 4.494s，中位数 4.494s；TBT 为 122ms / 127ms / 82ms，中位数 122ms；CLS 三次均为 0；score 为 83 / 69 / 70，中位数 70。一次初始 Lighthouse navigation 失败并回退为 unscored HTTP fetch，已按数据状态排除，不计入三轮 Lab；
+- [x] `image-delivery-insight` 三次均为约 1,379 KiB，较部署前约 2,339 KiB 减少约 960 KiB（41%），且 Merino / Knitted Fabrics 不再进入报告的图片证据；
+- [x] 首次部署后 Crawl Diff Run `de96d11b-9c86-4fad-bd61-8110589b18ff` 出现 8 个低优先级 content-hash 变化，但 0 new errors / indexability flips / high-priority recommendation；其中返回内容受输出预算限制。随即以相同范围复核，Run `df1f29f4-a015-4f02-977a-be091a16605b` 为 25 个 URL、0 added / removed / changed / new errors / indexability flips，确认没有持续技术回归；
+- [x] Finding outcome 记录为 `fixed / keep`；CrUX Phone 仍为 `not_configured`，因此没有 Field CWV 结论。
