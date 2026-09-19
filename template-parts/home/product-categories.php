@@ -77,10 +77,12 @@ $categories = array(
 	array(
 		'title'    => __( 'Outdoor Clothing', 'myathletik-child' ),
 		'url'      => '/outdoor-clothing-manufacturer/',
-		'image'    => 'outdoor clothing/cat-outdoor-1200-q100.webp',
+		'image'    => 'outdoor clothing/cat-outdoor-1200-q80.webp',
 		'sources'  => array(
-			640  => 'outdoor clothing/cat-outdoor-640-q100.webp',
-			1200 => 'outdoor clothing/cat-outdoor-1200-q100.webp',
+			480  => 'outdoor clothing/cat-outdoor-480-q80.webp',
+			640  => 'outdoor clothing/cat-outdoor-640-q80.webp',
+			960  => 'outdoor clothing/cat-outdoor-960-q80.webp',
+			1200 => 'outdoor clothing/cat-outdoor-1200-q80.webp',
 		),
 		'sizes'    => '(min-width: 64rem) 35rem, (min-width: 48rem) calc(50vw - 2.5rem), calc(100vw - 2rem)',
 		'width'    => 1200,
