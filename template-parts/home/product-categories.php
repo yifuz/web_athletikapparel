@@ -40,11 +40,12 @@ $categories = array(
 	array(
 		'title'    => __( 'Merino Wool', 'myathletik-child' ),
 		'url'      => '/merino-wool-manufacturer/',
-		'image'    => 'merino wool product/cat-merino-1280-lossless.webp',
+		'image'    => 'merino wool product/cat-merino-1280-q80.webp',
 		'sources'  => array(
-			640  => 'merino wool product/cat-merino-640-lossless.webp',
-			960  => 'merino wool product/cat-merino-960-lossless.webp',
-			1280 => 'merino wool product/cat-merino-1280-lossless.webp',
+			480  => 'merino wool product/cat-merino-480-q80.webp',
+			640  => 'merino wool product/cat-merino-640-q80.webp',
+			960  => 'merino wool product/cat-merino-960-q80.webp',
+			1280 => 'merino wool product/cat-merino-1280-q80.webp',
 		),
 		'sizes'    => '(min-width: 64rem) 17rem, (min-width: 48rem) calc(50vw - 2.5rem), calc(100vw - 2rem)',
 		'width'    => 1280,
@@ -59,10 +60,12 @@ $categories = array(
 	array(
 		'title'    => __( 'Knitted Fabrics', 'myathletik-child' ),
 		'url'      => '/knitted-fabrics-manufacturer/',
-		'image'    => 'knitted fabrics/cat-knitted-fabrics-1200-q100.webp',
+		'image'    => 'knitted fabrics/cat-knitted-fabrics-1200-q80.webp',
 		'sources'  => array(
-			640  => 'knitted fabrics/cat-knitted-fabrics-640-q100.webp',
-			1200 => 'knitted fabrics/cat-knitted-fabrics-1200-q100.webp',
+			480  => 'knitted fabrics/cat-knitted-fabrics-480-q80.webp',
+			640  => 'knitted fabrics/cat-knitted-fabrics-640-q80.webp',
+			960  => 'knitted fabrics/cat-knitted-fabrics-960-q80.webp',
+			1200 => 'knitted fabrics/cat-knitted-fabrics-1200-q80.webp',
 		),
 		'sizes'    => '(min-width: 64rem) 35rem, (min-width: 48rem) calc(50vw - 2.5rem), calc(100vw - 2rem)',
 		'width'    => 1200,

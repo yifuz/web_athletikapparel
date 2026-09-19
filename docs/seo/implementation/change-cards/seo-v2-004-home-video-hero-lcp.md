@@ -1,22 +1,22 @@
 # SEO Change Card：SEO-V2-004 首页视频 Hero LCP
 
 - Change ID：`SEO-V2-004-HERO`
-- 状态：`deployed / playback-verified / performance-pending`
+- 状态：`inconclusive / keep-monitoring`
 - 变更日期：2026-09-18
 - 变更页面或分组：`/`
 - 搜索与采购意图：保持首页 `Performance Apparel Manufacturer` 的 B2B 供应商发现和采购入口职责，不改变页面主题或关键词所有权
 - 唯一主要变量：首页 Hero 视频的首屏资源调度；保留现有 poster、MP4、构图、文案和覆盖层，只把 MP4 从首屏自动请求改为 `window.load` 后空闲加载
 - 业务假设：让 13 KB poster 成为唯一首屏高优先级 Hero 媒体，并阻止 367 KB / 943 KB MP4 与首屏 CSS、字体和图片争夺带宽，可降低首页移动端 Lab FCP / LCP，同时保留后续动态展示
-- 证据来源与数据状态：2026-09-18 生产首页三次同条件 Lighthouse 13.4.1 移动端 Lab；LCP 为 4.529s / 4.612s / 4.532s，中位数 4.532s，三次 LCP 节点均为 `video.ma-home-hero__video`。相对 2026-08-27 的 3.66s Lab 基线稳定慢约 0.87s；CrUX Phone 为 `not_configured`，因此不写成 Field CWV 回归
+- 证据来源与数据状态：部署前为 2026-09-18 生产首页三次同条件 Lighthouse 13.4.1 移动端 Lab，LCP 为 4.529s / 4.612s / 4.532s，中位数 4.532s，三次 LCP 节点均为 `video.ma-home-hero__video`。部署后于 2026-09-19 再做三次同条件 Lab，LCP 为 4.566s / 4.586s / 3.338s，中位数 4.566s，三次 LCP 节点均改为 `img.ma-home-hero__poster`。中位数差异为 +34ms（约 +0.75%），属于 Lab 正常波动，既不能证明提速，也不构成回归；CrUX Phone 仍为 `not_configured`，因此不写成 Field CWV 结论
 - 主要指标：部署后同条件三次移动 Lighthouse 的 LCP / FCP 中位数；首屏网络瀑布中 MP4 是否在 `window.load` 前发起；poster 是否为 eager/high LCP 候选
 - 防护指标：HTTP 200、单一 H1、CLS、TBT、Desktop/Mobile 构图、poster 到视频的过渡、静音循环播放、CTA、Consent 与 GA4 不受影响；reduced-motion、Save-Data、后台标签页和离屏状态不得强制播放
 - 基线窗口：2026-09-18 部署前；移动 Lab LCP 中位数 4.532s、CLS 0、TBT 0–140ms
 - Day 7 / 28 / 90 复盘日期：性能项以 Day 0 同条件 Lab 和后续可得 CrUX 为主；GSC 排名不作为本次代码的直接归因指标
 - 干扰因素：Cookiebot 与 jQuery 阻塞链、Cloudflare/Flywheel 响应、网络波动、首页其他 eager 资源、Lighthouse 运行环境
 - 部署前 Crawl ID：`crawl_40f88b6c25d74ba79ee193c7be26caf9`（最近冻结 Crawl，仅作无回归参考）
-- 部署后 Crawl ID：`【DEPLOYMENT PENDING】`
-- Finding / Inventory 处置：首页 Hero Lab LCP Finding 转为 `deployed / performance-verification-pending`；所有者报告的“视频一直不会播放”经生产浏览器复现判定为 `not-a-code-defect / environment-expected`：正常 motion 的 Desktop / Mobile 均播放，当前 Windows 的系统动画状态关闭，触发站点既定 reduced-motion poster-only 分支。Cookiebot、jQuery 与首页下方产品图不并入本次变量
-- 最终决策及原因：`【PENDING：生产三轮 Lab、网络请求顺序与视觉验收后填写】`
+- 部署后 Crawl Diff Run ID：`2b028751-ef61-4650-bb49-f2c54e2f2b36`（25 个 URL；added / removed / changed / new errors / indexability flips 均为 0）
+- Finding / Inventory 处置：所有者报告的“视频一直不会播放”经生产浏览器复现判定为 `not-a-code-defect / environment-expected`：正常 motion 的 Desktop / Mobile 均播放，当前 Windows 的系统动画状态关闭，触发站点既定 reduced-motion poster-only 分支。性能报告 Finding `action-1a2a7aafa456` 处置为 `deferred`：Hero 已退出 LCP 节点且请求顺序符合目标，但页面级 LCP 仍处于 needs-work，应由独立的渲染阻塞链与图片交付调查承接，不能把 Cookiebot、jQuery 或首页下方产品图混入本次单变量结果
+- 最终决策及原因：`inconclusive / keep-monitoring`。保留当前实现：它消除了 MP4 的首屏竞争并恢复 reduced-motion / Save-Data 防护，没有造成可测回归；但 LCP 中位数没有改善，不能标记为 `fixed`。不继续修改 Hero，等待可得 CrUX，并把重复出现的共享渲染链和图片交付问题作为独立变量评估
 
 ## 实施内容
 
@@ -65,5 +65,6 @@
 - [x] 强制 reduced-motion 的生产浏览器为 0 个 MP4 请求、`currentSrc=""`、`paused=true`、poster-only；当前 Windows `SPI_GETCLIENTAREAANIMATION Enabled=False` 且 `MinAnimate=0`，与所有者浏览器不播放现象一致；
 - [ ] Desktop 与 Mobile 的 poster 构图、覆盖层、文字和 CTA 无视觉回归；视频在首屏稳定后静音循环播放且无闪黑；
 - [ ] Save-Data、后台标签页和离屏状态完成真实浏览器验收；
-- [ ] 三次相同条件移动 Lighthouse 记录 LCP / FCP / TBT / CLS 与 LCP 节点；
-- [ ] 使用同范围 Crawl Diff 处置所有新增、消失与持续 Finding，并填写部署后 Crawl ID 和最终决策。
+- [x] 三次相同条件移动 Lighthouse 完成：LCP / FCP 为 4.566s / 4.586s / 3.338s，中位数 4.566s；TBT 为 44ms / 153ms / 169ms，中位数 153ms；CLS 三次均为 0；三次 LCP 节点均为 `img.ma-home-hero__poster`；
+- [x] 同范围 Crawl Diff 完成：Run ID `2b028751-ef61-4650-bb49-f2c54e2f2b36`，25 个 URL，0 added / removed / changed / new errors / indexability flips。四个 Technical Guide MP4 因响应超过 5 MB 产生既有媒体读取警告，不属于首页 Hero 新回归；
+- [x] 最终决策记录为 `inconclusive / keep-monitoring`；当前 Hero 实现保留，页面级 LCP Finding 转入独立性能调查。
