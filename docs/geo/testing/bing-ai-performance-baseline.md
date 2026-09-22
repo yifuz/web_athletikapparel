@@ -1,6 +1,6 @@
 # Bing Webmaster Tools AI Performance 基线
 
-> 状态：`api-site-verified / ai-export-pending`。2026-09-22 已用只读 Bing Webmaster API 确认该账户可访问已验证站点，但尚未取得 AI Performance 后台截图或导出；**没有建立引用数值基线**。不得把未取得数据写成 0，也不得把站点验证等同于该报表已可用。
+> 状态：`overview-baseline-established / page-query-pending`。2026-09-22 已用只读 Bing Webmaster API 确认该账户可访问已验证站点，并取得 AI Performance 的 `OverviewStats` 逐日 CSV；**概览时序基线已建立**，但后台指标卡、被引用 URL 与 Grounding Queries 仍待取证。不得把缺失明细写成 0。
 
 ## 0. API 连接核验（2026-09-22）
 
@@ -17,22 +17,36 @@
 
 微软定义 `Total Citations` 为所选时间内 AI 回答作为来源展示的引用次数；`Average Cited Pages` 为所选时间内每天被作为来源展示的本站不同页面平均数；`Grounding Queries` 是抽样的检索短语，不是完整用户提问清单。逐页次数表示被引用频率，不代表推荐位置、页面权重或排名。报表覆盖 Microsoft Copilot、Bing 的 AI 摘要和部分合作方体验，不能直接代表 ChatGPT、Google AI Mode 或所有 AI 产品。参见 [Bing AI Performance 官方说明](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)。新增四项预览功能的定义见 [Bing 官方更新](https://blogs.bing.com/search/June-2026/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare)。
 
-## 2. 首次快照（待后台证据）
+## 2. 首次快照（概览已入档，页面和查询待补）
+
+原始文件：`C:\Users\Administrator\Downloads\athletikapparel.com_AIPerformanceOverviewStats_9_22_2026.csv`；本地 SHA-256：`C74B1AA333EADC07BC5E632E1C1FCB52D299CD8AC12AD7BCFCE694B6FFFD87A1`。CSV 只有 `Date`、`Citations`、`Cited Pages` 三列。已核对 54 个连续日期、无重复或缺日；文件名和本地修改时间均为 2026-09-22，但 CSV 内未注明后台时区或报表生成时间。下表中统计值均来自**逐日 CSV 计算**，不是后台概览卡片的直接读数。
 
 | 字段 | 记录 |
 |---|---|
-| 报表状态 | `未查看`；查看后改为 `有数据 / 界面可用但显示 0 / 界面不可用 / 权限不足 / 加载或导出失败` |
-| 属性名称与类型 | API 返回 `https://athletikapparel.com/`，`IsVerified = true`；界面属性类型 `未取得` |
-| 截图/导出时间与时区 | `未取得` |
-| 统计起止日期及后台时区 | `未取得` |
-| 数据最后更新日 | `未取得` |
-| Total Citations | `未取得` |
-| Average Cited Pages | `未取得` |
-| 逐日趋势 | `未取得` |
+| 报表状态 | `有数据：OverviewStats 逐日 CSV 已取得；后台卡片、Pages、Grounding Queries 未取得` |
+| 属性名称与类型 | API 返回 `https://athletikapparel.com/`，`IsVerified = true`；CSV 文件名为同域，界面属性类型仍 `未取得` |
+| 导出时间与时区 | 文件名日期为 `2026-09-22`；准确导出时刻和后台时区 `未取得` |
+| CSV 完整范围 | `2026-07-29` 至 `2026-09-20`，54 个连续自然日；后台时区 `未取得` |
+| 可比 28 天窗口 | `2026-08-24` 至 `2026-09-20`，28 个连续自然日 |
+| 数据最后更新日 | CSV 最后一行是 `2026-09-20`；是否等于后台最后更新日 `未确认` |
+| Total Citations | 后台卡片 `未取得`；28 天逐日 `Citations` **合计 5**；54 天逐日合计也为 5 |
+| Average Cited Pages | 后台卡片 `未取得`；28 天逐日 `Cited Pages` 合计 4，算术平均 **0.1429 页/日**；不与后台卡片读数混同 |
+| 逐日趋势 | 54 天内 4 天非零，其余 50 天在此 CSV 中为 0；非零日期见下表 |
 | 页面列表完整性 | `未取得`；记录总行数、分页及是否为截取的前几行 |
 | Grounding Queries 完整性 | `未取得`；注明官方定义为样本，不推算总查询量 |
 | Intents / Topics / Citation Share / Compare | `未查看`；若界面未出现，记录 `未显示`，不推断为 0 |
-| 原始证据位置 | `未取得` |
+| 原始证据位置 | 上述本地 CSV；未复制进 Git，文件完整性以 SHA-256 复核 |
+
+### 非零日期（CSV 原值）
+
+| 日期 | Citations | Cited Pages |
+|---|---:|---:|
+| 2026-08-26 | 1 | 1 |
+| 2026-08-27 | 1 | 1 |
+| 2026-09-05 | 1 | 1 |
+| 2026-09-07 | 2 | 1 |
+
+这份导出只证明上述 Bing 报表范围内存在少量引用记录，不能识别具体页面、grounding query、回答原文、买家意图、品牌提及或供应商推荐。微软说明 AI Performance 为汇总/抽样数据，不同视图的总数可能不同；取得页面和查询导出后应分别保留各自读数，不强制凑成 5。[官方口径](https://www.bing.com/webmasters/help/ai-performance-9f8e7d6c)
 
 ### Cited Pages
 
@@ -60,8 +74,8 @@
 ## 4. 所有者取数最短清单
 
 1. 打开 Bing Webmaster Tools，选中 API 已验证的 `https://athletikapparel.com/` 属性，再进入 `AI Performance`；先截一张能同时看到属性、日期范围、总引用数、平均引用页面数和趋势的图。
-2. 在同一日期范围内导出页面引用、Grounding Queries 和时间序列的 CSV/Excel；若界面无法导出，则截取完整列表并保留行数、分页和所选排序。
+2. 时间序列 CSV 已取得。下一步优先选 `2026-08-24` 至 `2026-09-20`，导出页面引用与 Grounding Queries 的 CSV/Excel；若界面无法选择同一窗口或无法导出，则保留实际日期、完整列表截图、行数、分页和所选排序。
 3. 若有 `Intents`、`Topics`、`Citation Share`，可顺手截取，不必为了首份基线额外分析。
 4. 如果找不到 `AI Performance`、出现空白/权限提示或显示 0，也请截相应界面。0 只有在选定属性、日期范围、报表正常加载后才记为 0。
 
-收到证据后，将本文件状态改为 `baseline-established` 或据实记录不可用原因；只在有数据时填写数值、URL 和查询短语。
+收到页面、查询与概览卡片证据后，将本文件状态改为 `baseline-complete`；只在有数据时填写 URL、查询短语和后台卡片数值。首个 28 天窗口数据量很小，暂不据此归因近期页面发布或改写内容。

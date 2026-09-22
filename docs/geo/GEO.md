@@ -110,7 +110,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | [`testing/ultramerino-canonical-conflict-audit-2026-09-14.md`](testing/ultramerino-canonical-conflict-audit-2026-09-14.md) | UltraMerino 的可访问性、Sitemap、Canonical、AI 来源选择、冲突声明和双站治理建议 |
 | [`testing/ai-cited-source-pattern-audit-2026-09-14.md`](testing/ai-cited-source-pattern-audit-2026-09-14.md) | AI 实际引用站点的页面模式、可迁移做法、风险边界和 Athletik 优先改进项 |
 | [`testing/ai-cited-source-monthly-template.md`](testing/ai-cited-source-monthly-template.md) | 每月固定 Baseline 复测后的 Sources URL、模式、迁移判断和改动门槛模板 |
-| [`testing/bing-ai-performance-baseline.md`](testing/bing-ai-performance-baseline.md) | Bing AI Performance 的首次取数口径、证据状态与待填快照；未取得后台数据前不视为数值基线 |
+| [`testing/bing-ai-performance-baseline.md`](testing/bing-ai-performance-baseline.md) | Bing AI Performance 的首份概览时序基线、证据口径与待补页面/查询明细 |
 | [`distribution/social-content-sop.md`](distribution/social-content-sop.md) | 官网指南改编为 LinkedIn / Instagram 内容的执行 SOP |
 | [`distribution/publishing-log.md`](distribution/publishing-log.md) | 每次站外分发的发布时间、链接和七日数据 |
 | [`../seo/authority/offsite-authority-opportunity-pool-v1.md`](../seo/authority/offsite-authority-opportunity-pool-v1.md) | 站外行业引用、目录、认证名录和编辑机会的证据与状态 |
@@ -232,7 +232,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-002 | 补齐 V2-E01 环境和来源证据 | 测量有效性 | P0 | `partial` | Temporary Chat、模式、个性化、地区、设备和来源面板均已记录；否则保留 partial |
 | GEO-V2-003 | 核实并完成 GEO-08 分发 | 引用发现入口 | P1 | `partial / LinkedIn-source-card` | 补录已被 Google 找到的 LinkedIn 帖子公开 URL、UTM 和时间；确认 Instagram/Story 状态，未发布部分审核执行 |
 | GEO-V2-004 | 补录 GEO-06/07 发布与七日数据 | 运营证据 | P1 | `overdue / owner-input` | 可得字段全部补录，不可得字段写 unavailable |
-| GEO-V2-005 | 启用 Bing Webmaster Tools AI 引用观测 | 引用 | P1 | `api-site-verified / ai-export-pending` | 2026-09-22 只读 API 已确认 `https://athletikapparel.com/` 为已验证站点；[采集单](testing/bing-ai-performance-baseline.md)已更新，尚无 AI Performance 后台数据。取得同一窗口的概览与页面、查询、时间序列导出后据实建立首个引用快照 |
+| GEO-V2-005 | 启用 Bing Webmaster Tools AI 引用观测 | 引用 | P1 | `overview-baseline-established / page-query-pending` | 2026-09-22 只读 API 已确认站点验证；[首份概览基线](testing/bing-ai-performance-baseline.md)使用 2026-08-24～09-20 的完整 28 天窗口，逐日 CSV 汇总 5 次引用、4 个 cited-page-days。后台卡片读数、被引用 URL 和 Grounding Queries 待补；小样本不归因页面改动，也不视为推荐结果 |
 | GEO-V2-006 | 建立 D03～D05 / C06～C08 claim-to-source 证据矩阵 | 引用/推荐 | P1 | `complete` | 已记录六题的匹配事实、规范第一方 URL、AI 实际来源、第三方候选、缺失证据与公开边界；见日期化矩阵 |
 | GEO-V2-007 | ACTIVESEAM 原创技术内容与分发 | 提取/引用/推荐 | P1 | `deployed / production-verified / social-feed-published / public-urls-confirmed / indexing-requested / measuring` | 两支 Merrow ACTIVESEAM 实际操作视频、一支自然状态成衣接缝展示和一支 Yamato FLATLOCK 对照视频均已核验；Merrow 型号为 `MB-4DFO 2.0`，2 线与 3 线按项目要求使用。页面、Technical Guides Hub、Article / FAQPage / BreadcrumbList Schema、Sitemap 和真实生产媒体已部署；2026-09-18 生产页复核为 HTTP 200、自引用 canonical、`index`，所有者随后确认已在 GSC 完成一次索引申请。该申请不视为已收录，也不重复提交。同日 LinkedIn 视频帖和 Instagram 6 页 Carousel 的公开 URL 已补录：LinkedIn 公开页可核验账号、正文与指南短链接，Instagram URL 返回 HTTP 200，但匿名正文抓取受平台限制。2026-09-26 起记录七日数据。未写入 Slim / Comfort / Infused 版本、Athletik 自测性能百分比或把自然状态画面写成测试 |
 | GEO-V2-008 | Merino 专业站与规范页冲突审计 | 提取/推荐 | P0 | `complete / remediation-required` | 已确认 UltraMerino 为同方控制、双站同时运营；完成 HTTP、robots、41 URL Sitemap、自引用 Canonical、页面结构、AI 引用和冲突声明审计；未取得该域名 GSC/Bing、反链和当前设备/许可专项证据 |
