@@ -110,7 +110,7 @@
 | 内部 Campaign | `2026-09-top-sportswear-manufacturers-china` |
 | 官网母文章 | <https://www.athletikapparel.com/top-sportswear-manufacturers-china/> |
 | 主题 | Top 5 OEM/ODM Sportswear Manufacturers in China for Mid-Sized Brands (2026) |
-| 当前状态 | `feed-published / production-verified / indexing-requested / measuring`；所有者确认 LinkedIn 与 Instagram Feed 已发布；2026-09-16 官网母文章已恢复 HTTP 200，并完成 GSC 实时测试和一次索引请求 |
+| 当前状态 | `feed-published / production-verified / indexed-snapshot-confirmed / seven-day-partial / measuring`；所有者确认 LinkedIn 与 Instagram Feed 已发布；2026-09-22 GSC 只读 URL Inspection 已确认规范 URL 收录，七日 GA4 数据已记录，平台后台明细仍缺失 |
 | LinkedIn 发布格式 | 1 张单图 + 技术教育型正文；不使用 PDF/PPT |
 | LinkedIn UTM content | `top_sportswear_manufacturers_china_single_image` |
 | LinkedIn 公开帖子 URL | <https://www.linkedin.com/feed/update/urn:li:activity:7505180674052661248/>；公开页面已核验 |
@@ -118,7 +118,7 @@
 | Instagram UTM content | `top_sportswear_manufacturers_china_story` |
 | 发布素材包 | `D:\B-视频素材\营销内容包\2026-09-top-sportswear-manufacturers-china\`（Git 外运营资产） |
 | Instagram 公开 URL / Story | Feed URL `unavailable — owner-confirmed published`；Story 状态 `unavailable` |
-| 实际发布时间与七日复盘 | 发布日期 2026-09-14，精确时分待后台补录；2026-09-22 起记录满七个完整自然日数据 |
+| 实际发布时间与七日复盘 | 发布日期 2026-09-14，精确时分待后台补录；已在 2026-09-22 复核 2026-09-15～09-21 七个完整自然日（GA4 属性时区 `Asia/Shanghai`） |
 
 ### 已准备
 
@@ -129,7 +129,23 @@
 
 ### 发布后核验与边界
 
-LinkedIn 公开页面可读取已批准正文、五家公司名单、发布者披露、短链接和单张图片，公开 URL 已确认。Instagram Feed 状态来自所有者确认；未取得公开 URL，因此不推断其实际格式、Story 状态或指标。2026-09-16 生产页和社交 UTM 目标均已复核为 HTTP 200，canonical 与 `index` 正常；GSC 索引请求只表示已提交，不等于已经收录。
+LinkedIn 公开页面可读取已批准正文、五家公司名单、发布者披露、短链接和单张图片，公开 URL 已确认。Instagram Feed 状态来自所有者确认；未取得公开 URL，因此不推断其实际格式、Story 状态或指标。2026-09-16 生产页和社交 UTM 目标均已复核为 HTTP 200，canonical 与 `index` 正常。原 GSC 索引请求本身不等于收录；后续 2026-09-22 的 URL Inspection 才提供了已收录快照。
+
+### 2026-09-22 七日复盘（2026-09-15～09-21）
+
+| 指标 | 结果与数据状态 |
+|---|---|
+| LinkedIn 帖子后台展示、覆盖、反应、评论、转发、链接点击、主页访问、新增关注 | `unavailable`：本次没有可读取的帖子后台明细；所有者此前称两个平台整体曝光基本为 0，但这不是本帖各指标的精确 0 值。公开帖子可访问，不提供后台曝光或点击数。 |
+| Instagram Feed 后台展示、覆盖、互动、收藏、分享、主页活动、新增关注 | `unavailable`：所有者确认已发布 Feed，但公开 URL、实际格式、精确时间及帖子后台明细尚未取得。 |
+| Instagram Story / Link Sticker | `unavailable`：尚未确认是否实际发布，不把已准备的 Story UTM 当成已发布或 0 点击。 |
+| GA4 LinkedIn 帖子 UTM | `sessionManualAdContent = top_sportswear_manufacturers_china_single_image` 且 `sessionSourceMedium = linkedin / organic_social`：**7 sessions、5 engagedSessions、1 totalUsers**。这是 GA4 会话归因，不是 LinkedIn 平台链接点击或 7 位不同买家；重复访问或内部检查未排除。 |
+| GA4 官网母文章入口 | 同一 UTM 下，`landingPage = /top-sportswear-manufacturers-china` 为 **3 sessions、1 engagedSession**；另外 4 个同标签会话的 landingPage 分散于其他站内页面，不能把 7 全写成文章落地会话。 |
+| GA4 Instagram UTM | 本窗口完整返回的 `sessionSourceMedium` / `sessionManualAdContent` 结果没有 `instagram / organic_social` 或 `top_sportswear_manufacturers_china_story` 行；记录为 **0 个可归因会话**，不是 0 次曝光，也不能判断未确认的 Story 效果。 |
+| GA4 询盘信号 | 按 `sessionManualAdContent × eventName` 返回 13/13 行，没有该 UTM 的 `generate_lead`；本窗口 **0 个可归因 GA4 lead event**。人工核验的有效/合格询盘 `unavailable`，不把事件数直接当业务结果。 |
+| GSC URL Inspection | 2026-09-22 只读 API 返回 `PASS / Submitted and indexed`；`pageFetchState = SUCCESSFUL`、robots/indexing allowed，Google 与用户 Canonical 均为该规范 URL，Sitemap 为 `sitemap_index.xml`。最后抓取 `2026-09-16T03:26:39Z`（北京时间 11:26:39）。该快照证明 URL 已收录，不证明此后每次页面修改都已重新抓取。 |
+| 当前生产页面 | 2026-09-22 重新抓取返回 HTTP 200、单一 H1、自引用 Canonical、`index`；单页审计 `issues=[]`、`recommendations=[]`。本次仅覆盖该 URL，不代表全站审计。 |
+
+结论：`no-change / seven-day-partial / measuring`。GSC 的“可编入索引”已升级为实际已收录快照；LinkedIn UTM 有可归因访问，但只有 1 位 GA4 用户且平台后台指标缺失，尚不能证明触达目标买家、获得 AI 引用或进入供应商推荐名单。保留当前文章与分发，不重复申请索引。后续仅在取得平台后台明细、人工询盘核验或完整月度 GSC / Bing / 固定提示词窗口后更新判断；缺失项保持 `unavailable`。
 
 ## 2026-09-18 — Industrial FLATLOCK vs Merrow ACTIVESEAM（Feed 已发布）
 
