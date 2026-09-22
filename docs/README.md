@@ -18,7 +18,7 @@
 - [`geo/testing/ultramerino-canonical-conflict-audit-2026-09-14.md`](geo/testing/ultramerino-canonical-conflict-audit-2026-09-14.md)：UltraMerino 与规范 Merino 页的技术状态、冲突事实和双站治理审计。
 - [`geo/testing/ai-cited-source-pattern-audit-2026-09-14.md`](geo/testing/ai-cited-source-pattern-audit-2026-09-14.md)：AI 实际引用页面的共性模式、可借鉴做法、风险边界和主站优先级。
 - [`geo/testing/ai-cited-source-monthly-template.md`](geo/testing/ai-cited-source-monthly-template.md)：固定 Baseline 复测后的月度来源审计与改动门槛模板。
-- [`geo/testing/bing-ai-performance-baseline.md`](geo/testing/bing-ai-performance-baseline.md)：Bing AI Performance 的首份概览时序基线与待补页面/查询证据。
+- [`geo/testing/bing-ai-performance-baseline.md`](geo/testing/bing-ai-performance-baseline.md)：Bing AI Performance 的首份概览与页面级基线；Grounding Queries 当前无记录。
 - `geo/content/`：三篇 GEO 基础指南的批准草稿和内容简报。
 - `geo/distribution/`：LinkedIn/Instagram 分发 SOP 与发布日志。
 
