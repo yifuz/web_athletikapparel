@@ -11,6 +11,7 @@
     }
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let pointerTracking = false;
     let dragging = false;
     let dragStartX = 0;
     let dragStartScroll = 0;
@@ -46,23 +47,37 @@
         return;
       }
 
-      dragging = true;
+      pointerTracking = true;
       dragStartX = event.clientX;
       dragStartScroll = track.scrollLeft;
-      track.classList.add('is-dragging');
-      track.setPointerCapture(event.pointerId);
     });
 
     track.addEventListener('pointermove', (event) => {
-      if (!dragging) {
+      if (!pointerTracking) {
         return;
       }
 
+      const distance = event.clientX - dragStartX;
+      if (!dragging && Math.abs(distance) <= 6) {
+        return;
+      }
+
+      if (!dragging) {
+        dragging = true;
+        track.classList.add('is-dragging');
+        track.setPointerCapture(event.pointerId);
+      }
+
       event.preventDefault();
-      track.scrollLeft = dragStartScroll - (event.clientX - dragStartX);
+      track.scrollLeft = dragStartScroll - distance;
     });
 
     const stopDragging = (event) => {
+      if (!pointerTracking) {
+        return;
+      }
+
+      pointerTracking = false;
       if (!dragging) {
         return;
       }
@@ -77,6 +92,11 @@
 
     track.addEventListener('pointerup', stopDragging);
     track.addEventListener('pointercancel', stopDragging);
+    track.addEventListener('pointerleave', () => {
+      if (!dragging) {
+        pointerTracking = false;
+      }
+    });
     track.addEventListener('dragstart', (event) => event.preventDefault());
     track.addEventListener('scroll', updateControls, { passive: true });
     track.addEventListener('scrollend', updateControls, { passive: true });

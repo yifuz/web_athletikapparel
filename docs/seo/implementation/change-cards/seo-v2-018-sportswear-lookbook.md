@@ -20,6 +20,7 @@ Finding outcome：`changed / owner-directed / production-pending`
 ## 本地验收与生产门槛
 
 - 已通过：Sportswear 本地 HTTP 200、单一 H1、14 个 lookbook 卡片与 14 个放大入口；骑行套装不再被引用。Merino 保持 16 个卡片且没有放大脚本，Underwear 没有新增展示。
-- 已通过：42/42 图片尺寸与本地 HTTP 200；PHP 与 JS 语法检查；真实浏览器桌面和 390px 手机弹窗视觉、放大图载入、上一张/下一张、键盘方向键、关闭后焦点回到原图；拖动手势不会误开放大弹窗。
+- 已通过：42/42 图片尺寸与本地 HTTP 200；PHP 与 JS 语法检查；桌面和 390px 手机弹窗视觉、放大图载入、上一张/下一张、键盘方向键、关闭后焦点回到原图。
+- 2026-09-22 真实指针复验纠正：首轮使用程序触发的 `.click()`，未覆盖真实鼠标事件。随后复现原画廊脚本在 `pointerdown` 即 `setPointerCapture`，令 `pointerup` / `click` 落到画廊 `DIV` 而非图片链接。共享画廊脚本改为鼠标移动超过 6px 才接管指针；修复后 Sportswear 真实鼠标点击可打开第 1/14 张，桌面拖动可滚动且不误开放大层，390px 触控点击可放大，Merino 原有画廊拖动仍正常。此前“真实鼠标点击已通过”的验收含义以本次复验为准。
 - 生产验收：同步五个主题代码文件与 uploads 中的 42 个图片文件后，复查 Sportswear 200、单一 H1、Title/Meta/Canonical 未变、14/14 图像可访问、Desktop/Mobile 无横向溢出、弹窗与手势正常；确认其他六个品类无新增 lookbook/lightbox；再做定向 Crawl Diff。未完成前不得写成生产已验收。
 - 观察：本次为采购核验体验改进，不用低样本 GSC 波动证明图片带来曝光或排名提升；随 SEO-V2-018 的后续窗口观察页面曝光、自然点击与有效询盘。
