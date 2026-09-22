@@ -73,6 +73,7 @@ Text Domain:  myathletik-child
   --ma-line-icon-stroke: 1.75;
   --ma-social-button-height: calc(var(--ma-touch-target) - var(--ma-space-2) - var(--ma-space-1));
   --ma-social-button-padding-x: var(--ma-space-2);
+  --ma-product-lightbox-width: 38rem;
   --ma-footer-social-width: 15rem;
   --ma-reading-width: 68ch;
   --ma-article-media-width: 30rem;
@@ -4333,6 +4334,130 @@ body.page .container.grid-container:has(.ma-product-category) {
   height: auto;
   aspect-ratio: 1;
   object-fit: contain;
+}
+
+.ma-product-showcase--portrait .ma-product-showcase-card img {
+  aspect-ratio: auto;
+}
+
+.ma-product-showcase-card__open {
+  position: relative;
+  display: block;
+  cursor: zoom-in;
+}
+
+.ma-product-showcase-card__open:focus-visible {
+  outline: 2px solid var(--ma-color-accent);
+  outline-offset: calc(-1 * var(--ma-space-1));
+}
+
+.ma-product-showcase-card__zoom {
+  position: absolute;
+  right: var(--ma-space-2);
+  bottom: var(--ma-space-2);
+  display: grid;
+  width: var(--ma-touch-target);
+  height: var(--ma-touch-target);
+  place-items: center;
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  color: var(--ma-color-accent-2);
+}
+
+.ma-product-showcase-card__zoom svg {
+  width: var(--ma-social-icon-size);
+  height: var(--ma-social-icon-size);
+}
+
+.ma-product-showcase-card__open:hover .ma-product-showcase-card__zoom,
+.ma-product-showcase-card__open:focus-visible .ma-product-showcase-card__zoom {
+  border-color: var(--ma-color-accent-2);
+}
+
+.ma-product-lightbox {
+  box-sizing: border-box;
+  width: min(92vw, var(--ma-product-lightbox-width));
+  max-width: none;
+  max-height: calc(100dvh - var(--ma-space-3) - var(--ma-space-3));
+  padding: var(--ma-space-3);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  color: var(--ma-color-text);
+}
+
+.ma-product-lightbox::backdrop {
+  background: color-mix(in srgb, var(--ma-color-dark) 82%, transparent);
+}
+
+.ma-product-lightbox__toolbar,
+.ma-product-lightbox__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ma-space-2);
+}
+
+.ma-product-lightbox__toolbar {
+  margin-bottom: var(--ma-space-2);
+}
+
+.ma-product-lightbox__count,
+.ma-product-lightbox__caption {
+  margin: 0;
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-small);
+}
+
+.ma-product-lightbox button {
+  display: inline-flex;
+  min-width: var(--ma-touch-target);
+  min-height: var(--ma-touch-target);
+  align-items: center;
+  justify-content: center;
+  padding: var(--ma-space-2);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  color: var(--ma-color-accent-2);
+  cursor: pointer;
+}
+
+.ma-product-lightbox button:hover,
+.ma-product-lightbox button:focus-visible {
+  border-color: var(--ma-color-accent-2);
+}
+
+.ma-product-lightbox button:focus-visible {
+  outline: 2px solid var(--ma-color-accent);
+  outline-offset: var(--ma-space-1);
+}
+
+.ma-product-lightbox button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.ma-product-lightbox__figure {
+  display: grid;
+  justify-items: center;
+  gap: var(--ma-space-2);
+  margin: 0 0 var(--ma-space-3);
+}
+
+.ma-product-lightbox__image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 70dvh;
+  object-fit: contain;
+}
+
+.ma-product-lightbox__caption {
+  color: var(--ma-color-text);
+  text-align: center;
 }
 
 .ma-product-showcase-card figcaption {

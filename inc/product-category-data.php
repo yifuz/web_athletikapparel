@@ -44,16 +44,42 @@ function myathletik_gallery_item( $image, $alt ) {
  * @param string $alt     Descriptive image alt text.
  * @param string $caption Short visible product label.
  * @param array  $webp    Responsive WebP paths keyed by pixel width.
+ * @param int    $width   Display image width.
+ * @param int    $height  Display image height.
  * @return array
  */
-function myathletik_product_showcase_item( $image, $alt, $caption, $webp ) {
+function myathletik_product_showcase_item( $image, $alt, $caption, $webp, $width = 800, $height = 800 ) {
 	return array(
 		'image'        => $image,
 		'alt'          => $alt,
 		'caption'      => $caption,
-		'image_width'  => 800,
-		'image_height' => 800,
+		'image_width'  => $width,
+		'image_height' => $height,
 		'image_webp'   => $webp,
+	);
+}
+
+/**
+ * Get one portrait image from the Sportswear lookbook.
+ *
+ * @param string $slug    Shared filename stem under sportswear/lookbook.
+ * @param string $alt     Descriptive image alt text.
+ * @param string $caption Short visible product label.
+ * @return array
+ */
+function myathletik_sportswear_lookbook_item( $slug, $alt, $caption ) {
+	$base = 'sportswear/lookbook/' . $slug;
+
+	return myathletik_product_showcase_item(
+		$base . '-800.jpg',
+		$alt,
+		$caption,
+		array(
+			480 => $base . '-480.webp',
+			800 => $base . '-800.webp',
+		),
+		800,
+		1000
 	);
 }
 
@@ -150,6 +176,26 @@ function myathletik_product_category_data() {
 				__( 'Leggings, shorts, and compression pieces', 'myathletik-child' ),
 				__( 'Yoga and studio wear', 'myathletik-child' ),
 				__( 'Running singlets and performance layers', 'myathletik-child' ),
+			),
+			'showcase_kicker'  => __( 'Product examples', 'myathletik-child' ),
+			'showcase_heading' => __( 'Sportswear lookbook', 'myathletik-child' ),
+			'showcase_variant' => 'portrait',
+			'showcase_lightbox' => true,
+			'product_showcase' => array(
+				myathletik_sportswear_lookbook_item( 'lookbook-01-running-top-shorts', __( 'Woman running in a plum training tank and black shorts', 'myathletik-child' ), __( 'Training Tank & Shorts', 'myathletik-child' ) ),
+				myathletik_sportswear_lookbook_item( 'lookbook-02-sports-bra-shorts', __( 'Woman wearing a gray sports bra and black training shorts', 'myathletik-child' ), __( 'Sports Bra & Shorts', 'myathletik-child' ) ),
+				myathletik_sportswear_lookbook_item( 'lookbook-03-training-tee-leggings', __( 'Woman wearing a purple training T-shirt and black leggings', 'myathletik-child' ), __( 'Training Tee & Leggings', 'myathletik-child' ) ),
+				myathletik_sportswear_lookbook_item( 'lookbook-04-pink-bra-shorts', __( 'Woman wearing a pink sports bra and matching shorts', 'myathletik-child' ), __( 'Sports Bra Set', 'myathletik-child' ) ),
+				myathletik_sportswear_lookbook_item( 'lookbook-05-white-athletic-dress', __( 'Woman wearing a white sleeveless athletic dress with green trim', 'myathletik-child' ), __( 'Sleeveless Athletic Dress', 'myathletik-child' ) ),
+				myathletik_sportswear_lookbook_item( 'lookbook-06-coral-jacket-leggings', __( 'Woman wearing a coral training jacket and black leggings', 'myathletik-child' ), __( 'Training Jacket & Leggings', 'myathletik-child' ) ),
+				myathletik_sportswear_lookbook_item( 'lookbook-07-pink-hooded-jacket', __( 'Woman wearing a pink hooded sports jacket and black leggings', 'myathletik-child' ), __( 'Hooded Sports Jacket', 'myathletik-child' ) ),
+				myathletik_sportswear_lookbook_item( 'lookbook-08-charcoal-zip-jacket', __( 'Woman wearing a charcoal zip-front training jacket and black leggings', 'myathletik-child' ), __( 'Zip-Front Training Jacket', 'myathletik-child' ) ),
+				myathletik_sportswear_lookbook_item( 'lookbook-09-pink-sleeveless-top', __( 'Woman wearing a pink sleeveless training top and black leggings', 'myathletik-child' ), __( 'Sleeveless Training Top', 'myathletik-child' ) ),
+				myathletik_sportswear_lookbook_item( 'lookbook-10-burgundy-training-set', __( 'Woman wearing a burgundy training jacket and leggings', 'myathletik-child' ), __( 'Burgundy Training Set', 'myathletik-child' ) ),
+				myathletik_sportswear_lookbook_item( 'lookbook-11-printed-bra-shorts', __( 'Woman wearing a printed sports bra and matching shorts', 'myathletik-child' ), __( 'Printed Training Set', 'myathletik-child' ) ),
+				myathletik_sportswear_lookbook_item( 'lookbook-12-coral-bra-black-shorts', __( 'Woman wearing a coral sports bra and black training shorts', 'myathletik-child' ), __( 'Sports Bra & Training Shorts', 'myathletik-child' ) ),
+				myathletik_sportswear_lookbook_item( 'lookbook-13-blue-hooded-top', __( 'Woman wearing a blue hooded training top', 'myathletik-child' ), __( 'Hooded Training Top', 'myathletik-child' ) ),
+				myathletik_sportswear_lookbook_item( 'lookbook-14-mens-gray-hoodie-set', __( 'Man wearing a gray hooded training top and matching pants', 'myathletik-child' ), __( 'Men\'s Hooded Training Set', 'myathletik-child' ) ),
 			),
 			// Structured sub-category showcase: image + title + description.
 			// When present, the template renders these as alternating detail

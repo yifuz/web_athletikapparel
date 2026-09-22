@@ -164,7 +164,9 @@ if ( ! empty( $category['hero_video'] ) ) {
 
 	<?php if ( ! empty( $category['product_showcase'] ) && is_array( $category['product_showcase'] ) ) : ?>
 	<?php $has_showcase_carousel = count( $category['product_showcase'] ) > 8; ?>
-	<section class="ma-product-section ma-product-showcase" aria-labelledby="ma-product-showcase-title"<?php echo $has_showcase_carousel ? ' data-ma-product-carousel' : ''; ?>>
+	<?php $has_showcase_lightbox = ! empty( $category['showcase_lightbox'] ); ?>
+	<?php $showcase_variant = ! empty( $category['showcase_variant'] ) ? sanitize_html_class( $category['showcase_variant'] ) : ''; ?>
+	<section class="ma-product-section ma-product-showcase<?php echo $showcase_variant ? ' ma-product-showcase--' . esc_attr( $showcase_variant ) : ''; ?>" aria-labelledby="ma-product-showcase-title"<?php echo $has_showcase_carousel ? ' data-ma-product-carousel' : ''; ?><?php echo $has_showcase_lightbox ? ' data-ma-product-lightbox' : ''; ?>>
 		<div class="ma-section-inner">
 			<div class="ma-section-heading">
 				<p class="ma-section-kicker"><?php echo esc_html( ! empty( $category['showcase_kicker'] ) ? $category['showcase_kicker'] : __( 'Product examples', 'myathletik-child' ) ); ?></p>
@@ -175,15 +177,15 @@ if ( ! empty( $category['hero_video'] ) ) {
 			</div>
 			<?php if ( $has_showcase_carousel ) : ?>
 				<div class="ma-product-showcase__toolbar">
-					<p id="ma-product-showcase-help"><?php esc_html_e( 'Drag the gallery or use the arrow buttons to view more products.', 'myathletik-child' ); ?></p>
+					<p id="ma-product-showcase-help"><?php echo esc_html( $has_showcase_lightbox ? __( 'Drag the gallery or use the arrows to view more products. Select a photo to enlarge it.', 'myathletik-child' ) : __( 'Drag the gallery or use the arrow buttons to view more products.', 'myathletik-child' ) ); ?></p>
 					<div class="ma-product-showcase__controls">
 						<button type="button" data-ma-carousel-prev aria-controls="ma-product-showcase-track" disabled>
 							<span aria-hidden="true">←</span>
-							<span class="screen-reader-text"><?php esc_html_e( 'View previous Merino wool products', 'myathletik-child' ); ?></span>
+							<span class="screen-reader-text"><?php esc_html_e( 'View previous product photos', 'myathletik-child' ); ?></span>
 						</button>
 						<button type="button" data-ma-carousel-next aria-controls="ma-product-showcase-track">
 							<span aria-hidden="true">→</span>
-							<span class="screen-reader-text"><?php esc_html_e( 'View more Merino wool products', 'myathletik-child' ); ?></span>
+							<span class="screen-reader-text"><?php esc_html_e( 'View more product photos', 'myathletik-child' ); ?></span>
 						</button>
 					</div>
 				</div>
@@ -193,7 +195,7 @@ if ( ! empty( $category['hero_video'] ) ) {
 				<?php if ( $has_showcase_carousel ) : ?>
 					id="ma-product-showcase-track"
 					tabindex="0"
-					aria-label="<?php esc_attr_e( 'Merino wool product gallery', 'myathletik-child' ); ?>"
+					aria-label="<?php echo esc_attr( $category['showcase_heading'] ); ?>"
 					aria-describedby="ma-product-showcase-help"
 				<?php endif; ?>
 			>
@@ -211,27 +213,35 @@ if ( ! empty( $category['hero_video'] ) ) {
 						}
 					}
 					?>
-					<figure class="ma-product-showcase-card">
-						<div class="ma-product-showcase-card__media">
-							<?php if ( $webp_srcset ) : ?>
-								<picture>
-									<source type="image/webp" srcset="<?php echo esc_attr( implode( ', ', $webp_srcset ) ); ?>" sizes="<?php echo esc_attr( $image_sizes ); ?>">
-							<?php endif; ?>
-							<img
-								src="<?php echo esc_url( $image_base . $image['image'] ); ?>"
-								width="<?php echo esc_attr( absint( $image['image_width'] ) ); ?>"
-								height="<?php echo esc_attr( absint( $image['image_height'] ) ); ?>"
-								alt="<?php echo esc_attr( $image['alt'] ); ?>"
-								loading="lazy"
-								decoding="async"
-								<?php if ( $has_showcase_carousel ) : ?>draggable="false"<?php endif; ?>
-							>
-							<?php if ( $webp_srcset ) : ?>
-								</picture>
-							<?php endif; ?>
-						</div>
-						<figcaption><?php echo esc_html( $image['caption'] ); ?></figcaption>
-					</figure>
+				<figure class="ma-product-showcase-card">
+					<div class="ma-product-showcase-card__media">
+						<?php if ( $has_showcase_lightbox ) : ?>
+							<a class="ma-product-showcase-card__open" href="<?php echo esc_url( $image_base . $image['image'] ); ?>" data-ma-lightbox-link data-ma-lightbox-full="<?php echo esc_url( $image_base . ( ! empty( $image['image_webp'][800] ) ? $image['image_webp'][800] : $image['image'] ) ); ?>">
+						<?php endif; ?>
+						<?php if ( $webp_srcset ) : ?>
+							<picture>
+								<source type="image/webp" srcset="<?php echo esc_attr( implode( ', ', $webp_srcset ) ); ?>" sizes="<?php echo esc_attr( $image_sizes ); ?>">
+						<?php endif; ?>
+						<img
+							src="<?php echo esc_url( $image_base . $image['image'] ); ?>"
+							width="<?php echo esc_attr( absint( $image['image_width'] ) ); ?>"
+							height="<?php echo esc_attr( absint( $image['image_height'] ) ); ?>"
+							alt="<?php echo esc_attr( $image['alt'] ); ?>"
+							loading="lazy"
+							decoding="async"
+							<?php if ( $has_showcase_carousel ) : ?>draggable="false"<?php endif; ?>
+						>
+						<?php if ( $webp_srcset ) : ?>
+							</picture>
+						<?php endif; ?>
+						<?php if ( $has_showcase_lightbox ) : ?>
+							<span class="ma-product-showcase-card__zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5M10.5 8v5M8 10.5h5"/></svg></span>
+							<span class="screen-reader-text"><?php esc_html_e( 'View larger photo', 'myathletik-child' ); ?></span>
+							</a>
+						<?php endif; ?>
+					</div>
+					<figcaption><?php echo esc_html( $image['caption'] ); ?></figcaption>
+				</figure>
 				<?php endforeach; ?>
 			</div>
 		</div>

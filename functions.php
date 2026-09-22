@@ -303,10 +303,10 @@ function myathletik_enqueue_inquiry_tracking() {
 add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_inquiry_tracking' );
 
 /**
- * Enable mouse drag, keyboard and arrow controls for the Merino product rail.
+ * Enable mouse drag, keyboard and arrow controls for category product rails.
  */
-function myathletik_enqueue_merino_product_carousel() {
-	if ( ! is_page( 'merino-wool-manufacturer' ) ) {
+function myathletik_enqueue_product_showcase_carousel() {
+	if ( ! is_page( array( 'merino-wool-manufacturer', 'sportswear-manufacturer' ) ) ) {
 		return;
 	}
 
@@ -317,14 +317,35 @@ function myathletik_enqueue_merino_product_carousel() {
 	}
 
 	wp_enqueue_script(
-		'myathletik-merino-product-carousel',
+		'myathletik-product-showcase-carousel',
 		get_stylesheet_directory_uri() . '/assets/js/merino-product-carousel.js',
 		array(),
 		filemtime( $script_path ),
 		true
 	);
 }
-add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_merino_product_carousel' );
+add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_product_showcase_carousel' );
+
+/** Open Sportswear lookbook photos in an accessible, keyboard-operated viewer. */
+function myathletik_enqueue_sportswear_lightbox() {
+	if ( ! is_page( 'sportswear-manufacturer' ) ) {
+		return;
+	}
+
+	$script_path = get_stylesheet_directory() . '/assets/js/product-showcase-lightbox.js';
+	if ( ! file_exists( $script_path ) ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'myathletik-product-showcase-lightbox',
+		get_stylesheet_directory_uri() . '/assets/js/product-showcase-lightbox.js',
+		array(),
+		filemtime( $script_path ),
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_sportswear_lightbox' );
 
 /**
  * Track deliberate email and WhatsApp contact clicks as secondary GA4 events.
