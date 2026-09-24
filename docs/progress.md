@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-09-18。
+最后更新：2026-09-24。
 
 ---
 
@@ -41,7 +41,8 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 - Meta Ads 当前目标是获取真实粉丝和扩大影响力，不以 Instagram 直接询盘为主要目标。
 - 已记录的 Meta 对照 Reel 表现较强；详见
   [`marketing/ads/meta-ads-baseline-2026-08-07.md`](marketing/ads/meta-ads-baseline-2026-08-07.md)。
-- Google Ads 是独立的询盘获客路径。仓库中最新记录仍是 2026-08-05 上线快照；报告当前状态前必须登录平台核验。
+- Google Ads 是独立的询盘获客路径。2026-09-24 已完成 API 当前快照与同期邮件询盘初步核对；
+  外部平台状态仍会变化，后续报告当前状态前必须重新核验。
 - Outbound 已有流程和空白台账模板，但真实联系人数据不得进入 Git；在工作存储、留存规则和发送邮箱确认前不启动。
 
 ### 1.4 隐私、归因与询盘
@@ -356,12 +357,13 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
   平均 CPC CNY 10.24、conversions 0。所有者确认同期无实际表单提交；直接邮件询盘
   暂无 Google Ads 来源归因。
 - 搜索词报告仅公开 28/73 次点击和 38.2% 花费，剩余搜索词受隐私阈值影响，记为
-  `unavailable`。当前不增加预算、不改出价、不添加否定词，等待人工询盘来源与质量核对。
+  `unavailable`。当前不增加预算、不改出价、不添加否定词。
 - 2026-09-24 已建立[普通 163 邮箱询盘只读分析工具](marketing/ads/163-mail-inquiry-analysis-runbook.md)。
-  完整[候选快照](marketing/ads/163-mail-inquiry-snapshot-2026-09-24.md)已自动发现并只读扫描
+  完整[确认快照](marketing/ads/163-mail-inquiry-snapshot-2026-09-24.md)已自动发现并只读扫描
   `INBOX + Junk/Spam + Trash`，三个角色全部成功、缺失与解析失败均为 0。最近窗口跨文件夹
-  去重后共 20 封邮件，其中 10 封询盘候选、2 封 `needs_review`；Junk 含 5 封候选，不能忽略。
-  十封候选均无明确 Google 自述来源，人工真伪、MOQ 与销售阶段待补；P0 继续为 `进行中`，
+  去重后共 20 封邮件，经逐封内容级复核确认 5 封真实询盘、15 封非询盘；真实询盘中 4 封
+  位于 `INBOX`、1 封位于 Junk/Spam。1 封自述来自一般网络渠道但未指明 Google，另外 4 封
+  来源未知，0 封可以归因给 Google Ads。P0 已完成，P1 将持续补齐负责人、MOQ 和销售阶段；
   每日计划任务尚未启用。
 
 ---
@@ -738,6 +740,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-22 | SEO-V2-018 Sportswear lookbook：所有者提供真实产品照片，指定 `IMG_4011.jpg` 使用 Outdoor 灰色风帽衫、`IMG_4244.jpg` 使用骑行衣，随后要求删除骑行套装、保留其余原图标识并加入点击放大。目标页面 `/sportswear-manufacturer/` 承接 OEM / ODM sportswear 采购核验意图；主要变量为新增 14 张真实产品的两排可拖动图廊及同组件放大查看，不更改 URL、Title、Meta、H1、Canonical、Schema 或其他六品类。42 个 WebP/JPG 派生文件置于 uploads，骑行套装 3 个本地派生文件已删除，原始素材未动。风险为图片请求、手势冲突、手机弹窗和原图标识；本地 200、单一 H1、14/14 卡片与放大入口、42/42 图片访问及尺寸、桌面/手机弹窗、键盘与焦点、Merino/Underwear 隔离均通过。生产需部署代码与图片后复核并做定向 Crawl Diff；Finding outcome `changed / owner-directed / production-pending`。完整记录见 [Sportswear lookbook Change Card](seo/implementation/change-cards/seo-v2-018-sportswear-lookbook.md)。 |
 | 2026-09-22 | SEO-V2-018 Sportswear lookbook 本地真实点击缺陷修复：所有者报告无法放大，生产尚未部署，故只针对 LocalWP 复验。真实鼠标事件显示画廊脚本在 `pointerdown` 即捕获指针，使 `pointerup` 与 `click` 落到画廊容器；此前程序触发 `.click()` 的通过结果不代表真实鼠标可用。仅修改共享 `merino-product-carousel.js` 的拖动启动时机，鼠标移动超过 6px 后才捕获指针。修复后真实鼠标点击打开 Sportswear 放大层、桌面拖动不误触、390px 触控点击可放大、Merino 拖动保持正常；页面、元数据、图片与正文不变。风险为共享脚本对 Merino 画廊的交互回归；本地验收已覆盖，生产部署后需复验 Sportswear 与 Merino。Finding outcome `fixed / local-verified / deployment-pending`。 |
 | 2026-09-22 | GEO-V2-020 首轮七日复盘：按 GA4 属性 `Asia/Shanghai` 时区核对 2026-09-15～09-21。LinkedIn 帖子专属 UTM 得到 7 sessions、5 engagedSessions、1 totalUsers，其中 3 sessions 以 Top 5 文章为入口；Instagram Story UTM 未见可归因会话，但 Story 发布状态未知。GA4 事件明细未见该 UTM 的 `generate_lead`，人工合格询盘与两个平台的精确后台指标均 `unavailable`，不以所有者“整体基本为 0”的定性描述代替本帖数字。GSC 只读 URL Inspection 返回 `PASS / Submitted and indexed`，最后抓取为 2026-09-16T03:26:39Z；同日生产单页抓取仍为 HTTP 200、自引用 Canonical、`index`、单一 H1。索引请求不再仅是待处理，但低样本不能证明触达目标买家或获 AI 推荐；处置 `no-change / seven-day-partial / measuring`。详见[分发日志](geo/distribution/publishing-log.md)。 |
+| 2026-09-24 | Promotion P0 完成：Google Ads API 当前快照、163 邮箱 `INBOX + Junk/Spam + Trash` 聚合快照及 20 封邮件内容级复核均已完成。确认 5 封真实询盘、15 封非询盘；4 封真实询盘在 `INBOX`、1 封在 Junk/Spam。1 封自述一般网络来源但未指明 Google，另外 4 封来源未知，0 封可归因 Google Ads。1 封总量 1,500–2,500 件但每款数量未知，1 封仅询问 50 / 100 / 250 / 500 价格档位，其他 3 封数量未知。私有复核台账已建立，规则已校准并通过 13 项测试；P1 于 2026-09-28 起持续补齐负责人、MOQ 与销售阶段。 |
 
 ---
 
@@ -750,5 +753,6 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 5. 下一个月使用完全相同的 Baseline v2 与 Broad Discovery v1 提示词及 [`AI 引用来源月度审计模板`](geo/testing/ai-cited-source-monthly-template.md)复测，不在同一会话连续运行多题。
 6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-018 的 Sportswear 合作模式与 14 图 lookbook 均已在本地实施；前者待生产部署验收，后者本地交互已通过、待同步 42 个 uploads 图片并进行生产验收；DataForSEO 额度恢复后再补 US / GB / CA 同配置快照。保持 URL、Title、Meta、H1，不新建近义页；SEO-V2-015 等既有改动继续按原 Day 28 / 90 窗口观察。
 7. SEO-V2-004 转为性能监控项，不再主动投入增量优化；持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据，只有达到重新触发条件才启动页面或性能改动。
-8. 广告数据达到可分析样本后，再进行阶段性复盘；不做无意义的每日分析。
+8. Promotion P0 已完成；2026-09-28 起进入 P1，使用本机私有台账持续补齐新询盘负责人、MOQ、
+   自述来源和销售阶段，并继续把平台 conversion 与人工确认询盘分开记录。
 9. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。

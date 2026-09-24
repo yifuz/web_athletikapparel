@@ -2,7 +2,7 @@
 
 > 建立日期：2026-09-24
 > 邮箱类型：普通 `@163.com` 邮箱
-> 状态：本机工具已实现；完整文件夹范围重跑完成；每日计划任务未启用
+> 状态：本机工具、完整文件夹范围重跑与首轮内容级校准已完成；每日计划任务未启用
 > 用途：补齐 Promotion P0 的人工询盘数量与质量证据，不修改 Google Ads 或邮箱内容
 
 ## 1. 能做什么
@@ -61,7 +61,8 @@ py -3 .\scripts\marketing\email_intake\analyze_163.py analyze
 %LOCALAPPDATA%\Athletik\mail-intake\output\
 ├── latest-report.md
 ├── latest-summary.json
-└── latest-records.csv
+├── latest-records.csv
+└── latest-reviewed-records.csv  # 首轮人工复核台账；不由每次自动分析覆盖
 ```
 
 ## 4. 每日自动运行
@@ -94,9 +95,14 @@ py -3 .\scripts\marketing\email_intake\analyze_163.py analyze
 ## 6. 当前证据缺口
 
 - 完整 60 天窗口已覆盖 `INBOX + Junk/Spam + Trash`，详见
-  [`163 邮箱询盘候选快照（2026-09-24）`](163-mail-inquiry-snapshot-2026-09-24.md)。三个目标角色
+  [`163 邮箱询盘确认快照（2026-09-24）`](163-mail-inquiry-snapshot-2026-09-24.md)。三个目标角色
   全部读取成功，缺失角色与解析失败均为 0。
-- 最近窗口的 20 封邮件中有 10 封询盘候选与 2 封 `needs_review`，仍需人工确认。
-- 首版未读取 Sent，销售阶段和回复状态为 `unavailable`。
-- 邮件未明确说明来源时，Google Ads 来源保持 `unknown`，不能按比例推算。
+- 最近窗口 20 封邮件已逐封完成内容级复核，并用于校准规则：5 封真实询盘、15 封非询盘；
+  校准后的自动规则也识别出同一组 5 封候选，没有发现真实询盘漏判。
+- 真实询盘中 4 封位于 `INBOX`、1 封位于 Junk/Spam；垃圾箱必须纳入，但不能将垃圾箱邮件
+  直接视为询盘。
+- 1 封真实询盘自述来自一般网络渠道但未指明 Google，其余 4 封来源未知；0 封可以归因给
+  Google Ads。
+- 工具不读取 Sent，销售阶段和回复状态为 `unavailable`；附件也不读取，因此附件中的数量、
+  规格或商业条件仍需人工补录。
 - 新授权码已由所有者在本机配置并经 DPAPI 加密；尚未启用每日计划任务。

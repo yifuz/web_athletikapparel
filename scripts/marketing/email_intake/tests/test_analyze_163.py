@@ -54,6 +54,36 @@ class ClassificationTests(unittest.TestCase):
         self.assertEqual(result["max_quantity_mention"], 1000)
         self.assertEqual(result["moq_signal"], "meets_or_exceeds_moq_mention")
 
+    def test_total_quantity_range_extracts_both_bounds(self):
+        result = MODULE.classify_message(
+            "Manufacturing enquiry",
+            "Our initial order may be approximately 1,500–2,500 total pieces across several designs.",
+        )
+        self.assertEqual(result["quantity_mentions"], [1500, 2500])
+        self.assertEqual(result["moq_signal"], "meets_or_exceeds_moq_mention")
+
+    def test_supplier_pitch_is_vendor_not_buyer(self):
+        result = MODULE.classify_message(
+            "Custom sportswear",
+            "We are a factory specialized in sportswear, activewear, hoodies and gym wear. "
+            "Our sales rep can send our catalogue and quotation.",
+        )
+        self.assertEqual(result["classification"], "vendor_or_spam")
+
+    def test_website_quotation_pitch_is_vendor(self):
+        result = MODULE.classify_message(
+            "Re: Cost",
+            "Can I share the website overview and quotation?",
+        )
+        self.assertEqual(result["classification"], "vendor_or_spam")
+
+    def test_online_contact_source_is_not_google(self):
+        result = MODULE.classify_message(
+            "Product inquiry",
+            "I found your business contact online and need a custom apparel producer.",
+        )
+        self.assertEqual(result["source_signal"], "self_reported_web_unspecified")
+
 
 class ParsingTests(unittest.TestCase):
     def test_html_message_prefers_plain_text(self):

@@ -83,6 +83,19 @@ VENDOR_TERMS: dict[str, int] = {
     "contact database": 4,
     "business loan": 4,
     "investment opportunity": 4,
+    "website overview and quotation": 6,
+    "exhibition stand": 5,
+    "exhibition booth": 5,
+    "booth designing": 5,
+    "stand fabrication": 5,
+    "attendee list": 5,
+    "visitor list": 5,
+    "factory specialized in": 5,
+    "we are a factory": 4,
+    "send our catalogue": 4,
+    "sales rep": 3,
+    "marketing strategist": 3,
+    "business growth": 3,
 }
 
 COUNTRY_TERMS: dict[str, tuple[str, ...]] = {
@@ -105,8 +118,9 @@ COUNTRY_TERMS: dict[str, tuple[str, ...]] = {
 }
 
 QUANTITY_PATTERN = re.compile(
-    r"(?<![\w.])([1-9]\d{0,2}(?:[,.]\d{3})*|[1-9]\d{0,6})\s*"
-    r"(pcs?|pieces?|units?|sets?|garments?|items?)\b",
+    r"(?<![\w.])(?P<first>[1-9]\d{0,2}(?:[,.]\d{3})*|[1-9]\d{0,6})"
+    r"(?:\s*(?:-|–|—|to)\s*(?P<second>[1-9]\d{0,2}(?:[,.]\d{3})*|[1-9]\d{0,6}))?"
+    r"\s*(?:total\s+)?(?P<unit>pcs?|pieces?|units?|sets?|garments?|items?)\b",
     re.IGNORECASE,
 )
 
@@ -227,13 +241,17 @@ def _mentions(text: str, groups: dict[str, tuple[str, ...]]) -> list[str]:
 def extract_quantities(text: str) -> list[int]:
     quantities: list[int] = []
     for match in QUANTITY_PATTERN.finditer(text):
-        raw = match.group(1).replace(",", "").replace(".", "")
-        try:
-            value = int(raw)
-        except ValueError:
-            continue
-        if 0 < value <= 1_000_000:
-            quantities.append(value)
+        for group_name in ("first", "second"):
+            captured = match.group(group_name)
+            if not captured:
+                continue
+            raw = captured.replace(",", "").replace(".", "")
+            try:
+                value = int(raw)
+            except ValueError:
+                continue
+            if 0 < value <= 1_000_000:
+                quantities.append(value)
     return sorted(set(quantities))
 
 
@@ -247,7 +265,12 @@ def detect_source_signal(text: str) -> str:
     )
     if any(pattern in text for pattern in google_patterns):
         return "self_reported_google"
-    web_patterns = ("found your website", "came across your website", "online search")
+    web_patterns = (
+        "found your website",
+        "came across your website",
+        "online search",
+        "found your business contact online",
+    )
     if any(pattern in text for pattern in web_patterns):
         return "self_reported_web_unspecified"
     return "unknown"
@@ -266,9 +289,25 @@ def classify_message(subject: str, body: str, minimum_order_quantity: int = 500)
     if products:
         inquiry_score += 2
     if "unsubscribe" in normalized and not quantities:
-        vendor_score += 2
+        vendor_score += 5
 
-    if vendor_score >= 5 and vendor_score >= inquiry_score:
+    strong_vendor_signals = (
+        "website overview and quotation",
+        "exhibition stand",
+        "exhibition booth",
+        "booth designing",
+        "attendee list",
+        "visitor list",
+        "factory specialized in",
+        "we are a factory",
+        "send our catalogue",
+        "sales rep",
+    )
+    strong_vendor = any(signal in normalized for signal in strong_vendor_signals)
+
+    if (strong_vendor and vendor_score >= 4) or (
+        vendor_score >= 5 and vendor_score >= inquiry_score
+    ):
         classification = "vendor_or_spam"
         needs_review = False
     elif inquiry_score >= 5:
