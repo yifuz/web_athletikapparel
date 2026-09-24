@@ -402,6 +402,19 @@ def parse_mail(raw_message: bytes, config: dict[str, Any]) -> MailRecord | None:
     )
 
 
+def _send_client_id(client: imaplib.IMAP4_SSL) -> None:
+    """网易 Coremail 要求第三方客户端在认证后发送 RFC 2971 ID。"""
+    if "ID" not in {str(capability).upper() for capability in client.capabilities}:
+        return
+    imaplib.Commands["ID"] = ("AUTH",)
+    status, _ = client._simple_command(
+        "ID",
+        '("name" "AthletikMailAnalyzer" "version" "1.0" "vendor" "Athletik Clothing")',
+    )
+    if status != "OK":
+        raise RuntimeError("163 IMAP 客户端 ID 握手失败。")
+
+
 def _connect(config: dict[str, Any], secret: str) -> imaplib.IMAP4_SSL:
     context = ssl.create_default_context()
     client = imaplib.IMAP4_SSL(
@@ -409,6 +422,7 @@ def _connect(config: dict[str, Any], secret: str) -> imaplib.IMAP4_SSL:
     )
     try:
         client.login(str(config["email"]), secret)
+        _send_client_id(client)
         status, _ = client.select(str(config.get("mailbox", "INBOX")), readonly=True)
         if status != "OK":
             raise RuntimeError("无法以只读模式打开 INBOX。")

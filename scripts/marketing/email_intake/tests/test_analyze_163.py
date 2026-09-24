@@ -97,6 +97,22 @@ class ParsingTests(unittest.TestCase):
             self.assertNotIn("subject", csv_text.lower())
             self.assertNotIn("body", csv_text.lower())
 
+    def test_coremail_client_id_is_sent_when_advertised(self):
+        class FakeClient:
+            capabilities = ("IMAP4REV1", "ID")
+
+            def __init__(self):
+                self.command = None
+
+            def _simple_command(self, command, argument):
+                self.command = (command, argument)
+                return "OK", [b"ID completed"]
+
+        client = FakeClient()
+        MODULE._send_client_id(client)
+        self.assertEqual(client.command[0], "ID")
+        self.assertIn("AthletikMailAnalyzer", client.command[1])
+
 
 if __name__ == "__main__":
     unittest.main()
