@@ -9,9 +9,15 @@ Thumbs.db
 node_modules/
 npm-debug.log*
 
+# Python tooling
+__pycache__/
+*.py[cod]
+
 # Local env / secrets
 *.log
 .env
+mail-intake-local/
+scripts/marketing/email_intake/.local/
 
 # Secrets — NEVER commit credentials/recovery codes
 flywheel_recovery_codes.txt

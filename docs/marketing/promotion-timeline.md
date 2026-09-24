@@ -1,6 +1,6 @@
 # Athletik Clothing Promotion 主时间线
 
-> 版本：1.2
+> 版本：1.3
 > 制定日期：2026-09-24
 > 更新日期：2026-09-24
 > 当前周期：2026-09-24 至 2026-12-23
@@ -45,8 +45,11 @@ P0 需要形成以下四项输出：
 [`Google Ads API 快照与流量质量审计`](ads/google-ads-api-snapshot-2026-09-24.md)。
 当前 API 证据显示 Campaign 仅定向 United States，与 2026-08-05 上线时的
 United States + Canada 历史记录不同；当前状态以本次 API 快照为准。所有者确认近一个月
-没有实际表单提交，直接邮件询盘暂不记录 `mailto`，其 Google Ads 来源与质量为
-`unavailable`，因此 P0 尚未关闭。
+没有实际表单提交，直接邮件询盘暂不记录 `mailto`。2026-09-24 已建立普通 163 邮箱的
+本机只读询盘分析工具和[操作手册](ads/163-mail-inquiry-analysis-runbook.md)，准备按相同的两个
+完整 30 天窗口补齐询盘候选、明确 MOQ 数量和自述来源。当前仍待所有者在本机输入客户端
+授权码并完成首次采集；采集前直接邮件的 Google Ads 来源与质量保持 `unavailable`，因此
+P0 尚未关闭。
 
 Google Ads 会因隐私阈值省略部分低量搜索词；这些点击仍可能计入 Campaign 总数，
 但不会出现在 `search_term_view`。因此搜索词明细不能被解释为全部搜索查询，

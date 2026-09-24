@@ -28,6 +28,7 @@
 - [`marketing/promotion-plan.md`](marketing/promotion-plan.md)：90 天推广、归因、预算与询盘计划。
 - [`marketing/promotion-matrix.md`](marketing/promotion-matrix.md)：渠道分工、单人内容基线和复盘指标。
 - [`marketing/ads/google-ads-api-snapshot-2026-09-24.md`](marketing/ads/google-ads-api-snapshot-2026-09-24.md)：当前 Google Ads API 配置、表现、搜索词覆盖与证据缺口基线。
+- [`marketing/ads/163-mail-inquiry-analysis-runbook.md`](marketing/ads/163-mail-inquiry-analysis-runbook.md)：普通 163 邮箱只读询盘采集、隐私边界与本机自动运行手册。
 - `marketing/ads/`：Google Ads 与 Meta Ads 的日期化上线/基线记录。
 - `marketing/outbound/`：Outbound 操作流程和空白线索台账模板；真实联系人数据不得进入 Git。
 

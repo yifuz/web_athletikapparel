@@ -357,6 +357,10 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
   暂无 Google Ads 来源归因。
 - 搜索词报告仅公开 28/73 次点击和 38.2% 花费，剩余搜索词受隐私阈值影响，记为
   `unavailable`。当前不增加预算、不改出价、不添加否定词，等待人工询盘来源与质量核对。
+- 2026-09-24 已建立[普通 163 邮箱询盘只读分析工具](marketing/ads/163-mail-inquiry-analysis-runbook.md)：
+  通过 `imap.163.com:993` 只读 `INBOX`，按与 Google Ads 相同的两个完整 30 天窗口输出询盘
+  候选、明确 MOQ 数量和自述来源。凭据与结果只保存在 `%LOCALAPPDATA%`，不进入 Git；当前
+  等待所有者本机输入客户端授权码并完成首次采集，P0 仍为 `进行中`。
 
 ---
 
