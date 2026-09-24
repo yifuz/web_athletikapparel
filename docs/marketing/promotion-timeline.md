@@ -20,7 +20,7 @@
 
 | 节点 | 日期 | Promotion 重点 | 阶段完成门槛 | 当前状态 |
 |---|---|---|---|---|
-| P0 Google Ads API 快照与观察基线 | 2026-09-24～09-27 | 优先通过 Google Ads API 读取当前 Campaign、预算、地域、关键词、搜索词、花费、点击和 conversion 数据，并与实际询盘质量核对；Meta / Instagram、LinkedIn 和 YouTube 因当前样本过少，仅保持 `monitor-only`，不列入 P0 分析 | 形成一份可复现、带明确日期范围和指标定义的 Google Ads 快照；已有 Google Ads 询盘完成来源与质量初步核对；未知字段写 `unavailable` | **进行中**（API 完成；邮箱首轮仅含 `INBOX`，完整重跑待补） |
+| P0 Google Ads API 快照与观察基线 | 2026-09-24～09-27 | 优先通过 Google Ads API 读取当前 Campaign、预算、地域、关键词、搜索词、花费、点击和 conversion 数据，并与实际询盘质量核对；Meta / Instagram、LinkedIn 和 YouTube 因当前样本过少，仅保持 `monitor-only`，不列入 P0 分析 | 形成一份可复现、带明确日期范围和指标定义的 Google Ads 快照；已有 Google Ads 询盘完成来源与质量初步核对；未知字段写 `unavailable` | **进行中**（API 与完整邮箱聚合快照完成；10 封候选和 2 封待复核需人工确认） |
 | P1 Google Ads 运营与询盘闭环 | 2026-09-28～10-04 | 固定私有线索台账、询盘分级、负责人和每周复盘口径；核对 Google Ads conversion、GA4 `generate_lead` 与人工确认询盘之间的关系 | 新询盘能够从 Google Ads 来源进入合格、不合格、已报价、打样、成交或流失状态；平台 conversion 与人工合格询盘不会混算；没有无人负责的跟进项 | 待 P0 |
 | P2 稳定观察与首轮 Google Ads 决策 | 2026-10-05～10-18 | 在不盲目扩量的前提下稳定运行两周；分析搜索意图、无关流量、地域、设备、花费和询盘质量；其他渠道继续低投入观察，不因低样本强行作效果结论 | 连续两周没有归因或跟进中断；Google Ads 得到 `keep`、`change-one-variable` 或 `pause` 结论；其他渠道保持 `monitor-only`，直到形成足够样本后再单独建立分析节点 | 待 P1 |
 | P3 Outbound 条件式试运行 | 2026-10-19～11-01 | 仅在发送邮箱、私有台账、保留规则、退订机制和首封邮件审核全部完成后，启动美国市场小批量人工开发；不满足门槛则保持暂缓 | 门槛满足时，连续两周按每周 10–15 家匹配企业执行并完整记录；门槛未满足时，明确阻塞项和负责人，不为了赶时间发送 | 条件式待办 |
@@ -46,11 +46,11 @@ P0 需要形成以下四项输出：
 当前 API 证据显示 Campaign 仅定向 United States，与 2026-08-05 上线时的
 United States + Canada 历史记录不同；当前状态以本次 API 快照为准。所有者确认近一个月
 没有实际表单提交，直接邮件询盘暂不记录 `mailto`。2026-09-24 已建立普通 163 邮箱的
-本机只读询盘分析工具和[操作手册](ads/163-mail-inquiry-analysis-runbook.md)。首轮
-[邮件候选快照](ads/163-mail-inquiry-snapshot-2026-09-24.md)只覆盖 `INBOX`；所有者随后确认
-Junk/Trash 中仍有邮件，因此 8 封邮件与 5 封规则候选均不能作为总量。工具已扩展为自动发现
-`INBOX + Junk/Spam + Trash` 并跨文件夹去重，等待新授权码完整重跑。本次一次性授权凭据已
-删除，自动同步未启用。直接邮件的 Google Ads 来源仍为 `unavailable`，因此 P0 尚未关闭。
+本机只读询盘分析工具和[操作手册](ads/163-mail-inquiry-analysis-runbook.md)。完整
+[邮件候选快照](ads/163-mail-inquiry-snapshot-2026-09-24.md)已自动发现并读取
+`INBOX + Junk/Spam + Trash`，跨文件夹去重后最近窗口共 20 封邮件，其中 10 封询盘候选、
+2 封 `needs_review`；Junk 包含 5 封候选，证明不能忽略。十封候选均没有明确自述来自 Google，
+来源继续为 `unknown`；P0 等待人工确认真伪、MOQ 与销售阶段，尚未关闭。每日自动任务未启用。
 
 Google Ads 会因隐私阈值省略部分低量搜索词；这些点击仍可能计入 Campaign 总数，
 但不会出现在 `search_term_view`。因此搜索词明细不能被解释为全部搜索查询，

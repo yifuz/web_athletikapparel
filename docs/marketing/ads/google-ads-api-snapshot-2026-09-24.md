@@ -150,8 +150,8 @@ Campaign 几乎打满 CNY 25 日预算，但更大的曝光损失来自 Ad Rank�
 - 平台侧 P0 快照已完成；P0 整体保持 `进行中`，因为人工邮件询盘的来源和质量尚未完成
   初步核对。
 - 已建立[普通 163 邮箱询盘只读分析工具](163-mail-inquiry-analysis-runbook.md)。
-  [首次两个 30 天窗口快照](163-mail-inquiry-snapshot-2026-09-24.md)只覆盖 `INBOX`；所有者随后
-  确认 Junk/Trash 中仍有邮件，因此 8 封邮件与 5 封规则候选只保留为连接验证记录，不能作为
-  询盘总量。工具已扩展文件夹范围，等待新授权码完整重跑。
+  [完整两个 30 天窗口快照](163-mail-inquiry-snapshot-2026-09-24.md)覆盖 `INBOX + Junk/Spam +
+  Trash`：最近窗口 20 封邮件中识别 10 封询盘候选和 2 封 `needs_review`；十封候选来源均
+  `unknown`，不能归因给 Google Ads，仍需人工确认。
 - 下一步不是广告优化，而是建立最小私有询盘记录：日期、公司、国家、需求、MOQ 是否符合、
   当前阶段和来源；来源无法确认时必须写 `unknown`，不得推定为 Google Ads。
