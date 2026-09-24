@@ -144,11 +144,18 @@ class Window:
     end: date
 
 
+@dataclass(frozen=True)
+class MailboxTarget:
+    name: str
+    role: str
+
+
 @dataclass
 class MailRecord:
     message_key: str
     received_at: str
     sender_domain: str
+    mailbox_role: str
     classification: str
     inquiry_score: int
     vendor_score: int
@@ -377,7 +384,9 @@ def _message_key(message: Any, received_at: datetime, sender: str, subject: str)
     return hashlib.sha256(str(source).encode("utf-8", errors="replace")).hexdigest()[:20]
 
 
-def parse_mail(raw_message: bytes, config: dict[str, Any]) -> MailRecord | None:
+def parse_mail(
+    raw_message: bytes, config: dict[str, Any], mailbox_role: str = "inbox"
+) -> MailRecord | None:
     message = BytesParser(policy=policy.default).parsebytes(raw_message)
     report_tz = ZoneInfo(config["report_timezone"])
     received_at = _message_datetime(message, report_tz)
@@ -398,6 +407,7 @@ def parse_mail(raw_message: bytes, config: dict[str, Any]) -> MailRecord | None:
         message_key=_message_key(message, received_at, sender_address, subject),
         received_at=received_at.isoformat(),
         sender_domain=sender_domain,
+        mailbox_role=mailbox_role,
         **result,
     )
 
@@ -415,6 +425,55 @@ def _send_client_id(client: imaplib.IMAP4_SSL) -> None:
         raise RuntimeError("163 IMAP 客户端 ID 握手失败。")
 
 
+def _parse_list_mailbox_name(raw_name: bytes) -> str:
+    value = raw_name.strip()
+    if value.startswith(b'"') and value.endswith(b'"'):
+        value = value[1:-1].replace(b'\\"', b'"').replace(b'\\\\', b'\\')
+    return value.decode("ascii")
+
+
+def discover_mailboxes(
+    client: imaplib.IMAP4_SSL, config: dict[str, Any]
+) -> tuple[MailboxTarget, ...]:
+    wanted_roles = {
+        str(role).lower() for role in config.get("mailbox_roles", ["inbox", "junk", "trash"])
+    }
+    targets: list[MailboxTarget] = []
+    seen: set[str] = set()
+    if "inbox" in wanted_roles:
+        targets.append(MailboxTarget("INBOX", "inbox"))
+        seen.add("inbox")
+
+    status, response = client.list()
+    if status != "OK":
+        raise RuntimeError("无法读取 163 IMAP 文件夹列表。")
+    pattern = re.compile(
+        rb"^\((?P<flags>[^)]*)\)\s+(?:NIL|\"(?:[^\"\\]|\\.)*\")\s+(?P<name>.+)$"
+    )
+    for item in response or []:
+        if not isinstance(item, bytes):
+            continue
+        match = pattern.match(item)
+        if not match:
+            continue
+        flags = {flag.upper() for flag in match.group("flags").split()}
+        if b"\\JUNK" in flags:
+            role = "junk"
+        elif b"\\TRASH" in flags:
+            role = "trash"
+        else:
+            continue
+        if role not in wanted_roles or role in seen:
+            continue
+        try:
+            name = _parse_list_mailbox_name(match.group("name"))
+        except UnicodeDecodeError:
+            continue
+        targets.append(MailboxTarget(name, role))
+        seen.add(role)
+    return tuple(targets)
+
+
 def _connect(config: dict[str, Any], secret: str) -> imaplib.IMAP4_SSL:
     context = ssl.create_default_context()
     client = imaplib.IMAP4_SSL(
@@ -423,9 +482,6 @@ def _connect(config: dict[str, Any], secret: str) -> imaplib.IMAP4_SSL:
     try:
         client.login(str(config["email"]), secret)
         _send_client_id(client)
-        status, _ = client.select(str(config.get("mailbox", "INBOX")), readonly=True)
-        if status != "OK":
-            raise RuntimeError("无法以只读模式打开 INBOX。")
         return client
     except Exception:
         try:
@@ -438,43 +494,62 @@ def _connect(config: dict[str, Any], secret: str) -> imaplib.IMAP4_SSL:
 def check_connection(config: dict[str, Any], secret: str) -> None:
     client = _connect(config, secret)
     try:
-        print("连接成功：已以只读模式打开 INBOX；未抓取、发送、删除或移动邮件。")
+        targets = discover_mailboxes(client, config)
+        opened: list[str] = []
+        for target in targets:
+            status, _ = client.select(target.name, readonly=True)
+            if status != "OK":
+                raise RuntimeError(f"无法以只读模式打开 {target.role} 文件夹。")
+            opened.append(target.role)
+        print(
+            "连接成功：已以只读模式打开 "
+            + ", ".join(opened)
+            + "；未抓取、发送、删除或移动邮件。"
+        )
     finally:
         client.logout()
 
 
-def fetch_records(config: dict[str, Any], secret: str, since: date) -> tuple[list[MailRecord], int]:
+def fetch_records(
+    config: dict[str, Any], secret: str, since: date
+) -> tuple[list[MailRecord], int, tuple[str, ...]]:
     client = _connect(config, secret)
-    records: list[MailRecord] = []
+    records_by_key: dict[str, MailRecord] = {}
     parse_gaps = 0
+    mailboxes_read: list[str] = []
     try:
         since_token = since.strftime("%d-%b-%Y")
-        status, response = client.uid("search", None, "SINCE", since_token)
-        if status != "OK":
-            raise RuntimeError("IMAP 搜索失败。")
-        uids = response[0].split() if response and response[0] else []
-        for uid in uids:
-            status, payload = client.uid("fetch", uid, "(BODY.PEEK[])")
+        for target in discover_mailboxes(client, config):
+            status, _ = client.select(target.name, readonly=True)
             if status != "OK":
-                parse_gaps += 1
-                continue
-            raw = next(
-                (item[1] for item in payload if isinstance(item, tuple) and isinstance(item[1], bytes)),
-                None,
-            )
-            if raw is None:
-                parse_gaps += 1
-                continue
-            try:
-                record = parse_mail(raw, config)
-            except Exception:
-                parse_gaps += 1
-                continue
-            if record is not None:
-                records.append(record)
+                raise RuntimeError(f"无法以只读模式打开 {target.role} 文件夹。")
+            mailboxes_read.append(target.role)
+            status, response = client.uid("search", None, "SINCE", since_token)
+            if status != "OK":
+                raise RuntimeError(f"{target.role} 文件夹 IMAP 搜索失败。")
+            uids = response[0].split() if response and response[0] else []
+            for uid in uids:
+                status, payload = client.uid("fetch", uid, "(BODY.PEEK[])")
+                if status != "OK":
+                    parse_gaps += 1
+                    continue
+                raw = next(
+                    (item[1] for item in payload if isinstance(item, tuple) and isinstance(item[1], bytes)),
+                    None,
+                )
+                if raw is None:
+                    parse_gaps += 1
+                    continue
+                try:
+                    record = parse_mail(raw, config, target.role)
+                except Exception:
+                    parse_gaps += 1
+                    continue
+                if record is not None and record.message_key not in records_by_key:
+                    records_by_key[record.message_key] = record
     finally:
         client.logout()
-    return records, parse_gaps
+    return list(records_by_key.values()), parse_gaps, tuple(mailboxes_read)
 
 
 def _record_date(record: MailRecord, report_tz: ZoneInfo) -> date:
@@ -488,9 +563,11 @@ def _records_in_window(records: Iterable[MailRecord], window: Window, report_tz:
 def summarize_window(records: list[MailRecord], window: Window, report_tz: ZoneInfo) -> dict[str, Any]:
     selected = _records_in_window(records, window, report_tz)
     inquiries = [record for record in selected if record.classification == "inquiry_candidate"]
+    mailbox_counts = Counter(record.mailbox_role for record in selected)
     return {
         "window": asdict(window),
         "emails_read": len(selected),
+        "mailbox_counts": dict(mailbox_counts),
         "inquiry_candidates": len(inquiries),
         "vendor_or_spam": sum(record.classification == "vendor_or_spam" for record in selected),
         "needs_review": sum(record.needs_manual_review for record in selected),
@@ -519,7 +596,8 @@ def _markdown_report(summary: dict[str, Any]) -> str:
         "",
         f"> 生成时间：{summary['generated_at']}",
         f"> 报告时区：`{summary['report_timezone']}`",
-        "> 数据方式：IMAP SSL，只读 `INBOX`，使用 `BODY.PEEK[]`",
+        "> 数据方式：IMAP SSL，只读 `INBOX`、Junk/Spam 和 Trash，使用 `BODY.PEEK[]`",
+        f"> 已读取文件夹角色：`{', '.join(summary['mailboxes_read'])}`",
         "> 隐私：未保存原始正文、完整发件地址或附件",
         "",
         "## 两个 30 天窗口",
@@ -540,6 +618,11 @@ def _markdown_report(summary: dict[str, Any]) -> str:
     )
     for label, key in rows:
         lines.append(f"| {label} | {previous[key]} | {recent[key]} |")
+    for role in ("inbox", "junk", "trash"):
+        lines.append(
+            f"| `{role}` 邮件 | {previous['mailbox_counts'].get(role, 0)} | "
+            f"{recent['mailbox_counts'].get(role, 0)} |"
+        )
     lines.extend(
         [
             "",
@@ -550,6 +633,7 @@ def _markdown_report(summary: dict[str, Any]) -> str:
             "- 国家字段只记录正文明确提及项，不根据邮箱后缀、IP 或语言推断。",
             "- 只有发件人明确提及 Google 才记录 `self_reported_google`；其余来源为 `unknown`。",
             "- 本报告不能将邮件询盘因果归因给 Google Ads；需要 UTM/GCLID/CRM 才能建立可靠广告归因。",
+            "- 若 `mailbox_roles_missing` 非空，对应 Junk/Trash 文件夹未被服务器标记为 SPECIAL-USE，结果仍不完整。",
             f"- 无法解析或读取的邮件数：{summary['parse_gaps']}。",
             "",
         ]
@@ -558,7 +642,11 @@ def _markdown_report(summary: dict[str, Any]) -> str:
 
 
 def write_outputs(
-    records: list[MailRecord], config: dict[str, Any], windows: tuple[Window, Window], parse_gaps: int
+    records: list[MailRecord],
+    config: dict[str, Any],
+    windows: tuple[Window, Window],
+    parse_gaps: int,
+    mailboxes_read: tuple[str, ...],
 ) -> Path:
     output_dir = Path(config.get("output_dir", DEFAULT_OUTPUT_DIR))
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -573,6 +661,10 @@ def write_outputs(
         "generated_at": datetime.now(report_tz).isoformat(),
         "report_timezone": config["report_timezone"],
         "parse_gaps": parse_gaps,
+        "mailboxes_read": list(mailboxes_read),
+        "mailbox_roles_missing": sorted(
+            set(config.get("mailbox_roles", ["inbox", "junk", "trash"])) - set(mailboxes_read)
+        ),
         "windows": [summarize_window(records, window, report_tz) for window in windows],
     }
 
@@ -598,7 +690,7 @@ def write_outputs(
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
-    subparsers.add_parser("check", help="验证登录并以只读模式打开 INBOX，不抓取邮件")
+    subparsers.add_parser("check", help="验证登录并只读打开 INBOX、Junk/Spam 和 Trash，不抓取邮件")
     analyze = subparsers.add_parser("analyze", help="生成最近30天和此前30天询盘候选快照")
     analyze.add_argument(
         "--as-of",
@@ -620,8 +712,12 @@ def main(argv: list[str] | None = None) -> int:
         report_tz = ZoneInfo(config["report_timezone"])
         as_of = args.as_of or datetime.now(report_tz).date()
         recent, previous = report_windows(as_of)
-        records, parse_gaps = fetch_records(config, secret, previous.start - timedelta(days=1))
-        output_dir = write_outputs(records, config, (recent, previous), parse_gaps)
+        records, parse_gaps, mailboxes_read = fetch_records(
+            config, secret, previous.start - timedelta(days=1)
+        )
+        output_dir = write_outputs(
+            records, config, (recent, previous), parse_gaps, mailboxes_read
+        )
         print(f"分析完成：{output_dir}")
         print("结果为询盘候选快照；请人工复核，不要直接作为 Google Ads 归因结论。")
         return 0

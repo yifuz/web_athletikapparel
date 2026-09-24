@@ -357,11 +357,11 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
   暂无 Google Ads 来源归因。
 - 搜索词报告仅公开 28/73 次点击和 38.2% 花费，剩余搜索词受隐私阈值影响，记为
   `unavailable`。当前不增加预算、不改出价、不添加否定词，等待人工询盘来源与质量核对。
-- 2026-09-24 已建立[普通 163 邮箱询盘只读分析工具](marketing/ads/163-mail-inquiry-analysis-runbook.md)
-  并完成[首次候选快照](marketing/ads/163-mail-inquiry-snapshot-2026-09-24.md)：通过
-  `imap.163.com:993`、Coremail `ID` 握手和只读 `INBOX`，按 Google Ads 相同窗口读取最近
-  30 天 8 封邮件，识别 5 封未人工确认的询盘候选；五封均无明确数量或 Google 自述来源。
-  一次性凭据在采集后已删除，未启用计划任务；P0 因人工确认待补继续为 `进行中`。
+- 2026-09-24 已建立[普通 163 邮箱询盘只读分析工具](marketing/ads/163-mail-inquiry-analysis-runbook.md)。
+  首次[候选快照](marketing/ads/163-mail-inquiry-snapshot-2026-09-24.md)只读 `INBOX`，所有者随后
+  确认 Junk/Trash 中仍有邮件，因此最近窗口 8 封邮件与 5 封规则候选均标记为不完整，不能
+  用作询盘总量。工具已扩展为自动发现 `INBOX + Junk/Spam + Trash`、只读抓取并跨文件夹
+  去重；上一枚一次性凭据已删除，等待新授权码完整重跑，P0 继续为 `进行中`。
 
 ---
 

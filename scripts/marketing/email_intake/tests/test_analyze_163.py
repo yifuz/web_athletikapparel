@@ -73,6 +73,7 @@ class ParsingTests(unittest.TestCase):
             message_key="sample-hash",
             received_at="2026-09-01T12:00:00-04:00",
             sender_domain="example.com",
+            mailbox_role="junk",
             classification="inquiry_candidate",
             inquiry_score=9,
             vendor_score=0,
@@ -88,11 +89,16 @@ class ParsingTests(unittest.TestCase):
             config = {
                 "report_timezone": "America/New_York",
                 "output_dir": temporary_directory,
+                "mailbox_roles": ["inbox", "junk", "trash"],
             }
-            output_dir = MODULE.write_outputs([record], config, (recent, previous), 0)
+            output_dir = MODULE.write_outputs(
+                [record], config, (recent, previous), 0, ("inbox", "junk", "trash")
+            )
             summary = json.loads((output_dir / "latest-summary.json").read_text(encoding="utf-8"))
             csv_text = (output_dir / "latest-records.csv").read_text(encoding="utf-8-sig")
             self.assertEqual(summary["windows"][0]["inquiry_candidates"], 1)
+            self.assertEqual(summary["windows"][0]["mailbox_counts"]["junk"], 1)
+            self.assertEqual(summary["mailbox_roles_missing"], [])
             self.assertIn("example.com", csv_text)
             self.assertNotIn("subject", csv_text.lower())
             self.assertNotIn("body", csv_text.lower())
@@ -112,6 +118,22 @@ class ParsingTests(unittest.TestCase):
         MODULE._send_client_id(client)
         self.assertEqual(client.command[0], "ID")
         self.assertIn("AthletikMailAnalyzer", client.command[1])
+
+    def test_special_use_junk_and_trash_are_discovered(self):
+        class FakeClient:
+            def list(self):
+                return "OK", [
+                    b'(\\HasNoChildren) "/" "INBOX"',
+                    b'(\\HasNoChildren \\Junk) "/" "&V4NXPpCuTvY-"',
+                    b'(\\HasNoChildren \\Trash) "/" "&XfJT0ZAB-"',
+                    b'(\\HasNoChildren \\Sent) "/" "&XfJT0ZCuTvY-"',
+                ]
+
+        targets = MODULE.discover_mailboxes(
+            FakeClient(), {"mailbox_roles": ["inbox", "junk", "trash"]}
+        )
+        self.assertEqual([target.role for target in targets], ["inbox", "junk", "trash"])
+        self.assertEqual(targets[1].name, "&V4NXPpCuTvY-")
 
 
 if __name__ == "__main__":

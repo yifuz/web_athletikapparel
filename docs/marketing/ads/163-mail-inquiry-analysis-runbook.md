@@ -2,16 +2,17 @@
 
 > 建立日期：2026-09-24
 > 邮箱类型：普通 `@163.com` 邮箱
-> 状态：本机工具已实现；首次采集完成；一次性授权凭据已删除，自动同步未启用
+> 状态：本机工具已实现；已扩展至 `INBOX + Junk/Spam + Trash`；等待完整重跑
 > 用途：补齐 Promotion P0 的人工询盘数量与质量证据，不修改 Google Ads 或邮箱内容
 
 ## 1. 能做什么
 
-本工具通过 `imap.163.com:993` 和 SSL 只读访问 `INBOX`，生成最近 30 个完整自然日与
+本工具通过 `imap.163.com:993` 和 SSL 只读访问 `INBOX`，并自动发现服务器以 SPECIAL-USE
+标记的 Junk/Spam 和 Trash，生成最近 30 个完整自然日与
 此前 30 个完整自然日的询盘候选快照。窗口采用 Google Ads 账户时区
 `America/New_York`，并排除报告生成当天，以便与 Google Ads API 快照直接对照。
 连接器在认证后发送 Coremail 声明支持的 RFC 2971 `ID` 握手，再以 `EXAMINE` 打开
-`INBOX`；缺少该握手时，163 会返回 `Unsafe Login` 并拒绝打开邮箱。
+各目标文件夹；缺少该握手时，163 会返回 `Unsafe Login` 并拒绝打开邮箱。
 
 输出包括：
 
@@ -30,7 +31,8 @@
 - 授权码通过 Windows DPAPI 按当前用户加密，保存在
   `%LOCALAPPDATA%\Athletik\mail-intake\secret.dpapi`。
 - 邮箱地址、配置、CSV 和报告全部位于 `%LOCALAPPDATA%\Athletik\mail-intake\`，不进入 Git。
-- IMAP 以 `readonly=True` 打开 `INBOX`，读取命令使用 `BODY.PEEK[]`，不会主动标记已读。
+- IMAP 以 `readonly=True` 打开 `INBOX`、Junk/Spam 和 Trash，读取命令使用 `BODY.PEEK[]`，
+  不会主动标记已读；同一 Message-ID 跨文件夹只计一次。
 - 不发送、删除、移动、归档邮件，不读取或保存附件。
 - 不保存原始邮件正文、完整发件地址或主题；CSV 只保存哈希 ID、发件域名和抽取字段。
 - 首版不读取 Sent，因此“是否回复、报价、打样、成交或流失”仍需人工确认。
@@ -46,8 +48,8 @@
 .\scripts\marketing\email_intake\setup-163.ps1
 ```
 
-脚本会在本机依次询问完整邮箱地址和客户端授权码，然后只验证登录与只读打开 `INBOX`，不会
-抓取邮件。验证通过后运行首次分析：
+脚本会在本机依次询问完整邮箱地址和客户端授权码，然后只验证登录与只读打开 `INBOX`、
+Junk/Spam 和 Trash，不会抓取邮件。验证通过后运行首次分析：
 
 ```powershell
 py -3 .\scripts\marketing\email_intake\analyze_163.py analyze
@@ -91,9 +93,10 @@ py -3 .\scripts\marketing\email_intake\analyze_163.py analyze
 
 ## 6. 当前证据缺口
 
-- 首次 60 天窗口采集已完成，详见
-  [`163 邮箱询盘候选快照（2026-09-24）`](163-mail-inquiry-snapshot-2026-09-24.md)。
-- 规则从最近窗口 8 封邮件中识别出 5 封询盘候选；五封均需人工确认，不能直接写成真实或合格询盘。
+- 首次采集只覆盖 `INBOX`，详见
+  [`163 邮箱询盘候选快照（2026-09-24）`](163-mail-inquiry-snapshot-2026-09-24.md)；所有者确认
+  Junk/Trash 中仍有邮件，因此该快照已标记为不完整，不能用于总量结论。
+- 工具已经扩展到 `INBOX + Junk/Spam + Trash`，但尚未使用新授权码完成完整重跑。
 - 首版未读取 Sent，销售阶段和回复状态为 `unavailable`。
 - 邮件未明确说明来源时，Google Ads 来源保持 `unknown`，不能按比例推算。
-- 本次只授权一次使用客户端授权码；采集后配置和加密授权码均已删除，未启用每日计划任务。
+- 上一枚授权码只获准使用一次；采集后配置和加密授权码均已删除，未启用每日计划任务。
