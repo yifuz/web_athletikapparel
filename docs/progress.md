@@ -346,13 +346,17 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 
 ### 5.5 Google Ads 快照
 
-- GA4 已链接 Google Ads 账号 `734-505-8603`。
-- 首个搜索 Campaign：`Leads-Search-1`。
-- 落地页：Sportswear manufacturer。
-- 地区：United States + Canada；语言：English；Search Network only。
-- 出价：Maximize Clicks；日预算 RMB 25。
-- AI Max、Search Partners、Display expansion、text adaptation、final URL expansion 均关闭。
-- 2026-08-05 启动并进入 Google 审核；后续是否开始展示必须实时核验，不能沿用该历史快照。
+- 2026-09-24 已通过 Google Ads API 完成当前配置与最近 30 个完整自然日的只读快照，
+  详见 [`Google Ads API 快照与流量质量审计`](marketing/ads/google-ads-api-snapshot-2026-09-24.md)。
+- GA4 已链接 Google Ads 账号 `734-505-8603`；搜索 Campaign `Leads-Search-1`
+  当前为 `ENABLED`，日预算 CNY 25，出价策略 `TARGET_SPEND`（Maximize Clicks）。
+- 当前地域只包含 United States，匹配方式为 `PRESENCE`；Search Partners 和 Display
+  Network 均关闭。2026-08-05 的 United States + Canada 记录仅代表上线历史，不能再当作当前设置。
+- 2026-08-25 至 2026-09-23：花费 CNY 747.28、展示 745、点击 73、CTR 9.80%、
+  平均 CPC CNY 10.24、conversions 0。所有者确认同期无实际表单提交；直接邮件询盘
+  暂无 Google Ads 来源归因。
+- 搜索词报告仅公开 28/73 次点击和 38.2% 花费，剩余搜索词受隐私阈值影响，记为
+  `unavailable`。当前不增加预算、不改出价、不添加否定词，等待人工询盘来源与质量核对。
 
 ---
 

@@ -1,14 +1,15 @@
 # Athletik Clothing 网站推广计划
 
 > 网站：<https://www.athletikapparel.com/>
-> 版本：1.6
+> 版本：1.7
 > 创建日期：2026-08-03
-> 文档对齐日期：2026-08-07
+> 文档对齐日期：2026-09-24
 > 规划周期：首个 90 天
 > 2026-08-07 文档基线：网站、隐私、测试归因与转化链路已完成；Google 搜索广告与 Instagram 付费推广均已上线；真实广告点击和首个 30 天基线仍待验证；多渠道矩阵已按单人保守产能对齐，详见 `promotion-matrix.md`
 > 当前执行时间线：[`promotion-timeline.md`](promotion-timeline.md)；渠道实时状态须先完成该文件 P0 核验，不能从本计划的 8 月记录推断
 > 首轮媒体预算：Google 每月 RMB 500–1,000（已确认）；Instagram/Meta 当前每日 RMB 68 在投，计划范围 RMB 50–100/日（单独预算线）
 > 首轮目标市场：原计划美国；实际投放美国和加拿大
+> 当前地域更新：2026-09-24 API 当前配置仅 United States；美国和加拿大仅指 2026-08-05 上线历史，详见 [`ads/google-ads-api-snapshot-2026-09-24.md`](ads/google-ads-api-snapshot-2026-09-24.md)
 > 首轮投放品类：Sportswear Manufacturer（已确认）
 
 使用本计划时，请同时参考 `AGENTS.md`、`docs/progress.md`、
