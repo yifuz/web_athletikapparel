@@ -24,6 +24,7 @@
 
 ## `marketing/`：推广与获客
 
+- [`marketing/promotion-timeline.md`](marketing/promotion-timeline.md)：当前 Promotion 唯一主时间线；只管理跨渠道推广节点，不重复 SEO/GEO 子任务。
 - [`marketing/promotion-plan.md`](marketing/promotion-plan.md)：90 天推广、归因、预算与询盘计划。
 - [`marketing/promotion-matrix.md`](marketing/promotion-matrix.md)：渠道分工、单人内容基线和复盘指标。
 - `marketing/ads/`：Google Ads 与 Meta Ads 的日期化上线/基线记录。
