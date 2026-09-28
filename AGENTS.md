@@ -330,6 +330,10 @@ way the user does:
 
 ## 7. When in doubt
 
+- Google Ads 读取或复盘只在所有者于当前对话中明确要求时运行。未来 Agent 必须先读
+  `docs/marketing/ads/google-ads-api-analysis-runbook.md`，仅使用 Google Ads MCP 只读能力；
+  不得修改预算、出价、地域、关键词、否定关键词、广告或 conversion 设置，也不得把来源未知的
+  邮件询盘归因给 Google Ads。
 - 163 邮箱只读分析只在所有者于当前对话中明确要求时运行。未来 Agent 必须先读
   `docs/marketing/ads/163-mail-inquiry-analysis-runbook.md` 的“Agent 接手与获取步骤”；不得要求
   所有者在聊天中粘贴授权码，不得主动读取 Sent 或附件，真实联系人和邮件内容不得进入 Git。

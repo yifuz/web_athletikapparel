@@ -27,6 +27,7 @@
 - [`marketing/promotion-timeline.md`](marketing/promotion-timeline.md)：当前 Promotion 唯一主时间线；只管理跨渠道推广节点，不重复 SEO/GEO 子任务。
 - [`marketing/promotion-plan.md`](marketing/promotion-plan.md)：90 天推广、归因、预算与询盘计划。
 - [`marketing/promotion-matrix.md`](marketing/promotion-matrix.md)：渠道分工、单人内容基线和复盘指标。
+- [`marketing/ads/google-ads-api-analysis-runbook.md`](marketing/ads/google-ads-api-analysis-runbook.md)：Google Ads MCP 只读接手、查询顺序、指标口径与证据边界。
 - [`marketing/ads/google-ads-api-snapshot-2026-09-24.md`](marketing/ads/google-ads-api-snapshot-2026-09-24.md)：当前 Google Ads API 配置、表现、搜索词覆盖与证据缺口基线。
 - [`marketing/ads/163-mail-inquiry-analysis-runbook.md`](marketing/ads/163-mail-inquiry-analysis-runbook.md)：普通 163 邮箱只读询盘采集、Agent 接手命令、隐私边界与本机运行手册。
 - [`marketing/ads/163-mail-inquiry-snapshot-2026-09-24.md`](marketing/ads/163-mail-inquiry-snapshot-2026-09-24.md)：与 Google Ads 同窗口的邮件聚合、内容级确认结果和证据边界。
