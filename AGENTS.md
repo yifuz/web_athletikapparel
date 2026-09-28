@@ -330,6 +330,9 @@ way the user does:
 
 ## 7. When in doubt
 
+- 163 邮箱只读分析只在所有者于当前对话中明确要求时运行。未来 Agent 必须先读
+  `docs/marketing/ads/163-mail-inquiry-analysis-runbook.md` 的“Agent 接手与获取步骤”；不得要求
+  所有者在聊天中粘贴授权码，不得主动读取 Sent 或附件，真实联系人和邮件内容不得进入 Git。
 - **Adding/swapping/regenerating ANY image → re-read §1.6 first.** Images go
   in `uploads/myathletik-theme/assets/images/`, NOT the theme folder. Code
   paths stay theme-relative; the output buffer rewrites them. Putting a file
