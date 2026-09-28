@@ -212,7 +212,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 每月只推进一个主主题，维持网站 1 篇深度内容/月的保守基线：
 
 1. 建立 D03～D05 推荐证据矩阵：买家问题、Athletik 匹配事实、站内原始证据、可信第三方佐证、缺失输入、可公开边界。
-2. `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 已完成证据 intake、英文正文、所有者 copy/视觉审核、生产部署、技术验收、社交公开 URL 核验、一次 GSC 索引申请与首轮七日复盘，现为 `deployed / production-verified / social-feed-published / public-urls-confirmed / indexed-snapshot-confirmed / seven-day-partial / measuring`。2026-09-28 URL Inspection 已确认 `Submitted and indexed`；固定窗口取得 18 次 Web Search 展示、0 点击，LinkedIn UTM 有少量活动但母文章不是 Landing Page，平台后台和人工询盘仍缺。正文继续使用原创生产证据，不把自然状态展示写成拉伸测试，也不列未确认的 Slim / Comfort / Infused 版本；下一步等待月度窗口。
+2. `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 已完成证据 intake、英文正文、所有者 copy/视觉审核、生产部署、技术验收、社交公开 URL 核验、一次 GSC 索引申请与首轮七日复盘，现为 `deployed / production-verified / social-feed-published / public-urls-confirmed / indexed-snapshot-confirmed / seven-day-measurement-contaminated / measuring`。2026-09-28 URL Inspection 已确认 `Submitted and indexed`；固定窗口取得 18 次 Web Search 展示、0 点击。原记录中的 LinkedIn UTM 活动已确认来自所有者使用 Windows / Edge 与 Clash Verge 切换中国、美国出口进行的内部 QA，因此外部成效统计为 0 个已确认外部 UTM 会话；平台后台和人工询盘仍缺，不能据此推断社交曝光为 0。正文继续使用原创生产证据，不把自然状态展示写成拉伸测试，也不列未确认的 Slim / Comfort / Infused 版本；下一步等待月度窗口。
 3. D04 不再优先增加另一篇泛化供应商清单。更有价值的是经授权的项目案例，或不披露客户名称的可核验开发/QC 流程证据；没有授权和真实结果时不建案例。
 4. D05 先审计 Merino Wool 规范页与历史矩阵站的重复、冲突、索引和引用，再决定是增强现页、建立技术指南还是保持不变。
 5. 站外每月只推进一项：优先真实设备方/认证方/行业编辑来源，其次是可维护的高质量制造商资料页；不以目录数量为 KPI。当前被外部输入阻塞的项目保持 deferred，不使用错误地址或不完整证书提交。
@@ -234,7 +234,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-004 | 补录 GEO-06/07 发布与七日数据 | 运营证据 | P1 | `overdue / owner-input` | 可得字段全部补录，不可得字段写 unavailable |
 | GEO-V2-005 | 启用 Bing Webmaster Tools AI 引用观测 | 引用 | P1 | `baseline-established` | 2026-09-22 只读 API 已确认站点验证；[首份 Bing 基线](testing/bing-ai-performance-baseline.md)在 2026-08-24～09-20 的完整 28 天 CSV 中汇总 5 次引用、4 个 cited-page-days。Pages 截图列出 FLATLOCK vs OVERLOCK Guide 2 次、About Us 2 次、首页 1 次；所有者已在后台确认 Grounding Queries 当前无记录。页面截图未显示日期范围，不作日期级页面归因；引用不等于推荐 |
 | GEO-V2-006 | 建立 D03～D05 / C06～C08 claim-to-source 证据矩阵 | 引用/推荐 | P1 | `complete` | 已记录六题的匹配事实、规范第一方 URL、AI 实际来源、第三方候选、缺失证据与公开边界；见日期化矩阵 |
-| GEO-V2-007 | ACTIVESEAM 原创技术内容与分发 | 提取/引用/推荐 | P1 | `deployed / production-verified / social-feed-published / public-urls-confirmed / indexed-snapshot-confirmed / seven-day-partial / measuring` | 两支 Merrow ACTIVESEAM 实际操作视频、一支自然状态成衣接缝展示和一支 Yamato FLATLOCK 对照视频均已核验；Merrow 型号为 `MB-4DFO 2.0`，2 线与 3 线按项目要求使用。页面、Technical Guides Hub、Article / FAQPage / BreadcrumbList Schema、Sitemap 和真实生产媒体已部署；2026-09-18 完成生产复核和一次 GSC 索引申请，同日补录 LinkedIn 视频帖与 Instagram 6 页 Carousel 的公开 URL。2026-09-28 固定窗口复核确认 URL Inspection 为 `PASS / Submitted and indexed`，页面 Search Analytics 为 18 impressions、0 clicks；LinkedIn UTM 为 `sessions = 6`、`engagedSessions = 4`、`totalUsers = 1`，但母文章不是 Landing Page，Instagram 无匹配行，平台后台与人工询盘仍 `unavailable`，因此保持 partial。未写入 Slim / Comfort / Infused 版本、Athletik 自测性能百分比或把自然状态画面写成测试；详见[分发日志](distribution/publishing-log.md) |
+| GEO-V2-007 | ACTIVESEAM 原创技术内容与分发 | 提取/引用/推荐 | P1 | `deployed / production-verified / social-feed-published / public-urls-confirmed / indexed-snapshot-confirmed / seven-day-measurement-contaminated / measuring` | 两支 Merrow ACTIVESEAM 实际操作视频、一支自然状态成衣接缝展示和一支 Yamato FLATLOCK 对照视频均已核验；Merrow 型号为 `MB-4DFO 2.0`，2 线与 3 线按项目要求使用。页面、Technical Guides Hub、Article / FAQPage / BreadcrumbList Schema、Sitemap 和真实生产媒体已部署；2026-09-18 完成生产复核和一次 GSC 索引申请，同日补录 LinkedIn 视频帖与 Instagram 6 页 Carousel 的公开 URL。2026-09-28 固定窗口复核确认 URL Inspection 为 `PASS / Submitted and indexed`，页面 Search Analytics 为 18 impressions、0 clicks。原始 LinkedIn UTM 为 `sessions = 6`、`engagedSessions = 4`、`totalUsers = 1`，但唯一用户已由设备、地区切换和所有者操作确认属于内部 QA；Instagram 无匹配行，所以本轮为 0 个已确认外部 UTM 会话。平台后台与人工询盘仍 `unavailable`，不能扩写为 0 次曝光。未写入 Slim / Comfort / Infused 版本、Athletik 自测性能百分比或把自然状态画面写成测试；详见[分发日志](distribution/publishing-log.md) |
 | GEO-V2-008 | Merino 专业站与规范页冲突审计 | 提取/推荐 | P0 | `complete / remediation-required` | 已确认 UltraMerino 为同方控制、双站同时运营；完成 HTTP、robots、41 URL Sitemap、自引用 Canonical、页面结构、AI 引用和冲突声明审计；未取得该域名 GSC/Bing、反链和当前设备/许可专项证据 |
 | GEO-V2-009 | 每月一个可信站外佐证动作 | 推荐 | P1 | `suspended / awaiting-dedicated-media` | 2026-09-18 所有者决定先暂停第三方佐证包与外联，待补拍机器铭牌、接缝细节、同面料 sew-off 等专项素材后恢复；暂停期间不建立半成品资料包、不联系设备商或媒体。恢复后以获得可公开、可索引、信息准确的真实条目或编辑内容为完成标准 |
 | GEO-V2-010 | 建立 GSC Generative AI 月度观测 | 找到/引用入口 | P0 | `baseline-established` | 首个三个月导出完整入档；以后使用完整 28 天可比窗口并保持各维度口径分离 |
@@ -247,7 +247,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-017 | UltraMerino 事实同步 | 提取/来源归属 | P2 | `deferred / outside-project-control` | 该站当前不由本项目负责；保留冲突记录，不在本项目修改。若未来职责改变，再核对 MOQ、产能、设备/员工数量、工艺边界、认证、材料来源和 Schema |
 | GEO-V2-018 | 建立 AI 实际引用来源模式审计 | 全漏斗决策 | P0 | `operational` | 已按实际 Sources 面板完成首轮审计并建立月度模板；以后随固定 Baseline 每月增量更新，不按单次样本大改网站 |
 | GEO-V2-019 | 主站可引用事实与设备证据补强 | 提取/引用/推荐 | P0 | `deployed / production-verified / measuring` | 2026-09-14 生产验收：首页、About、Merino 均 HTTP 200、单一 H1、自引用 Canonical、`index` 且 JSON-LD 可解析；新增事实完整出现。Page Sitemap 为 18/18 唯一 URL，三页及 Sitemap index 的 `lastmod` 已更新为 `2026-09-14T02:50:00+00:00`；AI 相关爬虫未被 robots.txt 屏蔽 |
-| GEO-V2-020 | 自有 Top 5 供应商指南受控试验 | 宽泛发现/引用/推荐 | P1 | `deployed / production-verified / social-feed-published / indexed-snapshot-confirmed / seven-day-partial / measuring` | `/top-sportswear-manufacturers-china/` 已接入共用 Technical Guides 架构；比较 Athletik、HUCAI、SANSANSUN、INGORSPORTS 与 Bellasports，首屏公开发布者利益关系，并提供筛选方法、MOQ 冲突、来源和事实限制。LinkedIn 单图帖已公开核验，Instagram Feed 已由所有者确认发布。2026-09-16 生产页与社交 UTM 目标均恢复 HTTP 200 并完成一次索引请求；2026-09-22 GSC 只读 URL Inspection 返回 `PASS / Submitted and indexed`，最后抓取为 2026-09-16。9 月 15～21 日 GA4 的 LinkedIn 帖子 UTM 有 7 sessions、5 engagedSessions、1 totalUsers，其中仅 3 sessions 以该文章为入口；Instagram 可归因会话 0，平台后台精确指标与人工询盘核验仍 `unavailable`。详细口径见[发布日志](distribution/publishing-log.md)；不把会话、引用或索引状态当作买家推荐，也不因小样本改页 |
+| GEO-V2-020 | 自有 Top 5 供应商指南受控试验 | 宽泛发现/引用/推荐 | P1 | `deployed / production-verified / social-feed-published / indexed-snapshot-confirmed / seven-day-measurement-contaminated / measuring` | `/top-sportswear-manufacturers-china/` 已接入共用 Technical Guides 架构；比较 Athletik、HUCAI、SANSANSUN、INGORSPORTS 与 Bellasports，首屏公开发布者利益关系，并提供筛选方法、MOQ 冲突、来源和事实限制。LinkedIn 单图帖已公开核验，Instagram Feed 已由所有者确认发布。2026-09-16 生产页与社交 UTM 目标均恢复 HTTP 200 并完成一次索引请求；2026-09-22 GSC 只读 URL Inspection 返回 `PASS / Submitted and indexed`，最后抓取为 2026-09-16。9 月 15～21 日原始 GA4 曾记录 LinkedIn 帖子 UTM 7 sessions、5 engagedSessions、1 totalUsers，其中 3 sessions 以该文章为入口；2026-09-28 已确认该唯一用户属于内部 QA，故从外部成效统计中排除。Instagram 无匹配行，平台后台精确指标与人工询盘仍 `unavailable`。详细口径见[发布日志](distribution/publishing-log.md)；不把内部会话、引用或索引状态当作买家推荐，也不因污染样本改页 |
 
 ## 10. 统一记录与判断口径
 
@@ -269,6 +269,11 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 - **Google 生成式搜索展示**：GSC Property impressions、获得页面级链接曝光的规范 URL、Countries、Devices 和 Dates；不推断报表未提供的 Query、Clicks、答案内容或推荐位置。
 - **访问与业务结果**：AI referral sessions、engaged sessions、有效询盘；样本不足时只报绝对值，不报趋势。
 
+社交 Campaign 在解释前必须先排除内部 QA。若生产 UTM 与固定 Windows / Edge 用户、代理国家切换、
+异常 Landing Page 或人工检查时间一致，原始 GA4 数字继续保留，但标记为 `measurement-contaminated`
+并从外部访问和转化统计中剔除。`0 confirmed external UTM sessions` 只表示没有已确认的外部 UTM 会话；
+它不等于平台曝光或真实浏览为 0，也不能排除拒绝统计同意或浏览器拦截造成的未测访问。
+
 “稳定改善”的最低工作定义是：同一固定意图在至少两个独立产品或连续两个月出现同方向变化，且没有依赖品牌点名、历史聊天或错误事实。它仍不是永久排名保证。
 
 ## 11. 内容与站外工作的硬边界
@@ -286,6 +291,6 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 截至 2026-09-28，Athletik 已完成规范站、实体基础和六篇已上线指南；主要 Schema、索引基础和首轮社交分发均已建立。第五篇供应商比较指南和第六篇 ACTIVESEAM 技术指南均已部署、分发并取得 GSC `Submitted and indexed` 快照；这只证明对应 URL 已收录，不代表获得 AI 引用或推荐。GSC 首个专用报表确认 29 次 Google 生成式 AI Property impressions，部署前四篇指南均出现页面级链接曝光。Baseline v2 已完成 ChatGPT Search 8/8 与 Google AI Mode 8/8，Perplexity 因权限 unavailable；专业 D03～D05 已出现跨产品推荐，但 C06～C08 对应官网 Guide 在 6 次可用运行中仍为 0 次引用。
 
-Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。七品类 Program Fit 与 About 综合 buyer-fit 已上线并完成生产复核；GEO-V2-020 于 2026-09-22 取得 GSC 已收录快照及首轮七日 GA4 数据，但平台后台与有效询盘仍缺，不能把自有名单型页面当作独立背书。GEO-V2-007 于 2026-09-28 取得 GSC 已收录快照、18 次 Web Search 展示和首轮七日 GA4 UTM 数据；LinkedIn UTM 的 6 个会话没有以母文章为 Landing Page，Instagram 无匹配行，平台后台与有效询盘仍缺，因此继续为 `seven-day-partial`，不从低样本强行归因。D03～D05 / C06～C08 [`claim-to-source 证据矩阵`](testing/claim-to-source-matrix-2026-09-14.md)、[`UltraMerino 冲突审计`](testing/ultramerino-canonical-conflict-audit-2026-09-14.md)和 [`AI 实际引用来源模式审计`](testing/ai-cited-source-pattern-audit-2026-09-14.md)均已完成。UltraMerino 当前不由本项目负责，因此事实同步降为外部范围；下一步等待完整月度观测窗口，不重复提交、不从低样本强行归因。
+Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。七品类 Program Fit 与 About 综合 buyer-fit 已上线并完成生产复核；GEO-V2-020 于 2026-09-22 取得 GSC 已收录快照，首轮七日 GA4 原始数据随后被确认由内部 QA 污染，平台后台与有效询盘仍缺，不能把自有名单型页面当作独立背书。GEO-V2-007 于 2026-09-28 取得 GSC 已收录快照和 18 次 Web Search 展示；原始 LinkedIn UTM 的 6 个会话同样已确认属于内部 QA，Instagram 无匹配行。两次活动目前均为 0 个已确认外部 UTM 会话，但平台曝光/浏览未知，状态改为 `seven-day-measurement-contaminated`，不从污染样本归因。D03～D05 / C06～C08 [`claim-to-source 证据矩阵`](testing/claim-to-source-matrix-2026-09-14.md)、[`UltraMerino 冲突审计`](testing/ultramerino-canonical-conflict-audit-2026-09-14.md)和 [`AI 实际引用来源模式审计`](testing/ai-cited-source-pattern-audit-2026-09-14.md)均已完成。UltraMerino 当前不由本项目负责，因此事实同步降为外部范围；下一步等待完整月度观测窗口，不重复提交、不从污染或低样本强行归因。
 
 本对话可以用于规划、分析用户带回的 Temporary Chat 结果、更新证据和制定内容；不得作为中性测试环境。

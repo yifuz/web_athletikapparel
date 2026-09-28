@@ -3,7 +3,7 @@
 适用范围：Athletik Clothing 将官网已审核的技术指南改编为 LinkedIn 公司主页和
 Instagram 的自然内容。本文按单人运营的实际工作量设计；完成基线后再考虑加量。
 
-最后核对：2026-08-12。
+最后核对：2026-09-28。
 
 ## 1. 内容与事实来源
 
@@ -90,20 +90,43 @@ utm_content=<topic>_story
 
 标签控制在约 5–7 个，优先技术、产品和制造意图，不堆叠泛流量标签。
 
-## 6. 审核与发布清单
+## 6. 生产 UTM 测试与内部 QA 隔离
+
+生产社交 UTM 只用于识别真实渠道访问，不应用于日常人工点链检查。内部 QA 如果复用生产 UTM，
+GA4 可能在后续直接访问或站内浏览中继续沿用该 Campaign，从而把内部检查误记为社媒会话。
+
+1. **可达性检查优先使用 HTTP 工具。** 用 `Invoke-WebRequest`、`curl` 或等效工具确认 UTM URL
+   返回 HTTP 200、没有异常跳转且参数保留；不要为了检查链接是否可达而在正常浏览器中打开生产 UTM。
+2. **浏览器视觉 QA 不发送统计数据。** 如必须查看页面渲染，应拒绝 Statistics consent、阻止 GA4
+   请求或使用专用测试环境；完成后核对 Network，不能只凭无痕模式判断“不会被统计”。
+3. **归因链路测试使用专用测试标签。** 如确需验证 GA4 收数，使用明确隔离的
+   `utm_medium=internal_qa` 与 `utm_content=<topic>_qa`，不得复用已发布帖子的生产
+   `organic_social` / `utm_content`。
+4. **不盲目启用 IP 排除。** 当前人工检查可能通过 Clash Verge 在中国与美国出口间切换，IP 过滤
+   容易漏掉内部访问并误伤真实美国买家。未来如实施 `debug_mode` / Developer Traffic filter，先在
+   Testing 状态单独验收，再决定是否启用；本 SOP 不授权直接修改 GA4 或网站跟踪代码。
+5. **复盘前先排查污染。** 当 Campaign 只有 1 个用户、设备/浏览器固定、国家随代理切换、
+   Landing Page 与发布目标不符，或会话时间与人工检查一致时，必须核对内部 QA。确认污染后保留
+   原始数字，但标记为 `measurement-contaminated`，并从外部访问、互动和转化判断中剔除。
+
+正确结论格式为：`0 confirmed external UTM sessions; platform reach unavailable; historical campaign data contaminated by internal QA.`
+它不等于“平台没有曝光”，也不能排除拒绝统计同意、浏览器拦截或其他未测访问。
+
+## 7. 审核与发布清单
 
 - [ ] 官网母文章已上线，URL、移动端和 CTA 正常。
 - [ ] 所有工艺和设备陈述都有站内批准内容或所有者确认支持。
 - [ ] 所有者审核 LinkedIn 单图/视频、Instagram 七图顺序、Story 和两版英文文案。
 - [ ] LinkedIn 单图或视频在移动端预览可读，不包含无实际用途的 PDF/PPT。
 - [ ] LinkedIn 与 Instagram 使用各自的 UTM。
+- [ ] 内部未在正常分析环境中打开生产 UTM；如做归因测试，已使用 `internal_qa` 专用标签。
 - [ ] 静态图片没有仿按钮；Instagram 标签容器与字号比例协调，Story 已给原生 Link Sticker 留出安全区。
 - [ ] 图中和正文中的技术术语一致。
 - [ ] 没有未确认的客户、认证、产能、交期或性能结论。
 - [ ] 发布身份、公开范围、图片顺序和链接目标正确。
 - [ ] 发布日期和帖子 URL 写入发布日志。
 
-## 7. 复盘节奏
+## 8. 复盘节奏
 
 起步阶段不做每日分析。每条内容满七个完整自然日后记录一次结果；阶段性汇总时再比较主题和平台。
 
@@ -112,9 +135,13 @@ LinkedIn 至少记录：发布格式（单图/视频）、展示、覆盖（如�
 Instagram Carousel 至少记录：覆盖、展示、点赞、评论、收藏、分享、主页活动和新增关注；
 Story 记录覆盖与 Link Sticker 点击。GA4 按 `technical_guides` Campaign 检查 Sessions 和 Engaged sessions。
 
+GA4 复盘先执行第 6 节的内部 QA 污染检查。平台后台、GA4、GSC 和人工询盘是四类不同证据；
+任何一类缺失都写 `unavailable`，不以另一类指标代替，也不把“0 个已确认外部 UTM 会话”扩写为
+“0 次社交曝光”或“无人浏览”。
+
 不使用两个平台不同口径的数字直接判定哪个平台“更好”。首轮目标是验证内容能否获得专业互动、收藏、关注和可归因的网站访问。
 
-## 8. 首次验证案例
+## 9. 首次验证案例
 
 首轮已发布案例和待补录项见
 [`publishing-log.md`](publishing-log.md)。以后新主题复制本 SOP，
