@@ -111,6 +111,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | [`testing/ai-cited-source-pattern-audit-2026-09-14.md`](testing/ai-cited-source-pattern-audit-2026-09-14.md) | AI 实际引用站点的页面模式、可迁移做法、风险边界和 Athletik 优先改进项 |
 | [`testing/ai-cited-source-monthly-template.md`](testing/ai-cited-source-monthly-template.md) | 每月固定 Baseline 复测后的 Sources URL、模式、迁移判断和改动门槛模板 |
 | [`testing/bing-ai-performance-baseline.md`](testing/bing-ai-performance-baseline.md) | Bing AI Performance 的首份概览与页面级基线；Grounding Queries 已由所有者确认无记录 |
+| [`testing/geo-measurement-snapshot-2026-09-28.md`](testing/geo-measurement-snapshot-2026-09-28.md) | 传统 GSC、GSC Generative AI、Bing AI Performance 与 GA4 AI referral 的首份跨平台月度快照 |
 | [`distribution/social-content-sop.md`](distribution/social-content-sop.md) | 官网指南改编为 LinkedIn / Instagram 内容的执行 SOP |
 | [`distribution/publishing-log.md`](distribution/publishing-log.md) | 每次站外分发的发布时间、链接和七日数据 |
 | [`../seo/authority/offsite-authority-opportunity-pool-v1.md`](../seo/authority/offsite-authority-opportunity-pool-v1.md) | 站外行业引用、目录、认证名录和编辑机会的证据与状态 |
@@ -248,6 +249,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-018 | 建立 AI 实际引用来源模式审计 | 全漏斗决策 | P0 | `operational` | 已按实际 Sources 面板完成首轮审计并建立月度模板；以后随固定 Baseline 每月增量更新，不按单次样本大改网站 |
 | GEO-V2-019 | 主站可引用事实与设备证据补强 | 提取/引用/推荐 | P0 | `deployed / production-verified / measuring` | 2026-09-14 生产验收：首页、About、Merino 均 HTTP 200、单一 H1、自引用 Canonical、`index` 且 JSON-LD 可解析；新增事实完整出现。Page Sitemap 为 18/18 唯一 URL，三页及 Sitemap index 的 `lastmod` 已更新为 `2026-09-14T02:50:00+00:00`；AI 相关爬虫未被 robots.txt 屏蔽 |
 | GEO-V2-020 | 自有 Top 5 供应商指南受控试验 | 宽泛发现/引用/推荐 | P1 | `deployed / production-verified / social-feed-published / indexed-snapshot-confirmed / seven-day-measurement-contaminated / measuring` | `/top-sportswear-manufacturers-china/` 已接入共用 Technical Guides 架构；比较 Athletik、HUCAI、SANSANSUN、INGORSPORTS 与 Bellasports，首屏公开发布者利益关系，并提供筛选方法、MOQ 冲突、来源和事实限制。LinkedIn 单图帖已公开核验，Instagram Feed 已由所有者确认发布。2026-09-16 生产页与社交 UTM 目标均恢复 HTTP 200 并完成一次索引请求；2026-09-22 GSC 只读 URL Inspection 返回 `PASS / Submitted and indexed`，最后抓取为 2026-09-16。9 月 15～21 日原始 GA4 曾记录 LinkedIn 帖子 UTM 7 sessions、5 engagedSessions、1 totalUsers，其中 3 sessions 以该文章为入口；2026-09-28 已确认该唯一用户属于内部 QA，故从外部成效统计中排除。Instagram 无匹配行，平台后台精确指标与人工询盘仍 `unavailable`。详细口径见[发布日志](distribution/publishing-log.md)；不把内部会话、引用或索引状态当作买家推荐，也不因污染样本改页 |
+| GEO-V2-021 | 建立首份 GEO 跨平台月度快照 | 全漏斗测量 | P0 | `snapshot-complete / manual-ai-refresh-pending` | 传统 GSC 与 GA4 已取得 2026-08-27～09-23 完整 28 天窗口及前一等长窗口；GSC Web Search 为 27 clicks / 1,047 impressions。GSC Generative AI 与 Bing AI Performance 沿用最近完整人工导出，不用残缺窗口制造趋势。GA4 原始 ChatGPT referral 为 11 sessions / 1 user / 0 generate_lead，但与内部测试重叠，外部确认值记为 0；详见[跨平台测量快照](testing/geo-measurement-snapshot-2026-09-28.md) |
 
 ## 10. 统一记录与判断口径
 
@@ -292,5 +294,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 截至 2026-09-28，Athletik 已完成规范站、实体基础和六篇已上线指南；主要 Schema、索引基础和首轮社交分发均已建立。第五篇供应商比较指南和第六篇 ACTIVESEAM 技术指南均已部署、分发并取得 GSC `Submitted and indexed` 快照；这只证明对应 URL 已收录，不代表获得 AI 引用或推荐。GSC 首个专用报表确认 29 次 Google 生成式 AI Property impressions，部署前四篇指南均出现页面级链接曝光。Baseline v2 已完成 ChatGPT Search 8/8 与 Google AI Mode 8/8，Perplexity 因权限 unavailable；专业 D03～D05 已出现跨产品推荐，但 C06～C08 对应官网 Guide 在 6 次可用运行中仍为 0 次引用。
 
 Broad Discovery v1 也已完成，Google AI Mode 与 ChatGPT Search 共 6 次均未提 Athletik、未引用规范站。这说明当前不是整体 GEO 失败，而是“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态。七品类 Program Fit 与 About 综合 buyer-fit 已上线并完成生产复核；GEO-V2-020 于 2026-09-22 取得 GSC 已收录快照，首轮七日 GA4 原始数据随后被确认由内部 QA 污染，平台后台与有效询盘仍缺，不能把自有名单型页面当作独立背书。GEO-V2-007 于 2026-09-28 取得 GSC 已收录快照和 18 次 Web Search 展示；原始 LinkedIn UTM 的 6 个会话同样已确认属于内部 QA，Instagram 无匹配行。两次活动目前均为 0 个已确认外部 UTM 会话，但平台曝光/浏览未知，状态改为 `seven-day-measurement-contaminated`，不从污染样本归因。D03～D05 / C06～C08 [`claim-to-source 证据矩阵`](testing/claim-to-source-matrix-2026-09-14.md)、[`UltraMerino 冲突审计`](testing/ultramerino-canonical-conflict-audit-2026-09-14.md)和 [`AI 实际引用来源模式审计`](testing/ai-cited-source-pattern-audit-2026-09-14.md)均已完成。UltraMerino 当前不由本项目负责，因此事实同步降为外部范围；下一步等待完整月度观测窗口，不重复提交、不从污染或低样本强行归因。
+
+2026-09-28 首份[跨平台 GEO 测量快照](testing/geo-measurement-snapshot-2026-09-28.md)已建立：传统 GSC 相邻 28 天由 5 clicks / 230 impressions 增至 27 / 1,047；FLATLOCK、QC、Merino、Top 5 与 ACTIVESEAM 页面均出现实际 Web Search 信号。GSC Generative AI 仍只有截至 09-02 的 29 Property impressions 基线，Bing 仍只有 08-24～09-20 的 5 citations 基线，均没有第二个完整窗口。GA4 当前窗记录 11 次 ChatGPT referral、1 个用户、0 `generate_lead`，但与已知内部测试期重叠，因此只保留原始值，外部确认访问为 0。下一步在 2026-10-03 后补 GSC Generative AI 完整窗口，再运行固定 Baseline v2 / Broad Discovery v1；不从残缺、污染或低样本窗口强行归因。
 
 本对话可以用于规划、分析用户带回的 Temporary Chat 结果、更新证据和制定内容；不得作为中性测试环境。

@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-09-24。
+最后更新：2026-09-28。
 
 ---
 
@@ -20,8 +20,8 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 - 规范站：<https://www.athletikapparel.com/>，运行于 Flywheel。
 - WordPress 重建已上线，使用 GeneratePress 父主题和 `myathletik-child` 子主题。
 - 首页、7 个产品类目页、Services、About、Contact、Sustainability 和 Privacy Policy 已上线。
-- Technical Guides 内容中心及 4 篇指南均已在生产上线，站点导航、首页和页脚有稳定入口。
-- Rank Math Page Sitemap 于 2026-08-20 生产核验包含 19 个 URL，其中包括内容中心与 4 篇指南。
+- Technical Guides 内容中心及 6 篇指南均已在生产上线，站点导航、首页和页脚有稳定入口。
+- Rank Math Page Sitemap 已在六篇指南生产验收中核对，内容中心与六篇指南均唯一出现；具体数量以对应日期的生产验收记录为准。
 - 浏览器、Googlebot、OAI-SearchBot 和 PerplexityBot 访问 QC Guide 均返回 HTTP 200；页面允许索引，Title/Meta/H1/Canonical、Article/FAQPage/BreadcrumbList、图片和视频正常。
 - 先前 Hub 与 3 篇基础指南已在 Google Search Console 逐个申请索引；2026-08-27 URL Inspection 确认 QC Guide 为 `PASS / Submitted and indexed`，Google 最后抓取时间为 `2026-08-26T13:41:31Z`，Canonical 一致且抓取成功；不重复请求或改写页面。
 - `myathletik.com` 已按所有者决定完全下线，已检查入口返回 HTTP 410；不做跨域 301，也不再优化旧站。
@@ -34,6 +34,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 - GEO-06 LinkedIn 单图帖和 Instagram Carousel 已于 2026-08-13 发布；公开帖子 URL 与 Story 状态待补录。Google AI Mode 已在 V2-C08 Sources 面板发现日期为 2026-08-14 的 Athletik LinkedIn OEM 尽调帖；实际 LinkedIn URL、Instagram/Story 状态和七日数据仍待补录。
 - 2026-09-11 首批测试后诊断已完成：当前主瓶颈是规范来源归属、目标 Guide 的 source selection 和独立佐证，不是技术访问或索引阻断；完整 finding 见 [`geo/testing/baseline-v2-post-batch-diagnosis-2026-09-11.md`](geo/testing/baseline-v2-post-batch-diagnosis-2026-09-11.md)。
 - 当前长期 GEO 对话只用于规划和证据分析，不能作为中性测试环境。
+- 2026-09-28 已建立首份[`GEO 跨平台测量快照`](geo/testing/geo-measurement-snapshot-2026-09-28.md)：传统 GSC 与 GA4 使用相邻完整 28 天窗口；GSC Generative AI 与 Bing AI Performance 保留最近完整人工导出，不把残缺窗口当趋势。
 
 ### 1.3 营销与广告
 
@@ -744,16 +745,17 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-28 | GEO-V2-007 ACTIVESEAM 首次七日复盘完成：固定窗口为 2026-09-19～09-25（GA4 属性时区 `Asia/Shanghai`）。规范页、LinkedIn / Instagram UTM、Technical Guides Hub、Page Sitemap 及两个公开帖子 URL 均为 HTTP 200；规范页保持 `index, follow`、无 `X-Robots-Tag`、单一自引用 Canonical、单一 H1，Article / FAQPage / BreadcrumbList Schema 可解析。GSC URL Inspection 返回 `PASS / Submitted and indexed`，最后抓取为 `2026-09-18T01:43:06Z`；Search Analytics 为 18 impressions、0 clicks、平均排名约 10.67。原始 LinkedIn 专属 UTM 为 `sessions = 6`、`engagedSessions = 4`、`totalUsers = 1`，Landing Page 为首页 4、`(not set)` 1、Sportswear 1；Instagram 无匹配行。后续归因诊断确认该唯一用户属于内部 QA，因此处置已更正为 `no-change / seven-day-measurement-contaminated / measuring`。平台后台与人工合格询盘仍 `unavailable`，不重复申请索引。 |
 | 2026-09-28 | `seo` CLI 的 `fetch failed` 已定位为 Clash Verge 系统代理未被 CLI 自带 Undici 自动采用，而非 GSC/GA4 授权失效。新增本机 `seo-clash` 入口：只为当前 CLI 子进程读取并注入 Windows HTTP/HTTPS 代理及 Undici `EnvHttpProxyAgent`，不改 Windows、VS Code、原始 `seo` 命令、OAuth 文件或持久环境变量。`seo-clash --version`、站点权限、GSC URL Inspection、Search Analytics 与 GA4 Reporting 均已验证；使用与停止条件见 [`SEO CLI 与 Clash Verge 代理适配`](operations/seo-cli-clash-proxy.md)。 |
 | 2026-09-28 | 社交 UTM 内部流量修正：Top 5 与 ACTIVESEAM 两个 Campaign 在合并窗口中使用同一 returning GA4 用户，设备固定为 Windows / Edge，国家随 Clash Verge 在中国与美国间切换；所有者确认曾在该环境打开生产 UTM。由此确认 Top 5 固定窗口的 7 sessions 与 ACTIVESEAM 固定窗口的 6 sessions 均为内部 QA 污染，保留原始数字但从外部成效中剔除。两次活动当前均为 `0 confirmed external UTM sessions`；平台展示、覆盖、点击仍 `unavailable`，不能写成 0，也不能排除拒绝统计同意或拦截器造成的未测访问。分发 SOP 已增加 HTTP 可达性检查、无统计浏览器 QA、`internal_qa` 专用标签及污染判定规则；不盲目使用会被 Clash 出口变化绕过且可能误伤美国买家的 IP 过滤。 |
+| 2026-09-28 | 首份 GEO 跨平台月度快照完成：传统 GSC 当前完整 28 天为 27 clicks / 1,047 impressions，对比前窗 5 / 230；FLATLOCK、QC、Merino、Top 5 与 ACTIVESEAM 均有页面级 Web Search 信号。GSC Generative AI 沿用截至 09-02 的 29 Property impressions 基线，Bing 沿用 08-24～09-20 的 5 citations 基线，均不以残缺窗口制造趋势。GA4 原始 ChatGPT referral 为 11 sessions / 1 user / 0 generate_lead，但唯一用户与内部 GEO 测试重叠，故外部确认访问记为 0、真实外部访问保持 unverified。处置 `no-change / measuring`；2026-10-03 后补 GSC 生成式完整窗口。 |
 
 ---
 
 ## 13. 下一步优先级
 
-1. `/top-sportswear-manufacturers-china/` 的 GSC 实时测试与一次索引请求已经完成；2026-09-22 又取得 `Submitted and indexed` 快照及最后抓取时间，不再重复提交。首页、About 与 Merino 沿用原定复查窗口。
-2. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
-3. GEO-V2-007 已完成生产部署、技术验收、LinkedIn / Instagram 公开 URL 补录、一次 GSC 索引申请及 2026-09-28 首次七日复核。GSC 已确认规范 URL 收录；固定窗口为 18 次 Web Search 展示、0 点击。原始 LinkedIn UTM 6 sessions 已确认属于内部 QA，Instagram 无匹配行，状态改为 `seven-day-measurement-contaminated / measuring`。平台后台与人工询盘不可得，当前为 0 个已确认外部 UTM 会话且没有 AI 引用或推荐证据；等待月度窗口，不立即重写页面或重复提交。没有拉伸状态素材，因此继续不写 Athletik 实测延伸、强度或耐久声明，HSAT-K5 和国产海淮扒密缝机保持独立证据线。
-4. 七个品类页 Program Fit、About 综合段落、GEO-V2-019 与 GEO-V2-020 已上线并通过生产复核，不再立即重复修改。GEO-V2-020 已取得 GSC 已收录快照；首轮七日 GA4/UTM 原始会话已确认属于内部 QA，状态改为 `seven-day-measurement-contaminated / measuring`。LinkedIn/Instagram 精确后台数据和有效询盘仍待取得，不把缺口写成零。按下一个完整月度窗口复测 Baseline v2 与 Broad Discovery v1，并分别记录整体、页面和固定提示词结果，不把污染或低样本波动归因到单一页面。
-5. 下一个月使用完全相同的 Baseline v2 与 Broad Discovery v1 提示词及 [`AI 引用来源月度审计模板`](geo/testing/ai-cited-source-monthly-template.md)复测，不在同一会话连续运行多题。
+1. 2026-10-03 后导出 GSC Generative AI 的 2026-09-03～09-30 完整窗口，再运行固定 Baseline v2 / Broad Discovery v1；2026-10-20 后导出 Bing AI Performance 的 2026-09-21～10-18 完整窗口。各系统单独报告，不把 citation、impression、session 和 recommendation 相加。
+2. `/top-sportswear-manufacturers-china/` 的 GSC 实时测试与一次索引请求已经完成；2026-09-22 又取得 `Submitted and indexed` 快照及最后抓取时间，不再重复提交。首页、About 与 Merino 沿用原定复查窗口。
+3. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
+4. GEO-V2-007 已完成生产部署、技术验收、LinkedIn / Instagram 公开 URL 补录、一次 GSC 索引申请及 2026-09-28 首次七日复核。GSC 已确认规范 URL 收录；固定窗口为 18 次 Web Search 展示、0 点击。原始 LinkedIn UTM 6 sessions 已确认属于内部 QA，Instagram 无匹配行，状态改为 `seven-day-measurement-contaminated / measuring`。平台后台与人工询盘不可得，当前为 0 个已确认外部 UTM 会话且没有 AI 引用或推荐证据；等待月度窗口，不立即重写页面或重复提交。没有拉伸状态素材，因此继续不写 Athletik 实测延伸、强度或耐久声明，HSAT-K5 和国产海淮扒密缝机保持独立证据线。
+5. 七个品类页 Program Fit、About 综合段落、GEO-V2-019 与 GEO-V2-020 已上线并通过生产复核，不再立即重复修改。GEO-V2-020 已取得 GSC 已收录快照；首轮七日 GA4/UTM 原始会话已确认属于内部 QA，状态改为 `seven-day-measurement-contaminated / measuring`。LinkedIn/Instagram 精确后台数据和有效询盘仍待取得，不把缺口写成零。按下一个完整月度窗口复测 Baseline v2 与 Broad Discovery v1，并分别记录整体、页面和固定提示词结果，不把污染或低样本波动归因到单一页面。
 6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-018 的 Sportswear 合作模式与 14 图 lookbook 均已在本地实施；前者待生产部署验收，后者本地交互已通过、待同步 42 个 uploads 图片并进行生产验收；DataForSEO 额度恢复后再补 US / GB / CA 同配置快照。保持 URL、Title、Meta、H1，不新建近义页；SEO-V2-015 等既有改动继续按原 Day 28 / 90 窗口观察。
 7. SEO-V2-004 转为性能监控项，不再主动投入增量优化；持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据，只有达到重新触发条件才启动页面或性能改动。
 8. Promotion P0 已完成；2026-09-28 起进入 P1，使用本机私有台账持续补齐新询盘负责人、MOQ、

@@ -15,6 +15,16 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-09-28：GEO 月度快照中的传统 GSC / GA4 AI referral
+
+完整跨平台口径见 [`GEO 跨平台测量快照`](../geo/testing/geo-measurement-snapshot-2026-09-28.md)。本条只保留传统 GSC 与 GA4 的可复核摘要。
+
+- GSC Web Search 当前完整 28 天窗口为 2026-08-27～09-23：27 clicks / 1,047 impressions / 2.58% CTR / average position 13.13；前一等长窗口 2026-07-30～08-26 为 5 / 230 / 2.17% / 23.90。
+- 当前窗口页面信号：FLATLOCK vs OVERLOCK 4 clicks / 268 impressions，QC Guide 5 / 148，Merino 4 / 143，Top 5 Guide 1 / 70，ACTIVESEAM Guide 0 / 11。后两页在前窗尚未发布或没有匹配行，不按“从零增长”计算。
+- 美国为 6 clicks / 388 impressions，英国 3 / 46，加拿大 1 / 30；设备为 Desktop 15 / 812、Mobile 11 / 224、Tablet 1 / 11。
+- GA4 AI referral 当前窗口原始值为 11 sessions / 1 total user，全部由 `sessionSource = chatgpt.com` 识别；`generate_lead` 精确过滤返回 0 行。当前唯一用户与已知 GEO/来源面板内部测试期重叠，因此保留原始数，但对外部成效记录为 `0 confirmed external AI-referral sessions`，不写成绝对无外部访问。
+- 处置为 `no-change / measuring`：传统 Search 增长不等于 AI 引用增长，且没有足够证据归因到单一页面或算法更新。
+
 ## 2026-09-18：周度 SEO 监测、Merino 增长复核与首页视频 Hero Lab
 
 ### 来源与覆盖
