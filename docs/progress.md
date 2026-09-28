@@ -44,7 +44,11 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
   [`marketing/ads/meta-ads-baseline-2026-08-07.md`](marketing/ads/meta-ads-baseline-2026-08-07.md)。
 - Google Ads 是独立的询盘获客路径。2026-09-24 已完成 API 当前快照与同期邮件询盘初步核对；
   外部平台状态仍会变化，后续报告当前状态前必须重新核验。
-- Outbound 已有流程和空白台账模板，但真实联系人数据不得进入 Git；在工作存储、留存规则和发送邮箱确认前不启动。
+- Outbound 已进入发送前准备：`info@athletikapparel.com` 的单次 Gmail 原始邮件验证显示
+  SPF、DKIM、DMARC 均 PASS；私有工作目录、空白线索台账、抑制名单和美国 Sportswear
+  首封邮件草案已建立，首批 10 家美国公司级候选已写入私有台账且联系人字段保持空白。
+  真实联系人数据不得进入 Git；Brevo 冷联系场景仍需平台书面确认，
+  tracking pixel 必须关闭并复测，未回复潜客保留规则和首封正文仍待所有者批准，因此尚未发送。
 
 ### 1.4 隐私、归因与询盘
 
@@ -746,6 +750,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-28 | `seo` CLI 的 `fetch failed` 已定位为 Clash Verge 系统代理未被 CLI 自带 Undici 自动采用，而非 GSC/GA4 授权失效。新增本机 `seo-clash` 入口：只为当前 CLI 子进程读取并注入 Windows HTTP/HTTPS 代理及 Undici `EnvHttpProxyAgent`，不改 Windows、VS Code、原始 `seo` 命令、OAuth 文件或持久环境变量。`seo-clash --version`、站点权限、GSC URL Inspection、Search Analytics 与 GA4 Reporting 均已验证；使用与停止条件见 [`SEO CLI 与 Clash Verge 代理适配`](operations/seo-cli-clash-proxy.md)。 |
 | 2026-09-28 | 社交 UTM 内部流量修正：Top 5 与 ACTIVESEAM 两个 Campaign 在合并窗口中使用同一 returning GA4 用户，设备固定为 Windows / Edge，国家随 Clash Verge 在中国与美国间切换；所有者确认曾在该环境打开生产 UTM。由此确认 Top 5 固定窗口的 7 sessions 与 ACTIVESEAM 固定窗口的 6 sessions 均为内部 QA 污染，保留原始数字但从外部成效中剔除。两次活动当前均为 `0 confirmed external UTM sessions`；平台展示、覆盖、点击仍 `unavailable`，不能写成 0，也不能排除拒绝统计同意或拦截器造成的未测访问。分发 SOP 已增加 HTTP 可达性检查、无统计浏览器 QA、`internal_qa` 专用标签及污染判定规则；不盲目使用会被 Clash 出口变化绕过且可能误伤美国买家的 IP 过滤。 |
 | 2026-09-28 | 首份 GEO 跨平台月度快照完成：传统 GSC 当前完整 28 天为 27 clicks / 1,047 impressions，对比前窗 5 / 230；FLATLOCK、QC、Merino、Top 5 与 ACTIVESEAM 均有页面级 Web Search 信号。GSC Generative AI 沿用截至 09-02 的 29 Property impressions 基线，Bing 沿用 08-24～09-20 的 5 citations 基线，均不以残缺窗口制造趋势。GA4 原始 ChatGPT referral 为 11 sessions / 1 user / 0 generate_lead，但唯一用户与内部 GEO 测试重叠，故外部确认访问记为 0、真实外部访问保持 unverified。处置 `no-change / measuring`；2026-10-03 后补 GSC 生成式完整窗口。 |
+| 2026-09-28 | Outbound 发送前准备推进：将流程更新为中文当前状态，固定 `%LOCALAPPDATA%\Athletik\outbound\` 私有工作目录，新增抑制名单模板、美国 Sportswear 三触点邮件草案和 Brevo Support 英文确认请求；首批 10 家美国公司级候选已按第一方官网信号写入私有台账，未收集姓名、邮箱或 LinkedIn。单次 Gmail 原始邮件显示 `info@athletikapparel.com` 的 SPF、DKIM、DMARC 和 TLS 通过，但邮件仍含 Brevo tracking pixel；Brevo 对 B2B non-personal 与 role-based 地址的官方说明存在表面冲突，因此在平台书面确认、追踪关闭复测、6 个月未回复记录保留提案和首封正文获得所有者批准前，状态保持 `preparation-in-progress / no-live-send`。 |
 
 ---
 
@@ -760,4 +765,6 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 7. SEO-V2-004 转为性能监控项，不再主动投入增量优化；持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据，只有达到重新触发条件才启动页面或性能改动。
 8. Promotion P0 已完成；2026-09-28 起进入 P1，使用本机私有台账持续补齐新询盘负责人、MOQ、
    自述来源和销售阶段，并继续把平台 conversion 与人工确认询盘分开记录。
-9. Outbound 继续暂缓，直到真实数据存储、留存规则和发送邮箱确认。
+9. Outbound 已完成私有工作区、空白线索/抑制模板和首封草案；下一步先取得 Brevo 对当前
+   一对一美国 B2B prospecting 场景的书面确认，关闭并复测 tracking pixel，再由所有者批准
+   “未回复记录最后触达后 6 个月删除或匿名化”的提案及首封正文。四项未完成前不发送。

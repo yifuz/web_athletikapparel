@@ -33,7 +33,14 @@
 - [`marketing/ads/163-mail-inquiry-analysis-runbook.md`](marketing/ads/163-mail-inquiry-analysis-runbook.md)：普通 163 邮箱只读询盘采集、Agent 接手命令、隐私边界与本机运行手册。
 - [`marketing/ads/163-mail-inquiry-snapshot-2026-09-24.md`](marketing/ads/163-mail-inquiry-snapshot-2026-09-24.md)：与 Google Ads 同窗口的邮件聚合、内容级确认结果和证据边界。
 - `marketing/ads/`：Google Ads 与 Meta Ads 的日期化上线/基线记录。
-- `marketing/outbound/`：Outbound 操作流程和空白线索台账模板；真实联系人数据不得进入 Git。
+- [`marketing/outbound/workflow.md`](marketing/outbound/workflow.md)：Outbound 发送闸门、私有数据边界、
+  美国首轮研究与退订/抑制流程。
+- [`marketing/outbound/us-sportswear-pilot-email.md`](marketing/outbound/us-sportswear-pilot-email.md)：
+  美国 Sportswear 首轮三触点邮件草案；须经所有者审核，不能据此自动发送。
+- [`marketing/outbound/brevo-readiness-request.md`](marketing/outbound/brevo-readiness-request.md)：
+  Brevo 冷联系场景书面确认请求与 tracking pixel 关闭复测清单。
+- `marketing/outbound/lead-ledger-template.csv` 与
+  `marketing/outbound/suppression-list-template.csv`：只允许保存空白模板；真实联系人数据不得进入 Git。
 
 ## `privacy/`：隐私、同意与部署
 

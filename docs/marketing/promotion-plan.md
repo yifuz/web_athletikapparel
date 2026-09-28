@@ -357,10 +357,15 @@ Google 搜索广告用于捕获已经主动寻找制造商的买家。每个广�
 
 ### 6.2 目标客户开发（单人保守基线）
 
-- 操作流程与空白字段模板见 [`outbound/workflow.md`](outbound/workflow.md) 和
-  [`outbound/lead-ledger-template.csv`](outbound/lead-ledger-template.csv)。真实联系人数据
+- 操作流程与空白字段模板见 [`outbound/workflow.md`](outbound/workflow.md)、
+  [`outbound/lead-ledger-template.csv`](outbound/lead-ledger-template.csv) 和
+  [`outbound/suppression-list-template.csv`](outbound/suppression-list-template.csv)。真实联系人数据
   必须保存在 Git 之外的受限工作副本中。
-- [ ] 启动前确定线索台账、访问权限、保存期限和退订/禁止联系流程，并同步隐私与数据流文档。
+- [x] 私有工作目录固定为 `%LOCALAPPDATA%\Athletik\outbound\`；发件身份固定为
+      `Athletik Clothing <info@athletikapparel.com>`，2026-09-28 的单次 Gmail 原始邮件显示
+      SPF、DKIM、DMARC 均 PASS。
+- [ ] 启动前批准未回复潜客保存期限，取得 Brevo 对当前冷联系场景的书面确认，关闭并复测
+      个体 open/click tracking，并审核首封邮件。
 - [ ] 首轮以美国为主；加拿大主动外联在适用范围和营销合规完成复核后启动。
 - [ ] 每周建立约 10–15 家匹配企业的目标名单。
 - [ ] 每家企业优先选择 1–2 位相关联系人。
@@ -581,7 +586,7 @@ Google 与 Instagram 使用独立目标和扩量门槛。Meta 首次扩量只依
 ### 周二至周三
 
 - 集中拍摄或整理当周素材，准备第一条 Reel/Short。
-- 建立 10–15 家目标企业名单并开始触达；未完成前一周跟进时不新增名单。
+- 建立 10–15 家目标企业研究名单；仅在 Outbound 发送闸门全部通过后开始触达，未完成前一周跟进时不新增名单。
 
 ### 周四
 
@@ -624,8 +629,9 @@ Google 与 Instagram 使用独立目标和扩量门槛。Meta 首次扩量只依
 - `【需要确认：最终 Privacy Policy 和同意管理负责人】`
 - `用户说明（2026-08-07）：大部分客户可接受公开展示；这不构成批量授权。单个客户名称、案例和素材仍须写入授权台账，没有书面记录即不发布。认证与业务事实沿用原有逐项核实规则。`
 - `已确认（2026-08-07）：推广由用户本人单人全职负责；内容量采用保守基线，有余力时可额外更新，但额外产出不自动提高后续基线。`
-- `已建立 Outbound 空白台账模板和美国首轮操作流程；真实台账保存位置、未回复潜客保留期限、
-  发送邮箱与加拿大适用范围仍待确认。`
+- `已建立 Outbound 私有工作目录、空白线索/抑制模板和美国首轮邮件草案；发送邮箱及域名验证
+  已确认。未回复潜客保留期限、Brevo 场景资格、tracking pixel 关闭复测、首封审核与加拿大
+  适用范围仍待完成。`
 - `【待建立：客户案例授权台账；没有书面记录的客户名称和素材不得发布】`
 
 ---
@@ -644,7 +650,8 @@ Google 与 Instagram 使用独立目标和扩量门槛。Meta 首次扩量只依
 - [x] 部署后通过带 UTM/GCLID 的 URL 提交测试询盘，验证完整数据链路。
 - [ ] 对批准的市场和品类运行 Keyword Planner。
 - [ ] 建立并持续维护否定关键词列表；首轮精准/词组关键词已经上线。
-- [ ] 确认 Outbound 真实台账保存位置、未回复潜客保留期限和发送邮箱后，再开始美国首轮触达。
+- [ ] Outbound 私有台账位置和发送身份已经确认；完成未回复潜客保留期限批准、Brevo 场景
+      书面确认、tracking pixel 关闭复测及首封邮件审核后，再开始美国首轮触达。
 - [x] 首轮广告已映射到 Sportswear Manufacturer 落地页。
 - [x] 首轮广告素材已经上线；完整标题、描述和站内链接仍应从 Google Ads 补录归档。
 - [x] 已于 2026-08-05 启动可控的 Google 搜索广告测试。
