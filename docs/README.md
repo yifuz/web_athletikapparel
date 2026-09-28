@@ -57,6 +57,7 @@
 ## `operations/`：环境与维护
 
 - [`operations/flywheel-cleanup-guide.md`](operations/flywheel-cleanup-guide.md)：已完成的 Flywheel 清理操作记录。
+- [`operations/seo-cli-clash-proxy.md`](operations/seo-cli-clash-proxy.md)：Clash Verge 开启时 `seo` CLI 的本机代理适配、验证与故障边界。
 
 ## `source-content/`：历史来源材料
 

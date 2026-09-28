@@ -154,7 +154,7 @@ LinkedIn 公开页面可读取已批准正文、五家公司名单、发布者�
 | 内部 Campaign | `2026-09-flatlock-vs-activeseam` |
 | 官网母文章 | <https://www.athletikapparel.com/flatlock-vs-activeseam-technical-knitwear/> |
 | 主题 | Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear |
-| 当前状态 | `feed-published / public-urls-confirmed / seven-day-partial / measuring`；2026-09-28 已完成生产与公开 URL 复核，但 GSC / GA4 读取失败，不能把缺失数据写成 0；精确时分与平台后台数据仍待补录 |
+| 当前状态 | `feed-published / public-urls-confirmed / indexed-snapshot-confirmed / seven-day-partial / measuring`；2026-09-28 已完成生产、公开 URL、GSC 与 GA4 固定窗口复核；精确时分、平台后台和人工询盘数据仍待补录 |
 | LinkedIn 发布格式 | 22.57 秒、720 × 1280、H.264 的真实 Merrow ACTIVESEAM 生产视频 + 技术教育型正文；视频无音轨 |
 | LinkedIn UTM content | `flatlock_activeseam_video` |
 | LinkedIn 公开帖子 URL | <https://www.linkedin.com/posts/athletik-apparel_technicalknitwear-flatlock-activeseam-activity-7506545366570512384-FnoT>；公开页已核验为 Athletik Clothing 帖子，正文、主题与指南短链接一致 |
@@ -175,8 +175,8 @@ LinkedIn 公开页面可读取已批准正文、五家公司名单、发布者�
 ### 待补录与后续动作
 
 - LinkedIn 公开页已核验账号、正文主题与指南短链接；Instagram 正文与 Carousel 内容受匿名抓取限制，保留所有者确认边界。两端精确发布时间和可得后台指标待补录；不可取得字段写 `unavailable`。
-- 母文章已在 GSC 完成一次索引申请；不重复提交，也不把“已请求”写成“已收录”。
-- 2026-09-28 的首次七日复盘因 Google API 读取失败保持 partial；连接恢复后只补取同一固定窗口，不改变窗口或用其他来源估算。
+- 母文章已在 GSC 完成一次索引申请；2026-09-28 URL Inspection 已取得 `Submitted and indexed` 快照，因此不再重复提交。
+- 2026-09-28 首次读取失败后，确认是 Clash Verge 系统代理未被 CLI 自带 Undici 自动采用；通过仅作用于 CLI 子进程的 `seo-clash` 入口恢复读取，并只回填原定 2026-09-19～09-25 固定窗口。
 
 ### 2026-09-28 七日复盘（2026-09-19～09-25）
 
@@ -186,10 +186,11 @@ LinkedIn 公开页面可读取已批准正文、五家公司名单、发布者�
 | Indexability 与页面结构 | `complete`：生产抓取为 HTTP 200、Meta robots `index, follow`、无 `X-Robots-Tag`、单一自引用 Canonical、单一 H1；Article、FAQPage、BreadcrumbList 等 JSON-LD 可解析。 |
 | Sitemap 与站内发现 | `complete`：Page Sitemap 中规范 URL 仅出现 1 次，`lastmod` 为 `2026-09-18T01:16:20+00:00`；Technical Guides Hub 为 HTTP 200 并链接到该页。 |
 | LinkedIn / Instagram 公开 URL | `complete`（仅可达性）：两个公开 URL 均返回 HTTP 200；这不提供帖子后台展示、覆盖、互动或点击数据。 |
-| GSC URL Inspection | `unavailable`：2026-09-28 两次只读请求均返回 `INTERNAL_ERROR / fetch failed`。此前状态仍只能写 `indexing-requested`，不能据此升级为已收录，也不重复申请索引。 |
-| GA4 七日 UTM | `unavailable`：按属性 `547377703`、时区 `Asia/Shanghai`、固定窗口 2026-09-19～09-25 查询；两次只读请求均返回 `INTERNAL_ERROR / fetch failed`，因此 sessions、engagedSessions、totalUsers、Landing Page 与 `generate_lead` 均未取得，不记为 0。 |
+| GSC URL Inspection | `complete`：2026-09-28 只读 API 返回 `PASS / Submitted and indexed`；robots 与 indexing allowed，`pageFetchState = SUCCESSFUL`，Google 与用户 Canonical 均为规范 URL，抓取方式为 Mobile。最后抓取为 `2026-09-18T01:43:06Z`。该快照证明 URL 已收录，不证明后续每次改动都已重新抓取。 |
+| GSC 七日 Search Analytics | `complete`：固定窗口内该规范页为 0 clicks、18 impressions、CTR 0%、平均排名约 10.67。带 Query 维度的可见行只有品牌/域名查询 `www.athletikapparel.com`，为 3 impressions、平均排名 37；Query 维度不能覆盖匿名查询，因此页面总量优先。 |
+| GA4 七日 UTM | `complete`：属性 `547377703`、时区 `Asia/Shanghai`。LinkedIn `flatlock_activeseam_video` 为 `sessions = 6`、`engagedSessions = 4`、`totalUsers = 1`；Instagram `flatlock_activeseam_carousel` 无匹配行。LinkedIn UTM 的 Landing Page 为首页 4 sessions、`(not set)` 1、Sportswear 1，母文章不是这些 UTM 会话的 Landing Page；事件明细无匹配的 `generate_lead`。这些记录不能当作母文章访问、合格买家或询盘。 |
 | LinkedIn / Instagram 后台数据 | `unavailable`：未取得本帖精确展示、覆盖、互动、收藏、分享、链接点击、主页活动或新增关注。 |
 | 人工合格询盘 | `unavailable`：本轮没有能与这两个帖子 UTM 或母文章建立证据链的询盘复核数据。 |
 | 页面审计 Finding | 只有低严重度 `title_too_wide` 估算提示；生产 Title 与 `seo-tags.md` 批准值一致，且没有 CTR 样本支持改写，处置 `not-needed / no-change`。 |
 
-结论：`no-change / seven-day-partial / measuring`。生产可达性、可索引信号、Sitemap、站内入口、Schema 和公开社交 URL 均通过；但本轮没有取得 GSC 实际 indexed snapshot、GA4 UTM 结果、平台后台数据或人工询盘证据，因此不能评价分发流量、Google 收录、AI 引用或推荐效果。连接恢复后补取同一历史窗口；在此之前不重写页面、不重复提交索引，也不把缺口写成零。
+结论：`no-change / seven-day-partial / measuring`。生产链路与 GSC 已收录快照通过，规范页在固定窗口获得 18 次传统 Web Search 展示但无点击；LinkedIn UTM 有 6 个会话，却没有以母文章为 Landing Page，Instagram 无匹配行。平台后台与人工询盘仍 `unavailable`，而本轮也没有 AI 引用或推荐证据，因此不把少量归因活动写成内容或分发成功。保留现页，等待月度窗口，不重写页面、不重复提交索引。
