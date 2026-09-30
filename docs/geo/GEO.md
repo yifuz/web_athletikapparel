@@ -215,7 +215,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | V2-C08 | 引用 | OEM Evaluation + QC Guide | Google Sources 面板已把 Athletik LinkedIn 尽调帖列为首张卡片，证明站外分发可被找到；但正文未提品牌、两篇官网 Guide 未被引用，并回漂到 9GG–16GG/Stoll/Shima fully fashioned 语境。批后优先区分站外发现、规范引用和技术准确性，再决定是否强化 cut-and-sew 定义块、一手证据和外部引用入口 |
 | BD-01 | 宽泛推荐 | 首页、Sportswear、站外实体信号 | 无国家、无技术和无 MOQ 限定；用于观察全球 sportswear OEM/ODM 候选池，不用未出现否定专业匹配 |
 | BD-02 | 宽泛推荐 | 首页、Sportswear、About、站外实体信号 | 只限定中国与 mid-sized brand；观察 Athletik 是否进入通用中国 sportswear OEM/ODM 短名单及主要竞争者 |
-| BD-03 | 商业匹配推荐 | About、七个品类页、Services、Contact、当前 MOQ 500 口径 | 两个产品均未出现 Athletik；七品类 Program Fit 已上线并集中表达目标买家、项目范围和商业起点，About 综合段落仍为本地待审核；不推断每色 MOQ 或价格，待 About 部署和页面重新抓取后按月复测 |
+| BD-03 | 商业匹配推荐 | About、七个品类页、Services、Contact、当前 MOQ 500 口径 | 两个产品均未出现 Athletik；七品类 Program Fit 与 About 综合 buyer-fit 段落均已于 2026-09-14 完成生产部署和复核，集中表达目标买家、项目范围和商业起点；不推断每色 MOQ 或价格，按完整月度窗口复测 |
 
 ## 8. 单人执行计划
 
@@ -240,7 +240,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 1. 建立 D03～D05 推荐证据矩阵：买家问题、Athletik 匹配事实、站内原始证据、可信第三方佐证、缺失输入、可公开边界。
 2. `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 已完成证据 intake、英文正文、所有者 copy/视觉审核、生产部署、技术验收、社交公开 URL 核验、一次 GSC 索引申请与首轮七日复盘，现为 `deployed / production-verified / social-feed-published / public-urls-confirmed / indexed-snapshot-confirmed / seven-day-measurement-contaminated / measuring`。2026-09-28 URL Inspection 已确认 `Submitted and indexed`；固定窗口取得 18 次 Web Search 展示、0 点击。原记录中的 LinkedIn UTM 活动已确认来自所有者使用 Windows / Edge 与 Clash Verge 切换中国、美国出口进行的内部 QA，因此外部成效统计为 0 个已确认外部 UTM 会话；平台后台和人工询盘仍缺，不能据此推断社交曝光为 0。正文继续使用原创生产证据，不把自然状态展示写成拉伸测试，也不列未确认的 Slim / Comfort / Infused 版本；下一步等待月度窗口。
 3. D04 不再优先增加另一篇泛化供应商清单。更有价值的是经授权的项目案例，或不披露客户名称的可核验开发/QC 流程证据；没有授权和真实结果时不建案例。
-4. D05 先审计 Merino Wool 规范页与历史矩阵站的重复、冲突、索引和引用，再决定是增强现页、建立技术指南还是保持不变。
+4. D05 的 Merino Wool 规范页与 UltraMerino 重复、冲突、索引和引用审计已完成；UltraMerino 当前不由本项目负责，因此本项目保留冲突记录但不安排跨站修改。若未来职责改变，再依据届时证据决定同步、增强或保持不变。
 5. 站外每月只推进一项：优先真实设备方/认证方/行业编辑来源，其次是可维护的高质量制造商资料页；不以目录数量为 KPI。当前被外部输入阻塞的项目保持 deferred，不使用错误地址或不完整证书提交。
 
 ### P2 — 90 天验证与扩量条件
@@ -261,7 +261,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-005 | 启用 Bing Webmaster Tools AI 引用观测 | 引用 | P1 | `baseline-established` | 2026-09-22 只读 API 已确认站点验证；[首份 Bing 基线](testing/bing-ai-performance-baseline.md)在 2026-08-24～09-20 的完整 28 天 CSV 中汇总 5 次引用、4 个 cited-page-days。Pages 截图列出 FLATLOCK vs OVERLOCK Guide 2 次、About Us 2 次、首页 1 次；所有者已在后台确认 Grounding Queries 当前无记录。页面截图未显示日期范围，不作日期级页面归因；引用不等于推荐 |
 | GEO-V2-006 | 建立 D03～D05 / C06～C08 claim-to-source 证据矩阵 | 引用/推荐 | P1 | `complete` | 已记录六题的匹配事实、规范第一方 URL、AI 实际来源、第三方候选、缺失证据与公开边界；见日期化矩阵 |
 | GEO-V2-007 | ACTIVESEAM 原创技术内容与分发 | 提取/引用/推荐 | P1 | `deployed / production-verified / social-feed-published / public-urls-confirmed / indexed-snapshot-confirmed / seven-day-measurement-contaminated / measuring` | 两支 Merrow ACTIVESEAM 实际操作视频、一支自然状态成衣接缝展示和一支 Yamato FLATLOCK 对照视频均已核验；Merrow 型号为 `MB-4DFO 2.0`，2 线与 3 线按项目要求使用。页面、Technical Guides Hub、Article / FAQPage / BreadcrumbList Schema、Sitemap 和真实生产媒体已部署；2026-09-18 完成生产复核和一次 GSC 索引申请，同日补录 LinkedIn 视频帖与 Instagram 6 页 Carousel 的公开 URL。2026-09-28 固定窗口复核确认 URL Inspection 为 `PASS / Submitted and indexed`，页面 Search Analytics 为 18 impressions、0 clicks。原始 LinkedIn UTM 为 `sessions = 6`、`engagedSessions = 4`、`totalUsers = 1`，但唯一用户已由设备、地区切换和所有者操作确认属于内部 QA；Instagram 无匹配行，所以本轮为 0 个已确认外部 UTM 会话。平台后台与人工询盘仍 `unavailable`，不能扩写为 0 次曝光。未写入 Slim / Comfort / Infused 版本、Athletik 自测性能百分比或把自然状态画面写成测试；详见[分发日志](distribution/publishing-log.md) |
-| GEO-V2-008 | Merino 专业站与规范页冲突审计 | 提取/推荐 | P0 | `complete / remediation-required` | 已确认 UltraMerino 为同方控制、双站同时运营；完成 HTTP、robots、41 URL Sitemap、自引用 Canonical、页面结构、AI 引用和冲突声明审计；未取得该域名 GSC/Bing、反链和当前设备/许可专项证据 |
+| GEO-V2-008 | Merino 专业站与规范页冲突审计 | 提取/推荐 | P0 | `complete / conflicts-recorded / remediation-outside-project-control` | 已确认 UltraMerino 为同方控制、双站同时运营；完成 HTTP、robots、41 URL Sitemap、自引用 Canonical、页面结构、AI 引用和冲突声明审计。该站当前不由本项目负责，因此不在本项目执行整改；未取得的该域名 GSC/Bing、反链和当前设备/许可专项证据只在未来职责改变时补查 |
 | GEO-V2-009 | 每月一个可信站外佐证动作 | 推荐 | P1 | `suspended / awaiting-dedicated-media` | 2026-09-18 所有者决定先暂停第三方佐证包与外联，待补拍机器铭牌、接缝细节、同面料 sew-off 等专项素材后恢复；暂停期间不建立半成品资料包、不联系设备商或媒体。恢复后以获得可公开、可索引、信息准确的真实条目或编辑内容为完成标准 |
 | GEO-V2-010 | 建立 GSC Generative AI 月度观测 | 找到/引用入口 | P0 | `baseline-established` | 首个三个月导出完整入档；以后使用完整 28 天可比窗口并保持各维度口径分离 |
 | GEO-V2-011 | 完成 Baseline v2 首批测试后四阶段诊断 | 全漏斗决策 | P0 | `complete` | 诊断分别覆盖找到、提取、引用与推荐；技术阻断、来源归属、证据债务和最小行动已分开记录 |
