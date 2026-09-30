@@ -15,6 +15,22 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-09-30：SEO-V2-018 Sportswear 部署与索引关闭快照
+
+### 生产与索引
+
+- 目标 URL：`https://www.athletikapparel.com/sportswear-manufacturer/`。生产页 HTTP 200、可索引、自引用 Canonical、单一 `Sportswear Manufacturer` H1；Title、Meta、Canonical 和 Schema 未改变，页面审计为 0 issues / 0 recommendations。
+- Program model 与 14 图 Sportswear lookbook 已上线；42/42 个图片资源返回 HTTP 200。真实浏览器桌面点击、Next、Escape 与焦点回归通过，390×844 手机视口无横向溢出；其他六个品类未出现 Sportswear 模块或 lightbox 脚本。
+- GSC URL Inspection 为 `PASS / Submitted and indexed`，`INDEXING_ALLOWED / ALLOWED / SUCCESSFUL`；Google Canonical 与用户 Canonical 一致，最后抓取时间为 `2026-09-22T08:21:22Z`。本条记录当前收录状态，不把它归因于此前的单次索引请求，也不重复提交。
+
+### 三市场 SERP 边界
+
+- 完成五个商业词在 US / GB / CA 的 15 组 Google Desktop English depth-20 快照，最终 15/15 完整；Athletik 未出现在本轮保留结果中，单次快照不作为长期排名判断。
+- `OEM activewear manufacturer` 是五词中与现有 Sportswear 页最匹配的支持性商业词；`sportswear OEM manufacturer` 可作次级表达。`private label sportswear manufacturer` 混有 startup、low-MOQ、teamwear、社交内容与现货意图，只保留支持性语言和“不做 ready-stock”边界。
+- `technical sportswear manufacturer` 意图不稳定；`performance apparel manufacturer` 继续由首页承接。结论为 `research-complete / no-change`：不改 Sportswear URL、Title、Meta、H1 或页面所有权，不建立近义页。
+
+关闭处置：SEO-V2-018 为 `completed / production-verified / measuring`；实施 Finding outcome 为 `changed / keep`。后续随常规 28 / 90 天窗口观察 GSC、GA4 与有效询盘，低样本波动不触发页面改写。
+
 ## 2026-09-28：GEO 月度快照中的传统 GSC / GA4 AI referral
 
 完整跨平台口径见 [`GEO 跨平台测量快照`](../geo/testing/geo-measurement-snapshot-2026-09-28.md)。本条只保留传统 GSC 与 GA4 的可复核摘要。
