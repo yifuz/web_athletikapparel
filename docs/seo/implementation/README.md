@@ -10,7 +10,7 @@
 | [`moq-update-seo-imp-008-v1.md`](moq-update-seo-imp-008-v1.md) | SEO-IMP-008 | 成衣 MOQ 500 pieces per style 已同步；Hero 资格条撤销 |
 | [`performance-diagnosis-seo-imp-034-v1.md`](performance-diagnosis-seo-imp-034-v1.md) | SEO-IMP-034 | 根因诊断完成，形成 035–038 |
 | [`deployment-batch-seo-imp-035-038.md`](deployment-batch-seo-imp-035-038.md) | SEO-IMP-035–038 | 生产验收完成；035–037 `keep`，038 `keep-monitoring` |
-| [`change-cards/`](change-cards/) | SEO-IMP-024/035/036/037/038、SEO-V2-004/005/007/008/015/016/017、PCD-001/003/004/005/006/007/008/009 | 单一变量、基线、Crawl 和最终决策；SEO-V2-004 首页视频 Hero 为 `inconclusive / keep-monitoring`；SEO-V2-016 首页 Merino / Knitted Fabrics、SEO-V2-017 首页 Outdoor 类目图均为 `fixed / keep`；其他已部署项目按各自 Day 7 / 28 / 90 节点测量，外部凭据不足的项目继续 deferred |
+| [`change-cards/`](change-cards/) | SEO-IMP-024/035/036/037/038、SEO-V2-004/005/007/008/013/015/016/017/018、PCD-001/003/004/005/006/007/008/009 | 单一变量、基线、Crawl、季度标准复核和最终决策；SEO-V2-013 的 2026 Q3 标准与外链复核为 `reviewed / one-change-pending`；SEO-V2-004 首页视频 Hero 为 `inconclusive / keep-monitoring`；SEO-V2-016 首页 Merino / Knitted Fabrics、SEO-V2-017 首页 Outdoor 类目图均为 `fixed / keep`；其他已部署项目按各自 Day 7 / 28 / 90 节点测量，外部凭据不足的项目继续 deferred |
 
 最新稳定部署后 Crawl Diff：Run `8fc3102b-06ff-4139-9105-8b898fe1925d`，25 个 URL、0 changed / new errors / indexability flips。历史部署记录不得作为当前生产状态的替代；新增变更建立新的 Change Card，并在部署后补回归证据。
 
