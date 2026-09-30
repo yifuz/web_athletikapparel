@@ -1,5 +1,7 @@
 # Baseline v2 首批测试后 GEO 诊断（2026-09-11）
 
+> 历史快照说明：本文保留 2026-09-11 当日诊断，不回写后续生产事实。2026-09-30 按原始“运行有效性”字段回算后，Baseline v2 的 16 条实际回答全部为 `partial`，正式 `valid` 分母为 0；本文的排名与引用结论只能作为描述性观察。当前口径与完整分母见 [`prompt-baseline.md`](prompt-baseline.md) 和 [`../GEO.md`](../GEO.md)。
+
 ## 1. 结论先行
 
 Athletik 已经跨过“完全不可见”阶段：Google Search Console（GSC）已经记录 Google 生成式搜索链接曝光，ChatGPT Search 和 Google AI Mode 也都能找到、提取并在部分未点名采购题中推荐 Athletik。
