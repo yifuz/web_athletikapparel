@@ -4,7 +4,7 @@
 
 覆盖模式：`full`
 
-状态：`review-complete / implemented / deployment-pending`
+状态：`completed / production-verified / scheduled`
 
 复核执行：Codex（只读证据核验与内部记录）
 
@@ -36,7 +36,7 @@
 | AATCC TM135-2025 | AATCC 当前商品页为 2025 版 | 用于 fabrics after home laundering 的 dimensional change；页面未把它误写成所有成衣或所有洗涤场景的统一方法 | `no-change` |
 | ISO 3759:2011 | 现行 Edition 5；2022 年复审确认 | 用于 dimensional-change testing 的 preparation、marking 与 measurement，适用于 woven / knitted fabrics 和 made-up textile articles，页面表述一致 | `no-change` |
 | ISO 5077:2007 | 现行 Edition 2；2022 年复审确认 | 用于 specified washing and drying 后的 dimensional change，页面表述一致 | `no-change` |
-| ISO 2859-1:2026 | 现行 Edition 3，2026-01 发布；替代并撤销 1999 版及其 amendments/corrigendum | QC Guide 对 AQL、sample size 和 accept/reject thresholds 的概括仍与新版官方摘要一致；正文与 references 已更新为 2026 版官方入口 | `changed / deployment-pending` |
+| ISO 2859-1:2026 | 现行 Edition 3，2026-01 发布；替代并撤销 1999 版及其 amendments/corrigendum | QC Guide 对 AQL、sample size 和 accept/reject thresholds 的概括仍与新版官方摘要一致；正文与 references 已更新为 2026 版官方入口 | `changed / keep / production-verified` |
 | ANSI/ASQ Z1.4-2003 (R2018) | ASQ 标记为 current edition | 页面只将其作为美国 attributes sampling 对应标准，没有写入错误版本号 | `no-change` |
 
 补充体系复核：Textile Exchange CCS v3.1 当前正在修订，但现有 chain-of-custody、scope / transaction certificates、volume reconciliation 与 segregation 的概括仍与官方页面一致；GOTS 已发布 8.0，现有对 processing / manufacturing / trading certification 与最终标签范围的概括仍成立；OEKO-TEX STANDARD 100 已进入 Edition 01.2026，现有 harmful-substances 与 certificate scope 表述仍成立；SLCP、DHS UFLPA 与 ZDHC MRSL 的当前官方说明也与页面用途一致。因此这些项目均为 `no-change`，不因版本发布机械加入更多数字或条款。
@@ -51,14 +51,14 @@
 - 置信度：`Confirmed`
 - 影响页面：`/garment-quality-control-checklist/`
 - 数据状态：标准状态与页面内容 `complete`；标准全文为付费内容，未用于逐表验证
-- 观察：ISO 官方页面确认 `ISO 2859-1:2026` 为现行 Edition 3，1999 版及其 amendment / corrigendum 已撤销。生产页仍链接 `https://www.iso.org/obp/ui/#iso:std:iso:2859:-1:en`，页面与参考资料标签都没有写明 2026 版。
+- 审计时观察：ISO 官方页面确认 `ISO 2859-1:2026` 为现行 Edition 3，1999 版及其 amendment / corrigendum 已撤销；当时生产页仍链接 `https://www.iso.org/obp/ui/#iso:std:iso:2859:-1:en`，页面与参考资料标签都没有写明 2026 版。
 - 推断：正文当前没有明示旧版，AQL 概括也没有被官方公开摘要推翻，因此不是事实性错误或索引风险；但改成稳定的现行标准落地页并写明版本，可减少季度复核歧义。
 - 推翻条件：ISO 官方撤销 2026 版，或项目决定所有标准引用一律有意不标版本且通用 OBP 链接可稳定解析到现行版。
 - 最小修改：将 QC Guide 正文及 references 中的 ISO 链接改为 `https://www.iso.org/standard/85464.html`，可见引用改为 `ISO 2859-1:2026`；不改 AQL 示例、URL、Title、Meta、H1、Schema 或其他页面。
 - 依赖：公开正文修改已由所有者于 2026-09-30 明确批准。
 - 验收：本地与生产 HTTP 200、单一 H1、正文与 references 均指向现行标准页；定向页面审计无新 indexability / canonical / schema 问题。
 - 复核窗口：部署后立即技术验收；下一次季度复核不晚于 2026-12-31。
-- 当前 outcome：`changed / source-verified / local-render-unavailable / deployment-pending`
+- 当前 outcome：`changed / keep / production-verified`
 
 ### SEO-V2-013-F02 — ISO 4915 处于系统复审
 
@@ -101,7 +101,7 @@
 | ISO 4915 | 403 | 官方落地页确认现行且处于 systematic review | `pass / monitor` |
 | ISO 3759 | 403 | 官方落地页确认现行 | `pass` |
 | ISO 5077 | 403 | 官方落地页确认现行 | `pass` |
-| ISO 2859-1 原通用 OBP 入口 | 403 | 官方确认现行版已变为 ISO 2859-1:2026；本地实现已改用稳定标准页 | `changed / deployment-pending` |
+| ISO 2859-1 原通用 OBP 入口 | 403 | 官方确认现行版已变为 ISO 2859-1:2026；生产页已改用稳定标准页 | `changed / production-verified` |
 | Bella Sports LinkedIn 帖子 | 451，区域跳转至 `linkedin.cn` | 公共 Web 结果可打开原帖并匹配引用主体 | `pass / region-restricted` |
 
 ### 未渲染的 3 个源数据备用链接
@@ -114,3 +114,16 @@
 - 除 ISO 2859-1 的入口与版本标签外，其余标准引用均保持 `no-change` 或 `no-change / monitor`；ISO 2859-1 的公开解释保持不变，正文与 references 已明确更新为 2026 版官方入口。
 - 不更新所有指南的公开 `reviewed_on` 日期来制造机械 freshness。只有实际修改 ISO 2859-1 引用时，才更新 QC Guide 的真实复核日期。
 - 本轮没有 URL、Title、Meta、H1、Schema、页面所有权或内链结构修改，也没有需要 301 的 URL 变更。QC Guide 的 `reviewed_on` 已按真实复核日期更新为 2026-09-30。
+
+## 6. 部署验收与关闭
+
+2026-09-30 生产定向验收结果：
+
+- 页面返回 HTTP 200；`robots` 为 `index, follow`，无 `X-Robots-Tag` 阻断，自引用 Canonical 正确，单一 H1。
+- Title、Meta 与 H1 仍匹配 `seo-tags.md` 核准基线；URL 与页面所有权没有变化。
+- 正文与 references 各出现 1 次 `ISO 2859-1:2026` 及 `https://www.iso.org/standard/85464.html`，原 OBP URL 为 0；可见 Technical review date 为 2026-09-30。
+- URL 存在于 `page-sitemap.xml`，`/technical-guides/` 返回 HTTP 200 并保留到该指南的可抓取入口。
+- JSON-LD 可解析，Organization、WebSite、WebPage、Article、FAQPage 与 BreadcrumbList 各有 1 个节点，FAQ 为 4 项，没有发现本次部署造成的 Schema 类型或解析回归。
+- 非阻断说明：Rank Math 的 `Article.dateModified` 仍取 WordPress 数据库页面时间 `2026-08-20T08:31:05+00:00`，不会自动跟随代码数据中的 `reviewed_on`。本项目没有修改 Schema；该字段与可见技术复核日期不是同一数据源，因此不把它误报为已同步，也不在本次标准引用单变量中追加 Schema 改动。
+
+关闭结论：SEO-V2-013 2026 Q3 复核与唯一公开更新均完成，Finding outcome 为 `changed / keep`。恢复季度计划状态；除 ISO 4915 生命周期发生变化外，不提前重复复核，下次例行复核不晚于 2026-12-31。
