@@ -72,9 +72,10 @@ Google 可见性不需要 `llms.txt` 或所谓的 AI 专用 Schema。当前策�
 
 2026-08-10 部署验证：
 
-- 规范站的 Organization/LocalBusiness 实体已包含 `legalName` = `Athletik Clothing Inc.`，以及已核实的 LinkedIn、Instagram 和 YouTube `sameAs` URL。
+- 2026-08-10 的部署记录写明 Organization/LocalBusiness 实体包含 `legalName` = `Athletik Clothing Inc.`，以及已核实的 LinkedIn、Instagram 和 YouTube `sameAs` URL。
 - 首页、About Us 和 Sportswear Manufacturer 页面均返回 HTTP 200，服务器端渲染的 JSON-LD 可正常解析。
 - 规范站 JSON-LD 中已无 `myathletik.com` URL。
+- 2026-09-30 实时复核仍能确认 `sameAs`，但未发现 `legalName`；当前状态以后者为准。此差异已进入 [`../GEO.md`](../GEO.md) 风险台账，不能继续把 `legalName` 写成已部署。
 
 ## 4. 固定提示词版本
 
@@ -168,7 +169,7 @@ v1 的已知限制：V1-02 已点名域名，不能衡量自然发现；V1-05 �
 | 运行日期 | 产品 + 模型/模式 | v2 ID | 环境摘要 | 运行有效性 | 品牌结果 | 是否引用规范站 | Athletik 引用 URL | 引用相关/支持 | 错误、过时或意图错位 | 其他供应商/来源 | 完整证据 | 变化确认 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | — | — | — | 登录状态；临时/隐私；搜索；语言；实际地区 | — | — | — | — | — | — | — | — | 首次 / 待确认 / 初步确认 |
-| 2026-09-03 | ChatGPT Search（可见模型/模式待补录） | V2-E01 | 英文回答；Temporary Chat、登录状态、搜索模式、个性化设置、实际地区和设备待补录 | 暂存，尚不计入完整中性基线；固定原文与第一次回答已提供，未见个性化关系措辞，但环境元数据和来源面板不完整 | 核心识别准确：公开品牌、technical knitwear OEM/ODM、张家港生产地与规范站均正确；未说明中美实体名称及角色 | 是 | <https://www.athletikapparel.com/> | 部分支持：规范站支持主营品类、FLATLOCK/ACTIVESEAM、地址与 4,500+ m²；不支持回答中的次级域名关系和圆机当前状态 | 将 `athletik.com.cn` 表述为公司仍在运营的 China manufacturing site，但未保留该来源链接，且其当前角色/所有权尚未经所有者在本项目中核准；圆机表述来自该次级站而非当前规范站，应视为待确认的历史一方声明 | 提及 `athletik.com.cn`，回答中未保存可点击来源 | 所有者在 GEO 工作对话粘贴第一次完整回答；未提供来源面板截图 | 首次运行；环境待确认 |
+| 2026-09-03 | ChatGPT Search（可见模型/模式待补录） | V2-E01 | 英文回答；Temporary Chat、登录状态、搜索模式、个性化设置、实际地区和设备待补录 | 暂存，尚不计入完整中性基线；固定原文与第一次回答已提供，未见个性化关系措辞，但环境元数据和来源面板不完整 | 核心识别准确：公开品牌、technical knitwear OEM/ODM、张家港生产地与规范站均正确；未说明中美实体名称及角色 | 是 | <https://www.athletikapparel.com/> | 部分支持：规范站支持主营品类、FLATLOCK/ACTIVESEAM、地址与 4,500+ m²；不支持回答中的次级域名关系和圆机当前状态 | 将 `athletik.com.cn` 表述为公司仍在运营的 China manufacturing site，但未保留该来源链接；本次运行时其角色尚未经本项目核准。所有者于 2026-09-30 后续确认该站仍在继续使用，但圆机等具体断言仍需按该站法律实体、日期与范围理解，不能用后续确认补齐本次缺失的来源链路 | 提及 `athletik.com.cn`，回答中未保存可点击来源 | 所有者在 GEO 工作对话粘贴第一次完整回答；未提供来源面板截图 | 首次运行；环境待确认 |
 | 2026-09-05 | ChatGPT Search（可见推理设置为“高”；模型名称未显示） | V2-E02 | 已登录；Temporary Chat；搜索/联网开启；中文界面、英文回答；Desktop；Custom Instructions、个性化设置和实际地区待所有者确认 | `partial / environment-metadata`：固定原文、第一次完整回答、Temporary Chat 和来源面板均有证据；缺少 Custom Instructions 与实际地区确认 | 指定网站理解总体准确：正确识别 vertically integrated technical-knitwear OEM/ODM、主要产品、own fabric mill、FLATLOCK/ACTIVESEAM、服务流程、规模与材料能力 | 是；这是指定域名控制题，不计自然发现 | 首页、About、Services、Sportswear、Underwear、Outdoor、Merino Wool、Knitted Fabrics、Silk Wear、Sports Accessories、Sustainability 共 11 个规范 URL | 强支持：回答末尾逐页列出规范 URL，截图显示 Sources 面板共 20 项且可见项均为 Athletik Apparel；2026-09-05 对上述 11 个生产 URL 定向复核均为 HTTP 200，主体声明可在当前可见正文找到 | MOQ 例外错误：回答称 Outdoor Clothing 与 Sports Accessories 页面列出 1,000-piece MOQ；当日两个生产页面均显示公共 garment MOQ 500 pieces/style，且未找到 1,000 pieces。`yarn-to-finished-garment` 可由当前站支持为一体化开发与生产，但不应扩展解释为自有纺纱 | 未提及其他供应商；来源为规范站一方页面 | 所有者在 GEO 工作对话提供第一次完整回答和 Sources 面板截图；面板显示 Temporary Chat、Desktop 与 20 个来源，回答正文保留 11 个 Athletik URL | 首次运行；待补环境字段后转为 valid |
 | 2026-09-05 | ChatGPT Search（未选择 Research/Deep Research；模型名称未显示；Sources 面板显示 299） | V2-D03 | Temporary Chat；未选择 Research/Deep Research；英文回答；Desktop；美国网络地区；完整回答和 Sources 面板截图已提供；Custom Instructions 与个性化设置待确认 | `partial / environment-metadata`：固定原文、第一次回答、Temporary Chat、运行模式、网络地区和规范站来源 URL 已补证；仅余 Custom Instructions 与个性化设置待确认 | Athletik 进入四家短名单第 1 位，被评为 `Very strong`、`cleanest match` 和 `best-supported shortlist`；匹配理由为 ISO 607/Yamato FLATLOCK、Merrow ACTIVESEAM、技术针织品和自有生产设施 | 是 | <https://www.athletikapparel.com/about-us/?utm_source=chatgpt.com>；另有两个使用中文名称的 Athletik 历史/矩阵站来源卡片，URL 均未保存 | 主体匹配强但来源混合：当前 About 支持 Yamato FLATLOCK、Merrow ACTIVESEAM、自有 4,500+ m² 设施与技术针织定位；ISO 607 是当前技术指南中的工业参考。回答将这些证据表述为“same technical page”，来源归属不够精确 | 使用 `Zhangjiagang Athletik Clothing Co., Ltd.` 缩写而非核准全称；Athletik 论证混入历史矩阵站。Yonglee 页面所称 `MB-40FD` 与 Merrow 官方 `MB-4DFO` 不一致；Yonglee、Royal、Merino Wool Apparel 的设备数与产能主要为企业自述，第三方资料只部分证明企业/地址，不证明机器当前归属 | Shanghai Yonglee Textile Co., Ltd. / Yonglee Group（第2）；Royal International Industrial Co., Ltd.（第3）；Merino Wool Apparel (Suzhou) Co., Ltd.（第4）；技术来源含 Merrow/ACTIVESEAM，外部佐证含 ISPO 与 D&B | 所有者在 GEO 工作对话提供第一次完整回答、Sources 面板截图和 Athletik Apparel About Us 实际 URL；截图显示 299 个检索来源，仅保存面板可见部分 | 首次运行；强正向推荐信号，待补两个个性化环境字段；不标稳定改善 |
 | 2026-09-05 | ChatGPT Search（模型/模式待确认；Sources 面板显示 196） | V2-D04 | 英文回答；Desktop；完整回答和 Sources 面板截图已提供；Temporary Chat、Research/Deep Research、Custom Instructions、个性化设置和实际网络地区待本次运行单独确认 | `partial / environment-and-source-url`：固定原文与第一次回答完整，来源卡片标题可见；运行环境和 Athletik 卡片实际 URL 尚未保存 | Athletik 在五家中列第 1，被标为 `Best overall for technical base layers`、`clearest specialist match`，并在优先级段落中再次被写为 base-layer 项目的第一联系对象 | 是；截图可见三个 Athletik Apparel 规范站来源卡片，但实际 href 未保存 | `About Us — Knitwear Manufacturer`、`Sportswear Manufacturer`、`Sustainability & Certifications` 来源卡片；定向核验对应当前规范页均为 HTTP 200 | 强支持：当前 About 支持 technical knitwear OEM/ODM、own fabric mill、Yamato FLATLOCK、Merrow ACTIVESEAM、材料范围及 100,000+ pieces/month；Sportswear 支持 base layer/activewear 相关结构与当前 500 pieces/style MOQ；Sustainability 支持材料、文件和合规项目表述 | 回答正确写出当前 MOQ 500 pieces/style，但又引用“merino-specific material”中的 1,000 pieces/style/fabric；该历史/次级材料不能并列成为当前政策。其余供应商的 MOQ、厂房、产能、设备和测试能力主要为企业自述；附件首字母疑似在复制时缺失，不影响主体 | YOUMEGA / Xiamen Mega Garment（第2）；Ohsure（第3）；Junhao Clothing（第4）；Huali Global（第5） | 所有者提供第一次完整回答附件和 Sources 面板截图；截图显示 196 个检索来源，可见 Athletik About、Sportswear、Sustainability 以及 YOUMEGA、Ohsure、Junhao 等来源卡片 | 首次运行；强正向第一推荐信号，待运行环境与实际来源 URL 补证；不与 V1-04 直接计算升降 |
@@ -188,7 +189,7 @@ v1 的已知限制：V1-02 已点名域名，不能衡量自然发现；V1-05 �
 #### 2026-09-03 V2-E01 核验备注
 
 - 当日定向核验确认，规范站首页和 About Us 页面支持 technical knitwear OEM/ODM、主要产品类别、FLATLOCK/ACTIVESEAM、张家港地址及 4,500+ m² 等核心表述；因此规范站引用与回答主体相关。
-- `https://athletik.com.cn/` 当日仍可访问，并公开使用 Zhangjiagang Athletik Clothing Co., Limited、相同地址以及圆机表述。但当前项目真值只把 `athletikapparel.com` 作为规范站，尚未确认该域名当前由谁控制、是否继续代表现行业务或未来如何处置。因此本次回答中的“also operates”不能直接升级为核准实体事实。
+- `https://athletik.com.cn/` 当日仍可访问，并公开使用 Zhangjiagang Athletik Clothing Co., Limited、相同地址以及圆机表述。本次运行时尚未确认该域名的当前角色；所有者于 2026-09-30 后续确认该站仍在继续使用。该后续确认关闭了“是否仍在使用”的问题，但不替代本次缺失的来源链接，也不让圆机等具体断言脱离其法律实体、日期与范围自动升级为规范站最新事实。
 - 回答没有出现 `your own`、历史聊天或用户关系措辞，但缺少 Temporary Chat、搜索模式、个性化设置、模型和实际地区证据。补齐环境信息前，本行只保留为 V2 首次运行的暂存结果。
 
 #### 2026-09-05 V2-E02 核验备注
@@ -260,7 +261,7 @@ v1 的已知限制：V1-02 已点名域名，不能衡量自然发现；V1-05 �
 - 本次固定提示词、无痕、未登录、AI Mode、美国网络地区和第一次回答均已保存，个性化污染风险明显低于普通登录会话。由于没有 Sources 面板截图，且回答内使用 `google.com/goto` 中转链接，先记为 `partial / source-panel-and-final-url`，不补猜每个来源对应的最终 URL。
 - 回答正确识别了品牌、technical knitwear OEM/ODM、FLATLOCK/ACTIVESEAM、主要产品、中国张家港/苏州生产地区以及 `athletikapparel.com`。这证明 Google AI Mode 能找到规范站并抽取大部分核心实体信息。
 - “one garment factory of its own and 5 partner factories in Asia / capacity of 5 million pcs per year”可在仍被 Google 抓取的 [athletik.nyc 旧页面](https://www.athletik.nyc/)逐字找到，而当前[规范站首页](https://www.athletikapparel.com/)公开的是 4,500+ sq m own production facility 和 100,000+ pcs/month。该冲突应归类为历史来源污染，不能因为模型输出了旧数字就反向修改规范站。
-- 回答将 `athletik.com.cn`、`athletik.nyc` 和 Athletik Canada 描述为区域主页或展示域名。当前项目只核准 `athletikapparel.com` 为规范站；其他域名的当前控制权、运营角色和处置状态没有逐站完成核准，因此这些关系均不计为准确实体事实。
+- 回答将 `athletik.com.cn`、`athletik.nyc` 和 Athletik Canada 描述为区域主页或展示域名。本次运行时只核准 `athletikapparel.com` 为规范站，因此这些关系当时不计为准确实体事实；所有者于 2026-09-30 后续确认 `athletik.com.cn` 仍在继续使用，但没有据此核准回答对 `athletik.nyc`、Athletik Canada 或三者整体关系的描述。
 - 这条结果把 V2-E01 的主要缺口从抽象风险变成了可复现问题：Google 能找到规范站，但会把旧站中更具体、可直接摘录的工厂数量和年产能合并进答案。首批 Google AI Mode 八题结束前继续冻结规范站；之后单独开展历史域名/旧档案污染审计，比较旧来源的索引、引用频率、可控性与处置成本。
 
 #### 2026-09-11 Google AI Mode V2-E02 核验备注
@@ -514,13 +515,13 @@ Broad Discovery 首轮完成前不建立出现率结论。首轮完成后分别�
 
 | 来源 | 发现的冲突类型 | 控制状态 | 下一步 |
 |---|---|---|---|
-| `myathletik.com` | 旧站下线前的 GEO-01 在规范域名之前引用了其历史 About Us 页面 | 站点内容已完全下线；所有已检查入口返回 410；按所有者决定不做 301 | 不修复旧站；只追踪搜索/AI 系统是否继续引用缓存中的旧页面 |
+| `myathletik.com` | 旧站下线前的 GEO-01 在规范域名之前引用了其历史 About Us 页面 | 站点内容已完全下线；2026-09-30 复核 HTTP/HTTPS、www/裸域及普通、Googlebot、OAI UA 均返回 410；按所有者决定不做 301 | 风险记为 `closed / monitoring`；只追踪搜索/AI 系统是否继续引用缓存中的旧页面，或入口是否重新出现 200/3xx |
 | `athletikapparel.com/contact/` | 当前页面把 Zhangjiagang Athletik Clothing Co., Limited 列为中国生产设施；当前 JSON-LD 和隐私文件使用美国实体 Athletik Clothing Inc.。GEO-02 因此只把网站归为中国实体 | 已确认：两者属于同一 Athletik 业务体系，分别为中国与美国实体名称，运营职责不同；当前已知角色为中国生产设施名称与美国网站数据控制者 | 保留两个准确实体名称；对外内容需要更详细职责时由所有者补充，不自行推断母子公司、签约、出口、雇佣或知识产权关系，也不把两者写成同一个法律实体 |
-| `linkedin.com/company/athletik-clothing-inc` | 旧 LinkedIn 页面仍被国际搜索索引，显示 New York, NY headquarters、旧网站/地址，以及尚未进入当前核准事实库的客户、审核、人数和成立年份等资料；GEO-01 采用了其 New York 字段 | 中国版入口已弃用；当前主推广页为 `linkedin.com/company/111831319/`。旧国际页面的管理权限和可编辑性尚未确认 | 不把旧页声明并入当前事实库；若无法取得管理权，则继续用规范站和当前 LinkedIn 强化准确实体信息，并监测后续 GEO 是否仍引用旧页 |
+| `linkedin.com/company/athletik-clothing-inc` | 历史 LinkedIn 介绍页仍被国际搜索索引，显示 New York, NY headquarters、历史网站/地址，以及客户、审核、人数和成立年份等资料；GEO-01 采用了其 New York 字段 | 所有者于 2026-09-30 确认页面内容属实，但管理账号已丢失且不会再发布新内容；当前主推广页为 `linkedin.com/company/111831319/` | 记为 `accepted-residual / monitor-only`，不再列 P0；所有新发布只使用当前 LinkedIn。历史内容不脱离原日期和范围自动升级为当前可复用断言；仅在产生新实体误判或找回账号时重新评估 |
 | `athletik.com` | 历史品牌/网站文案和联系信息 | 【需要确认：是否拥有且可编辑？】 | 确认所有权后再更新、设置规范指向或下线 |
 | `athletik.nyc` | 历史公司简介、产能和工厂结构声明 | 【需要确认：是否拥有且可编辑？】 | 替换为当前核准实体信息，或在适当时重定向 |
-| `athletik.com.cn` | 历史实体表述、邮箱和运营声明 | 【需要确认：是否拥有且可编辑？】 | 更新信息，或明确说明其当前用途 |
-| `ultramerino.com` | 公司早期为类目矩阵建立的独立网站；GEO-03 识别出其与 Athletik 的关系，GEO-05 将其作为“Athletik/UltraMerino”引用；页面包含历史实体名称、认证、设备、产能和材料声明 | 用户已确认公司拥有；当前角色、内容有效性和去留策略尚未确定 | 所有权问题已关闭；核验流量、索引、反向链接和历史声明后，再决定保留并更新、设置规范指向或下线。未完成评估前，不把历史站声明自动并入规范新站 |
+| `athletik.com.cn` | 持续运行的中国实体站点与规范站存在重叠实体、客户、审核、设备、产能和地址断言 | 所有者于 2026-09-30 确认仍在继续使用；不关闭、不做 301 或跨域 Canonical | 作为持续使用站点单独维护；重叠断言按法律实体、日期和适用范围复核，不自动互相升级；AI 引用时记录真实来源归属 |
+| `ultramerino.com` | 公司早期为类目矩阵建立的独立网站；GEO-03 识别出其与 Athletik 的关系，GEO-05 将其作为“Athletik/UltraMerino”引用；页面包含历史实体名称、认证、设备、产能和材料声明 | 用户已确认公司拥有，但该站当前不由本项目负责 | 保留冲突记录，不在本项目擅自修改、复制、设置 Canonical 或重定向；历史站声明不自动并入规范新站，职责改变时再重新立项 |
 | `powermerino.com` / `sportsbaselayer.com` | 历史细分网站声明、日期和联系信息 | 【需要确认：是否拥有且可编辑？】 | 每次检查一个域名；没有流量证据时不要批量重定向 |
 | 供应商目录和进口数据网站 | 不受控制或由账户管理的 MOQ、地址、产品和关联数据 | 【需要确认：哪些资料页可以编辑？】 | 只修正公司能够控制的资料页，不声称可以控制公开记录 |
 
@@ -528,7 +529,7 @@ Broad Discovery 首轮完成前不建立出现率结论。首轮完成后分别�
 
 1. 保留每条结果的时间背景。8 月样本不是严格的前后对照实验：Bing GEO-01 记录于旧站下线前；ChatGPT GEO-02 记录于旧站下线和实体 Schema 部署后。
 2. ChatGPT Search 的 Baseline v1 已完成并冻结；不再补跑其他产品来拼接旧版基线。后续从 Baseline v2 开始，在同一月度窗口运行三个主产品，并记录当时的部署、抓取和环境条件。
-3. 规范站的 Organization/LocalBusiness 实体已经部署 `legalName` 和经过核实的官方资料 `sameAs` 链接。
+3. 规范站的 Organization/LocalBusiness 已部署经过核实的官方资料 `sameAs` 链接；2026-09-30 实时检查未发现 `legalName`。应先批准可见实体说明，再决定是否补充与正文一致的 `legalName` 或实体关系字段，不能把计划状态写成已部署。
 4. 确认公司能控制哪些历史域名和目录资料页；已完全下线的 `myathletik.com` 不进入修复范围。
 5. 先修正可控制且可见度最高的来源，再发布新的目录资料。
 6. 已完成：FLATLOCK vs OVERLOCK、technical knitwear tech pack 和 OEM evaluation 三篇第一方指南已发布到 Technical Guides 内容中心。

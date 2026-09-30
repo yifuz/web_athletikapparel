@@ -81,10 +81,12 @@ GEO 内容需要帮助目标买家依次完成四个任务，而不只是获取�
 
 Beta Textiles / BTEXCO 是同一运营体系的面料销售名称，但对外独立运营；公开页面、站外资料和内容中不得把它与 Athletik 关联、互链或描述为关联公司。
 
-`myathletik.com` 已按所有者决定完全下线，已检查入口返回 HTTP 410，不做跨域 301，后续出现只记录为过期缓存信号。
+`myathletik.com` 已按所有者决定完全下线，不做跨域 301。2026-09-30 复核 HTTP/HTTPS、www/裸域，并以普通 UA、Googlebot 和 OAI-SearchBot 请求，全部返回 HTTP 410；该风险记为 `closed / monitoring`，后续只有重新出现 200/3xx、旧正文或 AI 持续引用缓存时才重新打开。
+
+旧 LinkedIn 页面 `linkedin.com/company/athletik-clothing-inc` 是历史介绍页。所有者于 2026-09-30 确认页面内容属实，但管理账号已丢失且不会再发布新内容。它不再作为当前运营渠道，风险从 P0 降为 `accepted-residual / monitor-only`：以后所有新发布与官方社交信号只使用当前 [LinkedIn](https://www.linkedin.com/company/111831319/)；旧页中的客户、审核、人数、地址和成立年份仍按历史页面的原有范围理解，不自动作为当前项目可重复使用的最新断言。只有 AI/搜索结果因该页产生新的实体误判，或重新取得账号权限时，才重新评估治理动作。
 所有者已确认 `ultramerino.com` 为同方控制的 Merino 专业站，但该站当前不由本项目负责。GEO 主执行范围只优化 Athletik 规范站；UltraMerino 只作为来源冲突和历史事实样本，不在本项目中安排页面修改、跨域 Canonical、301 或内容复制。其生产知识只有在被当前证据独立复核后才可用于规范站，历史商业和能力声明不能自动升级为现行事实。
 
-`athletik.com.cn` 和其他历史/类目矩阵站的所有权、当前角色和去留仍须逐站核验；它们不是规范站事实的自动来源，也不能在未确认时被描述为 Athletik 当前官方子站。
+`athletik.com.cn` 已由所有者于 2026-09-30 确认仍在继续使用，不再归类为待下线的历史站，也不安排关闭、301 或跨域 Canonical。`athletikapparel.com` 仍是本项目的 GEO 规范站；`athletik.com.cn` 作为持续运行的中国实体站点单独维护。两站重叠的实体、客户、审核、设备、产能和地址断言应保留各自日期、法律实体与适用范围，未经当前复核不自动互相升级为最新事实。其他历史/类目矩阵站的所有权、当前角色和去留仍须逐站核验。
 
 ## 3. 平台事实与策略边界
 
@@ -126,6 +128,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 ### 5.1 找到层：基础基本完成
 
 - 2026-09-03 生产抽查：`robots.txt`、Sitemap index、Technical Guides Hub 与四篇指南均返回 HTTP 200；Page Sitemap 含 18 个 URL。
+- 2026-09-30 全景审计复核：Page Sitemap 已增至 20 个 URL，20/20 均返回 HTTP 200、单一 H1 和自引用 Canonical；Technical Guides Hub 当前列出六篇指南。该结果是生产可访问性快照，不代替 GSC 索引覆盖或真实 crawler 日志。
 - 同日以 Googlebot、OAI-SearchBot、PerplexityBot、Claude-SearchBot 和 ChatGPT-User 抽查 Tech Pack Guide，均返回 HTTP 200。该测试只排除明显的 UA/robots/CDN 阻拦，不代替真实爬虫日志。
 - 当前仓库中的 GSC 最新索引快照为 18 个 Sitemap 页面中 17 个 `PASS / Submitted and indexed`；`/services/` 为 `Discovered - currently not indexed`，实时测试曾通过并已请求一次，当前按周监测，不重复提交或改页。
 - Technical Guides Hub、首页、导航、页脚、品类页和指南之间已有稳定内链。
@@ -133,12 +136,14 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 ### 5.2 提取与引用层：结构完成，结果仍需复测
 
-- 已上线四篇第一方技术指南：
+- 截至 2026-09-30 已上线六篇第一方技术指南：
   - <https://www.athletikapparel.com/flatlock-vs-overlock-technical-knitwear/>
   - <https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/>
   - <https://www.athletikapparel.com/evaluate-technical-knitwear-oem/>
   - <https://www.athletikapparel.com/garment-quality-control-checklist/>
-- 四篇指南使用可见正文、唯一 H1、文章目录、内部链接、外部技术参考、可见复核日期和 Organization 作者；JSON-LD 与页面正文对应，包含 Article、FAQPage 和 BreadcrumbList，Hub 使用 ItemList。
+  - <https://www.athletikapparel.com/top-sportswear-manufacturers-china/>
+  - <https://www.athletikapparel.com/flatlock-vs-activeseam-technical-knitwear/>
+- 六篇指南使用可见正文、唯一 H1、文章目录、内部链接、外部技术参考、可见复核日期和 Organization 作者；JSON-LD 与页面正文对应，包含 Article、FAQPage 和 BreadcrumbList，Hub 使用 ItemList。
 - Baseline v1 已证明规范站在品牌点名和指定网站问题中可以被识别与引用；这不能外推为未点名推荐。
 - GSC Generative AI Page 表返回 13 个规范 URL；四篇 Technical Guides 均至少出现一次，FLATLOCK Guide 7 次、QC Guide 4 次。它们属于页面级链接曝光和 citation-surface evidence；报表没有 Query 与答案原文，不能验证链接支持的具体结论。
 - Baseline v2 首批可执行测试已完成：ChatGPT Search 8/8、Google AI Mode 8/8；Perplexity 8 条按 `unavailable / plan-access` 记录。ChatGPT D03～D05 均把 Athletik 列第 1，但 D05 的核心引用来自旧 `ultramerino.com`；C06～C08 为 0/3 个已验证对应 Guide 引用。Google AI Mode E01/E02 找到规范站但仍受旧站候选/旧口径影响；D03 第 1但引用历史矩阵站、D04 未出现、D05 第 3并引用当前规范 Merino 页面；C06 未引目标 Guide，C07 只引首页，C08 的 Sources 面板把 Athletik LinkedIn 尽调帖列为第一张卡片，但仍未引用官网目标 Guide。推荐已跨产品复现，站外分发已进入 Google 来源候选；规范内容引用、证据归属和语义稳定性仍是主要缺口。
@@ -169,12 +174,30 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 | 阶段 | 当前判断 | 主要理由 | 下一道门槛 |
 |---|---|---|---|
-| 找到 | 已获得 Google 实际展示证据，持续监测 | 生产 200、Sitemap、Canonical、内链、主要 crawler 可访问；17/18 GSC indexed；Generative AI 首个基线 29 impressions | Services 转为 indexed；完整可比窗口持续出现目标页面；无新的抓取/indexability 回归 |
+| 找到 | 已获得 Google 实际展示证据，持续监测 | 2026-09-30 生产 20/20 URL 为 200、单一 H1、自引用 Canonical；主要 crawler 抽查可访问；17/18 GSC indexed 属于 18 URL 阶段的历史索引快照；Generative AI 首个基线 29 impressions | 为当前 20 URL 建立新的完整索引快照；完整可比窗口持续出现目标页面；无新的抓取/indexability 回归 |
 | 提取 | 部分达成，历史来源污染已复现 | 品牌题可提取核心业务、地点与规范站，但 Google AI Mode E01 混入 `athletik.nyc` 的 5 家伙伴工厂、年产 500 万件及未核准区域域名关系 | E01/E02 在两个可用产品或跨月份准确覆盖规范实体口径，且不引入未核准站点关系 |
 | 引用 | Google 链接曝光与站外来源候选已出现，但内容题尚未取得规范指南引用 | GSC 中四篇指南均有页面级链接曝光；ChatGPT C06～C08 为 0/3；Google C06 未引目标 Guide、C07 只引首页、C08 只在 Sources 面板出现 Athletik LinkedIn 尽调帖，三题均未取得对应官网 Guide 引用 | 同一固定内容题在至少两个独立产品/月份出现相关规范指南引用，且引用支持结论 |
 | 推荐 | 跨产品出现但排序不稳定，规范引用开始形成 | ChatGPT D03～D05 均为第 1；Google AI Mode D03 第 1/历史站引用、D04 未出现、D05 第 3/规范 Merino 页面引用 | 下一月在独立会话中继续进入匹配短名单；规范站与可信独立来源支持准确理由，且不混淆实体关系 |
 
 不建立一个把四阶段相加的“GEO 总分”。四阶段分别记录，否则品牌题的高准确率会掩盖未点名推荐的缺口。
+
+### 6.1 风险台账（2026-09-30）
+
+状态含义：`active` 需要执行动作；`controlled` 已有持续控制但仍需监测；`accepted-residual` 是所有者知情接受且当前不投入修复；`closed / monitoring` 已满足验收条件，只观察是否复发；`red-line` 是持续适用、不能以一次完成关闭的发布边界。
+
+| ID | 类型 | 风险与当前状态 | 优先级 | 负责人建议 | 决策、动作与验收口径 |
+|---|---|---|---|---|---|
+| GEO-RISK-001 | 事实/治理 | 中央文档、历史快照与生产真值漂移；`active` | P0 | 文档维护者 + 网站负责人 | 生产当前为 20 个 Sitemap URL、六篇 Guide；日期化历史值不得冒充当前值。纠正 `legalName` 等未部署却写成已部署的记录；可见实体说明获批后再决定 Schema，不让 Schema 超前于正文。验收为中央文档无已知当前事实冲突。 |
+| GEO-RISK-002 | 测量 | 批次 `complete` 标签可能掩盖单次 `partial`；`active` | P0 | GEO 执行者 | 每批同时报告 `valid / partial / unavailable / personalized / intent-mismatch` 分母；趋势、推荐率和引用率只使用有效运行或明确披露降级样本。 |
+| GEO-RISK-003 | 测量 | 内部 QA 污染 GA4/UTM；`controlled` | P1 | 分析负责人 | 保留原始值并标记 `measurement-contaminated`，从外部访问和转化中剔除；验收为快照同时给出 raw 与 confirmed-external。 |
+| GEO-RISK-004 | 信源 | 与采购判断相关的独立外部证据不足；`active / suspended-awaiting-media` | P1 | 所有者 + 内容负责人 | 等待机器铭牌、接缝细节和同面料 sew-off 等专项素材；恢复后每月最多推进一项可信来源，不以低质目录、付费链接或自建榜单补量。 |
+| GEO-RISK-005 | 合规/证据 | 客户、Logo、认证和审核存在授权与范围边界；`red-line` | P0 红线 | 所有者 | 发布前核对授权、法律实体、站点、产品/材料/工序范围和有效期；历史页面属实不等于可脱离原范围作为当前营销断言复用。 |
+| GEO-RISK-006 | 执行边界 | UltraMerino 等站点不由本项目控制；`accepted-scope` | P2 | 所有者 | 本项目只记录冲突，不擅自修改、复制、设置 Canonical 或重定向；若职责改变再重新立项。 |
+| GEO-RISK-007 | 外部资料 | 旧 LinkedIn 管理权丢失；`accepted-residual / monitor-only` | P2 | 所有者 + 社交管理员 | 所有者确认历史内容属实且页面不再更新；当前不投入追索或修复，新内容只发当前 LinkedIn。若 AI/搜索产生新的实体误判或账号找回，再重新打开。 |
+| GEO-RISK-008 | 基础设施 | `myathletik.com` 退役状态；`closed / monitoring` | P2 | 基础设施负责人 | 2026-09-30 已验证四种 host/scheme 与普通、Googlebot、OAI UA 均为 410；任一入口重新出现 200/3xx 或旧正文时重新打开。 |
+| GEO-RISK-009 | 跨站治理 | `athletik.com.cn` 持续运行带来的双站事实同步；`active-governance` | P1 | 所有者 + 两站维护者 | 不关闭、不重定向；保持其中国实体站点角色。重叠断言按法律实体、日期和范围核验；AI 引用该站时单独记录来源归属，不把它误判为退役缓存或独立第三方背书。 |
+
+风险台账不把 `accepted-residual` 或 `closed / monitoring` 计入当前 P0。P0 只保留会直接污染事实源、测量结论或未经授权公开声明的问题。
 
 ## 7. Baseline v2 提示词—资产—缺口映射
 
