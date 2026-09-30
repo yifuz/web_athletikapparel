@@ -277,6 +277,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-021 | 建立首份 GEO 跨平台月度快照 | 全漏斗测量 | P0 | `snapshot-complete / manual-ai-refresh-pending` | 传统 GSC 与 GA4 已取得 2026-08-27～09-23 完整 28 天窗口及前一等长窗口；GSC Web Search 为 27 clicks / 1,047 impressions。GSC Generative AI 与 Bing AI Performance 沿用最近完整人工导出，不用残缺窗口制造趋势。GA4 原始 ChatGPT referral 为 11 sessions / 1 user / 0 generate_lead，但与内部测试重叠，外部确认值记为 0；详见[跨平台测量快照](testing/geo-measurement-snapshot-2026-09-28.md) |
 | GEO-V2-022 | 对齐 GEO 当前真值与日期化历史快照 | 治理 | P0 | `complete / monitoring` | 已扫描 21 个 GEO Markdown 文件，修正当前控制入口中的 20 URL、六篇 Guide、`legalName`、域名和社交资料口径；日期化文件保留原值并明确不可当作当前事实。以后资产或所有者决策变化时复查 |
 | GEO-V2-023 | 建立 Baseline / Broad Discovery 有效分母 | 全漏斗测量 | P0 | `complete / valid-baseline-not-yet-established` | 已逐条读取“运行有效性”字段并发布平台分母表；首轮 `valid` 为 0。下一窗口只有满足环境、独立会话、第一次完整回答和来源证据要求的记录才进入正式比率 |
+| GEO-V2-024 | 建立首轮有效复测执行包 | 全漏斗测量 | P0 | `ready / not-before-2026-10-04` | 已建立 22 次 ChatGPT Search / Google AI Mode 运行账本、固定 Prompt 哈希清单、逐 URL 引用账本和批次分母表；单条目标为 `manual_authorized_sample / E3 / review passed`。2026-10-03 后先补完整月度观测窗口，再开始复测；Perplexity 无权限时继续单列 `unavailable` |
 
 ## 10. 统一记录与判断口径
 

@@ -20,6 +20,7 @@
 - [`geo/testing/ai-cited-source-monthly-template.md`](geo/testing/ai-cited-source-monthly-template.md)：固定 Baseline 复测后的月度来源审计与改动门槛模板。
 - [`geo/testing/bing-ai-performance-baseline.md`](geo/testing/bing-ai-performance-baseline.md)：Bing AI Performance 的首份概览与页面级基线；Grounding Queries 当前无记录。
 - [`geo/testing/geo-measurement-snapshot-2026-09-28.md`](geo/testing/geo-measurement-snapshot-2026-09-28.md)：首份跨平台 GEO 测量快照，分开记录传统 GSC、GSC Generative AI、Bing AI Performance 与 GA4 AI referral。
+- [`geo/testing/valid-retest/README.md`](geo/testing/valid-retest/README.md)：首轮有效复测执行包，包含 22 次运行账本、固定 Prompt 清单、引用账本、有效性闸门和批次分母表。
 - `geo/content/`：三篇 GEO 基础指南的批准草稿和内容简报。
 - `geo/distribution/`：LinkedIn/Instagram 分发 SOP 与发布日志。
 

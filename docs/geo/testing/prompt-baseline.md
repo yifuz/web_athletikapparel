@@ -410,6 +410,8 @@ Broad Discovery 首轮完成前不建立出现率结论。首轮完成后分别�
 
 判断边界：现有 22 条实际回答可以用于描述性观察、错误类型和来源模式分析，但正式的中性推荐率、品牌出现率或引用率当前没有有效分母。`0/6 answer mentions`、`0/6 canonical citations`、D03～D05 排名和 C06～C08 引用结果应写成“在 6 条或相应数量的 `partial` 观察中”，不能写成基于 `valid` 样本的稳定比例。下一完整窗口使用固定原文重新运行时，只有环境、独立会话、第一次完整回答和来源证据均满足要求的记录才进入 `valid`。
 
+下一批使用 [`valid-retest/README.md`](valid-retest/README.md) 执行：ChatGPT Search 与 Google AI Mode 共 22 条计划运行，逐条保存 E3 证据并通过人工复核；Perplexity 继续单独记录可用性，不用其他产品替代。
+
 ### 5.6 Baseline v1 历史结果（冻结）
 
 以下结果全部属于 v1。为保留原始历史，旧表中的 `GEO-01～08` 应理解为 `V1-01～08`；不回写或改写原始证据行。
