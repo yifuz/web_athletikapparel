@@ -503,7 +503,7 @@ function myathletik_technical_article_data() {
 			'topic'            => __( 'Quality control', 'myathletik-child' ),
 			'summary'          => __( 'Incoming fabric checks, in-line inspection, AQL sampling, final inspection, needle control and QC documentation for technical knitwear programs.', 'myathletik-child' ),
 			'intro'            => __( 'A workable garment quality control program combines incoming material checks, in-line process controls, a final pre-shipment inspection and the records that connect each result to the purchase order.', 'myathletik-child' ),
-			'reviewed_on'      => '2026-08-20',
+			'reviewed_on'      => '2026-09-30',
 			'featured_image'   => 'production/articles/covers/garment-qc-checklist-cover.webp',
 			'featured_small'   => 'production/articles/covers/garment-qc-checklist-cover-800.webp',
 			'featured_alt'     => __( 'Quality control inspector measuring a dark technical knit garment with a tape measure on a white inspection table', 'myathletik-child' ),
@@ -545,8 +545,8 @@ function myathletik_technical_article_data() {
 			),
 			'references'       => array(
 				array(
-					'label' => __( 'ISO 2859-1 sampling procedures for inspection by attributes', 'myathletik-child' ),
-					'url'   => 'https://www.iso.org/obp/ui/#iso:std:iso:2859:-1:en',
+					'label' => __( 'ISO 2859-1:2026 sampling procedures for inspection by attributes', 'myathletik-child' ),
+					'url'   => 'https://www.iso.org/standard/85464.html',
 				),
 				array(
 					'label' => __( 'AATCC TM135-2025 dimensional changes after home laundering', 'myathletik-child' ),
