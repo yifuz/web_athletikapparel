@@ -4,12 +4,12 @@
 - Finding type：`review`
 - 变更类型：V1.3 B 类采购决策完整性改进
 - 优先级：P1
-- 状态：`local-validated / owner-review`
+- 状态：`deployed / production-verified / keep-measuring`
 - 审计与实施日期：2026-09-09
 - 目标页面：`/sports-accessories-manufacturer/`
 - 目标市场：美国、英国、加拿大
 - 主要官网任务：`Discover / Qualify / Verify / Start`
-- 当前 Finding outcome：`changed / owner-review`
+- 当前 Finding outcome：`changed / keep-measuring`
 
 ## 搜索意图与证据
 
@@ -71,4 +71,14 @@
 - 第三张原图 `sports-accessory-product-category.png` 未改动；滚动进入视口后，现有 `technical-knit-accessories-800-q85.webp` / `-480-q85.webp` 响应式衍生图正常加载；
 - 术语、占位符、禁用泛化词与绝对化承诺检查通过；图片文件未变。
 
-允许 outcome：`changed`、`no-change`、`deferred`。当前为 `changed / owner-review`。
+## 生产部署与阶段检查（2026-10-08）
+
+- 所有者已确认本批改动部署完成；生产 HTML 可见 technical knit / textile accessories 范围、hard sports equipment 排除边界、Development inputs、customization / quality checkpoints、Buyer Questions、四步采购流程与相关技术指南入口。因历史记录未保存精确生产时间，本轮以 2026-09-09 实施日作为观察锚点，并明确 2026-09-11 共用品类模板更新构成干扰变量。
+- 新鲜生产抓取为 HTTP 200、robots 允许、自引用 Canonical、单一 H1、0 fetch failure、0 high / medium issue；Page Sitemap 与首页均保留规范 URL，页面无 LocalWP / localhost 泄漏。唯一低级 Finding 为全站既有 `hsts_missing`，沿用 SEO-V2-014 的 `deferred / existing-owner-action`，不视为本页回归。
+- GSC URL Inspection 为 `PASS / Submitted and indexed`，Google Canonical 与用户 Canonical 一致，最后抓取时间为 `2026-10-02T20:02:32Z`。
+- 当前 GSC 只能形成 25 个最终日的等长阶段窗口：2026-08-15～09-08 为 2 clicks / 29 impressions / CTR 6.90% / position 7.03；2026-09-09～10-03 为 0 / 20 / 0% / 12.40。点击、曝光和平均排名方向下滑，但总样本只有 49 impressions，requested 28-day after window 尚缺 3 个 final 日，工具结论为 `partial / not-enough-data`，不能据此归因、回滚或改主词。
+- 同窗 GA4 Landing Page 为 0 → 0 sessions、0 conversion。90 天 exact-URL Query 只返回 1 条低可执行性行，0 个非品牌 Query 达到页面机会报告的审查条件；当前没有 Title、Meta、H1 或正文实验依据。
+- 所有者锁定的第三张原图路径 `sports-accessory-product-category.png` 仍在生产 HTML 中且返回 HTTP 200，现有 `technical-knit-accessories` 480 / 800 / 1200w 响应式候选也保持在线，本轮未修改图片。
+- 阶段处置为 `changed / keep-measuring`：保持 URL、Title、Meta、H1、正文、Schema、图片与页面所有权，不新增配件单品页或硬质体育器材范围；不把低量下滑写成失败。下一正式节点为不早于 2026-12-08 的 Day 90，提前重开的条件是相关商业 Query 形成可比较的排名 / CTR 假设，或出现可归因的合格询盘与明确范围错配。
+
+允许 outcome：`changed`、`no-change`、`deferred`。当前为 `changed / keep-measuring`。

@@ -138,6 +138,31 @@ Finding outcome：`no-change / keep-measuring`。当前没有 Critical / Warning
 
 Info / P3：JSON-LD `dateModified` 与 OG `updated_time` 仍为 2026-06-27，Twitter reading time 仍为 `Less than a minute`，与 9 月代码化页面更新和当前 1,184-word 抽取结果不一致。这是 WordPress 数据库字段与 code-first 正文的共享元数据来源问题，不是索引阻塞；本轮处置 `no-change / deferred`，不为单一 Merino 页面建立补丁或扩充 Backlog。
 
+## 2026-10-08：Silk Wear + Sports Accessories 联合阶段检查
+
+### 生产与索引
+
+- 两页定向生产抓取均为 HTTP 200、robots 允许、自引用 Canonical、单一 H1、0 fetch failure、0 high / medium issue；采购决策模块已进入生产 HTML，Page Sitemap 与首页均保留规范入口，未发现 LocalWP / localhost 泄漏。
+- GSC URL Inspection 均为 `PASS / Submitted and indexed`，Google Canonical 与用户 Canonical 一致。Silk Wear 最后抓取为 `2026-10-02T11:17:32Z`，Sports Accessories 为 `2026-10-02T20:02:32Z`，均晚于 9 月实施。
+- 唯一审计 Finding 是两页共同的 `hsts_missing`，属于 SEO-V2-014 既有全站基础设施项，继续 `deferred / existing-owner-action`，不记为本轮页面回归。Sports Accessories 所有者锁定的第三张原图仍在生产 HTML 中并返回 HTTP 200，现有 480 / 800 / 1200w 响应式候选保持在线。
+
+### GSC / GA4 阶段窗口
+
+历史记录没有保存精确生产时间，因此以 2026-09-09 代码实施与所有者确认部署作为观察锚点；2026-09-11 共用品类模板更新是已知干扰变量。GSC 当前最后 final 日为 2026-10-03，requested 28-day after window 只能比较 25 个等长最终日，工具统一返回 `partial / not-enough-data`。
+
+| 页面 | Before（2026-08-15～09-08） | After（2026-09-09～10-03） | GA4 Landing Page | 阶段解读 |
+|---|---:|---:|---:|---|
+| Silk Wear | 1 click / 28 impressions / 3.57% CTR / position 17.86 | 1 / 35 / 2.86% / 12.69 | 0 → 0 sessions；0 conversion | 曝光与平均排名方向改善，但点击不变、样本不足，不作正向归因 |
+| Sports Accessories | 2 / 29 / 6.90% / 7.03 | 0 / 20 / 0% / 12.40 | 0 → 0 sessions；0 conversion | 点击、曝光与平均排名方向下滑，但前后合计仅 49 impressions，不归因、不回滚 |
+
+GA4 为所有渠道 Landing Page 口径；两页的 0 session 不证明没有搜索访问，尤其是在本月已记录 GSC / GA4 measurement gap 的前提下。
+
+### 90 天 Query 与处置
+
+- Silk Wear 的 90 天 exact-URL Query 只有 2 行；唯一可审查非品牌词 `one-stop silk garment manufacturer` 为 3 impressions / 0 click / position 58。页面已覆盖 full-package OEM 与采购流程，但 3 次曝光不足以验证 `one-stop` 的意图与措辞价值，不机械加入 Title、H1 或正文。
+- Sports Accessories 只有 1 条低可执行性 exact-URL Query，0 个非品牌 Query 达到页面机会报告的审查条件；目前没有可测试的 Query / CTR 假设。
+- 联合 Finding outcome 为 `changed / keep-measuring`。两页从滞后的 `owner-review` 修正为 `deployed / production-verified / keep-measuring`；保持 URL、Title、Meta、H1、正文、Schema、图片与页面所有权，不新增近义页，也不扩充 V2 Backlog。下一正式节点为不早于 2026-12-08 的 Day 90；只有相关商业 Query 达到可比较样本，或出现可归因的合格询盘 / 明确意图错配，才提前重开单变量实验。
+
 ## 2026-09-30：SEO-V2-018 Sportswear 部署与索引关闭快照
 
 ### 生产与索引
