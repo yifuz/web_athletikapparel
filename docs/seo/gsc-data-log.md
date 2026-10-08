@@ -87,7 +87,7 @@ Organic Search 只有首页一行，为 2 sessions / 1 user / 0 engaged session 
 
 Finding：`SEO-MEASUREMENT-001`
 
-状态：`confirmed / external-config-action-required`
+状态：`resolved / production-verified`
 
 优先级：`P0 operational`；它不阻止 Google 抓取或排名，但会使 GA4 acquisition、Landing Page 和转化归因严重不完整，并使生产 Cookie consent 入口无法按既有文档工作。
 
@@ -107,7 +107,16 @@ Finding：`SEO-MEASUREMENT-001`
 3. 初始 / Reject all：Statistics 与 WP Consent API 保持 false，非必要 Cookie 不写入；Allow all：Statistics 与 WP Consent API 变为 true，随后首页与一个产品页出现 GA4 `page_view` / `g/collect`，并写入预期的 `_ga` Cookie。不得为补数据而绕过真实用户 consent。
 4. 用 GA4 Realtime / DebugView 做一次明确标记的内部 QA，随后从修复日期开始建立新的 28 天 GSC / GA4 / 询盘基线。9 月历史缺失不能回填，修复后的短窗也不能与完整自然月直接作同口径趋势结论。
 
-Finding outcome：`diagnosed / no-code-change / owner-action-required`。在上述验收通过前，GSC 继续作为搜索可见性主数据，GA4 仅作为已成功采集会话的下限样本；正式询盘仍以邮箱人工真值为准。
+2026-10-08 同日修复验收：
+
+- Cookiebot Manager 已显示 `www.athletikapparel.com` 为 Domain Group #1 的正式 Domain；随后对相同 CBID 的实时 `cc.js` 复查确认 `www.athletikapparel.com` 与 `athletikapparel.com` 均返回完整有效配置，原 `not authorized` 错误消失。
+- 两个独立无 Cookie 浏览器会话均显示首次 Banner。初始 Statistics 与 WP Consent API 均为 false，没有 `_ga` Cookie。
+- `Allow all` 后 Preferences / Statistics / Marketing 与 WP Statistics consent 均为 true，写入 `CookieConsent`、`_ga` 与 `_ga_JV4NTPDVQB`；首页及 `/merino-wool-manufacturer/` 均向 GA4 Measurement ID `G-JV4NTPDVQB` 发送 `page_view`。
+- `Reject all` 后仅保留 `CookieConsent`，Statistics 与 WP Statistics consent 维持 false；进入 `/underwear-manufacturer/` 后仍没有 `_ga` Cookie或 GA4 `g/collect`。
+- Merino 页页脚 `Cookie Settings` 已真实点击并成功重新显示 Banner，证明现有 `data-cookie-settings` / `Cookiebot.renew()` 路径恢复。
+- 本次没有修改主题、插件、CBID、Site Kit 或 Consent Mode 代码；修复来自 Cookiebot Domain Group 外部配置生效。9 月历史漏测不能回填，从 2026-10-08 起重新累计可比较窗口。
+
+Finding outcome：`fixed / external-config / production-verified / keep`。GSC 继续作为搜索可见性主数据；GA4 从修复日起恢复为 consented-session 数据源，仍不与 GSC clicks 强求 1:1；正式询盘继续以邮箱人工真值为准。新的 28 天恢复窗口为 2026-10-08 至 2026-11-04，考虑 GSC final 数据延迟，正式复核不早于 2026-11-07。
 
 ## 2026-10-08：到期 Day 28 页面复盘
 

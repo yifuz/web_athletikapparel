@@ -379,8 +379,8 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 
 - WP Consent API 2.0.1 与 Cookiebot 4.7.2 已在生产启用。
 - Cookiebot CBID：`f81cac53-c468-4afd-9823-7adcc4839c5b`，使用 Auto blocking；Cookiebot 自带 Google Consent Mode 已关闭，由 Site Kit 单独控制 Google consent。
-- 2026-10-08 生产只读诊断确认：该 CBID 当前对 `www.athletikapparel.com` 与 `athletikapparel.com` 均返回 `not authorized`，因此 Banner、Privacy Trigger / `Cookiebot.renew()` 和 Allow / Reject 状态不能视为当前已通过。修复点为 Cookiebot Manager 的 Domain Group 授权或正确 CBID，不在主题代码。
-- 目标行为保持不变：Banner 对所有访问者采用明确同意，可选类别不预选；`Reject all` 保持可选 WP consent 和 Google 广告/分析信号 denied，`Allow all` 将其设为 granted；撤回同意恢复为 false。只有完成无 Cookie 浏览器和 GA4 网络请求复验后，才能重新标记为生产可用。
+- 2026-10-08 生产只读诊断曾确认该 CBID 对 `www.athletikapparel.com` 与 `athletikapparel.com` 返回 `not authorized`；同日 Cookiebot Manager 的 Domain Group 配置生效后，两个 host 均恢复有效授权，无主题或 CBID 改动。
+- 当前生产行为已重新验证：无 Cookie 首访显示 Banner且可选类别不预选；`Reject all` 保持可选 WP consent denied、不写 `_ga`、不发送 GA4 collect；`Allow all` 将 Statistics / WP consent 设为 granted，并在首页及 Merino 页发送 GA4 `page_view`；页脚 `Cookie Settings` 可重新打开 Banner。
 - AdSense 已从生产 Site Kit 断开；公开 HTML 已确认不再加载 AdSense 脚本或域名引用。
 
 ### 6.2 Privacy Policy 与区域边界
@@ -758,6 +758,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-10-08 | Silk Wear + Sports Accessories 联合阶段检查完成：两页生产抓取均为 HTTP 200、可索引、自引用 Canonical、单一 H1、0 high / medium issue，采购决策内容、Sitemap 与首页入口均在线；URL Inspection 均为 `PASS / Submitted and indexed`，最后抓取均为 2026-10-02。以 2026-09-09 为观察锚点的等长窗口当前只有 25 个 final 日：Silk 为 1 / 28 → 1 click / 35 impressions，Sports Accessories 为 2 / 29 → 0 / 20；两者均为 `partial / not-enough-data`，GA4 Landing Page 均为 0 → 0。Silk 90 天唯一可审查非品牌词只有 3 impressions，Sports Accessories 无可执行非品牌 Query；不改 URL、Title、Meta、H1、正文或页面所有权，不建近义页。两张 Change Card 从滞后的 `owner-review` 修正为 `deployed / production-verified / keep-measuring`，联合 outcome `changed / keep-measuring`，下一正式节点不早于 2026-12-08 Day 90。 |
 | 2026-10-08 | SEO-V2-003 Services 索引复查完成：GSC `index-watch` 为 complete，1/1 inspected，当前仍为 `NEUTRAL / URL is unknown to Google`、`indexStatus=excluded`；相对 2026-09-30 的 `Discovered - currently not indexed`，工具判定同一 excluded 状态 unchanged，0 regression / recovery / alert，仍无 Google Canonical 或最后抓取时间。生产普通请求与模拟 Googlebot 均为 HTTP 200、`index`、无 X-Robots-Tag、自引用 Canonical、单一 H1 和完整采购流程内容；Page Sitemap 唯一条目、首页 5 个入口、robots 与 Title/Meta 均正常，单页审计 0 issue / 0 recommendation。Finding outcome 保持 `no-change / monitoring`：不重复申请、不改页面；Services 单页由周度改为月度或触发式复查，下一常规节点不早于 2026-11-08，全站 Crawl / Index Snapshot 继续运行。 |
 | 2026-10-08 | SEO-V2-002 GSC / GA4 测量差距诊断完成：Google 登录、GSC / GA4 scope、GSC Property 与 GA4 Property `547377703` 均正常，9 月 54 个 GA4 sessions 的 host 全部为 `www.athletikapparel.com`；生产 Site Kit tag `GT-WBLS3B9D` 存在，主题无第二份基础 GA4 tag。根因是 Cookiebot CBID `f81cac53-c468-4afd-9823-7adcc4839c5b` 的 `cc.js` 对 `www` 与裸域均明确返回 `not authorized`：新浏览器无法初始化 Banner，Statistics / WP consent 保持 false，仅加载 `gtag.js` 而不发送 GA4 `g/collect`。Finding outcome `diagnosed / no-code-change / owner-action-required`；所有者需在 Cookiebot Manager 授权两个域名或换用正确 CBID，验收 Allow / Reject 与 GA4 网络请求后，从修复日起重建 28 天基线。9 月 GA4 Organic Search 继续视为不完整下限，不用于否定 GSC 32 clicks。 |
+| 2026-10-08 | SEO-V2-002 Cookiebot / GA4 测量链生产修复验收通过：Cookiebot Manager 显示 `www.athletikapparel.com` 为正式 Domain，当前 CBID 的实时 `cc.js` 对 `www` 与裸域均返回完整配置且无 `not authorized`。两个独立无 Cookie 浏览器会话均显示首次 Banner；Allow all 后 Statistics / WP consent 为 true，写入 `CookieConsent`、`_ga` 与 `_ga_JV4NTPDVQB`，首页和 Merino 页均发送 GA4 `page_view`；Reject all 后 Statistics 保持 false，仅保留 `CookieConsent`，Underwear 页无 `_ga` 或 GA4 collect；页脚 Cookie Settings 可重新打开 Banner。本次无主题、插件、CBID 或 Site Kit 代码修改，Finding outcome `fixed / external-config / production-verified / keep`。9 月历史漏测不回填；新 28 天恢复窗口为 2026-10-08～11-04，正式复核不早于 11-07。 |
 
 ---
 
