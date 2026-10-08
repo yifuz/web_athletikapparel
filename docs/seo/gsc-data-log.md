@@ -15,6 +15,71 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-10-08：2026 年 9 月自然月 GSC / GA4 / 正式询盘基线
+
+### 来源、窗口与数据状态
+
+- 窗口统一为 2026-09-01 至 2026-09-30。GSC 使用 `dataState: final`；Date 30 行、Page 21 行、Query 50 行、Country 95 行、Device 3 行，API 均无分页截断。GSC Query 仍受低量匿名化影响，因此 Property / Page 总量为完整基线，Query 明细为隐私过滤后的可见样本。
+- GA4 Property `547377703` 返回完整自然月报告，Property 时区为 `Asia/Shanghai`。GSC、GA4 与邮件分别采用各自数据源的自然日口径，不把不同时区的单次事件做逐小时强行匹配。
+- 正式询盘使用 163 邮箱只读证据：2026-09-03 至 09-23 沿用 2026-09-24 已完成人工内容复核的私有台账；2026-09-24 至 09-30 对当前 INBOX、Junk/Spam、Trash 中的 9 封新增邮件逐封复核。三类邮箱角色均可读、`parse_gaps=0`；不读取 Sent 或附件，不在 Git 保存联系人或正文。
+- `monthly-report` 的跨窗 retained segment 比较状态为 `partial`，原因是 Page / Query 行受保留与匿名化影响；本节的 9 月单窗 Date 总量、Page、Country、Device、GA4 与人工询盘复核不受该比较状态替代。
+
+### GSC 自然搜索基线
+
+全站 Web Search 为 **32 clicks / 1,280 impressions / 2.50% CTR / average position 11.75**。与 8 月的 8 / 329 / 2.43% / 23.27 相比，clicks 增加 24（+300%），impressions 增加 951（+289%），CTR 增加 0.07 个百分点；average position 数值改善 11.52。由于基数低且查询组合已变化，后两项只作为方向，不解释为所有关键词统一提升。
+
+| Device | Clicks | Impressions | CTR | Average position |
+|---|---:|---:|---:|---:|
+| Desktop | 16 | 967 | 1.65% | 13.11 |
+| Mobile | 15 | 300 | 5.00% | 7.62 |
+| Tablet | 1 | 13 | 7.69% | 6.08 |
+
+主要目标市场中，美国为 6 clicks / 432 impressions，英国为 2 / 54，加拿大为 1 / 46；三地合计 9 clicks / 532 impressions，占 Property impressions 约 41.6%。这些国家级样本仍不足以比较询盘质量或据此建立国家平行页。
+
+| Page | Clicks | Impressions | CTR | Average position |
+|---|---:|---:|---:|---:|
+| `/flatlock-vs-overlock-technical-knitwear/` | 4 | 304 | 1.32% | 7.33 |
+| `/top-sportswear-manufacturers-china/` | 4 | 185 | 2.16% | 9.69 |
+| `/merino-wool-manufacturer/` | 5 | 160 | 3.13% | 12.24 |
+| `/` | 5 | 153 | 3.27% | 7.99 |
+| `/garment-quality-control-checklist/` | 5 | 125 | 4.00% | 16.76 |
+| `/knitted-fabrics-manufacturer/` | 1 | 95 | 1.05% | 17.41 |
+| `/underwear-manufacturer/` | 3 | 90 | 3.33% | 12.33 |
+| `/about-us/` | 1 | 57 | 1.75% | 6.23 |
+
+Query API 返回 50 个可见查询，合计只有 1 click / 205 impressions，而 Property 总量为 32 / 1,280；其余点击和曝光属于匿名化缺口，不能猜词。可见非品牌信号主要为 FLATLOCK 对比词簇：`overlock vs flatlock` 24 impressions / position 8.25、`flatlock stitch vs overlock` 22 / 9.41 / 1 click、`flatlock vs overlock` 21 / 8.86、`difference between flatlock and overlock` 15 / 9.13。商业词中 `merino wool clothing manufacturer` 为 14 impressions / position 26.21，`functional knitted fabrics factory` 为 7 / 23.29，`sportswear manufacturer china` 为 6 / 28.5；均不足以单独触发 Title、Meta、H1 或页面所有权调整。
+
+### GA4 流量与事件基线
+
+全站原始值为 **54 sessions / 10 total users / 7 new users / 28 engaged sessions**；engagement rate 为 **51.85%**，average session duration 为 **663.26 seconds**，event count 为 317，key events 为 0。已知 11 个 AI Assistant sessions / 1 user 与内部 GEO 测试重叠，且其他内部 QA 无法从整月汇总中可靠剔除，因此 54 是原始分析会话，不等于 54 个外部买家访问；不生成推测性的“净外部 sessions”。
+
+| Default channel group | Sessions | Total users | Engaged sessions | Event count | Key events |
+|---|---:|---:|---:|---:|---:|
+| Organic Social | 24 | 2 | 17 | 142 | 0 |
+| AI Assistant | 11 | 1 | 10 | 83 | 0 |
+| Direct | 8 | 6 | 0 | 22 | 0 |
+| Unassigned | 8 | 1 | 0 | 61 | 0 |
+| Organic Search | 2 | 1 | 0 | 5 | 0 |
+| Paid Search | 1 | 1 | 1 | 4 | 0 |
+
+Organic Search 只有首页一行，为 2 sessions / 1 user / 0 engaged session / 5 events / 0 key events；精确 `generate_lead` 过滤返回 0 行。全站同样没有 `generate_lead`。唯一一次 `contact_whatsapp_click` 发生于 2026-09-22，渠道为 Organic Social，Landing Page 带 `fbclid`；它不是 SEO 转化，也没有业务证据证明其构成正式询盘。
+
+与 8 月相比，全站 raw sessions 112 → 54、total users 82 → 10、engaged sessions 48 → 28；Organic Search sessions 保持 2，但 engaged sessions 1 → 0。由于 8 月包含测试/无效互动，9 月包含已确认的内部 GEO/UTM 测试，不能把全站 GA4 降幅直接解释为外部需求下降，也不能把 GSC 增长写成已转化增长。
+
+### 正式询盘真值与归因边界
+
+- 9 月人工确认的**真实/正式询盘为 6 封**；其余 23 封已复核邮件均为供应商、SEO、联系人名单、展会搭建等推销或非询盘。
+- 6 封中没有一封已经确认最终的“每款至少 500 件”数量：2 封给出了可能达到 MOQ 的范围或报价阶梯，但未承诺首单每款数量；其余 4 封数量未知或附件未读。因此记录为 **6 个真实询盘 / 0 个已确认 MOQ 合格询盘 / 6 个 qualification 未完成**，不能把后两项写成 6 个不合格询盘。
+- 来源自述为 1 封 `self_reported_web_unspecified`、5 封 `unknown`、0 封 `self_reported_google`。结合 GA4 Organic Search 0 `generate_lead`，当前是 **0 个可确认归因 Organic Search 的正式询盘**；来源未知不等于已证明不是 Google。
+- 8 月业务真值为 0 封正式/有效询盘，9 月增加到 6 封真实询盘，但来源和 MOQ qualification 均不足，不能把增长归因给 SEO、GEO、社交或某次页面改动。
+
+### Findings 与处置
+
+- `visibility-up / conversion-unproven`：GSC 曝光与点击较 8 月显著增加，且 FLATLOCK、Top Sportswear Guide、Merino、首页和 QC Guide 均超过 100 Page impressions；GA4 Organic Search 与人工询盘来源没有同步证明 SEO 转化。
+- `no-change / baseline-established`：本次不修改 URL、Title、Meta、H1、页面所有权，不创建近义页。FLATLOCK 可见词与现有指南任务一致，先保持；商业页可见 Query 仍低量，不用匿名 Query 猜词。
+- 月报中的内容衰减、Cannibalization、striking-distance 与 quick-win 扫描均未形成可执行候选；Google 2026 年 9 月 Spam Update 只记录时间重叠，不作因果归因。最大页面变化已通过上述 Page / Query 复核处置为 `monitoring`；当前变更日志已覆盖 9 月部署，不另造 postmortem 或 Backlog 项。
+- 下一步应把本基线用于既定 Day 28 / Day 90 页面复盘，并优先核对超过观察门槛的页面是否获得相关商业 Query 与合格询盘，而不是因 Property 总量上升继续批量扩写。
+
 ## 2026-09-30：SEO-V2-018 Sportswear 部署与索引关闭快照
 
 ### 生产与索引
