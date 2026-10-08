@@ -111,3 +111,11 @@ URL、Title、Meta、H1、Canonical、Schema 类型、Hero、MOQ 和页面所有
 - [x] 所有者确认后完成部署。
 
 当前 Finding outcome：`changed / measuring`。以 2026-09-07 生产部署为观察起点，Day 7 / 28 / 90 分别为 2026-09-14、2026-10-05、2026-12-06；复查 GSC Query、页面互动与有效询盘，不与 Title / Meta 实验混合归因。
+
+## Day 28 provisional 复盘（2026-10-08）
+
+- 数据状态 `partial`：GSC 最后 final 日为 2026-10-03，只能比较 2026-08-11～09-06 与 2026-09-07～10-03，各 27 日；请求的 after window 缺少 2026-10-04，不能给正式方向结论。
+- Provisional Page 数值为 3 clicks / 43 impressions / position 23.12 → 3 / 166 / 10.78；CTR 为 6.98% → 1.81%。可见 Query 只覆盖 after 20 impressions，`merino wool clothing manufacturer` 为 11 / position 24.36 → 8 / 28.13，没有与 Page 总曝光同步增长。
+- GA4 Landing Page 为 2 → 7 sessions、0 → 4 engaged sessions、0 conversion；after 中包含已确认的内部 ChatGPT / GEO 测试，不能作为买家增长。9 月有 1 封真实 Merino underwear RFQ，但来源与 Landing Page 未知，不能归因给本页。
+
+当前 outcome：`partial / keep-measuring`。保持页面与采购内容，不用 provisional 总曝光下结论；GSC final 覆盖 2026-10-04 后按完整 28 日重跑，Day 90 仍为 2026-12-06。

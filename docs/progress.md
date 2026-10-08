@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-09-28。
+最后更新：2026-10-08。
 
 ---
 
@@ -756,6 +756,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-09-30 | SEO-V2-013 所有者批准后的最小更新已本地实施：仅将 QC Guide 正文与 references 的 ISO 2859-1 引用改为 `ISO 2859-1:2026` 及官方标准页 `https://www.iso.org/standard/85464.html`，并将该页 `reviewed_on` 更新为真实复核日期 2026-09-30。AQL 解释与示例、URL、Title、Meta、H1、Schema、页面所有权和其他指南均不改；PHP 语法与源代码断言通过，但 LocalWP 45 秒内未返回响应，因此状态为 `implemented / source-verified / local-render-unavailable / deployment-pending`，待两个主题文件部署后进行生产定向验收。 |
 | 2026-09-30 | SEO-V2-013 部署记录关闭：QC Guide 生产页为 HTTP 200、`index, follow`、无 `X-Robots-Tag` 阻断、自引用 Canonical、单一 H1；Title、Meta 与 H1 保持核准基线。正文与 references 各有 1 次 `ISO 2859-1:2026` 官方链接，旧 OBP URL 为 0，可见 Technical review date 为 2026-09-30；页面存在于 `page-sitemap.xml`，Technical Guides Hub 保留可抓取入口。JSON-LD 可解析且六类核心节点齐全；Rank Math 的 `Article.dateModified` 仍取 WordPress 数据库的 2026-08-20 页面时间，未随代码 `reviewed_on` 同步，本轮不扩展 Schema 变量。最终状态 `completed / production-verified / scheduled`，Finding outcome `changed / keep`；下次例行复核不晚于 2026-12-31。 |
 | 2026-10-08 | 2026 年 9 月自然月 GSC / GA4 / 正式询盘基线完成：GSC final 为 32 clicks / 1,280 impressions / 2.50% CTR / average position 11.75，较 8 月 8 / 329 明显上升；GA4 为 54 raw sessions / 10 users / 28 engaged sessions，Organic Search 仍为 2 sessions、0 engaged session、0 `generate_lead`。163 邮箱合并既有人工台账与 09-24～09-30 新邮件逐封复核，确认 6 封真实询盘、0 封已确认每款达到 MOQ、0 封可确认归因 Organic Search；来源未知不按非 Google 处理。结论为 `visibility-up / conversion-unproven` 与 `no-change / baseline-established`；GSC 32 clicks 对 GA4 2 个 `google / organic` sessions 另记 `measurement-gap / investigate`，先做只读标签、Consent 与过滤诊断，不新增 Backlog 或直接改站。 |
+| 2026-10-08 | 到期 Day 28 页面复盘完成：完整窗口覆盖首页、Underwear、Knitted Fabrics、Contact、Services 与 Sportswear。首页为 4 / 73 → 6 clicks / 135 impressions，Underwear 为 0 / 25 → 2 / 84，Knitted 为 0 / 41 → 1 / 90，均保持 `keep / measuring`；Contact、Services 与 Sportswear 低于判断门槛，B 类采购内容维持 `changed / measuring`。Merino 只有 27 / 28 个 final 日，Outdoor 只有 26 / 28，分别顺延至 GSC final 覆盖 10-04 / 10-05 后关闭。Targeted 生产审计 8/8 URL 为 HTTP 200、可索引、0 high / medium issue；HSTS 沿用 owner-action，Sportswear 图片提示沿用 performance monitor-only。未触发 URL、Title、Meta、H1、Schema、页面所有权或 Backlog 变更。 |
 
 ---
 

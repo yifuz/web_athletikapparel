@@ -130,3 +130,11 @@
 - URL Inspection 数据状态 `complete`，1/1 inspected、0 failed、0 issue、0 regression；结果仍为 `PASS / Submitted and indexed`，Canonical 一致，最后抓取时间 `2026-09-03T20:21:04Z`。该索引快照早于本次部署，只证明既有索引状态，不证明 Google 已抓取新正文。
 
 验收结论：`changed / measuring`。以 2026-09-08 为观察起点，Day 7 / 28 / 90 分别为 2026-09-15、2026-10-06、2026-12-07；在数据门槛或明确范围问题出现前，不修改 URL、Title、Meta、H1 或页面所有权，也不把本项加入 SEO V2 Backlog。
+
+## Day 28 provisional 复盘（2026-10-08）
+
+- 数据状态 `partial`：GSC 最后 final 日为 2026-10-03，只能比较 2026-08-13～09-07 与 2026-09-08～10-03，各 26 日；请求的 after window 缺少 2026-10-04～10-05，不能正式关闭 Day 28。
+- Provisional Page 数值为 0 clicks / 21 impressions / position 21.86 → 0 / 27 / 20.19；GA4 before / after 均为 0 Landing Page session / 0 conversion。
+- After retained Query 只有 12 impressions，包含网址词 8、`outdoor clothing market size` 2、`garment active insulation market` 1 与 `outdoor apparel manufacturers` 1；既不足以判断商业意图，也不支持关键词或页面结构调整。
+
+当前 outcome：`partial / not-enough-data`。保持现有采购内容与页面所有权；GSC final 覆盖 2026-10-05 后重跑完整 28 日，Day 90 仍为 2026-12-07。

@@ -3,7 +3,7 @@
 - Change ID：`SEO-V2-005`
 - Finding type：`opportunity`
 - 优先级：P1
-- 状态：`fixed / measuring`
+- 状态：`fixed / keep-measuring`
 - 实施阶段：`production-accepted / measurement-open`
 - 实施日期：2026-09-01
 - 生产验收日期：2026-09-01
@@ -89,3 +89,12 @@
 - Day 7（2026-09-08）：已完成。URL Inspection 为 `PASS / Submitted and indexed`，Google 于 2026-09-07 重新抓取部署后页面，Canonical 一致且无索引回归。生产页 HTTP 200、可索引、单一 H1、0 invalid JSON-LD，Sitemap 与首页入口保持。GSC final 只到 09-04，部署前后各只有 4 个完整日且绝对样本为 1–2 impressions，报告为 `partial / not-enough-data`；当前 final 28 天页面为 0 clicks / 24 impressions，可见 3 个 Query 各 1 impression。GA4 同一 before / after 均为 0 landing sessions。工具生成的 Title / Meta 建议低于 100 impressions 门槛，处置为 `not-needed / low-sample`；outcome 保持 `no-change / measuring`；
 - Day 28（2026-09-29）：按相同口径比较页面 GSC clicks / impressions / Query / country、GA4 Organic Search 与人工核验有效询盘；
 - Day 90（2026-11-30）：结合季节性和其他发布记录决定 `keep`、`iterate` 或 `revert`。
+
+## Day 28 复盘（2026-10-08）
+
+- 数据状态 `complete`：GSC 比较 2026-08-04～08-31 与 2026-09-01～09-28，各 28 个 final 日。
+- 页面从 0 clicks / 25 impressions / position 23.20 变为 2 / 84 / 11.31；报告为 `positive / low confidence`，零点击基线不能计算有意义的点击增长百分比，也不能证明正文改动造成变化。
+- After retained Query 只有 2 行、6 impressions：网址词 5，相关词 `stretch performance base layers oem` 1 / position 45；2 个 Page clicks 的实际 Query 均被匿名，不能据此替换主词或扩写近义页。
+- GA4 before / after 均为 0 Landing Page session、0 conversion；9 月真实询盘没有可确认 Organic Search 或 Underwear 页面归因。
+
+Day 28 outcome：`keep / measuring`。方向正向但低于页面修改门槛；保持 URL、Title、Meta、H1、正文、Schema 与页面所有权，下一正式节点为 2026-11-30 Day 90。

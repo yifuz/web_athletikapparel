@@ -54,3 +54,12 @@ Sportswear 已覆盖 Training、Running、Yoga、Compression、FLATLOCK、ACTIVE
 生产验收确认 Sportswear 新增两张执行卡、四个 Buyer Questions、Tech Pack Guide 与 QC Guide 内链均已生效；其他六个品类页未输出该专属区块。Title、Meta、H1、Schema 类型、图片与页面所有权未变。生产 Meta 中既有的小写 `flatlock / activeseam` 不属于本批次变量或新增回归，另行按受控文案流程处理。
 
 当前 Finding outcome：`changed / measuring`。部署后按 28 / 90 天同口径观察，不把本项与 Title / Meta 或关键词实验混合归因。
+
+## Day 28 复盘（2026-10-08）
+
+- 数据状态 `complete`：GSC 比较 2026-08-05～09-01 与 2026-09-02～09-29，各 28 个 final 日。
+- 页面从 0 clicks / 36 impressions / position 9.17 变为 1 / 33 / 19.15；前后总曝光低于 100，报告为 `not-enough-data / low confidence`，position 变化不能解释为排名回归。
+- After retained Query 只有 7 impressions，其中网址词 6，另 1 次为不匹配的公司/品牌式查询；GA4 所有渠道 Landing Page 为 15 → 5 sessions、0 conversion，且同期存在社交分发、内部 QA 与后续 lookbook 部署干扰。
+- 同轮生产审计确认页面 HTTP 200、可索引；`image_oversized_candidate` 为低优先级性能提示，按所有者当前策略处置 `deferred / monitor-only`，不是采购内容回归。
+
+Day 28 outcome：`changed / measuring`。没有证据支持回滚或继续扩写；保持 URL、Title、Meta、H1、采购区块与页面所有权，后续由 SEO-V2-018 和 Day 90 统一观察。

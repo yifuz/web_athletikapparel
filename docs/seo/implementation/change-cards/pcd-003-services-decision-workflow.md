@@ -61,3 +61,11 @@
 生产验收覆盖首页、Services 与 7 个品类页，共 9/9 HTTP 200、可索引、单一 H1、自引用 Canonical、0 fetch failure、0 high/medium issue。结构化审计仅保留既有 HSTS 与图片尺寸启发式两项 low review，均与本项无关，分别记录为 `no-change / existing-owner-action` 与 `no-change / unchanged-heuristic`。
 
 当前 Finding outcome：`changed / measuring`。作为 B 类采购决策改进，本项不单独归因为自然搜索排名变化；后续观察 Services engagement、Contact 进入路径和询盘资料完整度。
+
+## Day 28 复盘（2026-10-08）
+
+- 数据状态 `complete`：GSC 比较 2026-08-05～09-01 与 2026-09-02～09-29，各 28 个 final 日。
+- Services 为 0 clicks / 1 impression → 0 / 2；before / after 均无 retained Query，GA4 Landing Page 均为 0 session / 0 conversion。报告结论为 `not-enough-data / low confidence`。
+- 同轮生产审计确认页面 HTTP 200、可索引；9 月询盘台账没有可靠的 Services Landing Page 或 Contact 进入路径字段，因此采购流程对 qualification 的贡献不可测。
+
+Day 28 outcome：`changed / measuring`。绝对样本不足，不改、不回滚四阶段采购决策内容；只有 Day 90 出现相关 Query、可识别 Services 访问路径或询盘反馈时再判断效果。

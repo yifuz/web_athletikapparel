@@ -3,7 +3,7 @@
 - Change ID：`SEO-V2-005-KF`
 - Finding type：`opportunity`
 - 优先级：P1
-- 状态：`fixed / measuring`
+- 状态：`fixed / keep-measuring`
 - 实施阶段：`production-accepted / measurement-open`
 - 实施日期：2026-09-01
 - 生产验收日期：2026-09-01
@@ -70,3 +70,12 @@ Day 0 说明：最初使用 Edge `--window-size=390,844` 截取外窗时出现�
 - Day 7（2026-09-08）：已完成。URL Inspection 为 `PASS / Submitted and indexed`，Google 于 2026-09-05 重新抓取部署后页面，Canonical 一致且无索引回归。GSC final 数据只到 2026-09-03，部署后仅 3 个完整日，搜索比较为 `partial / not-enough-data`；当前 28 天可见 Query 为 0 clicks / 7 impressions，其中目标词 `functional knitted fabrics factory` 占 5 impressions，另外两个 Query 各 1 impression，不构成明确主题偏移。生产 HTTP、Sitemap、首页入口、结构化数据、能力文案和 36 个图片候选 URL 均通过，outcome 为 `no-change / measuring`；
 - Day 28（2026-09-29）：按相同口径比较页面 GSC clicks / impressions / Query / country、GA4 Organic Search 与人工核验询盘；
 - Day 90（2026-11-30）：结合季节性和其他发布记录决定 `keep`、`iterate` 或 `revert`。
+
+## Day 28 复盘（2026-10-08）
+
+- 数据状态 `complete`：GSC 比较 2026-08-04～08-31 与 2026-09-01～09-28，各 28 个 final 日。
+- 页面从 0 clicks / 41 impressions / position 48.56 变为 1 / 90 / 16.14；报告为 `positive / low confidence`，仍不构成单变量因果证明。
+- 可见 Query impressions 为 5 → 18；目标词 `functional knitted fabrics factory` 从 3 impressions / position 36.33 变为 7 / 23.29，并新增低量的 `functional knit fabrics manufacturers` 与 `performance knit fabric oem`。主题与页面所有权一致，但单一 Query 仍远低于 100 impressions。
+- GA4 Landing Page 为 1 → 0 sessions、0 conversion；没有可确认 Organic Search 询盘。页面级 Country retained rows 受低量过滤，不作市场质量判断。
+
+Day 28 outcome：`keep / measuring`。主题匹配出现早期正向信号，但没有达到 Title / Meta、页面所有权或新 URL 实验门槛；保持现状至 2026-11-30 Day 90。

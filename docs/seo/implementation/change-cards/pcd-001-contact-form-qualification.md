@@ -107,3 +107,11 @@
 - [x] 未执行成功提交，未产生测试询盘或 GA4 lead。
 
 Finding outcome 更新为 `changed / measuring`。后续在 28 个完整自然日后观察不合格询盘识别率、字段完整度和有效询盘；该 B 类采购决策改进不解释为自然搜索排名变化。
+
+## Day 28 复盘（2026-10-08）
+
+- Targeted 生产复核确认首页与 Contact 仍为 HTTP 200、可索引、单一 H1，并继续输出 Form ID `3`、`Estimated Order Quantity` 与 Tech Pack 字段；未发现字段被代码部署移除的证据。
+- Contact 的 GSC 等长 28 天为 0 clicks / 34 impressions → 0 / 53，GA4 Landing Page 为 3 sessions / 1 conversion → 0 / 0。Contact 不是主要搜索承接页，且 before conversion 已被 8 月业务核验归入测试、无效或不合格互动，不能解释为改版后转化下降。
+- 9 月人工确认 6 封真实询盘，但当前私有台账不能把它们与 Form ID `3` 成功提交逐封去重关联，也不能可靠统计新 Numeric / Tech Pack 字段的填写完整度；2 封存在可能达到 MOQ 的数量范围，其余仍需 qualification。
+
+Day 28 outcome：`changed / measuring`。字段仍在生产生效，但“字段完整度改善”和“不合格询盘识别率”数据为 `unavailable`，不宣称成功、不回滚；Day 90 前继续在私有询盘台账补录 submission channel、每款数量与 Tech Pack 状态。

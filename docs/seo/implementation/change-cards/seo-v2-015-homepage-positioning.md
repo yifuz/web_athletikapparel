@@ -3,7 +3,7 @@
 - Change ID：`SEO-V2-015`
 - Finding type：`fix`
 - 优先级：P1
-- 状态：`measuring`
+- 状态：`keep / measuring`
 - 实施阶段：`fixed / measuring`
 - 实施日期：2026-08-31
 - 目标页面：`/`
@@ -102,3 +102,13 @@
 - Day 7：2026-09-07 已完成；Google 于 `2026-09-04T20:21:54Z` 重新抓取首页，URL Inspection 为 `PASS / Submitted and indexed`，Canonical 一致，生产 HTML 与当前搜索快照均显示新 Title，未发现明显技术回归。GSC 最终数据只覆盖三个改版后自然日且首页 Query 明细不可见，因此不作效果归因、不回滚；
 - Day 28：比较同口径 GSC Query/Page/Country、GA4 Organic Search 与人工核验有效询盘；
 - Day 90：在跨季节与其他发布因素记录完整时，决定 `keep`、`iterate` 或 `revert`。
+
+## Day 28 复盘（2026-10-08）
+
+- 数据状态 `complete`：GSC 比较 2026-08-03～08-30 与 2026-08-31～09-27，各 28 个 final 日；GA4 使用相同日期但按 Property `Asia/Shanghai` 时区。
+- GSC 首页从 4 clicks / 73 impressions / 5.48% CTR / position 4.19 变为 6 / 135 / 4.44% / 6.98。报告方向为 `positive / low confidence`；时间相邻不证明本次定位改动造成增长。
+- After Query 只保留 3 行、合计 11 impressions，全部为 `www.athletikapparel.com`、`athletik clothing inc` 或 `athletik`；其余 124 Page impressions 与 6 clicks 的 Query 受匿名化影响，无法验证新定位对应的非品牌词。
+- GA4 首页所有渠道 Landing Page 为 43 → 26 sessions、11 → 12 engaged sessions、0 conversion；9 月自然月 Organic Search 只有首页 2 sessions / 0 engaged session / 0 `generate_lead`。9 月 6 封真实询盘均无可确认 Organic Search 归因。
+- 同期存在 GEO 内容、社交分发、首页视频与其他页面发布，且 GA4 含内部 QA；不把 GSC 增长或 GA4 变化归因到单一变量。
+
+Day 28 outcome：`keep / measuring`。没有技术或搜索回归证据，也没有足够非品牌 Query 与合格询盘证据支持继续改写；保持 URL、Title、Meta、H1、Schema 与页面所有权，Day 90 再决定 `keep`、`iterate` 或 `revert`。
