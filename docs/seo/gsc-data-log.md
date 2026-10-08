@@ -64,7 +64,7 @@ Query API 返回 50 个可见查询，合计只有 1 click / 205 impressions，�
 
 Organic Search 只有首页一行，为 2 sessions / 1 user / 0 engaged session / 5 events / 0 key events；精确 `generate_lead` 过滤返回 0 行。全站同样没有 `generate_lead`。唯一一次 `contact_whatsapp_click` 发生于 2026-09-22，渠道为 Organic Social，Landing Page 带 `fbclid`；它不是 SEO 转化，也没有业务证据证明其构成正式询盘。
 
-同窗 GSC 为 32 clicks，而 GA4 `sessionSourceMedium = google / organic` 只有 2 sessions，且只落在首页。Search Console click 与 GA4 session 的定义、归因、Cookie consent、浏览器拦截和页面停留条件本来不同，不能要求 1:1；但本月约 16:1 的差距足以把 GA4 自然搜索可观察性标记为 `partial / measurement-gap`。在完成标签触发、Consent Mode / Cookiebot、内部流量过滤与主要自然落地页 `page_view` 的定向诊断前，不用 GA4 的 2 sessions 否定 GSC 的 32 clicks，也不把缺失部分补算成访问或询盘。
+同窗 GSC 为 32 clicks，而 GA4 `sessionSourceMedium = google / organic` 只有 2 sessions，且只落在首页。Search Console click 与 GA4 session 的定义、归因、Cookie consent、浏览器拦截和页面停留条件本来不同，不能要求 1:1；但本月约 16:1 的差距足以把 GA4 自然搜索可观察性标记为 `partial / measurement-gap`。2026-10-08 的只读诊断已确认 Cookiebot Domain Group 授权故障，详见下方诊断记录；在修复并形成新的完整观察窗口前，不用 GA4 的 2 sessions 否定 GSC 的 32 clicks，也不把缺失部分补算成访问或询盘。
 
 与 8 月相比，全站 raw sessions 112 → 54、total users 82 → 10、engaged sessions 48 → 28；Organic Search sessions 保持 2，但 engaged sessions 1 → 0。由于 8 月包含测试/无效互动，9 月包含已确认的内部 GEO/UTM 测试，不能把全站 GA4 降幅直接解释为外部需求下降，也不能把 GSC 增长写成已转化增长。
 
@@ -78,10 +78,36 @@ Organic Search 只有首页一行，为 2 sessions / 1 user / 0 engaged session 
 ### Findings 与处置
 
 - `visibility-up / conversion-unproven`：GSC 曝光与点击较 8 月显著增加，且 FLATLOCK、Top Sportswear Guide、Merino、首页和 QC Guide 均超过 100 Page impressions；GA4 Organic Search 与人工询盘来源没有同步证明 SEO 转化。
-- `measurement-gap / investigate`：GSC 32 clicks 与 GA4 2 个 `google / organic` sessions 差距过大，GA4 API 报告本身完整，但其 SEO acquisition coverage 不能视为完整。下一步先做只读测量链诊断，再决定是否需要代码或 Consent 配置变更；当前不凭差距直接改站。
+- `measurement-gap / diagnosed / external-fix-required`：GSC 32 clicks 与 GA4 2 个 `google / organic` sessions 差距过大，GA4 API 报告本身完整，但其 SEO acquisition coverage 不能视为完整。只读诊断已确认当前 Cookiebot Domain Group 未授权生产域名；修复点在 Cookiebot Manager，不在主题代码。9 月 GA4 Organic Search 继续保留为原始观测值，不作为完整 acquisition coverage。
 - `no-change / baseline-established`：本次不修改 URL、Title、Meta、H1、页面所有权，不创建近义页。FLATLOCK 可见词与现有指南任务一致，先保持；商业页可见 Query 仍低量，不用匿名 Query 猜词。
 - 月报中的内容衰减、Cannibalization、striking-distance 与 quick-win 扫描均未形成可执行候选；Google 2026 年 9 月 Spam Update 只记录时间重叠，不作因果归因。最大页面变化已通过上述 Page / Query 复核处置为 `monitoring`；当前变更日志已覆盖 9 月部署，不另造 postmortem 或 Backlog 项。
 - 下一步应把本基线用于既定 Day 28 / Day 90 页面复盘，并优先核对超过观察门槛的页面是否获得相关商业 Query 与合格询盘，而不是因 Property 总量上升继续批量扩写。
+
+### 2026-10-08：GSC / GA4 测量差距只读诊断
+
+Finding：`SEO-MEASUREMENT-001`
+
+状态：`confirmed / external-config-action-required`
+
+优先级：`P0 operational`；它不阻止 Google 抓取或排名，但会使 GA4 acquisition、Landing Page 和转化归因严重不完整，并使生产 Cookie consent 入口无法按既有文档工作。
+
+已确认的证据：
+
+- `seo-clash doctor` 的 Google 登录、GSC / GA4 只读 scope 和 GSC Property 均通过；GA4 Property `547377703` 为 `www.athletikapparel.com`，9 月 54 sessions 的 `hostName` 也全部为 `www.athletikapparel.com`。没有证据支持“读错 Property”或“流量写到 localhost / 其他域名”。
+- 生产 HTML 正常加载 Site Kit Google tag `GT-WBLS3B9D`，主题中没有第二份基础 GA4 tag；Cookiebot 使用 CBID `f81cac53-c468-4afd-9823-7adcc4839c5b` 和 Auto blocking。公开 Cookiebot 配置将 Google tag 列为 Statistics 类别 `cat:[3]`。
+- 对 Cookiebot `cc.js` 的生产域名授权请求均返回 HTTP 200，但响应正文明确报错：`athletikapparel.com` 与 `www.athletikapparel.com` 均未获该 Domain Group ID 授权。HTTP 200 只表示脚本请求成功，不表示 CMP 配置有效。
+- 新浏览器会话中 Cookiebot 横幅没有初始化，`Cookiebot.hasResponse=false`、Statistics consent 与 WP Consent API `statistics` 均为 false，没有 `_ga` Cookie，也没有 `google-analytics.com/g/collect` 请求；仅下载 `gtag.js` 不等于 GA4 已采集 page view。
+- 9 月仅有的两个 `google / organic` sessions 分别发生于 09-01 和 09-18，都是同一个 United States / Chrome / Windows / Desktop 用户，首次用户来源为 `(direct) / (none)`。它们可能来自已有同意状态或内部/返回访问，但当前没有证据把该用户确定为内部人员，因此只保留为原始值，不进一步推断。
+- GSC Query 明细仍受匿名化：可见 Query 仅解释 1 click / 205 impressions，不能用可见词或可见国家行反推其余 31 clicks。Cookiebot 故障解释 GA4 漏测机制，但不把缺失的 GSC clicks 换算成 sessions、users 或询盘。
+
+修复位置与验收标准：
+
+1. 在 Cookiebot Manager 中打开 CBID `f81cac53-c468-4afd-9823-7adcc4839c5b` 对应 Domain Group，确认账户/订阅有效，并将规范主机 `www.athletikapparel.com` 加入授权域名；同时加入裸域 `athletikapparel.com`，覆盖主机跳转前的访问。若该 CBID 属于错误 Domain Group，应改用真正包含这两个域名的 CBID，而不是在主题内绕过 CMP。
+2. 保存并发布后，复查两个 host 的 `cc.js` 响应不再包含 `not authorized`；使用无 Cookie 的普通浏览器确认首次访问能看到 Banner，页脚 Privacy Trigger 与 `Cookiebot.renew()` 能重新打开设置。
+3. 初始 / Reject all：Statistics 与 WP Consent API 保持 false，非必要 Cookie 不写入；Allow all：Statistics 与 WP Consent API 变为 true，随后首页与一个产品页出现 GA4 `page_view` / `g/collect`，并写入预期的 `_ga` Cookie。不得为补数据而绕过真实用户 consent。
+4. 用 GA4 Realtime / DebugView 做一次明确标记的内部 QA，随后从修复日期开始建立新的 28 天 GSC / GA4 / 询盘基线。9 月历史缺失不能回填，修复后的短窗也不能与完整自然月直接作同口径趋势结论。
+
+Finding outcome：`diagnosed / no-code-change / owner-action-required`。在上述验收通过前，GSC 继续作为搜索可见性主数据，GA4 仅作为已成功采集会话的下限样本；正式询盘仍以邮箱人工真值为准。
 
 ## 2026-10-08：到期 Day 28 页面复盘
 
