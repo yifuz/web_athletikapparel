@@ -64,6 +64,8 @@ Query API 返回 50 个可见查询，合计只有 1 click / 205 impressions，�
 
 Organic Search 只有首页一行，为 2 sessions / 1 user / 0 engaged session / 5 events / 0 key events；精确 `generate_lead` 过滤返回 0 行。全站同样没有 `generate_lead`。唯一一次 `contact_whatsapp_click` 发生于 2026-09-22，渠道为 Organic Social，Landing Page 带 `fbclid`；它不是 SEO 转化，也没有业务证据证明其构成正式询盘。
 
+同窗 GSC 为 32 clicks，而 GA4 `sessionSourceMedium = google / organic` 只有 2 sessions，且只落在首页。Search Console click 与 GA4 session 的定义、归因、Cookie consent、浏览器拦截和页面停留条件本来不同，不能要求 1:1；但本月约 16:1 的差距足以把 GA4 自然搜索可观察性标记为 `partial / measurement-gap`。在完成标签触发、Consent Mode / Cookiebot、内部流量过滤与主要自然落地页 `page_view` 的定向诊断前，不用 GA4 的 2 sessions 否定 GSC 的 32 clicks，也不把缺失部分补算成访问或询盘。
+
 与 8 月相比，全站 raw sessions 112 → 54、total users 82 → 10、engaged sessions 48 → 28；Organic Search sessions 保持 2，但 engaged sessions 1 → 0。由于 8 月包含测试/无效互动，9 月包含已确认的内部 GEO/UTM 测试，不能把全站 GA4 降幅直接解释为外部需求下降，也不能把 GSC 增长写成已转化增长。
 
 ### 正式询盘真值与归因边界
@@ -76,6 +78,7 @@ Organic Search 只有首页一行，为 2 sessions / 1 user / 0 engaged session 
 ### Findings 与处置
 
 - `visibility-up / conversion-unproven`：GSC 曝光与点击较 8 月显著增加，且 FLATLOCK、Top Sportswear Guide、Merino、首页和 QC Guide 均超过 100 Page impressions；GA4 Organic Search 与人工询盘来源没有同步证明 SEO 转化。
+- `measurement-gap / investigate`：GSC 32 clicks 与 GA4 2 个 `google / organic` sessions 差距过大，GA4 API 报告本身完整，但其 SEO acquisition coverage 不能视为完整。下一步先做只读测量链诊断，再决定是否需要代码或 Consent 配置变更；当前不凭差距直接改站。
 - `no-change / baseline-established`：本次不修改 URL、Title、Meta、H1、页面所有权，不创建近义页。FLATLOCK 可见词与现有指南任务一致，先保持；商业页可见 Query 仍低量，不用匿名 Query 猜词。
 - 月报中的内容衰减、Cannibalization、striking-distance 与 quick-win 扫描均未形成可执行候选；Google 2026 年 9 月 Spam Update 只记录时间重叠，不作因果归因。最大页面变化已通过上述 Page / Query 复核处置为 `monitoring`；当前变更日志已覆盖 9 月部署，不另造 postmortem 或 Backlog 项。
 - 下一步应把本基线用于既定 Day 28 / Day 90 页面复盘，并优先核对超过观察门槛的页面是否获得相关商业 Query 与合格询盘，而不是因 Property 总量上升继续批量扩写。
