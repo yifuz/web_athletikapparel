@@ -163,6 +163,26 @@ GA4 为所有渠道 Landing Page 口径；两页的 0 session 不证明没有搜
 - Sports Accessories 只有 1 条低可执行性 exact-URL Query，0 个非品牌 Query 达到页面机会报告的审查条件；目前没有可测试的 Query / CTR 假设。
 - 联合 Finding outcome 为 `changed / keep-measuring`。两页从滞后的 `owner-review` 修正为 `deployed / production-verified / keep-measuring`；保持 URL、Title、Meta、H1、正文、Schema、图片与页面所有权，不新增近义页，也不扩充 V2 Backlog。下一正式节点为不早于 2026-12-08 的 Day 90；只有相关商业 Query 达到可比较样本，或出现可归因的合格询盘 / 明确意图错配，才提前重开单变量实验。
 
+## 2026-10-08：SEO-V2-003 Services 索引复查
+
+### GSC indexed snapshot
+
+- 覆盖模式为 `targeted`，仅检查 `https://www.athletikapparel.com/services/`。`seo-clash` 版本为项目已验证的 `0.2.36`，Google 登录、Search Console 只读 scope 与属性均通过；`index-watch` 为 `dataStatus=complete`，1/1 inspected、0 failed、0 quota blocked、0 deferred。
+- 当前 indexed snapshot 为 `NEUTRAL / URL is unknown to Google`，`indexStatus=excluded`，issue code 为 `verdict_excluded`；没有返回 Google Canonical、最后抓取时间或具体抓取状态。前一份 2026-09-30 快照为 `Discovered - currently not indexed`，但工具将两者归为同一 excluded 状态，`changeKind=unchanged`，0 regression、0 recovery、0 alert。
+- URL Inspection 是 Google 的索引快照，不是实时测试。当前显示文字从 `Discovered - currently not indexed` 变为 `URL is unknown to Google`，但没有证据表明发生新的技术回归，也不能从 unspecified 字段推断 robots、抓取或 canonical 被阻塞。
+
+### 生产技术复核
+
+- 新鲜单页审计为 HTTP 200、无重定向、robots.txt 允许、`follow, index`、无 X-Robots-Tag、自引用 Canonical、单一 `Our Services` H1；Title、Meta 与 `seo-tags.md` 一致。JSON-LD 可解析且 0 invalid block，3 张图片均有 alt，0 mixed content，报告为 0 issue / 0 recommendation。
+- 模拟 Googlebot 请求同样返回 HTTP 200、完整 64,906-byte HTML、相同 Title、`index`、自引用 Canonical、单一 H1 与完整采购流程正文；未出现 bot 专属阻断或空壳响应。
+- `page-sitemap.xml` 中规范 URL 仅出现 1 次，首页当前仍有 5 个指向该 URL 的绝对链接；robots.txt 未禁止 `/services/`，生产 HTML 未泄漏 LocalWP / localhost 主机名。
+
+### Finding 处置
+
+Finding `SEO-V2-003-SERVICES-INDEX`：类型 `review`；严重度 `Info`；业务优先级 `P1`；信心 `Confirmed`；数据状态为 GSC complete + production targeted。观察是 Google 当前未收录该规范 URL；推断是现有证据不支持代码、robots、Canonical、Sitemap 或发现路径缺陷。失效条件是后续 Inspection 变为 `PASS / Submitted and indexed`，或 Google / 生产证据返回明确技术阻塞。
+
+Outcome 保持 `no-change / monitoring`。不重复请求索引，不修改 URL、Title、Meta、H1、正文、Schema 或页面所有权。由于自 2026-08-28 一次性请求后多次只读快照均未形成可执行新证据，Services 单页从周度轮询改为月度或触发式复查，下一常规节点不早于 2026-11-08；若期间发生实质页面发布、Sitemap / Canonical 变化、服务器错误或 GSC 明确抓取原因，则提前重开。该节奏调整不关闭 SEO-V2-003 的全站 Crawl / Index Snapshot 监测。
+
 ## 2026-09-30：SEO-V2-018 Sportswear 部署与索引关闭快照
 
 ### 生产与索引
