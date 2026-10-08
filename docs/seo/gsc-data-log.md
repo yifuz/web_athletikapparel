@@ -88,7 +88,7 @@ Organic Search 只有首页一行，为 2 sessions / 1 user / 0 engaged session 
 ### 范围与数据状态
 
 - 使用 `measure-change` 按各自生产变更日起比较等长的 GSC `dataState: final` 28 天窗口，并读取同窗 GA4 Landing Page；完整窗口覆盖首页、Underwear、Knitted Fabrics、Contact、Services 与 Sportswear。
-- GSC 当前最后 final 日为 2026-10-03。Merino 请求的 28 天 after window 只有 27 个 final 日，Outdoor 只有 26 个，因此两项为 `partial / not-enough-data`，本次只保存 provisional 数值，不正式关闭 Day 28。
+- GSC 当前最后 final 日为 2026-10-03。Merino 可比较 27 个 final 日，Outdoor 可比较 26 个 final 日。所有者于 2026-10-08 决定接受这两个近似等长窗口并正式关闭 Day 28；下列数值仍明确标注实际天数，不表述为完整 28 天。
 - 询盘沿用同日 9 月人工真值：6 封真实询盘、0 封已确认每款达到 MOQ、0 封可确认归因 Organic Search。其中 1 封为 Merino underwear RFQ，但来源与访问页面未知，不能归因到 Merino 页面改动。
 - Targeted 生产审计覆盖 8/8 URL，全部 HTTP 200、可索引，0 failed、0 high / medium issue。返回的 `hsts_missing` 为既有 SEO-V2-014 owner-action，处置 `deferred / existing-owner-action`；Sportswear 的 `image_oversized_candidate` 属所有者已暂停的增量性能工作，处置 `deferred / monitor-only`。两项都不是本轮内容回归。
 
@@ -105,14 +105,14 @@ Organic Search 只有首页一行，为 2 sessions / 1 user / 0 engaged session 
 
 GA4 数值为所有渠道 Landing Page 原始值，并包含已知内部 QA 与其他分发活动；它不等于 Organic Search 结果。页面级 Country retained rows 同样受低量过滤，不足以比较美国、加拿大或欧洲质量；市场判断继续使用完整自然月 Property Country 基线。
 
-### 尚未关闭的 Day 28
+### 近似窗口关闭的 Day 28
 
-| 页面 | 当前等长 final 日 | Before | After | 证据边界 / 下一步 |
+| 页面 | 实际等长 final 日 | Before | After | Day 28 结论 |
 |---|---:|---:|---:|---|
-| Merino | 27 / 28 | 3 clicks / 43 impressions / position 23.12 | 3 / 166 / 10.78 | 总曝光明显增加，但 CTR 6.98% → 1.81%；可见商业 Query 未同步增长，GA4 after 7 sessions 中含已确认内部测试。等待 GSC final 覆盖 2026-10-04 后重跑，当前 `partial / keep-measuring` |
-| Outdoor | 26 / 28 | 0 / 21 / 21.86 | 0 / 27 / 20.19 | 0 click、0 GA4 Landing Page session，可见 Query 仅 12 impressions。等待 GSC final 覆盖 2026-10-05 后重跑，当前 `partial / not-enough-data` |
+| Merino | 27 / 28 | 3 clicks / 43 impressions / position 23.12 | 3 / 166 / 10.78 | `keep / measuring`：曝光与页面平均排名明显改善，但 clicks 未增长、CTR 6.98% → 1.81%，可见商业 Query 未同步改善；GA4 after 7 sessions 含已确认内部测试，Merino RFQ 也无法归因。不改页面，转入 Day 90 |
+| Outdoor | 26 / 28 | 0 / 21 / 21.86 | 0 / 27 / 20.19 | `keep / measuring`（low confidence）：曝光和平均排名仅轻微改善，仍为 0 click、0 GA4 Landing Page session，可见 Query 只有 12 impressions。证据不足以证明成功，也未触发迭代或回滚；转入 Day 90 |
 
-本轮 Finding outcome：完整 Day 28 项均为 `no-change / keep-measuring` 或既有 B 类 `changed / measuring`；未出现 `iterate` 或 `revert` 触发条件。保持所有 URL、Title、Meta、H1、Schema 与页面所有权，不新增 Backlog；Merino 与 Outdoor 只因 final 数据未齐而顺延，不用 provisional 数值代替正式结论。
+本轮 Finding outcome：所有到期 Day 28 项均已关闭，结论为 `no-change / keep-measuring` 或既有 B 类 `changed / measuring`；未出现 `iterate` 或 `revert` 触发条件。保持所有 URL、Title、Meta、H1、Schema 与页面所有权，不新增 Backlog。Merino 与 Outdoor 的关闭是所有者接受 27 日 / 26 日近似窗口后的决策，不改变两项结论的低置信度和证据边界。
 
 ## 2026-09-30：SEO-V2-018 Sportswear 部署与索引关闭快照
 

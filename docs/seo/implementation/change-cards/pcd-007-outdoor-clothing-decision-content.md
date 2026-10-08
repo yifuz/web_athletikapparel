@@ -4,12 +4,12 @@
 - Finding type：`review`
 - 变更类型：V1.3 B 类采购决策完整性改进候选
 - 优先级：P1
-- 状态：`deployed / measuring`
+- 状态：`deployed / keep-measuring`
 - 审计日期：2026-09-08
 - 目标页面：`/outdoor-clothing-manufacturer/`
 - 目标市场：美国、英国、加拿大
 - 主要官网任务：`Discover / Qualify / Verify / Start`
-- 当前 Finding outcome：`changed / measuring`
+- 当前 Finding outcome：`changed / keep-measuring`
 
 ## 数据与技术状态
 
@@ -131,10 +131,10 @@
 
 验收结论：`changed / measuring`。以 2026-09-08 为观察起点，Day 7 / 28 / 90 分别为 2026-09-15、2026-10-06、2026-12-07；在数据门槛或明确范围问题出现前，不修改 URL、Title、Meta、H1 或页面所有权，也不把本项加入 SEO V2 Backlog。
 
-## Day 28 provisional 复盘（2026-10-08）
+## Day 28 复盘（2026-10-08）
 
-- 数据状态 `partial`：GSC 最后 final 日为 2026-10-03，只能比较 2026-08-13～09-07 与 2026-09-08～10-03，各 26 日；请求的 after window 缺少 2026-10-04～10-05，不能正式关闭 Day 28。
-- Provisional Page 数值为 0 clicks / 21 impressions / position 21.86 → 0 / 27 / 20.19；GA4 before / after 均为 0 Landing Page session / 0 conversion。
+- GSC 最后 final 日为 2026-10-03，可比较 2026-08-13～09-07 与 2026-09-08～10-03，各 26 日。所有者于 2026-10-08 决定接受少 2 日的近似等长窗口并正式关闭 Day 28；本结论不把该窗口表述为完整 28 日。
+- Page 数值为 0 clicks / 21 impressions / position 21.86 → 0 / 27 / 20.19；GA4 before / after 均为 0 Landing Page session / 0 conversion。
 - After retained Query 只有 12 impressions，包含网址词 8、`outdoor clothing market size` 2、`garment active insulation market` 1 与 `outdoor apparel manufacturers` 1；既不足以判断商业意图，也不支持关键词或页面结构调整。
 
-当前 outcome：`partial / not-enough-data`。保持现有采购内容与页面所有权；GSC final 覆盖 2026-10-05 后重跑完整 28 日，Day 90 仍为 2026-12-07。
+Day 28 outcome：`keep / measuring`（low confidence）。曝光与平均排名只有轻微改善，0 click、0 GA4 Landing Page session 和极少 Query 证据不足以证明页面优化成功；同时没有出现范围错配、技术回归或负向信号来支持迭代或回滚。保持现有采购内容与页面所有权，直接转入 2026-12-07 Day 90。
