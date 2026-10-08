@@ -114,6 +114,30 @@ GA4 数值为所有渠道 Landing Page 原始值，并包含已知内部 QA 与�
 
 本轮 Finding outcome：所有到期 Day 28 项均已关闭，结论为 `no-change / keep-measuring` 或既有 B 类 `changed / measuring`；未出现 `iterate` 或 `revert` 触发条件。保持所有 URL、Title、Meta、H1、Schema 与页面所有权，不新增 Backlog。Merino 与 Outdoor 的关闭是所有者接受 27 日 / 26 日近似窗口后的决策，不改变两项结论的低置信度和证据边界。
 
+## 2026-10-08：Merino Wool 阶段性检查
+
+### 覆盖与通过项
+
+- 覆盖模式为 `targeted`，仅检查 `/merino-wool-manufacturer/`。新鲜生产抓取为 HTTP 200、无重定向、robots 允许、自引用 Canonical、单一 H1；Title、Meta 与 H1 符合 `seo-tags.md` / `docs/sitemap.md`。22 张图片均有 alt，0 oversized image candidate，JSON-LD 可解析且 0 invalid block；`audit-page` 返回 0 issue / 0 recommendation。
+- GSC URL Inspection 为 `PASS / Submitted and indexed`，`INDEXING_ALLOWED / ALLOWED / SUCCESSFUL`，Google Canonical 与用户 Canonical 一致；最后抓取时间为 `2026-10-02T10:27:21Z`，晚于 9 月内容与视觉部署。该证据证明索引状态与抓取时间，不单独证明 Google 当前排名所用的每段正文版本。
+- Page Sitemap 与首页均存在该规范 URL；Merino carousel 脚本在生产 HTML 中被引用且资源返回 HTTP 200，页面未泄漏 LocalWP / localhost 地址。
+- 90 天 Cannibalization 报告覆盖 87 个 retained Query × Page 行和 64 个 Property Query group，0 个 material multi-URL candidate；没有证据支持合并、Canonical、重定向或页面所有权调整。
+- 90 天 Internal Links 报告对 retained Query 只形成 1 个候选来源页，核验后确认 Underwear 已有链接，因此 0 个 ready-to-apply missing contextual link。该结果不代表完整站内链接普查，但当前没有可执行缺口。
+
+### 搜索与转化信号
+
+- 所有者已接受的近似 Day 28 等长窗口为 27 日：3 clicks / 43 impressions / position 23.12 → 3 / 166 / 10.78；曝光增加 123（+286.05%），平均排名改善 12.34，但 clicks 不变、CTR 6.98% → 1.81%。工具因少 1 个 final 日仍标记 `partial / not-enough-data`，项目决策保持 `keep / measuring`。
+- 同窗 GA4 Landing Page 为 2 → 7 sessions、0 → 4 engaged sessions、0 conversion；after 包含已确认的内部 ChatGPT / GEO 测试，不解释为买家增长。
+- 90 天可见非品牌 Query 只有 25 impressions：`merino wool clothing manufacturer` 19 / position 25.95，复数 3 / 43.67，`wool apparel` 2 / 30，`stretch performance base layers oem` 1 / 17，合计 0 click。匿名 Query 缺口不能用这些 retained rows 反推。
+- `page-opportunities` 把 singular / plural clothing phrase 标记为 Title / H1 framing 候选，但现有 Title `Merino Wool Apparel Manufacturer` 已覆盖全部核心概念，正文也完整覆盖 clothing manufacturer 意图；目标词仍在 page two 之后且只有 19 impressions，没有可用 CTR benchmark。机械加入 exact phrase 或把 `Apparel` 改成 `Clothing` 不构成已验证实验。
+- 9 月有 1 封真实 Merino underwear RFQ，但来源与 Landing Page 未知，不能归因给本页或 Organic Search。
+
+### 处置
+
+Finding outcome：`no-change / keep-measuring`。当前没有 Critical / Warning；不修改 URL、Title、Meta、H1、正文、Schema、图片、内链或页面所有权，也不增加同义 Merino 页面。页面已经具备充分的采购决策内容，继续扩写的预期边际收益低。下一正式节点保持 2026-12-06 Day 90；只有可见商业 Query 形成稳定、可比较的排名与 CTR 假设，或出现可归因的合格询盘 / 明确范围错配，才提前重开单变量实验。
+
+Info / P3：JSON-LD `dateModified` 与 OG `updated_time` 仍为 2026-06-27，Twitter reading time 仍为 `Less than a minute`，与 9 月代码化页面更新和当前 1,184-word 抽取结果不一致。这是 WordPress 数据库字段与 code-first 正文的共享元数据来源问题，不是索引阻塞；本轮处置 `no-change / deferred`，不为单一 Merino 页面建立补丁或扩充 Backlog。
+
 ## 2026-09-30：SEO-V2-018 Sportswear 部署与索引关闭快照
 
 ### 生产与索引

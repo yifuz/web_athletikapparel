@@ -119,3 +119,13 @@ URL、Title、Meta、H1、Canonical、Schema 类型、Hero、MOQ 和页面所有
 - GA4 Landing Page 为 2 → 7 sessions、0 → 4 engaged sessions、0 conversion；after 中包含已确认的内部 ChatGPT / GEO 测试，不能作为买家增长。9 月有 1 封真实 Merino underwear RFQ，但来源与 Landing Page 未知，不能归因给本页。
 
 Day 28 outcome：`keep / measuring`。曝光与页面平均排名方向正向，但 clicks、可见商业 Query 和可归因询盘没有同步改善，因此不宣称商业效果成功，也不触发 Title / Meta 或正文迭代。保持页面与采购内容，直接转入 2026-12-06 Day 90。
+
+## 阶段性检查（2026-10-08）
+
+- Targeted `audit-page` 新鲜抓取为 HTTP 200、robots 允许、自引用 Canonical、单一 H1，Title / Meta / H1 与规范真值一致；22 张图片 0 missing alt，JSON-LD 0 invalid，报告为 0 issue / 0 recommendation。
+- URL Inspection 为 `PASS / Submitted and indexed`，Google 与用户 Canonical 一致；Google 最后抓取为 `2026-10-02T10:27:21Z`，无 index regression。Page Sitemap、首页入口、carousel 脚本引用与脚本 HTTP 200 同时通过。
+- 90 天 GSC retained 非品牌 Query 只有 25 impressions / 0 click；其中 `merino wool clothing manufacturer` 为 19 impressions / position 25.95。工具生成的 exact-phrase framing 建议没有 page-one CTR benchmark，且当前 Title、H1 和正文已覆盖相同商业概念，处置 `no-change / low-sample`。
+- 90 天 query-to-URL overlap 为 0 个 material candidate；Internal Links 只核验出 Underwear 已存在的链接，0 个 ready-to-apply missing contextual link。没有 URL 合并、页面所有权或新增内链动作。
+- JSON-LD `dateModified` / OG `updated_time` 保持 2026-06-27，Twitter reading time 为 `Less than a minute`；记录为共享 code-first / WordPress metadata source 的 Info / P3，不作 Merino 单页补丁。
+
+阶段 Finding outcome：`no-change / keep-measuring`。当前瓶颈是商业 Query 与可归因点击/询盘证据不足，不是抓取、索引、采购内容长度、图片数量或站内发现。保持所有页面变量至 2026-12-06 Day 90；提前重开只接受新的可比较 Query / CTR 假设、可归因合格询盘或明确范围错配。
