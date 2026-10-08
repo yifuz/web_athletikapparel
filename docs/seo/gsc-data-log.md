@@ -15,6 +15,27 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-10-08：GSC Generative AI 首个等长 28 天对比窗口
+
+### 来源与数据完整性
+
+- 所有者提供 GSC `效果 > 生成式 AI 功能（Beta）` XLSX；过滤器明确为 `搜索类型：网络`、`日期：2026年9月3日-2026年9月30日`。
+- 原始文件已复制到 `~/seo-reports/gsc-generative-ai/2026-09-03_2026-09-30/athletikapparel-generative-ai-2026-09-03_2026-09-30.xlsx`，大小 7,295 bytes，SHA-256 为 `0CB3BF40FCBB5F40FC6437137563BB686FD4BAD30948EA4DE4C64D6A9456518D`。
+- 日期 28 行、Page 14 行、Country 50 行、Device 3 行；Country 与 Device 均闭合到 190 Property impressions。数据接入模式为 `business_data_import (M5)`，证据为可审计原始导出；它不能替代 AI 回答样本。
+- 等长前窗 2026-08-06～09-02 从同日滚动导出的日期行提取；滚动文件的 Page/Country/Device 是整个 77 天范围聚合，因此只比较 Property 日期总量，不制造维度级前窗。
+
+### Property 与分布
+
+Property impressions 为 **27 → 190**，增加 163（+603.7%，7.04×）；有展示日期由 11/28 增至 27/28，日均由 0.96 增至 6.79。前窗与 2026-08-13～08-17 的已知日志异常重叠，当前窗又混合 Top Sportswear 与 ACTIVESEAM 两篇 Guide 上线前后日期，因此只判断 `visibility-up / attribution-unproven`，不把增量归因给某个页面或部署。
+
+Page 表为 14 个规范 URL、合计 199 次页面级链接曝光，高于 Property 的 190 次符合多页面聚合规则。主要页面为 FLATLOCK vs OVERLOCK 63、Top Sportswear 31、QC 29、首页 19、Merino 17、Underwear 12、ACTIVESEAM 9、About 6。Technical Knitwear Tech Pack 与 OEM Evaluation 没有返回行，只记为 `no returned row`，不解释为零需求、抓取失败或内容失败。
+
+Country 前五为美国 55、印度 16、英国 12、巴基斯坦 8、加拿大 7；Device 为 Desktop 130、Mobile 57、Tablet 3。国家和设备只说明链接展示分布，不代表买家身份、采购意图或转化质量。
+
+### 结论与处置
+
+本窗口确认 Google AI Overviews / AI Mode 中的规范站链接可见性显著扩大，并给出 14 个页面的 citation-surface evidence；它不提供 Query、答案原文、提取准确性、推荐位置、Clicks 或询盘。Finding outcome 为 `no-site-change / valid-retest-gsc-gate-passed`：不改 URL、Title、Meta、H1、正文、Schema 或内链；22 条有效复测记录仍全部 `planned`。详细口径、完整页面表与复测衔接见 [`GSC Generative AI 28 天测量快照`](../geo/testing/geo-measurement-snapshot-2026-10-08.md)。
+
 ## 2026-10-08：2026 年 9 月自然月 GSC / GA4 / 正式询盘基线
 
 ### 来源、窗口与数据状态

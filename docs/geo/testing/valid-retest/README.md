@@ -8,7 +8,7 @@
 >
 > 单条目标证据等级：`E3`
 >
-> 当前状态：`ready / not-run`。建立执行包不等于已经取得有效样本。
+> 当前状态：`ready / gsc-gate-passed / not-run`。2026-10-08 已取得要求的 GSC Generative AI 完整窗口；建立执行包和通过数据时间闸门都不等于已经取得有效样本。
 
 本执行包用于完成 Baseline v2 与 Broad Discovery v1 的第一批严格有效复测。固定提示词仍以 [`../prompt-baseline.md`](../prompt-baseline.md) 为唯一规范来源；本目录只负责执行、证据和复核，不建立新版本，也不改写提示词。
 
@@ -53,6 +53,13 @@ Perplexity 仍属于原计划分母的一部分，但不进入这 22 条实际�
 - 已确定采集人和复核人。采集人可以是所有者；Codex 可复核用户带回的证据，但当前 Codex 对话不能充当中性 ChatGPT Search 样本。
 
 任一闸门不满足时，不开始批次。
+
+### 3.1 2026-10-08 闸门进度
+
+- **已通过：**GSC Generative AI 的 2026-09-03～09-30 完整窗口已导出、校验并归档；Property 等长窗口为 27 → 190 impressions。证据见 [`../geo-measurement-snapshot-2026-10-08.md`](../geo-measurement-snapshot-2026-10-08.md)。
+- **已分开保存：**传统 GSC 与 GA4 已有 2026 年 9 月自然月基线；Bing 保留 2026-08-24～09-20 基线，第二窗口不早于 2026-10-20。
+- **仍需在首条运行前固定：**连续不超过 3 天的执行窗口、生产冻结、外部事件、私有证据目录、采集人和复核人。
+- **账本状态：**22 条 `run_state` 仍全部为 `planned`，尚无 `valid`、`partial` 或其他终态样本。
 
 ## 4. 平台预检
 
