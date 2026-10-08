@@ -46,6 +46,7 @@ if ($summary.Count -ne 6) {
 
 $allowedValidity = @('valid', 'partial', 'personalized', 'intent-mismatch', 'unavailable', 'invalid')
 $allowedRunState = @('planned', 'in_progress', 'completed', 'skipped')
+$allowedSampleMode = @('manual_authorized_sample', 'browser_assisted_sample')
 $validRequiredFields = @(
     'sampled_at_local',
     'model_mode',
@@ -94,7 +95,7 @@ foreach ($run in $runs) {
         $errors.Add("Invalid run_state for $($run.sample_id): $($run.run_state).")
     }
 
-    if ($run.sample_mode -ne 'manual_authorized_sample') {
+    if ($allowedSampleMode -notcontains $run.sample_mode) {
         $errors.Add("Unexpected sample_mode for $($run.sample_id): $($run.sample_mode).")
     }
 

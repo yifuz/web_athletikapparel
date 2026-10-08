@@ -1,7 +1,7 @@
 batch_id,test_group,platform,planned,answers_obtained,valid,partial,personalized,intent_mismatch,unavailable,invalid,review_status,notes
-GEO-VALID-2026-10-A,Baseline v2,ChatGPT Search,8,,,,,,,,pending,
+GEO-VALID-2026-10-A,Baseline v2,ChatGPT Search,8,8,,8,,,,,owner_review_pending,11 条 M4 浏览器辅助样本已采集；inline citation 最终 URL 已保存。因完整 UI 截图、整合 Sources 面板与两条超长答案文本存在证据缺口，暂不进入 valid 分母。
 GEO-VALID-2026-10-A,Baseline v2,Google AI Mode,8,,,,,,,,pending,
 GEO-VALID-2026-10-A,Baseline v2,Perplexity,8,,,,,,,,availability_check_required,"If plan access remains unavailable, record unavailable=8"
-GEO-VALID-2026-10-A,Broad Discovery v1,ChatGPT Search,3,,,,,,,,pending,
+GEO-VALID-2026-10-A,Broad Discovery v1,ChatGPT Search,3,3,,3,,,,,owner_review_pending,11 条 M4 浏览器辅助样本已采集；inline citation 最终 URL 已保存。因完整 UI 截图、整合 Sources 面板与两条超长答案文本存在证据缺口，暂不进入 valid 分母。
 GEO-VALID-2026-10-A,Broad Discovery v1,Google AI Mode,3,,,,,,,,pending,
 GEO-VALID-2026-10-A,Broad Discovery v1,Perplexity,3,,,,,,,,availability_check_required,"If plan access remains unavailable, record unavailable=3"

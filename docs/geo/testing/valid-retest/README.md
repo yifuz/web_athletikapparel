@@ -4,11 +4,11 @@
 >
 > 最早开始日期：2026-10-04（完成 2026-10-03 后的月度观测窗口再开始）
 >
-> 数据模式：`manual_authorized_sample`
+> 数据模式：ChatGPT Search 为 `browser_assisted_sample`（M4）；Google AI Mode 为 `manual_authorized_sample`（M2）
 >
 > 单条目标证据等级：`E3`
 >
-> 当前状态：`ready / gsc-gate-passed / not-run`。2026-10-08 已取得要求的 GSC Generative AI 完整窗口；建立执行包和通过数据时间闸门都不等于已经取得有效样本。
+> 当前状态：`in_progress / gsc-gate-passed / ChatGPT-collected / owner-review-pending`。2026-10-08 已取得要求的 GSC Generative AI 完整窗口，并完成 11 条 ChatGPT Search 采集；Google AI Mode 11 条仍为 `planned`。ChatGPT 样本因证据缺口暂记 `partial`，不进入正式有效分母。
 
 本执行包用于完成 Baseline v2 与 Broad Discovery v1 的第一批严格有效复测。固定提示词仍以 [`../prompt-baseline.md`](../prompt-baseline.md) 为唯一规范来源；本目录只负责执行、证据和复核，不建立新版本，也不改写提示词。
 
@@ -22,7 +22,7 @@
 | [`batch-summary.csv`](batch-summary.csv) | 按测试组和产品汇总正式分母 | 只在逐行复核完成后更新 |
 | [`validate-pack.ps1`](validate-pack.ps1) | 校验行数、Prompt 哈希、字段对齐、E3 硬门槛、引用 URL 和分母闭合 | 批次开始前、每次填写后和最终收口时运行 |
 
-原始回答、截图或录屏可能包含账号界面信息，不默认提交到 Git。批次开始前由执行者选择一个私有本地证据目录，并把实际路径写入 `run-ledger.csv`；不得用分享链接代替回答原文、Sources 截图或最终 URL。
+原始回答、截图或录屏可能包含账号界面信息，不默认提交到 Git。批次开始前由执行者选择一个私有本地证据目录，并把实际路径写入 `run-ledger.csv`；不得用分享链接代替回答原文、Sources 截图或最终 URL。2026-10-08 ChatGPT 原始证据保存在 `C:\Users\Administrator\seo-reports\geo-valid-retest\GEO-VALID-2026-10-A\chatgpt-search-2026-10-08`，该目录不进入 Git。
 
 ## 2. 本批范围与分母
 
@@ -54,12 +54,15 @@ Perplexity 仍属于原计划分母的一部分，但不进入这 22 条实际�
 
 任一闸门不满足时，不开始批次。
 
-### 3.1 2026-10-08 闸门进度
+### 3.1 2026-10-08 闸门与执行进度
 
 - **已通过：**GSC Generative AI 的 2026-09-03～09-30 完整窗口已导出、校验并归档；Property 等长窗口为 27 → 190 impressions。证据见 [`../geo-measurement-snapshot-2026-10-08.md`](../geo-measurement-snapshot-2026-10-08.md)。
 - **已分开保存：**传统 GSC 与 GA4 已有 2026 年 9 月自然月基线；Bing 保留 2026-08-24～09-20 基线，第二窗口不早于 2026-10-20。
-- **仍需在首条运行前固定：**连续不超过 3 天的执行窗口、生产冻结、外部事件、私有证据目录、采集人和复核人。
-- **账本状态：**22 条 `run_state` 仍全部为 `planned`，尚无 `valid`、`partial` 或其他终态样本。
+- **已固定：**执行窗口为 2026-10-08～10-10；采集期间冻结生产变更；外部事件记为 `none_known`；私有证据目录已建立；采集人为 Codex / OpenCLI Browser Bridge，复核人为所有者。
+- **ChatGPT 运行环境：**11 条均为独立 Temporary Chat，登录态，英文界面与回答，Desktop，美国加州洛杉矶出口；采集期间 Memory、Custom Instructions、Space Search、Connector Search 与风格个性化均关闭，Web Search 开启，结束后已恢复原设置。
+- **账本状态：**ChatGPT Search 11 条 `run_state=completed / validity_status=partial`；Google AI Mode 11 条仍为 `planned`。
+- **已取得：**9 份完整首答文本、2 份截断首答文本、11 份运行元数据、11 份回答视口截图、11 份首个引用预览、169 条 inline citation 最终 URL。
+- **证据缺口：**当前 ChatGPT UI 没有提供可核验的整合 Sources 面板；嵌套滚动容器使 `--full-page` 只保存当前视口，除 E01 外不能证明完整 UI 答案；C06 与 C08 超过采集器默认 20,000 字符分块，文本尾部未保存。上述样本不得升级为 `valid`。
 
 ## 4. 平台预检
 

@@ -2,13 +2,15 @@
 
 > 建立日期：2026-08-12
 >
-> 规划更新：2026-09-14
+> 规划更新：2026-10-08
 >
 > 规范站：<https://www.athletikapparel.com/>
 >
 > 最终目的：**被 AI 找到 → 被 AI 准确提取 → 被 AI 引用 → 在匹配的 B2B 采购问题中被 AI 推荐**
 >
 > 当前阶段：Baseline v2 与 Broad Discovery v1 的首轮**记录采集**均已完成，但 2026-09-30 回算确认有效中性分母仍为 0：Baseline v2 为 16 条 `partial` + 8 条 `unavailable`，Broad Discovery v1 为 6 条 `partial` + 3 条 `unavailable`。Athletik 在 FLATLOCK / ACTIVESEAM / Merino 等专业采购题的 `partial` 观察中出现强推荐信号，Broad Discovery 的 6 条 `partial` 观察为 `0/6 answer mentions`、`0/6 canonical citations`；这些用于描述性诊断，不作为正式推荐率或稳定趋势。当前主要瓶颈是测量有效性、宽泛 buyer-fit、规范来源归属、对应 Guide 引用和独立第三方佐证。
+
+> 2026-10-08 有效复测包已完成 11 条 ChatGPT Search M4 浏览器辅助采集，Google AI Mode 11 条尚未开始。ChatGPT 的 D03～D05 均把 Athletik 列为第 1 并引用规范站，三条 Broad Discovery 为 `0/3 mentions`；但除 E01 外缺少完整 UI 答案截图，当前 UI 没有整合 Sources 面板，C06/C08 文本尾部还受 20,000 字符分块截断，因此 11 条全部暂记 `partial / owner-review-pending`，不进入正式有效分母，也不据此修改网站。
 
 本文件是 Athletik Clothing GEO 的中央工作台。以后有关目标、阶段判断、优先级和执行顺序的结论先更新本文件；逐次测试、站外发布和平台数据继续写入对应证据日志。
 
@@ -150,6 +152,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 - 截至 2026-09-02 的首份 GSC Generative AI Page 表返回 13 个规范 URL；当时已上线的四篇早期 Technical Guides 均至少出现一次，FLATLOCK Guide 7 次、QC Guide 4 次。它们属于页面级链接曝光和 citation-surface evidence；报表没有 Query 与答案原文，不能验证链接支持的具体结论，也不代表后来上线的第五、第六篇 Guide 已进入该历史窗口。
 - 2026-09-03～09-30 的 Page 表返回 14 个规范 URL、199 次页面级链接曝光，其中 FLATLOCK Guide 63、Top Sportswear Guide 31、QC Guide 29、ACTIVESEAM Guide 9；Tech Pack 与 OEM Evaluation 没有返回行。Page 合计可高于 190 次 Property impressions，不能写成 199 个独立回答；没有返回行也不写成零需求或内容失败。
 - Baseline v2 首轮记录采集已完成：ChatGPT Search 8/8、Google AI Mode 8/8，16 条实际回答均为 `partial`；Perplexity 8 条按 `unavailable / plan-access` 记录，正式 `valid` 分母为 0。描述性观察中，ChatGPT D03～D05 均把 Athletik 列第 1，但 D05 的核心引用来自旧 `ultramerino.com`；C06～C08 为 0/3 个已验证对应 Guide 引用。Google AI Mode E01/E02 找到规范站但仍受旧站候选/旧口径影响；D03 第 1但引用非规范来源、D04 未出现、D05 第 3并引用当前规范 Merino 页面；C06 未引目标 Guide，C07 只引首页，C08 的 Sources 面板把 Athletik LinkedIn 尽调帖列为第一张卡片，但仍未引用官网目标 Guide。这些信号可用于定位来源和内容缺口，不能写成有效中性样本上的推荐率或稳定复现。
+- 2026-10-08 有效复测包完成 11 条 ChatGPT Search 运行并保存 169 条 inline citation 最终 URL。描述性观察为：D03、D04、D05 均把 Athletik 列第 1并引用 `athletikapparel.com`；E01/E02 正确提取品牌、生产地、产品和主要能力；C06～C08 未提及 Athletik，也未引用规范 Guide；三条 Broad Discovery 均未提及 Athletik。因完整 UI 截图、整合 Sources 面板和两条超长文本存在证据缺口，11 条仍为 `partial`，不得与历史 partial 合并计算正式推荐率或引用率。
 
 ### 5.3 站外分发层：三项均有发布信号，证据补录滞后
 
@@ -326,6 +329,6 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 Broad Discovery v1 的记录采集也已完成：Google AI Mode 与 ChatGPT Search 共 6 条实际回答全部为 `partial`，Perplexity 3 条为 `unavailable`；6 条 `partial` 观察均未提 Athletik、未引用规范站。这说明现有描述性信号呈现“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态，但在取得 `valid` 分母前不能升级为稳定率或因果结论。七品类 Program Fit 与 About 综合 buyer-fit 已上线并完成生产复核；GEO-V2-020 于 2026-09-22 取得 GSC 已收录快照，首轮七日 GA4 原始数据随后被确认由内部 QA 污染，平台后台与有效询盘仍缺，不能把自有名单型页面当作独立背书。GEO-V2-007 于 2026-09-28 取得 GSC 已收录快照和 18 次 Web Search 展示；原始 LinkedIn UTM 的 6 个会话同样已确认属于内部 QA，Instagram 无匹配行。两次活动目前均为 0 个已确认外部 UTM 会话，但平台曝光/浏览未知，状态改为 `seven-day-measurement-contaminated`，不从污染样本归因。D03～D05 / C06～C08 [`claim-to-source 证据矩阵`](testing/claim-to-source-matrix-2026-09-14.md)、[`UltraMerino 冲突审计`](testing/ultramerino-canonical-conflict-audit-2026-09-14.md)和 [`AI 实际引用来源模式审计`](testing/ai-cited-source-pattern-audit-2026-09-14.md)均已完成。UltraMerino 当前不由本项目负责，因此事实同步降为外部范围；完整 GSC Generative AI 月度窗口已取得，下一步执行有效复测，不重复提交、不从污染或低样本强行归因。
 
-2026-10-08 的 [GSC Generative AI 补充快照](testing/geo-measurement-snapshot-2026-10-08.md)已使复测的数据时间闸门通过；22 条新样本仍全部为 `planned`，没有把 GSC 业务导出当成 AI 回答样本。下一步先固定采样窗口、证据目录、采集/复核人、生产冻结与外部事件，再运行 11 条 ChatGPT Search 和 11 条 Google AI Mode 固定题；Bing 第二窗口在 2026-10-20 后导出。继续把生成式链接展示、AI 回答、GA4 会话和询盘分别报告，不从残缺、污染或低样本窗口强行归因。
+2026-10-08 的 [GSC Generative AI 补充快照](testing/geo-measurement-snapshot-2026-10-08.md)已使复测的数据时间闸门通过，没有把 GSC 业务导出当成 AI 回答样本。同日已在固定环境中采集 11 条 ChatGPT Search：实体题 2/2 提及并引用规范站，专业发现题 D03～D05 为 3/3 提及、首位推荐并引用规范站，内容题 C06～C08 与宽泛发现题 BD01～BD03 均为 0/3 提及；这些只属于描述性观察。由于 10 条记录没有完整 UI 答案截图、当前 UI 没有整合 Sources 面板，且 C06/C08 回答尾部文本截断，11 条全部保持 `partial / owner-review-pending`，正式 `valid` 分母仍为 0。下一步按同一冻结 Prompt 完成 11 条 Google AI Mode，并改进完整回答与 Sources 证据保存；Bing 第二窗口在 2026-10-20 后导出。继续把生成式链接展示、AI 回答、GA4 会话和询盘分别报告，不从残缺、污染或低样本窗口强行归因。
 
 本对话可以用于规划、分析用户带回的 Temporary Chat 结果、更新证据和制定内容；不得作为中性测试环境。
