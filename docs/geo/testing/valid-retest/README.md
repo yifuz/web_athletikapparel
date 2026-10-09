@@ -10,6 +10,8 @@
 >
 > 当前状态：`in_progress / gsc-gate-passed / ChatGPT-collected / owner-review-pending`。2026-10-08 已取得要求的 GSC Generative AI 完整窗口，并完成 11 条 ChatGPT Search 采集；Google AI Mode 11 条仍为 `planned`。ChatGPT 样本因证据缺口暂记 `partial`，不进入正式有效分母。
 
+> 2026-10-09 更新：[`重采批次 B`](batch-b/README.md) 的 11 条 ChatGPT Search 已全部完成，提示词哈希、完整文本长度、纵向截图覆盖和文件完整性检查通过，状态为 `collection-complete / owner-review-pending`。C06/C08 尾部文本已取得，完整 Sources 面板已通过右上角 Summary 入口识别。批次 A 的记录与证据保持历史 `partial`；B 的采集账本独立保存，尚未进入正式 `valid` 分母。
+
 本执行包用于完成 Baseline v2 与 Broad Discovery v1 的第一批严格有效复测。固定提示词仍以 [`../prompt-baseline.md`](../prompt-baseline.md) 为唯一规范来源；本目录只负责执行、证据和复核，不建立新版本，也不改写提示词。
 
 ## 1. 文件与职责
@@ -62,7 +64,7 @@ Perplexity 仍属于原计划分母的一部分，但不进入这 22 条实际�
 - **ChatGPT 运行环境：**11 条均为独立 Temporary Chat，登录态，英文界面与回答，Desktop，美国加州洛杉矶出口；采集期间 Memory、Custom Instructions、Space Search、Connector Search 与风格个性化均关闭，Web Search 开启，结束后已恢复原设置。
 - **账本状态：**ChatGPT Search 11 条 `run_state=completed / validity_status=partial`；Google AI Mode 11 条仍为 `planned`。
 - **已取得：**9 份完整首答文本、2 份截断首答文本、11 份运行元数据、11 份回答视口截图、11 份首个引用预览、169 条 inline citation 最终 URL。
-- **证据缺口：**当前 ChatGPT UI 没有提供可核验的整合 Sources 面板；嵌套滚动容器使 `--full-page` 只保存当前视口，除 E01 外不能证明完整 UI 答案；C06 与 C08 超过采集器默认 20,000 字符分块，文本尾部未保存。上述样本不得升级为 `valid`。
+- **批次 A 证据缺口：**当次未取得可核验的完整 Sources 面板；嵌套滚动容器使 `--full-page` 只保存当前视口，除 E01 外不能证明完整 UI 答案；C06 与 C08 超过采集器默认 20,000 字符分块，文本尾部未保存。上述历史样本不得升级为 `valid`。2026-10-09 已识别完整 Sources 入口并另建批次 B 重采，不能把当次采集缺口描述为产品没有 Sources 功能。
 
 ## 4. 平台预检
 

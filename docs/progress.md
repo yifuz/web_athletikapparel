@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-10-08。
+最后更新：2026-10-09。
 
 ---
 
@@ -34,7 +34,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 - GEO-06 LinkedIn 单图帖和 Instagram Carousel 已于 2026-08-13 发布；公开帖子 URL 与 Story 状态待补录。Google AI Mode 已在 V2-C08 Sources 面板发现日期为 2026-08-14 的 Athletik LinkedIn OEM 尽调帖；实际 LinkedIn URL、Instagram/Story 状态和七日数据仍待补录。
 - 2026-09-11 首批测试后诊断已完成：当前主瓶颈是规范来源归属、目标 Guide 的 source selection 和独立佐证，不是技术访问或索引阻断；完整 finding 见 [`geo/testing/baseline-v2-post-batch-diagnosis-2026-09-11.md`](geo/testing/baseline-v2-post-batch-diagnosis-2026-09-11.md)。
 - 当前长期 GEO 对话只用于规划和证据分析，不能作为中性测试环境。
-- 2026-09-28 已建立首份[`GEO 跨平台测量快照`](geo/testing/geo-measurement-snapshot-2026-09-28.md)；2026-10-08 又完成 [GSC Generative AI 首个等长 28 天对比](geo/testing/geo-measurement-snapshot-2026-10-08.md)，Property impressions 为 27 → 190。该结果只确认生成式链接可见性上升。有效复测中的 11 条 ChatGPT Search 已完成首次采集，但因完整回答截图、统一 Sources 面板和两条回答尾部文本缺口，当前全部为 `partial / owner-review-pending`，不进入有效分母；11 条 Google AI Mode 仍为 `planned`，Bing 第二窗口仍待 2026-10-20 后导出。
+- 2026-09-28 已建立首份[`GEO 跨平台测量快照`](geo/testing/geo-measurement-snapshot-2026-09-28.md)；2026-10-08 又完成 [GSC Generative AI 首个等长 28 天对比](geo/testing/geo-measurement-snapshot-2026-10-08.md)，Property impressions 为 27 → 190。该结果只确认生成式链接可见性上升。首次 ChatGPT Search 批次 A 因证据缺口保持历史 `partial`；2026-10-09 [重采批次 B](geo/testing/valid-retest/batch-b/README.md) 的 11 条完整首答已全部取得，提示词哈希、文本长度、文件及纵向覆盖检查通过，状态为 `collection-complete / owner-review-pending`，正式有效分母仍为 0。Google AI Mode 11 条仍为 `planned`，Bing 第二窗口仍待 2026-10-20 后导出。
 
 ### 1.3 营销与广告
 
@@ -760,13 +760,13 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 | 2026-10-08 | SEO-V2-002 GSC / GA4 测量差距诊断完成：Google 登录、GSC / GA4 scope、GSC Property 与 GA4 Property `547377703` 均正常，9 月 54 个 GA4 sessions 的 host 全部为 `www.athletikapparel.com`；生产 Site Kit tag `GT-WBLS3B9D` 存在，主题无第二份基础 GA4 tag。根因是 Cookiebot CBID `f81cac53-c468-4afd-9823-7adcc4839c5b` 的 `cc.js` 对 `www` 与裸域均明确返回 `not authorized`：新浏览器无法初始化 Banner，Statistics / WP consent 保持 false，仅加载 `gtag.js` 而不发送 GA4 `g/collect`。Finding outcome `diagnosed / no-code-change / owner-action-required`；所有者需在 Cookiebot Manager 授权两个域名或换用正确 CBID，验收 Allow / Reject 与 GA4 网络请求后，从修复日起重建 28 天基线。9 月 GA4 Organic Search 继续视为不完整下限，不用于否定 GSC 32 clicks。 |
 | 2026-10-08 | SEO-V2-002 Cookiebot / GA4 测量链生产修复验收通过：Cookiebot Manager 显示 `www.athletikapparel.com` 为正式 Domain，当前 CBID 的实时 `cc.js` 对 `www` 与裸域均返回完整配置且无 `not authorized`。两个独立无 Cookie 浏览器会话均显示首次 Banner；Allow all 后 Statistics / WP consent 为 true，写入 `CookieConsent`、`_ga` 与 `_ga_JV4NTPDVQB`，首页和 Merino 页均发送 GA4 `page_view`；Reject all 后 Statistics 保持 false，仅保留 `CookieConsent`，Underwear 页无 `_ga` 或 GA4 collect；页脚 Cookie Settings 可重新打开 Banner。本次无主题、插件、CBID 或 Site Kit 代码修改，Finding outcome `fixed / external-config / production-verified / keep`。9 月历史漏测不回填；新 28 天恢复窗口为 2026-10-08～11-04，正式复核不早于 11-07。 |
 | 2026-10-08 | GSC Generative AI 首个等长 28 天对比完成：所有者导出的 2026-09-03～09-30 XLSX 已按 SHA-256 归档，28 个日期行、14 个 Page、50 个 Country、3 个 Device 均通过完整性检查。Property impressions 为 190，对比 2026-08-06～09-02 的 27，增加 163（+603.7%，7.04×）；有展示日期为 27/28。Page 表合计 199，主要为 FLATLOCK 63、Top Sportswear 31、QC 29、首页 19、Merino 17、Underwear 12、ACTIVESEAM 9；页面合计不等于独立回答。前窗含已知日志异常，当前窗混合两篇新 Guide 上线前后，因此 outcome 为 `visibility-up / attribution-unproven / no-site-change`。有效复测 GSC 数据闸门已通过，22 条运行仍全部 `planned`；Bing 第二窗口仍待 2026-10-20 后导出。 |
-| 2026-10-08 | 有效复测 ChatGPT Search 首轮采集完成：固定 11 条 Prompt 均在独立 Temporary Chat、美国洛杉矶出口、Web Search 开启且个性化关闭的环境中运行，并保存元数据、回答文本、页面截图、首个引用预览及 169 条行内引用 URL。描述性结果为实体题 2/2 提及并引用规范站，专业发现题 D03～D05 为 3/3 提及、首位推荐并引用规范站，内容题 C06～C08 为 0/3，宽泛发现题 BD01～BD03 为 0/3；这些不是正式有效率。由于 10 条截图只覆盖可视区域、当前 UI 未提供统一 Sources 面板，且 C06/C08 的回答尾部文本超过采集上限，11 条统一记录为 `partial / owner-review-pending`，有效分母仍为 0；不据此修改网站。原始证据位于 Git 外私有目录，结构化台账见 [`有效复测执行包`](geo/testing/valid-retest/README.md)。 |
+| 2026-10-08 | 有效复测 ChatGPT Search 首轮采集完成：固定 11 条 Prompt 均在独立 Temporary Chat、美国洛杉矶出口、Web Search 开启且个性化关闭的环境中运行，并保存元数据、回答文本、页面截图、首个引用预览及 169 条行内引用 URL。描述性结果为实体题 2/2 提及并引用规范站，专业发现题 D03～D05 为 3/3 提及、首位推荐并引用规范站，内容题 C06～C08 为 0/3，宽泛发现题 BD01～BD03 为 0/3；这些不是正式有效率。由于 10 条截图只覆盖可视区域、当次未取得完整 Sources 面板，且 C06/C08 的回答尾部文本超过采集上限，11 条统一记录为 `partial / owner-review-pending`，有效分母仍为 0；不据此修改网站。原始证据位于 Git 外私有目录，结构化台账见 [`有效复测执行包`](geo/testing/valid-retest/README.md)。 |
 
 ---
 
 ## 13. 下一步优先级
 
-1. GSC Generative AI 的 2026-09-03～09-30 完整窗口已归档，数据时间闸门通过。11 条 ChatGPT Search 已完成首次采集，但证据门槛未完全通过，需所有者独立复核且当前不计入有效分母；下一步按同一冻结 Prompt 完成 11 条 Google AI Mode，并改进完整回答与 Sources 证据采集。2026-10-20 后导出 Bing AI Performance 的 2026-09-21～10-18 完整窗口。各系统单独报告，不把 citation、impression、session 和 recommendation 相加。
+1. GSC Generative AI 的 2026-09-03～09-30 完整窗口已归档，数据时间闸门通过。[ChatGPT 重采批次 B](geo/testing/valid-retest/batch-b/README.md) 已完成 11 条完整首答并通过采集检查；先复核合并引用、横向表格及暂停后的网络变化，当前不计入正式有效分母。下一平台按同一冻结 Prompt 完成 11 条 Google AI Mode，并沿用完整回答与 Sources 证据要求。2026-10-20 后导出 Bing AI Performance 的 2026-09-21～10-18 完整窗口。各系统单独报告，不把 citation、impression、session 和 recommendation 相加。
 2. `/top-sportswear-manufacturers-china/` 的 GSC 实时测试与一次索引请求已经完成；2026-09-22 又取得 `Submitted and indexed` 快照及最后抓取时间，不再重复提交。首页、About 与 Merino 沿用原定复查窗口。
 3. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
 4. GEO-V2-007 已完成生产部署、技术验收、LinkedIn / Instagram 公开 URL 补录、一次 GSC 索引申请及 2026-09-28 首次七日复核。GSC 已确认规范 URL 收录；固定窗口为 18 次 Web Search 展示、0 点击。原始 LinkedIn UTM 6 sessions 已确认属于内部 QA，Instagram 无匹配行，状态改为 `seven-day-measurement-contaminated / measuring`。平台后台与人工询盘不可得，当前为 0 个已确认外部 UTM 会话；月度 GSC 生成式窗口已记录 ACTIVESEAM Guide 的 9 次页面级链接曝光，但仍没有答案提取或推荐证据。进入固定 Prompt 有效复测，不立即重写页面或重复提交。没有拉伸状态素材，因此继续不写 Athletik 实测延伸、强度或耐久声明，HSAT-K5 和国产海淮扒密缝机保持独立证据线。

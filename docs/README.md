@@ -21,7 +21,7 @@
 - [`geo/testing/bing-ai-performance-baseline.md`](geo/testing/bing-ai-performance-baseline.md)：Bing AI Performance 的首份概览与页面级基线；Grounding Queries 当前无记录。
 - [`geo/testing/geo-measurement-snapshot-2026-09-28.md`](geo/testing/geo-measurement-snapshot-2026-09-28.md)：首份跨平台 GEO 测量快照，分开记录传统 GSC、GSC Generative AI、Bing AI Performance 与 GA4 AI referral。
 - [`geo/testing/geo-measurement-snapshot-2026-10-08.md`](geo/testing/geo-measurement-snapshot-2026-10-08.md)：GSC Generative AI 首个等长 28 天对比窗口、页面/国家/设备分布及有效复测数据闸门。
-- [`geo/testing/valid-retest/README.md`](geo/testing/valid-retest/README.md)：首轮有效复测执行包，包含 22 次运行账本、固定 Prompt 清单、引用账本、有效性闸门和批次分母表。
+- [`geo/testing/valid-retest/README.md`](geo/testing/valid-retest/README.md)：首轮有效复测执行包，包含批次 A 的 22 次运行账本、固定 Prompt 清单、引用账本、有效性闸门和批次分母表；[ChatGPT 重采批次 B](geo/testing/valid-retest/batch-b/README.md) 已完成 11 条采集，待正式复核。
 - `geo/content/`：三篇 GEO 基础指南的批准草稿和内容简报。
 - `geo/distribution/`：LinkedIn/Instagram 分发 SOP 与发布日志。
 
