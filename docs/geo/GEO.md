@@ -12,6 +12,8 @@
 
 > 2026-10-08 的 11 条 ChatGPT Search M4 样本因截图、完整 Sources 面板和 C06/C08 文本尾部缺口保持历史 `partial`。2026-10-09 已另建 [`重采批次 B`](testing/valid-retest/batch-b/README.md)，11/11 完整首答已取得，保存 74 张回答分段截图、26 张 Sources 截图及 C07 宽表格补图；文本长度、提示词哈希、文件与纵向覆盖检查通过。Sources 面板现已通过 Summary 入口识别。B 仍为 `collection-complete / owner-review-pending`，合并引用、横向表格与网络变化待复核，正式有效分母仍为 0。Google AI Mode 11 条尚未开始，本次未修改网站。
 
+> 同日[首轮逐条复核](testing/valid-retest/batch-b/review-2026-10-09.md)已完成：E01 的内容与引用支持关系通过，早间环境与所有者独立审核待确认；其余十条有未展开合并引用，D03/D05/C06 另有宽表截图缺口。原会话只读重开未恢复，未提交新问题。批次 B 的 D03/D05 明确推荐 Athletik，D04 与三条 Broad Discovery 未提及；C07 的规范 Guide 只确认进入检索列表，尚不能计最终引用。D05 的 Beta / Athletik 公开关联来源已定位到 Textilepages，属于既有隔离风险复现。上述均为描述性观察，正式有效分母不变。
+
 本文件是 Athletik Clothing GEO 的中央工作台。以后有关目标、阶段判断、优先级和执行顺序的结论先更新本文件；逐次测试、站外发布和平台数据继续写入对应证据日志。
 
 ## 1. 北极星目标与四阶段结果漏斗
@@ -283,7 +285,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-021 | 建立首份 GEO 跨平台月度快照 | 全漏斗测量 | P0 | `gsc-ai-refresh-complete / bing-refresh-pending` | 传统 GSC 与 GA4 已建立 9 月自然月基线；GSC Generative AI 的 2026-09-03～09-30 完整窗口为 190 Property impressions，对比前窗 27。该指标只证明链接展示，不证明推荐或转化。Bing 第二个完整窗口仍不早于 2026-10-20；详见[10 月 8 日补充快照](testing/geo-measurement-snapshot-2026-10-08.md) |
 | GEO-V2-022 | 对齐 GEO 当前真值与日期化历史快照 | 治理 | P0 | `complete / monitoring` | 已扫描 21 个 GEO Markdown 文件，修正当前控制入口中的 20 URL、六篇 Guide、`legalName`、域名和社交资料口径；日期化文件保留原值并明确不可当作当前事实。以后资产或所有者决策变化时复查 |
 | GEO-V2-023 | 建立 Baseline / Broad Discovery 有效分母 | 全漏斗测量 | P0 | `complete / valid-baseline-not-yet-established` | 已逐条读取“运行有效性”字段并发布平台分母表；首轮 `valid` 为 0。下一窗口只有满足环境、独立会话、第一次完整回答和来源证据要求的记录才进入正式比率 |
-| GEO-V2-024 | 建立首轮有效复测执行包 | 全漏斗测量 | P0 | `in-progress / ChatGPT-recollected / owner-review-pending` | GSC 数据闸门已通过；批次 A 的 11 条 ChatGPT 为历史 `partial`，Google AI Mode 11 条仍为 `planned`。2026-10-09 [批次 B](testing/valid-retest/batch-b/README.md) 已取得 11 条完整首答并通过采集文件检查；复核合并引用、横向表格及恢复段 Los Angeles → San Jose 网络变化后再判定正式有效性。Perplexity 可用性本次未重核 |
+| GEO-V2-024 | 建立首轮有效复测执行包 | 全漏斗测量 | P0 | `in-progress / first-pass-reviewed / evidence-gaps-open` | GSC 数据闸门已通过；批次 A 的 ChatGPT 为历史 `partial`，Google AI Mode 11 条仍 `planned`。[批次 B 首轮复核](testing/valid-retest/batch-b/review-2026-10-09.md)已完成：E01 待早间环境与独立审核；其他十条建议 `partial`，71 组合并引用的 89 个额外来源位置未映射，D03/D05/C06 横向截图缺口确认。只读重开 11 原会话均未恢复，未重新提问。正式分母为 0；网络变化及是否授权补采由所有者决定。Perplexity 本次未重核 |
 
 ## 10. 统一记录与判断口径
 
@@ -331,6 +333,6 @@ Broad Discovery v1 的记录采集也已完成：Google AI Mode 与 ChatGPT Sear
 
 2026-10-08 的 [GSC Generative AI 补充快照](testing/geo-measurement-snapshot-2026-10-08.md)已使复测的数据时间闸门通过，没有把 GSC 业务导出当成 AI 回答样本。同日已在固定环境中采集 11 条 ChatGPT Search：实体题 2/2 提及并引用规范站，专业发现题 D03～D05 为 3/3 提及、首位推荐并引用规范站，内容题 C06～C08 与宽泛发现题 BD01～BD03 均为 0/3 提及；这些只属于描述性观察。由于 10 条记录没有完整 UI 答案截图、当次未取得完整 Sources 面板，且 C06/C08 回答尾部文本截断，11 条全部保持 `partial / owner-review-pending`，正式 `valid` 分母仍为 0。下一步按同一冻结 Prompt 完成 11 条 Google AI Mode，并改进完整回答与 Sources 证据保存；Bing 第二窗口在 2026-10-20 后导出。继续把生成式链接展示、AI 回答、GA4 会话和询盘分别报告，不从残缺、污染或低样本窗口强行归因。
 
-2026-10-09 已完成 [ChatGPT 重采批次 B](testing/valid-retest/batch-b/README.md) 的 11 条完整首答，保存完整文本、74 张回答分段截图、26 张 Sources 截图及 C07 宽表格补图；提示词哈希、文本长度、文件和纵向覆盖检查通过。原设置已恢复，旧批次 A 保留历史 `partial`。B 的合并引用、横向表格与恢复段 San Jose 出口仍须正式复核，当前 `valid` 分母保持 0；下一步先完成该复核，再按冻结 Prompt 运行 Google AI Mode，不重复重采已完成的回答。
+2026-10-09 已完成 [ChatGPT 重采批次 B](testing/valid-retest/batch-b/README.md) 的 11 条完整首答与[首轮逐条复核](testing/valid-retest/batch-b/review-2026-10-09.md)。文件、完整文本和纵向覆盖检查通过，不等于横向截图与完整引用账本通过：D03/D05/C06 的宽表右侧缺失，除 E01 外的十条均有未展开合并引用；只读重开原会话未恢复。E01 的内容与引用关系通过，但早间环境及所有者独立审核仍待确认。当前 `valid` 分母保持 0；先由所有者决定环境证据、网络变化与是否另行授权补采，再运行下一平台，不通过放宽标准或覆盖旧样本收口。本次没有重新提问、改变 ChatGPT 设置或改站。
 
 本对话可以用于规划、分析用户带回的 Temporary Chat 结果、更新证据和制定内容；不得作为中性测试环境。

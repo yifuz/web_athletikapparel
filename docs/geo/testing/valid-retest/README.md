@@ -12,6 +12,8 @@
 
 > 2026-10-09 更新：[`重采批次 B`](batch-b/README.md) 的 11 条 ChatGPT Search 已全部完成，提示词哈希、完整文本长度、纵向截图覆盖和文件完整性检查通过，状态为 `collection-complete / owner-review-pending`。C06/C08 尾部文本已取得，完整 Sources 面板已通过右上角 Summary 入口识别。批次 A 的记录与证据保持历史 `partial`；B 的采集账本独立保存，尚未进入正式 `valid` 分母。
 
+> 同日[首轮逐条复核](batch-b/review-2026-10-09.md)确认：D03、D05、C06 的截图有横向缺口；十条回答的合并引用未完整映射。E01 的内容与引用支持关系通过，但早间环境证据与所有者独立复核尚未关闭。原会话只读重开未恢复，未提交新 Prompt；正式有效分母仍为 0。文件检查不等同于 E3 验收。
+
 本执行包用于完成 Baseline v2 与 Broad Discovery v1 的第一批严格有效复测。固定提示词仍以 [`../prompt-baseline.md`](../prompt-baseline.md) 为唯一规范来源；本目录只负责执行、证据和复核，不建立新版本，也不改写提示词。
 
 ## 1. 文件与职责

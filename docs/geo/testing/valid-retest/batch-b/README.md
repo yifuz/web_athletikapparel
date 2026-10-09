@@ -3,9 +3,11 @@
 - 批次：`GEO-VALID-2026-10-B`。
 - 采集日期：2026-10-09（Asia/Shanghai）。
 - 范围：Baseline v2 8 条、Broad Discovery v1 3 条，固定原文与 SHA-256 沿用 [`../prompt-manifest.csv`](../prompt-manifest.csv)。
-- 状态：`collection-complete / collection-checks-passed / owner-review-pending`。
+- 状态：`collection-complete / codex-first-pass-complete / evidence-gaps-open / owner-review-pending`。
 - 已取得完整回答 11/11；正式 `valid` 分母仍为 0，尚未作正式有效性判定。
 - 账本：[`collection-ledger.csv`](collection-ledger.csv)。本表是 11 条重采记录，不替代批次 A 的 22 行平台运行账本。
+
+2026-10-09 已完成 [11 条首轮复核](review-2026-10-09.md)，审核结果另存 [`review-ledger.csv`](review-ledger.csv)。原始 167 文件与 Prompt 哈希复查一致；但 D03、D05、C06 的宽表右侧截图确有缺口，十条回答的 71 处合并引用仍有 89 个额外来源位置未映射。程序通过只说明文件、全文长度与纵向覆盖，不等于完整横向截图或引用账本通过。E01 的内容与引用关系已核实，早间环境证据及所有者独立复核仍待确认；其他十条建议保留 `partial`。只读重开 11 个原会话均未恢复原回答，本次未重新提问。
 
 ## 采集结果
 
