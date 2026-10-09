@@ -38,6 +38,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 - 同日 [B 的首轮逐条复核](geo/testing/valid-retest/batch-b/review-2026-10-09.md)确认 D03/D05/C06 横向截图缺口与十条合并引用缺口；E01 内容及引用关系通过，但早间环境与所有者独立审核未关闭。只读重开 11 原会话均未恢复，0 次新提问；正式分母不变。新批次 D04 未提 Athletik，不能沿用旧批次全首位结论；D05 的 Beta 关联已定位公开目录来源。本次未改站或外部资料。
 
 - 最新决定：所有者手动重采的 [E01](geo/testing/valid-retest/manual-e01/README.md)已按其明确确认判为 `valid / owner-confirmed`，手动 M2 有效样本为 1 条；A/B 的旧样本与历史分母不覆盖。E01 已关闭，下一条处理 E02，不再索要 E01 环境确认。
+- 后续执行：[批次 C](geo/testing/valid-retest/batch-c/README.md)的 E02 已通过完整首答、横向表格、Sources 与合并引用复核，记为 `valid / E3 / passed`。当前接受 E01（M2）和 E02（M4）各一条；D03 正在采集，各模式分开统计，A/B 不覆盖。
 
 ### 1.3 营销与广告
 

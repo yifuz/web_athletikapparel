@@ -1,0 +1,15 @@
+sample_id,group_index,source_position,group_size,cited_url,support_status,supported_claim_scope
+GVC-CHT-V2-E02,1,1,2,https://www.athletikapparel.com/about-us/,supported_in_group,OEM/ODM定位及张家港生产地
+GVC-CHT-V2-E02,1,2,2,https://www.athletikapparel.com/sportswear-manufacturer/,supported_in_group,开发方式及非现货贴牌
+GVC-CHT-V2-E02,2,1,1,https://www.athletikapparel.com/sportswear-manufacturer/,supported,运动服产品范围
+GVC-CHT-V2-E02,3,1,1,https://www.athletikapparel.com/underwear-manufacturer/,supported,内衣及保暖打底产品
+GVC-CHT-V2-E02,4,1,1,https://www.athletikapparel.com/outdoor-clothing-manufacturer/,supported,针织户外服装及配件范围
+GVC-CHT-V2-E02,5,1,1,https://www.athletikapparel.com/merino-wool-manufacturer/,supported,Merino产品及成分选项
+GVC-CHT-V2-E02,6,1,1,https://www.athletikapparel.com/silk-wear-manufacturer/,supported,针织丝类及按项目评估梭织丝类
+GVC-CHT-V2-E02,7,1,1,https://www.athletikapparel.com/knitted-fabrics-manufacturer/,supported,针织面料及按规格开发功能选项
+GVC-CHT-V2-E02,8,1,2,https://www.athletikapparel.com/knitted-fabrics-manufacturer/,supported_in_group,自有面料及开发生产流程
+GVC-CHT-V2-E02,8,2,2,https://www.athletikapparel.com/services/,supported_in_group,面料到成衣及接受的开发资料
+GVC-CHT-V2-E02,9,1,2,https://athletikapparel.com/,supported_in_group,FLATLOCK与ACTIVESEAM设备及弹力带接合设备
+GVC-CHT-V2-E02,9,2,2,https://www.athletikapparel.com/services/,supported_in_group,bonded-welded选项及按批准样品生产
+GVC-CHT-V2-E02,10,1,1,https://www.athletikapparel.com/about-us/,supported_first_party_claim,设施人员产能与MOQ的官网自述
+GVC-CHT-V2-E02,11,1,1,https://www.athletikapparel.com/services/,supported,打样时限QC及按项目提供FOB/DDP
