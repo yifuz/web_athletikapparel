@@ -37,6 +37,8 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 - 2026-09-28 已建立首份[`GEO 跨平台测量快照`](geo/testing/geo-measurement-snapshot-2026-09-28.md)；2026-10-08 又完成 [GSC Generative AI 首个等长 28 天对比](geo/testing/geo-measurement-snapshot-2026-10-08.md)，Property impressions 为 27 → 190。该结果只确认生成式链接可见性上升。首次 ChatGPT Search 批次 A 因证据缺口保持历史 `partial`；2026-10-09 [重采批次 B](geo/testing/valid-retest/batch-b/README.md) 的 11 条完整首答已全部取得，提示词哈希、文本长度、文件及纵向覆盖检查通过，状态为 `collection-complete / owner-review-pending`，正式有效分母仍为 0。Google AI Mode 11 条仍为 `planned`，Bing 第二窗口仍待 2026-10-20 后导出。
 - 同日 [B 的首轮逐条复核](geo/testing/valid-retest/batch-b/review-2026-10-09.md)确认 D03/D05/C06 横向截图缺口与十条合并引用缺口；E01 内容及引用关系通过，但早间环境与所有者独立审核未关闭。只读重开 11 原会话均未恢复，0 次新提问；正式分母不变。新批次 D04 未提 Athletik，不能沿用旧批次全首位结论；D05 的 Beta 关联已定位公开目录来源。本次未改站或外部资料。
 
+- 最新决定：所有者手动重采的 [E01](geo/testing/valid-retest/manual-e01/README.md)已按其明确确认判为 `valid / owner-confirmed`，手动 M2 有效样本为 1 条；A/B 的旧样本与历史分母不覆盖。E01 已关闭，下一条处理 E02，不再索要 E01 环境确认。
+
 ### 1.3 营销与广告
 
 - Instagram、官网和 YouTube 正在运营；LinkedIn 公司主页已完成基础配置并进入低频自然更新。
@@ -767,7 +769,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 
 ## 13. 下一步优先级
 
-1. GSC 完整窗口已归档，数据时间闸门通过。[ChatGPT 批次 B 的首轮复核](geo/testing/valid-retest/batch-b/review-2026-10-09.md)已完成，但正式分母仍为 0：先核对 E01 早间环境与所有者独立审核，再决定网络变化及其他十条是否另行授权补采。原会话只读重开未恢复，不能靠搜索候选推补合并引用；下一平台仍有 11 条 Google AI Mode 待运行，必须在关闭每条会话前完成引用展开和宽表验收。2026-10-20 后导出 Bing AI Performance 的 2026-09-21～10-18 完整窗口。各系统单独报告，不把 citation、impression、session 和 recommendation 相加。
+1. GSC 完整窗口已归档，数据时间闸门通过。[E01 手动补采](geo/testing/valid-retest/manual-e01/README.md)已按所有者明确确认判为 `valid`，手动有效样本为 1 条，下一条处理 E02；不再重复索要 E01 环境证据。[批次 B 首轮复核](geo/testing/valid-retest/batch-b/review-2026-10-09.md)的其他十条仍保留原状态，网络变化及是否补采另按所有者决定处理。下一平台 11 条 Google AI Mode 待运行；2026-10-20 后导出 Bing AI Performance 的 2026-09-21～10-18 完整窗口。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。
 2. `/top-sportswear-manufacturers-china/` 的 GSC 实时测试与一次索引请求已经完成；2026-09-22 又取得 `Submitted and indexed` 快照及最后抓取时间，不再重复提交。首页、About 与 Merino 沿用原定复查窗口。
 3. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
 4. GEO-V2-007 已完成生产部署、技术验收、LinkedIn / Instagram 公开 URL 补录、一次 GSC 索引申请及 2026-09-28 首次七日复核。GSC 已确认规范 URL 收录；固定窗口为 18 次 Web Search 展示、0 点击。原始 LinkedIn UTM 6 sessions 已确认属于内部 QA，Instagram 无匹配行，状态改为 `seven-day-measurement-contaminated / measuring`。平台后台与人工询盘不可得，当前为 0 个已确认外部 UTM 会话；月度 GSC 生成式窗口已记录 ACTIVESEAM Guide 的 9 次页面级链接曝光，但仍没有答案提取或推荐证据。进入固定 Prompt 有效复测，不立即重写页面或重复提交。没有拉伸状态素材，因此继续不写 Athletik 实测延伸、强度或耐久声明，HSAT-K5 和国产海淮扒密缝机保持独立证据线。

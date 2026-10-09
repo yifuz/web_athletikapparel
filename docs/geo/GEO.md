@@ -16,6 +16,8 @@
 
 本文件是 Athletik Clothing GEO 的中央工作台。以后有关目标、阶段判断、优先级和执行顺序的结论先更新本文件；逐次测试、站外发布和平台数据继续写入对应证据日志。
 
+> 最新决定（2026-10-09）：所有者已手动重采 E01，确认符合要求并明确判为 `valid`。[手动补采记录](testing/valid-retest/manual-e01/README.md)已单独接受 1 条有效样本（M2）；E01 已关闭，下一条处理 E02。不再重复索要 E01 环境确认。上文及批次 A/B 的 0 分母为各自历史状态，不覆盖旧样本，不升级其他十条，也不混算不同采集模式的表现率。
+
 ## 1. 北极星目标与四阶段结果漏斗
 
 本项目使用以下四阶段管理 GEO，但它们不是一个必然自动转化的算法。页面可抓取不代表一定会被检索，
@@ -285,7 +287,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-021 | 建立首份 GEO 跨平台月度快照 | 全漏斗测量 | P0 | `gsc-ai-refresh-complete / bing-refresh-pending` | 传统 GSC 与 GA4 已建立 9 月自然月基线；GSC Generative AI 的 2026-09-03～09-30 完整窗口为 190 Property impressions，对比前窗 27。该指标只证明链接展示，不证明推荐或转化。Bing 第二个完整窗口仍不早于 2026-10-20；详见[10 月 8 日补充快照](testing/geo-measurement-snapshot-2026-10-08.md) |
 | GEO-V2-022 | 对齐 GEO 当前真值与日期化历史快照 | 治理 | P0 | `complete / monitoring` | 已扫描 21 个 GEO Markdown 文件，修正当前控制入口中的 20 URL、六篇 Guide、`legalName`、域名和社交资料口径；日期化文件保留原值并明确不可当作当前事实。以后资产或所有者决策变化时复查 |
 | GEO-V2-023 | 建立 Baseline / Broad Discovery 有效分母 | 全漏斗测量 | P0 | `complete / valid-baseline-not-yet-established` | 已逐条读取“运行有效性”字段并发布平台分母表；首轮 `valid` 为 0。下一窗口只有满足环境、独立会话、第一次完整回答和来源证据要求的记录才进入正式比率 |
-| GEO-V2-024 | 建立首轮有效复测执行包 | 全漏斗测量 | P0 | `in-progress / first-pass-reviewed / evidence-gaps-open` | GSC 数据闸门已通过；批次 A 的 ChatGPT 为历史 `partial`，Google AI Mode 11 条仍 `planned`。[批次 B 首轮复核](testing/valid-retest/batch-b/review-2026-10-09.md)已完成：E01 待早间环境与独立审核；其他十条建议 `partial`，71 组合并引用的 89 个额外来源位置未映射，D03/D05/C06 横向截图缺口确认。只读重开 11 原会话均未恢复，未重新提问。正式分母为 0；网络变化及是否授权补采由所有者决定。Perplexity 本次未重核 |
+| GEO-V2-024 | 建立首轮有效复测执行包 | 全漏斗测量 | P0 | `in-progress / E01-manual-valid / remaining-review` | GSC 数据闸门已通过；[E01 手动补采](testing/valid-retest/manual-e01/README.md)已按所有者明确确认判为 `valid`，手动 M2 有效样本为 1 条，下一条处理 E02。A/B 旧样本不覆盖；批次 B 其他十条维持 `partial` 建议，合并引用及 D03/D05/C06 横向截图问题不自动升级。Google AI Mode 11 条仍 `planned`；网络变化及是否补采按所有者决定，Perplexity 本次未重核 |
 
 ## 10. 统一记录与判断口径
 
