@@ -1,8 +1,11 @@
 # SEO-V2-005：Knitted Fabrics 结构、材料与应用补强
 
-> Change ID：`SEO-V2-005-KF-STRUCTURE-20261020`  
-> 实施日期：2026-10-20  
-> 状态：`implemented / owner-review / deployment-pending`  
+> Change ID：`SEO-V2-005-KF-STRUCTURE-20261020`
+>
+> 实施日期：2026-10-20
+>
+> 状态：`implemented / owner-review / deployment-pending`
+>
 > Finding outcome：`changed / owner-review`，不是排名改善或生产验收通过
 
 ## 1. 目标、授权与唯一变量
