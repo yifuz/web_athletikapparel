@@ -17,7 +17,7 @@
 
 ## 2026-10-20：Knitted Fabrics 内容补强前基线
 
-本轮根据所有者的 Google 曝光/排名优先指令执行 SEO-V2-005，不处理表单默认品类。目标为 `/knitted-fabrics-manufacturer/`，新内容仍为本地待审稿；本节数据全部发生在本次部署之前，不是改动收益。
+本轮根据所有者的 Google 曝光/排名优先指令执行 SEO-V2-005，不处理表单默认品类。目标为 `/knitted-fabrics-manufacturer/`；采集时新内容仍为本地待审稿，随后所有者于 2026-10-20 确认生产部署。本节数据全部发生在本次部署之前，不是改动收益。
 
 ### 来源与窗口
 
@@ -45,7 +45,15 @@
 
 ### 决策
 
-US / CA 的 `functional knit fabrics manufacturers` SERP 快照与已有一方业务事实支持补足“结构—材料—应用”内容，但没有证明新增内容一定提升排名；GB 请求失败，研究不是三市场完整覆盖。此次不做 Title / Meta / H1 实验，不改 URL 或页面所有权，不建近义页。Finding outcome 为 `changed / owner-review / deployment-pending`，Day 0 从未来真实部署日开始；具体证据、风险、文件、验收和复盘见 [本次 Change Card](implementation/change-cards/seo-v2-005-knitted-fabric-structures-2026-10-20.md)。
+US / CA 的 `functional knit fabrics manufacturers` SERP 快照与已有一方业务事实支持补足“结构—材料—应用”内容，但没有证明新增内容一定提升排名；GB 请求失败，研究不是三市场完整覆盖。此次不做 Title / Meta / H1 实验，不改 URL 或页面所有权，不建近义页。初始 outcome 为 `changed / owner-review / deployment-pending`，同日完成部署验收后转为 `changed / keep-measuring`；具体证据、风险、文件、验收和复盘见 [本次 Change Card](implementation/change-cards/seo-v2-005-knitted-fabric-structures-2026-10-20.md)。
+
+### Day 0：2026-10-20 生产部署与索引快照
+
+所有者确认三个主题文件已部署；生产原始 HTML、七品类定向审计、四种屏宽、CSS 内容一致性、五组产品图、Page Sitemap 唯一条目及首页入口均通过。没有重复请求索引，也未提交测试询盘；此为上线验收，不是曝光或排名收益。
+
+`seo-clash url-inspect` 返回 `PASS / Submitted and indexed`，`robotsTxtState=ALLOWED`、`indexingState=INDEXING_ALLOWED`、`pageFetchState=SUCCESSFUL`，Google / User Canonical 均为目标规范 URL；最后抓取 `2026-10-19T11:38:33Z`，`crawledAs=MOBILE`，早于本批部署，因此尚不能确认新模块已进入 Google 的已抓取版本。
+
+冻结前窗继续使用上面的 2026-09-20～10-17 final 数据。新模块 Day 7 为 10-27、Day 28 为 11-17、Day 90 为 2027-01-18；预定完整后窗为 2026-10-21～11-17，排除部署日，等 final 覆盖至 11-17 后再分析，预计 11-20 起读取。前后窗非紧邻，且 retained Query 低样本/匿名化限制继续保留；本次不读取新的 GA4 或邮箱数据，不用分析事件替代正式询盘真值。
 
 ## 2026-10-08：GSC Generative AI 首个等长 28 天对比窗口
 
