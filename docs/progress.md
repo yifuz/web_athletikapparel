@@ -768,6 +768,14 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 
 ---
 
+## 2026-10-20 SEO-V2-005 实施补记
+
+所有者明确当前阶段优先 Google 非品牌曝光和商业词排名，不将面料页表单默认品类的准确性作为本轮任务。既有 URL、Title、Meta、H1 与页面所有权不变，仅在 Knitted Fabrics 新增 single jersey / interlock / rib / jacquard 的结构、材料方向、服装应用和开发输入模块。文案使用已确认能力与一般结构原理，不新增固定 GSM、成分比例、性能结果、认证或图片证据；四类新内容均为待所有者审核草稿。
+
+PHP 语法、七品类数据/模板隔离、单一 H1 和 360 / 768 / 1024 / 1440px 浏览器离线渲染检查通过。其他六品类数据/HTML 未变，面料页去除新字段/模块后也与原数据/HTML 一致。本机 LocalWP 服务未运行，完整 WordPress 页面与生产验收仍未完成，不以模板桩替代。状态为 `implemented / owner-review / deployment-pending`，Finding outcome `changed / owner-review`。
+
+审核后需部署 `inc/product-category-data.php`、`template-parts/product-category/page.php`、`style.css`；没有新增图片或 JavaScript。真实部署后再记 Day 0 与 7 / 28 / 90 日期，原 Knitted 2026-11-30 Day 90 若混入新变量须披露。详见 [Change Card](seo/implementation/change-cards/seo-v2-005-knitted-fabric-structures-2026-10-20.md) 与 [GSC 基线](seo/gsc-data-log.md)。
+
 ## 13. 下一步优先级
 
 1. GSC 完整窗口已归档，数据时间闸门通过。[E01 手动补采](geo/testing/valid-retest/manual-e01/README.md)已按所有者明确确认判为 `valid`，手动有效样本为 1 条，下一条处理 E02；不再重复索要 E01 环境证据。[批次 B 首轮复核](geo/testing/valid-retest/batch-b/review-2026-10-09.md)的其他十条仍保留原状态，网络变化及是否补采另按所有者决定处理。下一平台 11 条 Google AI Mode 待运行；2026-10-20 后导出 Bing AI Performance 的 2026-09-21～10-18 完整窗口。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。
@@ -775,7 +783,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 3. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
 4. GEO-V2-007 已完成生产部署、技术验收、LinkedIn / Instagram 公开 URL 补录、一次 GSC 索引申请及 2026-09-28 首次七日复核。GSC 已确认规范 URL 收录；固定窗口为 18 次 Web Search 展示、0 点击。原始 LinkedIn UTM 6 sessions 已确认属于内部 QA，Instagram 无匹配行，状态改为 `seven-day-measurement-contaminated / measuring`。平台后台与人工询盘不可得，当前为 0 个已确认外部 UTM 会话；月度 GSC 生成式窗口已记录 ACTIVESEAM Guide 的 9 次页面级链接曝光，但仍没有答案提取或推荐证据。进入固定 Prompt 有效复测，不立即重写页面或重复提交。没有拉伸状态素材，因此继续不写 Athletik 实测延伸、强度或耐久声明，HSAT-K5 和国产海淮扒密缝机保持独立证据线。
 5. 七个品类页 Program Fit、About 综合段落、GEO-V2-019 与 GEO-V2-020 已上线并通过生产复核，不再立即重复修改。GEO-V2-020 已取得 GSC 已收录快照；首轮七日 GA4/UTM 原始会话已确认属于内部 QA，状态改为 `seven-day-measurement-contaminated / measuring`。LinkedIn/Instagram 精确后台数据和有效询盘仍待取得，不把缺口写成零。月度数据闸门现已通过，按有效复测执行包运行 Baseline v2 与 Broad Discovery v1，并分别记录平台、页面和固定 Prompt 结果，不把污染或低样本波动归因到单一页面。
-6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-018 已完成生产、索引与 US / GB / CA SERP 关闭验收，状态为 `completed / measuring`，不再列为待部署项目。保持 Sportswear 的 URL、Title、Meta、H1 与页面所有权，不建近义页；随常规 28 / 90 天 GSC、GA4 与有效询盘窗口观察，只有达到关闭记录中的触发条件才重开。SEO-V2-015 等既有改动继续按原观察窗口处理。
+6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：当前先审核 SEO-V2-005 Knitted Fabrics 的结构—材料—应用草稿，审核与真实部署后做单变量验收，再从部署日建立新观察窗口。SEO-V2-018 已为 `completed / measuring`，不重复列为待部署项目；Sportswear、首页及其他既有改动保持原窗口，不新建近义页或无触发重写。
 7. SEO-V2-004 转为性能监控项，不再主动投入增量优化；持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据，只有达到重新触发条件才启动页面或性能改动。
 8. Promotion P0 已完成；2026-09-28 起进入 P1，使用本机私有台账持续补齐新询盘负责人、MOQ、
    自述来源和销售阶段，并继续把平台 conversion 与人工确认询盘分开记录。

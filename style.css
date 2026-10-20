@@ -4469,6 +4469,78 @@ body.page .container.grid-container:has(.ma-product-category) {
   line-height: 1.35;
 }
 
+/* Fabric structure/material/application guide: data-gated to Knitted Fabrics.
+   No global tokens or existing category components are overridden. */
+.ma-fabric-structures {
+  background: var(--ma-color-surface);
+}
+
+.ma-fabric-structures .ma-section-inner {
+  padding-block: 0;
+}
+
+.ma-fabric-structures__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--ma-space-4);
+}
+
+.ma-fabric-structure {
+  min-width: 0;
+  padding: var(--ma-space-4);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+}
+
+.ma-fabric-structure h3 {
+  margin: 0;
+  color: var(--ma-color-text);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-h3);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-fabric-structure__description {
+  margin: var(--ma-space-2) 0 var(--ma-space-3);
+  color: var(--ma-color-muted);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-fabric-structure dl {
+  display: grid;
+  gap: var(--ma-space-3);
+  margin: 0;
+  padding-top: var(--ma-space-3);
+  border-top: 1px solid var(--ma-color-border);
+  font-size: var(--ma-fs-small);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-fabric-structure dt {
+  color: var(--ma-color-text);
+  font-weight: 700;
+}
+
+.ma-fabric-structure dd {
+  margin: var(--ma-space-1) 0 0;
+  color: var(--ma-color-muted);
+}
+
+.ma-fabric-structures__note {
+  max-width: var(--ma-reading-width);
+  margin: var(--ma-space-4) 0 0;
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-small);
+  line-height: var(--ma-lh-body);
+}
+
+@media (min-width: 48rem) {
+  .ma-fabric-structures__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* Optional category-specific buyer evidence blocks. These render only when
    their data is present, so the shared template remains stable for siblings. */
 .ma-product-assurance {

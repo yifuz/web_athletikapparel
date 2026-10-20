@@ -1370,6 +1370,42 @@ function myathletik_product_category_data() {
 					),
 				),
 			),
+			// SEO-V2-005: structure/material/application draft; owner review before deployment.
+			'fabric_structures' => array(
+				'heading' => __( 'Knit structures for performance apparel', 'myathletik-child' ),
+				'intro'   => __( 'Choose the knit structure around the intended garment, then define the fiber blend, weight, stretch, and finish. We develop single jersey, interlock, rib, and jacquard knitted fabrics for standalone fabric orders and integrated apparel programs.', 'myathletik-child' ),
+				'items'   => array(
+					array(
+						'title'       => __( 'Single jersey fabrics', 'myathletik-child' ),
+						'description' => __( 'Single-knit fabrics for lightweight tops and next-to-skin apparel.', 'myathletik-child' ),
+						'materials'   => __( 'Polyester, nylon, Merino wool, or blends; elastane can be specified for stretch.', 'myathletik-child' ),
+						'applications' => __( 'T-shirts, performance underwear, and lightweight base-layer tops and bottoms.', 'myathletik-child' ),
+						'development' => __( 'Yarn count, GSM, opacity, stretch and recovery, and dimensional stability.', 'myathletik-child' ),
+					),
+					array(
+						'title'       => __( 'Interlock fabrics', 'myathletik-child' ),
+						'description' => __( 'Double-knit fabrics with a similar appearance on both sides, for briefs requiring a more stable structure.', 'myathletik-child' ),
+						'materials'   => __( 'Merino wool, polyester, or blends selected for the target hand feel and layering role.', 'myathletik-child' ),
+						'applications' => __( 'Base layers, thermal underwear, and training apparel.', 'myathletik-child' ),
+						'development' => __( 'GSM, thickness, usable width, shrinkage, and stretch and recovery.', 'myathletik-child' ),
+					),
+					array(
+						'title'       => __( 'Rib knit fabrics', 'myathletik-child' ),
+						'description' => __( 'Ribbed constructions for close-fitting apparel and trim components, developed around the required fit and recovery.', 'myathletik-child' ),
+						'materials'   => __( 'Merino wool or performance blends, with elastane where specified.', 'myathletik-child' ),
+						'applications' => __( 'Fitted underwear, base layers, cuffs, and neckline trims.', 'myathletik-child' ),
+						'development' => __( 'Rib pattern, composition, usable width, and stretch and recovery.', 'myathletik-child' ),
+					),
+					array(
+						'title'       => __( 'Jacquard knit fabrics', 'myathletik-child' ),
+						'description' => __( 'Knitted-in patterns for apparel programs requiring a specific texture or color design.', 'myathletik-child' ),
+						'materials'   => __( 'Merino wool or blends, with yarn and color selection matched to the design.', 'myathletik-child' ),
+						'applications' => __( 'Patterned base layers, tops, and lightweight layering pieces.', 'myathletik-child' ),
+						'development' => __( 'Reference swatch or artwork, pattern scale, yarn colors, GSM, and fabric-back appearance.', 'myathletik-child' ),
+					),
+				),
+				'note' => __( 'These are development directions, not fixed specifications. Final composition, GSM, width, finish, and test criteria are agreed for each fabric program.', 'myathletik-child' ),
+			),
 			'capability_kicker' => __( 'Development & quotation', 'myathletik-child' ),
 			'capability_heading' => __( 'Develop functional knits against an approved specification', 'myathletik-child' ),
 			'construction'      => __( 'Send the target composition, yarn and knit structure, GSM, usable width, stretch and recovery, color reference, finish or performance requirement, testing requirement, order quantity, intended application, and delivery destination. Development is managed through our own fabric mill, with knitting, dyeing, finishing, and in-house testing coordinated against the approved specification. Swatches, counter samples, lab dips, sample yardage, and approval samples are available based on project needs. Third-party testing and supporting documentation can be arranged based on the required standard. Pricing is normally quoted per kg, while other units can be used when required. Final timing, packing, and delivery terms are set in the project quotation.', 'myathletik-child' ),

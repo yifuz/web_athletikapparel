@@ -11,9 +11,41 @@
 > 记录纪律：
 > - GSC 对低量查询做匿名化处理；某维度单行缺失不等于零流量，各维度合计口径可能不同。
 > - GA4 `generate_lead` 是分析事件，不自动等于真实、有效或合格 B2B 询盘；必须与表单、收件箱或 CRM 人工核对。
-> - 样本低于 100 曝光门槛时只记录方向，不触发页面修改（`seo-process.md` §5）。
+> - 100 次曝光是 CTR 元数据实验的初始观察门槛，不是所有内容改进的禁改线；低样本的 B 类改进须满足 `seo-process.md` §5.1 的业务事实、采购任务、单一变量、授权与复盘要求。
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
+
+## 2026-10-20：Knitted Fabrics 内容补强前基线
+
+本轮根据所有者的 Google 曝光/排名优先指令执行 SEO-V2-005，不处理表单默认品类。目标为 `/knitted-fabrics-manufacturer/`，新内容仍为本地待审稿；本节数据全部发生在本次部署之前，不是改动收益。
+
+### 来源与窗口
+
+- GSC `sc-domain:athletikapparel.com`，`type=web`、`dataState=final`，所有国家/设备；等长窗口为 2026-08-23～09-19 和 2026-09-20～10-17，各 28 天。
+- 同日页面维度为 0 clicks / 92 impressions / average position 27.05 → 1 / 84 / 13.63；页面平均排名不是某个商业词的固定排名，不能据此判定主词已经进第一页。
+- exact-page 的 Query × Page 复取使用 `dimensionFilterGroups` 精确 URL、`rowLimit=25000`。前窗完整返回 5 行，后窗首次网络失败、仅重试一次后完整返回 9 行，未截断；Query 仍受 GSC 匿名化限制。
+
+### 后窗全部返回行
+
+| Query | Clicks | Impressions | Average position | 本轮处置 |
+|---|---:|---:|---:|---|
+| breathable knitted fabric supplier | 0 | 1 | 49 | 固定观察词 |
+| custom knit fabric oem | 0 | 1 | 49 | 固定观察词 |
+| functional knit fabrics manufacturers | 0 | 5 | 19 | 固定观察词 |
+| functional knitted fabrics factory | 0 | 1 | 27 | 固定观察词 |
+| knitted fabric manufacturer | 0 | 4 | 33.5 | 固定观察词 |
+| performance knit fabric oem | 0 | 1 | 26 | 固定观察词 |
+| performance knit supplier | 0 | 1 | 27 | 固定观察词 |
+| uk technical fabric suppliers stretch wool performance knit garment construction | 0 | 1 | 8 | 保留原始行，不以英国本地供应身份主动定位 |
+| www.athletikapparel.com | 0 | 2 | 16 | 网址词，不计非品牌目标词簇 |
+
+8 条非网址查询合计 15 impressions；排除带 `uk` 的超长查询后，固定 7 个商业观察词为 14 impressions / 0 clicks。全部 9 行合计只有 17 impressions / 0 clicks，不能补算到页面 84 impressions / 1 click，也不能猜出未返回的点击查询。
+
+前窗 5 行为 `acetate knit fabric manufacturer` 2 impressions / position 69、`functional knitted fabrics factory` 10 / 27.2、`lightweight performance knit tops factory` 2 / 85、`performance knit fabric oem` 1 / 30、`www.athletikapparel.com` 5 / 21.2，均为 0 click。Acetate 未确认能力、knit tops 为成衣意图，不作为本页面目标。两窗 retained Query 集合不同，不以可见行的总量变化证明排名收益。
+
+### 决策
+
+US / CA 的 `functional knit fabrics manufacturers` SERP 快照与已有一方业务事实支持补足“结构—材料—应用”内容，但没有证明新增内容一定提升排名；GB 请求失败，研究不是三市场完整覆盖。此次不做 Title / Meta / H1 实验，不改 URL 或页面所有权，不建近义页。Finding outcome 为 `changed / owner-review / deployment-pending`，Day 0 从未来真实部署日开始；具体证据、风险、文件、验收和复盘见 [本次 Change Card](implementation/change-cards/seo-v2-005-knitted-fabric-structures-2026-10-20.md)。
 
 ## 2026-10-08：GSC Generative AI 首个等长 28 天对比窗口
 

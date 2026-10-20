@@ -305,6 +305,41 @@ if ( ! empty( $category['hero_video'] ) ) {
 	</section>
 	<?php endif; ?>
 
+	<?php if ( ! empty( $category['fabric_structures']['items'] ) && is_array( $category['fabric_structures']['items'] ) ) : ?>
+	<section class="ma-product-section ma-fabric-structures" aria-labelledby="ma-fabric-structures-title">
+		<div class="ma-section-inner">
+			<div class="ma-section-heading">
+				<p class="ma-section-kicker"><?php esc_html_e( 'Fabric construction', 'myathletik-child' ); ?></p>
+				<h2 id="ma-fabric-structures-title"><?php echo esc_html( $category['fabric_structures']['heading'] ); ?></h2>
+				<p><?php echo esc_html( $category['fabric_structures']['intro'] ); ?></p>
+			</div>
+			<div class="ma-fabric-structures__grid">
+				<?php foreach ( $category['fabric_structures']['items'] as $structure ) : ?>
+					<article class="ma-fabric-structure">
+						<h3><?php echo esc_html( $structure['title'] ); ?></h3>
+						<p class="ma-fabric-structure__description"><?php echo esc_html( $structure['description'] ); ?></p>
+						<dl>
+							<div>
+								<dt><?php esc_html_e( 'Material direction', 'myathletik-child' ); ?></dt>
+								<dd><?php echo esc_html( $structure['materials'] ); ?></dd>
+							</div>
+							<div>
+								<dt><?php esc_html_e( 'Apparel applications', 'myathletik-child' ); ?></dt>
+								<dd><?php echo esc_html( $structure['applications'] ); ?></dd>
+							</div>
+							<div>
+								<dt><?php esc_html_e( 'Specify for development', 'myathletik-child' ); ?></dt>
+								<dd><?php echo esc_html( $structure['development'] ); ?></dd>
+							</div>
+						</dl>
+					</article>
+				<?php endforeach; ?>
+			</div>
+			<p class="ma-fabric-structures__note"><?php echo esc_html( $category['fabric_structures']['note'] ); ?></p>
+		</div>
+	</section>
+	<?php endif; ?>
+
 	<?php if ( ! empty( $category['subcategories'] ) ) : ?>
 	<section class="ma-product-section ma-product-subcategories" aria-labelledby="ma-product-subcats-title">
 		<div class="ma-section-inner">
