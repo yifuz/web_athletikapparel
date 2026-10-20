@@ -772,7 +772,7 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 
 所有者明确当前阶段优先 Google 非品牌曝光和商业词排名，不将面料页表单默认品类的准确性作为本轮任务。既有 URL、Title、Meta、H1 与页面所有权不变，仅在 Knitted Fabrics 新增 single jersey / interlock / rib / jacquard 的结构、材料方向、服装应用和开发输入模块。文案使用已确认能力与一般结构原理，不新增固定 GSM、成分比例、性能结果、认证或图片证据；四类新内容均为待所有者审核草稿。
 
-PHP 语法、七品类数据/模板隔离、单一 H1 和 360 / 768 / 1024 / 1440px 浏览器离线渲染检查通过。其他六品类数据/HTML 未变，面料页去除新字段/模块后也与原数据/HTML 一致。本机 LocalWP 服务未运行，完整 WordPress 页面与生产验收仍未完成，不以模板桩替代。状态为 `implemented / owner-review / deployment-pending`，Finding outcome `changed / owner-review`。
+PHP 语法、七品类数据/模板隔离、单一 H1 和 360 / 768 / 1024 / 1440px 浏览器离线渲染检查通过。其他六品类数据/HTML 未变，面料页去除新字段/模块后也与原数据/HTML 一致。所有者启动 LocalWP 后已补齐真实 WordPress 验收：七品类均 200、单一 H1；四种屏宽无溢出、新模块仅面料页显示，实际 Title/Meta 符合基线、本地 Canonical 正常，Schema JSON 可解析，五组产品图加载且表单正常渲染但未提交。本地域名 Cookiebot configuration 404 与一次 Instant Reload 请求 400 记录为本地环境 Info，不改主题/CMP，也不据此推断生产故障。当前为 `implemented / local-verified / owner-review / deployment-pending`；Finding outcome 仍为 `changed / owner-review`，生产验收未完成。
 
 审核后需部署 `inc/product-category-data.php`、`template-parts/product-category/page.php`、`style.css`；没有新增图片或 JavaScript。真实部署后再记 Day 0 与 7 / 28 / 90 日期，原 Knitted 2026-11-30 Day 90 若混入新变量须披露。详见 [Change Card](seo/implementation/change-cards/seo-v2-005-knitted-fabric-structures-2026-10-20.md) 与 [GSC 基线](seo/gsc-data-log.md)。
 

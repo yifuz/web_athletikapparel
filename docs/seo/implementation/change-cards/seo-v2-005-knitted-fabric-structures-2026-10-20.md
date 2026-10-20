@@ -4,7 +4,7 @@
 >
 > 实施日期：2026-10-20
 >
-> 状态：`implemented / owner-review / deployment-pending`
+> 状态：`implemented / local-verified / owner-review / deployment-pending`
 >
 > Finding outcome：`changed / owner-review`，不是排名改善或生产验收通过
 
@@ -55,10 +55,13 @@
 | 新模块 | 面料页恰好一个模块、四张卡片、十二组 `dt` / `dd`；其他六页为零 |
 | 浏览器离线渲染 | 360 / 768 / 1024 / 1440px 均无文档或模块子元素横向溢出；Desktop 成对卡片等高、顶端对齐；无页面脚本错误 |
 | 新正文检查 | 无占位符、Beta/BTEXCO 公开关联、认证或量化性能声称 |
-| 完整 LocalWP | `unavailable`：本机没有运行中的 Local/php/nginx/mysql 服务，HTTP 请求连接失败；没有改动环境或数据库以假装通过 |
-| 生产部署、Rank Math、Canonical、Schema、表单及 Crawl Diff | `pending`，离线模板桩不替代完整 WordPress 或生产验收 |
+| 完整 LocalWP | 所有者启动后复验通过：七品类均为 HTTP 200、单一 H1，新模块仅面料页存在；实际 WordPress 页面在四种屏宽无横向溢出，Desktop 卡片成对等高、顶端对齐 |
+| LocalWP 页面输出与资源 | 面料页 Title / 单一 Meta Description / H1 符合既有基线，单一 Canonical 正确使用本地地址；新增内容已在原始 HTML 中，Schema JSON 可解析；五组产品图实际加载、alt 非空，共用表单正常渲染但未提交 |
+| 生产部署、生产域名与 Rank Math / Canonical / Schema / 表单 / Crawl Diff | `pending`；本地通过不等于已部署，也不替代生产验收或实际询盘链路测试 |
 
 离线检查加载现有父/子主题 CSS、实际共享模板和本地字体；Inquiry CTA 明确使用桩，不提交测试询盘。截图保存在 Git 忽略的 `.chrome-check/fabric-structures-{360,768,1024,1440}.png`，不是生产截图。
+
+2026-10-20 补充真实 LocalWP 验收：源代码覆盖全部七品类，浏览器完整渲染覆盖 Knitted Fabrics 的 360 / 768 / 1024 / 1440px，真实截图为 `.chrome-check/local-fabric-structures-{360,768,1024,1440}.png`。浏览器未登录、未提交表单，并设置分析端点拦截以避免测试流量。没有页面 JavaScript 异常；但网络记录出现本地域名 `myathletik-rebuild-02.local` 的 Cookiebot configuration 404，以及一次 `/browser-sync/socket.io/` 400（页面仍显示 Instant Reload connected）。两项作为本地环境观察记录为 `Info / no-theme-change`，不归因于新增模块，不据此断言生产 Cookiebot 有故障；生产 Consent 状态仍须在生产验收时独立确认。本轮没有更改网站代码、CMP 配置或数据库。
 
 部署前 Crawl ID：本轮未创建新全站 Crawl，`unavailable`；同日生产单页只读检查无 issue，不冒用历史 Crawl ID。部署后 Crawl ID：`pending`。
 
