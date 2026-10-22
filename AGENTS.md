@@ -176,7 +176,10 @@ The rebuild reorganizes the site around search intent. Target structure:
 ### Positioning (drives all content decisions)
 - Audience: **mid-sized B2B buyers** (brands/wholesalers placing technical knit
   orders), NOT startups doing tiny runs.
-- MOQ 500 pieces per style. Frame the site as a **technical manufacturing partner**, not
+- 定制面料成衣项目 MOQ（所有者于 2026-10-22 确认）：**500 pieces per colour per style, with mixed sizes**。
+  每款每色至少 500 件，同款同色可混码；该门槛依据定制面料最低米数设置，具体米数未确认。
+  当前询盘技术口径与回复策略见 [`docs/marketing/inquiry-reply-playbook.md`](docs/marketing/inquiry-reply-playbook.md)。
+  Frame the site as a **technical manufacturing partner**, not
   a startup hand-holding service. (This is the key contrast vs. competitors like
   Hongyu Apparel, who target startups / low MOQ.)
 - Differentiators to emphasize: vertical integration, flatlock/activeseam
