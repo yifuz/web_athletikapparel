@@ -314,6 +314,11 @@ reopened:
 - Do not invent facts, certifications, capacity numbers, or client names. If a
   factual detail is needed and unknown, insert a `【NEEDS INPUT: ...】` placeholder
   rather than fabricating.
+- 询盘回复的技术对齐、起草、审核与审核后提炼，使用
+  [`.agents/skills/wp-brand-voice-guard/SKILL.md`](.agents/skills/wp-brand-voice-guard/SKILL.md)。
+  所有者于 2026-10-22 要求：以后每篇询盘回复通过审核后，自动提炼新增或修正的通用事实、
+  能力边界、采购与样品条件及回复策略，更新技能及引用手册；去重，不保存客户资料或邮件全文。
+  此流程已有持续授权，无需再次询问是否更新技能；文案审核不等于发送授权。
 
 ## 6. Terminology — spelling consistency reference
 

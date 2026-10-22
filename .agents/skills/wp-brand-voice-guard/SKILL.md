@@ -1,20 +1,10 @@
 ---
 name: wp-brand-voice-guard
 description: >
-  Brand voice, terminology, and anti-fabrication guard for myathletik-child.
-  Enforces AGENTS.md §5 (explicit authorization for long-form copy, owner
-  review before publication) and §6
-  (consistent technical term spelling: FLATLOCK, ACTIVESEAM, SELF FABRIC,
-  SCREENPRINT, COVERSTITCH, OVERLOCK, Carbondry, Laser perforation, Merino
-  wool, Vertically integrated OEM, MOQ, Tech pack / spec sheet). Also blocks
-  invented facts (certifications, factory counts, capacity numbers, client
-  names) and ensures unauthorized or factually incomplete content slots use
-  【CONTENT: user to write】 / 【NEEDS INPUT: ...】 placeholders. Use whenever the user asks to 写文案 /
-  改文字 / 检查术语 / 拼写检查 / 品牌口吻, or says "write copy", "check
-  terminology", "fix spelling", "brand voice", "rewrite this text", "what
-  should this say", or before publishing/committing any page that contains
-  body copy or marketing prose. Trigger on 术语一致 / 拼写 / 占位符 /
-  不要乱编 / 品牌一致性 / 上线前检查 too.
+  维护 Athletik Clothing 的品牌口吻、术语和事实边界。用于网站文案起草、修改及上线前检查，
+  B2B 询盘邮件的技术对齐、回复起草与审核，以及所有者确认询盘回复“审核通过／验收通过”后的技能更新。
+  遵循 AGENTS.md §5–§6，不虚构能力、认证、MOQ 或测试结果；审核后自动提炼已确认的通用事实、
+  采购与样品条件及回复策略，更新技能及引用手册，客户身份与邮件全文不写入 Git。
 ---
 
 # wp-brand-voice-guard — Brand Voice, Terminology & Anti-Fabrication
@@ -140,6 +130,23 @@ From AGENTS.md §5 + `docs/site/design-brief.md`:
   对待评估性能和商务条件说明需要哪些资料，不虚构价格、测试结果或交期。
   样品、排期、英国运输与首封回复策略见
   [询盘回复技术口径与策略](../../../docs/marketing/inquiry-reply-playbook.md)。
+
+## 询盘回复与审核后的持续更新
+
+所有者于 2026-10-22 明确要求：以后本项目每篇询盘回复通过审核后，都执行技能提炼更新。
+
+- 技术对齐和起草前，读取[询盘回复技术口径与策略](../../../docs/marketing/inquiry-reply-playbook.md)中的现行事实与适用范围。首封围绕客户实际问题组织，不机械套用其他项目的 MOQ、运输或性能承诺。
+- 面料方案区分原版采购与定制替代，由客户选择。2026-10-22 所有者确认原版 Carvico 面料暂无现货，订单确认后才采购；不能写成选定原版即可寄现成样布。库存、供货和价格引用时核对最新确认。
+- 当前 bonded seam 能力限于口袋、袖口等局部；ACTIVESEAM 有充分制造经验。局部胶合与主拼缝分别确认，不将局部能力扩大为整件全胶合。
+- 激光打孔按具体图样确认孔径、密度和排布；替代面料的手感、弹性及穿着表现通过样品评估，不把估计的纱线规格、未核实专利或笼统性能百分比写成已验证事实。
+
+当所有者明确确认某篇询盘回复“审核通过”“验收通过”或同义表述后：
+
+1. 自动核对该轮新增或修正的通用事实、采购与样品前提、能力边界及有效表达方式，无需再次询问是否更新技能。
+2. 将可复用事实与策略合并到现有手册；需要改变技能触发或约束时同步本文件。保留确认日期、来源类型、适用范围和条件；重复内容去重，没有新增知识时核对现有条目并说明，不制造重复规则。
+3. 区分所有者明确确认的事实、公开来源、团队初判和待测目标。文案通过审核本身不把估计变成测试结论，也不将单个图样、面料或客户的条件扩大为普遍承诺。
+4. 只保存匿名化的通用知识；客户姓名、邮箱、公司身份、邮件主题、原文、附件和个案价格或数量不进入 Git，不复制整封获批回复作为学习记录。
+5. 核对旧口径冲突、引用链接和技能格式，按项目 Git 约定提交推送本次文件，并简短汇报已更新内容。审核通过仍不代表已发送或允许发送邮件。
 
 ## Output format
 

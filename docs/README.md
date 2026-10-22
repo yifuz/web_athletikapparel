@@ -30,7 +30,7 @@
 - [`marketing/promotion-timeline.md`](marketing/promotion-timeline.md)：当前 Promotion 唯一主时间线；只管理跨渠道推广节点，不重复 SEO/GEO 子任务。
 - [`marketing/promotion-plan.md`](marketing/promotion-plan.md)：90 天推广、归因、预算与询盘计划。
 - [`marketing/promotion-matrix.md`](marketing/promotion-matrix.md)：渠道分工、单人内容基线和复盘指标。
-- [`marketing/inquiry-reply-playbook.md`](marketing/inquiry-reply-playbook.md)：所有者确认的询盘回复口径：每款与每色 MOQ 组合、小单评估、免费样品、打样与运输周期，以及友善、简明的首封回复策略。
+- [`marketing/inquiry-reply-playbook.md`](marketing/inquiry-reply-playbook.md)：所有者确认的 MOQ、样品与交期、面料采购及工艺能力边界，以及友善简明的回复策略和审核后技能更新流程。
 - [`marketing/ads/google-ads-api-analysis-runbook.md`](marketing/ads/google-ads-api-analysis-runbook.md)：Google Ads MCP 只读接手、查询顺序、指标口径与证据边界。
 - [`marketing/ads/google-ads-api-snapshot-2026-09-24.md`](marketing/ads/google-ads-api-snapshot-2026-09-24.md)：当前 Google Ads API 配置、表现、搜索词覆盖与证据缺口基线。
 - [`marketing/ads/163-mail-inquiry-analysis-runbook.md`](marketing/ads/163-mail-inquiry-analysis-runbook.md)：普通 163 邮箱只读询盘采集、Agent 接手命令、隐私边界与本机运行手册。
