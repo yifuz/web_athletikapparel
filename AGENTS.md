@@ -176,8 +176,9 @@ The rebuild reorganizes the site around search intent. Target structure:
 ### Positioning (drives all content decisions)
 - 主要面向采购技术针织服装的中型 B2B 品牌与批发商，优先较大订单和持续返单；
   同时保留小客户、小单的沟通与项目评估空间，不因首批数量较小自动排除。
-- 当前对客 MOQ 暂行口径（所有者于 2026-10-22 后续调整）：**500 pieces per style**。
-  暂不将每款每色 500 件作为统一对客门槛。定制面料的最低米数仍需结合面料、颜色和数量拆分按项目核算；
+- 当前 MOQ 组合口径（所有者于 2026-10-22 采纳）：**500 pieces per style** 作为标准入口；
+  定制面料每款每色通常按 **400–500 件**评估，可混码，最终结合面料最低米数、单件耗料和颜色拆分核算。
+  每款和每色条件同时满足，不将每款 500 件理解为可任意拆色，不额外统一要求每款至少 1,000 件。
   小单可继续评估，不自动承诺降低 MOQ、任意混色或接受所有小单。
   当前询盘技术口径与回复策略见 [`docs/marketing/inquiry-reply-playbook.md`](docs/marketing/inquiry-reply-playbook.md)。
   Frame the site as a **technical manufacturing partner**, not
