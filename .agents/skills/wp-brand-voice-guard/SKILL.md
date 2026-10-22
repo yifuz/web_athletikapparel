@@ -65,10 +65,10 @@ Specifically never invent:
   that's the user's stated figure, OK to reuse; don't invent new ones)
 - Capacity numbers (pieces/month, knit meters, etc.)
 - Client / brand names
-- 未经确认或被改写的 MOQ。所有者于 2026-10-22 确认，定制面料成衣项目为
-  **500 pieces per colour per style, with mixed sizes**：每款每色至少 500 件，可混码，
-  依据定制面料最低米数设置；具体米数未确认。页面可以按已批准规格省略数字，
-  但不得沿用旧的每款 500 件表述，或自行改写每色数量与混码规则。
+- 未经确认或被改写的 MOQ。所有者于 2026-10-22 后续调整当前对客暂行口径为
+  **500 pieces per style**；暂停同日较早确认的每款每色 500 件统一对客门槛。
+  定制面料最低米数仍按面料、颜色及数量拆分核算，具体米数未确认。
+  不因客户首批数量较小自动拒绝，也不自行承诺更低 MOQ 或任意混色均可行。
 - Awards, partnerships, media mentions
 - An unconfirmed legal/operational responsibility split between Athletik
   Clothing Inc. and Zhangjiagang Athletik Clothing Co., Limited
@@ -134,7 +134,8 @@ From AGENTS.md §5 + `docs/site/design-brief.md`:
   competence, not from buzzwords.
 - **Specific > generic.** "Flatlock seam construction at 14 SPI" beats
   "high-quality stitching".
-- 面向采购技术针织服装的中型 B2B 品牌和批发商；定制面料成衣 MOQ 使用上方已确认的每款每色口径。
+- 主要面向采购技术针织服装的中型 B2B 品牌和批发商，优先较大订单和持续返单；
+  小客户和小单保留沟通与项目评估空间，MOQ 使用上方暂行的每款口径。
 - 询盘邮件语气应友善、亲切、专业；首封简短但覆盖客户关键问题。先回答已确认事项，
   对待评估性能和商务条件说明需要哪些资料，不虚构价格、测试结果或交期。
   样品、排期、英国运输与首封回复策略见
