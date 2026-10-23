@@ -399,6 +399,33 @@ if ( ! empty( $category['hero_video'] ) ) {
 	</section>
 	<?php endif; ?>
 
+	<?php if ( ! empty( $category['seamless_program']['options'] ) && is_array( $category['seamless_program']['options'] ) ) : ?>
+	<section class="ma-product-section ma-product-seamless" aria-labelledby="ma-product-seamless-title">
+		<div class="ma-section-inner">
+			<div class="ma-section-heading">
+				<p class="ma-section-kicker"><?php esc_html_e( 'Seamless manufacturing', 'myathletik-child' ); ?></p>
+				<h2 id="ma-product-seamless-title"><?php echo esc_html( $category['seamless_program']['heading'] ); ?></h2>
+				<p><?php echo esc_html( $category['seamless_program']['intro'] ); ?></p>
+			</div>
+			<div class="ma-product-seamless__layout">
+				<div class="ma-product-seamless__route">
+					<h3><?php echo esc_html( $category['seamless_program']['route_heading'] ); ?></h3>
+					<p><?php echo esc_html( $category['seamless_program']['route_description'] ); ?></p>
+				</div>
+				<dl class="ma-product-seamless__options">
+					<?php foreach ( $category['seamless_program']['options'] as $option ) : ?>
+						<div>
+							<dt><?php echo esc_html( $option['label'] ); ?></dt>
+							<dd><?php echo esc_html( $option['description'] ); ?></dd>
+						</div>
+					<?php endforeach; ?>
+				</dl>
+			</div>
+			<p class="ma-product-seamless__note"><strong><?php esc_html_e( 'Confirm during sampling:', 'myathletik-child' ); ?></strong> <?php echo esc_html( $category['seamless_program']['note'] ); ?></p>
+		</div>
+	</section>
+	<?php endif; ?>
+
 	<section class="ma-product-section ma-product-capabilities">
 		<div class="ma-section-inner ma-product-feature">
 			<div class="ma-section-heading">

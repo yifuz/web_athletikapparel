@@ -788,6 +788,14 @@ PHP 语法、七品类数据/模板隔离、LocalWP 与生产 360 / 768 / 1024 /
 
 状态 `deployed / production-verified / measuring`，本批部署记录关闭，Finding outcome `changed / keep-measuring`，排名收益仍 `unverified`。唯一主题文件 `template-parts/technical-article/content-flatlock-vs-overlock-technical-knitwear.php` 已上线，无额外部署。Day 0 / 7 / 28 / 90 为 2026-10-23 / 10-30 / 11-20 / 2027-01-21；本链接后窗 10-24～11-20 等 final 完整后再分析。Merino 原 12-06 Day 90 与既定监测保持不变，未来比较需披露这次入链变量。审计覆盖、GSC 基线、工具 Finding 处置、风险及验收边界见 [Change Card](seo/implementation/change-cards/seo-v2-005-flatlock-merino-context-link-2026-10-23.md)。既有 Backlog 与两份 GEO 未提交修改保留不动，不新增 Backlog 项。
 
+## 2026-10-23 SEO-V2-005：Underwear seamless 本地稿
+
+六个商业服装品类的需求覆盖筛选后，只选择当前已确认的 Underwear seamless 正文缺口；其他五页 `no-change`，不扩充 Backlog。所有者确认 genuine seamless 适用于男士 boxer briefs / trunks、女式 briefs / camisoles、thermal base-layer tops / bottoms，并可稳定定制 knitted patterns、ventilation / support zones、waist / leg openings、sizing / fit；目前没有对应订单、样品或实物照片，故只介绍能力，不虚构履历、设备或实测性能，也不把既有图片当 seamless 证据。
+
+经“开始制作”授权，现有 Underwear 页在产品展示后新增一个条件式无图模块，区分 seamless 与 FLATLOCK / ACTIVESEAM / bonded details，并说明必要连接和收口按款打样确认。URL、Title、Meta、H1、Schema、原内容、链接、图片、视频与表单不改。PHP、七品类 raw HTML 前后字段对照及 Chrome 360 / 768 / 1024 / 1440px 布局通过；只有 Underwear 出现该模块，其他六页无新增输出。
+
+状态为 `local-draft / local-verified / owner-review-pending`，Finding outcome `changed / owner-review`；不是已批准发布。审核后仅部署 `inc/product-category-data.php`、`template-parts/product-category/page.php`、`style.css`，无新媒体、JS 或数据库操作。Day 0 待真实生产部署与验收后登记，Underwear 原 2026-11-30 Day 90 不重置，上线后须披露新增变量。完整证据、GSC 基线、工具 Finding 处置和风险见 [Change Card](seo/implementation/change-cards/seo-v2-005-underwear-seamless-2026-10-23.md)。既有 Backlog 与两份 GEO 未提交修改保留不动。
+
 ## 13. 下一步优先级
 
 1. GSC 完整窗口已归档，数据时间闸门通过。[E01 手动补采](geo/testing/valid-retest/manual-e01/README.md)已按所有者明确确认判为 `valid`，手动有效样本为 1 条，下一条处理 E02；不再重复索要 E01 环境证据。[批次 B 首轮复核](geo/testing/valid-retest/batch-b/review-2026-10-09.md)的其他十条仍保留原状态，网络变化及是否补采另按所有者决定处理。下一平台 11 条 Google AI Mode 待运行；2026-10-20 后导出 Bing AI Performance 的 2026-09-21～10-18 完整窗口。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。

@@ -448,6 +448,32 @@ function myathletik_product_category_data() {
 					),
 				),
 			),
+			// Owner-confirmed capability; no existing product photo is used as seamless proof.
+			'seamless_program' => array(
+				'heading' => __( 'Seamless underwear and base-layer development', 'myathletik-child' ),
+				'intro'   => __( 'Athletik offers genuine seamless manufacturing for men\'s boxer briefs and trunks, women\'s briefs and camisoles, and thermal base-layer tops and bottoms. Products can be developed around the buyer\'s knitted pattern, zone placement, openings, and fit requirements.', 'myathletik-child' ),
+				'route_heading' => __( 'Seamless or sewn-panel construction?', 'myathletik-child' ),
+				'route_description' => __( 'Seamless knitting is a distinct manufacturing route, not another name for FLATLOCK, ACTIVESEAM, or bonded details. FLATLOCK and ACTIVESEAM join fabric panels; specify the intended construction route in the tech pack before development.', 'myathletik-child' ),
+				'options' => array(
+					array(
+						'label'       => __( 'Jacquard & knitted patterns', 'myathletik-child' ),
+						'description' => __( 'Develop knitted-in patterns and their placement to suit the product design.', 'myathletik-child' ),
+					),
+					array(
+						'label'       => __( 'Ventilation & support zones', 'myathletik-child' ),
+						'description' => __( 'Specify localized ventilation or support zones and their position on the garment.', 'myathletik-child' ),
+					),
+					array(
+						'label'       => __( 'Waist & leg openings', 'myathletik-child' ),
+						'description' => __( 'Customize waist and leg openings around the intended coverage and fit.', 'myathletik-child' ),
+					),
+					array(
+						'label'       => __( 'Sizing & fit', 'myathletik-child' ),
+						'description' => __( 'Develop the size range and garment fit against the buyer\'s measurement requirements.', 'myathletik-child' ),
+					),
+				),
+				'note' => __( 'Any required sewn joins, attachment points, and finishing details are confirmed for each style during sampling. Seamless does not mean every finished garment is entirely free of seams.', 'myathletik-child' ),
+			),
 			'capability_kicker'  => __( 'Development inputs', 'myathletik-child' ),
 			'capability_heading' => __( 'Define fit, fabric, and seam performance before sampling', 'myathletik-child' ),
 			'construction'      => __( 'Send the product type, intended activity and climate, target market and delivery destination, size range, target fit, garment drawing or tech pack, reference sample, fabric composition and weight, stretch and recovery targets, seam map, waistband and trim requirements, artwork, private-label packaging requirements, target price range, order quantity, and required testing. Our team can coordinate knitted fabric development through our own fabric mill, review FLATLOCK, ACTIVESEAM, and bonded-welded options, develop samples, and use in-house testing to check the agreed material and garment criteria before bulk production. Final sampling, testing, and production terms are confirmed for the project.', 'myathletik-child' ),

@@ -4541,6 +4541,86 @@ body.page .container.grid-container:has(.ma-product-category) {
   }
 }
 
+/* Text-only seamless capability: data-gated to Underwear. Existing product
+   imagery remains separate and is not presented as seamless evidence. */
+.ma-product-seamless {
+  border-top: 1px solid var(--ma-color-border);
+  background: var(--ma-color-bg);
+}
+
+.ma-product-seamless .ma-section-inner {
+  padding-block: 0;
+}
+
+.ma-product-seamless__layout {
+  display: grid;
+  gap: var(--ma-space-5);
+}
+
+.ma-product-seamless__route {
+  min-width: 0;
+  padding: var(--ma-space-4);
+  border-left: var(--ma-space-1) solid var(--ma-color-accent-2);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-surface);
+}
+
+.ma-product-seamless__route h3 {
+  margin: 0 0 var(--ma-space-3);
+  color: var(--ma-color-text);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-h3);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-product-seamless__route p,
+.ma-product-seamless__options dd {
+  margin: 0;
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-base);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-product-seamless__options {
+  display: grid;
+  gap: var(--ma-space-4);
+  min-width: 0;
+  margin: 0;
+}
+
+.ma-product-seamless__options > div {
+  min-width: 0;
+  padding-block: var(--ma-space-3);
+  border-top: 1px solid var(--ma-color-border);
+}
+
+.ma-product-seamless__options dt {
+  margin-bottom: var(--ma-space-2);
+  color: var(--ma-color-text);
+  font-weight: 700;
+}
+
+.ma-product-seamless__note {
+  margin: var(--ma-space-5) 0 0;
+  padding-top: var(--ma-space-3);
+  border-top: 1px solid var(--ma-color-border);
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-small);
+  line-height: var(--ma-lh-body);
+}
+
+@media (min-width: 48rem) {
+  .ma-product-seamless__options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .ma-product-seamless__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  }
+}
+
 /* Optional category-specific buyer evidence blocks. These render only when
    their data is present, so the shared template remains stable for siblings. */
 .ma-product-assurance {
