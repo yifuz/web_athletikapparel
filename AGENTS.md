@@ -318,6 +318,8 @@ reopened:
   [`.agents/skills/wp-brand-voice-guard/SKILL.md`](.agents/skills/wp-brand-voice-guard/SKILL.md)。
   所有者于 2026-10-22 要求：以后每篇询盘回复通过审核后，自动提炼新增或修正的通用事实、
   能力边界、采购与样品条件及回复策略，更新技能及引用手册；去重，不保存客户资料或邮件全文。
+  所有者于 2026-10-23 补充：重点积累跨客户可复用的回复策略，保留必要、稳定的公司通用条款；
+  不逐封积累具体面料型号、规格、供应商采购米数、临时库存或单个项目参数，需要时按项目核实。
   此流程已有持续授权，无需再次询问是否更新技能；文案审核不等于发送授权。
 
 ## 6. Terminology — spelling consistency reference
