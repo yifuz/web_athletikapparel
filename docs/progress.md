@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-10-09。
+最后更新：2026-10-23。
 
 ---
 
@@ -775,6 +775,12 @@ get_stylesheet_directory_uri() . '/assets/images/...'
 PHP 语法、七品类数据/模板隔离、LocalWP 与生产 360 / 768 / 1024 / 1440px 均通过；生产七品类 200、单一 H1、7/7 可索引、0 high / medium issue，新模块仅面料页显示，实际 Title/Meta、Canonical、CollectionPage、五组图片、Sitemap 唯一条目及首页入口正常，生产 CSS 与本地一致。GSC 为 `PASS / Submitted and indexed`，Canonical 一致，最后抓取 `2026-10-19T11:38:33Z`，早于本次部署，不能证明新版已被抓取。25 URL 部署后稳定 Diff 无新增状态或索引回归；首次历史 Diff 的 9 个 changed 未展开逐 URL 明细，不用于本批归因。HSTS / Sportswear 大图沿用既有 deferred；Turnstile 在重用会话导航时有间歇报错，但两页独立新会话未复现，实际提交未测试，记录 monitor-only。完整证据及处置见 Change Card。当前 `deployed / production-verified / measuring`，Finding outcome `changed / keep-measuring`。
 
 `inc/product-category-data.php`、`template-parts/product-category/page.php`、`style.css` 已部署；没有新增图片或 JavaScript，本次验收无额外部署文件。Day 0 为 2026-10-20，Day 7 / 28 / 90 为 2026-10-27 / 11-17 / 2027-01-18；完整效果窗口为 10-21～11-17，等 final 数据覆盖末日后读取。原 Knitted 2026-11-30 Day 90 后窗已混入新变量，须披露。详见 [Change Card](seo/implementation/change-cards/seo-v2-005-knitted-fabric-structures-2026-10-20.md) 与 [GSC 基线](seo/gsc-data-log.md)。
+
+## 2026-10-23 Merino 固定商业查询监测
+
+按所有者决定，产品样例与行业引用暂由所有者继续选材 / 关注，先执行 SEO-V2-005 的固定商业词观察。已建立并回读本机查询组 `merino-commercial-core-v1`：apparel、clothing、base layer、underwear 四个精确 manufacturer 查询，固定 US / GB / CA、English、Google Desktop、Top 50，不改公开页面或页面所有权。GSC 2026-09-23～10-20 的 final 28 日 Page 为 4 clicks / 177 impressions，但 Query 明细仅覆盖 13 impressions，四个固定词均未返回行；国家 / 设备明细也不闭合，保持 partial。今天 apparel US 取得自然排名第 28、absolute 32，GB / CA 超时；与 10-20 五组历史成功快照合并的最近记录矩阵仍为 6/12 可得，不写成完整当前排名或已证明增长。
+
+下次 GSC 周度节点为 10-30；首个不重叠 28 天后窗为 10-21～11-17，预计 11-20 起等 final 覆盖后分析。下一批付费排名按四词 × 三地分 11-20 / 11-21 两天采集，先检查预算，不自动调高限额或持续重试；没有安装后台付费任务或提醒。Merino 12-06 Day 90 不变。本轮仅更新监测记录，现有 Backlog 与两份 GEO 未提交修改保留不动。详见 [固定监测 V1](seo/research/merino-commercial-monitor-v1.md) 与 [数据记录](seo/gsc-data-log.md)。
 
 ## 13. 下一步优先级
 

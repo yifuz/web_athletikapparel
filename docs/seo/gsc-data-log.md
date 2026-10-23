@@ -15,6 +15,30 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-10-23：Merino 商业查询固定监测 V1
+
+所有者决定先执行商业词固定观察，产品开发样例与行业引用分别由所有者继续选材 / 关注，不实施页面改动。本次归入 SEO-V2-005，固定 `merino wool apparel manufacturer`、`merino wool clothing manufacturer`、`merino wool base layer manufacturer`、`merino wool underwear manufacturer` 四个精确查询，US / GB / CA、English、Google Desktop、Top 50，共 12 个独立单元。本机 `merino-commercial-core-v1` 查询组已保存并回读；未开启后台自动抓取、付费定时器或提醒。
+
+### GSC 基线
+
+- `sc-domain:athletikapparel.com`，`type=web`、`dataState=final`，窗口 2026-09-23～10-20；全站 Date 返回连续 28 个 final 日期。确认所选窗口覆盖，不宣称 10-20 为最新 final 日。
+- 目标规范 URL 的精确 Page 为 **4 clicks / 177 impressions / CTR 2.26% / average position 6.5593**。这是所有国家 / 设备的页面数据，不是某个词的固定排名。
+- Query × Page 返回 5 行、0 clicks / 13 impressions：`blend` 1 / position 2、`i want blanks` 1 / 5、`merino wool clothing manufacturers` 1 / 10、`stretch performance base layers oem` 1 / 17、网址词 9 / 9.7778。四个固定精确查询均 `not-returned`，不是零曝光；不把复数变体混入单数固定词，也不猜测四次页面点击来自哪个查询。
+- Country、Country × Device、Query × Page × Country × Device 分别返回 3 / 4 / 5 行，各只有 13 impressions / 0 clicks；国家单维控制也不与 Page 177 impressions / 4 clicks 闭合，原因未证实。细分覆盖保持 `partial / non-reconciled`，不用于宣称 US / GB / CA 增长或零流量，不回填差额。Query 受匿名化限制；不同维度的缺口不能全部机械归因于同一原因。
+- 首次 GSC 探测 `fetch failed`，同请求只重试一次后成功；没有修改 OAuth 或代理持久设置。最终目标页五种维度查询均返回数据，无行数上限截断。
+
+### SERP 补采与历史边界
+
+今天只补采此前缺失的 apparel 三市场：US 于 `2026-10-23T05:43:58Z` 返回完整 50 条自然结果，目标 Merino URL 为 **organic rankGroup 28 / rankAbsolute 32 / page 3**，task ID `10230543-2417-0139-0000-d677d4911e48`；GB / CA 均为 provider 15 秒超时，排名留空。1/3 今日快照有效，不能声称三市场完整；也不能把此前 apparel 查询失败写成从“无排名”升至 28。
+
+10-20 的 clothing 三地与 underwear US / CA 共五组成功 Top 50 未出现记录仅作为历史锚点，保留原日期，不冒充今日排名。包含今天一个成功单元后，固定 12 单元的“最近一次记录”为 6 个成功快照、6 个 unavailable，仍为 `baseline-partial`。本次没有重复购买那五组历史快照，没有更改 provider 限额。
+
+### 后续节奏与处置
+
+下次 GSC 周度观察为 **2026-10-30**。首个不重叠 28 天后窗预定 2026-10-21～11-17，等 final 覆盖后于预计 11-20 起核验；付费固定排名下一轮分 **11-20 / 11-21** 两天各六组执行，保留实际日期，基础估算约 USD 0.06/天，并先检查日 / 月限额、未知费用预留与账户余额。没有安装自动任务。Merino 原 2026-12-06 Day 90 不变，监测建立日不当作页面改动 Day 0。
+
+Finding outcome：`configured / baseline-partial / no-site-change`。失败单元和维度不闭合均保留为 Info / deferred，US 报告 8 个 `repeated-domain` 观测为 no-change；不改 URL、Title、Meta、H1、Schema、正文、图片或内链，不新增 Backlog 项。完整词表、历史 task ID、状态字典、预算与可复现命令见 [固定监测 V1](research/merino-commercial-monitor-v1.md)。
+
 ## 2026-10-20：Knitted Fabrics 内容补强前基线
 
 本轮根据所有者的 Google 曝光/排名优先指令执行 SEO-V2-005，不处理表单默认品类。目标为 `/knitted-fabrics-manufacturer/`；采集时新内容仍为本地待审稿，随后所有者于 2026-10-20 确认生产部署。本节数据全部发生在本次部署之前，不是改动收益。
