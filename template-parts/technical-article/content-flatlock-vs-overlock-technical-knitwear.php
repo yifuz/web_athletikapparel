@@ -119,7 +119,7 @@ $media_base = get_stylesheet_directory_uri() . '/assets/images/production/articl
 
 <section id="fabric-and-testing" aria-labelledby="ma-fabric-testing-title">
 	<h2 id="ma-fabric-testing-title">Fabric, thread and machine settings affect the result</h2>
-	<p>The same stitch type can behave differently across a lightweight jersey, a high-modulus compression knit, a brushed thermal fabric and a Merino wool blend. Before approving the seam, review at least the following variables:</p>
+	<p>The same stitch type can behave differently across a lightweight jersey, a high-modulus compression knit, a brushed thermal fabric and a <a href="<?php echo esc_url( home_url( '/merino-wool-manufacturer/' ) ); ?>">Merino wool blend</a>. Before approving the seam, review at least the following variables:</p>
 	<ul>
 		<li>Fabric composition, construction and weight.</li>
 		<li>Stretch percentage, recovery and direction of stretch.</li>

@@ -782,6 +782,12 @@ PHP 语法、七品类数据/模板隔离、LocalWP 与生产 360 / 768 / 1024 /
 
 下次 GSC 周度节点为 10-30；首个不重叠 28 天后窗为 10-21～11-17，预计 11-20 起等 final 覆盖后分析。下一批付费排名按四词 × 三地分 11-20 / 11-21 两天采集，先检查预算，不自动调高限额或持续重试；没有安装后台付费任务或提醒。Merino 12-06 Day 90 不变。本轮仅更新监测记录，现有 Backlog 与两份 GEO 未提交修改保留不动。详见 [固定监测 V1](seo/research/merino-commercial-monitor-v1.md) 与 [数据记录](seo/gsc-data-log.md)。
 
+## 2026-10-23 SEO-V2-005：FLATLOCK → Merino 单处内链
+
+所有者批准只在 FLATLOCK Guide 的材料段，把已有 `Merino wool blend` 链接至 `/merino-wool-manufacturer/`；不执行 OEM Evaluation 的可选链接，不扩写 GEO 正文。仅修改一个主题 PHP 文件的一行，原文字、URL、Title、Meta、H1、Canonical、Schema、技术复核日期、媒体、CSS、JS 和表单不变。PHP 语法、源码精确隔离、本地 raw HTML、390 / 1440px 键盘焦点及实际点击跳转均通过；生产目前仍为旧链接状态，不能视为已部署。
+
+状态 `owner-approved / implemented / local-verified / deployment-pending`，Finding outcome `changed`，排名收益 `unverified`。只需部署 `template-parts/technical-article/content-flatlock-vs-overlock-technical-knitwear.php`，无图片或数据库操作；Day 0 / 7 / 28 / 90 待真实部署日起算。Merino 原 12-06 Day 90 与既定监测保持不变，未来比较需披露这次入链变量。审计覆盖、GSC 基线、工具 Finding 处置、风险及验收边界见 [Change Card](seo/implementation/change-cards/seo-v2-005-flatlock-merino-context-link-2026-10-23.md)。既有 Backlog 与两份 GEO 未提交修改保留不动，不新增 Backlog 项。
+
 ## 13. 下一步优先级
 
 1. GSC 完整窗口已归档，数据时间闸门通过。[E01 手动补采](geo/testing/valid-retest/manual-e01/README.md)已按所有者明确确认判为 `valid`，手动有效样本为 1 条，下一条处理 E02；不再重复索要 E01 环境证据。[批次 B 首轮复核](geo/testing/valid-retest/batch-b/review-2026-10-09.md)的其他十条仍保留原状态，网络变化及是否补采另按所有者决定处理。下一平台 11 条 Google AI Mode 待运行；2026-10-20 后导出 Bing AI Performance 的 2026-09-21～10-18 完整窗口。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。
