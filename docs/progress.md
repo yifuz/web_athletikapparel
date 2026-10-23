@@ -784,9 +784,9 @@ PHP 语法、七品类数据/模板隔离、LocalWP 与生产 360 / 768 / 1024 /
 
 ## 2026-10-23 SEO-V2-005：FLATLOCK → Merino 单处内链
 
-所有者批准只在 FLATLOCK Guide 的材料段，把已有 `Merino wool blend` 链接至 `/merino-wool-manufacturer/`；不执行 OEM Evaluation 的可选链接，不扩写 GEO 正文。仅修改一个主题 PHP 文件的一行，原文字、URL、Title、Meta、H1、Canonical、Schema、技术复核日期、媒体、CSS、JS 和表单不变。PHP 语法、源码精确隔离、本地 raw HTML、390 / 1440px 键盘焦点及实际点击跳转均通过；生产目前仍为旧链接状态，不能视为已部署。
+所有者批准只在 FLATLOCK Guide 的材料段，把已有 `Merino wool blend` 链接至 `/merino-wool-manufacturer/`；不执行 OEM Evaluation 的可选链接，不扩写 GEO 正文。仅修改一个主题 PHP 文件的一行，原文字、URL、Title、Meta、H1、Canonical、Schema、技术复核日期、媒体、CSS、JS 和表单不变。2026-10-23 所有者确认部署后，生产 raw HTML 与 390 / 1440px 浏览器均确认新增链接恰好一个；键盘焦点和实际点击到 Merino HTTP 200 均通过，来源页正文、元数据、Schema、媒体清单及原链接与部署前一致。三 URL 防护检查、Sitemap 唯一条目与 Merino 反向入口正常；目标整页 textContent hash 不作为逐字零差异证据，完整边界保留在 Change Card。
 
-状态 `owner-approved / implemented / local-verified / deployment-pending`，Finding outcome `changed`，排名收益 `unverified`。只需部署 `template-parts/technical-article/content-flatlock-vs-overlock-technical-knitwear.php`，无图片或数据库操作；Day 0 / 7 / 28 / 90 待真实部署日起算。Merino 原 12-06 Day 90 与既定监测保持不变，未来比较需披露这次入链变量。审计覆盖、GSC 基线、工具 Finding 处置、风险及验收边界见 [Change Card](seo/implementation/change-cards/seo-v2-005-flatlock-merino-context-link-2026-10-23.md)。既有 Backlog 与两份 GEO 未提交修改保留不动，不新增 Backlog 项。
+状态 `deployed / production-verified / measuring`，本批部署记录关闭，Finding outcome `changed / keep-measuring`，排名收益仍 `unverified`。唯一主题文件 `template-parts/technical-article/content-flatlock-vs-overlock-technical-knitwear.php` 已上线，无额外部署。Day 0 / 7 / 28 / 90 为 2026-10-23 / 10-30 / 11-20 / 2027-01-21；本链接后窗 10-24～11-20 等 final 完整后再分析。Merino 原 12-06 Day 90 与既定监测保持不变，未来比较需披露这次入链变量。审计覆盖、GSC 基线、工具 Finding 处置、风险及验收边界见 [Change Card](seo/implementation/change-cards/seo-v2-005-flatlock-merino-context-link-2026-10-23.md)。既有 Backlog 与两份 GEO 未提交修改保留不动，不新增 Backlog 项。
 
 ## 13. 下一步优先级
 
