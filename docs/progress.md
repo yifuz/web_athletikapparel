@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-10-23。
+最后更新：2026-10-27。
 
 ---
 
@@ -794,7 +794,15 @@ PHP 语法、七品类数据/模板隔离、LocalWP 与生产 360 / 768 / 1024 /
 
 经“开始制作”授权，现有 Underwear 页在产品展示后新增一个条件式无图模块，区分 seamless 与 FLATLOCK / ACTIVESEAM / bonded details，并说明必要连接和收口按款打样确认。URL、Title、Meta、H1、Schema、原内容、链接、图片、视频与表单不改。PHP、七品类 raw HTML 前后字段对照及 Chrome 360 / 768 / 1024 / 1440px 布局通过；只有 Underwear 出现该模块，其他六页无新增输出。
 
-状态为 `local-draft / local-verified / owner-review-pending`，Finding outcome `changed / owner-review`；不是已批准发布。审核后仅部署 `inc/product-category-data.php`、`template-parts/product-category/page.php`、`style.css`，无新媒体、JS 或数据库操作。Day 0 待真实生产部署与验收后登记，Underwear 原 2026-11-30 Day 90 不重置，上线后须披露新增变量。完整证据、GSC 基线、工具 Finding 处置和风险见 [Change Card](seo/implementation/change-cards/seo-v2-005-underwear-seamless-2026-10-23.md)。既有 Backlog 与两份 GEO 未提交修改保留不动。
+10-23 制作时状态为 `local-draft / local-verified / owner-review-pending`；2026-10-27 所有者确认部署后已完成下述生产验收。完整证据、GSC 基线、工具 Finding 处置和风险见 [Change Card](seo/implementation/change-cards/seo-v2-005-underwear-seamless-2026-10-23.md)。既有 Backlog 与两份 GEO 未提交修改保留不动。
+
+## 2026-10-27 SEO-V2-005：Underwear seamless 部署验收关闭
+
+生产新模块与 10-23 本地稿一致，CSS 已生效；Chrome 360 / 768 / 1024 / 1440px 无横向溢出、四项定制完整，16/16 原产品图资源 HTTP 200，未把原图当 seamless 实物证据。七品类均为 HTTP 200、可索引、单一 H1、自引用 Canonical；只有 Underwear 输出该模块。相对本地基线，七页原正文、内链及媒体清单保持一致，Underwear Title / Meta / H1 和规范化 origin 后的 Schema 一致；robots 指令顺序及 Sportswear Meta / dateModified 的环境差异如实保留，不冒称完整生产部署前后 Diff。Page Sitemap 为 20 条 / 20 个唯一 URL，七品类各一次，首页保留两个 Underwear 入口。
+
+`audit-urls` 7/7 fetched、0 failed / skipped、0 high / medium；两个 review 全部处置：`hsts_missing` 沿用 `deferred / owner-action`，`image_oversized_candidate` 沿用 Sportswear `deferred / monitor-only`。保留工具 coverage unknown，不扩大为全站无回归或排名收益。状态 `deployed / production-verified / measuring`，本模块部署记录关闭，Finding outcome `changed / keep-measuring`。三个主题文件已上线，无需额外部署；本轮只有内部记录变更。
+
+以 10-27 部署确认和验收日为保守 Day 0（具体上线时刻未知），Day 7 / 28 / 90 为 **2026-11-03 / 2026-11-24 / 2027-01-25**；完整后窗 10-28～11-24 等 final 覆盖后读取，计划比较前窗 09-29～10-26，本轮未取该窗数值。Underwear 原 **11-30 Day 90 不重置**，须披露新增 seamless 变量。未做新 URL Inspection，不声称 Google 已抓取新版，也不重复请求索引。Knitted Fabrics 今天到期的 Day 7 尚未执行，保持独立任务。详见上述 Change Card。
 
 ## 13. 下一步优先级
 

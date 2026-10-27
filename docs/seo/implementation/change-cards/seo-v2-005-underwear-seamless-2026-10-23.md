@@ -2,18 +2,18 @@
 
 > Change ID：`SEO-V2-005-UW-SEAMLESS-20261023`
 >
-> 制作日期：2026-10-23；生产部署日期：`pending`
+> 制作日期：2026-10-23；生产部署确认及验收日期：2026-10-27（具体部署时刻未提供）
 >
-> 状态：`local-draft / local-verified / owner-review-pending`，不是已批准发布
+> 状态：`deployed / production-verified / measuring`；本批部署记录已关闭
 >
-> Finding outcome：`changed / owner-review`；搜索收益 `unverified`
+> Finding outcome：`changed / keep-measuring`；搜索收益 `unverified`
 
 ## 1. 目标、授权与主要变量
 
 - 目标页：<https://www.athletikapparel.com/underwear-manufacturer/>。
 - 搜索意图：寻找可按产品要求开发 seamless underwear / thermal base layers 的制造合作伙伴；现有 Underwear URL 继续承接，不创建 Seamless、Performance Underwear 或 Base Layer 平行页。
 - 主要官网任务：`Discover / Qualify`。让买家确认产品适配、可定制内容及 construction route，减少把低轮廓缝线或 bonded details 误认成真正 seamless 的可能。
-- 所有者在六品类缺口筛选后，明确确认能力、产品及定制范围；随后要求“开始制作”。授权范围为现有页面内的本地英文文案与版式草稿，正式部署前仍需所有者审核。
+- 所有者在六品类缺口筛选后，明确确认能力、产品及定制范围；随后要求“开始制作”。最初交付为本地待审稿；2026-10-27 所有者确认“部署完成，验收”，本轮据此核查生产，不自行修改生产内容。
 - 唯一主要变量：增加一个独立、服务器端输出的 **无图 seamless 能力模块**，位于四组现有产品展示之后、Development inputs 之前。包含产品范围、construction route 区分、四类定制项与按款确认说明。
 - 按 `seo-process.md` §5.1 的 B 类采购决策完整性改进管理；不以低曝光或 exact-match 词缺失作为改写 Title / Meta / H1 的理由。
 - URL、Title、Meta、H1、Canonical、robots、Schema、既有正文、内链、图片、视频、表单和 MOQ 不改；不引入 JavaScript 或新依赖。不新增 Backlog 项。
@@ -90,16 +90,55 @@ QA 快照与截图位于 Git 忽略的 `.chrome-check/underwear-seamless-*`，�
 - 主要观察：Underwear 同口径 GSC 页面与相关非品牌商业查询的 impressions / clicks，随后检查可得的自然搜索询盘；保留 Query 缺失、低样本和来源未知边界。不以聚合 average position 充当具体商业词排名，不承诺增长。
 - 防护：原 URL / 元数据 / H1 / Schema、四张产品图片及 Hero、原内容与内链、七品类条件式隔离、移动端可读性。
 - 回滚条件：能力被撤回、产生无法支持的履历暗示、可复现的内容或布局回归；仅撤回本模块三处增量。短期无增长不是自动回滚理由。
-- 本地制作日不作为 Day 0。生产 Day 0 待所有者审核、实际部署确认与定向验收后登记；Day 7 / 28 / 90 按真实 Day 0 计算。排除部署日，Day 28 等完整后窗被 GSC final 覆盖后再分析，允许 `inconclusive`。
-- Underwear 原 **2026-11-30 Day 90 不重置**；若新模块上线，必须披露原观察窗混入这次内容变量。其他页面原监测节点不变。
-- 最终决策：本地验收通过，`changed / owner-review`，等待所有者审核；没有生产发布或搜索收益结论。
+- 本地制作日不作为 Day 0。以 **2026-10-27 部署确认及生产验收日**建立本模块的保守 Day 0；Day 7 / 28 / 90 为 **2026-11-03 / 2026-11-24 / 2027-01-25**。具体上线时刻未知，不倒推至 10-23。
+- 排除 Day 0，首个完整 28 天后窗为 **2026-10-28～11-24**，等 GSC final 覆盖末日再读取，预计 11-27 起核验、实际以可用性为准；正式等长前窗优先为 **2026-09-29～10-26**，本次未重新提取该窗。第 2 节 09-23～10-20 的数值仅是既有研究基线，不能冒充紧邻部署的前窗。允许 `inconclusive`，不推断单变量因果。
+- Underwear 原 **2026-11-30 Day 90 不重置**；原观察窗已经混入 seamless 内容变量，后续复盘必须披露。其他页面原监测节点不变。
+- 最终决策：2026-10-27 生产验收通过，`changed / keep-measuring`；只关闭本模块的部署记录，不关闭整个 SEO-V2-005，不宣称 Google 已抓取新版或排名收益。
 
-## 5. 审核后部署清单
+## 5. 已完成部署清单
 
-**目前先不要部署。所有者审核通过后，同步以下三个主题文件：**
+所有者已确认部署；2026-10-27 生产正文及 CSS 输出与本地交付一致。以下三个文件的部署记录关闭，无需再次上传：
 
 1. `wp-content/themes/myathletik-child/inc/product-category-data.php`
 2. `wp-content/themes/myathletik-child/template-parts/product-category/page.php`
 3. `wp-content/themes/myathletik-child/style.css`
 
 无需新增图片、视频、JavaScript、插件或数据库修改。本卡与 `docs/progress.md` 是内部记录，不作为网站内容部署。用户既有 Backlog 与两份 GEO 未提交修改保持原样，不纳入本次提交。
+
+## 6. 2026-10-27 生产关闭验收
+
+覆盖模式 `targeted`：七个现有商业品类页的 raw HTML 与选定 URL 审计；Underwear 在 Chrome 360 / 768 / 1024 / 1440px 的实际渲染；另核查首页入口、robots.txt、Page Sitemap、共享 CSS 和 Underwear 原有产品图资源。生产采集完成时间为 `2026-10-27T01:30:50.258Z`。这不是全站全面审计，也不是 Google 抓取或搜索效果证明。
+
+| 检查 | 生产结果 |
+|---|---|
+| 新模块部署 | Underwear raw HTML 恰好一个模块，正文与 10-23 本地稿完全一致；四类定制齐全，无图片 / 视频、无占位符、无虚构样品 / 订单 / 设备声明；仍在产品展示后、开发输入前 |
+| CSS 与真实渲染 | 主题 CSS HTTP 200，包含新模块与桌面双栏规则；四种屏宽均可见、四项完整、无模块或文档横向溢出、无捕获到的 pageerror；桌面和手机截图已人工查看，raw / rendered 的目标元数据及模块文本一致 |
+| 七品类隔离 | 七页均 HTTP 200、单一 H1、自引用 HTTPS Canonical、允许索引且无 X-Robots-Tag；其他六品类模块数为 0，无 LocalWP 主机泄漏 |
+| 原内容 / 内链 / 媒体 | 规范化本地与生产 origin 后，七页原正文、链接与媒体属性清单均与 10-23 本地基线一致；排除新模块及动态询盘区。Underwear 四组产品的 12 个 WebP 与 4 个 JPG 共 **16/16 HEAD 200**、MIME 正确；原图片 alt 与用途不变，不作 seamless 实物证据 |
+| Underwear SEO 字段 | Title 为 `Underwear Manufacturer | Athletik Clothing`，Meta 与本地交付及已记录的生产口径一致，H1 为 `Underwear Manufacturer`；没有新增关键词型 Title / Meta / H1 实验，无 URL 或 301 变更 |
+| Schema | 七页 JSON-LD 均可解析，类型为 CollectionPage / ImageObject / LocalBusiness / Organization / PostalAddress / WebSite；Underwear 及五个其他品类在规范化 origin 后与本地基线一致，未增添虚构 Product / Service 或认证字段。Sportswear 的环境差异另见下文 |
+| Sitemap / 入口 | Page Sitemap HTTP 200、20 条 / 20 个唯一 URL，七品类各一次；首页保留两个可抓取的 Underwear 入口。robots.txt HTTP 200，仅限制 `/wp-admin/`，未阻断目标页 |
+
+### 跨环境差异，不误判为本批回归
+
+- 七页 robots 的本地 `index, follow` 与生产 `follow, index` 只是顺序不同，指令集合相同。
+- Sportswear 本地 Meta 为 `FLATLOCK/ACTIVESEAM`，生产为既有 `flatlock & activeseam`；其 CollectionPage `dateModified` 分别为 2026-08-19 与 2026-06-27。属于当前已观察到的环境数据库差异，不在本批改动中；不宣称七页元数据和 Schema 跨环境逐字全同，也不据此追加修复。Underwear 的 Schema 包括日期字段在 origin 规范化后相同。
+- 本次没有保留可独立回读的 10-23 全套生产 raw 快照用于逐字段历史 Diff；七页原内容的精确比较参考是 **10-23 本地验收快照**，生产 indexability 则按本次实际响应确认。不能把这一比较写成完整生产部署前后 Diff。
+
+### Structured report Finding 处置（2/2）
+
+使用 CLI 0.2.36，先 `doctor` 与 `reports describe audit-urls`，再对相同七页执行 `audit-urls` action view，`refresh=true`、`maxPages=7`、`concurrency=2`、`saveReport=false`。报告 requested / attempted / fetched / retained 均为 7，failed / skipped / omitted 为 0、未触及页数上限、无输出截断，7 页 indexable，high / medium 为 0 / 0。Low 共 8 个实例，汇总为两个 review：
+
+| ID / 类型 | 证据 / 覆盖 | Outcome 与原因 |
+|---|---|---|
+| `hsts_missing` / review | 七页均缺 HSTS，7/7 affected URLs 已查看；工具 Low，项目按 Info / P3 / Confirmed 处理 | `deferred / owner-action`：沿用 SEO-V2-014 基础设施评估，非本次新增回归，不修改 Cloudflare 或响应头，不把 HSTS 当排名保证 |
+| `image_oversized_candidate` / review | Sportswear 一个 affected URL 已查看；工具 Low，项目按 Info / P3 处理，其尺寸启发式不证明用户体验或排名损失 | `deferred / monitor-only`：沿用既有性能暂缓决定，不在 Underwear 无图模块验收中改 Sportswear 图片；出现既定性能 / 渲染触发条件才重开 |
+
+两项均未改站，不需为文档状态更新重跑报告。保留 `findings.coverage.state=unknown`，source completeness 未由工具声明；无 warning / caveat、完整返回不等于全站 all-clear。报告未关联 GSC / GA4，不能把其诊断零值解释成真实搜索或会话为零。原 `action-8b522974e45a` 的 `not-needed` 决策继续成立，未改元数据。
+
+### 限制与后续
+
+- 本批没有全站 Crawl / Crawl Diff，部署前 / 后 Crawl ID 仍为 `not-run`；选定 URL 报告与七页直接证据不是全站 Crawl ID。
+- 未进行新的 URL Inspection、索引请求、GA4 / 询盘效果分析、视频播放、表单投递或性能测试；不证明 Google 已读取新模块，不重复提交索引。
+- 浏览器为临时未登录会话，拦截分析端点；没有同意 Cookie、提交表单或修改线上配置。本轮只更新内部部署记录，没有网站代码变更、额外部署文件或新增付费 SERP 请求。
+- 本模块进入按第 4 节日期的观察；今天到期的 Knitted Fabrics Day 7 是独立任务，本次尚未执行，不混入本模块验收结论。
