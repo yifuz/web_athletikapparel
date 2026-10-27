@@ -2,7 +2,7 @@
 
 > 状态：V1 英语研究已完成并冻结；V2 按授权补充有界研究，页面改动另按 Backlog 与变更流程审批
 >
-> 数据日期：V1 主要为 2026-08-15 至 2026-08-17；最新 V2 结构词研究为 2026-10-27
+> 数据日期：V1 主要为 2026-08-15 至 2026-08-17；最新 V2 结构词与六品类第二轮研究为 2026-10-27
 
 本目录保留研究链路和原始数据。日常决策先读本页和 [`../v2-backlog.md`](../v2-backlog.md)，只有需要复核来源时再进入明细文件。
 
@@ -20,6 +20,7 @@
 
 | 目的 | 文件 |
 |---|---|
+| 查看六个商业品类的第二轮 US / GB / CA 需求筛选、分层深度快照、现页覆盖对照与自有站区分（不改页） | [`serp-commercial-round2-us-gb-ca-2026-10-27.md`](serp-commercial-round2-us-gb-ca-2026-10-27.md) |
 | 查看 2026-10-27 结构词 depth 50 扩充与材料组合词三市场结果、4 个不可得单元、当前十倍金额限额 | [`knit-structure-serp-expanded-2026-10-27.md`](knit-structure-serp-expanded-2026-10-27.md) |
 | 查看 2026-10-27 single jersey / interlock / rib / jacquard 四组结构词 US / GB / CA 快照、采购意图与样布准备建议（不改页） | [`knit-structure-serp-us-gb-ca-2026-10-27.md`](knit-structure-serp-us-gb-ca-2026-10-27.md) |
 | 查看 2026-09-01 FLATLOCK Guide US / GB / CA 查询意图观测（后续内容归 GEO） | [`serp-flatlock-guide-us-gb-ca-2026-09-01.md`](serp-flatlock-guide-us-gb-ca-2026-09-01.md) |
@@ -44,6 +45,8 @@
 2026-10-27 [结构词归一化 CSV](data/knit-structure-serp-us-gb-ca-2026-10-27.csv) 保存四词 × 三市场的 112 个自然结果行（102 个唯一 URL）。配置 depth 10，实际每单元 8～10 行；页面角色多数为 title / snippet 初分，官网复核等级单列，不当作搜索量、完整 Top 10 或当前长期排名。
 
 同日[扩充结果 CSV](data/knit-structure-serp-expanded-us-gb-ca-2026-10-27.csv)另保留 595 行 / 439 唯一 URL：结构词 depth 50 与材料组合词 depth 10 各 10/12 单元成功，失败留空，不用浅层结果冒充深层恢复；深层清单不是逐页内容审计。[73 条 Finding](data/knit-structure-serp-expanded-findings-2026-10-27.csv)全部按描述性观察处置，单元内分页重复不去重后重编号。
+
+六品类第二轮的[结果](data/serp-commercial-round2-2026-10-27-results.csv)、[逐次 coverage](data/serp-commercial-round2-2026-10-27-coverage.csv)和[Finding 处置](data/serp-commercial-round2-2026-10-27-findings.csv)另行保留，不与面料结构词合并为单一排名历史。研究对照六页生产正文：优先评估 Yoga 产品级说明及 balaclava / neck gaiter 的呈现，其他已有内容不重复报缺口。PowerMerino 已由所有者确认控制，不计独立竞争对手或第三方背书；本次不互链、合并或改站。
 
 ## 4. 重开条件
 

@@ -824,6 +824,18 @@ Finding outcome **`no-change / evidence-preparation / keep-measuring`**。首轮
 
 扩充后，**服装用 polyester interlock 优先准备实物例，performance polyester jacquard 是新增待确认方向**；Merino jersey 仍混零售，nylon/spandex rib 仍扩散至泛弹力与 tricot，不能自动新建页面或认定低竞争。新增费用本机已知 $0.132、unknown $0.056、effective $0.188，未超本轮 $0.25；今日累计本机 actual $0.158 + unknown $0.058 = effective $0.216，账户余额 $50.004680（账户与本机口径不强行对齐）。最终 `research-complete-with-limitations / no-site-change / keep-measuring`，无网站部署文件。详见[扩充报告](seo/research/knit-structure-serp-expanded-2026-10-27.md)，当前预算口径同步到 SEO Process 与 Merino 监测规则；原观察日期保持不变。
 
+## 2026-10-27 SEO-V2-005：六个商业品类第二轮 SERP 研究完成
+
+所有者批准对 Underwear、Sportswear、Merino、Outdoor、Silk 和 Accessories 扩充研究，不包含已在同日完成的 Knitted Fabrics。24 词 × US / GB / CA 的 72 组 depth-10 初筛为 **68 可用 / 4 unavailable**；据意图和现页内容选 8 词，24 组 depth-50 为 **22 可用 / 2 unavailable**（US Yoga 为 `partial`，结果数估算无效但保留 50 行）。共保留 **1,685 行 / 1,117 唯一 URL**，186 条工具 Finding 全部 `no-change`；113 条 coverage 保留 111 次 fresh 尝试及 2 次免费缓存恢复，不把失败补零或以浅层代替深层。
+
+主站的浅层出现为 performance underwear GB 6 / CA 5；深层 Merino T-shirt CA 原始 rankGroup 15 / rankAbsolute 18。CA performance underwear 深层只返回 9 行且未见主站，US / GB 深层不可得；本轮不构成稳定排名历史或因果证明。PowerMerino 经所有者确认控制，仅作内部自有站分类，不计独立竞争对手/第三方背书或主站排名，不互链、合并或修改。
+
+六个生产页正文均已对照，**最值得下一步窄范围评估的是 Sportswear Yoga 的产品级开发说明，以及 Accessories balaclava / neck gaiter 的分别呈现**；不是新增能力或关键词缺口。Underwear seamless、Merino 梯度、Outdoor knit fleece 和 Silk underwear/base layers 已覆盖，不重复写通用 OEM/QC。只建议真实产品证据与已批准范围，不创建平行页、不改 metadata、不修改 Backlog；第三张 Accessories 图片继续锁定。19 个官网 URL 成功内容抽样，另 1 个经两次读取仍 unavailable，不把抽样当成全站技术验收。
+
+本轮新增本机 **actual $0.364 + unknown $0.058 = effective $0.422**，低于额外 $0.65；最终日累计 actual $0.522 + unknown $0.116 = effective $0.638，月 effective $0.810。账户余额 $49.614680 / 日 spend $0.566 分开记录。金额限额仍为 notice $0.50/day、hard $1/day、hard $5/month，每报告 10 请求 / 1000 行不变。
+
+Outcome：`research-complete-with-limitations / no-site-change / keep-measuring`。Underwear seamless 11-03/11-24、Merino 10-30 GSC 与 11-20/21 固定 SERP、Knitted 11-17 Day 28、Silk/Accessories 12-08 等原窗口不变。完整方法、失败清单、原始位置与下一步依赖见[第二轮研究](seo/research/serp-commercial-round2-us-gb-ca-2026-10-27.md)。**本轮无网站部署文件，无需重新请求索引。**
+
 ## 13. 下一步优先级
 
 1. GSC 完整窗口已归档，数据时间闸门通过。[E01 手动补采](geo/testing/valid-retest/manual-e01/README.md)已按所有者明确确认判为 `valid`，手动有效样本为 1 条，下一条处理 E02；不再重复索要 E01 环境证据。[批次 B 首轮复核](geo/testing/valid-retest/batch-b/review-2026-10-09.md)的其他十条仍保留原状态，网络变化及是否补采另按所有者决定处理。下一平台 11 条 Google AI Mode 待运行；2026-10-20 后导出 Bing AI Performance 的 2026-09-21～10-18 完整窗口。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。
