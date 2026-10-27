@@ -846,6 +846,16 @@ Outcome：`research-complete-with-limitations / no-site-change / keep-measuring`
 
 所有者随后视觉复审要求删除该初稿的两个 CTA 链接，已从数据、共享模板和专属 CSS 一并移除，不保留空容器。七品类原字段对照及 360 / 390 / 768 / 1024 / 1440px 本地截图复测通过；三组正文、原图及现有其他入口不变，链接位置无残留留白。现稿仍为 `local-verified / owner-review-pending`，尚未部署，仍须上述三个主题文件一起部署；详见 Change Card 第 9 节。
 
+## 2026-10-27 SEO-V2-005：Sportswear Yoga 生产部署验收关闭
+
+所有者确认最终无链接版本已部署。生产 Yoga 简介、Product and fit / Fabric and construction / Sample approval 三组要点及原图与本地交付一致，两条 CTA 和空容器均已移除；生产 CSS 规范化换行后全文一致。Chrome 360 / 390 / 768 / 1024 / 1440px 无横向溢出或残留底部留白；14/14 个 lookbook 大图 GET 200，手机和桌面的点击/键盘放大、切图、关闭均通过。七品类全部 HTTP 200、可索引、单一 H1、自引用 Canonical；只有 Sportswear 输出新模块，其他六页无新增。Page Sitemap 20/20 唯一 URL，七品类各一次，首页保留两个 Sportswear 入口。
+
+本地/生产 origin 规范化后，七页原正文、内链和媒体清单一致；保留生产 / 本地既有 robots 顺序、HTTPS social 属性，以及 Sportswear Meta / dateModified 环境差异，不冒称完整生产部署前后 Diff。定向 `audit-urls` 7/7 fetched、0 failed / skipped，0 high / medium；两个 review 均保持 deferred（HSTS owner-action、Sportswear 图片 monitor-only），coverage unknown 不改写。多次导航浏览器再次捕获既有 Turnstile 初始化提醒，沿用独立人工观察，不声明表单投递或全页面无 JS 异常；未提交表单或改线上配置。一次网页抽取旧简介与直接请求/Chrome 新版的矛盾已保留，不等同 Google 抓取状态。
+
+状态 `deployed / production-verified / measuring`，Finding outcome `changed / keep-measuring`，本批部署记录关闭。以 **2026-10-27** 为保守 Day 0，Day 7 / 28 / 90 为 **2026-11-03 / 2026-11-24 / 2027-01-25**；完整后窗 **10-28～11-24** 等 final 覆盖后读取，预计 11-27 起核验。计划前窗 09-29～10-26 本轮未重新提取，保持 pending，不以历史快照代替。Sportswear 原观察窗口不重置，披露 Yoga 变量混入；其他既定节点不变。
+
+三个主题文件已上线，**本次无需额外部署**，只更新内部记录。未运行新 GSC / GA4 / URL Inspection / 付费 SERP / 全站 Crawl，不重复请求索引、不扩充 Backlog；用户既有 Backlog 与两份 GEO 修改完整保留。完整范围、差异、Finding 处置和限制见 [Yoga Change Card 第 10 节](seo/implementation/change-cards/seo-v2-005-sportswear-yoga-2026-10-27.md)。
+
 ## 13. 下一步优先级
 
 1. GSC 完整窗口已归档，数据时间闸门通过。[E01 手动补采](geo/testing/valid-retest/manual-e01/README.md)已按所有者明确确认判为 `valid`，手动有效样本为 1 条，下一条处理 E02；不再重复索要 E01 环境证据。[批次 B 首轮复核](geo/testing/valid-retest/batch-b/review-2026-10-09.md)的其他十条仍保留原状态，网络变化及是否补采另按所有者决定处理。下一平台 11 条 Google AI Mode 待运行；2026-10-20 后导出 Bing AI Performance 的 2026-09-21～10-18 完整窗口。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。
