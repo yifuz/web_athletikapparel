@@ -357,6 +357,7 @@ if ( ! empty( $category['hero_video'] ) ) {
 					$image_height  = ! empty( $sub['image_height'] ) ? absint( $sub['image_height'] ) : 0;
 					$image_sizes   = '(max-width: 47.99rem) calc(100vw - 3rem), 35rem';
 					$webp_srcset   = array();
+					$has_development = ! empty( $sub['development']['options'] ) && is_array( $sub['development']['options'] );
 
 					if ( ! empty( $sub['image_webp'] ) && is_array( $sub['image_webp'] ) ) {
 						foreach ( $sub['image_webp'] as $variant_width => $variant_path ) {
@@ -367,7 +368,7 @@ if ( ! empty( $category['hero_video'] ) ) {
 						}
 					}
 					?>
-					<article class="ma-subcat <?php echo $is_even ? 'ma-subcat--reverse' : ''; ?>" id="subcat-<?php echo esc_attr( $sub_slug ); ?>">
+					<article class="ma-subcat <?php echo $is_even ? 'ma-subcat--reverse' : ''; ?><?php echo $has_development ? ' ma-subcat--development' : ''; ?>" id="subcat-<?php echo esc_attr( $sub_slug ); ?>">
 						<div class="ma-subcat__media">
 							<?php if ( $webp_srcset ) : ?>
 								<picture>
@@ -391,6 +392,24 @@ if ( ! empty( $category['hero_video'] ) ) {
 							<span class="ma-subcat__index"><?php echo esc_html( sprintf( '%02d', $index + 1 ) ); ?></span>
 							<h3><?php echo esc_html( $sub['title'] ); ?></h3>
 							<p><?php echo esc_html( $sub['description'] ); ?></p>
+							<?php if ( $has_development ) : ?>
+								<dl class="ma-subcat__development">
+									<?php foreach ( $sub['development']['options'] as $option ) : ?>
+										<div>
+											<dt><?php echo esc_html( $option['label'] ); ?></dt>
+											<dd><?php echo esc_html( $option['description'] ); ?></dd>
+										</div>
+									<?php endforeach; ?>
+								</dl>
+								<?php if ( ! empty( $sub['development']['links'] ) && is_array( $sub['development']['links'] ) ) : ?>
+									<div class="ma-subcat__development-links">
+										<?php foreach ( $sub['development']['links'] as $link ) : ?>
+											<?php $link_url = 0 === strpos( $link['url'], '#' ) ? $link['url'] : home_url( $link['url'] ); ?>
+											<a class="ma-text-link" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link['label'] ); ?> <span aria-hidden="true">→</span></a>
+										<?php endforeach; ?>
+									</div>
+								<?php endif; ?>
+							<?php endif; ?>
 						</div>
 					</article>
 				<?php endforeach; ?>

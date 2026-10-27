@@ -235,7 +235,28 @@ function myathletik_product_category_data() {
 				),
 				array(
 					'title'       => __( 'Yoga and studio wear', 'myathletik-child' ),
-					'description' => __( 'Yoga and studio styles can be developed with soft-drape knit options and FLATLOCK construction where a low-profile seam is required. Hand feel, seam placement, stretch/recovery, and next-to-skin comfort should be reviewed on the actual fabric and garment sample.', 'myathletik-child' ),
+					'description' => __( 'Custom yoga clothing programs can include sports bras, leggings, shorts, and fitted tops. Develop individual styles or coordinated sets around the buyer\'s material, fit, and construction brief.', 'myathletik-child' ),
+					// Owner-review draft: product-specific briefing, not fixed performance claims.
+					'development' => array(
+						'options' => array(
+							array(
+								'label'       => __( 'Product and fit', 'myathletik-child' ),
+								'description' => __( 'Specify the bra shape and intended support target, legging or short rise and length, top coverage, size range, and intended activity.', 'myathletik-child' ),
+							),
+							array(
+								'label'       => __( 'Fabric and construction', 'myathletik-child' ),
+								'description' => __( 'Define composition, GSM, hand feel, stretch/recovery, opacity targets, and seam placement. Review FLATLOCK or ACTIVESEAM options against the selected material and garment.', 'myathletik-child' ),
+							),
+							array(
+								'label'       => __( 'Sample approval', 'myathletik-child' ),
+								'description' => __( 'Confirm fit in movement, waistband recovery, seam extension, and fabric opacity on the actual sample. Required results follow the agreed test method and acceptance criteria.', 'myathletik-child' ),
+							),
+						),
+						'links' => array(
+							myathletik_related_link( __( 'View sportswear examples', 'myathletik-child' ), '#ma-product-showcase-title' ),
+							myathletik_related_link( __( 'Discuss your yoga program', 'myathletik-child' ), '/contact/' ),
+						),
+					),
 					'image'       => 'sportswear/1U128579_4X3.png',
 					'image_alt'    => __( 'Back view of black yoga leggings with a high-rise waistband and phone pocket', 'myathletik-child' ),
 					'image_width'  => 1448,

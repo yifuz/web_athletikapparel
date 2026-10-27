@@ -836,6 +836,14 @@ Finding outcome **`no-change / evidence-preparation / keep-measuring`**。首轮
 
 Outcome：`research-complete-with-limitations / no-site-change / keep-measuring`。Underwear seamless 11-03/11-24、Merino 10-30 GSC 与 11-20/21 固定 SERP、Knitted 11-17 Day 28、Silk/Accessories 12-08 等原窗口不变。完整方法、失败清单、原始位置与下一步依赖见[第二轮研究](seo/research/serp-commercial-round2-us-gb-ca-2026-10-27.md)。**本轮无网站部署文件，无需重新请求索引。**
 
+## 2026-10-27 SEO-V2-005：Sportswear Yoga 本地草稿验收完成，待所有者审核
+
+所有者批准先制作第二轮研究 R2-002 对应的 Yoga 产品开发区块。已仅替换现有 `Yoga and studio wear` 简介，加入 Product and fit / Fabric and construction / Sample approval 三组要点及 lookbook / Contact 入口；复用原产品图和现有 lookbook，不增加数字、材料配方或性能承诺，不改 URL、metadata、H1、Schema 配置、MOQ 或表单。共享模板条件渲染，样式仅限新组件。
+
+两个 PHP 文件语法、七品类配置前后隔离与源码 diff 检查通过；其他六品类数据不变。初次 LocalWP 502 经所有者启动/重启后解除，已采集本批源码补丁前后真实本地 HTML：七页 HTTP 200、各一个 H1，metadata / Canonical / robots / JSON-LD 相同；排除 Yoga 目标区和动态询盘区后，原正文、链接及媒体清单相同。360 / 390 / 768 / 1024 / 1440px 截图无横向溢出，两条入口有效、44px 触控高度，既有 lookbook 点击/键盘放大、切图和关闭正常；未提交表单。768px 下此产品组改为上下排列，避免窄双栏留白；原图属性与其他产品组布局不变。状态为 `local-draft / local-verified / owner-review-pending`，Finding outcome `changed / local-draft`，搜索收益仍 unverified。
+
+现在可在本地 `#subcat-yoga-and-studio-wear` 审核，尚未部署；所有者审核通过后待部署文件仅 `inc/product-category-data.php`、`template-parts/product-category/page.php`、`style.css`，没有 uploads / JS / 数据库改动。Day 0 和后续窗口待生产部署确认，不从草稿日期计时；本地通过不等于生产或 Google 抓取验收。完整英文稿、事实边界、风险与验收清单见 [Yoga Change Card](seo/implementation/change-cards/seo-v2-005-sportswear-yoga-2026-10-27.md)。原 Backlog 与两份 GEO 未提交修改保留。
+
 ## 13. 下一步优先级
 
 1. GSC 完整窗口已归档，数据时间闸门通过。[E01 手动补采](geo/testing/valid-retest/manual-e01/README.md)已按所有者明确确认判为 `valid`，手动有效样本为 1 条，下一条处理 E02；不再重复索要 E01 环境证据。[批次 B 首轮复核](geo/testing/valid-retest/batch-b/review-2026-10-09.md)的其他十条仍保留原状态，网络变化及是否补采另按所有者决定处理。下一平台 11 条 Google AI Mode 待运行；2026-10-20 后导出 Bing AI Performance 的 2026-09-21～10-18 完整窗口。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。

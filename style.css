@@ -4830,6 +4830,50 @@ body.page .container.grid-container:has(.ma-product-category) {
   line-height: var(--ma-lh-body);
 }
 
+/* Optional development brief within one product group; no global card changes. */
+.ma-subcat--development .ma-subcat__body > p {
+  font-size: var(--ma-fs-base);
+}
+
+.ma-subcat__development {
+  margin: var(--ma-space-4) 0 0;
+}
+
+.ma-subcat__development > div {
+  padding: var(--ma-space-3) 0;
+  border-top: 1px solid var(--ma-color-border);
+}
+
+.ma-subcat__development dt {
+  margin: 0 0 var(--ma-space-1);
+  color: var(--ma-color-text);
+  font-family: var(--ma-font-head);
+  font-size: var(--ma-fs-small);
+  font-weight: 700;
+}
+
+.ma-subcat__development dd {
+  margin: 0;
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-base);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-subcat__development-links {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--ma-space-4);
+  row-gap: var(--ma-space-2);
+  margin-top: var(--ma-space-2);
+}
+
+.ma-subcat__development-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ma-space-2);
+  min-height: var(--ma-touch-target);
+}
+
 /* Tablet+: two-column alternating layout. */
 @media (min-width: 48rem) {
   .ma-subcat {
@@ -4849,6 +4893,19 @@ body.page .container.grid-container:has(.ma-product-category) {
 
   .ma-subcat__media img {
     aspect-ratio: 4 / 3;
+  }
+}
+
+/* Keep the longer brief readable before the desktop two-column layout. */
+@media (min-width: 48rem) and (max-width: 63.99rem) {
+  .ma-subcat--development {
+    grid-template-columns: 1fr;
+  }
+
+  .ma-subcat--development .ma-subcat__media {
+    width: 100%;
+    max-width: 35rem;
+    justify-self: center;
   }
 }
 
