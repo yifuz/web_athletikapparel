@@ -4,7 +4,7 @@
 >
 > 建立日期：2026-08-15
 >
-> 最近更新：2026-09-01
+> 最近更新：2026-10-27（补充 DataForSEO 成本控制；V1.3 方法与页面决策门槛不变）
 >
 > 适用网站：`https://www.athletikapparel.com/`
 >
@@ -690,6 +690,14 @@ GEO 的中性测试、分发和月度比较继续在 [`../geo/GEO.md`](../geo/GE
 - 适合用于关键词发现、竞争研究、爬取和排名监控；
 - 没有订阅不阻塞本流程；
 - 任何工具建议都必须回到真实 SERP、GSC、业务事实和询盘验证。
+
+### DataForSEO 成本与频率控制（2026-10-27 所有者批准）
+
+- 本机 CLI 金额限额按原值提高十倍并回读：daily notice **USD 0.50**、daily hard **USD 1.00**、monthly hard **USD 5.00**；不再沿用旧 USD 0.05 / 0.10 / 0.50，也不在本轮结束后自动恢复旧值。
+- `maxRequestsPerReport=10`、`maxRowsPerReport=1000` 不变。余额充足不自动授权无限查询、提高请求数上限、持续付费排错或修改页面。
+- 每批先检查 `providers dataforseo limits` 与 `spend`，给出有界的查询、市场、深度、基础费用及失败预留；统计已知 actual 与 unknown / reserved，账户费用与本机台账分开，不只报告成功请求费用。
+- 预算额度与 API 每分钟频率独立。遇到 `40202` 降频，必要时串行；每失败单元最多复试一次，仍失败记 `unavailable`，不补零、不换词冒充恢复、不持续付费重试。
+- 本轮授权与核验见[结构词扩充报告](research/knit-structure-serp-expanded-2026-10-27.md)。该预算更新不改变 SEO V2 Backlog、既有复盘日期、页面所有权或发布审批。
 
 ## 9. 发布审批与安全门槛
 

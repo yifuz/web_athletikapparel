@@ -812,6 +812,18 @@ GSC final 本次只到 **10-24**：最新 28 天 09-27～10-24 为 **0 clicks / 
 
 Day 7 技术 / 抓取检查关闭，outcome **`no-change / keep-measuring / not-enough-data`**，不改网站、不新增 Backlog、无需部署。Day 28 仍为 **11-17**，完整后窗 10-21～11-17 等 final 覆盖后预计 **11-20 起**核验；原 11-30 和新模块 2027-01-18 Day 90 保留。全部 Query、日期与市场缺口见 [GSC Log](seo/gsc-data-log.md)，技术和处置见 [Change Card](seo/implementation/change-cards/seo-v2-005-knitted-fabric-structures-2026-10-20.md)。
 
+## 2026-10-27 SEO-V2-005：结构采购词三市场研究完成
+
+按所有者授权，完成 single jersey / interlock / rib knit / jacquard knit 四个精确 manufacturer 查询的 US / GB / CA Google Desktop 快照：**12/12 单元、configured depth 10、112 个自然结果行 / 102 个唯一 URL**。三个失败单元各重试一次后全部恢复；日账本已知实际 $0.026、unknown $0.002，日／月额度未调整。保留两个 rank 字段、角色初分及选定官网复核限制；不把快照结果数当搜索量，也不把有界范围未见 Athletik 当成未收录或全网无排名。
+
+四词均有供货意图，但并非纯 B2B。single jersey / interlock 优先作为现有面料页的真实样布准备方向，不是流量或易排名排序；rib 区分整幅服装面料与袖口／领口辅料，jacquard 排除梭织／家居语义扩散。现有四卡已覆盖结构、材料、应用及开发输入，未确认需要立即补定义或改主词；下一候选是所有者选定 **1～2 款真实样布与对应实际结构、composition / GSM**，缺少照片不等于否定已确认能力。
+
+Finding outcome **`no-change / evidence-preparation / keep-measuring`**。首轮只归档研究，不改网站、Backlog、页面所有权或观察窗口，**无需部署**；若未来上线样例，另行批准并披露新增变量。Knitted Day 28 仍为 11-17，等 final 覆盖预定后窗后预计 11-20 起读取。完整浅层结果、费用、七个 review 和三条 action 提示处置见[结构词研究](seo/research/knit-structure-serp-us-gb-ca-2026-10-27.md)。
+
+随后所有者确认 DataForSEO 充值，明确批准扩充研究并将原金额限额提高十倍。本机已设置并回读：**daily notice $0.50 / daily hard $1.00 / monthly hard $5.00**，每报告 10 请求 / 1000 行不变；保留新值，不恢复旧 $0.10。账户充值后余额核验为 $50.152680。新增 24 单元各最多复试一次，**20 成功 / 4 unavailable**；结构词 depth 50 与材料组合 depth 10 各 10/12 成功，保留 **595 行 / 439 唯一 URL**，25 个单元内重复行不重新编号，73 条描述性 Finding 均 `no-change`。不可得为 single jersey GB / CA 深层、merino jersey CA、nylon spandex rib US，不能补零或冒称完整三市场 Top 50。
+
+扩充后，**服装用 polyester interlock 优先准备实物例，performance polyester jacquard 是新增待确认方向**；Merino jersey 仍混零售，nylon/spandex rib 仍扩散至泛弹力与 tricot，不能自动新建页面或认定低竞争。新增费用本机已知 $0.132、unknown $0.056、effective $0.188，未超本轮 $0.25；今日累计本机 actual $0.158 + unknown $0.058 = effective $0.216，账户余额 $50.004680（账户与本机口径不强行对齐）。最终 `research-complete-with-limitations / no-site-change / keep-measuring`，无网站部署文件。详见[扩充报告](seo/research/knit-structure-serp-expanded-2026-10-27.md)，当前预算口径同步到 SEO Process 与 Merino 监测规则；原观察日期保持不变。
+
 ## 13. 下一步优先级
 
 1. GSC 完整窗口已归档，数据时间闸门通过。[E01 手动补采](geo/testing/valid-retest/manual-e01/README.md)已按所有者明确确认判为 `valid`，手动有效样本为 1 条，下一条处理 E02；不再重复索要 E01 环境证据。[批次 B 首轮复核](geo/testing/valid-retest/batch-b/review-2026-10-09.md)的其他十条仍保留原状态，网络变化及是否补采另按所有者决定处理。下一平台 11 条 Google AI Mode 待运行；2026-10-20 后导出 Bing AI Performance 的 2026-09-21～10-18 完整窗口。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。

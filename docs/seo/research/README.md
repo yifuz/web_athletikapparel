@@ -1,8 +1,8 @@
 # SEO 搜索语言与关键词研究索引
 
-> 状态：V1 英语研究已完成；当前页面决策已进入生产与监测
+> 状态：V1 英语研究已完成并冻结；V2 按授权补充有界研究，页面改动另按 Backlog 与变更流程审批
 >
-> 数据日期：主要为 2026-08-15 至 2026-08-17
+> 数据日期：V1 主要为 2026-08-15 至 2026-08-17；最新 V2 结构词研究为 2026-10-27
 
 本目录保留研究链路和原始数据。日常决策先读本页和 [`../v2-backlog.md`](../v2-backlog.md)，只有需要复核来源时再进入明细文件。
 
@@ -20,6 +20,8 @@
 
 | 目的 | 文件 |
 |---|---|
+| 查看 2026-10-27 结构词 depth 50 扩充与材料组合词三市场结果、4 个不可得单元、当前十倍金额限额 | [`knit-structure-serp-expanded-2026-10-27.md`](knit-structure-serp-expanded-2026-10-27.md) |
+| 查看 2026-10-27 single jersey / interlock / rib / jacquard 四组结构词 US / GB / CA 快照、采购意图与样布准备建议（不改页） | [`knit-structure-serp-us-gb-ca-2026-10-27.md`](knit-structure-serp-us-gb-ca-2026-10-27.md) |
 | 查看 2026-09-01 FLATLOCK Guide US / GB / CA 查询意图观测（后续内容归 GEO） | [`serp-flatlock-guide-us-gb-ca-2026-09-01.md`](serp-flatlock-guide-us-gb-ca-2026-09-01.md) |
 | 查看 2026-08-31 US / GB / CA 产品型商业查询刷新 | [`serp-product-intent-refresh-2026-08-31.md`](serp-product-intent-refresh-2026-08-31.md) |
 | 理解北美与欧洲买家任务和搜索语言 | [`seo-search-language-research-v1.md`](seo-search-language-research-v1.md) |
@@ -38,6 +40,10 @@
 ## 3. 原始与归一化数据
 
 [`data/`](data/) 保存 Keyword Planner 输入、七国矩阵、三批美国发现结果和机会主表。CSV 是历史证据，不直接代表当前搜索表现；Google Ads Competition 和出价不等于自然搜索难度。
+
+2026-10-27 [结构词归一化 CSV](data/knit-structure-serp-us-gb-ca-2026-10-27.csv) 保存四词 × 三市场的 112 个自然结果行（102 个唯一 URL）。配置 depth 10，实际每单元 8～10 行；页面角色多数为 title / snippet 初分，官网复核等级单列，不当作搜索量、完整 Top 10 或当前长期排名。
+
+同日[扩充结果 CSV](data/knit-structure-serp-expanded-us-gb-ca-2026-10-27.csv)另保留 595 行 / 439 唯一 URL：结构词 depth 50 与材料组合词 depth 10 各 10/12 单元成功，失败留空，不用浅层结果冒充深层恢复；深层清单不是逐页内容审计。[73 条 Finding](data/knit-structure-serp-expanded-findings-2026-10-27.csv)全部按描述性观察处置，单元内分页重复不去重后重编号。
 
 ## 4. 重开条件
 
