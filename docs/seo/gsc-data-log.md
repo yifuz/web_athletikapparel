@@ -15,6 +15,67 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-10-27：Knitted Fabrics 结构模块 Day 7
+
+目标为 `/knitted-fabrics-manufacturer/`，归入 `SEO-V2-005-KF-STRUCTURE-20261020`。本轮只读复查，没有改站、请求索引、付费 SERP 或邮箱读取。原部署 Day 0 为 10-20，完整 28 天后窗仍为 **2026-10-21～11-17**，不因短期波动改窗。
+
+### 索引及 final 日期闸门
+
+- URL Inspection 当前为 **`PASS / Submitted and indexed`**，robots / indexing 均允许、fetch 成功、Google / User Canonical 均为目标规范 URL，`crawledAs=MOBILE`。
+- 最后抓取为 **`2026-10-21T19:26:22Z`（北京时间 10-22 03:26:22）**，晚于本批部署日；相比 Day 0 的 10-19 抓取快照已更新。它证明部署后重新抓取，API 不提供本次 Google 存储 HTML，不能断言 Google 收到的新模块逐字内容。
+- CLI 0.2.36；全部搜索请求为 `sc-domain:athletikapparel.com`、`type=web`、精确 Page 过滤、`rowLimit=25000`。除日期探测对照外均为 `dataState=final`。
+- 对全属性 10-01～10-26 的 Date 控制请求，`all` 返回 26 日，`final` 只返回连续 10-01～10-24 的 24 日；目标页 final Date 同样只到 10-24，包括明确返回的 10-17 零值行。本次把 **10-24 作为已验证的最新 final 边界**；10-25 / 26 仅在 all 中出现，不混入效果比较。
+- 排除 Day 0 后只有 **10-21～10-24 四个完整 final 日**。`measure-change` 的方向判断至少要求前后各七个 final 日，因此本轮不强行运行七日效果 verdict，用原始精确 URL 请求保存短窗观察；数据状态为 `partial / not-enough-data`，不是零变化或改动成功 / 失败。
+
+### 页面窗口与每日观察
+
+| 用途 | 日期 | Clicks | Impressions | CTR | Average position |
+|---|---|---:|---:|---:|---:|
+| 原冻结 28 日前窗（历史值，不刷新覆盖） | 09-20～10-17 | 1 | 84 | 1.19% | 13.63 |
+| 当前 final 28 日滚动观察 | 09-27～10-24 | 0 | 132 | 0% | 12.89 |
+| 部署前四个 GSC 日期 | 10-16～10-19 | 0 | 44 | 0% | 6.77 |
+| 排除部署日后的四个 final 日期 | 10-21～10-24 | 0 | 6 | 0% | 10.00 |
+
+以上当前 Page 请求各返回一行，均未触及行数上限。滚动 28 日与冻结基线重叠 21 天，且包含大量部署前数据，不能把 84 → 132 作为本次改动收益；四日短窗也不能把 44 → 6 当作失败或立即回滚证据。页面 average position 不是目标词固定排名，查询 / 国家 / 设备混合也会改变该值。
+
+目标页 Date 行中，10-18 / 19 / 20 分别为 **12 / 29 / 17 impressions**；10-21 / 22 / 23 / 24 为 **1 / 2 / 1 / 2**，上述七日 clicks 均为 0。按预先固定的部署日期口径，18～19 日尖峰不能归为 20 日新增模块收益；GSC 日历和所有者部署日记录不提供精确分钟对齐，不作跨时区的逐时归因。当前未证明尖峰持续，也未证明页面发生技术回归。
+
+### 最新 28 日全部保留 Query
+
+精确 URL 的 `dimensions=[query,page]` 返回 9 行、19 impressions / 0 clicks，无行数截断；只覆盖 Page 132 impressions 中的 19，不回填其余 113。
+
+| Query | Clicks | Impressions | Average position | 处置 |
+|---|---:|---:|---:|---|
+| breathable knitted fabric supplier | 0 | 1 | 49 | 固定商业词 |
+| custom knit fabric oem | 0 | 1 | 49 | 固定商业词 |
+| functional knit fabrics manufacturers | 0 | 5 | 19 | 固定商业词 |
+| functional knitted fabrics factory | 0 | 2 | 24 | 固定商业词 |
+| knitted fabric manufacturer | 0 | 4 | 33.5 | 固定商业词 |
+| performance knit fabric oem | 0 | 1 | 26 | 固定商业词 |
+| performance knit supplier | 0 | 1 | 27 | 固定商业词 |
+| uk technical fabric suppliers stretch wool performance knit garment construction | 0 | 2 | 34.5 | 相关但含英国本地限定，不定位成英国工厂 |
+| www.athletikapparel.com | 0 | 2 | 14 | 网址词，不计非品牌商业簇 |
+
+固定七词合计 **15 impressions / 0 clicks**；加上英国长查询为 17 次相关非网址曝光。查询方向仍是商业面料供货，不足以解释页面全部发现来源。未返回 single jersey / interlock / rib / jacquard 新查询，记为 `not-returned`，不是零需求或覆盖无效。
+
+四日后窗只返回 `functional knitted fabrics factory` 1 impression / position 21，以及网址词 1 / 14；均 0 click，共覆盖 Page 6 impressions 中的 2。前四日 Query 无保留行，但 Page 有 44 impressions，不把缺行写成无搜索。
+
+### 市场分布限制
+
+- 当前 28 日 `dimensions=[country,page]` 返回四行：US 15 impressions / position 27.4、GB 2 / 34.5、Israel 1 / 26、Türkiye 1 / 19，均 0 click；合计仅 19，不与 Page 132 闭合。
+- 为排除组合维度选择的影响，同窗、同精确 URL 另做 `dimensions=[country]` 控制，仍为同四行 / 19。保持 **`partial / non-reconciled`**，不能断言 132 次曝光主要来自美国，也不能把 Canada / 其他欧洲国家缺行写成零。
+- 四日后窗 Country × Page 仅返回 US 2 impressions / position 17.5，与 Page 6 也不闭合。缺口原因未证实；Query 匿名化与其他维度合计差异分开记录，不把所有差额统一归因为匿名化。
+
+### 技术、Finding 与决策
+
+单页 `audit-page` action view 返回 0 Finding、0 issue / recommendation，保留 coverage unknown 及过滤 1 个非 HTTP 链接的 warning，不扩大为全站无缺陷。直接生产检查 HTTP 200、允许索引、自引用 Canonical、单一 H1，四卡 / 十二组定义与五图均正常；360 / 1440px 无横向溢出。与 10-23 本地快照规范化 origin 后，原正文、链接、媒体、Title / Meta / H1 和 Schema 一致；同日早间七品类审计与 Sitemap 证据仍作明确日期的补充，不冒称新全站 Crawl。
+
+首次浏览器捕获既有 Turnstile async/defer 间歇报错；仅一次独立新会话复查未再出现 pageerror，表单一份、无可见错误，但 1.5 秒时未见 `cf-turnstile-response` 字段，故不把它写成验证码或提交链路通过。延续 `SEO-KF-QA-TURNSTILE-20261020 / review / Info / no-change / monitor-only`；实际提交影响 `unverified`，未发测试询盘。若真实提交异常或独立会话可稳定复现并影响初始化，再进入专门诊断。
+
+本次最终为 **`no-change / keep-measuring / not-enough-data`**：关闭本模块 Day 7 技术与抓取检查，保留现有正文、URL、Title、Meta、H1 和图片，不新增 Backlog、不换关键词、不做 CTR 实验。Day 28 日历节点 **11-17**，正式后窗等 final 覆盖后预计 **11-20 起**核验；原批次 11-30 与本模块 2027-01-18 Day 90 均不变。没有读取 GA4 或询盘，不给获客效果结论。
+
+原始 API 结果、生产 QA 和截图保存在 Git 忽略的 `.chrome-check/knitted-fabrics-day7-*`；完整部署及本次复查见 [Change Card](implementation/change-cards/seo-v2-005-knitted-fabric-structures-2026-10-20.md)。本轮无需部署网站文件。
+
 ## 2026-10-23：Merino 商业查询固定监测 V1
 
 所有者决定先执行商业词固定观察，产品开发样例与行业引用分别由所有者继续选材 / 关注，不实施页面改动。本次归入 SEO-V2-005，固定 `merino wool apparel manufacturer`、`merino wool clothing manufacturer`、`merino wool base layer manufacturer`、`merino wool underwear manufacturer` 四个精确查询，US / GB / CA、English、Google Desktop、Top 50，共 12 个独立单元。本机 `merino-commercial-core-v1` 查询组已保存并回读；未开启后台自动抓取、付费定时器或提醒。

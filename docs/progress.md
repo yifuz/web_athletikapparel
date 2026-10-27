@@ -802,7 +802,15 @@ PHP 语法、七品类数据/模板隔离、LocalWP 与生产 360 / 768 / 1024 /
 
 `audit-urls` 7/7 fetched、0 failed / skipped、0 high / medium；两个 review 全部处置：`hsts_missing` 沿用 `deferred / owner-action`，`image_oversized_candidate` 沿用 Sportswear `deferred / monitor-only`。保留工具 coverage unknown，不扩大为全站无回归或排名收益。状态 `deployed / production-verified / measuring`，本模块部署记录关闭，Finding outcome `changed / keep-measuring`。三个主题文件已上线，无需额外部署；本轮只有内部记录变更。
 
-以 10-27 部署确认和验收日为保守 Day 0（具体上线时刻未知），Day 7 / 28 / 90 为 **2026-11-03 / 2026-11-24 / 2027-01-25**；完整后窗 10-28～11-24 等 final 覆盖后读取，计划比较前窗 09-29～10-26，本轮未取该窗数值。Underwear 原 **11-30 Day 90 不重置**，须披露新增 seamless 变量。未做新 URL Inspection，不声称 Google 已抓取新版，也不重复请求索引。Knitted Fabrics 今天到期的 Day 7 尚未执行，保持独立任务。详见上述 Change Card。
+以 10-27 部署确认和验收日为保守 Day 0（具体上线时刻未知），Day 7 / 28 / 90 为 **2026-11-03 / 2026-11-24 / 2027-01-25**；完整后窗 10-28～11-24 等 final 覆盖后读取，计划比较前窗 09-29～10-26，本轮未取该窗数值。Underwear 原 **11-30 Day 90 不重置**，须披露新增 seamless 变量。未做新 URL Inspection，不声称 Google 已抓取新版，也不重复请求索引。该段只记录 Underwear 验收；Knitted Fabrics 的独立 Day 7 结果见下一节。详见上述 Change Card。
+
+## 2026-10-27 SEO-V2-005：Knitted Fabrics Day 7 完成
+
+URL Inspection 为 `PASS / Submitted and indexed`，最后抓取更新为 **2026-10-21T19:26:22Z（北京时间 10-22 03:26:22）**，Canonical 一致且抓取成功，确认部署后重新抓取。生产结构四卡 / 十二组定义及原五图正常，360 / 1440px 无横向溢出，元数据、原内容、链接、媒体和 Schema 与规范化 origin 后的 10-23 本地快照一致；单页审计 0 Finding，保留 coverage unknown 和非 HTTP 链接过滤提醒。既有 Turnstile 间歇错误未在一次新会话中复现，但验证码响应字段与实际提交未验证，保持 Info / monitor-only，不宣称提交通过。
+
+GSC final 本次只到 **10-24**：最新 28 天 09-27～10-24 为 **0 clicks / 132 impressions / average position 12.89**，Query 仅覆盖 19 次，其中固定七个商业词 15 次；Country 合计同样只有 19，单维控制未闭合，不判全部流量市场。前四日 10-16～19 为 **0 / 44**，排除部署日的后四日 10-21～24 为 **0 / 6**；10-18 / 19 的尖峰不能记成本次 10-20 模块收益，四日回落也不足判失败或回滚。当前滚动 28 日与冻结基线重叠 21 天，不归因于单一改动。
+
+Day 7 技术 / 抓取检查关闭，outcome **`no-change / keep-measuring / not-enough-data`**，不改网站、不新增 Backlog、无需部署。Day 28 仍为 **11-17**，完整后窗 10-21～11-17 等 final 覆盖后预计 **11-20 起**核验；原 11-30 和新模块 2027-01-18 Day 90 保留。全部 Query、日期与市场缺口见 [GSC Log](seo/gsc-data-log.md)，技术和处置见 [Change Card](seo/implementation/change-cards/seo-v2-005-knitted-fabric-structures-2026-10-20.md)。
 
 ## 13. 下一步优先级
 
@@ -811,7 +819,7 @@ PHP 语法、七品类数据/模板隔离、LocalWP 与生产 360 / 768 / 1024 /
 3. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
 4. GEO-V2-007 已完成生产部署、技术验收、LinkedIn / Instagram 公开 URL 补录、一次 GSC 索引申请及 2026-09-28 首次七日复核。GSC 已确认规范 URL 收录；固定窗口为 18 次 Web Search 展示、0 点击。原始 LinkedIn UTM 6 sessions 已确认属于内部 QA，Instagram 无匹配行，状态改为 `seven-day-measurement-contaminated / measuring`。平台后台与人工询盘不可得，当前为 0 个已确认外部 UTM 会话；月度 GSC 生成式窗口已记录 ACTIVESEAM Guide 的 9 次页面级链接曝光，但仍没有答案提取或推荐证据。进入固定 Prompt 有效复测，不立即重写页面或重复提交。没有拉伸状态素材，因此继续不写 Athletik 实测延伸、强度或耐久声明，HSAT-K5 和国产海淮扒密缝机保持独立证据线。
 5. 七个品类页 Program Fit、About 综合段落、GEO-V2-019 与 GEO-V2-020 已上线并通过生产复核，不再立即重复修改。GEO-V2-020 已取得 GSC 已收录快照；首轮七日 GA4/UTM 原始会话已确认属于内部 QA，状态改为 `seven-day-measurement-contaminated / measuring`。LinkedIn/Instagram 精确后台数据和有效询盘仍待取得，不把缺口写成零。月度数据闸门现已通过，按有效复测执行包运行 Baseline v2 与 Broad Discovery v1，并分别记录平台、页面和固定 Prompt 结果，不把污染或低样本波动归因到单一页面。
-6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-005 Knitted Fabrics 的结构—材料—应用模块已于 2026-10-20 关闭生产部署验收，当前 `production-verified / measuring`；10-27 做 Day 7，11-17 为 Day 28 日历节点，完整效果复盘等待 final 数据覆盖预定后窗。SEO-V2-018 已为 `completed / measuring`，不重复列为待部署项目；其他既有改动保持原窗口，不新建近义页或无触发重写。
+6. SEO 后续统一按 [`SEO V2 Backlog`](seo/v2-backlog.md) 执行：SEO-V2-005 Knitted Fabrics 的结构—材料—应用模块已于 2026-10-20 关闭生产部署验收，10-27 Day 7 技术与部署后抓取复查完成，当前 `no-change / keep-measuring / not-enough-data`；11-17 为 Day 28 日历节点，完整效果复盘等待 final 数据覆盖预定后窗。Underwear seamless 已于 10-27 完成部署验收，11-03 做 Day 7；Merino 固定查询 10-30 周度观察保持不变。SEO-V2-018 已为 `completed / measuring`，不重复列为待部署项目；其他既有改动保持原窗口，不新建近义页或无触发重写。
 7. SEO-V2-004 转为性能监控项，不再主动投入增量优化；持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据，只有达到重新触发条件才启动页面或性能改动。
 8. Promotion P0 已完成；2026-09-28 起进入 P1，使用本机私有台账持续补齐新询盘负责人、MOQ、
    自述来源和销售阶段，并继续把平台 conversion 与人工确认询盘分开记录。

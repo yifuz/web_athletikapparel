@@ -109,3 +109,39 @@ Turnstile 仅记录已观察到的间歇报错，不推断根因、不改主题�
 3. `style.css`
 
 本轮没有新增图片或 JavaScript，不需要同步 uploads、修改数据库或 Rank Math 字段。生产验收阶段仅更新记录，没有新增网站部署文件。文档和忽略目录中的 QA 工具/截图不需要部署；不自动或重复请求编入索引。实施记录关闭为 `production-verified / measuring`，后续按固定日期观察相关非品牌曝光与商业词排名，不立即连续改写同页。
+
+## 7. 2026-10-27 Day 7：抓取检查关闭，效果继续观察
+
+本轮 `targeted`、只读，未改网站。Day 7 Finding outcome 为 **`no-change / keep-measuring`**，效果证据为 **`partial / not-enough-data`**；本卡既有实施 outcome `changed / keep-measuring` 不覆盖。
+
+### 抓取及技术
+
+- URL Inspection 为 `PASS / Submitted and indexed`、robots / indexing 允许、fetch 成功、Google / User Canonical 一致、MOBILE。最后抓取由 Day 0 的 10-19 更新为 **2026-10-21T19:26:22Z（北京时间 10-22 03:26:22）**，确认部署后重新抓取；API 未给出存储 HTML，不把时间证据写成新模块逐字被 Google 读取的证明。
+- CLI 0.2.36 `doctor` 通过；描述并运行 `audit-page` action view，0 Finding / 0 issue / 0 recommendation。保留 `findings.coverage.state=unknown`、1 个非 HTTP 链接过滤 warning；当前页面存在 mailto / tel 链接，不把协议过滤当断链。本次无自动 Finding 需处置。
+- 生产 QA 完成于 `2026-10-27T01:38:50.491Z`：目标 HTTP 200、无 X-Robots-Tag、index、self-Canonical、单一 H1、无本地主机泄漏；一个结构模块、四卡、十二组定义、无占位符或 Beta 公开关联。360 / 1440px raw / rendered 内容一致、无横向溢出，Desktop 成对等高对齐，五组原图均实际加载且 alt 保留，桌面 / 手机截图已查看。
+- 规范化 origin 后，与 10-23 本地快照的 Title / Meta / H1、正文、链接、媒体和解析后的 Schema 一致；这不是紧邻本批部署前的生产快照 Diff。同日早间 Underwear 验收已确认七品类状态 / Canonical / 唯一 H1、Page Sitemap 20 条 / 20 unique、七品类各一次、首页入口和 robots.txt 正常，本次复用该日期明确的发现路径证据；不额外抓全站，也不冒用新 Crawl ID。
+- 既有 `SEO-KF-QA-TURNSTILE-20261020` 间歇 async/defer pageerror 在首轮出现；一次独立新会话复查无 pageerror、有一份表单、无可见表单错误，但等待 1.5 秒时未见验证码响应字段，不能宣称验证码 / 提交通过。沿用 `review / Info / no-change / monitor-only`，提交影响 `unverified`；未提交测试询盘，未改插件 / CMP / 主题。独立会话稳定复现并影响初始化或真实提交失败才重开。
+
+### 搜索数据及解读
+
+全属性 `dataState=all` 与 `final` Date 对照请求均至 10-26，final 只覆盖连续 **10-01～10-24**；10-25 / 26 的 preliminary 行不用于比较。因此排除部署日后目前仅有 **10-21～10-24 四个 final 日**，未满足 `measure-change` 至少前后各七个 final 日的方向闸门，本次不强行运行该报告的效果 verdict。
+
+| 窗口 | Clicks / Impressions | Average position | 限制 |
+|---|---|---:|---|
+| 冻结 28 日前窗：09-20～10-17 | 1 / 84 | 13.63 | 历史冻结值不覆盖 |
+| 最新 28 日：09-27～10-24 | 0 / 132 | 12.89 | 与前窗重叠 21 天，大量数据早于部署 |
+| 前四日：10-16～10-19 | 0 / 44 | 6.77 | Query 未返回行，不等于没有搜索 |
+| 后四日：10-21～10-24 | 0 / 6 | 10.00 | 低样本 / 短窗口，不作成功或失败判断 |
+
+10-18 / 19 的曝光为 12 / 29，10-20 为 17；后四日为 1 / 2 / 1 / 2。不能把部署日期口径之前的尖峰归因为本次新增模块，也不能把四日回落据为技术回归或自动撤销理由。具体部署时刻未记录，不作 GSC 日历与上海时区的逐分钟对齐。
+
+最新 28 日精确 URL Query × Page 返回全部 9 行，只覆盖 **19 / 132 impressions**，固定七个相关商业词为 **15 impressions / 0 clicks**；`functional knit fabrics manufacturers` 5 / position 19、`knitted fabric manufacturer` 4 / 33.5、`functional knitted fabrics factory` 2 / 24，其余四个固定词各 1。另有英国超长相关查询 2 和网址词 2。未返回新的四类结构查询，记 `not-returned` 而非零需求。Page average position 与低量 Query 平均位置都不等于标准化 SERP 固定排名。
+
+Country × Page 的 US 15、GB 2、Israel 1、Türkiye 1 合计也只有 19；Country 单维控制同样 19，保持 `partial / non-reconciled`，不据此判断整页主要流量市场或为缺失国家补零。后四日 Query 只有一个商业词及网址词各一次；国家只返回 US 2，均未闭合 Page 6。完整九行、每日值、日期控制及限制见 [GSC Log](../../gsc-data-log.md) 最新 10-27 条目。所有 raw 请求 `rowLimit=25000`、未触及上限，原始证据存于 Git 忽略的 `.chrome-check/knitted-fabrics-day7-gsc-2026-10-27.json`。
+
+### 处置与后续
+
+- Day 7 技术 / 抓取检查完成；保持本模块和所有元数据，不改页面，不新增 Backlog，不进行付费排名请求或重复索引申请。本轮没有 Google / GA4 / 询盘因果或转化结论。
+- 既有 HSTS / Sportswear 图片 deferred 状态及历史 Diff Finding 处置不变；单页报告无新自动 Finding，Turnstile 人工观察仍按上述边界监控，不把缺证据写成健康通过。
+- Day 28 仍为 **2026-11-17**，预定后窗 **10-21～11-17**、冻结前窗 **09-20～10-17**，等 final 覆盖末日后预计 11-20 起核验；仍允许 `inconclusive`。本模块 **2027-01-18 Day 90** 与原批次 **2026-11-30 Day 90** 都不重置，原批次须披露这次内容变量。
+- 无新代码、图片、CSS、JS 或数据库修改；只更新内部记录，**无需部署文件**。既有 Backlog 与两份 GEO 未提交修改不纳入本次提交。
