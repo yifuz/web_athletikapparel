@@ -4859,21 +4859,6 @@ body.page .container.grid-container:has(.ma-product-category) {
   line-height: var(--ma-lh-body);
 }
 
-.ma-subcat__development-links {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: var(--ma-space-4);
-  row-gap: var(--ma-space-2);
-  margin-top: var(--ma-space-2);
-}
-
-.ma-subcat__development-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--ma-space-2);
-  min-height: var(--ma-touch-target);
-}
-
 /* Tablet+: two-column alternating layout. */
 @media (min-width: 48rem) {
   .ma-subcat {

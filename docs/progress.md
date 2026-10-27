@@ -844,6 +844,8 @@ Outcome：`research-complete-with-limitations / no-site-change / keep-measuring`
 
 现在可在本地 `#subcat-yoga-and-studio-wear` 审核，尚未部署；所有者审核通过后待部署文件仅 `inc/product-category-data.php`、`template-parts/product-category/page.php`、`style.css`，没有 uploads / JS / 数据库改动。Day 0 和后续窗口待生产部署确认，不从草稿日期计时；本地通过不等于生产或 Google 抓取验收。完整英文稿、事实边界、风险与验收清单见 [Yoga Change Card](seo/implementation/change-cards/seo-v2-005-sportswear-yoga-2026-10-27.md)。原 Backlog 与两份 GEO 未提交修改保留。
 
+所有者随后视觉复审要求删除该初稿的两个 CTA 链接，已从数据、共享模板和专属 CSS 一并移除，不保留空容器。七品类原字段对照及 360 / 390 / 768 / 1024 / 1440px 本地截图复测通过；三组正文、原图及现有其他入口不变，链接位置无残留留白。现稿仍为 `local-verified / owner-review-pending`，尚未部署，仍须上述三个主题文件一起部署；详见 Change Card 第 9 节。
+
 ## 13. 下一步优先级
 
 1. GSC 完整窗口已归档，数据时间闸门通过。[E01 手动补采](geo/testing/valid-retest/manual-e01/README.md)已按所有者明确确认判为 `valid`，手动有效样本为 1 条，下一条处理 E02；不再重复索要 E01 环境证据。[批次 B 首轮复核](geo/testing/valid-retest/batch-b/review-2026-10-09.md)的其他十条仍保留原状态，网络变化及是否补采另按所有者决定处理。下一平台 11 条 Google AI Mode 待运行；2026-10-20 后导出 Bing AI Performance 的 2026-09-21～10-18 完整窗口。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。

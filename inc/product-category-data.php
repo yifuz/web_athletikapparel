@@ -252,10 +252,6 @@ function myathletik_product_category_data() {
 								'description' => __( 'Confirm fit in movement, waistband recovery, seam extension, and fabric opacity on the actual sample. Required results follow the agreed test method and acceptance criteria.', 'myathletik-child' ),
 							),
 						),
-						'links' => array(
-							myathletik_related_link( __( 'View sportswear examples', 'myathletik-child' ), '#ma-product-showcase-title' ),
-							myathletik_related_link( __( 'Discuss your yoga program', 'myathletik-child' ), '/contact/' ),
-						),
 					),
 					'image'       => 'sportswear/1U128579_4X3.png',
 					'image_alt'    => __( 'Back view of black yoga leggings with a high-rise waistband and phone pocket', 'myathletik-child' ),

@@ -6,13 +6,15 @@
 >
 > Finding outcome：`changed / local-draft`；搜索收益 `unverified`；未部署
 
+> 当前修订：所有者视觉复审要求删除两个链接，已移除；第 5～6 节保留初稿验收记录，最新验收以第 9 节为准。三组正文、原图与页面定位不变，仍待所有者最终审核与部署确认。
+
 ## 1. 目标、授权与主要变量
 
 - 目标页面：<https://www.athletikapparel.com/sportswear-manufacturer/>。
 - 搜索意图：为 yoga / studio clothing 项目寻找可按款式、面料和版型开发的 OEM/ODM 制造商；继续由 Sportswear 现有页承接，不创建 Yoga、Activewear 或 Fitness 平行页。
 - 主要官网任务：`Qualify / Verify / Start`。让买家辨认具体产品范围、准备款式开发输入并发起项目讨论。
 - 所有者在第二轮 SERP 研究结束后同意先制作该区块本地草稿，随后要求“开始做，如果需要什么没有告诉我”。这是本范围英文草稿与实现授权，不是公开发布批准。
-- 唯一主要变量：增强现有 `Yoga and studio wear` 产品组的采购开发具体度，替换原简介，增加三组 definition-list 要点及两个站内入口。产品组位置、标题、anchor 和现有图片不变。
+- 唯一主要变量：增强现有 `Yoga and studio wear` 产品组的采购开发具体度，替换原简介，增加三组 definition-list 要点。初稿的两个站内入口已按所有者视觉复审删除。产品组位置、标题、anchor 和现有图片不变。
 - 改动类型：SEO Process §5.1 **B 类采购决策完整性改进**。排名改善是待测假设，不把通用内容增加、单次 SERP 或缺少 exact-match 词当作已证明的收益。
 - 不改 URL、Title、Meta、H1、robots、Canonical、Schema 配置、Hero、MOQ、表单、lookbook 图片/顺序/脚本或其他六个品类；不新增 Backlog 项。
 
@@ -51,14 +53,14 @@ Define composition, GSM, hand feel, stretch/recovery, opacity targets, and seam 
 
 Confirm fit in movement, waistband recovery, seam extension, and fabric opacity on the actual sample. Required results follow the agreed test method and acceptance criteria.
 
-两个入口：`View sportswear examples` → 既有 `#ma-product-showcase-title`；`Discuss your yoga program` → `/contact/`。不增加 UTM、预填参数、脚本或新页面。
+初稿曾有 `View sportswear examples` 与 `Discuss your yoga program` 两个入口；所有者认为视觉突兀，已全部移除。现稿此产品组不含 CTA 链接，不增加 UTM、预填参数、脚本或新页面。
 
 ## 4. 文件与视觉范围
 
 | 文件 | 本次变化 |
 |---|---|
 | `inc/product-category-data.php` | 只改 Sportswear `subcategories[2].description`，新增该项的 `development` 数据；metadata、图片等原字段不动 |
-| `template-parts/product-category/page.php` | 复用共享产品组模板，以 options 数据为开关输出三组 `<dt>/<dd>` 及可选站内链接；文本与 URL 转义，不在其他品类输出空区块 |
+| `template-parts/product-category/page.php` | 复用共享产品组模板，以 options 数据为开关输出三组 `<dt>/<dd>`；移除本次链接渲染分支，文本转义，不在其他品类输出空区块 |
 | `style.css` | `.ma-subcat--development` / `.ma-subcat__development*` 专属样式；沿用字号、颜色、间距和 touch-target token，不改全局 token，不使用新 JS |
 
 视觉草案：保留现有 Yoga 产品图，文字侧增加轻分隔线的三组要点，不再使用一组独立大卡片。按设计技能的真实截图检查，发现 768px 原双栏使左侧留白偏大，因此仅此产品组在 48～63.99rem 改为上下排列，图片最大宽度维持 35rem，与既有响应式 sizes 一致；桌面保留双栏，手机正常堆叠。未更改图片文件、原图标签属性或其他产品组布局。
@@ -109,3 +111,13 @@ QA helper、前后 JSON 和五种宽度截图保存在忽略目录 `.chrome-chec
 3. `style.css`
 
 没有 uploads 新文件，没有图片、JS、数据库、Rank Math 设置或 URL 迁移。内部文档与 `.chrome-check/` 不属于生产部署包。Git 提交/推送不等于发布批准或生产上线。
+
+## 9. 2026-10-27 视觉复审：删除两个链接
+
+- 授权与证据：所有者提供本地截图，明确要求删除 `View sportswear examples` 和 `Discuss your yoga program`，理由是视觉突兀。
+- 主要变量：只删除这两个链接的数据、共享模板专属渲染分支及不再使用的专属 CSS；不隐藏 DOM、不保留空链接容器，不改三组正文、图片、导航或其他 Contact 入口。
+- 验收：相对删除前本地快照，七页均 HTTP 200；metadata、H1、Canonical、robots、解析后 JSON-LD、非目标正文、原内链与媒体清单保持一致。Yoga 仅少两个链接及其文字，原标题、三组说明和图片属性相同。
+- 视觉：Chrome 360 / 390 / 768 / 1024 / 1440px 无横向溢出，链接和链接容器均为零，三组说明完整。区块末尾无残留链接留白；1440px 高度约 603→551px，390px 约 1134→1030px；本次页面访问无 pageerror。
+- 覆盖与限制：本次仅本地回归，不重复付费研究、GSC、GA4 或生产 Crawl；未再次操作表单或 lightbox，前述原媒体、脚本和相关链接未改。QA 快照与截图位于忽略目录 `.chrome-check/sportswear-yoga-*`。
+- 风险与结果：局部新增入口已移除，但现页 lookbook、导航和原询盘入口保留；没有新 URL 或 301 需求。Finding outcome 为 `changed / local-verified / owner-review-pending`，不宣称曝光或排名效果。
+- 部署：仍需前述三个主题文件一起部署；暂无生产部署确认，Day 0 不提前计时。

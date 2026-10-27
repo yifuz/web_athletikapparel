@@ -401,14 +401,6 @@ if ( ! empty( $category['hero_video'] ) ) {
 										</div>
 									<?php endforeach; ?>
 								</dl>
-								<?php if ( ! empty( $sub['development']['links'] ) && is_array( $sub['development']['links'] ) ) : ?>
-									<div class="ma-subcat__development-links">
-										<?php foreach ( $sub['development']['links'] as $link ) : ?>
-											<?php $link_url = 0 === strpos( $link['url'], '#' ) ? $link['url'] : home_url( $link['url'] ); ?>
-											<a class="ma-text-link" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link['label'] ); ?> <span aria-hidden="true">→</span></a>
-										<?php endforeach; ?>
-									</div>
-								<?php endif; ?>
 							<?php endif; ?>
 						</div>
 					</article>
