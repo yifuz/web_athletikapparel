@@ -357,7 +357,8 @@ if ( ! empty( $category['hero_video'] ) ) {
 					$image_height  = ! empty( $sub['image_height'] ) ? absint( $sub['image_height'] ) : 0;
 					$secondary_image = ! empty( $sub['secondary_image'] ) && is_array( $sub['secondary_image'] ) ? $sub['secondary_image'] : array();
 					$has_secondary = ! empty( $secondary_image['image'] );
-					$image_sizes   = $has_secondary ? '(max-width: 47.99rem) calc(50vw - 1.75rem), 18rem' : '(max-width: 47.99rem) calc(100vw - 3rem), 35rem';
+					$is_accessory_feature = 'sports-accessories-manufacturer' === $category_slug && 0 === $index && $has_secondary && count( $sub['development']['options'] ?? array() ) === 2;
+					$image_sizes   = $is_accessory_feature ? '(max-width: 47.99rem) calc(100vw - 3rem), (max-width: 75rem) calc(50vw - 2rem), 35rem' : ( $has_secondary ? '(max-width: 47.99rem) calc(50vw - 1.75rem), 18rem' : '(max-width: 47.99rem) calc(100vw - 3rem), 35rem' );
 					$webp_srcset   = array();
 					$secondary_srcset = array();
 					$has_development = ! empty( $sub['development']['options'] ) && is_array( $sub['development']['options'] );
@@ -379,6 +380,23 @@ if ( ! empty( $category['hero_video'] ) ) {
 						}
 					}
 					?>
+					<?php if ( $is_accessory_feature ) : ?>
+						<?php
+						get_template_part( 'template-parts/product-category/accessory-feature', null, array(
+							'sub' => $sub,
+							'slug' => $sub_slug,
+							'image_base' => $image_base,
+							'image_alt' => $image_alt,
+							'image_width' => $image_width,
+							'image_height' => $image_height,
+							'image_sizes' => $image_sizes,
+							'webp_srcset' => $webp_srcset,
+							'secondary_image' => $secondary_image,
+							'secondary_srcset' => $secondary_srcset,
+						) );
+						continue;
+						?>
+					<?php endif; ?>
 					<article class="ma-subcat <?php echo $is_even ? 'ma-subcat--reverse' : ''; ?><?php echo $has_development ? ' ma-subcat--development' : ''; ?>" id="subcat-<?php echo esc_attr( $sub_slug ); ?>">
 						<div class="ma-subcat__media<?php echo $has_secondary ? ' ma-subcat__media--paired' : ''; ?>">
 							<?php if ( $has_secondary ) : ?>
