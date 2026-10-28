@@ -4769,6 +4769,11 @@ body.page .container.grid-container:has(.ma-product-category) {
   gap: var(--ma-space-5);
 }
 
+/* Give the accessories product groups more room without changing other pages. */
+.ma-subcategories:has(> .ma-accessory-feature) {
+  gap: clamp(calc(var(--ma-space-5) + var(--ma-space-2)), 5vw, var(--ma-space-6));
+}
+
 .ma-subcat {
   display: grid;
   gap: var(--ma-space-4);
