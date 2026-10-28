@@ -355,8 +355,11 @@ if ( ! empty( $category['hero_video'] ) ) {
 					$image_alt     = ! empty( $sub['image_alt'] ) ? $sub['image_alt'] : $sub['title'];
 					$image_width   = ! empty( $sub['image_width'] ) ? absint( $sub['image_width'] ) : 0;
 					$image_height  = ! empty( $sub['image_height'] ) ? absint( $sub['image_height'] ) : 0;
-					$image_sizes   = '(max-width: 47.99rem) calc(100vw - 3rem), 35rem';
+					$secondary_image = ! empty( $sub['secondary_image'] ) && is_array( $sub['secondary_image'] ) ? $sub['secondary_image'] : array();
+					$has_secondary = ! empty( $secondary_image['image'] );
+					$image_sizes   = $has_secondary ? '(max-width: 47.99rem) calc(50vw - 1.75rem), 18rem' : '(max-width: 47.99rem) calc(100vw - 3rem), 35rem';
 					$webp_srcset   = array();
+					$secondary_srcset = array();
 					$has_development = ! empty( $sub['development']['options'] ) && is_array( $sub['development']['options'] );
 
 					if ( ! empty( $sub['image_webp'] ) && is_array( $sub['image_webp'] ) ) {
@@ -367,9 +370,20 @@ if ( ! empty( $category['hero_video'] ) ) {
 							}
 						}
 					}
+					if ( $has_secondary && ! empty( $secondary_image['webp'] ) && is_array( $secondary_image['webp'] ) ) {
+						foreach ( $secondary_image['webp'] as $variant_width => $variant_path ) {
+							$variant_width = absint( $variant_width );
+							if ( $variant_width && $variant_path ) {
+								$secondary_srcset[] = esc_url( $image_base . ltrim( $variant_path, '/' ) ) . ' ' . $variant_width . 'w';
+							}
+						}
+					}
 					?>
 					<article class="ma-subcat <?php echo $is_even ? 'ma-subcat--reverse' : ''; ?><?php echo $has_development ? ' ma-subcat--development' : ''; ?>" id="subcat-<?php echo esc_attr( $sub_slug ); ?>">
-						<div class="ma-subcat__media">
+						<div class="ma-subcat__media<?php echo $has_secondary ? ' ma-subcat__media--paired' : ''; ?>">
+							<?php if ( $has_secondary ) : ?>
+								<figure>
+							<?php endif; ?>
 							<?php if ( $webp_srcset ) : ?>
 								<picture>
 									<source type="image/webp" srcset="<?php echo esc_attr( implode( ', ', $webp_srcset ) ); ?>" sizes="<?php echo esc_attr( $image_sizes ); ?>">
@@ -386,6 +400,21 @@ if ( ! empty( $category['hero_video'] ) ) {
 							>
 							<?php if ( $webp_srcset ) : ?>
 								</picture>
+							<?php endif; ?>
+							<?php if ( $has_secondary ) : ?>
+									<figcaption><?php echo esc_html( ! empty( $sub['primary_image_caption'] ) ? $sub['primary_image_caption'] : $sub['title'] ); ?></figcaption>
+								</figure>
+								<figure>
+								<picture class="ma-subcat__additional-image">
+									<?php if ( $secondary_srcset ) : ?>
+										<source type="image/webp" srcset="<?php echo esc_attr( implode( ', ', $secondary_srcset ) ); ?>" sizes="<?php echo esc_attr( $image_sizes ); ?>">
+									<?php endif; ?>
+									<img src="<?php echo esc_url( $image_base . $secondary_image['image'] ); ?>" width="<?php echo esc_attr( absint( $secondary_image['width'] ) ); ?>" height="<?php echo esc_attr( absint( $secondary_image['height'] ) ); ?>" alt="<?php echo esc_attr( $secondary_image['alt'] ); ?>" loading="lazy" decoding="async">
+								</picture>
+									<?php if ( ! empty( $secondary_image['caption'] ) ) : ?>
+										<figcaption><?php echo esc_html( $secondary_image['caption'] ); ?></figcaption>
+									<?php endif; ?>
+								</figure>
 							<?php endif; ?>
 						</div>
 						<div class="ma-subcat__body">

@@ -856,6 +856,10 @@ Outcome：`research-complete-with-limitations / no-site-change / keep-measuring`
 
 三个主题文件已上线，**本次无需额外部署**，只更新内部记录。未运行新 GSC / GA4 / URL Inspection / 付费 SERP / 全站 Crawl，不重复请求索引、不扩充 Backlog；用户既有 Backlog 与两份 GEO 修改完整保留。完整范围、差异、Finding 处置和限制见 [Yoga Change Card 第 10 节](seo/implementation/change-cards/seo-v2-005-sportswear-yoga-2026-10-27.md)。
 
+## 2026-10-28 SEO-V2-005：Sports Accessories 头颈配件本地草稿
+
+根据第二轮三市场 SERP 与所有者确认的 Merino wool 护脖实物图，现有首组区分 balaclava 与 neck gaiter 的采购输入，并与原头套图并排展示；第三张图不变，不新增页面、链接或修改 metadata。七个本地品类页与五种屏宽检查通过；本地新旧 WebP 均未返回 Content-Type，生产部署后需复核。状态 `changed / local-draft / owner-review-pending`，尚未部署、未证明搜索效果；原 Sports Accessories Day 90 不重置，后续需披露观察窗口内的变量。详见 [变更卡](seo/implementation/change-cards/seo-v2-005-accessories-head-neck-2026-10-28.md)。
+
 ## 13. 下一步优先级
 
 1. GSC 完整窗口已归档，数据时间闸门通过。[E01 手动补采](geo/testing/valid-retest/manual-e01/README.md)已按所有者明确确认判为 `valid`，手动有效样本为 1 条，下一条处理 E02；不再重复索要 E01 环境证据。[批次 B 首轮复核](geo/testing/valid-retest/batch-b/review-2026-10-09.md)的其他十条仍保留原状态，网络变化及是否补采另按所有者决定处理。下一平台 11 条 Google AI Mode 待运行；2026-10-20 后导出 Bing AI Performance 的 2026-09-21～10-18 完整窗口。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。

@@ -4787,6 +4787,32 @@ body.page .container.grid-container:has(.ma-product-category) {
   display: block;
 }
 
+/* Two real product examples within one existing product group. */
+.ma-subcat__media--paired {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ma-space-2);
+  background: var(--ma-color-surface);
+}
+
+.ma-subcat__media--paired figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.ma-subcat__media--paired figcaption {
+  padding: var(--ma-space-2);
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-small);
+  line-height: var(--ma-lh-body);
+  text-align: center;
+}
+
+.ma-subcat__media--paired .ma-subcat__additional-image img {
+  object-fit: contain;
+  padding: var(--ma-space-2);
+}
+
 .ma-subcat__media img {
   display: block;
   width: 100%;

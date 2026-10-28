@@ -1531,7 +1531,33 @@ function myathletik_product_category_data() {
 			'subcategories'    => array(
 				array(
 					'title'       => __( 'Balaclavas, ski masks, and neckwear', 'myathletik-child' ),
-					'description' => __( 'Balaclavas, ski masks, neck gaiters, and neck warmers developed around the intended activity, climate, face opening, helmet or hood interface, coverage, fit, and material specification. Thermal, stretch, wind-resistant, FLATLOCK, and ACTIVESEAM options are selected and verified by project.', 'myathletik-child' ),
+					'description' => __( 'Develop balaclavas, ski masks, neck gaiters, and neck warmers for the intended activity and climate. Define thermal, stretch, and wind-resistance targets and select FLATLOCK or ACTIVESEAM construction where suitable.', 'myathletik-child' ),
+					// Owner-review draft: product briefing, with a confirmed Merino wool example.
+					'development' => array(
+						'options' => array(
+							array(
+								'label'       => __( 'Balaclavas and ski masks', 'myathletik-child' ),
+								'description' => __( 'Specify the face opening, head and neck coverage, fit, and compatibility with the intended helmet or hood.', 'myathletik-child' ),
+							),
+							array(
+								'label'       => __( 'Neck gaiters and neck warmers', 'myathletik-child' ),
+								'description' => __( 'Specify length, circumference, coverage, knit fabric, and stretch for the intended activity. The Merino wool gaiter shown is a product example; other materials can be developed to the buyer\'s brief.', 'myathletik-child' ),
+							),
+						),
+					),
+					'secondary_image' => array(
+						'image'  => 'sports accessories/merino-neck-gaiter-800.png',
+						'alt'    => __( 'Grey marl knit neck gaiter folded into a tube', 'myathletik-child' ),
+						'caption' => __( 'Merino wool neck gaiter', 'myathletik-child' ),
+						'width'  => 800,
+						'height' => 800,
+						'webp'   => array(
+							480  => 'sports accessories/merino-neck-gaiter-480.webp',
+							800  => 'sports accessories/merino-neck-gaiter-800.webp',
+							1200 => 'sports accessories/merino-neck-gaiter-1200.webp',
+						),
+					),
+					'primary_image_caption' => __( 'Balaclavas and ski masks', 'myathletik-child' ),
 					'image'       => 'sports accessories/Balaclavas.png',
 					'image_alt'    => __( 'Black and navy technical balaclavas displayed with a sports helmet', 'myathletik-child' ),
 					'image_width'  => 1448,
