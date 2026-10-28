@@ -72,7 +72,7 @@ if ( ! empty( $category['hero_video'] ) ) {
 	</section>
 
 	<?php if ( ! empty( $category['buyer_fit']['summary'] ) && ! empty( $category['buyer_fit']['facts'] ) && is_array( $category['buyer_fit']['facts'] ) ) : ?>
-	<section class="ma-product-section ma-product-fit" aria-labelledby="ma-product-fit-title">
+	<section class="ma-product-section ma-product-fit<?php echo 'sports-accessories-manufacturer' === $category_slug ? ' ma-product-fit--accessories' : ''; ?>" aria-labelledby="ma-product-fit-title">
 		<div class="ma-section-inner ma-product-fit__layout">
 			<div class="ma-product-fit__answer">
 				<p class="ma-section-kicker"><?php esc_html_e( 'Program fit', 'myathletik-child' ); ?></p>
