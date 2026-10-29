@@ -25,4 +25,4 @@ Dot 的 7 条按所有者确认记为 `valid / owner_confirmed`；手动 BD-01 �
 
 ## 后续
 
-[C06～C08 与 BD-01～BD-03 来源对照](source-comparison-2026-10-29.md)与 [C06 / C07 技术证据盘点](c06-c07-evidence-inventory-2026-10-29.md)已完成。所有者随后提供并授权使用改造示范，[C06 两张 HTML 表与 PDF 入口已本地实施](c06-tech-pack-demo-2026-10-29.md)，所有者审核通过，部署仍待完成；不将单轮结果解释为改动必然带来引用。按所有者决定，MOQ / 颜色沟通方案不属于本 GEO 工作范围。Google AI Mode 属另一平台，是否运行由后续安排决定；不能与本批 ChatGPT Search 混算。
+[C06～C08 与 BD-01～BD-03 来源对照](source-comparison-2026-10-29.md)与 [C06 / C07 技术证据盘点](c06-c07-evidence-inventory-2026-10-29.md)已完成。所有者随后提供并授权使用改造示范，[C06 两张 HTML 表与 PDF 入口已通过生产定向验收](c06-tech-pack-demo-2026-10-29.md)；不将单轮结果解释为改动必然带来引用。按所有者决定，MOQ / 颜色沟通方案不属于本 GEO 工作范围。Google AI Mode 另按[独立 Dot 任务包](../dot-google-ai-mode-brief-2026-10-29.md)准备；不能与本批 ChatGPT Search 混算。
