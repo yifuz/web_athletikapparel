@@ -9,7 +9,7 @@
 | Dot 云端浏览器辅助（M4） | 7：D04、D05、C06～C08、BD-02、BD-03 | 原 BD-01 为 `partial` | Dot 交付自评、Codex 完整性检查及抽查后，所有者确认第 1 项复核完毕 |
 | 所有者手动重采（M2） | 1：BD-01 | 与 Dot 旧 BD-01 分开 | 所有者接受完整回答、首条引用卡和有用的 Sources 截图，不要求截完百余条候选 |
 
-逐条状态见 [复核账本](review-ledger.csv)，单页判断和行动见 [结论与行动](findings.md)。E01 的手动有效决定、批次 C 的 E02 与 D03-R2 有效决定仍然保留，不在本批重复计数。Dot BD-01 首个引用卡未展开、原会话无法恢复，仍为 `partial`；手动新样本不覆盖它。
+逐条状态见 [复核账本](review-ledger.csv)，单页判断和行动见 [结论与行动](findings.md)，官网与实际引用的逐题对照见 [来源对照](source-comparison-2026-10-29.md)。E01 的手动有效决定、批次 C 的 E02 与 D03-R2 有效决定仍然保留，不在本批重复计数。Dot BD-01 首个引用卡未展开、原会话无法恢复，仍为 `partial`；手动新样本不覆盖它。
 
 Dot 的 7 条按所有者确认记为 `valid / owner_confirmed`；手动 BD-01 按所有者对精简留证范围的决定记为 `valid / owner_accepted`。**这不声称 Codex 已独立逐张查看全部截图，也不声称手动样本的完整 Sources 已截图。** 两种有效决定均保留已知缺口，不自动修改历史批次的一般验收规则。
 
@@ -25,4 +25,4 @@ Dot 的 7 条按所有者确认记为 `valid / owner_confirmed`；手动 BD-01 �
 
 ## 后续
 
-先按 [结论与行动](findings.md) 准备证据对照，不因单轮结果直接改生产页面。Google AI Mode 属另一平台，是否运行由后续安排决定；不能与本批 ChatGPT Search 混算。
+[C06～C08 与 BD-01～BD-03 来源对照](source-comparison-2026-10-29.md)已完成，下一步按对照中的 MOQ 表达评估及真实证据 intake 准备方案，不因单轮结果直接改生产页面。Google AI Mode 属另一平台，是否运行由后续安排决定；不能与本批 ChatGPT Search 混算。
