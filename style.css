@@ -6252,6 +6252,28 @@ body.page .site-main.ma-technical-article {
   font-family: var(--ma-font-head);
 }
 
+/* Keep the example row label visible while narrow screens scroll the table. */
+.ma-tech-pack-demo-table--bom col:first-child {
+  width: 20%;
+}
+
+.ma-tech-pack-demo-table--bom col:last-child {
+  width: 8%;
+}
+
+@media (max-width: 47.99rem) {
+  .ma-tech-pack-demo-table--bom col:first-child {
+    width: 15%;
+  }
+
+  .ma-tech-pack-demo-table th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--ma-color-surface);
+  }
+}
+
 .ma-technical-article__note {
   padding: var(--ma-space-4);
   border-left: 3px solid var(--ma-color-accent);

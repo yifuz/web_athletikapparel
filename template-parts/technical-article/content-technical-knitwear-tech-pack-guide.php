@@ -8,6 +8,9 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$tech_pack_uploads = wp_get_upload_dir();
+$tech_pack_demo    = '/myathletik-theme/documents/athletik-tech-pack-demo.pdf';
 ?>
 
 <div class="ma-technical-article__opening">
@@ -47,6 +50,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<li>Any pre-wash and after-wash measurement requirements.</li>
 	</ul>
 	<p>Avoid ambiguous terms such as “body length” without showing the start and end points. Curved seams, elastic openings and stretch panels need a stated measurement method because different handling can produce different results.</p>
+	<h3>Example: finished-garment measurement table</h3>
+	<p class="ma-technical-article__note"><strong>Demonstration only:</strong> This example is adapted from an actual tech pack. All measurements and tolerances are illustrative and are not for production. The full demonstration does not replace a project-specific specification.</p>
+	<p>The example records finished-garment measurements in centimeters for a performance T-shirt. Measure the garment laid flat without stretching; confirm measurement methods and tolerances for the actual project. On smaller screens, scroll horizontally to view all sizes.</p>
+	<div class="ma-technical-article__table-wrap ma-tech-pack-demo-table" role="region" aria-label="Demonstration finished-garment measurement table in centimeters; scroll horizontally for all sizes" tabindex="0">
+		<table>
+			<thead>
+				<tr><th scope="col">Point of measurement</th><th scope="col">Tolerance</th><th scope="col">S</th><th scope="col">M</th><th scope="col">L</th><th scope="col">XL</th><th scope="col">2XL</th></tr>
+			</thead>
+			<tbody>
+				<tr><th scope="row">1/2 Chest at underarm</th><td>±1.0</td><td>48.5</td><td>52.5</td><td>56.5</td><td>60.5</td><td>64.5</td></tr>
+				<tr><th scope="row">1/2 Bottom opening</th><td>±1.0</td><td>47.0</td><td>51.0</td><td>55.0</td><td>59.0</td><td>63.0</td></tr>
+				<tr><th scope="row">Centre-back length</th><td>±1.0</td><td>68.5</td><td>70.5</td><td>72.5</td><td>74.5</td><td>76.5</td></tr>
+				<tr><th scope="row">Sleeve length from centre back</th><td>±0.8</td><td>35.5</td><td>36.5</td><td>37.5</td><td>38.5</td><td>39.5</td></tr>
+				<tr><th scope="row">Armhole straight</th><td>±0.8</td><td>21.5</td><td>22.5</td><td>23.5</td><td>24.5</td><td>25.5</td></tr>
+				<tr><th scope="row">1/2 Sleeve opening</th><td>±0.5</td><td>15.5</td><td>16.0</td><td>16.5</td><td>17.0</td><td>17.5</td></tr>
+				<tr><th scope="row">Back neck drop</th><td>±0.3</td><td>2.3</td><td>2.3</td><td>2.3</td><td>2.3</td><td>2.3</td></tr>
+				<tr><th scope="row">Neck width</th><td>±0.5</td><td>17.5</td><td>18.5</td><td>19.5</td><td>20.5</td><td>21.5</td></tr>
+				<tr><th scope="row">Front neck drop</th><td>±0.5</td><td>8.2</td><td>8.7</td><td>9.2</td><td>9.7</td><td>10.2</td></tr>
+			</tbody>
+		</table>
+	</div>
+	<?php if ( empty( $tech_pack_uploads['error'] ) && is_file( $tech_pack_uploads['basedir'] . $tech_pack_demo ) ) : ?>
+		<p><a href="<?php echo esc_url( $tech_pack_uploads['baseurl'] . $tech_pack_demo ); ?>">View the complete demonstration tech pack (PDF)</a></p>
+	<?php endif; ?>
 </section>
 
 <section id="finished-fabric" aria-labelledby="ma-tech-pack-fabric-title">
@@ -86,6 +113,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<h2 id="ma-tech-pack-trims-title">6. Control trims, elastic and component compatibility</h2>
 	<p>List every component in the bill of materials with supplier or article details where nominated. Include elastic width and extension requirements, zipper type and length, drawcord, stopper, label, transfer, reflective component, thread, padding and packaging items.</p>
 	<p>Identify attachment and joining requirements for components that affect fit or durability. For elastic, define the finished opening measurement or extension relationship and approve the join and attachment on the production fabric. For heat-applied graphics, identify placement, artwork revision, finished size, color standard and any laundering or adhesion requirement.</p>
+	<h3>Example: bill of materials</h3>
+	<p class="ma-technical-article__note"><strong>Demonstration only:</strong> The following component list is illustrative and not for production. Material, labeling and packaging requirements must be agreed for the actual order.</p>
+	<p>On smaller screens, scroll horizontally to view all component details.</p>
+	<div class="ma-technical-article__table-wrap ma-tech-pack-demo-table ma-tech-pack-demo-table--bom" role="region" aria-label="Demonstration bill of materials; scroll horizontally for all columns" tabindex="0">
+		<table>
+			<colgroup><col><col><col><col><col></colgroup>
+			<thead>
+				<tr><th scope="col">Component</th><th scope="col">Description</th><th scope="col">Position</th><th scope="col">Color / finish</th><th scope="col">Qty</th></tr>
+			</thead>
+			<tbody>
+				<tr><th scope="row">Main fabric</th><td>Polyester / elastane single jersey</td><td>Body and sleeves</td><td>As colorway</td><td>1</td></tr>
+				<tr><th scope="row">Contrast fabric</th><td>Matching stretch knit</td><td>Upper yoke</td><td>As colorway</td><td>1</td></tr>
+				<tr><th scope="row">Neck tape</th><td>SELF FABRIC tape</td><td>Inside back neck</td><td>Contrast color</td><td>1</td></tr>
+				<tr><th scope="row">Sewing thread</th><td>FLATLOCK / COVERSTITCH thread</td><td>All seams</td><td>As colorway</td><td>As req.</td></tr>
+				<tr><th scope="row">Front logo</th><td>Heat-transfer artwork</td><td>Left front shoulder</td><td>Red</td><td>1</td></tr>
+				<tr><th scope="row">Back logo</th><td>Heat-transfer artwork</td><td>Centre back below neck</td><td>Red</td><td>1</td></tr>
+				<tr><th scope="row">Neck print</th><td>Size, fiber and brand details</td><td>Inside back neck</td><td>Soft grey</td><td>1</td></tr>
+				<tr><th scope="row">Care label</th><td>Printed care and origin details</td><td>Inside left seam</td><td>White / dark print</td><td>1</td></tr>
+				<tr><th scope="row">Hangtag</th><td>Athletik sample card</td><td>Attached at neck</td><td>White / red</td><td>1</td></tr>
+				<tr><th scope="row">Packaging</th><td>Individual polybag</td><td>Finished garment</td><td>Clear</td><td>1</td></tr>
+			</tbody>
+		</table>
+	</div>
+	<p>The quantities shown are illustrative. A production BOM should identify the units and consumption or other agreed requirements for each material and component.</p>
 </section>
 
 <section id="testing" aria-labelledby="ma-tech-pack-testing-title">
