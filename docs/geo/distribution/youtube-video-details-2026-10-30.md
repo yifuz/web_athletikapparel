@@ -13,9 +13,9 @@
 
 | 原视频 | 实际可核对的问题 | 建议标题 / 说明方向 | 规范指南 |
 |---|---|---|---|
-| [Sewing with Activeseam](https://www.youtube.com/watch?v=YUxwc5DoFSk)，147 秒 | 描述仅重复标题，没有对应技术指南入口 | `Merrow ACTIVESEAM Sewing for Technical Knitwear | Athletik Clothing`；说明生产过程及买家应在规格中确认的变量 | FLATLOCK / ACTIVESEAM 指南 |
-| [flatlock stitch iso 607 sewing - Yamato](https://www.youtube.com/watch?v=fyu-1_aarzY)，896 秒 | 描述仍含 `https:www.athletik.com`，格式不完整且不是本项目规范站；需要更清楚的主题说明 | `Industrial FLATLOCK Sewing on a Yamato Machine | Athletik Clothing`；以工业 FLATLOCK 生产示例解释，不从标题推断所有配置 | FLATLOCK / OVERLOCK 指南 |
-| [activeseam active seam underwear, sportswear](https://www.youtube.com/watch?v=sPS4_jD8nBc)，133 秒 | 描述含 `Athletk` 拼写及非规范站链接 `https://www.athletik.com` | `ACTIVESEAM Underwear and Sportswear Examples | Athletik Clothing`；按成衣展示写，不当作生产过程或性能试验 | FLATLOCK / ACTIVESEAM 指南 |
+| [Sewing with Activeseam](https://www.youtube.com/watch?v=YUxwc5DoFSk)，147 秒 | 描述仅重复标题，没有对应技术指南入口 | `Merrow ACTIVESEAM Sewing for Technical Knitwear \| Athletik Clothing`；说明生产过程及买家应在规格中确认的变量 | FLATLOCK / ACTIVESEAM 指南 |
+| [flatlock stitch iso 607 sewing - Yamato](https://www.youtube.com/watch?v=fyu-1_aarzY)，896 秒 | 描述仍含 `https:www.athletik.com`，格式不完整且不是本项目规范站；需要更清楚的主题说明 | `Industrial FLATLOCK Sewing on a Yamato Machine \| Athletik Clothing`；以工业 FLATLOCK 生产示例解释，不从标题推断所有配置 | FLATLOCK / OVERLOCK 指南 |
+| [activeseam active seam underwear, sportswear](https://www.youtube.com/watch?v=sPS4_jD8nBc)，133 秒 | 描述含 `Athletk` 拼写及非规范站链接 `https://www.athletik.com` | `ACTIVESEAM Underwear and Sportswear Examples \| Athletik Clothing`；按成衣展示写，不当作生产过程或性能试验 | FLATLOCK / ACTIVESEAM 指南 |
 
 上述链接问题仅指向项目规范来源和链接格式，不意味着 `athletik.com` 已关闭；也不与已退役的 `myathletik.com` 混淆。本轮不改频道简介或其他视频，不增加企业登记资料、客户资料或未核准能力。
 
