@@ -870,6 +870,10 @@ Dot 云端 7 条经所有者确认有效；Dot 原 BD-01 首条引用卡缺失�
 
 所有者随后提供真实 Tech Pack 改造示范并授权使用；[C06 示范内容实施及生产验收](geo/testing/valid-retest/batch-d-2026-10-29/c06-tech-pack-demo-2026-10-29.md)在现有指南加入尺寸表、BOM 和完整 PDF 入口，均标明仅供示范、不用于生产。所有者于 2026-10-29 确认审核通过，同日生产定向验收通过，状态 `owner-approved / production-verified / observation-pending`；精确部署时刻及搜索引擎重新抓取状态 unknown，未声称带来引用增长。
 
+## 2026-10-30 GEO：E01 来源定向核查
+
+[E01 本轮实际引用来源核查](geo/testing/e01-source-trace-2026-10-30.md)已关联既有 `GEO-BV2-002`：生产基地段共引 `.nyc`、`.ca` 和中国站，不能把结果单独归因给某一来源；`.nyc` 当前首页仍有旧伙伴工厂表述，中国站首页未见此表述且继续使用，`.ca` 仅记录解析网址但当前无法读取正文。`.nyc` / `.ca` 控制权未知，不擅自登录、修改、联系、关闭或重定向。规范站和中国站各自角色及此前第三方目录决定不变。
+
 ## 13. 下一步优先级
 
 1. GEO ChatGPT Search 已保留 E01（M2）、批次 C 的 E02 / D03-R2（M4），以及[10-29 独立续测](geo/testing/valid-retest/batch-d-2026-10-29/README.md)的 Dot 7 条（M4）和手动 BD-01（M2）有效决定；旧 partial 不覆盖、模式与日期分开。[C06 改造示范](geo/testing/valid-retest/batch-d-2026-10-29/c06-tech-pack-demo-2026-10-29.md)已获审核并通过生产定向验收；[Google AI Mode 11 条 Dot 任务包](geo/testing/valid-retest/dot-google-ai-mode-brief-2026-10-29.md)已准备，尚未采集，Bing AI Performance 的 2026-09-21～10-18 窗口待导出。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。
