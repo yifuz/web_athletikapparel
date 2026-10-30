@@ -14,7 +14,7 @@
 
 **插入位置：**第 5 节 `Audit finished-fabric and lot control`，紧接现有要求取得面料报告并核对实际批量面料的末段之后。
 
-> Where an accredited laboratory is required for your project, verify its current accreditation status and whether the specific test method is included in its scope with the accreditation body. Compare the test method, sample identification and results with your project requirements. [ILAC explains how accreditation bodies list accredited laboratories and their scopes](https://ilac.org/ilac-mra-and-signatories/accredited-conformity-assessment-bodies/). Laboratory accreditation does not automatically certify a finished garment.
+> Review the report against your project requirements: the laboratory, sample or fabric lot, test method and version, and results. If the project requires an accredited laboratory, check with the relevant accreditation body that the laboratory is currently accredited and that the required test is within its scope. [ILAC explains how accreditation bodies list accredited laboratories and their scopes](https://ilac.org/ilac-mra-and-signatories/accredited-conformity-assessment-bodies/). Laboratory accreditation does not automatically certify a finished garment.
 
 **来源与边界：**ILAC 说明认可机构维护已认可机构名单并颁发包含认可范围的证书。认可要求以项目为条件；草稿不声称 Athletik 或某个实验室已获认可，也不将特定产品或任何检测结果写为已获认证。
 
