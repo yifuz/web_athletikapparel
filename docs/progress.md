@@ -888,6 +888,8 @@ Google AI Mode 的 11 题 Dot 首答已私有归档，完成[逐题观察及与 
 
 同日按所有者授权完成 [Tech Pack 新示范分发包](geo/distribution/publishing-log.md)：LinkedIn 单张 1080 × 1350 JPG、英文正文、替代文字、中文发布说明和 390px 预览已准备并校验，素材位于 `D:\B-视频素材\营销内容包\2026-10-tech-pack-demo\`。所有者已确认审核及发布完成，状态 `published / owner-confirmed / public-url-pending / measuring`；七日窗口为 10-31～11-06，11-07 起复盘，实际帖子 URL 与后台数据待补。不因 C06 / C08 处于抓取观察期而停止新素材分发。
 
+同日完成 [YouTube 既有视频英文信息核对与三条更新稿](geo/distribution/youtube-video-details-2026-10-30.md)：公开列出 90 条、核对 6 条相关视频元数据与缩略图，针对 `YUxwc5DoFSk`、`fyu-1_aarzY`、`sPS4_jD8nBc` 准备原视频标题、说明及规范指南入口；发现重复标题式描述、非规范站/格式不完整链接和品牌拼写问题。更新包已校验，状态 `draft / owner-review / not-applied`；下一步审核后在原视频保存并公开复核，不重复上传。
+
 ## 13. 下一步优先级
 
 1. GEO ChatGPT Search 已保留 E01（M2）、批次 C 的 E02 / D03-R2（M4），以及[10-29 独立续测](geo/testing/valid-retest/batch-d-2026-10-29/README.md)的 Dot 7 条（M4）和手动 BD-01（M2）有效决定；旧 partial 不覆盖、模式与日期分开。[C06 改造示范](geo/testing/valid-retest/batch-d-2026-10-29/c06-tech-pack-demo-2026-10-29.md)与 [C08 增补](geo/testing/valid-retest/batch-d-2026-10-29/c08-guide-copy-draft-2026-10-30.md)均已通过生产验收；[Google AI Mode 11 题](geo/testing/valid-retest/google-ai-mode-2026-10-29/README.md)已采集归档。C08 已请求索引，建议 2026-11-06 复查两页抓取及索引。Bing AI Performance 本轮按所有者决定 `deferred / low-signal`，不要求追加导出。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。
