@@ -882,6 +882,8 @@ Google AI Mode 的 11 题 Dot 首答已私有归档，完成[逐题观察及与 
 
 同日 [C06 / C08 GSC 最新抓取快照](geo/testing/c06-c08-crawl-status-2026-10-30.md)确认：C06 已收录，C08 为 `Crawled - currently not indexed`，最后抓取均为 10-16 UTC，早于本次更新。C08 当前前台定向检查未见明显技术阻断；优先做 GSC 网页版实时测试，通过后针对本次更新申请一次索引，尚未执行。C06 保持观察，暂不从单次 AI 结果判断新内容效果。
 
+所有者随后确认 C08 已于同日请求编入索引，已记为 `indexing-requested / owner-confirmed`，等待后续 API 结果；建议 2026-11-06 复查，不重复申请。此前未收录结果保留为请求前快照。
+
 ## 13. 下一步优先级
 
 1. GEO ChatGPT Search 已保留 E01（M2）、批次 C 的 E02 / D03-R2（M4），以及[10-29 独立续测](geo/testing/valid-retest/batch-d-2026-10-29/README.md)的 Dot 7 条（M4）和手动 BD-01（M2）有效决定；旧 partial 不覆盖、模式与日期分开。[C06 改造示范](geo/testing/valid-retest/batch-d-2026-10-29/c06-tech-pack-demo-2026-10-29.md)已获审核并通过生产定向验收；[Google AI Mode 11 题](geo/testing/valid-retest/google-ai-mode-2026-10-29/README.md)已采集归档。后续按既有窗口观察，Bing AI Performance 的 2026-09-21～10-18 窗口待导出。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。

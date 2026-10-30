@@ -1,6 +1,6 @@
 # C06 / C08 更新后的抓取与索引快照
 
-查询日期：2026-10-30（Asia/Shanghai）。范围仅为 C06 Tech Pack 与 C08 OEM Evaluation 两个规范 URL。来源为 `seo` CLI 0.2.36 的 Search Console URL Inspection API，只读查询属性 `sc-domain:athletikapparel.com`；Google 登录、readonly scope 与默认属性检查通过。两页查询均成功返回完整索引结果，未请求编入索引。
+查询日期：2026-10-30（Asia/Shanghai）。范围仅为 C06 Tech Pack 与 C08 OEM Evaluation 两个规范 URL。来源为 `seo` CLI 0.2.36 的 Search Console URL Inspection API，只读查询属性 `sc-domain:athletikapparel.com`；Google 登录、readonly scope 与默认属性检查通过。两页查询均成功返回完整索引结果；API 查询未发出索引请求。所有者随后确认已为 C08 请求编入索引，详见下方更新。
 
 ## 当前结果
 
@@ -22,7 +22,9 @@ C06 的更新锚点见[示范生产验收](valid-retest/batch-d-2026-10-29/c06-t
 ## 判断与下一步
 
 1. **两页都尚无更新后抓取证据。** 此时做固定题采样可作为当时观察，但不能用来判定新示例或新段落的效果；即使后续抓取时间更新，Inspection API 也不提供 Google 存储正文，不能声称逐字版本已核实。
-2. **优先处理 C08 的索引状态核验。** 下一项为在 GSC 网页版对该 URL 做一次实时测试；若通过，针对本次已批准的新内容提交一次编入索引请求，并记录时间。当前只读 API 不提供实时测试或索引申请功能，需所有者在现有 GSC 登录环境完成；当前尚未执行或记作已申请。
+2. **C08 已请求，等待后续状态。** 所有者于 2026-10-30 明确确认已请求编入索引，操作状态记为 `indexing-requested / owner-confirmed`；精确提交时刻及实时测试读数未单独记录，不反推填写。上表保留请求前的 API 索引快照，不能因已提交申请就改成已收录。
 3. **C06 保持观察。** 已收录，无需因抓取时间尚未更新而马上重写或反复申请。C08 实时测试/单次申请之后，再按常规周度节奏查询状态；如返回明确技术错误，才针对错误诊断，当前不猜测页面质量、算法惩罚或站点故障。
+
+**建议复查日期：2026-11-06。** 查询 C08 索引状态、最后抓取时间和 Canonical，并一并核对 C06 是否有更新后抓取。该日期是检查点，不是 Google 收录时限，也未创建自动任务；在此前不因结果尚未更新重复提交申请。
 
 证据私有保存于 `C:\Users\Administrator\seo-reports\c06-c08-crawl-check-2026-10-30\`：`c06-url-inspection.json`、`c08-url-inspection.json`、`c08-current-public-check.json`。不提交账户上下文及完整 API 响应；本站代码、URL、元信息、索引设置与所有者浏览器均未修改。
