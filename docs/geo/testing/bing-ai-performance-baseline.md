@@ -1,5 +1,7 @@
 # Bing Webmaster Tools AI Performance 基线
 
+> 2026-10-30 决定：本轮转为 `deferred / low-signal`。所有者提供的截图选中 `6 M`，显示 Total Citations **34**、Avg. Cited Pages 卡片 **0**，Grounding Queries 为 `No data available / 0 rows`。这不是零引用；卡片显示 0 也不推算为期间没有页面被引用。截图未提供精确起止日期或 Pages 明细，不能与下方 28 天基线直接比较或解释增长。按所有者决定略过本轮额外导出与深入分析，不再将其列为当前待办；已有基线保留。以后出现足够可用的页面/查询明细，或所有者明确要求时再重开。
+
 > 状态：`baseline-established`。2026-09-22 已用只读 Bing Webmaster API 确认已验证站点，取得 AI Performance 的 `OverviewStats` 逐日 CSV 和 Pages 列表截图；所有者已在后台查看并确认 Grounding Queries 当前**无记录**。首份概览与页面级基线已建立。
 
 ## 0. API 连接核验（2026-09-22）
@@ -78,6 +80,8 @@
 后续月度复核使用同一属性、同长度完整窗口；同时记录 GSC Generative AI、固定 Baseline/Broad Discovery 答案和 GA4 引荐，各系统指标分别呈现，**不相加**。小样本阶段先记录事实和相关 URL，不因单次升降立即改写近期上线页面。
 
 ## 4. 后续复测
+
+以下是首份基线建立时的计划；2026-10-30 起按页首暂缓决定执行，不要求补齐下一窗口。
 
 1. 首份基线已建立，无需为 Grounding Queries 的空表重复截图或导出。
 2. 下一个完整可比窗口继续记录引用总量、被引用页面和 Grounding Queries 是否出现记录；若届时有查询短语再记录实际内容。

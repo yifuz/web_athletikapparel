@@ -884,9 +884,11 @@ Google AI Mode 的 11 题 Dot 首答已私有归档，完成[逐题观察及与 
 
 所有者随后确认 C08 已于同日请求编入索引，已记为 `indexing-requested / owner-confirmed`，等待后续 API 结果；建议 2026-11-06 复查，不重复申请。此前未收录结果保留为请求前快照。
 
+所有者同日根据 Bing 后台截图决定略过本轮 AI Performance 分析：`6 M` 所选窗口显示 34 次引用，Grounding Queries 无明细。已在 [Bing 基线](geo/testing/bing-ai-performance-baseline.md)记为 `deferred / low-signal`，不再要求本轮导出；不将截图当作零引用或与旧 28 天基线直接比较。
+
 ## 13. 下一步优先级
 
-1. GEO ChatGPT Search 已保留 E01（M2）、批次 C 的 E02 / D03-R2（M4），以及[10-29 独立续测](geo/testing/valid-retest/batch-d-2026-10-29/README.md)的 Dot 7 条（M4）和手动 BD-01（M2）有效决定；旧 partial 不覆盖、模式与日期分开。[C06 改造示范](geo/testing/valid-retest/batch-d-2026-10-29/c06-tech-pack-demo-2026-10-29.md)已获审核并通过生产定向验收；[Google AI Mode 11 题](geo/testing/valid-retest/google-ai-mode-2026-10-29/README.md)已采集归档。后续按既有窗口观察，Bing AI Performance 的 2026-09-21～10-18 窗口待导出。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。
+1. GEO ChatGPT Search 已保留 E01（M2）、批次 C 的 E02 / D03-R2（M4），以及[10-29 独立续测](geo/testing/valid-retest/batch-d-2026-10-29/README.md)的 Dot 7 条（M4）和手动 BD-01（M2）有效决定；旧 partial 不覆盖、模式与日期分开。[C06 改造示范](geo/testing/valid-retest/batch-d-2026-10-29/c06-tech-pack-demo-2026-10-29.md)与 [C08 增补](geo/testing/valid-retest/batch-d-2026-10-29/c08-guide-copy-draft-2026-10-30.md)均已通过生产验收；[Google AI Mode 11 题](geo/testing/valid-retest/google-ai-mode-2026-10-29/README.md)已采集归档。C08 已请求索引，建议 2026-11-06 复查两页抓取及索引。Bing AI Performance 本轮按所有者决定 `deferred / low-signal`，不要求追加导出。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。
 2. `/top-sportswear-manufacturers-china/` 的 GSC 实时测试与一次索引请求已经完成；2026-09-22 又取得 `Submitted and indexed` 快照及最后抓取时间，不再重复提交。首页、About 与 Merino 沿用原定复查窗口。
 3. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
 4. GEO-V2-007 已完成生产部署、技术验收、LinkedIn / Instagram 公开 URL 补录、一次 GSC 索引申请及 2026-09-28 首次七日复核。GSC 已确认规范 URL 收录；固定窗口为 18 次 Web Search 展示、0 点击。原始 LinkedIn UTM 6 sessions 已确认属于内部 QA，Instagram 无匹配行，状态改为 `seven-day-measurement-contaminated / measuring`。平台后台与人工询盘不可得，当前为 0 个已确认外部 UTM 会话；月度 GSC 生成式窗口已记录 ACTIVESEAM Guide 的 9 次页面级链接曝光，但仍没有答案提取或推荐证据。进入固定 Prompt 有效复测，不立即重写页面或重复提交。没有拉伸状态素材，因此继续不写 Athletik 实测延伸、强度或耐久声明，HSAT-K5 和国产海淮扒密缝机保持独立证据线。
