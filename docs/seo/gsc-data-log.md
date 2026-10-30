@@ -15,6 +15,12 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-10-30：C06 / C08 更新后的抓取与索引核对
+
+只读 URL Inspection 两页均成功。C06 当前为 `PASS / Submitted and indexed`，最后抓取 `2026-10-16T13:23:03Z`；C08 当前为 `NEUTRAL / Crawled - currently not indexed`，最后抓取 `2026-10-16T20:05:52Z`。两页均允许抓取和索引、fetch 成功，Google / User Canonical 一致；最后抓取均早于 10-29 / 10-30 的本次内容生产验收日期。
+
+当前生产 C08 的 HTTP、robots、Canonical、Sitemap 与内链定向检查未见明显阻断；不能以此确定未收录原因，也不能归因于尚无更新后抓取记录的新增两段。下一项优先为 C08 网页版实时测试，通过后针对本次更新申请一次索引；本次未执行该申请。完整结果、证据路径和边界见 [GEO 抓取与索引快照](../geo/testing/c06-c08-crawl-status-2026-10-30.md)。
+
 ## 2026-10-27：Knitted Fabrics 结构模块 Day 7
 
 目标为 `/knitted-fabrics-manufacturer/`，归入 `SEO-V2-005-KF-STRUCTURE-20261020`。本轮只读复查，没有改站、请求索引、付费 SERP 或邮箱读取。原部署 Day 0 为 10-20，完整 28 天后窗仍为 **2026-10-21～11-17**，不因短期波动改窗。
