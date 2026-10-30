@@ -1,6 +1,6 @@
 # C08 OEM 评估指南：两处英文增补草稿
 
-日期：2026-10-30。状态：`draft / owner-review`。目标页面为 [How to Evaluate a Vertically Integrated Knitwear OEM](https://www.athletikapparel.com/evaluate-technical-knitwear-oem/)，依据 [C08 证据与内容缺口核查](c08-guide-gap-audit-2026-10-30.md)。以下只涉及现有正文的两处增补，供所有者审核；尚未写入页面模板或发布。
+日期：2026-10-30。状态：`owner-approved / locally-verified / deployment-pending`。目标页面为 [How to Evaluate a Vertically Integrated Knitwear OEM](https://www.athletikapparel.com/evaluate-technical-knitwear-oem/)，依据 [C08 证据与内容缺口核查](c08-guide-gap-audit-2026-10-30.md)。所有者已批准以下两段，已原样加入现有模板；本地验收完成，尚未部署生产。
 
 ## 1. 企业登记核验
 
@@ -22,4 +22,6 @@
 
 - 两段均为面向买家的核验建议，不改变现有产品、产能、认证或商务承诺，不增加新的测试数值或行业统一门槛。
 - 两个拟用正文链接均于 2026-10-30 直接读取并返回 HTTP 200；不因此推断所有地区访问体验一致。
-- 本次未修改页面代码或线上网站。经所有者审核通过后，再将批准的段落插入现有模板，并检查页面、链接和移动端呈现；不因为一次 AI 采样声称修改会带来引用增长。
+- 已将两段原样加入 `template-parts/technical-article/content-evaluate-technical-knitwear-oem.php` 的上述位置。PHP 语法、本地 HTTP 200、两个新增链接和两段单次渲染通过；390 / 1440px 无整页横向溢出，单一 H1，无页面 JS 错误；独立无头浏览器截图已复核，证据位于 `C:\Users\Administrator\seo-reports\c08-verification-2026-10-30\`。未操作所有者现有浏览器。
+- 本地验收使用 LocalWP Apache `127.0.0.1:10008` 和本站 Host，绕过仅用于本次请求的环境代理；没有更改系统代理或服务。仅上述模板属于部署文件；上线后仍须独立验收，不以 Git 推送代替生产部署。
+- 所有者另问自身登记信息的可核验性：本次生产 Contact 确认已有英文中国实体名称和地址；在仓库项目文本范围未找到经确认的中文注册名、统一社会信用代码及对应公开授权。本次没有搜索私人邮件或全部附件，不代表公司无此资料。建议核实后集中在既有 Contact 展示，再考虑从指南连接；未添加未确认信息，未将英文名反推成中文法定名称。

@@ -25,6 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section id="legal-identity" aria-labelledby="ma-oem-legal-identity-title">
 	<h2 id="ma-oem-legal-identity-title">2. Verify the legal identity and operating location</h2>
 	<p>Request the contracting company name, registered address, business licence, production-site address, quotation entity, invoice entity, bank beneficiary and proposed exporter. Differences do not automatically indicate a problem, but they must be explained and documented before payment or contracting.</p>
+	<p>For a supplier registered in China, ask for its Chinese registered name and check the registration details through the National Enterprise Credit Information Publicity System. Compare the record with the business licence and clarify any differences. The <a href="https://intellectual-property-helpdesk.ec.europa.eu/ip-management-and-resources/publications/how-search-basic-chinese-company-information-protect-your-ip_en">European Commission’s China IP Helpdesk guide</a> explains how to use the system. A registry check alone does not establish the actual production site or its manufacturing capability.</p>
 	<p>Match certificate and audit documents to the correct legal entity, site, product category, operation scope and validity period. A certificate held by a related company, material supplier or another factory should not be presented as evidence for an operation outside its stated scope.</p>
 	<p>Confirm which site will make the samples and which site will make bulk production. If more than one site may be used, define the approval and change control required before moving production.</p>
 </section>
@@ -73,6 +74,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<li>Incoming inspection, roll identification and nonconforming material.</li>
 	</ul>
 	<p>Ask for sample reports from a comparable process, then agree which results must be generated on the actual bulk fabric. Do not assume a generic fabric certificate covers every color, lot, finish or finished garment.</p>
+	<p>Review the report against your project requirements: the laboratory, sample or fabric lot, test method and version, and results. If the project requires an accredited laboratory, check with the relevant accreditation body that the laboratory is currently accredited and that the required test is within its scope. <a href="https://ilac.org/ilac-mra-and-signatories/accredited-conformity-assessment-bodies/">ILAC explains how accreditation bodies list accredited laboratories and their scopes</a>. Laboratory accreditation does not automatically certify a finished garment.</p>
 </section>
 
 <section id="development-system" aria-labelledby="ma-oem-development-title">

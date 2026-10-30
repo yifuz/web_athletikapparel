@@ -1,5 +1,7 @@
 # Draft Article — How to Evaluate a Vertically Integrated Knitwear OEM
 
+> 2026-10-30 增补：下方保留原发布源文；两处新增核验说明已获所有者批准并完成本地实施，当前内容应连同[增补记录](../testing/valid-retest/batch-d-2026-10-29/c08-guide-copy-draft-2026-10-30.md)查看，待部署生产。
+
 > Status: owner-approved publication source; implemented in the public registry on 2026-08-11.
 > Owner authorization: the owner asked Codex to establish the Technical Guides
 > centre and accumulate three articles on 2026-08-11.
