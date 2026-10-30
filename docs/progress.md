@@ -878,7 +878,7 @@ Google AI Mode 的 11 题 Dot 首答已私有归档，完成[逐题观察及与 
 
 同日已完成 [C08 官网指南证据与内容缺口核查](geo/testing/valid-retest/batch-d-2026-10-29/c08-guide-gap-audit-2026-10-30.md)：现有尽调框架保留，优先建议补充中国企业登记和实验室认可范围的具体核验路径；目前为内部建议，尚未修改网站正文。
 
-同日 [C08 两处英文增补](geo/testing/valid-retest/batch-d-2026-10-29/c08-guide-copy-draft-2026-10-30.md)已获所有者审核及部署批准，已原样加入现有模板并通过 PHP、本地 HTTP 与 390 / 1440px 呈现检查；状态 `deployment-approved / locally-verified / transfer-pending`。当前无可用自动部署连接，单文件部署包已准备；生产尚未出现新增正文，下一步完成传输并验收。所有者明确自身登记资料问题仅为讨论，不追加资料披露或 Contact 改动任务。
+同日 [C08 两处英文增补](geo/testing/valid-retest/batch-d-2026-10-29/c08-guide-copy-draft-2026-10-30.md)已获所有者批准并确认部署，生产两段与批准稿逐字一致；HTTP、元信息和 360 / 390 / 1440px 定向呈现验收通过，状态 `owner-approved / production-verified / observation-pending`。后续核对搜索引擎抓取状态并按既有节奏观察，不以部署验收替代引用效果。所有者明确自身登记资料问题仅为讨论，不追加资料披露或 Contact 改动任务。
 
 ## 13. 下一步优先级
 
