@@ -886,7 +886,7 @@ Google AI Mode 的 11 题 Dot 首答已私有归档，完成[逐题观察及与 
 
 所有者同日根据 Bing 后台截图决定略过本轮 AI Performance 分析：`6 M` 所选窗口显示 34 次引用，Grounding Queries 无明细。已在 [Bing 基线](geo/testing/bing-ai-performance-baseline.md)记为 `deferred / low-signal`，不再要求本轮导出；不将截图当作零引用或与旧 28 天基线直接比较。
 
-同日按所有者授权完成 [Tech Pack 新示范分发包](geo/distribution/publishing-log.md)：LinkedIn 单张 1080 × 1350 JPG、英文正文、替代文字、中文发布说明和 390px 预览已准备并校验，素材位于 `D:\B-视频素材\营销内容包\2026-10-tech-pack-demo\`。状态 `draft / owner-review / not-published`；下一步审核图片和正文后发布，不因 C06 / C08 处于抓取观察期而停止这类新素材分发。
+同日按所有者授权完成 [Tech Pack 新示范分发包](geo/distribution/publishing-log.md)：LinkedIn 单张 1080 × 1350 JPG、英文正文、替代文字、中文发布说明和 390px 预览已准备并校验，素材位于 `D:\B-视频素材\营销内容包\2026-10-tech-pack-demo\`。所有者已确认审核完成，状态 `owner-reviewed / not-published`；下一步发布并补录实际帖子 URL 与日期，不因 C06 / C08 处于抓取观察期而停止这类新素材分发。
 
 ## 13. 下一步优先级
 
