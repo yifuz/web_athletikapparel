@@ -23,6 +23,12 @@ project. These rules exist to protect the site's existing SEO equity and to
 keep the rebuild consistent. When a task conflicts with these rules, stop and
 flag it rather than silently overriding.
 
+## 工作清单与交付核对
+
+- 所有者授权执行前面列出的多项工作时，按完整清单执行；不要在执行说明或委派时遗漏其中任何一项。后续指令改变范围时同步更新清单。
+- 逐项追踪完成情况；交付前对照原清单确认每项结果。未完成或受阻的项目应明确说明剩余工作及原因，不将部分完成表述为全部完成。
+- 提出下一步前先核对当前授权事项是否完成；已经承诺的决策、分析或交付不得被新的建议替代。每次回答应结合当前进度指出接下来最值得做的工作；所有者要求暂缓时遵循其安排。
+
 ## 1. Tech stack (this is a CODE-FIRST project)
 
 This site is rebuilt and maintained as a **code project**, not a visual
