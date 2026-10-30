@@ -355,8 +355,9 @@ way the user does:
   不得修改预算、出价、地域、关键词、否定关键词、广告或 conversion 设置，也不得把来源未知的
   邮件询盘归因给 Google Ads。
 - 163 邮箱只读分析只在所有者于当前对话中明确要求时运行。未来 Agent 必须先读
-  `docs/marketing/ads/163-mail-inquiry-analysis-runbook.md` 的“Agent 接手与获取步骤”；不得要求
-  所有者在聊天中粘贴授权码，不得主动读取 Sent 或附件，真实联系人和邮件内容不得进入 Git。
+  `docs/marketing/ads/163-mail-inquiry-analysis-runbook.md` 的“Agent 接手与获取步骤”；所有者于
+  2026-10-30 授权在处理获准读取的邮件时按任务需要直接查看附件，无需逐份询问。不得要求
+  所有者在聊天中粘贴授权码，不得主动读取 Sent，真实联系人、邮件内容和附件不得进入 Git。
 - **Adding/swapping/regenerating ANY image → re-read §1.6 first.** Images go
   in `uploads/myathletik-theme/assets/images/`, NOT the theme folder. Code
   paths stay theme-relative; the output buffer rewrites them. Putting a file
