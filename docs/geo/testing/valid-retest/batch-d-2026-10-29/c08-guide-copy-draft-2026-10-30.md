@@ -1,6 +1,6 @@
 # C08 OEM 评估指南：两处英文增补草稿
 
-日期：2026-10-30。状态：`owner-approved / locally-verified / deployment-pending`。目标页面为 [How to Evaluate a Vertically Integrated Knitwear OEM](https://www.athletikapparel.com/evaluate-technical-knitwear-oem/)，依据 [C08 证据与内容缺口核查](c08-guide-gap-audit-2026-10-30.md)。所有者已批准以下两段，已原样加入现有模板；本地验收完成，尚未部署生产。
+日期：2026-10-30。状态：`deployment-approved / locally-verified / transfer-pending`。目标页面为 [How to Evaluate a Vertically Integrated Knitwear OEM](https://www.athletikapparel.com/evaluate-technical-knitwear-oem/)，依据 [C08 证据与内容缺口核查](c08-guide-gap-audit-2026-10-30.md)。所有者已批准以下两段及生产部署，已原样加入现有模板；本地验收完成，待实际传输和生产验收。
 
 ## 1. 企业登记核验
 
@@ -25,3 +25,9 @@
 - 已将两段原样加入 `template-parts/technical-article/content-evaluate-technical-knitwear-oem.php` 的上述位置。PHP 语法、本地 HTTP 200、两个新增链接和两段单次渲染通过；390 / 1440px 无整页横向溢出，单一 H1，无页面 JS 错误；独立无头浏览器截图已复核，证据位于 `C:\Users\Administrator\seo-reports\c08-verification-2026-10-30\`。未操作所有者现有浏览器。
 - 本地验收使用 LocalWP Apache `127.0.0.1:10008` 和本站 Host，绕过仅用于本次请求的环境代理；没有更改系统代理或服务。仅上述模板属于部署文件；上线后仍须独立验收，不以 Git 推送代替生产部署。
 - 所有者明确纠正：关于自身登记信息的发问只是讨论指南写法，不是要求补充或公开企业资料。撤下此前提出的 Contact 资料补充建议，不作为待办，不再索取中文注册名或信用代码。指南提供通用核验方法本身成立，无证据支持为本次 GEO 增补而额外披露公司资料；继续仅推进已批准的两段。没有发布任何新增企业登记信息。
+
+## 部署交付状态
+
+- 所有者于 2026-10-30 明确批准部署，无需重复申请批准。本次检查的生产 URL 为 HTTP 200，第 2、5 节尚未出现两段新增正文；未将批准或 Git 推送记作部署完成。
+- 当前会话没有可直接使用的 Flywheel / Local Connect / SFTP 部署连接，未操作所有者的浏览器或 Local GUI。已准备 `C:\Users\Administrator\Downloads\athletik-c08-approved-deploy-2026-10-30.zip`，ZIP 仅含 `template-parts/technical-article/content-evaluate-technical-knitwear-oem.php`；内容与批准实施提交 `dcb896d` 一致，解包校验通过。同目录 `athletik-c08-approved-deploy-2026-10-30-manifest.json` 记录文件及 ZIP 的 SHA-256。
+- 实际目标为 `wp-content/themes/myathletik-child/template-parts/technical-article/content-evaluate-technical-knitwear-oem.php`。通过既有部署方式替换该文件，完成传输后再检查生产正文与链接及响应式显示。没有数据库、CSS 或 uploads 变更。
