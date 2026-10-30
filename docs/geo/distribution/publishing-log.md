@@ -3,11 +3,11 @@
 本文件记录技术内容的准备、发布及复盘状态。平台实时数据和帖子 URL 必须从后台或公开帖子核对后填写，
 不得根据聊天推断。
 
-## 2026-10-30 — Tech Pack 新示范（审核完成，待发布）
+## 2026-10-30 — Tech Pack 新示范（所有者确认已发布）
 
 | 字段 | 记录 |
 |---|---|
-| 状态 | `owner-reviewed / not-published`；所有者于 2026-10-30 确认审核完成，尚未发布 |
+| 状态 | `published / owner-confirmed / public-url-pending / measuring`；所有者于 2026-10-30 确认本轮 LinkedIn 已发布 |
 | 官网母文章 | <https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/> |
 | 素材新增价值 | 10-29 上线的示范尺寸表、BOM 及九页 PDF；8 月旧帖为通用清单与信息图，本次不是简单重发 |
 | 本轮格式 | LinkedIn 单张 1080 × 1350 JPG + 英文正文，不制作多图/PDF 附件 |
@@ -16,9 +16,11 @@
 | 正文 UTM content | `tech_pack_demo_single_image`，source `linkedin` / medium `organic_social` / campaign `technical_guides` |
 | 校验 | 英文正文 1,185 字符；图像尺寸及无内容溢出检查通过，原图和 390px 预览已视觉复核；主图字段来自批准网页和 PDF |
 | 官网入口 | 带 UTM 的指南 URL 返回 HTTP 200、参数保留、Canonical 为规范指南；PDF HTTP 200，九页，哈希与批准文件相同；HTTP 校验未执行网页分析脚本 |
-| 待办 | 所有者使用单图和对应正文发布，补录实际帖子 URL 与日期；七日统计窗口从真实发布时间确定，当前不填充曝光或访问数字 |
+| 发布日期及链接 | 2026-10-30，精确时分 unknown；实际帖子 URL 待补。本次匿名访问当前公司主页返回 HTTP 999，未独立核验公开正文或图片，不从历史帖子猜测 URL |
+| 七日窗口 | 2026-10-31～2026-11-06，七个完整自然日；2026-11-07 起复盘。平台时区如与本记录不同，取得后台数据时另行注明；未创建自动任务 |
+| 待办 | 补录实际帖子 URL；窗口结束后记录可得平台数据和外部 UTM 会话。尚未取得的数据保持 unknown / unavailable，不填写为零 |
 
-文件包括 `linkedin/tech-pack-demo-linkedin.jpg`、正文 TXT、alt text、中文发布说明、源数据、HTML 排版源和可重复生成脚本、390px 预览及七日指标模板。运营素材留在 Git 外。尚未发布，不称独立第三方背书或已获得 AI 引用，也不增加公司登记资料、客户身份、认证或实测承诺。
+文件包括 `linkedin/tech-pack-demo-linkedin.jpg`、正文 TXT、alt text、中文发布说明、源数据、HTML 排版源和可重复生成脚本、390px 预览及七日指标模板。运营素材留在 Git 外；原制作包和 ZIP 保留生成时状态，后续实际发布状态以本日志及素材包内 `发布记录.md` 为准。本次属于自有渠道分发，不称独立第三方背书或已获得 AI 引用，也不增加公司登记资料、客户身份、认证或实测承诺。
 
 ## 2026-08-12 — FLATLOCK vs OVERLOCK
 
