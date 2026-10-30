@@ -886,6 +886,8 @@ Google AI Mode 的 11 题 Dot 首答已私有归档，完成[逐题观察及与 
 
 所有者同日根据 Bing 后台截图决定略过本轮 AI Performance 分析：`6 M` 所选窗口显示 34 次引用，Grounding Queries 无明细。已在 [Bing 基线](geo/testing/bing-ai-performance-baseline.md)记为 `deferred / low-signal`，不再要求本轮导出；不将截图当作零引用或与旧 28 天基线直接比较。
 
+同日按所有者授权完成 [Tech Pack 新示范分发包](geo/distribution/publishing-log.md)：LinkedIn 单张 1080 × 1350 JPG、英文正文、替代文字、中文发布说明和 390px 预览已准备并校验，素材位于 `D:\B-视频素材\营销内容包\2026-10-tech-pack-demo\`。状态 `draft / owner-review / not-published`；下一步审核图片和正文后发布，不因 C06 / C08 处于抓取观察期而停止这类新素材分发。
+
 ## 13. 下一步优先级
 
 1. GEO ChatGPT Search 已保留 E01（M2）、批次 C 的 E02 / D03-R2（M4），以及[10-29 独立续测](geo/testing/valid-retest/batch-d-2026-10-29/README.md)的 Dot 7 条（M4）和手动 BD-01（M2）有效决定；旧 partial 不覆盖、模式与日期分开。[C06 改造示范](geo/testing/valid-retest/batch-d-2026-10-29/c06-tech-pack-demo-2026-10-29.md)与 [C08 增补](geo/testing/valid-retest/batch-d-2026-10-29/c08-guide-copy-draft-2026-10-30.md)均已通过生产验收；[Google AI Mode 11 题](geo/testing/valid-retest/google-ai-mode-2026-10-29/README.md)已采集归档。C08 已请求索引，建议 2026-11-06 复查两页抓取及索引。Bing AI Performance 本轮按所有者决定 `deferred / low-signal`，不要求追加导出。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。

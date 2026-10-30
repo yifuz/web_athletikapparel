@@ -1,7 +1,24 @@
 # LinkedIn + Instagram 内容发布日志
 
-本文件记录已完成发布的技术内容及其复盘状态。平台实时数据和帖子 URL 必须从后台或公开帖子核对后填写，
+本文件记录技术内容的准备、发布及复盘状态。平台实时数据和帖子 URL 必须从后台或公开帖子核对后填写，
 不得根据聊天推断。
+
+## 2026-10-30 — Tech Pack 新示范（已准备，待审核）
+
+| 字段 | 记录 |
+|---|---|
+| 状态 | `draft / owner-review / not-published`；所有者授权制作，本次未发布 |
+| 官网母文章 | <https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/> |
+| 素材新增价值 | 10-29 上线的示范尺寸表、BOM 及九页 PDF；8 月旧帖为通用清单与信息图，本次不是简单重发 |
+| 本轮格式 | LinkedIn 单张 1080 × 1350 JPG + 英文正文，不制作多图/PDF 附件 |
+| 主图内容 | M 码三个测量点及容差、三项 BOM 组件/规格/位置；注明摘录、厘米单位、仅供示范且不用于生产 |
+| 本地素材包 | `D:\B-视频素材\营销内容包\2026-10-tech-pack-demo\` |
+| 正文 UTM content | `tech_pack_demo_single_image`，source `linkedin` / medium `organic_social` / campaign `technical_guides` |
+| 校验 | 英文正文 1,185 字符；图像尺寸及无内容溢出检查通过，原图和 390px 预览已视觉复核；主图字段来自批准网页和 PDF |
+| 官网入口 | 带 UTM 的指南 URL 返回 HTTP 200、参数保留、Canonical 为规范指南；PDF HTTP 200，九页，哈希与批准文件相同；HTTP 校验未执行网页分析脚本 |
+| 待办 | 所有者审核图片及正文后发布，补录实际帖子 URL 与日期；七日统计窗口从真实发布时间确定，当前不填充曝光或访问数字 |
+
+文件包括 `linkedin/tech-pack-demo-linkedin.jpg`、正文 TXT、alt text、中文发布说明、源数据、HTML 排版源和可重复生成脚本、390px 预览及七日指标模板。运营素材留在 Git 外。尚未发布，不称独立第三方背书或已获得 AI 引用，也不增加公司登记资料、客户身份、认证或实测承诺。
 
 ## 2026-08-12 — FLATLOCK vs OVERLOCK
 
