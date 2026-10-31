@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-10-29。
+最后更新：2026-10-31。
 
 ---
 
@@ -890,7 +890,7 @@ Google AI Mode 的 11 题 Dot 首答已私有归档，完成[逐题观察及与 
 
 同日完成 [YouTube 既有视频英文信息核对与三条更新稿](geo/distribution/youtube-video-details-2026-10-30.md)：公开列出 90 条、核对 6 条相关视频元数据与缩略图，针对 `YUxwc5DoFSk`、`fyu-1_aarzY`、`sPS4_jD8nBc` 准备原视频标题、说明及规范指南入口。2026-10-31 所有者明确该账号不在其管辖，且 Codex 仅负责官网变动，方案现为 `closed / out-of-scope / not-applied`；保留历史草稿，撤下站外编辑待办，不要求接管账号。
 
-2026-10-31 已按所有者授权完成 [技术指南正文衔接核查与本地补充](geo/testing/guide-context-links-2026-10-31.md)：只在 FLATLOCK / OVERLOCK 的 ACTIVESEAM 介绍段将既有词语链接到对应专页，Tech Pack 和反向入口已有，不重复堆链。PHP、源码隔离、本地字段及 390 / 1440px 实际点击通过；状态 `implemented / locally-verified / deployment-pending`。下一步部署一个模板并做生产定向验收，保留既有观察窗口。
+2026-10-31 已完成 [技术指南正文衔接及生产验收](geo/testing/guide-context-links-2026-10-31.md)：只在 FLATLOCK / OVERLOCK 的 ACTIVESEAM 介绍段将既有词语链接到对应专页，Tech Pack 和反向入口已有，不重复堆链。所有者确认部署后，生产原始 HTML 与 390 / 1440px 浏览器均确认新链接生效，实际点击进入 HTTP 200 的目标指南；来源正文、元信息、Schema 和媒体清单与部署前一致。状态 `deployed / production-verified`，本次部署验收关闭；10-31 链接上线作为既有 Merino 观察期的来源页新增变量记录，保留原窗口。
 
 ## 13. 下一步优先级
 
