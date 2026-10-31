@@ -227,6 +227,7 @@ function myathletik_technical_article_data() {
 			'summary'          => __( 'Define finished fabric, POMs, tolerances, seam maps, components, testing and sample approvals in one controlled production reference.', 'myathletik-child' ),
 			'intro'            => __( 'A production-ready tech pack should control the finished fabric, measurements, seam map, components, testing and approvals—not only the sketch and size chart.', 'myathletik-child' ),
 			'reviewed_on'      => '2026-08-11',
+			'updated_on'       => '2026-10-29', // Approved demo added; deployment time is unknown.
 			'featured_image'   => 'production/articles/covers/technical-knitwear-tech-pack-cover.webp',
 			'featured_small'   => 'production/articles/covers/technical-knitwear-tech-pack-cover-800.webp',
 			'featured_alt'     => __( 'Technical knitwear tech pack layout with garment flats, measurement points, fabric swatches and seam samples', 'myathletik-child' ),
@@ -297,6 +298,7 @@ function myathletik_technical_article_data() {
 			'summary'          => __( 'Verify legal and production scope, process ownership, fabric controls, technical capability, quality evidence, traceability and project-level capacity.', 'myathletik-child' ),
 			'intro'            => __( 'Evaluate the legal and production scope, process ownership, fabric controls, technical sewing, quality evidence, traceability, capacity fit and commercial assumptions before approving an OEM.', 'myathletik-child' ),
 			'reviewed_on'      => '2026-08-11',
+			'updated_on'       => '2026-10-30', // Approved verification guidance added; date precision only.
 			'featured_image'   => 'production/articles/covers/technical-knitwear-oem-evaluation-cover.webp',
 			'featured_small'   => 'production/articles/covers/technical-knitwear-oem-evaluation-cover-800.webp',
 			'featured_alt'     => __( 'Athletik technical knitwear garment production floor in Zhangjiagang, Jiangsu', 'myathletik-child' ),
@@ -579,6 +581,32 @@ function myathletik_get_technical_article_data( $slug ) {
 	$articles = myathletik_technical_article_data();
 
 	return isset( $articles[ $slug ] ) ? $articles[ $slug ] : null;
+}
+
+/**
+ * Resolve a content update without inventing a deployment time.
+ *
+ * Registry dates record approved template changes independently of publication
+ * and technical review. Preserve a later database edit and leave other guides
+ * on their existing database timestamps.
+ *
+ * @param array|null $article       Article record.
+ * @param string     $database_date Existing ISO date or timestamp.
+ * @return string
+ */
+function myathletik_technical_article_modified_date( $article, $database_date ) {
+	if ( empty( $article['updated_on'] ) ) {
+		return $database_date;
+	}
+
+	// Page timestamps and Sitemap timestamps may use different time zones.
+	$database_day = $database_date
+		? ( new DateTimeImmutable( $database_date, wp_timezone() ) )->setTimezone( wp_timezone() )->format( 'Y-m-d' )
+		: '';
+
+	return $database_day > $article['updated_on']
+		? $database_date
+		: $article['updated_on'];
 }
 
 /**

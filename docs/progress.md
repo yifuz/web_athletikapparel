@@ -892,6 +892,8 @@ Google AI Mode 的 11 题 Dot 首答已私有归档，完成[逐题观察及与 
 
 2026-10-31 已完成 [技术指南正文衔接及生产验收](geo/testing/guide-context-links-2026-10-31.md)：只在 FLATLOCK / OVERLOCK 的 ACTIVESEAM 介绍段将既有词语链接到对应专页，Tech Pack 和反向入口已有，不重复堆链。所有者确认部署后，生产原始 HTML 与 390 / 1440px 浏览器均确认新链接生效，实际点击进入 HTTP 200 的目标指南；来源正文、元信息、Schema 和媒体清单与部署前一致。状态 `deployed / production-verified`，本次部署验收关闭；10-31 链接上线作为既有 Merino 观察期的来源页新增变量记录，保留原窗口。
 
+2026-10-31 已按所有者授权完成 [C06 / C08 内容更新日期修正](geo/testing/guide-content-dates-2026-10-31.md)：分别使用已有发布记录中的 10-29 / 10-30，新增独立 `Content updated`，并对齐 Article / WebPage 及两条 Page Sitemap 日期；首次发表和技术复核时间保留。PHP、六篇指南字段及 Schema 回归、两页 390 / 1440px 显示、Sitemap 及一次性缓存刷新均通过。状态 `implemented / locally-verified / deployment-pending`，下一步部署四个主题文件后做生产验收，保留原观察窗口。
+
 ## 13. 下一步优先级
 
 1. GEO ChatGPT Search 已保留 E01（M2）、批次 C 的 E02 / D03-R2（M4），以及[10-29 独立续测](geo/testing/valid-retest/batch-d-2026-10-29/README.md)的 Dot 7 条（M4）和手动 BD-01（M2）有效决定；旧 partial 不覆盖、模式与日期分开。[C06 改造示范](geo/testing/valid-retest/batch-d-2026-10-29/c06-tech-pack-demo-2026-10-29.md)与 [C08 增补](geo/testing/valid-retest/batch-d-2026-10-29/c08-guide-copy-draft-2026-10-30.md)均已通过生产验收；[Google AI Mode 11 题](geo/testing/valid-retest/google-ai-mode-2026-10-29/README.md)已采集归档。C08 已请求索引，建议 2026-11-06 复查两页抓取及索引。Bing AI Performance 本轮按所有者决定 `deferred / low-signal`，不要求追加导出。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。

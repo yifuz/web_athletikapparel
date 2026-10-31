@@ -1382,7 +1382,7 @@ function myathletik_sync_home_rank_math_title() {
 add_action( 'init', 'myathletik_sync_home_rank_math_title', 30 );
 
 /**
- * Invalidate the Rank Math page and index Sitemap caches once per managed
+ * Invalidate the Rank Math Sitemap caches once per managed
  * Sitemap release.
  *
  * Rank Math stores generated XML independently of the page response, so a
@@ -1390,7 +1390,7 @@ add_action( 'init', 'myathletik_sync_home_rank_math_title', 30 );
  * The release marker keeps this invalidation scoped to one deployment.
  */
 function myathletik_invalidate_rank_math_sitemap_cache_release() {
-	$release = 'geo-v2-021-20260916';
+	$release = 'guide-content-dates-20261031-v2';
 
 	if ( get_option( '_myathletik_sitemap_cache_release' ) === $release ) {
 		return;
@@ -1400,8 +1400,9 @@ function myathletik_invalidate_rank_math_sitemap_cache_release() {
 		return;
 	}
 
-	\RankMath\Sitemap\Cache::invalidate_storage( 'page' );
-	\RankMath\Sitemap\Cache::invalidate_storage( '1' );
+	// A complete release purge also clears files missing from the cache registry.
+	\RankMath\Sitemap\Cache::invalidate_storage();
+	update_option( '_myathletik_sitemap_cache_updated_at', gmdate( 'Y-m-d H:i:s' ), false );
 	update_option( '_myathletik_sitemap_cache_release', $release, false );
 }
 add_action( 'init', 'myathletik_invalidate_rank_math_sitemap_cache_release', 99 );

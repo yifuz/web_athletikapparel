@@ -449,6 +449,11 @@ function myathletik_rank_math_technical_article_schema( $data ) {
 	$publisher_id = ! empty( $data['publisher']['@id'] ) ? $data['publisher']['@id'] : home_url( '/#organization' );
 	$image_id     = $page_url . '#primaryimage';
 	$image_url    = myathletik_images_uri() . '/' . ltrim( $article['featured_image'], '/' );
+	$modified_date = myathletik_technical_article_modified_date( $article, get_post_modified_time( DATE_W3C, false, $page_id ) );
+
+	if ( ! empty( $article['updated_on'] ) && isset( $data['WebPage'] ) ) {
+		$data['WebPage']['dateModified'] = $modified_date;
+	}
 
 	$data['technicalArticleImage'] = array(
 		'@type'      => 'ImageObject',
@@ -466,7 +471,7 @@ function myathletik_rank_math_technical_article_schema( $data ) {
 		'headline'         => $article['title'],
 		'description'      => $article['meta_description'],
 		'datePublished'    => get_post_time( DATE_W3C, false, $page_id ),
-		'dateModified'     => get_post_modified_time( DATE_W3C, false, $page_id ),
+		'dateModified'     => $modified_date,
 		'inLanguage'       => 'en-US',
 		'articleSection'   => $article['article_section'],
 		'mainEntityOfPage' => array( '@id' => $webpage_id ),
@@ -818,7 +823,9 @@ function myathletik_rank_math_core_sitemap_lastmod( $output, $url ) {
 
 	$modified = ! empty( $url['mod'] ) ? strtotime( $url['mod'] ) : 0;
 	$modified = max( (int) $modified, myathletik_rank_math_core_sitemap_baseline( $url['loc'] ) );
-	$lastmod  = '<lastmod>' . esc_html( gmdate( DATE_W3C, $modified ) ) . '</lastmod>';
+	$article  = myathletik_get_technical_article_data( trim( wp_parse_url( $url['loc'], PHP_URL_PATH ), '/' ) );
+	$date     = myathletik_technical_article_modified_date( $article, gmdate( DATE_W3C, $modified ) );
+	$lastmod  = '<lastmod>' . esc_html( $date ) . '</lastmod>';
 
 	if ( false !== strpos( $output, '<lastmod>' ) ) {
 		return (string) preg_replace( '#<lastmod>[^<]*</lastmod>#', $lastmod, $output, 1 );
@@ -842,9 +849,11 @@ function myathletik_rank_math_page_sitemap_index_lastmod( $entry, $object_type, 
 	}
 
 	$current          = ! empty( $entry['lastmod'] ) ? strtotime( $entry['lastmod'] ) : 0;
+	// This is the Sitemap cache release time, not a page's content update time.
+	$cache_release    = (int) strtotime( get_option( '_myathletik_sitemap_cache_updated_at', '' ) );
 	$entry['lastmod'] = gmdate(
 		'Y-m-d H:i:s',
-		max( (int) $current, myathletik_rank_math_core_sitemap_baseline() )
+		max( (int) $current, myathletik_rank_math_core_sitemap_baseline(), $cache_release )
 	);
 
 	return $entry;

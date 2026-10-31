@@ -20,6 +20,10 @@ $published_iso     = get_the_date( DATE_W3C );
 $published_display = get_the_date( 'F j, Y' );
 $reviewed_iso      = $article['reviewed_on'];
 $reviewed_display  = wp_date( 'F j, Y', strtotime( $reviewed_iso ) );
+$updated_iso       = ! empty( $article['updated_on'] )
+	? myathletik_technical_article_modified_date( $article, get_post_modified_time( DATE_W3C ) )
+	: '';
+$updated_display   = $updated_iso ? wp_date( 'F j, Y', ( new DateTimeImmutable( $updated_iso, wp_timezone() ) )->getTimestamp() ) : '';
 $media             = get_stylesheet_directory_uri() . '/assets/images/';
 $image_url         = $media . ltrim( $article['featured_image'], '/' );
 $image_small_url   = $media . ltrim( $article['featured_small'], '/' );
@@ -62,6 +66,10 @@ foreach ( $article['related_articles'] ?? array() as $related_slug ) {
 						<span aria-hidden="true">·</span>
 						<?php esc_html_e( 'Technical review completed', 'myathletik-child' ); ?>
 						<time datetime="<?php echo esc_attr( $reviewed_iso ); ?>"><?php echo esc_html( $reviewed_display ); ?></time>
+						<?php if ( $updated_iso ) : ?>
+							<span aria-hidden="true">·</span>
+							<span><?php esc_html_e( 'Content updated', 'myathletik-child' ); ?> <time datetime="<?php echo esc_attr( $updated_iso ); ?>"><?php echo esc_html( $updated_display ); ?></time></span>
+						<?php endif; ?>
 					</p>
 				</div>
 				<figure class="ma-technical-article__hero-media">
