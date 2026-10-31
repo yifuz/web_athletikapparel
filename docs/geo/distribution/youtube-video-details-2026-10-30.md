@@ -2,6 +2,8 @@
 
 日期：2026-10-30。状态：`draft / owner-review / not-applied`。目标为现有官方频道 [@athletikclothinginc](https://www.youtube.com/@athletikclothinginc)，ID `UCDeo0CuAcVyZRao41Et7ABw`。本次核对公开内容并准备三条现有视频的更新稿，未登录或修改账号，未上传视频。
 
+**2026-10-31 范围更正：**所有者说明该 YouTube 账号不在其管辖，并明确 Codex 只负责网站变动。本方案状态改为 `closed / out-of-scope / not-applied`，撤下站外编辑待办；下方文案和原素材包保留为历史草稿，不要求审核、账号接管或实施。以后只有所有者明确扩大范围时才重开。
+
 ## 覆盖与发现
 
 - 读取当前 Videos 页及两次公开分页，取得 90 条标题和 URL；仍有后续页面，因此不是全频道完整审计。标题清单用于筛选，不将全部标题中的能力或性能声明直接采纳为事实。
@@ -32,4 +34,4 @@
 
 [YouTube 编辑视频设置说明](https://support.google.com/youtube/answer/57404?hl=en)支持修改已上传视频的标题、描述等信息；[YouTube 描述建议](https://support.google.com/youtube/answer/12948449?hl=en)建议每条视频使用准确、独特的描述，并将主题放在前几行。本轮按已公开画面主题和 Athletik 已批准的技术指南写作，不承诺 AI 引用、搜索排名或询盘增长。
 
-下一步优先审核并更新上述三条既有视频；完成后保存实际更新时间和公开核验结果。其他 87 条清单项及后续分页不冒充已完成逐片审查。
+原先拟议的审核和 YouTube 修改步骤已按 2026-10-31 的范围决定停止；不继续推进。其他 87 条清单项及后续分页不冒充已完成逐片审查。

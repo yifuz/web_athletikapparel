@@ -888,7 +888,7 @@ Google AI Mode 的 11 题 Dot 首答已私有归档，完成[逐题观察及与 
 
 同日按所有者授权完成 [Tech Pack 新示范分发包](geo/distribution/publishing-log.md)：LinkedIn 单张 1080 × 1350 JPG、英文正文、替代文字、中文发布说明和 390px 预览已准备并校验，素材位于 `D:\B-视频素材\营销内容包\2026-10-tech-pack-demo\`。所有者已确认审核及发布完成，状态 `published / owner-confirmed / public-url-pending / measuring`；七日窗口为 10-31～11-06，11-07 起复盘，实际帖子 URL 与后台数据待补。不因 C06 / C08 处于抓取观察期而停止新素材分发。
 
-同日完成 [YouTube 既有视频英文信息核对与三条更新稿](geo/distribution/youtube-video-details-2026-10-30.md)：公开列出 90 条、核对 6 条相关视频元数据与缩略图，针对 `YUxwc5DoFSk`、`fyu-1_aarzY`、`sPS4_jD8nBc` 准备原视频标题、说明及规范指南入口；发现重复标题式描述、非规范站/格式不完整链接和品牌拼写问题。更新包已校验，状态 `draft / owner-review / not-applied`；下一步审核后在原视频保存并公开复核，不重复上传。
+同日完成 [YouTube 既有视频英文信息核对与三条更新稿](geo/distribution/youtube-video-details-2026-10-30.md)：公开列出 90 条、核对 6 条相关视频元数据与缩略图，针对 `YUxwc5DoFSk`、`fyu-1_aarzY`、`sPS4_jD8nBc` 准备原视频标题、说明及规范指南入口。2026-10-31 所有者明确该账号不在其管辖，且 Codex 仅负责官网变动，方案现为 `closed / out-of-scope / not-applied`；保留历史草稿，撤下站外编辑待办，不要求接管账号。
 
 ## 13. 下一步优先级
 
