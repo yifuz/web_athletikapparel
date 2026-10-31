@@ -1,8 +1,8 @@
 # YouTube 现有工艺视频：英文标题与说明更新
 
-日期：2026-10-30。状态：`draft / owner-review / not-applied`。目标为现有官方频道 [@athletikclothinginc](https://www.youtube.com/@athletikclothinginc)，ID `UCDeo0CuAcVyZRao41Et7ABw`。本次核对公开内容并准备三条现有视频的更新稿，未登录或修改账号，未上传视频。
+日期：2026-10-30；状态更新：2026-10-31，`closed / out-of-scope / not-applied`。目标为现有官方频道 [@athletikclothinginc](https://www.youtube.com/@athletikclothinginc)，ID `UCDeo0CuAcVyZRao41Et7ABw`。本次核对公开内容并准备三条现有视频的更新稿，未登录或修改账号，未上传视频。
 
-**2026-10-31 范围更正：**所有者说明该 YouTube 账号不在其管辖，并明确 Codex 只负责网站变动。本方案状态改为 `closed / out-of-scope / not-applied`，撤下站外编辑待办；下方文案和原素材包保留为历史草稿，不要求审核、账号接管或实施。以后只有所有者明确扩大范围时才重开。
+**2026-10-31 范围更正：**所有者说明该 YouTube 账号不在其管辖。本方案保持 `closed / out-of-scope / not-applied`，撤下 YouTube 编辑待办；下方文案和原素材包保留为历史草稿，不要求审核、账号接管或实施。所有者随后纠正了“只做官网”的结论，确认 Instagram 与 LinkedIn 为其可控账号，可纳入 GEO 工作；这一更正不重开本 YouTube 方案。只有所有者以后明确授权处理 YouTube 时才重开。
 
 ## 覆盖与发现
 

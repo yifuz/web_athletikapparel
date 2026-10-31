@@ -888,11 +888,15 @@ Google AI Mode 的 11 题 Dot 首答已私有归档，完成[逐题观察及与 
 
 同日按所有者授权完成 [Tech Pack 新示范分发包](geo/distribution/publishing-log.md)：LinkedIn 单张 1080 × 1350 JPG、英文正文、替代文字、中文发布说明和 390px 预览已准备并校验，素材位于 `D:\B-视频素材\营销内容包\2026-10-tech-pack-demo\`。所有者已确认审核及发布完成，状态 `published / owner-confirmed / public-url-pending / measuring`；七日窗口为 10-31～11-06，11-07 起复盘，实际帖子 URL 与后台数据待补。不因 C06 / C08 处于抓取观察期而停止新素材分发。
 
-同日完成 [YouTube 既有视频英文信息核对与三条更新稿](geo/distribution/youtube-video-details-2026-10-30.md)：公开列出 90 条、核对 6 条相关视频元数据与缩略图，针对 `YUxwc5DoFSk`、`fyu-1_aarzY`、`sPS4_jD8nBc` 准备原视频标题、说明及规范指南入口。2026-10-31 所有者明确该账号不在其管辖，且 Codex 仅负责官网变动，方案现为 `closed / out-of-scope / not-applied`；保留历史草稿，撤下站外编辑待办，不要求接管账号。
+同日完成 [YouTube 既有视频英文信息核对与三条更新稿](geo/distribution/youtube-video-details-2026-10-30.md)：公开列出 90 条、核对 6 条相关视频元数据与缩略图，针对 `YUxwc5DoFSk`、`fyu-1_aarzY`、`sPS4_jD8nBc` 准备原视频标题、说明及规范指南入口。2026-10-31 所有者明确该账号不在其管辖，方案现为 `closed / out-of-scope / not-applied`；保留历史草稿，撤下 YouTube 编辑待办，不要求接管账号。
 
 2026-10-31 已完成 [技术指南正文衔接及生产验收](geo/testing/guide-context-links-2026-10-31.md)：只在 FLATLOCK / OVERLOCK 的 ACTIVESEAM 介绍段将既有词语链接到对应专页，Tech Pack 和反向入口已有，不重复堆链。所有者确认部署后，生产原始 HTML 与 390 / 1440px 浏览器均确认新链接生效，实际点击进入 HTTP 200 的目标指南；来源正文、元信息、Schema 和媒体清单与部署前一致。状态 `deployed / production-verified`，本次部署验收关闭；10-31 链接上线作为既有 Merino 观察期的来源页新增变量记录，保留原窗口。
 
 2026-10-31 已按所有者授权完成 [C06 / C08 内容更新日期修正](geo/testing/guide-content-dates-2026-10-31.md)：分别使用已有发布记录中的 10-29 / 10-30，新增独立 `Content updated`，并对齐 Article / WebPage 及两条 Page Sitemap 日期；首次发表和技术复核时间保留。PHP、六篇指南字段及 Schema 回归、两页 390 / 1440px 显示、Sitemap 及一次性缓存刷新均通过。状态 `implemented / locally-verified / deployment-pending`，下一步部署四个主题文件后做生产验收，保留原观察窗口。
+
+同日所有者要求当天可做工作一并验收，已在同一批次追加 Tech Pack 示范入口说明：Guides Hub 卡片摘要提示已有尺寸表 / BOM 示范及 PDF，两处目录标签明确示范内容。只追加修改既有待部署的 `inc/technical-article-data.php`，不增加部署文件数量；局部 HTML 对比、表格 / PDF 校验与手机 / 桌面真实跳转通过。统一使用 `athletik-geo-batch-2026-10-31.zip`，部署四个文件后按[合并记录](geo/testing/guide-content-dates-2026-10-31.md)一次验收日期与入口两项。
+
+2026-10-31 后续范围更正：所有者确认控制 Instagram 与 LinkedIn，撤销此前“只做官网”的结论。官网与这两个可控账号均可纳入后续 GEO 优化和内容准备；YouTube 不在其管辖的决定保持。已同步 `AGENTS.md` 与 YouTube 关闭记录，当前官网合并部署包继续完成，不因范围更正遗漏已授权事项。
 
 ## 13. 下一步优先级
 

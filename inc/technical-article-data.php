@@ -224,7 +224,7 @@ function myathletik_technical_article_data() {
 			'meta_description' => __( 'Build a cut-and-sew technical knitwear tech pack with fabric specifications, seam maps, POMs, tolerances, testing requirements and approval stages.', 'myathletik-child' ),
 			'kicker'           => __( 'Technical specification guide', 'myathletik-child' ),
 			'topic'            => __( 'Tech pack development', 'myathletik-child' ),
-			'summary'          => __( 'Define finished fabric, POMs, tolerances, seam maps, components, testing and sample approvals in one controlled production reference.', 'myathletik-child' ),
+			'summary'          => __( 'Define fabric, POMs, tolerances, seams, components, testing and approvals, with illustrative measurement and BOM examples and a demonstration PDF.', 'myathletik-child' ),
 			'intro'            => __( 'A production-ready tech pack should control the finished fabric, measurements, seam map, components, testing and approvals—not only the sketch and size chart.', 'myathletik-child' ),
 			'reviewed_on'      => '2026-08-11',
 			'updated_on'       => '2026-10-29', // Approved demo added; deployment time is unknown.
@@ -242,10 +242,10 @@ function myathletik_technical_article_data() {
 			'toc'              => array(
 				'document-control'    => __( 'Document control and intended use', 'myathletik-child' ),
 				'technical-flats'     => __( 'Technical flats and callouts', 'myathletik-child' ),
-				'pom-and-tolerances'  => __( 'POMs and tolerances', 'myathletik-child' ),
+				'pom-and-tolerances'  => __( 'POMs, tolerances and measurement example', 'myathletik-child' ),
 				'finished-fabric'     => __( 'Finished-fabric specification', 'myathletik-child' ),
 				'seam-map'            => __( 'Seam map and stitch construction', 'myathletik-child' ),
-				'trims-and-components' => __( 'Trims and component compatibility', 'myathletik-child' ),
+				'trims-and-components' => __( 'Trims, components and BOM example', 'myathletik-child' ),
 				'testing'             => __( 'Testing methods and criteria', 'myathletik-child' ),
 				'sample-approvals'    => __( 'Sample stages and approvals', 'myathletik-child' ),
 				'handoff-checklist'   => __( 'Final handoff checklist', 'myathletik-child' ),

@@ -1,6 +1,6 @@
-# C06 / C08 内容更新日期修正
+# C06 / C08 日期修正与 Tech Pack 示范入口
 
-日期：2026-10-31。状态：`implemented / locally-verified / deployment-pending`。所有者已授权修正两篇已更新指南的内容日期；本次未直接部署生产。
+日期：2026-10-31。状态：`implemented / locally-verified / deployment-pending`。所有者已授权修正两篇已更新指南的内容日期，随后要求检查当天可补做的官网工作并合并验收；同批增加 Tech Pack 示范入口说明。本次未直接部署生产。
 
 ## 日期依据与问题
 
@@ -36,15 +36,29 @@
 
 日期粒度依据 [Google 日期说明](https://developers.google.com/search/docs/appearance/publication-dates)、[Schema.org dateModified](https://schema.org/dateModified) 和 [Sitemap 协议](https://www.sitemaps.org/protocol.html)。本次通过的是本地解析、字段与渲染一致性检查，未运行外部 [Rich Results Test](https://search.google.com/test/rich-results) 或 [Schema Validator](https://validator.schema.org/)，不描述为外部验证通过或搜索引擎已采用。
 
+## 同批补充：Tech Pack 示范入口说明
+
+所有者提出当天补做并一并验收后，核查 [Guides Hub](https://www.athletikapparel.com/technical-guides/)、[Tech Pack Guide](https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/) 和 Services，均为生产 HTTP 200。Tech Pack 已有完整 PDF 入口，Hub 也已有该页卡片；实际可改善之处是卡片摘要与文章目录没有提示已经上线的示范内容。不是孤立页或缺 PDF，也不从 10-29 单次采样推断索引问题。
+
+只追加修改 `inc/technical-article-data.php` 三处文字：
+
+- 卡片摘要：`Define fabric, POMs, tolerances, seams, components, testing and approvals, with illustrative measurement and BOM examples and a demonstration PDF.`
+- 目录尺寸表项：`POMs, tolerances and measurement example`。
+- 目录组件项：`Trims, components and BOM example`。
+
+已有 URL 和章节锚点保持不变；未增加下载按钮、Services 内链、页面或长篇正文。此项是既有示范的入口说明，不把微小导航调整作为新的实质内容日期，保留 C06 的 10-29。
+
+局部验证：Hub 与 Tech Pack 的本地 HTML 均为 200，仅上述三处文字改变；Title、Meta、H1/H2/H3、Canonical、JSON-LD、媒体和所有 href 与本次补充前一致。9 行尺寸表示范、10 行 BOM 保留；PDF 200、MIME 为 `application/pdf`，SHA-256 仍为 `c022e24d4a4b97f244a54477c38eae6231c8c636936b46d139b60976e0919ac3`。两种屏宽分别检查卡片与目录并实际点击；证据位于 `C:\Users\Administrator\seo-reports\tech-pack-discovery-2026-10-31\`。这改善已有材料的可发现性，不宣称提高 AI 引用率。
+
 ## 部署与后续
 
-部署包：`C:\Users\Administrator\Downloads\athletik-guide-content-dates-2026-10-31.zip`。包内仅有以下四个子主题文件，按原相对路径覆盖：
+统一部署包：`C:\Users\Administrator\Downloads\athletik-geo-batch-2026-10-31.zip`，包含日期修正与示范入口两项，替代先前仅含日期修正的 `athletik-guide-content-dates-2026-10-31.zip`。不需要两个包重复覆盖。包内仍仅有以下四个子主题文件，按原相对路径覆盖：
 
 1. `inc/technical-article-data.php`
 2. `rank-math.php`
 3. `template-parts/technical-article/page.php`
 4. `functions.php`
 
-同批部署四个文件；若逐一上传，按上述顺序，先提供共用日期函数，最后上传缓存发布标记。无需上传 Markdown、PDF、图片、CSS 或 JS。部署后核对两页可见日期、Article / WebPage、Page Sitemap 与主索引，并验证其余指南没有新增日期。
+同批部署四个文件；若逐一上传，按上述顺序，先提供共用日期函数，最后上传缓存发布标记。无需上传 Markdown、PDF、图片、CSS 或 JS。部署后合并核对两页可见日期、Article / WebPage、Page Sitemap 与主索引，以及 Tech Pack 卡片、两处目录、实际跳转与 PDF；并验证其余指南没有新增日期。
 
 本次修正既有内容更新记录，不重置 C06 / C08 原观察窗口，不重复索引申请，不宣称索引或 AI 引用改善。以后实质内容更新时按批准及发布记录维护 `updated_on`；技术复核另行记录，不自动跟随。
