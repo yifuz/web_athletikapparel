@@ -134,7 +134,7 @@ $media_base = get_stylesheet_directory_uri() . '/assets/images/production/articl
 
 <section id="activeseam" aria-labelledby="ma-activeseam-title">
 	<h2 id="ma-activeseam-title">ACTIVESEAM is not another name for FLATLOCK</h2>
-	<p>ACTIVESEAM should be specified separately. Merrow describes its MB-4DFO ACTIVESEAM platform as a two-needle, two- or three-thread flat overlock system and an alternative to conventional FLATLOCK, INTERLOCK and OVERLOCK construction. It is therefore inaccurate to use ACTIVESEAM as a generic synonym for any visually flat seam.</p>
+	<p><a href="<?php echo esc_url( home_url( '/flatlock-vs-activeseam-technical-knitwear/' ) ); ?>">ACTIVESEAM</a> should be specified separately. Merrow describes its MB-4DFO ACTIVESEAM platform as a two-needle, two- or three-thread flat overlock system and an alternative to conventional FLATLOCK, INTERLOCK and OVERLOCK construction. It is therefore inaccurate to use ACTIVESEAM as a generic synonym for any visually flat seam.</p>
 	<p>If ACTIVESEAM is required, the buyer and manufacturer should confirm the machine platform, seam version, required appearance and sample performance. This article does not use an ACTIVESEAM production video; the distinction is included to prevent an ambiguous stitch callout.</p>
 </section>
 
