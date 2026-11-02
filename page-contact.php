@@ -57,9 +57,9 @@ $contact_hero_image = get_stylesheet_directory_uri() . '/assets/images/contact/h
 					<p class="ma-section-kicker"><?php esc_html_e( 'Our facility', 'myathletik-child' ); ?></p>
 					<h2><?php esc_html_e( 'Zhangjiagang Athletik Clothing Co., Limited', 'myathletik-child' ); ?></h2>
 					<address>
-						<?php esc_html_e( 'No.25, Zhongxing Road, Yangshe Town, Zhangjiagang, Jiangsu, 215699 China', 'myathletik-child' ); ?>
+						<?php esc_html_e( 'No.15, Zhongxing Road, Yangshe Town, Zhangjiagang, Jiangsu, 215699 China', 'myathletik-child' ); ?>
 					</address>
-					<a class="ma-contact-map-link" href="https://www.google.com/maps/search/?api=1&query=No.25%2C%20Zhongxing%20Road%2C%20Yangshe%20Town%2C%20Zhangjiagang%2C%20Jiangsu%2C%20215699%20China" target="_blank" rel="noopener noreferrer">
+					<a class="ma-contact-map-link" href="https://www.google.com/maps/search/?api=1&query=No.15%2C%20Zhongxing%20Road%2C%20Yangshe%20Town%2C%20Zhangjiagang%2C%20Jiangsu%2C%20215699%20China" target="_blank" rel="noopener noreferrer">
 						<?php esc_html_e( 'Open map', 'myathletik-child' ); ?>
 					</a>
 				</div>

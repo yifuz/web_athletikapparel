@@ -1646,7 +1646,7 @@ function myathletik_site_footer() {
 				<ul>
 					<li><a href="tel:+8613951139696">86-13951139696</a></li>
 					<li><a href="mailto:info@athletikapparel.com">info@athletikapparel.com</a></li>
-					<li><?php esc_html_e( 'No.25, Zhongxing Road, Yangshe Town, Zhangjiagang, Jiangsu, 215699 China', 'myathletik-child' ); ?></li>
+					<li><?php esc_html_e( 'No.15, Zhongxing Road, Yangshe Town, Zhangjiagang, Jiangsu, 215699 China', 'myathletik-child' ); ?></li>
 				</ul>
 				<a class="ma-site-footer__quote" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Request a Quote', 'myathletik-child' ); ?></a>
 			</div>

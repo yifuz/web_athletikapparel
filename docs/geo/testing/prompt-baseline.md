@@ -46,7 +46,7 @@
 | 项目范围外的同方专业站 | <https://www.ultramerino.com/>（公司早期为类目矩阵建立的独立网站；当前不由本项目负责，不在本项目修改或决定去留） |
 | 公开邮箱 | `info@athletikapparel.com` |
 | 公开电话 | `+86 139 5113 9696` |
-| 中国办公地址 | No.25, Zhongxing Road, Yangshe Town, Zhangjiagang, Jiangsu, 215699 China |
+| 中国办公地址 | No.15, Zhongxing Road, Yangshe Town, Zhangjiagang, Jiangsu, 215699 China（所有者于 2026-11-02 确认；官网此前误写 25 号） |
 | LinkedIn | <https://www.linkedin.com/company/111831319/> |
 | Instagram | <https://www.instagram.com/athletikclothinginc/> |
 | YouTube | <https://www.youtube.com/@athletikclothinginc> |

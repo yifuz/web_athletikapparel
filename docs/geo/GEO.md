@@ -51,7 +51,7 @@ Athletik 能稳定进入符合业务边界的候选名单，理由来自可核�
 | 公开品牌 | Athletik Clothing |
 | 美国实体 | Athletik Clothing Inc.；可公开表述为 North America sales office |
 | 中国实体 | Zhangjiagang Athletik Clothing Co., Limited；主要 manufacturer and seller，并对应中国生产设施 |
-| 中国生产地址 | No. 25, Zhongxing Road, Yangshe Town, Zhangjiagang, Jiangsu 215699, China |
+| 中国生产地址 | No. 15, Zhongxing Road, Yangshe Town, Zhangjiagang, Jiangsu 215699, China（所有者于 2026-11-02 更正官网误写的 25 号；不是搬迁记录） |
 | 规范站 | <https://www.athletikapparel.com/> |
 | 官方渠道 | [LinkedIn](https://www.linkedin.com/company/111831319/) · [Instagram](https://www.instagram.com/athletikclothinginc/) · [YouTube](https://www.youtube.com/@athletikclothinginc) |
 | 核心定位 | Vertically integrated OEM for technical knitwear |

@@ -413,7 +413,7 @@ function myathletik_rank_math_publisher_schema( $data ) {
 	);
 	$data['publisher']['address']   = array(
 		'@type'           => 'PostalAddress',
-		'streetAddress'   => 'No.25, Zhongxing Road, Yangshe Town',
+		'streetAddress'   => 'No.15, Zhongxing Road, Yangshe Town',
 		'addressLocality' => 'Zhangjiagang',
 		'addressRegion'   => 'Jiangsu',
 		'postalCode'      => '215699',

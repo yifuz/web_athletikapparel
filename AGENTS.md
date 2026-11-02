@@ -200,6 +200,7 @@ The rebuild reorganizes the site around search intent. Target structure:
 - **Public brand:** Athletik Clothing.
 - **U.S. entity name:** Athletik Clothing Inc.
 - **China entity name:** Zhangjiagang Athletik Clothing Co., Limited.
+- **中国生产地址门牌（所有者于 2026-11-02 确认）：** 中兴路 **15 号**（`No.15, Zhongxing Road, Yangshe Town`）。官网此前的 25 号为误写，不是搬迁；当前地址以 15 号为准，历史采样和来源摘录保留原文并注明更正。
 - **Fabric sales name:** Beta Textiles (BTEXCO) — **not a separate legal
   entity**; it is an external-facing name used by the same operation for
   fabric sales (owner clarification 2026-08-20). Therefore "our own fabric

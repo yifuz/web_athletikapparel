@@ -28,6 +28,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.2 GEO
 
+- 2026-11-02 所有者确认中国生产地址正确门牌为中兴路 15 号，官网 25 号为误写。联系页、地图搜索、全站页脚和组织 Schema 已作本地修正；部署状态与验收见[地址更正记录](geo/testing/address-correction-2026-11-02.md)。本轮仅纠正门牌，历史来源与已接受的 AI 样本原文保留。
 - [`geo/GEO.md`](geo/GEO.md) 是 GEO 中央工作台和路由文档。
 - Baseline v1（原 GEO-01～08）的第一轮 Temporary Chat 中性基线已经完成并冻结；Baseline v2 首批可执行测试已完成：ChatGPT Search 8/8、Google AI Mode 8/8，Perplexity 8 条按 `unavailable / plan-access` 记录。
 - 实体、技术可抓取性、四篇指南和 GEO-06/07 首轮 LinkedIn/Instagram 分发已经完成。

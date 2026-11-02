@@ -70,7 +70,7 @@ Note (microcopy under submit, optional):
 
 **Our facility**
 - Zhangjiagang Athletik Clothing Co., Limited
-- No.25, Zhongxing Road, Yangshe Town, Zhangjiagang, Jiangsu, 215699 China
+- No.15, Zhongxing Road, Yangshe Town, Zhangjiagang, Jiangsu, 215699 China
 - The page links to Google Maps; do not list partner factories.
 
 [IMAGE: optional — real photo of the facility exterior or entrance]
