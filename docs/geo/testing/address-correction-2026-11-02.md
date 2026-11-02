@@ -20,6 +20,8 @@
 
 部署包：`C:\Users\Administrator\Downloads\athletik-address-correction-2026-11-02.zip`，仅包含上表三个主题文件；覆盖生产子主题中对应路径。
 
+后续交付决定：所有者要求与[买家公开名单 GEO 内容](buyer-disclosures-2026-11-02.md)一起部署。改用五文件合并包 `athletik-geo-buyer-evidence-2026-11-02.zip`，待新增文案审核后统一部署；旧三文件包只保留历史交付记录，无需单独执行。
+
 本地验证已通过：
 
 - 三个部署文件均通过 PHP 8.2.30 语法检查。

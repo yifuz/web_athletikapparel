@@ -3358,6 +3358,53 @@ body.page .container.grid-container:has(.ma-about-page) {
   margin: var(--ma-space-3) 0 0;
 }
 
+/* Dated buyer disclosures link directly to the publishers' source documents. */
+.ma-about-disclosures {
+  padding: 0 0 var(--ma-section-y);
+}
+
+.ma-about-disclosures h2 {
+  margin: 0;
+  font-size: var(--ma-fs-h2);
+  line-height: 1.15;
+}
+
+.ma-about-disclosures__intro {
+  max-width: var(--ma-reading-width);
+  margin: var(--ma-space-3) 0 var(--ma-space-5);
+}
+
+.ma-about-disclosures__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  gap: var(--ma-space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ma-about-disclosures__list li {
+  border-top: 1px solid var(--ma-color-border);
+  padding-top: var(--ma-space-4);
+}
+
+.ma-about-disclosures__list h3 {
+  margin: 0;
+  font-size: var(--ma-fs-h3);
+}
+
+.ma-about-disclosures__list p {
+  margin: var(--ma-space-3) 0 var(--ma-space-2);
+  color: var(--ma-color-muted);
+}
+
+.ma-about-disclosures__list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ma-touch-target);
+  overflow-wrap: anywhere;
+}
+
 .ma-about-cta {
   background: var(--ma-color-text);
   color: var(--ma-color-bg);

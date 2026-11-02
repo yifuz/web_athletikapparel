@@ -86,6 +86,26 @@ sample room, or fabric mill]
 
 Button: Request a Quote → /contact/
 
+## 公开供应商披露（2026-11-02 本地草稿，待所有者审核）
+
+位置：现有 Who we serve 之后、Closing CTA 之前。下面英文已在本地模板实现供审阅；未批准公开发布。原始名单核验与适用边界见 [`docs/geo/testing/buyer-disclosures-2026-11-02.md`](docs/geo/testing/buyer-disclosures-2026-11-02.md)。
+
+**Public supplier disclosures**
+
+> Our China production entity, Zhangjiagang Athletik Clothing Co., Limited, appears in the buyer-published records below.
+
+**Canadian Tire Corporation**
+
+> Listed in its Tier 1 Owned Brand supplier factory list, updated January 6, 2026.
+
+[Canadian Tire supplier list (PDF, page 4)](https://s201.q4cdn.com/326551073/files/doc_downloads/2026/03/CTC-Tier-1-Owned-Brand-Supplier-List_EN.pdf#page=4)
+
+**Sainsbury's**
+
+> Listed as an apparel main production site in China in its September 2026 Tier 1 supplier list for general merchandise and clothing.
+
+[Sainsbury's supplier list (PDF, page 10)](https://corporate.sainsburys.co.uk/media/334du1a0/tier-one-supplier-list-gm-clothing-september-2026.pdf#page=10)
+
 ================================================================
 ## Build notes (for Codex)
 ================================================================

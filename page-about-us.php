@@ -114,6 +114,25 @@ get_header();
 		</div>
 	</section>
 
+	<section class="ma-about-disclosures" aria-labelledby="ma-about-disclosures-title">
+		<div class="ma-section-inner">
+			<h2 id="ma-about-disclosures-title"><?php esc_html_e( 'Public supplier disclosures', 'myathletik-child' ); ?></h2>
+			<p class="ma-about-disclosures__intro"><?php esc_html_e( 'Our China production entity, Zhangjiagang Athletik Clothing Co., Limited, appears in the buyer-published records below.', 'myathletik-child' ); ?></p>
+			<ul class="ma-about-disclosures__list">
+				<li>
+					<h3><?php esc_html_e( 'Canadian Tire Corporation', 'myathletik-child' ); ?></h3>
+					<p><?php esc_html_e( 'Listed in its Tier 1 Owned Brand supplier factory list, updated January 6, 2026.', 'myathletik-child' ); ?></p>
+					<a href="<?php echo esc_url( 'https://s201.q4cdn.com/326551073/files/doc_downloads/2026/03/CTC-Tier-1-Owned-Brand-Supplier-List_EN.pdf#page=4' ); ?>"><?php esc_html_e( 'Canadian Tire supplier list (PDF, page 4)', 'myathletik-child' ); ?></a>
+				</li>
+				<li>
+					<h3><?php esc_html_e( 'Sainsbury\'s', 'myathletik-child' ); ?></h3>
+					<p><?php esc_html_e( 'Listed as an apparel main production site in China in its September 2026 Tier 1 supplier list for general merchandise and clothing.', 'myathletik-child' ); ?></p>
+					<a href="<?php echo esc_url( 'https://corporate.sainsburys.co.uk/media/334du1a0/tier-one-supplier-list-gm-clothing-september-2026.pdf#page=10' ); ?>"><?php esc_html_e( 'Sainsbury\'s supplier list (PDF, page 10)', 'myathletik-child' ); ?></a>
+				</li>
+			</ul>
+		</div>
+	</section>
+
 	<section class="ma-about-cta" aria-labelledby="ma-about-cta-title">
 		<div class="ma-section-inner ma-about-cta__inner">
 			<div>
