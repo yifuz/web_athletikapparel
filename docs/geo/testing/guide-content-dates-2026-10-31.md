@@ -1,6 +1,6 @@
 # C06 / C08 日期修正与 Tech Pack 示范入口
 
-日期：2026-10-31。状态：`implemented / locally-verified / deployment-pending`。所有者已授权修正两篇已更新指南的内容日期，随后要求检查当天可补做的官网工作并合并验收；同批增加 Tech Pack 示范入口说明。本次未直接部署生产。
+实施日期：2026-10-31；生产验收：2026-11-02。状态：`deployed / production-verified`。所有者已授权修正两篇已更新指南的内容日期，随后要求检查当天可补做的官网工作并合并验收；同批增加 Tech Pack 示范入口说明。所有者于 11-02 确认部署后，两项已通过合并生产验收。
 
 ## 日期依据与问题
 
@@ -59,6 +59,19 @@
 3. `template-parts/technical-article/page.php`
 4. `functions.php`
 
-同批部署四个文件；若逐一上传，按上述顺序，先提供共用日期函数，最后上传缓存发布标记。无需上传 Markdown、PDF、图片、CSS 或 JS。部署后合并核对两页可见日期、Article / WebPage、Page Sitemap 与主索引，以及 Tech Pack 卡片、两处目录、实际跳转与 PDF；并验证其余指南没有新增日期。
+上述四文件部署已由所有者确认，以下合并验收通过。无需追加部署 Markdown、PDF、图片、CSS 或 JS。
+
+### 2026-11-02 生产验收关闭
+
+- 覆盖六篇技术指南及 Guides Hub，共 7 个生产 URL，均 HTTP 200、单一 H1、Canonical 指向各自正式 URL。
+- C06 / C08 的可见内容更新日期、Article / WebPage `dateModified` 与 Page Sitemap `lastmod` 分别为 `2026-10-29` / `2026-10-30`。两页发表日期、技术复核日期保留。其余四篇指南未新增内容日期，Schema 与部署前一致。
+- 六篇指南的 Title、Meta、robots、H1、Canonical、媒体及 href 均与 10-31 生产快照一致；排除获批的新日期及两处目录标签后，正文文本不变。Hub 的新 Tech Pack 摘要已生效。
+- 生产 Page Sitemap 保持 20 个唯一 URL，仅两条目标 `lastmod` 变化。主索引的 Page Sitemap 时间为 `2026-11-02T01:35:41+00:00`，重复请求保持稳定；该值表示缓存发布，不用作内容更新或精确部署时刻。
+- 9 行 POM 与 10 行 BOM 内容保留；PDF 为 HTTP 200、`application/pdf`、431759 字节，SHA-256 与原批准文件相同。
+- 390 / 1440px 隔离无头浏览器均通过 Hub 卡片实际跳转、两处目录实际定位及两篇指南日期显示；无整页横向溢出或页面 JS 错误。8 张最终截图已视觉复核；手机 Hub 首张截图早于懒加载图片完成，等待解码后补截确认图片正常。未操作所有者日常浏览器。
+- 浏览器检查于 `2026-11-02T01:43:31.669Z` 完成，原始 HTML / XML 检查于 `2026-11-02T01:43:48.285094+00:00` 完成，截图补核于 `01:43:59.392Z` 完成（北京时间 09:43）。这是验收时间，精确部署时刻未确认。
+- 网页文本提取工具仍展示部分旧缓存；同期直接生产 HTTP 与隔离浏览器均确认新内容，以当前 HTML / DOM 为验收依据。
+
+生产证据目录：`C:\Users\Administrator\seo-reports\geo-batch-acceptance-2026-11-02\`，包括 `production-checks.json`、HTML / XML、`check-production.py` 及 `browser/` 下 JSON 和截图。两项部署验收关闭；尚未运行外部 Rich Results Test / Schema Validator，也没有新抓取、收录或 AI 引用效果的结论。
 
 本次修正既有内容更新记录，不重置 C06 / C08 原观察窗口，不重复索引申请，不宣称索引或 AI 引用改善。以后实质内容更新时按批准及发布记录维护 `updated_on`；技术复核另行记录，不自动跟随。

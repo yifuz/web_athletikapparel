@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-10-31。
+最后更新：2026-11-02。
 
 ---
 
@@ -892,9 +892,9 @@ Google AI Mode 的 11 题 Dot 首答已私有归档，完成[逐题观察及与 
 
 2026-10-31 已完成 [技术指南正文衔接及生产验收](geo/testing/guide-context-links-2026-10-31.md)：只在 FLATLOCK / OVERLOCK 的 ACTIVESEAM 介绍段将既有词语链接到对应专页，Tech Pack 和反向入口已有，不重复堆链。所有者确认部署后，生产原始 HTML 与 390 / 1440px 浏览器均确认新链接生效，实际点击进入 HTTP 200 的目标指南；来源正文、元信息、Schema 和媒体清单与部署前一致。状态 `deployed / production-verified`，本次部署验收关闭；10-31 链接上线作为既有 Merino 观察期的来源页新增变量记录，保留原窗口。
 
-2026-10-31 已按所有者授权完成 [C06 / C08 内容更新日期修正](geo/testing/guide-content-dates-2026-10-31.md)：分别使用已有发布记录中的 10-29 / 10-30，新增独立 `Content updated`，并对齐 Article / WebPage 及两条 Page Sitemap 日期；首次发表和技术复核时间保留。PHP、六篇指南字段及 Schema 回归、两页 390 / 1440px 显示、Sitemap 及一次性缓存刷新均通过。状态 `implemented / locally-verified / deployment-pending`，下一步部署四个主题文件后做生产验收，保留原观察窗口。
+2026-10-31 已按所有者授权完成 [C06 / C08 内容更新日期修正](geo/testing/guide-content-dates-2026-10-31.md)：分别使用已有发布记录中的 10-29 / 10-30，新增独立 `Content updated`，并对齐 Article / WebPage 及两条 Page Sitemap 日期；首次发表和技术复核时间保留。PHP、本地回归及两页 390 / 1440px 检查通过。2026-11-02 所有者确认部署后，生产日期、Schema、Sitemap 及缓存刷新已全部通过，状态 `deployed / production-verified`，保留原观察窗口。
 
-同日所有者要求当天可做工作一并验收，已在同一批次追加 Tech Pack 示范入口说明：Guides Hub 卡片摘要提示已有尺寸表 / BOM 示范及 PDF，两处目录标签明确示范内容。只追加修改既有待部署的 `inc/technical-article-data.php`，不增加部署文件数量；局部 HTML 对比、表格 / PDF 校验与手机 / 桌面真实跳转通过。统一使用 `athletik-geo-batch-2026-10-31.zip`，部署四个文件后按[合并记录](geo/testing/guide-content-dates-2026-10-31.md)一次验收日期与入口两项。
+同日所有者要求当天可做工作一并验收，已在同一批次追加 Tech Pack 示范入口说明：Guides Hub 卡片摘要提示已有尺寸表 / BOM 示范及 PDF，两处目录标签明确示范内容。统一包 `athletik-geo-batch-2026-10-31.zip` 的四个文件已于 2026-11-02 确认部署；[合并生产验收](geo/testing/guide-content-dates-2026-10-31.md)覆盖 7 个 URL、20 条生产 Page Sitemap 记录、PDF 及 390 / 1440px 实际跳转，全部通过。两项部署验收关闭，尚未以此判断搜索或 AI 表现。
 
 2026-10-31 后续范围更正：所有者确认控制 Instagram 与 LinkedIn，撤销此前“只做官网”的结论。官网与这两个可控账号均可纳入后续 GEO 优化和内容准备；YouTube 不在其管辖的决定保持。已同步 `AGENTS.md` 与 YouTube 关闭记录，当前官网合并部署包继续完成，不因范围更正遗漏已授权事项。
 
