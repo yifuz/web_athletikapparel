@@ -28,8 +28,8 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.2 GEO
 
-- 2026-11-02 所有者确认中国生产地址正确门牌为中兴路 15 号，官网 25 号为误写。联系页、地图搜索、全站页脚和组织 Schema 已作本地修正；部署状态与验收见[地址更正记录](geo/testing/address-correction-2026-11-02.md)。本轮仅纠正门牌，历史来源与已接受的 AI 样本原文保留。
-- 同日已完成[买家公开名单核验与 About 内容](geo/testing/buyer-disclosures-2026-11-02.md)：Canadian Tire 名单内文日期为 2026-01-06，Sainsbury's 改用当前官方链接的 2026 年 9 月新版，均确认列有中国实体。官网只表达有日期的公开列名并链接原 PDF，不扩写为当前订单或背书；与地址修正形成五文件合并包，所有者已确认“那一起部署吧”，状态为 `owner-approved / deployment-pending`。
+- 2026-11-02 所有者确认中国生产地址正确门牌为中兴路 15 号，官网 25 号为误写。联系页、地图搜索、全站页脚和组织 Schema 已更正，并由所有者确认部署与验收完成；见[地址更正记录](geo/testing/address-correction-2026-11-02.md)。本轮仅纠正门牌，历史来源与已接受的 AI 样本原文保留。
+- 同日已完成[买家公开名单核验与 About 内容](geo/testing/buyer-disclosures-2026-11-02.md)：Canadian Tire 名单内文日期为 2026-01-06，Sainsbury's 改用当前官方链接的 2026 年 9 月新版，均确认列有中国实体。官网只表达有日期的公开列名并链接原 PDF，不扩写为当前订单或背书；与地址修正形成五文件合并包，所有者已确认“已验收 并部署”，状态为 `deployed / owner-accepted`。本轮交付关闭，未将部署确认等同搜索重抓或 AI 成效。
 - [`geo/GEO.md`](geo/GEO.md) 是 GEO 中央工作台和路由文档。
 - Baseline v1（原 GEO-01～08）的第一轮 Temporary Chat 中性基线已经完成并冻结；Baseline v2 首批可执行测试已完成：ChatGPT Search 8/8、Google AI Mode 8/8，Perplexity 8 条按 `unavailable / plan-access` 记录。
 - 实体、技术可抓取性、四篇指南和 GEO-06/07 首轮 LinkedIn/Instagram 分发已经完成。

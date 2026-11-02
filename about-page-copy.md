@@ -86,9 +86,9 @@ sample room, or fabric mill]
 
 Button: Request a Quote → /contact/
 
-## 公开供应商披露（2026-11-02 已批准部署）
+## 公开供应商披露（2026-11-02 已部署并验收）
 
-位置：现有 Who we serve 之后、Closing CTA 之前。所有者于 2026-11-02 确认“那一起部署吧”，下面英文已批准，待与地址更正统一部署。原始名单核验与适用边界见 [`docs/geo/testing/buyer-disclosures-2026-11-02.md`](docs/geo/testing/buyer-disclosures-2026-11-02.md)。
+位置：现有 Who we serve 之后、Closing CTA 之前。所有者于 2026-11-02 批准下面英文，随后确认“已验收 并部署”；已与地址更正统一部署，按所有者确认关闭本轮交付。原始名单核验与适用边界见 [`docs/geo/testing/buyer-disclosures-2026-11-02.md`](docs/geo/testing/buyer-disclosures-2026-11-02.md)。
 
 **Public supplier disclosures**
 

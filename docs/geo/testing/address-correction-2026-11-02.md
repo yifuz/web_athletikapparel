@@ -1,6 +1,6 @@
 # 中国生产地址门牌更正
 
-日期：2026-11-02。状态：`local-complete / deployment-pending`。
+日期：2026-11-02。状态：`deployed / owner-accepted`。
 
 ## 事实与更正范围
 
@@ -29,8 +29,10 @@
 - 首页、Contact、Privacy 与改动前快照相比，title / canonical 保持一致；排除 Fluent Forms 隐藏蜜罐字段每次请求变化的标签后，可见正文只有门牌变更。Privacy 的纽约数据控制者地址不变。
 - ZIP 内文件清单准确，各文件与本地源码逐字节一致。ZIP SHA-256：`dc5bb6dab538b2d8702fb069c6fb875d0a1be64a4c8f5b75fdea7d33872cbf8f`。
 
-证据目录：`C:\Users\Administrator\seo-reports\address-correction-2026-11-02\`，含前后 HTML、`local-checks.json` 和包内文件哈希。检查仅覆盖本次字段修正，未运行外部全量 Schema 验证。本记录不把本地通过、Git 提交或 ZIP 生成等同生产已更新；部署后检查联系页、页脚、地图 query 和 JSON-LD 的门牌。
+证据目录：`C:\Users\Administrator\seo-reports\address-correction-2026-11-02\`，含前后 HTML、`local-checks.json` 和包内文件哈希。上述检查为本地字段修正验证，未运行外部全量 Schema 验证。
+
+所有者于 2026-11-02 确认五文件合并包“已验收 并部署”，据此关闭地址更正的部署与验收。状态依据为所有者确认，不是由本地通过、Git 提交或 ZIP 生成推断；本次没有新增 Agent 生产验收记录。
 
 ## GEO 后续
 
-买家名单与官网的 15 / 25 号差异，已由所有者确认原因是官网误写。继续核验 Canadian Tire 与 Sainsbury's / Tu 买家公开名单的版本、列名范围和官网可引用表述；公开列名不自动证明当前订单、直接合同或质量背书。
+买家名单与官网的 15 / 25 号差异，已由所有者确认原因是官网误写并完成更正。Canadian Tire 与 Sainsbury's 买家公开名单的版本、列名范围和官网引用内容已核验并一起部署；公开列名不自动证明当前订单、直接合同或质量背书。
