@@ -1,12 +1,14 @@
-# 买家公开供应商名单：GEO 核验与官网草稿
+# 买家公开供应商名单：GEO 核验与官网部署
 
-日期：2026-11-02。状态：`local-draft / owner-review-pending / deployment-pending`。
+日期：2026-11-02。状态：`owner-approved / deployment-pending`。
 
 后续[买家名单扩查](buyer-disclosures-expansion-2026-11-02.md)已完成：本轮没有取得可新增的第三家买家官方列名；保持以下两家和现有五文件合并包，不把聚合贸易数据或同一买家的旧表计为新增来源。
 
 ## 授权与目标
 
 所有者要求“我们做完一起部署，推进买家公开名单 GEO”。本轮在现有 About 页补充可独立打开的买家原始披露，并与已经完成的中兴路 15 号更正合并交付；新英文内容由所有者审核后统一部署。依据 `AGENTS.md` §5，已获内容准备授权不等同新增文案已通过发布审核。
+
+所有者随后确认“那一起部署吧 要部署哪些”，新增文案与合并部署均已批准，无需再次索要文案批准；生产仍待所有者部署和线上验收。
 
 这项工作服务于未点名采购问题的证据质量。两平台已有的 D04 / BD 样本只用来确定研究方向，不能证明缺少这些名单是未被推荐的原因，也不能承诺上线后 AI 会引用或推荐。
 
@@ -30,9 +32,9 @@ Sainsbury's / Tu 的 2024 年原 PDF 只作历史留档；官网引用采用已�
 - 官网不展示客户 Logo，不复制整份名单，不公布员工数据、Sedex 编号、订单或联系人；不将这些披露加入 Organization `sameAs`，不创建虚假的合作关系 Schema。
 - 这一轮没有外联、登记或改动买家网站。买家来源内容独立存在；官网的解释仍属于第一方内容，不把官网自行引用来源计为新增外部背书或 AI 成效。
 
-## 官网落位与英文草稿
+## 官网落位与已批准英文
 
-页面：`/about-us/`。在现有 Who we serve 后、CTA 前补充 Public supplier disclosures 小节；沿用既有页面 URL、Title、H1、canonical 和组织结构化数据类型。公开文案见 [`about-page-copy.md`](../../../about-page-copy.md#公开供应商披露2026-11-02-本地草稿待所有者审核)。
+页面：`/about-us/`。在现有 Who we serve 后、CTA 前补充 Public supplier disclosures 小节；沿用既有页面 URL、Title、H1、canonical 和组织结构化数据类型。公开文案见 [`about-page-copy.md`](../../../about-page-copy.md#公开供应商披露2026-11-02-已批准部署)。
 
 `page-about-us.php` 输出标题、核准中国实体名、两个有版本依据的事实句和可见 PDF 来源链接，链接附 `#page=4` / `#page=10`。`style.css` 只补充该区块的 scoped 样式。无需上传新图片、复制 PDF 至主站或创建新页面。
 
@@ -48,9 +50,9 @@ Sainsbury's / Tu 的 2024 年原 PDF 只作历史留档；官网引用采用已�
 
 ## 合并部署与验收
 
-合并包：`C:\Users\Administrator\Downloads\athletik-geo-buyer-evidence-2026-11-02.zip`。所有者审核后覆盖以下五个子主题文件：
+合并包：`C:\Users\Administrator\Downloads\athletik-geo-buyer-evidence-2026-11-02.zip`。所有者已批准覆盖以下五个子主题文件：
 
-1. `page-about-us.php`：买家公开披露草稿。
+1. `page-about-us.php`：已批准的买家公开披露内容。
 2. `style.css`：该小节样式。
 3. `page-contact.php`：15 号联系地址与地图搜索。
 4. `functions.php`：15 号共用页脚。
