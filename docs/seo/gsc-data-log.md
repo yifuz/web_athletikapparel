@@ -15,6 +15,27 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-11-02：Merino 商业词 GSC 周度观察
+
+补做原定 10-30 的只读观察；`web / final` 全站日期查询在 10-01～11-01 返回连续 10-01～10-30 共 30 日，因此最新完整 28 日窗口为 **10-03～10-30**。精确目标页 `/merino-wool-manufacturer/` 返回 **5 clicks / 193 impressions / 2.59% CTR / average position 7.24**。这是全部查询、国家和设备混合的 Page 平均位置，不是单个关键词的固定排名。
+
+| Query × Page（完整保留返回行） | Clicks | Impressions | Average position |
+| --- | ---: | ---: | ---: |
+| `blend` | 0 | 1 | 2 |
+| `custom tailor made` | 0 | 1 | 4 |
+| `i want blanks` | 0 | 1 | 5 |
+| `merino wool clothing manufacturer` | 0 | 2 | 25 |
+| `merino wool clothing manufacturers` | 0 | 2 | 11 |
+| `www.athletikapparel.com` | 0 | 10 | 10 |
+
+固定四词中只有 `merino wool clothing manufacturer` 返回行；`merino wool apparel manufacturer`、`merino wool base layer manufacturer`、`merino wool underwear manufacturer` 均 `not-returned`，不是零曝光。复数词不混入单数固定词。该单数词在四维数据中为 US desktop 1 impression / position 30，Vietnam desktop 1 / 20；样本很小，不外推排名趋势。
+
+Country 单维仅返回 17 impressions / 0 clicks：US 12、GB 1、DE 1、Bahrain 1、Hong Kong 1、Vietnam 1；Country × Device 中 US desktop 11、US mobile 1、GB mobile 1，其余四国 / 地区各 1。GB desktop 和 Canada 没有返回行，不能写零。四维 Query × Page × Country × Device 有 8 行、合计 17 impressions / 0 clicks；四维和 Query / Country 同样与 Page 的 193 impressions / 5 clicks 不闭合，原因未证实，不分配差额或点击；最大 8 行，低于 25,000 上限。
+
+10-23 的 09-23～10-20 Page 基线为 4 / 177；本次滚动窗口与之重叠 18 天，不是独立实验或可归因比较。原 10-21～11-17 独立后窗、11-20 起按 final 覆盖核验，以及 11-20 / 11-21 固定 SERP 计划保持。10-23 入链及 10-31 来源页另一内链是后续比较的共同变量。本轮 `no-change / keep-measuring`，不改页面或 metadata，不读取 GA4、邮箱、Google Ads，也未请求付费 SERP。
+
+本次 CLI doctor 初次本地数据库 locked，停止并发后单次重试恢复；四维请求首次 `fetch failed`，同请求一次重试成功，未改代理或认证配置。
+
 ## 2026-10-30：C06 / C08 更新后的抓取与索引核对
 
 只读 URL Inspection 两页均成功。C06 当前为 `PASS / Submitted and indexed`，最后抓取 `2026-10-16T13:23:03Z`；C08 当前为 `NEUTRAL / Crawled - currently not indexed`，最后抓取 `2026-10-16T20:05:52Z`。两页均允许抓取和索引、fetch 成功，Google / User Canonical 一致；最后抓取均早于 10-29 / 10-30 的本次内容生产验收日期。

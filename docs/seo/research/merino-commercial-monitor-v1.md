@@ -131,6 +131,10 @@ GSC 探测首次 `INTERNAL_ERROR / fetch failed`，相同请求只重试一次�
 
 ## 7. 可复现请求与决策闸门
 
+### 2026-11-02 周度补查
+
+原定 10-30 的 GSC 周度观察已于 11-02 补做：final 最新覆盖至 10-30，10-03～10-30 精确 Page 为 5 clicks / 193 impressions；固定词仅 `merino wool clothing manufacturer` 返回 2 impressions / position 25，另三词 `not-returned`。Query 明细共 17 impressions、0 clicks，不能解释 Page 差额或推断目标市场全部曝光。窗口与 09-23～10-20 基线重叠 18 日，不作独立实验或归因；完整维度、重试与后续限制见 [GSC 数据记录](../gsc-data-log.md)。下一次可于 **11-09** 做滚动观察；原 11-20 / 11-21 固定 SERP 和完整后窗检查不变，不存在已设置的自动任务。
+
 SERP 单元模板，每次从表中取精确词与国家：
 
 ```powershell

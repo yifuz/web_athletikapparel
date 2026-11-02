@@ -860,7 +860,11 @@ Outcome：`research-complete-with-limitations / no-site-change / keep-measuring`
 
 ## 2026-10-28 SEO-V2-005：Sports Accessories 头颈配件本地草稿
 
-根据第二轮三市场 SERP 与所有者确认的 Merino wool 护脖实物图，现有首组区分 balaclava 与 neck gaiter 的采购输入，并与原头套图并排展示；第三张图不变，不新增页面、链接或修改 metadata。七个本地品类页与五种屏宽检查通过；本地新旧 WebP 均未返回 Content-Type，生产部署后需复核。状态 `changed / local-draft / owner-review-pending`，尚未部署、未证明搜索效果；原 Sports Accessories Day 90 不重置，后续需披露观察窗口内的变量。详见 [变更卡](seo/implementation/change-cards/seo-v2-005-accessories-head-neck-2026-10-28.md)。
+根据第二轮三市场 SERP 与所有者确认的 Merino wool 护脖实物图，现有首组区分 balaclava 与 neck gaiter 的采购输入，并与原头套图展示；第三张图不变，不新增页面、链接或修改 metadata。七个本地品类页与五种屏宽检查通过。2026-10-29 所有者确认后续视觉调整、代码与图片已部署，生产定向验收及图片 MIME 检查通过；2026-11-02 补录，状态 `changed / production-verified / keep-measuring`，搜索效果尚未验证。以 10-29 为保守 Day 0，11-05 为 Day 7、11-26 为 Day 28；原 12-08 Day 90 不重置并须披露本批变量。详见 [变更卡](seo/implementation/change-cards/seo-v2-005-accessories-head-neck-2026-10-28.md)。
+
+## 2026-11-02 SEO-V2-005：Merino 周度与 FLATLOCK 内链 Day 7 补查
+
+Merino 的 10-03～10-30 final 28 天精确 Page 为 5 clicks / 193 impressions；Query 明细仅 17 impressions，固定四词仅 `merino wool clothing manufacturer` 返回 2 impressions，其余 `not-returned`，缺口不可补算。与旧基线重叠 18 日，不做因果结论；详见 [GSC 记录](seo/gsc-data-log.md)。FLATLOCK 来源与 Merino 目标生产 URL 均正常，链接在 390 / 1440 px 可聚焦点击；GSC 来源最后抓取 10-27、目标 10-29，均已收录。来源 10-31 新增 ACTIVESEAM 链接为共同变量，不能因旧抓取时间断言新版已被 Google 解析。完整后窗仍待 final；均 `no-change / keep-measuring`，没有网站部署文件。
 
 ## 2026-10-29 GEO：ChatGPT Search 独立续测收口
 

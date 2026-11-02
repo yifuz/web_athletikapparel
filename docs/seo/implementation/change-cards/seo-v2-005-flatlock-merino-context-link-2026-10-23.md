@@ -97,6 +97,14 @@ GSC 驱动的 `internal-links` 报告范围为 2026-07-21～10-18、90 天、非
 
 观察期补充（2026-10-31）：同一来源页的 ACTIVESEAM 段已[新增对应技术指南链接并通过生产验收](../../../geo/testing/guide-context-links-2026-10-31.md)。原 Merino 链接仍在，来源正文文字及元信息保持一致；这一新增链接须作为后续复盘的共同变量披露，不重置本卡 Day 7 / Day 28 窗口，也不将后续来源页或 Merino 表现变化归因于单个链接。
 
+### 2026-11-02 Day 7 补查
+
+原定 10-30 的检查于 11-02 执行，覆盖来源和 Merino 目标 2 URL：均 HTTP 200、`index, follow`、无 X-Robots-Tag、单一 H1 / 自引用 Canonical、JSON-LD 可解析，均在 Page Sitemap。来源 `#fabric-and-testing` 中恰好一个 `Merino wool blend` 普通链接指向目标；390 / 1440 px 真实浏览器可聚焦、点击到达目标，页面无横向溢出。来源 `#activeseam` 另一个技术指南链接也在线，作为共同变量继续披露。
+
+GSC URL Inspection：来源为 `PASS / Submitted and indexed`，fetch `SUCCESS`、robots allowed、Google / 用户 Canonical 一致，最后抓取 **2026-10-27T13:11:57Z**；它晚于 10-23 Merino 内链上线，但早于 10-31 ACTIVESEAM 内链，不等于已证明 Google 解析了任一链接。Merino 目标为 `PASS / Submitted and indexed`、fetch `SUCCESS`、Canonical 一致，最后抓取 **2026-10-29T09:57:25Z**。
+
+一次本机 HTTP 目标请求遭遇套接字占用，单次重试 HTTP 200，不据此判断生产故障。结果 `changed / keep-measuring`；完整 10-24～11-20 后窗待 final 覆盖后预计 11-23 起核验，不归因、不重复请求索引、不调整正文或链接。
+
 ## 5. 部署清单
 
 以下一个主题文件已由所有者确认部署，并通过本卡生产验收：
