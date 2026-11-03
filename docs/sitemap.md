@@ -116,6 +116,12 @@
 
 ---
 
+### Product Showcase——仅本地审核的扩展方案
+
+2026-11-03 所有者授权将 Product Showcase Demo 接入 LocalWP。临时审核路径为 `/product-showcase/` 与其下的 Ocean Depth 单款详情；首页、Merino 页及 Products 菜单提供本地入口。该实现仅用于审核，noindex、排除 Sitemap，不改变上文的生产页面结构或 `/products/` 未建设状态。正式公开 URL 和上线范围尚未确定，详见 [本地接入记录](site/product-showcase-local-review-2026-11-03.md)。
+
+---
+
 ## 2A. Technical Guides 内容中心 — `/technical-guides/`（新增）
 
 **H1：** Technical Knitwear Guides

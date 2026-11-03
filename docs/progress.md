@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-11-02。
+最后更新：2026-11-03。
 
 ---
 
@@ -17,6 +17,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.1 网站与内容
 
+- 2026-11-03 按所有者授权完成 [Product Showcase LocalWP 审核版接入](site/product-showcase-local-review-2026-11-03.md)：展示库、Ocean Depth 单款详情及首页／Merino／导航入口仅在指定本地环境启用；新页面 noindex 并排除 Sitemap，未上线，正式 URL 与发布范围待讨论。
 - 规范站：<https://www.athletikapparel.com/>，运行于 Flywheel。
 - WordPress 重建已上线，使用 GeneratePress 父主题和 `myathletik-child` 子主题。
 - 首页、7 个产品类目页、Services、About、Contact、Sustainability 和 Privacy Policy 已上线。

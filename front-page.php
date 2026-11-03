@@ -16,6 +16,9 @@ get_header();
 	<?php get_template_part( 'template-parts/home/hero' ); ?>
 	<?php get_template_part( 'template-parts/home/client-logos' ); ?>
 	<?php get_template_part( 'template-parts/home/product-categories' ); ?>
+	<?php if ( myathletik_product_showcase_preview_enabled() ) : ?>
+		<?php get_template_part( 'template-parts/product-showcase/entry', null, array( 'context' => 'home' ) ); ?>
+	<?php endif; ?>
 	<?php get_template_part( 'template-parts/home/capability-proof' ); ?>
 	<?php get_template_part( 'template-parts/home/technical-guides' ); ?>
 	<?php get_template_part( 'template-parts/home/why-myathletik' ); ?>

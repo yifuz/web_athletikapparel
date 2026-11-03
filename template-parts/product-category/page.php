@@ -248,6 +248,10 @@ if ( ! empty( $category['hero_video'] ) ) {
 	</section>
 	<?php endif; ?>
 
+	<?php if ( 'merino-wool-manufacturer' === $category_slug && myathletik_product_showcase_preview_enabled() ) : ?>
+		<?php get_template_part( 'template-parts/product-showcase/entry', null, array( 'context' => 'merino' ) ); ?>
+	<?php endif; ?>
+
 	<?php if ( ! empty( $category['buying_paths'] ) && is_array( $category['buying_paths'] ) ) : ?>
 	<section class="ma-product-section ma-product-buying-paths" aria-labelledby="ma-product-buying-paths-title">
 		<div class="ma-section-inner">
