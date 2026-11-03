@@ -1,6 +1,6 @@
 <?php
 /**
- * Owner-reviewed real product examples for the local Product Showcase preview.
+ * Owner-reviewed real product examples and publishing metadata.
  *
  * @package myathletik-child
  */
@@ -41,6 +41,13 @@ function myathletik_product_example_data() {
 
 	return array(
 		'ocean-depth' => array(
+			'slug'           => 'ocean-depth-merino-wool-blend-set',
+			'seo_title'      => "Women's Merino Wool-Blend Set | Athletik Clothing",
+			'meta_description' => "Explore a real women's top and leggings set in 155 GSM Merino wool-blend fabric. View product photos, video, specifications and OEM development options.",
+			'inquiry_category' => 'Merino Wool',
+			'social_image'   => $media_base . 'front-social.jpg',
+			'category_slug'  => 'merino-wool-manufacturer',
+			'category_label' => 'Merino wool',
 			'name'           => 'Ocean Depth',
 			'title'          => "Women's Merino wool-blend top & leggings",
 			'intro'          => "This women's set pairs a long-sleeve top with matching leggings in the same 155 GSM Merino wool-blend fabric. Use the sample as a reference for material, fit and style development.",
@@ -57,12 +64,12 @@ function myathletik_product_example_data() {
 			'media'          => array(
 				'images' => $images,
 				'video'  => array(
-					'src'    => $media_base . 'ocean-depth-review-1080.mp4',
+					'src'    => $media_base . 'ocean-depth-1080.mp4',
 					'poster' => $images['front']['src'],
 				),
 			),
 			'options'        => array(
-				'intro'  => "The top and leggings share the same fabric. These proposed options show how the set could be developed around a buyer's brief.",
+				'intro'  => "The top and leggings share the same fabric. Review the options below for development around your buyer's brief.",
 				'groups' => array(
 					array(
 						'title' => 'Top development',
@@ -94,5 +101,16 @@ function myathletik_product_example_data() {
 				'note'   => 'Final choices depend on the selected fabric and approved sample; these alternatives are not specifications of the set shown.',
 			),
 		),
+	);
+}
+
+/** Shared library metadata; individual examples retain their own search intent. */
+function myathletik_product_showcase_data() {
+	return array(
+		'slug' => 'product-showcase',
+		'title' => 'Product Showcase',
+		'seo_title' => 'OEM Apparel Product Showcase | Athletik Clothing',
+		'meta_description' => 'Explore real apparel examples from Athletik Clothing, with product photos, videos, fabric specifications and development options for OEM programs.',
+		'social_image' => get_stylesheet_directory_uri() . '/assets/images/product-examples/ocean-depth/front-social.jpg',
 	);
 }

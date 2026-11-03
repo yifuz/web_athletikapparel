@@ -1,19 +1,19 @@
 <?php
 /**
- * Local-only Product Showcase review page.
+ * Product Showcase library.
  *
- * Routing, metadata and preview access are controlled by the integration module.
+ * Routing, metadata and availability are controlled by the integration module.
  *
  * @package myathletik-child
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-if ( ! function_exists( 'myathletik_product_showcase_preview_enabled' ) || ! myathletik_product_showcase_preview_enabled() ) {
+if ( ! function_exists( 'myathletik_product_showcase_enabled' ) || ! myathletik_product_showcase_enabled() ) {
 	return;
 }
 
-$products   = myathletik_product_example_data();
+$products   = myathletik_product_showcase_products();
 $materials  = array();
 $categories = array(
 	'sportswear-manufacturer'         => 'Sportswear',
@@ -31,7 +31,6 @@ foreach ( $products as $product ) {
 get_header();
 ?>
 <main id="primary" class="site-main ma-pl ma-pl-library">
-	<?php get_template_part( 'template-parts/product-showcase/review-bar', null, array( 'current' => 'library' ) ); ?>
 	<div class="ma-section-inner">
 		<section class="ma-pl-library-intro" aria-labelledby="ma-pl-library-title">
 			<div>
@@ -84,7 +83,6 @@ get_header();
 				<?php endforeach; ?>
 			</ul>
 		</section>
-		<aside class="ma-pl-review-context" lang="zh-CN">本地审核：当前仅展示一款已整理资料的实物产品。后续产品共用这套卡片与详情结构，按已确认的材料和产品类型扩展；本轮不发布至生产站。</aside>
 	</div>
 </main>
 <?php get_footer(); ?>

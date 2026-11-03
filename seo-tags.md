@@ -28,6 +28,23 @@ Performance apparel manufacturer for underwear, base layers, sportswear and
 yoga apparel. Integrated knit fabric development, FLATLOCK and ACTIVESEAM.
 
 ================================================================
+## Product Showcase（2026-11-03 发布候选，未部署）
+
+用途：实物产品发现与规格参考；既有 manufacturer 页面继续拥有采购能力类主词。本次所有者要求按生产标准实现，最终生产发布仍待确认。
+
+### Library `/product-showcase/`
+**H1:** Product Showcase
+**SEO Title:** OEM Apparel Product Showcase | Athletik Clothing
+**Meta Description:** Explore real apparel examples from Athletik Clothing, with product photos, videos, fabric specifications and development options for OEM programs.
+
+### Ocean Depth `/product-showcase/ocean-depth-merino-wool-blend-set/`
+**H1:** Women's Merino wool-blend top & leggings
+**SEO Title:** Women's Merino Wool-Blend Set | Athletik Clothing
+**Meta Description:** Explore a real women's top and leggings set in 155 GSM Merino wool-blend fabric. View product photos, video, specifications and OEM development options.
+
+两页分享图：`uploads/myathletik-theme/assets/images/product-examples/ocean-depth/front-social.jpg`。不声明成衣现货、售价、性能测试结果或未经确认的工艺参数。
+
+================================================================
 ## Product category pages
 ================================================================
 

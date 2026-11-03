@@ -1,4 +1,4 @@
-/* Local Product Showcase enhancement. Cards and destinations exist in server HTML. */
+/* Product Showcase enhancement. Cards and destinations exist in server HTML. */
 (function () {
   'use strict';
 
@@ -92,12 +92,15 @@
     buttons.forEach(function (button) {
       button.addEventListener('click', function () { selectMedia(button); });
     });
+    var thumbs = gallery.querySelector('.ma-pl-thumbs');
+    if (thumbs) thumbs.hidden = false;
     if (textButton && videoButton) {
       textButton.addEventListener('click', function () {
         selectMedia(videoButton);
         stage.scrollIntoView({block: 'center', behavior: 'instant'});
         video.focus({preventScroll: true});
       });
+      textButton.hidden = false;
     }
   }
 

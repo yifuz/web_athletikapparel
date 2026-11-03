@@ -1,13 +1,18 @@
 <?php
-/** Local-only related product entry for the existing homepage or Merino page. */
+/** Related product entry for the existing homepage or Merino page. */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-if ( ! function_exists( 'myathletik_product_showcase_preview_enabled' ) || ! myathletik_product_showcase_preview_enabled() ) {
+if ( ! function_exists( 'myathletik_product_showcase_enabled' ) || ! myathletik_product_showcase_enabled() ) {
 	return;
 }
 $context = isset( $args['context'] ) ? $args['context'] : 'home';
 if ( ! in_array( $context, array( 'home', 'merino' ), true ) ) {
+	return;
+}
+$product_key = isset( $args['product_key'] ) ? sanitize_key( $args['product_key'] ) : 'ocean-depth';
+$products    = myathletik_product_showcase_products();
+if ( ! isset( $products[ $product_key ] ) ) {
 	return;
 }
 ?>
@@ -20,7 +25,7 @@ if ( ! in_array( $context, array( 'home', 'merino' ), true ) ) {
 				<p class="ma-pl-muted">Explore real garment examples with material details and development options to inform your next product brief.</p>
 				<a class="ma-pl-text-link" href="<?php echo esc_url( myathletik_product_showcase_url() ); ?>">View all product examples <span aria-hidden="true">→</span></a>
 			</div>
-			<?php get_template_part( 'template-parts/product-showcase/card', null, array( 'context' => 'home', 'product_key' => 'ocean-depth' ) ); ?>
+			<?php get_template_part( 'template-parts/product-showcase/card', null, array( 'context' => 'home', 'product_key' => $product_key ) ); ?>
 		</div>
 	<?php else : ?>
 		<div class="ma-section-inner">
@@ -28,7 +33,7 @@ if ( ! in_array( $context, array( 'home', 'merino' ), true ) ) {
 				<div><p class="ma-pl-eyebrow">Product Showcase</p><h2 id="ma-pl-merino-title">Merino wool product examples</h2></div>
 				<a class="ma-pl-text-link" href="<?php echo esc_url( myathletik_product_showcase_url() ); ?>">View all product examples <span aria-hidden="true">→</span></a>
 			</div>
-			<?php get_template_part( 'template-parts/product-showcase/card', null, array( 'context' => 'merino', 'product_key' => 'ocean-depth' ) ); ?>
+			<?php get_template_part( 'template-parts/product-showcase/card', null, array( 'context' => 'merino', 'product_key' => $product_key ) ); ?>
 		</div>
 	<?php endif; ?>
 </section>

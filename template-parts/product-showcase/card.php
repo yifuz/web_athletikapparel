@@ -8,12 +8,12 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-if ( ! function_exists( 'myathletik_product_showcase_preview_enabled' ) || ! myathletik_product_showcase_preview_enabled() ) {
+if ( ! function_exists( 'myathletik_product_showcase_enabled' ) || ! myathletik_product_showcase_enabled() ) {
 	return;
 }
-$product_key = isset( $args['product_key'] ) ? $args['product_key'] : 'ocean-depth';
+$product_key = isset( $args['product_key'] ) ? sanitize_key( $args['product_key'] ) : 'ocean-depth';
 $context     = isset( $args['context'] ) ? $args['context'] : 'library';
-$products    = myathletik_product_example_data();
+$products    = myathletik_product_showcase_products();
 if ( ! isset( $products[ $product_key ] ) || ! in_array( $context, array( 'library', 'home', 'merino' ), true ) ) {
 	return;
 }
@@ -52,7 +52,7 @@ $sizes   = '(max-width: 760px) 684px, 854px';
 			<p class="ma-pl-muted"><?php echo esc_html( $product['title'] ); ?></p>
 			<dl class="ma-pl-product-facts">
 				<div class="ma-pl-fact"><dt>Fabric weight</dt><dd><?php echo esc_html( $product['gsm'] ); ?></dd></div>
-				<div class="ma-pl-fact"><dt>Merino wool content</dt><dd><?php echo esc_html( $product['merino_content'] ); ?></dd></div>
+				<div class="ma-pl-fact"><dt>Fabric reference</dt><dd><?php echo esc_html( $product['fabric_ref'] ); ?></dd></div>
 			</dl>
 			<a class="ma-pl-text-link" href="<?php echo esc_url( $url ); ?>">View product example <span aria-hidden="true">→</span></a>
 		</div>
@@ -67,7 +67,7 @@ $sizes   = '(max-width: 760px) 684px, 854px';
 		<div class="ma-pl-related-product__body">
 			<p class="ma-pl-eyebrow"><?php echo esc_html( $product['name'] ); ?></p>
 			<h3><a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $product['title'] ); ?></a></h3>
-			<p class="ma-pl-muted">The top and leggings use the same fabric. Explore the actual product, its material specifications and the development options for the set.</p>
+			<p class="ma-pl-muted"><?php echo esc_html( $product['summary'] ); ?></p>
 			<dl class="ma-pl-product-facts">
 				<div class="ma-pl-fact"><dt>Composition</dt><dd><?php echo esc_html( $product['composition'] ); ?></dd></div>
 				<div class="ma-pl-fact"><dt>Fabric weight</dt><dd><?php echo esc_html( $product['gsm'] ); ?></dd></div>

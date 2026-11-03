@@ -116,9 +116,17 @@
 
 ---
 
-### Product Showcase——仅本地审核的扩展方案
+### Product Showcase——正式发布候选（尚未部署）
 
-2026-11-03 所有者授权将 Product Showcase Demo 接入 LocalWP。临时审核路径为 `/product-showcase/` 与其下的 Ocean Depth 单款详情；首页、Merino 页及 Products 菜单提供本地入口。该实现仅用于审核，noindex、排除 Sitemap，不改变上文的生产页面结构或 `/products/` 未建设状态。正式公开 URL 和上线范围尚未确定，详见 [本地接入记录](site/product-showcase-local-review-2026-11-03.md)。
+2026-11-03 所有者要求按生产站规格制作准备上线的版本。以下路径与结构进入正式发布候选，在 Local 完整验收后仍需所有者确认生产发布：
+
+- `/product-showcase/`：H1 `Product Showcase`，展示真实产品、材料和开发选项；不是新的 manufacturer 品类页。
+- `/product-showcase/ocean-depth-merino-wool-blend-set/`：H1 `Women's Merino wool-blend top & leggings`，承接单款规格与开发参考；沿用真实成分、155 GSM、HY254955。
+- 入口：首页七品类区块后、Merino 原图库后、Products 下拉菜单；产品详情回链 Merino 能力页和展示库，并进入 Contact 项目询盘。
+- 后续产品复用数据与模板，每个实物仅一个详情 URL；只有已发布且有效的页面出现在卡片和导航中。七个既有商业品类 URL 与关键词任务不变，不创建 `/products/`。
+- Local／staging 保留 noindex 并排除 Sitemap；production 发布后的正式页按站点与页面索引设置参与 Sitemap。不是把本地 noindex 元数据复制上线。
+
+部署步骤、文件及验收见[发布候选记录](site/product-showcase-release-candidate-2026-11-03.md)。没有改动已上线 URL，因此本轮无 301 映射。
 
 ---
 

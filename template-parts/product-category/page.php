@@ -248,7 +248,7 @@ if ( ! empty( $category['hero_video'] ) ) {
 	</section>
 	<?php endif; ?>
 
-	<?php if ( 'merino-wool-manufacturer' === $category_slug && myathletik_product_showcase_preview_enabled() ) : ?>
+	<?php if ( 'merino-wool-manufacturer' === $category_slug && myathletik_product_showcase_enabled() ) : ?>
 		<?php get_template_part( 'template-parts/product-showcase/entry', null, array( 'context' => 'merino' ) ); ?>
 	<?php endif; ?>
 

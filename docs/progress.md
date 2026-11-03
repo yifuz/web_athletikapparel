@@ -17,7 +17,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.1 网站与内容
 
-- 2026-11-03 按所有者授权完成 [Product Showcase LocalWP 审核版接入](site/product-showcase-local-review-2026-11-03.md)：展示库、Ocean Depth 单款详情及首页／Merino／导航入口仅在指定本地环境启用；新页面 noindex 并排除 Sitemap，未上线，正式 URL 与发布范围待讨论。
+- 2026-11-03 所有者进一步要求 Product Showcase 按生产规格制作，已将仅本地 Demo 升级为[正式发布候选](site/product-showcase-release-candidate-2026-11-03.md)：去审核界面、启用带产品参考的询盘、准备 SEO／分享图和显式建页脚本。继续在 Local 验收，尚未生产部署；原[本地接入记录](site/product-showcase-local-review-2026-11-03.md)保留为历史。
 - 规范站：<https://www.athletikapparel.com/>，运行于 Flywheel。
 - WordPress 重建已上线，使用 GeneratePress 父主题和 `myathletik-child` 子主题。
 - 首页、7 个产品类目页、Services、About、Contact、Sustainability 和 Privacy Policy 已上线。

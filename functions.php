@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once get_stylesheet_directory() . '/inc/product-category-data.php';
 require_once get_stylesheet_directory() . '/inc/technical-article-data.php';
 require_once get_stylesheet_directory() . '/inc/product-example-data.php';
-require_once get_stylesheet_directory() . '/inc/product-showcase-preview.php';
+require_once get_stylesheet_directory() . '/inc/product-showcase.php';
 
 /**
  * Return the current public garment MOQ per style.
