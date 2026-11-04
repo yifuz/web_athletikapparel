@@ -179,7 +179,6 @@ $categories = array(
 								<span class="ma-category-card__subtitle"><?php echo esc_html( $category['subtitle'] ); ?></span>
 							<?php endif; ?>
 						</span>
-						<span class="ma-category-card__arrow" aria-hidden="true">&rarr;</span>
 					</span>
 				</a>
 			<?php endforeach; ?>
