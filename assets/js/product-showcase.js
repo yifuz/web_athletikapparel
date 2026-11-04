@@ -56,52 +56,87 @@
     var image = document.getElementById('ma-pl-main-product-image');
     var video = document.getElementById('ma-pl-product-video');
     var caption = document.getElementById('ma-pl-media-caption');
-    if (!stage || !image || !video || !caption) return;
+    var dialog = document.getElementById('ma-pl-video-dialog');
+    if (!stage || !image || !video || !caption || !dialog) return;
     var gallery = stage.closest('.ma-pl-gallery');
     if (!gallery) return;
     var buttons = Array.from(gallery.querySelectorAll('.ma-pl-thumb'));
     var videoButton = buttons.find(function (button) { return button.dataset.media === 'video'; });
+    var photoButtons = buttons.filter(function (button) { return button.dataset.media === 'image'; });
     var textButton = document.getElementById('ma-pl-show-product-video');
+    var closeButton = dialog.querySelector('[data-ma-pl-video-close]');
+    var activeTrigger = null;
+    var backdropPointerDown = false;
 
-    function selectMedia(button) {
-      var isVideo = button.dataset.media === 'video';
-      if (!isVideo) video.pause();
-      image.hidden = isVideo;
-      video.hidden = !isVideo;
-      if (isVideo) {
-        // No media bytes are requested until the video is explicitly selected.
-        if (video.preload === 'none') {
-          video.preload = 'metadata';
-          video.load();
-        }
-        caption.textContent = 'Product video · Use the player controls to watch';
-      } else {
-        var thumbImage = button.querySelector('img');
-        // Responsive candidates must change together with src to avoid retaining the front image.
-        if (button.dataset.srcset) image.srcset = button.dataset.srcset;
-        else image.removeAttribute('srcset');
-        image.src = button.dataset.src || (thumbImage ? thumbImage.src : image.src);
-        if (button.dataset.sizes) image.sizes = button.dataset.sizes;
-        image.alt = button.dataset.alt || '';
-        caption.textContent = (button.dataset.caption || '') + ' · Frame from the product video';
-      }
-      buttons.forEach(function (item) {
+    function selectPhoto(button) {
+      video.pause();
+      var thumbImage = button.querySelector('img');
+      // Responsive candidates must change together with src to avoid retaining the front image.
+      if (button.dataset.srcset) image.srcset = button.dataset.srcset;
+      else image.removeAttribute('srcset');
+      image.src = button.dataset.src || (thumbImage ? thumbImage.src : image.src);
+      if (button.dataset.sizes) image.sizes = button.dataset.sizes;
+      image.alt = button.dataset.alt || '';
+      caption.textContent = (button.dataset.caption || '') + ' · Frame from the product video';
+      photoButtons.forEach(function (item) {
         item.setAttribute('aria-pressed', String(item === button));
       });
     }
-    buttons.forEach(function (button) {
-      button.addEventListener('click', function () { selectMedia(button); });
+
+    function openVideo(trigger) {
+      if (typeof dialog.showModal !== 'function') {
+        // Older browsers still have a working video destination.
+        window.location.assign(video.querySelector('source').src);
+        return;
+      }
+      activeTrigger = trigger;
+      dialog.showModal();
+      document.documentElement.classList.add('ma-pl-video-open');
+      // The request and playback are initiated only by the visitor's explicit click.
+      if (video.preload === 'none') {
+        video.preload = 'metadata';
+        video.load();
+      }
+      video.play().then(function () {
+        if (!dialog.open) video.pause();
+      }).catch(function () {
+        // Native controls remain available if playback requires another gesture.
+      });
+    }
+
+    function isOutsideDialog(event) {
+      var rect = dialog.getBoundingClientRect();
+      return event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+    }
+    if (closeButton) closeButton.addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('pointerdown', function (event) {
+      backdropPointerDown = event.target === dialog && isOutsideDialog(event);
+    });
+    dialog.addEventListener('click', function (event) {
+      if (backdropPointerDown && event.target === dialog && isOutsideDialog(event)) dialog.close();
+      backdropPointerDown = false;
+    });
+    dialog.addEventListener('close', function () {
+      video.pause();
+      document.documentElement.classList.remove('ma-pl-video-open');
+      if (activeTrigger && activeTrigger.isConnected) activeTrigger.focus({preventScroll: true});
+      activeTrigger = null;
+    });
+    window.addEventListener('pagehide', function () { video.pause(); });
+
+    photoButtons.forEach(function (button) {
+      button.addEventListener('click', function () { selectPhoto(button); });
+    });
+    [videoButton, textButton].filter(Boolean).forEach(function (button) {
+      if (typeof dialog.showModal !== 'function') {
+        button.removeAttribute('aria-haspopup');
+        button.removeAttribute('aria-controls');
+      }
+      button.addEventListener('click', function () { openVideo(button); });
     });
     var thumbs = gallery.querySelector('.ma-pl-thumbs');
     if (thumbs) thumbs.hidden = false;
-    if (textButton && videoButton) {
-      textButton.addEventListener('click', function () {
-        selectMedia(videoButton);
-        stage.scrollIntoView({block: 'center', behavior: 'instant'});
-        video.focus({preventScroll: true});
-      });
-      textButton.hidden = false;
-    }
+    if (textButton) textButton.hidden = false;
   }
 
   if (document.readyState === 'loading') {

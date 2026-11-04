@@ -1,6 +1,6 @@
 <?php
 /**
- * Real product detail with a shared photo/video stage and project inquiry links.
+ * Real product detail with a photo gallery, video viewer and project inquiry links.
  *
  * @package myathletik-child
  */
@@ -41,13 +41,14 @@ get_header();
 		<span aria-hidden="true"> / </span><span aria-current="page"><?php echo esc_html( $product['name'] ); ?></span>
 	</nav>
 	<section class="ma-section-inner ma-pl-product" aria-labelledby="ma-pl-product-title">
+		<header class="ma-pl-product__heading">
+			<p class="ma-pl-eyebrow">Product example / <?php echo esc_html( $product['name'] ); ?></p>
+			<h1 id="ma-pl-product-title"><?php echo esc_html( $product['title'] ); ?></h1>
+			<p class="ma-pl-intro"><?php echo esc_html( $product['intro'] ); ?></p>
+		</header>
 		<div class="ma-pl-gallery" role="group" aria-label="Product photos and video">
 			<div id="ma-pl-product-media" class="ma-pl-main-image">
 				<img id="ma-pl-main-product-image" src="<?php echo esc_url( $front['src'] ); ?>" srcset="<?php echo esc_attr( $front['srcset'] ); ?>" sizes="<?php echo esc_attr( $sizes ); ?>" width="1280" height="720" alt="<?php echo esc_attr( $front['alt'] ); ?>" loading="eager" fetchpriority="high" decoding="async">
-				<video id="ma-pl-product-video" controls playsinline preload="none" hidden tabindex="0" aria-label="<?php echo esc_attr( sprintf( __( 'Product video: %s', 'myathletik-child' ), $product['title'] ) ); ?>" poster="<?php echo esc_url( $video['poster'] ); ?>">
-					<source src="<?php echo esc_url( $video['src'] ); ?>" type="video/mp4">
-					<a href="<?php echo esc_url( $video['src'] ); ?>">Watch the product video</a>
-				</video>
 			</div>
 			<p id="ma-pl-media-caption" class="ma-pl-image-caption" aria-live="polite"><?php echo esc_html( $front['caption'] ); ?> · Frame from the product video</p>
 			<div class="ma-pl-thumbs" role="group" aria-label="Choose a photo or video" hidden>
@@ -56,7 +57,7 @@ get_header();
 						<img src="<?php echo esc_url( $image['thumbnail'] ); ?>" width="640" height="360" alt="" loading="lazy" decoding="async">
 					</button>
 				<?php endforeach; ?>
-				<button class="ma-pl-thumb ma-pl-thumb--video" type="button" aria-label="View product video" aria-pressed="false" aria-controls="ma-pl-product-media" data-media="video">
+				<button class="ma-pl-thumb ma-pl-thumb--video" type="button" aria-label="View product video" aria-haspopup="dialog" aria-controls="ma-pl-video-dialog" data-media="video">
 					<img src="<?php echo esc_url( $front['thumbnail'] ); ?>" width="640" height="360" alt="" loading="lazy" decoding="async">
 					<span class="ma-pl-thumb__video-mark" aria-hidden="true"><span>▶ Video</span></span>
 				</button>
@@ -73,9 +74,6 @@ get_header();
 			</noscript>
 		</div>
 		<div class="ma-pl-product__text">
-			<p class="ma-pl-eyebrow">Product example / <?php echo esc_html( $product['name'] ); ?></p>
-			<h1 id="ma-pl-product-title"><?php echo esc_html( $product['title'] ); ?></h1>
-			<p class="ma-pl-intro"><?php echo esc_html( $product['intro'] ); ?></p>
 			<?php if ( ! empty( $product['characteristics'] ) ) : ?>
 				<p class="ma-pl-characteristics"><?php echo esc_html( $product['characteristics'] ); ?></p>
 			<?php endif; ?>
@@ -87,13 +85,23 @@ get_header();
 			</dl>
 			<div class="ma-pl-actions">
 				<a class="ma-pl-button" href="<?php echo esc_url( $inquiry_url ); ?>">Request a project review</a>
-				<button id="ma-pl-show-product-video" class="ma-pl-button ma-pl-button--secondary" type="button" aria-controls="ma-pl-product-media" hidden>View product video</button>
+				<button id="ma-pl-show-product-video" class="ma-pl-button ma-pl-button--secondary" type="button" aria-haspopup="dialog" aria-controls="ma-pl-video-dialog" hidden>View product video</button>
 			</div>
 			<?php if ( $category_slug && $category_label ) : ?>
 				<a class="ma-pl-text-link ma-pl-related-category" href="<?php echo esc_url( home_url( '/' . $category_slug . '/' ) ); ?>"><?php echo esc_html( sprintf( __( 'Explore %s manufacturing', 'myathletik-child' ), $category_label ) ); ?> <span aria-hidden="true">→</span></a>
 			<?php endif; ?>
 		</div>
 	</section>
+	<dialog id="ma-pl-video-dialog" class="ma-pl-video-dialog" aria-labelledby="ma-pl-video-title">
+		<div class="ma-pl-video-dialog__toolbar">
+			<p id="ma-pl-video-title">Product video</p>
+			<button class="ma-pl-button ma-pl-button--secondary" type="button" data-ma-pl-video-close autofocus aria-label="Close product video">Close <span aria-hidden="true">×</span></button>
+		</div>
+		<video id="ma-pl-product-video" controls playsinline preload="none" tabindex="0" aria-label="<?php echo esc_attr( sprintf( __( 'Product video: %s', 'myathletik-child' ), $product['title'] ) ); ?>" poster="<?php echo esc_url( $video['poster'] ); ?>">
+			<source src="<?php echo esc_url( $video['src'] ); ?>" type="video/mp4">
+			<a href="<?php echo esc_url( $video['src'] ); ?>">Watch the product video</a>
+		</video>
+	</dialog>
 	<section id="ma-pl-development-options" class="ma-pl-section" aria-labelledby="ma-pl-development-title">
 		<div class="ma-section-inner">
 			<div class="ma-pl-section-head">
