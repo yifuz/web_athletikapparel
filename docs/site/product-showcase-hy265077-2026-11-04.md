@@ -60,6 +60,17 @@
 
 **Finding outcome：`local-page-review-pending / video-owner-approved`。生产发布仍未执行。**
 
+## 同日文案修正：直接面向客户
+
+- 所有者审核 `buyer` 的用法后授权修改。目标为两款产品详情，搜索意图仍是具体样品、材料与开发参考。
+- 证据：原套装说明 `your buyer's brief` 容易被理解为读者的客户提出的需求；展示页直接与采购方交流，使用 `your product brief` 更清楚。
+- 主要变量：共享标题改为 `Build around your product brief`；两款的尺寸表、颜色参考、吊牌及目标 GSM 表述统一使用 `your`。
+- 风险：仅调整称谓，不改变实物规格、能力条件、URL、SEO metadata 或媒体。技术文章等其它页面不在本次替换范围。
+- 验收标准：两款 Local 页显示新标题及相应文案，Development options 不残留 `buyer`，PHP 语法检查通过。
+- 验收结果：两款 Local 页面 HTTP 200，Development options 显示新标题及称谓，`buyer` 残留为 0；两个 PHP 文件语法检查及独立文案 diff 审阅通过。
+- Finding outcome：`copy-revised / local-verified`。措辞修改已授权，整页与生产发布状态沿用上方记录。
+- 本次增量部署文件仅 `inc/product-example-data.php` 与 `templates/product-example.php`；没有新增媒体或数据库步骤。整个展示库第一次上线仍须按完整发布清单执行。
+
 ## 审核入口与部署
 
 - [本地新产品页](http://myathletik-rebuild-02.local/product-showcase/mens-merino-tencel-mesh-long-sleeve-shirt/)

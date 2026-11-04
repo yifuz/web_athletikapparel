@@ -94,7 +94,7 @@ get_header();
 	<section id="ma-pl-development-options" class="ma-pl-section" aria-labelledby="ma-pl-development-title">
 		<div class="ma-section-inner">
 			<div class="ma-pl-section-head">
-				<div><p class="ma-pl-eyebrow">Development options</p><h2 id="ma-pl-development-title">Build around the buyer's brief</h2></div>
+				<div><p class="ma-pl-eyebrow">Development options</p><h2 id="ma-pl-development-title">Build around your product brief</h2></div>
 				<p><?php echo esc_html( $product['options']['intro'] ); ?></p>
 			</div>
 			<div class="ma-pl-options">
