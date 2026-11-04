@@ -76,6 +76,9 @@ get_header();
 			<p class="ma-pl-eyebrow">Product example / <?php echo esc_html( $product['name'] ); ?></p>
 			<h1 id="ma-pl-product-title"><?php echo esc_html( $product['title'] ); ?></h1>
 			<p class="ma-pl-intro"><?php echo esc_html( $product['intro'] ); ?></p>
+			<?php if ( ! empty( $product['characteristics'] ) ) : ?>
+				<p class="ma-pl-characteristics"><?php echo esc_html( $product['characteristics'] ); ?></p>
+			<?php endif; ?>
 			<div class="ma-pl-state">Real product sample · OEM development reference</div>
 			<dl class="ma-pl-quick">
 				<?php foreach ( $facts as $label => $value ) : ?>

@@ -71,6 +71,24 @@
 - Finding outcome：`copy-revised / local-verified`。措辞修改已授权，整页与生产发布状态沿用上方记录。
 - 本次增量部署文件仅 `inc/product-example-data.php` 与 `templates/product-example.php`；没有新增媒体或数据库步骤。整个展示库第一次上线仍须按完整发布清单执行。
 
+## 同日新增：一行服装特性
+
+所有者要求根据面料组成研究并增加一行特性描述，并随后明确确认两款实物均“手感柔软，贴肤无明显扎感”。本轮使用 `wp-brand-voice-guard` 核对文案证据，按 `wp-seo-audit` 做局部渲染验收。
+
+- 目标：两款详情页；意图是帮助采购方快速判断样品的穿着特点。主要变量为简介下方一行定性特性，不改变原材料规格与关键词所有权。
+- Ocean Depth：`Soft next-to-skin feel · Added stretch · Moisture-absorbing Merino wool`。
+- HY265077：`Soft next-to-skin feel · Lightweight mesh · Moisture-absorbing fibers`。
+- `Soft next-to-skin feel` 来自所有者实物确认；不从未知 micron 推定柔软度，也不扩大成对所有使用者均无刺激的承诺。
+- Ocean Depth 的 `Added stretch` 是基于已确认 5% Spandex 的定性材料推断；不加入 4-way stretch、伸长率、回复率或耐洗次数。[CottonWorks 材料说明](https://cottonworks.com/cotton-flex/)支持 Spandex 对混纺弹性的贡献，其具体棉混纺示例不是本款测试证据。
+- Woolmark 说明羊毛纤维可吸收水汽并允许其蒸发；本页将该属性明确归于 Merino wool，不把纯羊毛研究中的成衣保暖、温度或对比数据移植到本款。[Woolmark 原始说明](https://www.woolmark.com/industry/research/factsheets/wool-is-naturally-breathable/)
+- TENCEL 官方资料支持其 Lyocell 与 Modal 纤维柔软及吸收／释放湿气的特点；HY265077 采用共同可支持的纤维描述，未自行补全 Tencel 子类型，也未引入供应商认证或性能倍数。[TENCEL 纤维说明](https://www.tencel.com/fibers)、[性能说明](https://www.tencel.com/fibers/benefits/performance)
+- HY265077 的 lightweight mesh 沿用所有者提供的 Mesh LS T-shirts 名称与 115 GSM，不据此声称已测透气率。
+- 风险与边界：吸湿不等于液态汗液导湿或快干；本轮不采用“锁温”、恒温、抗菌、低敏或量化透气表述。公开页面保持简短特性描述，研究依据记录在本文件。
+- 验收标准：两款文案在原始 HTML 中各出现一次，桌面／手机可读且无横向溢出，唯一 H1、已确认规格和 Local noindex 保留；PHP 语法检查通过。
+- 验收结果：两款各在 1440／390 宽度通过 HTTP 200、服务器正文唯一输出、H1／规格／Local noindex 保留和无横向溢出检查；零页面 JS 错误。已查看截图，特性段落自然换行并均衡行长，避免桌面末行只剩单个词。PHP 语法及 diff 检查通过，记录位于忽略目录 `.chrome-check/product-characteristics-qa-results.json` 和 `characteristics-*.png`。
+- Finding outcome：`characteristics-draft / local-verified`；新文案仍由所有者审核，未生产发布。
+- 本次增量部署文件：`inc/product-example-data.php`、`templates/product-example.php`、`style.css`，无新增媒体或数据库步骤。
+
 ## 审核入口与部署
 
 - [本地新产品页](http://myathletik-rebuild-02.local/product-showcase/mens-merino-tencel-mesh-long-sleeve-shirt/)

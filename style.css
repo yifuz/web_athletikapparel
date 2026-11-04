@@ -6775,6 +6775,7 @@ body.ma-pl-page .content-area { width: 100%; }
 .ma-pl-product__text { padding-top: var(--ma-space-3); }
 .ma-pl-product__text h1 { margin-block: var(--ma-space-3); }
 .ma-pl-intro { max-width: 45ch; color: var(--ma-color-muted); }
+.ma-pl-characteristics { margin-block: var(--ma-space-3) 0; color: var(--ma-color-text); font-size: var(--ma-fs-small); font-weight: 600; text-wrap: balance; }
 .ma-pl-state { display: flex; align-items: center; gap: var(--ma-space-2); margin-top: var(--ma-space-4); color: var(--ma-color-accent-2); font-size: var(--ma-fs-small); font-weight: 650; }
 .ma-pl-state::before { content: ''; flex: 0 0 var(--ma-space-2); width: var(--ma-space-2); height: var(--ma-space-2); border-radius: 50%; background: var(--ma-color-accent); }
 .ma-pl-quick { margin-top: var(--ma-space-5); border-top: 1px solid var(--ma-color-border); }
