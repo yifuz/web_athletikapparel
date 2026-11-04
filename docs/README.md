@@ -68,7 +68,7 @@
 
 ## `operations/`：环境与维护
 
-- [`operations/flywheel-ssh-deployment.md`](operations/flywheel-ssh-deployment.md)：已验证的生产 SSH 连接、目录差异、指定文件备份／部署流程及首轮发布记录；凭据保留在本机，不进入 Git。
+- [`operations/flywheel-ssh-deployment.md`](operations/flywheel-ssh-deployment.md)：Local 审核后由 Codex 直接部署的工作流程；含 SSH 预检、代码／媒体清单、精准建页、备份回退、线上验收、记录模板及首轮发布记录。
 - [`operations/flywheel-cleanup-guide.md`](operations/flywheel-cleanup-guide.md)：已完成的 Flywheel 清理操作记录。
 - [`operations/seo-cli-clash-proxy.md`](operations/seo-cli-clash-proxy.md)：Clash Verge 开启时 `seo` CLI 的本机代理适配、验证与故障边界。
 

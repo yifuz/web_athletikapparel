@@ -37,9 +37,8 @@ page-builder site. Codex is expected to do substantial work in
 the theme code. Day-to-day layout/structure changes happen in code; only
 routine text edits happen in the block editor.
 
-- **Platform:** WordPress 7.0 (hosted on Flywheel; developed locally on
-  LocalWP and deployed with Local Connect). GoDaddy is not part of the
-  current hosting, email, or deployment stack.
+- **Platform:** WordPress 7.0，生产托管于 Flywheel，使用 LocalWP 开发和本地审核；
+  获准上线的版本由 Codex 经专用 SSH 部署。GoDaddy 不在当前托管、邮件或部署体系内。
 - **Parent theme:** **GeneratePress** (lightweight, developer-oriented, clean
   hook system, strong Core Web Vitals). Do NOT edit the parent theme.
 - **All custom work lives in the child theme `myathletik-child`:**
@@ -60,14 +59,16 @@ routine text edits happen in the block editor.
 - **Version control: Git.** The child theme is a git repo. Every AI-made change
   is reviewable as a diff and revertable. Commit in small, logical units.
 
-### Local/staging workflow
+### 本地审核与生产部署
 - Develop on **LocalWP** (Windows). Site files live at
   `…\Local Sites\<site>\app\public\`; child theme at
   `wp-content\themes\myathletik-child\`.
 - Open the **child theme folder** in VS Code so Codex operates
   directly on these files.
-- Changes flow: LocalWP (dev) → staging → production. Never assume direct
-  production edits.
+- 所有者于 2026-11-04 确认：**LocalWP 用于开发和本地页面审核；确认上线后，由 Codex 通过专用 SSH 直接部署生产并验收。** 默认流程为 Local 审核 → 所有者确认上线 → Codex 部署 → 生产验收与记录。
+- 部署前读取 [`docs/operations/flywheel-ssh-deployment.md`](docs/operations/flywheel-ssh-deployment.md)。同一批改动已有上线授权时继续完成，不重复询问，不要求所有者手动传文件或执行服务器命令；仍标记“暂不上线”或未批准的草稿保留在 Local。
+- 网站修改完成后主动列出代码、媒体和必要数据库操作的部署清单；部署后明确实际上传文件、验收结果及未完成项。按清单备份与传输，不整库覆盖生产，不覆盖用户未批准的改动。
+- Git 提交／推送与生产部署分别核实。Codex 创建提交后立即推送当前分支；推送失败明确报告，保留用户已有修改，不执行 `git reset --hard`。
 
 ### 内部 Markdown 文档语言
 
@@ -144,10 +145,9 @@ For normal `<img>` output, keep using `get_stylesheet_directory_uri()` and let t
 
 ### Deploying images (uploads is not in git)
 
-Because uploads is outside the repo, `git push` does NOT carry images. When
-syncing to staging/production, transfer `uploads/myathletik-theme/` separately
-(FTP/SCP the whole folder, or use WP Migrate / All-in-One WP Migration). Plan
-for this on every environment sync.
+图片与视频位于 Git 之外，`git push` 不会上传媒体。生产发布时由 Codex 按批准清单单独传输
+`uploads/myathletik-theme/` 下本轮新增或替换的文件；保留其他媒体，不默认同步整个目录。
+实际传输、备份与验收遵循[SSH 部署流程](docs/operations/flywheel-ssh-deployment.md)。
 
 ## 2. Information architecture
 
