@@ -118,11 +118,11 @@
 
 ### Product Showcase——正式发布候选（尚未部署）
 
-2026-11-03 所有者要求按生产站规格制作准备上线的版本。以下路径与结构进入正式发布候选，在 Local 完整验收后仍需所有者确认生产发布：
+2026-11-03 所有者要求按生产站规格制作准备上线的版本。2026-11-04 已授权将目前改动一起部署；以下路径与结构不变，生产建页与上线验收待完成：
 
 - `/product-showcase/`：H1 `Product Showcase`，展示真实产品、材料和开发选项；不是新的 manufacturer 品类页。
 - `/product-showcase/ocean-depth-merino-wool-blend-set/`：H1 `Women's Merino wool-blend top & leggings`，承接单款规格与开发参考；沿用真实成分、155 GSM、HY254955。
-- `/product-showcase/mens-merino-tencel-mesh-long-sleeve-shirt/`：H1 `Men's Merino wool-Tencel mesh long-sleeve T-shirt`，HY265077、80% Tencel / 20% Merino wool、115 GSM。2026-11-04 视频获批并接入 Local，页面正文和视觉仍待审核；见[接入记录](site/product-showcase-hy265077-2026-11-04.md)。
+- `/product-showcase/mens-merino-tencel-mesh-long-sleeve-shirt/`：H1 `Men's Merino wool-Tencel mesh long-sleeve T-shirt`，HY265077、80% Tencel / 20% Merino wool、115 GSM。2026-11-04 视频获批并接入 Local，已纳入所有者批准的整包部署；见[接入记录](site/product-showcase-hy265077-2026-11-04.md)。
 - 入口：首页七品类区块后、Merino 原图库后、Products 下拉菜单；产品详情回链 Merino 能力页和展示库，并进入 Contact 项目询盘。
 - 首页保留 Ocean Depth 特色卡与展示库总入口；Merino 页按有效的已发布产品循环展示，当前两款。
 - 后续产品复用数据与模板，每个实物仅一个详情 URL；只有已发布且有效的页面出现在卡片和导航中。七个既有商业品类 URL 与关键词任务不变，不创建 `/products/`。

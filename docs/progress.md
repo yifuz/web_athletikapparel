@@ -17,7 +17,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.1 网站与内容
 
-- 2026-11-04 所有者批准 HY265077 男式 Merino-Tencel 视频，已将[第二款产品接入 Local 展示库](site/product-showcase-hy265077-2026-11-04.md)：四张静帧与批准视频共用媒体区，规格为 80% Tencel / 20% Merino wool、115 GSM；展示库与 Merino 页显示两款。页面正文／开发选项和视觉待所有者审核；完整发布包现在为展示库加两款详情，仍未生产部署。
+- 2026-11-04 已将[第二款 HY265077 产品接入 Local 展示库](site/product-showcase-hy265077-2026-11-04.md)：四张静帧与批准视频共用媒体区，规格为 80% Tencel / 20% Merino wool、115 GSM。所有者随后授权将目前改动一起部署；完整发布包为展示库加两款详情，已补充后台「工具 → Product Showcase」建页入口并完成真实 Local 按钮／权限／重复操作验收，生产建页及上线验收待完成；见[完整部署清单](site/product-showcase-release-candidate-2026-11-03.md)。
 - 2026-11-03 所有者进一步要求 Product Showcase 按生产规格制作，已将仅本地 Demo 升级为[正式发布候选](site/product-showcase-release-candidate-2026-11-03.md)：去审核界面、启用带产品参考的询盘、准备 SEO／分享图和显式建页脚本。继续在 Local 验收，尚未生产部署；原[本地接入记录](site/product-showcase-local-review-2026-11-03.md)保留为历史。
 - 规范站：<https://www.athletikapparel.com/>，运行于 Flywheel。
 - WordPress 重建已上线，使用 GeneratePress 父主题和 `myathletik-child` 子主题。

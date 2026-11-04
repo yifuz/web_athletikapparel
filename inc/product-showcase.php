@@ -1,5 +1,5 @@
 <?php
-/** Product Showcase routing and SEO. Page creation is an explicit WP-CLI task. */
+/** Product Showcase routing and SEO. Pages are created explicitly via admin tools or CLI. */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

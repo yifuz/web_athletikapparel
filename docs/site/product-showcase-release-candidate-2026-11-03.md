@@ -2,11 +2,11 @@
 
 日期：2026-11-03。当前状态：**按生产规格实现，Local 验收，未部署生产**。
 
-2026-11-04 更新：所有者批准 HY265077 视频，已加入[第二款男式 Merino-Tencel 产品](product-showcase-hy265077-2026-11-04.md)。当前发布候选为展示库加两款详情，共三个 WordPress 页面。下方部署清单已合并第二款；其页面正文与视觉仍需所有者审核。
+2026-11-04 更新：已加入[第二款男式 Merino-Tencel 产品](product-showcase-hy265077-2026-11-04.md)，所有者随后明确“目前的改动一起部署”，授权展示库加两款详情共三个页面发布。生产建页和上线验收仍待完成；新增后台「工具 → Product Showcase」入口，无需配置 SSH。
 
 ## 范围与证据
 
-所有者在本地 Demo 接入后明确要求“按照生产站的规格来，这个版本是准备上线的版本”。本轮将实际页面、功能和发布流程转换为正式实现；继续遵守此前暂不上线、共同审核后再正式发布的安排。
+所有者在本地 Demo 接入后明确要求“按照生产站的规格来，这个版本是准备上线的版本”。本轮将实际页面、功能和发布流程转换为正式实现；2026-11-04 后续整包部署授权已替代此前暂不上线的安排。
 
 - 目标：`/product-showcase/`、`/product-showcase/ocean-depth-merino-wool-blend-set/` 与 `/product-showcase/mens-merino-tencel-mesh-long-sleeve-shirt/`；首页、Merino 页及 Products 菜单作为入口。首页保留 Ocean Depth 特色卡，Merino 入口与展示库展示两款。
 - 搜索意图：展示库承接真实产品发现，详情承接具体样品、材料与开发参考。七个商业品类页继续拥有 manufacturer 采购能力需求，现有 URL 不改，无需 301。
@@ -38,11 +38,11 @@
 
 验收过程发现并修复了两个迁移缺口：非媒体库分享图回退到 Logo，以及首页／Merino 调用仍指向已删除的 Demo 函数。最终以本轮完整渲染复测结果为准。
 
-**Finding outcome：正式发布候选，等待所有者在 Local 确认视觉与内容；未生产部署。**
+**Finding outcome：已获整包发布授权，后台建页入口已实现并完成本地验收；production-pending，生产建页及上线验收待完成。**
 
 ## 批准后部署清单
 
-以下清单是正式发布准备，**不是当前要求立即部署**。只推主题 Git 不会创建生产页面，也不会上传媒体；不要整库覆盖生产。
+以下清单已获所有者整包部署授权。只推主题 Git 不会创建生产页面，也不会上传媒体；不要整库覆盖生产。
 
 ### 主题代码（相对 `wp-content/themes/myathletik-child/`）
 
@@ -52,6 +52,8 @@ style.css
 front-page.php
 inc/product-example-data.php
 inc/product-showcase.php
+inc/product-showcase-setup.php
+inc/product-showcase-admin.php
 templates/product-showcase.php
 templates/product-example.php
 template-parts/product-showcase/card.php
@@ -102,7 +104,16 @@ hy265077-owner-approved-video.mp4
 
 ### WordPress 页面记录
 
-从 WordPress 根目录运行；先上传代码和媒体，再显式建页：
+推荐从后台操作，先上传上列代码和媒体（新增 `inc/` 文件先传，`functions.php` 最后覆盖）：
+
+1. 登录生产站 WordPress 后台，进入 **工具 / Tools → Product Showcase**。
+2. 核对站点网址为 `https://www.athletikapparel.com`；检查三个页面及 20 个媒体文件。失败时显示错误并禁用发布按钮，先修复错误，不要另建同名空白页。
+3. 点击 **创建并发布展示页**。后台执行 URL／归属和媒体复检，再创建或补齐页面记录。
+4. 成功后打开三个页面，清理生产页面缓存并执行下述上线验收；后台成功提示不等于 Google 已收录。
+
+后台要求 `manage_options` 和 `publish_pages`，只接受带有效 nonce 的 POST；打开检查页不创建页面，重复执行保留页面 ID、内容、自定义 SEO 与未变化的修改时间。共享核心有互斥锁，阻止同时建页；异常中断后若持续提示已有任务运行，由维护者检查锁及实际页面状态。素材路径和发布对象全部来自已部署代码，不接受任意文件或页面执行输入。
+
+CLI 仍作为可选途径保留。已有 SSH 环境时可从 WordPress 根目录运行：
 
 ```sh
 # 可选：先准备草稿（不会降低已有发布页状态）
@@ -116,7 +127,19 @@ wp eval-file wp-content/themes/myathletik-child/scripts/setup-product-showcase.p
 
 脚本当前覆盖展示库与两款详情，`publish` 会发布全部已配置记录，不是仅发布第二款。生产执行前须确认三个页面均获发布批准。
 
-如暂不具备服务器 WP-CLI，需要按同样字段在后台创建／标记三个页面后再验收；不能只上传 PHP 就宣称页面上线。当前尚未对生产执行任何建页操作。
+无需服务器 WP-CLI 时使用上述后台入口；仅在普通「页面 → 新增」中输入同名 slug 不会关联模板所需的标记。当前未通过本轮工具对生产执行任何建页操作。
+
+## 2026-11-04 后台部署入口
+
+- 目标页面与搜索意图：沿用上方三个正式 URL 及采购样品参考任务；不调整 URL 或公开正文。
+- 证据：所有者已批准整包部署，并希望直接在 wp-admin 完成建页；原脚本仅能通过 WP-CLI 执行。
+- 主要变量：将原建页逻辑提取为共享核心，后台与 CLI 调用同一套预检和写入流程。
+- 风险：缺少素材、同名无关页面、重复操作、无权限或过期请求、数据库写入失败。
+- 验收标准：预检只读；未授权／无效请求不写页面；错误清楚呈现；首次创建正确父子记录与 SEO；重复不增页；保持本地 noindex；生产发布由所有者在后台操作后另验。
+- 本地结果：5 个 PHP 文件 lint 与 diff whitespace 检查通过；隔离模拟测试 78 项断言通过，覆盖首次创建、幂等、路由冲突、媒体缺失／越界、受保护页面、保留自定义 SEO、旧 Demo 迁移、写入失败和互斥锁。
+- 真实 Local 后台：检查页列出三个页面及 20 个媒体；GET 误用发布端点返回 405，缺 nonce 返回 403，匿名 POST 返回 400；两次有效按钮提交均提示已是最新状态，前后页面记录及全部 metadata 的 SHA-256 完全相同，锁已释放。三个前台 URL 仍为 200 + noindex。临时 QA 会话已撤销，测试未提交询盘。
+- CLI 兼容复测：同一共享核心输出三个原有页面 ID 80／81／84 与 `Already current`，未重复创建。浏览器证据保存在忽略目录 `.chrome-check/showcase-admin-*`；不作为生产验收证据。
+- Finding outcome：`implemented / local-verified / production-pending`。本轮补传 `functions.php`、`inc/product-showcase.php`、`inc/product-showcase-setup.php`、`inc/product-showcase-admin.php`、`scripts/setup-product-showcase.php`；此前完整主题和 20 个媒体清单仍适用，`functions.php` 最后覆盖。
 
 ## 技术依据
 
