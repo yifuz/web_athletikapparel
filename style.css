@@ -74,6 +74,10 @@ Text Domain:  myathletik-child
   --ma-social-button-height: calc(var(--ma-touch-target) - var(--ma-space-2) - var(--ma-space-1));
   --ma-social-button-padding-x: var(--ma-space-2);
   --ma-product-lightbox-width: 38rem;
+  /* Lookbook: trim the verified white side padding, retaining the full photo height. */
+  --ma-lookbook-image-ratio: 2 / 3;
+  --ma-lookbook-columns: 2;
+  --ma-lookbook-gap: var(--ma-space-3);
   --ma-footer-social-width: 15rem;
   --ma-reading-width: 68ch;
   --ma-article-media-width: 30rem;
@@ -4428,13 +4432,34 @@ body.page .container.grid-container:has(.ma-product-category) {
   background: var(--ma-color-white);
 }
 
-/* Share Merino's square frame across category galleries; contain portrait photos. */
+/* Merino uses square frames; the model lookbook has its own portrait proportions. */
 .ma-product-showcase-card img {
   display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 1;
   object-fit: contain;
+}
+
+.ma-product-showcase--lookbook .ma-product-showcase-card img {
+  aspect-ratio: var(--ma-lookbook-image-ratio);
+  /* The 800x1000 canvases include ~66px side padding; 2:3 removes it without
+     cropping the top/bottom or altering the original image used by the viewer. */
+  object-fit: cover;
+  object-position: center;
+}
+
+.ma-product-showcase--lookbook .ma-product-showcase__grid--carousel {
+  grid-template-rows: auto;
+  grid-auto-columns: calc((100% - (var(--ma-lookbook-columns) - 1) * var(--ma-lookbook-gap)) / var(--ma-lookbook-columns));
+  gap: var(--ma-lookbook-gap);
+}
+
+@media (min-width: 48rem) {
+  .ma-product-showcase--lookbook {
+    --ma-lookbook-columns: 4;
+    --ma-lookbook-gap: var(--ma-space-4);
+  }
 }
 
 .ma-product-showcase-card__open {

@@ -889,6 +889,7 @@ function myathletik_product_category_data() {
 			'showcase_kicker'    => __( 'Product examples', 'myathletik-child' ),
 			'showcase_heading'   => __( 'Merino wool product programs', 'myathletik-child' ),
 			'showcase_intro'     => __( 'Representative garment and accessory formats from Merino wool development programs.', 'myathletik-child' ),
+			'showcase_lightbox'  => true,
 			'product_showcase'   => array(
 				myathletik_product_showcase_item(
 					'merino wool product/merino-printed-half-zip-top-800.jpg',

@@ -334,9 +334,9 @@ function myathletik_enqueue_product_showcase_carousel() {
 }
 add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_product_showcase_carousel' );
 
-/** Open Sportswear lookbook photos in an accessible, keyboard-operated viewer. */
-function myathletik_enqueue_sportswear_lightbox() {
-	if ( ! is_page( 'sportswear-manufacturer' ) ) {
+/** Open Sportswear and Merino gallery photos in an accessible shared viewer. */
+function myathletik_enqueue_category_lightbox() {
+	if ( ! is_page( array( 'sportswear-manufacturer', 'merino-wool-manufacturer' ) ) ) {
 		return;
 	}
 
@@ -353,7 +353,7 @@ function myathletik_enqueue_sportswear_lightbox() {
 		true
 	);
 }
-add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_sportswear_lightbox' );
+add_action( 'wp_enqueue_scripts', 'myathletik_enqueue_category_lightbox' );
 
 /**
  * Track deliberate email and WhatsApp contact clicks as secondary GA4 events.

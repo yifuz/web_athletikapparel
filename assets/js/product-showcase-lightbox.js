@@ -9,14 +9,15 @@
 
     const dialog = document.createElement('dialog');
     dialog.className = 'ma-product-lightbox';
-    dialog.setAttribute('aria-label', 'Sportswear photo viewer');
+    const heading = section.querySelector('h2');
+    dialog.setAttribute('aria-label', `${heading?.textContent.trim() || 'Product'} photo viewer`);
     dialog.innerHTML = `
       <div class="ma-product-lightbox__toolbar">
         <p class="ma-product-lightbox__count" aria-live="polite"></p>
         <button type="button" data-ma-lightbox-close aria-label="Close larger photo">×</button>
       </div>
       <figure class="ma-product-lightbox__figure">
-        <img class="ma-product-lightbox__image" data-ma-lightbox-image alt="" width="800" height="1000" decoding="async">
+        <img class="ma-product-lightbox__image" data-ma-lightbox-image alt="" width="800" height="800" decoding="async">
         <figcaption class="ma-product-lightbox__caption" data-ma-lightbox-caption></figcaption>
       </figure>
       <div class="ma-product-lightbox__navigation">
@@ -43,11 +44,21 @@
       const thumb = link.querySelector('img');
       const label = link.closest('figure')?.querySelector('figcaption');
       image.alt = thumb?.alt || '';
+      image.width = Number(thumb?.getAttribute('width')) || 800;
+      image.height = Number(thumb?.getAttribute('height')) || 800;
       image.src = link.dataset.maLightboxFull || link.href;
       caption.textContent = label?.textContent?.trim() || image.alt;
       count.textContent = `${index + 1} / ${links.length}`;
+      const focusedNavigation = document.activeElement;
       previous.disabled = index === 0;
       next.disabled = index === links.length - 1;
+      // A disabled focused button can return focus to body; keep arrow-key
+      // navigation inside the viewer when reaching the first or last photo.
+      if (focusedNavigation === previous && previous.disabled) {
+        (next.disabled ? close : next).focus();
+      } else if (focusedNavigation === next && next.disabled) {
+        (previous.disabled ? close : previous).focus();
+      }
     };
 
     image.addEventListener('error', () => {

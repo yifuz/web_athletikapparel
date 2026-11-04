@@ -165,7 +165,8 @@ if ( ! empty( $category['hero_video'] ) ) {
 	<?php if ( ! empty( $category['product_showcase'] ) && is_array( $category['product_showcase'] ) ) : ?>
 	<?php $has_showcase_carousel = count( $category['product_showcase'] ) > 8; ?>
 	<?php $has_showcase_lightbox = ! empty( $category['showcase_lightbox'] ); ?>
-	<section class="ma-product-section ma-product-showcase" aria-labelledby="ma-product-showcase-title"<?php echo $has_showcase_carousel ? ' data-ma-product-carousel' : ''; ?><?php echo $has_showcase_lightbox ? ' data-ma-product-lightbox' : ''; ?>>
+	<?php $is_model_lookbook = 'sportswear-manufacturer' === $category_slug; ?>
+	<section class="ma-product-section ma-product-showcase<?php echo $is_model_lookbook ? ' ma-product-showcase--lookbook' : ''; ?>" aria-labelledby="ma-product-showcase-title"<?php echo $has_showcase_carousel ? ' data-ma-product-carousel' : ''; ?><?php echo $has_showcase_lightbox ? ' data-ma-product-lightbox' : ''; ?>>
 		<div class="ma-section-inner">
 			<div class="ma-section-heading">
 				<p class="ma-section-kicker"><?php echo esc_html( ! empty( $category['showcase_kicker'] ) ? $category['showcase_kicker'] : __( 'Product examples', 'myathletik-child' ) ); ?></p>
@@ -200,7 +201,9 @@ if ( ! empty( $category['hero_video'] ) ) {
 			>
 				<?php foreach ( $category['product_showcase'] as $image ) : ?>
 					<?php
-					$image_sizes = '(max-width: 47.99rem) 50vw, 25vw';
+					$image_sizes = $is_model_lookbook
+						? '(min-width: 75rem) 270px, (min-width: 48rem) calc((100vw - 120px) / 4), calc((100vw - 64px) / 2)'
+						: '(max-width: 47.99rem) 50vw, 25vw';
 					$webp_srcset = array();
 
 					if ( ! empty( $image['image_webp'] ) && is_array( $image['image_webp'] ) ) {
