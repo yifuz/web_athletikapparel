@@ -1,6 +1,6 @@
 # HY265077 第二款产品展示接入
 
-日期：2026-11-04。状态：视频已获所有者审核通过；产品页已接入 Local，所有者随后授权将目前改动一起部署。生产建页与上线验收待完成，见[整包部署与后台操作](product-showcase-release-candidate-2026-11-03.md)。
+日期：2026-11-04。状态：视频及后续整包发布已获所有者批准；已通过专用 SSH 连接部署并正式发布，生产 Page ID 107。公开 HTTPS、canonical、robots、Schema 与 Sitemap 验收通过；外部浏览器已验证图片、视频播放／切换及桌面／手机无横向溢出。证据及验收限制见[整包发布记录](product-showcase-release-candidate-2026-11-03.md)。后文 Local 验收与待批准表述保留为实施阶段记录，以本段及末尾发布状态为准。
 
 ## 目标与依据
 
@@ -104,6 +104,8 @@ assets/js/product-showcase.js
 style.css
 ```
 
-发布时另上传上述媒体表的 10 个文件，并显式创建 WordPress 页面。当前整个 Product Showcase 尚未生产部署，因此不能只上传本轮差异文件；第一次发布须使用[完整发布清单](product-showcase-release-candidate-2026-11-03.md)，包含原功能、两款媒体和三个 WordPress 页面。
+首次发布使用[完整发布清单](product-showcase-release-candidate-2026-11-03.md)，包含原功能、两款媒体和三个 WordPress 页面，不能只上传本轮差异文件。2026-11-04 已完成：全部 15 个主题依赖与本地一致，两款共 20 个媒体齐全，生产页面 ID 105／106／107 已发布。
 
-代码提交／推送与 Local 页面的 publish 状态都不表示生产部署。未修改生产、GSC 或外部平台，也不提前宣称 SEO 增长。
+正式入口：[男式 Merino-Tencel 产品页](https://www.athletikapparel.com/product-showcase/mens-merino-tencel-mesh-long-sleeve-shirt/)；[展示库](https://www.athletikapparel.com/product-showcase/)。
+
+最终 Finding outcome：`deployed / published / production-verified`。本次已独立核实生产响应与媒体交互，没有将 Git 推送或 Local publish 当作上线证据；未执行 GSC 请求，也不提前宣称 Google 收录或 SEO 增长。

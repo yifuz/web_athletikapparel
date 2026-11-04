@@ -17,8 +17,8 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.1 网站与内容
 
-- 2026-11-04 已将[第二款 HY265077 产品接入 Local 展示库](site/product-showcase-hy265077-2026-11-04.md)：四张静帧与批准视频共用媒体区，规格为 80% Tencel / 20% Merino wool、115 GSM。所有者随后授权将目前改动一起部署；完整发布包为展示库加两款详情，已补充后台「工具 → Product Showcase」建页入口并完成真实 Local 按钮／权限／重复操作验收，生产建页及上线验收待完成；见[完整部署清单](site/product-showcase-release-candidate-2026-11-03.md)。
-- 2026-11-03 所有者进一步要求 Product Showcase 按生产规格制作，已将仅本地 Demo 升级为[正式发布候选](site/product-showcase-release-candidate-2026-11-03.md)：去审核界面、启用带产品参考的询盘、准备 SEO／分享图和显式建页脚本。继续在 Local 验收，尚未生产部署；原[本地接入记录](site/product-showcase-local-review-2026-11-03.md)保留为历史。
+- 2026-11-04 Product Showcase 已正式发布：展示库 ID 105、Ocean Depth ID 106、[HY265077 男式 Merino-Tencel](site/product-showcase-hy265077-2026-11-04.md) ID 107。所有者授权并完成公钥登记后，已建立[专用 Flywheel SSH 部署连接](operations/flywheel-ssh-deployment.md)，上传 5 个后台更新文件及 2 个此前漏传的 JS；完整 15 文件与本地一致，20 个媒体齐全。三个页面通过公开 HTTPS、canonical、index/follow、Schema 及 Sitemap 检查；真实 Chrome 验证筛选、图片及视频播放／切换、1440／390 无横向溢出。Cookiebot 截图遮挡及首页独立 Turnstile 报错见[生产发布记录](site/product-showcase-release-candidate-2026-11-03.md)，未提交询盘；发布不代表 Google 已收录。
+- 2026-11-03 所有者进一步要求 Product Showcase 按生产规格制作，已将仅本地 Demo 升级为[正式发布候选](site/product-showcase-release-candidate-2026-11-03.md)：去审核界面、启用带产品参考的询盘、准备 SEO／分享图和显式建页脚本。当时完成 Local 验收，次日已按上条记录正式发布；原[本地接入记录](site/product-showcase-local-review-2026-11-03.md)保留为历史。
 - 规范站：<https://www.athletikapparel.com/>，运行于 Flywheel。
 - WordPress 重建已上线，使用 GeneratePress 父主题和 `myathletik-child` 子主题。
 - 首页、7 个产品类目页、Services、About、Contact、Sustainability 和 Privacy Policy 已上线。

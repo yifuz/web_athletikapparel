@@ -116,9 +116,9 @@
 
 ---
 
-### Product Showcase——正式发布候选（尚未部署）
+### Product Showcase——已正式发布
 
-2026-11-03 所有者要求按生产站规格制作准备上线的版本。2026-11-04 已授权将目前改动一起部署；以下路径与结构不变，生产建页与上线验收待完成：
+2026-11-03 所有者要求按生产站规格制作准备上线的版本。2026-11-04 所有者授权整包部署并建立 SSH 连接，以下路径已正式发布，生产页面 ID 为 105／106／107，三个 URL 已各一次进入 Page Sitemap：
 
 - `/product-showcase/`：H1 `Product Showcase`，展示真实产品、材料和开发选项；不是新的 manufacturer 品类页。
 - `/product-showcase/ocean-depth-merino-wool-blend-set/`：H1 `Women's Merino wool-blend top & leggings`，承接单款规格与开发参考；沿用真实成分、155 GSM、HY254955。

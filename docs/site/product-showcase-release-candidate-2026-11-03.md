@@ -1,8 +1,8 @@
 # Product Showcase 正式发布候选
 
-日期：2026-11-03。当前状态：**按生产规格实现，Local 验收，未部署生产**。
+日期：2026-11-03；2026-11-04 更新。当前状态：**已部署生产并发布三个页面，公开 HTTPS／SEO 及真实浏览器筛选、媒体交互验收通过；验收范围见下方发布记录**。
 
-2026-11-04 更新：已加入[第二款男式 Merino-Tencel 产品](product-showcase-hy265077-2026-11-04.md)，所有者随后明确“目前的改动一起部署”，授权展示库加两款详情共三个页面发布。生产建页和上线验收仍待完成；新增后台「工具 → Product Showcase」入口，无需配置 SSH。
+2026-11-04 更新：已加入[第二款男式 Merino-Tencel 产品](product-showcase-hy265077-2026-11-04.md)，所有者随后明确“目前的改动一起部署”，授权展示库加两款详情共三个页面发布。后台「工具 → Product Showcase」入口已部署；所有者又授权建立 SSH 连接，现已通过同一建页核心完成正式发布。
 
 ## 范围与证据
 
@@ -38,7 +38,7 @@
 
 验收过程发现并修复了两个迁移缺口：非媒体库分享图回退到 Logo，以及首页／Merino 调用仍指向已删除的 Demo 函数。最终以本轮完整渲染复测结果为准。
 
-**Finding outcome：已获整包发布授权，后台建页入口已实现并完成本地验收；production-pending，生产建页及上线验收待完成。**
+**Finding outcome（2026-11-04）：`deployed / published / production-verified`。原本地验证保留；最新生产证据及验收限制见末尾发布记录。**
 
 ## 批准后部署清单
 
@@ -127,7 +127,7 @@ wp eval-file wp-content/themes/myathletik-child/scripts/setup-product-showcase.p
 
 脚本当前覆盖展示库与两款详情，`publish` 会发布全部已配置记录，不是仅发布第二款。生产执行前须确认三个页面均获发布批准。
 
-无需服务器 WP-CLI 时使用上述后台入口；仅在普通「页面 → 新增」中输入同名 slug 不会关联模板所需的标记。当前未通过本轮工具对生产执行任何建页操作。
+无需服务器 WP-CLI 时使用上述后台入口；仅在普通「页面 → 新增」中输入同名 slug 不会关联模板所需的标记。2026-11-04 已通过授权的 SSH／CLI 完成三个页面发布，所有者无需再次点击建页按钮。
 
 ## 2026-11-04 后台部署入口
 
@@ -140,6 +140,21 @@ wp eval-file wp-content/themes/myathletik-child/scripts/setup-product-showcase.p
 - 真实 Local 后台：检查页列出三个页面及 20 个媒体；GET 误用发布端点返回 405，缺 nonce 返回 403，匿名 POST 返回 400；两次有效按钮提交均提示已是最新状态，前后页面记录及全部 metadata 的 SHA-256 完全相同，锁已释放。三个前台 URL 仍为 200 + noindex。临时 QA 会话已撤销，测试未提交询盘。
 - CLI 兼容复测：同一共享核心输出三个原有页面 ID 80／81／84 与 `Already current`，未重复创建。浏览器证据保存在忽略目录 `.chrome-check/showcase-admin-*`；不作为生产验收证据。
 - Finding outcome：`implemented / local-verified / production-pending`。本轮补传 `functions.php`、`inc/product-showcase.php`、`inc/product-showcase-setup.php`、`inc/product-showcase-admin.php`、`scripts/setup-product-showcase.php`；此前完整主题和 20 个媒体清单仍适用，`functions.php` 最后覆盖。
+
+## 2026-11-04 生产部署与发布
+
+- 所有者完成 Flywheel 公钥登记后，建立[专用 SSH 部署连接](../operations/flywheel-ssh-deployment.md)，核实规范域名、生产环境、活动子主题与 `blog_public=1`。
+- 部署前 3 个待覆盖文件均与上一代码提交一致，无独立线上修改；原文件已备份至本机私有目录。新增后台所需 2 文件，并补齐原完整清单漏传的 2 个 JS，本轮总共上传 7 文件；`functions.php` 最后替换。服务器 PHP lint 与 SHA-256 检查通过。
+- 部署后完整 15 个主题依赖均与本地逐字节一致；20 个媒体存在且非空，包含两个完整 MP4。
+- 建页脚本已发布：展示库 ID 105，Ocean Depth ID 106，HY265077 ID 107；两个详情的 parent 均为 105。再次运行返回无变化，没有重复创建或修改页面。
+- 从生产服务器发起公开 HTTPS 请求：首页、Merino 页、展示库及两款详情均为 HTTP 200，响应为实际页面内容。三个新页各有一个 H1、唯一自身 canonical、`index, follow`、正确 OG 图；没有 LocalWP 域名或运行时错误混入。
+- 展示库输出 CollectionPage + ItemList，详情输出 ItemPage + BreadcrumbList，无 Product/Offer 或 Article 误用；首页与 Merino 的展示入口已出现在实际 HTML。
+- `/page-sitemap.xml` 返回有效 XML，三个新 URL 各出现一次。公开页面可索引不等于 Google 已收录，本轮没有执行 GSC 请求。
+- 两个 MP4 的公开 HEAD 均为 200 + `video/mp4`，大小分别为 16,629,027 和 37,944,142 字节；两个 JS 均为 200 + `application/javascript`。
+- 外部标准 Chrome：首页、展示库及两款详情均为 200，无访问挑战；展示库两个面料编号筛选正常，两款图片可解码、视频实际播放且切回图片后暂停。1440／390 宽度无横向溢出，同源 HTTP 请求失败为 0；展示库和详情无页面 JavaScript 错误。
+- 验收限制：截图保留 Cookiebot 未选择的同意弹窗，遮挡区域未做完整视觉确认；未提交真实询盘，未运行第三方 Rich Results Test／Schema Validator。首页另捕获一条 Turnstile 错误：`Remove async/defer from the Turnstile api.js script tag before using turnstile.ready()`，尚未确定是否既存或影响提交；作为独立待诊断问题记录，不归因于本次展示功能，也不宣称全站表单验收通过。
+- 证据：`.chrome-check/production-showcase-preflight-2026-11-04.json`、`showcase-production-upload-result.json`、`showcase-production-records-2026-11-04.json`、`showcase-production-http-2026-11-04.json`、`showcase-production-seo-2026-11-04.json`；忽略目录原始记录不进入 Git。
+- 浏览器证据：`.chrome-check/showcase-production-browser-2026-11-04.json` 及同目录 8 张截图。以上生产证据取代前文实施阶段的 `production-pending` 状态。
 
 ## 技术依据
 
