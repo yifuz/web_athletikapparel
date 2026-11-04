@@ -6746,6 +6746,7 @@ body.ma-pl-page .content-area { width: 100%; }
 .ma-pl-compact-product__body h3 { margin-block: var(--ma-space-2) var(--ma-space-3); }
 .ma-pl-compact-product__body > p:not(.ma-pl-eyebrow) { color: var(--ma-color-muted); font-size: var(--ma-fs-small); }
 .ma-pl-compact-product__body .ma-pl-text-link { margin-top: var(--ma-space-3); font-size: var(--ma-fs-small); }
+.ma-pl-related-products { display: grid; gap: var(--ma-space-4); }
 .ma-pl-related-product { display: grid; grid-template-columns: .85fr 1.15fr; border: 1px solid var(--ma-color-border); border-radius: var(--ma-radius); overflow: hidden; background: var(--ma-color-white); }
 .ma-pl-related-product__image { display: block; min-width: 0; }
 .ma-pl-related-product__image a { display: block; height: 100%; }

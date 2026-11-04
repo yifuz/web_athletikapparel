@@ -2,11 +2,13 @@
 
 日期：2026-11-03。当前状态：**按生产规格实现，Local 验收，未部署生产**。
 
+2026-11-04 更新：所有者批准 HY265077 视频，已加入[第二款男式 Merino-Tencel 产品](product-showcase-hy265077-2026-11-04.md)。当前发布候选为展示库加两款详情，共三个 WordPress 页面。下方部署清单已合并第二款；其页面正文与视觉仍需所有者审核。
+
 ## 范围与证据
 
 所有者在本地 Demo 接入后明确要求“按照生产站的规格来，这个版本是准备上线的版本”。本轮将实际页面、功能和发布流程转换为正式实现；继续遵守此前暂不上线、共同审核后再正式发布的安排。
 
-- 目标：`/product-showcase/` 与 `/product-showcase/ocean-depth-merino-wool-blend-set/`；首页、Merino 页及 Products 菜单作为入口。
+- 目标：`/product-showcase/`、`/product-showcase/ocean-depth-merino-wool-blend-set/` 与 `/product-showcase/mens-merino-tencel-mesh-long-sleeve-shirt/`；首页、Merino 页及 Products 菜单作为入口。首页保留 Ocean Depth 特色卡，Merino 入口与展示库展示两款。
 - 搜索意图：展示库承接真实产品发现，详情承接具体样品、材料与开发参考。七个商业品类页继续拥有 manufacturer 采购能力需求，现有 URL 不改，无需 301。
 - 事实来源：所有者已确认的实拍、公开使用权、Ocean Depth 名称、相同面料套装、52% Merino wool / 43% Polyester / 5% Spandex、155 GSM、HY254955；开发选项沿用已审稿。
 - 不新增 micron、knit structure、seam construction、认证或测试结论，不构造价格、库存、评分和评价。
@@ -81,6 +83,23 @@ ocean-depth-1080.mp4
 
 MP4 为 16,629,027 字节的 1080p H.264 副本，`preload=none`；原始公司视频不变。旧文件名 `ocean-depth-review-1080.mp4` 已替换，不再使用。JPEG 为 27,132 字节，来自相同真实原视频静帧，无 AI 或产品内容修改。
 
+第二款目录：`wp-content/uploads/myathletik-theme/assets/images/product-examples/hy265077-mens-merino-tencel/`
+
+```text
+front-640.webp
+front-1280.webp
+back-view-640.webp
+back-view-1280.webp
+fabric-close-640.webp
+fabric-close-1280.webp
+cuff-close-640.webp
+cuff-close-1280.webp
+front-social.jpg
+hy265077-owner-approved-video.mp4
+```
+
+第二款使用所有者处理背景并审核通过的成片，56.375 秒、37,944,142 字节；静帧均从该版本提取。页面封面为 `front-1280.webp`。不要上传旧灰棚审核版替代此 MP4；不把第一款“原视频／无 AI”的说明套用到这款已处理背景的成片。
+
 ### WordPress 页面记录
 
 从 WordPress 根目录运行；先上传代码和媒体，再显式建页：
@@ -95,7 +114,9 @@ wp eval-file wp-content/themes/myathletik-child/scripts/setup-product-showcase.p
 
 脚本先预检全部 URL／归属冲突和媒体，不覆盖无关页面，不自动改现有 URL；创建父子页面、metadata 并清除 Rank Math Sitemap 缓存。已存在的正式页面正文与自定义 SEO 设置保留；已有设置如人为 noindex，不强制覆盖，须在上线验收中处理。
 
-如暂不具备服务器 WP-CLI，需要按同样字段在后台创建／标记两页后再验收；不能只上传 PHP 就宣称页面上线。当前尚未对生产执行任何建页操作。
+脚本当前覆盖展示库与两款详情，`publish` 会发布全部已配置记录，不是仅发布第二款。生产执行前须确认三个页面均获发布批准。
+
+如暂不具备服务器 WP-CLI，需要按同样字段在后台创建／标记三个页面后再验收；不能只上传 PHP 就宣称页面上线。当前尚未对生产执行任何建页操作。
 
 ## 技术依据
 

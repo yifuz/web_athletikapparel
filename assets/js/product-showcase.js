@@ -74,7 +74,7 @@
           video.preload = 'metadata';
           video.load();
         }
-        caption.textContent = 'Original product video · Use the player controls to watch';
+        caption.textContent = 'Product video · Use the player controls to watch';
       } else {
         var thumbImage = button.querySelector('img');
         // Responsive candidates must change together with src to avoid retaining the front image.
@@ -83,7 +83,7 @@
         image.src = button.dataset.src || (thumbImage ? thumbImage.src : image.src);
         if (button.dataset.sizes) image.sizes = button.dataset.sizes;
         image.alt = button.dataset.alt || '';
-        caption.textContent = (button.dataset.caption || '') + ' · Frame from the original product video';
+        caption.textContent = (button.dataset.caption || '') + ' · Frame from the product video';
       }
       buttons.forEach(function (item) {
         item.setAttribute('aria-pressed', String(item === button));

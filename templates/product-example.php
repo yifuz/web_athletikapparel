@@ -49,7 +49,7 @@ get_header();
 					<a href="<?php echo esc_url( $video['src'] ); ?>">Watch the product video</a>
 				</video>
 			</div>
-			<p id="ma-pl-media-caption" class="ma-pl-image-caption" aria-live="polite"><?php echo esc_html( $front['caption'] ); ?> · Frame from the original product video</p>
+			<p id="ma-pl-media-caption" class="ma-pl-image-caption" aria-live="polite"><?php echo esc_html( $front['caption'] ); ?> · Frame from the product video</p>
 			<div class="ma-pl-thumbs" role="group" aria-label="Choose a photo or video" hidden>
 				<?php foreach ( $images as $image_key => $image ) : ?>
 					<button class="ma-pl-thumb" type="button" aria-label="<?php echo esc_attr( $image['control'] ); ?>" aria-pressed="<?php echo 'front' === $image_key ? 'true' : 'false'; ?>" aria-controls="ma-pl-product-media" data-media="image" data-caption="<?php echo esc_attr( $image['caption'] ); ?>" data-alt="<?php echo esc_attr( $image['alt'] ); ?>" data-src="<?php echo esc_url( $image['src'] ); ?>" data-srcset="<?php echo esc_attr( $image['srcset'] ); ?>" data-sizes="<?php echo esc_attr( $sizes ); ?>">
@@ -111,7 +111,7 @@ get_header();
 				<?php endforeach; ?>
 			</div>
 			<article class="ma-pl-set-options" aria-labelledby="ma-pl-set-options-title">
-				<h3 id="ma-pl-set-options-title">Shared options for the set</h3>
+				<h3 id="ma-pl-set-options-title"><?php echo esc_html( $product['options']['shared_title'] ?? 'Additional development options' ); ?></h3>
 				<dl class="ma-pl-set-options__list">
 					<?php foreach ( $product['options']['shared'] as $label => $value ) : ?>
 						<div class="ma-pl-set-options__item"><dt><?php echo esc_html( $label ); ?></dt><dd><?php echo esc_html( $value ); ?></dd></div>

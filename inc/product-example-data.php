@@ -1,6 +1,6 @@
 <?php
 /**
- * Owner-reviewed real product examples and publishing metadata.
+ * Real product examples and publishing metadata.
  *
  * @package myathletik-child
  */
@@ -10,7 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Keep sample facts, media and approved development options in one place.
+ * Keep sample facts, media and development options in one place.
+ * New local entries require owner review before production publication.
  *
  * These entries describe actual samples, not stock availability or tested performance.
  *
@@ -31,6 +32,27 @@ function myathletik_product_example_data() {
 			'src'       => $media_base . $image_key . '-1280.webp',
 			'thumbnail' => $media_base . $image_key . '-640.webp',
 			'srcset'    => $media_base . $image_key . '-640.webp 640w, ' . $media_base . $image_key . '-1280.webp 1280w',
+			'width'     => 1280,
+			'height'    => 720,
+			'caption'   => $image[0],
+			'alt'       => $image[1],
+			'control'   => $image[2],
+		);
+	}
+
+	$mens_media_base = get_stylesheet_directory_uri() . '/assets/images/product-examples/hy265077-mens-merino-tencel/';
+	$mens_images     = array();
+	$mens_image_data = array(
+		'front'        => array( 'Front view', "Front view of the grey men's Tencel and Merino wool long-sleeve T-shirt", 'View front' ),
+		'back-view'    => array( 'Back view', 'Back view of the grey Tencel and Merino wool long-sleeve T-shirt', 'View back' ),
+		'fabric-close' => array( 'Fabric detail', 'Close-up of the grey mesh fabric and hem on the Tencel and Merino wool T-shirt', 'View fabric detail' ),
+		'cuff-close'   => array( 'Cuff detail', 'Thumbhole cuff detail on the grey Tencel and Merino wool long-sleeve T-shirt', 'View cuff detail' ),
+	);
+	foreach ( $mens_image_data as $image_key => $image ) {
+		$mens_images[ $image_key ] = array(
+			'src'       => $mens_media_base . $image_key . '-1280.webp',
+			'thumbnail' => $mens_media_base . $image_key . '-640.webp',
+			'srcset'    => $mens_media_base . $image_key . '-640.webp 640w, ' . $mens_media_base . $image_key . '-1280.webp 1280w',
 			'width'     => 1280,
 			'height'    => 720,
 			'caption'   => $image[0],
@@ -70,6 +92,7 @@ function myathletik_product_example_data() {
 			),
 			'options'        => array(
 				'intro'  => "The top and leggings share the same fabric. Review the options below for development around your buyer's brief.",
+				'shared_title' => 'Shared options for the set',
 				'groups' => array(
 					array(
 						'title' => 'Top development',
@@ -99,6 +122,68 @@ function myathletik_product_example_data() {
 					'Packaging'           => 'Packed together as a set or as individually packed pieces, with buyer-specified hangtags.',
 				),
 				'note'   => 'Final choices depend on the selected fabric and approved sample; these alternatives are not specifications of the set shown.',
+			),
+		),
+		'merino-tencel-mesh-top' => array(
+			'slug'             => 'mens-merino-tencel-mesh-long-sleeve-shirt',
+			'seo_title'        => "Men's Merino-Tencel Mesh Long-Sleeve Shirt | Athletik Clothing",
+			'meta_description' => "Explore a men's mesh long-sleeve T-shirt in 80% Tencel and 20% Merino wool, 115 GSM. View the product video, fabric details and OEM development options.",
+			'inquiry_category' => 'Merino Wool',
+			'social_image'     => $mens_media_base . 'front-social.jpg',
+			'category_slug'    => 'merino-wool-manufacturer',
+			'category_label'   => 'Merino wool',
+			'name'             => 'Merino-Tencel Mesh Top',
+			'title'            => "Men's Merino wool-Tencel mesh long-sleeve T-shirt",
+			'intro'            => "This men's long-sleeve T-shirt uses 115 GSM mesh fabric made with 80% Tencel and 20% Merino wool. Review the sample's fit, fabric texture and thumbhole cuffs as a reference for your own development brief.",
+			'summary'          => 'A lightweight long-sleeve T-shirt with thumbhole cuffs, in an 80% Tencel and 20% Merino wool blend.',
+			'material'         => 'merino',
+			'material_label'   => 'Merino wool',
+			'sample_material'  => 'Tencel / Merino wool blend',
+			'composition'      => '80% Tencel / 20% Merino wool',
+			'merino_content'   => '20%',
+			'gsm'              => '115 GSM',
+			'fabric_ref'       => 'HY265077',
+			'use'              => 'Lightweight layering and everyday wear',
+			'search'           => "men men's mens merino tencel mesh long sleeve t-shirt shirt top thumbhole cuff lightweight layering HY265077 115 GSM 80 tencel 20 wool",
+			'media'            => array(
+				'images' => $mens_images,
+				'video'  => array(
+					'src'    => $mens_media_base . 'hy265077-owner-approved-video.mp4',
+					'poster' => $mens_images['front']['src'],
+				),
+			),
+			'options'          => array(
+				'intro' => 'Use this long-sleeve sample as a starting point. Discuss the style and material choices below against your product brief.',
+				'groups' => array(
+					array(
+						'title' => 'Style and fit',
+						'intro' => 'Development choices for the long-sleeve top.',
+						'items' => array(
+							'Neckline'   => 'Crew neck / mock neck',
+							'Cuffs'      => 'Plain cuffs / thumbhole cuffs',
+							'Fit'        => 'Close fit / regular fit',
+							'Body length'=> 'Hip length / longline',
+						),
+					),
+					array(
+						'title' => 'Fabric and sizing',
+						'intro' => 'Material and size targets for the development brief.',
+						'items' => array(
+							'Composition' => 'Tencel / Merino wool blend; alternative ratios for review',
+							'Fabric weight' => '115 GSM reference / buyer-specified target',
+							'Colour' => "Sample grey / buyer's colour reference",
+							'Sizing' => "Buyer's size chart / reference sample",
+						),
+					),
+				),
+				'shared_title' => 'Branding and project details',
+				'shared' => array(
+					'Labels and branding' => 'Woven or printed labels, care labels, and logo placement to suit the brand.',
+					'Packaging' => 'Buyer-specified hangtags and individual garment packaging.',
+					'Order brief' => 'Quantity per style, colour breakdown, size range and required timeline.',
+					'Testing requirements' => 'Define the required tests and acceptance criteria for the intended market.',
+				),
+				'note' => 'Final choices depend on the selected fabric and approved sample; these alternatives are not specifications of the T-shirt shown.',
 			),
 		),
 	);

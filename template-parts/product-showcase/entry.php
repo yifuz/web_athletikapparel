@@ -12,7 +12,10 @@ if ( ! in_array( $context, array( 'home', 'merino' ), true ) ) {
 }
 $product_key = isset( $args['product_key'] ) ? sanitize_key( $args['product_key'] ) : 'ocean-depth';
 $products    = myathletik_product_showcase_products();
-if ( ! isset( $products[ $product_key ] ) ) {
+$merino_products = array_filter( $products, static function ( $product ) {
+	return 'merino-wool-manufacturer' === ( $product['category_slug'] ?? '' );
+} );
+if ( ( 'home' === $context && ! isset( $products[ $product_key ] ) ) || ( 'merino' === $context && ! $merino_products ) ) {
 	return;
 }
 ?>
@@ -33,7 +36,11 @@ if ( ! isset( $products[ $product_key ] ) ) {
 				<div><p class="ma-pl-eyebrow">Product Showcase</p><h2 id="ma-pl-merino-title">Merino wool product examples</h2></div>
 				<a class="ma-pl-text-link" href="<?php echo esc_url( myathletik_product_showcase_url() ); ?>">View all product examples <span aria-hidden="true">→</span></a>
 			</div>
-			<?php get_template_part( 'template-parts/product-showcase/card', null, array( 'context' => 'merino', 'product_key' => $product_key ) ); ?>
+			<div class="ma-pl-related-products">
+				<?php foreach ( array_keys( $merino_products ) as $merino_key ) : ?>
+					<?php get_template_part( 'template-parts/product-showcase/card', null, array( 'context' => 'merino', 'product_key' => $merino_key ) ); ?>
+				<?php endforeach; ?>
+			</div>
 		</div>
 	<?php endif; ?>
 </section>
