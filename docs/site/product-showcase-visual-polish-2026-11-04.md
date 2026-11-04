@@ -1,6 +1,6 @@
 # Product Showcase 三项视觉优化
 
-日期：2026-11-04。状态：`local-verified / owner-review-pending`。本轮已获本地修改授权，尚未部署生产；此前 Showcase 正式发布记录不代表本轮增量已上线。
+日期：2026-11-04。状态：`deployed / production-verified`。所有者审核后明确要求通过 SSH 上线，并补充授权将首页分类卡片移除箭头一并发布；本轮增量已于北京时间 16:48 完成生产部署，16:50 完成浏览器验收。
 
 ## 授权范围与实现
 
@@ -10,6 +10,8 @@
 
 未实施审查中的另外两条建议：材质筛选不变，首页 Showcase 入口内容与布局不变。没有更新产品数据、图片、视频、SEO 元数据或数据库。
 
+追加授权：首页 **Product categories** 卡片移除装饰性箭头，仅删除箭头 `span` 及对应 CSS，保留全部七个分类链接、图片与标题。
+
 ## 验收
 
 - Chrome LocalWP：360／768／1024／1440px，首页、展示库及两款详情均 HTTP 200，无横向溢出、无页面 JS 错误。
@@ -17,10 +19,10 @@
 - 真实视频播放进度推进；播放器在360px为320×180，在1440px为1088×612，无容器比例造成的上下大面积留边。
 - 844×390横屏手机检查通过，弹层和关闭按钮均在视口内。
 - 独立回归14个场景通过：首次打开前零 MP4 请求、两入口键盘操作、4张照片切换、视频关闭暂停及焦点恢复、搜索／空结果／重置、无 JavaScript 降级。
-- PHP 语法、JavaScript 语法及 `git diff --check` 通过。验证未提交询盘、未操作生产。
+- PHP 语法、JavaScript 语法及 `git diff --check` 通过。本地验证未提交询盘、未操作生产；后续已授权部署见下文。
 - 截图与测量保存在忽略目录 `.chrome-check/polish-showcase-*`；独立报告为 `.chrome-check/showcase-visual-regression-independent.json`。
 
-## 待批准部署清单
+## 实际部署清单
 
 以下主题文件应作为同一批同步，避免旧脚本与新模板错配：
 
@@ -28,6 +30,19 @@
 style.css
 templates/product-example.php
 assets/js/product-showcase.js
+template-parts/home/product-categories.php
 ```
 
-没有媒体上传或数据库操作。内部记录和 `docs/progress.md` 不需要上传网站。所有者确认上线后，按[Flywheel SSH 部署流程](../operations/flywheel-ssh-deployment.md)备份、部署并验收。
+没有媒体上传或数据库操作。内部记录和 `docs/progress.md` 不上传网站。已按[Flywheel SSH 部署流程](../operations/flywheel-ssh-deployment.md)备份、部署并验收。
+
+## 生产发布与验证
+
+- **批准版本**：`main` 的 `1a0065a`（Showcase 三项优化），包含已另行获准发布的 `46d4944`（首页箭头移除）；两提交均已推送。发布源取自固定提交，不使用未提交工作区。
+- **目标页面／意图**：首页产品分类入口、`/product-showcase/` 以及两款现有详情页；改善采购浏览、样品视频查看及产品参考查找，不改搜索意图、URL、文案或 SEO 设置。
+- **预检与备份**：确认正式域名、`production` 环境、活动子主题与目录；四个生产原件均匹配已知发布基线，无未知线上差异。新私有备份目录为 `C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-04-1a0065a-20261104T084801Z`，含原件及 manifest。较早的三文件准备批次未激活，已由本四文件批次取代。
+- **执行**：仅经专用 SSH 传输这四个文件，先写同目录临时文件并核验内容，两份 PHP 均通过服务器语法检查，再近连续替换；激活耗时约20ms。前后均校验文件，四个 SHA-256 与批准提交完全一致，原 `0644` 权限保留，WordPress 可正常启动。没有执行建页脚本、整库同步或媒体上传；无需回退。
+- **公开浏览器**：正式普通 URL（未添加绕缓存参数）15个场景全部通过，页面 HTTP 200、唯一 H1；360／768／1024／1440px 的展示库与两款详情无横向溢出。768px 卡片图片高约261px、CTA 底部对齐；手机标题简介在图集之前，桌面仍左图右文。
+- **视频交互**：两款实际视频进度推进，播放器从320×180至1088×612保持16:9；打开前零 MP4 请求。四张照片切换、两个键盘入口、Escape／关闭按钮／背景关闭后的暂停和焦点恢复，以及无 JavaScript 媒体直达降级全部通过。
+- **首页分类**：七个分类链接及 Showcase 入口保留，`.ma-category-card__arrow` 为0，360／768／1440px 无横向溢出。
+- **证据与边界**：部署 manifest 位于忽略目录 `.chrome-check/showcase-polish-deploy-manifest.json` 及私有备份目录；独立浏览器报告为 `.chrome-check/showcase-polish-production-independent.json`，截图同前缀。Cookiebot 仅在临时浏览器上下文拒绝非必要 Cookie，不改站点设置。首页仍出现之前已记录的 Turnstile async/defer 错误，未扩大为本批修复，未提交表单；Showcase 详情无页面 JS 错误或主题／媒体 HTTP 失败。本轮不等同全站表单、搜索索引或 SEO 效果验收。
+- **Finding outcome**：本批三项 Showcase 优化及首页箭头移除均已发布并通过验收，无本批待部署项。记录提交单独推送，不把 Git 推送等同生产发布。
