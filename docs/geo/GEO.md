@@ -1,28 +1,22 @@
 # Athletik Clothing GEO 工作台
 
-> 建立日期：2026-08-12
->
-> 规划更新：2026-10-09
+> 建立日期：2026-08-12；工作台核对更新：2026-11-04。
 >
 > 规范站：<https://www.athletikapparel.com/>
 >
 > 最终目的：**被 AI 找到 → 被 AI 准确提取 → 被 AI 引用 → 在匹配的 B2B 采购问题中被 AI 推荐**
 >
-> 当前阶段：Baseline v2 与 Broad Discovery v1 的首轮**记录采集**均已完成，但 2026-09-30 回算确认有效中性分母仍为 0：Baseline v2 为 16 条 `partial` + 8 条 `unavailable`，Broad Discovery v1 为 6 条 `partial` + 3 条 `unavailable`。Athletik 在 FLATLOCK / ACTIVESEAM / Merino 等专业采购题的 `partial` 观察中出现强推荐信号，Broad Discovery 的 6 条 `partial` 观察为 `0/6 answer mentions`、`0/6 canonical citations`；这些用于描述性诊断，不作为正式推荐率或稳定趋势。当前主要瓶颈是测量有效性、宽泛 buyer-fit、规范来源归属、对应 Guide 引用和独立第三方佐证。
+> 当前阶段：基础建设和首轮内容实施已完成，正在核对来源选择、补强真实证据并观察已部署内容。10 月已有按各自验收范围接受的 ChatGPT Search 样本，Google AI Mode 11 题也已采集归档；不能再把 9 月历史 `valid 0` 当作全部当前状态。两平台、不同日期和 M2 / M4 采集模式分开，不汇总为同一推荐率。
+>
+> 最近已关闭交付：C06 示范与 C08 内容增补已通过生产验收；两页内容日期及 Tech Pack 入口说明于 11-02 完成合并生产验收。About 买家公开名单与中国生产地址 15 号更正于同日由所有者确认 `deployed / owner-accepted`。部署完成不等于 Google 重抓或 AI 成效。
 
-> 2026-10-08 的 11 条 ChatGPT Search M4 样本因截图、完整 Sources 面板和 C06/C08 文本尾部缺口保持历史 `partial`。2026-10-09 已另建 [`重采批次 B`](testing/valid-retest/batch-b/README.md)，11/11 完整首答已取得，保存 74 张回答分段截图、26 张 Sources 截图及 C07 宽表格补图；文本长度、提示词哈希、文件与纵向覆盖检查通过。Sources 面板现已通过 Summary 入口识别。B 仍为 `collection-complete / owner-review-pending`，合并引用、横向表格与网络变化待复核，正式有效分母仍为 0。Google AI Mode 11 条尚未开始，本次未修改网站。
+本文件是 GEO 中央工作台，管理当前目标、判断和执行顺序。逐题样本、发布与数据保留在日期化来源；本次仅按仓库证据整理，没有重新抓取生产、平台或外部数据。
 
-> 同日[首轮逐条复核](testing/valid-retest/batch-b/review-2026-10-09.md)已完成：E01 的内容与引用支持关系通过，早间环境与所有者独立审核待确认；其余十条有未展开合并引用，D03/D05/C06 另有宽表截图缺口。原会话只读重开未恢复，未提交新问题。批次 B 的 D03/D05 明确推荐 Athletik，D04 与三条 Broad Discovery 未提及；C07 的规范 Guide 只确认进入检索列表，尚不能计最终引用。D05 的 Beta / Athletik 公开关联来源已定位到 Textilepages，属于既有隔离风险复现。上述均为描述性观察，正式有效分母不变。
+当前范围以 `AGENTS.md` 为准：官网、Instagram、当前 LinkedIn 均可优化和准备内容；公开发布仍需对应授权。所有者不管理 YouTube，既有视频信息更新已 `closed / out-of-scope / not-applied`，不要求接管；其他域名、账号与外联不自动纳入。
 
-本文件是 Athletik Clothing GEO 的中央工作台。以后有关目标、阶段判断、优先级和执行顺序的结论先更新本文件；逐次测试、站外发布和平台数据继续写入对应证据日志。
+下一步沿用已有安排：先确认 C07 同面料 FLATLOCK / OVERLOCK 正反面实物样本及公开许可，再评估是否补充既有指南；不把外观示范写成性能测试。11-06 建议复查 C06 / C08 抓取与索引，10-30 LinkedIn Tech Pack 新帖的完整七日窗口为 10-31～11-06，11-07 起复盘。Bing 本轮按所有者决定暂缓，不重复催导出。
 
-> 2026-11-02 本轮主任务已关闭：[买家公开名单的 GEO 证据应用](testing/buyer-disclosures-2026-11-02.md)。已核验 Canadian Tire 2026 年名单和 Sainsbury's 2026 年 9 月名单中的中国实体列名，About 内容与 15 号地址更正合并交付；所有者已确认“已验收 并部署”，状态为 `deployed / owner-accepted`。目录、日期提示和转发包装只作辅助维护；既有采样按已接受结果继续观察，不用单次缺席推断原因或重复改写近期指南。
-
-下一项建议：准备 C07 同面料 FLATLOCK / OVERLOCK 正反面实物示范，先确认可公开样本，再评估补入既有指南。依据[技术证据盘点](testing/valid-retest/batch-d-2026-10-29/c06-c07-evidence-inventory-2026-10-29.md)，现有两个生产视频使用不同面料和成衣，尚缺同布结构对照；样本存在与可公开性仍待确认，未启动拍摄或页面改动。外观示范不作为强度、伸长、舒适度或成本测试。
-
-> 最新决定（2026-10-09）：所有者已手动重采 E01，确认符合要求并明确判为 `valid`。[手动补采记录](testing/valid-retest/manual-e01/README.md)已单独接受 1 条有效样本（M2）；E01 已关闭，下一条处理 E02。不再重复索要 E01 环境确认。上文及批次 A/B 的 0 分母为各自历史状态，不覆盖旧样本，不升级其他十条，也不混算不同采集模式的表现率。
-
-> 后续执行：[逐条重采批次 C](testing/valid-retest/batch-c/README.md)已将 E02 验收为 `valid / E3 / passed`（M4）：完整首答与表格、23 条 Sources 候选、14 个实际引用位置均已核对。当前已接受 E01（M2）和 E02（M4）两条；E02 不计自然发现。D03 正在采集，每条当场验收后才进入下一题，不再批量采完后检查。
+对应证据：[10 月有效样本验收](testing/valid-retest/batch-d-2026-10-29/README.md)、[Google AI Mode 对照](testing/valid-retest/google-ai-mode-2026-10-29/README.md)、[指南合并生产验收](testing/guide-content-dates-2026-10-31.md)、[买家名单](testing/buyer-disclosures-2026-11-02.md)、[技术证据盘点](testing/valid-retest/batch-d-2026-10-29/c06-c07-evidence-inventory-2026-10-29.md)、[分发日志](distribution/publishing-log.md)。
 
 ## 1. 北极星目标与四阶段结果漏斗
 
@@ -57,10 +51,10 @@ Athletik 能稳定进入符合业务边界的候选名单，理由来自可核�
 | 中国实体 | Zhangjiagang Athletik Clothing Co., Limited；主要 manufacturer and seller，并对应中国生产设施 |
 | 中国生产地址 | No. 15, Zhongxing Road, Yangshe Town, Zhangjiagang, Jiangsu 215699, China（所有者于 2026-11-02 更正官网误写的 25 号；不是搬迁记录） |
 | 规范站 | <https://www.athletikapparel.com/> |
-| 官方渠道 | [LinkedIn](https://www.linkedin.com/company/111831319/) · [Instagram](https://www.instagram.com/athletikclothinginc/) · [YouTube](https://www.youtube.com/@athletikclothinginc) |
+| 可控 GEO 渠道 | 规范官网、[LinkedIn](https://www.linkedin.com/company/111831319/) 与 [Instagram](https://www.instagram.com/athletikclothinginc/)；YouTube 是既有公开入口，但所有者不管理，本轮不执行编辑 |
 | 核心定位 | Vertically integrated OEM for technical knitwear |
-| 目标客户 | 北美和欧洲的中型 B2B 品牌、批发商和进口商；不以初创企业和小批量试单为主要受众 |
-| 成衣商业门槛 | MOQ 500 pieces per style |
+| 目标客户 | 北美和欧洲的中型 B2B 品牌、批发商和进口商；优先较大订单与持续返单，同时保留小客户、小单的项目评估空间 |
+| 成衣商业门槛 | 标准入口为 500 pieces per style；定制面料每款每色通常按 400–500 件评估，可混码，结合最低米数、耗料及颜色拆分核算；不承诺任意拆色或接受所有小单 |
 | 独立面料业务 | 接受独立面料项目；MOQ、开发和交付按面料规格与项目确认，不套用成衣 500 件口径 |
 | 主要转化 | 买家提交产品类别、预计数量、业务类型、公司信息、tech pack/specification 和项目要求，进入开发与报价审核 |
 
@@ -96,18 +90,22 @@ Beta Textiles / BTEXCO 是同一运营体系的面料销售名称，但对外独
 `myathletik.com` 已按所有者决定完全下线，不做跨域 301。2026-09-30 复核 HTTP/HTTPS、www/裸域，并以普通 UA、Googlebot 和 OAI-SearchBot 请求，全部返回 HTTP 410；该风险记为 `closed / monitoring`，后续只有重新出现 200/3xx、旧正文或 AI 持续引用缓存时才重新打开。
 
 旧 LinkedIn 页面 `linkedin.com/company/athletik-clothing-inc` 是历史介绍页。所有者于 2026-09-30 确认页面内容属实，但管理账号已丢失且不会再发布新内容。它不再作为当前运营渠道，风险从 P0 降为 `accepted-residual / monitor-only`：以后所有新发布与官方社交信号只使用当前 [LinkedIn](https://www.linkedin.com/company/111831319/)；旧页中的客户、审核、人数、地址和成立年份仍按历史页面的原有范围理解，不自动作为当前项目可重复使用的最新断言。只有 AI/搜索结果因该页产生新的实体误判，或重新取得账号权限时，才重新评估治理动作。
-所有者已确认 `ultramerino.com` 为同方控制的 Merino 专业站，但该站当前不由本项目负责。GEO 主执行范围只优化 Athletik 规范站；UltraMerino 只作为来源冲突和历史事实样本，不在本项目中安排页面修改、跨域 Canonical、301 或内容复制。其生产知识只有在被当前证据独立复核后才可用于规范站，历史商业和能力声明不能自动升级为现行事实。
+所有者已确认 `ultramerino.com` 为同方控制的 Merino 专业站，但该站当前不由本项目负责。GEO 网站执行范围以 Athletik 规范站为主，另含获准的 Instagram / LinkedIn 工作；UltraMerino 只作为来源冲突和历史事实样本，不在本项目中安排页面修改、跨域 Canonical、301 或内容复制。其生产知识只有在被当前证据独立复核后才可用于规范站，历史商业和能力声明不能自动升级为现行事实。
 
 `athletik.com.cn` 已由所有者于 2026-09-30 确认仍在继续使用，不再归类为待下线的历史站，也不安排关闭、301 或跨域 Canonical。`athletikapparel.com` 仍是本项目的 GEO 规范站；`athletik.com.cn` 作为持续运行的中国实体站点单独维护。两站重叠的实体、客户、审核、设备、产能和地址断言应保留各自日期、法律实体与适用范围，未经当前复核不自动互相升级为最新事实。其他历史/类目矩阵站的所有权、当前角色和去留仍须逐站核验。
 
+`powermerino.com` 已由所有者在[10-27 第二轮 SERP 研究](../seo/research/serp-commercial-round2-us-gb-ca-2026-10-27.md)中确认控制，仅作内部自有站分类，不计独立竞品/第三方佐证，不自动互链、合并或修改。
+
+`athletik.nyc` / `athletikclothinginc.ca` 于 10-30 被所有者确认为无控制权，采用 `accepted-residual / monitor-only`；不安排登录、修改、关闭、重定向或外联。E01 的生产基地段同时共引这两站与中国站，不能确定某一站是全部细节的唯一来源；详见 [E01 来源核查](testing/e01-source-trace-2026-10-30.md)。
+
 ## 3. 平台事实与策略边界
 
-当前规划采用以下官方平台边界，不采用未经证明的“GEO 捷径”：
+以下是此前研究采用的平台边界与来源路由；本次文档整理没有重新核验外部页面或平台功能。遇实际功能变化再定向核查，不采用未经证明的“GEO 捷径”：
 
 - Google 说明 AI Overviews / AI Mode 继续依赖常规搜索基础；页面需可索引并可展示摘要，不需要特殊 AI Schema、`llms.txt` 或把正文强行切成固定长度片段。GSC 当前已为本属性开放 Generative AI Beta 专用报表，可观察 impressions、Pages、Countries、Devices 和 Dates，但没有 Query、答案原文、推荐位置或转化。参见 [Google AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)、[Google generative AI optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) 与 [Generative AI performance report](https://support.google.com/webmasters/answer/16984139)。
 - OpenAI 说明允许 `OAI-SearchBot` 有助于内容在 ChatGPT 搜索中被发现、摘要和引用；ChatGPT 引荐流量可在 Analytics 中观察。参见 [OpenAI Publishers and Developers FAQ](https://help.openai.com/en/articles/12627856-publishers-and-developers-faq)。
 - Perplexity 将 `PerplexityBot` 定义为用于在搜索结果中发现和链接网页的 crawler；其访问状态需要与其他搜索 crawler 分开验证。参见 [Perplexity Crawlers](https://docs.perplexity.ai/docs/resources/perplexity-crawlers)。
-- Bing Webmaster Tools 已提供 AI Performance 公开预览，可观察 citation count、cited pages 和 grounding queries；若当前账户可用，应把它作为引用证据源，而不是购买第三方“可见性分数”。参见 [Bing AI Performance](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)。
+- Bing Webmaster Tools 已提供 AI Performance 公开预览，可观察 citation count、cited pages 和 grounding queries；此前已建立账户基线；10-30 起按所有者决定 `deferred / low-signal`，不把下一窗口导出列为当前待办。参见 [Bing AI Performance](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)。
 
 因此，Schema 的职责是帮助统一实体与内容表达，并与可见正文一致；它不是推荐排名开关。
 FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们确实比段落更清楚时使用。
@@ -127,6 +125,11 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | [`testing/bing-ai-performance-baseline.md`](testing/bing-ai-performance-baseline.md) | Bing AI Performance 的首份概览与页面级基线；Grounding Queries 已由所有者确认无记录 |
 | [`testing/geo-measurement-snapshot-2026-09-28.md`](testing/geo-measurement-snapshot-2026-09-28.md) | 传统 GSC、GSC Generative AI、Bing AI Performance 与 GA4 AI referral 的首份跨平台月度快照 |
 | [`testing/geo-measurement-snapshot-2026-10-08.md`](testing/geo-measurement-snapshot-2026-10-08.md) | GSC Generative AI 首个等长 28 天对比窗口、当前页面/国家/设备分布及有效复测数据闸门 |
+| [`testing/valid-retest/batch-d-2026-10-29/README.md`](testing/valid-retest/batch-d-2026-10-29/README.md) | 10-29 ChatGPT Search 独立续测验收、模式与证据限制 |
+| [`testing/valid-retest/google-ai-mode-2026-10-29/README.md`](testing/valid-retest/google-ai-mode-2026-10-29/README.md) | Google AI Mode 11 题归档及跨平台逐题观察，不混算比率 |
+| [`testing/guide-content-dates-2026-10-31.md`](testing/guide-content-dates-2026-10-31.md) | C06 / C08 内容日期及 Tech Pack 入口的 11-02 合并生产验收 |
+| [`testing/buyer-disclosures-2026-11-02.md`](testing/buyer-disclosures-2026-11-02.md) | 买家公开列名、批准措辞与部署确认；不等同订单或背书 |
+| [`testing/address-correction-2026-11-02.md`](testing/address-correction-2026-11-02.md) | 中国生产地址 15 号更正，历史样本原文保留 |
 | [`distribution/social-content-sop.md`](distribution/social-content-sop.md) | 官网指南改编为 LinkedIn / Instagram 内容的执行 SOP |
 | [`distribution/publishing-log.md`](distribution/publishing-log.md) | 每次站外分发的发布时间、链接和七日数据 |
 | [`../seo/authority/offsite-authority-opportunity-pool-v1.md`](../seo/authority/offsite-authority-opportunity-pool-v1.md) | 站外行业引用、目录、认证名录和编辑机会的证据与状态 |
@@ -136,21 +139,23 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 新 agent 开始 GEO 工作时，先读 `AGENTS.md`、本文件和 `testing/prompt-baseline.md`，再按任务读取分发或站外权威日志。不要仅依赖聊天历史。
 
-## 5. 当前资产与证据状态
+## 5. 资产与日期化证据状态
+
+下列 HTTP、Sitemap、GSC 与社交数值均属于标注日期的历史快照，不能当作 11-04 的实时总量或重新验收。
 
 ### 5.1 找到层：基础基本完成
 
 - 2026-09-03 生产抽查：`robots.txt`、Sitemap index、Technical Guides Hub 与四篇指南均返回 HTTP 200；Page Sitemap 含 18 个 URL。
 - 2026-09-30 全景审计复核：Page Sitemap 已增至 20 个 URL，20/20 均返回 HTTP 200、单一 H1 和自引用 Canonical；Technical Guides Hub 当前列出六篇指南。该结果是生产可访问性快照，不代替 GSC 索引覆盖或真实 crawler 日志。
-- 同日以 Googlebot、OAI-SearchBot、PerplexityBot、Claude-SearchBot 和 ChatGPT-User 抽查 Tech Pack Guide，均返回 HTTP 200。该测试只排除明显的 UA/robots/CDN 阻拦，不代替真实爬虫日志。
-- 截至 2026-09-30，仓库中的 GSC 最新完整索引快照仍属于 18 URL 阶段：其中 17 个 `PASS / Submitted and indexed`，`/services/` 为 `Discovered - currently not indexed`。当前生产 Sitemap 已有 20 个 URL，但尚无对应的完整 20 URL GSC 快照；实时测试曾通过并已请求一次，当前按周监测，不重复提交或改页。
+- 2026-09-03 以 Googlebot、OAI-SearchBot、PerplexityBot、Claude-SearchBot 和 ChatGPT-User 抽查 Tech Pack Guide，均返回 HTTP 200。该测试只排除明显的 UA/robots/CDN 阻拦，不代替真实爬虫日志。
+- 截至 2026-09-30，仓库中的 GSC 最新完整索引快照仍属于 18 URL 阶段：其中 17 个 `PASS / Submitted and indexed`，`/services/` 为 `Discovered - currently not indexed`。当时生产 Sitemap 已有 20 个 URL，但没有对应的完整 20 URL GSC 快照。这是历史差异；Services 后续以 SEO Backlog 的日期化记录为准，不据此重开任务或重复提交。
 - Technical Guides Hub、首页、导航、页脚、品类页和指南之间已有稳定内链。
 - 2026-09-05 首次 GSC Generative AI 导出返回 2026-07-21 至 09-02 共 29 次 Property impressions，证明本站链接已在实际 AI Overviews / AI Mode 结果中展示；这比 crawler/索引资格更强，但仍不证明答案准确提取或推荐了 Athletik。
 - 2026-10-08 已取得 2026-09-03～09-30 的完整 28 天导出：Property impressions 为 190，对比前一等长窗口 27，增加 163（+603.7%，7.04×），有展示日期由 11/28 增至 27/28。前窗与 2026-08-13～08-17 日志异常重叠，当前窗也混合两篇新 Guide 上线前后日期，因此只确认链接可见性上升，不作页面或部署因果归因。
 
 ### 5.2 提取与引用层：结构完成，结果仍需复测
 
-- 截至 2026-09-30 已上线六篇第一方技术指南：
+- 2026-09-30 已上线以下六篇指南，11-02 [合并验收](testing/guide-content-dates-2026-10-31.md)再次确认六页与 Hub 可用：
   - <https://www.athletikapparel.com/flatlock-vs-overlock-technical-knitwear/>
   - <https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/>
   - <https://www.athletikapparel.com/evaluate-technical-knitwear-oem/>
@@ -164,7 +169,16 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 - Baseline v2 首轮记录采集已完成：ChatGPT Search 8/8、Google AI Mode 8/8，16 条实际回答均为 `partial`；Perplexity 8 条按 `unavailable / plan-access` 记录，正式 `valid` 分母为 0。描述性观察中，ChatGPT D03～D05 均把 Athletik 列第 1，但 D05 的核心引用来自旧 `ultramerino.com`；C06～C08 为 0/3 个已验证对应 Guide 引用。Google AI Mode E01/E02 找到规范站但仍受旧站候选/旧口径影响；D03 第 1但引用非规范来源、D04 未出现、D05 第 3并引用当前规范 Merino 页面；C06 未引目标 Guide，C07 只引首页，C08 的 Sources 面板把 Athletik LinkedIn 尽调帖列为第一张卡片，但仍未引用官网目标 Guide。这些信号可用于定位来源和内容缺口，不能写成有效中性样本上的推荐率或稳定复现。
 - 2026-10-08 有效复测包完成 11 条 ChatGPT Search 运行并保存 169 条 inline citation 最终 URL。描述性观察为：D03、D04、D05 均把 Athletik 列第 1并引用 `athletikapparel.com`；E01/E02 正确提取品牌、生产地、产品和主要能力；C06～C08 未提及 Athletik，也未引用规范 Guide；三条 Broad Discovery 均未提及 Athletik。因完整 UI 截图、整合 Sources 面板和两条超长文本存在证据缺口，11 条仍为 `partial`，不得与历史 partial 合并计算正式推荐率或引用率。
 
-### 5.3 站外分发层：三项均有发布信号，证据补录滞后
+### 5.3 10 月采样与已部署证据补强
+
+- [10-09 批次 B](testing/valid-retest/batch-b/README.md)已取得 11 条完整首答，但[逐条复核](testing/valid-retest/batch-b/review-2026-10-09.md)仍发现合并引用与部分横向表格截图缺口；文件/文本检查通过不等于整批有效。A/B 保留历史状态，后续独立样本不能反向补齐原记录。
+- [手动 E01](testing/valid-retest/manual-e01/README.md) 已按所有者确认接受为 M2 有效样本；[批次 C](testing/valid-retest/batch-c/README.md) 的 E02 / D03-R2 为 M4 `valid / E3 / passed`。D03 首次记录及 A/B 仍保留原 `partial`，不覆盖。E02 为指定域名理解题，不计自然发现。
+- [10-29 批次 D](testing/valid-retest/batch-d-2026-10-29/README.md)：Dot 7 条为 `valid / owner_confirmed`（M4）；手动 BD-01 为 `valid / owner_accepted`（M2）；Dot 原 BD-01 仍 `partial`。地区未知、手动 Sources 精简留证等限制保留，不冒称全部经 Codex 独立核验或 E3。
+- [Google AI Mode 10-29 首答](testing/valid-retest/google-ai-mode-2026-10-29/README.md) 11 题已归档；5 题 16 个引用位置缺最终 URL，地区 unknown。可观察已知答案和引用，不补链接，不自动升级原方案 E3；不与 ChatGPT 不同日期/模式混算表现率。
+- [C06 示范](testing/valid-retest/batch-d-2026-10-29/c06-tech-pack-demo-2026-10-29.md) 的尺寸表、BOM 与 PDF 已于 10-29 通过生产验收，仅供示范、不用于生产；[C08 增补](testing/valid-retest/batch-d-2026-10-29/c08-guide-copy-draft-2026-10-30.md) 于 10-30 通过生产验收。[C07 → ACTIVESEAM 上下文链接](testing/guide-context-links-2026-10-31.md) 于 10-31 完成生产验收。
+- [C06 / C08 日期及 Tech Pack 入口说明](testing/guide-content-dates-2026-10-31.md) 于 11-02 生产验收关闭，保留原观察窗口。当天 [15 号地址更正](testing/address-correction-2026-11-02.md)与[买家公开名单](testing/buyer-disclosures-2026-11-02.md)按所有者确认关闭；后者未冒称 Agent 新执行生产验收。公开列名只证明原名单日期和范围，不证明当前订单、直接合同或质量背书。
+
+### 5.4 站外分发层：发布与效果分别记录
 
 | 对应意图 | 官网母文章 | LinkedIn / Instagram 状态 | 证据缺口 |
 |---|---|---|---|
@@ -172,113 +186,96 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | V2-C06 | Technical Knitwear Tech Pack | 2026-08-13 已发布 | 两个平台公开 URL、Story 状态和七日数据待补录 |
 | V2-C08 | Evaluate a Vertically Integrated Knitwear OEM | Google AI Mode Sources 面板已发现 2026-08-14 Athletik LinkedIn 尽调帖；Instagram 状态待确认 | LinkedIn 实际公开 URL、Instagram 发布状态、Story 状态和七日数据待补录 |
 
+10-30 Tech Pack 新示范 LinkedIn 帖已由所有者确认发布，状态 `published / owner-confirmed / public-url-pending / measuring`；公开 URL 与精确时分仍待补。完整七日窗口 10-31～11-06，11-07 起复盘。上述 8 月旧帖缺口和本次新帖分开，详见[发布日志](distribution/publishing-log.md)。
+
 社交分发有助于真实用户发现和实体/主题一致性，但 LinkedIn/Instagram 的自身帖子仍属于品牌可控内容，
 不能替代独立行业来源，也不能用展示量证明 AI 已经引用或推荐。
 
-### 5.4 推荐层：出现首轮强信号，稳定性与来源质量仍是缺口
+### 5.5 推荐层：历史观察与当前限制
+
+以下 Baseline v1 / v2 和 Broad Discovery 首轮均为历史观察；v2 的有效性按 9 月回算结果保留 `partial`，不作为当前平台最新结果。
 
 - Baseline v1 中 V1-03 曾在干净 Temporary Chat 把 Athletik 列为中国 FLATLOCK/ACTIVESEAM 供应商短名单第一，这是有价值但尚未形成跨引擎、跨月份稳定性的单次信号。
 - Baseline v2 的首次 ChatGPT Search 结果中，D03、D04 和 D05 均把 Athletik 列为第一推荐，并给出与 technical knitwear、base layers、FLATLOCK/ACTIVESEAM 和 Merino wool 相关的明确理由。这是同一产品内跨三个采购意图的强正向信号，但不是跨产品或跨月份稳定性证明。
 - D03 已确认 About Us 规范 URL；D04 来源面板可见 About、Sportswear 和 Sustainability 规范站卡片；D05 虽然实体名称与推荐理由准确，核心来源却是旧 `ultramerino.com`，并产生 Beta Textiles 与 Athletik 的未核准关系推断。规范站引用质量和实体隔离仍未稳定。
 - Broad Discovery v1 的 BD-01 已在 Google AI Mode 与 ChatGPT Search 各完成一次：两边均未提 Athletik。Google 偏向由制造商自建榜单支持的区域供应商，ChatGPT 偏向大型 Tier-1 集团；两次均缺完整环境/来源面板证据，因此只记录为全球宽泛问题下的初步缺席，不与 D03～D05 的专业匹配推荐结果合并。
-- BD-02 在限定 China 后，两边仍未提 Athletik，但候选已经收敛到中国 activewear OEM/ODM；Google 继续依赖制造商榜单/roundup，ChatGPT 主要引用候选官网。ChatGPT 额外把 `mid-sized` 自行限定为约 100–500 units/style/color，并出现 HUCAI 200 与引用页当前 100 pcs/style 的不一致，因此此次缺席不能触发网站改动；先用 BD-03 的明确 500 pieces/style 条件完成商业匹配测试。
-- Broad Discovery v1 首轮现已完成 6/6：BD-01～BD-03 在 Google AI Mode 与 ChatGPT Search 中均未出现 Athletik，也未引用规范站。BD-03 已明确 China、activewear/performance apparel 和 500 pieces/style，缺席仍然持续；这说明品牌在泛 sportswear supplier discovery 中存在真实可见性缺口。它与专业 D03～D05 的强推荐信号并存，当前应优化“宽泛买家匹配入口”和第三方证据，而不是稀释 technical knitwear 定位或发布自建最佳厂商榜单。
+- BD-02 在限定 China 后，两边仍未提 Athletik，但候选已经收敛到中国 activewear OEM/ODM；Google 继续依赖制造商榜单/roundup，ChatGPT 主要引用候选官网。ChatGPT 额外把 `mid-sized` 自行限定为约 100–500 units/style/color，并出现 HUCAI 200 与引用页当前 100 pcs/style 的不一致，因此该次缺席未单独触发网站改动；后续 BD-03 已完成。
+- Broad Discovery v1 首轮记录采集为 6/6（均 `partial`）：BD-01～BD-03 在 Google AI Mode 与 ChatGPT Search 中均未出现 Athletik，也未引用规范站。BD-03 已明确 China、activewear/performance apparel 和 500 pieces/style，当时仍未出现；这是宽泛发现缺口线索，不是有效中性样本的稳定缺席率。后续 Program Fit、About 与受控 Top 5 试验已有实施，最新 10-29 观察见下文，不重复执行旧建议。
 - 站外权威机会池已经识别 Woolmark 条目、认证名录、Merrow、行业媒体和制造商目录等来源，但 ThomasNet、OEKO-TEX、WRAP 和 Merrow 等当前分别受平台资格、可核验输入或所有者优先级限制，不能写成已完成。
 - 当前缺少的是“与具体采购判断相关的独立佐证”，不是链接总数。更多低质量目录、付费链接或自建推荐榜单不会解决该问题。
 
-## 6. 阶段诊断
+## 6. 阶段诊断（按已有证据更新至 2026-11-04）
 
 | 阶段 | 当前判断 | 主要理由 | 下一道门槛 |
 |---|---|---|---|
-| 找到 | 已获得 Google 实际展示证据，持续监测 | 2026-09-30 生产 20/20 URL 为 200、单一 H1、自引用 Canonical；主要 crawler 抽查可访问；17/18 GSC indexed 属于 18 URL 阶段的历史索引快照；Generative AI 首个基线 29 impressions | 为当前 20 URL 建立新的完整索引快照；完整可比窗口持续出现目标页面；无新的抓取/indexability 回归 |
-| 提取 | 部分达成，历史来源污染已复现 | 品牌题可提取核心业务、地点与规范站，但 Google AI Mode E01 混入 `athletik.nyc` 的 5 家伙伴工厂、年产 500 万件及未核准区域域名关系 | E01/E02 在两个可用产品或跨月份准确覆盖规范实体口径，且不引入未核准站点关系 |
-| 引用 | Google 链接曝光与站外来源候选已出现，但内容题尚未取得规范指南引用 | 历史 GSC 窗口中四篇早期 Guide 均有页面级链接曝光；6 条 C06～C08 跨产品记录均为 `partial`，其中 ChatGPT 为 0/3 已验证目标 Guide 引用，Google C06 未引目标 Guide、C07 只引首页、C08 只在 Sources 面板出现 Athletik LinkedIn 尽调帖 | 在 `valid` 运行中取得相关规范 Guide 引用；同题在至少两个独立产品或月份复现，且引用支持结论 |
-| 推荐 | `partial` 观察中跨产品出现，正式有效率尚不可计算 | ChatGPT D03～D05 的 3 条 `partial` 记录均为第 1；Google AI Mode D03 第 1/非规范来源引用、D04 未出现、D05 第 3/规范 Merino 页面引用；这些不构成 `valid` 推荐率 | 下一月以完整环境和独立会话取得 `valid` 记录并继续进入匹配短名单；规范站与可信独立来源支持准确理由，且不混淆实体关系 |
+| 找到 | 基础与实际链接展示已建立 | 既有 GSC Generative AI 等长窗口 27 → 190 属于 9 月；11-02 六指南和 Hub 的生产技术验收通过 | 按已排窗口观察抓取与展示，不把历史页面数当作当前全站统计 |
+| 提取 | 核心实体可提取，跨域关系仍有残余风险 | 10-29 Google E01 共引规范站、中国站、NYC / Canada；10-30 已核查，无权域名按所有者决定监测 | 在可控渠道保持准确口径；只有反复出现且有实际影响的错误再评估处置 |
+| 引用 | 已有对应 Guide 的实际引用，仍不稳定 | 10-29 Google C07 实际引用 FLATLOCK Guide；ChatGPT 同题仅候选，C06 / C08 两平台本次未见官网实际引用 | 先观察已部署 C06 / C08；区分候选与正文引用，不把单次变化归因为改版 |
+| 推荐 | 专业题有已接受的推荐观察，宽泛题结果分化 | ChatGPT D03 / D04 / D05 各次推荐；Google D03 第1、D05 第2、D04 未提，BD-03 第1，BD-01 只引自有 Top 5 而未推荐 Athletik | 不同日期、平台、M2 / M4 分开；保留未知地区与引用缺口，等待独立可比复现 |
 
-不建立一个把四阶段相加的“GEO 总分”。四阶段分别记录，否则品牌题的高准确率会掩盖未点名推荐的缺口。
+不建立四阶段相加的“GEO 总分”。品牌题、指定域名题、候选来源、实际引用与采购推荐分别记录。具体结果以[两平台逐题对照](testing/valid-retest/google-ai-mode-2026-10-29/README.md)为准。
 
-### 6.1 风险台账（2026-09-30）
+### 6.1 风险台账（保留既有 ID，11-04 核对更新）
 
 状态含义：`active` 需要执行动作；`controlled` 已有持续控制但仍需监测；`accepted-residual` 是所有者知情接受且当前不投入修复；`closed / monitoring` 已满足验收条件，只观察是否复发；`red-line` 是持续适用、不能以一次完成关闭的发布边界。
 
 | ID | 类型 | 风险与当前状态 | 优先级 | 负责人建议 | 决策、动作与验收口径 |
 |---|---|---|---|---|---|
-| GEO-RISK-001 | 事实/治理 | 中央文档、历史快照与生产真值漂移；`controlled / reconciliation-complete` | P1 监测 | 文档维护者 + 网站负责人 | 2026-09-30 已扫描 `docs/geo/` 的 21 个 Markdown 文件，并对齐 20 个 Sitemap URL、六篇 Guide、`legalName`、退役域名、LinkedIn 与 `athletik.com.cn` 当前口径；日期化历史快照保留原值并明确日期。以后生产资产或所有者决策变化时复查当前态入口。 |
-| GEO-RISK-002 | 测量 | 批次 `complete` 标签可能掩盖单次 `partial`；`controlled / denominator-established` | P1 监测 | GEO 执行者 | 2026-09-30 已建立首轮有效分母表：Baseline v2 为 `valid 0 / partial 16 / unavailable 8`，Broad Discovery v1 为 `valid 0 / partial 6 / unavailable 3`。以后每批继续同时报告 `valid / partial / unavailable / personalized / intent-mismatch`；正式比率只使用 `valid`。 |
+| GEO-RISK-001 | 事实/治理 | 中央文档与日期化证据漂移；`controlled / reconciliation-complete` | P1 监测 | 文档维护者 + 网站负责人 | 9-30 清理记录保留；11-04 定向恢复被删进度并核对 10-29～11-02 来源。当前入口区分已部署、owner-accepted、采样有效性和实时数据；未重做全站审计。 |
+| GEO-RISK-002 | 测量 | 批次完成标签掩盖证据差异；`controlled` | P1 监测 | GEO 执行者 | 9 月首轮 valid 0 保留为历史；10 月 E01 / C / D 按各自已接受范围记录，旧 partial 不升级；不混算平台、日期、M2 / M4 或未知地区，也不将 owner-accepted 自动写成 E3。 |
 | GEO-RISK-003 | 测量 | 内部 QA 污染 GA4/UTM；`controlled` | P1 | 分析负责人 | 保留原始值并标记 `measurement-contaminated`，从外部访问和转化中剔除；验收为快照同时给出 raw 与 confirmed-external。 |
-| GEO-RISK-004 | 信源 | 与采购判断相关的独立外部证据不足；`active / suspended-awaiting-media` | P1 | 所有者 + 内容负责人 | 等待机器铭牌、接缝细节和同面料 sew-off 等专项素材；恢复后每月最多推进一项可信来源，不以低质目录、付费链接或自建榜单补量。 |
+| GEO-RISK-004 | 信源 | 采购判断所需独立佐证仍有限；`controlled / monitoring` | P1 | 所有者 + 内容负责人 | 11-02 已核验两家买家公开列名并上线 About，范围限日期化名单；既有设备方外联仍 suspended-awaiting-media。两者分别记录，不把公开列名写成工艺性能或当前订单背书。 |
 | GEO-RISK-005 | 合规/证据 | 客户、Logo、认证和审核存在授权与范围边界；`red-line` | P0 红线 | 所有者 | 发布前核对授权、法律实体、站点、产品/材料/工序范围和有效期；历史页面属实不等于可脱离原范围作为当前营销断言复用。 |
-| GEO-RISK-006 | 执行边界 | UltraMerino 等站点不由本项目控制；`accepted-scope` | P2 | 所有者 | 本项目只记录冲突，不擅自修改、复制、设置 Canonical 或重定向；若职责改变再重新立项。 |
+| GEO-RISK-006 | 执行边界 | UltraMerino 等站点不在本项目执行范围；`accepted-scope` | P2 | 所有者 | 本项目只记录冲突，不擅自修改、复制、设置 Canonical 或重定向；若职责改变再重新立项。 |
 | GEO-RISK-007 | 外部资料 | 旧 LinkedIn 管理权丢失；`accepted-residual / monitor-only` | P2 | 所有者 + 社交管理员 | 所有者确认历史内容属实且页面不再更新；当前不投入追索或修复，新内容只发当前 LinkedIn。若 AI/搜索产生新的实体误判或账号找回，再重新打开。 |
 | GEO-RISK-008 | 基础设施 | `myathletik.com` 退役状态；`closed / monitoring` | P2 | 基础设施负责人 | 2026-09-30 已验证四种 host/scheme 与普通、Googlebot、OAI UA 均为 410；任一入口重新出现 200/3xx 或旧正文时重新打开。 |
 | GEO-RISK-009 | 跨站治理 | `athletik.com.cn` 持续运行带来的双站事实同步；`active-governance` | P1 | 所有者 + 两站维护者 | 不关闭、不重定向；保持其中国实体站点角色。重叠断言按法律实体、日期和范围核验；AI 引用该站时单独记录来源归属，不把它误判为退役缓存或独立第三方背书。 |
 
 风险台账不把 `accepted-residual` 或 `closed / monitoring` 计入当前 P0。P0 只保留会直接污染事实源、测量结论或未经授权公开声明的问题。
 
-2026-09-30 真值清理说明：本轮把 `GEO.md` 与 `testing/prompt-baseline.md` 作为当前控制入口；`baseline-*-diagnosis-2026-09-11.md`、`*-2026-09-14.md`、测量快照和全景审计等日期化文件继续保存当日证据，不把其中的 18 URL、四篇 Guide 或当时待确认状态机械改写为今天的事实。后续引用日期化文件时必须同时读取本工作台的当前状态。
+2026-09-30 历史清理说明：当时把 `GEO.md` 与 `testing/prompt-baseline.md` 作为当前控制入口；`baseline-*-diagnosis-2026-09-11.md`、`*-2026-09-14.md`、测量快照和全景审计等日期化文件继续保存当日证据，不把其中的 18 URL、四篇 Guide 或当时待确认状态机械改写为今天的事实。后续引用日期化文件时必须同时读取本工作台的当前状态。
 
 ## 7. Baseline v2 提示词—资产—缺口映射
 
-| Prompt | 目标阶段 | 当前主要承接资产 | 当前缺口/决策 |
+本表使用已归档的 10 月观察和后续部署记录，不改写固定问题原文；每题的限制见[逐题对照](testing/valid-retest/google-ai-mode-2026-10-29/README.md)。
+
+| Prompt | 目标阶段 | 当前承接资产 | 当前缺口/决策 |
 |---|---|---|---|
-| V2-E01 | 提取 | 首页、About、Organization Schema | Google AI Mode 已复现旧 `athletik.nyc` 工厂数量/年产能污染；先完成八题，再审计历史域名和旧档案，不在批次中改页 |
-| V2-E02 | 提取 + 引用 | 首页、七个品类页、About、Services | Google AI Mode 当前事实提取准确，但只列首页且来源候选混入旧站；指定站点题不计自然发现 |
-| V2-D03 | 推荐 | 首页、FLATLOCK Guide、生产证据 | 已跨产品第 1，但 Google 引用落在 `athletik.com.cn`/`powermerino.com`；完成批次后优先治理规范站证据归属，再判断是否建立原创 ACTIVESEAM 内容 |
-| V2-D04 | 推荐 | Sportswear、Underwear、Services、OEM Evaluation | Google AI Mode 首轮未出现且竞品多为泛 activewear/规模叙述；先完成 D05，再决定是否补强 1,000+ 件项目匹配摘要与独立佐证 |
-| V2-D05 | 推荐 | Merino Wool、Underwear、About、FLATLOCK Guide | Google AI Mode 已直接引用规范 Merino 页面并列第 3，证明当前页可承接该意图；ChatGPT 仍依赖旧 `ultramerino.com`，批次后重点转为历史站冲突治理和可信独立佐证，不机械新建重复指南 |
-| V2-C06 | 引用 | Tech Pack Guide | ChatGPT 与 Google AI Mode 均准确进入 cut-and-sew performance knitwear 语境，但都未引用目标 Guide，citation source-selection 缺口已跨产品复现；Google 回答还出现 stitch type 命名、固定 SPI/tolerance/extended measurement 等过度概括。本批结束前不改页，完成 C07/C08 后再统一判断可引用摘要、原创生产证据、标准来源或站外引用入口 |
-| V2-C07 | 引用 | FLATLOCK vs OVERLOCK Guide | ChatGPT 与 Google AI Mode 都未选择目标 Guide；Google 只引用规范首页，source-to-claim 支持不足，并采用制造商博客中的固定 SPI 与未经透明验证的 8%–18% 成本数字。完成 C08 后再结合 GSC、Bing grounding query 与跨产品结果判断可引用摘要、原创生产证据、一手标准来源和外部引用入口 |
-| V2-C08 | 引用 | OEM Evaluation + QC Guide | Google Sources 面板已把 Athletik LinkedIn 尽调帖列为首张卡片，证明站外分发可被找到；但正文未提品牌、两篇官网 Guide 未被引用，并回漂到 9GG–16GG/Stoll/Shima fully fashioned 语境。批后优先区分站外发现、规范引用和技术准确性，再决定是否强化 cut-and-sew 定义块、一手证据和外部引用入口 |
-| BD-01 | 宽泛推荐 | 首页、Sportswear、站外实体信号 | 无国家、无技术和无 MOQ 限定；用于观察全球 sportswear OEM/ODM 候选池，不用未出现否定专业匹配 |
-| BD-02 | 宽泛推荐 | 首页、Sportswear、About、站外实体信号 | 只限定中国与 mid-sized brand；观察 Athletik 是否进入通用中国 sportswear OEM/ODM 短名单及主要竞争者 |
-| BD-03 | 商业匹配推荐 | About、七个品类页、Services、Contact、当前 MOQ 500 口径 | 两个产品均未出现 Athletik；七品类 Program Fit 与 About 综合 buyer-fit 段落均已于 2026-09-14 完成生产部署和复核，集中表达目标买家、项目范围和商业起点；不推断每色 MOQ 或价格，按完整月度窗口复测 |
+| V2-E01 | 提取 | 首页、About、Organization Schema | 手动样本已接受；Google 共引跨域来源的风险已核查，NYC / Canada 无控制权，接受残余风险并监测；地址现为15号 |
+| V2-E02 | 提取 + 引用 | 首页、品类、About、Services | 批次 C 已 valid / E3 / passed，Google 亦实际引用官网；指定域名题不计自然发现 |
+| V2-D03 | 推荐 | FLATLOCK / ACTIVESEAM 指南、产品及生产证据 | ChatGPT D03-R2 已通过验收，Google 亦推荐并引官网指南；ACTIVESEAM 已上线，不重新立项 |
+| V2-D04 | 推荐 | Sportswear、Underwear、About、Services | ChatGPT 本次第1，Google 本次未提；About 买家名单已上线，独立可比结果仍待后续观察 |
+| V2-D05 | 推荐 | Merino Wool、Underwear、About | ChatGPT 本次第1，Google 第2且引官网；同方站不是独立背书，UltraMerino 冲突审计已完成且站点改动范围外 |
+| V2-C06 | 引用 | Tech Pack Guide 与示范 PDF | 两平台本次未见目标实际引用；10-29 示范、11-02 日期/入口均已部署，先复查抓取并观察，不重复堆清单 |
+| V2-C07 | 引用 | FLATLOCK vs OVERLOCK Guide | Google 本次实际引用，ChatGPT 仅候选；先确认同面料正反面样本及公开许可，现有不同面料视频不能当性能对比 |
+| V2-C08 | 引用 | OEM Evaluation + QC Guide | 两平台本次未见官网实际引用；10-30 登记与实验室核验增补、11-02 日期同步已部署，观察既有窗口 |
+| BD-01 | 宽泛推荐 | 首页、Sportswear、Top 5、站外信号 | ChatGPT 手动样本未提；Google 引 Top 5 却推荐其他供应商；引用不等于推荐 |
+| BD-02 | 宽泛推荐 | Sportswear、About、Top 5 | 两平台本次未提；Google 有引用 URL 缺口，不补造或据此判定唯一原因 |
+| BD-03 | 商业匹配推荐 | About、品类 Program Fit、Top 5、Contact | ChatGPT 未提，Google 第1并引 Top 5；自有榜单不是独立评级，不以一次结果扩大同类页面 |
 
-## 8. 单人执行计划
+## 8. 单人执行计划（当前顺序）
 
-### P0 — 有效测量基线（首批完成）
+1. **收口既有交付后观察。** C06 示范、C08 内容、C07 上下文链接和 11-02 日期/入口均完成生产验收；地址与 About 买家名单按所有者确认关闭。11-06 建议核对 C06 / C08 抓取与索引，不重复申请、不重置原观察窗口。部署及内容日期不等于搜索重抓日期。
+2. **确认 C07 可公开实物。** 继续既有[技术证据盘点](testing/valid-retest/batch-d-2026-10-29/c06-c07-evidence-inventory-2026-10-29.md)的同面料 FLATLOCK / OVERLOCK 正反面样本机会。未确认存在与许可前不制作虚构案例、启动拍摄或改页；外观与性能证据分开。
+3. **维护可控分发证据。** 10-30 LinkedIn 新帖待实际 URL，11-07 起复盘完整七日窗口；旧 GEO-06/07/08 的 URL、Story 和可得数据缺口继续按[发布日志](distribution/publishing-log.md)补录。Instagram / LinkedIn 可准备内容，但每次公开发布按授权执行，YouTube 更新已关闭。
+4. **保持测量口径。** 9 月首轮与 A/B 的 partial 不覆盖；E01、C、D、Google 独立入账。已完成两平台 10 月采集，不重新批量采样或用缺少来源的记录补齐分母。GSC 生成式展示、实际回答、GA4、正式询盘分开；Bing 本轮 deferred / low-signal。
+5. **有触发再扩量。** claim-to-source 矩阵、Program Fit、About、ACTIVESEAM、UltraMerino 冲突审计和 Top 5 试验已有记录，不重新立项。设备方佐证/外联继续按暂缓决定；买家公开名单已核验并应用，不等同外联解禁。新材料或重复出现的明确证据缺口成立后，再评估既有页面的增量价值。
 
-1. 完成 8 条 Baseline v2 × ChatGPT Search、Perplexity、Google AI Mode 的首批记录；Perplexity 因当前无会员权限按 8 条 `unavailable / plan-access` 记录，不付费、不换产品替代。
-2. 每条提示词使用独立干净会话，保存第一次回答、全部引用 URL、来源面板和环境元数据；缺项结果标为 `partial`，不补猜。
-3. 首批测试期间冻结了会影响实体、指南正文、导航或 Schema 的上线修改；该冻结现已随 Google C08 完成而结束。
-4. 批后阶段诊断和最小改动清单已形成，见 [`testing/baseline-v2-post-batch-diagnosis-2026-09-11.md`](testing/baseline-v2-post-batch-diagnosis-2026-09-11.md)；不因为一次未出现就立刻改页，关键变化至少需要另一产品或下一月复现。
-
-### P1 — 清掉证据债务并补引用观测（本批结束后 1 周内）
-
-1. 核实 GEO-08 的实际发布状态：Google 已发现 2026-08-14 Athletik LinkedIn 尽调帖；补录其公开 URL、实际时间和 UTM，并确认 Instagram Carousel/Story 是否已发布，未发布部分再审核执行。
-2. 补录 GEO-07、GEO-06 的公开帖子 URL、Story 状态和已到期的七日平台/GA4 数据；无法取得的字段明确写 `unavailable`。
-3. 将网站加入或核对 Bing Webmaster Tools；若账户出现 AI Performance，记录 total citations、cited pages 和 grounding queries 的月度快照。
-4. 每月导出 GSC Generative AI 的 Property impressions、Pages、Countries、Devices 和 Dates；与传统 Web Search、GA4、固定提示词和第三方估算分开。Page 明细不与 Property 总量机械相加，也不把链接曝光直接写成准确提取或推荐。
-
-### P1 — 建立“可被推荐”的证据链（未来 30～60 天）
-
-每月只推进一个主主题，维持网站 1 篇深度内容/月的保守基线：
-
-1. 建立 D03～D05 推荐证据矩阵：买家问题、Athletik 匹配事实、站内原始证据、可信第三方佐证、缺失输入、可公开边界。
-2. `Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear` 已完成证据 intake、英文正文、所有者 copy/视觉审核、生产部署、技术验收、社交公开 URL 核验、一次 GSC 索引申请与首轮七日复盘，现为 `deployed / production-verified / social-feed-published / public-urls-confirmed / indexed-snapshot-confirmed / seven-day-measurement-contaminated / measuring`。2026-09-28 URL Inspection 已确认 `Submitted and indexed`；固定窗口取得 18 次 Web Search 展示、0 点击。原记录中的 LinkedIn UTM 活动已确认来自所有者使用 Windows / Edge 与 Clash Verge 切换中国、美国出口进行的内部 QA，因此外部成效统计为 0 个已确认外部 UTM 会话；平台后台和人工询盘仍缺，不能据此推断社交曝光为 0。正文继续使用原创生产证据，不把自然状态展示写成拉伸测试，也不列未确认的 Slim / Comfort / Infused 版本；月度 GSC 生成式窗口已取得 9 次页面级链接曝光，下一步进入固定 Prompt 有效复测，不单独改页。
-3. D04 不再优先增加另一篇泛化供应商清单。更有价值的是经授权的项目案例，或不披露客户名称的可核验开发/QC 流程证据；没有授权和真实结果时不建案例。
-4. D05 的 Merino Wool 规范页与 UltraMerino 重复、冲突、索引和引用审计已完成；UltraMerino 当前不由本项目负责，因此本项目保留冲突记录但不安排跨站修改。若未来职责改变，再依据届时证据决定同步、增强或保持不变。
-5. 站外每月只推进一项：优先真实设备方/认证方/行业编辑来源，其次是可维护的高质量制造商资料页；不以目录数量为 KPI。当前被外部输入阻塞的项目保持 deferred，不使用错误地址或不完整证书提交。
-
-### P2 — 90 天验证与扩量条件
-
-1. 每月按固定 v2 提示词运行一次，不增加日常重复测试。
-2. 内容发布后至少观察 28～90 天的索引、查询、引用和引荐；短周期只处理事实错误或技术阻断。
-3. 只有某主题出现相关 grounding query、规范页引用、非品牌展示增长或短名单进入信号时，才继续同一 topic cluster。
-4. 如果 90 天后仍只有品牌题能提取、未点名题无引用，优先重新评估独特证据和站外来源，不继续堆同类文章。
+每月保留固定 Prompt 与可比环境，内容效果按既定完整窗口观察；短周期仅修复已证实的事实错误或技术阻断。本轮不增加 Backlog，不因单次未提及改 URL、Title、Schema 或建立近义页面。
 
 ## 9. 活跃行动清单
 
 | ID | 行动 | 对应阶段 | 优先级 | 状态 | 完成标准 |
 |---|---|---|---|---|---|
 | GEO-V2-001 | 完成首批 24 条 Baseline v2 记录 | 全漏斗测量 | P0 | `record-complete / valid 0; partial 16; unavailable 8` | ChatGPT Search 与 Google AI Mode 共 16 条实际回答均为 `partial`；Perplexity 8 条为 `unavailable / plan-access`。完成的是记录采集，不是有效中性基线；未混用替代品 |
-| GEO-V2-002 | 补齐 V2-E01 环境和来源证据 | 测量有效性 | P0 | `partial` | Temporary Chat、模式、个性化、地区、设备和来源面板均已记录；否则保留 partial |
+| GEO-V2-002 | 补齐 V2-E01 环境和来源证据 | 测量有效性 | P0 | `closed / manual-valid / historical-partial-preserved` | 9 月和 A/B 原记录保留 partial；10-09 手动 E01 已按所有者确认接受为 M2 有效样本，不再要求重复补证或采样，见[记录](testing/valid-retest/manual-e01/README.md) |
 | GEO-V2-003 | 核实并完成 GEO-08 分发 | 引用发现入口 | P1 | `partial / LinkedIn-source-card` | 补录已被 Google 找到的 LinkedIn 帖子公开 URL、UTM 和时间；确认 Instagram/Story 状态，未发布部分审核执行 |
 | GEO-V2-004 | 补录 GEO-06/07 发布与七日数据 | 运营证据 | P1 | `overdue / owner-input` | 可得字段全部补录，不可得字段写 unavailable |
-| GEO-V2-005 | 启用 Bing Webmaster Tools AI 引用观测 | 引用 | P1 | `baseline-established` | 2026-09-22 只读 API 已确认站点验证；[首份 Bing 基线](testing/bing-ai-performance-baseline.md)在 2026-08-24～09-20 的完整 28 天 CSV 中汇总 5 次引用、4 个 cited-page-days。Pages 截图列出 FLATLOCK vs OVERLOCK Guide 2 次、About Us 2 次、首页 1 次；所有者已在后台确认 Grounding Queries 当前无记录。页面截图未显示日期范围，不作日期级页面归因；引用不等于推荐 |
+| GEO-V2-005 | 启用 Bing Webmaster Tools AI 引用观测 | 引用 | P1 | `baseline-established / current-cycle-deferred-low-signal` | 9-22 已建立首份基线；10-30 所有者选择暂缓本轮额外导出和分析，保留截图 34 citations 的原范围，不与历史28天直接比较，见[Bing 基线](testing/bing-ai-performance-baseline.md) |
 | GEO-V2-006 | 建立 D03～D05 / C06～C08 claim-to-source 证据矩阵 | 引用/推荐 | P1 | `complete` | 已记录六题的匹配事实、规范第一方 URL、AI 实际来源、第三方候选、缺失证据与公开边界；见日期化矩阵 |
 | GEO-V2-007 | ACTIVESEAM 原创技术内容与分发 | 提取/引用/推荐 | P1 | `deployed / production-verified / social-feed-published / public-urls-confirmed / indexed-snapshot-confirmed / seven-day-measurement-contaminated / measuring` | 两支 Merrow ACTIVESEAM 实际操作视频、一支自然状态成衣接缝展示和一支 Yamato FLATLOCK 对照视频均已核验；Merrow 型号为 `MB-4DFO 2.0`，2 线与 3 线按项目要求使用。页面、Technical Guides Hub、Article / FAQPage / BreadcrumbList Schema、Sitemap 和真实生产媒体已部署；2026-09-18 完成生产复核和一次 GSC 索引申请，同日补录 LinkedIn 视频帖与 Instagram 6 页 Carousel 的公开 URL。2026-09-28 固定窗口复核确认 URL Inspection 为 `PASS / Submitted and indexed`，页面 Search Analytics 为 18 impressions、0 clicks。原始 LinkedIn UTM 为 `sessions = 6`、`engagedSessions = 4`、`totalUsers = 1`，但唯一用户已由设备、地区切换和所有者操作确认属于内部 QA；Instagram 无匹配行，所以本轮为 0 个已确认外部 UTM 会话。平台后台与人工询盘仍 `unavailable`，不能扩写为 0 次曝光。未写入 Slim / Comfort / Infused 版本、Athletik 自测性能百分比或把自然状态画面写成测试；详见[分发日志](distribution/publishing-log.md) |
 | GEO-V2-008 | Merino 专业站与规范页冲突审计 | 提取/推荐 | P0 | `complete / conflicts-recorded / remediation-outside-project-control` | 已确认 UltraMerino 为同方控制、双站同时运营；完成 HTTP、robots、41 URL Sitemap、自引用 Canonical、页面结构、AI 引用和冲突声明审计。该站当前不由本项目负责，因此不在本项目执行整改；未取得的该域名 GSC/Bing、反链和当前设备/许可专项证据只在未来职责改变时补查 |
-| GEO-V2-009 | 每月一个可信站外佐证动作 | 推荐 | P1 | `suspended / awaiting-dedicated-media` | 2026-09-18 所有者决定先暂停第三方佐证包与外联，待补拍机器铭牌、接缝细节、同面料 sew-off 等专项素材后恢复；暂停期间不建立半成品资料包、不联系设备商或媒体。恢复后以获得可公开、可索引、信息准确的真实条目或编辑内容为完成标准 |
+| GEO-V2-009 | 每月一个可信站外佐证动作 | 推荐 | P1 | `equipment-outreach-suspended / buyer-disclosures-applied` | 9-18 设备方佐证包与外联因专项素材暂缓，未解禁。11-02 已按后续专项授权核验并应用两家买家公开名单，部署按所有者确认关闭；不把这项完成扩大为联系设备商/媒体或取得工艺性能背书 |
 | GEO-V2-010 | 建立 GSC Generative AI 月度观测 | 找到/引用入口 | P0 | `first-comparable-window-established` | 首个三个月基线与 2026-09-03～09-30 完整窗口均已入档；Property 等长窗口为 27 → 190 impressions。继续保持 Property、Page、Country、Device 与 AI 回答样本口径分离 |
 | GEO-V2-011 | 完成 Baseline v2 首批测试后四阶段诊断 | 全漏斗决策 | P0 | `complete` | 诊断分别覆盖找到、提取、引用与推荐；技术阻断、来源归属、证据债务和最小行动已分开记录 |
 | GEO-V2-012 | 建立并运行 Broad Discovery v1 | 宽泛推荐发现 | P0 | `record-complete / valid 0; partial 6; unavailable 3` | BD-01～BD-03 共 6 次首次回答均为 `partial`；Perplexity 3 条为 `unavailable / plan-access`。Athletik 在 6 条 `partial` 观察中正文出现与规范站引用均为 0/6；不写成有效中性样本的出现率，结果不与 Baseline v2 合并 |
@@ -290,10 +287,10 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-V2-018 | 建立 AI 实际引用来源模式审计 | 全漏斗决策 | P0 | `operational` | 已按实际 Sources 面板完成首轮审计并建立月度模板；以后随固定 Baseline 每月增量更新，不按单次样本大改网站 |
 | GEO-V2-019 | 主站可引用事实与设备证据补强 | 提取/引用/推荐 | P0 | `deployed / production-verified / measuring` | 2026-09-14 生产验收：首页、About、Merino 均 HTTP 200、单一 H1、自引用 Canonical、`index` 且 JSON-LD 可解析；新增事实完整出现。Page Sitemap 为 18/18 唯一 URL，三页及 Sitemap index 的 `lastmod` 已更新为 `2026-09-14T02:50:00+00:00`；AI 相关爬虫未被 robots.txt 屏蔽 |
 | GEO-V2-020 | 自有 Top 5 供应商指南受控试验 | 宽泛发现/引用/推荐 | P1 | `deployed / production-verified / social-feed-published / indexed-snapshot-confirmed / seven-day-measurement-contaminated / measuring` | `/top-sportswear-manufacturers-china/` 已接入共用 Technical Guides 架构；比较 Athletik、HUCAI、SANSANSUN、INGORSPORTS 与 Bellasports，首屏公开发布者利益关系，并提供筛选方法、MOQ 冲突、来源和事实限制。LinkedIn 单图帖已公开核验，Instagram Feed 已由所有者确认发布。2026-09-16 生产页与社交 UTM 目标均恢复 HTTP 200 并完成一次索引请求；2026-09-22 GSC 只读 URL Inspection 返回 `PASS / Submitted and indexed`，最后抓取为 2026-09-16。9 月 15～21 日原始 GA4 曾记录 LinkedIn 帖子 UTM 7 sessions、5 engagedSessions、1 totalUsers，其中 3 sessions 以该文章为入口；2026-09-28 已确认该唯一用户属于内部 QA，故从外部成效统计中排除。Instagram 无匹配行，平台后台精确指标与人工询盘仍 `unavailable`。详细口径见[发布日志](distribution/publishing-log.md)；不把内部会话、引用或索引状态当作买家推荐，也不因污染样本改页 |
-| GEO-V2-021 | 建立首份 GEO 跨平台月度快照 | 全漏斗测量 | P0 | `gsc-ai-refresh-complete / bing-refresh-pending` | 传统 GSC 与 GA4 已建立 9 月自然月基线；GSC Generative AI 的 2026-09-03～09-30 完整窗口为 190 Property impressions，对比前窗 27。该指标只证明链接展示，不证明推荐或转化。Bing 第二个完整窗口仍不早于 2026-10-20；详见[10 月 8 日补充快照](testing/geo-measurement-snapshot-2026-10-08.md) |
-| GEO-V2-022 | 对齐 GEO 当前真值与日期化历史快照 | 治理 | P0 | `complete / monitoring` | 已扫描 21 个 GEO Markdown 文件，修正当前控制入口中的 20 URL、六篇 Guide、`legalName`、域名和社交资料口径；日期化文件保留原值并明确不可当作当前事实。以后资产或所有者决策变化时复查 |
-| GEO-V2-023 | 建立 Baseline / Broad Discovery 有效分母 | 全漏斗测量 | P0 | `complete / valid-baseline-not-yet-established` | 已逐条读取“运行有效性”字段并发布平台分母表；首轮 `valid` 为 0。下一窗口只有满足环境、独立会话、第一次完整回答和来源证据要求的记录才进入正式比率 |
-| GEO-V2-024 | 建立首轮有效复测执行包 | 全漏斗测量 | P0 | `in-progress / E01-manual-valid / remaining-review` | GSC 数据闸门已通过；[E01 手动补采](testing/valid-retest/manual-e01/README.md)已按所有者明确确认判为 `valid`，手动 M2 有效样本为 1 条，下一条处理 E02。A/B 旧样本不覆盖；批次 B 其他十条维持 `partial` 建议，合并引用及 D03/D05/C06 横向截图问题不自动升级。Google AI Mode 11 条仍 `planned`；网络变化及是否补采按所有者决定，Perplexity 本次未重核 |
+| GEO-V2-021 | 建立首份 GEO 跨平台月度快照 | 全漏斗测量 | P0 | `gsc-ai-refresh-complete / bing-deferred-low-signal` | 9 月自然月和 9-03～9-30 的 GSC Generative AI 窗口已有日期化记录；Property 前窗27、后窗190为历史数据。10-30 Bing 已按所有者决定暂缓，不继续列待导出 |
+| GEO-V2-022 | 对齐 GEO 当前真值与日期化历史快照 | 治理 | P0 | `complete / monitoring` | 9-30 的原清理已完成；11-04 对本工作台回退差异定向核对并恢复，按10月验收、11-02部署、15 号地址及最新渠道范围更新当前摘要；历史证据不覆盖 |
+| GEO-V2-023 | 建立 Baseline / Broad Discovery 有效分母 | 全漏斗测量 | P0 | `complete / historical-denominators-retained` | 9月回算首轮 valid 为0是历史结论；10月E01、C、D已有按各自标准接受的样本。按平台、日期、模式分别报告，不把两者矛盾化或混算统一表现率 |
+| GEO-V2-024 | 建立首轮有效复测执行包 | 全漏斗测量 | P0 | `accepted-samples-recorded / google-observations-archived` | E01手动M2已接受；批次C的E02 / D03-R2为M4 valid / E3 / passed；10-29批次D为Dot七条M4 valid / owner_confirmed与手动BD-01 M2 valid / owner_accepted。旧partial不覆盖，Google AI Mode 11题已独立归档但保留未知地区及5题16个引用位置URL缺口；不混算或冒称全部E3 |
 
 ## 10. 统一记录与判断口径
 
@@ -307,6 +304,8 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 - 结果有效性：`valid`、`partial`、`personalized`、`product-unavailable` 或 `intent-mismatch`。
 
 ### 10.2 月度结果分别报告
+
+所有者对特定样本接受的留证范围只适用于该样本，不改变其他批次规则；`valid / owner_accepted`、独立核验的 E3 与跨批可比性分开。缺失的来源、地区或采集字段仍保留 unknown。
 
 - **实体准确性 E01/E02**：关键事实正确率和冲突类型；不计算自然推荐率。
 - **供应商发现 D03～D05**：入选题数/有效运行数、平均名单位置、第一推荐次数、推荐理由准确性、规范站与第三方引用覆盖。
@@ -335,12 +334,12 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 ## 12. 当前准确状态
 
-截至 2026-10-09，Athletik 已完成规范站、实体基础和六篇已上线指南；主要 Schema、索引基础和首轮社交分发均已建立。第五篇供应商比较指南和第六篇 ACTIVESEAM 技术指南均已部署、分发并取得 GSC `Submitted and indexed` 快照；这只证明对应 URL 已收录，不代表获得 AI 引用或推荐。GSC Generative AI 的首个等长 28 天比较已建立：2026-09-03～09-30 为 190 Property impressions，前窗为 27；Page 表返回 14 个规范 URL，四篇 Guide 合计 132 次页面级链接曝光。该结果确认生成式链接可见性扩大，但不提供 Query、答案、推荐位置或转化。Baseline v2 的历史记录采集仍为 ChatGPT Search 8 条与 Google AI Mode 8 条 `partial`、Perplexity 8 条 `unavailable`，正式 `valid` 分母仍为 0。
+截至 2026-11-04 的文档核对，六篇技术指南已经上线；Program Fit、About、主站事实证据增强与 Top 5 受控试验的既有部署记录保留。C06 / C08 新增内容和 11-02 日期/入口验收已关闭；买家公开列名与15 号地址按所有者确认关闭。上文生产、索引、GSC与GA4数字均沿用各自日期化来源，本次没有实时刷新，不把 20 URL或 9 月展示量当作 11 月全站现值。
 
-Broad Discovery v1 的记录采集也已完成：Google AI Mode 与 ChatGPT Search 共 6 条实际回答全部为 `partial`，Perplexity 3 条为 `unavailable`；6 条 `partial` 观察均未提 Athletik、未引用规范站。这说明现有描述性信号呈现“专业意图强、宽泛供应商发现弱；链接展示已发生、规范内容引用仍弱”的分层状态，但在取得 `valid` 分母前不能升级为稳定率或因果结论。七品类 Program Fit 与 About 综合 buyer-fit 已上线并完成生产复核；GEO-V2-020 于 2026-09-22 取得 GSC 已收录快照，首轮七日 GA4 原始数据随后被确认由内部 QA 污染，平台后台与有效询盘仍缺，不能把自有名单型页面当作独立背书。GEO-V2-007 于 2026-09-28 取得 GSC 已收录快照和 18 次 Web Search 展示；原始 LinkedIn UTM 的 6 个会话同样已确认属于内部 QA，Instagram 无匹配行。两次活动目前均为 0 个已确认外部 UTM 会话，但平台曝光/浏览未知，状态改为 `seven-day-measurement-contaminated`，不从污染样本归因。D03～D05 / C06～C08 [`claim-to-source 证据矩阵`](testing/claim-to-source-matrix-2026-09-14.md)、[`UltraMerino 冲突审计`](testing/ultramerino-canonical-conflict-audit-2026-09-14.md)和 [`AI 实际引用来源模式审计`](testing/ai-cited-source-pattern-audit-2026-09-14.md)均已完成。UltraMerino 当前不由本项目负责，因此事实同步降为外部范围；完整 GSC Generative AI 月度窗口已取得，下一步执行有效复测，不重复提交、不从污染或低样本强行归因。
+测量已从“历史首轮 valid 0”推进到按独立批次接受样本及两平台逐题观察。Google 10-29 的 C07 已实际引用目标指南，BD-03 已推荐 Athletik；ChatGPT 的相关候选不等于引用，专业题推荐不等于宽泛发现稳定。旧 partial、未知地区、缺失最终URL和内部QA污染仍显式保留，不计算混合推荐率、不归因于近期部署。
 
-2026-10-08 的 [GSC Generative AI 补充快照](testing/geo-measurement-snapshot-2026-10-08.md)已使复测的数据时间闸门通过，没有把 GSC 业务导出当成 AI 回答样本。同日已在固定环境中采集 11 条 ChatGPT Search：实体题 2/2 提及并引用规范站，专业发现题 D03～D05 为 3/3 提及、首位推荐并引用规范站，内容题 C06～C08 与宽泛发现题 BD01～BD03 均为 0/3 提及；这些只属于描述性观察。由于 10 条记录没有完整 UI 答案截图、当次未取得完整 Sources 面板，且 C06/C08 回答尾部文本截断，11 条全部保持 `partial / owner-review-pending`，正式 `valid` 分母仍为 0。下一步按同一冻结 Prompt 完成 11 条 Google AI Mode，并改进完整回答与 Sources 证据保存；Bing 第二窗口在 2026-10-20 后导出。继续把生成式链接展示、AI 回答、GA4 会话和询盘分别报告，不从残缺、污染或低样本窗口强行归因。
+下一步是核实 C07 同面料可公开样本，按11-06/11-07既有节点复查抓取和LinkedIn新帖窗口。没有当前材料则保留待确认，不重复重写近期指南；Bing与YouTube按已确认决定暂缓/关闭。官网和可控Instagram、LinkedIn范围保持，不自动扩张到其他站点或外联。
 
-2026-10-09 已完成 [ChatGPT 重采批次 B](testing/valid-retest/batch-b/README.md) 的 11 条完整首答与[首轮逐条复核](testing/valid-retest/batch-b/review-2026-10-09.md)。文件、完整文本和纵向覆盖检查通过，不等于横向截图与完整引用账本通过：D03/D05/C06 的宽表右侧缺失，除 E01 外的十条均有未展开合并引用；只读重开原会话未恢复。E01 的内容与引用关系通过，但早间环境及所有者独立审核仍待确认。当前 `valid` 分母保持 0；先由所有者决定环境证据、网络变化与是否另行授权补采，再运行下一平台，不通过放宽标准或覆盖旧样本收口。本次没有重新提问、改变 ChatGPT 设置或改站。
+本轮 Finding outcome：`documentation-reconciled / source-checked`。恢复的是已有执行与证据边界，未新增 Backlog、网站改动、生产操作、外部研究或采样。
 
 本对话可以用于规划、分析用户带回的 Temporary Chat 结果、更新证据和制定内容；不得作为中性测试环境。

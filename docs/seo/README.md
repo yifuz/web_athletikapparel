@@ -1,6 +1,8 @@
 # Athletik Clothing SEO 工作台
 
-> 当前阶段：V1 已于 2026-08-25 收尾；V2 Backlog 已建立
+> 当前阶段：V1 已于 2026-08-25 收尾并冻结；V2 已部署批次进入观察与到期复查
+>
+> 记录核对：2026-11-04；本次未刷新外部数据，指标和生产证据按原记录日期理解。
 >
 > 适用网站：<https://www.athletikapparel.com/>
 >
@@ -38,19 +40,18 @@ URL、H1 和页面所有权仍以 [`../sitemap.md`](../sitemap.md) 为准；Titl
 | `implementation/` | [`implementation/README.md`](implementation/README.md) | 图片、MOQ、性能、部署批次和 Change Cards |
 | `authority/` | [`authority/README.md`](authority/README.md) | 站外名录、编辑引用和合作机会 |
 
-## 4. 当前生产结论
+## 4. 当前执行口径与证据日期
 
-- V1 生产实施已经完成，SEO-IMP-035–037 决策为 `keep`，SEO-IMP-038 为 `keep-monitoring`；
-- 最新冻结 Crawl 为 `crawl_40f88b6c25d74ba79ee193c7be26caf9`：20 页、0 fetch failure；没有新增状态码错误、Title 变化或 indexability flip；
-- SEO-V2-003 两批 URL Inspection 已覆盖 18 个 Sitemap 页面：17 个 indexed / PASS，Services 为 `Discovered - currently not indexed`；Services 生产索引信号正常，2026-08-28 17:28 GSC 实时测试已绿色通过，所有者随后确认已请求编入索引一次。当前不重复提交，只在合理窗口复查 indexed snapshot。QC Guide Sitemap 重复项已于 2026-08-29 定位为生产重复 Page ID `80` 并移入回收站；复验为 18 个条目 / 18 个唯一 URL，Finding 为 `fixed / keep`。全站监测 Crawl 无状态码或 indexability 回归，GOTS 外链 Finding 已 `fixed`；
-- SEO-V2-004 于 2026-08-27 完成当前轮 Lab 复核：首页 LCP 3.66s，无恶化；Services 3 次有效 LCP 中位数 4.44s，较既有 5.00s 改善。CrUX 因未配置 API key 且匿名接口 429 仍为 unavailable，当前 `no-change / monitoring`，不触发代码改动；
-- SEO-V2-006 当前为 `deferred / external-input`：ThomasNet 因真实 Zhangjiagang 地址无法选择和平台资格不明而暂缓；所有者于 2026-08-29 进一步确认 OEKO-TEX Buying Guide / WRAP 公开列名短期无法提供 certificate / label number、持证主体、WRAP ID、有效期及门户列名状态。只有对应外部条件或完整可核验凭据到位后才重开；
-- SEO-V2-007 的 7 张 1200×627 JPG 已通过生产 HTML、Schema、资源和 7 URL 定向审计，但 LinkedIn Post Inspector 实际重新抓取仍显示 `No image found`；当前为 `platform-failed / diagnosis-monitoring`。模拟 LinkedInBot 可访问页面和图片，根因未证实；先等部署满 48 小时复验，再查 Cloudflare Security Events，必要时只做 Sportswear 单页标准 JPEG 受控实验；
-- SEO-V2-008 已完成生产验收并决定 `fixed / keep`：五页 18/18 响应式节点、54/54 WebP、生产二进制一致性、Desktop/Mobile 视觉、同一 5 URL 审计与三次 Sports Accessories 移动端 Lab 均通过；
-- SEO-V2-002 已完成 2026-07-26 至 08-22 的 GSC / GA4 / 询盘基线：GSC 5 点击 / 184 曝光；GA4 Organic Search 2 sessions、0 `generate_lead`、0 有效询盘；全站 8 次 `generate_lead` 中有效询盘 1 次，来自 Organic Social。页面与查询均未达到修改门槛；
-- Cloudflare `/cdn-cgi/l/email-protection`、Sitemap `noindex` 和 `/wp-sitemap.xml` 跳转均已有明确 `not-needed` / 有意控制处置；
-- Breadcrumb 严格字段、HSTS、剩余大图、品类社交图和可选 Schema 不是 V1 阻塞项，重开条件统一记录在 V2 Backlog；
-- 当前没有批准新的商业页面或近义页面。任何新 URL 必须重新经过业务匹配、SERP、页面所有权和 301 决策。
+- **唯一执行入口仍为 [V2 Backlog](v2-backlog.md)**，各批次状态、到期检查与完整效果窗口集中在那里。V1 已冻结，SEO-IMP-035～037 为 `keep`，038 为 `keep-monitoring`；`crawl_40f88b6c25d74ba79ee193c7be26caf9` 的 20 页／0 fetch failure 是 V1 冻结证据，不当作今天的全站 Crawl 或 URL 总量。
+- **基线与询盘（SEO-V2-002）**：08-27 的滚动快照保留为历史；所有者于 09-08 更正 8 月正式／有效询盘为 **0**。10-08 已补齐 9 月自然月基线并诊断、修复 Cookiebot Domain Group 授权故障；9 月 GA4 历史漏测不回填，也不能用它否定 GSC。恢复观察窗口为 **10-08～11-04**，等 GSC final 覆盖后，正式复核不早于 **11-07**。见 [GSC / GA4 / 询盘日志](gsc-data-log.md)。
+- **Services（SEO-V2-003）**：最后已记录的单页 indexed snapshot 为 10-08 的 `NEUTRAL / URL is unknown to Google`；同日生产定向检查没有发现 HTTP、robots、Canonical、Sitemap 或入口阻断。保持 `no-change / monitoring`；一次已确认的索引请求不重复。下一常规复查不早于 **11-08**，按月度／明确触发条件执行，不沿用早期每周重复轮询。
+- **性能（SEO-V2-004）**：09-19 已按所有者决定转为 `deferred / monitor-only`，当前不继续投入增量性能优化。首页类目图的 SEO-V2-016／017 已完成并为 `fixed / keep`，生产与 Lab 证据只支持各自范围，不将 Lab 波动解释为曝光收益；只有达到 Backlog 的性能、抓取／渲染或用户体验触发条件才重开。
+- **内容与内链（SEO-V2-005）**：Knitted 结构模块 10-27 Day 7 技术／抓取检查已完成，效果为 `partial / not-enough-data`；11-17 是 Day 28 日历节点，预定 10-21～11-17 后窗须等 final 覆盖，预计 11-20 起核验。Underwear seamless、Sportswear Yoga、配件头颈模块及 FLATLOCK → Merino 内链都已有独立部署记录，分别按 [Backlog 分批表](v2-backlog.md) 的日期复查；前两项原定 11-03 Day 7 尚无完成记录，配件 Day 7 为 11-05。
+- **Merino 商业词观察**：原定 10-30 的周度观察与 FLATLOCK 入链 Day 7 已于 **11-02** 补做；该次 10-03～10-30 Page 数据为 5 clicks／193 impressions，细分维度不闭合且可见商业词样本小，保持 `no-change / keep-measuring`。页面平均位置不是固定关键词排名，历史滚动窗口不能作为独立效果比较。见 [GSC Log](gsc-data-log.md) 及 [固定监测记录](research/merino-commercial-monitor-v1.md)。
+- **既有关闭记录**：SEO-V2-013 已于 09-30 完成 Q3 六篇指南标准／外链复核和 QC Guide 的 ISO 2859-1:2026 更新，下次不晚于 **12-31**；SEO-V2-015 的 10-08 Day 28 为 `keep / measuring`；SEO-V2-018 已于 09-30 关闭 Sportswear lookbook、索引与三市场研究的部署记录，后续观察不重列为待上线任务。以上是带日期记录，不冒称 11-04 已重查标准或搜索状态。
+- **暂缓与历史未关闭项**：SEO-V2-006 的 ThomasNet、OEKO-TEX、WRAP 仍依外部资格／可核验凭据重开；SEO-V2-007 最后记录的平台结果仍为 08-28 LinkedIn `No image found`，没有新的实际平台成功证据就不写修复完成；SEO-V2-008 的五品类响应式图片保留 `fixed / keep`。本次不重跑平台测试或扩充研究。
+- **页面边界**：继续优先现有七个商业品类页，不为 Activewear／Fitness、Performance Fabrics 或单复数创建近义平行页。另经批准的 [Product Showcase 展示库与两款详情](../site/product-showcase-release-candidate-2026-11-03.md) 已于 11-04 上线，发布记录与品类实验分开；上线及进入 Sitemap 不等于 Google 已收录。
+- Cloudflare `/cdn-cgi/l/email-protection`、Sitemap `noindex` 和 `/wp-sitemap.xml` 跳转沿用既定 `not-needed`／有意控制处置；HSTS、可选 Schema 和其他条件项按 Backlog 触发，不为提高工具分数重开冻结 V1。
 
 ## 5. 维护规则
 
