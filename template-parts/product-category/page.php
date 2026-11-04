@@ -165,8 +165,7 @@ if ( ! empty( $category['hero_video'] ) ) {
 	<?php if ( ! empty( $category['product_showcase'] ) && is_array( $category['product_showcase'] ) ) : ?>
 	<?php $has_showcase_carousel = count( $category['product_showcase'] ) > 8; ?>
 	<?php $has_showcase_lightbox = ! empty( $category['showcase_lightbox'] ); ?>
-	<?php $showcase_variant = ! empty( $category['showcase_variant'] ) ? sanitize_html_class( $category['showcase_variant'] ) : ''; ?>
-	<section class="ma-product-section ma-product-showcase<?php echo $showcase_variant ? ' ma-product-showcase--' . esc_attr( $showcase_variant ) : ''; ?>" aria-labelledby="ma-product-showcase-title"<?php echo $has_showcase_carousel ? ' data-ma-product-carousel' : ''; ?><?php echo $has_showcase_lightbox ? ' data-ma-product-lightbox' : ''; ?>>
+	<section class="ma-product-section ma-product-showcase" aria-labelledby="ma-product-showcase-title"<?php echo $has_showcase_carousel ? ' data-ma-product-carousel' : ''; ?><?php echo $has_showcase_lightbox ? ' data-ma-product-lightbox' : ''; ?>>
 		<div class="ma-section-inner">
 			<div class="ma-section-heading">
 				<p class="ma-section-kicker"><?php echo esc_html( ! empty( $category['showcase_kicker'] ) ? $category['showcase_kicker'] : __( 'Product examples', 'myathletik-child' ) ); ?></p>
@@ -235,7 +234,6 @@ if ( ! empty( $category['hero_video'] ) ) {
 							</picture>
 						<?php endif; ?>
 						<?php if ( $has_showcase_lightbox ) : ?>
-							<span class="ma-product-showcase-card__zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5M10.5 8v5M8 10.5h5"/></svg></span>
 							<span class="screen-reader-text"><?php esc_html_e( 'View larger photo', 'myathletik-child' ); ?></span>
 							</a>
 						<?php endif; ?>

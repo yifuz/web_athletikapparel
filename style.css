@@ -4428,16 +4428,13 @@ body.page .container.grid-container:has(.ma-product-category) {
   background: var(--ma-color-white);
 }
 
+/* Share Merino's square frame across category galleries; contain portrait photos. */
 .ma-product-showcase-card img {
   display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 1;
   object-fit: contain;
-}
-
-.ma-product-showcase--portrait .ma-product-showcase-card img {
-  aspect-ratio: auto;
 }
 
 .ma-product-showcase-card__open {
@@ -4449,30 +4446,6 @@ body.page .container.grid-container:has(.ma-product-category) {
 .ma-product-showcase-card__open:focus-visible {
   outline: 2px solid var(--ma-color-accent);
   outline-offset: calc(-1 * var(--ma-space-1));
-}
-
-.ma-product-showcase-card__zoom {
-  position: absolute;
-  right: var(--ma-space-2);
-  bottom: var(--ma-space-2);
-  display: grid;
-  width: var(--ma-touch-target);
-  height: var(--ma-touch-target);
-  place-items: center;
-  border: 1px solid var(--ma-color-border);
-  border-radius: var(--ma-radius);
-  background: var(--ma-color-white);
-  color: var(--ma-color-accent-2);
-}
-
-.ma-product-showcase-card__zoom svg {
-  width: var(--ma-social-icon-size);
-  height: var(--ma-social-icon-size);
-}
-
-.ma-product-showcase-card__open:hover .ma-product-showcase-card__zoom,
-.ma-product-showcase-card__open:focus-visible .ma-product-showcase-card__zoom {
-  border-color: var(--ma-color-accent-2);
 }
 
 .ma-product-lightbox {

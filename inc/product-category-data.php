@@ -179,7 +179,6 @@ function myathletik_product_category_data() {
 			),
 			'showcase_kicker'  => __( 'Product examples', 'myathletik-child' ),
 			'showcase_heading' => __( 'Sportswear lookbook', 'myathletik-child' ),
-			'showcase_variant' => 'portrait',
 			'showcase_lightbox' => true,
 			'product_showcase' => array(
 				myathletik_sportswear_lookbook_item( 'lookbook-01-running-top-shorts', __( 'Woman running in a plum training tank and black shorts', 'myathletik-child' ), __( 'Training Tank & Shorts', 'myathletik-child' ) ),
