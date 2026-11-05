@@ -48,7 +48,7 @@ When authorization is absent, or a required fact is unknown, insert:
 > placeholder rather than fabricating.
 
 Specifically never invent:
-- Certifications (e.g. OEKO-TEX, GOTS, ISO — unless the user has stated them)
+- 未经所有者确认的认证或审核。可用清单与边界见[询盘回复手册的认证、审核与评估资料](../../../docs/marketing/inquiry-reply-playbook.md#认证审核与评估资料)；区分认证、审核、平台和评估工具，按具体材料／订单核对适用范围。
 - Factory count (the brief mentions "four factories" — confirm with user
   before stating a number)
 - Founding year, years of operation ("15+ years" appears in `seo-tags.md` —
@@ -59,7 +59,7 @@ Specifically never invent:
   **500 pieces per style** 作为标准入口；定制面料每款每色通常按 **400–500 件**评估，可混码。
   每款与每色条件同时满足，按面料最低米数、单件耗料、配色及定样、生产、QC、运输成本核算；
   具体供应商的采购米数按当前项目核实，不作为默认回复条款。
-  不因客户首批数量较小自动拒绝，也不自行承诺更低 MOQ 或任意混色均可行。
+  不因客户首批数量较小自动拒绝，也不自行承诺更低 MOQ 或任意混色均可行；同款返单按下文已确认的灵活性评估。
 - Awards, partnerships, media mentions
 - An unconfirmed legal/operational responsibility split between Athletik
   Clothing Inc. and Zhangjiagang Athletik Clothing Co., Limited
@@ -142,7 +142,8 @@ From AGENTS.md §5 + `docs/site/design-brief.md`:
 - 不自行确定未经所有者确认的技术路线或设计方案；对尚未确认的结构、材料适配和生产可行性先审核资料并与所有者对齐。面料推荐仅使用已确认选项，具体项目适用性仍需评估。
 - 所有者于 2026-10-28 授权按项目匹配度与潜在订单规模调整跟进优先级和回复深度。2026-10-29 补充：尚未提供任何技术资料的询盘，内部暂按低价值、低优先级跟进，简短友善地回答核心问题并优先索取已有 tech pack；收到技术资料后结合其他信息重新评估。此分类是内部资源分配规则，不证明客户采购能力或长期价值，也不自动拒绝；不要对客户使用低价值标签。其他资料不足的情形仍按实际信息判断。报价档位是近期计划规模的重要信号，但不等于确定订单量或长期采购规模；邮箱类型不能单独证明客户的公司性质或商业价值。
 - 所有者于 2026-10-28 确认首次接触客户通常收取打样费，寄样运费包含在打样费中，具体金额按项目核算。非首次接触客户此前的免费评估样品口径结合项目确认；不自行承诺额外开发费用全免。制样前先了解预计首单数量，评估面料起订要求和生产成本；确认合作关系及基本订单方案后再展开具体样品细节。
-- 区分面料采购 MOQ 与成衣生产 MOQ：除面料要求，还需覆盖定样、生产、QC 和运输成本。客户问最低件数时直接回答每款 500 件的标准，低于标准仅作项目评估，不把采购米数直接换算成可接成衣件数。
+- 区分面料采购 MOQ 与成衣生产 MOQ：除面料要求，还需覆盖定样、生产、QC 和运输成本。首次询盘问最低件数时直接回答每款 500 件的标准，低于标准仅作项目评估，不把采购米数直接换算成可接成衣件数。
+- 返单与首单区分评估：所有者于 2026-11-05 确认，同款返单 MOQ 可适当放宽，但仍受面料最低量限制，不承诺任意小量或固定更短交期。客户关心持续合作时，说明已确认的返单经验和同等质量责任，具体事实与条件见手册；“100% 负责”不延伸为逐件全检或零缺陷承诺。
 - 客户需要比较指定面料与定制替代时，说明路线和取舍，由客户选择；库存、样布可供性、采购前提及交期按当前项目确认，不把“可采购”写成“有现货”。
 - 当前 bonded seam 能力限于口袋、袖口等局部；ACTIVESEAM 有充分制造经验。局部胶合与主拼缝分别确认，不将局部能力扩大为整件全胶合。
 - 成本优势、性能接近和工艺效果按开发目标沟通，最终结果由样品或测试确认；不把某次项目的材料规格、工艺参数或估计结果推广为通用承诺。
