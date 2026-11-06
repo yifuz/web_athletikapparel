@@ -453,8 +453,8 @@ Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独
 
 ### 7.3 Git 与媒体部署
 
-- 子主题 Git 远程仓库：<https://github.com/yifuz/web_myathletik.git>。
-- Codex 在当前 checkout 成功提交后必须立即推送当前分支。
+- 子主题 Git 远程仓库：<https://github.com/yifuz/web_athletikapparel>；实际推送前核对当前 `origin`。
+- 所有者于 2026-11-06 调整：日常改动验证后先保留本地提交，积累一批后阶段性统一推送，不再每次提交后立即推送。批次范围与仅本地内容的边界遵循 `AGENTS.md`。
 - 图片和视频位于 uploads，不进入 Git；每次变更必须通过 Local Connect、FTP/SCP 或迁移工具另行同步。
 - 代码提交成功不代表图片已经部署。
 
