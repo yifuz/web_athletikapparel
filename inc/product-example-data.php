@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * New local entries require owner review before production publication.
  *
  * These entries describe actual samples, not stock availability or tested performance.
+ * Keep customer-specific tech-pack instructions out of these public records.
  *
  * @return array<string,array> Product records keyed by their stable internal identifier.
  */
@@ -231,66 +232,55 @@ function myathletik_product_example_data() {
 			'category_label' => 'Merino wool',
 			'name' => 'Jacquard Merino-Mix Set',
 			'title' => "Women's wool jacquard base-layer set",
-			'intro' => 'A matching quarter-zip top and full-length leggings with a geometric jacquard pattern and contrasting dark panels. Explore the complete set, back and side views, collar, and waistband across four product videos.',
-			'summary' => 'A quarter-zip top and matching leggings with 240 GSM Merino wool-blend jacquard fabric and separate panel fabric.',
+			'intro' => "This women's set pairs a quarter-zip top with full-length leggings in Merino wool-blend jacquard, with contrasting dark panels. Review the sample's pattern, fit and silhouette as a reference for your own product brief.",
+			'summary' => 'A matching quarter-zip top and leggings with geometric Merino wool-blend jacquard and contrasting dark panels.',
 			'characteristics' => 'Geometric jacquard · Quarter-zip collar · Dark side panels',
 			'material' => 'merino',
 			'material_label' => 'Merino wool',
-			'sample_material' => 'Merino wool-blend jacquard with separate panel fabric',
+			'sample_material' => 'Merino wool-blend jacquard',
 			'composition' => 'Main jacquard: 65% Polyester / 25% Merino wool / 10% Nylon',
 			'merino_content' => '25% in the main jacquard fabric',
 			'gsm' => '240 GSM (main jacquard)',
 			'fabric_ref' => 'HY254931 (jacquard) / HY254888 (panels)',
 			'use' => 'Base-layer top and leggings',
-			'state' => 'Product sample · Technical brief reference',
-			'facts' => array(
-				'Main jacquard' => 'HY254931 · 240 GSM',
-				'Jacquard composition' => '65% Polyester / 25% Merino wool / 10% Nylon',
-				'Panel fabric' => 'HY254888 · Black mélange',
-				'Panel specification' => '70% Merino wool / 30% Nylon; inside: 100% Polyester, as listed in the technical brief.',
-				'Product format' => 'Quarter-zip long-sleeve top + full-length leggings',
-			),
-			'facts_note' => 'Material details follow the technical brief and confirmed updates. The jacquard and panel specifications are separate, not a combined whole-garment composition.',
-			'search' => "women womens girls jacquard merino wool mix blend base layer quarter zip top leggings set HY254931 HY254888 240 GSM polyester nylon black grey",
+			'search' => "women womens jacquard merino wool mix blend base layer quarter zip top leggings set HY254931 HY254888 240 GSM polyester nylon black grey",
 			'media' => array(
 				'images' => $jacquard_images,
 				'video' => $jacquard_videos['overview'],
 				'videos' => $jacquard_videos,
 			),
 			'options' => array(
-				'eyebrow' => 'Technical reference',
-				'title' => 'Details from the product brief',
-				'intro' => 'The supplied brief separates the top, leggings and shared material references. These details describe the design reference; final construction and trims remain subject to sample approval.',
+				'intro' => 'Use this matching set as a reference. Discuss the style, fit and material choices below against your own product brief.',
 				'groups' => array(
 					array(
-						'title' => 'Quarter-zip top',
-						'intro' => 'Long sleeves, a stand collar and dark side panels.',
+						'title' => 'Top development',
+						'intro' => 'Style and fit options to discuss for the top.',
 						'items' => array(
-							'Front opening' => 'Quarter zip',
-							'Zipper reference' => 'No. 3 reversed coil, 22 cm in the brief',
-							'Body fabric' => 'HY254931 jacquard',
-							'Panel reference' => 'HY254888 black mélange',
+							'Neckline' => 'Quarter zip / your neckline specification',
+							'Fit' => 'Close fit / regular fit',
+							'Body length' => 'Hip length / longline',
+							'Sizing' => 'Your size chart / reference sample',
 						),
 					),
 					array(
-						'title' => 'Full-length leggings',
-						'intro' => 'Matching jacquard with dark panels and an elasticated waistband.',
+						'title' => 'Leggings development',
+						'intro' => 'Waist and length options to discuss for the leggings.',
 						'items' => array(
-							'Leg length' => 'Full length',
-							'Waist construction' => 'Internal elastic',
-							'Waist reference' => '4 cm width in the brief',
-							'Fabric pairing' => 'HY254931 jacquard + HY254888 panels',
+							'Rise' => 'Mid rise / high rise',
+							'Waistband' => 'Narrow / wide waistband',
+							'Leg length' => 'Full length / 7/8 length',
+							'Sizing' => 'Your size chart / reference sample',
 						),
 					),
 				),
-				'shared_title' => 'Shared construction and approval points',
+				'shared_title' => 'Shared options for the set',
 				'shared' => array(
-					'Seam reference' => 'Stitch types 606 / 607 are specified in the brief; confirm the seam map against the approved sample.',
-					'Seam colour' => 'Tonal black and contrasting Laurel Wreath FLATLOCK mock-ups are requested for approval, not shown as two finished sample variants.',
-					'Labels and trims' => 'Woven size and loop-label placements are indicated; the zipper puller remains to be confirmed.',
-					'Your project brief' => 'Confirm final artwork, sizing, material requirements and test criteria before production assessment.',
+					'Fabric' => 'Merino wool-blend jacquard; composition, GSM and panel fabrics reviewed against your product brief.',
+					'Pattern and colour' => 'Your supplied artwork, pattern placement and colour references, reviewed for production feasibility.',
+					'Labels and branding' => 'Woven or printed labels, care labels, and logo placement to suit the brand.',
+					'Packaging' => 'Packed together as a set or as individually packed pieces, with your specified hangtags.',
 				),
-				'note' => 'The product videos are visual references. Design notes and proposed seam treatments do not establish tested performance or final production approval.',
+				'note' => 'Final choices depend on the selected fabric and approved sample; these alternatives are not specifications of the set shown.',
 			),
 		),
 	);
