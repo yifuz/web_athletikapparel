@@ -234,7 +234,7 @@ function myathletik_product_example_data() {
 			'title' => "Women's wool jacquard base-layer set",
 			'intro' => "This women's set pairs a quarter-zip top with full-length leggings in Merino wool-blend jacquard, with contrasting dark panels. Review the sample's pattern, fit and silhouette as a reference for your own product brief.",
 			'summary' => 'A matching quarter-zip top and leggings with geometric Merino wool-blend jacquard and contrasting dark panels.',
-			'characteristics' => 'Geometric jacquard · Quarter-zip collar · Dark side panels',
+			'characteristics' => 'Next-to-skin comfort · Warmth · Breathability',
 			'material' => 'merino',
 			'material_label' => 'Merino wool',
 			'sample_material' => 'Merino wool-blend jacquard',
@@ -242,7 +242,7 @@ function myathletik_product_example_data() {
 			'merino_content' => '25% in the main jacquard fabric',
 			'gsm' => '240 GSM (main jacquard)',
 			'fabric_ref' => 'HY254931 (jacquard) / HY254888 (panels)',
-			'use' => 'Base-layer top and leggings',
+			'use' => 'Base layering',
 			'search' => "women womens jacquard merino wool mix blend base layer quarter zip top leggings set HY254931 HY254888 240 GSM polyester nylon black grey",
 			'media' => array(
 				'images' => $jacquard_images,
@@ -256,7 +256,7 @@ function myathletik_product_example_data() {
 						'title' => 'Top development',
 						'intro' => 'Style and fit options to discuss for the top.',
 						'items' => array(
-							'Neckline' => 'Quarter zip / your neckline specification',
+							'Front opening' => 'Quarter zip / your opening specification',
 							'Fit' => 'Close fit / regular fit',
 							'Body length' => 'Hip length / longline',
 							'Sizing' => 'Your size chart / reference sample',
