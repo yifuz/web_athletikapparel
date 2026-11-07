@@ -61,20 +61,17 @@ $sizes   = '(max-width: 760px) 684px, 854px';
 	<article class="ma-pl-related-product">
 		<div class="ma-pl-related-product__image">
 			<a href="<?php echo esc_url( $url ); ?>">
-				<img src="<?php echo esc_url( $image['src'] ); ?>" srcset="<?php echo esc_attr( $image['srcset'] ); ?>" sizes="<?php echo esc_attr( $sizes ); ?>" width="1280" height="720" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy" decoding="async">
+				<img src="<?php echo esc_url( $image['src'] ); ?>" srcset="<?php echo esc_attr( $image['srcset'] ); ?>" sizes="570px" width="1280" height="720" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="lazy" decoding="async">
 			</a>
 		</div>
 		<div class="ma-pl-related-product__body">
 			<p class="ma-pl-eyebrow"><?php echo esc_html( $product['name'] ); ?></p>
 			<h3><a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $product['title'] ); ?></a></h3>
-			<p class="ma-pl-muted"><?php echo esc_html( $product['summary'] ); ?></p>
 			<dl class="ma-pl-product-facts">
-				<div class="ma-pl-fact"><dt>Composition</dt><dd><?php echo esc_html( $product['composition'] ); ?></dd></div>
 				<div class="ma-pl-fact"><dt>Fabric weight</dt><dd><?php echo esc_html( $product['gsm'] ); ?></dd></div>
 				<div class="ma-pl-fact"><dt>Fabric reference</dt><dd><?php echo esc_html( $product['fabric_ref'] ); ?></dd></div>
-				<div class="ma-pl-fact"><dt>Suggested use</dt><dd><?php echo esc_html( $product['use'] ); ?></dd></div>
 			</dl>
-			<a class="ma-pl-button" href="<?php echo esc_url( $url ); ?>">Explore this product example <span aria-hidden="true">→</span></a>
+			<a class="ma-pl-text-link" href="<?php echo esc_url( $url ); ?>">View product details <span aria-hidden="true">→</span></a>
 		</div>
 	</article>
 <?php endif; ?>

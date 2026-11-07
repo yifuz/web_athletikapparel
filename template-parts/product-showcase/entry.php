@@ -12,9 +12,7 @@ if ( ! in_array( $context, array( 'home', 'merino' ), true ) ) {
 }
 $product_key = isset( $args['product_key'] ) ? sanitize_key( $args['product_key'] ) : 'ocean-depth';
 $products    = myathletik_product_showcase_products();
-$merino_products = array_filter( $products, static function ( $product ) {
-	return 'merino-wool-manufacturer' === ( $product['category_slug'] ?? '' );
-} );
+$merino_products = 'merino' === $context ? myathletik_product_showcase_category_preview( 'merino-wool-manufacturer' ) : array();
 if ( ( 'home' === $context && ! isset( $products[ $product_key ] ) ) || ( 'merino' === $context && ! $merino_products ) ) {
 	return;
 }
@@ -36,7 +34,10 @@ if ( ( 'home' === $context && ! isset( $products[ $product_key ] ) ) || ( 'merin
 				<div><p class="ma-pl-eyebrow">Product Showcase</p><h2 id="ma-pl-merino-title">Merino wool product examples</h2></div>
 				<a class="ma-pl-text-link" href="<?php echo esc_url( myathletik_product_showcase_url() ); ?>">View all product examples <span aria-hidden="true">→</span></a>
 			</div>
-			<div class="ma-pl-related-products">
+			<?php if ( count( $merino_products ) > 1 ) : ?>
+				<p id="ma-pl-merino-scroll-help" class="ma-pl-preview-help">Swipe or scroll to view both examples.</p>
+			<?php endif; ?>
+			<div class="ma-pl-related-products" role="region" aria-labelledby="ma-pl-merino-title"<?php if ( count( $merino_products ) > 1 ) : ?> tabindex="0" aria-describedby="ma-pl-merino-scroll-help"<?php endif; ?>>
 				<?php foreach ( array_keys( $merino_products ) as $merino_key ) : ?>
 					<?php get_template_part( 'template-parts/product-showcase/card', null, array( 'context' => 'merino', 'product_key' => $merino_key ) ); ?>
 				<?php endforeach; ?>

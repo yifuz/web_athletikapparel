@@ -38,6 +38,32 @@ function myathletik_product_showcase_products() {
 	}, ARRAY_FILTER_USE_KEY );
 }
 
+/** Category pages are previews, not another unbounded product library. */
+function myathletik_product_showcase_category_preview( $category_slug ) {
+	$ranked = array();
+	foreach ( myathletik_product_showcase_products() as $key => $product ) {
+		if ( $category_slug !== ( $product['category_slug'] ?? '' ) ) {
+			continue;
+		}
+		$page = myathletik_product_showcase_page( $key );
+		if ( ! myathletik_product_showcase_is_public( $page ) ) {
+			continue;
+		}
+		$ranked[ $key ] = array(
+			'product' => $product,
+			'published' => $page->post_date_gmt,
+			'id' => (int) $page->ID,
+		);
+	}
+	// Use publication time, not modification time; routine edits do not reorder cards.
+	uasort( $ranked, static function ( $a, $b ) {
+		return strcmp( $b['published'], $a['published'] ) ?: $b['id'] <=> $a['id'];
+	} );
+	return array_map( static function ( $item ) {
+		return $item['product'];
+	}, array_slice( $ranked, 0, 2, true ) );
+}
+
 function myathletik_product_showcase_url() {
 	$page = myathletik_product_showcase_page();
 	return myathletik_product_showcase_is_public( $page ) ? get_permalink( $page ) : '';
