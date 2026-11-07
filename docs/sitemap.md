@@ -124,11 +124,18 @@
 - `/product-showcase/ocean-depth-merino-wool-blend-set/`：H1 `Women's Merino wool-blend top & leggings`，承接单款规格与开发参考；沿用真实成分、155 GSM、HY254955。
 - `/product-showcase/mens-merino-tencel-mesh-long-sleeve-shirt/`：H1 `Men's Merino wool-Tencel mesh long-sleeve T-shirt`，HY265077、80% Tencel / 20% Merino wool、115 GSM。2026-11-04 视频获批并接入 Local，已纳入所有者批准的整包部署；见[接入记录](site/product-showcase-hy265077-2026-11-04.md)。
 - 入口：首页七品类区块后、Merino 原图库后、Products 下拉菜单；产品详情回链 Merino 能力页和展示库，并进入 Contact 项目询盘。
-- 首页保留 Ocean Depth 特色卡与展示库总入口；Merino 页按有效的已发布产品循环展示，当前两款。
+- 首页保留 Ocean Depth 特色卡与展示库总入口；Merino 页按有效的已发布产品循环展示，已上线两款；下述 Local 新款未部署。
 - 后续产品复用数据与模板，每个实物仅一个详情 URL；只有已发布且有效的页面出现在卡片和导航中。七个既有商业品类 URL 与关键词任务不变，不创建 `/products/`。
 - Local／staging 保留 noindex 并排除 Sitemap；production 发布后的正式页按站点与页面索引设置参与 Sitemap。不是把本地 noindex 元数据复制上线。
 
 部署步骤、文件及验收见[发布候选记录](site/product-showcase-release-candidate-2026-11-03.md)。没有改动已上线 URL，因此本轮无 301 映射。
+
+#### 新款本地审核（2026-11-07，未上线）
+
+- 所有者确认新路径 `/product-showcase/womens-wool-jacquard-base-layer-set/`，H1 `Women's wool jacquard base-layer set`；Local ID 85，产品 key `womens-wool-jacquard-set`。
+- 主提花面料 HY25493：65% Polyester / 25% Merino wool / 10% Nylon，240 GSM；HY25888 拼接面料单独列示，不将主面料成分或克重推广到整件。资料边界见[本地接入记录](site/product-showcase-jacquard-2026-11-07.md)。
+- 4 段视频复用单个按需播放弹窗；本地展示库及 Merino 入口新增此款，首页特色款不变。保留 noindex／Sitemap 排除；英文草稿和页面尚待所有者审核，无生产发布授权。
+- 不改现有 URL，不需要 301。日常验证后仅保留本地提交，按当前 `AGENTS.md` 阶段性批量推送规则处理。
 
 ---
 

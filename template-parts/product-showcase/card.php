@@ -27,7 +27,7 @@ $sizes   = '(max-width: 760px) 684px, 854px';
 	<article class="ma-pl-product-card" data-material="<?php echo esc_attr( $product['material'] ); ?>" data-search="<?php echo esc_attr( $product['search'] ); ?>">
 		<a class="ma-pl-product-card__image" href="<?php echo esc_url( $url ); ?>" aria-label="<?php echo esc_attr( 'View ' . $product['name'] . ' product example' ); ?>">
 			<img src="<?php echo esc_url( $image['src'] ); ?>" srcset="<?php echo esc_attr( $image['srcset'] ); ?>" sizes="<?php echo esc_attr( $sizes ); ?>" width="1280" height="720" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="eager" decoding="async">
-			<span class="ma-pl-media-note">Photos + product video <span aria-hidden="true">↗</span></span>
+			<span class="ma-pl-media-note"><?php echo esc_html( count( $product['media']['videos'] ?? array() ) > 1 ? sprintf( __( 'Photos + %d product videos', 'myathletik-child' ), count( $product['media']['videos'] ) ) : 'Photos + product video' ); ?> <span aria-hidden="true">↗</span></span>
 		</a>
 		<div class="ma-pl-product-card__body">
 			<p class="ma-pl-eyebrow"><?php echo esc_html( $product['material_label'] . ' · ' . $product['name'] ); ?></p>

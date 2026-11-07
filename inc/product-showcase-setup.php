@@ -92,6 +92,14 @@ function myathletik_product_showcase_prepare( $check_media = true ) {
 			}
 			$media_urls[] = $product['media']['video']['src'];
 			$media_urls[] = $product['media']['video']['poster'];
+			foreach ( $product['media']['videos'] ?? array() as $clip_key => $clip ) {
+				foreach ( array( 'src', 'poster', 'thumbnail' ) as $field ) {
+					if ( empty( $clip[ $field ] ) || ! is_string( $clip[ $field ] ) ) {
+						return new WP_Error( 'showcase_preflight', 'Required video ' . $field . ' is missing for ' . $product['slug'] . ': ' . $clip_key . '. Nothing changed.' );
+					}
+					$media_urls[] = $clip[ $field ];
+				}
+			}
 		}
 		$media_prefixes = array(
 			trailingslashit( get_stylesheet_directory_uri() ) . 'assets/images/',

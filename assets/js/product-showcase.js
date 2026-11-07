@@ -61,10 +61,19 @@
     var gallery = stage.closest('.ma-pl-gallery');
     if (!gallery) return;
     var buttons = Array.from(gallery.querySelectorAll('.ma-pl-thumb'));
-    var videoButton = buttons.find(function (button) { return button.dataset.media === 'video'; });
+    var videoButtons = Array.from(gallery.querySelectorAll('[data-media="video"]'));
     var photoButtons = buttons.filter(function (button) { return button.dataset.media === 'image'; });
     var textButton = document.getElementById('ma-pl-show-product-video');
     var closeButton = dialog.querySelector('[data-ma-pl-video-close]');
+    var source = video.querySelector('source');
+    var videoTitle = document.getElementById('ma-pl-video-title');
+    var fallbackLink = video.querySelector('a');
+    if (!source || !videoTitle) return;
+    var defaultSource = source.getAttribute('src');
+    var defaultPoster = video.getAttribute('poster');
+    var defaultTitle = videoTitle.textContent;
+    var defaultVideoLabel = video.getAttribute('aria-label');
+    var loadedSource = null;
     var activeTrigger = null;
     var backdropPointerDown = false;
 
@@ -84,18 +93,28 @@
     }
 
     function openVideo(trigger) {
+      var nextSource = trigger.dataset.videoSrc || defaultSource;
+      var nextPoster = trigger.dataset.videoPoster || defaultPoster;
+      var nextTitle = trigger.dataset.videoTitle;
       if (typeof dialog.showModal !== 'function') {
         // Older browsers still have a working video destination.
-        window.location.assign(video.querySelector('source').src);
+        window.location.assign(nextSource);
         return;
       }
+      video.pause();
+      videoTitle.textContent = nextTitle ? defaultTitle + ' · ' + nextTitle : defaultTitle;
+      video.setAttribute('aria-label', nextTitle ? defaultVideoLabel + ' — ' + nextTitle : defaultVideoLabel);
+      video.poster = nextPoster;
+      if (fallbackLink) fallbackLink.href = nextSource;
       activeTrigger = trigger;
       dialog.showModal();
       document.documentElement.classList.add('ma-pl-video-open');
       // The request and playback are initiated only by the visitor's explicit click.
-      if (video.preload === 'none') {
+      if (loadedSource !== nextSource) {
+        source.src = nextSource;
         video.preload = 'metadata';
         video.load();
+        loadedSource = nextSource;
       }
       video.play().then(function () {
         if (!dialog.open) video.pause();
@@ -127,7 +146,7 @@
     photoButtons.forEach(function (button) {
       button.addEventListener('click', function () { selectPhoto(button); });
     });
-    [videoButton, textButton].filter(Boolean).forEach(function (button) {
+    videoButtons.concat(textButton).filter(Boolean).forEach(function (button) {
       if (typeof dialog.showModal !== 'function') {
         button.removeAttribute('aria-haspopup');
         button.removeAttribute('aria-controls');
@@ -136,6 +155,8 @@
     });
     var thumbs = gallery.querySelector('.ma-pl-thumbs');
     if (thumbs) thumbs.hidden = false;
+    var videos = gallery.querySelector('.ma-pl-videos');
+    if (videos) videos.hidden = false;
     if (textButton) textButton.hidden = false;
   }
 

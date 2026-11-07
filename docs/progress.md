@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-11-05。
+最后更新：2026-11-07。
 
 2026-11-04 已按所有者要求[核对 SEO / GEO 三份未提交文档差异](operations/document-reconciliation-2026-11-04.md)：原文件已备份，恢复被回退的完成记录并对齐最新已核准状态；历史测量按原日期保留。本轮只整理文档，没有生产或外部平台操作。
 
@@ -19,6 +19,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.1 网站与内容
 
+- 2026-11-07 新增 [Jacquard Merino-Mix 套装 Showcase 本地审核版](site/product-showcase-jacquard-2026-11-07.md)：所有者确认新路径并提供技术 PDF、4 段视频、240 GSM，授权简短英文草稿。Local 新页面 ID 85；四段视频按整套／背侧／上衣领口／腰裤分别播放，A/B 两种面料规格分列，沿用共享模板。首页精选仍是 Ocean Depth；Local 展示库及 Merino 入口增加新款。**仅 Local 审核，未推送、未部署生产；正文待审核**。后续上线需要 6 个代码文件、13 个新增媒体及单款建页步骤，详见记录。
 - 2026-11-05 [Sportswear 图集及两页大图查看](site/product-gallery-alignment-2026-11-04.md)已获授权并经专用 SSH 发布 `1638b93`：Sportswear 单排、桌面四列／手机两列，2:3取景去除素材两侧白边、不裁人物；Merino 保留原两排方形图集，16张新增点击放大。五份代码已私有备份，三份 PHP 服务器语法及五文件哈希／权限校验通过，无媒体／数据库步骤。初次旧页面缓存未误报通过；所有者承接后台刷新后，普通正式 URL 的公开CSS／JS与批准版本一致。两页图集响应式、全大图、键盘、无JS及横屏12场景通过，首页和七类目基础检查通过。状态 `deployed / production-verified`；既有 Turnstile async/defer 错误单独记录，未修改或提交表单。
 - 2026-11-04 Product Showcase [三项视觉优化及首页分类箭头移除](site/product-showcase-visual-polish-2026-11-04.md)已获授权，经专用 SSH 部署并生产验收：16:9 视频弹层、平板卡片缩短与按钮对齐、手机标题简介置于媒体上方；首页分类七个链接保留、小箭头移除。四个主题文件已私有备份并校验哈希，正式浏览器15场景通过；无媒体／数据库步骤。状态为 `deployed / production-verified`。Showcase 首页入口与筛选条未改；首页既有 Turnstile 错误单独记录，未提交表单。
 - 2026-11-04 部署分工已固化：LocalWP 用于开发和本地页面审核；所有者确认上线后，由 Codex 通过专用 SSH 直接部署、验收并记录，同批授权不重复询问。流程、备份回退与交付模板见[部署工作流程](operations/flywheel-ssh-deployment.md)，已同步 `AGENTS.md`；本次只更新文档，无生产操作。

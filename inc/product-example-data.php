@@ -61,6 +61,39 @@ function myathletik_product_example_data() {
 		);
 	}
 
+	// Owner-provided technical PDF + four videos; copy remains a Local review draft.
+	$jacquard_media_base = get_stylesheet_directory_uri() . '/assets/images/product-examples/womens-wool-jacquard-set/';
+	$jacquard_images = array();
+	$jacquard_image_data = array(
+		'front'           => array( 'Full set', 'Front view of the black and grey jacquard quarter-zip top and leggings', 'View full set' ),
+		'back-view'       => array( 'Back view', 'Back view of the jacquard top and leggings with dark side panels', 'View back' ),
+		'neckline-detail' => array( 'Collar and jacquard detail', 'Close-up of the stand collar, front zip and geometric jacquard pattern', 'View collar detail' ),
+		'waist-detail'    => array( 'Waist detail', 'Close-up of the dark elasticated waistband and jacquard leggings', 'View waist detail' ),
+	);
+	foreach ( $jacquard_image_data as $image_key => $image ) {
+		$jacquard_images[ $image_key ] = array(
+			'src' => $jacquard_media_base . $image_key . '-1280.webp',
+			'thumbnail' => $jacquard_media_base . $image_key . '-640.webp',
+			'srcset' => $jacquard_media_base . $image_key . '-640.webp 640w, ' . $jacquard_media_base . $image_key . '-1280.webp 1280w',
+			'width' => 1280, 'height' => 720,
+			'caption' => $image[0], 'alt' => $image[1], 'control' => $image[2],
+		);
+	}
+	$jacquard_videos = array();
+	foreach ( array(
+		'overview' => array( 'Full-set overview', 'front' ),
+		'back-side' => array( 'Back and side views', 'back-view' ),
+		'neckline' => array( 'Top and collar details', 'neckline-detail' ),
+		'waist' => array( 'Waist and leggings', 'waist-detail' ),
+	) as $video_key => $video ) {
+		$jacquard_videos[ $video_key ] = array(
+			'src' => $jacquard_media_base . $video_key . '-1080.mp4',
+			'poster' => $jacquard_images[ $video[1] ]['src'],
+			'thumbnail' => $jacquard_images[ $video[1] ]['thumbnail'],
+			'label' => $video[0],
+		);
+	}
+
 	return array(
 		'ocean-depth' => array(
 			'slug'           => 'ocean-depth-merino-wool-blend-set',
@@ -186,6 +219,78 @@ function myathletik_product_example_data() {
 					'Testing requirements' => 'Define the required tests and acceptance criteria for the intended market.',
 				),
 				'note' => 'Final choices depend on the selected fabric and approved sample; these alternatives are not specifications of the T-shirt shown.',
+			),
+		),
+		'womens-wool-jacquard-set' => array(
+			'slug' => 'womens-wool-jacquard-base-layer-set',
+			'seo_title' => "Women's Wool Jacquard Base-Layer Set | Athletik Clothing",
+			'meta_description' => "Explore a women's jacquard base-layer set with a quarter-zip top and leggings. View four product videos and 240 GSM Merino wool-blend fabric details.",
+			'inquiry_category' => 'Merino Wool',
+			'social_image' => $jacquard_media_base . 'front-social.jpg',
+			'category_slug' => 'merino-wool-manufacturer',
+			'category_label' => 'Merino wool',
+			'name' => 'Jacquard Merino-Mix Set',
+			'title' => "Women's wool jacquard base-layer set",
+			'intro' => 'A matching quarter-zip top and full-length leggings with a geometric jacquard pattern and contrasting dark panels. Explore the complete set, back and side views, collar, and waistband across four product videos.',
+			'summary' => 'A quarter-zip top and matching leggings with 240 GSM Merino wool-blend jacquard fabric and separate panel fabric.',
+			'characteristics' => 'Geometric jacquard · Quarter-zip collar · Dark side panels',
+			'material' => 'merino',
+			'material_label' => 'Merino wool',
+			'sample_material' => 'Merino wool-blend jacquard with separate panel fabric',
+			'composition' => 'Main jacquard: 65% Polyester / 25% Merino wool / 10% Nylon',
+			'merino_content' => '25% in the main jacquard fabric',
+			'gsm' => '240 GSM (main jacquard)',
+			'fabric_ref' => 'HY25493 (jacquard) / HY25888 (panels)',
+			'use' => 'Base-layer top and leggings',
+			'state' => 'Product sample · Technical brief reference',
+			'facts' => array(
+				'Main jacquard' => 'HY25493 · 240 GSM',
+				'Jacquard composition' => '65% Polyester / 25% Merino wool / 10% Nylon',
+				'Panel fabric' => 'HY25888 · Black mélange',
+				'Panel specification' => '70% Merino wool / 30% Nylon; inside: 100% Polyester, as listed in the technical brief.',
+				'Product format' => 'Quarter-zip long-sleeve top + full-length leggings',
+			),
+			'facts_note' => 'Material references come from the supplied technical brief. The jacquard and panel specifications are separate, not a combined whole-garment composition.',
+			'search' => "women womens girls jacquard merino wool mix blend base layer quarter zip top leggings set HY25493 HY25888 240 GSM polyester nylon black grey",
+			'media' => array(
+				'images' => $jacquard_images,
+				'video' => $jacquard_videos['overview'],
+				'videos' => $jacquard_videos,
+			),
+			'options' => array(
+				'eyebrow' => 'Technical reference',
+				'title' => 'Details from the product brief',
+				'intro' => 'The supplied brief separates the top, leggings and shared material references. These details describe the design reference; final construction and trims remain subject to sample approval.',
+				'groups' => array(
+					array(
+						'title' => 'Quarter-zip top',
+						'intro' => 'Long sleeves, a stand collar and dark side panels.',
+						'items' => array(
+							'Front opening' => 'Quarter zip',
+							'Zipper reference' => 'No. 3 reversed coil, 22 cm in the brief',
+							'Body fabric' => 'HY25493 jacquard',
+							'Panel reference' => 'HY25888 black mélange',
+						),
+					),
+					array(
+						'title' => 'Full-length leggings',
+						'intro' => 'Matching jacquard with dark panels and an elasticated waistband.',
+						'items' => array(
+							'Leg length' => 'Full length',
+							'Waist construction' => 'Internal elastic',
+							'Waist reference' => '4 cm width in the brief',
+							'Fabric pairing' => 'HY25493 jacquard + HY25888 panels',
+						),
+					),
+				),
+				'shared_title' => 'Shared construction and approval points',
+				'shared' => array(
+					'Seam reference' => 'Stitch types 606 / 607 are specified in the brief; confirm the seam map against the approved sample.',
+					'Seam colour' => 'Tonal black and contrasting Laurel Wreath FLATLOCK mock-ups are requested for approval, not shown as two finished sample variants.',
+					'Labels and trims' => 'Woven size and loop-label placements are indicated; the zipper puller remains to be confirmed.',
+					'Your project brief' => 'Confirm final artwork, sizing, material requirements and test criteria before production assessment.',
+				),
+				'note' => 'The product videos are visual references. Design notes and proposed seam treatments do not establish tested performance or final production approval.',
 			),
 		),
 	);
