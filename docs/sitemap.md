@@ -133,7 +133,7 @@
 #### 新款本地审核（2026-11-07，未上线）
 
 - 所有者确认新路径 `/product-showcase/womens-wool-jacquard-base-layer-set/`，H1 `Women's wool jacquard base-layer set`；Local ID 85，产品 key `womens-wool-jacquard-set`。
-- 主提花面料 HY25493：65% Polyester / 25% Merino wool / 10% Nylon，240 GSM；HY25888 拼接面料单独列示，不将主面料成分或克重推广到整件。资料边界见[本地接入记录](site/product-showcase-jacquard-2026-11-07.md)。
+- 主提花面料 HY254931：65% Polyester / 25% Merino wool / 10% Nylon，240 GSM；HY254888 拼接面料单独列示，不将主面料成分或克重推广到整件。编号以所有者 2026-11-07 对原 PDF 的更正为准；资料边界见[本地接入记录](site/product-showcase-jacquard-2026-11-07.md)。
 - 4 段视频复用单个按需播放弹窗；本地展示库及 Merino 入口新增此款，首页特色款不变。保留 noindex／Sitemap 排除；英文草稿和页面尚待所有者审核，无生产发布授权。
 - 不改现有 URL，不需要 301。日常验证后仅保留本地提交，按当前 `AGENTS.md` 阶段性批量推送规则处理。
 

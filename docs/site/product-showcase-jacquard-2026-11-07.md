@@ -8,8 +8,9 @@
 - 视频来源目录：`D:\B-视频素材\Google_Omni_成片\女款羊毛提花0624\`。全部四个 MP4 纳入本款，不只最初指定的 06。
 - 技术来源：所有者提供的 `GIRLS Jacquard Merino-Mix_Top+Pant - Unbranded.pdf`，两页已阅读文字与图样。PDF 不上传公开网站，不进入 Git。
 - 所有者补充 GSM 为 **240**；当前按主提花面料记录，已在对话说明不将其套用到拼接面料。
-- 主面料 A：HY25493 jacquard，65% Polyester / 25% Merino wool / 10% Nylon。
-- 拼接面料 B：HY25888，技术资料列 70% Merino wool / 30% Nylon，另列 `Inside: 100% PES`，black mélange。页面保留独立“inside”说明，不推算整件成分或内外层占比。
+- 主面料 A：HY254931 jacquard，65% Polyester / 25% Merino wool / 10% Nylon。
+- 拼接面料 B：HY254888，技术资料列 70% Merino wool / 30% Nylon，另列 `Inside: 100% PES`，black mélange。页面保留独立“inside”说明，不推算整件成分或内外层占比。
+- **编号更正（所有者 2026-11-07 确认）：** 原 PDF 的 `HY25493`、`HY25888` 有误，分别改为 `HY254931`、`HY254888`。现行页面、展示卡、搜索及询盘引用以更正编号为准；原 PDF 和既有历史验收快照不覆盖，其旧编号不得作为现行依据。成分、240 GSM、视频、URL 与布局不变。
 - PDF 包含女款／女孩设计；本次使用成年女模特视频、已批准女款标题，不额外创建儿童页面。
 - 缝线 606／607、22 cm No. 3 reversed-coil zipper、4 cm 腰部宽度来自设计稿；tonal／contrast FLATLOCK mock-up 是待批准要求，不写成已经存在的两款成品或性能认证。
 
@@ -36,6 +37,8 @@
 - 本地漂亮链接 `/page-sitemap.xml`、`/sitemap_index.xml` 返回 404，未擅自刷新 rewrite 或改索引设置。只读查询入口 `/?sitemap=page&sitemap_n=1` 用于核对 XML；另直接确认 Rank Math sitemap entry 返回 false、WP core sitemap 排除 ID 85。
 - 本机 PHP CLI 存在既有 `php_imagick.dll` 加载警告；本次媒体由 FFmpeg 输出，PHP 语法与页面渲染不依赖该扩展，未改环境配置。
 - 本地截图、测试及建页前后快照保存在忽略目录 `.chrome-check/`，不作为生产部署文件。
+- 编号更正仅需更新共享产品数据及上述内部记录；无需新增或替换媒体，也无需重建页面。整批上线仍沿用下方 6 个代码／13 个媒体／单款建页清单，当前没有生产部署授权。
+- 更正后复核通过：详情、展示库筛选、Merino 入口及 Contact 预填均使用新编号；四档宽度的本地回归仍通过。ID 85 正文及 Rank Math 元数据原本不含货号，因此没有数据库更新；旧编号仅保留于本记录的明确作废说明与历史快照。
 
 ## 4. 后续获准上线时的准确清单
 
