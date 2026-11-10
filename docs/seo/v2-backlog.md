@@ -2,9 +2,9 @@
 
 > 建立日期：2026-08-25
 >
-> 状态：活跃；2026-11-04 核对记录
+> 状态：活跃；2026-11-10 核对记录
 >
-> 本次只整理已有证据与执行状态，未刷新 GSC / GA4 / 生产数据；外部状态按各条记录日期理解。
+> 11-10 已刷新定向索引／生产检查，并补齐 10-08～11-04 GSC＋GA4 基线；其余外部状态按各条记录原日期理解。
 >
 > 前置基线：[`SEO 审计汇总与实施清单 V1`](seo-implementation-checklist-v1.md) 已收尾
 
@@ -15,7 +15,7 @@ V2 不以增加任务数量为目标。所有项目必须有一方数据、生�
 | ID | 工作项 | 来源 | 优先级 | 当前状态 | 启动条件 / 下一步 | 完成标准 |
 |---|---|---|---|---|---|---|
 | SEO-V2-001 | QC Guide GSC 网页版实时测试与索引记录 | IMP-018 | P0 | `completed` | 2026-08-26 所有者确认已请求编入索引；2026-08-27 SEO-V2-003 URL Inspection 返回 `PASS / Submitted and indexed`，最后抓取为 `2026-08-26T13:41:31Z` | 已在 [`gsc-data-log.md`](gsc-data-log.md) 记录操作与后续索引证据；继续常规曝光监测，不重复提交或改写页面 |
-| SEO-V2-002 | 28 天 GSC / GA4 / 询盘基线刷新 | IMP-014/022/033 | P0 | `completed / recurring baseline / measurement-restored` | 2026-10-08 补齐 9 月自然月后，针对 GSC 32 clicks 对 GA4 Organic Search 2 sessions 的测量差距，诊断确认 Cookiebot Domain Group 授权故障；同日外部配置恢复并完成生产浏览器验收：两个 host 均获授权，首次 Banner、Allow all、Reject all、WP Consent API、GA4 Cookie / `page_view` 与页脚 Cookie Settings 全部按预期工作，主题及 CBID 无需修改 | 结论 `measurement-gap / diagnosed / fixed`。9 月 GA4 继续保留为不完整原始值，不回填或用于否定 GSC；从 2026-10-08 起重新累计 consented-session 数据，恢复窗口为 10-08 至 11-04，考虑 GSC final 延迟，正式复核不早于 2026-11-07。继续以人工询盘真值校验转化，不要求 GSC click 与 GA4 session 1:1 |
+| SEO-V2-002 | 28 天 GSC / GA4 / 询盘基线刷新 | IMP-014/022/033 | P0 | `baseline-established / recurring / inquiry-unverified` | 2026-11-10 已补齐 10-08～11-04 恢复窗口：GSC 36 clicks / 1,443 impressions，前窗 28 / 1,259；七品类为 14 / 599，前窗 10 / 472。GA4 全站 137 sessions；Organic Search 16 sessions / 11 users，2 位用户浏览 Contact，未记录自然搜索成功提交。全站 3 次 generate_lead 的业务真实性与质量未核验，本次未读邮箱 | `no-change / baseline-established / keep-measuring`。10-08 Cookiebot 修复记录保留；本窗含 QA 及多项发布，不作单变量归因。9 月漏测不回填，不强求 GSC clicks 与 GA4 sessions 1:1。下一相邻窗口可用 11-05～12-02，待 final 覆盖后取数；正式询盘只在获准后补核，详见 [GSC Log](gsc-data-log.md) |
 | SEO-V2-003 | 索引、Crawl 与 HTML 响应持续监测 | IMP-033/038 | P0 | `monitoring / services-no-change` | 2026-11-10 Services 月度复查为 `NEUTRAL / Discovered - currently not indexed`，已列出 Sitemap 发现来源，未返回抓取时间；相对 10-08 unknown 状态有发现证据，仍未收录，不作为 recovery。生产 HTTP 200、index / follow、自引用 Canonical、无 X-Robots 限制、Page Sitemap 一次、首页 5 个入口及四阶段采购流程正常；未查明未收录原因 | 保持 `no-change / monitoring`，不重复已于 08-28 确认的请求；下一常规复查不早于 2026-12-10。若 PASS 则关闭单页观察；明确 HTTP、抓取、robots、Canonical、Sitemap 阻塞或实质页面发布时提前重开。全站监测职责不关闭；本次仅四个到期页面定向检查，见 [GSC Log](gsc-data-log.md) |
 | SEO-V2-004 | 剩余 LCP 与 Field CWV 复核 | IMP-035–038 | P0 | `deferred / monitor-only` | 2026-09-19 所有者决定当前阶段不继续投入增量性能优化；保留 poster-first、延迟 MP4、reduced-motion / Save-Data 控制。已记录正常 motion 播放、强制 reduced-motion、三次 Lab 与 Crawl Diff 验收；Save-Data、离屏／后台暂停的真实浏览器检查在原卡仍未勾选，不扩大为全部通过；CrUX Phone 仍为该次 `unavailable` | 保持现状，不主动重开共享渲染链或非关键图片压缩。只有可用 Field CWV 不良、抓取／渲染／indexability 回归、明显用户体验故障，或同配置 Lab 重复恶化且有单变量假设时重开；历史证据见 [Hero Change Card](implementation/change-cards/seo-v2-004-home-video-hero-lcp.md) |
 | SEO-V2-005 | 用非品牌 Query 扩充现有页面证据与内链 | IMP-014/022 | P1 | `active / deployed-batches-measuring` | 原页面 Day 28 决策保留。Knitted 结构模块已于 10-27 完成 Day 7 技术／抓取复查，结果 `no-change / keep-measuring / not-enough-data`；Underwear seamless、Sportswear Yoga、配件头颈防护、FLATLOCK → Merino 入链均已各自完成部署验收，最新日期与未到期／已到期未复查项见下方分批表 | 各批使用原 Change Card 与独立 Day 0，不连续改写同页、不建近义页、不把低样本波动解释为因果；保留原 Day 90 并披露后续内容／内链／展示入口共同变量。Knitted 完整后窗 10-21～11-17 等 final 覆盖后预计 11-20 起核验；不把过期计划自动记为已完成 |
@@ -52,7 +52,7 @@ V2 不以增加任务数量为目标。所有项目必须有一方数据、生�
 
 ### 当前执行顺序
 
-1. 三个商业模块 Day 7 及 Services 月度复查已于 11-10 完成，结果见 [GSC Log](gsc-data-log.md)；无需重复检查或改版。下一项为 **SEO-V2-002 的 10-08～11-04 GSC＋GA4 恢复窗口**，本次 GSC final 已覆盖至 11-07，可以开始取数；本轮尚未执行该基线。
+1. 三个商业模块 Day 7、Services 月度复查及 **SEO-V2-002 的 10-08～11-04 GSC＋GA4 恢复基线**均已于 11-10 完成，结果见 [GSC Log](gsc-data-log.md)。七商业页曝光 472→599，增加 26.9%；自然搜索 16 sessions / 11 users，正式询盘尚未核验。下一效果重点为 **Knitted 与 Merino 的 10-21～11-17 完整后窗，预计 11-20 起按 final 核验**；当前汇总窗口不替代独立复盘，也不触发重复改版。
 2. 8 月正式／有效询盘已由所有者于 09-08 更正为 **0**，08-27 旧分类只保留历史轨迹；正式询盘邮箱只在当前任务明确获准读取时核对，不因继续 SEO 自动读取。
 3. Services 下一常规节点不早于 12-10，明确技术或发布触发条件出现时提前重开。Showcase 总览和女款已 indexed；男款 11-10 所有者确认已请求索引，建议 11-17 起复查一次，申请不等于收录。性能增量优化与外部凭据受阻项目继续暂缓。
 4. 完整 28 天效果复盘依上表分批执行；不因等待窗口而重写页面或扩充 Backlog。标准／外链下次季度复核仍不晚于 12-31。
