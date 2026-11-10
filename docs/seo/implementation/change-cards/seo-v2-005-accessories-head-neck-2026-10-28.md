@@ -56,3 +56,11 @@ Finding outcome：`changed / keep-measuring`；搜索效果尚未验证。
 以 **2026-10-29** 作为保守部署确认 / Day 0，Day 7 为 **2026-11-05**、Day 28 为 **2026-11-26**；Day 28 完整后窗为 2026-10-30～11-26，待 GSC final 覆盖末日再核验。10-28 的 28 天 Page 数据 0 clicks / 20 impressions 为此前滚动观察，不冒充本批精确前窗；等后续复盘时补取同口径前窗。验收时未重新运行 URL Inspection、全站 Crawl、GA4 或询盘核对，未证明 Google 已抓取本批改动，也未证明排名收益。无需额外部署、重复请求索引或新建 Backlog 项。
 
 2026-11-02 补录时再对生产执行定向 HTTP / 图片核对：页面、四个新增资源与四个受保护图片均为 HTTP 200，图片 MIME 正常，受保护图片哈希与基线一致；其中 800 WebP 首次传输 EOF，一次重试成功，不能据此判断持续故障。当天未运行本页 GSC 或全站 Crawl。
+
+## 2026-11-10：补做 Day 7 复查
+
+原定 11-05 的技术／索引检查完成。GSC `PASS / Submitted and indexed`，允许索引、抓取成功、Google / User Canonical 一致；最后抓取 `2026-11-07T00:34:07Z` 晚于 Day 0，但不直接证明 Google 已采用每段新增内容。生产 HTTP 200、index / follow、无 X-Robots 限制、自引用 Canonical、单一 H1、Page Sitemap 一次、首页两个入口；balaclava / neck gaiter 说明及护脖图保留。护脖和受保护第三图各一个 PNG / WebP，共 4/4 GET 200、MIME 正确；本次未重做历史 SHA 比较，不把可访问等同字节未变。
+
+按 Day 0 推导并首次提取精确窗口，`web / final` 前后 7 日 10-22～10-28 → 10-30～11-05：clicks **0→0**、impressions **2→10**、Page average position **5.50→9.90**。后窗仅品牌域名 Query 0 clicks / 8 impressions，不闭合 Page 的 10 次曝光；不能认定增长来自 balaclava / neck gaiter 词或新增图文。正式前 28 日 **10-01～10-28** 为 **0 clicks / 18 impressions / 0% CTR / 4.94 average position**。
+
+本轮 `no-change / keep-measuring / not-enough-data`；保留 10-30～11-26 后窗，等 final 覆盖后复盘，原 12-08 Day 90 不重置。图文和颜色属于组合改动，不拆成单一因素因果；全站 11-04 Showcase 入口也作为共同变量披露。本轮无代码、媒体或部署操作，没有视觉、表单、全站 Crawl 或索引申请。完整口径见 [11-10 GSC Log](../../gsc-data-log.md)，原始结果在 `.chrome-check/seo-mainline-2026-11-10/`。

@@ -16,7 +16,7 @@ V2 不以增加任务数量为目标。所有项目必须有一方数据、生�
 |---|---|---|---|---|---|---|
 | SEO-V2-001 | QC Guide GSC 网页版实时测试与索引记录 | IMP-018 | P0 | `completed` | 2026-08-26 所有者确认已请求编入索引；2026-08-27 SEO-V2-003 URL Inspection 返回 `PASS / Submitted and indexed`，最后抓取为 `2026-08-26T13:41:31Z` | 已在 [`gsc-data-log.md`](gsc-data-log.md) 记录操作与后续索引证据；继续常规曝光监测，不重复提交或改写页面 |
 | SEO-V2-002 | 28 天 GSC / GA4 / 询盘基线刷新 | IMP-014/022/033 | P0 | `completed / recurring baseline / measurement-restored` | 2026-10-08 补齐 9 月自然月后，针对 GSC 32 clicks 对 GA4 Organic Search 2 sessions 的测量差距，诊断确认 Cookiebot Domain Group 授权故障；同日外部配置恢复并完成生产浏览器验收：两个 host 均获授权，首次 Banner、Allow all、Reject all、WP Consent API、GA4 Cookie / `page_view` 与页脚 Cookie Settings 全部按预期工作，主题及 CBID 无需修改 | 结论 `measurement-gap / diagnosed / fixed`。9 月 GA4 继续保留为不完整原始值，不回填或用于否定 GSC；从 2026-10-08 起重新累计 consented-session 数据，恢复窗口为 10-08 至 11-04，考虑 GSC final 延迟，正式复核不早于 2026-11-07。继续以人工询盘真值校验转化，不要求 GSC click 与 GA4 session 1:1 |
-| SEO-V2-003 | 索引、Crawl 与 HTML 响应持续监测 | IMP-033/038 | P0 | `monitoring / services-no-change` | 2026-10-08 Services 只读复查仍为 `NEUTRAL / URL is unknown to Google`；相对 2026-09-30 的 `Discovered - currently not indexed`，工具仍判定 excluded 状态 unchanged、0 regression / recovery / alert。生产普通请求与模拟 Googlebot 均为 200，`index`、自引用 Canonical、无 X-Robots-Tag、Page Sitemap 唯一条目、首页 5 个入口及完整采购流程内容均正常，单页审计 0 issue / 0 recommendation | 不重复提交或改页；Services 单页从低收益周度轮询改为月度或触发式复查，下一常规 indexed snapshot 不早于 2026-11-08。若变为 `PASS / Submitted and indexed` 则关闭单页观察；只有出现明确抓取、Canonical、robots、Sitemap 或服务端阻塞才进入修复诊断。全站 Crawl / Index Snapshot 继续按既定监测运行 |
+| SEO-V2-003 | 索引、Crawl 与 HTML 响应持续监测 | IMP-033/038 | P0 | `monitoring / services-no-change` | 2026-11-10 Services 月度复查为 `NEUTRAL / Discovered - currently not indexed`，已列出 Sitemap 发现来源，未返回抓取时间；相对 10-08 unknown 状态有发现证据，仍未收录，不作为 recovery。生产 HTTP 200、index / follow、自引用 Canonical、无 X-Robots 限制、Page Sitemap 一次、首页 5 个入口及四阶段采购流程正常；未查明未收录原因 | 保持 `no-change / monitoring`，不重复已于 08-28 确认的请求；下一常规复查不早于 2026-12-10。若 PASS 则关闭单页观察；明确 HTTP、抓取、robots、Canonical、Sitemap 阻塞或实质页面发布时提前重开。全站监测职责不关闭；本次仅四个到期页面定向检查，见 [GSC Log](gsc-data-log.md) |
 | SEO-V2-004 | 剩余 LCP 与 Field CWV 复核 | IMP-035–038 | P0 | `deferred / monitor-only` | 2026-09-19 所有者决定当前阶段不继续投入增量性能优化；保留 poster-first、延迟 MP4、reduced-motion / Save-Data 控制。已记录正常 motion 播放、强制 reduced-motion、三次 Lab 与 Crawl Diff 验收；Save-Data、离屏／后台暂停的真实浏览器检查在原卡仍未勾选，不扩大为全部通过；CrUX Phone 仍为该次 `unavailable` | 保持现状，不主动重开共享渲染链或非关键图片压缩。只有可用 Field CWV 不良、抓取／渲染／indexability 回归、明显用户体验故障，或同配置 Lab 重复恶化且有单变量假设时重开；历史证据见 [Hero Change Card](implementation/change-cards/seo-v2-004-home-video-hero-lcp.md) |
 | SEO-V2-005 | 用非品牌 Query 扩充现有页面证据与内链 | IMP-014/022 | P1 | `active / deployed-batches-measuring` | 原页面 Day 28 决策保留。Knitted 结构模块已于 10-27 完成 Day 7 技术／抓取复查，结果 `no-change / keep-measuring / not-enough-data`；Underwear seamless、Sportswear Yoga、配件头颈防护、FLATLOCK → Merino 入链均已各自完成部署验收，最新日期与未到期／已到期未复查项见下方分批表 | 各批使用原 Change Card 与独立 Day 0，不连续改写同页、不建近义页、不把低样本波动解释为因果；保留原 Day 90 并披露后续内容／内链／展示入口共同变量。Knitted 完整后窗 10-21～11-17 等 final 覆盖后预计 11-20 起核验；不把过期计划自动记为已完成 |
 | SEO-V2-006 | 站外行业引用与可信目录运营 | IMP-020 | P1 | `deferred / external-input` | ThomasNet 因地址与平台资格问题暂缓；2026-08-29 所有者确认 OEKO-TEX Buying Guide 与 WRAP 公开列名短期无法提供所需 certificate / label number、持证主体、WRAP ID、有效期及门户列名状态，同步暂缓 | ThomasNet 仅在平台书面确认资格或支持人工地址后重开；OEKO-TEX / WRAP 仅在完整可核验凭据可用后重开；不以链接总数作为成功指标 |
@@ -35,16 +35,16 @@ V2 不以增加任务数量为目标。所有项目必须有一方数据、生�
 
 > SEO-V2-018 已于 2026-09-30 完成生产、索引与 SERP 关闭验收。Program model、14 图 lookbook、42 个图片资源及真实点击放大均已验证，图片仍属于同一 Sportswear 页面采购核验增强，不新增 Backlog 项。完整证据、边界和重开条件见 [SEO-V2-018 关闭记录](implementation/change-cards/seo-v2-018-sportswear-lookbook.md)。
 
-### SEO-V2-005 分批状态与后续窗口（2026-11-04 核对）
+### SEO-V2-005 分批状态与后续窗口（2026-11-10 更新）
 
 下表仅归集已经批准并实施的同项子批次，不新增 SEO 项目。时间为原记录的日历节点，实际效果复盘需等 GSC `final` 覆盖；索引、技术与效果分别判断。
 
 | 子批次 / 证据 | 已完成的最后记录 | 后续与限制 |
 |---|---|---|
 | [Knitted Fabrics 结构模块](implementation/change-cards/seo-v2-005-knitted-fabric-structures-2026-10-20.md) | 10-20 部署；10-27 Day 7 技术与抓取检查关闭。Google 最后抓取 10-21 晚于部署，但当时只有四个完整 final 后日；效果 `partial / not-enough-data` | Day 28 为 11-17；完整后窗 10-21～11-17，预计 11-20 起按 final 核验；本模块 Day 90 为 2027-01-18，原 Knitted 11-30 Day 90 不重置 |
-| [Underwear seamless](implementation/change-cards/seo-v2-005-underwear-seamless-2026-10-23.md) | 10-27 部署验收关闭；仅确认制造能力，未声称有 seamless 样品／订单图 | 原定 11-03 Day 7 已到期，本次未找到完成记录，待补查；Day 28 为 11-24，后窗 10-28～11-24，预计 11-27 起核验；原 11-30 Day 90 不重置 |
-| [Sportswear Yoga 采购说明](implementation/change-cards/seo-v2-005-sportswear-yoga-2026-10-27.md) | 10-27 最终稿部署验收关闭；所有者要求删除的两个局部链接已移除 | 原定 11-03 Day 7 已到期，本次未找到完成记录，待补查；Day 28 为 11-24，后窗 10-28～11-24，预计 11-27 起核验；前窗 09-29～10-26 未在原卡提取，不能用其他旧快照替代 |
-| [Sports Accessories 头颈防护](implementation/change-cards/seo-v2-005-accessories-head-neck-2026-10-28.md) | 10-29 部署验收，11-02 补录与定向 HTTP／媒体复核；第三张受保护图片哈希不变 | Day 7 为 11-05，Day 28 为 11-26；后窗 10-30～11-26 等 final 覆盖后核验；原 12-08 Day 90 不重置 |
+| [Underwear seamless](implementation/change-cards/seo-v2-005-underwear-seamless-2026-10-23.md) | 10-27 部署；原定 11-03 Day 7 已于 11-10 补查关闭。Indexed、最后抓取 11-09，生产模块正常；早期曝光 21→16，精确前 28 日已补齐，效果样本不足 | `no-change / keep-measuring`；Day 28 为 11-24，后窗 10-28～11-24，预计 11-27 起核验；原 11-30 Day 90 不重置，不把抓取时间当作新正文采用证明 |
+| [Sportswear Yoga 采购说明](implementation/change-cards/seo-v2-005-sportswear-yoga-2026-10-27.md) | 10-27 部署；原定 11-03 Day 7 已于 11-10 补查关闭。Indexed、最后抓取 11-03，三组说明和两链接移除正常；早期曝光 11→12，09-29～10-26 精确前窗已补齐 | `no-change / keep-measuring`；Day 28 为 11-24，后窗 10-28～11-24，预计 11-27 起核验；披露 11-05 图集改版共同变量，不重置原窗口 |
+| [Sports Accessories 头颈防护](implementation/change-cards/seo-v2-005-accessories-head-neck-2026-10-28.md) | 10-29 部署；原定 11-05 Day 7 已于 11-10 补查关闭。Indexed、最后抓取 11-07，图文正常、代表媒体 4/4 成功；早期曝光 2→10，Query 仅品牌域名，不能判断商业收益；10-01～10-28 前窗已补齐 | `no-change / keep-measuring`；Day 28 为 11-26，后窗 10-30～11-26 等 final 覆盖后核验；原 12-08 Day 90 不重置。本次未重做受保护图历史 SHA 比较 |
 | [FLATLOCK Guide → Merino 内链](implementation/change-cards/seo-v2-005-flatlock-merino-context-link-2026-10-23.md) | 10-23 部署；原定 10-30 Day 7 已于 11-02 补查，两页 indexed、生产链接及真实点击通过 | Day 28 为 11-20；后窗 10-24～11-20，预计 11-23 起核验；披露 10-31 同来源页另一内链共同变量，不将增长归因于单链 |
 | [Merino 商业词固定观察](research/merino-commercial-monitor-v1.md) / [GSC Log](gsc-data-log.md) | 原定 10-30 周度已于 11-02 补做；10-03～10-30 页面为 5 clicks / 193 impressions，维度不闭合且可见商业词低样本，`no-change / keep-measuring` | 不重做已补查节点；原独立后窗 10-21～11-17 等 final 覆盖后预计 11-20 起核验；原计划固定 SERP 11-20／11-21，届时先复核预算与是否有重复快照；原 Merino 12-06 Day 90 不重置 |
 
@@ -52,9 +52,9 @@ V2 不以增加任务数量为目标。所有项目必须有一方数据、生�
 
 ### 当前执行顺序
 
-1. 先补查 Underwear seamless 与 Sportswear Yoga 已到期的 Day 7，再按 11-05 节点复查配件头颈模块；本轮仅整理文档，没有执行这些检查。
-2. SEO-V2-002 的 10-08～11-04 恢复窗口正式复核不早于 11-07；8 月正式／有效询盘已由所有者于 09-08 更正为 **0**，08-27 旧分类只保留历史轨迹，不再作当前获客结论。
-3. Services 单页沿 10-08 决策按月度／触发式复查，下一常规节点不早于 11-08；性能增量优化与外部凭据受阻项目继续暂缓。
+1. 三个商业模块 Day 7 及 Services 月度复查已于 11-10 完成，结果见 [GSC Log](gsc-data-log.md)；无需重复检查或改版。下一项为 **SEO-V2-002 的 10-08～11-04 GSC＋GA4 恢复窗口**，本次 GSC final 已覆盖至 11-07，可以开始取数；本轮尚未执行该基线。
+2. 8 月正式／有效询盘已由所有者于 09-08 更正为 **0**，08-27 旧分类只保留历史轨迹；正式询盘邮箱只在当前任务明确获准读取时核对，不因继续 SEO 自动读取。
+3. Services 下一常规节点不早于 12-10，明确技术或发布触发条件出现时提前重开。Showcase 总览和女款已 indexed；男款 11-10 所有者确认已请求索引，建议 11-17 起复查一次，申请不等于收录。性能增量优化与外部凭据受阻项目继续暂缓。
 4. 完整 28 天效果复盘依上表分批执行；不因等待窗口而重写页面或扩充 Backlog。标准／外链下次季度复核仍不晚于 12-31。
 
 ## 2. 不进入 V2 的项目

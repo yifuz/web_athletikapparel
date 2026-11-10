@@ -15,6 +15,57 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-11-10：三个商业模块到期复查与 Services 月度索引检查
+
+按 SEO-V2-005 三张 Change Card 补做 Underwear seamless、Sportswear Yoga 原定 11-03，以及 Sports Accessories 头颈模块原定 11-05 的 Day 7 检查；另执行 SEO-V2-003 Services 月度复查。本轮覆盖模式 `targeted`，不是全站审计。生产 HTTP 与 GSC URL Inspection 均成功；没有修改网站、部署、提交表单、重试索引或读取邮箱、GA4、Google Ads、付费 SERP。
+
+### 索引与生产防护
+
+| 页面 | GSC indexed snapshot | 最后抓取（UTC） | 生产核对 |
+|---|---|---|---|
+| Underwear | `PASS / Submitted and indexed` | 2026-11-09T14:46:04Z | seamless 模块及四类定制保留，无图，不把既有产品图写成 seamless 样品证据 |
+| Sportswear | `PASS / Submitted and indexed` | 2026-11-03T08:09:45Z | Yoga 三组说明保留，目标产品组链接为 0，已删除的两条 CTA 未回归 |
+| Sports Accessories | `PASS / Submitted and indexed` | 2026-11-07T00:34:07Z | Balaclava / neck gaiter 采购说明和真实护脖图保留 |
+| Services | `NEUTRAL / Discovered - currently not indexed` | 未返回 | 四阶段采购流程完整；没有查明未收录原因 |
+
+前三页均 `ALLOWED / INDEXING_ALLOWED / SUCCESSFUL`，Google 与 User Canonical 一致，Googlebot Smartphone 抓取。最后抓取晚于各自部署日，只能说明部署后发生过抓取，不能直接证明 Google 已采用每一段新正文。Services 的 robots / indexing / fetch 字段为 unspecified，没有返回抓取时间或 Canonical，不能将这些缺失写成禁止抓取或抓取失败；Google 已列出 Sitemap 与 Page Sitemap 发现来源。相较 10-08 的 `URL is unknown to Google`，当前有发现证据，但仍未收录，不把分类变化当作收录恢复。
+
+四页生产普通请求均 HTTP 200、`index, follow`、无 X-Robots-Tag 限制、自引用 Canonical、单一 H1、Page Sitemap 各一次；首页可抓取入口依次为 2 / 2 / 2 / 5 个。robots.txt 只限制 `/wp-admin/`，未阻断目标页。护脖和受保护第三张配件图各一个 PNG / WebP，共 4/4 GET 200、MIME 正确；本次未重新比较第三图历史 SHA，不扩大为字节未变证明。未重新做浏览器视觉、性能、Google 实时测试或全站 Crawl。
+
+### 精确日期与早期结果
+
+GSC `web / final / refresh` 全站日期查询 10-20～11-09 返回连续 10-20～11-07 共 19 日；11-08 / 09 未返回，不当零。以下早期窗口末日均已覆盖。`dimensions=[page]`，精确规范 URL 过滤（Underwear / Sportswear 用锚定两 URL 的 regex，配件用 equals），全国家 / 全设备，`rowLimit=25000`，每次最多 2 行，未触及上限。日期沿用 GSC 报告时区，不把 API 抓取 UTC 时间直接混作表现日期。
+
+| 页面 | 前 7 日 → 后 7 日（均排除 Day 0） | Clicks | Impressions | Page average position |
+|---|---|---:|---:|---:|
+| Underwear | 10-20～10-26 → 10-28～11-03 | 0 → 2 | 21 → 16 | 6.62 → 12.69 |
+| Sportswear | 10-20～10-26 → 10-28～11-03 | 1 → 0 | 11 → 12 | 13.55 → 18.50 |
+| Sports Accessories | 10-22～10-28 → 10-30～11-05 | 0 → 0 | 2 → 10 | 5.50 → 9.90 |
+
+同后 7 日窗的 `dimensions=[query,page]` 只保留品牌域名词 `www.athletikapparel.com`：Underwear 0 clicks / 4 impressions / 11.75，Sportswear 0 / 5 / 6.20，Accessories 0 / 8 / 10.75。保留 Query 与 Page 不闭合，未返回 seamless、yoga 或 balaclava 等商业查询不等于零需求、零曝光；不能将未披露差额或 Underwear 的点击归给新增内容。Page average position 不是固定商业词排名。每个 7 日窗包含完整一周，但隔开了部署日，仍不是受控因果实验；尤其配件基数只有 2 次曝光，不用增长百分比判断成功。
+
+已补齐并冻结正式前 28 日基线，替代此前尚未提取的精确前窗（历史滚动快照不覆盖）：
+
+| 页面 | 前 28 日 | Clicks | Impressions | CTR | Page average position |
+|---|---|---:|---:|---:|---:|
+| Underwear | 09-29～10-26 | 2 | 86 | 2.33% | 6.97 |
+| Sportswear | 09-29～10-26 | 5 | 55 | 9.09% | 7.40 |
+| Sports Accessories | 10-01～10-28 | 0 | 18 | 0% | 4.94 |
+
+**决策：**三页 Day 7 技术／索引复查关闭，效果 `partial / not-enough-data`，本轮 `no-change / keep-measuring`，不改 Title、Meta、H1、正文或 URL。Underwear / Yoga 的后 28 日仍为 10-28～11-24，预计 11-27 起核验 final；配件仍为 10-30～11-26，等末日 final 覆盖后复盘。原页面 Day 90 不重置。披露配件正文／图片／颜色组合变量、11-04 Showcase 新入口和 11-05 Sportswear 图集改版（该图集改版不在 Yoga 首个后 7 日窗内，但在正式后 28 日窗内）。
+
+Services 原 Finding `SEO-V2-003-SERVICES-INDEX` 保持 `review / Info / P1 / no-change / monitoring`：当前未收录事实确定，原因未确定；未见上述技术阻断，不重复已于 08-28 确认的请求。下一常规复查不早于 12-10，若提前出现明确 HTTP、robots、Canonical、Sitemap、抓取错误或实质页面发布再重开。
+
+本轮 4 次 URL Inspection、9 次 Search Analytics 查询均成功；8 个页面／查询窗口结果加 1 个日期覆盖结果完整检查，最多 19 行，未分页或截断。原始请求、响应、生产 HTML 与 `live-html-summary.json` 位于 Git 忽略目录 `.chrome-check/seo-mainline-2026-11-10/`。下一项为 SEO-V2-002 的 10-08～11-04 GSC＋GA4 恢复窗口，当前 final 已覆盖其末日；本轮尚未执行该基线，也未读取正式询盘邮箱。
+
+## 2026-11-10：Product Showcase 索引检查与男款申请确认
+
+只读 URL Inspection：展示库 `/product-showcase/` 与 Ocean Depth 女装套装均为 `PASS / Submitted and indexed`，最后抓取分别为 `2026-11-04T12:05:43Z`、`2026-11-04T13:14:34Z`；均允许索引、抓取成功，Google / User Canonical 一致。男式 HY265077 `/product-showcase/mens-merino-tencel-mesh-long-sleeve-shirt/` 为 `NEUTRAL / Discovered - currently not indexed`，无最后抓取时间，已列出 Sitemap index 和 Showcase 总览发现来源。
+
+三页均已在 Page Sitemap 各出现一次；总览和男款实时 HTTP 200、index / follow、自引用 Canonical、单一 H1，男款无 X-Robots 限制，robots.txt 未阻断，总览原始 HTML 有可抓取详情链接。女款本轮未重新取 HTML，不把其 GSC PASS 写成新的完整生产验收。未发现男款在上述技术检查范围内的阻断；Jacquard 新款仍仅 Local / noindex，不进入本次生产索引清单。
+
+随后所有者回复“做好了”，据上下文记录男款已于 **2026-11-10 请求编入索引**，状态 `indexing-requested / owner-confirmed`。实时测试读数和具体申请时刻未提供，不补写为已独立验收；上述 API 快照发生在请求前，不据申请更新为 indexed。无需再申请总览或女款；男款建议 11-17 起复查一次，或收到明确失败信息时提前检查。
+
 ## 2026-11-02：Merino 商业词 GSC 周度观察
 
 补做原定 10-30 的只读观察；`web / final` 全站日期查询在 10-01～11-01 返回连续 10-01～10-30 共 30 日，因此最新完整 28 日窗口为 **10-03～10-30**。精确目标页 `/merino-wool-manufacturer/` 返回 **5 clicks / 193 impressions / 2.59% CTR / average position 7.24**。这是全部查询、国家和设备混合的 Page 平均位置，不是单个关键词的固定排名。

@@ -154,3 +154,11 @@ CLI 0.2.36 的 doctor / describe 后，以 `audit-urls` actions、refresh=true�
 仅更新本卡及进度记录，没有修改网站代码或线上配置。浏览器是临时未登录会话，拦截分析端点；Cookiebot 遮挡交互时仅在该会话选择 Reject all，没有 Allow-all、表单投递或广告改动。未运行新的 GSC / GA4 / URL Inspection / 付费 SERP、全站 Crawl 或 Crawl Diff，部署前 / 后 Crawl ID 仍为 `not-run`；不重复请求索引。证据与截图在 Git 忽略目录 `.chrome-check/sportswear-yoga-production-*`，不是额外部署文件。
 
 最终 Finding outcome：`changed / keep-measuring`，状态 `deployed / production-verified / measuring`。仅关闭这批 Yoga 内容及链接移除的部署记录，不关闭整个 SEO-V2-005；Day 0 和效果观察按第 7 节执行。
+
+## 11. 2026-11-10：补做 Day 7 复查
+
+原定 11-03 的技术／索引检查已完成。GSC 为 `PASS / Submitted and indexed`，允许索引、抓取成功、Google / User Canonical 一致；最后抓取 `2026-11-03T08:09:45Z` 晚于 Yoga 部署日，不等于已经核对 Google 所抓的新模块 HTML。生产 HTTP 200、index / follow、自引用 Canonical、单一 H1、无 X-Robots 阻断、Sitemap 一次、首页两个入口；Yoga 三组说明保留，目标产品组链接数 0，已删两条 CTA 未回归。
+
+`web / final` 前后 7 日 10-20～10-26 → 10-28～11-03：clicks **1→0**、impressions **11→12**、Page average position **13.55→18.50**。后窗 Query 仅品牌域名词 0 clicks / 5 impressions，与 Page 不闭合，不据此判断 yoga 商业词增长或下降。正式前 28 日 09-29～10-26 已补齐：**5 clicks / 55 impressions / 9.09% CTR / 7.40 average position**；不再标为未提取，先前章节保留原阶段记录。
+
+本轮 `no-change / keep-measuring / not-enough-data`；后 28 日仍 10-28～11-24，预计 11-27 起按 final 复盘，既有页面节点不重置。**11-05 Sportswear 图集改版**在正式后 28 日窗内，但不在本次后 7 日窗内，后续须披露该共同变量；本次最后抓取早于图集改版，不能顺带宣称 Google 已抓取图集新版。未改站、未做新视觉／图库全量／表单／性能验收或索引申请。完整口径见 [11-10 GSC Log](../../gsc-data-log.md)，证据在 `.chrome-check/seo-mainline-2026-11-10/`。

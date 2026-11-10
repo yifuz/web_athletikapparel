@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-11-07。
+最后更新：2026-11-10。
 
 2026-11-04 已按所有者要求[核对 SEO / GEO 三份未提交文档差异](operations/document-reconciliation-2026-11-04.md)：原文件已备份，恢复被回退的完成记录并对齐最新已核准状态；历史测量按原日期保留。本轮只整理文档，没有生产或外部平台操作。
 
@@ -19,6 +19,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.1 网站与内容
 
+- 2026-11-10 已完成 [SEO 到期复查](seo/gsc-data-log.md)：Underwear seamless、Sportswear Yoga 和配件头颈模块均已索引，最后抓取均晚于各自部署，线上模块及索引防护正常；前后 7 日曝光 21→16、11→12、2→10，可见 Query 仍仅品牌域名，保持 `no-change / keep-measuring / not-enough-data`。已补齐三页精确前 28 日基线，原后窗与 Day 90 不重置。Services 为 `Discovered - currently not indexed`，没有查明原因或发现定向技术阻断，转下一月度／触发式检查。Showcase 总览与女款已 indexed，男款由所有者确认当天请求索引，尚不写成已收录。此次仅检查和内部记录，无生产代码／媒体／数据库变化；下一项为 10-08～11-04 GSC＋GA4 恢复基线。
 - 2026-11-07 新增 [Jacquard Merino-Mix 套装 Showcase 本地审核版](site/product-showcase-jacquard-2026-11-07.md)：所有者确认新路径并提供技术 PDF、4 段视频、240 GSM，授权简短英文草稿。Local 新页面 ID 85；四段视频按整套／背侧／上衣领口／腰裤分别播放，A/B 两种面料规格分列，沿用共享模板。首页精选仍是 Ocean Depth；Local 展示库增加新款。所有者随后要求 Merino 入口最多两款，已改为最近发布的两款紧凑预览，桌面双列／小屏横滑，全部产品仍在 Showcase 总页。**仅 Local 审核，未推送、未部署生产；正文待审核**。整批后续上线需要 8 个代码文件、13 个新增媒体及单款建页步骤；预览布局增量为其中 4 个代码文件、无新增媒体／数据库操作，详见记录。
 - 同日按所有者最新要求收敛新款对外表达：参考已发布两款，只保留产品概览、基础材料与通用定制方向，移除客户技术包的具体规格和打样指令，不再展示内部结构拆解。四视频、两款预览、原两款记录及 SEO 设置不变；Local ID 85 fallback 简介精准同步。此项代码增量仅 `inc/product-example-data.php`，无媒体变更；详情／搜索／预览／询盘等输出及四档响应式复核通过，仍仅本地待审核。上条“A/B 两种面料规格分列”是初稿状态，现由五行基础材料表替代，仍明确成分及 GSM 仅指主提花面料。
 - 同日收到本款穿着特性确认后，将特点行改为 `Next-to-skin comfort · Warmth · Breathability`；同时修正用途为 `Base layering`、定制项为 `Front opening`。只采用所有者确认的定性特点，不公开复合结构或新增性能承诺；本次仅共享产品数据与内部记录变更，无媒体／数据库步骤，仍未部署。
@@ -920,7 +921,7 @@ Google AI Mode 的 11 题 Dot 首答已私有归档，完成[逐题观察及与 
 3. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
 4. GEO-V2-007 已完成生产部署、技术验收、LinkedIn / Instagram 公开 URL 补录、一次 GSC 索引申请及 2026-09-28 首次七日复核。GSC 已确认规范 URL 收录；固定窗口为 18 次 Web Search 展示、0 点击。原始 LinkedIn UTM 6 sessions 已确认属于内部 QA，Instagram 无匹配行，状态改为 `seven-day-measurement-contaminated / measuring`。平台后台与人工询盘不可得，当前为 0 个已确认外部 UTM 会话；月度 GSC 生成式窗口已记录 ACTIVESEAM Guide 的 9 次页面级链接曝光，但仍没有答案提取或推荐证据。进入固定 Prompt 有效复测，不立即重写页面或重复提交。没有拉伸状态素材，因此继续不写 Athletik 实测延伸、强度或耐久声明，HSAT-K5 和国产海淮扒密缝机保持独立证据线。
 5. 七个品类页 Program Fit、About 综合段落、GEO-V2-019 与 GEO-V2-020 已上线并通过生产复核，不再立即重复修改。GEO-V2-020 已取得 GSC 已收录快照；首轮七日 GA4/UTM 原始会话已确认属于内部 QA，状态为 `seven-day-measurement-contaminated / measuring`。LinkedIn/Instagram 精确后台数据和有效询盘缺口不写成零；10 月采集已按上文完成，后续按原窗口和触发条件观察，各平台、页面与固定 Prompt 分开，不重复批量采样或把低样本变化归因到单一页面。
-6. SEO 后续统一按 [V2 Backlog 分批状态](seo/v2-backlog.md)执行：Knitted 结构模块 10-27 Day 7 已完成，完整 10-21～11-17 后窗等待 final 覆盖，预计 11-20 起核验。Underwear seamless／Sportswear Yoga 的 11-03 Day 7 已到期但尚无完成记录，优先补查；配件头颈模块 Day 7 为 11-05。Merino 原定 10-30 周度与 FLATLOCK 入链 Day 7 已于 11-02 补做，保持 `no-change / keep-measuring`。GSC／GA4 恢复窗口正式复盘不早于 11-07，Services 不早于 11-08；SEO-V2-018 已关闭部署，其他实验保留原窗口并披露 11-04 展示库入口这一共同变量，不新建近义页或无触发重写。
+6. SEO 后续统一按 [V2 Backlog 分批状态](seo/v2-backlog.md)执行：Underwear seamless／Sportswear Yoga／配件头颈模块的 Day 7 已于 11-10 补查，三页均 indexed、技术正常，效果仍低样本，精确前 28 日基线已补齐。下一项为 10-08～11-04 GSC＋GA4 恢复基线（final 已覆盖末日），不自动读取邮箱。Knitted 完整 10-21～11-17 后窗预计 11-20 起核验；Merino 与 FLATLOCK 原定早期检查已于 11-02 完成。Services 11-10 仍未收录，下一常规检查不早于 12-10；Showcase 男款已申请，建议 11-17 起复查。SEO-V2-018 保持关闭部署，其他实验保留原窗口并披露 11-04 展示库入口和 11-05 Sportswear 图集共同变量，不新建近义页或无触发重写。
 7. SEO-V2-004 转为性能监控项，不再主动投入增量优化；持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据，只有达到重新触发条件才启动页面或性能改动。
 8. Promotion P0 已完成；2026-09-28 起进入 P1，使用本机私有台账持续补齐新询盘负责人、MOQ、
    自述来源和销售阶段，并继续把平台 conversion 与人工确认询盘分开记录。

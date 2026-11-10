@@ -142,3 +142,11 @@ QA 快照与截图位于 Git 忽略的 `.chrome-check/underwear-seamless-*`，�
 - 未进行新的 URL Inspection、索引请求、GA4 / 询盘效果分析、视频播放、表单投递或性能测试；不证明 Google 已读取新模块，不重复提交索引。
 - 浏览器为临时未登录会话，拦截分析端点；没有同意 Cookie、提交表单或修改线上配置。本轮只更新内部部署记录，没有网站代码变更、额外部署文件或新增付费 SERP 请求。
 - 本模块进入按第 4 节日期的观察；今天到期的 Knitted Fabrics Day 7 是独立任务，本次尚未执行，不混入本模块验收结论。
+
+## 7. 2026-11-10：补做 Day 7 复查
+
+原定 11-03 的技术／索引检查已完成。GSC 为 `PASS / Submitted and indexed`，抓取成功且允许索引，Google / User Canonical 均为原 URL；最后抓取 `2026-11-09T14:46:04Z` 晚于部署日，但 API 不提供所抓 HTML，不能据此证明每段新增正文已采用。生产 HTTP 200、index / follow、自引用 Canonical、单一 H1、无 X-Robots 阻断、Sitemap 一次、首页两个入口；无图 seamless 模块与四类定制完整。
+
+`web / final` 前后 7 日为 10-20～10-26 → 10-28～11-03：clicks **0→2**、impressions **21→16**、Page average position **6.62→12.69**。后窗 Query 只返回品牌域名词 0 clicks / 4 impressions，不闭合 Page 总量，不把两次点击归于 seamless。已补齐正式前 28 日 09-29～10-26：**2 clicks / 86 impressions / 2.33% CTR / 6.97 average position**。
+
+本轮 `no-change / keep-measuring / not-enough-data`；完整后窗、原 Day 90 及本模块窗口按第 4 节不变。技术检查不是全站 Crawl、视觉或表单验收，未改站或重新申请索引。完整证据、共同变量、数据口径见 [11-10 GSC Log](../../gsc-data-log.md)，原始结果在 `.chrome-check/seo-mainline-2026-11-10/`。
