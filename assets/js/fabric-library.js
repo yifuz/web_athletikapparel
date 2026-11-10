@@ -64,9 +64,8 @@
       return focused.closest('[data-fabric-card]');
     }
 
-    function focusGrid(scroll) {
+    function focusGrid() {
       grid.focus({preventScroll: true});
-      if (scroll) grid.scrollIntoView({block: 'start', behavior: 'auto'});
     }
 
     function render() {
@@ -77,7 +76,7 @@
       var shownCards = shown.map(function (record) { return record.card; });
       var focused = focusedCard();
       // Never strand keyboard focus in a card that is about to become hidden.
-      if (focused && !shownCards.includes(focused)) focusGrid(false);
+      if (focused && !shownCards.includes(focused)) focusGrid();
       cards.forEach(function (card) { card.hidden = !shownCards.includes(card); });
       empty.hidden = matches.length !== 0;
       status.textContent = matches.length
@@ -197,9 +196,10 @@
         listen(entry[0], 'click', function (event) {
           event.preventDefault();
           if (entry[0].getAttribute('aria-disabled') === 'true') return;
+          // Keep pagination focus and the reader's viewport in place.
+          // Direct fabric links still scroll to their requested card separately.
           currentPage += entry[1];
           render();
-          focusGrid(true);
         });
       });
       listen(window, 'hashchange', showHashTarget);

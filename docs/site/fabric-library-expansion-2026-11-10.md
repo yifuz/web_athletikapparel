@@ -82,6 +82,14 @@
 - 报告 `.chrome-check/fabric-expansion.json`；桌面与手机整模块、320px 区间卡片截图已人工复看。数据复核脚本 `.chrome-check/verify-recent-fabric-data.py`，JS 离线报告 `.chrome-check/fabric-material-filter-fixture.json`。
 - 测试脚本、截图和报告仅在 Git 忽略的 `.chrome-check/`，不发布。
 
+### 同日修订：翻页不主动滚动
+
+所有者反馈 Next／Previous 点击后画面跳动。本轮移除分页回调中的列表顶部滚动及强制移焦，保留分页按钮焦点和结果数量播报；精确料号链接仍按用户指定目标滚动定位。没有修改数据、文案或每页数量。
+
+本轮运行时增量为 `assets/js/fabric-library.js`；语法检查及 17 项离线交互回归通过。1440／768／360／320 四档共 208 次真实鼠标／Enter／Space 激活后，滚动坐标变化均为 0；包含首尾页、筛选结果和禁用状态，精确料号链接定位正常，JS／Local HTTP 错误均为 0。报告 `.chrome-check/fabric-pagination-nojump.json`。
+
+本次只取消主动滚动，不强制固定列表高度；末页卡片较少、手机成分长短不同时，区块与分页按钮仍会随内容自然移动，但视窗不自动跳转。不为此增加大片空槽。仍仅本地，不部署生产。
+
 ## 5. 部署清单（未批准）
 
 本轮增量 6 个运行时文件：
