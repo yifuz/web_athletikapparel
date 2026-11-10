@@ -12,7 +12,7 @@ $weights = array_column( $fabrics, 'gsm' );
 		<header class="ma-fabric-library__heading">
 			<div>
 				<p class="ma-section-kicker"><?php esc_html_e( 'Fabric references', 'myathletik-child' ); ?></p>
-				<h2 id="ma-fabric-library-title"><?php esc_html_e( 'A selection of Merino wool fabrics', 'myathletik-child' ); ?></h2>
+				<h2 id="ma-fabric-library-title"><?php esc_html_e( 'Merino wool fabric selection', 'myathletik-child' ); ?></h2>
 				<p class="ma-fabric-library__scope"><?php esc_html_e( 'Representative references from our 2025 collection — not our complete fabric range or a live stock list.', 'myathletik-child' ); ?></p>
 			</div>
 			<div class="ma-fabric-library__edition">

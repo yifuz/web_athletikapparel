@@ -7,13 +7,14 @@ $fabrics = myathletik_fabric_library_data();
 $selected = array( 'HY254776', 'HY254955', 'HY254931' );
 $library_url = home_url( '/knitted-fabrics-manufacturer/' );
 ?>
-<div class="ma-fabric-preview" aria-label="<?php esc_attr_e( 'Selected 2025 fabric references', 'myathletik-child' ); ?>">
-	<p class="ma-fabric-preview__label"><?php esc_html_e( 'Selected fabric references · 2025', 'myathletik-child' ); ?></p>
+<div class="ma-fabric-preview" aria-label="<?php esc_attr_e( 'Selected 2025 Merino wool fabric references', 'myathletik-child' ); ?>">
+	<p class="ma-fabric-preview__label"><?php esc_html_e( 'Selected Merino wool fabrics · 2025', 'myathletik-child' ); ?></p>
+	<p class="ma-fabric-preview__scope"><?php esc_html_e( 'A preview of our 2025 selection, not our complete fabric range.', 'myathletik-child' ); ?></p>
 	<ul class="ma-fabric-preview__list">
 		<?php foreach ( $selected as $ref ) : ?>
 			<?php $fabric = $fabrics[ $ref ]; ?>
 			<li><a class="ma-fabric-preview__item" href="<?php echo esc_url( $library_url . '#fabric-' . strtolower( $ref ) ); ?>"><span><strong><?php echo esc_html( $ref ); ?></strong><span class="ma-fabric-preview__composition"><?php echo esc_html( $fabric['composition']['Composition'] ); ?></span></span><span class="ma-fabric-preview__weight"><?php echo esc_html( $fabric['gsm'] ); ?> GSM<span aria-hidden="true"> ↗</span></span></a></li>
 		<?php endforeach; ?>
 	</ul>
-	<a class="ma-fabric-preview__all" href="<?php echo esc_url( $library_url . '#merino-fabric-examples' ); ?>"><?php esc_html_e( 'Explore the fabric selection', 'myathletik-child' ); ?><span aria-hidden="true"> →</span></a>
+	<a class="ma-fabric-preview__all" href="<?php echo esc_url( $library_url . '#merino-fabric-examples' ); ?>"><?php echo esc_html( sprintf( _n( 'View the %d fabric reference', 'View all %d fabric references', count( $fabrics ), 'myathletik-child' ), count( $fabrics ) ) ); ?><span aria-hidden="true"> →</span></a>
 </div>

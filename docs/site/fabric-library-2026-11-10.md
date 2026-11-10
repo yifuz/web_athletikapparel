@@ -20,6 +20,8 @@
 | `/merino-wool-manufacturer/#merino-yarn-sourcing-and-fabric-development` | 在既有面料开发区块内加入 HY254776、HY254955、HY254931 三条紧凑入口 |
 | `/knitted-fabrics-manufacturer/#fabric-hy254955` 等 | 精确定位料号；JS 自动显示所在分页，不让目标留在隐藏页 |
 
+完整库标题为 `Merino wool fabric selection`，作为综合面料页中的羊毛选样模块，而不是全部面料的目录。Merino 的精选入口明确标注 `Selected Merino wool fabrics · 2025`，带范围提示和动态计数的 `View all 24 fabric references` 链接。
+
 - 桌面 3 列、平板 2 列、手机 1 列；每页桌面／平板 6 款、手机 3 款，新增记录不会无限追加页面高度。
 - 搜索支持料号或纤维名称，配合成分类别、GSM 区间筛选；有结果数量、空结果、重置及上一页／下一页状态。
 - GSM 分组：小于 150、150–199、200–249、250 及以上；不是产品适用场景或性能分级。
@@ -68,6 +70,17 @@
 - 21 组追加验收全部通过，覆盖成分筛选、长成分、三个深链接、无 JS 分组和锚点；规格卡成衣链接为 0，Merino 的 3 个面料入口／2 款成衣精选、Showcase 的 3 款展示不变。数据和 JS 对比 `75c0d24` 无变更。
 - 浏览器 JS 异常和 Local HTTP 错误均为 0；报告 `.chrome-check/fabric-card-height.json`，截图 `.chrome-check/fabric-card-height-{width}-{page-1,page-2,layered}.png` 已人工复看。本轮仍 `local-review / not-deployed`。
 
+### 同日后续：明确完整库与精选入口的分工
+
+所有者再次确认完整规格库留在面料页、Merino 仅保留精选入口，并要求先做一版。原有位置、数量和链接目标已经符合分工，本次小幅明确标题与入口表达，不搬动或复制整套规格库。
+
+- 完整库 H2 改为 `Merino wool fabric selection`，原有 2025 代表性、非全部范围、非实时库存说明继续保留。
+- Merino 精选标题明确材料和年份，新增简短范围提示：`A preview of our 2025 selection, not our complete fabric range.`
+- 查看全部入口改为 `View all 24 fabric references`，数量读取共享数据，不手工固化；仍跳转面料页原有锚点。
+- 不改规格数据、筛选／分页 JS、卡片等高规则、页面 H1／SEO 元数据／URL 或既有 Showcase。
+- 1440／768／360／320 四档共 16 组本地验收通过：完整 24 款仅在 Knitted，Merino 保留 3 款面料精选与 2 款成衣入口，动态 CTA 和三个料号均经实际点击定位，单 H1、触控尺寸至少 44px、无横溢出或范围说明裁剪。JS 异常／Local HTTP 错误均为 0。
+- 报告 `.chrome-check/fabric-page-roles.json`；截图 `.chrome-check/fabric-page-roles-{knitted,merino}-{1440,768,360,320}.png` 已人工复看，仍未获生产发布授权。
+
 ## 5. 待批准部署清单
 
 本轮运行时代码共 **8 个文件**：
@@ -84,6 +97,8 @@
 媒体：无。数据库：无。新增页面／URL／301：无。内部记录与原始资料不上传生产。
 
 同日卡片简化修订相对初版的增量仅 `template-parts/fabric-library/card.php`、`style.css` 两个文件；整个面料库尚未上线，后续正式发布仍使用上述完整 8 文件清单的最终版本。
+
+随后的两页分工表达微调增量为 `template-parts/fabric-library/library.php`、`template-parts/fabric-library/preview.php`、`style.css` 三个文件，仍包含在完整 8 文件清单中，无额外媒体或数据库步骤。
 
 获批后仍按 [SSH 部署流程](../operations/flywheel-ssh-deployment.md) 核对当前生产版本、精准备份和传输。
 先放置新数据文件、JS 和模板部件，再启用 `functions.php` 引入及共用模板调用，避免出现缺失依赖的发布窗口。
