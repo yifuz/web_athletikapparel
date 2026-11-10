@@ -1,0 +1,76 @@
+# 2025 代表性面料库——Local 审核版
+
+日期：2026-11-10。状态：`local-review / not-deployed`。
+
+## 1. 授权与范围
+
+所有者提供 2025 羊毛合集规格照片，说明这只是部分代表性面料，不是目前全部面料；2026 合集尚未完成。
+所有者随后批准：先在现有 Knitted Fabrics 页加入代表性面料库，Merino 页放精选入口，不新增独立页面；先做料号、成分、GSM 规格卡，实拍图片以后补。
+
+- 原始资料：`C:\Users\Administrator\Pictures\微信图片_20261110142950_298_41.jpg`。
+- 原图只用于核对，不复制到主题、Git 或公开媒体目录，不使用通用纹理冒充对应面料。
+- 本轮仅 Local；不上传生产、不改生产数据库、不推送 Git。
+- 此任务独立于同日已经上线的 Jacquard Showcase，不沿用其上线授权。
+
+## 2. 页面位置与交互
+
+| 位置 | 本轮内容 |
+|---|---|
+| `/knitted-fabrics-manufacturer/#merino-fabric-examples` | 在既有 Fabric structures 之后加入规格库；24 款原顺序展示 |
+| `/merino-wool-manufacturer/#merino-yarn-sourcing-and-fabric-development` | 在既有面料开发区块内加入 HY254776、HY254955、HY254931 三条紧凑入口 |
+| `/knitted-fabrics-manufacturer/#fabric-hy254955` 等 | 精确定位料号；JS 自动显示所在分页，不让目标留在隐藏页 |
+
+- 桌面 3 列、平板 2 列、手机 1 列；每页桌面／平板 6 款、手机 3 款，新增记录不会无限追加页面高度。
+- 搜索支持料号或纤维名称，配合成分类别、GSM 区间筛选；有结果数量、空结果、重置及上一页／下一页状态。
+- GSM 分组：小于 150、150–199、200–249、250 及以上；不是产品适用场景或性能分级。
+- 手机筛选单列，避免较长成分选项截字；按钮使用独立浅色底，避免继承父主题低对比深色底。手机页码单独居中，两个翻页按钮在下一行等宽排列。
+- 全部记录由 PHP 输出；无 JS 时前 6 款直接显示，其余分为三个可展开的原生 `details` 组。
+- 增强脚本异常时恢复原生分组；键盘焦点、筛选状态提示与深链接同时保留。
+- 已有真实成衣关联仅复用原 Showcase 已发布页面校验；不根据类似外观建立新关联。
+- Contact 仅一个公共入口，没有新建表单字段、预填参数或自动提交。
+
+## 3. 数据与表达边界
+
+单一数据源为 `inc/fabric-library.php`。24 款逐项与照片核对，并由独立代理复核：纯 Merino 9 款、混纺 13 款、内外层分别标注 2 款，范围 95–330 GSM。
+
+- 每个独立成分字段均合计 100%；内外层比例不合并、不平均。
+- HY254798 按原图保留 `Polyamide`，HY254888 保留 `Nylon`；`Tencel`、`Coolmax`、`Bamboo Fiber` 也按来源保留，不擅自替换或推断。
+- HY254931 为 240 GSM；HY254888 为 210 GSM。不得将成衣主提花的 240 GSM 自动套用至另一料号。
+- 不推断宽幅、微米、针织组织、结构厚度、现货、MOQ、测试结果或性能等级；原图未明确的 GSM 层级不作扩写。
+- 页面明确说明 `Representative references from our 2025 collection — not our complete fabric range or a live stock list.`
+- 本轮不纳入 HY265077，因为它不在本次 2025 原图清单中；其他已批准单独供货示例仍是后续独立内容，不伪装为该合集记录。
+- 本轮只有简短标题、标签、规格和范围说明，不改写既有长篇营销正文、SEO 标题／描述、canonical 或 Schema。
+
+实施沿用 `wp-page-template-builder` 的共享模板与转义约束、`wp-design-polish` 的设计 token／响应式／焦点要求，以及 `wp-brand-voice-guard` 的来源和事实边界。
+
+## 4. 验证
+
+- PHP 六个新增／变更文件语法检查通过；JS 语法与 14 组独立 DOM fixture 检查通过。
+- 原图与数据 24 条完全一致；料号唯一、分类数量、GSM 范围及分层比例检查通过。
+- 真实 Chrome 的 31 组 Local 检查通过：1440／1024／768／360 响应式，320 窄屏补测，24 款分页无遗漏／重复，成分 9／13／2 分类，GSM 边界，料号／纤维／大小写／多词组合搜索，筛选交集／空结果／重置，键盘与缩放焦点，三个精选链接和离开首页的料号锚点，异常 hash，以及无 JS 展开组／深链接。
+- 单 H1、按钮触控尺寸至少 44px、无页面横向溢出；Showcase 3 款／Merino 成衣预览 2 款／首页 Ocean Depth 保持不变，筛选 JS 只在 Knitted Fabrics 加载。
+- 浏览器 JS 异常 0、本地 HTTP 4xx／5xx 0。检查隔离外部请求，未测试 Cookiebot／其他第三方服务，也不据此宣称生产验收完成。
+- 目检发现并修复父主题按钮低对比、手机筛选截字及窄屏页码折行；最终追加 3 组检查全部通过：360／320 首尾页的页码和等宽按钮、触控及溢出，以及全新无 JS 页面直达后续组料号并自动展开。
+- 主报告 `.chrome-check/fabric-local-independent.json`；最终补验 `.chrome-check/fabric-local-mobile-final.json`。共 31 组主验加 3 组补验通过，最终截图已人工复看。
+- 测试脚本、截图、报告保存在 Git 忽略的 `.chrome-check/`，不随代码发布；没有提交询盘或操作生产。
+
+## 5. 待批准部署清单
+
+本轮运行时代码共 **8 个文件**：
+
+1. `inc/fabric-library.php`
+2. `assets/js/fabric-library.js`
+3. `template-parts/fabric-library/card.php`
+4. `template-parts/fabric-library/library.php`
+5. `template-parts/fabric-library/preview.php`
+6. `template-parts/product-category/page.php`
+7. `functions.php`
+8. `style.css`
+
+媒体：无。数据库：无。新增页面／URL／301：无。内部记录与原始资料不上传生产。
+
+获批后仍按 [SSH 部署流程](../operations/flywheel-ssh-deployment.md) 核对当前生产版本、精准备份和传输。
+先放置新数据文件、JS 和模板部件，再启用 `functions.php` 引入及共用模板调用，避免出现缺失依赖的发布窗口。
+发布后需要复核两页普通 URL、分页／筛选／跨页锚点和既有 Showcase；本地提交不等于上线。
+
+后续实拍图或 2026 合集需另外提供、核对并批准，不自动替换本批 2025 来源说明。

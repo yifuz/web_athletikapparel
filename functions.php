@@ -15,6 +15,7 @@ require_once get_stylesheet_directory() . '/inc/product-category-data.php';
 require_once get_stylesheet_directory() . '/inc/technical-article-data.php';
 require_once get_stylesheet_directory() . '/inc/product-example-data.php';
 require_once get_stylesheet_directory() . '/inc/product-showcase.php';
+require_once get_stylesheet_directory() . '/inc/fabric-library.php';
 
 // 建页仅由管理员显式触发；公共页面不加载后台操作入口。
 if ( is_admin() ) {

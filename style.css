@@ -123,6 +123,10 @@ Text Domain:  myathletik-child
   --ma-pl-preview-image-height: clamp(14rem, 24vw, 20rem);
   --ma-pl-preview-card-width: 100%;
   --ma-pl-preview-focus-width: 3px;
+  /* Representative fabric specifications: no substitute texture imagery. */
+  --ma-fabric-weight-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  --ma-fabric-focus-width: 3px;
+  --ma-fabric-anchor-offset: calc(var(--ma-space-6) * 2);
 }
 
 html,
@@ -4641,6 +4645,165 @@ body.page .container.grid-container:has(.ma-product-category) {
   .ma-fabric-structures__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+/* Representative fabric library. Scoped to its owning category and compact Merino entry. */
+.ma-fabric-library {
+  background: var(--ma-color-bg);
+  scroll-margin-top: var(--ma-fabric-anchor-offset);
+}
+
+.ma-fabric-library .ma-section-inner { padding-block: 0; }
+.ma-fabric-library [hidden] { display: none; }
+
+.ma-fabric-library__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--ma-space-5);
+  margin-bottom: var(--ma-space-5);
+}
+
+.ma-fabric-library__heading h2 { margin: 0 0 var(--ma-space-3); }
+.ma-fabric-library__scope {
+  max-width: var(--ma-reading-width);
+  margin: 0;
+  color: var(--ma-color-muted);
+}
+
+.ma-fabric-library__edition {
+  flex-shrink: 0;
+  display: grid;
+  gap: var(--ma-space-1);
+  padding-left: var(--ma-space-4);
+  border-left: 1px solid var(--ma-color-border);
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-small);
+}
+
+.ma-fabric-library__edition strong { color: var(--ma-color-text); font-size: var(--ma-fs-h3); }
+.ma-fabric-library__controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr)) auto;
+  gap: var(--ma-space-3);
+  align-items: end;
+  padding: var(--ma-space-4);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-surface);
+}
+
+.ma-fabric-library__controls label { min-width: 0; display: grid; gap: var(--ma-space-2); }
+.ma-fabric-library__controls label > span { font-size: var(--ma-fs-small); font-weight: 600; }
+.ma-fabric-library__controls input,
+.ma-fabric-library__controls select {
+  width: 100%;
+  min-width: 0;
+  min-height: var(--ma-touch-target);
+  box-sizing: border-box;
+  padding: var(--ma-space-2) var(--ma-space-3);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  color: var(--ma-color-text);
+  font-family: var(--ma-font-body);
+  font-size: var(--ma-fs-base);
+}
+
+.ma-fabric-library .ma-button { min-height: var(--ma-touch-target); box-sizing: border-box; }
+.ma-fabric-library button.ma-button--outline { background: var(--ma-color-white); gap: var(--ma-space-2); }
+.ma-fabric-library button.ma-button--outline:hover,
+.ma-fabric-library button.ma-button--outline:focus { background: var(--ma-color-surface); }
+.ma-fabric-library__status { margin: var(--ma-space-4) 0 var(--ma-space-3); color: var(--ma-color-muted); font-size: var(--ma-fs-small); }
+.ma-fabric-library__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--ma-space-4);
+  scroll-margin-top: var(--ma-fabric-anchor-offset);
+}
+
+.ma-fabric-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--ma-space-4);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  scroll-margin-top: var(--ma-fabric-anchor-offset);
+}
+
+.ma-fabric-card:target { border-color: var(--ma-color-accent-2); }
+.ma-fabric-card__head { display: flex; justify-content: space-between; gap: var(--ma-space-3); align-items: center; }
+.ma-fabric-card__kind { margin: 0 0 var(--ma-space-2); color: var(--ma-color-muted); font-size: var(--ma-fs-small); }
+.ma-fabric-card h3 { margin: 0; font-size: var(--ma-fs-h3); font-family: var(--ma-font-head); }
+.ma-fabric-card__weight { display: grid; margin: 0; flex-shrink: 0; text-align: right; color: var(--ma-color-accent-2); }
+.ma-fabric-card__weight strong { font-family: var(--ma-font-head); font-size: var(--ma-fabric-weight-size); line-height: 1; }
+.ma-fabric-card__weight span { font-size: var(--ma-fs-small); margin-top: var(--ma-space-1); }
+.ma-fabric-card__composition {
+  display: grid;
+  gap: var(--ma-space-2);
+  padding-top: var(--ma-space-3);
+  margin: var(--ma-space-4) 0 0;
+  border-top: 1px solid var(--ma-color-border);
+  font-size: var(--ma-fs-base);
+  line-height: var(--ma-lh-body);
+}
+.ma-fabric-card__composition dt { color: var(--ma-color-muted); font-size: var(--ma-fs-small); font-weight: 400; }
+.ma-fabric-card__composition dd { margin: var(--ma-space-1) 0 0; color: var(--ma-color-text); }
+.ma-fabric-card__example {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ma-space-2);
+  min-height: var(--ma-touch-target);
+  margin-top: auto;
+  padding-top: var(--ma-space-3);
+  font-size: var(--ma-fs-small);
+  font-weight: 600;
+  color: var(--ma-color-accent-2);
+}
+.ma-fabric-library__pagination { display: flex; justify-content: center; align-items: center; gap: var(--ma-space-4); margin-top: var(--ma-space-4); }
+.ma-fabric-library__pagination > span { font-size: var(--ma-fs-small); color: var(--ma-color-muted); }
+.ma-fabric-library__pagination button.ma-button--outline[aria-disabled="true"] { color: var(--ma-color-muted); background: var(--ma-color-surface); cursor: default; }
+.ma-fabric-library__empty { padding: var(--ma-space-5); border: 1px dashed var(--ma-color-border); text-align: center; color: var(--ma-color-muted); }
+.ma-fabric-library__footer { display: flex; align-items: center; justify-content: space-between; gap: var(--ma-space-5); margin-top: var(--ma-space-5); padding-top: var(--ma-space-4); border-top: 1px solid var(--ma-color-border); }
+.ma-fabric-library__footer p { max-width: var(--ma-reading-width); margin: 0; font-size: var(--ma-fs-small); color: var(--ma-color-muted); }
+.ma-fabric-library__footer a { flex-shrink: 0; }
+.ma-fabric-library__more { margin-top: var(--ma-space-4); }
+.ma-fabric-library__more summary { min-height: var(--ma-touch-target); padding-block: var(--ma-space-2); box-sizing: border-box; color: var(--ma-color-accent-2); font-weight: 600; cursor: pointer; }
+.ma-fabric-library :is(input, select, button, a, summary):focus-visible,
+.ma-fabric-card:focus,
+.ma-fabric-library__grid:focus,
+.ma-fabric-preview a:focus-visible { outline: var(--ma-fabric-focus-width) solid var(--ma-color-accent-2); outline-offset: var(--ma-space-1); }
+
+.ma-fabric-preview { margin-top: var(--ma-space-4); padding-top: var(--ma-space-4); border-top: 1px solid var(--ma-color-border); }
+.ma-subcat__body .ma-fabric-preview__label { margin: 0 0 var(--ma-space-2); color: var(--ma-color-accent-2); font-size: var(--ma-fs-small); font-weight: 600; }
+.ma-fabric-preview__list { list-style: none; padding: 0; margin: 0; }
+.ma-fabric-preview__item { display: flex; align-items: center; justify-content: space-between; gap: var(--ma-space-3); min-height: var(--ma-touch-target); padding-block: var(--ma-space-3); border-bottom: 1px solid var(--ma-color-border); color: var(--ma-color-text); text-decoration: none; }
+.ma-fabric-preview__item:hover { color: var(--ma-color-accent-2); }
+.ma-fabric-preview__composition { display: block; color: var(--ma-color-muted); font-size: var(--ma-fs-small); line-height: var(--ma-lh-body); }
+.ma-fabric-preview__weight { flex-shrink: 0; font-size: var(--ma-fs-small); color: var(--ma-color-accent-2); font-weight: 600; }
+.ma-fabric-preview__all { display: inline-flex; align-items: center; gap: var(--ma-space-2); min-height: var(--ma-touch-target); margin-top: var(--ma-space-2); font-size: var(--ma-fs-small); font-weight: 600; color: var(--ma-color-accent-2); }
+
+@media (max-width: 63.99rem) {
+  .ma-fabric-library__controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ma-fabric-library__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 37.5rem) {
+  .ma-fabric-library__heading { flex-direction: column; gap: var(--ma-space-4); }
+  .ma-fabric-library__edition { display: flex; flex-wrap: wrap; gap: var(--ma-space-3); padding: 0; border: 0; align-items: baseline; }
+  .ma-fabric-library__edition strong { font-size: var(--ma-fs-small); }
+  .ma-fabric-library__controls { grid-template-columns: minmax(0, 1fr); padding: var(--ma-space-3); }
+  .ma-fabric-library__controls .ma-fabric-library__search { grid-column: 1 / -1; }
+  .ma-fabric-library__controls > button { grid-column: 1 / -1; justify-self: start; }
+  .ma-fabric-library__controls input,
+  .ma-fabric-library__controls select { padding-inline: var(--ma-space-2); }
+  .ma-fabric-library__grid { grid-template-columns: minmax(0, 1fr); gap: var(--ma-space-3); }
+  .ma-fabric-library__pagination { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--ma-space-2); }
+  .ma-fabric-library__pagination > span { grid-column: 1 / -1; grid-row: 1; text-align: center; }
+  .ma-fabric-library__pagination .ma-button { padding-inline: var(--ma-space-3); justify-content: center; }
+  .ma-fabric-library__footer { flex-direction: column; align-items: flex-start; gap: var(--ma-space-3); }
 }
 
 /* Text-only seamless capability: data-gated to Underwear. Existing product

@@ -107,6 +107,14 @@
 | Knitted Fabrics | `/knitted-fabrics-manufacturer/` | Knitted Fabrics Manufacturer | `/products/knitted-fabrics/` |
 | Sports Accessories | `/sports-accessories-manufacturer/` | Sports Accessories Manufacturer | `/products/sports-accessories/` |
 
+### 2025 代表性面料库（2026-11-10 Local 审核）
+
+所有者批准在现有 Knitted Fabrics 页增加规格库，并从 Merino 页关联，不新增独立面料页面或 URL。此项仅 Local，未部署；见[实施与部署清单](site/fabric-library-2026-11-10.md)。
+
+- `/knitted-fabrics-manufacturer/#merino-fabric-examples`：既有组织结构介绍后展示 24 款料号／成分／GSM 规格卡，搜索、筛选与分页控制高度；无对应实拍时不填充通用纹理图片。
+- `/merino-wool-manufacturer/#merino-yarn-sourcing-and-fabric-development`：原区块内加入 3 个精选料号入口，跳转面料页具体卡片；不增加另一整段长列表。
+- 2025 仅代表来源合集，不表述为全部面料或实时库存；两款分层成分分别展示。既有页面 H1、SEO 元数据、Schema、canonical 及成衣 Showcase 结构不变。
+
 ### 产品中心——首页产品区块（当前实现）
 
 首页 `/#ma-home-categories-title` 产品区块是当前产品中心，并链接全部 7 个品类页。

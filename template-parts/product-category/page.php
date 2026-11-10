@@ -345,6 +345,10 @@ if ( ! empty( $category['hero_video'] ) ) {
 	</section>
 	<?php endif; ?>
 
+	<?php if ( 'knitted-fabrics-manufacturer' === $category_slug ) : ?>
+		<?php get_template_part( 'template-parts/fabric-library/library' ); ?>
+	<?php endif; ?>
+
 	<?php if ( ! empty( $category['subcategories'] ) ) : ?>
 	<section class="ma-product-section ma-product-subcategories" aria-labelledby="ma-product-subcats-title">
 		<div class="ma-section-inner">
@@ -444,6 +448,9 @@ if ( ! empty( $category['hero_video'] ) ) {
 							<span class="ma-subcat__index"><?php echo esc_html( sprintf( '%02d', $index + 1 ) ); ?></span>
 							<h3><?php echo esc_html( $sub['title'] ); ?></h3>
 							<p><?php echo esc_html( $sub['description'] ); ?></p>
+							<?php if ( 'merino-wool-manufacturer' === $category_slug && 'merino-yarn-sourcing-and-fabric-development' === $sub_slug ) : ?>
+								<?php get_template_part( 'template-parts/fabric-library/preview' ); ?>
+							<?php endif; ?>
 							<?php if ( $has_development ) : ?>
 								<dl class="ma-subcat__development">
 									<?php foreach ( $sub['development']['options'] as $option ) : ?>
