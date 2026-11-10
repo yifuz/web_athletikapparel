@@ -1,6 +1,6 @@
-# 面料库扩充：HY24／HY25／HY26 本地审核版
+# 面料库扩充：HY24／HY25／HY26 与生产发布记录
 
-日期：2026-11-10。状态：`local-review / not-deployed`。本轮不推送 Git、不部署生产。
+日期：2026-11-10。当前状态：`deployed / cache-verification-pending`。所有者已批准当天改动上线，9 文件已发布；普通浏览器仍命中旧 HTML 缓存，待 Flywheel 刷新后完成验收。Git 未推送。下文 Local 状态保留为研发历史，最终发布状态以下方第 6 节为准。
 
 ## 1. 授权与范围
 
@@ -90,7 +90,7 @@
 
 本次只取消主动滚动，不强制固定列表高度；末页卡片较少、手机成分长短不同时，区块与分页按钮仍会随内容自然移动，但视窗不自动跳转。不为此增加大片空槽。仍仅本地，不部署生产。
 
-## 5. 部署清单（未批准）
+## 5. 已批准部署清单
 
 本轮增量 6 个运行时文件：
 
@@ -101,6 +101,33 @@
 5. `template-parts/fabric-library/library.php`
 6. `style.css`
 
-整个面料库从未上线；未来获批时，部署首批清单的 8 个运行时文件最终版本，再加本次新增的数据文件，共 **9 个**。无媒体、数据库或新 URL 操作；不上传 Excel、内部记录或测试产物。
+所有者随后要求“把今天的改动部署吧”，授权完整面料库最终版本，包括上述扩充与翻页不主动滚动。完整实际发布清单共 **9 个**，按依赖顺序：
+
+1. `inc/fabric-library-recent.php`
+2. `inc/fabric-library.php`
+3. `template-parts/fabric-library/card.php`
+4. `template-parts/fabric-library/library.php`
+5. `template-parts/fabric-library/preview.php`
+6. `assets/js/fabric-library.js`
+7. `style.css`
+8. `functions.php`
+9. `template-parts/product-category/page.php`
+
+无媒体、数据库或新 URL 操作；不上传 Excel、内部记录或测试产物。
 
 先部署新数据文件，再启用引用，按[专用 SSH 部署流程](../operations/flywheel-ssh-deployment.md)精准备份、传输与生产验收。Git 本地提交不等于推送或上线。
+
+## 6. 2026-11-10 生产发布（缓存验收未完成）
+
+- 授权：所有者批准今天的改动；上午已上线 Jacquard 不重复发布，本批仅发布面料库全部研发修订及 Next／Previous 不主动滚动。
+- 目标：Knitted Fabrics 面料选型入口及 Merino 精选关联；主要变量为具体料号／成分／GSM 参考与可搜索筛选，不改 H1、SEO 元数据、URL 或成衣 Showcase。
+- 冻结版本：`1e2b88f`，相对已部署基线 `128de86` 恰好 9 个运行时文件；3 个旧文件的生产内容与基线规范化比对一致，6 个新文件未被占用。工作区文件与批准提交一致。
+- 生产环境：专用 SSH 确认域名、`production`、活动主题和 theme／uploads 路径匹配。既有 `fileperms(/www/.wordpress/)` CLI 警告未修改平台核心，所有命令退出状态及正式页分别检查。
+- 私有备份：`C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-10-1e2b88f-fabric-20261110T093921Z`，含 3 个原代码文件、6 个相关页面 post／metadata 只读快照及完整 manifest；不在公开目录或 Git。
+- 实际传输：9 文件经同目录临时文件哈希／大小与 7 个 PHP 服务器语法检查后激活；先依赖，再 `functions.php`，最后共用类目模板，未发生回退。生产 9 文件 SHA-256、大小、权限均与冻结发布源一致。
+- 数据库与媒体：未执行写入；6 个相关页面的 post／metadata 前后完全一致，没有整库同步、建页、表单提交或额外媒体上传。
+- 公开静态资源：正式 HTML 引用的 `style.css?ver=1794303653`（184449 bytes）及 `fabric-library.js?ver=1794303653`（9344 bytes）均 HTTP 200，解码后的 SHA-256 与发布源一致。
+- 公开页面：6 个普通 URL HTTP 200，单 H1、title、description、canonical、robots 与发布前基线保持。PowerShell 普通 GET 已见 97 款；但标准 Chrome `x-fw-type: VISIT` 及 Headless `FLYWHEEL_BOT` 普通请求均收到 `x-cache: MISS,HIT` 旧 HTML，Knitted 0 款、Merino 0 面料入口。不能用部分请求成功替代浏览器验收。
+- 缓存处理：只读核查当前 WP-CLI 没有平台页面缓存命令，标准 `wp cache flush` 仅是 Object Cache，未误用或伪造平台事件。已请所有者按 [Flywheel 官方步骤](https://getflywheel.com/wordpress-support/how-do-i-clear-my-cache/)在 Advanced → Flush Cache 刷新，随后继续普通 URL 验收；没有用查询参数或强制绕缓存请求冒充通过。
+- 证据：`.chrome-check/fabric-deploy-manifest-20261110.json`、`fabric-production-20261110-baseline.json`、`fabric-production-cache-20261110.json`、`fabric-production-cache-20261110-standard.json`；均 Git 忽略。
+- Finding outcome：代码发布已完成，**普通浏览器功能／缓存最终验收待完成**，不标记 `production-verified`。Git 未推送；记录先保存本地。

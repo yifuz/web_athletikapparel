@@ -107,9 +107,9 @@
 | Knitted Fabrics | `/knitted-fabrics-manufacturer/` | Knitted Fabrics Manufacturer | `/products/knitted-fabrics/` |
 | Sports Accessories | `/sports-accessories-manufacturer/` | Sports Accessories Manufacturer | `/products/sports-accessories/` |
 
-### 代表性面料库（2026-11-10 Local 审核）
+### 代表性面料库（2026-11-10 发布，缓存验收待完成）
 
-所有者批准在现有 Knitted Fabrics 页增加规格库，并从 Merino 页关联，不新增独立面料页面或 URL。此项仅 Local，未部署；见[实施与部署清单](site/fabric-library-2026-11-10.md)。
+所有者批准在现有 Knitted Fabrics 页增加规格库，并从 Merino 页关联，不新增独立面料页面或 URL。同日获准并已发布 9 文件，普通浏览器旧 HTML 缓存待刷新复核；见[生产发布记录](site/fabric-library-expansion-2026-11-10.md#6-2026-11-10-生产发布缓存验收未完成)。
 
 - `/knitted-fabrics-manufacturer/#merino-fabric-examples`：既有组织结构介绍后展示 97 款料号／成分／GSM 规格卡（原 24 款加近期 73 款），搜索、多纤维筛选与分页控制高度；无对应实拍时不填充通用纹理图片。
 - `/merino-wool-manufacturer/#merino-yarn-sourcing-and-fabric-development`：原区块内加入 3 个精选料号入口，跳转面料页具体卡片；不增加另一整段长列表。
