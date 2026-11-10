@@ -15,6 +15,90 @@
 > - GSC Generative AI 的 Property 总量与 Page 明细使用不同聚合方式；Page 行不可机械相加后当作独立 AI 回答次数。
 > - 新条目追加在最新日期处，不覆写历史快照。
 
+## 2026-11-10：Knitted Fabrics 定向搜索诊断
+
+结论为 **`no-change / diagnosis-complete / fabric-examples-confirmed`**。现有主词和独立面料采购任务匹配；可见核心商业词的位置偏后，尚无足够证据将零点击归因于 Title／Meta。现页已覆盖结构、定制与采购流程，最值得准备的下一变量是 **具体面料编号、成分、GSM 与真实展示的对应关系**。该呈现缺口已确认，但是否解释当前排名、补齐后能提升多少仍未验证。本轮没有网站代码、媒体、数据库或部署改动，也没有新增 Backlog ID。
+
+### 范围、证据与完整性
+
+- 环境／日期／模式：2026-11-10 生产 `https://www.athletikapparel.com/knitted-fabrics-manufacturer/`，`targeted`。检查该页原始 HTML、响应头、首页入口、robots 和 Page Sitemap；不把单页检查写成全站无问题。本轮没有重新进行 URL Inspection、视觉／性能或表单提交测试。
+- 结构化入口：`page-opportunities` 先读取 actions，再读取同次缓存的 full 报告；窗口 **10-09～11-05**。14 条源 Query、1 条低可操作性排除、13 条 eligible 全部检查，共 52 impressions／0 clicks；报告未截断。它与下列固定窗口日期不同，不混合数值。
+- GSC：沿用上次恢复基线，追加 **9 份、74 行**精确页或精确页＋查询报表，全部核对。固定前窗 **09-10～10-07**、当前窗 **10-08～11-04**，均 `web / final / rowLimit=25000`；没有输出截断。明细聚合不闭合处见下文，不当作取得全部真实查询。
+- SERP：两词 × US／GB／CA，Google、English、desktop、请求 depth 50；**6/6 成功，232 条返回 organic 结果全部阅读标题／摘要及目标 URL**。覆盖的是返回结果，非六份完整 50 条自然结果。原始 Google 跳转 URL 全部解析到实际目标；保留原始排名和 URL，派生目标单列，不用去重结果重排 Athletik 名次。
+- 232 条合计 187 个完全相同目标 URL 去重后项；组内额外重复共 5 条（core-CA 2、performance-US 2、performance-GB 1），另 performance-US rank 9／11 仅 `srsltid` 不同。角色分类按标题、摘要、目标地址判断，不代表逐页核验 232 个网站的工厂身份或正文。
+- 今日 DataForSEO 新增费用 **$0.052**，6 次付费请求、0 次付费重试；账户余额 **$49.562680**，当日 spend 与本批一致。现有日硬限额 $1、月限额 $5 未变。Google 跳转解析不是新增付费 SERP 请求；其中 1 条首次未解析、单次重试成功，最终 232/232。
+- 原始响应、页面 HTML、逐行分类、跳转链、支出核验和 SHA-256 manifest 留在 Git 忽略目录 `.chrome-check/knitted-search-diagnosis-2026-11-10/`。未调用邮件或 Google Ads，也未修改任何外部设置。
+
+### 排名与搜索意图：保留主词，不能把 OEM 次级词直接升级为主词
+
+| Exact query | 市场 | 本次返回 organic 行 | Athletik 正式面料页 |
+|---|---|---:|---|
+| `knitted fabric manufacturer` | US | 46 | **自然结果 rankGroup 25**；rankAbsolute 32，page 3，落地 URL 正确 |
+| 同上 | GB | 45 | 返回结果中未见 |
+| 同上 | CA | 45 | 返回结果中未见 |
+| `performance knit fabric oem` | US | 48 | 返回结果中未见 |
+| 同上 | GB | 26 | 返回结果中未见 |
+| 同上 | CA | 22 | 返回结果中未见 |
+
+“未见”只描述这一日期、地区、设备和保留结果集，不等于无排名、未索引或已验证排在第 50 名以后。不得把单次 US 第 25 名和跨日期／市场的 GSC 平均位置 35.05 当成排名改善 10 位。
+
+核心词仍包含真实面料制造／供应采购页，也混入目录、榜单、零售和社交结果；GB 更偏直接厂家页面，但仍有成衣／梭织等混合结果。没有支持改 URL、Title、H1 或另建近义页的证据。`performance knit fabric oem` 在本次 US **36/48**、CA **13/22** 返回行属于零售／现货／消费者平台；GB 混合程度不同，不能由 US 推及所有市场。含 OEM 并不自动使一个查询更精准；该词保留为次级需求线索，不替换主词。上述比率是保留结果行数，含已披露重复，不是独立商家市场份额。
+
+### GSC：商业词可见度扩大，但峰值不证明 10-20 改版收益
+
+| 口径 | 前窗 | 当前窗 | 解释 |
+|---|---:|---:|---|
+| 精确页 clicks／impressions／average position | 1／88／14.95 | **0／173／16.71** | 曝光增加，尚未带来本窗点击增长 |
+| 精确页可见 Query 合计 | 0／17 | 0／54 | 前窗 71、当前 119 次页面曝光无法由返回查询解释 |
+| `knitted fabric manufacturer` impressions／position | 2／25.50 | **22／35.05** | 核心商业词覆盖增加，位置仍偏后；市场、设备和日期构成可能变化，不能当作固定条件下的排名变化 |
+| `performance knit fabric oem` impressions／position | **1／26.00** | **3／21.67** | 本次精确页前值；下方历史基线的全站 Query 4／40.5 不是该页前值 |
+
+固定七个商业词（core、functional knit fabrics manufacturers、functional knitted fabrics factory、performance knit fabric oem、performance knit supplier、custom knit fabric oem、breathable knitted fabric supplier）可见曝光 **11→32**，均零点击；加权位置 26.00→31.94，保留低量与构成变化限制。新增精确页 Query 与此前当前窗 Query × Page 的 14 行一致。当前没有披露四种结构词，不等于这些结构无需求或模块失败。
+
+精确页 Country 和 Device 合计同为 **17→54 impressions**，加权位置与 Query 样本相同，却不与页面 **88→173** 闭合，状态为 **`partial / non-reconciled`**。只确认规模与保留查询样本一致，不能证明具体过滤机制或诊断 CLI／GSC 故障。US 14→28、GB 1→4 仅为返回行值，不是整页国家份额；无 CA 行不等于零曝光。Desktop 53／Mobile 1 也不能当整页设备比例。另对当前 core 查询单独按国家／设备分组可闭合 22 impressions，其中 US 8／position 37.375、22 次均 desktop；该更窄结果不外推给整页。
+
+当前精确页 Date 28 行完整闭合 **173 impressions／0 clicks／position 16.7052**。最高峰 **10-19 的 29 次曝光在 10-20 部署之前**；10-08～19 为 81 次、部署日 17 次、10-21～11-04 为 75 次。因此不能把图中最高峰归因于结构模块，也不能将整个窗口描述为部署后持续增长；同样没有证据证明模块造成下降。
+
+### 页面覆盖、工具处置与真实缺口
+
+生产检查通过：HTTP 200、`follow, index`、无 X-Robots 限制、唯一 self-canonical 和 H1；Title／Meta／社交描述与 `seo-tags.md` 一致；首页有 2 个可抓取入口、Page Sitemap 出现 1 次。四种结构卡及 12 组说明存在；独立面料供应、own fabric mill、in-house testing、五产品族、材料／用途、开发输入、按项目 MOQ、样品审批、测试和四步采购流程均已覆盖。不新增一组重复能力文案或采购流程。
+
+`page-opportunities` 的 13 行全部处置如下；工具的“精确字面未出现”不直接构成内容缺陷：
+
+| 源 Query／组 | 行数 | 人工核对与 outcome |
+|---|---:|---|
+| `verified functional knit fabric from china recommended manufacturers`；`excellent functional knit fabric brand buying guide` | 2 | 8／1 次曝光，不能支持 CTR 实验；不加入 verified／recommended／excellent 自荐词，不把商业页改成买家指南。`no-change` |
+| core；复数 manufacturers；functional knit fabrics manufacturers；performance knit fabric oem | 4 | 采购主题已覆盖，排名与低样本需观察；不做单复数堆词或凭零点击改 metadata。`no-change` |
+| functional knitted fabrics factory；apparel knit textile manufacturer；performance knit supplier；breathable knitted fabric supplier | 4 | 自有面料厂、面料供应及功能开发已有表达；不为补 factory／textile／supplier 字面而重复写作，不补无测试支撑的性能结果。`no-change` |
+| premium knitted apparel fabrics；UK 长串采购词；acetate knit fabric manufacturer | 3 | 不加 premium 自夸、不暗示英国本地工厂、不扩张未确认的 acetate 能力。`no-change` |
+
+两个工具 fix action **`action-23418f3fc3aa`、`action-958fe698952f` 均为 `not-needed`**：分别针对上述自荐词及机械归组的 8 个 content gaps；现有证据不能支持原建议。工具 estimatedClickLift **0.55** 使用默认曲线及极小样本，不作为预期点击收益。报告的 1 个非 HTTP 链接排除是覆盖提示，非已证实断链。六份 SERP 的 **`repeated-domain`／`domains[0]`** 均为 `not-needed`：原始 URL 全为 Google 跳转而误算成 google.com 集中，真实目标已另行解析；不能据此诊断竞争者垄断或 Athletik 缺席。
+
+本次没有确认新的 Critical／Warning。以下为同一现有 Backlog 项内的 `review / Info / P1`：
+
+- **观察（Confirmed）**：五组类别图片尚未与某一实际面料的编号、确切成分和 GSM 一一对应；类别覆盖不等于买家能评估一个具体布样。
+- **推断（Unverified）**：补充实物规格可能增强采购任务匹配与内容独特性，但不是已证实的低排名原因；未核验外链竞争强度，不把剩余差距全部归因于内容或域名权重。
+- **最小后续变量**：在现有面料页准备少量真实面料例子，展示编号、成分、GSM、应用及已确认的对应视觉。结构／幅宽可在取得资料后加入，不为凑规格阻塞最小版本；不创建一批薄产品页。
+- **证伪／调整条件**：若现页已经存在同等可识别的实物规格，或目标词进一步证据证明需要完全不同的采购产品，则重评该模块，不继续机械扩建。
+- **outcome**：本轮 `no-change`；下一批经授权实施时另建 Change Card，记录单一主变量、生产检查与独立前后窗。原观察窗口不重置。
+
+作为展示组织参考，读取了 [EYSAN 具体 interlock 产品](https://www.eysan.com.tw/product/100-polyester-micro-birdseye-mesh-interlock-fabric/)、[Fuzhou 具体 jacquard 产品](https://www.fuzhoutextile.com/breathable-polyester-knit-weft-jacquard-mesh-fabric-for-sportswear-product/)和 [Caracol 面料总页](https://www.caracolknits.com/products-services/knit-fabric)：可参考编号／规格／应用／取样入口的连接方式，不复制对方参数、商业条款或将其内容归因为排名原因。前两页亦存在模板残留／内部表述冲突，不能当作整体质量标杆；这些补充样本不冒充本次全部排名页审核。
+
+另定向读取本次快照的 [Huiliang Circular Knitted Fabric](https://www.huiliang-textile.com/en/category/Circular-Knitted-Fabric.html)（core-US 第 10）与 [Fuzhou FTT-WB364](https://www.fuzhoutextile.com/88-polyester-12-spandex-stretch-jersey-knit-fabric-for-sportswear-product/)（performance-GB 第 7）：前者把有编号布样连接详情与 Request Swatches，后者把具体货号、成分／GSM／幅宽、用途和询盘放在一起。Web 读取标注分别为三周前／上月缓存，不当作今天的新鲜 HTTP 验收；只支持展示组织参照，不能证明这些模块造成其排名。连同 [EYSAN interlock 类目入口](https://www.eysan.com.tw/product-category/knitting-structure/interlock/)共读取 6 个官方代表页面，而非全体搜索结果正文。
+
+### 所有者确认与下一步
+
+所有者在本轮明确确认以下两款均可作为**对外独立供货的面料例子**，此前“是否可复用”的依赖已解除：
+
+| Fabric reference | 已批准 Composition | Fabric weight | 可复用的现有展示 |
+|---|---|---:|---|
+| HY254955 | 52% Merino wool／43% Polyester／5% Spandex | 155 GSM | Ocean Depth 女式上衣与 leggings 套装 |
+| HY265077 | 80% Tencel／20% Merino wool | 115 GSM | 男式长袖 Showcase |
+
+可先准备这两款的本地面料示例模块，沿用已批准规格与实际成衣应用；**成衣图片只表示面料应用，不冒充布样近摄**。本次确认不包含库存、可订颜色、幅宽、具体 MOQ、价格、未确认结构或性能数值；公开面料 MOQ 仍按项目确认，不套用成衣 500 件、不公开旧内部 1,000–3,000 kg 口径，不关联 Beta Textiles。
+
+本轮完成的是诊断与事实补齐，尚未获新模块制作／上线授权。后续最值得执行的是两款实物证据的 Local 审核版；优先在原结构模块完整后窗 **10-21～11-17** 结束后再安排新变量上线，预计 **11-20** 起按 final 数据核验。原页面 **11-30 Day 90**、结构模块 **2027-01-18 Day 90** 不重置。无需再为相同问题扩充结构词研究或立即修改 Title／Meta。
+
 ## 2026-11-10：10-08～11-04 GSC＋GA4 恢复窗口基线
 
 SEO-V2-002 本轮 **GSC＋GA4 基线已补齐**，状态 `baseline-established / keep-measuring`；正式／合格询盘及其来源为 `unverified`，本次没有读取邮箱。此窗口是 10-08 Cookiebot 修复后第一份指定的 28 天观测，**不是修复效果或任一页面改版的因果实验**。10-08 本身包含修复前时段及明确内部 QA，不将整日视为纯净的修复后样本；9 月漏测不回填。

@@ -2,7 +2,7 @@
 
 > 当前阶段：V1 已于 2026-08-25 收尾并冻结；V2 已部署批次进入观察与到期复查
 >
-> 最近更新：2026-11-10；已刷新三个商业模块、Services 与 Showcase 的定向索引记录，并补齐 10-08～11-04 GSC＋GA4 恢复基线；其余指标与验收仍按各自原日期理解。
+> 最近更新：2026-11-10；已补齐恢复基线及 Knitted Fabrics 定向搜索诊断；本次主词 US 自然结果第 25，保留现有定位，所有者确认两款现有面料可作为独立供货例子。其余指标与验收仍按各自原日期理解。
 >
 > 适用网站：<https://www.athletikapparel.com/>
 >
@@ -48,6 +48,7 @@ URL、H1 和页面所有权仍以 [`../sitemap.md`](../sitemap.md) 为准；Titl
 - **性能（SEO-V2-004）**：09-19 已按所有者决定转为 `deferred / monitor-only`，当前不继续投入增量性能优化。首页类目图的 SEO-V2-016／017 已完成并为 `fixed / keep`，生产与 Lab 证据只支持各自范围，不将 Lab 波动解释为曝光收益；只有达到 Backlog 的性能、抓取／渲染或用户体验触发条件才重开。
 - **内容与内链（SEO-V2-005）**：Knitted 结构模块 10-27 Day 7 已完成，效果样本不足；完整后窗 10-21～11-17，预计 11-20 起按 final 核验。Underwear seamless、Sportswear Yoga 和配件头颈模块的到期 Day 7 已于 **11-10** 补查：均 indexed、部署后发生抓取、生产模块正常；前后 7 日曝光分别为 21→16、11→12、2→10，可见 Query 仍仅品牌域名，效果 `not-enough-data`。三页精确前 28 日基线已补齐，保留原后窗并披露后续共同变量，见 [Backlog 分批表](v2-backlog.md) 和 [GSC Log](gsc-data-log.md)。
 - **新 Showcase**：11-10 总览和 Ocean Depth 为 indexed；HY265077 男款为 discovered-not-indexed，所有者随后确认已请求索引，建议 11-17 起复查一次。Jacquard 仍仅 Local，不提交生产索引。恢复基线已完成；下一主要效果节点为 **Knitted 与 Merino 的 10-21～11-17 完整后窗**，预计 11-20 起按 final 核验。
+- **Knitted 定向诊断（11-10）**：两词三市场共 6 组、232 条返回自然结果全部核对，费用 $0.052。`knitted fabric manufacturer` US 为自然第 25，GB／CA 各 45 条返回结果未见；`performance knit fabric oem` 意图混合，不替换主词。现页结构和采购流程充分覆盖，具体面料规格与视觉对应是下一优先变量。所有者已确认 HY254955／HY265077 均可独立供货，可准备两款示例的 Local 审核版；本轮仅诊断，尚未制作或部署。10-19 峰值早于 10-20 发布，不能作改版收益；原完整后窗不变，详见 [GSC Log](gsc-data-log.md)。
 - **Merino 商业词观察**：原定 10-30 的周度观察与 FLATLOCK 入链 Day 7 已于 **11-02** 补做；该次 10-03～10-30 Page 数据为 5 clicks／193 impressions，细分维度不闭合且可见商业词样本小，保持 `no-change / keep-measuring`。页面平均位置不是固定关键词排名，历史滚动窗口不能作为独立效果比较。见 [GSC Log](gsc-data-log.md) 及 [固定监测记录](research/merino-commercial-monitor-v1.md)。
 - **既有关闭记录**：SEO-V2-013 已于 09-30 完成 Q3 六篇指南标准／外链复核和 QC Guide 的 ISO 2859-1:2026 更新，下次不晚于 **12-31**；SEO-V2-015 的 10-08 Day 28 为 `keep / measuring`；SEO-V2-018 已于 09-30 关闭 Sportswear lookbook、索引与三市场研究的部署记录，后续观察不重列为待上线任务。以上是带日期记录，不冒称 11-04 已重查标准或搜索状态。
 - **暂缓与历史未关闭项**：SEO-V2-006 的 ThomasNet、OEKO-TEX、WRAP 仍依外部资格／可核验凭据重开；SEO-V2-007 最后记录的平台结果仍为 08-28 LinkedIn `No image found`，没有新的实际平台成功证据就不写修复完成；SEO-V2-008 的五品类响应式图片保留 `fixed / keep`。本次不重跑平台测试或扩充研究。
