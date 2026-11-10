@@ -1,4 +1,4 @@
-# 2025 代表性面料库——Local 审核版
+# 代表性面料库——Local 审核版（首批 2025 羊毛选样）
 
 日期：2026-11-10。状态：`local-review / not-deployed`。
 
@@ -20,7 +20,7 @@
 | `/merino-wool-manufacturer/#merino-yarn-sourcing-and-fabric-development` | 在既有面料开发区块内加入 HY254776、HY254955、HY254931 三条紧凑入口 |
 | `/knitted-fabrics-manufacturer/#fabric-hy254955` 等 | 精确定位料号；JS 自动显示所在分页，不让目标留在隐藏页 |
 
-完整库标题为 `Merino wool fabric selection`，作为综合面料页中的羊毛选样模块，而不是全部面料的目录。Merino 的精选入口明确标注 `Selected Merino wool fabrics · 2025`，带范围提示和动态计数的 `View all 24 fabric references` 链接。
+完整库标题为 `Fabric selection library`，不将总模块限定为 Merino 或某一年份；当前收录系列单独标注 `Merino wool · 2025 collection`，只描述目前展示的资料，不代表全部生产能力。Merino 的精选入口仍标注 `Selected Merino wool fabrics · 2025`，带范围提示和动态计数的 `View all 24 fabric references` 链接。
 
 - 桌面 3 列、平板 2 列、手机 1 列；每页桌面／平板 6 款、手机 3 款，新增记录不会无限追加页面高度。
 - 搜索支持料号或纤维名称，配合成分类别、GSM 区间筛选；有结果数量、空结果、重置及上一页／下一页状态。
@@ -39,7 +39,7 @@
 - HY254798 按原图保留 `Polyamide`，HY254888 保留 `Nylon`；`Tencel`、`Coolmax`、`Bamboo Fiber` 也按来源保留，不擅自替换或推断。
 - HY254931 为 240 GSM；HY254888 为 210 GSM。不得将成衣主提花的 240 GSM 自动套用至另一料号。
 - 不推断宽幅、微米、针织组织、结构厚度、现货、MOQ、测试结果或性能等级；原图未明确的 GSM 层级不作扩写。
-- 页面明确说明 `Representative references from our 2025 collection — not our complete fabric range or a live stock list.`
+- 页面明确说明 `Compare representative fabric references by composition and weight. This selection is not our complete fabric range or a live stock list.`；2025 移入当前系列标签，不再限定整个面料库。
 - 本轮不纳入 HY265077，因为它不在本次 2025 原图清单中；其他已批准单独供货示例仍是后续独立内容，不伪装为该合集记录。
 - 本轮只有简短标题、标签、规格和范围说明，不改写既有长篇营销正文、SEO 标题／描述、canonical 或 Schema。
 
@@ -73,6 +73,7 @@
 ### 同日后续：明确完整库与精选入口的分工
 
 所有者再次确认完整规格库留在面料页、Merino 仅保留精选入口，并要求先做一版。原有位置、数量和链接目标已经符合分工，本次小幅明确标题与入口表达，不搬动或复制整套规格库。
+本节是 `5560a8d` 的历史版本；总标题与主库简介随后按下节更正，Merino 精选不变。
 
 - 完整库 H2 改为 `Merino wool fabric selection`，原有 2025 代表性、非全部范围、非实时库存说明继续保留。
 - Merino 精选标题明确材料和年份，新增简短范围提示：`A preview of our 2025 selection, not our complete fabric range.`
@@ -80,6 +81,19 @@
 - 不改规格数据、筛选／分页 JS、卡片等高规则、页面 H1／SEO 元数据／URL 或既有 Showcase。
 - 1440／768／360／320 四档共 16 组本地验收通过：完整 24 款仅在 Knitted，Merino 保留 3 款面料精选与 2 款成衣入口，动态 CTA 和三个料号均经实际点击定位，单 H1、触控尺寸至少 44px、无横溢出或范围说明裁剪。JS 异常／Local HTTP 错误均为 0。
 - 报告 `.chrome-check/fabric-page-roles.json`；截图 `.chrome-check/fabric-page-roles-{knitted,merino}-{1440,768,360,320}.png` 已人工复看，仍未获生产发布授权。
+
+### 同日更正：通用面料库与当前收录系列分层
+
+所有者指出将来会增加非 Merino 面料，原总标题和简介范围过窄。本轮按已授权要求重新组织头部层级：
+
+- 总标题 `Fabric selection library` 和通用选型说明不绑定纤维或年份；范围声明继续明确非完整系列、非实时库存。
+- 右侧 `In this library` 仅显示当前记录总数和 GSM 范围，按数据计算；不是全公司的面料总数或供货范围。
+- 新增轻量、非交互的 `Currently included` 系列条，当前仅显示有来源的 `Merino wool / 2025 collection`，不创建空系列、预告款或虚构非 Merino 规格。列表允许换行以容纳以后确认的系列标签。
+- 当前 Composition 筛选仍准确对应这 24 款：纯 Merino／Merino 混纺／分层成分。不将其改成含义更广但没有对应数据的泛称。
+- 以后实际加入非 Merino 时，需要同时更新记录分组、筛选选项／验证及系列标签；本次是呈现与表达调整，不声称已经完成通用多材质分类引擎。
+- 保留 `#merino-fabric-examples` 作为既有入口的兼容锚点；不改页面 URL、H1、SEO 元数据，Merino 页精选和 Showcase 不变。
+- 本轮 1440／1024／768／360／320 五档共 9 组 Local 验收通过：总标题、范围说明与当前系列无截字或横溢出；24 款和 9／13／2 分组、桌面与手机分页筛选、三个料号深链接及 Merino 的 3 款面料／2 款成衣入口均保留。JS 异常和 Local HTTP 错误为 0。
+- 报告 `.chrome-check/fabric-generic-library.json`；截图 `.chrome-check/fabric-generic-library-{width}-header-first-row.png`，桌面与手机已人工复看。仍为 `local-review / not-deployed`。
 
 ## 5. 待批准部署清单
 
@@ -99,6 +113,8 @@
 同日卡片简化修订相对初版的增量仅 `template-parts/fabric-library/card.php`、`style.css` 两个文件；整个面料库尚未上线，后续正式发布仍使用上述完整 8 文件清单的最终版本。
 
 随后的两页分工表达微调增量为 `template-parts/fabric-library/library.php`、`template-parts/fabric-library/preview.php`、`style.css` 三个文件，仍包含在完整 8 文件清单中，无额外媒体或数据库步骤。
+
+通用面料库头部重设计增量仅 `template-parts/fabric-library/library.php`、`style.css`，同样属于上述完整清单；不新增媒体或数据库操作。
 
 获批后仍按 [SSH 部署流程](../operations/flywheel-ssh-deployment.md) 核对当前生产版本、精准备份和传输。
 先放置新数据文件、JS 和模板部件，再启用 `functions.php` 引入及共用模板调用，避免出现缺失依赖的发布窗口。

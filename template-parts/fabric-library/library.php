@@ -12,15 +12,21 @@ $weights = array_column( $fabrics, 'gsm' );
 		<header class="ma-fabric-library__heading">
 			<div>
 				<p class="ma-section-kicker"><?php esc_html_e( 'Fabric references', 'myathletik-child' ); ?></p>
-				<h2 id="ma-fabric-library-title"><?php esc_html_e( 'Merino wool fabric selection', 'myathletik-child' ); ?></h2>
-				<p class="ma-fabric-library__scope"><?php esc_html_e( 'Representative references from our 2025 collection — not our complete fabric range or a live stock list.', 'myathletik-child' ); ?></p>
+				<h2 id="ma-fabric-library-title"><?php esc_html_e( 'Fabric selection library', 'myathletik-child' ); ?></h2>
+				<p class="ma-fabric-library__scope"><?php esc_html_e( 'Compare representative fabric references by composition and weight. This selection is not our complete fabric range or a live stock list.', 'myathletik-child' ); ?></p>
 			</div>
 			<div class="ma-fabric-library__edition">
-				<span><?php esc_html_e( '2025 selection', 'myathletik-child' ); ?></span>
+				<span><?php esc_html_e( 'In this library', 'myathletik-child' ); ?></span>
 				<strong><?php echo esc_html( count( $fabrics ) ); ?> <?php esc_html_e( 'references', 'myathletik-child' ); ?></strong>
 				<span><?php echo esc_html( min( $weights ) . '–' . max( $weights ) ); ?> GSM</span>
 			</div>
 		</header>
+		<div class="ma-fabric-library__collections" aria-label="<?php esc_attr_e( 'Collections represented in this library', 'myathletik-child' ); ?>">
+			<p class="ma-fabric-library__collections-label"><?php esc_html_e( 'Currently included', 'myathletik-child' ); ?></p>
+			<ul class="ma-fabric-library__collection-list">
+				<li><strong><?php esc_html_e( 'Merino wool', 'myathletik-child' ); ?></strong><span><?php esc_html_e( '2025 collection', 'myathletik-child' ); ?></span></li>
+			</ul>
+		</div>
 		<div class="ma-fabric-library__controls" data-fabric-controls role="search" aria-label="<?php esc_attr_e( 'Filter fabric references', 'myathletik-child' ); ?>" hidden>
 			<label class="ma-fabric-library__search" for="ma-fabric-search"><span><?php esc_html_e( 'Find a reference', 'myathletik-child' ); ?></span><input type="search" id="ma-fabric-search" placeholder="<?php esc_attr_e( 'Fabric code or fiber', 'myathletik-child' ); ?>" data-fabric-search aria-controls="ma-fabric-results" autocomplete="off"></label>
 			<label for="ma-fabric-group"><span><?php esc_html_e( 'Composition', 'myathletik-child' ); ?></span><select id="ma-fabric-group" data-fabric-group aria-controls="ma-fabric-results"><option value="all"><?php esc_html_e( 'All compositions', 'myathletik-child' ); ?></option><option value="pure">100% Merino wool</option><option value="blend"><?php esc_html_e( 'Merino wool blends', 'myathletik-child' ); ?></option><option value="layered"><?php esc_html_e( 'Layered compositions', 'myathletik-child' ); ?></option></select></label>
