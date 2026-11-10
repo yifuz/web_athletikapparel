@@ -4760,6 +4760,7 @@ body.page .container.grid-container:has(.ma-product-category) {
 .ma-fabric-card h3 { margin: 0; font-size: var(--ma-fs-h3); font-family: var(--ma-font-head); }
 .ma-fabric-card__weight { display: grid; margin: 0; flex-shrink: 0; text-align: right; color: var(--ma-color-accent-2); }
 .ma-fabric-card__weight strong { font-family: var(--ma-font-head); font-size: var(--ma-fabric-weight-size); line-height: 1; }
+.ma-fabric-card__weight--range strong { font-size: var(--ma-fs-h3); }
 .ma-fabric-card__weight span { font-size: var(--ma-fs-small); margin-top: var(--ma-space-1); }
 .ma-fabric-card__composition {
   display: grid;

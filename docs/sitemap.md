@@ -107,14 +107,14 @@
 | Knitted Fabrics | `/knitted-fabrics-manufacturer/` | Knitted Fabrics Manufacturer | `/products/knitted-fabrics/` |
 | Sports Accessories | `/sports-accessories-manufacturer/` | Sports Accessories Manufacturer | `/products/sports-accessories/` |
 
-### 代表性面料库——首批 2025 羊毛选样（2026-11-10 Local 审核）
+### 代表性面料库（2026-11-10 Local 审核）
 
 所有者批准在现有 Knitted Fabrics 页增加规格库，并从 Merino 页关联，不新增独立面料页面或 URL。此项仅 Local，未部署；见[实施与部署清单](site/fabric-library-2026-11-10.md)。
 
-- `/knitted-fabrics-manufacturer/#merino-fabric-examples`：既有组织结构介绍后展示 24 款料号／成分／GSM 规格卡，搜索、筛选与分页控制高度；无对应实拍时不填充通用纹理图片。
+- `/knitted-fabrics-manufacturer/#merino-fabric-examples`：既有组织结构介绍后展示 97 款料号／成分／GSM 规格卡（原 24 款加近期 73 款），搜索、多纤维筛选与分页控制高度；无对应实拍时不填充通用纹理图片。
 - `/merino-wool-manufacturer/#merino-yarn-sourcing-and-fabric-development`：原区块内加入 3 个精选料号入口，跳转面料页具体卡片；不增加另一整段长列表。
 - 2025 仅代表来源合集，不表述为全部面料或实时库存；两款分层成分分别展示。既有页面 H1、SEO 元数据、Schema、canonical 及成衣 Showcase 结构不变。
-- 所有者随后明确将加入其他非 Merino 面料：总标题为 `Fabric selection library`，通用简介不绑定纤维或年份；当前 `Merino wool / 2025 collection` 单独列为已收录系列。旧锚点为兼容入口保留，不代表面料库只限 Merino；其他系列待收到真实资料后加入，不显示虚构或空的选项。
+- 总标题为 `Fabric selection library`，通用简介不绑定纤维或年份；当前收录栏分别标记 `Recent fabric references / HY24 · HY25 · HY26` 与 `Merino wool / 2025 collection`。旧锚点为兼容入口保留，不代表面料库只限 Merino；新增资料与待核实记录见[扩充记录](site/fabric-library-expansion-2026-11-10.md)，不显示虚构或空的选项。
 
 ### 产品中心——首页产品区块（当前实现）
 

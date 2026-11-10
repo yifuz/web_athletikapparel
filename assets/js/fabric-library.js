@@ -24,19 +24,27 @@
       return value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
     }
 
+    // Material options come from the same PHP registry as the cards. A blended
+    // reference may match several materials; do not force it into one family.
+    var materialValues = Array.from(group.options).map(function (option) { return option.value; });
+    if (!materialValues.includes('all') || materialValues.length < 2) return;
     var records = cards.map(function (card) {
       return {
         card: card,
         text: normalize((card.dataset.ref || '') + ' ' + (card.dataset.composition || '')),
-        group: card.dataset.group,
-        gsm: Number(card.dataset.gsm),
+        materials: (card.dataset.materials || '').trim().split(/\s+/).filter(Boolean),
+        gsmMin: Number(card.dataset.gsmMin),
+        gsmMax: Number(card.dataset.gsmMax),
         parent: card.parentNode
       };
     });
     // An incomplete template must retain its original, expandable reference groups.
     if (records.some(function (record) {
       return !record.card.id || !record.card.dataset.ref || !record.card.dataset.composition ||
-        !['pure', 'blend', 'layered'].includes(record.group) || !Number.isFinite(record.gsm) || record.gsm <= 0;
+        !record.materials.length || record.materials.some(function (material) {
+          return material === 'all' || !materialValues.includes(material);
+        }) || !Number.isFinite(record.gsmMin) || !Number.isFinite(record.gsmMax) ||
+        record.gsmMin <= 0 || record.gsmMax < record.gsmMin;
     })) return;
 
     var moreGroups = Array.from(root.querySelectorAll('[data-fabric-more]')).map(function (node) {
@@ -80,12 +88,14 @@
       next.setAttribute('aria-disabled', String(!pageCount || currentPage >= pageCount - 1));
     }
 
-    function weightMatches(gsm) {
+    // Preserve source ranges: include a reference wherever its stated GSM
+    // interval overlaps the selected band, rather than picking a midpoint.
+    function weightMatches(record) {
       switch (weight.value) {
-        case 'under-150': return gsm < 150;
-        case '150-199': return gsm >= 150 && gsm < 200;
-        case '200-249': return gsm >= 200 && gsm < 250;
-        case '250-plus': return gsm >= 250;
+        case 'under-150': return record.gsmMin < 150;
+        case '150-199': return record.gsmMax >= 150 && record.gsmMin < 200;
+        case '200-249': return record.gsmMax >= 200 && record.gsmMin < 250;
+        case '250-plus': return record.gsmMax >= 250;
         default: return true;
       }
     }
@@ -93,7 +103,7 @@
     function filterRecords() {
       var terms = normalize(search.value).split(/\s+/).filter(Boolean);
       matches = records.filter(function (record) {
-        return (group.value === 'all' || record.group === group.value) && weightMatches(record.gsm) &&
+        return (group.value === 'all' || record.materials.includes(group.value)) && weightMatches(record) &&
           terms.every(function (term) { return record.text.includes(term); });
       });
       currentPage = 0;

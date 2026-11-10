@@ -4,15 +4,14 @@ if ( ! defined( 'ABSPATH' ) || empty( $args['fabric'] ) ) {
 	return;
 }
 $fabric = $args['fabric'];
-$groups = array( 'pure' => __( '100% Merino wool', 'myathletik-child' ), 'blend' => __( 'Merino wool blend', 'myathletik-child' ), 'layered' => __( 'Layered composition', 'myathletik-child' ) );
 ?>
-<article class="ma-fabric-card" id="fabric-<?php echo esc_attr( strtolower( $fabric['ref'] ) ); ?>" tabindex="-1" data-fabric-card data-ref="<?php echo esc_attr( $fabric['ref'] ); ?>" data-composition="<?php echo esc_attr( implode( ' ', $fabric['composition'] ) ); ?>" data-group="<?php echo esc_attr( $fabric['group'] ); ?>" data-gsm="<?php echo esc_attr( $fabric['gsm'] ); ?>">
+<article class="ma-fabric-card" id="fabric-<?php echo esc_attr( strtolower( $fabric['ref'] ) ); ?>" tabindex="-1" data-fabric-card data-ref="<?php echo esc_attr( $fabric['ref'] ); ?>" data-composition="<?php echo esc_attr( implode( ' ', $fabric['composition'] ) ); ?>" data-materials="<?php echo esc_attr( implode( ' ', $fabric['materials'] ) ); ?>" data-gsm="<?php echo esc_attr( $fabric['gsm'] ); ?>" data-gsm-min="<?php echo esc_attr( $fabric['gsm_min'] ); ?>" data-gsm-max="<?php echo esc_attr( $fabric['gsm_max'] ); ?>">
 	<div class="ma-fabric-card__head">
 		<div>
-			<p class="ma-fabric-card__kind"><?php echo esc_html( $groups[ $fabric['group'] ] ); ?></p>
+			<p class="ma-fabric-card__kind"><?php echo esc_html( $fabric['kind'] ); ?></p>
 			<h3><?php echo esc_html( $fabric['ref'] ); ?></h3>
 		</div>
-		<p class="ma-fabric-card__weight"><strong><?php echo esc_html( $fabric['gsm'] ); ?></strong><span>GSM</span></p>
+		<p class="ma-fabric-card__weight<?php echo $fabric['gsm_min'] !== $fabric['gsm_max'] ? ' ma-fabric-card__weight--range' : ''; ?>"><strong><?php echo esc_html( $fabric['gsm'] ); ?></strong><span>GSM</span></p>
 	</div>
 	<dl class="ma-fabric-card__composition">
 		<?php foreach ( $fabric['composition'] as $label => $value ) : ?>
