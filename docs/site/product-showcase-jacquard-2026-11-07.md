@@ -1,6 +1,6 @@
-# Jacquard Merino-Mix 套装：本地接入与审核记录
+# Jacquard Merino-Mix 套装：接入、审核与发布记录
 
-日期：2026-11-07。状态：`local-review / not-deployed`。所有者已授权本地建页、四段视频与简短英文草稿；**不等于批准正文或生产发布**。日常提交只保留本地，未推送。
+建档日期：2026-11-07；发布更新：2026-11-10。状态：`deployed / production-verified`。所有者于 2026-11-10 明确“允许上线，你来部署上线吧”，本批已通过专用 SSH 发布。以下本地审核条目保留历史过程，当前生产结果以第 5 节为准。Git 提交保留本地，未推送。
 
 ## 1. 确认范围与资料
 
@@ -50,9 +50,9 @@
 - 后续语义修正仅三项：特点行采用上述所有者确认的穿着特性；`Suggested use` 从产品形式改为 `Base layering`；定制项以 `Front opening` 表达 `Quarter zip / your opening specification`，不再混称领型。本次不改简介、SEO、媒体、样式或数据库，代码部署增量仍只有 `inc/product-example-data.php`。
 - 三项修正后，1440／1024／768／360px 文案断言及无横向溢出检查通过；详情、展示库、Merino 预览、Contact 预填继续不含已撤出的技术指令。旧两款数据与新款媒体哈希保持不变；无表单提交，未推送或部署。
 
-## 4. 后续获准上线时的准确清单
+## 4. 本次批准并执行的部署清单
 
-当前未进行任何生产操作。审核通过后按 `docs/operations/flywheel-ssh-deployment.md` 备份、传输和验收。
+所有者已于 2026-11-10 批准本批，按 `docs/operations/flywheel-ssh-deployment.md` 完成备份、传输及验收；具体结果见下一节。
 
 本记录及客户来源材料仅供内部核验，**不在对外部署清单中**；不得把 docs、测试快照或原 PDF 随主题代码整目录上传。
 
@@ -88,3 +88,21 @@
 本次对外文案收敛的代码增量只有 `inc/product-example-data.php`，没有新增媒体。Local 已精准同步 ID 85 的 fallback 简介；生产尚无此款页面，后续获准建页时从最新数据生成即可，不需要额外更新原两款数据库记录。
 
 激活顺序：先准备新媒体、兼容的模板／JS／样式／setup，`inc/product-showcase.php` 中的新预览函数须先于调用它的 `entry.php` 激活，再启用新数据与建页；记录实际生产 ID。验证普通正式 URL、缓存、四视频动态播放、原两款回归、展示库三款／Merino 预览两款、询盘、canonical 和正式 Sitemap 后才能标记生产验收完成。
+
+## 5. 2026-11-10 生产发布与验收
+
+- 授权：所有者批准上述审核版本上线；覆盖新增提花套装、四段视频、Merino 两款预览、技术细节收敛与最终穿着特性文案。不包含之后提出的 2025 代表性面料模块。
+- 目标与意图：新款作为真实成衣与 OEM 开发参考；Merino 品类页只提供两款预览，Showcase 总页保留完整产品。没有更改旧 URL，无 301 操作。
+- 版本：运行时代码固定取自 `9f9d033`，并核对当前文件一致；之后的本地提交仅为其他任务文档，不上传。
+- 生产预检：正式域名、`production` 环境、`myathletik-child` 活动主题及 theme／uploads 路径均匹配。8 个旧文件与上一版 `1638b93` 逐字节规范化比对一致，没有发现独立线上修改。
+- 私有备份：`C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-10-9f9d033-jacquard-20261110T055930Z`。包含原 8 文件、原 ID 105／106／107 的 post 与 metadata、新路径不存在的记录，以及文件哈希、大小、权限和实际步骤 manifest；不在公开目录或 Git。
+- 实际部署：第 4 节全部 8 个代码文件和 13 个新增媒体（36,210,898 bytes）已完成同目录临时文件校验后替换／新增。6 个 PHP 文件服务器语法检查通过；新预览函数先于入口激活。全部 21 个生产文件的 SHA-256、大小和权限与清单一致，无回退。
+- 数据库：仅新建生产页面 **ID 109**，父页为现有 Showcase **ID 105**，路径 `/product-showcase/womens-wool-jacquard-base-layer-set/`。仅该新页写入归属、布局与核准 SEO metadata；先 draft，验证后 publish。未调用全库 setup，未同步 Local 数据库；旧 ID 105／106／107 的完整 post／metadata 前后相同。重复调用返回 `changed=false`、ID 109，不重复建页。生产 `blog_public=1`，新页 `index, follow`。
+- 执行中只读建页预检首次因 WP-CLI 未自动加载后台 setup helper 而失败；补充显式 `require_once` 后预检通过。该失败发生在数据库写入前，没有改动生产业务逻辑或旧页。
+- HTTP／SEO：新详情、总页、Merino、原两款及首页共 6 个普通正式 URL 返回 200；各一处 H1、description、正确 canonical／OG URL，无 Local 地址或 noindex 泄漏。新页 title／description／H1 与批准数据相同，ItemPage／BreadcrumbList 正常，没有新增 Product／Offer／VideoObject。Page Sitemap 中新 URL 恰好一条，robots.txt 允许抓取；这不代表 Google 已收录或已经提交索引请求。
+- 资源：13 个媒体均返回 200 且 MIME 正确，4 个 MP4 的 Range 请求均为 206。分享 JPEG 的 HTTP gzip 传输长度为 48,250 bytes，解码后为 49,053 bytes，解码 SHA-256 与源文件完全一致；首次测试把传输长度与原文件大小直接比较而误报，已按 Content-Encoding 修正测试并复核。不是图片被改写或上传不完整。
+- 浏览器：独立 Chrome 29 组检查通过。1440／1024／768／360px 新详情、Hub、Merino 无横向溢出；1440／360px 四视频真实 currentTime 增长、正确 src／poster、关闭暂停并恢复焦点，总按钮恢复 overview；原两款 4 张照片／单视频回归通过。初始不请求新款 MP4；无 JS 时四视频和四照片直达链接可用。
+- 入口与询盘：普通 URL 下 Hub 三款、Merino 两款及料号搜索正确；首页仍为 Ocean Depth。Contact 正确预填 Merino Wool、两项已更正货号、240 GSM 和新 URL，未提交表单。没有发现旧缓存，不需要所有者手动清缓存。
+- 检查边界：隔离第三方 Cookiebot、统计及 Turnstile 请求，因此不将本次结果表述为同意管理／统计／完整表单投递验收。页面脚本错误与本站 HTTP 错误均为 0；服务器既有 `fileperms(/www/.wordpress/)` CLI 警告不影响命令退出和实际页面，未修改平台核心。
+- 证据：忽略目录 `.chrome-check/jacquard-deploy-manifest-20261110.json`、`jacquard-production-seo-20261110.json`、`jacquard-production-independent-20261110.json`、`jacquard-social-http-check.json` 及对应截图；内部资料和测试脚本均未上传。
+- Finding outcome：`verified`。本批无未完成部署项；后续 2025 面料模块需单独确认结构并先做 Local 审核。Git 与生产分开：本批未推送远程，发布记录保留本地提交。

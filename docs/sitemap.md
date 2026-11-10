@@ -124,19 +124,19 @@
 - `/product-showcase/ocean-depth-merino-wool-blend-set/`：H1 `Women's Merino wool-blend top & leggings`，承接单款规格与开发参考；沿用真实成分、155 GSM、HY254955。
 - `/product-showcase/mens-merino-tencel-mesh-long-sleeve-shirt/`：H1 `Men's Merino wool-Tencel mesh long-sleeve T-shirt`，HY265077、80% Tencel / 20% Merino wool、115 GSM。2026-11-04 视频获批并接入 Local，已纳入所有者批准的整包部署；见[接入记录](site/product-showcase-hy265077-2026-11-04.md)。
 - 入口：首页七品类区块后、Merino 原图库后、Products 下拉菜单；产品详情回链 Merino 能力页和展示库，并进入 Contact 项目询盘。
-- 首页保留 Ocean Depth 特色卡与展示库总入口；2026-11-04 生产版 Merino 页按有效的已发布产品循环展示，已上线两款；下述 Local 新款及两款上限改版未部署。
+- 首页保留 Ocean Depth 特色卡与展示库总入口；2026-11-10 已发布下述新款及两款上限改版，Merino 只显示最近发布的两款有效产品，Showcase 总页保留三款。
 - 后续产品复用数据与模板，每个实物仅一个详情 URL；只有已发布且有效的页面出现在卡片和导航中。七个既有商业品类 URL 与关键词任务不变，不创建 `/products/`。
 - Local／staging 保留 noindex 并排除 Sitemap；production 发布后的正式页按站点与页面索引设置参与 Sitemap。不是把本地 noindex 元数据复制上线。
 
 部署步骤、文件及验收见[发布候选记录](site/product-showcase-release-candidate-2026-11-03.md)。没有改动已上线 URL，因此本轮无 301 映射。
 
-#### 新款本地审核（2026-11-07，未上线）
+#### 新款审核与发布（2026-11-07 接入，2026-11-10 上线）
 
-- 所有者确认新路径 `/product-showcase/womens-wool-jacquard-base-layer-set/`，H1 `Women's wool jacquard base-layer set`；Local ID 85，产品 key `womens-wool-jacquard-set`。
+- 所有者确认新路径 `/product-showcase/womens-wool-jacquard-base-layer-set/`，H1 `Women's wool jacquard base-layer set`；Local ID 85，生产 ID 109，产品 key `womens-wool-jacquard-set`。
 - 主提花面料 HY254931：65% Polyester / 25% Merino wool / 10% Nylon，240 GSM；HY254888 拼接面料单独列示，不将主面料成分或克重推广到整件。编号以所有者 2026-11-07 对原 PDF 的更正为准；资料边界见[本地接入记录](site/product-showcase-jacquard-2026-11-07.md)。
-- 4 段视频复用单个按需播放弹窗；本地展示库及 Merino 入口新增此款，首页特色款不变。保留 noindex／Sitemap 排除；英文草稿和页面尚待所有者审核，无生产发布授权。
+- 4 段视频复用单个按需播放弹窗；所有者 2026-11-10 批准上线后，生产展示库及 Merino 入口已接入此款，首页特色款不变。Local 保留 noindex／Sitemap 排除；生产 index／follow、canonical 和 Page Sitemap 条目已核验。
 - 对外表达按已发布两款收敛为产品概览、基础材料与通用定制方向；保留主提花面料成分／克重及两项参考号，不公开客户技术包中的具体尺寸、缝型、内部层次和打样指令。Local 单款 fallback 简介已同步，URL／标题／metadata 及原两款不变。
-- 所有者随后限定 Merino 入口最多两款：Local 按有效已发布 Merino 页面首次发布时间降序选取（同时间按 ID 降序），桌面双列、小屏横滑，仅作紧凑预览。新增产品不再无限向下追加；完整产品仍由原 `View all product examples` 链接进入 Showcase，首页特色款不变。
+- 所有者随后限定 Merino 入口最多两款：Local 与生产均按有效已发布 Merino 页面首次发布时间降序选取（同时间按 ID 降序），桌面双列、小屏横滑，仅作紧凑预览。新增产品不再无限向下追加；完整产品仍由原 `View all product examples` 链接进入 Showcase，首页特色款不变。
 - 不改现有 URL，不需要 301。日常验证后仅保留本地提交，按当前 `AGENTS.md` 阶段性批量推送规则处理。
 
 ---

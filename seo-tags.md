@@ -44,12 +44,12 @@ yoga apparel. Integrated knit fabric development, FLATLOCK and ACTIVESEAM.
 
 两页分享图：`uploads/myathletik-theme/assets/images/product-examples/ocean-depth/front-social.jpg`。不声明成衣现货、售价、性能测试结果或未经确认的工艺参数。
 
-### Jacquard 套装 `/product-showcase/womens-wool-jacquard-base-layer-set/`（仅 Local，待审核）
+### Jacquard 套装 `/product-showcase/womens-wool-jacquard-base-layer-set/`（2026-11-10 已发布）
 **H1:** Women's wool jacquard base-layer set
 **SEO Title:** Women's Wool Jacquard Base-Layer Set | Athletik Clothing
 **Meta Description:** Explore a women's jacquard base-layer set with a quarter-zip top and leggings. View four product videos and 240 GSM Merino wool-blend fabric details.
 
-分享图：`uploads/myathletik-theme/assets/images/product-examples/womens-wool-jacquard-set/front-social.jpg`。主提花与拼接面料分别描述；四段视频不是性能测试证据。Local 强制 noindex，未向生产写入页面或 metadata。
+分享图：`uploads/myathletik-theme/assets/images/product-examples/womens-wool-jacquard-set/front-social.jpg`。主提花成分／GSM 的适用范围明确，不公开客户技术结构细节；四段视频不是性能测试证据。Local 强制 noindex；2026-11-10 所有者批准发布，生产 ID 109，title／description／canonical／index-follow／分享图／Sitemap 已验收。
 
 ================================================================
 ## Product category pages
