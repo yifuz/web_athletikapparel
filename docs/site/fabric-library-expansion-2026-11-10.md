@@ -1,6 +1,6 @@
 # 面料库扩充：HY24／HY25／HY26 与生产发布记录
 
-日期：2026-11-10。当前状态：`deployed / cache-verification-pending`。所有者已批准当天改动上线，9 文件已发布；普通浏览器仍命中旧 HTML 缓存，待 Flywheel 刷新后完成验收。Git 未推送。下文 Local 状态保留为研发历史，最终发布状态以下方第 6 节为准。
+日期：2026-11-10。当前状态：`deployed / production-verified`。所有者已批准当天改动上线，9 文件已发布；2026-11-13 使用普通正式网址完成浏览器验收。Git 未推送。下文 Local 与缓存待验收状态保留为历史，最终状态见第 6 节末尾。
 
 ## 1. 授权与范围
 
@@ -131,3 +131,11 @@
 - 缓存处理：只读核查当前 WP-CLI 没有平台页面缓存命令，标准 `wp cache flush` 仅是 Object Cache，未误用或伪造平台事件。已请所有者按 [Flywheel 官方步骤](https://getflywheel.com/wordpress-support/how-do-i-clear-my-cache/)在 Advanced → Flush Cache 刷新，随后继续普通 URL 验收；没有用查询参数或强制绕缓存请求冒充通过。
 - 证据：`.chrome-check/fabric-deploy-manifest-20261110.json`、`fabric-production-20261110-baseline.json`、`fabric-production-cache-20261110.json`、`fabric-production-cache-20261110-standard.json`；均 Git 忽略。
 - Finding outcome：代码发布已完成，**普通浏览器功能／缓存最终验收待完成**，不标记 `production-verified`。Git 未推送；记录先保存本地。
+
+### 2026-11-13 正式页面复验
+
+- 以普通正式网址、Chrome 无头浏览器复验，未使用缓存绕过；Knitted Fabrics 返回新版，97 款完整加载，Merino 的 3 个精选入口及跳转均正常。未确认用户是否手动刷新缓存，不推断旧缓存消失的原因。
+- 1440、360、320px 面料库分页检查通过，Next 鼠标点击与 Previous 键盘操作视口滚动差值均为 0；1440、360px 的 8 类纤维、4 档 GSM、搜索／无结果／重置通过。关闭 JavaScript 后，97 款及指定料号锚点可访问。
+- 6 个正式页面 HTTP 200、单 H1，title／description／canonical／robots 与部署前基线一致；首页、Sportswear、Showcase 列表及 Jacquard 页面 360px 基础回归通过。未提交表单。
+- 验收脚本最初将同页锚点导航返回空响应误判为失败，修正测试脚本后完整重跑：18 项通过，页面脚本错误及本站 HTTP 错误为 0。证据为 `.chrome-check/fabric-production-20261110-verified.json` 及对应截图；测试阻断第三方请求，因此不构成 Cookiebot、分析或 Turnstile 的验收。
+- 当前结果：`deployed / production-verified`；替代上方 11-10 缓存待验收状态。

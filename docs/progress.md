@@ -19,7 +19,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.1 网站与内容
 
-- 2026-11-10 所有者批准当天改动，已通过专用 SSH [发布完整 97 款面料库](site/fabric-library-expansion-2026-11-10.md#6-2026-11-10-生产发布缓存验收未完成)：冻结 `1e2b88f`，9 个运行时代码文件（3 替换／6 新增），私有备份、7 PHP 语法及 9 文件哈希／大小／权限验证通过；6 个相关页面 post／metadata 不变，无媒体／数据库操作，未推送。普通 Chrome 仍命中 Flywheel 旧 HTML，已请求所有者 Advanced → Flush Cache，状态为 `deployed / cache-verification-pending`，不能写为生产验收完成。下列面料库 Local 条目为研发历史，当前发布状态以本条为准。
+- 2026-11-10 所有者批准当天改动，已通过专用 SSH [发布完整 97 款面料库](site/fabric-library-expansion-2026-11-10.md#6-2026-11-10-生产发布缓存验收未完成)：冻结 `1e2b88f`，9 个运行时代码文件（3 替换／6 新增），私有备份、7 PHP 语法及 9 文件哈希／大小／权限验证通过；6 个相关页面 post／metadata 不变，无媒体／数据库操作，未推送。11-13 普通正式网址浏览器复验 18 项通过，97 款、筛选、翻页不跳动、Merino 入口和无 JS 回退正常；状态为 `deployed / production-verified`。未确认缓存是否由用户手动刷新。下列 Local 条目为研发历史。
 - 2026-11-10 已按所有者确认制作 [2025 代表性面料库 Local 审核版](site/fabric-library-2026-11-10.md)：现有 Knitted Fabrics 页加入 24 款料号／成分／GSM 规格卡，带搜索、筛选和分页；Merino 既有面料开发区块加入 3 个精选入口，不新增独立页面或图片。原图规格已双重复核，明确代表性选样而非完整范围／实时库存，内外层成分分列。当前 `local-review / not-deployed`，8 个运行时代码文件、无媒体／数据库操作；不包含在同日 Jacquard 上线授权内，待 Local 审核后另行决定发布。
 - 同日按所有者审核意见简化面料规格卡：移除 `View garment example`，统一桌面／平板卡片基准高度，手机按内容自然撑开；规格数据、筛选／分页、Merino 精选入口和既有 Showcase 不变。此修订仅 2 个代码文件，仍属于上述未上线面料库的 Local 审核范围。
 - 所有者随后确认两页分工，已将完整库标题明确为 `Merino wool fabric selection`；Merino 保留 3 款精选，增加代表性范围提示及带数量的查看全部入口。没有搬动或复制完整库，不新增页面，本轮表达微调仅 3 个代码文件，仍仅 Local 待审核。
