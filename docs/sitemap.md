@@ -152,6 +152,7 @@
 
 - 所有者确认 `/product-showcase/mens-half-zip-fleece-top/`，H1 `Men's half-zip fleece top`，关联 Outdoor Clothing；Local ID 87。数据、文案和媒体仍待审核，未部署生产。
 - 产品规格与媒体边界、Local 验收及未来获准发布清单见[本地接入记录](site/product-showcase-fleece-2026-11-13.md)。原 Showcase 及品类 URL 不变，不涉及 301。
+- 所有者另要求参考 Merino 在 Outdoor 产品范围之后加入精选入口；Local 采用最多两款、无有效产品自动隐藏的共用逻辑，单款桌面居中限宽。入口与该产品均未获生产部署授权，细节见同一记录。
 
 ---
 

@@ -18,10 +18,17 @@
 - Contact 正确预填 Outdoor Clothing、HY254900 和 250 GSM；未提交表单。禁用 JS 时视频与四张图片的直达链接可用。页面脚本及本站 HTTP 错误为 0；阻断第三方请求，因此不属于 Cookiebot、统计或完整表单投递验收。
 - 证据：`.chrome-check/fleece-local-qa-20261113.json`、`fleece-product-{1440,1024,768,360}.png`、建页前快照；均不进 Git 或生产。Local PHP CLI 既有 imagick 加载警告未处理，PHP 语法及实际页面检查通过。
 
+## Outdoor 页面入口（Local 审核）
+
+- 所有者要求参考 Merino 的 Product Showcase 入口，在 Outdoor 产品分类介绍之后、生产能力之前加入 `Outdoor clothing product examples`；单款时桌面居中限宽，手机完整显示。卡片复用现有图片、名称、面料克重、货号和详情链接，不新复制媒体、不预取视频。
+- 复用 Merino 的服务端精选逻辑：只显示对应类目中有效且公开的产品，按首次发布时间及 ID 选择最新两款；无可展示产品时隐藏区块，两款在桌面并排、手机原生横滑，并提供键盘焦点与提示。完整入口链接至现有 Showcase 总页。
+- Local Chrome 在 1440／1024／768／360／320px 检查单卡、链接、位置、页面横溢出及零视频请求；浏览器内模拟第二张卡，验证双列和小屏横滑。独立纯内存测试实际服务端筛选及零／一／两款输出、未公开或密码保护产品排除、无效 Hub 隐藏；不修改数据库。Merino 五档宽度及手机键盘操作、首页、Sportswear 和 Outdoor 无 JS 详情跳转回归通过。证据见 `.chrome-check/outdoor-preview-qa-20261113.json` 及对应截图。
+- 本入口增量为 `template-parts/product-category/page.php`、`template-parts/product-showcase/entry.php`、`template-parts/product-showcase/card.php`、`style.css`；不新增媒体、不改数据库。仅 Local，需与待审核的摇粒绒详情一起确认上线；若生产暂无有效 Outdoor 产品，入口自动隐藏。
+
 ## 未来获准上线的部署清单
 
 尚未获上线授权。届时先按专用 SSH 流程备份和检查生产状态，仅在所有者审核通过后部署：
 
-- 代码：`inc/product-example-data.php`。须比对届时完整文件与生产差异，避免夹带未批准的数据。
+- 代码：`inc/product-example-data.php`，以及 Outdoor 入口的 `template-parts/product-category/page.php`、`template-parts/product-showcase/entry.php`、`template-parts/product-showcase/card.php`、`style.css`，合计 5 个。须比对届时完整文件与生产差异，避免夹带未批准的数据。
 - 媒体：`uploads/myathletik-theme/assets/images/product-examples/mens-half-zip-fleece/` 下 `front-640.webp`、`front-1280.webp`、`back-view-640.webp`、`back-view-1280.webp`、`collar-zip-detail-640.webp`、`collar-zip-detail-1280.webp`、`pocket-detail-640.webp`、`pocket-detail-1280.webp`、`front-social.jpg`、`fleece-overview-1080.mp4` 共 10 个文件，不整目录同步其他媒体。
 - 数据库：仅精准新建此产品的生产页面及对应 SEO metadata，关联既有 Showcase 父页；不可直接复制 Local ID、整库同步或运行会批量发布其他产品的操作。核对新路径空闲、旧页面不变及生产 noindex／canonical／Sitemap 后再交付。

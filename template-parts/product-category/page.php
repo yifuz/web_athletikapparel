@@ -469,6 +469,10 @@ if ( ! empty( $category['hero_video'] ) ) {
 	</section>
 	<?php endif; ?>
 
+	<?php if ( 'outdoor-clothing-manufacturer' === $category_slug && function_exists( 'myathletik_product_showcase_enabled' ) && myathletik_product_showcase_enabled() ) : ?>
+		<?php get_template_part( 'template-parts/product-showcase/entry', null, array( 'context' => 'outdoor' ) ); ?>
+	<?php endif; ?>
+
 	<?php if ( ! empty( $category['seamless_program']['options'] ) && is_array( $category['seamless_program']['options'] ) ) : ?>
 	<section class="ma-product-section ma-product-seamless" aria-labelledby="ma-product-seamless-title">
 		<div class="ma-section-inner">

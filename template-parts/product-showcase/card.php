@@ -2,7 +2,7 @@
 /**
  * One product record rendered for the library or a related category entry.
  *
- * @param array $args product_key and context (library, home, merino).
+ * @param array $args product_key and context (library, home, merino, outdoor).
  * @package myathletik-child
  */
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,7 +14,7 @@ if ( ! function_exists( 'myathletik_product_showcase_enabled' ) || ! myathletik_
 $product_key = isset( $args['product_key'] ) ? sanitize_key( $args['product_key'] ) : 'ocean-depth';
 $context     = isset( $args['context'] ) ? $args['context'] : 'library';
 $products    = myathletik_product_showcase_products();
-if ( ! isset( $products[ $product_key ] ) || ! in_array( $context, array( 'library', 'home', 'merino' ), true ) ) {
+if ( ! isset( $products[ $product_key ] ) || ! in_array( $context, array( 'library', 'home', 'merino', 'outdoor' ), true ) ) {
 	return;
 }
 $product = $products[ $product_key ];
