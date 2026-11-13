@@ -30,7 +30,7 @@ yoga apparel. Integrated knit fabric development, FLATLOCK and ACTIVESEAM.
 ================================================================
 ## Product Showcase（分批发布）
 
-用途：实物产品发现与规格参考；既有 manufacturer 页面继续拥有采购能力类主词。展示库、Ocean Depth 与 HY265077 已于 2026-11-04 发布；Jacquard 套装已于 2026-11-10 发布；男款半拉链摇粒绒为 2026-11-13 Local 审核稿，发布状态见 `docs/progress.md`。
+用途：实物产品发现与规格参考；既有 manufacturer 页面继续拥有采购能力类主词。展示库、Ocean Depth 与 HY265077 已于 2026-11-04 发布；Jacquard 套装已于 2026-11-10 发布；男款半拉链摇粒绒及上衣紧身裤套装已于 2026-11-13 发布，详情见 `docs/progress.md`。
 
 ### Library `/product-showcase/`
 **H1:** Product Showcase
@@ -51,19 +51,19 @@ yoga apparel. Integrated knit fabric development, FLATLOCK and ACTIVESEAM.
 
 分享图：`uploads/myathletik-theme/assets/images/product-examples/womens-wool-jacquard-set/front-social.jpg`。主提花成分／GSM 的适用范围明确，不公开客户技术结构细节；四段视频不是性能测试证据。Local 强制 noindex；2026-11-10 所有者批准发布，生产 ID 109，title／description／canonical／index-follow／分享图／Sitemap 已验收。
 
-### 男款半拉链摇粒绒 `/product-showcase/mens-half-zip-fleece-top/`（Local 审核草稿）
+### 男款半拉链摇粒绒 `/product-showcase/mens-half-zip-fleece-top/`（已上线）
 **H1:** Men's half-zip fleece top
 **SEO Title:** Men's Half-Zip Fleece Top | Athletik Clothing
 **Meta Description:** Explore a men's half-zip fleece top in 250 GSM polyester fabric. View the product video, fabric reference and OEM development options.
 
-分享图：`uploads/myathletik-theme/assets/images/product-examples/mens-half-zip-fleece/front-social.jpg`。面料成分和克重仅对应 fleece fabric；待所有者审核后才能考虑生产发布。
+分享图：`uploads/myathletik-theme/assets/images/product-examples/mens-half-zip-fleece/front-social.jpg`。面料成分和克重仅对应 fleece fabric；生产 ID 111，title／description／canonical／index-follow／Sitemap 已验收。
 
-### 男款半拉链上衣及紧身裤 `/product-showcase/mens-half-zip-top-and-tights/`（Local 审核草稿）
+### 男款半拉链上衣及紧身裤 `/product-showcase/mens-half-zip-top-and-tights/`（已上线）
 **H1:** Men's half-zip top & tights
 **SEO Title:** Men's Half-Zip Top & Tights | Athletik Clothing
 **Meta Description:** Explore a men's half-zip top and tights in 180 GSM graphene polyester and elastane fabric, with two videos and product development options.
 
-分享图：`uploads/myathletik-theme/assets/images/product-examples/mens-half-zip-tights-set/front-social.jpg`。上下装使用同一面料；生成媒体与英文文案须经所有者审核，尚未部署生产。
+分享图：`uploads/myathletik-theme/assets/images/product-examples/mens-half-zip-tights-set/front-social.jpg`。上下装使用同一面料；生产 ID 113，title／description／canonical／index-follow／Sitemap 已验收。`ItemPage.name` 中 `&` 输出为字面 `&amp;`，旧 Ocean Depth 页面也存在同类现象，影响尚未证实，待后续排查；见[发布记录](docs/site/product-showcase-outdoor-release-2026-11-13.md)。
 
 ================================================================
 ## Product category pages

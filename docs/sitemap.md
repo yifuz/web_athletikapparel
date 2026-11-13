@@ -148,16 +148,16 @@
 - 所有者随后限定 Merino 入口最多两款：Local 与生产均按有效已发布 Merino 页面首次发布时间降序选取（同时间按 ID 降序），桌面双列、小屏横滑，仅作紧凑预览。新增产品不再无限向下追加；完整产品仍由原 `View all product examples` 链接进入 Showcase，首页特色款不变。
 - 不改现有 URL，不需要 301。日常验证后仅保留本地提交，按当前 `AGENTS.md` 阶段性批量推送规则处理。
 
-#### 男款半拉链摇粒绒（2026-11-13 Local 审核）
+#### 男款半拉链摇粒绒（2026-11-13 已上线）
 
-- 所有者确认 `/product-showcase/mens-half-zip-fleece-top/`，H1 `Men's half-zip fleece top`，关联 Outdoor Clothing；Local ID 87。数据、文案和媒体仍待审核，未部署生产。
-- 产品规格与媒体边界、Local 验收及未来获准发布清单见[本地接入记录](site/product-showcase-fleece-2026-11-13.md)。原 Showcase 及品类 URL 不变，不涉及 301。
-- 所有者另要求参考 Merino 在 Outdoor 产品范围之后加入精选入口；Local 采用最多两款、无有效产品自动隐藏的共用逻辑，单款桌面居中限宽。入口与该产品均未获生产部署授权，细节见同一记录。
+- 所有者确认 `/product-showcase/mens-half-zip-fleece-top/`，H1 `Men's half-zip fleece top`，关联 Outdoor Clothing；Local ID 87，生产 ID 111。
+- 产品规格与媒体边界、Local 验收见[接入记录](site/product-showcase-fleece-2026-11-13.md)；[生产发布记录](site/product-showcase-outdoor-release-2026-11-13.md)包含验收与待排查项。原 Showcase 及品类 URL 不变，不涉及 301。
+- 所有者另要求参考 Merino 在 Outdoor 产品范围之后加入精选入口；现已上线，采用最多两款、无有效产品自动隐藏的共用逻辑，单款桌面居中限宽。
 
-#### 男款半拉链上衣及紧身裤（2026-11-13 Local 审核）
+#### 男款半拉链上衣及紧身裤（2026-11-13 已上线）
 
-- 所有者确认 `/product-showcase/mens-half-zip-top-and-tights/`，H1 `Men's half-zip top & tights`，归入 Outdoor Clothing；Local ID 89。上下装同用 HY265048、180 GSM、86% Graphene Polyester / 14% Elastane。详情及 Outdoor 两款入口仅供本地审核，未部署生产。
-- 视频、生成画面审核边界和部署清单见[接入记录](site/product-showcase-half-zip-set-2026-11-13.md)；原有 URL 不变，不涉及 301。
+- 所有者确认 `/product-showcase/mens-half-zip-top-and-tights/`，H1 `Men's half-zip top & tights`，归入 Outdoor Clothing；Local ID 89，生产 ID 113。上下装同用 HY265048、180 GSM、86% Graphene Polyester / 14% Elastane。详情及 Outdoor 两款入口均已上线。
+- 视频与生成画面边界见[接入记录](site/product-showcase-half-zip-set-2026-11-13.md)；结构化数据字符编码待排查，见[生产发布记录](site/product-showcase-outdoor-release-2026-11-13.md)。原有 URL 不变，不涉及 301。
 
 ---
 
