@@ -19,6 +19,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.1 网站与内容
 
+- 2026-11-13 完成[男款半拉链上衣及紧身裤 Showcase Local 审核版](site/product-showcase-half-zip-set-2026-11-13.md)：所有者确认上下装同用 HY265048、180 GSM、86% Graphene Polyester / 14% Elastane；两段 Omni 成片及四组抽帧、Local 页面 ID 89，Outdoor 与摇粒绒一起展示双卡。多屏宽、视频播放、筛选、询盘预填及无 JS 回退通过；文字和生成画面待审核，未获准上线。
 - 2026-11-13 按所有者确认完成[男款半拉链摇粒绒 Showcase Local 审核版](site/product-showcase-fleece-2026-11-13.md)：HY254900、100% Polyester fleece fabric、250 GSM；完整视频及四张真实帧，Local 页面 ID 87。桌面／手机、视频实际播放、搜索筛选、询盘预填及无 JS 回退通过；仅本地审核，尚未获准上线。
 - 同日按要求参考 Merino 为 Outdoor 增加产品精选入口：单款居中、最多两款且无有效产品时隐藏；复用图片与卡片、不重复视频。Local 的五档屏宽、模拟双卡、零／一／两款边界及 Merino 回归通过，仍待所有者审核；增量 4 个代码文件、无新增媒体／数据库操作。
 - 2026-11-10 所有者批准当天改动，已通过专用 SSH [发布完整 97 款面料库](site/fabric-library-expansion-2026-11-10.md#6-2026-11-10-生产发布缓存验收未完成)：冻结 `1e2b88f`，9 个运行时代码文件（3 替换／6 新增），私有备份、7 PHP 语法及 9 文件哈希／大小／权限验证通过；6 个相关页面 post／metadata 不变，无媒体／数据库操作，未推送。11-13 普通正式网址浏览器复验 18 项通过，97 款、筛选、翻页不跳动、Merino 入口和无 JS 回退正常；状态为 `deployed / production-verified`。未确认缓存是否由用户手动刷新。下列 Local 条目为研发历史。

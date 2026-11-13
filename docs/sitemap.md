@@ -154,6 +154,11 @@
 - 产品规格与媒体边界、Local 验收及未来获准发布清单见[本地接入记录](site/product-showcase-fleece-2026-11-13.md)。原 Showcase 及品类 URL 不变，不涉及 301。
 - 所有者另要求参考 Merino 在 Outdoor 产品范围之后加入精选入口；Local 采用最多两款、无有效产品自动隐藏的共用逻辑，单款桌面居中限宽。入口与该产品均未获生产部署授权，细节见同一记录。
 
+#### 男款半拉链上衣及紧身裤（2026-11-13 Local 审核）
+
+- 所有者确认 `/product-showcase/mens-half-zip-top-and-tights/`，H1 `Men's half-zip top & tights`，归入 Outdoor Clothing；Local ID 89。上下装同用 HY265048、180 GSM、86% Graphene Polyester / 14% Elastane。详情及 Outdoor 两款入口仅供本地审核，未部署生产。
+- 视频、生成画面审核边界和部署清单见[接入记录](site/product-showcase-half-zip-set-2026-11-13.md)；原有 URL 不变，不涉及 301。
+
 ---
 
 ## 2A. Technical Guides 内容中心 — `/technical-guides/`（新增）

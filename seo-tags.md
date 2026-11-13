@@ -58,6 +58,13 @@ yoga apparel. Integrated knit fabric development, FLATLOCK and ACTIVESEAM.
 
 分享图：`uploads/myathletik-theme/assets/images/product-examples/mens-half-zip-fleece/front-social.jpg`。面料成分和克重仅对应 fleece fabric；待所有者审核后才能考虑生产发布。
 
+### 男款半拉链上衣及紧身裤 `/product-showcase/mens-half-zip-top-and-tights/`（Local 审核草稿）
+**H1:** Men's half-zip top & tights
+**SEO Title:** Men's Half-Zip Top & Tights | Athletik Clothing
+**Meta Description:** Explore a men's half-zip top and tights in 180 GSM graphene polyester and elastane fabric, with two videos and product development options.
+
+分享图：`uploads/myathletik-theme/assets/images/product-examples/mens-half-zip-tights-set/front-social.jpg`。上下装使用同一面料；生成媒体与英文文案须经所有者审核，尚未部署生产。
+
 ================================================================
 ## Product category pages
 ================================================================

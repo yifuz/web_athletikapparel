@@ -117,6 +117,40 @@ function myathletik_product_example_data() {
 		);
 	}
 
+	// Owner-confirmed shared fabric and two supplied clips; Local review draft.
+	$set_media_base = get_stylesheet_directory_uri() . '/assets/images/product-examples/mens-half-zip-tights-set/';
+	$set_images = array();
+	$set_image_data = array(
+		'front'    => array( 'Front view', 'Front view of the dark half-zip top with white sleeve panels', 'View front' ),
+		'side'     => array( 'Angled front view', 'Angled view of the dark half-zip top and white sleeve panels', 'View angled front' ),
+		'collar'   => array( 'Collar and zip detail', 'Close-up of the collar and contrasting zip on the dark top', 'View collar detail' ),
+		'full-set' => array( 'Full set', 'Full-length view of the dark half-zip top and tights', 'View full set' ),
+	);
+	foreach ( $set_image_data as $image_key => $image ) {
+		$set_images[ $image_key ] = array(
+			'src'       => $set_media_base . $image_key . '-1280.webp',
+			'thumbnail' => $set_media_base . $image_key . '-640.webp',
+			'srcset'    => $set_media_base . $image_key . '-640.webp 640w, ' . $set_media_base . $image_key . '-1280.webp 1280w',
+			'width'     => 1280,
+			'height'    => 720,
+			'caption'   => $image[0],
+			'alt'       => $image[1],
+			'control'   => $image[2],
+		);
+	}
+	$set_videos = array();
+	foreach ( array(
+		'overview'       => array( 'Top overview', 'front' ),
+		'collar-and-fit' => array( 'Collar and full-set views', 'collar' ),
+	) as $video_key => $video ) {
+		$set_videos[ $video_key ] = array(
+			'src'       => $set_media_base . $video_key . '-1080.mp4',
+			'poster'    => $set_images[ $video[1] ]['src'],
+			'thumbnail' => $set_images[ $video[1] ]['thumbnail'],
+			'label'     => $video[0],
+		);
+	}
+
 	return array(
 		'ocean-depth' => array(
 			'slug'           => 'ocean-depth-merino-wool-blend-set',
@@ -303,6 +337,66 @@ function myathletik_product_example_data() {
 					'Testing requirements' => 'Define the required tests and acceptance criteria for the intended market.',
 				),
 				'note' => 'Final choices depend on the selected fabric and approved sample; alternatives are not specifications of the top shown.',
+			),
+		),
+		'mens-half-zip-top-tights' => array(
+			'slug'             => 'mens-half-zip-top-and-tights',
+			'seo_title'        => "Men's Half-Zip Top & Tights | Athletik Clothing",
+			'meta_description' => "Explore a men's half-zip top and tights in 180 GSM graphene polyester and elastane fabric, with two videos and product development options.",
+			'inquiry_category' => 'Outdoor Clothing',
+			'social_image'     => $set_media_base . 'front-social.jpg',
+			'category_slug'    => 'outdoor-clothing-manufacturer',
+			'category_label'   => 'outdoor clothing',
+			'name'             => 'Half-Zip Top & Tights',
+			'title'            => "Men's half-zip top & tights",
+			'intro'            => "This men's set pairs a half-zip long-sleeve top with full-length tights. Both pieces use the same 180 GSM graphene polyester and elastane fabric. Review the silhouette and contrasting panels as a reference for your product brief.",
+			'summary'          => 'A half-zip long-sleeve top and tights in the same 180 GSM graphene polyester and elastane fabric.',
+			'state'            => 'Product example · OEM development reference',
+			'material'         => 'polyester',
+			'material_label'   => 'Polyester',
+			'sample_material'  => 'Graphene polyester / elastane',
+			'composition'      => '86% Graphene Polyester / 14% Elastane',
+			'gsm'              => '180 GSM',
+			'fabric_ref'       => 'HY265048',
+			'use'              => 'Outdoor layering',
+			'search'           => "men mens half zip top tights set graphene polyester elastane HY265048 180 GSM outdoor layering",
+			'media'            => array(
+				'images' => $set_images,
+				'video'  => $set_videos['overview'],
+				'videos' => $set_videos,
+			),
+			'options' => array(
+				'intro' => 'Review the top, tights and shared fabric choices against your product brief.',
+				'groups' => array(
+					array(
+						'title' => 'Top development',
+						'intro' => 'Style and fit options to discuss for the top.',
+						'items' => array(
+							'Front opening' => 'Half zip / your opening specification',
+							'Fit' => 'Your fit requirements / reference sample',
+							'Sleeve length' => 'Full length / your specification',
+							'Sizing' => 'Your size chart / reference sample',
+						),
+					),
+					array(
+						'title' => 'Tights development',
+						'intro' => 'Style and fit options to discuss for the tights.',
+						'items' => array(
+							'Waistband' => 'Your waistband specification',
+							'Leg length' => 'Full length / your specification',
+							'Fit' => 'Your fit requirements / reference sample',
+							'Sizing' => 'Your size chart / reference sample',
+						),
+					),
+				),
+				'shared_title' => 'Shared options for the set',
+				'shared' => array(
+					'Fabric' => 'One graphene polyester and elastane fabric for both pieces; alternatives reviewed against your brief.',
+					'Colour and panels' => 'Your colour references and panel placement, reviewed for production feasibility.',
+					'Labels and branding' => 'Labels and logo placement to suit the brand.',
+					'Packaging' => 'Your specified garment packaging and hangtags.',
+				),
+				'note' => 'Final choices depend on the selected fabric and approved sample; alternatives are not specifications of the set shown.',
 			),
 		),
 		'womens-wool-jacquard-set' => array(
