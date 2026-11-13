@@ -95,6 +95,28 @@ function myathletik_product_example_data() {
 		);
 	}
 
+	// Owner-provided product video and fabric specification; Local review draft.
+	$fleece_media_base = get_stylesheet_directory_uri() . '/assets/images/product-examples/mens-half-zip-fleece/';
+	$fleece_images = array();
+	$fleece_image_data = array(
+		'front'             => array( 'Front view', 'Front view of a man wearing an olive half-zip fleece top', 'View front' ),
+		'back-view'         => array( 'Back view', 'Back view of the olive long-sleeve fleece top', 'View back' ),
+		'collar-zip-detail' => array( 'Collar and zip detail', 'Stand collar and half-zip opening on the olive fleece top', 'View collar detail' ),
+		'pocket-detail'     => array( 'Pocket and fleece detail', 'Front pocket and fleece fabric detail on the olive top', 'View pocket detail' ),
+	);
+	foreach ( $fleece_image_data as $image_key => $image ) {
+		$fleece_images[ $image_key ] = array(
+			'src'       => $fleece_media_base . $image_key . '-1280.webp',
+			'thumbnail' => $fleece_media_base . $image_key . '-640.webp',
+			'srcset'    => $fleece_media_base . $image_key . '-640.webp 640w, ' . $fleece_media_base . $image_key . '-1280.webp 1280w',
+			'width'     => 1280,
+			'height'    => 720,
+			'caption'   => $image[0],
+			'alt'       => $image[1],
+			'control'   => $image[2],
+		);
+	}
+
 	return array(
 		'ocean-depth' => array(
 			'slug'           => 'ocean-depth-merino-wool-blend-set',
@@ -220,6 +242,67 @@ function myathletik_product_example_data() {
 					'Testing requirements' => 'Define the required tests and acceptance criteria for the intended market.',
 				),
 				'note' => 'Final choices depend on the selected fabric and approved sample; these alternatives are not specifications of the T-shirt shown.',
+			),
+		),
+		'mens-half-zip-fleece' => array(
+			'slug'             => 'mens-half-zip-fleece-top',
+			'seo_title'        => "Men's Half-Zip Fleece Top | Athletik Clothing",
+			'meta_description' => "Explore a men's half-zip fleece top in 250 GSM polyester fabric. View the product video, fabric reference and OEM development options.",
+			'inquiry_category' => 'Outdoor Clothing',
+			'social_image'     => $fleece_media_base . 'front-social.jpg',
+			'category_slug'    => 'outdoor-clothing-manufacturer',
+			'category_label'   => 'outdoor clothing',
+			'name'             => 'Half-Zip Fleece Top',
+			'title'            => "Men's half-zip fleece top",
+			'intro'            => "This men's long-sleeve top uses 250 GSM polyester fleece fabric and features a stand collar, half-zip opening and front pocket. Review the sample's silhouette and fabric as a reference for your own product brief.",
+			'summary'          => 'An olive long-sleeve fleece top with a stand collar, half-zip opening and front pocket.',
+			'material'         => 'polyester',
+			'material_label'   => 'Polyester',
+			'sample_material'  => 'Polyester fleece fabric',
+			'composition'      => 'Fleece fabric: 100% Polyester',
+			'gsm'              => '250 GSM (fleece fabric)',
+			'fabric_ref'       => 'HY254900',
+			'use'              => 'Outdoor layering',
+			'search'           => "men mens fleece half zip top olive polyester outdoor layering HY254900 250 GSM",
+			'media'            => array(
+				'images' => $fleece_images,
+				'video'  => array(
+					'src'    => $fleece_media_base . 'fleece-overview-1080.mp4',
+					'poster' => $fleece_images['front']['src'],
+				),
+			),
+			'options' => array(
+				'intro' => 'Discuss the style and fabric choices against your product brief.',
+				'groups' => array(
+					array(
+						'title' => 'Style and fit',
+						'intro' => 'Reference points for the garment.',
+						'items' => array(
+							'Front opening' => 'Half zip / your opening specification',
+							'Collar' => 'Stand collar / your reference',
+							'Pockets' => 'Front pocket / your pocket specification',
+							'Fit and sizing' => 'Your size chart / reference sample',
+						),
+					),
+					array(
+						'title' => 'Fabric and colour',
+						'intro' => 'Material targets for the development brief.',
+						'items' => array(
+							'Fleece fabric' => '100% Polyester sample / your composition',
+							'Fabric weight' => '250 GSM reference / your target GSM',
+							'Colour' => 'Sample olive / your colour reference',
+							'Trims' => 'Your zipper and trim specifications',
+						),
+					),
+				),
+				'shared_title' => 'Branding and project details',
+				'shared' => array(
+					'Labels and branding' => 'Labels and logo placement to suit the brand.',
+					'Packaging' => 'Your specified garment packaging and hangtags.',
+					'Order brief' => 'Quantity per style, colour breakdown, size range and required timeline.',
+					'Testing requirements' => 'Define the required tests and acceptance criteria for the intended market.',
+				),
+				'note' => 'Final choices depend on the selected fabric and approved sample; alternatives are not specifications of the top shown.',
 			),
 		),
 		'womens-wool-jacquard-set' => array(

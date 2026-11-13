@@ -30,7 +30,7 @@ yoga apparel. Integrated knit fabric development, FLATLOCK and ACTIVESEAM.
 ================================================================
 ## Product Showcase（分批发布）
 
-用途：实物产品发现与规格参考；既有 manufacturer 页面继续拥有采购能力类主词。展示库、Ocean Depth 与 HY265077 已于 2026-11-04 发布；2026-11-07 新增 Jacquard 套装仍仅为 Local 审核版，发布状态见 `docs/progress.md`。
+用途：实物产品发现与规格参考；既有 manufacturer 页面继续拥有采购能力类主词。展示库、Ocean Depth 与 HY265077 已于 2026-11-04 发布；Jacquard 套装已于 2026-11-10 发布；男款半拉链摇粒绒为 2026-11-13 Local 审核稿，发布状态见 `docs/progress.md`。
 
 ### Library `/product-showcase/`
 **H1:** Product Showcase
@@ -50,6 +50,13 @@ yoga apparel. Integrated knit fabric development, FLATLOCK and ACTIVESEAM.
 **Meta Description:** Explore a women's jacquard base-layer set with a quarter-zip top and leggings. View four product videos and 240 GSM Merino wool-blend fabric details.
 
 分享图：`uploads/myathletik-theme/assets/images/product-examples/womens-wool-jacquard-set/front-social.jpg`。主提花成分／GSM 的适用范围明确，不公开客户技术结构细节；四段视频不是性能测试证据。Local 强制 noindex；2026-11-10 所有者批准发布，生产 ID 109，title／description／canonical／index-follow／分享图／Sitemap 已验收。
+
+### 男款半拉链摇粒绒 `/product-showcase/mens-half-zip-fleece-top/`（Local 审核草稿）
+**H1:** Men's half-zip fleece top
+**SEO Title:** Men's Half-Zip Fleece Top | Athletik Clothing
+**Meta Description:** Explore a men's half-zip fleece top in 250 GSM polyester fabric. View the product video, fabric reference and OEM development options.
+
+分享图：`uploads/myathletik-theme/assets/images/product-examples/mens-half-zip-fleece/front-social.jpg`。面料成分和克重仅对应 fleece fabric；待所有者审核后才能考虑生产发布。
 
 ================================================================
 ## Product category pages

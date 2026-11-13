@@ -148,6 +148,11 @@
 - 所有者随后限定 Merino 入口最多两款：Local 与生产均按有效已发布 Merino 页面首次发布时间降序选取（同时间按 ID 降序），桌面双列、小屏横滑，仅作紧凑预览。新增产品不再无限向下追加；完整产品仍由原 `View all product examples` 链接进入 Showcase，首页特色款不变。
 - 不改现有 URL，不需要 301。日常验证后仅保留本地提交，按当前 `AGENTS.md` 阶段性批量推送规则处理。
 
+#### 男款半拉链摇粒绒（2026-11-13 Local 审核）
+
+- 所有者确认 `/product-showcase/mens-half-zip-fleece-top/`，H1 `Men's half-zip fleece top`，关联 Outdoor Clothing；Local ID 87。数据、文案和媒体仍待审核，未部署生产。
+- 产品规格与媒体边界、Local 验收及未来获准发布清单见[本地接入记录](site/product-showcase-fleece-2026-11-13.md)。原 Showcase 及品类 URL 不变，不涉及 301。
+
 ---
 
 ## 2A. Technical Guides 内容中心 — `/technical-guides/`（新增）
