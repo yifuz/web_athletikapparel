@@ -4910,11 +4910,26 @@ body.page .container.grid-container:has(.ma-product-category) {
 }
 
 .ma-sportswear-evidence__card {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   padding: var(--ma-space-4);
   border: 1px solid var(--ma-color-border);
   border-radius: var(--ma-radius);
   background: var(--ma-color-white);
+}
+
+.ma-sportswear-evidence__card-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--ma-space-3);
+  min-width: 0;
+}
+
+.ma-sportswear-evidence__icon {
+  border-color: transparent;
+  background: var(--ma-color-surface);
+  color: var(--ma-color-accent-2);
 }
 
 .ma-sportswear-evidence__card h3 {
@@ -4932,17 +4947,97 @@ body.page .container.grid-container:has(.ma-product-category) {
 }
 
 .ma-sportswear-evidence__card a {
-  display: inline-block;
-  min-height: var(--ma-touch-target);
-  margin-top: var(--ma-space-2);
+  color: var(--ma-color-accent-2);
   font-weight: 700;
   overflow-wrap: anywhere;
+  text-decoration: underline;
+}
+
+.ma-sportswear-evidence__card > a {
+  display: inline-block;
+  align-self: flex-start;
+  min-height: var(--ma-touch-target);
+  margin-top: auto;
+  padding-top: var(--ma-space-3);
+  box-sizing: border-box;
+}
+
+/* Underlined internal links need no extra arrow that can wrap onto its own line. */
+.ma-sportswear-evidence__card > a > span[aria-hidden="true"] {
+  display: none;
+}
+
+.ma-sportswear-evidence__card a:hover {
+  color: var(--ma-color-text);
+}
+
+.ma-sportswear-evidence__card a:focus-visible {
+  outline: medium solid var(--ma-color-accent-2);
+  outline-offset: var(--ma-space-1);
+}
+
+.ma-sportswear-evidence__card--sources {
+  display: grid;
+  gap: var(--ma-space-4);
+  background: var(--ma-color-bg);
 }
 
 .ma-sportswear-evidence__sources {
+  display: grid;
+  align-content: center;
+  gap: var(--ma-space-2);
+  min-width: 0;
+}
+
+.ma-sportswear-evidence__sources a {
   display: flex;
-  flex-wrap: wrap;
-  column-gap: var(--ma-space-4);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ma-space-2);
+  min-height: var(--ma-touch-target);
+  padding: var(--ma-space-3);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.ma-sportswear-evidence__sources a:hover,
+.ma-sportswear-evidence__sources a:focus-visible {
+  border-color: var(--ma-color-accent-2);
+  text-decoration: underline;
+}
+
+@media (min-width: 48rem) {
+  .ma-sportswear-evidence__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ma-sportswear-evidence__card--fabric,
+  .ma-sportswear-evidence__card--sources {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 64rem) {
+  .ma-sportswear-evidence__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ma-sportswear-evidence__card:not(.ma-sportswear-evidence__card--sources) .ma-sportswear-evidence__card-heading {
+    min-height: calc(var(--ma-fs-h3) * 2.6);
+  }
+
+  .ma-sportswear-evidence__card--fabric {
+    grid-column: auto;
+  }
+
+  .ma-sportswear-evidence__card--sources {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    align-items: center;
+    gap: var(--ma-space-5);
+  }
 }
 
 .ma-product-assurance {
@@ -5604,8 +5699,7 @@ body.page .container.grid-container:has(.ma-product-category) {
   }
 
   .ma-product-assurance__grid,
-  .ma-product-questions__grid,
-  .ma-sportswear-evidence__grid {
+  .ma-product-questions__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

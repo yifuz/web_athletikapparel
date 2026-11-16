@@ -46,3 +46,11 @@
 - 隔离 headless Chrome 在 1440、768、390、320px 检查区块、链接数量和页面横向溢出，均通过；1440 与 390 截图已目视核对，页内无 pageerror。Underwear、Outdoor、Merino、Knitted Fabrics、Silk Wear、Sports Accessories 六个类目均未显示新增区块。
 - 检查文件位于 Git 忽略目录 `.chrome-check/sportswear-evidence-qa-20261116.json` 和 `.chrome-check/sportswear-evidence-{1440,768,390,320}.png`，只用于本地审核。未使用或关闭所有者的浏览器页面。
 - 下一步：所有者审核 Sportswear 页面新增区块与英文；批准上线后由 Codex 按项目 SSH 部署流程核对、备份、部署并做生产验收。无生产操作、索引申请或 AI 结果重采。
+
+## 2026-11-16 视觉优化（Local 审核）
+
+按所有者对新增区块的反馈，在 Local 调整视觉呈现，不改变原有标题、正文、来源说明、链接或其顺序：桌面将三项站内证据入口并列，并把较长的买家公开名单独立成横向资料区；平板与手机依屏宽换行。四项复用站内线性图标，内部链接采用品牌强调色，两个 PDF 入口使用独立可聚焦的链接框。保留名单不证明特定订单或背书的说明，不把图标作为认证或背书。
+
+本轮视觉增量仅 `style.css` 和 `template-parts/product-category/sportswear-evidence.php`，无新增媒体、数据库操作或生产部署。整个新增区块仍为 `local-review / not-deployed`；如获准发布，需要结合原实施一起核对三个文件：上述两项及 `template-parts/product-category/page.php`。
+
+Local 检查覆盖 1440、1200、1024、768、390、360、320px：原文与五个链接和视觉调整前快照一致，四个图标正常、无页面横向溢出，链接可依次键盘聚焦并显示焦点；六个其他产品类别页未出现该区块。PHP 语法及 `git diff --check` 通过。截图、原文与链接快照及测试汇总保存在 Git 忽略目录 `.chrome-check/sportswear-evidence-polish-20261116-*`。内容和视觉仍待所有者审核，不代表上线授权。

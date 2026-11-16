@@ -9,7 +9,7 @@
 带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
 Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
 
-最后更新：2026-11-13。
+最后更新：2026-11-16。
 
 2026-11-04 已按所有者要求[核对 SEO / GEO 三份未提交文档差异](operations/document-reconciliation-2026-11-04.md)：原文件已备份，恢复被回退的完成记录并对齐最新已核准状态；历史测量按原日期保留。本轮只整理文档，没有生产或外部平台操作。
 
@@ -19,6 +19,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.1 网站与内容
 
+- 2026-11-16 Sportswear 的 [Manufacturing evidence 区块](geo/testing/bd02-sportswear-evidence-2026-11-16.md)按所有者反馈做 Local 视觉优化：桌面三项入口并列、买家公开名单独立成横向资料区，复用站内线性图标；原有文字、证据边界与五个链接不变。七档屏宽、键盘焦点及其他六个类目隔离通过。原新增区块及本次视觉改动仍待审核，未部署；整体上线清单为 3 个代码文件，无媒体或数据库操作。
 - 2026-11-13 所有者审核通过，[两款 Outdoor Showcase 与精选入口已上线](site/product-showcase-outdoor-release-2026-11-13.md)：冻结 `e00b611`，部署 5 个代码文件、21 个媒体文件并精准新建生产 ID 111／113（父页 105），六个关联旧页面 post／metadata 不变。正式网址多屏、三段视频实际播放、双卡入口、筛选、询盘预填和无 JS 回退通过；页面 Sitemap 各出现一次，未提交表单，也不据此声称 Google 已收录。套装的 `ItemPage.name` 含字面 `&amp;`，既有 Ocean Depth 也可复现，视觉标题正常，影响未证实、待后续排查；本批 `deployed / production-verified-with-warning`，未推送 Git。
 - 此前完成[男款半拉链上衣及紧身裤 Showcase Local 审核版](site/product-showcase-half-zip-set-2026-11-13.md)：所有者确认上下装同用 HY265048、180 GSM、86% Graphene Polyester / 14% Elastane；两段 Omni 成片及四组抽帧、Local 页面 ID 89，Outdoor 与摇粒绒一起展示双卡。多屏宽、视频播放、筛选、询盘预填及无 JS 回退通过；随后已依上条审核上线。
 - 此前按所有者确认完成[男款半拉链摇粒绒 Showcase Local 审核版](site/product-showcase-fleece-2026-11-13.md)：HY254900、100% Polyester fleece fabric、250 GSM；完整视频及四张真实帧，Local 页面 ID 87。桌面／手机、视频实际播放、搜索筛选、询盘预填及无 JS 回退通过；随后已依上条审核上线。
