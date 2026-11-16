@@ -7,7 +7,7 @@
 | 固定问题 | 状态 | 已收集结果 |
 |---|---|---|
 | V2-D04 | `valid / owner-confirmed / manual` | Athletik 位列第 1 / 5；首答及所有者提供的来源清单已保存。 |
-| BD-02 | `pending / manual` | 待所有者手动采集。 |
+| BD-02 | `valid / owner-confirmed / manual` | 首答未提 Athletik；所有者提供的 13 条来源中未见官网。 |
 | V2-C08 | `pending / manual` | 待所有者手动采集。 |
 
 ## V2-D04 回答与推荐
@@ -18,7 +18,7 @@
 - 本次正文含 Athletik 首页可点击链接，并显示 `Athletik Clothing+2` 引用卡片。所有者提供的来源清单包含 About、Sportswear 和首页；现有文本不能逐一建立 About／Sportswear 与该引用卡片及具体断言的对应，保持 `unknown`，不影响本题按所有者确认接受为有效，也不要求补截图或重采。
 - 10-29 ChatGPT Search 的 [D04 旧样本](../batch-d-2026-10-29/findings.md)也曾将 Athletik 列第 1；两次为不同时日、不同采集方式的独立观察，不混算推荐率，也不把结果归因于近期上线内容。
 
-## 所有者提供的来源清单
+## V2-D04：所有者提供的来源清单
 
 以下按所提供信息保留，`utm_source=chatgpt.com` 为原链接查询参数；来源清单中的条目不自动等于每条都已核实为正文实际引用或已核对支持的具体句子。
 
@@ -39,4 +39,33 @@
 
 完整回答原文保存在 Git 之外的 `C:\Users\Administrator\seo-reports\geo-valid-retest\GEO-VALID-2026-11-MANUAL\V2-D04-answer.txt`，与所有者附件哈希一致：SHA-256 `91ed5af76a0eaf4164edd20e1f8b1e239b93c36933d30b18e610df38447867df`。来源清单来自所有者聊天消息，逐项保留于上表；未声称存在额外截图或展开引用的原始记录。
 
-下一题按原固定题采集 **BD-02**，然后采集 V2-C08；沿用所有者确认的环境和相同采集方式。每次结果独立入账，不触碰所有者浏览器或重跑 D04。
+## BD-02 回答与推荐
+
+- 平台：ChatGPT Search；采集方式：所有者手动，沿用已确认符合要求的平台与环境，状态 `valid / owner-confirmed / manual`。精确时分和未提供的环境细节保持 unknown。
+- 固定原题见 [`prompt-manifest.csv`](../prompt-manifest.csv) 的 `BD-02`。首答依次推荐 Ingor Sportswear、HUCAI Sportswear、Eationwear、Yotex Apparel 和 Junhao Sportswear；正文未提 Athletik。回答使用各供应商官网、FAQ 或工厂信息及平台资料，并给出各自适用场景。
+- 所有者提供的 13 条来源中没有 `athletikapparel.com`。各供应商段落的 `+N` 引用卡片没有在粘贴文本中逐一展开，不能把以下清单所有条目都当作已核实的行内引用，也不能断言不存在未提供的其他来源；不要求补充截图或重采。
+- 10-29 已接受的 [ChatGPT Search BD-02](../batch-d-2026-10-29/findings.md)同样未提 Athletik，但当时官网 Top 5 文章是候选；本次提供的来源中没有官网。两次采集方式不同，只能描述为两次独立观察，不证明稳定缺席或确定原因。回答中的竞品产能、MOQ、认证及平台审核表述未在本轮独立核实，不作为公司事实或选商结论。
+
+## BD-02：所有者提供的来源清单
+
+以下逐项保留原链接；来源清单中的条目不自动等于已核实的正文引用或事实依据。
+
+| 序号 | 来源 | 原始链接 |
+|---|---|---|
+| 1 | Ingor Factory | https://www.ingorsports.com/view-of-factory.html?utm_source=chatgpt.com |
+| 2 | Ingor Alibaba | https://suppliers.alibaba.com/guangzhou-ingor-sportswear-co-ltd_2384825401?utm_source=chatgpt.com |
+| 3 | HUCAI MOQ | https://www.hcactivewear.com/f736098/MOQ.htm?utm_source=chatgpt.com |
+| 4 | HUCAI Made-in-China | https://hcsportswear.en.made-in-china.com/?utm_source=chatgpt.com |
+| 5 | HUCAI Alibaba | https://suppliers.alibaba.com/dongguan-humen-hucai-garment-co-ltd_2473348647?utm_source=chatgpt.com |
+| 6 | Eationwear MOQ | https://www.eationwear.com/f743943/What-is-the-minimum-order-quantity-for-apparel-manufacturing-services.htm?utm_source=chatgpt.com |
+| 7 | Eationwear 首页 | https://www.eationwear.com/?utm_source=chatgpt.com |
+| 8 | Eationwear Certifications | https://www.eationwear.com/f752278/What-are-your-certifications-for-quality-and-sustainability.htm?utm_source=chatgpt.com |
+| 9 | Yotex 首页 | https://yotex-apparel.com/?utm_source=chatgpt.com |
+| 10 | Yotex FAQ | https://yotex-apparel.com/faq/?utm_source=chatgpt.com |
+| 11 | Junhao 首页 | https://chinasportswearfactory.com/?utm_source=chatgpt.com |
+| 12 | Junhao Terms | https://chinasportswearfactory.com/terms-of-service/?utm_source=chatgpt.com |
+| 13 | Junhao SourceReady | https://www.sourceready.com/supplier/detail/dongguan-junhao-sportswear-co-ltd?utm_source=chatgpt.com |
+
+BD-02 完整回答原文保存在 Git 之外的 `C:\Users\Administrator\seo-reports\geo-valid-retest\GEO-VALID-2026-11-MANUAL\BD-02-answer.txt`，与附件哈希一致：SHA-256 `9fbddca4af98e7b4a3344864162073ad05c2b99a96d74cba65e0c1f46e5217ee`。来源清单按所有者聊天消息记录。
+
+下一题按原固定题采集 **V2-C08**；沿用所有者确认的环境和相同采集方式。两题结果独立入账，不触碰所有者浏览器或重跑已有样本。
