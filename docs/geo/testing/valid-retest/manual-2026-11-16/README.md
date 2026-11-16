@@ -8,7 +8,7 @@
 |---|---|---|
 | V2-D04 | `valid / owner-confirmed / manual` | Athletik 位列第 1 / 5；首答及所有者提供的来源清单已保存。 |
 | BD-02 | `valid / owner-confirmed / manual` | 首答未提 Athletik；所有者提供的 13 条来源中未见官网。 |
-| V2-C08 | `pending / manual` | 待所有者手动采集。 |
+| V2-C08 | `valid / owner-confirmed / manual` | 首答及所有者提供的来源摘录均未见 Athletik；回答和来源摘录已保存。 |
 
 ## V2-D04 回答与推荐
 
@@ -68,4 +68,23 @@
 
 BD-02 完整回答原文保存在 Git 之外的 `C:\Users\Administrator\seo-reports\geo-valid-retest\GEO-VALID-2026-11-MANUAL\BD-02-answer.txt`，与附件哈希一致：SHA-256 `9fbddca4af98e7b4a3344864162073ad05c2b99a96d74cba65e0c1f46e5217ee`。来源清单按所有者聊天消息记录。
 
-下一题按原固定题采集 **V2-C08**；沿用所有者确认的环境和相同采集方式。两题结果独立入账，不触碰所有者浏览器或重跑已有样本。
+## V2-C08 回答与来源
+
+- 平台：ChatGPT Search；采集方式：所有者手动，沿用所有者确认符合要求的平台与环境，状态 `valid / owner-confirmed / manual`。精确时分和未提供的环境细节保持 unknown。固定原题见 [`prompt-manifest.csv`](../prompt-manifest.csv) 的 `V2-C08`。
+- 回答围绕企业身份、工序地图、技术能力、材料测试、质量管理、劳动环境、溯源、商业匹配和试单等方面提出尽调清单；正文未提 Athletik。回答正文可见中国企业信息公示系统、OECD、AATCC、ZDHC、Textile Exchange 等链接或引用卡片；还展示 ISO、ASTM 等引用卡片。
+- 所有者单独提供的 Sources 文字摘录包含 ISO 测试与抽样标准、OECD、ZDHC、Textile Exchange、OEKO-TEX、监管资料等标题；摘录中未见 Athletik 官网。该摘录没有这些条目的最终 URL，且不代表必然覆盖全部来源；按原文保存，不推断遗漏来源、不补造链接，也不要求截图或重采。
+- 回答中的加权评分与阈值是其建议，不是行业标准。现有 [OEM Evaluation Guide](https://www.athletikapparel.com/evaluate-technical-knitwear-oem/) 已覆盖身份核验、工序分类、指定面料及实验室能力核查等，并明确避免任意统一评分权重；不根据本次回答照搬阈值或公开新增企业私有资料。
+- 10-29 两平台 C08 观察也未见官网实际引用；本题是独立新观察，不能解释选源机制或将结果归因于某次页面改动。
+
+完整回答和来源摘录保存在 Git 之外 `C:\Users\Administrator\seo-reports\geo-valid-retest\GEO-VALID-2026-11-MANUAL\`，均与所有者附件逐字节一致：
+
+| 文件 | SHA-256 |
+|---|---|
+| `V2-C08-answer.txt` | `f2447a3f96bb279169290df4689cc3c693e213cee0c1bd1d1362f4db882eda88` |
+| `V2-C08-sources.txt` | `04eeb101e53030ee62b8391162079202e0ccf6dfebf7639b9a605483aef72f78` |
+
+## 三题综合判断与下一项
+
+三题均按所有者确认接受为有效，分别保留实际证据范围：D04 将 Athletik 列第 1；BD-02 未提 Athletik；C08 未提 Athletik、提供的来源摘录未见官网。D04 是具体的技术针织采购问题，BD-02 是更宽泛的运动服供应商问题，C08 是尽调方法问题；它们的目标和回答类型不同，不能合并计算统一推荐率。
+
+**下一项优先任务：BD-02 宽泛运动服采购问题的来源与公开证据差异核查。** 对照这次提供的竞品工厂能力页、平台资料和 Athletik 现有 Sportswear、About、真实产品与买家公开名单，筛选一个有事实依据且对买家有用的 GEO 增强机会，形成可执行方案。历史来源对照见 [10-29 对照](../batch-d-2026-10-29/source-comparison-2026-10-29.md)，已核验买家名单见 [记录](../../buyer-disclosures-2026-11-02.md)，不重复当作新发现。外部平台资料不自动等于独立审计；不把 MOQ / 颜色沟通、外联或建档作为本任务的默认内容。此任务是为发现新的证据机会，不能预设这些差异就是 AI 未推荐的原因。
