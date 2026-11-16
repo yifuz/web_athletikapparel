@@ -1,0 +1,48 @@
+# BD-02：Sportswear 采购证据补强
+
+日期：2026-11-16。状态：`local-review / not-deployed`。所有者要求开始 BD-02 证据补强；本轮完成来源对照、事实核验、Sportswear 页 Local 实施和定向检查。新增英文正文是供所有者审核的草稿，尚未批准上线。
+
+## 问题与判断
+
+[11-16 手动样本](valid-retest/manual-2026-11-16/README.md)中，具体技术针织问题 D04 推荐 Athletik，而宽泛运动服 OEM 问题 BD-02 没有提及；10-29 的 BD-02 同样未提。两次采集方式不同，不证明稳定缺席或原因。此次提供的 BD-02 来源包括供应商官网、FAQ、工厂资料与供应商平台；来源清单不自动等于每一项都已核实为正文引用。
+
+定向对照：
+
+| 来源 | 本次观察 | 与 Athletik 的关系 |
+|---|---|---|
+| [INGOR 工厂页](https://www.ingorsports.com/view-of-factory.html) | 供应商将工厂介绍、OEM/ODM 和工厂影像入口集中呈现 | 内容是供应商自述，不等于独立审核；Athletik 已有生产过程材料但分散在技术指南。 |
+| [HUCAI 首页](https://www.hcactivewear.com/)和 [Eationwear 首页](https://www.eationwear.com/) | 分别提供生产能力、工艺、面料、质量等可供买家深入查看的入口 | 为厂商自述，不判断其工厂、认证或绩效。Athletik Sportswear 已有 buyer fit、产品、工艺、质量和流程内容，不重复创建。 |
+| Alibaba / Made-in-China / SourceReady 条目 | 属平台或聚合来源 | 平台展示及验证标签不自动证明工艺性能、订单履约或完整独立审计。本轮没有申请、更新或联系平台。 |
+| [Athletik About](https://www.athletikapparel.com/about-us/)及 [Sportswear](https://www.athletikapparel.com/sportswear-manufacturer/) | About 已有日期化买家公开名单；Sportswear 已有 14 张获准产品展示与生产能力说明 | 本轮补的是运动服采购落点上对现有证据的集中组织，不是新获得的第三方背书。 |
+
+## Local 实施
+
+在现有 Sportswear 页的 Construction & fabric 后、Program execution 前，增加 **Manufacturing evidence** 区块，四项各提供说明和可见链接：
+
+1. 已获准的 Sportswear lookbook：展示训练上衣、运动内衣、紧身裤与短裤等，不凭照片推断客户、订单或性能。
+2. 已公开的 [FLATLOCK / ACTIVESEAM 生产指南](https://www.athletikapparel.com/flatlock-vs-activeseam-technical-knitwear/#industrial-flatlock)：Yamato 与 Merrow 是分别拍摄的生产示范，所展示自然状态接缝不当作性能测试；链接从 FLATLOCK 处开始，可继续看到 ACTIVESEAM 及成衣接缝。
+3. [面料规格库](https://www.athletikapparel.com/knitted-fabrics-manufacturer/#merino-fabric-examples)：仅以代表性成分和 GSM 供项目参考，不称实时库存或测试结果。
+4. 中国生产实体在 [Canadian Tire 名单](https://s201.q4cdn.com/326551073/files/doc_downloads/2026/03/CTC-Tier-1-Owned-Brand-Supplier-List_EN.pdf#page=4)及 [Sainsbury's 名单](https://corporate.sainsburys.co.uk/media/334du1a0/tier-one-supplier-list-gm-clothing-september-2026.pdf#page=10)的日期化公开列名，沿用 About 已批准的事实与原 PDF 页码；区块明确名单不证明特定 sportswear 订单或推荐背书。
+
+11-16 核查两家官方入口仍指向上述 PDF；两份 PDF 均 HTTP 200、`application/pdf`，各自与 11-02 保存的原件 SHA-256 相同。两份原件分别在第 4 页和第 10 页列有 Athletik；保留原名单，不公开员工人数等额外信息。链接日期和范围详见[原核验记录](buyer-disclosures-2026-11-02.md)。
+
+这不是新增第三方发表，不承诺 AI 使用这些资料。现有 Sportswear 的技术指南相关链接、客户披露与已接受样本继续保留；不重做 MOQ / 颜色沟通、外联、第三方建档、企业注册信息或近义榜单。
+
+## 代码与交付
+
+| 类型 | 文件 / 操作 |
+|---|---|
+| 代码 | `template-parts/product-category/sportswear-evidence.php` 新增区块 |
+| 代码 | `template-parts/product-category/page.php` 仅 Sportswear slug 条件调用 |
+| 样式 | `style.css` 增加 scoped 卡片布局 |
+| 媒体 / 数据库 | 无新增或变更 |
+
+新增内容位于现有页面，未改 URL、H1、Title、meta、canonical 或 Schema 的实现。Local 与生产的现有 meta description 文本存在差异，本轮未修改相应 SEO 设置；不能把两个环境文本差异归因于新增区块。上线前按 SSH 部署流程再次对照生产共享文件、备份并只部署审核批准的变更。
+
+## 验证
+
+- 两个 PHP 文件均通过 PHP 8.2.35 语法检查；`git diff --check` 通过。
+- Local Sportswear 返回 HTTP 200、单一 H1，服务端初始 HTML 含四张证据卡和五个链接，不依赖 JS。两个站内落点的目标锚点均存在。
+- 隔离 headless Chrome 在 1440、768、390、320px 检查区块、链接数量和页面横向溢出，均通过；1440 与 390 截图已目视核对，页内无 pageerror。Underwear、Outdoor、Merino、Knitted Fabrics、Silk Wear、Sports Accessories 六个类目均未显示新增区块。
+- 检查文件位于 Git 忽略目录 `.chrome-check/sportswear-evidence-qa-20261116.json` 和 `.chrome-check/sportswear-evidence-{1440,768,390,320}.png`，只用于本地审核。未使用或关闭所有者的浏览器页面。
+- 下一步：所有者审核 Sportswear 页面新增区块与英文；批准上线后由 Codex 按项目 SSH 部署流程核对、备份、部署并做生产验收。无生产操作、索引申请或 AI 结果重采。

@@ -512,6 +512,10 @@ if ( ! empty( $category['hero_video'] ) ) {
 		</div>
 	</section>
 
+	<?php if ( 'sportswear-manufacturer' === $category_slug ) : ?>
+		<?php get_template_part( 'template-parts/product-category/sportswear-evidence' ); ?>
+	<?php endif; ?>
+
 	<?php if ( ! empty( $category['assurance_cards'] ) && is_array( $category['assurance_cards'] ) ) : ?>
 	<section class="ma-product-section ma-product-assurance" aria-labelledby="ma-product-assurance-title">
 		<div class="ma-section-inner">

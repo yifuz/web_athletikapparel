@@ -52,6 +52,8 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.2 GEO
 
+- 2026-11-16 完成 [BD-02 来源对照与 Sportswear 证据区](geo/testing/bd02-sportswear-evidence-2026-11-16.md) Local 审核版：集中呈现已公开的运动服产品、真实接缝生产过程、代表性面料库以及两份买家公开名单，明确资料范围；区块仅渲染 Sportswear，PHP、四屏宽、链接和六个品类隔离检查通过。状态 `local-review / not-deployed`，待所有者审核；计划部署 3 个代码文件，无媒体或数据库操作。
+
 - 2026-11-16 完成 [GEO 新资产与指南索引复核](geo/testing/geo-evidence-and-index-review-2026-11-16.md)：C08 现为 `PASS / Submitted and indexed`，最后报告抓取 11-12 北京时间；C06 同样已收录，但最后报告抓取仍为 10-16，早于示范上线。正式面料页四种访问标识均返回 200，初始 HTML 含 97 个料号锚点；两款 Outdoor 产品页面可读，生成画面不当作实拍或测试。Dot 到期后所有者改为[手动复测](geo/testing/valid-retest/manual-2026-11-16/README.md)；D04、BD-02、C08 按所有者确认有效，D04 中 Athletik 第 1 / 5，后两题正文与所提供来源未见 Athletik。下一优先为 BD-02 宽泛采购来源与公开证据差异核查；单次回答不等同稳定 AI 推荐。
 
 - 2026-11-02 所有者确认中国生产地址正确门牌为中兴路 15 号，官网 25 号为误写。联系页、地图搜索、全站页脚和组织 Schema 已更正，并由所有者确认部署与验收完成；见[地址更正记录](geo/testing/address-correction-2026-11-02.md)。本轮仅纠正门牌，历史来源与已接受的 AI 样本原文保留。
