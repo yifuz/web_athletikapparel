@@ -52,6 +52,8 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.2 GEO
 
+- 2026-11-16 完成 [GEO 新资产与指南索引复核](geo/testing/geo-evidence-and-index-review-2026-11-16.md)：C08 现为 `PASS / Submitted and indexed`，最后报告抓取 11-12 北京时间；C06 同样已收录，但最后报告抓取仍为 10-16，早于示范上线。正式面料页四种访问标识均返回 200，初始 HTML 含 97 个料号锚点；两款 Outdoor 产品页面可读，生成画面不当作实拍或测试。[D04 / BD-02 / C08 隔离复测包](geo/testing/valid-retest/dot-chatgpt-search-brief-2026-11-16.md)已准备，待云电脑执行；未将收录、抓取或单次回答等同 AI 推荐。
+
 - 2026-11-02 所有者确认中国生产地址正确门牌为中兴路 15 号，官网 25 号为误写。联系页、地图搜索、全站页脚和组织 Schema 已更正，并由所有者确认部署与验收完成；见[地址更正记录](geo/testing/address-correction-2026-11-02.md)。本轮仅纠正门牌，历史来源与已接受的 AI 样本原文保留。
 - 同日已完成[买家公开名单核验与 About 内容](geo/testing/buyer-disclosures-2026-11-02.md)：Canadian Tire 名单内文日期为 2026-01-06，Sainsbury's 改用当前官方链接的 2026 年 9 月新版，均确认列有中国实体。官网只表达有日期的公开列名并链接原 PDF，不扩写为当前订单或背书；与地址修正形成五文件合并包，所有者已确认“已验收 并部署”，状态为 `deployed / owner-accepted`。本轮交付关闭，未将部署确认等同搜索重抓或 AI 成效。
 - [`geo/GEO.md`](geo/GEO.md) 是 GEO 中央工作台和路由文档。
