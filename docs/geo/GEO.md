@@ -12,11 +12,11 @@
 
 本文件是 GEO 中央工作台，管理当前目标、判断和执行顺序。逐题样本、发布与数据保留在日期化来源；2026-11-04 的工作台核对仅按仓库证据整理，11-16 定向复核范围见下方记录。
 
-> 2026-11-16 更新：[新资产与索引复核](testing/geo-evidence-and-index-review-2026-11-16.md)已完成。C08 已 `PASS / Submitted and indexed`，Google 最后报告抓取在 11-12 北京时间，晚于增补；C06 仍已收录，但最后报告抓取为 10-16，早于示范上线。正式面料页四种访问标识均返回 200，初始 HTML 含 97 个料号锚点；两款 Outdoor 产品页面可读。[D04 / BD-02 / C08 隔离复测任务包](testing/valid-retest/dot-chatgpt-search-brief-2026-11-16.md)已准备，待云电脑执行；样本与平台分开，C07 同布实物仍待确认。此更新不等于 AI 已引用新增资产。
+> 2026-11-16 更新：[新资产与索引复核](testing/geo-evidence-and-index-review-2026-11-16.md)已完成。C08 已 `PASS / Submitted and indexed`，Google 最后报告抓取在 11-12 北京时间，晚于增补；C06 仍已收录，但最后报告抓取为 10-16，早于示范上线。正式面料页四种访问标识均返回 200，初始 HTML 含 97 个料号锚点；两款 Outdoor 产品页面可读。Dot 已到期，改由所有者手动复测：[D04 已接受有效样本，Athletik 第 1 / 5](testing/valid-retest/manual-2026-11-16/README.md)，BD-02 和 C08 待采集；平台及采集方式分开，C07 同布实物仍待确认。单条结果不等于 AI 已引用新增资产或稳定推荐。
 
 当前范围以 `AGENTS.md` 为准：官网、Instagram、当前 LinkedIn 均可优化和准备内容；公开发布仍需对应授权。所有者不管理 YouTube，既有视频信息更新已 `closed / out-of-scope / not-applied`，不要求接管；其他域名、账号与外联不自动纳入。
 
-下一步执行已准备的三题隔离复测；C07 同面料 FLATLOCK / OVERLOCK 正反面实物样本及公开许可继续待确认，确认后再评估是否补充既有指南，不把外观示范写成性能测试。C06 / C08 的到期索引复查已于 11-16 完成；10-30 LinkedIn Tech Pack 新帖的完整七日窗口为 10-31～11-06，可得数据与实际 URL 仍待补录。Bing 本轮按所有者决定暂缓，不重复催导出。
+下一步由所有者手动采集 BD-02 和 C08，并按既有接受范围逐题记录；C07 同面料 FLATLOCK / OVERLOCK 正反面实物样本及公开许可继续待确认，确认后再评估是否补充既有指南，不把外观示范写成性能测试。C06 / C08 的到期索引复查已于 11-16 完成；10-30 LinkedIn Tech Pack 新帖的完整七日窗口为 10-31～11-06，可得数据与实际 URL 仍待补录。Bing 本轮按所有者决定暂缓，不重复催导出。
 
 对应证据：[10 月有效样本验收](testing/valid-retest/batch-d-2026-10-29/README.md)、[Google AI Mode 对照](testing/valid-retest/google-ai-mode-2026-10-29/README.md)、[指南合并生产验收](testing/guide-content-dates-2026-10-31.md)、[买家名单](testing/buyer-disclosures-2026-11-02.md)、[技术证据盘点](testing/valid-retest/batch-d-2026-10-29/c06-c07-evidence-inventory-2026-10-29.md)、[分发日志](distribution/publishing-log.md)。
 
@@ -257,7 +257,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 ## 8. 单人执行计划（当前顺序）
 
-1. **执行三题隔离复测。** [Dot 任务包](testing/valid-retest/dot-chatgpt-search-brief-2026-11-16.md)已准备，覆盖 D04、BD-02 和 C08。C06 / C08 抓取与索引已于 11-16 复核，结果见[记录](testing/geo-evidence-and-index-review-2026-11-16.md)；不把部署或内容日期当作搜索重抓日期。
+1. **完成三题复测。** Dot 已到期，所有者改为手动采集；[D04 已接受有效样本](testing/valid-retest/manual-2026-11-16/README.md)，BD-02 和 C08 待采。此前 [Dot 任务包](testing/valid-retest/dot-chatgpt-search-brief-2026-11-16.md)保留固定问题和历史方案。C06 / C08 抓取与索引已于 11-16 复核，结果见[记录](testing/geo-evidence-and-index-review-2026-11-16.md)；不把部署或内容日期当作搜索重抓日期。
 2. **确认 C07 可公开实物。** 继续既有[技术证据盘点](testing/valid-retest/batch-d-2026-10-29/c06-c07-evidence-inventory-2026-10-29.md)的同面料 FLATLOCK / OVERLOCK 正反面样本机会。未确认存在与许可前不制作虚构案例、启动拍摄或改页；外观与性能证据分开。
 3. **维护可控分发证据。** 10-30 LinkedIn 新帖待实际 URL，11-07 起复盘完整七日窗口；旧 GEO-06/07/08 的 URL、Story 和可得数据缺口继续按[发布日志](distribution/publishing-log.md)补录。Instagram / LinkedIn 可准备内容，但每次公开发布按授权执行，YouTube 更新已关闭。
 4. **保持测量口径。** 9 月首轮与 A/B 的 partial 不覆盖；E01、C、D、Google 独立入账。已完成两平台 10 月采集，不重新批量采样或用缺少来源的记录补齐分母。GSC 生成式展示、实际回答、GA4、正式询盘分开；Bing 本轮 deferred / low-signal。
