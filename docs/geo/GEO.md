@@ -16,7 +16,7 @@
 
 当前范围以 `AGENTS.md` 为准：官网、Instagram、当前 LinkedIn 均可优化和准备内容；公开发布仍需对应授权。所有者不管理 YouTube，既有视频信息更新已 `closed / out-of-scope / not-applied`，不要求接管；其他域名、账号与外联不自动纳入。
 
-[BD-02 Sportswear 采购证据区](testing/bd02-sportswear-evidence-2026-11-16.md)已于 11-17 部署并通过普通正式网址验收，状态 `deployed / production-verified`。所有者说明 C07 同面料比较暂时没有实物样本；[Asda 和 New Balance 公开记录](testing/buyer-disclosures-osh-2026-11-17.md)的 About 与 Sportswear 本地版已获准部署，但 Flywheel SSH 网关无法进入站点。所有者确认已添加备用公钥，网关仍拒绝该密钥；原密钥可认证但站点会话未建立，连接恢复后按既有授权继续。C06 / C08 的到期索引复查已于 11-16 完成；10-30 LinkedIn Tech Pack 新帖的完整七日窗口为 10-31～11-06，可得数据与实际 URL 仍待补录。Bing 本轮按所有者决定暂缓，不重复催导出。
+[BD-02 Sportswear 采购证据区](testing/bd02-sportswear-evidence-2026-11-16.md)与 [Asda 和 New Balance 公开记录](testing/buyer-disclosures-osh-2026-11-17.md)均已于 11-17 部署并通过普通正式网址验收，状态 `deployed / production-verified`。新名单保留 New Balance `Licensee` 范围；页面上线不等于已被 AI 引用或推荐。原 SSH 密钥恢复站点连接后完成发布，备用密钥当次仍被拒绝，Flywheel 工单 `15523783` 留待客服后续排查。所有者说明 C07 同面料比较暂时没有实物样本。C06 / C08 的到期索引复查已于 11-16 完成；10-30 LinkedIn Tech Pack 新帖的完整七日窗口为 10-31～11-06，可得数据与实际 URL 仍待补录。Bing 本轮按所有者决定暂缓，不重复催导出。
 
 对应证据：[10 月有效样本验收](testing/valid-retest/batch-d-2026-10-29/README.md)、[Google AI Mode 对照](testing/valid-retest/google-ai-mode-2026-10-29/README.md)、[指南合并生产验收](testing/guide-content-dates-2026-10-31.md)、[买家名单](testing/buyer-disclosures-2026-11-02.md)、[技术证据盘点](testing/valid-retest/batch-d-2026-10-29/c06-c07-evidence-inventory-2026-10-29.md)、[分发日志](distribution/publishing-log.md)。
 
@@ -226,7 +226,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-RISK-001 | 事实/治理 | 中央文档与日期化证据漂移；`controlled / reconciliation-complete` | P1 监测 | 文档维护者 + 网站负责人 | 9-30 清理记录保留；11-04 定向恢复被删进度并核对 10-29～11-02 来源。当前入口区分已部署、owner-accepted、采样有效性和实时数据；未重做全站审计。 |
 | GEO-RISK-002 | 测量 | 批次完成标签掩盖证据差异；`controlled` | P1 监测 | GEO 执行者 | 9 月首轮 valid 0 保留为历史；10 月 E01 / C / D 按各自已接受范围记录，旧 partial 不升级；不混算平台、日期、M2 / M4 或未知地区，也不将 owner-accepted 自动写成 E3。 |
 | GEO-RISK-003 | 测量 | 内部 QA 污染 GA4/UTM；`controlled` | P1 | 分析负责人 | 保留原始值并标记 `measurement-contaminated`，从外部访问和转化中剔除；验收为快照同时给出 raw 与 confirmed-external。 |
-| GEO-RISK-004 | 信源 | 采购判断所需独立佐证仍有限；`controlled / monitoring` | P1 | 所有者 + 内容负责人 | 11-02 已核验两家买家公开列名并上线 About，范围限日期化名单；既有设备方外联仍 suspended-awaiting-media。两者分别记录，不把公开列名写成工艺性能或当前订单背书。 |
+| GEO-RISK-004 | 信源 | 采购判断所需独立佐证仍有限；`controlled / monitoring` | P1 | 所有者 + 内容负责人 | 11-02 两家买家公开列名与 11-17 Asda / New Balance 公开记录已核验并上线，范围限各自日期化名单；既有设备方外联仍 suspended-awaiting-media。两者分别记录，不把公开列名写成工艺性能或当前订单背书。 |
 | GEO-RISK-005 | 合规/证据 | 客户、Logo、认证和审核存在授权与范围边界；`red-line` | P0 红线 | 所有者 | 发布前核对授权、法律实体、站点、产品/材料/工序范围和有效期；历史页面属实不等于可脱离原范围作为当前营销断言复用。 |
 | GEO-RISK-006 | 执行边界 | UltraMerino 等站点不在本项目执行范围；`accepted-scope` | P2 | 所有者 | 本项目只记录冲突，不擅自修改、复制、设置 Canonical 或重定向；若职责改变再重新立项。 |
 | GEO-RISK-007 | 外部资料 | 旧 LinkedIn 管理权丢失；`accepted-residual / monitor-only` | P2 | 所有者 + 社交管理员 | 所有者确认历史内容属实且页面不再更新；当前不投入追索或修复，新内容只发当前 LinkedIn。若 AI/搜索产生新的实体误判或账号找回，再重新打开。 |
@@ -258,7 +258,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 ## 8. 单人执行计划（当前顺序）
 
 1. **BD-02 证据补强已部署并验收。** Dot 已到期，所有者手动采集的 [D04、BD-02、C08 均已接受有效样本](testing/valid-retest/manual-2026-11-16/README.md)；[Sportswear 证据区](testing/bd02-sportswear-evidence-2026-11-16.md)已通过普通正式网址验收。C06 / C08 抓取与索引已于 11-16 复核，结果见[记录](testing/geo-evidence-and-index-review-2026-11-16.md)；不把部署或内容日期当作搜索重抓日期。
-2. **恢复 SSH 后部署已批准的买家公开证据。** [OS Hub 公开档案](testing/buyer-disclosures-osh-2026-11-17.md)匹配中国实体与 15 号地址；Asda 日期化数据及 New Balance 2026 Q1 Licensee Supplier List 的 Local 版本已获准发布，当前因 Flywheel SSH 站点会话受阻而未写入生产。恢复后直接按清单预检、备份、部署与验收；不能扩写为直接合同、当前订单或背书。C07 同面料实物暂缺，保持 `deferred / no-comparable-physical-sample`。
+2. **买家公开证据已部署并验收。** [OS Hub 公开档案](testing/buyer-disclosures-osh-2026-11-17.md)匹配中国实体与 15 号地址；Asda 日期化数据及 New Balance 2026 Q1 Licensee Supplier List 已按批准发布到 About 和 Sportswear，不扩写为直接合同、当前订单或背书。C07 同面料实物暂缺，保持 `deferred / no-comparable-physical-sample`。
 3. **维护可控分发证据。** 10-30 LinkedIn 新帖待实际 URL，11-07 起复盘完整七日窗口；旧 GEO-06/07/08 的 URL、Story 和可得数据缺口继续按[发布日志](distribution/publishing-log.md)补录。Instagram / LinkedIn 可准备内容，但每次公开发布按授权执行，YouTube 更新已关闭。
 4. **保持测量口径。** 9 月首轮与 A/B 的 partial 不覆盖；E01、C、D、Google 独立入账。已完成两平台 10 月采集，不重新批量采样或用缺少来源的记录补齐分母。GSC 生成式展示、实际回答、GA4、正式询盘分开；Bing 本轮 deferred / low-signal。
 5. **有触发再扩量。** claim-to-source 矩阵、Program Fit、About、ACTIVESEAM、UltraMerino 冲突审计和 Top 5 试验已有记录，不重新立项。设备方佐证/外联继续按暂缓决定；买家公开名单已核验并应用，不等同外联解禁。新材料或重复出现的明确证据缺口成立后，再评估既有页面的增量价值。

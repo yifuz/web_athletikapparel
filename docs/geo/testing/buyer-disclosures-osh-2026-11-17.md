@@ -1,6 +1,6 @@
 # 买家公开证据补查：Open Supply Hub（2026-11-17）
 
-状态：`deployment-authorized / alternate-ssh-key-rejected / site-session-unavailable / not-deployed`。所有者已审核并授权部署；Flywheel SSH 网关当前无法进入站点，生产尚未写入。所有者确认已添加备用公钥，但网关测试仍拒绝该密钥；来源核查与 Local 验收保留为历史，部署尝试见文末。
+状态：`deployed / production-verified`。所有者审核并授权的 Asda 与 New Balance 公开记录已通过原有 SSH 密钥部署，普通正式网址验收通过；先前 SSH 故障与备用密钥拒绝记录保留为历史，部署与验收结果见第 7 节。
 
 ## 1. 已核实的工厂档案
 
@@ -22,9 +22,9 @@ OS Hub 的贡献者数据并非对名单所涉事实的全面独立审计；实�
 
 完整公开档案和买家名单面板的本次文字快照、隔离浏览器截图保存在 Git 忽略目录 `.chrome-check/geo-osh-profile-20261117.txt`、`.chrome-check/geo-osh-identity-20261117.png` 与 `.chrome-check/geo-osh-asda-nb-20261117.png`；它们是当日动态页面快照，不是可长期保证不变的来源。匿名 API 的独立请求返回 401；本次实际结果来自网站正常公开搜索界面，不声称取得 API 凭据或下载完整名单。
 
-## 3. 下一步与备选方向
+## 3. 来源核查时的下一步与备选方向
 
-**优先：** 在不新增商业秘密的前提下，评估是否把 Asda 与 New Balance 的日期化公开列名作为官网既有买家披露的候选补充；先提供可审核的准确表达、来源和披露范围。New Balance 的 `Licensee` 口径必须保留。实际页面修改和公开发布按所有者指示推进，不自动发布。
+**当时优先，后续已完成：** 在不新增商业秘密的前提下，将 Asda 与 New Balance 的日期化公开列名作为官网既有买家披露的候选补充，提供可审核的准确表达、来源和披露范围。New Balance 的 `Licensee` 口径予以保留；后续审核与发布见第 4～7 节。
 
 **备选：** 以已批准且已上线的 97 个面料料号、成分和 GSM 为素材，研究对采购者有用的技术选型内容，并与现有面料库和成衣示例核对，避免重复或推导未公开的结构、用途、测试结果和库存状态；材料属于第一方证据，不当作独立背书。另一方向是基于现有技术指南和公开标准梳理项目测试选择，须逐条核验官方适用范围与现行版本，不根据标准编号冒称本公司实验室资质或测试结果。
 
@@ -50,6 +50,8 @@ C07 比较保留 `deferred / no-comparable-physical-sample`；该决定不表示
 
 ## 5. 2026-11-17 部署已获授权，SSH 站点会话受阻
 
+本节为当时的受阻记录；后续连接和部署结果见第 7 节。
+
 - 所有者确认“审核完成 运行部署”，授权发布审核版 `5175129` 的 `page-about-us.php` 与 `template-parts/product-category/sportswear-evidence.php`；无需媒体或数据库操作。该授权仍有效，连接恢复后直接续做，不再重复询问。
 - 发布前正式首页、About 与七品类普通访问均 HTTP 200、单一 H1 和各自 canonical；已保存部署前公开基线。首页、About 和 Sportswear 的随机查询参数请求也均 HTTP 200，返回 `MISS, MISS` / Cloudflare `DYNAMIC`。普通 About 与 Sportswear 目前仍为不含 Asda / New Balance 新记录的旧版。
 - Flywheel SSH 网关接受既有公钥，账号站点列表中也显示目标站；但进入该站点执行只读 `wp option get home` 或 `pwd` 均未完成，最终返回 `We're having trouble connecting to your site`。参考号 `1fb8ab90-f499-4038-b623-d6b298d8d77b`。经网关交互选择相同站点后，55 秒内仍停留在连接中；以 DNS 查询获得的公网地址直接尝试亦未在 28 秒内完成。不能据此认定全部 Flywheel 站点故障或推断原因。
@@ -57,6 +59,8 @@ C07 比较保留 `deferred / no-comparable-physical-sample`；该决定不表示
 - 恢复条件：Flywheel 网关能够进入目标站点并完成只读预检。恢复后按[SSH 工作流程](../../operations/flywheel-ssh-deployment.md)核对 home、stylesheet、production、主题与 uploads 路径；备份两份生产原文件并核对其与 `5175129^` 的哈希，确认无并发改动后按审核范围上传、验收和记录。若生产文件与基线不同，先核对并保留差异，不覆盖未知修改。
 
 ## 6. 备用 SSH 密钥尝试
+
+本节记录部署前的密钥尝试；旧密钥后来恢复站点连接，见第 7 节。
 
 所有者说明 Flywheel 客服需要一段时间，并要求创建新密钥尝试。已生成独立 Ed25519 备用密钥及独立配置 `C:\Users\Administrator\.ssh\athletik-flywheel-alt-20261117.conf`，保留原有密钥、配置及主机校验；新私钥 ACL 仅当前用户和 SYSTEM 可访问。公钥指纹 `SHA256:Phz+YcpUJyTCdteMcjm06iUAAe0il3Ch8AAW2bh5e/g`。新配置已核实只选择备用私钥；添加前网关返回 `Permission denied (publickey)`，表示 Flywheel 尚未登记该新公钥。
 
@@ -71,3 +75,12 @@ C07 比较保留 `deferred / no-comparable-physical-sample`；该决定不表示
 所有者要求重连后再次复测（本地时间 2026-11-17T15:02:22+08:00）：备用密钥连接站点与网关均返回 `Permission denied (publickey)`；原密钥通过认证，但站点会话在 50 秒内仍未建立。未验证客服是否已完成同步，因此不把结果归因为同步成功或失败。生产未写入，继续等待 Flywheel 排查，部署授权保持有效。
 
 所有者提供的 Flywheel 客服回复确认：客服已尝试重新同步 SSH 用户，但问题仍在，现已提交工单 `15523783` 给高级工程师，后续将通过邮件联系；客服表示现有日志未显示确切 SSH 错误。工单编号不同于此前网关返回的参考号 `1fb8ab90-f499-4038-b623-d6b298d8d77b`。等待客服后续结果，恢复后继续已批准的生产预检、备份、部署和验收。
+
+## 7. 2026-11-17 生产部署与验收
+
+- 所有者要求再次连接；原有密钥已能进入生产站点，备用密钥当次仍返回 `Permission denied (publickey)`。生产预检核对 `home`、活动子主题、`production` 环境及主题、uploads 路径均符合部署工作流程；不能据此判断 Flywheel 故障根因或工单 `15523783` 已关闭。
+- 按已批准版本 `5175129` 部署 `page-about-us.php` 与 `template-parts/product-category/sportswear-evidence.php`；无媒体、数据库或 URL 改动。两份生产原文件已按哈希保存到本机私有备份目录 `C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-17-5175129-geo-20261117T142537`，完整 manifest 与哈希同目录保存。
+- 生产 About 原文件的混合换行使字节哈希不同；换行规范化后与审核前版本完全一致。发布文件保留线上每一行原有换行字节，仅插入已批准的 10 行内容；规范化后与审核版一致。Sportswear 原文件与预期哈希完全一致。两份临时文件经服务器 PHP 语法检查后激活；最终生产哈希、大小、权限与所属用户／组核对通过，生产侧临时回退文件已按哈希验证清理，本机原文件备份保留。
+- 所有者刷新 Flywheel 缓存后，普通 About 和 Sportswear 正式网址从本机和生产服务器出口均 HTTP 200 且显示 Asda 与 New Balance。About 显示四项名单及各自来源；Sportswear 保留四张卡、六个链接和 `Licensee Supplier List Q1-2026` 范围。键盘焦点、Enter 跳转 About 对应标题、两项 OS Hub 链接地址均通过。
+- 隔离无头 Chrome 检查 1440、1024、768、390、320px，两页无横向溢出；桌面和手机截图已目视检查。其他六个品类页均 HTTP 200、单一 H1、未出现 Sportswear 证据区。两页 Title、description、canonical、robots、H1、JSON-LD 与部署前基线一致；基线中少数文字存在替换字符，这些片段按通配符比较，Title 另与 `seo-tags.md` 精确核对。
+- 验收记录为 `.chrome-check/geo-osh-production-qa-20261117.json`、`.chrome-check/geo-osh-production-seo-20261117.json` 和 `.chrome-check/geo-osh-live-{about,sportswear}-{1440,390}-20261117.png`；仅本地保存，不上传生产。Finding outcome：`changed / keep / measuring`。此次未进行 AI 复测，不据页面上线推断已被索引、引用或推荐。Git 文档记录保留本地提交，未推送。
