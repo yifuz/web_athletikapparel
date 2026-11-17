@@ -55,6 +55,8 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.2 GEO
 
+- 2026-11-17 所有者说明 C07 同面料接缝比较暂时没有实物样本。已[补查 Open Supply Hub 买家公开数据](geo/testing/buyer-disclosures-osh-2026-11-17.md)：实体名称及 15 号地址匹配，Asda 有日期化工厂贡献，New Balance 有 2026 Q1 Licensee Supplier List 列名；后者补齐了 11-02 访问受限时无法核实的线索。只支持各自时间和名单范围，未认领档案、修改网站或公开新增客户；下一步评估可引用范围及档案同时展示的历史认证信息。
+
 - 2026-11-16 完成 [BD-02 来源对照与 Sportswear 证据区](geo/testing/bd02-sportswear-evidence-2026-11-16.md) Local 审核版：集中呈现已公开的运动服产品、真实接缝生产过程、代表性面料库以及两份买家公开名单；11-17 已按上述记录获准部署并完成普通正式网址验收。
 
 - 2026-11-16 完成 [GEO 新资产与指南索引复核](geo/testing/geo-evidence-and-index-review-2026-11-16.md)：C08 现为 `PASS / Submitted and indexed`，最后报告抓取 11-12 北京时间；C06 同样已收录，但最后报告抓取仍为 10-16，早于示范上线。正式面料页四种访问标识均返回 200，初始 HTML 含 97 个料号锚点；两款 Outdoor 产品页面可读，生成画面不当作实拍或测试。Dot 到期后所有者改为[手动复测](geo/testing/valid-retest/manual-2026-11-16/README.md)；D04、BD-02、C08 按所有者确认有效，D04 中 Athletik 第 1 / 5，后两题正文与所提供来源未见 Athletik。下一优先为 BD-02 宽泛采购来源与公开证据差异核查；单次回答不等同稳定 AI 推荐。

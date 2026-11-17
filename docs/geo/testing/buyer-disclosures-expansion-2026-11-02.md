@@ -1,5 +1,7 @@
 # 买家公开名单扩查：2026-11-02
 
+> 后续更新（2026-11-17）：已通过 Open Supply Hub 的正常公开界面核实 New Balance `Licensee Supplier List Q1-2026` 中的匹配工厂档案，并查到 Asda 的日期化公开贡献；详见[后续记录](buyer-disclosures-osh-2026-11-17.md)。下文保留 11-02 当时的查询和访问限制，不再代表最新发现。两项尚未加入官网。
+
 ## 结论与本轮处置
 
 所有者要求继续寻找其他买家公开名单，合并加入待部署的 About 内容。本轮扩查**未找到可新增的第三家买家官方 Athletik 列名**，所以现有页面和五文件合并部署包保持 Canadian Tire Corporation 与 Sainsbury's 两项，见[已核验来源与部署记录](buyer-disclosures-2026-11-02.md)。
