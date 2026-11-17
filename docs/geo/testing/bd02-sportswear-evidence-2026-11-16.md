@@ -1,6 +1,6 @@
 # BD-02：Sportswear 采购证据补强
 
-日期：2026-11-16。状态：`local-review / not-deployed`。所有者要求开始 BD-02 证据补强；本轮完成来源对照、事实核验、Sportswear 页 Local 实施和定向检查。新增英文正文是供所有者审核的草稿，尚未批准上线。
+日期：2026-11-16。最新状态：`deployed / production-cache-pending`。所有者于 2026-11-17 说“审核发布吧”，批准最终版本；三个文件已上传并校验，但普通正式网址仍显示 Flywheel 旧缓存，最终生产验收待刷新后完成。下文 Local 审核状态为历史，实际部署见文末。
 
 ## 问题与判断
 
@@ -54,3 +54,12 @@
 本轮视觉增量仅 `style.css` 和 `template-parts/product-category/sportswear-evidence.php`，无新增媒体、数据库操作或生产部署。整个新增区块仍为 `local-review / not-deployed`；如获准发布，需要结合原实施一起核对三个文件：上述两项及 `template-parts/product-category/page.php`。
 
 Local 检查覆盖 1440、1200、1024、768、390、360、320px：原文与五个链接和视觉调整前快照一致，四个图标正常、无页面横向溢出，链接可依次键盘聚焦并显示焦点；六个其他产品类别页未出现该区块。PHP 语法及 `git diff --check` 通过。截图、原文与链接快照及测试汇总保存在 Git 忽略目录 `.chrome-check/sportswear-evidence-polish-20261116-*`。内容和视觉仍待所有者审核，不代表上线授权。
+
+## 2026-11-17 部署与缓存验收
+
+- 所有者明确批准“审核发布吧”；冻结最终代码 `161118e`，包含原证据区和后续视觉调整。发布前 SSH 已确认正式域名、`production`、活动子主题及目录；生产 `style.css` 和共用模板均与此前 `969f94f` 基线完全一致，新增模板此前不存在，既有线性图标依赖与批准版本一致。
+- 按依赖顺序上传 `template-parts/product-category/sportswear-evidence.php`、`style.css`、`template-parts/product-category/page.php`；两个 PHP 临时文件通过服务器语法检查，三个正式文件的 SHA-256、大小及 `0644` 权限与冻结版本一致。未上传媒体，未修改数据库或 WordPress 设置。
+- 私有备份目录：`C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-17-161118e-geo-20261117T052226Z`。含两个原生产文件、三个冻结发布文件、清单、公开基线及上传结果；不在 Git 或公开目录。
+- Cloudflare 对普通 Sportswear URL 与旧版 CSS URL 的定向 purge 返回成功；但普通正式网址仍返回 `x-cache: MISS, HIT` 的 Flywheel 旧 HTML，未出现证据区；旧 CSS 也仍从上游旧缓存返回。未把 Cloudflare 成功回执或 WordPress Object Cache 等同 Flywheel 页面缓存刷新。
+- 使用带临时查询参数的生产预览，确认新版 HTML 和 CSS 已由服务器正确输出，CSS 哈希与冻结文件一致；隔离 Chrome 的 1440 / 1024 / 768 / 390 / 320px 均显示 4 项证据、5 个链接、4 个图标，无横向溢出；六个其他品类无新增区块。首页及七品类的 title、description、H1、canonical、robots、JSON-LD 相对上线前基线一致；PDF、技术指南和面料锚点可访问。上述预览不等于普通网址缓存验收。
+- 普通网址仍须在 Flywheel Advanced → Flush Cache 后复测新版 HTML / CSS、响应式显示及链接，才可将状态升级为 `production-verified`。缓存清理请求已交所有者；未重试索引申请、未提交询盘、未推送 Git。
