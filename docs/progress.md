@@ -19,7 +19,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.1 网站与内容
 
-- 2026-11-17 所有者批准 [Sportswear 采购证据区](geo/testing/bd02-sportswear-evidence-2026-11-16.md)，已经 SSH 发布最终 `161118e` 的 3 个代码文件并核对服务器哈希与 PHP 语法；无媒体 / 数据库操作。临时查询参数预览及五屏宽、其他六品类隔离检查通过，但普通正式 URL 仍返回 Flywheel 旧缓存，状态 `deployed / production-cache-pending`，刷新后复验；未推送 Git。
+- 2026-11-17 所有者批准 [Sportswear 采购证据区](geo/testing/bd02-sportswear-evidence-2026-11-16.md)，已经 SSH 发布最终 `161118e` 的 3 个代码文件并核对服务器哈希与 PHP 语法；无媒体 / 数据库操作。临时查询参数预览及五屏宽、其他六品类隔离检查通过；所有者确认刷新 Flywheel 后，Chicago 访问节点的普通 URL 已返回新版，本机 San Jose 节点仍返回旧缓存。状态 `deployed / production-cache-pending`，待不同访问路径一致后完成普通网址验收；未推送 Git。
 
 - 2026-11-16 Sportswear 的 [Manufacturing evidence 区块](geo/testing/bd02-sportswear-evidence-2026-11-16.md)按所有者反馈做 Local 视觉优化：桌面三项入口并列、买家公开名单独立成横向资料区，复用站内线性图标；原有文字、证据边界与五个链接不变。七档屏宽、键盘焦点及其他六个类目隔离通过。原新增区块及本次视觉改动仍待审核，未部署；整体上线清单为 3 个代码文件，无媒体或数据库操作。
 - 2026-11-13 所有者审核通过，[两款 Outdoor Showcase 与精选入口已上线](site/product-showcase-outdoor-release-2026-11-13.md)：冻结 `e00b611`，部署 5 个代码文件、21 个媒体文件并精准新建生产 ID 111／113（父页 105），六个关联旧页面 post／metadata 不变。正式网址多屏、三段视频实际播放、双卡入口、筛选、询盘预填和无 JS 回退通过；页面 Sitemap 各出现一次，未提交表单，也不据此声称 Google 已收录。套装的 `ItemPage.name` 含字面 `&amp;`，既有 Ocean Depth 也可复现，视觉标题正常，影响未证实、待后续排查；本批 `deployed / production-verified-with-warning`，未推送 Git。

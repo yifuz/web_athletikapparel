@@ -62,4 +62,5 @@ Local 检查覆盖 1440、1200、1024、768、390、360、320px：原文与五�
 - 私有备份目录：`C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-17-161118e-geo-20261117T052226Z`。含两个原生产文件、三个冻结发布文件、清单、公开基线及上传结果；不在 Git 或公开目录。
 - Cloudflare 对普通 Sportswear URL 与旧版 CSS URL 的定向 purge 返回成功；但普通正式网址仍返回 `x-cache: MISS, HIT` 的 Flywheel 旧 HTML，未出现证据区；旧 CSS 也仍从上游旧缓存返回。未把 Cloudflare 成功回执或 WordPress Object Cache 等同 Flywheel 页面缓存刷新。
 - 使用带临时查询参数的生产预览，确认新版 HTML 和 CSS 已由服务器正确输出，CSS 哈希与冻结文件一致；隔离 Chrome 的 1440 / 1024 / 768 / 390 / 320px 均显示 4 项证据、5 个链接、4 个图标，无横向溢出；六个其他品类无新增区块。首页及七品类的 title、description、H1、canonical、robots、JSON-LD 相对上线前基线一致；PDF、技术指南和面料锚点可访问。上述预览不等于普通网址缓存验收。
-- 普通网址仍须在 Flywheel Advanced → Flush Cache 后复测新版 HTML / CSS、响应式显示及链接，才可将状态升级为 `production-verified`。缓存清理请求已交所有者；未重试索引申请、未提交询盘、未推送 Git。
+- 所有者确认已在 Flywheel 刷新缓存。随后再次定向清除 Cloudflare 的页面及旧 CSS，普通网址在 Flywheel SSH 出口的 Chicago 节点已返回新版：4 项、5 个链接、CSS 哈希与冻结文件一致，页面 SEO 元数据及 JSON-LD 与上线前一致；本机的 San Jose 节点仍返回旧 HTML 和旧 CSS（桌面、手机和机器人访问均复现）。公开 URL 的 `PURGE` 请求被 Cloudflare 返回 400，未形成 Fastly 清理结果；没有修改 DNS、缓存规则或站点设置。结果说明不同访问路径当时不一致，不能宣布所有普通访客均已看到新版。
+- 普通网址仍须从本机访问节点确认新版 HTML / CSS、响应式显示及链接，才可将状态升级为 `production-verified`。无需重复要求所有者刷新；未重试索引申请、未提交询盘、未推送 Git。
