@@ -55,6 +55,8 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.2 GEO
 
+- 2026-11-17 完成 [BD-02 第三方来源核查](geo/testing/source-ready-bd02-audit-2026-11-17.md)：SourceReady 已有匹配中国实体的公开档案，JSON-LD 仍写旧门牌 25 号，匿名响应未包含规范主站；中国站首页也显示 25 号并被其列为参考之一，不能据此推断唯一数据来源。已准备仅含公开信息的更正请求草稿，未登录、认领、修改或联系平台，也未修改中国站。
+
 - 2026-11-17 [Asda / New Balance 公开来源](geo/testing/buyer-disclosures-osh-2026-11-17.md)已按所有者批准通过 SSH 部署并完成普通正式网址验收：About 新增两条名单及各自来源，Sportswear 补充提及和 About 入口；保留 New Balance `Licensee` 范围。两文件生产备份与哈希、服务器 PHP 语法、五档屏宽、键盘跳转、六品类隔离及页面 SEO 对照通过；无媒体／数据库操作，未推送 Git。原密钥已可连接站点，备用密钥当次仍被拒绝；Flywheel 工单 `15523783` 留待客服后续排查。上线不等于已被 AI 引用或推荐。
 
 - 2026-11-17 所有者说明 C07 同面料接缝比较暂时没有实物样本。[Open Supply Hub 买家公开数据补查](geo/testing/buyer-disclosures-osh-2026-11-17.md)确认实体名称及 15 号地址匹配，Asda 有日期化工厂贡献，New Balance 有 2026 Q1 Licensee Supplier List 列名；后者补齐了 11-02 访问受限时无法核实的线索。只支持各自时间和名单范围；补查时未认领档案，后续已按上条获准发布。

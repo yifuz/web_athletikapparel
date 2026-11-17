@@ -18,6 +18,8 @@
 
 [BD-02 Sportswear 采购证据区](testing/bd02-sportswear-evidence-2026-11-16.md)与 [Asda 和 New Balance 公开记录](testing/buyer-disclosures-osh-2026-11-17.md)均已于 11-17 部署并通过普通正式网址验收，状态 `deployed / production-verified`。新名单保留 New Balance `Licensee` 范围；页面上线不等于已被 AI 引用或推荐。原 SSH 密钥恢复站点连接后完成发布，备用密钥当次仍被拒绝，Flywheel 工单 `15523783` 留待客服后续排查。所有者说明 C07 同面料比较暂时没有实物样本。C06 / C08 的到期索引复查已于 11-16 完成；10-30 LinkedIn Tech Pack 新帖的完整七日窗口为 10-31～11-06，可得数据与实际 URL 仍待补录。Bing 本轮按所有者决定暂缓，不重复催导出。
 
+11-17 [BD-02 第三方来源核查](testing/source-ready-bd02-audit-2026-11-17.md)发现 SourceReady 已有对应中国实体的公开档案；机器可读地址仍为 25 号，匿名响应未包含规范主站。中国站首页同样显示 25 号，SourceReady 将其列为参考之一，但未证明唯一来源。已准备最小更正请求供审核，未修改中国站、注册或联系平台；目录出现不等于 AI 已引用或推荐。
+
 对应证据：[10 月有效样本验收](testing/valid-retest/batch-d-2026-10-29/README.md)、[Google AI Mode 对照](testing/valid-retest/google-ai-mode-2026-10-29/README.md)、[指南合并生产验收](testing/guide-content-dates-2026-10-31.md)、[买家名单](testing/buyer-disclosures-2026-11-02.md)、[技术证据盘点](testing/valid-retest/batch-d-2026-10-29/c06-c07-evidence-inventory-2026-10-29.md)、[分发日志](distribution/publishing-log.md)。
 
 ## 1. 北极星目标与四阶段结果漏斗
@@ -231,7 +233,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-RISK-006 | 执行边界 | UltraMerino 等站点不在本项目执行范围；`accepted-scope` | P2 | 所有者 | 本项目只记录冲突，不擅自修改、复制、设置 Canonical 或重定向；若职责改变再重新立项。 |
 | GEO-RISK-007 | 外部资料 | 旧 LinkedIn 管理权丢失；`accepted-residual / monitor-only` | P2 | 所有者 + 社交管理员 | 所有者确认历史内容属实且页面不再更新；当前不投入追索或修复，新内容只发当前 LinkedIn。若 AI/搜索产生新的实体误判或账号找回，再重新打开。 |
 | GEO-RISK-008 | 基础设施 | `myathletik.com` 退役状态；`closed / monitoring` | P2 | 基础设施负责人 | 2026-09-30 已验证四种 host/scheme 与普通、Googlebot、OAI UA 均为 410；任一入口重新出现 200/3xx 或旧正文时重新打开。 |
-| GEO-RISK-009 | 跨站治理 | `athletik.com.cn` 持续运行带来的双站事实同步；`active-governance` | P1 | 所有者 + 两站维护者 | 不关闭、不重定向；保持其中国实体站点角色。重叠断言按法律实体、日期和范围核验；AI 引用该站时单独记录来源归属，不把它误判为退役缓存或独立第三方背书。 |
+| GEO-RISK-009 | 跨站治理 | `athletik.com.cn` 持续运行带来的双站事实同步；`active-governance` | P1 | 所有者 + 两站维护者 | 不关闭、不重定向；保持其中国实体站点角色。11-17 首页仍显示旧门牌 25 号，SourceReady 的公司 JSON-LD 也显示 25 号；正确门牌为 15 号，站点修改权限及数据流向未确认。详见[来源核查](testing/source-ready-bd02-audit-2026-11-17.md)。AI 引用该站时单独记录来源归属，不把它误判为退役缓存或独立第三方背书。 |
 
 风险台账不把 `accepted-residual` 或 `closed / monitoring` 计入当前 P0。P0 只保留会直接污染事实源、测量结论或未经授权公开声明的问题。
 
@@ -259,9 +261,10 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 1. **BD-02 证据补强已部署并验收。** Dot 已到期，所有者手动采集的 [D04、BD-02、C08 均已接受有效样本](testing/valid-retest/manual-2026-11-16/README.md)；[Sportswear 证据区](testing/bd02-sportswear-evidence-2026-11-16.md)已通过普通正式网址验收。C06 / C08 抓取与索引已于 11-16 复核，结果见[记录](testing/geo-evidence-and-index-review-2026-11-16.md)；不把部署或内容日期当作搜索重抓日期。
 2. **买家公开证据已部署并验收。** [OS Hub 公开档案](testing/buyer-disclosures-osh-2026-11-17.md)匹配中国实体与 15 号地址；Asda 日期化数据及 New Balance 2026 Q1 Licensee Supplier List 已按批准发布到 About 和 Sportswear，不扩写为直接合同、当前订单或背书。C07 同面料实物暂缺，保持 `deferred / no-comparable-physical-sample`。
-3. **维护可控分发证据。** 10-30 LinkedIn 新帖待实际 URL，11-07 起复盘完整七日窗口；旧 GEO-06/07/08 的 URL、Story 和可得数据缺口继续按[发布日志](distribution/publishing-log.md)补录。Instagram / LinkedIn 可准备内容，但每次公开发布按授权执行，YouTube 更新已关闭。
-4. **保持测量口径。** 9 月首轮与 A/B 的 partial 不覆盖；E01、C、D、Google 独立入账。已完成两平台 10 月采集，不重新批量采样或用缺少来源的记录补齐分母。GSC 生成式展示、实际回答、GA4、正式询盘分开；Bing 本轮 deferred / low-signal。
-5. **有触发再扩量。** claim-to-source 矩阵、Program Fit、About、ACTIVESEAM、UltraMerino 冲突审计和 Top 5 试验已有记录，不重新立项。设备方佐证/外联继续按暂缓决定；买家公开名单已核验并应用，不等同外联解禁。新材料或重复出现的明确证据缺口成立后，再评估既有页面的增量价值。
+3. **SourceReady 实体资料核查完成，公开更正待决定。** [核查与草稿](testing/source-ready-bd02-audit-2026-11-17.md)记录机器可读旧门牌、规范站入口缺失及中国站的同一旧值；已准备只含公开信息的更正请求，未联系平台或修改中国站，相关权限与渠道待确认。
+4. **维护可控分发证据。** 10-30 LinkedIn 新帖待实际 URL，11-07 起复盘完整七日窗口；旧 GEO-06/07/08 的 URL、Story 和可得数据缺口继续按[发布日志](distribution/publishing-log.md)补录。Instagram / LinkedIn 可准备内容，但每次公开发布按授权执行，YouTube 更新已关闭。
+5. **保持测量口径。** 9 月首轮与 A/B 的 partial 不覆盖；E01、C、D、Google 独立入账。已完成两平台 10 月采集，不重新批量采样或用缺少来源的记录补齐分母。GSC 生成式展示、实际回答、GA4、正式询盘分开；Bing 本轮 deferred / low-signal。
+6. **有触发再扩量。** claim-to-source 矩阵、Program Fit、About、ACTIVESEAM、UltraMerino 冲突审计和 Top 5 试验已有记录，不重新立项。设备方佐证/外联继续按暂缓决定；买家公开名单已核验并应用，不等同外联解禁。新材料或重复出现的明确证据缺口成立后，再评估既有页面的增量价值。
 
 每月保留固定 Prompt 与可比环境，内容效果按既定完整窗口观察；短周期仅修复已证实的事实错误或技术阻断。本轮不增加 Backlog，不因单次未提及改 URL、Title、Schema 或建立近义页面。
 
