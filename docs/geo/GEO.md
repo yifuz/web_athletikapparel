@@ -16,7 +16,7 @@
 
 当前范围以 `AGENTS.md` 为准：官网、Instagram、当前 LinkedIn 均可优化和准备内容；公开发布仍需对应授权。所有者不管理 YouTube，既有视频信息更新已 `closed / out-of-scope / not-applied`，不要求接管；其他域名、账号与外联不自动纳入。
 
-[BD-02 Sportswear 采购证据区](testing/bd02-sportswear-evidence-2026-11-16.md)已于 11-17 部署并通过普通正式网址验收，状态 `deployed / production-verified`。所有者说明 C07 同面料比较暂时没有实物样本；[Asda 和 New Balance 公开记录](testing/buyer-disclosures-osh-2026-11-17.md)的 About 与 Sportswear 本地版已获准部署，但 Flywheel SSH 网关无法进入站点，生产尚未写入；恢复连接后按既有授权继续。C06 / C08 的到期索引复查已于 11-16 完成；10-30 LinkedIn Tech Pack 新帖的完整七日窗口为 10-31～11-06，可得数据与实际 URL 仍待补录。Bing 本轮按所有者决定暂缓，不重复催导出。
+[BD-02 Sportswear 采购证据区](testing/bd02-sportswear-evidence-2026-11-16.md)已于 11-17 部署并通过普通正式网址验收，状态 `deployed / production-verified`。所有者说明 C07 同面料比较暂时没有实物样本；[Asda 和 New Balance 公开记录](testing/buyer-disclosures-osh-2026-11-17.md)的 About 与 Sportswear 本地版已获准部署，但 Flywheel SSH 网关无法进入站点。所有者要求尝试新密钥，备用公钥待添加，连接恢复后按既有授权继续。C06 / C08 的到期索引复查已于 11-16 完成；10-30 LinkedIn Tech Pack 新帖的完整七日窗口为 10-31～11-06，可得数据与实际 URL 仍待补录。Bing 本轮按所有者决定暂缓，不重复催导出。
 
 对应证据：[10 月有效样本验收](testing/valid-retest/batch-d-2026-10-29/README.md)、[Google AI Mode 对照](testing/valid-retest/google-ai-mode-2026-10-29/README.md)、[指南合并生产验收](testing/guide-content-dates-2026-10-31.md)、[买家名单](testing/buyer-disclosures-2026-11-02.md)、[技术证据盘点](testing/valid-retest/batch-d-2026-10-29/c06-c07-evidence-inventory-2026-10-29.md)、[分发日志](distribution/publishing-log.md)。
 

@@ -1,6 +1,6 @@
 # 买家公开证据补查：Open Supply Hub（2026-11-17）
 
-状态：`deployment-authorized / flywheel-ssh-blocked / not-deployed`。所有者已审核并授权部署；Flywheel SSH 网关当前无法进入站点，生产尚未写入。下文来源核查与 Local 验收保留为历史，部署尝试见文末；不把列名等同于当前业务关系或 AI 推荐。
+状态：`deployment-authorized / alternate-ssh-key-awaiting-registration / not-deployed`。所有者已审核并授权部署；Flywheel SSH 网关当前无法进入站点，生产尚未写入。所有者要求尝试新密钥，备用公钥待添加；来源核查与 Local 验收保留为历史，部署尝试见文末。
 
 ## 1. 已核实的工厂档案
 
@@ -55,3 +55,9 @@ C07 比较保留 `deferred / no-comparable-physical-sample`；该决定不表示
 - Flywheel SSH 网关接受既有公钥，账号站点列表中也显示目标站；但进入该站点执行只读 `wp option get home` 或 `pwd` 均未完成，最终返回 `We're having trouble connecting to your site`。参考号 `1fb8ab90-f499-4038-b623-d6b298d8d77b`。经网关交互选择相同站点后，55 秒内仍停留在连接中；以 DNS 查询获得的公网地址直接尝试亦未在 28 秒内完成。不能据此认定全部 Flywheel 站点故障或推断原因。
 - 已在私有目录 `C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-17-5175129-geo-20261117T142537` 冻结两份批准版本与公开基线，并记录待比对的旧版本哈希；这不是生产文件备份。因未进入生产，尚不能验证站点环境与远程文件哈希，也未取得原文件、上传、修改缓存或数据库。两处正式页面因此尚未进入本批生产验收。
 - 恢复条件：Flywheel 网关能够进入目标站点并完成只读预检。恢复后按[SSH 工作流程](../../operations/flywheel-ssh-deployment.md)核对 home、stylesheet、production、主题与 uploads 路径；备份两份生产原文件并核对其与 `5175129^` 的哈希，确认无并发改动后按审核范围上传、验收和记录。若生产文件与基线不同，先核对并保留差异，不覆盖未知修改。
+
+## 6. 备用 SSH 密钥尝试
+
+所有者说明 Flywheel 客服需要一段时间，并要求创建新密钥尝试。已生成独立 Ed25519 备用密钥及独立配置 `C:\Users\Administrator\.ssh\athletik-flywheel-alt-20261117.conf`，保留原有密钥、配置及主机校验；新私钥 ACL 仅当前用户和 SYSTEM 可访问。公钥指纹 `SHA256:Phz+YcpUJyTCdteMcjm06iUAAe0il3Ch8AAW2bh5e/g`。新配置已核实只选择备用私钥；添加前网关返回 `Permission denied (publickey)`，表示 Flywheel 尚未登记该新公钥。
+
+所有者将备用公钥添加到 Flywheel 后，应使用备用配置测试网关认证和进入目标站点；若会话恢复，按原授权完成预检、生产原文件备份、两文件部署和验收。原密钥先前已经通过认证，不能预设换钥能修复站点会话；本轮未修改生产或其他浏览器窗口。
