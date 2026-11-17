@@ -108,7 +108,7 @@ Button: Request a Quote → /contact/
 
 ## 公开供应商披露新增稿（2026-11-17，Local 审核）
 
-在上述两项后新增以下两项，完整证据与页面验收见[记录](docs/geo/testing/buyer-disclosures-osh-2026-11-17.md)。当前为 Local 审核版，尚未批准发布。
+在上述两项后新增以下两项，完整证据与页面验收见[记录](docs/geo/testing/buyer-disclosures-osh-2026-11-17.md)。所有者已审核并批准发布；部署时 Flywheel SSH 无法进入目标站，当前仍为 Local 版本，生产未写入。
 
 **Asda**
 

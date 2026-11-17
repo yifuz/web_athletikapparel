@@ -1,6 +1,6 @@
 # 买家公开证据补查：Open Supply Hub（2026-11-17）
 
-状态：`local-review / not-deployed`。所有者说明 C07 同面料接缝比较暂时没有实物样本，随后授权按讨论方案在 About Us 与 Sportswear 制作本地审核版。下文来源核查为历史记录，Local 实施及验收见文末；不把列名等同于当前业务关系或 AI 推荐。
+状态：`deployment-authorized / flywheel-ssh-blocked / not-deployed`。所有者已审核并授权部署；Flywheel SSH 网关当前无法进入站点，生产尚未写入。下文来源核查与 Local 验收保留为历史，部署尝试见文末；不把列名等同于当前业务关系或 AI 推荐。
 
 ## 1. 已核实的工厂档案
 
@@ -38,7 +38,7 @@ C07 比较保留 `deferred / no-comparable-physical-sample`；该决定不表示
 - Sportswear 的 `Buyer-published supplier lists` 补一句两项新记录，并增加跳到 About 完整名单的站内链接；原两份 PDF 入口、四张证据卡及不把名单当作特定订单或背书的说明均保留。
 - 官网不复制 OS Hub 中的员工、认证或其他附带字段；来源可通向该平台自己的完整档案，不能限制第三方展示。本次没有认领档案、修改第三方资料或披露订单信息。
 
-预备上线清单只有两个代码文件：`page-about-us.php` 和 `template-parts/product-category/sportswear-evidence.php`。使用现有布局与样式；无新增媒体、数据库操作、URL、Title、meta、H1 或 Schema 改动。当前仅 Local 审核，尚未获准发布，也未推送 Git。
+预备上线清单只有两个代码文件：`page-about-us.php` 和 `template-parts/product-category/sportswear-evidence.php`。使用现有布局与样式；无新增媒体、数据库操作、URL、Title、meta、H1 或 Schema 改动。当时为 Local 审核状态；后续授权与部署尝试见下，Git 未推送。
 
 定向验证：
 
@@ -46,4 +46,12 @@ C07 比较保留 `deferred / no-comparable-physical-sample`；该决定不表示
 2. 隔离 Chrome 在 1440、1024、768、390、360、320px 检查两页：About 四条记录和来源链接可见，Sportswear 四张卡、六个链接完整，无横向溢出。Sportswear 新入口通过键盘聚焦与 Enter 实际到达 About 对应标题；新来源链接可键盘聚焦。桌面与手机截图已目视检查。
 3. 其他六个品类页均 HTTP 200、单一 H1，未显示 Sportswear 新证据区。两项 OS Hub 筛选入口经隔离浏览器分别返回 HTTP 200、各 1 条匹配 `CN2021314PF2M92`；档案来源面板仍显示 New Balance Q1-2026 列表及 Asda 2026-10-22 数据。
 
-结果见 `.chrome-check/geo-osh-local-html-20261117.json`、`.chrome-check/geo-osh-local-qa-20261117.json`、`.chrome-check/geo-osh-source-qa-20261117.json`，截图为 `.chrome-check/geo-osh-{about,sportswear}-{1440,390}-20261117.png`。这些文件仅用于本地验证，不进入部署清单。下一步由所有者审核 Local 两页；批准后按项目部署流程发布并验收。
+结果见 `.chrome-check/geo-osh-local-html-20261117.json`、`.chrome-check/geo-osh-local-qa-20261117.json`、`.chrome-check/geo-osh-source-qa-20261117.json`，截图为 `.chrome-check/geo-osh-{about,sportswear}-{1440,390}-20261117.png`。这些文件仅用于本地验证，不进入部署清单。所有者随后已审核并授权部署，实际尝试见下。
+
+## 5. 2026-11-17 部署已获授权，SSH 站点会话受阻
+
+- 所有者确认“审核完成 运行部署”，授权发布审核版 `5175129` 的 `page-about-us.php` 与 `template-parts/product-category/sportswear-evidence.php`；无需媒体或数据库操作。该授权仍有效，连接恢复后直接续做，不再重复询问。
+- 发布前正式首页、About 与七品类普通访问均 HTTP 200、单一 H1 和各自 canonical；已保存部署前公开基线。首页、About 和 Sportswear 的随机查询参数请求也均 HTTP 200，返回 `MISS, MISS` / Cloudflare `DYNAMIC`。普通 About 与 Sportswear 目前仍为不含 Asda / New Balance 新记录的旧版。
+- Flywheel SSH 网关接受既有公钥，账号站点列表中也显示目标站；但进入该站点执行只读 `wp option get home` 或 `pwd` 均未完成，最终返回 `We're having trouble connecting to your site`。参考号 `1fb8ab90-f499-4038-b623-d6b298d8d77b`。经网关交互选择相同站点后，55 秒内仍停留在连接中；以 DNS 查询获得的公网地址直接尝试亦未在 28 秒内完成。不能据此认定全部 Flywheel 站点故障或推断原因。
+- 已在私有目录 `C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-17-5175129-geo-20261117T142537` 冻结两份批准版本与公开基线，并记录待比对的旧版本哈希；这不是生产文件备份。因未进入生产，尚不能验证站点环境与远程文件哈希，也未取得原文件、上传、修改缓存或数据库。两处正式页面因此尚未进入本批生产验收。
+- 恢复条件：Flywheel 网关能够进入目标站点并完成只读预检。恢复后按[SSH 工作流程](../../operations/flywheel-ssh-deployment.md)核对 home、stylesheet、production、主题与 uploads 路径；备份两份生产原文件并核对其与 `5175129^` 的哈希，确认无并发改动后按审核范围上传、验收和记录。若生产文件与基线不同，先核对并保留差异，不覆盖未知修改。
