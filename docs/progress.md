@@ -55,6 +55,8 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.2 GEO
 
+- 2026-11-17 按所有者确认的方向完成 [Asda / New Balance 公开来源 Local 审核版](geo/testing/buyer-disclosures-osh-2026-11-17.md)：About 新增两条名单及各自来源，Sportswear 补充提及和 About 入口；保留 New Balance `Licensee` 范围。两来源实际匹配、六档屏宽、键盘跳转、六品类隔离及页面 SEO 对照通过；仅两个代码文件，无媒体／数据库操作，尚未部署。
+
 - 2026-11-17 所有者说明 C07 同面料接缝比较暂时没有实物样本。已[补查 Open Supply Hub 买家公开数据](geo/testing/buyer-disclosures-osh-2026-11-17.md)：实体名称及 15 号地址匹配，Asda 有日期化工厂贡献，New Balance 有 2026 Q1 Licensee Supplier List 列名；后者补齐了 11-02 访问受限时无法核实的线索。只支持各自时间和名单范围，未认领档案、修改网站或公开新增客户；下一步评估可引用范围及档案同时展示的历史认证信息。
 
 - 2026-11-16 完成 [BD-02 来源对照与 Sportswear 证据区](geo/testing/bd02-sportswear-evidence-2026-11-16.md) Local 审核版：集中呈现已公开的运动服产品、真实接缝生产过程、代表性面料库以及两份买家公开名单；11-17 已按上述记录获准部署并完成普通正式网址验收。

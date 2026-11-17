@@ -1,6 +1,6 @@
 # 买家公开证据补查：Open Supply Hub（2026-11-17）
 
-状态：`source-checked / candidate-for-owner-review / no-public-change`。所有者说明 C07 同面料接缝比较暂时没有实物样本，要求寻找其他可执行的 GEO 工作。本次只查询公开资料，不改网站、社交账号或第三方档案，不把列名直接等同于当前业务关系或 AI 推荐。
+状态：`local-review / not-deployed`。所有者说明 C07 同面料接缝比较暂时没有实物样本，随后授权按讨论方案在 About Us 与 Sportswear 制作本地审核版。下文来源核查为历史记录，Local 实施及验收见文末；不把列名等同于当前业务关系或 AI 推荐。
 
 ## 1. 已核实的工厂档案
 
@@ -29,3 +29,21 @@ OS Hub 的贡献者数据并非对名单所涉事实的全面独立审计；实�
 **备选：** 以已批准且已上线的 97 个面料料号、成分和 GSM 为素材，研究对采购者有用的技术选型内容，并与现有面料库和成衣示例核对，避免重复或推导未公开的结构、用途、测试结果和库存状态；材料属于第一方证据，不当作独立背书。另一方向是基于现有技术指南和公开标准梳理项目测试选择，须逐条核验官方适用范围与现行版本，不根据标准编号冒称本公司实验室资质或测试结果。
 
 C07 比较保留 `deferred / no-comparable-physical-sample`；该决定不表示公司没有其他面料或成衣材料。后续有同面料样本及公开许可再重启，外观示范与性能测试仍应分开。本次没有运行 AI 复测，不推断这些资料已被 AI 引用或会带来推荐。
+
+## 4. 2026-11-17 Local 审核版
+
+所有者在了解两条公开记录的拟用位置、日期范围、来源入口与 OS Hub 档案可见范围后说“开始做”。按讨论方案实施：
+
+- About Us 的 `Public supplier disclosures` 在原两项之后新增 Asda 和 New Balance 两项。Asda 写 OS Hub 所显示的 2026 年 10 月数据；New Balance 明确保留 `Licensee Supplier List Q1-2026`。每项分别链接买家对应的 OS Hub 筛选结果，目标仅展示匹配工厂入口，继续点击可进入完整公开档案。
+- Sportswear 的 `Buyer-published supplier lists` 补一句两项新记录，并增加跳到 About 完整名单的站内链接；原两份 PDF 入口、四张证据卡及不把名单当作特定订单或背书的说明均保留。
+- 官网不复制 OS Hub 中的员工、认证或其他附带字段；来源可通向该平台自己的完整档案，不能限制第三方展示。本次没有认领档案、修改第三方资料或披露订单信息。
+
+预备上线清单只有两个代码文件：`page-about-us.php` 和 `template-parts/product-category/sportswear-evidence.php`。使用现有布局与样式；无新增媒体、数据库操作、URL、Title、meta、H1 或 Schema 改动。当前仅 Local 审核，尚未获准发布，也未推送 Git。
+
+定向验证：
+
+1. 两个 PHP 文件均通过 Local PHP 8.2.35 语法检查。About 与 Sportswear 的修改前后比较显示 Title、description、canonical、robots、H1、JSON-LD 以及目标区块以外的正文和链接保持一致；Underwear 对照同样一致。
+2. 隔离 Chrome 在 1440、1024、768、390、360、320px 检查两页：About 四条记录和来源链接可见，Sportswear 四张卡、六个链接完整，无横向溢出。Sportswear 新入口通过键盘聚焦与 Enter 实际到达 About 对应标题；新来源链接可键盘聚焦。桌面与手机截图已目视检查。
+3. 其他六个品类页均 HTTP 200、单一 H1，未显示 Sportswear 新证据区。两项 OS Hub 筛选入口经隔离浏览器分别返回 HTTP 200、各 1 条匹配 `CN2021314PF2M92`；档案来源面板仍显示 New Balance Q1-2026 列表及 Asda 2026-10-22 数据。
+
+结果见 `.chrome-check/geo-osh-local-html-20261117.json`、`.chrome-check/geo-osh-local-qa-20261117.json`、`.chrome-check/geo-osh-source-qa-20261117.json`，截图为 `.chrome-check/geo-osh-{about,sportswear}-{1440,390}-20261117.png`。这些文件仅用于本地验证，不进入部署清单。下一步由所有者审核 Local 两页；批准后按项目部署流程发布并验收。

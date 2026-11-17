@@ -129,6 +129,16 @@ get_header();
 					<p><?php esc_html_e( 'Listed as an apparel main production site in China in its September 2026 Tier 1 supplier list for general merchandise and clothing.', 'myathletik-child' ); ?></p>
 					<a href="<?php echo esc_url( 'https://corporate.sainsburys.co.uk/media/334du1a0/tier-one-supplier-list-gm-clothing-september-2026.pdf#page=10' ); ?>"><?php esc_html_e( 'Sainsbury\'s supplier list (PDF, page 10)', 'myathletik-child' ); ?></a>
 				</li>
+				<li>
+					<h3><?php esc_html_e( 'Asda', 'myathletik-child' ); ?></h3>
+					<p><?php esc_html_e( 'Listed in Asda\'s supplier data on Open Supply Hub, dated October 2026.', 'myathletik-child' ); ?></p>
+					<a href="<?php echo esc_url( 'https://opensupplyhub.org/facilities?contributors=5209&q=Zhangjiagang%20Athletik' ); ?>"><?php esc_html_e( 'Asda supplier record on Open Supply Hub', 'myathletik-child' ); ?></a>
+				</li>
+				<li>
+					<h3><?php esc_html_e( 'New Balance', 'myathletik-child' ); ?></h3>
+					<p><?php esc_html_e( 'Listed in New Balance\'s Licensee Supplier List Q1-2026 on Open Supply Hub.', 'myathletik-child' ); ?></p>
+					<a href="<?php echo esc_url( 'https://opensupplyhub.org/facilities?contributors=10959&q=Zhangjiagang%20Athletik' ); ?>"><?php esc_html_e( 'New Balance supplier record on Open Supply Hub', 'myathletik-child' ); ?></a>
+				</li>
 			</ul>
 		</div>
 	</section>
