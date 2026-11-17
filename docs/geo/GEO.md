@@ -16,7 +16,7 @@
 
 当前范围以 `AGENTS.md` 为准：官网、Instagram、当前 LinkedIn 均可优化和准备内容；公开发布仍需对应授权。所有者不管理 YouTube，既有视频信息更新已 `closed / out-of-scope / not-applied`，不要求接管；其他域名、账号与外联不自动纳入。
 
-下一步完成 [BD-02 Sportswear 采购证据区](testing/bd02-sportswear-evidence-2026-11-16.md)普通正式网址验收：所有者已批准，三个文件已部署，Flywheel 页面缓存仍为旧版，状态 `deployed / production-cache-pending`；C07 同面料 FLATLOCK / OVERLOCK 正反面实物样本及公开许可继续待确认，确认后再评估是否补充既有指南，不把外观示范写成性能测试。C06 / C08 的到期索引复查已于 11-16 完成；10-30 LinkedIn Tech Pack 新帖的完整七日窗口为 10-31～11-06，可得数据与实际 URL 仍待补录。Bing 本轮按所有者决定暂缓，不重复催导出。
+[BD-02 Sportswear 采购证据区](testing/bd02-sportswear-evidence-2026-11-16.md)已于 11-17 部署并通过普通正式网址验收，状态 `deployed / production-verified`；下一项优先确认 C07 同面料 FLATLOCK / OVERLOCK 正反面实物样本及公开许可，确认后再评估是否补充既有指南，不把外观示范写成性能测试。C06 / C08 的到期索引复查已于 11-16 完成；10-30 LinkedIn Tech Pack 新帖的完整七日窗口为 10-31～11-06，可得数据与实际 URL 仍待补录。Bing 本轮按所有者决定暂缓，不重复催导出。
 
 对应证据：[10 月有效样本验收](testing/valid-retest/batch-d-2026-10-29/README.md)、[Google AI Mode 对照](testing/valid-retest/google-ai-mode-2026-10-29/README.md)、[指南合并生产验收](testing/guide-content-dates-2026-10-31.md)、[买家名单](testing/buyer-disclosures-2026-11-02.md)、[技术证据盘点](testing/valid-retest/batch-d-2026-10-29/c06-c07-evidence-inventory-2026-10-29.md)、[分发日志](distribution/publishing-log.md)。
 
@@ -257,7 +257,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 ## 8. 单人执行计划（当前顺序）
 
-1. **完成 BD-02 证据补强生产验收。** Dot 已到期，所有者手动采集的 [D04、BD-02、C08 均已接受有效样本](testing/valid-retest/manual-2026-11-16/README.md)；[Sportswear 证据区](testing/bd02-sportswear-evidence-2026-11-16.md)已获准部署，普通正式网址的 Flywheel 缓存待刷新后验收。C06 / C08 抓取与索引已于 11-16 复核，结果见[记录](testing/geo-evidence-and-index-review-2026-11-16.md)；不把部署或内容日期当作搜索重抓日期。
+1. **BD-02 证据补强已部署并验收。** Dot 已到期，所有者手动采集的 [D04、BD-02、C08 均已接受有效样本](testing/valid-retest/manual-2026-11-16/README.md)；[Sportswear 证据区](testing/bd02-sportswear-evidence-2026-11-16.md)已通过普通正式网址验收。C06 / C08 抓取与索引已于 11-16 复核，结果见[记录](testing/geo-evidence-and-index-review-2026-11-16.md)；不把部署或内容日期当作搜索重抓日期。
 2. **确认 C07 可公开实物。** 继续既有[技术证据盘点](testing/valid-retest/batch-d-2026-10-29/c06-c07-evidence-inventory-2026-10-29.md)的同面料 FLATLOCK / OVERLOCK 正反面样本机会。未确认存在与许可前不制作虚构案例、启动拍摄或改页；外观与性能证据分开。
 3. **维护可控分发证据。** 10-30 LinkedIn 新帖待实际 URL，11-07 起复盘完整七日窗口；旧 GEO-06/07/08 的 URL、Story 和可得数据缺口继续按[发布日志](distribution/publishing-log.md)补录。Instagram / LinkedIn 可准备内容，但每次公开发布按授权执行，YouTube 更新已关闭。
 4. **保持测量口径。** 9 月首轮与 A/B 的 partial 不覆盖；E01、C、D、Google 独立入账。已完成两平台 10 月采集，不重新批量采样或用缺少来源的记录补齐分母。GSC 生成式展示、实际回答、GA4、正式询盘分开；Bing 本轮 deferred / low-signal。

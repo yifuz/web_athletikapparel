@@ -1,6 +1,6 @@
 # BD-02：Sportswear 采购证据补强
 
-日期：2026-11-16。最新状态：`deployed / production-cache-pending`。所有者于 2026-11-17 说“审核发布吧”，批准最终版本；三个文件已上传并校验，但普通正式网址仍显示 Flywheel 旧缓存，最终生产验收待刷新后完成。下文 Local 审核状态为历史，实际部署见文末。
+日期：2026-11-16。最新状态：`deployed / production-verified`。所有者于 2026-11-17 说“审核发布吧”，批准最终版本；三个文件已上传并校验，普通正式网址新版与样式已完成复验。下文 Local 审核和缓存待验收状态为历史，最终生产验收见文末。
 
 ## 问题与判断
 
@@ -63,4 +63,11 @@ Local 检查覆盖 1440、1200、1024、768、390、360、320px：原文与五�
 - Cloudflare 对普通 Sportswear URL 与旧版 CSS URL 的定向 purge 返回成功；但普通正式网址仍返回 `x-cache: MISS, HIT` 的 Flywheel 旧 HTML，未出现证据区；旧 CSS 也仍从上游旧缓存返回。未把 Cloudflare 成功回执或 WordPress Object Cache 等同 Flywheel 页面缓存刷新。
 - 使用带临时查询参数的生产预览，确认新版 HTML 和 CSS 已由服务器正确输出，CSS 哈希与冻结文件一致；隔离 Chrome 的 1440 / 1024 / 768 / 390 / 320px 均显示 4 项证据、5 个链接、4 个图标，无横向溢出；六个其他品类无新增区块。首页及七品类的 title、description、H1、canonical、robots、JSON-LD 相对上线前基线一致；PDF、技术指南和面料锚点可访问。上述预览不等于普通网址缓存验收。
 - 所有者确认已在 Flywheel 刷新缓存。随后再次定向清除 Cloudflare 的页面及旧 CSS，普通网址在 Flywheel SSH 出口的 Chicago 节点已返回新版：4 项、5 个链接、CSS 哈希与冻结文件一致，页面 SEO 元数据及 JSON-LD 与上线前一致；本机的 San Jose 节点仍返回旧 HTML 和旧 CSS（桌面、手机和机器人访问均复现）。公开 URL 的 `PURGE` 请求被 Cloudflare 返回 400，未形成 Fastly 清理结果；没有修改 DNS、缓存规则或站点设置。结果说明不同访问路径当时不一致，不能宣布所有普通访客均已看到新版。
-- 普通网址仍须从本机访问节点确认新版 HTML / CSS、响应式显示及链接，才可将状态升级为 `production-verified`。无需重复要求所有者刷新；未重试索引申请、未提交询盘、未推送 Git。
+- 当时普通网址仍须从本机访问节点确认新版 HTML / CSS、响应式显示及链接；未重试索引申请、未提交询盘、未推送 Git。后续结果见下。
+
+### 普通正式网址最终验收
+
+- 所有者后续表示“可以了”，2026-11-17 从此前返回旧版的本机访问路径重新检查：桌面、手机及 Googlebot 标识的普通正式网址均 HTTP 200，均显示 1 个证据区和 4 个项目；实际页面引用的新 `style.css` HTTP 200，SHA-256 `794675810e5a26df2f5d13f6bb5b413168f9810f5af1ab66c7616cbe470a546f`，与冻结发布文件一致。此结论限本次访问检查，不断言所有全球节点均已更新。
+- 隔离 Chrome 使用普通正式网址、标准桌面浏览器标识，在 1440 / 1024 / 768 / 390 / 320px 验证 4 项、5 个链接、4 个图标、无横向溢出；1440 与 390 截图已目视检查。其他六个品类 HTTP 200、单 H1 且没有新增区块。结果与截图保存在 `.chrome-check/bd02-prod-normal-qa-20261117.json` 和 `.chrome-check/bd02-prod-normal-{1440,1024,768,390,320}-20261117.png`，未操作所有者浏览器。
+- 生产页面证据区的标题、正文和四个子标题与批准的 Local 内容快照一致；首页及七个品类的 title、description、H1、canonical、robots 和解析后的 JSON-LD 均与部署前公开基线一致。原 PDF 已检查 HTTP 200 / `application/pdf`，生产指南和面料库目标锚点存在；没有提交询盘或发起索引请求。
+- 最终状态 `deployed / production-verified`，Finding outcome：`changed / keep / measuring`。已完成范围内的部署及验收；是否被 Google 重抓或 AI 引用仍需实际数据，不能由部署推断。下一步可继续核实 C07 同面料 FLATLOCK / OVERLOCK 正反面实物样本及公开许可。

@@ -19,9 +19,9 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.1 网站与内容
 
-- 2026-11-17 所有者批准 [Sportswear 采购证据区](geo/testing/bd02-sportswear-evidence-2026-11-16.md)，已经 SSH 发布最终 `161118e` 的 3 个代码文件并核对服务器哈希与 PHP 语法；无媒体 / 数据库操作。临时查询参数预览及五屏宽、其他六品类隔离检查通过；所有者确认刷新 Flywheel 后，Chicago 访问节点的普通 URL 已返回新版，本机 San Jose 节点仍返回旧缓存。状态 `deployed / production-cache-pending`，待不同访问路径一致后完成普通网址验收；未推送 Git。
+- 2026-11-17 所有者批准 [Sportswear 采购证据区](geo/testing/bd02-sportswear-evidence-2026-11-16.md)，已通过 SSH 发布最终 `161118e` 的 3 个代码文件；无媒体 / 数据库操作。所有者刷新缓存后，普通正式网址的桌面、手机和 Googlebot 请求均返回新版，CSS 哈希与发布源一致；五屏宽、其他六品类隔离及 SEO 基线比对通过。状态 `deployed / production-verified`，未推送 Git。
 
-- 2026-11-16 Sportswear 的 [Manufacturing evidence 区块](geo/testing/bd02-sportswear-evidence-2026-11-16.md)按所有者反馈做 Local 视觉优化：桌面三项入口并列、买家公开名单独立成横向资料区，复用站内线性图标；原有文字、证据边界与五个链接不变。七档屏宽、键盘焦点及其他六个类目隔离通过。原新增区块及本次视觉改动仍待审核，未部署；整体上线清单为 3 个代码文件，无媒体或数据库操作。
+- 2026-11-16 Sportswear 的 [Manufacturing evidence 区块](geo/testing/bd02-sportswear-evidence-2026-11-16.md)按所有者反馈做 Local 视觉优化：桌面三项入口并列、买家公开名单独立成横向资料区，复用站内线性图标；原有文字、证据边界与五个链接不变。七档屏宽、键盘焦点及其他六个类目隔离通过。当日为 Local 审核阶段，后续已按上条记录批准、部署并验收。
 - 2026-11-13 所有者审核通过，[两款 Outdoor Showcase 与精选入口已上线](site/product-showcase-outdoor-release-2026-11-13.md)：冻结 `e00b611`，部署 5 个代码文件、21 个媒体文件并精准新建生产 ID 111／113（父页 105），六个关联旧页面 post／metadata 不变。正式网址多屏、三段视频实际播放、双卡入口、筛选、询盘预填和无 JS 回退通过；页面 Sitemap 各出现一次，未提交表单，也不据此声称 Google 已收录。套装的 `ItemPage.name` 含字面 `&amp;`，既有 Ocean Depth 也可复现，视觉标题正常，影响未证实、待后续排查；本批 `deployed / production-verified-with-warning`，未推送 Git。
 - 此前完成[男款半拉链上衣及紧身裤 Showcase Local 审核版](site/product-showcase-half-zip-set-2026-11-13.md)：所有者确认上下装同用 HY265048、180 GSM、86% Graphene Polyester / 14% Elastane；两段 Omni 成片及四组抽帧、Local 页面 ID 89，Outdoor 与摇粒绒一起展示双卡。多屏宽、视频播放、筛选、询盘预填及无 JS 回退通过；随后已依上条审核上线。
 - 此前按所有者确认完成[男款半拉链摇粒绒 Showcase Local 审核版](site/product-showcase-fleece-2026-11-13.md)：HY254900、100% Polyester fleece fabric、250 GSM；完整视频及四张真实帧，Local 页面 ID 87。桌面／手机、视频实际播放、搜索筛选、询盘预填及无 JS 回退通过；随后已依上条审核上线。
@@ -55,7 +55,7 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.2 GEO
 
-- 2026-11-16 完成 [BD-02 来源对照与 Sportswear 证据区](geo/testing/bd02-sportswear-evidence-2026-11-16.md) Local 审核版：集中呈现已公开的运动服产品、真实接缝生产过程、代表性面料库以及两份买家公开名单；11-17 已按上述记录获准部署，普通正式网址缓存验收待完成。
+- 2026-11-16 完成 [BD-02 来源对照与 Sportswear 证据区](geo/testing/bd02-sportswear-evidence-2026-11-16.md) Local 审核版：集中呈现已公开的运动服产品、真实接缝生产过程、代表性面料库以及两份买家公开名单；11-17 已按上述记录获准部署并完成普通正式网址验收。
 
 - 2026-11-16 完成 [GEO 新资产与指南索引复核](geo/testing/geo-evidence-and-index-review-2026-11-16.md)：C08 现为 `PASS / Submitted and indexed`，最后报告抓取 11-12 北京时间；C06 同样已收录，但最后报告抓取仍为 10-16，早于示范上线。正式面料页四种访问标识均返回 200，初始 HTML 含 97 个料号锚点；两款 Outdoor 产品页面可读，生成画面不当作实拍或测试。Dot 到期后所有者改为[手动复测](geo/testing/valid-retest/manual-2026-11-16/README.md)；D04、BD-02、C08 按所有者确认有效，D04 中 Athletik 第 1 / 5，后两题正文与所提供来源未见 Athletik。下一优先为 BD-02 宽泛采购来源与公开证据差异核查；单次回答不等同稳定 AI 推荐。
 
