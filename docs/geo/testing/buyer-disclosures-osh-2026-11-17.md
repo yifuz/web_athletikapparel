@@ -1,6 +1,6 @@
 # 买家公开证据补查：Open Supply Hub（2026-11-17）
 
-状态：`deployment-authorized / alternate-ssh-key-awaiting-registration / not-deployed`。所有者已审核并授权部署；Flywheel SSH 网关当前无法进入站点，生产尚未写入。所有者要求尝试新密钥，备用公钥待添加；来源核查与 Local 验收保留为历史，部署尝试见文末。
+状态：`deployment-authorized / alternate-ssh-key-rejected / site-session-unavailable / not-deployed`。所有者已审核并授权部署；Flywheel SSH 网关当前无法进入站点，生产尚未写入。所有者确认已添加备用公钥，但网关测试仍拒绝该密钥；来源核查与 Local 验收保留为历史，部署尝试见文末。
 
 ## 1. 已核实的工厂档案
 
@@ -60,4 +60,8 @@ C07 比较保留 `deferred / no-comparable-physical-sample`；该决定不表示
 
 所有者说明 Flywheel 客服需要一段时间，并要求创建新密钥尝试。已生成独立 Ed25519 备用密钥及独立配置 `C:\Users\Administrator\.ssh\athletik-flywheel-alt-20261117.conf`，保留原有密钥、配置及主机校验；新私钥 ACL 仅当前用户和 SYSTEM 可访问。公钥指纹 `SHA256:Phz+YcpUJyTCdteMcjm06iUAAe0il3Ch8AAW2bh5e/g`。新配置已核实只选择备用私钥；添加前网关返回 `Permission denied (publickey)`，表示 Flywheel 尚未登记该新公钥。
 
-所有者将备用公钥添加到 Flywheel 后，应使用备用配置测试网关认证和进入目标站点；若会话恢复，按原授权完成预检、生产原文件备份、两文件部署和验收。原密钥先前已经通过认证，不能预设换钥能修复站点会话；本轮未修改生产或其他浏览器窗口。
+当时约定所有者添加备用公钥后，使用备用配置测试网关认证和进入目标站点；若会话恢复，按原授权完成预检、生产原文件备份、两文件部署和验收。原密钥先前已经通过认证，不能预设换钥能修复站点会话；本轮未修改生产或其他浏览器窗口。
+
+所有者随后确认“已经添加”。用独立配置对网关及目标站点复测，服务器仍返回 `Permission denied (publickey)`；同一测试通过正常 DNS 路径及直接解析的 Flywheel 地址得到相同结果。已确认配置仅选择备用密钥、私钥与所给公钥匹配，指纹仍为上述值。该结果只说明网关当时未接受该密钥，不推断所有者未添加、添加错误或具体原因。
+
+原密钥同轮仍能通过网关认证并列出本站，但目标站点只读会话在 30 秒内未建立。生产文件未备份或上传，部署授权仍有效；应结合先前 Flywheel 参考号让支持人员检查站点会话及新公钥认证，恢复后直接继续预检、备份、部署与验收。
