@@ -2449,6 +2449,27 @@ body.home .container.grid-container {
   box-sizing: border-box;
 }
 
+/* Keep the optional discovery-source choices readable and easy to tap. */
+.ma-inquiry-source .ff-el-form-check-label {
+  display: flex;
+  align-items: center;
+  gap: var(--ma-space-2);
+  min-height: var(--ma-touch-target);
+  cursor: pointer;
+}
+
+.ma-inquiry-source .ff-el-form-check-input {
+  flex: 0 0 var(--ma-space-3);
+  width: var(--ma-space-3);
+  height: var(--ma-space-3);
+  margin: 0;
+}
+
+.ma-inquiry-source .ff-el-form-check-input:focus-visible {
+  outline: medium solid var(--ma-color-accent-2);
+  outline-offset: var(--ma-space-1);
+}
+
 .ma-contact-form-panel .ff-t-container,
 .ma-inquiry-form--fluent .ff-t-container {
   display: grid;
