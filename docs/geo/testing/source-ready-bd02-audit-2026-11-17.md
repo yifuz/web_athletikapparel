@@ -1,6 +1,6 @@
 # BD-02 第三方资料核查：SourceReady（2026-11-17）
 
-状态：`research-complete / owner-sent / awaiting-response`。本次由 Codex 只读核查并准备草稿；所有者随后确认已向 SourceReady 发送请求，具体发送内容和渠道未单独核实，平台回复及公开更正仍待确认。Codex 未登录、认领、付费、修改第三方档案或联系平台，也未修改任何网站。
+状态：`research-complete / procedure-reply-received / public-correction-pending`。本次由 Codex 只读核查并准备草稿；所有者随后确认已向 SourceReady 发送请求，但具体发送内容和渠道未单独核实。2026-11-18 所有者转发流程答复：无公开档案自助认领或编辑流程，Entry 套餐编辑仅保存私有记录，公开更正需联系 `support@sourceready.com`。该答复不代表先前请求已由该邮箱受理或公开更正已完成。Codex 未登录、认领、付费、修改第三方档案或联系平台，也未修改任何网站。
 
 ## 1. 核查范围与结论
 
@@ -28,9 +28,9 @@ SourceReady 自称使用公开目录、网站、数据商与 AI 丰富资料，�
 
 ## 3. 可行处理路径
 
-最有价值的是解决同一实体的公开地址不一致，并提高规范站与该实体的关联准确度：可核实中国站是否有可用的修改权限和安排，并让 SourceReady 评估把公开档案和 JSON-LD 的地址更正为 No.15、增加规范站入口，同时按证据范围复核客户与认证表述。所有者于 11-17 确认已发送请求，等待平台回复；未确认实际发送文字与下方草稿完全一致。Codex 未联系平台或修改中国站，也不要求关闭或重定向中国站。
+最有价值的是解决同一实体的公开地址不一致，并提高规范站与该实体的关联准确度：可核实中国站是否有可用的修改权限和安排，并让 SourceReady 评估把公开档案和 JSON-LD 的地址更正为 No.15、增加规范站入口，同时按证据范围复核客户与认证表述。所有者于 11-17 确认已发送请求；未确认实际发送文字与下方草稿完全一致，也未确认是否通过支持邮箱提交。Codex 未联系平台或修改中国站，也不要求关闭或重定向中国站。
 
-SourceReady 的[帮助文档](https://help.sourceready.com/en/articles/9526604-edit-and-delete-supplier)说明，用户在 `My suppliers` 中编辑只影响自己的列表，不会修改公开搜索数据。其[数据来源说明](https://help.sourceready.com/en/articles/9542745-understanding-sourceready-s-supplier-data-sources)称供应商可提交或更新资料，但本次未发现可验证的公开档案认领流程或费用说明；可通过[官方支持入口](https://www.sourceready.com/contact)询问，不应假设注册、付费或修改私有列表即可解决。
+SourceReady 的[帮助文档](https://help.sourceready.com/en/articles/9526604-edit-and-delete-supplier)说明，用户在 `My suppliers` 中编辑只影响自己的列表，不会修改公开搜索数据。其[数据来源说明](https://help.sourceready.com/en/articles/9542745-understanding-sourceready-s-supplier-data-sources)称供应商可提交或更新资料。所有者 11-18 转发的流程答复进一步称公开档案没有自助认领或编辑流程、9 美元 Entry 套餐不开放公开编辑，公开更正应联系 `support@sourceready.com`；答复未确认公开更正是否收费或已受理。若先前已向该邮箱发送准确的更正内容，不重复提交；否则可沿该渠道提出请求。
 
 ## 4. 最小更正请求草稿（发送前准备，实际发送内容未核实）
 
@@ -54,4 +54,4 @@ Thank you.
 
 ## 5. 后续验证
 
-所有者已确认发送，等待平台回复；不能将发送等同于平台受理或完成更正。只有平台实际确认公开更正并完成后，才重新检查普通页面、初始 HTML、JSON-LD 的名称／门牌／网址及公开搜索入口，并记录数据来源和时间；不能把发出请求、账户内私有列表编辑或买方名单列名当作 AI 引用或推荐。
+2026-11-18 复查公开档案：匿名 GET 返回 HTTP 200，`Organization` JSON-LD 的地址仍是 No.25、`url` 仍为 `https://athletik.com.cn`；本次公开 HTML 未发现 `athletikapparel.com`。这不代表已检查登录或付费字段，也不将机器可读地址说成普通可见联系栏地址。流程答复已收到，具体更正是否发至支持邮箱、是否受理及公开更正是否完成仍待确认。平台实际完成更正后，重新检查普通页面、初始 HTML、JSON-LD 的名称／门牌／网址及公开搜索入口，并记录数据来源和时间；不能把发出请求、账户内私有列表编辑或买方名单列名当作 AI 引用或推荐。

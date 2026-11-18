@@ -55,7 +55,9 @@ Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引
 
 ### 1.2 GEO
 
-- 2026-11-17 完成 [BD-02 第三方来源核查](geo/testing/source-ready-bd02-audit-2026-11-17.md)：SourceReady 已有匹配中国实体的公开档案，JSON-LD 仍写旧门牌 25 号，匿名响应未包含规范主站；中国站首页也显示 25 号并被其列为参考之一，不能据此推断唯一数据来源。所有者随后确认已发送请求，平台回复与公开更正待确认；Codex 未登录、认领、修改或联系平台，也未修改中国站。
+- 2026-11-18 所有者转发 SourceReady 流程答复：公开档案无自助认领或编辑，Entry 套餐只编辑私有记录，公开更正需联系 `support@sourceready.com`。匿名复查 JSON-LD 仍为 25 号及 `athletik.com.cn`，公开 HTML 未发现规范主站；先前请求是否发至支持邮箱及是否已受理未知，公开更正未完成。详见[核查记录](geo/testing/source-ready-bd02-audit-2026-11-17.md)。
+
+- 2026-11-17 完成 [BD-02 第三方来源核查](geo/testing/source-ready-bd02-audit-2026-11-17.md)：SourceReady 已有匹配中国实体的公开档案，JSON-LD 仍写旧门牌 25 号，匿名响应未包含规范主站；中国站首页也显示 25 号并被其列为参考之一，不能据此推断唯一数据来源。所有者随后确认已发送请求；后续流程答复与公开更正状态见上条记录。Codex 未登录、认领、修改或联系平台，也未修改中国站。
 
 - 2026-11-17 完成[功能针织面料测试指南选题核查](geo/testing/performance-knit-testing-guide-opportunity-2026-11-17.md)：对照 C08 样本、现有 QC / Tech Pack / OEM 文章及标准发布方公开摘要，提出以测试选型与报告阅读为核心的候选内容；当前仅为可审核机会，未编写正文、批准新 URL 或修改网站。
 
