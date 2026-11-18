@@ -1,14 +1,15 @@
 # Privacy Policy
 
-> **2026-08-04 版本已批准；2026-11-18 新增的询盘来源说明待审核和发布**
+> **已审核并发布；询盘来源说明于 2026-11-18 补充**
 > Business approval: **August 4, 2026**
+> 询盘来源补充：**2026-11-18 所有者审核并批准发布**
 > Review scope: **United States first launch**
 > Effective date: **August 4, 2026**
-> Last updated (local draft): **November 18, 2026**
+> Last updated: **November 18, 2026**
 
 2026-08-04 批准版本描述美国首发时确认的数据流与服务配置；2026-11-18 关于询盘来源选填项的
-补充为本地草稿，待审核和发布。文末内部维护说明不属于公开 Privacy Policy。服务、处理方式或
-目标市场发生变化时，仍建议进行独立法律审核。
+补充已按所有者审核结果发布。文末内部维护说明不属于公开 Privacy Policy。服务、处理方式或目标
+市场发生变化时，仍建议进行独立法律审核。
 
 ## 1. Who We Are
 
