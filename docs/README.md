@@ -6,14 +6,15 @@
 
 | 文件 | 用途 |
 |---|---|
-| [`progress.md`](progress.md) | 当前项目完成状态、历史里程碑和待办；状态判断的主要入口 |
+| [`progress.md`](progress.md) | 跨项目当前状态和少量下一步；历史里程碑已归档 |
+| [`progress-history-2026-11-18.md`](progress-history-2026-11-18.md) | 截至 2026-11-18 的完整历史进度；按需查阅 |
 | [`sitemap.md`](sitemap.md) | 页面结构、URL 与 SEO 信息架构；创建或重构页面前必读 |
 | `README.md` | 本索引 |
 
 ## `geo/`：生成式搜索可见性
 
-- [`geo/GEO.md`](geo/GEO.md)：GEO 中央工作台、当前阶段与下一步。
-- [`geo/testing/prompt-baseline.md`](geo/testing/prompt-baseline.md)：冻结的 Baseline v1、当前 Baseline v2、测试结果和实体冲突证据。
+- [`geo/GEO.md`](geo/GEO.md)：GEO 当前判断、行动和一页月度摘要口径；旧工作台通过页面内链接查阅。
+- [`geo/testing/prompt-baseline.md`](geo/testing/prompt-baseline.md)：固定提示词和采样条件；历史回答及原始判断已归档并在页内链接。
 - [`geo/testing/claim-to-source-matrix-2026-09-14.md`](geo/testing/claim-to-source-matrix-2026-09-14.md)：六个核心推荐/内容问题的规范来源、AI 实际来源与证据缺口矩阵。
 - [`geo/testing/ultramerino-canonical-conflict-audit-2026-09-14.md`](geo/testing/ultramerino-canonical-conflict-audit-2026-09-14.md)：UltraMerino 与规范 Merino 页的技术状态、冲突事实和双站治理审计。
 - [`geo/testing/ai-cited-source-pattern-audit-2026-09-14.md`](geo/testing/ai-cited-source-pattern-audit-2026-09-14.md)：AI 实际引用页面的共性模式、可借鉴做法、风险边界和主站优先级。
@@ -21,7 +22,7 @@
 - [`geo/testing/bing-ai-performance-baseline.md`](geo/testing/bing-ai-performance-baseline.md)：Bing AI Performance 的首份概览与页面级基线；Grounding Queries 当前无记录。
 - [`geo/testing/geo-measurement-snapshot-2026-09-28.md`](geo/testing/geo-measurement-snapshot-2026-09-28.md)：首份跨平台 GEO 测量快照，分开记录传统 GSC、GSC Generative AI、Bing AI Performance 与 GA4 AI referral。
 - [`geo/testing/geo-measurement-snapshot-2026-10-08.md`](geo/testing/geo-measurement-snapshot-2026-10-08.md)：GSC Generative AI 首个等长 28 天对比窗口、页面/国家/设备分布及有效复测数据闸门。
-- [`geo/testing/valid-retest/README.md`](geo/testing/valid-retest/README.md)：首轮有效复测执行包，包含批次 A 的 22 次运行账本、固定 Prompt 清单、引用账本、有效性闸门和批次分母表；[ChatGPT 重采批次 B](geo/testing/valid-retest/batch-b/README.md) 已完成 11 条采集与[首轮逐条复核](geo/testing/valid-retest/batch-b/review-2026-10-09.md)，证据缺口与所有者审核待关闭。
+- [`geo/testing/valid-retest/README.md`](geo/testing/valid-retest/README.md)：各批次复测及原始证据入口；历史缺口以各批次记录和所有者已接受的结果为准，不因索引中的旧状态重开。
 - `geo/content/`：三篇 GEO 基础指南的批准草稿和内容简报。
 - `geo/distribution/`：LinkedIn/Instagram 分发 SOP 与发布日志。
 
@@ -81,6 +82,6 @@
 
 - 新建或实质性改写的内部 Markdown 文档默认使用简体中文。正式网站英文文案、固定测试提示词、原始引文、代码/API/Schema/事件名、URL、路径、命令、字段名、法律实体名和其他必须保留原貌的内容继续使用原生英文；用户明确要求英文时除外。
 - 新文档放入最接近的主题目录，不再直接堆到 `docs/` 根目录。
-- 根目录只保留高频跨领域入口。
-- 日期化快照写入对应领域子目录，并在 `progress.md` 或领域入口中建立链接。
+- 根目录主要保留高频跨领域入口及必要的旧进度归档。
+- 优先更新现有状态并只在一个地方记录细节；需要保留历史时归档并建立链接，不为每次操作新建文档或重复登记。
 - 移动文档时必须更新仓库内引用并运行 Markdown 本地链接检查。

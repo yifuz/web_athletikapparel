@@ -14,7 +14,7 @@
 
 1. [`../progress.md`](../progress.md)：全项目当前状态和下一步；
 2. [`v2-backlog.md`](v2-backlog.md)：当前 SEO 待办、优先级和重开条件；
-3. [`gsc-data-log.md`](gsc-data-log.md)：GSC / GA4 / 询盘周期数据和样本门槛；
+3. 需要核对历史数据时再查 [`gsc-data-log.md`](gsc-data-log.md)；不要求每次通读；
 4. [`seo-process.md`](seo-process.md)：研究、实施、发布和复盘规则；
 5. 只有需要历史实施依据时，才读取 [`seo-implementation-checklist-v1.md`](seo-implementation-checklist-v1.md) 或对应子目录。
 

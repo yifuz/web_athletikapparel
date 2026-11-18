@@ -1,0 +1,964 @@
+> **历史快照：截至 2026-11-18。文中当时的“当前”和“下一步”不再自动适用；请以[当前项目进度](progress.md)为准。**
+
+# Athletik Clothing 网站项目进度快照
+
+新会话开始时，请将本文件与 `AGENTS.md`、[`sitemap.md`](sitemap.md)、
+[`site/design-brief.md`](site/design-brief.md) 及相关页面文案一起阅读，并用 `git log`
+确认最近提交。
+
+本文件回答“已经完成什么、目前是什么状态、下一步做什么”。规则和实施边界以
+`AGENTS.md` 为准；页面结构和 URL 决策以 `sitemap.md` 为准；本文件是仓库进度的主要入口。
+带日期的发布、广告、审计及平台记录是历史快照，除非记录了更晚的核验结果。
+Google Ads、Search Console、GA4、Meta 等外部平台状态容易变化，引用为“当前状态”前必须实时核验。
+
+最后更新：2026-11-18。
+
+2026-11-04 已按所有者要求[核对 SEO / GEO 三份未提交文档差异](operations/document-reconciliation-2026-11-04.md)：原文件已备份，恢复被回退的完成记录并对齐最新已核准状态；历史测量按原日期保留。本轮只整理文档，没有生产或外部平台操作。
+
+---
+
+## 1. 当前状态摘要
+
+### 1.1 网站与内容
+
+- 2026-11-18 所有者审核并批准询盘来源字段后，已部署 `style.css`，精准更新生产 Fluent Forms 表单 3 及 Privacy Policy 正文，无新增媒体。首页、联系页和七个类目页的普通网址均显示六个可选多选项；1440／768／390／320 宽度的多选和布局通过，隐私说明已显示，既有表单字段、防垃圾配置和通知设置保持不变。生产字段规则校验通过（未运行验证码），本地保存／通知模板测试通过；未发送真实测试询盘，来源为客户自报而非完整归因。状态 `deployed / production-verified`，代码提交仅在本地。
+
+- 2026-11-17 所有者批准 [Sportswear 采购证据区](geo/testing/bd02-sportswear-evidence-2026-11-16.md)，已通过 SSH 发布最终 `161118e` 的 3 个代码文件；无媒体 / 数据库操作。所有者刷新缓存后，普通正式网址的桌面、手机和 Googlebot 请求均返回新版，CSS 哈希与发布源一致；五屏宽、其他六品类隔离及 SEO 基线比对通过。状态 `deployed / production-verified`，未推送 Git。
+
+- 2026-11-16 Sportswear 的 [Manufacturing evidence 区块](geo/testing/bd02-sportswear-evidence-2026-11-16.md)按所有者反馈做 Local 视觉优化：桌面三项入口并列、买家公开名单独立成横向资料区，复用站内线性图标；原有文字、证据边界与五个链接不变。七档屏宽、键盘焦点及其他六个类目隔离通过。当日为 Local 审核阶段，后续已按上条记录批准、部署并验收。
+- 2026-11-13 所有者审核通过，[两款 Outdoor Showcase 与精选入口已上线](site/product-showcase-outdoor-release-2026-11-13.md)：冻结 `e00b611`，部署 5 个代码文件、21 个媒体文件并精准新建生产 ID 111／113（父页 105），六个关联旧页面 post／metadata 不变。正式网址多屏、三段视频实际播放、双卡入口、筛选、询盘预填和无 JS 回退通过；页面 Sitemap 各出现一次，未提交表单，也不据此声称 Google 已收录。套装的 `ItemPage.name` 含字面 `&amp;`，既有 Ocean Depth 也可复现，视觉标题正常，影响未证实、待后续排查；本批 `deployed / production-verified-with-warning`，未推送 Git。
+- 此前完成[男款半拉链上衣及紧身裤 Showcase Local 审核版](site/product-showcase-half-zip-set-2026-11-13.md)：所有者确认上下装同用 HY265048、180 GSM、86% Graphene Polyester / 14% Elastane；两段 Omni 成片及四组抽帧、Local 页面 ID 89，Outdoor 与摇粒绒一起展示双卡。多屏宽、视频播放、筛选、询盘预填及无 JS 回退通过；随后已依上条审核上线。
+- 此前按所有者确认完成[男款半拉链摇粒绒 Showcase Local 审核版](site/product-showcase-fleece-2026-11-13.md)：HY254900、100% Polyester fleece fabric、250 GSM；完整视频及四张真实帧，Local 页面 ID 87。桌面／手机、视频实际播放、搜索筛选、询盘预填及无 JS 回退通过；随后已依上条审核上线。
+- 同日按要求参考 Merino 为 Outdoor 增加产品精选入口：单款居中、最多两款且无有效产品时隐藏；复用图片与卡片、不重复视频。Local 的五档屏宽、模拟双卡、零／一／两款边界及 Merino 回归通过；入口随后已依上条上线，增量 4 个代码文件，入口本身无新增媒体／数据库操作。
+- 2026-11-10 所有者批准当天改动，已通过专用 SSH [发布完整 97 款面料库](site/fabric-library-expansion-2026-11-10.md#6-2026-11-10-生产发布缓存验收未完成)：冻结 `1e2b88f`，9 个运行时代码文件（3 替换／6 新增），私有备份、7 PHP 语法及 9 文件哈希／大小／权限验证通过；6 个相关页面 post／metadata 不变，无媒体／数据库操作，未推送。11-13 普通正式网址浏览器复验 18 项通过，97 款、筛选、翻页不跳动、Merino 入口和无 JS 回退正常；状态为 `deployed / production-verified`。未确认缓存是否由用户手动刷新。下列 Local 条目为研发历史。
+- 2026-11-10 已按所有者确认制作 [2025 代表性面料库 Local 审核版](site/fabric-library-2026-11-10.md)：现有 Knitted Fabrics 页加入 24 款料号／成分／GSM 规格卡，带搜索、筛选和分页；Merino 既有面料开发区块加入 3 个精选入口，不新增独立页面或图片。原图规格已双重复核，明确代表性选样而非完整范围／实时库存，内外层成分分列。当前 `local-review / not-deployed`，8 个运行时代码文件、无媒体／数据库操作；不包含在同日 Jacquard 上线授权内，待 Local 审核后另行决定发布。
+- 同日按所有者审核意见简化面料规格卡：移除 `View garment example`，统一桌面／平板卡片基准高度，手机按内容自然撑开；规格数据、筛选／分页、Merino 精选入口和既有 Showcase 不变。此修订仅 2 个代码文件，仍属于上述未上线面料库的 Local 审核范围。
+- 所有者随后确认两页分工，已将完整库标题明确为 `Merino wool fabric selection`；Merino 保留 3 款精选，增加代表性范围提示及带数量的查看全部入口。没有搬动或复制完整库，不新增页面，本轮表达微调仅 3 个代码文件，仍仅 Local 待审核。
+- 所有者进一步指出后续将加入非 Merino：主库标题已更正为 `Fabric selection library`，简介泛化为按成分／克重选型；`Merino wool / 2025 collection` 降为独立的当前收录系列条，不再限制整个模块。前条总标题是历史版本，现以本条为准；数据、筛选、等高规则和 Merino 精选不变，仅 2 个运行时文件，仍仅 Local 未上线。
+- 同日已按所有者提供的 Excel [扩充近期面料规格](site/fabric-library-expansion-2026-11-10.md)：93 款 HY24／HY25／HY26 中，排除 5 款缺规格、7 款原料／认证表述待核实和 8 款已有料号，新增 73 款；合计 97 款，GSM 75–530。增加多纤维筛选和 GSM 区间支持，保留分页及 Merino 精选；HY254955 新表 Nylon 与旧资料 Polyester 冲突，所有者明确本轮保留原网站规格。仍仅 Local；本轮增量 6 个运行时文件，完整库未来发布需 9 个，无媒体／数据库操作。
+- 2026-11-10 所有者批准 [Jacquard Showcase 整批上线](site/product-showcase-jacquard-2026-11-07.md#5-2026-11-10-生产发布与验收)，已经专用 SSH 部署 `9f9d033` 的 8 个代码文件、13 个媒体并精准新建生产 ID 109（父级 105）；旧 105／106／107 的 post／metadata 不变，重复建页 `changed=false`。21 个生产文件哈希／大小／权限匹配；6 个正式 URL、canonical／index-follow／分享图／Sitemap 及 29 组浏览器检查通过，四段视频在桌面／手机真实播放。Merino 预览两款、Showcase 三款、首页 Ocean Depth 不变，Contact 只验预填未提交。本批状态 `deployed / production-verified`，取代下方 11-07 的本地待审核状态；未推送 Git。随后提出的 2025 代表性面料模块是新任务，未改生产，不在本次发布范围。
+- 2026-11-10 已完成 [Knitted Fabrics 定向搜索诊断](seo/gsc-data-log.md)：6 组两词三市场快照、232 条返回自然结果及目标 URL 全部核对，费用 $0.052；核心词 US 自然第 25，GB／CA 各 45 条返回结果未见，不能声称全量 Top 50 缺席。主词和页面任务匹配，结构／采购流程已覆盖，下一优先变量是具体面料规格对应真实展示。所有者确认 HY254955（155 GSM）与 HY265077（115 GSM）均可作为独立供货例子，可准备 Local 两款示例；本轮仍为 `no-change / diagnosis-complete`，尚未制作或部署。10-19 峰值在 10-20 发布之前，不归因于改版；原 10-21～11-17 后窗及 11-20 起复核安排不变。
+- 2026-11-10 已补齐 [10-08～11-04 GSC＋GA4 恢复窗口基线](seo/gsc-data-log.md)：GSC 全站 clicks 28→36、impressions 1,259→1,443；七商业页 10 / 472→14 / 599，曝光增加 26.9%。Knitted 为 0 clicks / 173 impressions，Merino 为 6 / 205。GA4 全站 137 sessions；Organic Search 16 sessions / 11 users，其中 2 位用户浏览 Contact，未记录自然搜索成功提交。全站 3 次 generate_lead 来自 AI Assistant／Direct，业务真实性及质量未核验；本次未读邮箱。13 份 GSC 与 15 份 GA4 报表完整核对、证据留在 Git 忽略目录；结果为 `no-change / baseline-established / keep-measuring`，不把含 QA 和多次部署的窗口解释为因果效果。下一主要效果节点为 Knitted／Merino 完整后窗 10-21～11-17，预计 11-20 起按 final 核验。本次仅内部文档，无网站部署。
+- 2026-11-10 已完成 [SEO 到期复查](seo/gsc-data-log.md)：Underwear seamless、Sportswear Yoga 和配件头颈模块均已索引，最后抓取均晚于各自部署，线上模块及索引防护正常；前后 7 日曝光 21→16、11→12、2→10，可见 Query 仍仅品牌域名，保持 `no-change / keep-measuring / not-enough-data`。已补齐三页精确前 28 日基线，原后窗与 Day 90 不重置。Services 为 `Discovered - currently not indexed`，没有查明原因或发现定向技术阻断，转下一月度／触发式检查。Showcase 总览与女款已 indexed，男款由所有者确认当天请求索引，尚不写成已收录。此次仅检查和内部记录，无生产代码／媒体／数据库变化；随后已补齐上条恢复基线。
+- 2026-11-07 新增 [Jacquard Merino-Mix 套装 Showcase 本地审核版](site/product-showcase-jacquard-2026-11-07.md)：所有者确认新路径并提供技术 PDF、4 段视频、240 GSM，授权简短英文草稿。Local 新页面 ID 85；四段视频按整套／背侧／上衣领口／腰裤分别播放，A/B 两种面料规格分列，沿用共享模板。首页精选仍是 Ocean Depth；Local 展示库增加新款。所有者随后要求 Merino 入口最多两款，已改为最近发布的两款紧凑预览，桌面双列／小屏横滑，全部产品仍在 Showcase 总页。**仅 Local 审核，未推送、未部署生产；正文待审核**。整批后续上线需要 8 个代码文件、13 个新增媒体及单款建页步骤；预览布局增量为其中 4 个代码文件、无新增媒体／数据库操作，详见记录。
+- 同日按所有者最新要求收敛新款对外表达：参考已发布两款，只保留产品概览、基础材料与通用定制方向，移除客户技术包的具体规格和打样指令，不再展示内部结构拆解。四视频、两款预览、原两款记录及 SEO 设置不变；Local ID 85 fallback 简介精准同步。此项代码增量仅 `inc/product-example-data.php`，无媒体变更；详情／搜索／预览／询盘等输出及四档响应式复核通过，仍仅本地待审核。上条“A/B 两种面料规格分列”是初稿状态，现由五行基础材料表替代，仍明确成分及 GSM 仅指主提花面料。
+- 同日收到本款穿着特性确认后，将特点行改为 `Next-to-skin comfort · Warmth · Breathability`；同时修正用途为 `Base layering`、定制项为 `Front opening`。只采用所有者确认的定性特点，不公开复合结构或新增性能承诺；本次仅共享产品数据与内部记录变更，无媒体／数据库步骤，仍未部署。
+- 2026-11-05 [Sportswear 图集及两页大图查看](site/product-gallery-alignment-2026-11-04.md)已获授权并经专用 SSH 发布 `1638b93`：Sportswear 单排、桌面四列／手机两列，2:3取景去除素材两侧白边、不裁人物；Merino 保留原两排方形图集，16张新增点击放大。五份代码已私有备份，三份 PHP 服务器语法及五文件哈希／权限校验通过，无媒体／数据库步骤。初次旧页面缓存未误报通过；所有者承接后台刷新后，普通正式 URL 的公开CSS／JS与批准版本一致。两页图集响应式、全大图、键盘、无JS及横屏12场景通过，首页和七类目基础检查通过。状态 `deployed / production-verified`；既有 Turnstile async/defer 错误单独记录，未修改或提交表单。
+- 2026-11-04 Product Showcase [三项视觉优化及首页分类箭头移除](site/product-showcase-visual-polish-2026-11-04.md)已获授权，经专用 SSH 部署并生产验收：16:9 视频弹层、平板卡片缩短与按钮对齐、手机标题简介置于媒体上方；首页分类七个链接保留、小箭头移除。四个主题文件已私有备份并校验哈希，正式浏览器15场景通过；无媒体／数据库步骤。状态为 `deployed / production-verified`。Showcase 首页入口与筛选条未改；首页既有 Turnstile 错误单独记录，未提交表单。
+- 2026-11-04 部署分工已固化：LocalWP 用于开发和本地页面审核；所有者确认上线后，由 Codex 通过专用 SSH 直接部署、验收并记录，同批授权不重复询问。流程、备份回退与交付模板见[部署工作流程](operations/flywheel-ssh-deployment.md)，已同步 `AGENTS.md`；本次只更新文档，无生产操作。
+- 2026-11-04 Product Showcase 已正式发布：展示库 ID 105、Ocean Depth ID 106、[HY265077 男式 Merino-Tencel](site/product-showcase-hy265077-2026-11-04.md) ID 107。所有者授权并完成公钥登记后，已建立[专用 Flywheel SSH 部署连接](operations/flywheel-ssh-deployment.md)，上传 5 个后台更新文件及 2 个此前漏传的 JS；完整 15 文件与本地一致，20 个媒体齐全。三个页面通过公开 HTTPS、canonical、index/follow、Schema 及 Sitemap 检查；真实 Chrome 验证筛选、图片及视频播放／切换、1440／390 无横向溢出。Cookiebot 截图遮挡及首页独立 Turnstile 报错见[生产发布记录](site/product-showcase-release-candidate-2026-11-03.md)，未提交询盘；发布不代表 Google 已收录。
+- 2026-11-03 所有者进一步要求 Product Showcase 按生产规格制作，已将仅本地 Demo 升级为[正式发布候选](site/product-showcase-release-candidate-2026-11-03.md)：去审核界面、启用带产品参考的询盘、准备 SEO／分享图和显式建页脚本。当时完成 Local 验收，次日已按上条记录正式发布；原[本地接入记录](site/product-showcase-local-review-2026-11-03.md)保留为历史。
+- 规范站：<https://www.athletikapparel.com/>，运行于 Flywheel。
+- WordPress 重建已上线，使用 GeneratePress 父主题和 `myathletik-child` 子主题。
+- 首页、7 个产品类目页、Services、About、Contact、Sustainability 和 Privacy Policy 已上线。
+- Technical Guides 内容中心及 6 篇指南均已在生产上线，站点导航、首页和页脚有稳定入口。
+- Rank Math Page Sitemap 已在六篇指南生产验收中核对，内容中心与六篇指南均唯一出现；具体数量以对应日期的生产验收记录为准。
+- 浏览器、Googlebot、OAI-SearchBot 和 PerplexityBot 访问 QC Guide 均返回 HTTP 200；页面允许索引，Title/Meta/H1/Canonical、Article/FAQPage/BreadcrumbList、图片和视频正常。
+- 先前 Hub 与 3 篇基础指南已在 Google Search Console 逐个申请索引；2026-08-27 URL Inspection 确认 QC Guide 为 `PASS / Submitted and indexed`，Google 最后抓取时间为 `2026-08-26T13:41:31Z`，Canonical 一致且抓取成功；不重复请求或改写页面。
+- `myathletik.com` 已按所有者决定完全下线，已检查入口返回 HTTP 410；不做跨域 301，也不再优化旧站。
+
+### 1.2 GEO
+
+- 2026-11-18 所有者转发 SourceReady 流程答复：公开档案无自助认领或编辑，Entry 套餐只编辑私有记录，公开更正需联系 `support@sourceready.com`；随后确认更正邮件已发送。匿名复查 JSON-LD 仍为 25 号及 `athletik.com.cn`，公开 HTML 未发现规范主站；是否受理和公开更正是否完成仍待确认。详见[核查记录](geo/testing/source-ready-bd02-audit-2026-11-17.md)。
+
+- 2026-11-17 完成 [BD-02 第三方来源核查](geo/testing/source-ready-bd02-audit-2026-11-17.md)：SourceReady 已有匹配中国实体的公开档案，JSON-LD 仍写旧门牌 25 号，匿名响应未包含规范主站；中国站首页也显示 25 号并被其列为参考之一，不能据此推断唯一数据来源。所有者随后确认已发送请求；后续流程答复与公开更正状态见上条记录。Codex 未登录、认领、修改或联系平台，也未修改中国站。
+
+- 2026-11-17 完成[功能针织面料测试指南选题核查](geo/testing/performance-knit-testing-guide-opportunity-2026-11-17.md)：对照 C08 样本、现有 QC / Tech Pack / OEM 文章及标准发布方公开摘要，提出以测试选型与报告阅读为核心的候选内容；当前仅为可审核机会，未编写正文、批准新 URL 或修改网站。
+
+- 2026-11-17 [Asda / New Balance 公开来源](geo/testing/buyer-disclosures-osh-2026-11-17.md)已按所有者批准通过 SSH 部署并完成普通正式网址验收：About 新增两条名单及各自来源，Sportswear 补充提及和 About 入口；保留 New Balance `Licensee` 范围。两文件生产备份与哈希、服务器 PHP 语法、五档屏宽、键盘跳转、六品类隔离及页面 SEO 对照通过；无媒体／数据库操作，未推送 Git。原密钥已可连接站点，备用密钥当次仍被拒绝；Flywheel 工单 `15523783` 留待客服后续排查。上线不等于已被 AI 引用或推荐。
+
+- 2026-11-17 所有者说明 C07 同面料接缝比较暂时没有实物样本。[Open Supply Hub 买家公开数据补查](geo/testing/buyer-disclosures-osh-2026-11-17.md)确认实体名称及 15 号地址匹配，Asda 有日期化工厂贡献，New Balance 有 2026 Q1 Licensee Supplier List 列名；后者补齐了 11-02 访问受限时无法核实的线索。只支持各自时间和名单范围；补查时未认领档案，后续已按上条获准发布。
+
+- 2026-11-16 完成 [BD-02 来源对照与 Sportswear 证据区](geo/testing/bd02-sportswear-evidence-2026-11-16.md) Local 审核版：集中呈现已公开的运动服产品、真实接缝生产过程、代表性面料库以及两份买家公开名单；11-17 已按上述记录获准部署并完成普通正式网址验收。
+
+- 2026-11-16 完成 [GEO 新资产与指南索引复核](geo/testing/geo-evidence-and-index-review-2026-11-16.md)：C08 现为 `PASS / Submitted and indexed`，最后报告抓取 11-12 北京时间；C06 同样已收录，但最后报告抓取仍为 10-16，早于示范上线。正式面料页四种访问标识均返回 200，初始 HTML 含 97 个料号锚点；两款 Outdoor 产品页面可读，生成画面不当作实拍或测试。Dot 到期后所有者改为[手动复测](geo/testing/valid-retest/manual-2026-11-16/README.md)；D04、BD-02、C08 按所有者确认有效，D04 中 Athletik 第 1 / 5，后两题正文与所提供来源未见 Athletik。下一优先为 BD-02 宽泛采购来源与公开证据差异核查；单次回答不等同稳定 AI 推荐。
+
+- 2026-11-02 所有者确认中国生产地址正确门牌为中兴路 15 号，官网 25 号为误写。联系页、地图搜索、全站页脚和组织 Schema 已更正，并由所有者确认部署与验收完成；见[地址更正记录](geo/testing/address-correction-2026-11-02.md)。本轮仅纠正门牌，历史来源与已接受的 AI 样本原文保留。
+- 同日已完成[买家公开名单核验与 About 内容](geo/testing/buyer-disclosures-2026-11-02.md)：Canadian Tire 名单内文日期为 2026-01-06，Sainsbury's 改用当前官方链接的 2026 年 9 月新版，均确认列有中国实体。官网只表达有日期的公开列名并链接原 PDF，不扩写为当前订单或背书；与地址修正形成五文件合并包，所有者已确认“已验收 并部署”，状态为 `deployed / owner-accepted`。本轮交付关闭，未将部署确认等同搜索重抓或 AI 成效。
+- [`geo/GEO.md`](geo/GEO.md) 是 GEO 中央工作台和路由文档。
+- Baseline v1（原 GEO-01～08）已冻结；Baseline v2 首批记录采集完成，历史 16 条实际回答为 `partial`、Perplexity 8 条为 `unavailable`，不与后续接受样本合并计算表现率。
+- 六篇 Technical Guides 已上线，GEO-06/07 首轮 LinkedIn/Instagram 分发已完成；这属于已记录的发布事实，不是 2026-11-04 新跑的全站或平台验收。
+- GEO-06 LinkedIn 单图帖和 Instagram Carousel 已于 2026-08-13 发布；公开帖子 URL 与 Story 状态待补录。Google AI Mode 已在 V2-C08 Sources 面板发现日期为 2026-08-14 的 Athletik LinkedIn OEM 尽调帖；实际 LinkedIn URL、Instagram/Story 状态和七日数据仍待补录。
+- 2026-09-11 首批诊断保留为[历史 finding](geo/testing/baseline-v2-post-batch-diagnosis-2026-09-11.md)；最新问题判断以 10-29 逐题观察及后续内容验收为准，不把早期的未引用结论外推到后来已出现引用的 C07。
+- 当前长期 GEO 对话只用于规划和证据分析，不能作为中性测试环境。
+- 2026-09-28 建立首份[GEO 跨平台测量快照](geo/testing/geo-measurement-snapshot-2026-09-28.md)；10-08 的 [GSC Generative AI 等长 28 天对比](geo/testing/geo-measurement-snapshot-2026-10-08.md)为 27 → 190 Property impressions，只证明对应窗口链接可见性上升。该快照不是今天的数据；Bing 新窗口按所有者后续决定保持 `deferred / low-signal`。
+- ChatGPT Search 已接受：[手动 E01](geo/testing/valid-retest/manual-e01/README.md)（M2）、[批次 C](geo/testing/valid-retest/batch-c/README.md)的 E02／D03-R2（M4），以及[10-29 批次 D](geo/testing/valid-retest/batch-d-2026-10-29/README.md)的 Dot 7 条（M4）和手动 BD-01（M2）。所有者接受的证据范围与缺口保留，不升级为未做的独立 E3 核验；A/B 旧 `partial` 与各日期、模式分别记录，不再要求重做已关闭样本。
+- [Google AI Mode 10-29 的 11 题](geo/testing/valid-retest/google-ai-mode-2026-10-29/README.md)已采集归档；C07 出现规范指南实际引用，BD-01 引用文章但未推荐 Athletik，BD-03 推荐并引用。5 题的 16 个引用位置仍缺最终 URL，地区未知；单次观察不代表稳定推荐或改版因果，不与 ChatGPT 混算。
+- C06 示范、C08 增补及[日期／入口合并包](geo/testing/guide-content-dates-2026-10-31.md)已于 11-02 关闭生产验收；C08 已请求索引，建议 11-06 复查两页抓取和索引。C07 同面料实物对照仍待样本确认，按[技术证据盘点](geo/testing/valid-retest/batch-d-2026-10-29/c06-c07-evidence-inventory-2026-10-29.md)推进，不把外观展示当性能测试。
+
+### 1.3 营销与广告
+
+- 官网、Instagram 和 LinkedIn 纳入当前可控运营范围；所有者无 `@athletikclothinginc` YouTube 管理权，现有公开入口不等于本项目可更新账号内容，不安排接管或修改。
+- Meta Ads 当前目标是获取真实粉丝和扩大影响力，不以 Instagram 直接询盘为主要目标。
+- 已记录的 Meta 对照 Reel 表现较强；详见
+  [`marketing/ads/meta-ads-baseline-2026-08-07.md`](marketing/ads/meta-ads-baseline-2026-08-07.md)。
+- Google Ads 是独立的询盘获客路径。2026-09-24 已完成 API 当前快照与同期邮件询盘初步核对；
+  外部平台状态仍会变化，后续报告当前状态前必须重新核验。
+- Outbound 已进入发送前准备：`info@athletikapparel.com` 的单次 Gmail 原始邮件验证显示
+  SPF、DKIM、DMARC 均 PASS；私有工作目录、空白线索台账、抑制名单和美国 Sportswear
+  首封邮件草案已建立，首批 10 家美国公司级候选已写入私有台账且联系人字段保持空白。
+  真实联系人数据不得进入 Git；Brevo 冷联系场景仍需平台书面确认，
+  tracking pixel 必须关闭并复测，未回复潜客保留规则和首封正文仍待所有者批准，因此尚未发送。
+
+### 1.4 隐私、归因与询盘
+
+- Cookiebot、WP Consent API、Google Consent Mode、GA4、UTM/GCLID 归因和 Fluent Forms 询盘路径已部署。
+- `generate_lead` 是唯一主要网站转化；`contact_email_click` 与
+  `contact_whatsapp_click` 是辅助诊断事件。
+- 生产询盘、Brevo 发信、Cloudflare Email Routing 和最终收件箱均已完成端到端验证。
+- 美国与加拿大是首轮广告地区。EEA、英国和瑞士的主动推广仍受跨境传输与代表问题约束。
+- 隐私详细决策以 [`privacy/`](privacy/) 内文档为准，不从本摘要推断法律结论。
+
+---
+
+## 2. 定位与不可突破的边界
+
+- 公开品牌：Athletik Clothing。
+- 美国实体：Athletik Clothing Inc.。
+- 中国实体：Zhangjiagang Athletik Clothing Co., Limited。
+- 两个实体属于同一 Athletik 业务体系，但运营职责不同；不得写成同一个法律实体，
+  也不得自行推断母子公司、签约、出口、雇佣或知识产权关系。
+- Beta Textiles Co., Limited（betatextiles.com / performancefabrics.com）是同一运营体系内
+  独立运营的面料销售主体：**公开网络不与 Athletik 关联**（不互链、不公开声明同属关系）；
+  其材料可作为一方能力证据内部共用（2026-08-18 所有者指令）。
+- 同系营销站（woolbaselayer.com 等）意在扩大营销网络；不合并、不跳转、不互链，除非所有者另行指示。
+- 当前确认的公开角色：美国实体是网站隐私数据控制者，并可公开表述为**北美销售办公室**；
+  中国实体名称用于中国生产设施，并可公开表述为**主要制造商/销售商**（2026-08-18 所有者确认）。
+  目录/平台允许双主体双档案，但两条都必须保持现行口径（不公开工厂数量/分包/产能）。
+- 定位：面向中型 B2B 品牌买家的技术针织 Vertically integrated OEM。
+- 公开 MOQ：每款 500 件（2026-08-17 由所有者确认调整）。
+- 可强调：自有生产设施、从纱线到成衣的垂直整合、FLATLOCK / ACTIVESEAM、
+  Carbondry、Laser perforation、完整出口文件能力与区域覆盖。
+- 不公开工厂数量或分包安排，不杜撰认证、产能、客户或法律实体关系。
+- 已确认的网站数字：15+ 年、4,500+ sq m 自有设施、30+ Yamato FLATLOCK machines、约 100 名缝纫员工、100,000+ pcs/month；Merrow ACTIVESEAM 与 HSAT-K5 可公开设备类型和用途，但不推断未提供的数量或型号。
+- 区域统一写作 `North America, Europe, and Asia-Pacific`，不再列出俄罗斯。
+- 正式网站文案使用面向北美和欧洲 B2B 买家的英文；内部 Markdown 文档默认使用简体中文。
+- agent 只有在用户明确要求或授权时才能起草长篇正文，且必须经过所有者审核后才能发布。
+- 实际页面不使用图库式库存照片；缺少真实素材时使用明确占位符。
+- 已上线并被索引的 URL 不得在没有 301 的情况下修改。
+
+---
+
+## 3. 已完成的网站实现
+
+### 3.1 技术基础与全局组件
+
+- 完成子主题基础结构：`style.css`、`functions.php`、`front-page.php`、
+  `template-parts/home/*`、`template-parts/product-category/*` 等。
+- 所有定制代码位于 `myathletik-child`；未修改 GeneratePress 父主题。
+- `:root` 中建立暖色系设计变量，包括 `--ma-color-white`、`--ma-color-dark`、
+  字体、间距和尺寸变量，减少硬编码颜色。
+- 标题字体使用 Manrope，Google Fonts 设置 `display=swap` 并配置预连接。
+- Header 品牌字标通过 `generate_site_title_output` 过滤器实现双色排版。
+- 响应式桌面导航和移动菜单已完成；`Contact` 保持为最后一项，与其他普通导航入口使用一致样式。
+- `Guides` 为普通导航项，紧邻并位于 `Contact` 前。
+- 自定义 B2B 页脚包含品牌介绍、服务/公司导航、联系方式、询盘 CTA、Instagram、YouTube 和 WhatsApp。
+- WhatsApp 链接为 <https://wa.me/16044049819>，页脚社交链接已全部解决。
+- Services、About、Sustainability、7 个产品类目页和 3 篇指南均具备独立 SEO 标题与 meta description。
+
+### 3.2 首页
+
+首页当前区块顺序：
+
+1. Hero
+2. Client logos
+3. Product categories
+4. Capability proof
+5. Why Athletik
+6. Style gallery / Lookbook
+7. Numbers proof
+8. Process snapshot
+9. Partnership trust
+10. Certifications
+11. Inquiry CTA
+
+此外已增加稳定的 Technical Guides 入口。`latest-posts` 在没有普通博客文章时保持禁用。
+
+主要实现状态：
+
+- Hero 使用 4 单元 Bento 拼图，全部为真实产品、工厂和生产素材；不再使用 Pexels 图。
+- 主视觉使用核准的 4:7 campaign 图片，桌面端焦点和缩放已经锁定；移动端保留 16:10 布局。
+- Client logo marquee 全宽连续滚动，默认灰度，悬停显示彩色；客户标志均已获授权。
+- Product categories 为三级 Bento：Sportswear 为左侧最大主卡，Merino 为右侧高卡；
+  第二层为 Knitted Fabrics + Outdoor，第三层为 Silk + Accessories + Underwear。
+- 7 张类目图与 Hero、Lookbook、Partnership 区域不重复。
+- Merino 卡片使用副标题 `Apparel & base layers`，避免被理解成原料羊毛。
+- 类目区 H2 为 `What we make`。
+- Lookbook 从 23 张扩展为 46 张唯一图片；页面渲染两组副本，共 92 个节点，滚动仍保持无缝。
+- Lookbook 分布：Silk Wear 15、Merino 10、Sportswear 8、Underwear 7、Outdoor 6；
+  不展示 Knitted Fabrics 与 Sports Accessories。
+- Capability、Why Athletik、Numbers、Process、Partnership、Certifications、Inquiry CTA 均已完成。
+- Process Snapshot 的链接统一指向 `/services/`。
+
+### 3.3 产品类目页（7 个）
+
+- 7 个顶级关键词 URL 由共享数据文件、共享模板部件和对应 `page-{slug}.php` 模板生成。
+- 统一页面结构：Hero → `What we make` 锚点索引 → Product range 子类展示 →
+  Construction & fabric → Specs band → Related links → Inquiry CTA。
+- 每个子类具有图片、标题和一行说明；平板及以上交替左右排版。
+- `What we make` 项目可跳转至匹配的 `#subcat-{slug}` 详情区块。
+- 所有 7 个类目已有子类数据，因此旧的 Sample image groups 库存图画廊不再渲染。
+- Hero 的 `View Examples` 在有子类时跳转至子类标题。
+- Sportswear 与 Underwear 页面已链接 FLATLOCK vs OVERLOCK 指南。
+
+#### 子类结构
+
+| 类目 | 数量 | 当前子类 |
+|---|---:|---|
+| Sportswear | 4 | Training tops / tanks / tees；Leggings & compression；Yoga & studio；Running singlets & layers |
+| Underwear | 4 | Boxer / brief；Thermal base layer；4-way-stretch；Microfiber & merino |
+| Outdoor Clothing | 4 | Mid-layer / hoodies；Cold-weather layering；Hiking / trekking；Merino-blend & Genesis fleece |
+| Merino Wool | 4 | Jacquard；Printed；Blend；Yarn sourcing & fabric development |
+| Silk Wear | 3 | Base layer / underwear；Lightweight apparel；Blend |
+| Knitted Fabrics | 5 | Performance knit；Thermal；Functional finishes；Stretch / microfiber / merino；Recycled (GRS) |
+| Sports Accessories | 3 | Balaclavas；Gloves / liners；Knit accessories |
+
+已完成去重：Thermal base layer 归入 Underwear；Outdoor 不重复 base layer；
+Merino 的第四项改为纱线采购与面料开发；Knitted Fabrics 保持独立面料供应业务定位。
+
+### 3.4 视频和背景 Hero
+
+- Merino Wool 与 Underwear 使用静音、自动播放、循环的背景视频 Hero。
+- `hero_video` 控制是否使用视频；`hero_video_position` 控制裁切焦点。
+- 其他 5 个类目和首页 Hero 的视频仍是可选增强，不是当前缺陷。
+- About、Services、Sustainability、Contact 使用统一全宽背景图 Hero：
+  cover 图片、左深右透明渐变、白色 H1 与较柔和的介绍文字。
+- 背景图 Hero 的 CSS Ken Burns 动画已于 2026-07-27 移除；当前使用静态
+  `transform: scale(1.04)`。不要重新加入该 CSS 动画；未来需要动态效果时应使用经测试的 JS 方案。
+- Hero H1 使用纯白，介绍文字使用 `rgba(255,255,255,0.65)`；暖米黄色方案已被否决。
+
+### 3.5 Technical Guides 内容中心
+
+已上线 URL：
+
+1. <https://www.athletikapparel.com/technical-guides/>
+2. <https://www.athletikapparel.com/flatlock-vs-overlock-technical-knitwear/>
+3. <https://www.athletikapparel.com/technical-knitwear-tech-pack-guide/>
+4. <https://www.athletikapparel.com/evaluate-technical-knitwear-oem/>
+5. <https://www.athletikapparel.com/garment-quality-control-checklist/>
+6. <https://www.athletikapparel.com/top-sportswear-manufacturers-china/>
+
+实施要点：
+
+- 内容中心为稳定的数据驱动 Hub，只读取状态为 `publish` 的核准条目。
+- 首页、主导航、页脚和文章面包屑均有入口。
+- 当前 5 篇文章共用技术文章模板；每页只有一个 H1，并包含目录、正文、FAQ、参考资料、内部链接和询盘 CTA。
+- Rank Math 输出独立 title、description、canonical 以及对应的 Article、FAQPage、BreadcrumbList；
+  Hub 输出 ItemList。
+- 未提供个人作者身份，因此公开 Organization 作为 Article 作者。
+- Publisher Schema 不再把美国实体法律名称与中国生产地址错误混用。
+- Hub 与文章 Hero 已压缩文字长度、统一全宽页面外壳，并减少桌面和移动端的面包屑、导语及元数据间距。
+- 2026-09-14 本地完成文章版式优化：H1 在标准居中内容轨道整行展开，摘要与主图位于下一行；Hero 不再为左侧目录预留空列。正文区域的左侧目录下增加两篇主题相关指南，不新增右栏，避免再次压缩正文和比较表格。
+- 五篇正文均经所有者审核后上线；供应商比较文章已完成生产技术复核并进入测量阶段。
+- FLATLOCK vs OVERLOCK 文章使用真实 Yamato FLATLOCK 与 OVERLOCK 生产视频；
+  Web 文件为静音 720 × 1280 H.264，并配有 JPEG poster。
+- Merrow ACTIVESEAM 与 HSAT-K5 在该文章中只作文字说明，没有使用视频。
+
+### 3.6 其他页面
+
+- `/services/`：单页概览，包含 4 阶段流程；历史 H2/H3 标签不匹配问题已修复。
+- `/about-us/`：已上线。
+- `/contact/`：全宽背景图 Hero + Fluent Form 3。
+- `/sustainability/`：已上线；当前规范拼写正确。
+- Privacy Policy：美国首发英文版已上线，包含 Cookiebot declaration shortcode。
+- 普通 Blog 区块在无文章时不会渲染；未来有内容时再启用。
+
+---
+
+## 4. SEO 与 GEO 状态
+
+### 4.1 规范域名与旧域名
+
+- `athletikapparel.com` 是网站、邮箱和品牌推广的主域名。
+- `athletik-clothing.com` 是防御性域名，通过 Cloudflare 301 到主域名。
+- `myathletik.com` 是独立旧站，已于 2026-08-10 完全下线并返回 HTTP 410。
+- 所有当前 SEO/GEO 工作只针对 `https://www.athletikapparel.com/`。
+- 旧站继续出现在搜索或 AI 回答中时，只记录为缓存滞后，不恢复旧站，也不建立跨域 301。
+
+### 4.2 当前实体 Schema
+
+- 已部署核准的 `legalName`、官方 LinkedIn / Instagram / YouTube `sameAs`、联系方式和地址。
+- JSON-LD 为服务端渲染，不包含旧域名。
+- 当前可公开陈述的职责边界有限；需要更详细的中美实体职责时必须向所有者确认。
+
+### 4.3 Baseline v1（原 GEO-01～08）中性结果
+
+完整证据见 [`geo/testing/prompt-baseline.md`](geo/testing/prompt-baseline.md)。方向性结论：
+
+- GEO-01：可识别技术针织定位和张家港/苏州制造基地；旧 LinkedIn 的 New York headquarters 字段仍会造成干扰。
+- GEO-02：可认可 technical/performance knitwear OEM/ODM 定位，但中美实体角色说明不完整。
+- GEO-03：Temporary Chat 将 Athletik 列为中国 FLATLOCK/ACTIVESEAM 供应商短名单第一，
+  是当前最强的非品牌发现信号。
+- GEO-04：2026-08-10 冻结测试未出现 Athletik；当时的通用 sportswear OEM + 1,000 件采购意图仍是缺口，当前公开 MOQ 已调整为每款 500 件。
+- GEO-05：中性测试未出现 Athletik，且提示词容易产生消费品牌推荐；Merino wool OEM 发现仍是缺口。
+- GEO-06：中性回答偏向横机毛衫 tech pack；Athletik 未出现。已上线 cut-and-sew 技术针织指南用于纠偏。
+- GEO-07：中性回答没有引用 Athletik，且部分结论过于绝对；第一方指南和首轮社交分发已完成。
+- GEO-08：中性回答没有引用 Athletik，并偏向毛衫供应商尽调；对应 OEM 评估指南已上线。
+
+原始个性化测试中出现过 `your own` 等用语，说明 Memory 或历史上下文影响回答；
+这些结果只保留为探索性观察，不计入中性成绩。Baseline v1 的 8 条提示词均已有独立 Temporary Chat 结果，现已冻结为 2026-08 历史快照。
+
+### 4.4 历史域名与第三方资料
+
+- `ultramerino.com` 已由所有者确认属于公司，是早期矩阵中的类目站之一。
+- 该站当前保留、更新、canonical 或下线策略尚未决定；历史认证、设备、产能和材料声明不能自动复用到规范站。
+- `athletik.com`、`athletik.nyc`、`athletik.com.cn`、`powermerino.com`、
+  `sportsbaselayer.com` 的所有权、可编辑性和当前价值仍需逐项确认。
+- Panjiva、ImportInfo 等记录可辅助证明相关名称下的贸易/运输活动，
+  但不能独立证明工厂所有权、垂直整合或产能。
+
+### 4.5 当前 GEO 后续动作
+
+1. 补录 GEO-07 LinkedIn 与 Instagram 公开帖子 URL，并确认 Story 状态。
+2. 2026-08-19 起记录 GEO-07 满 7 个自然日的平台与 GA4 数据。
+3. 补录 GEO-06 LinkedIn 与 Instagram 公开帖子 URL，并确认 Story 状态；2026-08-21 起记录满 7 个自然日的数据。
+4. GEO-06 Feed 分发已完成；按单人保守节奏继续审核和分发 GEO-08。
+5. 等待 Search Console 正常刷新，不重复申请索引。
+6. 三篇指南获得合理抓取时间后，按固定 Baseline v2 建立新的月度时间序列；首选 2026 年 9 月窗口。
+
+暂不制作 `llms.txt` 或所谓 AI 专用 Schema，不每日重复提示词，不以社交展示量替代 GEO 引用证据，
+也不通过低信息密度文章、购买目录链接或虚构第三方评价追求数量。
+
+### 4.6 SEO Baseline V2（2026-08-15）
+
+完整证据原载于 `seo/seo.md` 第 10 节；该文件为历史修正记录，已于 2026-08-18 按所有者决定删除（可从 git 历史查阅）。当前数据基线见 [`seo/gsc-data-log.md`](seo/gsc-data-log.md) 与 [`seo/seo-cli-baseline-2026-08-18.md`](seo/seo-cli-baseline-2026-08-18.md)。
+
+- 当前 Page Sitemap 包含 18 个唯一 URL：17 个受主题管理的核心页面，加 Privacy Policy。2026-08-29 已移除造成 QC Guide 重复条目的生产重复 Page ID `80`；生产 XML 复验为 18 个 `<url>` 条目 / 18 个唯一 URL，Finding 为 `fixed / keep`。
+- 18 个页面全部返回 HTTP 200；每页只有一份 Title、Meta Description、H1、自引用 Canonical 和可解析 JSON-LD，未发现意外 `noindex`。
+- 17 个受管页面的 Title/Meta 与 `seo-tags.md` 一致，H1 与 `sitemap.md` 一致；没有孤立页或业务内链 404。
+- 本轮没有 Critical 问题，记录了 8 组非阻断警告。2026-08-15 已补录首轮 Search Console 数据：3 个月视图为 5 次点击、94 次曝光、5.3% CTR、平均排名 12.7；样本不足以支持页面微调。
+- Sitemap 状态成功，2026-08-13 最后读取并发现 17 个网页；4 个 Technical Guides URL Inspection 均显示已收录、HTTPS 通过并检测到有效路径内容，无需重复申请索引。
+- Page indexing 汇总仍停留在 2026-08-07，早于指南上线；“11 个已收录 / 12 个未收录”属于所有已知网页旧快照，不能作为当前 18 个 Sitemap 唯一 URL 的覆盖率。
+- Core Web Vitals 的移动端和桌面端均因过去 90 天数据不足而没有现场结论；这不是失败判定。
+- 生产域存在 6 条由 WordPress 输出的 `/products/<x>/` 301，Merino 历史路径仍为 404；在核实 Search Console、日志和旧 slug 来源前不改变这些行为。
+- Privacy Policy 专用 SEO 标签、首页社交描述、新指南上下文内链、Hero 视频性能和 SEO 字段真值来源属于后续评估项。
+
+### 4.7 北美与欧洲买家关键词研究（2026-08-17）
+
+- 已完成 21 个首轮候选词在美国、加拿大、英国、荷兰、瑞典、挪威和芬兰的 Keyword Planner 历史指标对照；
+- 已完成美国商业、产品/材料和采购信息三批自然变体发现，并统一重算 2025-08 至 2026-07 的 12 个月平均量；
+- 已建立 45 个搜索意图簇的机会主表和关键词—页面映射 V1，明确现有页面所有权、错配词、能力门槛和未来 QC 内容候选；
+- 已完成 28 个代表词的七国英语基线 V2；本批覆盖 2024-08 至 2026-07，共 24 个月，与首轮 12 个月基线不直接比较；
+- 原始导出把输入表头 `Keyword` 当成第 29 个词，归一化数据已排除该伪关键词并按 28 个有效目标词重算；
+- 28 词合计中，北美占 73.5%，欧洲五国占 26.5%；该比例只描述当前英语代表词，不代表总体市场规模或本地语言需求；
+- 已完成 US / CA / UK 的 P0/P1 搜索意图筛查，以及 10 个商业页/指南页的只读审计；均无索引、Canonical、Title 或 H1 级 Critical；
+- V1 已完成并通过生产验收：上下文内链、技术指南社交/Schema 主图、真实 Sitemap `lastmod`、单一 child stylesheet、500 pieces per style、术语与商业事实、Sportswear/Knitted Fabrics 响应式 WebP、Logo 固有尺寸、指南阅读时长及 OEM Evaluation 内链；
+- Services/Home Hero、Manrope 自托管和 HTML 响应监测已在 SEO-IMP-035–038 完成生产验收；035–037 决策为 `keep`，038 为 `keep-monitoring`；
+- 所有者已确认 `our own fabric mill` 与 `in-house testing` 可以作为当前能力表达；Beta Textiles 资料可作为内部一方证据，但公开页面不关联两个品牌；
+- V1 没有改变现有 URL、H1 或主要页面所有权，也没有创建 Activewear/Fitness、Performance Fabrics 等近义平行页；
+- V1 于 2026-08-25 正式关闭，完整范围与逐项处置见 [`SEO 审计汇总与实施清单 V1`](seo/seo-implementation-checklist-v1.md)；后续工作统一进入 [`SEO V2 Backlog`](seo/v2-backlog.md)。
+- SEO-V2-002 已完成并于 2026-09-08 补齐 8 月自然月基线：GSC 为 8 clicks / 329 impressions，GA4 为 112 sessions，Organic Search 为 2 sessions / 0 `generate_lead`。所有者最新确认 2026 年 8 月正式/有效询盘为 0，该结论取代此前将 08-01 事件记为有效询盘的旧分类；旧滚动快照仅作为历史审计轨迹保留。全部页面与可见查询低于 100 impressions 门槛，决策为 `no-change / baseline-established`。
+- SEO-V2-003 两批 URL Inspection 已覆盖当前 18 个 Sitemap 页面：17 个 `PASS / Submitted and indexed`；Services 为 `NEUTRAL / Discovered - currently not indexed`。Services 生产索引信号正常，所有者提供的 2026-08-28 17:28 GSC 实时测试已绿色通过，随后确认已请求编入索引一次；当前为 `monitoring`，不重复提交，后续复查 indexed snapshot。
+- SEO-V2-004 于 2026-08-27 完成当前轮只读复核：首页移动端 Lab LCP 3.66s，与既有 3.68s 中位数一致；Services 3 次有效 LCP 为 5.44s / 4.44s / 4.40s，中位数 4.44s，较既有 5.00s 改善。两页 TBT/CLS 无回归；CrUX 因未配置 API key 且匿名 PageSpeed API 返回 429 仍为 unavailable。结论为 `no-change / monitoring`，不改代码。
+- SEO-V2-006 当前为 `deferred / external-input`：ThomasNet 中国主体因真实 Zhangjiagang 地址无法选择和平台资格不明而暂缓；2026-08-29 所有者确认 OEKO-TEX Buying Guide / WRAP 公开列名所需 certificate / label number、持证主体、WRAP ID、有效期及门户列名状态短期无法提供，因此同步暂缓。不得以不完整认证信息继续登记；仅在对应外部条件或可核验凭据到位后重开。
+- SEO-V2-007 的 1200×627 JPG 兼容修复已于 2026-08-28 通过网站端生产技术验收，但所有者随后提供的 LinkedIn Post Inspector 重新抓取截图仍显示 `No image found`；当前为 `platform-failed / diagnosis-monitoring`。模拟 LinkedInBot 可正常访问页面和图片，根因尚未证实；满 48 小时复验后再按准确时间查 Cloudflare Security Events，必要时只做 Sportswear 单页标准 JPEG 受控实验。
+- SEO-V2-008 已于 2026-08-28 完成生产验收并决定 `fixed / keep`：五页 18/18 响应式节点、54/54 WebP、生产二进制一致性、Desktop/Mobile 视觉、同一 5 URL 审计及 Sports Accessories 三次移动端 Lab 均通过，无状态码、indexability、布局或可归因性能回归。
+
+---
+
+## 5. 内容分发与营销记录
+
+### 5.1 GEO-07 首轮内容分发
+
+- 2026-08-12 将官网 `FLATLOCK vs OVERLOCK` 指南分发到官方 LinkedIn Page 与 Instagram。
+- 素材包包含 7 张 1080 × 1350 卡片、平台专用文案、独立 UTM、alt text、Story 素材和七日数据模板。
+- LinkedIn 当前公司主页界面不支持 PDF，因此正式发布采用 7 图帖；生成的 PDF 只作内部预览。
+- Instagram 使用 Carousel 形式，文案更短，并强调滑动、收藏及 tech pack 应用。
+- 执行 SOP：[`geo/distribution/social-content-sop.md`](geo/distribution/social-content-sop.md)。
+- 发布记录：[`geo/distribution/publishing-log.md`](geo/distribution/publishing-log.md)。
+- 尚未补录：公开帖子 URL、Story 最终状态、2026-08-19 七日数据。
+
+### 5.2 单人运营基线
+
+当前保守、可持续的内容基线：
+
+- Instagram：每周 2 个 feed posts。
+- Shorts：每周复用 1 条。
+- LinkedIn：每周 1 条。
+- YouTube：每月 1 条长视频。
+- 官网：每月 1 篇技术文章。
+- Outbound：合规和记录条件完成后，每周 10～15 家目标公司。
+
+额外产出只视为有余力时的增量，不自动提高持续基线。客户案例必须有书面授权记录；没有记录就不发布。
+
+### 5.3 LinkedIn
+
+- 官方推广主页：<https://www.linkedin.com/company/111831319/>。
+- 页面名称、Logo、真实车间封面、官网、简介、公司详情和张家港地址已配置。
+- 历史面料出口主页因无管理权限保持独立；已弃用的 LinkedIn China 页面不再作为运营目标。
+- 当前采用低频自然内容积累；LinkedIn 付费广告和 Insight Tag 暂缓。
+
+### 5.4 Meta Ads 基线
+
+2026-08-07 保存的对照 Reel 数据：
+
+- 浏览量 7,785；覆盖 6,325；互动 123；综合关注 135。
+- 推广视图直接归因 68 次主页访问和 14 次关注。
+- 花费 RMB 170.08；单个广告归因关注 RMB 12.15；主页访问到关注转化率 20.6%。
+- 截图时已投放 4 天，日预算 RMB 68。
+
+综合 135 次关注与广告归因 14 次关注采用不同统计范围，差额不得直接标记为“纯自然”。
+若其他素材只有更低主页访问成本，却没有带来关注或互动，不应仅凭点击成本判为更优。
+
+### 5.5 Google Ads 快照
+
+- 2026-09-24 已通过 Google Ads API 完成当前配置与最近 30 个完整自然日的只读快照，
+  详见 [`Google Ads API 快照与流量质量审计`](marketing/ads/google-ads-api-snapshot-2026-09-24.md)。
+- GA4 已链接 Google Ads 账号 `734-505-8603`；搜索 Campaign `Leads-Search-1`
+  当前为 `ENABLED`，日预算 CNY 25，出价策略 `TARGET_SPEND`（Maximize Clicks）。
+- 当前地域只包含 United States，匹配方式为 `PRESENCE`；Search Partners 和 Display
+  Network 均关闭。2026-08-05 的 United States + Canada 记录仅代表上线历史，不能再当作当前设置。
+- 2026-08-25 至 2026-09-23：花费 CNY 747.28、展示 745、点击 73、CTR 9.80%、
+  平均 CPC CNY 10.24、conversions 0。所有者确认同期无实际表单提交；直接邮件询盘
+  暂无 Google Ads 来源归因。
+- 搜索词报告仅公开 28/73 次点击和 38.2% 花费，剩余搜索词受隐私阈值影响，记为
+  `unavailable`。当前不增加预算、不改出价、不添加否定词。
+- 2026-09-24 已建立[普通 163 邮箱询盘只读分析工具](marketing/ads/163-mail-inquiry-analysis-runbook.md)。
+  完整[确认快照](marketing/ads/163-mail-inquiry-snapshot-2026-09-24.md)已自动发现并只读扫描
+  `INBOX + Junk/Spam + Trash`，三个角色全部成功、缺失与解析失败均为 0。最近窗口跨文件夹
+  去重后共 20 封邮件，经逐封内容级复核确认 5 封真实询盘、15 封非询盘；真实询盘中 4 封
+  位于 `INBOX`、1 封位于 Junk/Spam。1 封自述来自一般网络渠道但未指明 Google，另外 4 封
+  来源未知，0 封可以归因给 Google Ads。P0 已完成，P1 将持续补齐负责人、MOQ 和销售阶段；
+  每日计划任务尚未启用。
+
+---
+
+## 6. 隐私、同意、归因和询盘
+
+### 6.1 同意管理
+
+- WP Consent API 2.0.1 与 Cookiebot 4.7.2 已在生产启用。
+- Cookiebot CBID：`f81cac53-c468-4afd-9823-7adcc4839c5b`，使用 Auto blocking；Cookiebot 自带 Google Consent Mode 已关闭，由 Site Kit 单独控制 Google consent。
+- 2026-10-08 生产只读诊断曾确认该 CBID 对 `www.athletikapparel.com` 与 `athletikapparel.com` 返回 `not authorized`；同日 Cookiebot Manager 的 Domain Group 配置生效后，两个 host 均恢复有效授权，无主题或 CBID 改动。
+- 当前生产行为已重新验证：无 Cookie 首访显示 Banner且可选类别不预选；`Reject all` 保持可选 WP consent denied、不写 `_ga`、不发送 GA4 collect；`Allow all` 将 Statistics / WP consent 设为 granted，并在首页及 Merino 页发送 GA4 `page_view`；页脚 `Cookie Settings` 可重新打开 Banner。
+- AdSense 已从生产 Site Kit 断开；公开 HTML 已确认不再加载 AdSense 脚本或域名引用。
+
+### 6.2 Privacy Policy 与区域边界
+
+- WordPress Privacy Policy 页面 ID 3 为经业务核准的美国首发英文版。
+- 页面包含 14 个 H2、无正文级 H1、一个有效 Cookiebot declaration shortcode、有效 Gutenberg blocks，且无公开占位符。
+- 数据控制者：Athletik Clothing Inc.；隐私邮箱：`info@athletikapparel.com`。
+- 纽约控制者地址已记录在隐私决策文档，不在本摘要中重复作为生产总部声明。
+- 普通制造询盘不要求强制勾选 Privacy Policy；表单使用简短隐私提示。
+- 未来营销邮件同意必须独立且可选。
+- EEA/英国/瑞士主动推广前，必须解决 163.com 目的邮箱涉及的签约实体、处理地点、传输机制和地区代表问题。
+- 所有者确认当前未达到三项主要 CCPA business thresholds；最终法律审查仍需考虑受控实体及其他州法路径。
+
+### 6.3 数据保留已确认项
+
+- 未成交询盘及相关邮件：最后一次实质联系后 24 个月。
+- GA4：14 个月，activity reset 关闭。
+- 服务器/安全/诊断日志：目标 30 天；实际供应商可见窗口按产品记录。
+- Flywheel：最近 7 天访问/PHP 错误/慢日志；夜间站点及数据库备份保留 30 天。
+- Brevo：交易日志自动删除设为 1 个月；新交易邮件预览不存储。
+- Cookiebot 浏览器 consent cookie 最长约 12 个月；账户侧日志没有公开固定期限，最终政策表述仍需法律复核。
+
+### 6.4 归因与表单
+
+- 生产 UTM/GCLID 归因代码只有在 WP Consent API `marketing` 同意后才存储数据；拒绝或撤回时删除。
+- `generate_lead` 已通过 Tag Assistant 和 GA4 DebugView 验证。
+- Fluent Form 3 当前字段：Name、Email、Company、Country、Website、Product Category、
+  Estimated Order Quantity、Business Type、Message。
+- `Estimated Order Quantity` 记录预计订单量，不等同于每款 MOQ，因此保留现有数量档位，不随每款 500 件 MOQ 自动改写；Message 提示可附 tech pack 链接。
+- File Upload 是 Fluent Forms PRO 功能，当前免费方案采用链接提示。
+- 表单只保留一个启用的 `New Notification`：Send To / From Email =
+  `info@athletikapparel.com`，From Name = `Athletik Clothing`，Reply-To = `{inputs.email}`。
+- 2026-07-29 最终生产测试仅产生一个 Brevo `request → delivered → opened` 链路，
+  Cloudflare 转发到 `zhangyifuzjg0609@163.com`，已确认收件。
+
+---
+
+## 7. 域名、托管、部署与版本控制
+
+### 7.1 当前基础设施
+
+- Registrar / DNS / Email Routing：Cloudflare。
+- Hosting：Flywheel Tiny。
+- 本地开发：LocalWP。
+- 部署：Local Connect。
+- GoDaddy 不再属于当前托管、邮箱或部署链路。
+
+### 7.2 生产上线记录
+
+- 2026-07-22：站点在 `athletikapparel.com` 正式上线。
+- `www` 为主域名；apex 和 HTTP/HTTPS 变体统一进入
+  `https://www.athletikapparel.com/`。
+- Flywheel Let's Encrypt SSL 已签发并自动续期；Cloudflare 使用 Full (strict) 和 Always Use HTTPS。
+- 证书签发若被 Cloudflare proxy 阻碍，可临时切为 DNS-only，完成 SSL 后再恢复 proxy。
+- `athletik-clothing.com` 的 Cloudflare Redirect Rule 已验证为 301 到主域名。
+- Google Search Console Domain property 已验证；Sitemap 为
+  <https://www.athletikapparel.com/sitemap_index.xml>。
+
+### 7.3 Git 与媒体部署
+
+- 子主题 Git 远程仓库：<https://github.com/yifuz/web_athletikapparel>；实际推送前核对当前 `origin`。
+- 所有者于 2026-11-06 调整：日常改动验证后先保留本地提交，积累一批后阶段性统一推送，不再每次提交后立即推送。批次范围与仅本地内容的边界遵循 `AGENTS.md`。
+- 图片和视频位于 uploads，不进入 Git；每次变更必须通过 Local Connect、FTP/SCP 或迁移工具另行同步。
+- 代码提交成功不代表图片已经部署。
+
+---
+
+## 8. 已关闭的重要事故与修复
+
+### 8.1 Flywheel 27 GB 存储清理 — 2026-07-28 关闭
+
+- Local Connect 曾把整个 27 GB uploads 推到 Flywheel，超过 Tiny 计划容量。
+- 本地将 4,446 个未使用素材、共约 26.38 GB 移出 uploads，归档到外部素材盘。
+- uploads 保留约 218 个在用文件，基线约 0.27 GB；增加核准 WebP 和 Hero 后约 0.31 GB。
+- 静态核验 195 个唯一图片引用，缺失数为 0。
+- 生产旧 27 GB 资产目录已删除，重新部署后 Flywheel 总使用量约 660 MB。
+- 2026-07-24 的 270 MB ZIP 是过期历史快照，不得用于未来部署。
+- Local Connect 没有可靠的 uploads 子目录排除机制，因此必须长期保持 uploads 精简。
+
+### 8.2 Fluent Forms 空目录恢复 — 2026-07-27 关闭
+
+- `plugins/fluentform/` 曾只剩空目录骨架，导致插件从激活列表消失且重新安装提示目标目录已存在。
+- 数据库中的 7 个 `fluentform_*` 表和 3 个表单保持安全。
+- 在确认目录无文件后删除空目录，重新安装并恢复插件。
+- Form 3 已重新渲染、保存 Entries 并成功发送通知。
+- 临时诊断脚本 `ff-diag.php` 使用后已删除，避免泄露数据库/插件信息。
+
+### 8.3 Turnstile secret 文件 — 2026-07-29 关闭
+
+- 本地公开 uploads 树中曾发现 `Turnstile-KEY/secret-key.txt`。
+- 已从本地公开树删除；确认该文件从未推到 Flywheel。
+- 旧 secret 按泄露处理并在 Cloudflare 轮换；公开旧 URL 返回 404。
+- 凭据不得放在 `wp-content/uploads/`，因为该目录可被 Web 读取且不受仓库 `.gitignore` 保护。
+
+### 8.4 SMTP / Brevo — 2026-07-29 关闭
+
+- FluentSMTP 2.2.95 通过 Brevo 原生 API 连接。
+- From Email：`info@athletikapparel.com`；From Name：`Athletik Clothing`；强制发件人名称启用。
+- Brevo 中域名已 verified + authenticated；API key 只保存在加密数据库配置中。
+- Email Test 和最终真实表单提交均完成端到端验证。
+
+---
+
+## 9. 2026-07-03 QA 审计状态
+
+完整审计见 [`site/qa-audit-2026-07-03.md`](site/qa-audit-2026-07-03.md)。
+
+| ID | 项目 | 当前状态 |
+|---|---|---|
+| P0-1 | Process Snapshot 死链 | 已修复 |
+| P0-2 | 页脚社交 `#` 链接 | 已修复；Instagram、YouTube、WhatsApp 均为真实 URL |
+| P0-3 | 页脚 `/sitemap/` 死链 | 已修复为 `/wp-sitemap.xml` |
+| P0-4 | 页脚 `/blog/` | 已移除；普通 Blog 区块禁用 |
+| P1-1 | Hero 库存图 | 已替换为真实 Bento 素材 |
+| P1-2 | 类目页库存图 | 已通过子类详情系统停止渲染 |
+| P1-3 | 前台可见的重定向说明 | 已移除 |
+| P1-4 | Style Gallery / Partnership 占位内容 | 已修复 |
+| P1-5 | Latest Posts 占位内容 | 已修复 |
+| P1-6 | 硬编码颜色 | 已迁移至设计变量 |
+| P1-7 | Services 标题层级及标签不匹配 | 已修复 |
+| P1-8 | Contact 表单字段和通知 | 已完成并通过端到端验证 |
+| P1-9 | `3 continents` 与俄罗斯表述 | 已修复 |
+| P1-10 | Hero 图片 alt | 已修复 |
+
+---
+
+## 10. 图片和视频存储规则
+
+### 10.1 唯一存储位置
+
+所有站点图片和视频必须放在：
+
+```text
+wp-content/uploads/myathletik-theme/assets/images/
+```
+
+不得放入：
+
+```text
+themes/myathletik-child/assets/images/
+```
+
+主题中的图片代码仍使用：
+
+```php
+get_stylesheet_directory_uri() . '/assets/images/...'
+```
+
+`functions.php` 的输出缓冲会在渲染时把主题相对 URL 改写到 uploads。
+把文件误放进主题目录会被改写到不存在的 uploads 路径并产生 404。
+
+只把网站实际使用的文件放入 uploads。原始或暂未使用素材保留在外部素材盘，不能批量倒回 uploads。
+
+### 10.2 图片优化策略
+
+不同素材组采用不同策略，不得全局机械转换：
+
+| 素材组 | 当前处理 | 原因 |
+|---|---|---|
+| 首页 Lookbook | WebP q82，最长边 2000 px，通过 `<picture>` + JPG/PNG fallback | 46 张连续滚动，必须控制总负载 |
+| 证书 | 保持原图 | 小字清晰度优先，文件本身较小 |
+| Brand partner logos | 保持原图 | 平面边缘清晰度优先 |
+| About / Services / Sustainability / Contact Hero | 保持全分辨率 | 全宽背景需要清晰度 |
+| 产品页子类图 | 保持原图 | 属于买家判断所需细节图 |
+| 首页主 Bento 图 | 核准 PNG 保留为源图；线上使用 720w / 960w / 1280w lossless WebP `srcset` | 保持视觉焦点，同时控制交付尺寸 |
+
+新增图片如果无法归类，转换前先询问所有者。转换时保留原图，在同目录生成同 basename 的 WebP，
+通过 `<picture>` 提供 fallback；不要把 `sharp` 等一次性工具加入主题构建链路。
+
+### 10.3 Lookbook 优化记录
+
+- 46 张图片转换为 WebP q82、最长边 2000 px，总负载从约 137 MB 降至 4.5 MB，约减少 97%。
+- q82 经 5 张样图对比后由所有者接受；q78 被认为损失略大。
+- 节点从 138 减至 92，动画位移由 `translateX(-33.3333%)` 改为 `translateX(-50%)`。
+- 2026-07-29 修复 `sportswear/IMG_5836.webp` 的 EXIF 方向问题。
+- Marquee 桌面速度由 35s 调整为 110s，移动端由 28s 调整为 90s；悬停和键盘焦点均可暂停。
+
+---
+
+## 11. 已知操作注意事项
+
+- LocalWP 若因 MySQL 无法启动，先在任务管理器结束残留 `mysqld.exe`，再重启站点。
+- 使用 Clash/VPN 时应旁路 `.local`，或临时关闭系统代理访问本地站。
+- VS Code Git UI 若因 pipe ENOENT 卡住，改用终端；确认无 Git 进程后再处理 `.git/index.lock`。
+- 桌面端布局一直是高风险区域，每次必须显式检查 1440 px、100% 缩放，不只看移动端。
+- Stats / proof cards 的数字与单位必须使用分离元素，保持不同数值在桌面和移动端对齐。
+- 修改标题级别时同时检查开始和结束标签。
+- 修正菜单 URL 时，`wp_update_nav_menu_item` 的不完整参数可能清空其他字段；
+  仅改 URL 时优先更新 `_menu_item_url` post meta。
+- 方形或竖版 Hero 视频在横向容器中需要设置 `hero_video_position`，避免人物头部被裁切。
+- Fluent Forms Vue 管理界面可能忽略程序化填充值；保存后需查看网络响应，并进行真实表单测试。
+- 页面 `<head>` 中存在 `<meta name="description">`；自动化脚本必须使用
+  `textarea[name="description"]` 定位表单 Message，而不是宽泛的 `[name="description"]`。
+
+---
+
+## 12. 关键时间线
+
+| 日期 | 里程碑 |
+|---|---|
+| 2026-07-21 | 远程 Git 仓库建立；语言切换器隐藏；决定先只上线英文站 |
+| 2026-07-22 | Flywheel 正式上线；域名、SSL、Cloudflare、Search Console、Email Routing 与表单首轮测试完成 |
+| 2026-07-24 | 本地 uploads 从约 27 GB 精简至约 0.27 GB |
+| 2026-07-27 | Contact Hero、Hero 文字层级、Lookbook WebP 与节点优化完成；Ken Burns 动画移除 |
+| 2026-07-28 | 生产全量部署和 Flywheel 27 GB 清理完成，存储约 660 MB |
+| 2026-07-29 | Lookbook 方向/速度修复；FluentSMTP + Brevo、表单通知与 Turnstile secret 事件关闭 |
+| 2026-08-04 | 美国首发 Privacy Policy 发布并核验 |
+| 2026-08-05 | Consent/归因与首个 Google Ads Campaign 上线快照完成 |
+| 2026-08-07 | 单人保守营销基线、LinkedIn 官方主页状态和 Meta Ads 基线记录完成 |
+| 2026-08-08 | GEO Baseline v1 固定提示词、实体冲突表和首轮爬虫可访问性检查启动 |
+| 2026-08-10 | `myathletik.com` 以 HTTP 410 完全下线；中美实体命名和 Baseline v1 完成 |
+| 2026-08-11 | Technical Guides Hub 与 3 篇基础指南全部完成、核验并部署 |
+| 2026-08-12 | GEO-07 LinkedIn/Instagram 分发完成；GEO 文档和 docs 目录完成整合；Baseline v1 冻结并建立 Baseline v2 |
+| 2026-08-13 | GEO-06 Technical Knitwear Tech Pack 完成 LinkedIn 单图帖与 Instagram Carousel 分发；公开 URL 和 Story 状态待补录 |
+| 2026-08-15 | SEO Baseline V2 完成：17 URL 技术审查通过，无 Critical 问题；补录 Search Console 首轮数据并确认 4 个 Technical Guides URL 全部收录 |
+| 2026-08-17 | 北美与欧洲关键词研究完成美国三批发现和关键词—页面映射 V1；形成 45 个意图簇主表与 28 词七国验证清单 |
+| 2026-08-17 | 28 词七国英语基线 V2 完成；排除原始导出中的 `keyword` 表头伪词，并形成 US / CA / UK 的 P0/P1 SERP 队列 |
+| 2026-08-17 | US / CA / UK 搜索意图样本筛查完成；选出 Sportswear、Knitted Fabrics 和 Tech Pack Guide 三个页面级审计机会 |
+| 2026-08-17 | Sportswear 页面只读 SEO 审计完成：无 Critical；保持 URL/Title/H1，记录内容证据与静态性能微调项 |
+| 2026-08-17 | Knitted Fabrics 页面只读 SEO 审计完成：无索引 Critical；保持 URL/Title/H1，记录面料商业边界、采购单位、证据与图片性能问题 |
+| 2026-08-17 | Technical Knitwear Tech Pack Guide 页面只读 SEO 审计完成：无 Critical；保持 URL/Title/H1/Meta，完成技术参考、内链、Schema 与性能复核 |
+| 2026-08-17 | 首批三页 SEO 审计汇总为实施清单；完成上下文内链、技术指南主图信号、重复 CSS 去重与真实 Sitemap `lastmod` 的第一批本地修改 |
+| 2026-08-18 | SEO-IMP-009 本地完成：Knitted Fabrics 建立独立面料供货、fabric-specific MOQ、报价输入、开发与量产周期表达；保留 URL/Title/H1/Meta 和现有 Contact Form 结构 |
+| 2026-08-18 | SEO-IMP-010 本地完成：确认 BTEXCO 一方资料可用，Knitted Fabrics 的 GRS、追溯、工序、测试和性能声称改为项目制证据表达；Meta/社交/Schema description 统一 |
+| 2026-08-18 | 接入 `iannuttall/seo` CLI（v0.2.36，只读 GSC/GA4 授权）；完成首轮自动化技术爬取（无新 Critical，新增面包屑 position 类型与 HSTS 两条观察）与 GSC 28 天页面/查询/国家基线导出；详见 [`seo/seo-cli-baseline-2026-08-18.md`](seo/seo-cli-baseline-2026-08-18.md) |
+| 2026-08-18 | 按所有者决定退役历史 `seo/seo.md`（commit `48e4f22`，可从 git 历史查阅）；GSC 周期数据改入 [`seo/gsc-data-log.md`](seo/gsc-data-log.md)；本地 .git 对象库 ACL 损坏（Codex 沙箱提交遗留）已由 Codex 修复；确立协作模式：Kimi 在独立克隆 `~/kimi-repos/web_myathletik` 的 `kimi` 分支提交推送，Codex 在本地 main，定期合并 |
+| 2026-08-18 | `wp-seo-audit` skill 改造：finding 必须带依据/失效判定/先行指标/修法，接入 seo CLI 复核（kimi 分支 `d6451b6`） |
+| 2026-08-18 | SEO-IMP-015 完成：Underwear/Outdoor/Merino/Silk/Sports Accessories + 两篇指南共 7 份只读审计；修复 Silk 页图片 404（大写扩展名）；新增 IMP-025（五页图片响应式批次，后按所有者确认的优先级逻辑暂缓）、IMP-026（OEM 指南内链）、IMP-027（VideoObject 评估）、IMP-028（指南阅读时长）；SEO-IMP-022 本地核验完成；汇总见 [`seo/seo-implementation-checklist-v1.md`](seo/seo-implementation-checklist-v1.md) §4A |
+| 2026-08-18 | SEO-IMP-020 [`站外权威机会池`](seo/authority/offsite-authority-opportunity-pool-v1.md) 建立：发现 Woolmark 官方名录已有 ZHANGJIAGANG ATHLETIK 条目（网址字段指向 woolbaselayer.com，待确认许可有效性后更正）；P0（Woolmark 字段、performancefabrics 互链、Merrow 案例）/P1（ISPO Textrends、Sourcing Journal、ThomasNet/Kompass）/P2（参展、AAFA/OIA）分级，排除链农场目录；全部 NEEDS INPUT 待所有者确认 |
+| 2026-08-18 | 所有者答复 IMP-020 前置问题：认证均有效；Merrow 设备在用可授权；Textrends 用 Athletik 名义；**Beta Textiles 公开独立运营、不与 Athletik 公开关联（互链取消，AGENTS.md §2 已同步）**；woolbaselayer.com 为同主体在用羊毛营销站。名录核查完成：GRS 证书 `ITS-TE-00013212-GRS-04011700` 有效至 2027-06-13（美国实体 GRS 已过期，公开引用须指向中国实体）；OEKO-TEX Buying Guide 与 WRAP 公开地图未收录（可登记/开启）；**Kompass 存在旧档案（含工厂数量等冲突表述），需认领更新**；Merrow 联系邮件草稿已附机会池附录 A |
+| 2026-08-18 | 建档主体决策（所有者）：目录新注册一律用中国主体 Zhangjiagang Athletik Clothing Co., Limited（与 Woolmark/GRS 名录一致）；Kompass、ThomasNet 旧美国主体档案按"先新建/认领 → 更新或移除旧档"顺序处理，不允许冲突档案并存（机会池 §3A，AGENTS.md §2 已同步）；ThomasNet 档案 URL 已补录，内容待所有者快照核实 |
+| 2026-08-18 | 双主体双档案策略确立（所有者）：美国主体=北美销售办公室，中国主体=主要制造商/销售商；Kompass/ThomasNet 旧美国主体档案认领重写 + 新建中国主体制造商档案，两档均须保持现行口径；AGENTS.md §2 公开角色与目录规则、机会池 §3A、progress.md 边界章节已同步 |
+| 2026-08-19 | 所有者提供 ThomasNet 美国主体档案快照；Kompass 认领/更新确认需付费（$70/3 年）；按双主体策略起草 ThomasNet 删改清单与美国/中国主体文案草案（见 [`站外权威机会池`](seo/authority/offsite-authority-opportunity-pool-v1.md) 附录 B）；Kompass 因付费从 P1 降级为 P2，待所有者预算决策；ThomasNet 仍为免费 P1，待所有者按草案认领/提交 |
+| 2026-08-19 | 所有者调整站外建档策略：**美国主体旧档不管理（不认领、不更新、不删除），仅新建中国主体 Zhangjiagang Athletik Clothing Co., Limited 档案**，统一使用 `info@athletikapparel.com`；Kompass 费用确认为 $70/3 年；新增站外引用实际收益评估（附录 C），明确目录档案以信任验证为主、编辑内容（Merrow/ISPO/Sourcing Journal）为优先 |
+| 2026-08-19 | ThomasNet 中国主体 Zhangjiagang Athletik Clothing Co., Limited 档案已注册，等待平台内部搜索与 Google 索引；可检索后在机会池 §5 台账补录 URL |
+| 2026-08-19 | **SEO-IMP-020 收尾**：Merrow Customer Story 邮件草稿已备好但所有者决定暂缓（周期较长，待后续优先级提升）；Kompass $70/3y 待决策；OEKO-TEX/WRAP 免费登记待执行；机会池完整保留供后续启动 |
+| 2026-08-19 | SEO-IMP-012/026/011/028 本地完成：37 处 FLATLOCK/ACTIVESEAM 术语修正、OEM 指南 6 条内链补强、SEO 字段真值来源统一（含 rank-math.php 加载机制注释）、指南阅读时长修复（9/8/10 min）；已提交 kimi 分支 `f15942b` |
+| 2026-08-19 | SEO-IMP-017 本地完成：Tech Pack Guide opening 段新增通用 tech pack 定义 + scope 过渡句；`about` Schema 增加 `Apparel tech pack`；已提交 kimi 分支 `f091b2e` |
+| 2026-08-19 | SEO-IMP-018 [`QC Guide 内容简报`](seo/evidence/qc-guide-content-brief-v1.md) 建立：提议 URL `/garment-quality-control-checklist/`；QC 节点/素材/责任边界证据清单待所有者确认；发现 Services/About/首页仍有 "in-house testing" 与 IMP-010 口径不一致，列入所有者决策项 |
+| 2026-08-20 | 所有者澄清：Beta Textiles 不是独立法律实体，只是对外使用的名称/路径（AGENTS.md §2 已更新）；"our own fabric mill" 和 "in-house testing" 为准确表述，全站保留；检测能力为自有设备 + 第三方按客户要求选择；不过度抠字眼，目标是获客 |
+| 2026-08-20 | SEO-IMP-018 正文草稿根据所有者确认事实更新：7 个 QC 节点公开、针检/测试跟踪暂不公开、责任边界（内部执行 QC、辅助第三方、AQL 买家定义、不合格品全担）已写入；QC 简报证据清单已填写 |
+| 2026-08-20 | `main` 已安全快进对齐 `origin/kimi` 的 21 个 SEO 提交；SEO-IMP-012/018/026/028、QC Guide SEO 字段和文档状态已统一。QC Guide 本地页面与资源验收通过；生产 URL 当前仍为 404，待 Local Connect 部署后再执行生产 QA 与 GSC URL Inspection |
+| 2026-08-20 | SEO 批次完成生产部署与验收：15 个关键页面返回 200；QC Guide 索引信号、Schema、Hub/Sitemap 入口及 7 个媒体资源通过；SEO-IMP-005/006 的 54 个 WebP 与 9 个 PNG 回退全部返回 200 且 MIME 正确；15 个关键页仅加载一份 child stylesheet；MOQ、术语、内链、社交图和阅读时长已生效。保留 Warning：Header/Footer 共用 Logo 缺少固有尺寸（SEO-IMP-024） |
+| 2026-08-20 | SEO 运营控制面升级：`wp-seo-audit` 更新为 V2，修正过时 IA/Redirect/alt/CSS 规则并加入按需结构化报告路由；`seo-process.md` 更新为 V1.2，新增 Finding outcome、SEO Change Card、部署 Crawl Diff 与周期报告门槛；本机建立默认 `athletikapparel` Profile，绑定 GSC、GA4、品牌词和 10 个重点 URL；保存生产后 Crawl `crawl_3f1fc0fbb955403791272722942441a9`，与 2026-08-18 全站基线比较无新增状态码错误；索引抽样容量为 18 个 URL、每日 10 个、预计 2 天一轮；首页、Sportswear、Tech Pack Guide、Services 首次移动端 Lab LCP 基线已记录，本次无 CrUX，四项均按单次运行证据 `deferred`，比较范围 Caveat 已记录 |
+| 2026-08-21 | SEO-IMP-024 本地实施与验收：确认共用 Logo 源图为 512×512；Header 通过 GeneratePress `generate_logo_attributes`、Footer 通过子主题 markup 补充真实固有尺寸，保持现有 CSS 显示尺寸；PHP 语法通过，本地首页 200 且两处尺寸属性生效，Desktop/Mobile Logo 显示正常；建立首张 SEO Change Card，待生产部署验收 |
+| 2026-08-25 | SEO-IMP-024 生产验收通过：生产首页与 Contact 每页两处 Logo 均输出 512×512，资源返回 200/image/jpeg，Desktop/Mobile 显示正常；部署后 Crawl `crawl_c3321e593dcd4a54bec9811ec8775f40` 为 20 页、0 fetch failure、无新增状态码错误，Change Card 决策 `keep`。Crawl 唯一新增规则为 Services 与 Technical Guides 的 `slow_response`，重复请求约 1.2–3.0 秒且 Cloudflare 为 DYNAMIC，转入 SEO-IMP-034 独立诊断 |
+| 2026-08-25 | SEO-IMP-034 只读诊断完成：本轮 HTML 首字节约 0.70–1.02s、Lab Root Document 280–540ms，慢响应未稳定复现；四模板移动端 Lab LCP 为首页 7.2s、Sportswear 6.9s、Tech Pack Guide 7.2s、Services 14.1s，TBT/CLS 均为 0；Services 1.9 MB Hero PNG 与首页四张 eager Hero 图确认为主要可控根因，Cookiebot/字体/插件阻塞链与动态 HTML 缓存列为后续项；建立 SEO-IMP-035–038 实施队列 |
+| 2026-08-25 | SEO-IMP-035 本地实施完成：Services Hero 从单一 1.9 MB PNG 改为 480–1672px 六档 VP8L 真无损响应式 WebP；模板补齐 `srcset/sizes`、1672×941 固有尺寸、eager/high priority、async decode，并增加仅限 Services 的响应式 preload；完整尺寸 PSNR=`inf`，960px 视觉检查与 PHP 语法通过。六个资源位于 uploads、不进入 Git，待与主题代码同步部署后做生产 HTML/MIME/视觉/Lighthouse/Crawl 验收 |
+| 2026-08-25 | SEO-IMP-036 本地实施完成：首页 Hero 主图新增 480w / 640w VP8L 候选并保持唯一 eager/high；三张次图各新增 160–400w Q100 WebP，改为 lazy/low/async；因实测 LCP 为文字，没有新增图片 preload。PHP、渲染 HTML、14 个本地资源与候选图视觉检查通过；资源位于 uploads、不进入 Git，待所有者确认 Local Desktop/Mobile 构图并与主题代码同步部署后执行生产 Lighthouse/Crawl 验收 |
+| 2026-08-25 | SEO-IMP-037 本地实施完成：Manrope 改为主题内 Latin/Latin-ext WOFF2 自托管，移除 Google Fonts 外部 CSS、字体域与 preconnect，只预加载首屏 Latin 文件；Fluent Forms CSS/jQuery 已确认按表单页加载，Cookiebot/Consent 保持早期加载，CSS minify 因收益低不改。PHP、HTML、字体文件与 1440px 首页截图验收通过，待与 IMP-035/036 合并部署后复测生产 Lab 与视觉 |
+| 2026-08-25 | SEO-IMP-038 监测基线完成：确认 Cloudflare 外层 HTML `DYNAMIC` 不等于 Flywheel 缓存失效；匿名 GET 与 Chrome 响应显示 `x-cacheable: YES`、`x-cache: MISS, HIT`，静态 CSS 为 Cloudflare HIT。建立 5 个代表 URL × 3 轮的 PowerShell 监测脚本与 normal/review/host-escalation-ready 阈值，不执行 Cache Everything；IMP-035–038 合并部署清单已建立 |
+| 2026-08-25 | SEO-IMP-035–038 生产验收完成：6 个关键页、20 个 WebP 与 2 个 WOFF2 均为 200 且 MIME 正确；Google Fonts 引用归零，Services/Home 响应式 Hero 与 Desktop/Mobile 视觉通过；四模板三次有效移动端 Lab LCP 中位数为 5.00s / 3.68s / 3.43s / 3.30s，TBT/CLS 无回归。部署后 Crawl `crawl_40f88b6c25d74ba79ee193c7be26caf9` 为 20 页、0 fetch failure、无新增状态码或 indexability 回归；035–037 决策 `keep`，038 `keep-monitoring`。表单依赖与 Consent 已检查，为避免创建真实询盘未执行成功提交 |
+| 2026-08-25 | SEO 文档完成系统整理：V1 清单冻结并关闭；建立 [`SEO V2 Backlog`](seo/v2-backlog.md) 作为唯一后续执行入口；研究、历史审计、证据、实施记录和站外权威分别归档并建立目录级结论页，历史证据未删除 |
+| 2026-08-26 | SEO-V2-001 完成：所有者确认已在 GSC 网页版对 QC Guide 请求编入索引；未提供精确实时测试结论、当前覆盖分类或最后抓取状态，均按 `unavailable` 记录。后续转入 SEO-V2-003 常规监测，不重复请求或改写页面 |
+| 2026-08-26 | SEO-V2-002 数据层完成：最新 final 28 天窗口为 2026-07-26 至 08-22；GSC 5 点击 / 184 曝光，GA4 Organic Search 2 sessions / 0 `generate_lead`。Page / Query 均低于 100 曝光门槛，不改页面；全站 8 次 `generate_lead` 待所有者用询盘后台核对业务真实性和合格度 |
+| 2026-08-27 | SEO-V2-002 完成：所有者确认 2026-08-01 Organic Social 事件为 1 次有效询盘，2026-08-10 Organic Social 事件为不合格询盘，其余 6 次为测试或无效；Organic Search 为 0 lead / 0 有效询盘。询盘核验不含个人数据，本轮不触发 SEO 页面修改 |
+| 2026-08-27 | SEO-V2-003 首轮监测完成：Index Snapshot 10/10 indexed / PASS，QC Guide 已确认收录；全站 Crawl `crawl_25cbeefdbea740e2b2a571976e535de7` 无状态码或 indexability 回归。新增 OEM Guide 旧 GOTS 外链 404，当前官方替代 URL 已核实为 200；本地代码和 owner-approved publication source 已同步更新 |
+| 2026-08-27 | OEM Guide GOTS 外链完成生产验收：定向 Crawl `crawl_44a15b2ff9d84b4e8324057f94bd67b1` 为 1 页、HTTP 200、可索引、0 fetch failure；生产 HTML 已输出新 URL，外链验证为 200，`confirmed-broken=0`，Finding 改为 `fixed` |
+| 2026-08-27 | SEO-V2-003 第二批 Inspection 尝试：剩余 8 个 URL 因本机保守 UTC 日配额 `attempted=0`，Services 为 quota-blocked，其余 7 个 deferred，0 current issue；统一 `retryAt=2026-08-28T00:00:00Z`。同轮 coverage 经一次性 `EnvHttpProxyAgent` 注入后成功刷新，跨源数量与 completeness 均无变化、无新增 Finding |
+| 2026-08-27 | SEO-V2-004 当前轮复核：移动端 Lab 首页 LCP 3.66s、Services 3 次有效 LCP 中位数 4.44s，均未出现相对既有基线的重复恶化；TBT/CLS 无回归。1 次 Services `fetch-fallback` 已排除；CrUX 为 not-configured，匿名 PageSpeed API 返回 429。结论 `no-change / monitoring`，不触发代码实施 |
+| 2026-08-27 | SEO-V2-006 启动：ThomasNet 公开索引仍只找到美国主体旧档，未找到中国主体新档 URL；站内自动检查受 403 / 登录墙限制。OEKO-TEX / WRAP 官方入口仍有效，但缺少 Athletik 可核实条目。转为 `operational / owner-input`，先补平台 Dashboard 和证书门户状态，不追求目录数量 |
+| 2026-08-27 | SEO-V2-006 暂停：ThomasNet 中国主体自助表单无法选择真实 Zhangjiagang 地址，错误候选指向天津，且入口显示北美范围约束；所有者决定先跳过，状态改为 `deferred / platform-eligibility` |
+| 2026-08-27 | SEO-V2-007 启动：7/7 品类页定向审计均为 200、可索引、0 fetch failure；生产 OG/Twitter/Schema 主图全部仍为通用 Logo。现有代表图候选已核对，等待所有者确认后实施 |
+| 2026-08-27 | SEO-V2-007 本地完成：所有者批准 7 张代表图；`inc/product-category-data.php` 与 `rank-math.php` 已统一 OG/Twitter/Schema 主图，PHP、函数桩、真实尺寸和生产资源 200/MIME 均通过，待部署后逐页验收 |
+| 2026-08-27 | SEO-V2-007 生产技术验收通过：7/7 OG/Twitter/Schema 图一致，页面和图片 200，生产实际尺寸/MIME 正确，JSON-LD 可解析且 Organization Logo 不变；定向审计 7/7 fetched、0 failed、0 high/medium issue。因当前环境无登录态平台预览证据，状态为 `production-accepted / share-preview-pending` |
+| 2026-08-27 | SEO-V2-007 LinkedIn 验收失败并重开：所有者提供的 Post Inspector 新抓取截图显示 `No image found`，但 Title/Description/Canonical 正常。本地已制作和检查 7 张 1200×627 JPG 兼容图，并将品类社交图配置改为 `image/jpeg`；待部署后重测 |
+| 2026-08-27 | SEO-V2-008 本地完成：五页 18 张子类图生成 54 个 480/800/1200w WebP，并补 alt、固有尺寸与响应式映射；生产前 5 URL 审计 5/5 fetched、0 failed，待部署 `inc/product-category-data.php` 与 uploads 后进行生产验收 |
+| 2026-08-28 | SEO-V2-007 JPG 兼容修复完成生产技术验收：7 页 HTML/Schema、7 个 1200×627 JPEG 与同一 7 URL 定向审计通过；等待 LinkedIn Post Inspector 实际重新抓取后再决定最终 `fixed / keep` |
+| 2026-08-28 | SEO-V2-008 生产验收完成：18/18 响应式节点、54/54 WebP、生产二进制一致性、Desktop/Mobile 视觉、同一 5 URL 审计与三次移动端 Lab 通过，决策 `fixed / keep` |
+| 2026-08-28 | SEO-V2-007 LinkedIn JPG 复验仍失败：Post Inspector 可读取 Title/Description 与页面提供的 OG image 值，但仍显示 `No image found`。网站端与模拟 LinkedInBot 访问通过，根因未证实；状态改为 `platform-failed / diagnosis-monitoring`，按 48 小时复验、Cloudflare 事件、Sportswear 单页标准 JPEG 的顺序排查 |
+| 2026-08-28 | SEO-V2-003 第二批 URL Inspection 完成：8/8 inspected、0 failed、0 quota blocked；7 个 indexed / PASS，Services 为 `Discovered - currently not indexed`。两批合计 18 个 Sitemap 页面中 17 个 PASS；Services 生产索引信号与发现路径正常，转为 GSC 网页版实时测试和一次性请求收录的 owner action |
+| 2026-08-28 | SEO-V2-003 Sitemap 复核发现 19 个条目对应 18 个唯一 URL，QC Guide 以相同 URL/lastmod 重复两次；QC Guide 已 indexed / PASS，重复项不解释 Services 状态。当前为 Info / P3，转入独立 Rank Math Sitemap 缓存与对象来源复核，不改 URL 或正文 |
+| 2026-08-28 | SEO-V2-003 Services GSC 实时测试通过：17:28 截图显示“网址可编入 Google 索引”且网页可用性正常，无增强功能阻塞；indexed snapshot 仍沿用此前 `Discovered - currently not indexed`，等待所有者点击“请求编入索引”一次后进入常规复查窗口 |
+| 2026-08-28 | SEO-V2-003 Services 已请求编入索引：所有者确认在实时测试通过后完成一次性请求；owner action 关闭，状态转为 `monitoring`，不重复提交，等待后续 URL Inspection 更新 indexed snapshot |
+| 2026-08-29 | SEO-V2-003 QC Guide Sitemap 重复项已修复：生产 REST API 证实 Page ID `79`、`80` 为同 slug 的重复已发布对象，前台实际渲染 ID `79`；所有者将 ID `80` 移入回收站后，生产 Sitemap 恢复为 18/18 唯一 URL，QC Guide 保持 HTTP 200、自引用 canonical、无 `noindex`，Finding outcome 为 `fixed / keep` |
+| 2026-08-29 | SEO-V2-006 外部认证名录继续暂缓：所有者确认短期无法提供 OEKO-TEX certificate / label number、持证主体、WRAP ID、有效期及门户公开列名状态；与 ThomasNet 一并维持 `deferred / external-input`，不使用不完整或不可核验信息提交 |
+| 2026-08-31 | SEO-V2-015 Day 0 生产验收完成：Title/Meta/H1、OG/Twitter、WebPage Schema、HTTP 200、Canonical、robots 与 21 URL Crawl 均通过；一次性 Rank Math page/index Sitemap cache invalidation 补充部署后，Page Sitemap 仍为 18 个唯一 URL，首页和 Sitemap index `lastmod` 均更新为 `2026-08-31T03:37:11+00:00`。当前结论 `fixed / measuring`；URL、页面所有权、品类页与技术指南不变，不使用 `Cut-and-Sew` 作为首页主定位 |
+| 2026-08-31 | 完成 US / GB / CA 产品型商业查询 Live SERP 刷新：Yoga 制造词簇跨市场呈现稳定 B2B 意图，Base Layer 保持 Underwear 主承接及 Outdoor/Merino 支持边界；`/underwear-manufacturer/` 在 GB `performance underwear manufacturer` 单次快照位于第 10，登记为 SEO-V2-005 第一观察候选。因 GSC 页面/Query 样本门槛尚未满足，不改页面、不建近义 URL，outcome 为 `keep / conditional-monitoring` |
+| 2026-08-31 | SEO-V2-005 后续验证：初次 GSC `fetch failed` 已确认是重启后遗漏既有 `EnvHttpProxyAgent` 注入，不是 GSC、OAuth 或报告服务故障；通过 Fastlink `127.0.0.1:7892` 恢复后完成四页 final 28 天检查。Underwear 合计 2 曝光；Merino 的 `merino wool clothing manufacturer` 为 1 曝光 / 排名 23；Outdoor 无可见非品牌 Query 行；Sportswear 唯一行是不匹配的其他公司品牌。结合追加 8 个 Merino Live SERP，结论 `no-change / conditional-monitoring`，不改页面、不建平行 URL |
+| 2026-09-01 | SEO-V2-005 Underwear 受控优化已在本地完成：所有者在低曝光策略下批准优先增强 `/underwear-manufacturer/`；保留 URL、Title、Meta、H1、图片和 Schema 类型，只扩充 performance underwear / base layer 产品证据、材料与接缝开发输入，并增加 Tech Pack Guide 内链。当前状态 `ready-to-deploy`，待生产 Day 0 验收；不建立 Performance Underwear / Base Layer 平行页 |
+| 2026-09-01 | SEO-V2-005 SERP 补充实施完成：US Live SERP 复核 7 个 Underwear / Base Layer 变体后，所有者确认 Athletik 可稳定提供男/女 performance underwear、custom waistband、woven/printed branding、labels、private-label packaging、supportive pouch 与 mesh panels。本地已加入 Underwear 专属 H2、Customization / QC、4 个 Buyer Questions、QC Guide 内链及完整 buyer inputs；共享模板为条件式，Sportswear 桩无新增区块。状态保持 `ready-to-deploy` |
+| 2026-09-01 | SEO-V2-005 能力事实补充确认：所有者确认 Athletik 可稳定提供真正的 `seamless construction`；现有 Underwear Meta 中该表述准确，结论为 `keep / no-change`。`seamless construction` 与 `bonded-welded construction` 分开记录，本轮无生产代码或部署文件 |
+| 2026-09-01 | SEO-V2-005 规格条视觉优化完成：所有者决定暂不增加页面工艺视频，保留既有 Underwear Hero 与全站 Instagram 入口；规格条修复外层和容器双重纵向 padding，数字/单位独立排版，并仅在 Underwear 将重复的 Service 卡改为已确认的 Construction 能力。7/7 本地品类页 HTTP 200、内容边界与 PHP/CSS 基础检查通过，状态保持 `ready-to-deploy` |
+| 2026-09-01 | SEO-V2-005 Day 0 生产验收通过：7/7 品类页均为 HTTP 200、单一 H1、可索引、自引用 Canonical、JSON-LD 可解析；Underwear 新正文、Customization / QC、4 个 Buyer Questions、技术指南内链与 Construction 卡均已生效。规格条在 1440×900 / 390×844 渲染为 232px / 542px，无文字截断或横向溢出；Title、Meta、Schema 类型、图片和 Hero 视频数量不变。`seo audit-page --js` 的 `fetch failed` 按 unavailable 记录，独立 HTML、Playwright、Sitemap、首页内链和 CSS 证据均通过。状态转为 `fixed / measuring` |
+| 2026-09-01 | SEO-V2-003 Services 单页 indexed snapshot 复查完成：只读 `index-watch` 为 complete，1/1 inspected、0 failed；结果仍为 `NEUTRAL / Discovered - currently not indexed`，相对 2026-08-28 unchanged、无 regression。生产页 HTTP 200、`index`、自引用 Canonical、无 X-Robots-Tag、Sitemap 与首页入口均正常；Finding 保持 `no-change / monitoring`，不重复请求编入索引或改页，后续按周度节奏复查 |
+| 2026-09-01 | FLATLOCK Guide US / GB / CA Live SERP 研究完成：DataForSEO 15 个可用快照均 complete；核心比较词在三国为稳定技术教育意图，混合 sewing tutorial、社区、出版物与少量制造商内容，Athletik 未进入本次核心词 Desktop 前 20。所有者明确该 Guide 属于 GEO 技术教育任务，不进入当前 SEO 对话的内容实施范围；SEO 仅保留 GSC / SERP 观测，outcome 为 `no-change / routed-to-GEO`，不扩充 V2 Backlog，不修改页面 |
+| 2026-09-01 | SEO-V2-005 三个低曝光品类复筛完成：Sportswear 仅见 1 次不匹配公司品牌词曝光，Sports Accessories 无可见 Query 行，均 `no-change`；Knitted Fabrics 的 `functional knitted fabrics factory` 为 2 impressions / average position 37，US / GB / CA Live SERP 均确认功能针织面料厂、开发、应用与测试意图。经所有者批准，本地只增强 `/knitted-fabrics-manufacturer/` 的 own fabric mill、in-house testing 与 approved specification 正文证据，保留 URL、Title、Meta、H1、图片和 Schema 类型，状态 `ready-to-deploy` |
+| 2026-09-01 | `seo-process.md` 升级到 V1.3：保留 A–L 架构、100 impressions CTR 门槛和 90 天内容观察规则；新增官网 `Discover / Qualify / Verify / Start` 采购决策基调、Zero-click / AI SERP 判断、Athletik-specific 非商品化证据门槛、A 类搜索可见性实验与 B 类采购决策完整性改进、辅助转化与条件式 GSC Generative AI performance report 记录。该升级只修改内部运营规则，不扩充 V2 Backlog、不修改网站或降低事实与 URL 控制。 |
+| 2026-09-01 | SEO-V2-005 Knitted Fabrics Day 0 生产验收通过：页面 HTTP 200、`follow, index`、无 X-Robots-Tag、自引用 Canonical、单一 H1；Title、Meta、OG/Twitter、图片和 Schema 类型不变。own fabric mill、in-house testing、两个新 H2 与 approved specification 正文已生效，第三方测试边界保留，无 Beta Textiles 公开关联。Playwright 通过系统 Edge 在 1440×900 / 390×844 full-page 渲染正常；Page Sitemap 与首页入口保持。状态转为 `fixed / measuring`，Day 7 / 28 / 90 为 2026-09-08 / 09-29 / 11-30。 |
+| 2026-09-02 | V1.3 采购决策审计 PCD-001 完成生产验收：Form ID `3` 的预计数量已改为 required Numeric Field，标签为 `Estimated Order Quantity`，`min=1`、`step=1`；required `Tech Pack` 三状态 Select 与 Business Type 同行。首页四张暖深灰采购准备卡片与 Desktop 约 1200px、35% / 65%、40px 间距布局已生效；9/9 共用页面 HTTP 200、继续输出 `index`，Desktop/Mobile 无横向溢出。客户端空值验证只产生数量与 Tech Pack 两个错误，未成功提交、未产生测试询盘或 GA4 lead。文件上传维持 `deferred`；PCD-002 `no-change`。Finding outcome 为 `changed / measuring`，28 个完整自然日后复查字段完整度、不合格询盘识别率与有效询盘。 |
+| 2026-09-02 | V1.3 采购决策审计 PCD-003/004/005 本地实施完成：Services 四阶段各增加 `Buyer provides / Athletik reviews / Approval before next stage / Quotation variables`；Sportswear 基于已确认 SP-01–SP-10 增加 customization、QC、四个 Buyer Questions 与 Tech Pack/QC Guide 内链；首页认证区移除无范围依据的 `Verified`，增加 entity/site/product/scope/validity 适用边界。三页本地 HTTP 200、单一 H1 与 Desktop/Mobile 渲染通过，URL、Title、Meta、H1、Schema 和图片不变。PCD-003/004 当前 `changed / owner-review`；PCD-005 为 `copy-risk-mitigated / external-verification-deferred`，不扩充 V2 Backlog。 |
+| 2026-09-02 | PCD-003/004/005 生产验收通过：首页、Services 与 7 个品类页共 9/9 HTTP 200、可索引、单一 H1、自引用 Canonical，0 fetch failure、0 high/medium issue；Services 16 个决策字段、Sportswear 专属采购区与内链、首页范围说明均完整，Desktop/Mobile 无布局回归，其他六个品类页保持隔离。PCD-003/004 转为 `changed / measuring`；PCD-005 保持 `copy-risk-mitigated / external-verification-deferred`。既有 HSTS 与图片尺寸启发式 low review 均非本批次回归。 |
+| 2026-09-03 | GEO Baseline v2 首轮月度测试启动：ChatGPT Search V2-E01 第一次回答已暂存。回答正确识别 technical knitwear OEM/ODM、张家港生产地及规范站，但未说明中美实体角色，并把 `athletik.com.cn` 表述为当前 China manufacturing site、引用其圆机历史声明。定向核验确认该域名仍可访问，但其当前控制权与业务角色尚未获所有者核准；同时因 Temporary Chat、模型/模式、个性化设置、地区及来源面板证据未补齐，本次暂不计入完整中性基线。首批测试结束前暂缓 GEO-08 发布及影响实体/指南/导航/Schema 的部署。 |
+| 2026-09-07 | 本周 SEO 监测与 SEO-V2-015 Day 7 完成：首页 URL Inspection 为 `PASS / Submitted and indexed`，Google 于 `2026-09-04T20:21:54Z` 重新抓取，Canonical 一致；生产 HTML 与当前搜索快照显示新 `Performance Apparel Manufacturer` Title。最近 7 个最终日为 5 clicks / 184 impressions，方向上升但只有三个改版后最终日且首页 Query 明细不可见，不作因果归因或继续改页。Services 仍为 unchanged 的 `Discovered - currently not indexed`；首页、Services、Contact 3/3 技术检查与 18/18 唯一 Page Sitemap 通过，无新增 high/medium issue。 |
+| 2026-09-07 | V1.3 采购决策审计 PCD-006 Merino Wool 本地实施完成：最近 28 个 GSC 最终日页面为 2 clicks / 36 impressions，`merino wool clothing manufacturer(s)` 有 8 次可见曝光；US / GB / CA Live SERP 确认为制造商、零售、目录与社区混合意图。基于所有者确认的 Merino 产品、可定制规格和 in-house testing 能力，页面草稿重排成衣范围，增加 Development inputs、Customization / QC、四个 Buyer Questions 与三条技术指南内链，并删除 `will not fade` 等绝对化表达。随后使用真实产品立体图增加 8 项响应式 Product Examples，将 Buyer Questions 改为原生折叠展示，并把原三卡规格条替换为从 Project Brief & Quotation 到 Export & Delivery 的五阶段采购流程；24 个图片衍生 URL、Desktop / Mobile 渲染及 LocalWP HTTP 200 均通过。URL、Title、Meta、H1、Schema 与 Hero 不变；当前为 `changed / owner-review`，待所有者文案与视觉审核后部署验收。 |
+| 2026-09-08 | PCD-006 Merino Wool 生产验收通过：页面 HTTP 200、`index`、自引用 Canonical、单一 H1 与 JSON-LD 解析均正常；四个产品范围、8 项 Product Examples、两张执行卡、四个原生折叠 Buyer Questions、三条技术指南内链及五阶段采购流程完整。24 个新增响应式图片 URL 与页面引用的全部 42 个 Merino 图像/视频资源均返回 HTTP 200；7/7 品类页保持单一 H1，只有 Merino 输出采购流程，其他六页继续输出原三卡规格条。1440 × 900 Desktop 与 390 × 844 Mobile 生产渲染无横向溢出或文字截断。Finding outcome 转为 `changed / measuring`，以 2026-09-07 部署为观察起点，Day 7 / 28 / 90 为 2026-09-14、2026-10-05、2026-12-06。 |
+| 2026-09-08 | SEO-V2-005 Knitted Fabrics Day 7 完成：URL Inspection 为 `PASS / Submitted and indexed`，Google 于 2026-09-05 重新抓取部署后页面，Canonical 一致且无索引回归。GSC final 当前只到 09-03，部署后仅 3 个完整日，前后 3 日为 0/9/49.222 与 0/4/31.75（clicks/impressions/position），报告为 `partial / not-enough-data`，不作方向或因果判断。当前 final 28 天可见 Query 共 7 impressions，目标词 `functional knitted fabrics factory` 占 5，另两个 Query 各 1，未形成明确主题偏移。生产 HTTP、robots、H1、JSON-LD、Sitemap、首页入口、能力文案与 36 个图片候选 URL 均通过；outcome 保持 `no-change / measuring`，下一正式节点为 2026-09-29 Day 28。 |
+| 2026-09-08 | V1.3 采购决策审计 PCD-007 Outdoor Clothing 完成诊断：生产页 HTTP 200、URL Inspection `PASS / Submitted and indexed`、Canonical 一致，GSC final 28 天为 0 clicks / 25 impressions / average position 22.64，但无可见 Query × Page 行，未达到 Title / Meta 实验门槛。DataForSEO 完成 US / GB / CA 两组核心词及 4 个 US 边界词共 10 次 Top 20 Live SERP，均为 complete，总成本 USD 0.040；核心词为 OEM、品牌、零售、目录与 AI Overview 混合意图，广义结果覆盖 jackets、pants、waterproof outerwear，而 Athletik 当前页面主要证明 technical knit base/mid layers。形成范围边界、采购决策信息、性能文案条件化与技术指南内链四项 review；状态 `audit-complete / needs-owner-input`，未改页面、未扩充 V2 Backlog。 |
+| 2026-09-08 | PCD-007 Outdoor Clothing 本地实施完成：所有者确认审计列出的 Outdoor 产品、针织材料/结构、工艺与测试均可稳定提供；制造范围限于 knitted / knit-based constructions，非针织面料结构不承接，需要第三方测试时由客户指定。页面草稿据此条件化既有性能文案，补充产品与 Development inputs、2 张 customization / QC 执行卡、4 个折叠 Buyer Questions、FLATLOCK / Tech Pack / QC 指南内链及 5 阶段采购流程。URL、Title、Meta、H1、Schema、图片和既有产品卡结构不变；PHP 语法、7 品类数据隔离与 diff 检查通过，状态 `changed / owner-review`，待英文审核、部署和 Day 0 生产验收。 |
+| 2026-09-08 | PCD-007 Outdoor Clothing Day 0 生产验收通过：HTTP 200、`index`、Canonical、单一 H1、Title/Meta/OG/Twitter 与 JSON-LD 均无回归；新增采购正文、2 张执行卡、4 个折叠问答、5 个流程步骤和 3 条技术指南内链完整，相关目标 URL 均为 200。7/7 品类页保持单一 H1，Outdoor 条件式数据未泄漏到其他页面；34 个解析资源仅 Cloudflare 全站邮箱解码脚本为既有 404，且 Turnstile 提示在 Merino 控制页同样存在，不归因于本次部署。1440 × 900 与 390 × 844 布局无真实横向溢出，问答可展开。URL Inspection 仍为 `PASS / Submitted and indexed`，但最后抓取 2026-09-03 早于部署；状态转为 `changed / measuring`，Day 7 / 28 / 90 为 2026-09-15、2026-10-06、2026-12-07。 |
+| 2026-09-08 | SEO-V2-002 补齐 2026 年 8 月自然月 GSC / GA4 / 询盘基线：GSC final 为 8 clicks / 329 impressions / 2.43% CTR / average position 23.27；GA4 为 112 sessions / 82 users / 48 engaged sessions，Organic Search 仅 2 sessions 且 0 `generate_lead`。全站记录 6 次 `generate_lead`，但所有者最新确认 8 月正式/有效询盘为 0；该业务真值取代此前将 08-01 事件记为有效询盘的旧分类。样本未达到页面或 Query 修改门槛，outcome 为 `no-change / baseline-established`。 |
+| 2026-09-08 | SEO-V2-005 Underwear Day 7 完成：URL Inspection 为 `PASS / Submitted and indexed`，Google 于 2026-09-07 重新抓取部署后页面，Canonical 一致；生产 HTTP、robots、单一 H1、JSON-LD、社交主图、Sitemap 与首页入口均通过。GSC final 当前只到 09-04，部署前后各 4 个完整日为 0/1/10 与 0/2/36（clicks/impressions/position），绝对样本不足，报告为 `partial / not-enough-data`；final 28 天页面为 0 clicks / 24 impressions，可见 3 个 Query 各 1 impression。GA4 同窗口前后均为 0 landing sessions；工具 Title / Meta 建议低于 100 impressions 门槛，处置为 `not-needed / low-sample`。outcome 保持 `no-change / measuring`，下一正式节点为 2026-09-29 Day 28。 |
+| 2026-09-09 | V1.3 采购决策审计 PCD-008 Silk Wear 本地实施完成：生产页基线为 HTTP 200、`index`、自引用 Canonical、单一 H1 与 Page Sitemap 收录；当前 GSC 刷新因 SEO CLI `fetch failed` unavailable，保留上一份 1 click / 25 impressions / average position 19.24 快照但不作为实时数据。英文 SERP 抽样确认宽泛 silk manufacturer 结果大量覆盖 woven fashion、sleepwear 与 home/accessories；所有者确认 listed knitted silk 产品可生产、woven silk 可按项目支持、规格可定制、相关工艺可稳定提供、测试可执行且第三方测试由客户指定。本地据此扩展产品范围和 Development inputs，删除三个绝对化表达，增加 2 张 customization / QC 卡、4 个 Buyer Questions、5 阶段采购流程及 FLATLOCK / Tech Pack / QC Guide 内链；URL、Title、Meta、H1、Schema 类型和图片不变，不创建平行页。PHP、目标页面结构、六页隔离、术语与 1440 × 900 / 390 × 844 无横向溢出验收通过；状态 `changed / owner-review`，待所有者审核与部署。 |
+| 2026-09-09 | V1.3 采购决策审计 PCD-009 Sports Accessories 本地实施完成：宽泛 `sports accessories manufacturer` SERP 混合硬质体育器材和纺织配件，产品级制造词更接近本页 OEM/private-label 意图；所有者确认列出的纺织配件均可生产，并加入 beanies、wristbands、leg sleeves、compression sleeves，规格可指定、相关工艺与测试可提供，第三方测试由客户需要时指定。页面据此明确 technical knit / textile accessories 范围并排除 hard sports equipment，条件化原性能表达，增加 Development inputs、2 张 customization / QC 卡、4 个 Buyer Questions、5 阶段采购流程及 FLATLOCK / Tech Pack / QC Guide 内链；URL、Title、Meta、H1、Schema 和三张产品图不变，第三张 `sports-accessory-product-category.png` 按所有者要求锁定。PHP、目标结构、六页隔离、术语、图片加载与 1440 × 900 / 390 × 844 无横向溢出验收通过；状态 `changed / owner-review`，计划与 Silk Wear 一起部署。 |
+| 2026-09-10 | SEO-V2-005 Merino 商业词簇后续实施：9 个 US / GB / CA Top 50 快照确认 Base Layer、Thermal Underwear、Wool Underwear 均含 OEM 采购意图；所有者确认 `ultramerino.com` 为同方控制的 Merino 专业站，并要求与综合品类主站同时运营。本地仅在 `/merino-wool-manufacturer/` 增加 Lightweight Base Layers、Midweight Thermal Layers、Performance Underwear 三个条件式采购入口，公开 150–170 / 180–210 / 150–180 GSM 为 common briefing starting points 并明确非固定能力边界；不改 URL、Title、Meta、H1、Schema，不创建平行页或复制 UltraMerino 内容。PHP、diff 与本地 HTTP 200/单一 H1/三卡输出通过，状态 `changed / owner-review`，待视觉审核、部署和部署后 GSC 实际网址测试。 |
+| 2026-09-10 | SEO-V2-005 Merino Product Programs 视觉证据扩充：按所有者指定从 67 张真实 4000 × 4000 立体产品图中再选 8 个不重复款式，生成 24 个 480 / 800 WebP 与 800 JPG 页面资源；区块由 8 图静态网格改为 16 图双排横向轨道，Desktop 首屏仍为 4 × 2，Mobile 为 2 × 2，支持鼠标拖动、触屏、方向键和按钮。脚本仅在 Merino 页面加载；PHP/JS、HTTP 200、单一 H1、16 figure、资源与真实鼠标拖动通过，状态 `changed / owner-review`，待所有者视觉审核与生产部署。 |
+| 2026-09-10 | 全站视觉修复与 Merino 区块顺序调整：所有原生文字链接统一关闭 `skip-ink` 字形避让，修复不同浏览器缩放下的下划线割裂，不改变按钮与无下划线链接；`Merino wool product programs` 图片轨道前移到 Category overview 之后、采购入口之前，让真实产品证据更早出现。URL、Title、Meta、H1、Schema、图片资源和轮播交互保持不变，当前状态 `fixed / owner-review`。 |
+| 2026-09-10 | SEO-V2-005 Merino 产品梯度按所有者最新业务输入修订：采购入口由三档改为 Performance Underwear 140–160 GSM、Lightweight Base Layer 150–175 GSM、Midweight Base Layer 195–210 GSM、Cold-Weather Thermal 240–260 GSM，并分别公开条件式材料方向；竞品名称仅作为内部定位证据，不写入生产页面。Desktop 四列、Tablet 两列、Mobile 单列，URL、Title、Meta、H1、Schema、图片和页面所有权保持不变，状态 `changed / owner-review`。 |
+| 2026-09-11 | Merino 梯度与视觉批次生产验收部分完成：页面 HTTP 200、`follow, index`、自引用 Canonical、单一 H1、四档 GSM / 材料方向、16 图及 48 个响应式候选、图片区块前移、Desktop / Tablet 两列与 Mobile 单列均通过；其他六个品类页隔离正常。首页、Contact、QC Guide 与 Merino 的 39 个原生下划线链接均计算为 `skip-ink: none`。发现 `assets/js/merino-product-carousel.js` 在生产返回 404，页面未 enqueue 专属脚本，导致箭头、鼠标拖动和键盘增强未生效；需补部署 `functions.php` 与该脚本后再完成 URL Inspection，当前 outcome `partial / deployment-gap`。 |
+| 2026-09-11 | GEO Broad Discovery v1 的 BD-01 首轮完成：Google AI Mode 与 ChatGPT Search 均未提 Athletik。Google 候选为 Thygesen Textile Vietnam、HUCAI、Wearzio、Ingor 和 Billoomi，来源以制造商自建榜单/roundup 为主；ChatGPT 候选为 Eclat、Makalot、MAS、Hirdaramani 和 Regina Miracle，偏向大型 Tier-1 集团。两次环境元数据与 Sources 面板均不完整，ChatGPT 回答未保留引用 URL，因此记录为 `partial / first observation`，不与 V2-D03～D05 合并、不解释为稳定缺席。下一步按相同独立会话规则运行 BD-02。 |
+| 2026-09-11 | GEO Broad Discovery v1 的 BD-02 首轮完成：Google AI Mode 与 ChatGPT Search 均未提 Athletik，但候选池已从全球集团收敛到中国 activewear OEM/ODM。Google 主要依赖制造商榜单/roundup；ChatGPT 主要引用候选官网并识别 Eation 证书日期及 Sansansun MOQ 冲突，但自行把 mid-sized 限定为 100–500 units/style/color，且把 HUCAI 引用页当前的 100 pcs/style 写成 200。两次均保存完整回答、主要 URL 和 Sources 面板截图，环境元数据仍不完整，状态 `partial / environment`。下一步运行固定 BD-03；完成前不因本次缺席修改网站。 |
+| 2026-09-11 | GEO Broad Discovery v1 首轮完成：BD-03 在 Google AI Mode 与 ChatGPT Search 中仍未提 Athletik，至此 BD-01～BD-03 为 `0/6 answer mentions`、`0/6 canonical citations`。Google 继续依赖制造商榜单/roundup，并把 500 件泛化为高级能力统一门槛；ChatGPT 更准确地区分 per style 与 per color，但 Ingor、Bella 等引用仍有内部冲突或证据缺口。与专业 D03～D05 的强推荐并列判断后，结论是 Athletik 在泛 sportswear supplier discovery 中存在真实缺口，而不是专业匹配失败。下一步审核 Sportswear 页靠前的 buyer-fit answer block，并继续建立可信第三方证据；不发布自建最佳厂商榜单。 |
+| 2026-09-11 | GEO 全量 Baseline 综合诊断完成：综合 Baseline v1、v2、Broad Discovery v1、GSC Generative AI 和站外分发后，确认“找到较强、提取部分达成、规范引用最弱、专业推荐首轮较强、宽泛推荐弱”的分层状态。原方案先按单变量推进 Sportswear buyer-fit；所有者随后基于当前低曝光样本调整为 About 与七品类 buyer-fit 整批结构优化，统一部署后按月观察整体与页面级变化，不从低样本强行归因。D03～D05/C06～C08 claim-to-source 矩阵、历史矩阵站冲突审计、原创 ACTIVESEAM 证据与高质量第三方佐证继续推进；不批量增文、不改 URL、不建立自有最佳厂商榜单。完整方案见 [`GEO Baseline 综合诊断与后续方案`](geo/testing/baseline-integrated-diagnosis-2026-09-11.md)。 |
+| 2026-09-11 | GEO-V2-015 About Us 综合 buyer-fit paragraph 本地实施：在现有 Hero 公司摘要位置集中表达 Zhangjiagang, China 生产运营、established/mid-sized apparel brands、wholesalers/importers、七类产品、FLATLOCK/ACTIVESEAM、成衣 500 pieces/style 与 standalone fabric project 报价边界；同步更新 About copy source。未新增重复区块，URL、Title、H1、Schema、图片和页面结构不变；状态 `implemented / owner-review`，待所有者文案与视觉审核后部署。 |
+| 2026-09-11 | GEO-V2-016 七品类 Program Fit 本地实施：通过 `template-parts/product-category/page.php` 共用模板在 Hero 后增加轻量 buyer-fit 区块，每页分别提供可独立提取的适配段落及 Best suited to / Program scope / Commercial starting point 三项事实。Sportswear、Underwear、Outdoor Clothing、Merino Wool、Silk Wear 和 Sports Accessories 使用已确认的 500 pieces/style；Knitted Fabrics 保持按所选面料规格与项目要求报价。7/7 页面本地 HTTP 200、单一 H1、自引用 Canonical、单一 Program Fit 与内容隔离通过；Desktop 视觉抽查通过，窄屏使用单列响应式布局。URL、Title、H1、Schema 和图片不变，状态 `implemented / owner-review`。 |
+| 2026-09-14 | GEO-V2-006 claim-to-source 证据矩阵完成：对 V2-D03～D05 与 V2-C06～C08 分别映射规范站支持、ChatGPT / Google 实际采用来源、允许公开边界、独立佐证和下一动作。结论为 D03 主要缺设备方独立佐证并受历史矩阵站抢占，D04 站内 buyer-fit 已补齐但缺跨产品稳定发现，D05 的 `ultramerino.com` 来源优先与实体推断是当前最明确冲突，C06～C08 均存在规范 Guide source-selection 缺口。GEO-V2-006 转为 `complete`，GEO-V2-008 提升为下一项 P0；本批仅更新文档，不改网页。 |
+| 2026-09-14 | GEO-V2-008 UltraMerino 冲突审计完成：实时确认核心页 HTTP 200、robots 允许抓取、Sitemap 含 41 URL、抽查页均自引用 Canonical 且无 `noindex`；该站是会被 AI 采用的活跃 Merino 专业站，不是单纯历史缓存。审计定位了 1,000 vs 500 MOQ、120,000/100,000 产能自相矛盾、历史设备/员工数量、`Full/All/best/guarantee`、Woolmark 范围及通用 Organization Schema 等问题。按所有者既定双站排名目标，不建议跨域 Canonical 或 301；下一项为 GEO-V2-017 外部站事实同步，需 UltraMerino 站点权限及设备/许可证据。 |
+| 2026-09-14 | 前端 agent 改动后的 GEO 线上状态复核：七个品类页均返回 HTTP 200、单一 H1 和单一 Program Fit；Sportswear、Underwear、Outdoor Clothing、Merino Wool、Silk Wear、Sports Accessories 各保留两处 500 pieces/pcs，Knitted Fabrics 为 0 处，符合成衣与独立面料项目边界。GEO-V2-016 更新为 `deployed / production-verified`。About Us 线上尚未出现本地综合 buyer-fit 段落，因此 GEO-V2-015 继续保持 `implemented / owner-review`，不将两者误写为整批已部署。 |
+| 2026-09-14 | GEO-V2-018 AI 实际引用来源模式初审完成：从 Baseline v2、Broad Discovery v1 和已保存 Sources 面板中抽查 HUCAI、Sansansun、Royal、Yonglee、Merino Wool Apparel、LeelineWear、Ninghow 与 Yamato 页面。结论为页面长度和复杂 Schema 不是必要条件，反复有效的模式是精确意图、靠前直接答案、独有第一方事实、清晰归属、真实新鲜度和原始权威佐证；自建 Top X 榜单虽可能被抓取，但不适合 Athletik 复制。所有者确认 UltraMerino 当前不由本项目负责，GEO-V2-017 调整为 `deferred / outside-project-control`；主执行范围继续集中于 `athletikapparel.com`。 |
+| 2026-09-11 | 七品类 Program Fit 视觉优化完成：保持共用模板、现有英文文案和语义化 `<dl>` 不变，仅在 `style.css` 将原“左长文 + 右侧三张竖卡”重排为标题/说明双栏与统一三列决策信息带；Tablet 使用 2+1、Mobile 使用单列分隔布局，并移除该区块继承的重复纵向内边距。7/7 页面本地 HTTP 200、单一 H1 与 1024px 渲染通过；1440 / 1024 / 768 / 390 / 360px 代表性检查无横向溢出，最长的 Knitted Fabrics 商业条款无截断。URL、Title、Meta、H1、Schema、图片和正文不变，状态 `fixed / owner-review`。 |
+| 2026-09-11 | 七品类轻量图标系统第一版完成：新增共用 `template-parts/ui/line-icon.php`，以可继承主题颜色的内联描边 SVG 提供 Audience、Garment Scope、Commercial、Customization 与 Quality 五种采购语义图标；7/7 Program Fit 各显示前三种图标，具有执行卡片的六个品类页各增加后两种，Knitted Fabrics 因无该区块不额外输出。图标保持装饰性 `aria-hidden`，不建立媒体文件或 uploads 部署依赖；PHP 语法、7/7 HTTP 200、单一 H1、图标数量及 1440 / 1024 / 768 / 390 / 360px 代表性渲染通过，无横向溢出。正文、URL、Title、Meta、H1、Schema 和图片不变，状态 `implemented / owner-review`。 |
+| 2026-09-11 | 七品类 Program Fit 分层与 MOQ 去重完成：Program Fit 从与 Hero 相同的暖灰背景改为独立白色内容带，并在事实条内保留暖灰商业起点强调。六个服装/配饰页把可见 `500` 从原 4–6 次统一收敛为 2 次，仅保留 Program Fit 快速判断与 FAQ 完整解释；Knitted Fabrics 删除误入页尾的成衣 500 门槛，只保留一次按面料规格和项目要求报价的 MOQ 说明。原 MOQ 规格卡改为 Approved sample / Pricing basis 等更有区分度的信息，产品页共用询盘区不再重复数字，首页询盘提示保持不变。PHP 语法、diff check、7/7 HTTP 200、单一 H1、单一 Program Fit 及页面级出现次数通过；URL、Title、Meta、H1、Schema 和图片不变，状态 `fixed / owner-review`。 |
+| 2026-09-11 | 七品类四步流程视觉统一完成：Sportswear、Underwear、Knitted Fabrics 原三项规格条改为品类化四步流程；Outdoor Clothing、Merino Wool、Silk Wear、Sports Accessories 原五个节点将 Sample Development 与 Approval 合并，在不删除批准门槛的前提下统一为 Project Brief & Quotation → Development, Sampling & Approval → Bulk Production & Quality Control → Export / Packing & Delivery。共用模板采用深色舞台、居中标题、四张暖白图标卡和说明分隔线，新增 Inquiry、Sampling、Production、Shipping 四种双色线性 SVG。7/7 页面 HTTP 200、四步/四图标、无旧 Specs 区块、单一 H1 和原 MOQ 出现次数通过；1440 / 1024 为四列、768 为两列、360 为单列，代表性最长页面无横向或卡片内容溢出。新增流程英文为 `draft / owner-review`；URL、Title、Meta、H1、Schema、图片及首页流程保持不变。 |
+| 2026-09-12 | 首页轻量图标扩展完成：复用共用线性 SVG 组件，将 Manufacturing Proof Points 原 01–04 编号替换为 Vertical Integration、Technical Construction、Experience、Full-Package OEM/ODM 四种制造语义图标；Process Snapshot 保留 01–04 顺序，同时增加 Sampling、Production、Quality、Shipping 图标。图标均为装饰性 `aria-hidden`，沿用主题双色与间距变量，不新增图片或 uploads 部署依赖；首页 HTTP 200、单一 H1、两组各 4 张卡片/4 个图标、旧 Proof 编号移除，代表性产品页流程图标保持正常。正文、模块顺序、URL、Title、Meta、Schema 和图片不变，状态 `implemented / owner-review`。 |
+| 2026-09-14 | 所有者确认同方站点中的机器数量、员工数字、产能和已发布认证范围可作为 Athletik 规范站的一方事实使用；当前统一产能为 `100,000+ pieces per month`，可公开 `30+ Yamato FLATLOCK machines` 与约 100 名缝纫员工。Merrow ACTIVESEAM 与 HSAT-K5 可公开设备类型和用途，未确认的台数、型号或性能数字不推断。 |
+| 2026-09-14 | GEO-V2-019 主站证据增强本地实施：About Us 综合 buyer-fit 与生产设施段落统一到 Zhangjiagang、500 pieces/style、约 100 名缝纫员工和 100,000+ pieces/month；Merino FAQ 增加可独立提取的 Merino base layers + 30+ Yamato FLATLOCK + stitch type 607 + OEM/ODM + MOQ 直接答案；首页 Manufacturing Proof Points 改为 own integrated facility、30+ Yamato、Merrow ACTIVESEAM 与 HSAT-K5 四类一方证据，并补充按面料、部位、伸长要求和批准样衣选择工艺的边界。Rank Math Page Sitemap 为首页、About、Merino 写入本次真实更新时间，其余页面保留各自批次时间并升级一次性缓存标记；建立月度 AI 引用来源审计模板。URL、Title、H1 和页面所有权不变，状态 `implemented / owner-approved / deployment-pending`。 |
+| 2026-09-14 | GEO-V2-019 Day 0 生产验收通过：首页、About、Merino 均为 HTTP 200、单一 H1、自引用 Canonical、`index`、无 X-Robots-Tag 阻断，且各自 JSON-LD 1/1 可解析；首页四项生产证据与约 100 名缝纫员工、About 综合 buyer-fit/员工/产能、Merino 直接问答/30+ Yamato/stitch type 607/两处 500 pieces per style 均已生效。robots.txt 声明 Sitemap，未屏蔽 GPTBot、ChatGPT-User、Google-Extended 或 PerplexityBot；Page Sitemap 为 18/18 唯一 URL，首页、About、Merino 及 Sitemap index `lastmod` 均为 `2026-09-14T02:50:00+00:00`。状态转为 `deployed / production-verified / measuring`；URL、Title、H1 与页面所有权无变化。 |
+| 2026-09-14 | GEO-V2-020 自有 Top 5 供应商指南受控试验进入文案审核：已完成 `/top-sportswear-manufacturers-china/` 英文草稿，候选为 Athletik、HUCAI、SANSANSUN、INGORSPORTS 与 Bellasports；页面明确披露 Athletik 是发布者和候选对象，`Top 5` 不代表独立审计或绝对排名。其他厂商的 MOQ、能力、地点和流程只按 2026-09-14 可访问的公司官网记录，并逐项加入需 RFQ 核实的边界。当前状态 `draft / owner-review / not-published`，未加入 PHP 注册表、Technical Guides Hub、Schema、Sitemap 或生产站。 |
+| 2026-09-14 | GEO-V2-020 所有者审核后完成本地实施：新增 `/top-sportswear-manufacturers-china/` 共用指南模板、五家公司可见对比表、发布者披露、方法与验证边界、buyer-fit、统一 RFQ、FAQ 和公开来源；注册表发布状态使页面自动进入 Technical Guides Hub，Sportswear 品类页增加相关内链。新增与可见名单一致的 ItemList，并保留 Article、FAQPage、BreadcrumbList；页面与 Sitemap index 使用本次真实更新时间并升级 Rank Math Sitemap 缓存标记。复用 uploads 中现有生产实拍封面，无新增图片传输。状态 `implemented / owner-approved / deployment-pending`。 |
+| 2026-09-14 | GEO-V2-020 封面按所有者要求替换：将提供的生产工艺图转为 `technical-knitwear-sewing-machine-cover.webp`（1536×1024，约 138 KB）及 `technical-knitwear-sewing-machine-cover-800.webp`（800×534，约 50 KB），写入 uploads 的文章封面目录；更新文章注册表路径和描述性 alt 文本。该二进制图片不在 Git 中，生产部署时需单独同步两个 uploads 文件。 |
+| 2026-09-14 | GEO-V2-020 表格布局优化：将快速比较表从六列合并为四列（Manufacturer、Location and best public fit、Public MOQ signal、Capability and evidence），保留全部已审核事实并为桌面与移动端设置稳定列宽，减少窄列换行和右侧内容截断；文章正文、URL、Schema 语义和候选名单不变。 |
+| 2026-09-14 | GEO-V2-020 社交分发包完成：为已审核的供应商比较指南准备 LinkedIn 单图正文与 1200 × 627 JPG、Instagram Carousel/Story 正文、独立 UTM、替代文字、发布说明和七日数据模板，保留 Athletik 作为发布者及候选之一的披露。检查生产母文章 URL 返回 HTTP 404，因此 LinkedIn/Instagram 未发布，状态记录为 `ready-to-post / website-deployment-blocked`；Instagram 7 张 Carousel 图片仍需所有者提供或另行制作，不能把素材包完成写成平台已发布。素材包位于 `D:\B-视频素材\营销内容包\2026-09-top-sportswear-manufacturers-china\`。 |
+| 2026-09-14 | 技术文章阅读、宽表与轨道对齐优化：共享文章内容框架从站点通用 1200px 容器独立扩展为 87.5rem，宽屏 Hero 使用“15rem 目录占位轨道 + 标题内容 + 30rem 封面图”三列，Breadcrumb、H1、摘要与下方正文精确共用右侧起始线；正文区对应为固定目录栏与主内容栏。正文取消整体 68ch 上限，段落、标题、列表与提示框改用 72ch 阅读宽度，比较表可使用完整内容栏并保持 60rem 最小宽度。目录双栏断点延后到 80rem，较小桌面、平板和手机保持单栏，宽表通过已有可聚焦横向滚动容器浏览。共享模板的 5 篇技术文章自动受益；Top 5 页面本地 HTTP 200、单一 H1、目录和表格结构通过，1440 / 1280px 标题与正文左边线一致，1024 / 768 / 360px 无整页横向溢出。正文、URL、Title、Meta、Schema 和图片不变，状态 `implemented / owner-review`。 |
+| 2026-09-14 | GEO-V2-020 社交 Feed 发布确认：LinkedIn 单图帖公开 URL 为 <https://www.linkedin.com/feed/update/urn:li:activity:7505180674052661248/>，公开页面可读取已批准正文、五家公司名单、发布者披露、短链接和单张图片；Instagram Feed 由所有者确认同日发布，但公开 URL、实际格式和 Story 状态尚未提供，保持 `unavailable`。两个 Feed 从 2026-09-22 起记录满七个完整自然日数据。母文章生产 URL 在发布后复核仍返回 HTTP 404，当前首要动作是部署 `/top-sportswear-manufacturers-china/` 并确认社交链接最终落到正确 UTM URL。 |
+| 2026-09-15 | 设备图片方案 A 收敛为首页局部背景：仅在首页 Manufacturing Proof Points 保留 2×2 能力卡，并将所有者指定的真实纱线设备照片从右侧窄幅配图改为居中内容面板的背景，而非横跨整个页面区块；外层恢复暖白底与常规留白，背景面板使用圆角和边框。桌面端使用左强右弱的暖色遮罩，使卡片保持清晰并在右侧展示设备纵深，手机端提高遮罩强度以避免机械纹理干扰阅读。About 与 Services 不受影响，7 个产品页继续保持无设备图。新源图对应的 480 / 800 / 1536w 三个 WebP 候选存放于 uploads 的 `production/equipment/`，模板保留 srcset、sizes、固有尺寸及 lazy/async；背景为装饰性图像，使用空 alt 并从辅助技术中隐藏。原 `fabric-production-floor` 三个本地候选暂时保留以便所有者预览后快速回退。URL、Title、Meta、H1、Schema 和现有正文不变，状态 `implemented / owner-review / deployment-pending`。 |
+| 2026-09-15 | About / Services 真实生产摄影重新编排：所有者确认 `production/工艺/` 图片均源于真实车间，仅经 ChatGPT 做画面与光线优化，不涉及虚构。About 保留厂房 Hero，在 Our Story 嵌入“工人 + 缝制车间”全景，并将 Who We Serve 配图替换为橄榄绿色成衣缝制近景；Services 保留原 Hero，在 Capabilities 嵌入浅蓝色成衣面料缝制近景，在 Process 标题区加入裁剪车间图。Capabilities 最初候选与首页 Hero 使用同一原图，经视觉复核后已替换并删除其 3 个重复派生文件。未创建独立设备图库，也未向 7 个产品页加入设备图；4 张最终源图生成 12 个 480 / 800 / 1536w WebP，存放于 uploads 的 `production/garment-process/`，模板包含 srcset、sizes、固有尺寸、lazy/async 与描述性 alt。现有正文、URL、Title、Meta、H1 和 Schema 不变，状态 `implemented / owner-review / deployment-pending`。 |
+| 2026-09-15 | 首页 Why Myathletik 增加局部生产背景：沿用 Manufacturing Proof Points 已确认的居中圆角背景面板语言，选用未在首页、About 或 Services 出现的真实白色成衣缝制近景；宽屏端五张理由卡保持 3+2 布局，并利用空余网格区域展示操作人员、面料和设备，平板改为两列以避免文字拥挤，手机为单列并通过暖色遮罩将画面弱化为辅助纹理。新增 480 / 800 / 1536w 三个 WebP，存放于 uploads 的 `production/garment-process/`，使用 srcset、sizes、固有尺寸、lazy/async、空 alt 与 `aria-hidden`。现有正文、URL、Title、Meta、H1 和 Schema 不变，状态 `implemented / owner-review / deployment-pending`。 |
+| 2026-09-16 | GEO-V2-020 生产与 GSC 实时测试闭环：`/top-sportswear-manufacturers-china/` 连续生产检查为 HTTP 200，单一 H1、自引用 Canonical、`index`、发布者披露、ItemList / FAQPage、Technical Guides Hub 与 Sportswear 内链、Page Sitemap 唯一条目及两张封面 WebP 均通过；LinkedIn 短链接的最终 UTM 目标正确。所有者提供的 GSC“测试实际版本”截图时间为 2026-09-16 11:26，显示“网址可编入 Google 索引”“网页可以编入索引”，并在增强功能中检测到 1 项有效内容；随后确认已成功提交一次索引请求。记录为 `live-test-passed / indexing-requested`，不把请求成功误写为已收录，也不重复提交。GEO-V2-020 转为 `deployed / production-verified / social-feed-published / indexing-requested / measuring`。 |
+| 2026-09-16 | GEO-V2-007 ACTIVESEAM 原创证据 intake：核验两支 Merrow 视频均为 3840×2160、约 60 fps、10-bit HEVC，分别提供侧面与正面实际操作角度；所有者确认型号为 `MB-4DFO 2.0`。同步复核现有 Yamato FLATLOCK 视频为 1080×1920、60 fps、39.85 秒。Merrow 与 Yamato 官方资料确认 MB-4DFO 2.0 平台和四针六线 FLATLOCK 参考结构的技术区别。另核验一支国产海淮扒密缝机视频并独立归档，不混入 ACTIVESEAM 主比较；其完整品牌英文、型号和工艺英文名仍待确认。已建立 [`Industrial FLATLOCK vs Merrow ACTIVESEAM 证据 Brief`](geo/content/flatlock-vs-activeseam-evidence-brief.md)，状态 `evidence-intake / outline-ready / owner-input`；当前缺口为 ACTIVESEAM 接缝正反面近照、实际 2/3 线配置、公开 stitch version 及人物/成衣素材授权边界，未进入英文正文或网站实施。 |
+| 2026-09-16 | GEO-V2-007 证据门槛补齐：新增核验 `微信视频2026-08-17_135130_400.mp4`，为 3840×2160、约 60 fps、10-bit HEVC、21.38 秒的实际成衣接缝展示；画面覆盖接缝外观面与内侧面的自然铺放状态，但没有拉伸状态或性能测试。所有者确认 Athletik 按项目要求同时使用 2 线和 3 线 ACTIVESEAM 配置，并确认人物、车间和成衣素材均已取得公开使用同意；具体 Slim / Comfort / Infused 版本不能确认，因此从公开正文排除。状态更新为 `evidence-ready / draft-authorization-pending`：可在授权后起草完整英文正文，但不得从画面推断单件成衣针线配置，也不得声明 Athletik 已实测延伸率、强度或耐久性。 |
+| 2026-09-16 | GEO-V2-007 英文初稿完成：所有者明确授权后，依据 Merrow / Yamato / ISO 官方资料与已核验的一方生产素材完成 [`Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear`](geo/content/flatlock-vs-activeseam-draft.md) 初稿。稿件包含建议 URL、SEO Title、Meta、直接答案、技术对比表、品类应用、tech pack 清单、样品验证流程、FAQ、官方参考资料和媒体排布说明；明确排除未确认的 Slim / Comfort / Infused、单件成衣 2/3 线推断、Athletik 实测性能百分比与同面料受控比较表述。状态 `draft-complete / owner-review-required`，所有者完成 copy 与视觉审核前不实施页面、Hub、Schema 或 Sitemap。 |
+| 2026-09-16 | GEO-V2-007 所有者审核与本地实施完成：所有者确认正文与视觉后，新增 `/flatlock-vs-activeseam-technical-knitwear/`，接入共用 Technical Guides 数据层、Hub、Article / FAQPage / BreadcrumbList Schema、相关指南内链和 Sitemap。三支 Merrow 原视频保留不动，另生成 720×1280、30 fps、H.264、静音、SDR 网页副本及真实帧 poster；封面由真实 Yamato FLATLOCK 与 Merrow ACTIVESEAM 生产画面组成，不添加虚构设备或参数。公开正文继续明确不同视频不是同布种受控比较、自然状态成衣视频不是拉伸/强力测试、单件成衣的 2/3 线配置未知。主题代码与 uploads 媒体待同步生产后验收，状态 `owner-approved / implemented / deployment-pending`。 |
+| 2026-09-18 | 六篇 Technical Guides 与内容中心生产技术验收完成：7/7 URL 为 HTTP 200、`index, follow`、无 X-Robots-Tag、自引用 Canonical、单一 H1，并唯一进入 Page Sitemap；Hub 的 `CollectionPage + ItemList(6)`、六篇 Article、各页 FAQPage、BreadcrumbList 及 Top 5 的 ItemList(5) 均可解析，6/6 可见 FAQ 与 Schema 逐题一致。首页存在 Hub 入口，Hub 完整链接六篇文章；检查到的 30 个站内目标、9 个 MP4、7 个视频 poster、favicon 与 Organization Logo 均有效，ISO 的 4 个自动化 403 经浏览器复核为可访问的反自动化限制。390px 下 7/7 无整页横向溢出，3 个宽表使用可聚焦且带 ARIA 的独立横向滚动容器。GPTBot、ChatGPT-User、PerplexityBot、ClaudeBot、Googlebot 与 Bingbot 请求均返回 200。批量工具的“富结果必填字段缺失”经逐页解析确认为误报，处置 `not-needed`；ACTIVESEAM Title 宽度提示处置 `no-change`；HSTS 为全站基础设施项，处置 `deferred`。单次移动 Lighthouse 分数为 72–88、LCP 约 3.07–4.60 秒、CLS 均为 0，因无 CrUX 页面级数据且主要为共享 CSS / Cookiebot 渲染链，转入独立性能批次，不阻断本次验收。GEO-V2-007 转为 `deployed / production-verified / social-feed-published / measuring`；本次只确认可抓取与可编入索引，不写成 Google 已收录。 |
+| 2026-09-18 | GEO-V2-007 GSC 索引申请完成：所有者确认已对 `/flatlock-vs-activeseam-technical-knitwear/` 提交一次索引请求。状态更新为 `indexing-requested`；请求成功只证明操作已提交，不等于页面已经被 Google 收录，因此不重复提交，后续按常规窗口复查 indexed snapshot 与最后抓取时间。 |
+| 2026-09-18 | GEO-V2-007 社交公开 URL 闭环：补录 LinkedIn 视频帖 `activity-7506545366570512384` 与 Instagram Carousel `Ddaao5dFAj-` 的稳定公开 URL。LinkedIn 匿名公开页可读取 Athletik Clothing 账号、ACTIVESEAM / FLATLOCK 正文与指南短链接；Instagram URL 返回 HTTP 200，但匿名正文抓取受平台限流，因此只记录所有者确认与可访问性，不推断正文、精确发布时间或互动数据。状态更新为 `public-urls-confirmed / measuring`；下一测量节点仍为 2026-09-26。 |
+| 2026-09-18 | 本周 SEO 监测完成：一次性 `EnvHttpProxyAgent` 注入后恢复 GSC 只读 API；final 数据截至 09-13，最近 7 日相对前 21 日日均 clicks 0.524 → 1.286、impressions 20.524 → 40.286，但 retained 维度为 partial，不作因果归因。Merino 为最大页面增量（+4 clicks / +65 impressions），Google 于 09-14 重新抓取并保持 indexed / Canonical 一致；可见 Query 仅 21 impressions，低于修改门槛，处置 `no-change / measuring`。Services 仍为 unchanged 的 NEUTRAL，20/20 Sitemap URL 的 HTTP、robots、Canonical 与单一 H1 全部通过。首页视频 Hero 三次移动 Lab LCP 中位数 4.532s，较 08-27 的 3.66s 稳定慢约 0.87s，LCP 节点均为 Hero video；SEO-V2-004 重开为 `review / lab-regression`，CrUX 仍 unavailable，不写成 Field CWV 回归。 |
+| 2026-09-18 | SEO-V2-004 首页视频 Hero 单变量修复完成：保留现有 poster、MP4、构图和正文，将 poster 恢复为独立 eager/high 首屏图；视频移除初始 autoplay / source src，改为 `window.load` 后 idle 注入当前视口 MP4，并恢复 reduced-motion、Save-Data、后台标签页与离屏暂停控制。PHP / JS 语法、模板桩与普通/reduced-motion/Save-Data 隔离控制器测试通过；LocalWP 本地域名返回 502，因此全页视觉和真实性能不伪造为通过，状态为 `implemented / deployment-pending`。部署后只验证该变量：Desktop/Mobile、请求顺序、三次同条件移动 Lab 与 Crawl Diff；Cookiebot 和其他图片不并入本批。 |
+| 2026-09-18 | SEO-V2-004 播放诊断：生产 HTML、控制器、poster 与两支 MP4 均为 HTTP 200。正常 motion 的 1440×900 Desktop 与 390×844 Mobile 均在 load 后约 467ms / 266ms 请求正确 MP4，并在观察点持续播放（`readyState=4`、`paused=false`、opacity 1）；强制 reduced-motion 为 0 个 MP4 请求、poster-only。当前 Windows 系统动画状态为关闭（`SPI_GETCLIENTAREAANIMATION Enabled=False`、`MinAnimate=0`），与所有者观察到的“不播放”一致；Finding 处置为 `not-a-code-defect / environment-expected`，不取消无障碍保护。状态更新为 `deployed / playback-verified / performance-pending`，待正常 motion 视觉确认、三次移动 Lab 与 Crawl Diff。 |
+| 2026-09-19 | SEO-V2-004 生产性能闭环：三次同条件 Lighthouse 13.4.1 移动 Lab 的 LCP / FCP 为 4.566s / 4.586s / 3.338s，中位数 4.566s；较部署前 4.532s 增加 34ms（约 0.75%），属于正常波动，CLS 三次均为 0，LCP 节点均从 Hero video 改为独立 poster。Crawl Diff Run `2b028751-ef61-4650-bb49-f2c54e2f2b36` 检查 25 个 URL，0 added / removed / changed / new errors / indexability flips；四个 Technical Guide MP4 的 5 MB 响应限制仅为媒体读取警告，不是本次回归。Hero 决策为 `inconclusive / keep-monitoring`：保留 poster-first、延迟 MP4 与 motion/data 防护，不再修改 Hero；页面级 LCP Finding `action-1a2a7aafa456` 转为独立渲染阻塞链和图片交付调查，CrUX 仍 unavailable。 |
+| 2026-09-19 | SEO-V2-016 首页类目卡图片交付启动：SEO-V2-004 部署后的三次移动 Lab 均重复识别图片交付浪费，Merino 960w lossless 约 782 KB、Knitted Fabrics 1200w q100 约 285 KB；其中 Merino 最小 640w 候选仍约 314 KB，Knitted Fabrics 缺少 960w 档。保持同一源图、构图、`sizes`、文字、alt 与链接，仅为两张卡片生成 q80 的 480 / 640 / 960 / 原尺寸 WebP：Merino 约 7.1–29.7 KB，Knitted Fabrics 约 15.5–89.4 KB，并更新两组 `src` / `srcset`。原文件保留回滚，另外五张卡片不改；状态 `implemented / deployment-pending`，待生产视觉、实际候选、三次同条件 Lab 与 Crawl Diff。 |
+| 2026-09-19 | SEO-V2-016 生产验收完成：主页 200、单一 H1，HTML 仅引用 8 个新 q80 候选且 8/8 生产文件为 HTTP 200；真实浏览器在 Desktop DPR 1 选择 Merino 480w / Knitted Fabrics 640w，在 390px Mobile DPR 3 选择 1280w / 1200w，视觉清晰且无横向溢出。三次有效移动 Lab 的 image delivery 估算浪费稳定为约 1,379 KiB，较部署前约 2,339 KiB 减少约 960 KiB（41%），目标两图不再进入重复证据；LCP 中位数 4.566s → 4.494s、TBT 153ms → 122ms、CLS 仍为 0，变化不足以归因为提速。一次初始 Lighthouse 失败仅返回 unscored fetch，按数据状态排除。首轮部署后 Crawl Diff 有 8 个低优先级 content-hash 变化但 0 new errors / flips，随后的同范围稳定复核 Run `df1f29f4-a015-4f02-977a-be091a16605b` 为 25 URL、0 changed / new errors / indexability flips。最终状态 `fixed / keep`；页面级 LCP Finding 继续 deferred，CrUX 仍 unavailable。 |
+| 2026-09-19 | SEO-V2-017 首页 Outdoor 图片交付启动：SEO-V2-016 的三次有效移动 Lab 均重复列出 `cat-outdoor-1200-q100.webp`，传输约 100 KB、估算浪费约 75,565 bytes。保持同一源图、构图、`sizes`、文字、alt 与链接，仅生成 q80 的 480 / 640 / 960 / 1200w WebP（约 7.1 / 10.7 / 19.7 / 27.7 KB）并更新 Outdoor 的 `src` / `srcset`；原 q100 文件保留回滚。报告首项 Sports Accessories 使用带 BETXCO 标记的受保护图片，所有者此前明确要求该图不准改动，因此记录为 `deferred / owner-protected`，本批未重编码、替换或改路径。状态 `implemented / deployment-pending`。 |
+| 2026-09-19 | SEO-V2-017 生产验收完成：主页 200、单一 H1，4 个 Outdoor q80 WebP 均为 HTTP 200，HTML 不再引用其 q100 候选；真实浏览器在 1440px / DPR 1 选择 640w、390px / DPR 3 选择 1200w，Desktop/Mobile 视觉清晰且无横向溢出。三次有效移动 Lab 的 image delivery 估算浪费由约 1,379 KiB 降至约 1,305 KiB，减少约 74 KiB（约 5.4%），Outdoor 连续退出证据；LCP 中位数 3.356s、TBT 64ms、CLS 0，但该变化不归因成本次下方图片提速。稳定 Crawl Diff Run `8fc3102b-06ff-4139-9105-8b898fe1925d` 检查 25 URL，0 changed / new errors / indexability flips。Sports Accessories 的 q100 URL、137,242-byte 960w 文件和视觉保持不变，继续 `deferred / owner-protected`；最终状态 `fixed / keep`。 |
+| 2026-09-19 | SEO 优先级重排：所有者决定当前阶段跳过增量性能优化；SEO-V2-004 转为 `deferred / monitor-only`，仅在 Field CWV、抓取/渲染/indexability 或明显体验回归达到触发条件时重开。90 天 GSC 页面/Query 复查显示 Sportswear 仍缺少可用于改 Title / Meta / H1 的相关商业 Query 样本；DataForSEO 估算与 US / GB / CA Live SERP 同时显示 Sportswear 商业词需求较大，但宽泛词混有本地供应、teamwear、零售与榜单意图。启动 SEO-V2-018，只研究更贴合 Athletik 的 OEM / private label / technical / China 修饰词和现有页所有权；保持 URL、Title、Meta、H1，不新建近义页，允许研究结果为 `no-change`。 |
+| 2026-09-19 | SEO-V2-018 teamwear 业务边界确认：Athletik 可以承接 teamwear、team uniforms 和 custom sports kits，但这类询盘通常不能达到公开 MOQ 500 pieces per style，历史上基本没有形成订单。因此将其归类为“技术上可承接、商业上非主动获客范围”，后续 Sportswear SERP 研究排除以小批量球队定制、本地印字和零售为主的结果；不为 teamwear 建页，不把该词作为主词，也不公开声称 Athletik 无法生产。 |
+| 2026-09-19 | SEO-V2-018 第二轮验证启动：GSC `page-opportunities` 复跑覆盖 2026-06-17 至 09-14，Sportswear 仅 2 条可见 exact-URL Query 行，唯一 eligible 行仍为其他公司名 `sukartik clothing private limited`、1 impression，自动 Finding `action-5772d7be34e7` 处置 `not-needed / mismatched-query`。DataForSEO 五词请求因当前 UTC 日有效消耗 96,800 micros、预计新增 12,600 micros 会超过硬限额而停止，不重试或绕过；公开搜索抽样仅用于初筛，不能替代 US / GB / CA exact SERP。初筛显示 `OEM activewear manufacturer` 最接近 Athletik 的规格驱动采购任务；`private label sportswear manufacturer` 明显混入低 MOQ、startup 与 teamwear；`technical sportswear manufacturer` 语义不稳定；`performance apparel manufacturer` 继续归首页，Sportswear 页与 Top 5 指南分别承接交易和 China supplier comparison。现有 Sportswear 页主体覆盖充分，下一决策输入为合作模式及 labels / hangtags / packaging 的真实服务边界，未改网站。 |
+| 2026-09-19 | SEO-V2-018 Sportswear 合作模式单变量实施完成：所有者确认 Athletik 可按完整 tech pack 或 reference sample 做 OEM，可从明确概念或不完整规格协助开发型 ODM，可稳定提供 main labels、care labels、hangtags、artwork 与 custom packaging，并且不做 ready-stock white label。仅在 Sportswear Buyer Fit 后新增 OEM、Development-led ODM、Private label 三卡模块，明确三条采购入口与非现货边界；URL、Title、Meta、H1、图片、Schema 及其他六个品类不变。PHP 语法、7 品类数据隔离和 Sportswear-only 3 卡断言通过；LocalWP 当前返回 502，视觉未伪造为通过。风险为新增正文长度与响应式排版，部署后验收 200、单一 H1、三卡内容、Desktop/Mobile、其他品类隔离及 Crawl Diff；Finding outcome 为 `changed / owner-review / local-render-unavailable`，状态 `implemented / deployment-pending`。 |
+| 2026-09-22 | SEO-V2-018 视觉修订：目标仍为 `/sportswear-manufacturer/` 的 OEM / ODM / private-label 商业采购意图；证据为所有者指出 Program Fit 与 Program model 紧邻且卡片风格重复。唯一变量是 Program model 的布局与容器样式：暖灰底、桌面端左说明右纵列，三个合作模式改为分隔行与轻量图标；Program Fit、英文正文、URL、Title、Meta、H1、Schema、图片及其他品类保持不变。风险是新布局在窄屏断行或造成过长段落；验收需 360 / 768 / 1024 / 1200px 无横向溢出、内容顺序正确、生产单一 H1、其他六品类隔离与定向 Crawl Diff。2026-09-22 生产 HTML 为 200 但尚无新增模块；LocalWP 仍返回 502，真实视觉验收待部署。Finding outcome：`changed / owner-review / local-render-unavailable`；状态 `deployment-pending`。 |
+| 2026-09-22 | SEO-V2-018 Sportswear lookbook：所有者提供真实产品照片，指定 `IMG_4011.jpg` 使用 Outdoor 灰色风帽衫、`IMG_4244.jpg` 使用骑行衣，随后要求删除骑行套装、保留其余原图标识并加入点击放大。目标页面 `/sportswear-manufacturer/` 承接 OEM / ODM sportswear 采购核验意图；主要变量为新增 14 张真实产品的两排可拖动图廊及同组件放大查看，不更改 URL、Title、Meta、H1、Canonical、Schema 或其他六品类。42 个 WebP/JPG 派生文件置于 uploads，骑行套装 3 个本地派生文件已删除，原始素材未动。风险为图片请求、手势冲突、手机弹窗和原图标识；本地 200、单一 H1、14/14 卡片与放大入口、42/42 图片访问及尺寸、桌面/手机弹窗、键盘与焦点、Merino/Underwear 隔离均通过。生产需部署代码与图片后复核并做定向 Crawl Diff；Finding outcome `changed / owner-directed / production-pending`。完整记录见 [Sportswear lookbook Change Card](seo/implementation/change-cards/seo-v2-018-sportswear-lookbook.md)。 |
+| 2026-09-22 | SEO-V2-018 Sportswear lookbook 本地真实点击缺陷修复：所有者报告无法放大，生产尚未部署，故只针对 LocalWP 复验。真实鼠标事件显示画廊脚本在 `pointerdown` 即捕获指针，使 `pointerup` 与 `click` 落到画廊容器；此前程序触发 `.click()` 的通过结果不代表真实鼠标可用。仅修改共享 `merino-product-carousel.js` 的拖动启动时机，鼠标移动超过 6px 后才捕获指针。修复后真实鼠标点击打开 Sportswear 放大层、桌面拖动不误触、390px 触控点击可放大、Merino 拖动保持正常；页面、元数据、图片与正文不变。风险为共享脚本对 Merino 画廊的交互回归；本地验收已覆盖，生产部署后需复验 Sportswear 与 Merino。Finding outcome `fixed / local-verified / deployment-pending`。 |
+| 2026-09-22 | GEO-V2-020 首轮七日复盘：按 GA4 属性 `Asia/Shanghai` 时区核对 2026-09-15～09-21。原始数据为 LinkedIn 帖子专属 UTM 7 sessions、5 engagedSessions、1 totalUsers，其中 3 sessions 以 Top 5 文章为入口；Instagram Story UTM 未见匹配行。GSC 只读 URL Inspection 返回 `PASS / Submitted and indexed`，最后抓取为 2026-09-16T03:26:39Z；同日生产单页抓取仍为 HTTP 200、自引用 Canonical、`index`、单一 H1。2026-09-28 后续诊断确认该唯一 GA4 用户属于内部 QA，因此原七日结论已更正为 `no-change / seven-day-measurement-contaminated / measuring`；详见同日修正记录与[分发日志](geo/distribution/publishing-log.md)。 |
+| 2026-09-24 | Promotion P0 完成：Google Ads API 当前快照、163 邮箱 `INBOX + Junk/Spam + Trash` 聚合快照及 20 封邮件内容级复核均已完成。确认 5 封真实询盘、15 封非询盘；4 封真实询盘在 `INBOX`、1 封在 Junk/Spam。1 封自述一般网络来源但未指明 Google，另外 4 封来源未知，0 封可归因 Google Ads。1 封总量 1,500–2,500 件但每款数量未知，1 封仅询问 50 / 100 / 250 / 500 价格档位，其他 3 封数量未知。私有复核台账已建立，规则已校准并通过 13 项测试；P1 于 2026-09-28 起持续补齐负责人、MOQ 与销售阶段。 |
+| 2026-09-28 | GEO-V2-007 ACTIVESEAM 首次七日复盘完成：固定窗口为 2026-09-19～09-25（GA4 属性时区 `Asia/Shanghai`）。规范页、LinkedIn / Instagram UTM、Technical Guides Hub、Page Sitemap 及两个公开帖子 URL 均为 HTTP 200；规范页保持 `index, follow`、无 `X-Robots-Tag`、单一自引用 Canonical、单一 H1，Article / FAQPage / BreadcrumbList Schema 可解析。GSC URL Inspection 返回 `PASS / Submitted and indexed`，最后抓取为 `2026-09-18T01:43:06Z`；Search Analytics 为 18 impressions、0 clicks、平均排名约 10.67。原始 LinkedIn 专属 UTM 为 `sessions = 6`、`engagedSessions = 4`、`totalUsers = 1`，Landing Page 为首页 4、`(not set)` 1、Sportswear 1；Instagram 无匹配行。后续归因诊断确认该唯一用户属于内部 QA，因此处置已更正为 `no-change / seven-day-measurement-contaminated / measuring`。平台后台与人工合格询盘仍 `unavailable`，不重复申请索引。 |
+| 2026-09-28 | `seo` CLI 的 `fetch failed` 已定位为 Clash Verge 系统代理未被 CLI 自带 Undici 自动采用，而非 GSC/GA4 授权失效。新增本机 `seo-clash` 入口：只为当前 CLI 子进程读取并注入 Windows HTTP/HTTPS 代理及 Undici `EnvHttpProxyAgent`，不改 Windows、VS Code、原始 `seo` 命令、OAuth 文件或持久环境变量。`seo-clash --version`、站点权限、GSC URL Inspection、Search Analytics 与 GA4 Reporting 均已验证；使用与停止条件见 [`SEO CLI 与 Clash Verge 代理适配`](operations/seo-cli-clash-proxy.md)。 |
+| 2026-09-28 | 社交 UTM 内部流量修正：Top 5 与 ACTIVESEAM 两个 Campaign 在合并窗口中使用同一 returning GA4 用户，设备固定为 Windows / Edge，国家随 Clash Verge 在中国与美国间切换；所有者确认曾在该环境打开生产 UTM。由此确认 Top 5 固定窗口的 7 sessions 与 ACTIVESEAM 固定窗口的 6 sessions 均为内部 QA 污染，保留原始数字但从外部成效中剔除。两次活动当前均为 `0 confirmed external UTM sessions`；平台展示、覆盖、点击仍 `unavailable`，不能写成 0，也不能排除拒绝统计同意或拦截器造成的未测访问。分发 SOP 已增加 HTTP 可达性检查、无统计浏览器 QA、`internal_qa` 专用标签及污染判定规则；不盲目使用会被 Clash 出口变化绕过且可能误伤美国买家的 IP 过滤。 |
+| 2026-09-28 | 首份 GEO 跨平台月度快照完成：传统 GSC 当前完整 28 天为 27 clicks / 1,047 impressions，对比前窗 5 / 230；FLATLOCK、QC、Merino、Top 5 与 ACTIVESEAM 均有页面级 Web Search 信号。GSC Generative AI 沿用截至 09-02 的 29 Property impressions 基线，Bing 沿用 08-24～09-20 的 5 citations 基线，均不以残缺窗口制造趋势。GA4 原始 ChatGPT referral 为 11 sessions / 1 user / 0 generate_lead，但唯一用户与内部 GEO 测试重叠，故外部确认访问记为 0、真实外部访问保持 unverified。处置 `no-change / measuring`；2026-10-03 后补 GSC 生成式完整窗口。 |
+| 2026-09-28 | Outbound 发送前准备推进：将流程更新为中文当前状态，固定 `%LOCALAPPDATA%\Athletik\outbound\` 私有工作目录，新增抑制名单模板、美国 Sportswear 三触点邮件草案和 Brevo Support 英文确认请求；首批 10 家美国公司级候选已按第一方官网信号写入私有台账，未收集姓名、邮箱或 LinkedIn。单次 Gmail 原始邮件显示 `info@athletikapparel.com` 的 SPF、DKIM、DMARC 和 TLS 通过，但邮件仍含 Brevo tracking pixel；Brevo 对 B2B non-personal 与 role-based 地址的官方说明存在表面冲突，因此在平台书面确认、追踪关闭复测、6 个月未回复记录保留提案和首封正文获得所有者批准前，状态保持 `preparation-in-progress / no-live-send`。 |
+| 2026-09-30 | SEO-V2-018 部署记录正式关闭：Sportswear 生产页为 HTTP 200、可索引、自引用 Canonical、单一 H1，Program model 与 14 图 lookbook 已上线；42/42 个图片资源、桌面真实点击/切换/关闭/焦点回归及 390px 无横向溢出均通过，其他六个品类无模块或脚本串入。GSC URL Inspection 为 `PASS / Submitted and indexed`，Google Canonical 一致，最后抓取为 `2026-09-22T08:21:22Z`。五词 × US / GB / CA 共 15 组 Google Desktop English depth-20 SERP 快照完整；结论是不改 URL、Title、Meta、H1 或页面所有权，不建近义页。最终状态 `completed / production-verified / measuring`，实施 outcome `changed / keep`，SERP outcome `research-complete / no-change`；后续只进入常规 28 / 90 天 GSC、GA4 与有效询盘观察。 |
+| 2026-09-30 | SEO-V2-013 2026 Q3 技术标准与外链复核完成：全量覆盖 6 篇生产 Technical Guides、36 次引用与 30 个唯一生产外链，确认断链 0；22 个链接直接 HTTP 200，8 个因 bot / rate / region 限制返回 403、429 或 451，但均经官方搜索或浏览器证据确认目标仍存在。ASTM D2594/D2594M-21、AATCC TM135-2025、ISO 3759:2011、ISO 5077:2007 和 ANSI/ASQ Z1.4 保持 `no-change`；ISO 4915:1991 仍现行但进入 systematic review。唯一待改项是 QC Guide 的 ISO 2859-1 引用：官方已发布 ISO 2859-1:2026 并撤销 1999 版，现有 AQL 概括仍成立，但链接与可见版本应明确更新。状态 `reviewed / one-change-pending`；本轮只做只读审计与内部记录，公开正文待所有者明确批准后再改。下次例行复核不晚于 2026-12-31。 |
+| 2026-09-30 | SEO-V2-013 所有者批准后的最小更新已本地实施：仅将 QC Guide 正文与 references 的 ISO 2859-1 引用改为 `ISO 2859-1:2026` 及官方标准页 `https://www.iso.org/standard/85464.html`，并将该页 `reviewed_on` 更新为真实复核日期 2026-09-30。AQL 解释与示例、URL、Title、Meta、H1、Schema、页面所有权和其他指南均不改；PHP 语法与源代码断言通过，但 LocalWP 45 秒内未返回响应，因此状态为 `implemented / source-verified / local-render-unavailable / deployment-pending`，待两个主题文件部署后进行生产定向验收。 |
+| 2026-09-30 | SEO-V2-013 部署记录关闭：QC Guide 生产页为 HTTP 200、`index, follow`、无 `X-Robots-Tag` 阻断、自引用 Canonical、单一 H1；Title、Meta 与 H1 保持核准基线。正文与 references 各有 1 次 `ISO 2859-1:2026` 官方链接，旧 OBP URL 为 0，可见 Technical review date 为 2026-09-30；页面存在于 `page-sitemap.xml`，Technical Guides Hub 保留可抓取入口。JSON-LD 可解析且六类核心节点齐全；Rank Math 的 `Article.dateModified` 仍取 WordPress 数据库的 2026-08-20 页面时间，未随代码 `reviewed_on` 同步，本轮不扩展 Schema 变量。最终状态 `completed / production-verified / scheduled`，Finding outcome `changed / keep`；下次例行复核不晚于 2026-12-31。 |
+| 2026-10-08 | 2026 年 9 月自然月 GSC / GA4 / 正式询盘基线完成：GSC final 为 32 clicks / 1,280 impressions / 2.50% CTR / average position 11.75，较 8 月 8 / 329 明显上升；GA4 为 54 raw sessions / 10 users / 28 engaged sessions，Organic Search 仍为 2 sessions、0 engaged session、0 `generate_lead`。163 邮箱合并既有人工台账与 09-24～09-30 新邮件逐封复核，确认 6 封真实询盘、0 封已确认每款达到 MOQ、0 封可确认归因 Organic Search；来源未知不按非 Google 处理。结论为 `visibility-up / conversion-unproven` 与 `no-change / baseline-established`；GSC 32 clicks 对 GA4 2 个 `google / organic` sessions 另记 `measurement-gap / investigate`，先做只读标签、Consent 与过滤诊断，不新增 Backlog 或直接改站。 |
+| 2026-10-08 | 到期 Day 28 页面复盘全部关闭：首页为 4 / 73 → 6 clicks / 135 impressions，Underwear 为 0 / 25 → 2 / 84，Knitted 为 0 / 41 → 1 / 90，均保持 `keep / measuring`；Contact、Services 与 Sportswear 低于判断门槛，B 类采购内容维持 `changed / measuring`。所有者决定接受 Merino 27 日与 Outdoor 26 日近似等长 final 窗口：Merino 为 3 / 43 → 3 / 166，曝光和平均排名改善但 clicks、商业 Query 与可归因询盘未同步增长；Outdoor 为 0 / 21 → 0 / 27，仍无 click 或 GA4 Landing Page session。两页均正式关闭为 `keep / measuring`，保留低置信度并转入 Day 90。Targeted 生产审计 8/8 URL 为 HTTP 200、可索引、0 high / medium issue；HSTS 沿用 owner-action，Sportswear 图片提示沿用 performance monitor-only。未触发 URL、Title、Meta、H1、Schema、页面所有权或 Backlog 变更。 |
+| 2026-10-08 | Merino Wool 阶段性 targeted 检查完成：生产单页 HTTP 200、robots 允许、自引用 Canonical、单一 H1、Title/Meta 规范一致、22 图 alt 和 JSON-LD 均通过，`audit-page` 为 0 issue / 0 recommendation；URL Inspection 为 `PASS / Submitted and indexed`，Google Canonical 一致且最后抓取为 2026-10-02。90 天 retained 非品牌 Query 只有 25 impressions / 0 click，主商业词 `merino wool clothing manufacturer` 为 19 / position 25.95；页面机会工具的 exact-phrase 建议没有 page-one CTR benchmark，现有页面也已覆盖相同意图。Cannibalization 为 0 material candidate，Internal Links 没有 ready-to-apply 缺口。结论 `no-change / keep-measuring`：不继续扩写、不改 Title/H1、不建近义页，转入 2026-12-06 Day 90。Schema/OG 修改时间与 Twitter reading time 的 code-first 元数据来源偏差记录为 Info / P3，不建立单页补丁。 |
+| 2026-10-08 | Silk Wear + Sports Accessories 联合阶段检查完成：两页生产抓取均为 HTTP 200、可索引、自引用 Canonical、单一 H1、0 high / medium issue，采购决策内容、Sitemap 与首页入口均在线；URL Inspection 均为 `PASS / Submitted and indexed`，最后抓取均为 2026-10-02。以 2026-09-09 为观察锚点的等长窗口当前只有 25 个 final 日：Silk 为 1 / 28 → 1 click / 35 impressions，Sports Accessories 为 2 / 29 → 0 / 20；两者均为 `partial / not-enough-data`，GA4 Landing Page 均为 0 → 0。Silk 90 天唯一可审查非品牌词只有 3 impressions，Sports Accessories 无可执行非品牌 Query；不改 URL、Title、Meta、H1、正文或页面所有权，不建近义页。两张 Change Card 从滞后的 `owner-review` 修正为 `deployed / production-verified / keep-measuring`，联合 outcome `changed / keep-measuring`，下一正式节点不早于 2026-12-08 Day 90。 |
+| 2026-10-08 | SEO-V2-003 Services 索引复查完成：GSC `index-watch` 为 complete，1/1 inspected，当前仍为 `NEUTRAL / URL is unknown to Google`、`indexStatus=excluded`；相对 2026-09-30 的 `Discovered - currently not indexed`，工具判定同一 excluded 状态 unchanged，0 regression / recovery / alert，仍无 Google Canonical 或最后抓取时间。生产普通请求与模拟 Googlebot 均为 HTTP 200、`index`、无 X-Robots-Tag、自引用 Canonical、单一 H1 和完整采购流程内容；Page Sitemap 唯一条目、首页 5 个入口、robots 与 Title/Meta 均正常，单页审计 0 issue / 0 recommendation。Finding outcome 保持 `no-change / monitoring`：不重复申请、不改页面；Services 单页由周度改为月度或触发式复查，下一常规节点不早于 2026-11-08，全站 Crawl / Index Snapshot 继续运行。 |
+| 2026-10-08 | SEO-V2-002 GSC / GA4 测量差距诊断完成：Google 登录、GSC / GA4 scope、GSC Property 与 GA4 Property `547377703` 均正常，9 月 54 个 GA4 sessions 的 host 全部为 `www.athletikapparel.com`；生产 Site Kit tag `GT-WBLS3B9D` 存在，主题无第二份基础 GA4 tag。根因是 Cookiebot CBID `f81cac53-c468-4afd-9823-7adcc4839c5b` 的 `cc.js` 对 `www` 与裸域均明确返回 `not authorized`：新浏览器无法初始化 Banner，Statistics / WP consent 保持 false，仅加载 `gtag.js` 而不发送 GA4 `g/collect`。Finding outcome `diagnosed / no-code-change / owner-action-required`；所有者需在 Cookiebot Manager 授权两个域名或换用正确 CBID，验收 Allow / Reject 与 GA4 网络请求后，从修复日起重建 28 天基线。9 月 GA4 Organic Search 继续视为不完整下限，不用于否定 GSC 32 clicks。 |
+| 2026-10-08 | SEO-V2-002 Cookiebot / GA4 测量链生产修复验收通过：Cookiebot Manager 显示 `www.athletikapparel.com` 为正式 Domain，当前 CBID 的实时 `cc.js` 对 `www` 与裸域均返回完整配置且无 `not authorized`。两个独立无 Cookie 浏览器会话均显示首次 Banner；Allow all 后 Statistics / WP consent 为 true，写入 `CookieConsent`、`_ga` 与 `_ga_JV4NTPDVQB`，首页和 Merino 页均发送 GA4 `page_view`；Reject all 后 Statistics 保持 false，仅保留 `CookieConsent`，Underwear 页无 `_ga` 或 GA4 collect；页脚 Cookie Settings 可重新打开 Banner。本次无主题、插件、CBID 或 Site Kit 代码修改，Finding outcome `fixed / external-config / production-verified / keep`。9 月历史漏测不回填；新 28 天恢复窗口为 2026-10-08～11-04，正式复核不早于 11-07。 |
+| 2026-10-08 | GSC Generative AI 首个等长 28 天对比完成：所有者导出的 2026-09-03～09-30 XLSX 已按 SHA-256 归档，28 个日期行、14 个 Page、50 个 Country、3 个 Device 均通过完整性检查。Property impressions 为 190，对比 2026-08-06～09-02 的 27，增加 163（+603.7%，7.04×）；有展示日期为 27/28。Page 表合计 199，主要为 FLATLOCK 63、Top Sportswear 31、QC 29、首页 19、Merino 17、Underwear 12、ACTIVESEAM 9；页面合计不等于独立回答。前窗含已知日志异常，当前窗混合两篇新 Guide 上线前后，因此 outcome 为 `visibility-up / attribution-unproven / no-site-change`。有效复测 GSC 数据闸门已通过，22 条运行仍全部 `planned`；Bing 第二窗口仍待 2026-10-20 后导出。 |
+| 2026-10-08 | 有效复测 ChatGPT Search 首轮采集完成：固定 11 条 Prompt 均在独立 Temporary Chat、美国洛杉矶出口、Web Search 开启且个性化关闭的环境中运行，并保存元数据、回答文本、页面截图、首个引用预览及 169 条行内引用 URL。描述性结果为实体题 2/2 提及并引用规范站，专业发现题 D03～D05 为 3/3 提及、首位推荐并引用规范站，内容题 C06～C08 为 0/3，宽泛发现题 BD01～BD03 为 0/3；这些不是正式有效率。由于 10 条截图只覆盖可视区域、当次未取得完整 Sources 面板，且 C06/C08 的回答尾部文本超过采集上限，11 条统一记录为 `partial / owner-review-pending`，有效分母仍为 0；不据此修改网站。原始证据位于 Git 外私有目录，结构化台账见 [`有效复测执行包`](geo/testing/valid-retest/README.md)。 |
+
+---
+
+## 2026-10-20 SEO-V2-005 实施补记
+
+所有者明确当前阶段优先 Google 非品牌曝光和商业词排名，不将面料页表单默认品类的准确性作为本轮任务。既有 URL、Title、Meta、H1 与页面所有权不变，仅在 Knitted Fabrics 新增 single jersey / interlock / rib / jacquard 的结构、材料方向、服装应用和开发输入模块。文案使用已确认能力与一般结构原理，不新增固定 GSM、成分比例、性能结果、认证或图片证据；初版经本地审核流程后，所有者已于当日确认生产部署。
+
+PHP 语法、七品类数据/模板隔离、LocalWP 与生产 360 / 768 / 1024 / 1440px 均通过；生产七品类 200、单一 H1、7/7 可索引、0 high / medium issue，新模块仅面料页显示，实际 Title/Meta、Canonical、CollectionPage、五组图片、Sitemap 唯一条目及首页入口正常，生产 CSS 与本地一致。GSC 为 `PASS / Submitted and indexed`，Canonical 一致，最后抓取 `2026-10-19T11:38:33Z`，早于本次部署，不能证明新版已被抓取。25 URL 部署后稳定 Diff 无新增状态或索引回归；首次历史 Diff 的 9 个 changed 未展开逐 URL 明细，不用于本批归因。HSTS / Sportswear 大图沿用既有 deferred；Turnstile 在重用会话导航时有间歇报错，但两页独立新会话未复现，实际提交未测试，记录 monitor-only。完整证据及处置见 Change Card。当前 `deployed / production-verified / measuring`，Finding outcome `changed / keep-measuring`。
+
+`inc/product-category-data.php`、`template-parts/product-category/page.php`、`style.css` 已部署；没有新增图片或 JavaScript，本次验收无额外部署文件。Day 0 为 2026-10-20，Day 7 / 28 / 90 为 2026-10-27 / 11-17 / 2027-01-18；完整效果窗口为 10-21～11-17，等 final 数据覆盖末日后读取。原 Knitted 2026-11-30 Day 90 后窗已混入新变量，须披露。详见 [Change Card](seo/implementation/change-cards/seo-v2-005-knitted-fabric-structures-2026-10-20.md) 与 [GSC 基线](seo/gsc-data-log.md)。
+
+## 2026-10-23 Merino 固定商业查询监测
+
+按所有者决定，产品样例与行业引用暂由所有者继续选材 / 关注，先执行 SEO-V2-005 的固定商业词观察。已建立并回读本机查询组 `merino-commercial-core-v1`：apparel、clothing、base layer、underwear 四个精确 manufacturer 查询，固定 US / GB / CA、English、Google Desktop、Top 50，不改公开页面或页面所有权。GSC 2026-09-23～10-20 的 final 28 日 Page 为 4 clicks / 177 impressions，但 Query 明细仅覆盖 13 impressions，四个固定词均未返回行；国家 / 设备明细也不闭合，保持 partial。今天 apparel US 取得自然排名第 28、absolute 32，GB / CA 超时；与 10-20 五组历史成功快照合并的最近记录矩阵仍为 6/12 可得，不写成完整当前排名或已证明增长。
+
+下次 GSC 周度节点为 10-30；首个不重叠 28 天后窗为 10-21～11-17，预计 11-20 起等 final 覆盖后分析。下一批付费排名按四词 × 三地分 11-20 / 11-21 两天采集，先检查预算，不自动调高限额或持续重试；没有安装后台付费任务或提醒。Merino 12-06 Day 90 不变。本轮仅更新监测记录，现有 Backlog 与两份 GEO 未提交修改保留不动。详见 [固定监测 V1](seo/research/merino-commercial-monitor-v1.md) 与 [数据记录](seo/gsc-data-log.md)。
+
+## 2026-10-23 SEO-V2-005：FLATLOCK → Merino 单处内链
+
+所有者批准只在 FLATLOCK Guide 的材料段，把已有 `Merino wool blend` 链接至 `/merino-wool-manufacturer/`；不执行 OEM Evaluation 的可选链接，不扩写 GEO 正文。仅修改一个主题 PHP 文件的一行，原文字、URL、Title、Meta、H1、Canonical、Schema、技术复核日期、媒体、CSS、JS 和表单不变。2026-10-23 所有者确认部署后，生产 raw HTML 与 390 / 1440px 浏览器均确认新增链接恰好一个；键盘焦点和实际点击到 Merino HTTP 200 均通过，来源页正文、元数据、Schema、媒体清单及原链接与部署前一致。三 URL 防护检查、Sitemap 唯一条目与 Merino 反向入口正常；目标整页 textContent hash 不作为逐字零差异证据，完整边界保留在 Change Card。
+
+状态 `deployed / production-verified / measuring`，本批部署记录关闭，Finding outcome `changed / keep-measuring`，排名收益仍 `unverified`。唯一主题文件 `template-parts/technical-article/content-flatlock-vs-overlock-technical-knitwear.php` 已上线，无额外部署。Day 0 / 7 / 28 / 90 为 2026-10-23 / 10-30 / 11-20 / 2027-01-21；本链接后窗 10-24～11-20 等 final 完整后再分析。Merino 原 12-06 Day 90 与既定监测保持不变，未来比较需披露这次入链变量。审计覆盖、GSC 基线、工具 Finding 处置、风险及验收边界见 [Change Card](seo/implementation/change-cards/seo-v2-005-flatlock-merino-context-link-2026-10-23.md)。既有 Backlog 与两份 GEO 未提交修改保留不动，不新增 Backlog 项。
+
+## 2026-10-23 SEO-V2-005：Underwear seamless 本地稿
+
+六个商业服装品类的需求覆盖筛选后，只选择当前已确认的 Underwear seamless 正文缺口；其他五页 `no-change`，不扩充 Backlog。所有者确认 genuine seamless 适用于男士 boxer briefs / trunks、女式 briefs / camisoles、thermal base-layer tops / bottoms，并可稳定定制 knitted patterns、ventilation / support zones、waist / leg openings、sizing / fit；目前没有对应订单、样品或实物照片，故只介绍能力，不虚构履历、设备或实测性能，也不把既有图片当 seamless 证据。
+
+经“开始制作”授权，现有 Underwear 页在产品展示后新增一个条件式无图模块，区分 seamless 与 FLATLOCK / ACTIVESEAM / bonded details，并说明必要连接和收口按款打样确认。URL、Title、Meta、H1、Schema、原内容、链接、图片、视频与表单不改。PHP、七品类 raw HTML 前后字段对照及 Chrome 360 / 768 / 1024 / 1440px 布局通过；只有 Underwear 出现该模块，其他六页无新增输出。
+
+10-23 制作时状态为 `local-draft / local-verified / owner-review-pending`；2026-10-27 所有者确认部署后已完成下述生产验收。完整证据、GSC 基线、工具 Finding 处置和风险见 [Change Card](seo/implementation/change-cards/seo-v2-005-underwear-seamless-2026-10-23.md)。既有 Backlog 与两份 GEO 未提交修改保留不动。
+
+## 2026-10-27 SEO-V2-005：Underwear seamless 部署验收关闭
+
+生产新模块与 10-23 本地稿一致，CSS 已生效；Chrome 360 / 768 / 1024 / 1440px 无横向溢出、四项定制完整，16/16 原产品图资源 HTTP 200，未把原图当 seamless 实物证据。七品类均为 HTTP 200、可索引、单一 H1、自引用 Canonical；只有 Underwear 输出该模块。相对本地基线，七页原正文、内链及媒体清单保持一致，Underwear Title / Meta / H1 和规范化 origin 后的 Schema 一致；robots 指令顺序及 Sportswear Meta / dateModified 的环境差异如实保留，不冒称完整生产部署前后 Diff。Page Sitemap 为 20 条 / 20 个唯一 URL，七品类各一次，首页保留两个 Underwear 入口。
+
+`audit-urls` 7/7 fetched、0 failed / skipped、0 high / medium；两个 review 全部处置：`hsts_missing` 沿用 `deferred / owner-action`，`image_oversized_candidate` 沿用 Sportswear `deferred / monitor-only`。保留工具 coverage unknown，不扩大为全站无回归或排名收益。状态 `deployed / production-verified / measuring`，本模块部署记录关闭，Finding outcome `changed / keep-measuring`。三个主题文件已上线，无需额外部署；本轮只有内部记录变更。
+
+以 10-27 部署确认和验收日为保守 Day 0（具体上线时刻未知），Day 7 / 28 / 90 为 **2026-11-03 / 2026-11-24 / 2027-01-25**；完整后窗 10-28～11-24 等 final 覆盖后读取，计划比较前窗 09-29～10-26，本轮未取该窗数值。Underwear 原 **11-30 Day 90 不重置**，须披露新增 seamless 变量。未做新 URL Inspection，不声称 Google 已抓取新版，也不重复请求索引。该段只记录 Underwear 验收；Knitted Fabrics 的独立 Day 7 结果见下一节。详见上述 Change Card。
+
+## 2026-10-27 SEO-V2-005：Knitted Fabrics Day 7 完成
+
+URL Inspection 为 `PASS / Submitted and indexed`，最后抓取更新为 **2026-10-21T19:26:22Z（北京时间 10-22 03:26:22）**，Canonical 一致且抓取成功，确认部署后重新抓取。生产结构四卡 / 十二组定义及原五图正常，360 / 1440px 无横向溢出，元数据、原内容、链接、媒体和 Schema 与规范化 origin 后的 10-23 本地快照一致；单页审计 0 Finding，保留 coverage unknown 和非 HTTP 链接过滤提醒。既有 Turnstile 间歇错误未在一次新会话中复现，但验证码响应字段与实际提交未验证，保持 Info / monitor-only，不宣称提交通过。
+
+GSC final 本次只到 **10-24**：最新 28 天 09-27～10-24 为 **0 clicks / 132 impressions / average position 12.89**，Query 仅覆盖 19 次，其中固定七个商业词 15 次；Country 合计同样只有 19，单维控制未闭合，不判全部流量市场。前四日 10-16～19 为 **0 / 44**，排除部署日的后四日 10-21～24 为 **0 / 6**；10-18 / 19 的尖峰不能记成本次 10-20 模块收益，四日回落也不足判失败或回滚。当前滚动 28 日与冻结基线重叠 21 天，不归因于单一改动。
+
+Day 7 技术 / 抓取检查关闭，outcome **`no-change / keep-measuring / not-enough-data`**，不改网站、不新增 Backlog、无需部署。Day 28 仍为 **11-17**，完整后窗 10-21～11-17 等 final 覆盖后预计 **11-20 起**核验；原 11-30 和新模块 2027-01-18 Day 90 保留。全部 Query、日期与市场缺口见 [GSC Log](seo/gsc-data-log.md)，技术和处置见 [Change Card](seo/implementation/change-cards/seo-v2-005-knitted-fabric-structures-2026-10-20.md)。
+
+## 2026-10-27 SEO-V2-005：结构采购词三市场研究完成
+
+按所有者授权，完成 single jersey / interlock / rib knit / jacquard knit 四个精确 manufacturer 查询的 US / GB / CA Google Desktop 快照：**12/12 单元、configured depth 10、112 个自然结果行 / 102 个唯一 URL**。三个失败单元各重试一次后全部恢复；日账本已知实际 $0.026、unknown $0.002，日／月额度未调整。保留两个 rank 字段、角色初分及选定官网复核限制；不把快照结果数当搜索量，也不把有界范围未见 Athletik 当成未收录或全网无排名。
+
+四词均有供货意图，但并非纯 B2B。single jersey / interlock 优先作为现有面料页的真实样布准备方向，不是流量或易排名排序；rib 区分整幅服装面料与袖口／领口辅料，jacquard 排除梭织／家居语义扩散。现有四卡已覆盖结构、材料、应用及开发输入，未确认需要立即补定义或改主词；下一候选是所有者选定 **1～2 款真实样布与对应实际结构、composition / GSM**，缺少照片不等于否定已确认能力。
+
+Finding outcome **`no-change / evidence-preparation / keep-measuring`**。首轮只归档研究，不改网站、Backlog、页面所有权或观察窗口，**无需部署**；若未来上线样例，另行批准并披露新增变量。Knitted Day 28 仍为 11-17，等 final 覆盖预定后窗后预计 11-20 起读取。完整浅层结果、费用、七个 review 和三条 action 提示处置见[结构词研究](seo/research/knit-structure-serp-us-gb-ca-2026-10-27.md)。
+
+随后所有者确认 DataForSEO 充值，明确批准扩充研究并将原金额限额提高十倍。本机已设置并回读：**daily notice $0.50 / daily hard $1.00 / monthly hard $5.00**，每报告 10 请求 / 1000 行不变；保留新值，不恢复旧 $0.10。账户充值后余额核验为 $50.152680。新增 24 单元各最多复试一次，**20 成功 / 4 unavailable**；结构词 depth 50 与材料组合 depth 10 各 10/12 成功，保留 **595 行 / 439 唯一 URL**，25 个单元内重复行不重新编号，73 条描述性 Finding 均 `no-change`。不可得为 single jersey GB / CA 深层、merino jersey CA、nylon spandex rib US，不能补零或冒称完整三市场 Top 50。
+
+扩充后，**服装用 polyester interlock 优先准备实物例，performance polyester jacquard 是新增待确认方向**；Merino jersey 仍混零售，nylon/spandex rib 仍扩散至泛弹力与 tricot，不能自动新建页面或认定低竞争。新增费用本机已知 $0.132、unknown $0.056、effective $0.188，未超本轮 $0.25；今日累计本机 actual $0.158 + unknown $0.058 = effective $0.216，账户余额 $50.004680（账户与本机口径不强行对齐）。最终 `research-complete-with-limitations / no-site-change / keep-measuring`，无网站部署文件。详见[扩充报告](seo/research/knit-structure-serp-expanded-2026-10-27.md)，当前预算口径同步到 SEO Process 与 Merino 监测规则；原观察日期保持不变。
+
+## 2026-10-27 SEO-V2-005：六个商业品类第二轮 SERP 研究完成
+
+所有者批准对 Underwear、Sportswear、Merino、Outdoor、Silk 和 Accessories 扩充研究，不包含已在同日完成的 Knitted Fabrics。24 词 × US / GB / CA 的 72 组 depth-10 初筛为 **68 可用 / 4 unavailable**；据意图和现页内容选 8 词，24 组 depth-50 为 **22 可用 / 2 unavailable**（US Yoga 为 `partial`，结果数估算无效但保留 50 行）。共保留 **1,685 行 / 1,117 唯一 URL**，186 条工具 Finding 全部 `no-change`；113 条 coverage 保留 111 次 fresh 尝试及 2 次免费缓存恢复，不把失败补零或以浅层代替深层。
+
+主站的浅层出现为 performance underwear GB 6 / CA 5；深层 Merino T-shirt CA 原始 rankGroup 15 / rankAbsolute 18。CA performance underwear 深层只返回 9 行且未见主站，US / GB 深层不可得；本轮不构成稳定排名历史或因果证明。PowerMerino 经所有者确认控制，仅作内部自有站分类，不计独立竞争对手/第三方背书或主站排名，不互链、合并或修改。
+
+六个生产页正文均已对照，**最值得下一步窄范围评估的是 Sportswear Yoga 的产品级开发说明，以及 Accessories balaclava / neck gaiter 的分别呈现**；不是新增能力或关键词缺口。Underwear seamless、Merino 梯度、Outdoor knit fleece 和 Silk underwear/base layers 已覆盖，不重复写通用 OEM/QC。只建议真实产品证据与已批准范围，不创建平行页、不改 metadata、不修改 Backlog；第三张 Accessories 图片继续锁定。19 个官网 URL 成功内容抽样，另 1 个经两次读取仍 unavailable，不把抽样当成全站技术验收。
+
+本轮新增本机 **actual $0.364 + unknown $0.058 = effective $0.422**，低于额外 $0.65；最终日累计 actual $0.522 + unknown $0.116 = effective $0.638，月 effective $0.810。账户余额 $49.614680 / 日 spend $0.566 分开记录。金额限额仍为 notice $0.50/day、hard $1/day、hard $5/month，每报告 10 请求 / 1000 行不变。
+
+Outcome：`research-complete-with-limitations / no-site-change / keep-measuring`。Underwear seamless 11-03/11-24、Merino 10-30 GSC 与 11-20/21 固定 SERP、Knitted 11-17 Day 28、Silk/Accessories 12-08 等原窗口不变。完整方法、失败清单、原始位置与下一步依赖见[第二轮研究](seo/research/serp-commercial-round2-us-gb-ca-2026-10-27.md)。**本轮无网站部署文件，无需重新请求索引。**
+
+## 2026-10-27 SEO-V2-005：Sportswear Yoga 本地草稿验收完成，待所有者审核
+
+所有者批准先制作第二轮研究 R2-002 对应的 Yoga 产品开发区块。已仅替换现有 `Yoga and studio wear` 简介，加入 Product and fit / Fabric and construction / Sample approval 三组要点及 lookbook / Contact 入口；复用原产品图和现有 lookbook，不增加数字、材料配方或性能承诺，不改 URL、metadata、H1、Schema 配置、MOQ 或表单。共享模板条件渲染，样式仅限新组件。
+
+两个 PHP 文件语法、七品类配置前后隔离与源码 diff 检查通过；其他六品类数据不变。初次 LocalWP 502 经所有者启动/重启后解除，已采集本批源码补丁前后真实本地 HTML：七页 HTTP 200、各一个 H1，metadata / Canonical / robots / JSON-LD 相同；排除 Yoga 目标区和动态询盘区后，原正文、链接及媒体清单相同。360 / 390 / 768 / 1024 / 1440px 截图无横向溢出，两条入口有效、44px 触控高度，既有 lookbook 点击/键盘放大、切图和关闭正常；未提交表单。768px 下此产品组改为上下排列，避免窄双栏留白；原图属性与其他产品组布局不变。状态为 `local-draft / local-verified / owner-review-pending`，Finding outcome `changed / local-draft`，搜索收益仍 unverified。
+
+现在可在本地 `#subcat-yoga-and-studio-wear` 审核，尚未部署；所有者审核通过后待部署文件仅 `inc/product-category-data.php`、`template-parts/product-category/page.php`、`style.css`，没有 uploads / JS / 数据库改动。Day 0 和后续窗口待生产部署确认，不从草稿日期计时；本地通过不等于生产或 Google 抓取验收。完整英文稿、事实边界、风险与验收清单见 [Yoga Change Card](seo/implementation/change-cards/seo-v2-005-sportswear-yoga-2026-10-27.md)。原 Backlog 与两份 GEO 未提交修改保留。
+
+所有者随后视觉复审要求删除该初稿的两个 CTA 链接，已从数据、共享模板和专属 CSS 一并移除，不保留空容器。七品类原字段对照及 360 / 390 / 768 / 1024 / 1440px 本地截图复测通过；三组正文、原图及现有其他入口不变，链接位置无残留留白。现稿仍为 `local-verified / owner-review-pending`，尚未部署，仍须上述三个主题文件一起部署；详见 Change Card 第 9 节。
+
+## 2026-10-27 SEO-V2-005：Sportswear Yoga 生产部署验收关闭
+
+所有者确认最终无链接版本已部署。生产 Yoga 简介、Product and fit / Fabric and construction / Sample approval 三组要点及原图与本地交付一致，两条 CTA 和空容器均已移除；生产 CSS 规范化换行后全文一致。Chrome 360 / 390 / 768 / 1024 / 1440px 无横向溢出或残留底部留白；14/14 个 lookbook 大图 GET 200，手机和桌面的点击/键盘放大、切图、关闭均通过。七品类全部 HTTP 200、可索引、单一 H1、自引用 Canonical；只有 Sportswear 输出新模块，其他六页无新增。Page Sitemap 20/20 唯一 URL，七品类各一次，首页保留两个 Sportswear 入口。
+
+本地/生产 origin 规范化后，七页原正文、内链和媒体清单一致；保留生产 / 本地既有 robots 顺序、HTTPS social 属性，以及 Sportswear Meta / dateModified 环境差异，不冒称完整生产部署前后 Diff。定向 `audit-urls` 7/7 fetched、0 failed / skipped，0 high / medium；两个 review 均保持 deferred（HSTS owner-action、Sportswear 图片 monitor-only），coverage unknown 不改写。多次导航浏览器再次捕获既有 Turnstile 初始化提醒，沿用独立人工观察，不声明表单投递或全页面无 JS 异常；未提交表单或改线上配置。一次网页抽取旧简介与直接请求/Chrome 新版的矛盾已保留，不等同 Google 抓取状态。
+
+状态 `deployed / production-verified / measuring`，Finding outcome `changed / keep-measuring`，本批部署记录关闭。以 **2026-10-27** 为保守 Day 0，Day 7 / 28 / 90 为 **2026-11-03 / 2026-11-24 / 2027-01-25**；完整后窗 **10-28～11-24** 等 final 覆盖后读取，预计 11-27 起核验。计划前窗 09-29～10-26 本轮未重新提取，保持 pending，不以历史快照代替。Sportswear 原观察窗口不重置，披露 Yoga 变量混入；其他既定节点不变。
+
+三个主题文件已上线，**本次无需额外部署**，只更新内部记录。未运行新 GSC / GA4 / URL Inspection / 付费 SERP / 全站 Crawl，不重复请求索引、不扩充 Backlog；用户既有 Backlog 与两份 GEO 修改完整保留。完整范围、差异、Finding 处置和限制见 [Yoga Change Card 第 10 节](seo/implementation/change-cards/seo-v2-005-sportswear-yoga-2026-10-27.md)。
+
+## 2026-10-28 SEO-V2-005：Sports Accessories 头颈配件本地草稿
+
+根据第二轮三市场 SERP 与所有者确认的 Merino wool 护脖实物图，现有首组区分 balaclava 与 neck gaiter 的采购输入，并与原头套图展示；第三张图不变，不新增页面、链接或修改 metadata。七个本地品类页与五种屏宽检查通过。2026-10-29 所有者确认后续视觉调整、代码与图片已部署，生产定向验收及图片 MIME 检查通过；2026-11-02 补录，状态 `changed / production-verified / keep-measuring`，搜索效果尚未验证。以 10-29 为保守 Day 0，11-05 为 Day 7、11-26 为 Day 28；原 12-08 Day 90 不重置并须披露本批变量。详见 [变更卡](seo/implementation/change-cards/seo-v2-005-accessories-head-neck-2026-10-28.md)。
+
+## 2026-11-02 SEO-V2-005：Merino 周度与 FLATLOCK 内链 Day 7 补查
+
+Merino 的 10-03～10-30 final 28 天精确 Page 为 5 clicks / 193 impressions；Query 明细仅 17 impressions，固定四词仅 `merino wool clothing manufacturer` 返回 2 impressions，其余 `not-returned`，缺口不可补算。与旧基线重叠 18 日，不做因果结论；详见 [GSC 记录](seo/gsc-data-log.md)。FLATLOCK 来源与 Merino 目标生产 URL 均正常，链接在 390 / 1440 px 可聚焦点击；GSC 来源最后抓取 10-27、目标 10-29，均已收录。来源 10-31 新增 ACTIVESEAM 链接为共同变量，不能因旧抓取时间断言新版已被 Google 解析。完整后窗仍待 final；均 `no-change / keep-measuring`，没有网站部署文件。
+
+## 2026-10-29 GEO：ChatGPT Search 独立续测收口
+
+Dot 云端 7 条经所有者确认有效；Dot 原 BD-01 首条引用卡缺失，保留 partial。所有者手动重采 BD-01，确认采用精简 Sources 留证范围，记为 `valid / owner_accepted`；首条引用卡与部分 Sources 图片留在对话，未伪称本地保存或全部来源已截图。采集模式分开，云端地区未知，正式证据等级不冒称 E3。D04/D05 本次推荐 Athletik；C06～C08 和 BD-01～BD-03 未在回答中提及 Athletik，相关官网候选不等于正文引用。结论限单次观察，不证明稳定趋势或因果。原始 Excel、6 个 ZIP 与手动回答已复制到私有证据目录并核对复制哈希，原文件保留。详见[验收与账本](geo/testing/valid-retest/batch-d-2026-10-29/README.md)和[结论与行动](geo/testing/valid-retest/batch-d-2026-10-29/findings.md)。未更改网站或既有 GEO/SEO 未提交修改。
+
+同日[C06～C08 与 BD-01～BD-03 来源对照](geo/testing/valid-retest/batch-d-2026-10-29/source-comparison-2026-10-29.md)完成：三篇官网 Guide 均已覆盖对应核心主题，C07 Guide 已进入本次 Sources 候选；宽泛问题的来源对照仅作为历史观察，单次结果无法证明官网未被引用的原因。所有者随后明确只处理 GEO，将 MOQ / 颜色沟通方案排除出本工作范围；优先盘点真实技术证据。当前不修改页面、购买目录、外联或重复请求索引。未知地区、受限来源、未核验条款及用户的手动留证例外均保持原边界。
+
+同日完成 [C06 / C07 技术证据盘点](geo/testing/valid-retest/batch-d-2026-10-29/c06-c07-evidence-inventory-2026-10-29.md)：两篇指南已有基本内容，C07 的两段已公开视频为不同面料的工艺示例，不是受控性能对比；既有 Merrow 自然状态素材不等于 FLATLOCK 样本。限定范围的文件名搜索未找到真实匿名 Tech Pack 样本，不代表公司不存在此材料。需先确认真实来源、项目授权与保密边界，再评估是否补充页面；本轮未修改网站。
+
+所有者随后提供真实 Tech Pack 改造示范并授权使用；[C06 示范内容实施及生产验收](geo/testing/valid-retest/batch-d-2026-10-29/c06-tech-pack-demo-2026-10-29.md)在现有指南加入尺寸表、BOM 和完整 PDF 入口，均标明仅供示范、不用于生产。所有者于 2026-10-29 确认审核通过，同日生产定向验收通过，状态 `owner-approved / production-verified / observation-pending`；精确部署时刻及搜索引擎重新抓取状态 unknown，未声称带来引用增长。
+
+## 2026-10-30 GEO：E01 来源定向核查
+
+[E01 本轮实际引用来源核查](geo/testing/e01-source-trace-2026-10-30.md)已关联既有 `GEO-BV2-002`：生产基地段共引 `.nyc`、`.ca` 和中国站，不能把结果单独归因给某一来源；`.nyc` 当前首页仍有旧伙伴工厂表述，中国站首页未见此表述且继续使用，`.ca` 仅记录解析网址但当前无法读取正文。所有者确认 `.nyc` / `.ca` 无控制权，接受残余风险并监测；不擅自登录、修改、联系、关闭或重定向。规范站和中国站各自角色及此前第三方目录决定不变。
+
+Google AI Mode 的 11 题 Dot 首答已私有归档，完成[逐题观察及与 ChatGPT 对照](geo/testing/valid-retest/google-ai-mode-2026-10-29/README.md)。五题的部分引用位置缺最终 URL，已知答案与可核对引用仍可观察；环境和日期与 ChatGPT 样本不同，不能混算表现率或归因于页面改动。
+
+同日已完成 [C08 官网指南证据与内容缺口核查](geo/testing/valid-retest/batch-d-2026-10-29/c08-guide-gap-audit-2026-10-30.md)：现有尽调框架保留，优先建议补充中国企业登记和实验室认可范围的具体核验路径；目前为内部建议，尚未修改网站正文。
+
+同日 [C08 两处英文增补](geo/testing/valid-retest/batch-d-2026-10-29/c08-guide-copy-draft-2026-10-30.md)已获所有者批准并确认部署，生产两段与批准稿逐字一致；HTTP、元信息和 360 / 390 / 1440px 定向呈现验收通过，状态 `owner-approved / production-verified / observation-pending`。后续核对搜索引擎抓取状态并按既有节奏观察，不以部署验收替代引用效果。所有者明确自身登记资料问题仅为讨论，不追加资料披露或 Contact 改动任务。
+
+同日 [C06 / C08 GSC 最新抓取快照](geo/testing/c06-c08-crawl-status-2026-10-30.md)确认：C06 已收录，C08 为 `Crawled - currently not indexed`，最后抓取均为 10-16 UTC，早于本次更新。C08 当前前台定向检查未见明显技术阻断；优先做 GSC 网页版实时测试，通过后针对本次更新申请一次索引，尚未执行。C06 保持观察，暂不从单次 AI 结果判断新内容效果。
+
+所有者随后确认 C08 已于同日请求编入索引，已记为 `indexing-requested / owner-confirmed`，等待后续 API 结果；建议 2026-11-06 复查，不重复申请。此前未收录结果保留为请求前快照。
+
+所有者同日根据 Bing 后台截图决定略过本轮 AI Performance 分析：`6 M` 所选窗口显示 34 次引用，Grounding Queries 无明细。已在 [Bing 基线](geo/testing/bing-ai-performance-baseline.md)记为 `deferred / low-signal`，不再要求本轮导出；不将截图当作零引用或与旧 28 天基线直接比较。
+
+同日按所有者授权完成 [Tech Pack 新示范分发包](geo/distribution/publishing-log.md)：LinkedIn 单张 1080 × 1350 JPG、英文正文、替代文字、中文发布说明和 390px 预览已准备并校验，素材位于 `D:\B-视频素材\营销内容包\2026-10-tech-pack-demo\`。所有者已确认审核及发布完成，状态 `published / owner-confirmed / public-url-pending / measuring`；七日窗口为 10-31～11-06，11-07 起复盘，实际帖子 URL 与后台数据待补。不因 C06 / C08 处于抓取观察期而停止新素材分发。
+
+同日完成 [YouTube 既有视频英文信息核对与三条更新稿](geo/distribution/youtube-video-details-2026-10-30.md)：公开列出 90 条、核对 6 条相关视频元数据与缩略图，针对 `YUxwc5DoFSk`、`fyu-1_aarzY`、`sPS4_jD8nBc` 准备原视频标题、说明及规范指南入口。2026-10-31 所有者明确该账号不在其管辖，方案现为 `closed / out-of-scope / not-applied`；保留历史草稿，撤下 YouTube 编辑待办，不要求接管账号。
+
+2026-10-31 已完成 [技术指南正文衔接及生产验收](geo/testing/guide-context-links-2026-10-31.md)：只在 FLATLOCK / OVERLOCK 的 ACTIVESEAM 介绍段将既有词语链接到对应专页，Tech Pack 和反向入口已有，不重复堆链。所有者确认部署后，生产原始 HTML 与 390 / 1440px 浏览器均确认新链接生效，实际点击进入 HTTP 200 的目标指南；来源正文、元信息、Schema 和媒体清单与部署前一致。状态 `deployed / production-verified`，本次部署验收关闭；10-31 链接上线作为既有 Merino 观察期的来源页新增变量记录，保留原窗口。
+
+2026-10-31 已按所有者授权完成 [C06 / C08 内容更新日期修正](geo/testing/guide-content-dates-2026-10-31.md)：分别使用已有发布记录中的 10-29 / 10-30，新增独立 `Content updated`，并对齐 Article / WebPage 及两条 Page Sitemap 日期；首次发表和技术复核时间保留。PHP、本地回归及两页 390 / 1440px 检查通过。2026-11-02 所有者确认部署后，生产日期、Schema、Sitemap 及缓存刷新已全部通过，状态 `deployed / production-verified`，保留原观察窗口。
+
+同日所有者要求当天可做工作一并验收，已在同一批次追加 Tech Pack 示范入口说明：Guides Hub 卡片摘要提示已有尺寸表 / BOM 示范及 PDF，两处目录标签明确示范内容。统一包 `athletik-geo-batch-2026-10-31.zip` 的四个文件已于 2026-11-02 确认部署；[合并生产验收](geo/testing/guide-content-dates-2026-10-31.md)覆盖 7 个 URL、20 条生产 Page Sitemap 记录、PDF 及 390 / 1440px 实际跳转，全部通过。两项部署验收关闭，尚未以此判断搜索或 AI 表现。
+
+2026-10-31 后续范围更正：所有者确认控制 Instagram 与 LinkedIn，撤销此前“只做官网”的结论。官网与这两个可控账号均可纳入后续 GEO 优化和内容准备；YouTube 不在其管辖的决定保持。已同步 `AGENTS.md` 与 YouTube 关闭记录，当前官网合并部署包继续完成，不因范围更正遗漏已授权事项。
+
+## 13. 下一步优先级
+
+1. GEO ChatGPT Search 已保留 E01（M2）、批次 C 的 E02 / D03-R2（M4），以及[10-29 独立续测](geo/testing/valid-retest/batch-d-2026-10-29/README.md)的 Dot 7 条（M4）和手动 BD-01（M2）有效决定；旧 partial 不覆盖、模式与日期分开。[C06 改造示范](geo/testing/valid-retest/batch-d-2026-10-29/c06-tech-pack-demo-2026-10-29.md)与 [C08 增补](geo/testing/valid-retest/batch-d-2026-10-29/c08-guide-copy-draft-2026-10-30.md)均已通过生产验收；[Google AI Mode 11 题](geo/testing/valid-retest/google-ai-mode-2026-10-29/README.md)已采集归档。C08 已请求索引，建议 2026-11-06 复查两页抓取及索引。Bing AI Performance 本轮按所有者决定 `deferred / low-signal`，不要求追加导出。各采集模式和系统单独报告，不混算 citation、impression、session 和 recommendation。
+2. `/top-sportswear-manufacturers-china/` 的 GSC 实时测试与一次索引请求已经完成；2026-09-22 又取得 `Submitted and indexed` 快照及最后抓取时间，不再重复提交。首页、About 与 Merino 沿用原定复查窗口。
+3. 补齐 GEO-06/07/08 的公开帖子 URL、实际发布时间、Story 状态和可得七日数据；无法取得的字段明确写 `unavailable`。
+4. GEO-V2-007 已完成生产部署、技术验收、LinkedIn / Instagram 公开 URL 补录、一次 GSC 索引申请及 2026-09-28 首次七日复核。GSC 已确认规范 URL 收录；固定窗口为 18 次 Web Search 展示、0 点击。原始 LinkedIn UTM 6 sessions 已确认属于内部 QA，Instagram 无匹配行，状态改为 `seven-day-measurement-contaminated / measuring`。平台后台与人工询盘不可得，当前为 0 个已确认外部 UTM 会话；月度 GSC 生成式窗口已记录 ACTIVESEAM Guide 的 9 次页面级链接曝光，但仍没有答案提取或推荐证据。进入固定 Prompt 有效复测，不立即重写页面或重复提交。没有拉伸状态素材，因此继续不写 Athletik 实测延伸、强度或耐久声明，HSAT-K5 和国产海淮扒密缝机保持独立证据线。
+5. 七个品类页 Program Fit、About 综合段落、GEO-V2-019 与 GEO-V2-020 已上线并通过生产复核，不再立即重复修改。GEO-V2-020 已取得 GSC 已收录快照；首轮七日 GA4/UTM 原始会话已确认属于内部 QA，状态为 `seven-day-measurement-contaminated / measuring`。LinkedIn/Instagram 精确后台数据和有效询盘缺口不写成零；10 月采集已按上文完成，后续按原窗口和触发条件观察，各平台、页面与固定 Prompt 分开，不重复批量采样或把低样本变化归因到单一页面。
+6. SEO 后续统一按 [V2 Backlog 分批状态](seo/v2-backlog.md)执行：Underwear seamless／Sportswear Yoga／配件头颈模块的 Day 7 已于 11-10 补查，三页均 indexed、技术正常，效果仍低样本，精确前 28 日基线已补齐。10-08～11-04 GSC＋GA4 恢复基线也已完成，正式询盘未核验，不自动读取邮箱。下一主要效果节点为 Knitted 与 Merino 的完整 10-21～11-17 后窗，预计 11-20 起按 final 核验；FLATLOCK 入链后窗 10-24～11-20，预计 11-23 起核验。Services 11-10 仍未收录，下一常规检查不早于 12-10；Showcase 男款已申请，建议 11-17 起复查。SEO-V2-018 保持关闭部署，其他实验保留原窗口并披露 11-04 展示库入口和 11-05 Sportswear 图集共同变量，不新建近义页或无触发重写。
+7. SEO-V2-004 转为性能监控项，不再主动投入增量优化；持续监测 Page indexing、代表性 URL Crawl/HTML 响应和可用 CrUX 数据，只有达到重新触发条件才启动页面或性能改动。
+8. Promotion P0 已完成；2026-09-28 起进入 P1，使用本机私有台账持续补齐新询盘负责人、MOQ、
+   自述来源和销售阶段，并继续把平台 conversion 与人工确认询盘分开记录。
+9. Outbound 已完成私有工作区、空白线索/抑制模板和首封草案；下一步先取得 Brevo 对当前
+   一对一美国 B2B prospecting 场景的书面确认，关闭并复测 tracking pixel，再由所有者批准
+   “未回复记录最后触达后 6 个月删除或匿名化”的提案及首封正文。四项未完成前不发送。
