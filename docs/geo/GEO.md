@@ -18,7 +18,7 @@
 
 [BD-02 Sportswear 采购证据区](testing/bd02-sportswear-evidence-2026-11-16.md)与 [Asda 和 New Balance 公开记录](testing/buyer-disclosures-osh-2026-11-17.md)均已于 11-17 部署并通过普通正式网址验收，状态 `deployed / production-verified`。新名单保留 New Balance `Licensee` 范围；页面上线不等于已被 AI 引用或推荐。原 SSH 密钥恢复站点连接后完成发布，备用密钥当次仍被拒绝，Flywheel 工单 `15523783` 留待客服后续排查。所有者说明 C07 同面料比较暂时没有实物样本。C06 / C08 的到期索引复查已于 11-16 完成；10-30 LinkedIn Tech Pack 新帖的完整七日窗口为 10-31～11-06，可得数据与实际 URL 仍待补录。Bing 本轮按所有者决定暂缓，不重复催导出。
 
-11-17 [BD-02 第三方来源核查](testing/source-ready-bd02-audit-2026-11-17.md)发现 SourceReady 已有对应中国实体的公开档案；11-18 复查机器可读地址仍为 25 号，匿名响应未包含规范主站。中国站首页此前同样显示 25 号，SourceReady 将其列为参考之一，但未证明唯一来源。所有者已发送请求，并于 11-18 转发流程答复：无公开档案自助认领或编辑，公开更正需联系支持邮箱；原请求渠道、是否受理及公开更正仍待确认。Codex 未修改中国站、注册或联系平台。目录出现不等于 AI 已引用或推荐。
+11-17 [BD-02 第三方来源核查](testing/source-ready-bd02-audit-2026-11-17.md)发现 SourceReady 已有对应中国实体的公开档案；11-18 复查机器可读地址仍为 25 号，匿名响应未包含规范主站。中国站首页此前同样显示 25 号，SourceReady 将其列为参考之一，但未证明唯一来源。所有者于 11-18 转发流程答复：无公开档案自助认领或编辑，公开更正需联系支持邮箱；随后确认已发送更正邮件，平台是否受理及公开更正仍待确认。Codex 未修改中国站、注册或联系平台。目录出现不等于 AI 已引用或推荐。
 
 同日完成[功能针织面料测试选型指南机会核查](testing/performance-knit-testing-guide-opportunity-2026-11-17.md)：V2-C08 样本涉及测试标准，现有 QC、Tech Pack 和 OEM Evaluation 文章已有相关基础；候选指南拟进一步解释方法选择与报告阅读。当前仅为选题，未批准新页面、URL 或正文，也不以模拟内容冒称真实测试结果。
 
@@ -263,7 +263,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 1. **BD-02 证据补强已部署并验收。** Dot 已到期，所有者手动采集的 [D04、BD-02、C08 均已接受有效样本](testing/valid-retest/manual-2026-11-16/README.md)；[Sportswear 证据区](testing/bd02-sportswear-evidence-2026-11-16.md)已通过普通正式网址验收。C06 / C08 抓取与索引已于 11-16 复核，结果见[记录](testing/geo-evidence-and-index-review-2026-11-16.md)；不把部署或内容日期当作搜索重抓日期。
 2. **买家公开证据已部署并验收。** [OS Hub 公开档案](testing/buyer-disclosures-osh-2026-11-17.md)匹配中国实体与 15 号地址；Asda 日期化数据及 New Balance 2026 Q1 Licensee Supplier List 已按批准发布到 About 和 Sportswear，不扩写为直接合同、当前订单或背书。C07 同面料实物暂缺，保持 `deferred / no-comparable-physical-sample`。
-3. **SourceReady 更正流程已获答复，公开更正待完成。** [核查与草稿](testing/source-ready-bd02-audit-2026-11-17.md)记录机器可读旧门牌、规范站入口缺失及中国站的同一旧值；所有者转发的答复称公开更正须联系支持邮箱，Entry 套餐仅编辑私有记录。原请求具体渠道、是否受理及公开更正待确认；中国站未修改，修改权限待确认。
+3. **SourceReady 更正邮件已发送，公开更正待完成。** [核查与草稿](testing/source-ready-bd02-audit-2026-11-17.md)记录机器可读旧门牌、规范站入口缺失及中国站的同一旧值；所有者转发的答复称公开更正须联系支持邮箱，Entry 套餐仅编辑私有记录。所有者确认更正邮件已发送，平台是否受理及公开更正待确认；中国站未修改，修改权限待确认。
 4. **功能针织面料测试指南为下一候选。** [机会核查](testing/performance-knit-testing-guide-opportunity-2026-11-17.md)已对照 C08 样本、既有三篇指南及标准发布方公开资料；候选目标是测试选型与报告阅读，待所有者决定后再起草并确定页面位置。
 5. **维护可控分发证据。** 10-30 LinkedIn 新帖待实际 URL，11-07 起复盘完整七日窗口；旧 GEO-06/07/08 的 URL、Story 和可得数据缺口继续按[发布日志](distribution/publishing-log.md)补录。Instagram / LinkedIn 可准备内容，但每次公开发布按授权执行，YouTube 更新已关闭。
 6. **保持测量口径。** 9 月首轮与 A/B 的 partial 不覆盖；E01、C、D、Google 独立入账。已完成两平台 10 月采集，不重新批量采样或用缺少来源的记录补齐分母。GSC 生成式展示、实际回答、GA4、正式询盘分开；Bing 本轮 deferred / low-signal。
