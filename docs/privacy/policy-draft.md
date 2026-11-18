@@ -1,15 +1,14 @@
 # Privacy Policy
 
-> **APPROVED FOR PUBLICATION — UNITED STATES FIRST LAUNCH**
+> **2026-08-04 版本已批准；2026-11-18 新增的询盘来源说明待审核和发布**
 > Business approval: **August 4, 2026**
 > Review scope: **United States first launch**
 > Effective date: **August 4, 2026**
-> Last updated: **August 4, 2026**
+> Last updated (local draft): **November 18, 2026**
 
-This approved source describes the website's confirmed data flows and current service configuration
-for the United States first launch. The internal maintenance notes at the end of this file are not
-part of the public Privacy Policy. Independent legal review remains recommended as services,
-processing practices, or target markets change.
+2026-08-04 批准版本描述美国首发时确认的数据流与服务配置；2026-11-18 关于询盘来源选填项的
+补充为本地草稿，待审核和发布。文末内部维护说明不属于公开 Privacy Policy。服务、处理方式或
+目标市场发生变化时，仍建议进行独立法律审核。
 
 ## 1. Who We Are
 
@@ -38,7 +37,8 @@ When you submit our inquiry form, we may collect:
 - company website;
 - product category of interest;
 - estimated order quantity;
-- business type; and
+- business type;
+- how you found us, if you choose to provide it; and
 - the project details and other information you include in the message field, including a link to a
   tech pack if you choose to provide one.
 
@@ -114,6 +114,7 @@ We use personal information to:
 - operate, maintain, secure, and troubleshoot the website and form;
 - prevent spam, fraud, abuse, and security incidents;
 - understand website performance and visitor interactions when the required consent has been given;
+- understand how people found our business using information they choose to provide;
 - attribute inquiries to advertising or promotional campaigns when the required consent has been
   given;
 - maintain records and establish, exercise, or defend legal claims; and
