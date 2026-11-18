@@ -235,7 +235,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 | GEO-RISK-006 | 执行边界 | UltraMerino 等站点不在本项目执行范围；`accepted-scope` | P2 | 所有者 | 本项目只记录冲突，不擅自修改、复制、设置 Canonical 或重定向；若职责改变再重新立项。 |
 | GEO-RISK-007 | 外部资料 | 旧 LinkedIn 管理权丢失；`accepted-residual / monitor-only` | P2 | 所有者 + 社交管理员 | 所有者确认历史内容属实且页面不再更新；当前不投入追索或修复，新内容只发当前 LinkedIn。若 AI/搜索产生新的实体误判或账号找回，再重新打开。 |
 | GEO-RISK-008 | 基础设施 | `myathletik.com` 退役状态；`closed / monitoring` | P2 | 基础设施负责人 | 2026-09-30 已验证四种 host/scheme 与普通、Googlebot、OAI UA 均为 410；任一入口重新出现 200/3xx 或旧正文时重新打开。 |
-| GEO-RISK-009 | 跨站治理 | `athletik.com.cn` 持续运行带来的双站事实同步；`active-governance` | P1 | 所有者 + 两站维护者 | 不关闭、不重定向；保持其中国实体站点角色。11-17 首页仍显示旧门牌 25 号，SourceReady 的公司 JSON-LD 也显示 25 号；正确门牌为 15 号，站点修改权限及数据流向未确认。详见[来源核查](testing/source-ready-bd02-audit-2026-11-17.md)。AI 引用该站时单独记录来源归属，不把它误判为退役缓存或独立第三方背书。 |
+| GEO-RISK-009 | 跨站治理 | `athletik.com.cn` 持续运行带来的双站事实同步；`active-governance` | P1 | 所有者 + 两站维护者 | 不关闭、不重定向；保持其中国实体站点角色。11-18 首页及联系页页脚仍显示旧门牌 25 号；联系页正文已是 15 号，但 title、description 和 JSON-LD 仍保留 25 号及本项目不应公开关联的另一业务联系方式。SourceReady 的公司 JSON-LD 也显示 25 号；站点修改权限及数据流向未确认。详见[来源核查](testing/source-ready-bd02-audit-2026-11-17.md)。AI 引用该站时单独记录来源归属，不把它误判为退役缓存或独立第三方背书。 |
 
 风险台账不把 `accepted-residual` 或 `closed / monitoring` 计入当前 P0。P0 只保留会直接污染事实源、测量结论或未经授权公开声明的问题。
 
@@ -346,7 +346,7 @@ FAQ 只在页面存在真实买家问题时使用，表格和清单只在它们�
 
 测量已从“历史首轮 valid 0”推进到按独立批次接受样本及两平台逐题观察。Google 10-29 的 C07 已实际引用目标指南，BD-03 已推荐 Athletik；ChatGPT 的相关候选不等于引用，专业题推荐不等于宽泛发现稳定。旧 partial、未知地区、缺失最终URL和内部QA污染仍显式保留，不计算混合推荐率、不归因于近期部署。
 
-2026-11-17 的当前下一步是恢复 Flywheel SSH 站点会话，继续部署[已批准的新增买家公开证据](testing/buyer-disclosures-osh-2026-11-17.md)；C07 同面料实物样本暂缺，保留待后续材料到位再重启。C06 / C08 抓取复查已于 11-16 完成，LinkedIn 新帖窗口以实际可得数据记录。Bing 与 YouTube 按已确认决定暂缓/关闭；官网和可控 Instagram、LinkedIn 范围保持，不自动扩张到其他站点或外联。
+2026-11-17 的[新增买家公开证据](testing/buyer-disclosures-osh-2026-11-17.md)已部署并通过生产验收；C07 同面料实物样本暂缺，保留待后续材料到位再重启。C06 / C08 抓取复查已于 11-16 完成，LinkedIn 新帖窗口以实际可得数据记录。Bing 与 YouTube 按已确认决定暂缓/关闭；官网和可控 Instagram、LinkedIn 范围保持，不自动扩张到其他站点或外联。
 
 本轮 Finding outcome：`documentation-reconciled / source-checked`。恢复的是已有执行与证据边界，未新增 Backlog、网站改动、生产操作、外部研究或采样。
 
