@@ -1,7 +1,7 @@
 # Athletik Clothing 项目进度
 
-> 更新：2026-11-19。这里只保留跨项目现状与下一步；日期化证据和领域任务在对应工作台。
-> 原有完整进度已保存为[历史快照](archive/progress-history-2026-11-18.md)，其中的旧“当前状态”和待办以本页及领域工作台为准。
+> 更新：2026-11-19。这里保留跨项目最新现状、下一步及**当月（2026-11）工作流水账**；每月底将当月流水账按月归档至 `docs/archive/progress-YYYY-MM.md`。
+> 📅 **历月进度归档直达**：[2026-07](archive/progress-2026-07.md) · [2026-08](archive/progress-2026-08.md) · [2026-09](archive/progress-2026-09.md) · [2026-10](archive/progress-2026-10.md) · **2026-11（当月见下表）** · [全量合集快照](archive/progress-history-2026-11-18.md)
 
 ## 当前状态
 
@@ -18,9 +18,9 @@
 2. Knitted 完整后窗已收尾，待授权后可推进 HY254955 / HY265077 两款实物面料 Local 审核版；按原计划核查 11-20/21 Merino 固定 SERP 安排与 11-23 起 FLATLOCK→Merino 入链后窗。
 3. 其余 GEO 问题、样本和候选内容只在 [GEO 工作台](geo/GEO.md)维护；网站结构与 URL 以 [sitemap](sitemap.md) 为准。
 
-## 近期工作流水账（按日追加，严禁抹除，满月归档）
+## 2026-11 当月工作流水账（按日追加，严禁抹除，月底归档为 `archive/progress-2026-11.md`）
 
-> 2026-11-18 及更早的完整详录已原样保存在 [`docs/archive/progress-history-2026-11-18.md`](archive/progress-history-2026-11-18.md)。以下按“1 事 1 行”保留 11 月全部关键轨迹及后续每日新增工作：
+> 📅 切换月份：[2026-07](archive/progress-2026-07.md) · [2026-08](archive/progress-2026-08.md) · [2026-09](archive/progress-2026-09.md) · [2026-10](archive/progress-2026-10.md) · **2026-11（当前月）**
 
 | 日期 | 领域 | 完成事项与核心结果 | 证据 / 详录入口 |
 |---|---|---|---|
