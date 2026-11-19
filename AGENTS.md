@@ -1,350 +1,105 @@
-> This is the canonical project instruction file for Codex. Full page
-> structure and URL/SEO decisions are in `docs/sitemap.md` — read it before
-> creating or restructuring pages.
+> Canonical project instruction file for AI agents (Codex / Gemini). Full page structure and URL/SEO decisions are in [`docs/sitemap.md`](docs/sitemap.md) — read it before creating or restructuring pages.
 
 ---
 name: myathletik-website
 description: >
-  Project rules for the Athletik Clothing website on athletikapparel.com.
-  Athletik Clothing operates through the U.S. entity "Athletik Clothing Inc.",
-  the China entity "Zhangjiagang Athletik Clothing Co., Limited" as a
-  vertically integrated OEM knitwear manufacturer specializing in FLATLOCK /
-  ACTIVESEAM technical knitwear. It also uses the Beta Textiles name for
-  fabric sales (not a separate legal entity). This
-  skill encodes the site's tech stack, information architecture, URL/SEO rules,
-  brand voice, and terminology standards. Apply it on ANY task that creates or
-  edits theme code, page content, blocks, CSS, or redirects for this site.
+  Project rules for athletikapparel.com (Athletik Clothing). U.S. entity:
+  "Athletik Clothing Inc."; China entity: "Zhangjiagang Athletik Clothing Co.,
+  Limited" — vertically integrated OEM technical knitwear manufacturer
+  (FLATLOCK / ACTIVESEAM). Fabric sales also use the Beta Textiles name (not a
+  separate legal entity, publicly isolated). Apply on ANY task editing theme
+  code, content, blocks, CSS, docs, or redirects.
 ---
 
 # Athletik Clothing — Website Project Rules
 
-Read this file before writing any code, content, or block markup for this
-project. These rules exist to protect the site's existing SEO equity and to
-keep the rebuild consistent. When a task conflicts with these rules, stop and
-flag it rather than silently overriding.
+Read before writing any code, content, or markup. When a task conflicts with these rules, stop and flag it rather than silently overriding.
 
 ## 工作清单与交付核对
 
-- 所有者授权执行前面列出的多项工作时，按完整清单执行；不要在执行说明或委派时遗漏其中任何一项。后续指令改变范围时同步更新清单。
-- 逐项追踪完成情况；交付前对照原清单确认每项结果。未完成或受阻的项目应明确说明剩余工作及原因，不将部分完成表述为全部完成。
-- 提出下一步前先核对当前授权事项是否完成；已经承诺的决策、分析或交付不得被新的建议替代。每次回答应结合当前进度指出接下来最值得做的工作；所有者要求暂缓时遵循其安排。
-- 本轮 GEO 工作范围（所有者于 2026-10-31 后续更正）：官网、Instagram 和 LinkedIn 均纳入优化范围，所有者确认控制后两个账号；此前“只做官网”的结论已撤销。可以结合官网证据与这两个可控渠道规划和准备 GEO 内容，不把账号控制权等同于每次公开发布的授权。所有者不管理 `@athletikclothinginc` YouTube 账号，现有视频标题/描述更新方案仍停止；不要求其接管或协调该账号权限。其他站外账号、外联或第三方建档不因本次更正自动获得执行授权。
+- 获授权执行多项工作时按完整清单逐项落实并核对结果；未完成或受阻项明确说明剩余工作与原因，不将部分完成表述为全部完成。
+- 提出下一步前先核对已承诺事项；每次回答结合当前进度指出最值得做的工作，所有者要求暂缓时遵循其安排。
+- **GEO 范围（2026-10-31 更正）**：官网、当前 Instagram 和 LinkedIn 纳入优化与内容准备（每次公开发布仍需对应授权）。所有者不管理 `@athletikclothinginc` YouTube 账号，视频更新已停止，不要求接管。其他站外账号、外联或第三方建档不自动获得授权。
 
 ## 精简文档与状态维护
 
-- `docs/progress.md` 只保留跨项目现状和少量下一步；GEO 的当前判断和行动以 `docs/geo/GEO.md` 为准，SEO 任务以 `docs/seo/v2-backlog.md` 为准。专题细节保留在一个最合适的已有位置，其他入口只给简短状态和链接。
-- 日常修改优先更新旧状态，不叠加重复时间线。仅在结果、决策、证据或回退需要时留记录；SSH 重试、缓存刷新等过程不单独写入 GEO 文档。生产变更的备份、清单与必要验收仍按部署流程执行。
-- GEO 月度摘要保持一页，区分类目页搜索、生成式 AI 链接展示、各平台实际回答和业务确认询盘；未知或未取得的数据不写成零。小样本只描述实际观察，不强制计算精细比率或结论。
-- 固定提示词和历史样本原文不改写；按需归档历史内容，并明确历史状态不能自动视为当前事实。不为凑齐文档而新建空月报、平行 Backlog、重复报告或四格式文件。
-- 文档精简不自动改变既有采样频率、有效性决定、SEO 数据门槛或已约定观察窗口；需要调整时结合任务与所有者指示另行决定。
+- **唯一入口**：`docs/progress.md` 只留跨项目现状与少量下一步；GEO 以 `docs/geo/GEO.md` 为准；SEO 以 `docs/seo/v2-backlog.md` 为准；历史归档统一放入 `docs/archive/`。专题细节只留在一处，其他入口给简短状态与链接。
+- **三级记录制（控增量）**：
+  - **L1 微改**（少量文案/单条内链/样式微调/无异常只读复查）：**不新建独立 `.md`**；靠清晰的 `git commit` 说明 + 在领域工作台更新 1 行状态。
+  - **L2 常规上线/专题诊断**（新页面、新模块、批量媒体、专题审计）：最多 1 份 **≤ 40 行的单页简报**（改了什么 / 部署清单 / 验收结果与异常 / 观察窗口）。
+  - **L3 月度/周期复盘**：一页表格封顶（核心数据 + 1 句结论 + 1 个下一步）。
+- **通用免责默认生效**：除明确标注已验证的事项外，所有内部记录**默认**不主张因果归因、不覆盖未测页面/地区、不将未返回数据视为零、不代表已复验真实表单送达或搜索引擎已重抓。单次文档**只写特例与异常**，不再反复默写通用免责段。
+- **过程与历史边界**：日常修改优先覆盖旧状态，不叠加重复时间线；SSH 重试、缓存刷新等过程不写入 GEO 文档（部署备份、清单与必要验收仍按流程执行）。固定提示词与历史样本原文不改写；归档内容不自动视为当前事实；不新建空月报、平行 Backlog、重复报告或四格式文件。文档精简不改变既有采样频率、有效性决定、SEO 门槛或观察窗口。
 
-## 1. Tech stack (this is a CODE-FIRST project)
+## 1. Tech stack (CODE-FIRST project)
 
-This site is rebuilt and maintained as a **code project**, not a visual
-page-builder site. Codex is expected to do substantial work in
-the theme code. Day-to-day layout/structure changes happen in code; only
-routine text edits happen in the block editor.
-
-- **Platform:** WordPress 7.0，生产托管于 Flywheel，使用 LocalWP 开发和本地审核；
-  获准上线的版本由 Codex 经专用 SSH 部署。GoDaddy 不在当前托管、邮件或部署体系内。
-- **Parent theme:** **GeneratePress** (lightweight, developer-oriented, clean
-  hook system, strong Core Web Vitals). Do NOT edit the parent theme.
-- **All custom work lives in the child theme `myathletik-child`:**
-  ```
-  myathletik-child/
-    ├── style.css        ← all custom styles
-    ├── functions.php    ← enqueue, custom functions, block registration
-    ├── templates/       ← page templates / template parts
-    └── assets/          ← js, fonts, .gitkeep (NOT images — see §1.6)
-  ```
-- **No Kadence, no Spectra, no other page-builder plugin.** (Previous plan
-  assumed Kadence + Spectra; that is REVERSED — this is now a code-first build.)
-- **No heavy CSS framework** (no Bootstrap/Tailwind). Write clean, scoped,
-  commented CSS in the child theme. Use CSS custom properties (variables) for
-  the design tokens (colors, spacing, type scale) defined once at `:root`.
-- **No build step** unless explicitly introduced. Plain PHP templates + CSS +
-  light vanilla JS. Server-rendered WordPress, not a SPA.
-- **Version control: Git.** The child theme is a git repo. Every AI-made change
-  is reviewable as a diff and revertable. Commit in small, logical units.
+- **Platform:** WordPress 7.0 on Flywheel (production); LocalWP (Windows) for development & local review. GoDaddy is NOT in current hosting, email, or deployment.
+- **Theme:** GeneratePress parent (DO NOT edit). All custom code lives in child theme `myathletik-child/` (`style.css`, `functions.php`, `templates/`, `template-parts/`, `inc/`, `assets/` for JS/fonts only — NOT images, see §1.6).
+- **Stack constraints:** No page builders (no Kadence/Spectra), no Bootstrap/Tailwind, no build step unless explicitly introduced. Plain PHP + scoped CSS using `:root` `--ma-*` variables + light vanilla JS. Server-rendered WordPress.
+- **Git:** The child theme is a Git repo. Commit in small, logical, reviewable units.
 
 ### 本地审核与生产部署
-- Develop on **LocalWP** (Windows). Site files live at
-  `…\Local Sites\<site>\app\public\`; child theme at
-  `wp-content\themes\myathletik-child\`.
-- Open the **child theme folder** in VS Code so Codex operates
-  directly on these files.
-- 所有者于 2026-11-04 确认：**LocalWP 用于开发和本地页面审核；确认上线后，由 Codex 通过专用 SSH 直接部署生产并验收。** 默认流程为 Local 审核 → 所有者确认上线 → Codex 部署 → 生产验收与记录。
-- 部署前读取 [`docs/operations/flywheel-ssh-deployment.md`](docs/operations/flywheel-ssh-deployment.md)。同一批改动已有上线授权时继续完成，不重复询问，不要求所有者手动传文件或执行服务器命令；仍标记“暂不上线”或未批准的草稿保留在 Local。
-- 网站修改完成后主动列出代码、媒体和必要数据库操作的部署清单；部署后明确实际上传文件、验收结果及未完成项。按清单备份与传输，不整库覆盖生产，不覆盖用户未批准的改动。
-- Git 提交／推送与生产部署分别核实。所有者于 2026-11-06 更正：日常修改验证后先保留本地提交，积累一批后再阶段性统一推送；取消每次提交后立即推送的要求，不为每次提交单独发起推送确认，不自行设定固定周期或自动任务。需要推送时按当批范围执行，核对全部待推送提交；此前明确仅保留本地的内容，不得随其他提交自动带入远程。推送失败明确报告，保留用户已有修改，不执行 `git reset --hard`。
+- 默认流程：**LocalWP 开发与本地审核 → 所有者确认上线 → 通过专用 SSH 直接部署生产并验收**（2026-11-04 确认）。
+- 部署前读 [`docs/operations/flywheel-ssh-deployment.md`](docs/operations/flywheel-ssh-deployment.md)。已有上线授权的同一批改动直接完成，不要求所有者手动传文件或执行服务器命令；未批准草稿留在 Local。
+- 完成后列出代码、媒体与必要数据库部署清单，按清单备份与传输，不整库覆盖生产，不覆盖未批准改动；部署后明确实际上传文件、验收结果及未完成项。
+- **Git 提交与推送（2026-11-06 更正）**：日常验证后保留本地提交，积累一批再阶段性统一推送；不为每次提交单独发起推送确认，不设自动推送任务。推送前核对范围，仅限本地的内容不得带入远程；失败如实报告，保留用户修改，严禁 `git reset --hard`。
 
 ### 内部 Markdown 文档语言
-
-- 新建或实质性改写的内部 `.md` 文档默认使用**简体中文**，包括标题、说明、状态、计划、审计结论和操作记录。
-- 下列内容保留原生英文，不做机械翻译：正式网站英文文案、已核准的 title / H1 / meta、固定测试提示词、原始引文或来源摘录、代码/API/Schema/事件名、URL、路径、命令、字段名、法律实体名与其他专有名称。
-- 用户明确要求英文，或文档本身就是待上线的英文正文/英文源材料时，继续使用英文。
-- 既有英文历史资料不要求仅为语言统一而批量翻译；但以后更新内部叙述时，新增内容应使用中文。
-- 本规则只适用于内部项目文档；网站对外文案仍按第 5 节使用面向北美和欧洲 B2B 买家的英文。
+- 新建或实质性改写的内部 `.md` 默认使用**简体中文**；正式网站英文文案、已核准 Title/H1/Meta、固定提示词、原始引文、代码/API/Schema/事件名、URL、路径、命令、字段名与专有名称保留原生英文。
+- 网站对外文案仍按 §5 使用面向北美/欧洲 B2B 买家的英文。
 
 ## 1.6 Image storage — images live in uploads, NOT in the theme/git repo
 
-> **READ THIS BEFORE TOUCHING ANY IMAGE.** This is the #1 source of bugs
-> for agents new to this project. The image pipeline is non-obvious and
-> putting a file in the wrong place will silently produce a 404.
+> **READ BEFORE TOUCHING ANY IMAGE.** Putting an image inside the theme folder causes a guaranteed 404.
 
-**As of 2026-07-09, all images were migrated OUT of the theme directory and
-OUT of the git repo.** Reasons: the repo had grown to 259 MB of image blobs;
-git history was rewritten to strip them (`.git` is now <1 MB). Images are no
-longer version-controlled — they are bulk assets, not code.
-
-### Where images physically live
-
-```
-app/public/wp-content/uploads/myathletik-theme/assets/images/<category>/
-```
-
-The on-disk directory tree is **identical** to the old theme-relative layout
-(`sportswear/`, `production/`, `audit&certificates/`, `主图/`, `辅图/`,
-`brand-partner/`, etc.) — only the root changed from the theme to uploads.
-Existing categories include:
-
-| Folder | Contents |
-|--------|----------|
-| `sportswear/` `underwear/` `outdoor clothing/` `merino wool product/` `silkwear/` `knitted fabrics/` `sports accessories/` | Product photos per category |
-| `production/` | Factory / workshop / machinery photos |
-| `主图/` `辅图/` | Homepage hero & supporting visuals (Chinese folder names, URL-encoded in code) |
-| `audit&certificates/` `sustainable/` | Certification badges, sustainability material swatches |
-| `brand-partner/` | Client logo wall — **scanned at runtime by `client-logos.php`** (do not rename) |
-
-### The single rule: put images in uploads, NEVER in the theme
-
-- **Any new or regenerated image goes into the matching `uploads/.../images/<category>/` folder.** Period.
-- **Do NOT put images in `themes/myathletik-child/assets/images/`.** That folder is `.gitignore`d (only a `.gitkeep` is tracked) and, critically, images placed there **will not load** — see the URL-rewrite mechanism below. The theme folder stays empty.
-- Use ASCII filenames (lowercase, hyphenated, e.g. `flatlock-detail-01.jpg`). Chinese/space/uppercase names work but invite URL-encoding bugs; prefer ASCII for new files.
-
-### How URLs work — why a file in the theme folder 404s
-
-Code references images using the theme-relative path, exactly as before:
-```php
-$image = get_stylesheet_directory_uri() . '/assets/images/sportswear/photo.jpg';
-```
-This emits a URL pointing at the **theme** directory. But `functions.php`
-registers an output buffer (`myathletik_start_image_url_buffer`, hooked on
-`template_redirect`) that rewrites every `…/themes/myathletik-child/assets/images/…`
-URL in the final HTML to `…/uploads/myathletik-theme/assets/images/…`. So:
-
-- File in uploads → URL rewritten to uploads → **loads ✓**
-- File in theme → URL rewritten to uploads (where it doesn't exist) → **404 ✗**
-
-Therefore the **code path never changes** — keep writing
-`get_stylesheet_directory_uri() . '/assets/images/…'`. The buffer handles
-the redirect. The only file you must not edit blindly is the buffer itself
-or the `myathletik_images_uri()` / `myathletik_images_dir()` helpers in
-`functions.php`.
-
-### The two helpers in functions.php
-
-For the rare case where code needs the real location (not a rewritten URL):
-- **`myathletik_images_uri()`** → public URL to uploads image dir (for building `<img src>`).
-- **`myathletik_images_dir()`** → filesystem path to uploads image dir (for `glob()`/`scandir()`).
-  Used by `template-parts/home/client-logos.php` to scan the brand logo folder.
-
-For normal `<img>` output, keep using `get_stylesheet_directory_uri()` and let the buffer rewrite it — no need to call the helpers.
-
-### Deploying images (uploads is not in git)
-
-图片与视频位于 Git 之外，`git push` 不会上传媒体。生产发布时由 Codex 按批准清单单独传输
-`uploads/myathletik-theme/` 下本轮新增或替换的文件；保留其他媒体，不默认同步整个目录。
-实际传输、备份与验收遵循[SSH 部署流程](docs/operations/flywheel-ssh-deployment.md)。
+- **唯一物理路径**：`app/public/wp-content/uploads/myathletik-theme/assets/images/<category>/`（子目录含 `sportswear/`、`underwear/`、`outdoor clothing/`、`merino wool product/`、`silkwear/`、`knitted fabrics/`、`sports accessories/`、`production/`、`主图/`、`辅图/`、`audit&certificates/`、`sustainable/`、`brand-partner/` 等）。`brand-partner/` 由 `client-logos.php` 运行时扫描，不得改名。
+- **严禁放入主题目录**：`themes/myathletik-child/assets/images/` 仅保留 `.gitkeep`（已被 `.gitignore`）。新文件优先使用小写 ASCII 连字符命名。
+- **URL 改写机制**：PHP 代码继续写 `get_stylesheet_directory_uri() . '/assets/images/...'`，`functions.php` 中的 `myathletik_start_image_url_buffer`（`template_redirect`）会自动将其改写为 `uploads/myathletik-theme/assets/images/...`。切勿盲改缓冲函数或 `myathletik_images_uri()` / `myathletik_images_dir()`（仅在需要真实路径做 `glob()`/`scandir()` 时调用）。
+- **媒体部署**：uploads 不在 Git 中，生产发布时按批准清单通过 SSH 单独上传新增或替换文件，不同步整个目录。
 
 ## 2. Information architecture
 
-The rebuild reorganizes the site around search intent. Target structure:
+- **Home** & **Products hub**：首页 `/#ma-home-categories-title` 链接 7 个现有品类页（Knitted Fabrics、Sports Accessories、Outdoor Clothing、Sportswear、Underwear、Merino Wool Apparel、Silk Wear）；当前阶段不建 `/products/`，不新增近义或细分运动品类页。
+- **Product Showcase & Technical Guides**：按 [`docs/sitemap.md`](docs/sitemap.md) 维护现有展示库与技术指南。
+- **Capabilities / Services**：不单建 `/production/`、`/factory/`、`/equipments/` 或 4 个服务子页；能力在首页与品类页呈现，流程统一在 `/services/` 单页。
+- **Sustainability / About / Contact**：`/sustainability/` 拼写已修正；`/about-us/` 不公开工厂数量或分包；`/contact/` 表单用于项目匹配评估，不因首批数量低于标准 MOQ 自动筛除客户。
 
-- **Home**
-- **Products hub:** the homepage product section at
-  `/#ma-home-categories-title` links to the category landing pages. A separate
-  `/products/` page is not built in the current phase. Keep the EXISTING
-  categories (no new sport-specific categories added at this stage):
-  - Knitted Fabrics
-  - Sports Accessories
-  - Outdoor Clothing
-  - Sportswear
-  - Underwear
-  - Merino Wool Apparel
-  - Silk Wear
-- **Capabilities / Production:** no standalone `/production/`, `/factory/`, or
-  `/equipments/` pages in the current phase. Capability proof lives on the
-  homepage and product category pages.
-- **Services / Process:** one `/services/` overview contains Sampling &
-  Prototyping, Bulk Production, QC, and Export & Shipping. The four originally
-  planned service sub-pages are cancelled.
-- **Sustainability:** the current `/sustainability/` slug is correct. No
-  historical redirect is implemented. The owner explicitly excluded the
-  legacy domain from redirect/migration work on 2026-08-08.
-- **About Us** → company, own production facility / vertical integration,
-  regional coverage. Do not disclose factory count or subcontracting.
-- **Contact** (with an inquiry form: product category, estimated order
-  quantity, business type, company details, and project message)
-  表单用于了解项目与订单匹配度，不仅凭首批数量低于标准 MOQ 自动筛除客户。
-
-### Positioning (drives all content decisions)
-- 主要面向采购技术针织服装的中型 B2B 品牌与批发商，优先较大订单和持续返单；
-  同时保留小客户、小单的沟通与项目评估空间，不因首批数量较小自动排除。
-- 当前 MOQ 组合口径（所有者于 2026-10-22 采纳）：**500 pieces per style** 作为标准入口；
-  定制面料每款每色通常按 **400–500 件**评估，可混码，最终结合面料最低米数、单件耗料和颜色拆分核算。
-  每款和每色条件同时满足，不将每款 500 件理解为可任意拆色，不额外统一要求每款至少 1,000 件。
-  小单可继续评估，不自动承诺降低 MOQ、任意混色或接受所有小单。
-  当前询盘技术口径与回复策略见 [`docs/marketing/inquiry-reply-playbook.md`](docs/marketing/inquiry-reply-playbook.md)。
-  Frame the site as a **technical manufacturing partner**, not
-  a startup hand-holding service. (This is the key contrast vs. competitors like
-  Hongyu Apparel, who target startups / low MOQ.)
-- Differentiators to emphasize: vertical integration, flatlock/activeseam
-  technical construction, Carbondry finishing, laser perforation, full export
-  documentation capability, own production facility, regional coverage.
+### Positioning
+- 面向北美/欧洲采购技术针织服装的中型 B2B 品牌与批发商，优先较大订单与持续返单，同时保留小客户/小单的项目评估空间。
+- **MOQ 口径（2026-10-22）**：标准入口 **500 pieces per style**；定制面料每款每色通常按 **400–500 件**评估，可混码，结合最低米数、耗料与颜色拆分核算。两条件同时满足，不理解为任意拆色，也不统一要求 1,000 件/款；小单可评估但不自动承诺降 MOQ。详口径见 [`docs/marketing/inquiry-reply-playbook.md`](docs/marketing/inquiry-reply-playbook.md)。
+- 定位为 **technical manufacturing partner**（非初创低门槛代工）；突出差异点：vertical integration、FLATLOCK / ACTIVESEAM、Carbondry、laser perforation、完整出口文件、own production facility 与区域覆盖（`North America, Europe, and Asia-Pacific`，不含俄罗斯）。
 
 ### Entity naming and relationship
+- **Public brand:** Athletik Clothing（保持品牌与法人名区分，勿用法人名静默替代品牌名）。
+- **U.S. entity:** `Athletik Clothing Inc.` — 隐私数据控制者，可公开表述为 **North America sales office**。
+- **China entity:** `Zhangjiagang Athletik Clothing Co., Limited` — 中国生产设施主体，可公开表述为 **primary manufacturer and seller**。
+- **中国生产地址门牌（2026-11-02 确认）**：中兴路 **15 号**（`No.15, Zhongxing Road, Yangshe Town`）；此前官网 25 号为误写，非搬迁，历史采样保留原文并注明更正。
+- **实体关系边界**：两 Athletik 实体属同一业务体系但运营职责不同；未获所有者明确表述前，不得写成同一法人、母子公司或自行推断签约/出口/雇佣/知识产权分工（缺项用 `【NEEDS INPUT: confirm U.S./China entity responsibility】`）。目录注册允许双主体双档案，均须保持最新口径并链向 `athletikapparel.com`。
+- **Beta Textiles (BTEXCO) 隔离规则（2026-08-18 / 08-20）**：Beta Textiles 是同一运营体系对外销售面料的名称（非独立法人），因此 `"our own fabric mill"` 属实，其资料可作为内部一方能力证据；但**公开网络严禁将 Beta Textiles（`performancefabrics.com` / `betatextiles.com`）与 Athletik 关联**（不互链、不写关联/姐妹/母子公司表述）。
+- **同系营销站**：`woolbaselayer.com`、`betatextiles.com`、`performancefabrics.com`、`ultramerino.com`、`powermerino.com`、`athletik.com.cn` 等未经明确指令不合并、不跳转、不互链。
 
-- **Public brand:** Athletik Clothing.
-- **U.S. entity name:** Athletik Clothing Inc.
-- **China entity name:** Zhangjiagang Athletik Clothing Co., Limited.
-- **中国生产地址门牌（所有者于 2026-11-02 确认）：** 中兴路 **15 号**（`No.15, Zhongxing Road, Yangshe Town`）。官网此前的 25 号为误写，不是搬迁；当前地址以 15 号为准，历史采样和来源摘录保留原文并注明更正。
-- **Fabric sales name:** Beta Textiles (BTEXCO) — **not a separate legal
-  entity**; it is an external-facing name used by the same operation for
-  fabric sales (owner clarification 2026-08-20). Therefore "our own fabric
-  mill" is an accurate public statement.
-- The owner confirmed on 2026-08-10 that both Athletik entity names belong to the same Athletik
-  business, while their operational responsibilities differ. Do not describe
-  them as one legal entity, a parent/subsidiary pair, or interchangeable legal
-  names unless the owner supplies that exact legal relationship.
-- Beta Textiles (`performancefabrics.com` / `betatextiles.com`) is the same
-  operation's fabric sales channel. Its materials may be treated as
-  first-party capability evidence. **Owner directive (2026-08-18): Beta
-  Textiles operates publicly as an independent name — do NOT publicly
-  associate Beta Textiles with Athletik** (no cross-links between the sites,
-  no shared-entity statements in public copy, no parent/subsidiary/sister
-  wording). Marketing facts and materials may be shared internally because
-  they are the same operation, but the public web must not connect them.
-- Same-group marketing sites confirmed by the owner (2026-08-18):
-  `woolbaselayer.com` (active wool base layer marketing site, same entity as
-  the main site), `betatextiles.com` and `performancefabrics.com` (Beta
-  Textiles fabric sales). They exist to widen the marketing network; do not
-  merge, redirect, or cross-link them without explicit owner instruction.
-- Public directory/profile registrations may carry BOTH entities (owner
-  decision 2026-08-18): the China entity `Zhangjiagang Athletik Clothing Co.,
-  Limited` as the primary manufacturer/seller, and the U.S. entity `Athletik
-  Clothing Inc.` as the North America sales office. Both profiles must carry
-  current messaging (no factory counts, subcontracting, or capacity claims)
-  and link to athletikapparel.com; two profiles means double the freshness
-  obligation — a stale conflicting profile is worse than none.
-- Current confirmed public roles: Athletik Clothing Inc. is the
-  U.S. entity, the website privacy data controller, and — per owner decision
-  2026-08-18 — may be presented publicly as the **North America sales
-  office**; Zhangjiagang Athletik Clothing Co., Limited is the China entity,
-  the name shown for the China production facility, and — per the same
-  decision — the **primary manufacturer and seller**. If content needs a more
-  detailed responsibility split, use `【NEEDS INPUT: confirm U.S./China
-  entity responsibility】` rather than inventing contracting, export,
-  employment, or IP roles.
-- Keep the public brand distinct from all entity names. A page may name the
-  relevant jurisdictional entity, but should not silently replace the public
-  brand with that entity name.
+## 3. URL & SEO rules (strictest section)
 
-## 3. URL & SEO rules (SEO landmines — strictest section)
+- **规范域唯一焦点**：聚焦 `https://www.athletikapparel.com/`。旧域 `myathletik.com` 已按所有者决定完全下线并返回 HTTP 410，不做跨域 301（历史映射见 [`docs/sitemap.md`](docs/sitemap.md) §8，除非重开否则不实施）。
+- **Never change a live, indexed URL without a 301 redirect.** 删除或合并任何现网页面时，必须显式输出 301 映射。
+- **URL 约定**：品类页为顶级关键词路径 `/<x>-manufacturer/`；功能/辅助页保持 `/about-us/`、`/contact/`、`/services/`、`/sustainability/` 等现有层级。
+- **单页基本面**：每页须有唯一 `<title>`、meta description、唯一 H1、合理 H2/H3 层级及描述性图片 `alt`（真实关键词，非文件名）。
 
-> **Status correction (2026-08-10): `myathletik.com` has been fully taken
-> offline without redirects by explicit owner decision; all checked public
-> endpoints and host variants return HTTP 410.** It remains out
-> of scope; focus SEO/GEO work on `https://www.athletikapparel.com/`. Any later
-> legacy-domain citation is a stale search/AI cache signal, not a reason to
-> restore or optimize the old site.
+## 4. Rebuild cleanup — completed
 
-- **Never change a live, indexed URL without a 301 redirect.** Once this
-  rebuild reaches production and pages start getting indexed, every subsequent
-  URL change throws away search equity unless redirected. The owner's explicit
-  no-redirect retirement decision for the separate legacy domain is a scoped
-  exception and is not precedent for current canonical-site URL changes.
-- **URL convention for category pages: top-level, keyword-aligned slugs**
-  (the "manufacturer" pattern, matching how B2B buyers search). Category pages
-  move OUT of the `/products/` hierarchy to the top level. Example:
-  `/products/sportswear/` → `/sportswear-manufacturer/`.
-- **Auxiliary / structural pages stay in their hierarchy** (clearer site
-  structure, these aren't primary search-traffic targets): `/production/`,
-  `/factory/`, `/equipments/`, `/about-us/`, `/contact/`, etc. keep their paths.
-
-### Legacy-domain redirects — OUT OF SCOPE (owner decision)
-
-These category pages were originally planned to move from `/products/<x>/` to
-top-level `/<x>-manufacturer/` with a 301. The legacy site now returns 410, and
-the owner decided on 2026-08-08 not to create cross-domain redirects. Do not
-inventory, implement or propose these mappings unless that decision is later
-reopened:
-
-| Candidate legacy URL                | Current canonical URL                    | Status |
-|--------------------------------------|------------------------------------------|--------|
-| `/products/knitted-fabrics/`         | `/knitted-fabrics-manufacturer/`         | NOT PLANNED |
-| `/products/sports-accessories/`      | `/sports-accessories-manufacturer/`      | NOT PLANNED |
-| `/products/outdoor-clothing/`        | `/outdoor-clothing-manufacturer/`        | NOT PLANNED |
-| `/products/sportswear/`              | `/sportswear-manufacturer/`              | NOT PLANNED |
-| `/products/underwear/`               | `/underwear-manufacturer/`               | NOT PLANNED |
-| `/products/merino-wool-apparel/`     | `/merino-wool-manufacturer/`             | NOT PLANNED |
-| `/products/silk-wear/`               | `/silk-wear-manufacturer/`               | NOT PLANNED |
-| `/products/`                         | `/#ma-home-categories-title` or a future hub | NOT PLANNED |
-
-- **Auxiliary-page decisions:**
-  - `/production/`, `/factory/`, `/equipments/` — not built in the current phase
-  - `/sustainabilty/` ← **misspelled.** Already corrected to `/sustainability/`
-    in this rebuild. No legacy-domain redirect is planned.
-  - `/about-us/`, `/contact/` — keep
-- Every page needs: a unique <title>, a meta description, one H1 only, logical
-  H2/H3 hierarchy, and descriptive image alt text (real keywords, not filenames).
-- When you delete or merge a page, output the 301 mapping explicitly so it can
-  be added to redirects.
-
-## 4. Rebuild cleanup checklist — completed
-
-- [x] Remove live stock photography and replace it with approved
-      factory/product/campaign visuals. Inactive fallback gallery data may
-      still contain Unsplash filenames but does not render on current pages.
-- [x] Remove leftover test/demo footer links such as `Contact_example`.
-- [x] Fix Instagram, YouTube, and WhatsApp links.
-- [x] Fix the `Sustainabilty` spelling in the live URL and navigation; no
-      historical 301 was needed.
-- [x] Regroup homepage product imagery by category and connect cards/sections
-      to the corresponding category pages.
+早期上线前清理（去库存图、清演示链接、修社媒与 `/sustainability/` 拼写、重排首页类目图）已全部完成；历史详情见 `docs/archive/progress-history-2026-11-18.md` 与 `docs/site/qa-audit-2026-07-03.md`。
 
 ## 5. Brand voice & copy rules
 
 - Language: **English**, written for North American / European B2B buyers.
-- **Agents may draft long-form body copy only when the user explicitly asks or
-  authorizes them to do so.** A scoped request to write, draft, rewrite or
-  translate specific content is authorization for that content. Without such
-  authorization, limit work to structure, blocks, code, layout,
-  headings/labels, alt text and cleanup, and use `【CONTENT: user to write】` for
-  empty prose slots. Agent-written long-form copy must be clearly treated as a
-  draft, grounded in approved facts and sources, and reviewed and approved by
-  the owner before publication.
-- Tone (for all agent-written text): technical,
-  confident, specific. Avoid startup-pitch warmth; this is a manufacturer
-  talking to professional buyers.
-- Do not invent facts, certifications, capacity numbers, or client names. If a
-  factual detail is needed and unknown, insert a `【NEEDS INPUT: ...】` placeholder
-  rather than fabricating.
-- 询盘回复的技术对齐、起草、审核与审核后提炼，使用
-  [`.agents/skills/wp-brand-voice-guard/SKILL.md`](.agents/skills/wp-brand-voice-guard/SKILL.md)。
-  所有者于 2026-10-22 要求：以后每篇询盘回复通过审核后，自动提炼新增或修正的通用事实、
-  能力边界、采购与样品条件及回复策略，更新技能及引用手册；去重，不保存客户资料或邮件全文。
-  所有者于 2026-10-23 补充：重点积累跨客户可复用的回复策略，保留必要、稳定的公司通用条款；
-  不逐封积累具体面料型号、规格、供应商采购米数、临时库存或单个项目参数，需要时按项目核实。
-  所有者于 2026-10-28 确认：首次接触的客户通常收取打样费，寄样运费包含在打样费中，
-  具体金额按项目核算；首次询盘不再默认承诺免费打样或将运费单独表述为免费，详见询盘回复手册。
-  此流程已有持续授权，无需再次询问是否更新技能；文案审核不等于发送授权。
+- **长篇正文授权**：仅在用户明确要求或授权时起草长篇正文（定向要求撰写/改写/翻译即构成授权）；否则限于结构、代码、布局、标题/标签、alt 与清理，空正文位使用 `【CONTENT: user to write】`。Agent 起草的长篇正文均视为草稿，须基于核准事实并经所有者审核后发布。
+- **Tone**：technical, confident, specific — 专业制造商对话专业买家，避免初创推销腔。
+- **Fact discipline**：严禁虚构事实、认证、产能、测试结果或客户名；未知项使用 `【NEEDS INPUT: ...】`。
+- **询盘回复与持续沉淀**：使用 [`.agents/skills/wp-brand-voice-guard/SKILL.md`](.agents/skills/wp-brand-voice-guard/SKILL.md)。每篇询盘回复经所有者确认审核通过后，**自动**提炼跨客户可复用的回复策略及稳定通用条款更新技能与手册（去重，不保存客户身份、邮件全文、单项目面料型号/库存参数）；首次接触客户通常收取含寄样运费的打样费（按项目核算，不默认承诺免费打样或单独免运费）。此更新有持续授权，无需再次询问；文案审核不等于发送授权。
 
 ## 6. Terminology — spelling consistency reference
 
-Agents may draft or translate body content only under the explicit-authorization
-rule in §5. In all authored or edited text, spell these technical terms the same
-way the user does:
+In all authored or edited text (under §5 authorization), spell these terms consistently:
 
 - FLATLOCK (flatlock seam / flatlock stitch)
 - ACTIVESEAM
@@ -360,24 +115,8 @@ way the user does:
 
 ## 7. When in doubt
 
-- Google Ads 读取或复盘只在所有者于当前对话中明确要求时运行。未来 Agent 必须先读
-  `docs/marketing/ads/google-ads-api-analysis-runbook.md`，仅使用 Google Ads MCP 只读能力；
-  不得修改预算、出价、地域、关键词、否定关键词、广告或 conversion 设置，也不得把来源未知的
-  邮件询盘归因给 Google Ads。
-- 163 邮箱只读分析只在所有者于当前对话中明确要求时运行。未来 Agent 必须先读
-  `docs/marketing/ads/163-mail-inquiry-analysis-runbook.md` 的“Agent 接手与获取步骤”；所有者于
-  2026-10-30 授权在处理获准读取的邮件时按任务需要直接查看附件，无需逐份询问。不得要求
-  所有者在聊天中粘贴授权码，不得主动读取 Sent，真实联系人、邮件内容和附件不得进入 Git。
-- **Adding/swapping/regenerating ANY image → re-read §1.6 first.** Images go
-  in `uploads/myathletik-theme/assets/images/`, NOT the theme folder. Code
-  paths stay theme-relative; the output buffer rewrites them. Putting a file
-  in the theme folder = guaranteed 404.
-- Structural/IA changes, URL changes, or anything touching SEO → pause and ask.
-- Pure content additions to an existing page → proceed, follow §5 and §6.
-- New custom code → child theme `myathletik-child` only; never the GeneratePress
-  parent, core, or plugins. Write clean commented PHP/CSS, use CSS variables for
-  tokens, commit as a reviewable git diff.
-- Generating multiple pages → produce them from a shared template part so
-  structure and heading hierarchy stay consistent across pages.
-- Prefer small, reviewable changes over large sweeping rewrites (the extension
-  diff/review flow is the safety net — keep diffs digestible).
+- **Google Ads**：仅在当前对话明确要求时运行；先读 `docs/marketing/ads/google-ads-api-analysis-runbook.md`，仅只读 MCP，不得改广告设置或把未知来源询盘归因给 Google Ads。
+- **163 邮箱**：仅在当前对话明确要求时运行；先读 `docs/marketing/ads/163-mail-inquiry-analysis-runbook.md`。获准读取邮件时可直接按需查看附件（2026-10-30 授权）；不得索要授权码、不得主动读 Sent，真实联系人/邮件/附件严禁进 Git。
+- **图片操作**：先复读 §1.6；放 `uploads/myathletik-theme/assets/images/`，不放主题目录。
+- **IA / URL / SEO 结构变动**：先停下确认；现有页面的合规内容补充按 §5–§6 执行。
+- **代码边界**：只改 `myathletik-child`，不动 GeneratePress 父主题、WP 核心或插件；多页共用 template part 保持结构与标题层级一致；优先小步、可审核的 diff。

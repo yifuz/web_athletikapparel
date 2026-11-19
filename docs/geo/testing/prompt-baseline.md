@@ -1,7 +1,7 @@
 # GEO 固定提示词与采样条件
 
 > 当前项目状态与简明月度摘要见 [GEO 工作台](../GEO.md)。本页只保留已约定的采样条件和固定原题。
-> 原逐题答案、旧版分析、分类及完整记录均保存在[2026-11-18 历史快照](prompt-baseline-history-2026-11-18.md)；历史数据不重写、不重新判定。
+> 原逐题答案、旧版分析、分类及完整记录均保存在[2026-11-18 历史快照](../../archive/prompt-baseline-history-2026-11-18.md)；历史数据不重写、不重新判定。
 
 Baseline v1 已冻结；Baseline v2 与 Broad Discovery v1 分别保留原文和独立口径。V1-04 与 V2-D04 中的 1,000 pieces 是固定问题的历史条件，不替换当前公开的 500 pieces per style。其他有效样本和实际采集频率以已约定安排为准；本次文档整理不强制补采。
 
@@ -93,6 +93,6 @@ v1 的已知限制：V1-02 已点名域名，不能衡量自然发现；V1-05 �
 
 ## 历史结果与证据
 
-- [2026-11-18 之前的完整基线记录](prompt-baseline-history-2026-11-18.md)：原始回答、来源、批次有效性和当时结论。
+- [2026-11-18 之前的完整基线记录](../../archive/prompt-baseline-history-2026-11-18.md)：原始回答、来源、批次有效性和当时结论。
 - [2026-11-16 手动采样](valid-retest/manual-2026-11-16/README.md)：所有者确认有效的 D04、BD-02、C08 及实际证据范围。
 - [10 月 ChatGPT Search 采样](valid-retest/batch-d-2026-10-29/README.md)与 [Google AI Mode 采样](valid-retest/google-ai-mode-2026-10-29/README.md)：分别保存，不合并为跨平台推荐率。

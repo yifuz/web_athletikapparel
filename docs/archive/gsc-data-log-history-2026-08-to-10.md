@@ -1,0 +1,937 @@
+# GSC / GA4 / 询盘数据历史归档（2026-08 至 2026-10）
+
+> 本文件保存 2026-08-15 至 2026-10-30 的完整历史数据快照（原样归档，不改写历史数据）。
+> 当前活跃记录见 [docs/seo/gsc-data-log.md](../seo/gsc-data-log.md)。
+
+## 2026-10-30：C06 / C08 更新后的抓取与索引核对
+
+只读 URL Inspection 两页均成功。C06 当前为 `PASS / Submitted and indexed`，最后抓取 `2026-10-16T13:23:03Z`；C08 当前为 `NEUTRAL / Crawled - currently not indexed`，最后抓取 `2026-10-16T20:05:52Z`。两页均允许抓取和索引、fetch 成功，Google / User Canonical 一致；最后抓取均早于 10-29 / 10-30 的本次内容生产验收日期。
+
+当前生产 C08 的 HTTP、robots、Canonical、Sitemap 与内链定向检查未见明显阻断；不能以此确定未收录原因，也不能归因于尚无更新后抓取记录的新增两段。下一项优先为 C08 网页版实时测试，通过后针对本次更新申请一次索引；本次未执行该申请。完整结果、证据路径和边界见 [GEO 抓取与索引快照](../geo/testing/c06-c08-crawl-status-2026-10-30.md)。
+
+随后所有者确认 C08 已请求编入索引，日期记录为 2026-10-30，操作状态 `indexing-requested / owner-confirmed`；精确时刻及实时测试读数未单独记录。本条申请不改变上述请求前 API 索引快照。建议 2026-11-06 复查索引状态、最后抓取时间和 Canonical，不重复提交，不把申请当作已经收录。
+
+## 2026-10-27：Knitted Fabrics 结构模块 Day 7
+
+目标为 `/knitted-fabrics-manufacturer/`，归入 `SEO-V2-005-KF-STRUCTURE-20261020`。本轮只读复查，没有改站、请求索引、付费 SERP 或邮箱读取。原部署 Day 0 为 10-20，完整 28 天后窗仍为 **2026-10-21～11-17**，不因短期波动改窗。
+
+### 索引及 final 日期闸门
+
+- URL Inspection 当前为 **`PASS / Submitted and indexed`**，robots / indexing 均允许、fetch 成功、Google / User Canonical 均为目标规范 URL，`crawledAs=MOBILE`。
+- 最后抓取为 **`2026-10-21T19:26:22Z`（北京时间 10-22 03:26:22）**，晚于本批部署日；相比 Day 0 的 10-19 抓取快照已更新。它证明部署后重新抓取，API 不提供本次 Google 存储 HTML，不能断言 Google 收到的新模块逐字内容。
+- CLI 0.2.36；全部搜索请求为 `sc-domain:athletikapparel.com`、`type=web`、精确 Page 过滤、`rowLimit=25000`。除日期探测对照外均为 `dataState=final`。
+- 对全属性 10-01～10-26 的 Date 控制请求，`all` 返回 26 日，`final` 只返回连续 10-01～10-24 的 24 日；目标页 final Date 同样只到 10-24，包括明确返回的 10-17 零值行。本次把 **10-24 作为已验证的最新 final 边界**；10-25 / 26 仅在 all 中出现，不混入效果比较。
+- 排除 Day 0 后只有 **10-21～10-24 四个完整 final 日**。`measure-change` 的方向判断至少要求前后各七个 final 日，因此本轮不强行运行七日效果 verdict，用原始精确 URL 请求保存短窗观察；数据状态为 `partial / not-enough-data`，不是零变化或改动成功 / 失败。
+
+### 页面窗口与每日观察
+
+| 用途 | 日期 | Clicks | Impressions | CTR | Average position |
+|---|---|---:|---:|---:|---:|
+| 原冻结 28 日前窗（历史值，不刷新覆盖） | 09-20～10-17 | 1 | 84 | 1.19% | 13.63 |
+| 当前 final 28 日滚动观察 | 09-27～10-24 | 0 | 132 | 0% | 12.89 |
+| 部署前四个 GSC 日期 | 10-16～10-19 | 0 | 44 | 0% | 6.77 |
+| 排除部署日后的四个 final 日期 | 10-21～10-24 | 0 | 6 | 0% | 10.00 |
+
+以上当前 Page 请求各返回一行，均未触及行数上限。滚动 28 日与冻结基线重叠 21 天，且包含大量部署前数据，不能把 84 → 132 作为本次改动收益；四日短窗也不能把 44 → 6 当作失败或立即回滚证据。页面 average position 不是目标词固定排名，查询 / 国家 / 设备混合也会改变该值。
+
+目标页 Date 行中，10-18 / 19 / 20 分别为 **12 / 29 / 17 impressions**；10-21 / 22 / 23 / 24 为 **1 / 2 / 1 / 2**，上述七日 clicks 均为 0。按预先固定的部署日期口径，18～19 日尖峰不能归为 20 日新增模块收益；GSC 日历和所有者部署日记录不提供精确分钟对齐，不作跨时区的逐时归因。当前未证明尖峰持续，也未证明页面发生技术回归。
+
+### 最新 28 日全部保留 Query
+
+精确 URL 的 `dimensions=[query,page]` 返回 9 行、19 impressions / 0 clicks，无行数截断；只覆盖 Page 132 impressions 中的 19，不回填其余 113。
+
+| Query | Clicks | Impressions | Average position | 处置 |
+|---|---:|---:|---:|---|
+| breathable knitted fabric supplier | 0 | 1 | 49 | 固定商业词 |
+| custom knit fabric oem | 0 | 1 | 49 | 固定商业词 |
+| functional knit fabrics manufacturers | 0 | 5 | 19 | 固定商业词 |
+| functional knitted fabrics factory | 0 | 2 | 24 | 固定商业词 |
+| knitted fabric manufacturer | 0 | 4 | 33.5 | 固定商业词 |
+| performance knit fabric oem | 0 | 1 | 26 | 固定商业词 |
+| performance knit supplier | 0 | 1 | 27 | 固定商业词 |
+| uk technical fabric suppliers stretch wool performance knit garment construction | 0 | 2 | 34.5 | 相关但含英国本地限定，不定位成英国工厂 |
+| www.athletikapparel.com | 0 | 2 | 14 | 网址词，不计非品牌商业簇 |
+
+固定七词合计 **15 impressions / 0 clicks**；加上英国长查询为 17 次相关非网址曝光。查询方向仍是商业面料供货，不足以解释页面全部发现来源。未返回 single jersey / interlock / rib / jacquard 新查询，记为 `not-returned`，不是零需求或覆盖无效。
+
+四日后窗只返回 `functional knitted fabrics factory` 1 impression / position 21，以及网址词 1 / 14；均 0 click，共覆盖 Page 6 impressions 中的 2。前四日 Query 无保留行，但 Page 有 44 impressions，不把缺行写成无搜索。
+
+### 市场分布限制
+
+- 当前 28 日 `dimensions=[country,page]` 返回四行：US 15 impressions / position 27.4、GB 2 / 34.5、Israel 1 / 26、Türkiye 1 / 19，均 0 click；合计仅 19，不与 Page 132 闭合。
+- 为排除组合维度选择的影响，同窗、同精确 URL 另做 `dimensions=[country]` 控制，仍为同四行 / 19。保持 **`partial / non-reconciled`**，不能断言 132 次曝光主要来自美国，也不能把 Canada / 其他欧洲国家缺行写成零。
+- 四日后窗 Country × Page 仅返回 US 2 impressions / position 17.5，与 Page 6 也不闭合。缺口原因未证实；Query 匿名化与其他维度合计差异分开记录，不把所有差额统一归因为匿名化。
+
+### 技术、Finding 与决策
+
+单页 `audit-page` action view 返回 0 Finding、0 issue / recommendation，保留 coverage unknown 及过滤 1 个非 HTTP 链接的 warning，不扩大为全站无缺陷。直接生产检查 HTTP 200、允许索引、自引用 Canonical、单一 H1，四卡 / 十二组定义与五图均正常；360 / 1440px 无横向溢出。与 10-23 本地快照规范化 origin 后，原正文、链接、媒体、Title / Meta / H1 和 Schema 一致；同日早间七品类审计与 Sitemap 证据仍作明确日期的补充，不冒称新全站 Crawl。
+
+首次浏览器捕获既有 Turnstile async/defer 间歇报错；仅一次独立新会话复查未再出现 pageerror，表单一份、无可见错误，但 1.5 秒时未见 `cf-turnstile-response` 字段，故不把它写成验证码或提交链路通过。延续 `SEO-KF-QA-TURNSTILE-20261020 / review / Info / no-change / monitor-only`；实际提交影响 `unverified`，未发测试询盘。若真实提交异常或独立会话可稳定复现并影响初始化，再进入专门诊断。
+
+本次最终为 **`no-change / keep-measuring / not-enough-data`**：关闭本模块 Day 7 技术与抓取检查，保留现有正文、URL、Title、Meta、H1 和图片，不新增 Backlog、不换关键词、不做 CTR 实验。Day 28 日历节点 **11-17**，正式后窗等 final 覆盖后预计 **11-20 起**核验；原批次 11-30 与本模块 2027-01-18 Day 90 均不变。没有读取 GA4 或询盘，不给获客效果结论。
+
+原始 API 结果、生产 QA 和截图保存在 Git 忽略的 `.chrome-check/knitted-fabrics-day7-*`；完整部署及本次复查见 [Change Card](implementation/change-cards/seo-v2-005-knitted-fabric-structures-2026-10-20.md)。本轮无需部署网站文件。
+
+## 2026-10-23：Merino 商业查询固定监测 V1
+
+所有者决定先执行商业词固定观察，产品开发样例与行业引用分别由所有者继续选材 / 关注，不实施页面改动。本次归入 SEO-V2-005，固定 `merino wool apparel manufacturer`、`merino wool clothing manufacturer`、`merino wool base layer manufacturer`、`merino wool underwear manufacturer` 四个精确查询，US / GB / CA、English、Google Desktop、Top 50，共 12 个独立单元。本机 `merino-commercial-core-v1` 查询组已保存并回读；未开启后台自动抓取、付费定时器或提醒。
+
+### GSC 基线
+
+- `sc-domain:athletikapparel.com`，`type=web`、`dataState=final`，窗口 2026-09-23～10-20；全站 Date 返回连续 28 个 final 日期。确认所选窗口覆盖，不宣称 10-20 为最新 final 日。
+- 目标规范 URL 的精确 Page 为 **4 clicks / 177 impressions / CTR 2.26% / average position 6.5593**。这是所有国家 / 设备的页面数据，不是某个词的固定排名。
+- Query × Page 返回 5 行、0 clicks / 13 impressions：`blend` 1 / position 2、`i want blanks` 1 / 5、`merino wool clothing manufacturers` 1 / 10、`stretch performance base layers oem` 1 / 17、网址词 9 / 9.7778。四个固定精确查询均 `not-returned`，不是零曝光；不把复数变体混入单数固定词，也不猜测四次页面点击来自哪个查询。
+- Country、Country × Device、Query × Page × Country × Device 分别返回 3 / 4 / 5 行，各只有 13 impressions / 0 clicks；国家单维控制也不与 Page 177 impressions / 4 clicks 闭合，原因未证实。细分覆盖保持 `partial / non-reconciled`，不用于宣称 US / GB / CA 增长或零流量，不回填差额。Query 受匿名化限制；不同维度的缺口不能全部机械归因于同一原因。
+- 首次 GSC 探测 `fetch failed`，同请求只重试一次后成功；没有修改 OAuth 或代理持久设置。最终目标页五种维度查询均返回数据，无行数上限截断。
+
+### SERP 补采与历史边界
+
+今天只补采此前缺失的 apparel 三市场：US 于 `2026-10-23T05:43:58Z` 返回完整 50 条自然结果，目标 Merino URL 为 **organic rankGroup 28 / rankAbsolute 32 / page 3**，task ID `10230543-2417-0139-0000-d677d4911e48`；GB / CA 均为 provider 15 秒超时，排名留空。1/3 今日快照有效，不能声称三市场完整；也不能把此前 apparel 查询失败写成从“无排名”升至 28。
+
+10-20 的 clothing 三地与 underwear US / CA 共五组成功 Top 50 未出现记录仅作为历史锚点，保留原日期，不冒充今日排名。包含今天一个成功单元后，固定 12 单元的“最近一次记录”为 6 个成功快照、6 个 unavailable，仍为 `baseline-partial`。本次没有重复购买那五组历史快照，没有更改 provider 限额。
+
+### 后续节奏与处置
+
+下次 GSC 周度观察为 **2026-10-30**。首个不重叠 28 天后窗预定 2026-10-21～11-17，等 final 覆盖后于预计 11-20 起核验；付费固定排名下一轮分 **11-20 / 11-21** 两天各六组执行，保留实际日期，基础估算约 USD 0.06/天，并先检查日 / 月限额、未知费用预留与账户余额。没有安装自动任务。Merino 原 2026-12-06 Day 90 不变，监测建立日不当作页面改动 Day 0。
+
+Finding outcome：`configured / baseline-partial / no-site-change`。失败单元和维度不闭合均保留为 Info / deferred，US 报告 8 个 `repeated-domain` 观测为 no-change；不改 URL、Title、Meta、H1、Schema、正文、图片或内链，不新增 Backlog 项。完整词表、历史 task ID、状态字典、预算与可复现命令见 [固定监测 V1](research/merino-commercial-monitor-v1.md)。
+
+## 2026-10-20：Knitted Fabrics 内容补强前基线
+
+本轮根据所有者的 Google 曝光/排名优先指令执行 SEO-V2-005，不处理表单默认品类。目标为 `/knitted-fabrics-manufacturer/`；采集时新内容仍为本地待审稿，随后所有者于 2026-10-20 确认生产部署。本节数据全部发生在本次部署之前，不是改动收益。
+
+### 来源与窗口
+
+- GSC `sc-domain:athletikapparel.com`，`type=web`、`dataState=final`，所有国家/设备；等长窗口为 2026-08-23～09-19 和 2026-09-20～10-17，各 28 天。
+- 同日页面维度为 0 clicks / 92 impressions / average position 27.05 → 1 / 84 / 13.63；页面平均排名不是某个商业词的固定排名，不能据此判定主词已经进第一页。
+- exact-page 的 Query × Page 复取使用 `dimensionFilterGroups` 精确 URL、`rowLimit=25000`。前窗完整返回 5 行，后窗首次网络失败、仅重试一次后完整返回 9 行，未截断；Query 仍受 GSC 匿名化限制。
+
+### 后窗全部返回行
+
+| Query | Clicks | Impressions | Average position | 本轮处置 |
+|---|---:|---:|---:|---|
+| breathable knitted fabric supplier | 0 | 1 | 49 | 固定观察词 |
+| custom knit fabric oem | 0 | 1 | 49 | 固定观察词 |
+| functional knit fabrics manufacturers | 0 | 5 | 19 | 固定观察词 |
+| functional knitted fabrics factory | 0 | 1 | 27 | 固定观察词 |
+| knitted fabric manufacturer | 0 | 4 | 33.5 | 固定观察词 |
+| performance knit fabric oem | 0 | 1 | 26 | 固定观察词 |
+| performance knit supplier | 0 | 1 | 27 | 固定观察词 |
+| uk technical fabric suppliers stretch wool performance knit garment construction | 0 | 1 | 8 | 保留原始行，不以英国本地供应身份主动定位 |
+| www.athletikapparel.com | 0 | 2 | 16 | 网址词，不计非品牌目标词簇 |
+
+8 条非网址查询合计 15 impressions；排除带 `uk` 的超长查询后，固定 7 个商业观察词为 14 impressions / 0 clicks。全部 9 行合计只有 17 impressions / 0 clicks，不能补算到页面 84 impressions / 1 click，也不能猜出未返回的点击查询。
+
+前窗 5 行为 `acetate knit fabric manufacturer` 2 impressions / position 69、`functional knitted fabrics factory` 10 / 27.2、`lightweight performance knit tops factory` 2 / 85、`performance knit fabric oem` 1 / 30、`www.athletikapparel.com` 5 / 21.2，均为 0 click。Acetate 未确认能力、knit tops 为成衣意图，不作为本页面目标。两窗 retained Query 集合不同，不以可见行的总量变化证明排名收益。
+
+### 决策
+
+US / CA 的 `functional knit fabrics manufacturers` SERP 快照与已有一方业务事实支持补足“结构—材料—应用”内容，但没有证明新增内容一定提升排名；GB 请求失败，研究不是三市场完整覆盖。此次不做 Title / Meta / H1 实验，不改 URL 或页面所有权，不建近义页。初始 outcome 为 `changed / owner-review / deployment-pending`，同日完成部署验收后转为 `changed / keep-measuring`；具体证据、风险、文件、验收和复盘见 [本次 Change Card](implementation/change-cards/seo-v2-005-knitted-fabric-structures-2026-10-20.md)。
+
+### Day 0：2026-10-20 生产部署与索引快照
+
+所有者确认三个主题文件已部署；生产原始 HTML、七品类定向审计、四种屏宽、CSS 内容一致性、五组产品图、Page Sitemap 唯一条目及首页入口均通过。没有重复请求索引，也未提交测试询盘；此为上线验收，不是曝光或排名收益。
+
+`seo-clash url-inspect` 返回 `PASS / Submitted and indexed`，`robotsTxtState=ALLOWED`、`indexingState=INDEXING_ALLOWED`、`pageFetchState=SUCCESSFUL`，Google / User Canonical 均为目标规范 URL；最后抓取 `2026-10-19T11:38:33Z`，`crawledAs=MOBILE`，早于本批部署，因此尚不能确认新模块已进入 Google 的已抓取版本。
+
+冻结前窗继续使用上面的 2026-09-20～10-17 final 数据。新模块 Day 7 为 10-27、Day 28 为 11-17、Day 90 为 2027-01-18；预定完整后窗为 2026-10-21～11-17，排除部署日，等 final 覆盖至 11-17 后再分析，预计 11-20 起读取。前后窗非紧邻，且 retained Query 低样本/匿名化限制继续保留；本次不读取新的 GA4 或邮箱数据，不用分析事件替代正式询盘真值。
+
+## 2026-10-08：GSC Generative AI 首个等长 28 天对比窗口
+
+### 来源与数据完整性
+
+- 所有者提供 GSC `效果 > 生成式 AI 功能（Beta）` XLSX；过滤器明确为 `搜索类型：网络`、`日期：2026年9月3日-2026年9月30日`。
+- 原始文件已复制到 `~/seo-reports/gsc-generative-ai/2026-09-03_2026-09-30/athletikapparel-generative-ai-2026-09-03_2026-09-30.xlsx`，大小 7,295 bytes，SHA-256 为 `0CB3BF40FCBB5F40FC6437137563BB686FD4BAD30948EA4DE4C64D6A9456518D`。
+- 日期 28 行、Page 14 行、Country 50 行、Device 3 行；Country 与 Device 均闭合到 190 Property impressions。数据接入模式为 `business_data_import (M5)`，证据为可审计原始导出；它不能替代 AI 回答样本。
+- 等长前窗 2026-08-06～09-02 从同日滚动导出的日期行提取；滚动文件的 Page/Country/Device 是整个 77 天范围聚合，因此只比较 Property 日期总量，不制造维度级前窗。
+
+### Property 与分布
+
+Property impressions 为 **27 → 190**，增加 163（+603.7%，7.04×）；有展示日期由 11/28 增至 27/28，日均由 0.96 增至 6.79。前窗与 2026-08-13～08-17 的已知日志异常重叠，当前窗又混合 Top Sportswear 与 ACTIVESEAM 两篇 Guide 上线前后日期，因此只判断 `visibility-up / attribution-unproven`，不把增量归因给某个页面或部署。
+
+Page 表为 14 个规范 URL、合计 199 次页面级链接曝光，高于 Property 的 190 次符合多页面聚合规则。主要页面为 FLATLOCK vs OVERLOCK 63、Top Sportswear 31、QC 29、首页 19、Merino 17、Underwear 12、ACTIVESEAM 9、About 6。Technical Knitwear Tech Pack 与 OEM Evaluation 没有返回行，只记为 `no returned row`，不解释为零需求、抓取失败或内容失败。
+
+Country 前五为美国 55、印度 16、英国 12、巴基斯坦 8、加拿大 7；Device 为 Desktop 130、Mobile 57、Tablet 3。国家和设备只说明链接展示分布，不代表买家身份、采购意图或转化质量。
+
+### 结论与处置
+
+本窗口确认 Google AI Overviews / AI Mode 中的规范站链接可见性显著扩大，并给出 14 个页面的 citation-surface evidence；它不提供 Query、答案原文、提取准确性、推荐位置、Clicks 或询盘。Finding outcome 为 `no-site-change / valid-retest-gsc-gate-passed`：不改 URL、Title、Meta、H1、正文、Schema 或内链；22 条有效复测记录仍全部 `planned`。详细口径、完整页面表与复测衔接见 [`GSC Generative AI 28 天测量快照`](../geo/testing/geo-measurement-snapshot-2026-10-08.md)。
+
+## 2026-10-08：2026 年 9 月自然月 GSC / GA4 / 正式询盘基线
+
+### 来源、窗口与数据状态
+
+- 窗口统一为 2026-09-01 至 2026-09-30。GSC 使用 `dataState: final`；Date 30 行、Page 21 行、Query 50 行、Country 95 行、Device 3 行，API 均无分页截断。GSC Query 仍受低量匿名化影响，因此 Property / Page 总量为完整基线，Query 明细为隐私过滤后的可见样本。
+- GA4 Property `547377703` 返回完整自然月报告，Property 时区为 `Asia/Shanghai`。GSC、GA4 与邮件分别采用各自数据源的自然日口径，不把不同时区的单次事件做逐小时强行匹配。
+- 正式询盘使用 163 邮箱只读证据：2026-09-03 至 09-23 沿用 2026-09-24 已完成人工内容复核的私有台账；2026-09-24 至 09-30 对当前 INBOX、Junk/Spam、Trash 中的 9 封新增邮件逐封复核。三类邮箱角色均可读、`parse_gaps=0`；不读取 Sent 或附件，不在 Git 保存联系人或正文。
+- `monthly-report` 的跨窗 retained segment 比较状态为 `partial`，原因是 Page / Query 行受保留与匿名化影响；本节的 9 月单窗 Date 总量、Page、Country、Device、GA4 与人工询盘复核不受该比较状态替代。
+
+### GSC 自然搜索基线
+
+全站 Web Search 为 **32 clicks / 1,280 impressions / 2.50% CTR / average position 11.75**。与 8 月的 8 / 329 / 2.43% / 23.27 相比，clicks 增加 24（+300%），impressions 增加 951（+289%），CTR 增加 0.07 个百分点；average position 数值改善 11.52。由于基数低且查询组合已变化，后两项只作为方向，不解释为所有关键词统一提升。
+
+| Device | Clicks | Impressions | CTR | Average position |
+|---|---:|---:|---:|---:|
+| Desktop | 16 | 967 | 1.65% | 13.11 |
+| Mobile | 15 | 300 | 5.00% | 7.62 |
+| Tablet | 1 | 13 | 7.69% | 6.08 |
+
+主要目标市场中，美国为 6 clicks / 432 impressions，英国为 2 / 54，加拿大为 1 / 46；三地合计 9 clicks / 532 impressions，占 Property impressions 约 41.6%。这些国家级样本仍不足以比较询盘质量或据此建立国家平行页。
+
+| Page | Clicks | Impressions | CTR | Average position |
+|---|---:|---:|---:|---:|
+| `/flatlock-vs-overlock-technical-knitwear/` | 4 | 304 | 1.32% | 7.33 |
+| `/top-sportswear-manufacturers-china/` | 4 | 185 | 2.16% | 9.69 |
+| `/merino-wool-manufacturer/` | 5 | 160 | 3.13% | 12.24 |
+| `/` | 5 | 153 | 3.27% | 7.99 |
+| `/garment-quality-control-checklist/` | 5 | 125 | 4.00% | 16.76 |
+| `/knitted-fabrics-manufacturer/` | 1 | 95 | 1.05% | 17.41 |
+| `/underwear-manufacturer/` | 3 | 90 | 3.33% | 12.33 |
+| `/about-us/` | 1 | 57 | 1.75% | 6.23 |
+
+Query API 返回 50 个可见查询，合计只有 1 click / 205 impressions，而 Property 总量为 32 / 1,280；其余点击和曝光属于匿名化缺口，不能猜词。可见非品牌信号主要为 FLATLOCK 对比词簇：`overlock vs flatlock` 24 impressions / position 8.25、`flatlock stitch vs overlock` 22 / 9.41 / 1 click、`flatlock vs overlock` 21 / 8.86、`difference between flatlock and overlock` 15 / 9.13。商业词中 `merino wool clothing manufacturer` 为 14 impressions / position 26.21，`functional knitted fabrics factory` 为 7 / 23.29，`sportswear manufacturer china` 为 6 / 28.5；均不足以单独触发 Title、Meta、H1 或页面所有权调整。
+
+### GA4 流量与事件基线
+
+全站原始值为 **54 sessions / 10 total users / 7 new users / 28 engaged sessions**；engagement rate 为 **51.85%**，average session duration 为 **663.26 seconds**，event count 为 317，key events 为 0。已知 11 个 AI Assistant sessions / 1 user 与内部 GEO 测试重叠，且其他内部 QA 无法从整月汇总中可靠剔除，因此 54 是原始分析会话，不等于 54 个外部买家访问；不生成推测性的“净外部 sessions”。
+
+| Default channel group | Sessions | Total users | Engaged sessions | Event count | Key events |
+|---|---:|---:|---:|---:|---:|
+| Organic Social | 24 | 2 | 17 | 142 | 0 |
+| AI Assistant | 11 | 1 | 10 | 83 | 0 |
+| Direct | 8 | 6 | 0 | 22 | 0 |
+| Unassigned | 8 | 1 | 0 | 61 | 0 |
+| Organic Search | 2 | 1 | 0 | 5 | 0 |
+| Paid Search | 1 | 1 | 1 | 4 | 0 |
+
+Organic Search 只有首页一行，为 2 sessions / 1 user / 0 engaged session / 5 events / 0 key events；精确 `generate_lead` 过滤返回 0 行。全站同样没有 `generate_lead`。唯一一次 `contact_whatsapp_click` 发生于 2026-09-22，渠道为 Organic Social，Landing Page 带 `fbclid`；它不是 SEO 转化，也没有业务证据证明其构成正式询盘。
+
+同窗 GSC 为 32 clicks，而 GA4 `sessionSourceMedium = google / organic` 只有 2 sessions，且只落在首页。Search Console click 与 GA4 session 的定义、归因、Cookie consent、浏览器拦截和页面停留条件本来不同，不能要求 1:1；但本月约 16:1 的差距足以把 GA4 自然搜索可观察性标记为 `partial / measurement-gap`。2026-10-08 的只读诊断已确认 Cookiebot Domain Group 授权故障，详见下方诊断记录；在修复并形成新的完整观察窗口前，不用 GA4 的 2 sessions 否定 GSC 的 32 clicks，也不把缺失部分补算成访问或询盘。
+
+与 8 月相比，全站 raw sessions 112 → 54、total users 82 → 10、engaged sessions 48 → 28；Organic Search sessions 保持 2，但 engaged sessions 1 → 0。由于 8 月包含测试/无效互动，9 月包含已确认的内部 GEO/UTM 测试，不能把全站 GA4 降幅直接解释为外部需求下降，也不能把 GSC 增长写成已转化增长。
+
+### 正式询盘真值与归因边界
+
+- 9 月人工确认的**真实/正式询盘为 6 封**；其余 23 封已复核邮件均为供应商、SEO、联系人名单、展会搭建等推销或非询盘。
+- 6 封中没有一封已经确认最终的“每款至少 500 件”数量：2 封给出了可能达到 MOQ 的范围或报价阶梯，但未承诺首单每款数量；其余 4 封数量未知或附件未读。因此记录为 **6 个真实询盘 / 0 个已确认 MOQ 合格询盘 / 6 个 qualification 未完成**，不能把后两项写成 6 个不合格询盘。
+- 来源自述为 1 封 `self_reported_web_unspecified`、5 封 `unknown`、0 封 `self_reported_google`。结合 GA4 Organic Search 0 `generate_lead`，当前是 **0 个可确认归因 Organic Search 的正式询盘**；来源未知不等于已证明不是 Google。
+- 8 月业务真值为 0 封正式/有效询盘，9 月增加到 6 封真实询盘，但来源和 MOQ qualification 均不足，不能把增长归因给 SEO、GEO、社交或某次页面改动。
+
+### Findings 与处置
+
+- `visibility-up / conversion-unproven`：GSC 曝光与点击较 8 月显著增加，且 FLATLOCK、Top Sportswear Guide、Merino、首页和 QC Guide 均超过 100 Page impressions；GA4 Organic Search 与人工询盘来源没有同步证明 SEO 转化。
+- `measurement-gap / diagnosed / external-fix-required`：GSC 32 clicks 与 GA4 2 个 `google / organic` sessions 差距过大，GA4 API 报告本身完整，但其 SEO acquisition coverage 不能视为完整。只读诊断已确认当前 Cookiebot Domain Group 未授权生产域名；修复点在 Cookiebot Manager，不在主题代码。9 月 GA4 Organic Search 继续保留为原始观测值，不作为完整 acquisition coverage。
+- `no-change / baseline-established`：本次不修改 URL、Title、Meta、H1、页面所有权，不创建近义页。FLATLOCK 可见词与现有指南任务一致，先保持；商业页可见 Query 仍低量，不用匿名 Query 猜词。
+- 月报中的内容衰减、Cannibalization、striking-distance 与 quick-win 扫描均未形成可执行候选；Google 2026 年 9 月 Spam Update 只记录时间重叠，不作因果归因。最大页面变化已通过上述 Page / Query 复核处置为 `monitoring`；当前变更日志已覆盖 9 月部署，不另造 postmortem 或 Backlog 项。
+- 下一步应把本基线用于既定 Day 28 / Day 90 页面复盘，并优先核对超过观察门槛的页面是否获得相关商业 Query 与合格询盘，而不是因 Property 总量上升继续批量扩写。
+
+### 2026-10-08：GSC / GA4 测量差距只读诊断
+
+Finding：`SEO-MEASUREMENT-001`
+
+状态：`resolved / production-verified`
+
+优先级：`P0 operational`；它不阻止 Google 抓取或排名，但会使 GA4 acquisition、Landing Page 和转化归因严重不完整，并使生产 Cookie consent 入口无法按既有文档工作。
+
+已确认的证据：
+
+- `seo-clash doctor` 的 Google 登录、GSC / GA4 只读 scope 和 GSC Property 均通过；GA4 Property `547377703` 为 `www.athletikapparel.com`，9 月 54 sessions 的 `hostName` 也全部为 `www.athletikapparel.com`。没有证据支持“读错 Property”或“流量写到 localhost / 其他域名”。
+- 生产 HTML 正常加载 Site Kit Google tag `GT-WBLS3B9D`，主题中没有第二份基础 GA4 tag；Cookiebot 使用 CBID `f81cac53-c468-4afd-9823-7adcc4839c5b` 和 Auto blocking。公开 Cookiebot 配置将 Google tag 列为 Statistics 类别 `cat:[3]`。
+- 对 Cookiebot `cc.js` 的生产域名授权请求均返回 HTTP 200，但响应正文明确报错：`athletikapparel.com` 与 `www.athletikapparel.com` 均未获该 Domain Group ID 授权。HTTP 200 只表示脚本请求成功，不表示 CMP 配置有效。
+- 新浏览器会话中 Cookiebot 横幅没有初始化，`Cookiebot.hasResponse=false`、Statistics consent 与 WP Consent API `statistics` 均为 false，没有 `_ga` Cookie，也没有 `google-analytics.com/g/collect` 请求；仅下载 `gtag.js` 不等于 GA4 已采集 page view。
+- 9 月仅有的两个 `google / organic` sessions 分别发生于 09-01 和 09-18，都是同一个 United States / Chrome / Windows / Desktop 用户，首次用户来源为 `(direct) / (none)`。它们可能来自已有同意状态或内部/返回访问，但当前没有证据把该用户确定为内部人员，因此只保留为原始值，不进一步推断。
+- GSC Query 明细仍受匿名化：可见 Query 仅解释 1 click / 205 impressions，不能用可见词或可见国家行反推其余 31 clicks。Cookiebot 故障解释 GA4 漏测机制，但不把缺失的 GSC clicks 换算成 sessions、users 或询盘。
+
+修复位置与验收标准：
+
+1. 在 Cookiebot Manager 中打开 CBID `f81cac53-c468-4afd-9823-7adcc4839c5b` 对应 Domain Group，确认账户/订阅有效，并将规范主机 `www.athletikapparel.com` 加入授权域名；同时加入裸域 `athletikapparel.com`，覆盖主机跳转前的访问。若该 CBID 属于错误 Domain Group，应改用真正包含这两个域名的 CBID，而不是在主题内绕过 CMP。
+2. 保存并发布后，复查两个 host 的 `cc.js` 响应不再包含 `not authorized`；使用无 Cookie 的普通浏览器确认首次访问能看到 Banner，页脚 Privacy Trigger 与 `Cookiebot.renew()` 能重新打开设置。
+3. 初始 / Reject all：Statistics 与 WP Consent API 保持 false，非必要 Cookie 不写入；Allow all：Statistics 与 WP Consent API 变为 true，随后首页与一个产品页出现 GA4 `page_view` / `g/collect`，并写入预期的 `_ga` Cookie。不得为补数据而绕过真实用户 consent。
+4. 用 GA4 Realtime / DebugView 做一次明确标记的内部 QA，随后从修复日期开始建立新的 28 天 GSC / GA4 / 询盘基线。9 月历史缺失不能回填，修复后的短窗也不能与完整自然月直接作同口径趋势结论。
+
+2026-10-08 同日修复验收：
+
+- Cookiebot Manager 已显示 `www.athletikapparel.com` 为 Domain Group #1 的正式 Domain；随后对相同 CBID 的实时 `cc.js` 复查确认 `www.athletikapparel.com` 与 `athletikapparel.com` 均返回完整有效配置，原 `not authorized` 错误消失。
+- 两个独立无 Cookie 浏览器会话均显示首次 Banner。初始 Statistics 与 WP Consent API 均为 false，没有 `_ga` Cookie。
+- `Allow all` 后 Preferences / Statistics / Marketing 与 WP Statistics consent 均为 true，写入 `CookieConsent`、`_ga` 与 `_ga_JV4NTPDVQB`；首页及 `/merino-wool-manufacturer/` 均向 GA4 Measurement ID `G-JV4NTPDVQB` 发送 `page_view`。
+- `Reject all` 后仅保留 `CookieConsent`，Statistics 与 WP Statistics consent 维持 false；进入 `/underwear-manufacturer/` 后仍没有 `_ga` Cookie或 GA4 `g/collect`。
+- Merino 页页脚 `Cookie Settings` 已真实点击并成功重新显示 Banner，证明现有 `data-cookie-settings` / `Cookiebot.renew()` 路径恢复。
+- 本次没有修改主题、插件、CBID、Site Kit 或 Consent Mode 代码；修复来自 Cookiebot Domain Group 外部配置生效。9 月历史漏测不能回填，从 2026-10-08 起重新累计可比较窗口。
+
+Finding outcome：`fixed / external-config / production-verified / keep`。GSC 继续作为搜索可见性主数据；GA4 从修复日起恢复为 consented-session 数据源，仍不与 GSC clicks 强求 1:1；正式询盘继续以邮箱人工真值为准。新的 28 天恢复窗口为 2026-10-08 至 2026-11-04，考虑 GSC final 数据延迟，正式复核不早于 2026-11-07。
+
+## 2026-10-08：到期 Day 28 页面复盘
+
+### 范围与数据状态
+
+- 使用 `measure-change` 按各自生产变更日起比较等长的 GSC `dataState: final` 28 天窗口，并读取同窗 GA4 Landing Page；完整窗口覆盖首页、Underwear、Knitted Fabrics、Contact、Services 与 Sportswear。
+- GSC 当前最后 final 日为 2026-10-03。Merino 可比较 27 个 final 日，Outdoor 可比较 26 个 final 日。所有者于 2026-10-08 决定接受这两个近似等长窗口并正式关闭 Day 28；下列数值仍明确标注实际天数，不表述为完整 28 天。
+- 询盘沿用同日 9 月人工真值：6 封真实询盘、0 封已确认每款达到 MOQ、0 封可确认归因 Organic Search。其中 1 封为 Merino underwear RFQ，但来源与访问页面未知，不能归因到 Merino 页面改动。
+- Targeted 生产审计覆盖 8/8 URL，全部 HTTP 200、可索引，0 failed、0 high / medium issue。返回的 `hsts_missing` 为既有 SEO-V2-014 owner-action，处置 `deferred / existing-owner-action`；Sportswear 的 `image_oversized_candidate` 属所有者已暂停的增量性能工作，处置 `deferred / monitor-only`。两项都不是本轮内容回归。
+
+### 完整 Day 28 结果
+
+| 项目 / 页面 | Before | After | GA4 Landing Page | 可见 Query 证据 | Day 28 处置 |
+|---|---:|---:|---:|---|---|
+| SEO-V2-015 首页 | 4 clicks / 73 impressions / position 4.19 | 6 / 135 / 6.98 | 43 → 26 sessions，0 conversion | After 只保留 11 个可见 impressions，均为品牌或网址词；非品牌变化不可见 | `keep / measuring`；总可见性方向正向但不能验证新定位词，Day 90 再决定 |
+| Underwear | 0 / 25 / 23.20 | 2 / 84 / 11.31 | 0 → 0 | After 仅 6 个可见 impressions，其中相关词 `stretch performance base layers oem` 只有 1 | `keep / measuring`；报告方向正向但置信度低，不改页 |
+| Knitted Fabrics | 0 / 41 / 48.56 | 1 / 90 / 16.14 | 1 → 0 | 可见 Query impressions 5 → 18；`functional knitted fabrics factory` 为 3 / position 36.33 → 7 / 23.29 | `keep / measuring`；主题匹配方向正确但仍低于单一 Query 门槛 |
+| Contact / PCD-001 | 0 / 34 / 19.50 | 0 / 53 / 36.68 | 3 sessions / 1 conversion → 0 / 0 | After 只保留网址词；页面并非搜索获客页 | `changed / measuring`；真实询盘未能与 Form ID 3 去重关联，字段完整度效果 `unavailable`，不回滚 |
+| Services / PCD-003 | 0 / 1 / 8.00 | 0 / 2 / 5.00 | 0 → 0 | Before / After 均无 retained Query | `changed / measuring`；绝对样本不足，采购流程内容保持 |
+| Sportswear / PCD-004 | 0 / 36 / 9.17 | 1 / 33 / 19.15 | 15 → 5 sessions，0 conversion | After 仅 7 个可见 impressions，6 个为网址词 | `changed / measuring`；前后合计不足 100 impressions，且后续 lookbook / 社交分发构成干扰，不归因或回滚 |
+
+GA4 数值为所有渠道 Landing Page 原始值，并包含已知内部 QA 与其他分发活动；它不等于 Organic Search 结果。页面级 Country retained rows 同样受低量过滤，不足以比较美国、加拿大或欧洲质量；市场判断继续使用完整自然月 Property Country 基线。
+
+### 近似窗口关闭的 Day 28
+
+| 页面 | 实际等长 final 日 | Before | After | Day 28 结论 |
+|---|---:|---:|---:|---|
+| Merino | 27 / 28 | 3 clicks / 43 impressions / position 23.12 | 3 / 166 / 10.78 | `keep / measuring`：曝光与页面平均排名明显改善，但 clicks 未增长、CTR 6.98% → 1.81%，可见商业 Query 未同步改善；GA4 after 7 sessions 含已确认内部测试，Merino RFQ 也无法归因。不改页面，转入 Day 90 |
+| Outdoor | 26 / 28 | 0 / 21 / 21.86 | 0 / 27 / 20.19 | `keep / measuring`（low confidence）：曝光和平均排名仅轻微改善，仍为 0 click、0 GA4 Landing Page session，可见 Query 只有 12 impressions。证据不足以证明成功，也未触发迭代或回滚；转入 Day 90 |
+
+本轮 Finding outcome：所有到期 Day 28 项均已关闭，结论为 `no-change / keep-measuring` 或既有 B 类 `changed / measuring`；未出现 `iterate` 或 `revert` 触发条件。保持所有 URL、Title、Meta、H1、Schema 与页面所有权，不新增 Backlog。Merino 与 Outdoor 的关闭是所有者接受 27 日 / 26 日近似窗口后的决策，不改变两项结论的低置信度和证据边界。
+
+## 2026-10-08：Merino Wool 阶段性检查
+
+### 覆盖与通过项
+
+- 覆盖模式为 `targeted`，仅检查 `/merino-wool-manufacturer/`。新鲜生产抓取为 HTTP 200、无重定向、robots 允许、自引用 Canonical、单一 H1；Title、Meta 与 H1 符合 `seo-tags.md` / `docs/sitemap.md`。22 张图片均有 alt，0 oversized image candidate，JSON-LD 可解析且 0 invalid block；`audit-page` 返回 0 issue / 0 recommendation。
+- GSC URL Inspection 为 `PASS / Submitted and indexed`，`INDEXING_ALLOWED / ALLOWED / SUCCESSFUL`，Google Canonical 与用户 Canonical 一致；最后抓取时间为 `2026-10-02T10:27:21Z`，晚于 9 月内容与视觉部署。该证据证明索引状态与抓取时间，不单独证明 Google 当前排名所用的每段正文版本。
+- Page Sitemap 与首页均存在该规范 URL；Merino carousel 脚本在生产 HTML 中被引用且资源返回 HTTP 200，页面未泄漏 LocalWP / localhost 地址。
+- 90 天 Cannibalization 报告覆盖 87 个 retained Query × Page 行和 64 个 Property Query group，0 个 material multi-URL candidate；没有证据支持合并、Canonical、重定向或页面所有权调整。
+- 90 天 Internal Links 报告对 retained Query 只形成 1 个候选来源页，核验后确认 Underwear 已有链接，因此 0 个 ready-to-apply missing contextual link。该结果不代表完整站内链接普查，但当前没有可执行缺口。
+
+### 搜索与转化信号
+
+- 所有者已接受的近似 Day 28 等长窗口为 27 日：3 clicks / 43 impressions / position 23.12 → 3 / 166 / 10.78；曝光增加 123（+286.05%），平均排名改善 12.34，但 clicks 不变、CTR 6.98% → 1.81%。工具因少 1 个 final 日仍标记 `partial / not-enough-data`，项目决策保持 `keep / measuring`。
+- 同窗 GA4 Landing Page 为 2 → 7 sessions、0 → 4 engaged sessions、0 conversion；after 包含已确认的内部 ChatGPT / GEO 测试，不解释为买家增长。
+- 90 天可见非品牌 Query 只有 25 impressions：`merino wool clothing manufacturer` 19 / position 25.95，复数 3 / 43.67，`wool apparel` 2 / 30，`stretch performance base layers oem` 1 / 17，合计 0 click。匿名 Query 缺口不能用这些 retained rows 反推。
+- `page-opportunities` 把 singular / plural clothing phrase 标记为 Title / H1 framing 候选，但现有 Title `Merino Wool Apparel Manufacturer` 已覆盖全部核心概念，正文也完整覆盖 clothing manufacturer 意图；目标词仍在 page two 之后且只有 19 impressions，没有可用 CTR benchmark。机械加入 exact phrase 或把 `Apparel` 改成 `Clothing` 不构成已验证实验。
+- 9 月有 1 封真实 Merino underwear RFQ，但来源与 Landing Page 未知，不能归因给本页或 Organic Search。
+
+### 处置
+
+Finding outcome：`no-change / keep-measuring`。当前没有 Critical / Warning；不修改 URL、Title、Meta、H1、正文、Schema、图片、内链或页面所有权，也不增加同义 Merino 页面。页面已经具备充分的采购决策内容，继续扩写的预期边际收益低。下一正式节点保持 2026-12-06 Day 90；只有可见商业 Query 形成稳定、可比较的排名与 CTR 假设，或出现可归因的合格询盘 / 明确范围错配，才提前重开单变量实验。
+
+Info / P3：JSON-LD `dateModified` 与 OG `updated_time` 仍为 2026-06-27，Twitter reading time 仍为 `Less than a minute`，与 9 月代码化页面更新和当前 1,184-word 抽取结果不一致。这是 WordPress 数据库字段与 code-first 正文的共享元数据来源问题，不是索引阻塞；本轮处置 `no-change / deferred`，不为单一 Merino 页面建立补丁或扩充 Backlog。
+
+## 2026-10-08：Silk Wear + Sports Accessories 联合阶段检查
+
+### 生产与索引
+
+- 两页定向生产抓取均为 HTTP 200、robots 允许、自引用 Canonical、单一 H1、0 fetch failure、0 high / medium issue；采购决策模块已进入生产 HTML，Page Sitemap 与首页均保留规范入口，未发现 LocalWP / localhost 泄漏。
+- GSC URL Inspection 均为 `PASS / Submitted and indexed`，Google Canonical 与用户 Canonical 一致。Silk Wear 最后抓取为 `2026-10-02T11:17:32Z`，Sports Accessories 为 `2026-10-02T20:02:32Z`，均晚于 9 月实施。
+- 唯一审计 Finding 是两页共同的 `hsts_missing`，属于 SEO-V2-014 既有全站基础设施项，继续 `deferred / existing-owner-action`，不记为本轮页面回归。Sports Accessories 所有者锁定的第三张原图仍在生产 HTML 中并返回 HTTP 200，现有 480 / 800 / 1200w 响应式候选保持在线。
+
+### GSC / GA4 阶段窗口
+
+历史记录没有保存精确生产时间，因此以 2026-09-09 代码实施与所有者确认部署作为观察锚点；2026-09-11 共用品类模板更新是已知干扰变量。GSC 当前最后 final 日为 2026-10-03，requested 28-day after window 只能比较 25 个等长最终日，工具统一返回 `partial / not-enough-data`。
+
+| 页面 | Before（2026-08-15～09-08） | After（2026-09-09～10-03） | GA4 Landing Page | 阶段解读 |
+|---|---:|---:|---:|---|
+| Silk Wear | 1 click / 28 impressions / 3.57% CTR / position 17.86 | 1 / 35 / 2.86% / 12.69 | 0 → 0 sessions；0 conversion | 曝光与平均排名方向改善，但点击不变、样本不足，不作正向归因 |
+| Sports Accessories | 2 / 29 / 6.90% / 7.03 | 0 / 20 / 0% / 12.40 | 0 → 0 sessions；0 conversion | 点击、曝光与平均排名方向下滑，但前后合计仅 49 impressions，不归因、不回滚 |
+
+GA4 为所有渠道 Landing Page 口径；两页的 0 session 不证明没有搜索访问，尤其是在本月已记录 GSC / GA4 measurement gap 的前提下。
+
+### 90 天 Query 与处置
+
+- Silk Wear 的 90 天 exact-URL Query 只有 2 行；唯一可审查非品牌词 `one-stop silk garment manufacturer` 为 3 impressions / 0 click / position 58。页面已覆盖 full-package OEM 与采购流程，但 3 次曝光不足以验证 `one-stop` 的意图与措辞价值，不机械加入 Title、H1 或正文。
+- Sports Accessories 只有 1 条低可执行性 exact-URL Query，0 个非品牌 Query 达到页面机会报告的审查条件；目前没有可测试的 Query / CTR 假设。
+- 联合 Finding outcome 为 `changed / keep-measuring`。两页从滞后的 `owner-review` 修正为 `deployed / production-verified / keep-measuring`；保持 URL、Title、Meta、H1、正文、Schema、图片与页面所有权，不新增近义页，也不扩充 V2 Backlog。下一正式节点为不早于 2026-12-08 的 Day 90；只有相关商业 Query 达到可比较样本，或出现可归因的合格询盘 / 明确意图错配，才提前重开单变量实验。
+
+## 2026-10-08：SEO-V2-003 Services 索引复查
+
+### GSC indexed snapshot
+
+- 覆盖模式为 `targeted`，仅检查 `https://www.athletikapparel.com/services/`。`seo-clash` 版本为项目已验证的 `0.2.36`，Google 登录、Search Console 只读 scope 与属性均通过；`index-watch` 为 `dataStatus=complete`，1/1 inspected、0 failed、0 quota blocked、0 deferred。
+- 当前 indexed snapshot 为 `NEUTRAL / URL is unknown to Google`，`indexStatus=excluded`，issue code 为 `verdict_excluded`；没有返回 Google Canonical、最后抓取时间或具体抓取状态。前一份 2026-09-30 快照为 `Discovered - currently not indexed`，但工具将两者归为同一 excluded 状态，`changeKind=unchanged`，0 regression、0 recovery、0 alert。
+- URL Inspection 是 Google 的索引快照，不是实时测试。当前显示文字从 `Discovered - currently not indexed` 变为 `URL is unknown to Google`，但没有证据表明发生新的技术回归，也不能从 unspecified 字段推断 robots、抓取或 canonical 被阻塞。
+
+### 生产技术复核
+
+- 新鲜单页审计为 HTTP 200、无重定向、robots.txt 允许、`follow, index`、无 X-Robots-Tag、自引用 Canonical、单一 `Our Services` H1；Title、Meta 与 `seo-tags.md` 一致。JSON-LD 可解析且 0 invalid block，3 张图片均有 alt，0 mixed content，报告为 0 issue / 0 recommendation。
+- 模拟 Googlebot 请求同样返回 HTTP 200、完整 64,906-byte HTML、相同 Title、`index`、自引用 Canonical、单一 H1 与完整采购流程正文；未出现 bot 专属阻断或空壳响应。
+- `page-sitemap.xml` 中规范 URL 仅出现 1 次，首页当前仍有 5 个指向该 URL 的绝对链接；robots.txt 未禁止 `/services/`，生产 HTML 未泄漏 LocalWP / localhost 主机名。
+
+### Finding 处置
+
+Finding `SEO-V2-003-SERVICES-INDEX`：类型 `review`；严重度 `Info`；业务优先级 `P1`；信心 `Confirmed`；数据状态为 GSC complete + production targeted。观察是 Google 当前未收录该规范 URL；推断是现有证据不支持代码、robots、Canonical、Sitemap 或发现路径缺陷。失效条件是后续 Inspection 变为 `PASS / Submitted and indexed`，或 Google / 生产证据返回明确技术阻塞。
+
+Outcome 保持 `no-change / monitoring`。不重复请求索引，不修改 URL、Title、Meta、H1、正文、Schema 或页面所有权。由于自 2026-08-28 一次性请求后多次只读快照均未形成可执行新证据，Services 单页从周度轮询改为月度或触发式复查，下一常规节点不早于 2026-11-08；若期间发生实质页面发布、Sitemap / Canonical 变化、服务器错误或 GSC 明确抓取原因，则提前重开。该节奏调整不关闭 SEO-V2-003 的全站 Crawl / Index Snapshot 监测。
+
+## 2026-09-30：SEO-V2-018 Sportswear 部署与索引关闭快照
+
+### 生产与索引
+
+- 目标 URL：`https://www.athletikapparel.com/sportswear-manufacturer/`。生产页 HTTP 200、可索引、自引用 Canonical、单一 `Sportswear Manufacturer` H1；Title、Meta、Canonical 和 Schema 未改变，页面审计为 0 issues / 0 recommendations。
+- Program model 与 14 图 Sportswear lookbook 已上线；42/42 个图片资源返回 HTTP 200。真实浏览器桌面点击、Next、Escape 与焦点回归通过，390×844 手机视口无横向溢出；其他六个品类未出现 Sportswear 模块或 lightbox 脚本。
+- GSC URL Inspection 为 `PASS / Submitted and indexed`，`INDEXING_ALLOWED / ALLOWED / SUCCESSFUL`；Google Canonical 与用户 Canonical 一致，最后抓取时间为 `2026-09-22T08:21:22Z`。本条记录当前收录状态，不把它归因于此前的单次索引请求，也不重复提交。
+
+### 三市场 SERP 边界
+
+- 完成五个商业词在 US / GB / CA 的 15 组 Google Desktop English depth-20 快照，最终 15/15 完整；Athletik 未出现在本轮保留结果中，单次快照不作为长期排名判断。
+- `OEM activewear manufacturer` 是五词中与现有 Sportswear 页最匹配的支持性商业词；`sportswear OEM manufacturer` 可作次级表达。`private label sportswear manufacturer` 混有 startup、low-MOQ、teamwear、社交内容与现货意图，只保留支持性语言和“不做 ready-stock”边界。
+- `technical sportswear manufacturer` 意图不稳定；`performance apparel manufacturer` 继续由首页承接。结论为 `research-complete / no-change`：不改 Sportswear URL、Title、Meta、H1 或页面所有权，不建立近义页。
+
+关闭处置：SEO-V2-018 为 `completed / production-verified / measuring`；实施 Finding outcome 为 `changed / keep`。后续随常规 28 / 90 天窗口观察 GSC、GA4 与有效询盘，低样本波动不触发页面改写。
+
+## 2026-09-28：GEO 月度快照中的传统 GSC / GA4 AI referral
+
+完整跨平台口径见 [`GEO 跨平台测量快照`](../geo/testing/geo-measurement-snapshot-2026-09-28.md)。本条只保留传统 GSC 与 GA4 的可复核摘要。
+
+- GSC Web Search 当前完整 28 天窗口为 2026-08-27～09-23：27 clicks / 1,047 impressions / 2.58% CTR / average position 13.13；前一等长窗口 2026-07-30～08-26 为 5 / 230 / 2.17% / 23.90。
+- 当前窗口页面信号：FLATLOCK vs OVERLOCK 4 clicks / 268 impressions，QC Guide 5 / 148，Merino 4 / 143，Top 5 Guide 1 / 70，ACTIVESEAM Guide 0 / 11。后两页在前窗尚未发布或没有匹配行，不按“从零增长”计算。
+- 美国为 6 clicks / 388 impressions，英国 3 / 46，加拿大 1 / 30；设备为 Desktop 15 / 812、Mobile 11 / 224、Tablet 1 / 11。
+- GA4 AI referral 当前窗口原始值为 11 sessions / 1 total user，全部由 `sessionSource = chatgpt.com` 识别；`generate_lead` 精确过滤返回 0 行。当前唯一用户与已知 GEO/来源面板内部测试期重叠，因此保留原始数，但对外部成效记录为 `0 confirmed external AI-referral sessions`，不写成绝对无外部访问。
+- 处置为 `no-change / measuring`：传统 Search 增长不等于 AI 引用增长，且没有足够证据归因到单一页面或算法更新。
+
+## 2026-09-18：周度 SEO 监测、Merino 增长复核与首页视频 Hero Lab
+
+### 来源与覆盖
+
+- `seo` CLI 版本为项目已验证的 `0.2.36`；Google 登录、GSC `webmasters.readonly` scope 与属性 `sc-domain:athletikapparel.com` 均通过。初次调用因当前进程缺少既有 `EnvHttpProxyAgent` 注入而返回 `fetch failed`；按项目基线使用一次性进程级注入后恢复，未修改 Windows、VS Code、CLI 或仓库配置。
+- GSC Search Performance 使用 `dataState: final`，主窗口为 2026-08-17 至 09-13；最近比较段为 2026-09-07 至 09-13。日期总量 28/28 完整，但 Page / Query / Country / Device 均包含只存在于单一窗口的 retained rows，因此综合诊断为 `partial`，缺失行不按零处理。
+- 生产技术检查覆盖 Page Sitemap 的 20/20 URL：全部 HTTP 200、可索引、单一 H1、自引用 Canonical；Sitemap index 与 Page Sitemap 均为 200。Services 在首页有 5 个可抓取入口。
+- GA4 未纳入本次周度报告；有效询盘仍以所有者业务核验为准。本条不提供新的询盘结论。
+
+### 搜索表现与页面信号
+
+- 最近 7 个最终日相对前 21 日，日均点击由 `0.524` 升至 `1.286`，日均曝光由 `20.524` 升至 `40.286`；对应窗口总量为 11 → 9 clicks、431 → 282 impressions。由于比较窗口长度不同、多个站点改动和分发活动并存，只记录为增长信号，不作因果归因。
+- 相邻 28 天 retained Page 行中，Merino 为最大增量：0 → 4 clicks、11 → 76 impressions、average position 18.818 → 17.592；首页为 3 → 6 clicks、59 → 103 impressions；Silk Wear 为 0 → 2 clicks、5 → 32 impressions；Sports Accessories 为 0 → 2 clicks、13 → 34 impressions。
+- Merino 精确 URL 的 final 28 天 Query × Page 仅返回 3 行，其中 2 行可操作候选合计 21 impressions、0 clicks：`merino wool clothing manufacturer` 为 18 impressions / position 26.22，复数变体为 3 impressions / position 43.67。页面总量中的 4 clicks 未出现在 retained Query 行，不能猜测匿名 Query。样本低于 100 impressions，且当前 Title / H1 已由 `Merino Wool Apparel Manufacturer` 承接同一商业意图；Finding outcome 为 `no-change / measuring`，不改 Title、Meta、H1、URL 或正文。
+- Merino URL Inspection 为 `PASS / Submitted and indexed`，Google 与用户 Canonical 一致，最后抓取时间为 `2026-09-14T04:48:32Z`；说明 Google 已抓取当前批次，不重复请求索引。
+
+### Services 与首页性能
+
+- Services URL Inspection 为 `NEUTRAL / URL is unknown to Google`，工具判定 `changeKind=unchanged`、0 regression。生产页继续为 HTTP 200、`index`、自引用 Canonical、无 X-Robots-Tag、在 Page Sitemap 中且首页有 5 个入口。SEO-V2-003 保持 `no-change / monitoring`，不重复请求索引或改页。
+- 首页视频 Hero 完成三次同条件 Lighthouse 13.4.1 移动端 Lab：LCP 分别为 4.529s、4.612s、4.532s，中位数 4.532s；三次 LCP 节点均为 `video.ma-home-hero__video`。相对 2026-08-27 的 3.66s Lab 基线稳定慢约 0.87s；CLS 三次均为 0，TBT 为 0–140ms，服务器响应约 0.43–0.46s。
+- CrUX Phone Field 数据仍为 `not_configured`。因此 SEO-V2-004 重新进入 `review / lab-regression`，只确认同环境 Lab 回归，不声称真实用户 CWV 已恶化。下一步应先针对 poster、视频启动时机和 render path 建立单变量修复，再以相同三次移动 Lab 验证；Cookiebot 与共享图片仍是独立干扰项。
+
+## 2026-09-08：SEO-V2-005 Underwear Day 7
+
+### 来源与覆盖
+
+- 本次为 `/underwear-manufacturer/` targeted Day 7 复查；`seo` CLI `0.2.36`、Google 登录、GSC readonly scope 与 GA4 readonly scope 均通过。
+- `measure-change` 请求部署前后各 7 天，但 GSC `dataState: final` 当前只到 2026-09-04，因此实际比较 2026-08-28 至 08-31 与 2026-09-01 至 09-04 各 4 个完整日。报告为 `partial`、`afterWindowTruncated=true`，结论为 `not-enough-data / low confidence`。
+- `page-opportunities` 使用 2026-08-08 至 09-04 的 final 28 天 Query × Page 数据；精确 URL 返回 3 行、无截断，生产内容验证为 `verified`。
+- `index-watch` 为 `complete`：1/1 inspected、0 failed、0 quota blocked、0 current issue、0 regression。
+
+### 搜索表现与 Query
+
+部署前 4 个最终日为 0 clicks / 1 impression / average position 10；部署后 4 个最终日为 0 clicks / 2 impressions / average position 36。绝对样本只有 1–2 impressions，不能把排名差异解释为下降、趋势或改版因果。GA4 同一 before / after 窗口均为 0 landing-page sessions / 0 engaged sessions / 0 conversions。
+
+生产页当前 28 天 Page 汇总为 0 clicks / 24 impressions / average position 24.04。可见 Query × Page 仅有 3 行，均为 1 impression：
+
+| Query | Clicks | Impressions | Average position | 处置 |
+|---|---:|---:|---:|---|
+| `underwear` | 0 | 1 | 2 | 宽泛且单次曝光，不做 CTR 或 Title 实验 |
+| `mens underwear` | 0 | 1 | 20 | 页面正文已覆盖 men's underwear；不因机械词面提示修改 Title / H1 |
+| `stretch performance base layers oem` | 0 | 1 | 45 | 与页面 performance / base layer / OEM 范围相容；继续观察 |
+
+Query 明细受低量匿名化影响，3 次可见曝光不是 24 次 Page impressions 的完整解释。报告把三行均列为 `serp-framing` 或 CTR review，并估算 0.15 click lift；在每行仅 1 impression、没有 peer sample 且低于项目 100 impressions 门槛时，这些是机械建议，不构成改页证据。
+
+### 索引与生产状态
+
+- URL Inspection：`PASS / Submitted and indexed`，`INDEXING_ALLOWED / ALLOWED / SUCCESSFUL`；Google Canonical 与用户 Canonical 均为规范 URL。
+- Google 最后抓取时间为 `2026-09-07T05:02:43Z`，晚于 2026-09-01 部署；此前快照最后抓取为 `2026-08-22T17:46:29Z`。这证明 Google 已抓取部署后页面，但不证明新增正文产生排名提升。
+- 生产页 HTTP 200、`follow, index`、无 X-Robots-Tag、自引用 Canonical、单一 `Underwear Manufacturer` H1；Title 与 Meta 保持既有核准值。
+- JSON-LD 0 invalid，主图、Open Graph 与 Twitter 图为既有 1200 × 627 JPEG；页面 6 张图片均有 alt，未发现 oversized candidate 或 mixed content。
+- Page Sitemap 包含规范 URL，首页保留可抓取入口；页面级审计为 0 issues / 0 recommendations。唯一 Warning 是工具排除 1 个 non-HTTP link，不是页面缺陷。
+
+Finding outcome：`no-change / measuring`。Day 7 的发现、抓取、索引和生产健康目标通过；效果比较因只有 4 个最终日且绝对样本极低保持 `not-enough-data`。不修改 URL、Title、Meta、H1、正文、Schema、图片或页面所有权；下一正式复盘为 2026-09-29 的 Day 28。
+
+## 2026-09-08：2026 年 8 月自然月 GSC / GA4 / 询盘基线
+
+### 来源与口径
+
+- 窗口统一为 2026-08-01 至 2026-08-31；GSC 使用 `dataState: final`，总量、Page、Query、Country 与 Device 均为完整 API 返回，无分页截断。GA4 Property `547377703` 返回 `complete`，Property 时区为 `Asia/Shanghai`。
+- 这是完整自然月补充基线，不替换 2026-07-26 至 08-22 的 28 天滚动基线；后者继续作为当时 SEO-V2-002 的执行快照。
+- 2026-09-08 所有者最新确认：**2026 年 8 月正式/有效询盘为 0**。该业务真值取代 2026-08-27 将 08-01 事件记为 1 次有效询盘的旧分类；旧条目保留为历史审计轨迹，后续月度比较统一使用 0。
+
+### GSC 自然搜索基线
+
+全站 Web Search 为 **8 clicks / 329 impressions / 2.43% CTR / average position 23.27**。
+
+| Device | Clicks | Impressions | CTR | Average position |
+|---|---:|---:|---:|---:|
+| Desktop | 6 | 277 | 2.17% | 26.00 |
+| Mobile | 2 | 52 | 3.85% | 8.71 |
+
+主要市场中，美国为 4 clicks / 164 impressions，英国为 1 / 14，加拿大为 0 / 3。美国贡献约一半 Property impressions，但总样本仍小，不据此判断市场质量或设备差异。
+
+Page 维度曝光靠前的规范页面如下。Page 行可能因同一搜索结果展示多个本站 URL 而与 Property 总量口径不同，不机械相加：
+
+| Page | Clicks | Impressions | CTR | Average position |
+|---|---:|---:|---:|---:|
+| `/` | 5 | 79 | 6.33% | 4.15 |
+| `/flatlock-vs-overlock-technical-knitwear/` | 0 | 68 | 0% | 18.13 |
+| `/about-us/` | 0 | 47 | 0% | 9.45 |
+| `/knitted-fabrics-manufacturer/` | 0 | 41 | 0% | 48.56 |
+| `/sportswear-manufacturer/` | 0 | 39 | 0% | 10.05 |
+| `/sports-accessories-manufacturer/` | 1 | 32 | 3.13% | 6.03 |
+| `/contact/` | 0 | 32 | 0% | 20.53 |
+| `/garment-quality-control-checklist/` | 1 | 31 | 3.23% | 31.58 |
+| `/merino-wool-manufacturer/` | 1 | 31 | 3.23% | 21.35 |
+
+Query 维度只返回 17 行、合计 45 impressions，且这些可见行均为 0 clicks；其余低量 Query 受 GSC 匿名化影响。可见量相对较高的查询为 `overlock vs flatlock`（9 impressions / position 9）、`flatlock vs overlock`（7 / 16.14）、`garment inspection checklist`（5 / 61.6）、`merino wool clothing manufacturer`（5 / 25.2）与 `flatlock stitch vs overlock`（4 / 9.75）。这些信号与现有页面所有权基本一致，但没有任何单页或 Query 达到 100 impressions 门槛。
+
+### GA4 流量与事件基线
+
+全站为 **112 sessions / 82 total users / 79 new users / 48 engaged sessions**；engagement rate 为 **42.86%**，average session duration 为 **158.60 seconds**，event count 为 503，key events 为 4。
+
+| Default channel group | Sessions | Total users | Engaged sessions | Event count |
+|---|---:|---:|---:|---:|
+| Direct | 54 | 48 | 12 | 214 |
+| Organic Social | 28 | 18 | 23 | 162 |
+| Paid Search | 24 | 16 | 12 | 104 |
+| Unassigned | 3 | 1 | 0 | 11 |
+| Organic Search | 2 | 2 | 1 | 10 |
+| AI Assistant | 1 | 1 | 0 | 2 |
+
+GA4 全站 Landing Page 以 `/` 73 sessions、`/sportswear-manufacturer` 18、`(not set)` 6、`/contact` 3 和 `/technical-knitwear-tech-pack-guide` 3 为主。Organic Search 只有 `/` 这一行，为 2 sessions / 2 users / 1 engaged session / 10 events；没有 `generate_lead` 行。
+
+8 月共记录 6 次 `generate_lead`、涉及 5 users：08-01 为 1 次、08-05 为 4 次、08-10 为 1 次；渠道拆分为 Direct 2、Organic Social 2、Paid Search 2。Landing Page 拆分为 `/` 2、`/contact` 2、`/outdoor-clothing-manufacturer` 1、`/sportswear-manufacturer` 1。同期另有 9 次 `form_start` 与 4 次 `form_submit`；这些事件计数不等于去重表单、可联系买家或合格询盘。
+
+### 询盘真值与决策
+
+- 正式/有效询盘：**0**。
+- Organic Search：2 sessions、0 `generate_lead`、0 正式/有效询盘。
+- GA4 的 6 次 `generate_lead` 全部不计入正式/有效询盘；它们只能作为测试、无效或不合格互动的技术信号，不能作为获客成果。
+- `eventCount` 6 与全站 `keyEvents` 4 的差异继续按事件配置时间或定义差异的未决项记录；没有 GA4 管理界面变更证据，不自行归因。
+
+Finding outcome：`no-change / baseline-established`。8 月搜索可见性仍处于低样本期，Organic Search 尚未产生正式询盘；本基线不支持修改 URL、Title、Meta、H1、页面所有权或新增近义页。后续按既定 Day 28 / Day 90 节点和完整自然月复盘，重点观察非品牌 impressions、Organic Search engaged sessions、`generate_lead` 与人工确认正式询盘是否同时改善。
+
+## 2026-09-08：SEO-V2-005 Knitted Fabrics Day 7
+
+### 来源与覆盖
+
+- `seo` CLI 版本为项目已验证的 `0.2.36`；`seo doctor` 通过 Google 登录、GSC readonly scope 与默认属性检查。
+- `measure-change` 请求部署前后各 7 天，但 GSC `dataState: final` 当前只到 2026-09-03，因此实际只能比较 2026-08-29 至 08-31 与 2026-09-01 至 09-03 各 3 个完整日；报告状态为 `partial`、`afterWindowTruncated=true`，结论为 `not-enough-data / low confidence`。
+- `page-opportunities` 使用 2026-08-07 至 09-03 的 final 28 天 Query × Page 数据，精确 URL 共 3 行、无分页截断，生产页面验证为 `verified`。
+- `index-watch` 为 `complete`：1/1 inspected、0 failed、0 quota blocked、0 current issue、0 regression。
+- 生产页面定向检查覆盖 HTTP、robots、Canonical、H1、JSON-LD、Sitemap、首页入口、已部署能力表达和页面媒体资源。
+
+### 搜索表现与 Query
+
+部署前 3 个完整日为 0 clicks / 9 impressions / average position 49.222；部署后 3 个完整日为 0 clicks / 4 impressions / average position 31.75。曝光差值 -5、平均排名方向改善 17.472，但只有 3 个部署后最终日，不能据此判断增长、下降或因果。
+
+当前 final 28 天精确 URL 可见 Query 为 0 clicks / 7 impressions：
+
+| Query | Clicks | Impressions | Average position | 处置 |
+|---|---:|---:|---:|---|
+| `functional knitted fabrics factory` | 0 | 5 | 32.6 | 与页面所有权和已部署 functional knits / own fabric mill 内容一致；继续观察 |
+| `acetate knit fabric manufacturer` | 0 | 1 | 73 | 单次曝光且 Acetate 能力未获一方确认；不追加正文 |
+| `lightweight performance knit tops factory` | 0 | 1 | 95 | 单次、偏成衣意图；不足以判定主题偏移或改变页面所有权 |
+
+GSC Query 受低量匿名化影响，以上 7 次可见 Query 曝光不是页面总曝光的替代。工具生成的三个 `content-gap` 建议均属于机械词项覆盖提示；页面已明确覆盖 `functional knitted fabrics`，不因缺少精确单词 `factory`、Acetate 或 `tops` 而堆词或扩页。
+
+GA4 同一 3 日 before / after 落地页均返回 0 sessions / 0 engaged sessions / 0 conversions。数据源状态为 `complete`，但极低样本不能支持转化判断。
+
+### 索引与生产状态
+
+- URL Inspection：`PASS / Submitted and indexed`，`INDEXING_ALLOWED / ALLOWED / SUCCESSFUL`；Google Canonical 与用户 Canonical 均为规范 URL。
+- Google 最后抓取时间为 `2026-09-05T00:01:46Z`，晚于 2026-09-01 部署；此前快照最后抓取为 `2026-08-22T23:20:47Z`。
+- 当前搜索结果快照展示既有 Title `Knitted Fabrics Manufacturer | Athletik Clothing`，并已提取新 H2 与 own fabric mill / in-house testing 正文。该快照不保证所有 Query、地区和设备都采用相同摘要。
+- 生产页 HTTP 200、`follow, index`、无 X-Robots-Tag、自引用 Canonical、单一 H1、1/1 JSON-LD 可解析；Page Sitemap 保留规范 URL，首页有 2 个可抓取入口。
+- 新 H2、`our own fabric mill` 与 `in-house testing` 均存在，Beta Textiles / BTEXCO 公开提及为 0；页面发现的 36 个唯一图片候选 URL 全部返回 HTTP 200。
+
+Finding outcome：`no-change / measuring`。Day 7 的抓取、索引和生产健康目标通过；搜索效果比较因只有 3 个最终日保持 `not-enough-data`，不修改 URL、Title、Meta、H1、正文、Schema 或页面所有权。下一正式复盘为 2026-09-29 的 Day 28。
+
+## 2026-09-07：本周 SEO 监测与 SEO-V2-015 Day 7
+
+### 来源与覆盖
+
+- `seo` CLI 版本为项目已验证的 `0.2.36`；Google 登录、GSC `webmasters.readonly` scope 与属性 `sc-domain:athletikapparel.com` 均通过。
+- 初次 `index-watch` 因当前进程未注入本机代理而对首页和 Services 返回 `fetch failed`，数据状态为 `partial`；按同一来源只重试一次，在注入既有 `EnvHttpProxyAgent` 后成功。有效复验为 `complete`：2/2 inspected、0 failed、0 quota blocked、0 deferred。
+- GSC Search Performance 使用 `dataState: final`，窗口为 2026-08-06 至 09-02；最近 7 天比较段为 2026-08-27 至 09-02。页面和国家跨窗口保留行不完整、Query 跨窗口没有匹配保留行，因此综合报告为 `partial`；日期总量 28/28 完整。
+- 生产技术检查为 targeted：`/`、`/services/`、`/contact/` 三页；3/3 HTTP 200、可索引、单一 H1、自引用 Canonical，0 fetch failure、0 high/medium issue。Page Sitemap 为 18 个条目 / 18 个唯一 URL，三页均在 Sitemap，`robots.txt` 正常声明 Sitemap。Contact 原始 HTML 仍包含 `Estimated Order Quantity` 与 `Tech Pack` 字段；本轮未提交表单，不能据此声明邮件投递链路已重新测试。
+
+### SEO-V2-015 首页 Day 7
+
+- URL Inspection 为 `PASS / Submitted and indexed`，`INDEXING_ALLOWED / ALLOWED / SUCCESSFUL`；Google Canonical 与用户 Canonical 均为 `https://www.athletikapparel.com/`。
+- Google 最后抓取时间为 `2026-09-04T20:21:54Z`，发生在 2026-08-31 首页语义纠偏部署之后，证明 Google 已重新抓取部署后的规范 URL。
+- 生产 HTML 继续输出 `Performance Apparel Manufacturer | Athletik Clothing`、单一 H1、自引用 Canonical 与 `follow, index`；当前 `site:` 搜索快照也展示新 Title。该快照只说明本次可见搜索结果采用了新标题，不保证所有 Query、国家、设备或时间均使用同一标题。
+- 2026-08-27 至 09-02 全站为 5 clicks / 184 impressions；此前 21 天为 4 clicks / 213 impressions，日均点击从 0.19 升至 0.714、日均曝光从 10.143 升至 26.286。首页在 2026-08-06 至 09-02 窗口为 4 clicks / 99 impressions / average position 4.343，相邻前 28 天保留行为 2 / 23 / 9.739。
+- 以上方向为正，但 9 月 2 日是当前最终数据截止日，只有 8 月 31 日至 9 月 2 日三个最终日处于改版后；首页精确 Query × Page 返回 0 个保留行，低量匿名化查询不可见。因此 Day 7 不做搜索效果归因，也不修改 Title、Meta、H1 或正文。
+
+Finding outcome：`fixed / measuring`。Day 7 技术与抓取目标通过；SEO-V2-015 保持当前版本，下一检查点为 2026-09-28 的 Day 28 同口径 GSC / GA4 / 有效询盘复盘。
+
+### SEO-V2-003 Services 周度复查
+
+- Services 仍为 `NEUTRAL / Discovered - currently not indexed`，没有返回 Google Canonical、最后抓取时间或具体抓取状态；与既有快照相同，`changeKind=unchanged`，0 regression、0 alert。
+- 生产页面继续为 HTTP 200、`follow, index`、自引用 Canonical、单一 H1；Page Sitemap 和站内入口保持。当前仍没有代码、robots、Canonical、Sitemap 或发现路径阻塞证据。
+
+Finding `SEO-V2-003-SERVICES-INDEX` outcome 保持 `no-change / monitoring`。此前实时测试已经通过并请求编入索引一次，本周不重复提交、不改 URL 或正文；下一周继续只读 indexed snapshot。
+
+### 报告 Finding reconciliation
+
+- `action-732c2e495464`、`action-ab69d21aba40`、`action-a9749051ee50`：均为同一首页页面移动复核建议；已核对 URL Inspection、生产 HTML、近期部署和 Query 数据，outcome 为 `not-needed / verified-monitoring`，不重复计为三个缺陷。
+- `action-45e69e2c016a`：报告本身未发现 URL overlap，outcome 为 `not-needed`。
+- `action-d6944e3a6ca6`：未发现 retained-row content decay，outcome 为 `not-needed`。
+- `action-b17a80462de0`：不为制造低置信机会而降低最小曝光门槛，outcome 为 `not-needed / sample-gate`。
+- `action-1058f37bea64`：没有 striking-distance row，outcome 为 `not-needed`。
+- `action-485ffd6ad089`：已核对近期站点变更、索引和页面分段；没有官方 Google Ranking update 窗口重叠，也没有因果证据，outcome 为 `not-needed / investigated`。
+- `hsts_missing`：3 页 low review，延续 SEO-V2-014，outcome 为 `deferred / existing-owner-action`；它是基础设施安全评估，不是本周排名缺陷。
+- `image_oversized_candidate`：首页 1 页 low review；响应式 Hero 已完成既有生产验收，当前没有稳定 Field 或同环境 Lab 回归，outcome 为 `no-change / unchanged-heuristic`。
+- 报告另有 1 个外部 URL 阻止自动验证、4 个外部 URL 在有限重试后不可达，以及定向 Crawl 的 GSC join 因未注入代理而 `partial`；这些不改变上述生产页面、Sitemap 与单独成功取得的 GSC 证据。
+
+## 2026-09-05：GSC Generative AI 首个三个月基线
+
+### 来源与覆盖
+
+- 来源：所有者从 GSC `效果 > 生成式 AI 功能（Beta）` 导出的 XLSX；过滤器为 `搜索类型：网络`、`日期：过去 3 个月`。
+- 导出日期：2026-09-05；图表实际返回 2026-07-21 至 2026-09-02 共 44 个日期行。
+- 数据范围：日期、网页、国家/地区、设备和过滤器五个工作表均存在；本次视为 `complete / owner-export`。
+- 本地归档：`~/seo-reports/gsc-generative-ai/athletikapparel-generative-ai-baseline-2026-09-05.xlsx`（不进 Git）。
+- SHA-256：`EF33D0FE565081F3970DE4EA9B7EDDC372F3297A6D61E4FEFD18C6207740A165`。
+
+Google 对该报表的定义是：生成式 AI 功能向用户展示本站链接时计一次 impression；Search 报告覆盖 AI Overviews 和 AI Mode，但不提供触发 Query、答案原文、Clicks、推荐位置或转化。若同一生成式结果展示同一站点的多个页面，Property 图表计一次，Page 表会为各页面分别计数。因此以下 Page 数值只称为“页面级链接曝光”，不称为独立回答数或已验证推荐。参见 [Google Generative AI performance report](https://support.google.com/webmasters/answer/16984139) 与 [功能公告](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)。
+
+### Property、日期与设备
+
+- Property 总曝光：**29**。
+- 设备：Desktop 22（75.9%），Mobile 7（24.1%）。
+- 2026-08-29 至 09-02 集中了 18 次（62.1%）；其中 08-31 至 09-02 为 15 次（51.7%）。这是低量首个快照中的后段集中，只记录为方向，不能写成持续增长或由某次内容发布造成。
+- Google 曾在 2026-08-13 至 08-17 记录 Generative AI Search impressions 日志故障；该区间的零值不用于建立自然趋势。参见 [Search Console data anomalies](https://support.google.com/webmasters/answer/6211453?hl=zh-Hans)。
+
+### 页面级链接曝光
+
+Page 表返回 13 个 URL、合计 36 次页面级曝光；该合计高于 Property 的 29 次符合上述聚合规则。
+
+| 页面组 | 页面级曝光 | 明细 |
+|---|---:|---|
+| Technical Guides | 13 | FLATLOCK vs OVERLOCK 7；QC Checklist 4；OEM Evaluation 1；Tech Pack 1 |
+| 商业品类页 | 9 | Sports Accessories 4；Underwear 2；Knitted Fabrics 1；Merino Wool 1；Sportswear 1 |
+| 品牌/转化入口 | 9 | Home 7；About 1；Contact 1 |
+| 法律/非目标页 | 5 | Privacy Policy 5 |
+
+关键观察：
+
+- 四篇已上线 Technical Guides 均至少获得 1 次页面级链接曝光；FLATLOCK Guide 以 7 次成为并列最高页面，QC Guide 获得 4 次。第一方技术内容已经获得 Google 生成式结果中的实际展示证据，不再只是“可抓取/可索引”的理论资格。
+- Product category 页面也已进入生成式结果，但当前不能知道它们对应品牌查询、产品查询还是采购查询。
+- Privacy Policy 的 5 次归入法律/非目标曝光，不作为 B2B 买家发现、内容权威或推荐成果。
+- 未返回的 Sitemap 页面只表示本次 Page 表没有可见行，不解释为没有需求、无法提取或页面失败。
+
+### 国家/地区
+
+国家/地区表的 29 次与 Property 总量一致：美国 5、印度 4、孟加拉 3、英国 3、中国香港 3、越南 3；澳大利亚、加拿大、瑞士、法国、印度尼西亚、新西兰、菲律宾、土耳其各 1。
+
+北美和欧洲目标市场可见行为美国 5、英国 3、加拿大 1、瑞士 1、法国 1，合计 11 次（37.9%）。这只证明链接在对应地区被展示；没有 Query 和答案上下文，不能据此判断访问者身份、采购意图或市场质量。
+
+### GEO Audit 结论与处置
+
+| 阶段 | 本次能证明什么 | 本次不能证明什么 |
+|---|---|---|
+| 被 AI 找到 | Google 已在实际 AI Overviews / AI Mode 结果中展示规范站链接 | 不知道触发 Query 和检索链路 |
+| 被 AI 提取 | 无直接字段 | 不知道答案采用或准确复述了哪些事实 |
+| 被 AI 引用 | 13 个规范 URL 获得页面级链接曝光，可作为 citation-surface evidence | 不知道链接支持哪项结论，不能完成引用相关性审核 |
+| 被 AI 推荐 | 无直接字段 | 不知道 Athletik 是否进入供应商短名单、名单位置或推荐理由 |
+
+Finding outcome：`no-change / baseline-established`。当前样本小、没有 Query/答案上下文且是首个专用报表快照，不修改 URL、Title、Meta、H1、正文、Schema 或内部链接。GSC 用于持续量化 Google 端链接曝光；`docs/geo/testing/prompt-baseline.md` 的干净 Temporary Chat 测试继续负责提取准确性、引用相关性和推荐结果。下一次在 2026-09-03 至 09-30 的完整 28 天数据可用后建立首个可比窗口。
+
+## 2026-09-01：SEO-V2-003 Services indexed snapshot 复查
+
+只对 `https://www.athletikapparel.com/services/` 运行只读 `index-watch`。CLI 版本为项目已验证的 `0.2.36`，Search Console OAuth、`webmasters.readonly` scope 与默认属性均正常；报告 `dataStatus=complete`，`requested=1`、`attempted=1`、`inspected=1`、`failed=0`、`quotaBlocked=0`、`deferred=0`。
+
+Google URL Inspection indexed snapshot 仍为 `NEUTRAL / Discovered - currently not indexed`，未返回 Google canonical、最后抓取时间或具体抓取状态。与 2026-08-28 快照相比 `changeKind=unchanged`，没有 regression、recovery 或 alert。该结果是 Google 的索引快照，不是实时测试，也不能证明当前页面存在技术阻塞。
+
+同轮生产定向复核结果：Googlebot User-Agent 请求 HTTP 200；页面输出 `follow, index` 与自引用 canonical；无 `X-Robots-Tag`；robots.txt 未屏蔽 `/services/`；`page-sitemap.xml` 包含该 URL；首页仍有可抓取 Services 链接。结合 2026-08-28 GSC 实时测试通过和一次性请求编入索引记录，没有出现新的代码、robots、canonical、Sitemap 或发现路径问题。
+
+Finding `SEO-V2-003-SERVICES-INDEX` outcome 保持 `no-change / monitoring`。不重复请求编入索引，不改 URL、Title、Meta、H1、正文或 Schema；下一次按周度 indexed snapshot 节奏复查，若变为 `PASS / Submitted and indexed` 则关闭该单页观察，若 Google 返回明确抓取或 canonical 阻塞再进入诊断。
+
+## 2026-08-31：SEO-V2-005 GSC 代理故障修复与 Underwear 检查
+
+为核对 Underwear、Merino、Outdoor 与 Sportswear 页是否达到 SEO-V2-005 门槛，先运行 `seo --version` 与 `seo doctor --json`。CLI 版本为项目已验证的 `0.2.36`，Google 登录、Search Console `webmasters.readonly` scope 和默认属性 `sc-domain:athletikapparel.com` 均通过。
+
+初次裸跑两个不同只读报告时，均在取数阶段返回相同的非重试型错误：
+
+- `page-opportunities`，目标 `/underwear-manufacturer/`：`INTERNAL_ERROR / fetch failed / retryable=false`；
+- `search-performance-overview`，最新 28 天、非品牌范围：`INTERNAL_ERROR / fetch failed / retryable=false`。
+
+诊断确认本机直连 `searchconsole.googleapis.com:443` 失败，Fastlink 系统代理 `127.0.0.1:7892` 正常，但重启后当前进程没有注入既有 `EnvHttpProxyAgent`。在同一 PowerShell 进程内设置 `HTTP_PROXY`、`HTTPS_PROXY` 和 `NODE_OPTIONS=--import=.../undici-proxy-loader.mjs` 后：
+
+- `seo sites --json` 成功返回 `sc-domain:athletikapparel.com / siteOwner`；
+- 同参数重跑 Underwear `page-opportunities` 成功，数据状态 `available`、GSC `dataState: final`、页面验证 `verified`；
+- 窗口为 2026-07-31 至 08-27，Query × Page 为 2 行：`underwear` 1 曝光 / 0 点击 / 平均排名 2，`mens underwear` 1 曝光 / 0 点击 / 平均排名 20；
+- 目标页 HTTP 200，Title 与 H1 均为 `Underwear Manufacturer`；报告无分页截断，唯一 Warning 为排除 1 个 non-HTTP link。
+
+恢复后以相同 final 28 天、非品牌、最低 1 曝光参数完成其余三个候选页：
+
+| 页面 | 可见 Query × Page | 点击 | 曝光 | 平均排名 | 处置 |
+|---|---|---:|---:|---:|---|
+| `/merino-wool-manufacturer/` | `merino wool clothing manufacturer` | 0 | 1 | 23 | `no-change / below-threshold`；意图和页面所有权匹配，但不足以改页 |
+| `/outdoor-clothing-manufacturer/` | 未返回可见非品牌 Query 行 | — | — | — | `no-change / sparse-data`；不解释为页面零曝光 |
+| `/sportswear-manufacturer/` | `sukartik clothing private limited` | 0 | 1 | 45 | `not-needed / mismatched-query`；这是其他公司品牌，不扩写页面 |
+
+根因是代理注入遗漏，不是 GSC、OAuth 或报告服务故障。四页均未达到 100 曝光门槛；工具对 Underwear 的 CTR/serp-framing、Merino 的 content-gap 与 Sportswear 的 content-gap 建议均不能直接触发修改。Merino 查询只确认当前页面所有权方向；Sportswear 建议已被意图核验推翻。四份报告均无分页截断，页面验证范围中的重复 Warning 仅为各排除 1 个 non-HTTP link。
+
+## 2026-08-28：SEO-V2-003 第二批 URL Inspection 完成
+
+在本机保守 UTC 日配额重置后，只对首轮未选择的 8 个 Sitemap URL 重跑只读 `index-watch`。本次结果为 `dataStatus=complete`：`requested=8`、`unique=8`、`attempted=8`、`inspected=8`、`failed=0`、`quotaBlocked=0`、`deferred=0`、`currentIssues=1`、`regressions=0`。没有重复检查首批 10 个 URL，也没有向 Google 请求编入索引。
+
+| URL | Verdict / Coverage | Google / User Canonical | Google 最后抓取时间（UTC） | 处置 |
+|---|---|---|---|---|
+| `/services/` | `NEUTRAL / Discovered - currently not indexed` | 未返回 | 未返回 | `deferred / owner-action` |
+| `/silk-wear-manufacturer/` | `PASS / Submitted and indexed` | 一致、自引用 | `2026-08-11T09:14:20Z` | `no-change` |
+| `/sports-accessories-manufacturer/` | `PASS / Submitted and indexed` | 一致、自引用 | `2026-08-08T01:20:53Z` | `no-change` |
+| `/sportswear-manufacturer/` | `PASS / Submitted and indexed` | 一致、自引用 | `2026-08-27T17:44:58Z` | `no-change` |
+| `/sustainability/` | `PASS / Submitted and indexed` | 一致、自引用 | `2026-08-22T11:50:44Z` | `no-change` |
+| `/technical-guides/` | `PASS / Submitted and indexed` | 一致、自引用 | `2026-08-11T08:52:14Z` | `no-change` |
+| `/technical-knitwear-tech-pack-guide/` | `PASS / Submitted and indexed` | 一致、自引用 | `2026-08-11T08:56:16Z` | `no-change` |
+| `/underwear-manufacturer/` | `PASS / Submitted and indexed` | 一致、自引用 | `2026-08-22T17:46:29Z` | `no-change` |
+
+首批与第二批合计覆盖当前 18 个 Sitemap 页面：17 个 `PASS / Submitted and indexed`，1 个 Services 为 `NEUTRAL / Discovered - currently not indexed`。这是当前 Google indexed snapshot，不是实时抓取或搜索结果展示保证。
+
+### Finding：SEO-V2-003-SERVICES-INDEX
+
+- 类型：`review`；严重度：Info；业务优先级：P1；信心：Confirmed；
+- 数据状态：Google URL Inspection 为 `complete`；生产复核为 targeted；
+- 观察：Google 已发现 `/services/`，但当前快照尚未编入索引，且没有返回最后抓取时间或 canonical；这不是从既有 PASS 快照发生的 regression；
+- 生产证据：Googlebot User-Agent 请求返回 HTTP 200；页面输出 `index,follow`、自引用 canonical、无 X-Robots-Tag；`page-sitemap.xml` 包含该 URL 并输出 `lastmod=2026-08-08T02:30:00+00:00`；首页有 5 个指向 Services 的可抓取链接；
+- GSC 实时测试：所有者提供的 2026-08-28 17:28 GSC“测试实际版本”截图显示绿色通过，结论为“网址可编入 Google 索引”，网页可用性为“网页可以编入索引”，没有增强功能阻塞；该结果证明当前实时版本可索引，但不等于 indexed snapshot 已更新；
+- 推断：现有证据没有显示代码、robots、canonical、Sitemap 或发现路径阻塞。仅凭 `Discovered - currently not indexed` 不支持改 URL、Title、H1、Meta 或正文；
+- 失效判定：后续 Inspection 变为 `PASS / Submitted and indexed`，或 Google 后续返回明确抓取/索引阻塞；
+- 最小动作：实时测试已通过；所有者确认已于 2026-08-28 点击“请求编入索引”一次，平台操作完成；
+- 验收与窗口：不重复提交；在合理抓取窗口内按 SEO-V2-003 复查 indexed snapshot。允许 outcome 为 `changed`、`no-change` 或 `deferred`；当前为 `changed / monitoring`。
+
+### Finding：SEO-V2-003-SITEMAP-DUPLICATE
+
+- 类型：`review`；严重度：Info；业务优先级：P3；信心：Confirmed；
+- 目标页面：`/garment-quality-control-checklist/`；搜索意图：technical knitwear buyer 的 garment quality control checklist 信息型意图；
+- 初始证据：2026-08-28 生产 `page-sitemap.xml` 有 19 个 `<url>` 条目和 18 个唯一 URL；QC Guide 以相同 URL 与 `lastmod=2026-08-20T08:31:05+00:00` 重复两次；
+- 根因证据：2026-08-29 生产 WordPress REST API 返回两个同 slug、同发布时间和同内容的已发布 Page（ID `79`、`80`）；生产前台实际渲染 ID `79`，shortlink 为 `?p=79`。随机查询参数、`no-cache` 请求和 CDN 双 MISS 后重复仍存在，排除浏览器/CDN 旧缓存；本地数据库和本地 Sitemap 均只有一个 QC Guide 对象；
+- 主要变量：仅将生产重复 Page ID `80` 移至回收站，保留实际渲染和已收录的 ID `79`；未改 URL、正文、Title、canonical、模板或主题代码；
+- 风险：误删 ID `79` 会影响现有页面；因此按前台 `page-id-79` 与 shortlink 证据锁定保留对象，并在操作后复查 HTTP、canonical、robots 与 Sitemap；
+- 验收标准：生产 Page Sitemap 全部 URL 唯一、QC Guide 只出现一次、REST API 只返回一个已发布对象、页面保持 HTTP 200、自引用 canonical 且无 `noindex`；
+- 2026-08-29 验收：生产 Sitemap 为 18 个条目 / 18 个唯一 URL，QC Guide 计数为 1；REST API 只返回 ID `79`；页面 HTTP 200、canonical 为规范 URL、前台仍渲染 ID `79` 且未检测到 `noindex`；
+- Finding outcome：`fixed / keep`。该重复项未产生 canonical 或索引回归，也不解释 Services 的既有收录状态。
+
+## 2026-08-27：SEO-V2-003 第二批 URL Inspection 尝试
+
+按首轮清单对剩余 8 个 URL 运行只读 `index-watch`。本机保守 UTC 日配额尚未重置：8 个 URL 均未向 Google 发送 Inspection 请求，汇总为 `requested=8`、`unique=8`、`attempted=0`、`inspected=0`、`failed=0`、`quotaBlocked=1`、`deferred=7`、`currentIssues=0`。Services 首先返回 `inspection_quota_blocked`，其余 7 个 URL 随后按同一属性配额状态 deferred。
+
+本次结果的数据状态为 `partial / operational`，不提供新的 Google 索引快照，也不代表任何页面未收录或发生索引故障。工具给出的统一 `retryAt` 为 `2026-08-28T00:00:00Z`（北京时间 2026-08-28 08:00）。在该时间之后只重试这 8 个 URL，不重复检查首批 10 个 URL，不改页面或请求编入索引。
+
+同轮 `index-coverage` 的直连与仅设置代理环境变量调用先返回 `INTERNAL_ERROR: fetch failed`；按既有网络约束改用一次性 `EnvHttpProxyAgent` 注入后刷新成功。完整结果与首轮一致：21 个跨源唯一 URL、18 个有保留 Search Analytics 可见性、1 个可抓取但无保留可见性的 QC Guide、2 个预期非索引端点，Crawl / Sitemap / Search Console 三方 completeness 均为 `complete`。前两次失败调用不作为 coverage 证据，也不写成零覆盖或新 Finding。第二批 Inspection 处置仍为 `deferred`，失效条件是配额重置后 8 个 URL 均取得可读 URL Inspection 结果。
+
+## 2026-08-27：SEO-V2-003 首轮 Index Snapshot
+
+`index-coverage` 完整读取冻结 Crawl、Page Sitemap 与 2026-07-26 至 08-22 的 GSC Page 数据：21 个跨源唯一 URL 中，18 个有保留的 Search Analytics 可见性；唯一“可抓取但无保留可见性”的页面是 `/garment-quality-control-checklist/`。这只是 URL Inspection 候选，不是未收录判定。
+
+`index-monitor` 按每日 10 个 URL 的保守配额执行首批检查：10 次调用全部成功，0 failed、0 quota blocked、0 deferred、0 current issue。每个 URL 均为 `PASS / Submitted and indexed / INDEXING_ALLOWED / ALLOWED / SUCCESSFUL`，Google Canonical 与用户 Canonical 一致：
+
+| URL | Google 最后抓取时间（UTC） | 结论 |
+|---|---|---|
+| `/` | 2026-08-22T19:35:48Z | indexed / PASS |
+| `/about-us/` | 2026-08-22T18:36:29Z | indexed / PASS |
+| `/contact/` | 2026-08-12T16:37:01Z | indexed / PASS |
+| `/evaluate-technical-knitwear-oem/` | 2026-08-11T08:56:15Z | indexed / PASS |
+| `/flatlock-vs-overlock-technical-knitwear/` | 2026-08-12T19:07:28Z | indexed / PASS |
+| `/garment-quality-control-checklist/` | 2026-08-26T13:41:31Z | indexed / PASS |
+| `/knitted-fabrics-manufacturer/` | 2026-08-22T23:20:47Z | indexed / PASS |
+| `/merino-wool-manufacturer/` | 2026-08-15T01:58:03Z | indexed / PASS |
+| `/outdoor-clothing-manufacturer/` | 2026-08-12T11:36:38Z | indexed / PASS |
+| `/privacy-policy/` | 2026-08-15T04:28:01Z | indexed / PASS |
+
+本批未选择的 8 个 Sitemap URL 为 Services、Silk Wear、Sports Accessories、Sportswear、Sustainability、Technical Guides Hub、Tech Pack Guide 与 Underwear；状态是 `unselectedDue / skipped`，不是检查失败或未收录。它们均在同窗口有保留的 GSC Page 行，并在最新 Crawl 中保持 200、可索引和自引用 Canonical；后续配额窗口再补 URL Inspection，不据此推断完整站点覆盖率。
+
+QC Guide 已确认进入 Google 索引，最后抓取发生在所有者请求编入索引当日。处置为 `no-change / monitoring`：不重复请求编入索引，不修改页面；继续观察首次保留曝光与查询。
+
+## 2026-08-26：SEO-V2-002 28 天基线（2026-07-26 至 2026-08-22）
+
+这是 GSC 可返回 `dataState: final` 的最新完整 28 天窗口。对比窗口 2026-06-28 至 07-25 大部分位于 2026-07-22 正式上线前，因此本轮建立上线后基线，不把前后差异写成自然增长或改版因果。
+
+### 数据完整性
+
+- GSC：总量、Page、Query、Country、Device 与 Query × Page 均完成全量 API 读取；Page 19 行、Query 6 行、Country 34 行、Device 2 行，均无分页截断。Query 仍受低量匿名化影响，缺失查询不等于零需求。
+- GA4：同一窗口完成 Channel、Organic Landing Page 与 `generate_lead` 读取；API 未返回 sampling metadata。Property 时区为 `Asia/Shanghai`。Consent 和埋点口径仍可能使 GA4 与 GSC 不一一对应。
+- 询盘：初次导出时为 `partial / owner-input`；2026-08-27 已由所有者完成业务核验，当前状态为 `complete`。核验结果见下方，仅保存汇总，不记录联系人个人数据。
+
+### GSC 总量与设备
+
+总量为 5 次点击、184 次曝光、2.72% CTR、平均排名 21.3。
+
+| Device | 点击 | 曝光 | CTR | 平均排名 |
+|---|---:|---:|---:|---:|
+| Desktop | 5 | 164 | 3.05% | 23.1 |
+| Mobile | 0 | 20 | 0% | 6.6 |
+
+### GSC 页面
+
+Page 维度按 URL 计数，多个本站结果可在同一搜索结果中分别产生曝光，因此各行不可与 Property 总量机械相加。
+
+| 页面 | 点击 | 曝光 | CTR | 平均排名 |
+|---|---:|---:|---:|---:|
+| `http://athletikapparel.com/`（非规范变体） | 2 | 8 | 25.00% | 4.4 |
+| `/` | 2 | 67 | 2.99% | 5.7 |
+| `/merino-wool-manufacturer/` | 1 | 16 | 6.25% | 19.5 |
+| `/#ma-home-categories-title` | 0 | 1 | 0% | 8.0 |
+| `/about-us/` | 0 | 31 | 0% | 5.9 |
+| `/contact/` | 0 | 14 | 0% | 27.6 |
+| `/evaluate-technical-knitwear-oem/` | 0 | 8 | 0% | 16.5 |
+| `/flatlock-vs-overlock-technical-knitwear/` | 0 | 26 | 0% | 26.3 |
+| `/knitted-fabrics-manufacturer/` | 0 | 15 | 0% | 49.1 |
+| `/outdoor-clothing-manufacturer/` | 0 | 21 | 0% | 25.3 |
+| `/privacy-policy/` | 0 | 21 | 0% | 8.9 |
+| `/services/` | 0 | 1 | 0% | 8.0 |
+| `/silk-wear-manufacturer/` | 0 | 13 | 0% | 13.9 |
+| `/sports-accessories-manufacturer/` | 0 | 20 | 0% | 6.9 |
+| `/sportswear-manufacturer/` | 0 | 27 | 0% | 9.5 |
+| `/sustainability/` | 0 | 15 | 0% | 12.2 |
+| `/technical-guides/` | 0 | 6 | 0% | 23.2 |
+| `/technical-knitwear-tech-pack-guide/` | 0 | 23 | 0% | 16.7 |
+| `/underwear-manufacturer/` | 0 | 19 | 0% | 24.9 |
+
+`/garment-quality-control-checklist/` 未进入 Page 返回行。该页面较新且 Query/Page 数据受延迟和低量保护影响，本次只记为 `monitoring`，不写成零曝光、未收录或页面失败。
+
+### GSC 查询
+
+| Query | Target page | 点击 | 曝光 | 平均排名 |
+|---|---|---:|---:|---:|
+| `atheletik` | `/` | 0 | 1 | 1.0 |
+| `athletik` | `/` | 0 | 1 | 5.0 |
+| `athletique clothing` | `/` | 0 | 1 | 22.0 |
+| `flatlock vs overlock` | `/flatlock-vs-overlock-technical-knitwear/` | 0 | 2 | 22.5 |
+| `overlock vs flatlock` | `/flatlock-vs-overlock-technical-knitwear/` | 0 | 1 | 11.0 |
+| `sukartik clothing private limited` | `/sportswear-manufacturer/` | 0 | 1 | 45.0 |
+
+可见 Query 只覆盖 7 次曝光，不能代表全部 184 次 Property 曝光。两条 FLATLOCK / OVERLOCK 非品牌变体是首轮可见的指南发现信号，但合计仅 3 次曝光，不触发内容或 Title/Meta 修改。
+
+### GSC 国家
+
+| 目标市场 | 点击 | 曝光 | CTR | 平均排名 |
+|---|---:|---:|---:|---:|
+| US | 3 | 96 | 3.13% | 16.8 |
+| CA | 0 | 7 | 0% | 3.9 |
+| GB | 0 | 7 | 0% | 10.4 |
+| DE | 0 | 4 | 0% | 4.8 |
+| NL | 0 | 2 | 0% | 8.0 |
+| SE | 0 | 3 | 0% | 1.7 |
+
+Israel 为 1 点击 / 1 曝光，Türkiye 为 1 点击 / 6 曝光。其余完整返回行为：ARG 1、AUS 1、BGD 2、CHN 4、DNK 1、ESP 1、FRA 1、GHA 1、HKG 3、IDN 2、IND 10、JOR 1、KAZ 1、KOR 1、MAR 2、MEX 1、MYS 2、PAK 2、PHL 7、RUS 1、SAU 1、SGP 2、SVK 2、UKR 1、UZB 1、VNM 6 次曝光，均 0 点击。NO / FI 本轮无返回行；缺行不等于零搜索需求。
+
+### GA4 Organic Search 与 `generate_lead`
+
+| Channel | Sessions | Total users | Event count | Key events |
+|---|---:|---:|---:|---:|
+| Direct | 94 | 81 | 407 | 2 |
+| Organic Social | 37 | 29 | 220 | 1 |
+| Paid Search | 24 | 16 | 104 | 1 |
+| Organic Search | 2 | 2 | 10 | 0 |
+| Unassigned | 2 | 1 | 8 | 0 |
+| AI Assistant | 1 | 1 | 2 | 0 |
+
+Organic Search 只有一个 Landing Page 行：`/` 为 2 sessions、2 users、10 events、0 key events。Organic Search × `generate_lead` 返回 0 行，因此本窗口没有可归因到自然搜索的 GA4 lead event。
+
+全站 `generate_lead` 返回 8 次 event count、4 次 key events：
+
+| 日期 | Channel | Landing Page | Event count | Key events |
+|---|---|---|---:|---:|
+| 2026-07-28 | Direct | `/` | 1 | 0 |
+| 2026-07-29 | Direct | `/` | 1 | 0 |
+| 2026-08-01 | Organic Social | `/` | 1 | 0 |
+| 2026-08-05 | Direct | `/contact` | 1 | 1 |
+| 2026-08-05 | Direct | `/outdoor-clothing-manufacturer` | 1 | 1 |
+| 2026-08-05 | Paid Search | `/contact` | 1 | 0 |
+| 2026-08-05 | Paid Search | `/sportswear-manufacturer` | 1 | 1 |
+| 2026-08-10 | Organic Social | `/` | 1 | 1 |
+
+`eventCount` 与 `keyEvents` 的 8 / 4 差异与窗口内可能存在的事件配置启用时间相容，但本轮未取得管理界面变更记录，不能确定原因。月度基线继续以 `eventName = generate_lead` 的 event count 作技术信号，以人工确认的有效/合格询盘作业务结果。
+
+### 2026-08-27：询盘人工核验
+
+- 所有者确认 2026-08-01 的 Organic Social → `/` 事件对应 1 次有效询盘。
+- 所有者确认 2026-08-10 的 Organic Social → `/` 事件对应 1 次不合格询盘。
+- 其余 6 次事件均为测试或无效询盘；本次未进一步拆分测试与无效数量，因此只按“未计入有效询盘”汇总，不推断明细。
+- 本窗口业务基线：8 次 `generate_lead` 中有效询盘 1 次，未计入有效询盘 7 次。唯一有效询盘归因为 Organic Social；Organic Search 仍为 0 次 `generate_lead`、0 次有效询盘。
+- 数据状态为 `complete`：GA4 事件与所有者业务核验已经对齐，未记录联系人个人数据。SEO-V2-002 可关闭。
+
+### 页面级决策与 Finding outcome
+
+- `no-change / deferred`：没有单页或可比较 Query × Page 达到 100 曝光门槛；不修改 URL、Title、Meta、H1、正文或页面所有权，不新增近义页面。
+- `monitoring`：首页、About、Sports Accessories 与 Sportswear 已出现靠前但低量曝光；Merino 获得 1 次点击；FLATLOCK 指南出现首批非品牌查询。以上只建立方向，不形成因果结论。
+- `monitoring`：最近 7 天曝光相对前 21 天日均上升 92.9%，点击下降 25%；只有曝光达到异常阈值。报告识别到算法更新时间重叠，但未建立归因，不据此改站。
+- `no-change / completed`：询盘业务核验已补齐；唯一有效询盘来自 Organic Social，Organic Search 没有 lead event 或有效询盘。SEO-V2-002 关闭，不把社交流量成果归因给 SEO。
+
+## 2026-08-26：QC Guide 已请求编入索引
+
+- 所有者确认已在 GSC 网页版对 `/garment-quality-control-checklist/` 请求编入索引；SEO-V2-001 的平台操作已完成。
+- 证据来源为所有者操作确认，数据状态为 `partial`：本次未提供 GSC 截图，因此“测试实际网址”的精确结论、当前索引覆盖分类、最后抓取日期与状态均为 `unavailable`，不得据此写成已收录。
+- 处置结论：SEO-V2-001 标记为 `completed`；不重复请求、不改写页面，后续发现、抓取、收录和首次曝光统一归入 SEO-V2-003 的正常监测窗口。未收录或报告延迟本身不等于页面失败。
+
+## 2026-08-20：QC Guide 部署与 URL Inspection 尝试
+
+- `/garment-quality-control-checklist/` 已完成生产部署，普通浏览器、Googlebot、OAI-SearchBot 和 PerplexityBot 请求均返回 HTTP 200；Canonical 自指，robots meta 为 `follow, index`，Page Sitemap 已包含该 URL。
+- `seo technical-watch` 使用 `sc-domain:athletikapparel.com` 对该 URL 发起只读 URL Inspection；API 返回 `internal_error: fetch failed`，本次状态为 `partial`，未获得 Google 索引快照。
+- 该错误表示 URL Inspection 检查不完整，不等于页面抓取或索引失败。下一步在 GSC 网页版执行“测试实际网址”，通过后请求编入索引；不要在结果出现前重复改写页面。
+
+## 2026-08-18：28 天窗口（2026-07-17 至 2026-08-13）
+
+对比窗口 2026-06-19 至 07-16 为上线前，无数据属预期；本轮为上线后单窗口数据，不存在环比下降。
+总量与 2026-08-15 网页版截图一致（国家口径 5 点击 / 94 曝光），API 数据通道与手工观察一致。
+
+### 页面（含匿名化行，合计 170 曝光）
+
+| 页面 | 点击 | 曝光 | 平均排名 |
+|---|---:|---:|---:|
+| `/` | 3 | 55 | 6.5 |
+| `/about-us/` | 0 | 20 | 5.7 |
+| `/sportswear-manufacturer/` | 0 | 16 | 10.0 |
+| `/underwear-manufacturer/` | 0 | 10 | 26.9 |
+| `/merino-wool-manufacturer/` | 0 | 9 | 14.9 |
+| `/sports-accessories-manufacturer/` | 0 | 9 | 4.3 |
+| `http://athletikapparel.com/`（非规范变体） | 2 | 8 | 4.4 |
+| `/knitted-fabrics-manufacturer/` | 0 | 8 | 38.8 |
+| `/privacy-policy/` | 0 | 8 | 9.0 |
+| `/outdoor-clothing-manufacturer/` | 0 | 7 | 17.6 |
+| `/technical-knitwear-tech-pack-guide/` | 0 | 7 | 10.7 |
+| `/flatlock-vs-overlock-technical-knitwear/` | 0 | 4 | 20.0 |
+| `/sustainability/` | 0 | 4 | 8.0 |
+| 其余 5 页（contact / evaluate-oem / services / guides hub / 首页锚点） | 0 | 各 1 | 8–30 |
+
+### 查询
+
+仅 4 行品牌变体词可见：`atheletik`（1 曝光，排名 1）、`athletik`（1，5）、
+`athletique clothing`（1，22）、`sukartik clothing private limited`（1，45），均 0 点击。
+无非品牌查询进入可见行。
+
+### 国家（目标市场节选）
+
+| 国家 | 点击 | 曝光 | 平均排名 |
+|---|---:|---:|---:|
+| US | 2 | 51 | 13.7 |
+| CA | 0 | 7 | 4.7 |
+| DE | 0 | 3 | 3.7 |
+| GB | 0 | 3 | 14.0 |
+| NL | 0 | 2 | 8.0 |
+
+另有土耳其、丹麦、以色列各 1 次点击（非目标市场，样本噪声）。SE / NO / FI 本轮无可见行。
+
+### 本轮解读与决策
+
+- 样本远低于 100 曝光观察门槛：本轮不触发任何 Title/Meta/正文修改。
+- `sportswear-manufacturer` 16 曝光、平均排名 10.0，是最接近第一页的商业页；
+  `knitted-fabrics-manufacturer` 排名 38.8 最靠后——与关键词研究的竞争度判断方向一致，仅作方向记录。
+- `http://athletikapparel.com/` 非规范变体出现 2 点击 / 8 曝光：Canonical 与跳转链工作正常
+  （GSC 按页面归组时可能分开显示），不处理，持续观察。
+- 90 天总览中"日均曝光 2.3 → 9.3"的 anomaly 信号对应网站上线与指南发布，属预期，不是异常流量事件。
+- GSC 网页版 Page indexing 的未收录原因示例 URL 无 API，仍需登录网页版人工核对。
+
+### 例行导出命令
+
+```bash
+export HTTPS_PROXY=http://127.0.0.1:7892 HTTP_PROXY=http://127.0.0.1:7892
+seo reports run segment-impact --params '{"site":"sc-domain:athletikapparel.com","dimension":"query","days":28,"compareDays":28,"maxRows":100}' --json
+# dimension 可换 page / country；代理端口以本机 Fastlink 实际系统代理为准
+```
+
+---
+
+## 2026-08-15（网页版截图，历史补录）
+
+3 个月视图（可见区间 2026-07-21 至 08-12）：总点击 5、总曝光 94、平均 CTR 5.3%、平均排名 12.7。
+查询表 4 行品牌变体词各 1 曝光 0 点击。Sitemap 状态成功，2026-08-13 最后读取，发现 17 个网页。
+4 个 Technical Guides URL Inspection 均显示已收录、HTTPS 通过。
+Page indexing 汇总停留在 2026-08-07（已收录 11 / 未收录 12），早于指南上线，不代表当前覆盖率。
+Core Web Vitals 移动端与桌面端均因 90 天数据不足无现场结论。

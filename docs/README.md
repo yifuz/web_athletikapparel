@@ -6,8 +6,8 @@
 
 | 文件 | 用途 |
 |---|---|
-| [`progress.md`](progress.md) | 跨项目当前状态和少量下一步；历史里程碑已归档 |
-| [`progress-history-2026-11-18.md`](progress-history-2026-11-18.md) | 截至 2026-11-18 的完整历史进度；按需查阅 |
+| [`progress.md`](progress.md) | 跨项目当前状态和少量下一步；历史里程碑已归档至 `archive/` |
+| [`archive/README.md`](archive/README.md) | 历史进度、旧工作台、旧 GSC 日志与一次性大审计统一归档；按需查阅 |
 | [`sitemap.md`](sitemap.md) | 页面结构、URL 与 SEO 信息架构；创建或重构页面前必读 |
 | `README.md` | 本索引 |
 
@@ -62,7 +62,7 @@
 
 - [`seo/README.md`](seo/README.md)：SEO 中央工作台、当前状态、阅读顺序与分类入口；进入 SEO 文档时先读。
 - [`seo/v2-backlog.md`](seo/v2-backlog.md)：V2 唯一执行清单，按优先级、状态、触发条件和验收标准管理后续工作。
-- [`seo/gsc-data-log.md`](seo/gsc-data-log.md)：Search Console 周期数据快照与解读（持续更新）。
+- [`seo/gsc-data-log.md`](seo/gsc-data-log.md)：Search Console 近期数据快照与历史月度速查（2026-08～10 完整日志已归档至 `archive/`）。
 - [`seo/seo-process.md`](seo/seo-process.md)：面向北美和欧洲 B2B 买家的研究、实施、发布与复盘流程。
 - [`seo/seo-implementation-checklist-v1.md`](seo/seo-implementation-checklist-v1.md)：已关闭的 V1 实施与验收真值表，只保留历史 ID 和处置记录。
 - `seo/research/`、`seo/audits/`、`seo/evidence/`、`seo/implementation/`、`seo/authority/`：各目录均有 `README.md`，分别承接研究、历史审计、事实证据、实施记录和站外权威工作。
@@ -82,6 +82,6 @@
 
 - 新建或实质性改写的内部 Markdown 文档默认使用简体中文。正式网站英文文案、固定测试提示词、原始引文、代码/API/Schema/事件名、URL、路径、命令、字段名、法律实体名和其他必须保留原貌的内容继续使用原生英文；用户明确要求英文时除外。
 - 新文档放入最接近的主题目录，不再直接堆到 `docs/` 根目录。
-- 根目录主要保留高频跨领域入口及必要的旧进度归档。
-- 优先更新现有状态并只在一个地方记录细节；需要保留历史时归档并建立链接，不为每次操作新建文档或重复登记。
+- 根目录只保留高频跨领域入口；历史快照统一放入 `docs/archive/`。
+- 遵循 `AGENTS.md` 的三级记录制与“通用免责默认生效”规则：微改不新建 `.md`，单次文档只写特例与异常。
 - 移动文档时必须更新仓库内引用并运行 Markdown 本地链接检查。
