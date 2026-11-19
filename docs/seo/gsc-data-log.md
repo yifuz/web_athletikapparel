@@ -26,6 +26,33 @@
 
 > 2026-08 至 2026-10 完整历史记录已原样归档至 [docs/archive/gsc-data-log-history-2026-08-to-10.md](../archive/gsc-data-log-history-2026-08-to-10.md)。
 
+## 2026-11-19：URL Inspection 复查与 Knitted / Merino 完整 28 天后窗
+
+只读复查（`seo-clash` v0.2.36，`sc-domain:athletikapparel.com`，`type=web`、`dataState=final`、`rowLimit=25000`，均未触顶）；未修改网站或重复提交索引。
+
+### 1. 五个规范 URL 索引复查
+
+| URL | Verdict / Coverage | Google / User Canonical | Last Crawl (UTC) | 说明 |
+|---|---|---|---|---|
+| `/product-showcase/mens-merino-tencel-mesh-long-sleeve-shirt/` | `PASS / Submitted and indexed` | 一致 | `2026-11-16T20:08:39Z` | 11-10 申请已收录，11-17 到期复查关闭 |
+| `/product-showcase/womens-wool-jacquard-base-layer-set/` | `PASS / Submitted and indexed` | 一致 | `2026-11-16T00:15:03Z` | 已收录，Breadcrumbs Rich Results `PASS` |
+| `/product-showcase/mens-half-zip-fleece-top/` | `NEUTRAL / Discovered - currently not indexed` | 未返回 | 未返回 | Sitemap 已列出；robots/indexing/fetch 均 `UNSPECIFIED` |
+| `/product-showcase/mens-half-zip-top-and-tights/` | `PASS / Submitted and indexed` | 一致 | `2026-11-15T23:02:13Z` | 已收录，Breadcrumbs Rich Results `PASS` |
+| `/technical-knitwear-tech-pack-guide/` | `PASS / Submitted and indexed` | 一致 | `2026-10-16T13:23:03Z` | 仍未越过 `2026-10-16` 抓取 |
+
+### 2. Final 边界与 Knitted / Merino 28 天后窗（`2026-10-21～11-17`）
+
+日期边界探测（`11-01～11-19`）返回连续 17 日，最新 `final` 已覆盖 **`2026-11-17`**（`11-18 / 19` 未返回）；全站控制窗 `10-21～11-17` 为 28/28 连续 `final` 日（35 clicks / 1,300 impressions）。
+
+| 页面与窗口（均 28 天 `final`） | 精确 Page（Clicks / Imp / CTR / Pos） | Query × Page（行 / Clicks / Imp） | 固定观察词表现与关键限制 |
+|---|---|---|---|
+| **Knitted** 前窗 `09-20～10-17` | 1 / 84 / 1.19% / 13.63 | 9 / 0 / 17 | 固定 7 词 14 imp / 0 clicks |
+| **Knitted** 后窗 `10-21～11-17` | **1 / 177 / 0.56% / 25.17** | **19 / 0 / 108** | 固定 7 词返回 5/7，合计 **58 imp / 0 clicks**（加权位 31.81）：`knitted fabric manufacturer` 50 / 33.36、`functional knitted fabrics factory` 3 / 24.00、`performance knit fabric oem` 3 / 21.67、`functional knit fabrics manufacturers` 1 / 12.00、`performance knit supplier` 1 / 28.00；另 2 词及四类结构词 `not-returned`。Country×Device 19 行 0/108（US 55），与 Page 177 不闭合 |
+| **Merino** 前窗 `09-23～10-20` | 4 / 177 / 2.26% / 6.56 | 5 / 0 / 13 | 固定 4 词均 `not-returned` |
+| **Merino** 后窗 `10-21～11-17` | **7 / 201 / 3.48% / 8.60** | **14 / 0 / 28** | 固定 4 词返回 1/4：`merino wool clothing manufacturer` **4 imp / 0 clicks / 26.75**（四维：US desktop 2/29、VN desktop 2/24.5）；另 3 词 `not-returned`。相邻词有 `merino wool manufacturers` 2/6、`merino wool clothing manufacturers` 1/12、`merino wool manufacturer` 1/29、`oem base layer manufacturer` 1/1、`lightweight base layer manufacturer` 1/45 等；Country×Device 11 行及四维 17 行均 0/28（US 17），7 次点击全在未披露查询 |
+
+- **特例与处置**：两页 Query / Country 均与 Page 总量不闭合，披露查询均 0 点击，且后窗混入 10-23 / 10-31 内链与 11-04 Showcase 等共同变量。Knitted 判 `no-change / inconclusive`（商业词曝光扩大但点击持平且主词位置偏后），Merino 判 `no-change / keep-measuring`；均不改 URL / Title / Meta / H1，原 Day 90 节点不重置。
+
 ## 2026-11-10：Knitted Fabrics 定向搜索诊断
 
 结论为 **`no-change / diagnosis-complete / fabric-examples-confirmed`**。现有主词和独立面料采购任务匹配；可见核心商业词的位置偏后，尚无足够证据将零点击归因于 Title／Meta。现页已覆盖结构、定制与采购流程，最值得准备的下一变量是 **具体面料编号、成分、GSM 与真实展示的对应关系**。该呈现缺口已确认，但是否解释当前排名、补齐后能提升多少仍未验证。本轮没有网站代码、媒体、数据库或部署改动，也没有新增 Backlog ID。

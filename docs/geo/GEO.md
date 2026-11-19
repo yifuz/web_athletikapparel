@@ -13,9 +13,9 @@
 
 | 优先工作 | 当前状态 / 下一步 |
 |---|---|
-| 公开资料一致性 | 中国生产地址为 No.15。所有者已联系中国站相关人员修复，等待结果；SourceReady 更正邮件已发送，等待回复后核查公开档案。核查当前 [LinkedIn](https://www.linkedin.com/company/111831319/)、[Instagram](https://www.instagram.com/athletikclothinginc/) 和其他相关公开资料的名称、地址及官网入口。 |
+| 公开资料一致性 | 中国生产地址为 No.15。所有者已联系中国站相关人员修复，SourceReady 更正邮件已发；**2026-11-19 只读复验**：`athletik.com.cn` 首页 HTML 与 SourceReady 公开档案（JSON-LD / `__NEXT_DATA__`）仍为 No.25，SourceReady 公开响应仍未出现 `athletikapparel.com`（匿名响应，未检登录/付费字段），继续等待更新结果。核查当前 [LinkedIn](https://www.linkedin.com/company/111831319/)、[Instagram](https://www.instagram.com/athletikclothinginc/) 和其他相关公开资料的名称、地址及官网入口。 |
 | 宽泛采购的独立佐证 | 优先寻找能够验证实体、生产或供应链角色的真实第三方公开资料；已有 [OS Hub、Asda 和 New Balance 记录](testing/buyer-disclosures-osh-2026-11-17.md)，保留日期和 Licensee 等范围。 |
-| 既定效果复盘 | Knitted / Merino 既有后窗按 [SEO Backlog](../seo/v2-backlog.md)在 11-20 起核查；不把低样本波动当作单次改版的因果效果。 |
+| 既定效果复盘 | Knitted / Merino 完整 28 天后窗（`10-21～11-17`）已于 2026-11-19 按 `final` 完成核查（Knitted 1/84→1/177、Merino 4/177→7/201，维度不闭合且含共同变量，均 `no-change`），明细见 [GSC Log](../seo/gsc-data-log.md) 与 [SEO Backlog](../seo/v2-backlog.md)。 |
 | C07 接缝对照 | 暂缺同面料实物样本，待样本及公开许可具备后再推进。 |
 | 功能针织测试指南 | 已完成[机会核查](testing/performance-knit-testing-guide-opportunity-2026-11-17.md)，属于候选；页面位置与正文尚未获批准。 |
 
