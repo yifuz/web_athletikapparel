@@ -54,7 +54,7 @@ V2 不以增加任务数量为目标。所有项目必须有一方数据、生�
 
 1. **Knitted 与 Merino 完整 28 天后窗（`10-21～11-17`）已于 2026-11-19 按 `final` 完成复盘**（均 `no-change`，明细见 [GSC Log](gsc-data-log.md)）。下一到期效果窗口为 **FLATLOCK→Merino 入链（11-23 起）**、Underwear / Yoga（11-27 起）与 Sports Accessories（11-26 后）；Merino 固定 12 单元 SERP 原定 11-20/21，执行前复核预算。
 2. 8 月正式／有效询盘已由所有者于 09-08 更正为 **0**，08-27 旧分类只保留历史轨迹；正式询盘邮箱只在当前任务明确获准读取时核对，不因继续 SEO 自动读取。
-3. Services 下一常规节点不早于 12-10，明确技术或发布触发条件出现时提前重开。**2026-11-19 URL Inspection 复查**：Showcase 男款 HY265077（11-10 申请已于 11-16 抓取收录，11-17 复查关闭）、女款 Wool Jacquard 与男款 Half-Zip Top & Tights 均为 `PASS / Submitted and indexed`；`mens-half-zip-fleece-top` 为 `NEUTRAL / Discovered - currently not indexed`；Tech Pack Guide 仍 `PASS`，但最后抓取停留 `2026-10-16T13:23:03Z`（未越过 10-16）。性能增量优化与外部凭据受阻项目继续暂缓。
+3. Services 下一常规节点不早于 12-10，明确技术或发布触发条件出现时提前重开。**2026-11-19 URL Inspection 复查**：Showcase 男款 HY265077（11-10 申请已于 11-16 抓取收录，11-17 复查关闭）、女款 Wool Jacquard 与男款 Half-Zip Top & Tights 均为 `PASS / Submitted and indexed`；`mens-half-zip-fleece-top`（`Discovered - currently not indexed`）与 Tech Pack Guide（`PASS` 但最后抓取停留 `2026-10-16`）已由所有者于 11-19 请求编入索引，建议 11-26 起复查。性能增量优化与外部凭据受阻项目继续暂缓。
 4. Knitted 完整后窗已收尾，下一最有依据的内容工作仍是准备 HY254955／HY265077 两款面料参考的 Local 审核版（成衣图只作应用展示，不冒充布样近摄；待授权后沿用 SEO-V2-005 建实施卡执行）。不扩充无触发任务，标准／外链季度复核仍不晚于 12-31。
 
 ## 2. 不进入 V2 的项目
