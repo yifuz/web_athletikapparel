@@ -182,14 +182,14 @@ ACTIVESEAM: construction, applications, tech pack callouts and sample approval.
 ================================================================
 ## Technical guide  (/technical-knitwear-tech-pack-guide/)
 ================================================================
-Primary keyword: technical knitwear tech pack
+Primary keyword: activewear tech pack / sportswear tech pack / clothing tech pack / technical knitwear tech pack
 
 **SEO Title:**
-Technical Knitwear Tech Pack Guide | Athletik Clothing
+Activewear & Sportswear Tech Pack Guide (PDF) | Athletik
 
 **Meta Description:**
-Build a cut-and-sew technical knitwear tech pack with fabric specifications,
-seam maps, POMs, tolerances, testing requirements and approval stages.
+Build a cut-and-sew activewear & sportswear clothing tech pack: fabric specs,
+seam maps, POM & BOM tables, testing criteria, plus a 9-page demo PDF.
 
 ================================================================
 ## Technical guide  (/evaluate-technical-knitwear-oem/)

@@ -14,7 +14,7 @@ $tech_pack_demo    = '/myathletik-theme/documents/athletik-tech-pack-demo.pdf';
 ?>
 
 <div class="ma-technical-article__opening">
-	<p>A tech pack is the controlled production document that tells a manufacturer exactly what to make, how to make it, and what evidence to use for approval. Whether the product is a casual T-shirt or a compression base layer, the document should answer three questions without relying on assumptions:</p>
+	<p>An activewear or sportswear clothing tech pack is the controlled production document that tells a manufacturer exactly what to make, how to make it, and what evidence to use for approval. Whether the product is a casual T-shirt or a compression base layer, the document should answer three questions without relying on assumptions:</p>
 	<ol>
 		<li>What is being made?</li>
 		<li>How must it perform and be constructed?</li>
