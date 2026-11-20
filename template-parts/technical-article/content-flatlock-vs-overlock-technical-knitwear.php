@@ -87,7 +87,7 @@ $media_base = get_stylesheet_directory_uri() . '/assets/images/production/articl
 			</tbody>
 		</table>
 	</div>
-	<p class="ma-technical-article__note">The table describes common production logic, not a rule that every seam must follow. Both constructions may appear in one garment. A technical base layer, for example, may use FLATLOCK through high-contact body panels while using OVERLOCK, COVERSTITCH or binding for other operations.</p>
+	<p class="ma-technical-article__note">The table describes common production logic, not a rule that every seam must follow. Both constructions may appear in one garment. A technical base layer, for example, may use FLATLOCK through high-contact body panels while using OVERLOCK, <a href="<?php echo esc_url( home_url( '/flatlock-vs-coverstitch-technical-knitwear/' ) ); ?>">COVERSTITCH</a> or binding for hems and other finishing operations.</p>
 </section>
 
 <section id="when-flatlock" aria-labelledby="ma-when-flatlock-title">
