@@ -1,6 +1,6 @@
 # Athletik Clothing 项目进度
 
-> 更新：2026-11-19。这里保留跨项目最新现状、下一步及**当月（2026-11）工作流水账**；每月底将当月流水账按月归档至 `docs/archive/progress-YYYY-MM.md`。
+> 更新：2026-11-20。这里保留跨项目最新现状、下一步及**当月（2026-11）工作流水账**；每月底将当月流水账按月归档至 `docs/archive/progress-YYYY-MM.md`。
 > 📅 **历月进度归档直达**：[2026-07](archive/progress-2026-07.md) · [2026-08](archive/progress-2026-08.md) · [2026-09](archive/progress-2026-09.md) · [2026-10](archive/progress-2026-10.md) · **2026-11（当月见下表）** · [全量合集快照](archive/progress-history-2026-11-18.md)
 
 ## 当前状态
@@ -38,6 +38,7 @@
 | 2026-11-18～19 | 文档治理 | 完成两轮文档减负：瘦身 `AGENTS.md`（13.9 KB）、确立三级记录制、历史快照与 8～10 月 GSC 日志统一归入 `docs/archive/` | [`archive/README.md`](archive/README.md) · `01a22c6` / `87ac4c6` |
 | 2026-11-19 | SEO | 5 URL 索引复查（3 款新 Showcase 已收录）；完成 Knitted（1/84→1/177）与 Merino（4/177→7/201）完整 28 天 final 后窗复盘 | [`gsc-data-log.md`](seo/gsc-data-log.md) · `10dcb2c` |
 | 2026-11-19 | GEO / SEO | 提交并保存 OS Hub 工厂档案（`CN2021314PF2M92`，Claim `#6327`）认领及主站外链；对摇粒绒 Showcase 与 C06 指南请求 GSC 索引 | [`GEO.md`](geo/GEO.md) · [`v2-backlog.md`](seo/v2-backlog.md) · `8b99417` |
+| 2026-11-20 | 询盘 / 品牌规范 | 完成一轮 B2B 询盘两封英文回复审核通过，并自动提炼更新询盘手册与品牌规范技能（无现成私标库、小单限库存布、全流程与成衣阶段排期拆分、美中实体分工与 USCC/办公地址、BSCI 与营业执照分阶段披露及精简跟进原则） | [`inquiry-reply-playbook.md`](marketing/inquiry-reply-playbook.md) · [`SKILL.md`](../.agents/skills/wp-brand-voice-guard/SKILL.md) |
 
 ## 使用与维护
 

@@ -89,11 +89,17 @@ technical terms **exactly** as below:
 | Brand / entities      | Athletik Clothing (public brand); Athletik Clothing Inc. (U.S. entity); Zhangjiagang Athletik Clothing Co., Limited (China entity) | MyAthletik, Myathletik, ATHLETIK (caps), or treating either jurisdictional entity name as the sole public brand |
 
 The owner confirmed that the U.S. and China entity names belong to the same
-Athletik business but have different operational responsibilities. The current
-confirmed roles are limited to the U.S. entity as website privacy data
-controller and the China entity as the named China production facility. Do not
-invent the remaining responsibility split or describe the two as one legal
-entity.
+Athletik business but have different operational responsibilities. Confirmed
+roles (updated 2026-11-20): `Athletik Clothing Inc.` (U.S.-registered company)
+serves as website privacy data controller, North America sales office, and the
+standard commercial contracting, Proforma Invoice (PI), and payment collection
+entity; `Zhangjiagang Athletik Clothing Co., Limited` (Chinese legal name
+`张家港市雅诗蓝泰制衣有限公司`, USCC `91320582MA20YTQJ6K`, factory at No. 15,
+Zhongxing Road, Yangshe Town, Zhangjiagang) is the China manufacturing entity,
+supported by our Zhangjiagang office (`Suite 618, Huafang International Plaza,
+No. 178, Chengbei Road, Zhangjiagang`). Do not invent unconfirmed
+responsibilities (such as China export customs declarant, employment, or IP
+ownership) or describe the two as one legal entity or parent/subsidiary.
 
 ## Pre-publish / pre-commit check
 
@@ -141,7 +147,7 @@ From AGENTS.md §5 + `docs/site/design-brief.md`:
 - 所有者于 2026-11-06 确认 Foxmail 已配置自动签名；邮件草稿只提供必要的主题、称呼和正文，不重复附结束敬语或签名。
 - 回答客户实际问题，按沟通阶段选择信息：直接说明标准 MOQ，避免不必要地强调客户询价数量低于标准；客户未询问的打样费用与细节不必主动展开。定制项目未提供 tech pack 时，简短说明准确报价需要技术资料，优先索取 tech pack，暂不展开过多具体报价、生产或打样细节；参考图片可辅助理解，但不保证足以准确报价。
 - 不自行确定未经所有者确认的技术路线或设计方案；对尚未确认的结构、材料适配和生产可行性先审核资料并与所有者对齐。面料推荐仅使用已确认选项，具体项目适用性仍需评估。
-- 所有者于 2026-11-06 确认：公司提供 OEM 制造，不提供产品设计服务；客户提供最终设计、图案排位及成衣 tech pack，我方评估生产。区分产品设计与面料开发／生产技术转化，不自行要求客户提供机器编织文件。
+- 所有者于 2026-11-06 确认：公司提供 OEM 制造，不提供产品设计服务；客户提供最终设计、图案排位及成衣 tech pack，我方评估生产。区分产品设计与面料开发／生产技术转化，不自行要求客户提供机器编织文件。2026-11-20 补充：目前没有现成的自有私标（private-label）成衣款库或可直接套用的版型／尺码表，官网展示款属于过往生产参考。
 - 配套围脖的 MOQ 按实际用料区分：与成衣不同面料时每款 500 件；同面料时可结合成衣订单和面料用量调整，不承诺固定更低件数或推广至其他配件。具体适用范围见手册。
 - 可使用所有者批准的既有案例参考价帮助客户了解价格范围，但应明确对应材料／系列及计价条件；新项目仍需技术资料后报价，不将案例价格、成分或可供面料等同于已满足客户的新设计。下单时核实原材料价格，不积累个案报价。
 - 所有者于 2026-11-05 确认：客户技术要求较多但订单计划不明确时，先了解款式、每款数量、颜色与时间，关键技术边界简短承接，详细核验随项目推进；已有文字 brief 不等于没有技术资料。公司行业或邮件写法不能单独证明客户的纺织专业程度或是否使用 AI。
@@ -154,6 +160,8 @@ From AGENTS.md §5 + `docs/site/design-brief.md`:
 - 当前 bonded seam 能力限于口袋、袖口等局部；ACTIVESEAM 有充分制造经验。局部胶合与主拼缝分别确认，不将局部能力扩大为整件全胶合。
 - 成本优势、性能接近和工艺效果按开发目标沟通，最终结果由样品或测试确认；不把某次项目的材料规格、工艺参数或估计结果推广为通用承诺。
 - 已确认材料或处理方式不符合客户要求时，先披露差异并确认客户是否仍接受作为参考，再安排样品。纤维成分、处理阶段与所用助剂分别核实，不从成分或加工顺序推定无树脂／无合成材料。
+- 所有者于 2026-11-20 确认：低于 500 件标准 MOQ 的小单仅能在有合适库存面料时评估（受库存颜色与数量限制），不得将 500 件定制方案混称为更低数量的定制报价；定制面料的端到端全流程与齐料、书面批样且约定付款后的纯成衣生产阶段须分开沟通，且均以当时工厂排期为准。
+- 所有者于 2026-11-20 确认：初次供应商核验可提供 2026-05 更新的现行 amfori BSCI 摘要报告（如实说明是否另有单独 CAP 文件），营业执照副本须待确认具体合作意向后再提供；跟进回复避免重复首封已述定位或保密承诺、不冗长复述所附报告明细、不加防御性客套，发附件前须核对文档细节与既往回复的一致性。
 
 当所有者明确确认某篇询盘回复“审核通过”“验收通过”或同义表述后：
 
