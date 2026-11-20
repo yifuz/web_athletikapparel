@@ -13,13 +13,13 @@
 
 | 优先工作 | 当前状态 / 下一步 |
 |---|---|
-| 公开资料一致性 | 中国生产地址为 No.15。所有者已联系中国站相关人员修复，SourceReady 更正邮件已发；**2026-11-19 只读复验**：`athletik.com.cn` 首页 HTML 与 SourceReady 公开档案（JSON-LD / `__NEXT_DATA__`）仍为 No.25，SourceReady 公开响应仍未出现 `athletikapparel.com`（匿名响应，未检登录/付费字段），继续等待更新结果。核查当前 [LinkedIn](https://www.linkedin.com/company/111831319/)、[Instagram](https://www.instagram.com/athletikclothinginc/) 和其他相关公开资料的名称、地址及官网入口。 |
-| 宽泛采购的独立佐证 | 优先寻找能够验证实体、生产或供应链角色的真实第三方公开资料；已有 [OS Hub、Asda 和 New Balance 记录](testing/buyer-disclosures-osh-2026-11-17.md)，保留日期和 Licensee 等范围。**2026-11-19 已提交并保存 OS Hub 工厂档案认领**（`CN2021314PF2M92`，Pending Claim `#6327`，填入生产地址 No.15、华芳 618 办公地址、主站 `https://www.athletikapparel.com/` 公开勾选、MOQ 500、100 人及成衣/面料工序与核心品类，待平台审核通过后复验公开页）。 |
+| 公开资料一致性 | 中国生产地址为 No.15。**2026-11-20 可控社媒主页地址已更正**；中国站修复与 SourceReady 更正邮件等待对方处理结果（11-19 只读复验仍为 No.25）。 |
+| 宽泛采购的独立佐证 | 已有 [OS Hub、Asda 和 New Balance 记录](testing/buyer-disclosures-osh-2026-11-17.md)；**11-19 已提交 OS Hub 档案认领**（`CN2021314PF2M92`，Pending Claim `#6327`，挂载 `athletikapparel.com`）；**11-20 已向 Merrow（Customer Story / ACTIVESEAM 授权）及 Woolmark（Licence `0030001176` 询问并列加主站、保留 `woolbaselayer.com`）发信**，均待回复。 |
 | 既定效果复盘 | Knitted / Merino 完整 28 天后窗（`10-21～11-17`）已于 2026-11-19 按 `final` 完成核查（Knitted 1/84→1/177、Merino 4/177→7/201，维度不闭合且含共同变量，均 `no-change`），明细见 [GSC Log](../seo/gsc-data-log.md) 与 [SEO Backlog](../seo/v2-backlog.md)。 |
 | C07 接缝对照 | 暂缺同面料实物样本，待样本及公开许可具备后再推进。 |
 | 功能针织测试指南 | 已完成[机会核查](testing/performance-knit-testing-guide-opportunity-2026-11-17.md)，属于候选；页面位置与正文尚未获批准。 |
 
-Bing AI Performance 本轮按所有者决定暂缓；YouTube 账号不由所有者管理。Instagram 和当前 LinkedIn 可规划内容，但每次公开发布仍需授权。设备方外联的原暂缓决定仍有效。
+Bing AI Performance 本轮按所有者决定暂缓；YouTube 账号不由所有者管理。Instagram 和当前 LinkedIn 可规划内容，每次公开发布需授权（11-20 已发布 Sportswear 采购证据双端 Feed 帖）。Merrow 与 Woolmark 外联已于 2026-11-20 重启发送，等待回复。
 
 ## 月度摘要：只记录可用信息
 

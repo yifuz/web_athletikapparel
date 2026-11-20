@@ -116,8 +116,8 @@ Woolmark 官方 Active Licensees 公开名录已列有
 | — | Kompass 中国主体新建制造商档案 | kompass.com | 待补 | 付费 $70/3 年，待所有者结合 §7 收益评估后决策 |
 | 2026-08-29 | OEKO-TEX Buying Guide 登记 | oeko-tex.com | 待补 | `deferred / missing-verifiable-input`；短期无法提供 certificate / label number 与持证主体 |
 | 2026-08-29 | WRAP 公开列名开启 | wrapcompliance.org | 待补 | `deferred / missing-verifiable-input`；短期无法提供 WRAP ID、有效期与门户列名状态 |
-| — | Merrow 案例接触（邮件草稿见附录 A） | merrow.com | 待补 | **所有者 2026-08-19 决定暂缓，待后续优先级提升时启动** |
-| — | Woolmark 条目可选增强 | my.woolmark.com | — | 维持现状，可选 |
+| 2026-11-20 | Merrow 案例接触与 ACTIVESEAM 授权询问 | merrow.com (`support@merrow.com`) | 待补 | **所有者于 2026-11-20 已发送**（附上线 ACTIVESEAM 专页与 `MB-4DFO 2.0` 视频链接），等待回复 |
+| 2026-11-20 | Woolmark 条目询问并列新增第二网址 | my.woolmark.com (`woolmark.china@wool.com` / `woolmark@wool.com`) | — | **所有者于 2026-11-20 已发送**（保留 `woolbaselayer.com`，询问能否并列添加 `athletikapparel.com`），等待回复 |
 
 ## 6. 下一步
 
