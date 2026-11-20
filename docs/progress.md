@@ -39,7 +39,7 @@
 | 2026-11-19 | SEO | 5 URL 索引复查（3 款新 Showcase 已收录）；完成 Knitted（1/84→1/177）与 Merino（4/177→7/201）完整 28 天 final 后窗复盘 | [`gsc-data-log.md`](seo/gsc-data-log.md) · `10dcb2c` |
 | 2026-11-19 | GEO / SEO | 提交并保存 OS Hub 工厂档案（`CN2021314PF2M92`，Claim `#6327`）认领及主站外链；对摇粒绒 Showcase 与 C06 指南请求 GSC 索引 | [`GEO.md`](geo/GEO.md) · [`v2-backlog.md`](seo/v2-backlog.md) · `8b99417` |
 | 2026-11-20 | 询盘 / 品牌规范 | 完成一轮 B2B 询盘两封英文回复审核通过，并自动提炼更新询盘手册与品牌规范技能（无公开私标目录库但过往款版型/tech pack 可按项目评估沿用或微调、小单限库存布、全流程与成衣阶段排期拆分、美中实体分工与 USCC/办公地址、BSCI 与营业执照分阶段披露及精简跟进原则） | [`inquiry-reply-playbook.md`](marketing/inquiry-reply-playbook.md) · [`SKILL.md`](../.agents/skills/wp-brand-voice-guard/SKILL.md) |
-| 2026-11-20 | GEO / 社媒分发 | 完成 `2026-11-sportswear-manufacturing-evidence` 社媒素材包（Git 外：`D:\B-视频素材\营销内容包\2026-11-sportswear-manufacturing-evidence\`）：1080×1350 主图与 390×488 手机预览零溢出视觉验收通过、双端 UTM 经 `Invoke-WebRequest` 验证 HTTP 200 且参数保留（零浏览器打开）；待发布，未写入发布日志 | 本地素材包 · [`social-content-sop.md`](geo/distribution/social-content-sop.md) |
+| 2026-11-20 | GEO / 社媒分发 | 完成 `2026-11-sportswear-manufacturing-evidence` 社媒素材包（1080×1350 主图与 390×488 手机预览零溢出、双端 UTM 经 `Invoke-WebRequest` 验证 HTTP 200 且参数保留）；同日所有者确认 LinkedIn 与 Instagram Feed 均已发布，双端公开 URL 匿名复验 HTTP 200，七日复盘窗 `2026-11-21～11-27`（11-28 起复盘；Story 状态待确认） | [`publishing-log.md`](geo/distribution/publishing-log.md) · 本地素材包 |
 
 ## 使用与维护
 

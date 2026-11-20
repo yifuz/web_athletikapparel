@@ -3,6 +3,27 @@
 本文件记录技术内容的准备、发布及复盘状态。平台实时数据和帖子 URL 必须从后台或公开帖子核对后填写，
 不得根据聊天推断。
 
+## 2026-11-20 — Sportswear Manufacturing Evidence（LinkedIn + Instagram Feed 已发布）
+
+| 字段 | 记录 |
+|---|---|
+| 内部 Campaign | `2026-11-sportswear-manufacturing-evidence` |
+| 状态 | `feed-published / public-urls-confirmed / measuring`；所有者于 2026-11-20（北京时间约 15:00）确认 LinkedIn 与 Instagram Feed 均已发布 |
+| 官网目标着陆页 | <https://www.athletikapparel.com/sportswear-manufacturer/> |
+| 素材新增价值 | 2026-11-17 上线的 Sportswear 四卡采购证据区（产品展示、30+ Yamato FLATLOCK / Merrow MB-4DFO 2.0 ACTIVESEAM 生产证据、97 款 75–530 GSM 面料参考库、Canadian Tire / Sainsbury's / Asda / New Balance Licensee Q1-2026 公开名单，仅场地识别） |
+| LinkedIn 渠道与格式 | Athletik Clothing 官方公司主页（`company/111831319`）；1 张 1080 × 1350 JPG 信息总览单图 + 英文正文 |
+| LinkedIn 公开帖子 URL | <https://www.linkedin.com/feed/update/urn:li:activity:7529436520475267073/>；2026-11-20 匿名 HTTP 200，已核验 Athletik Clothing 账号、5 个标签及公开正文开头 |
+| LinkedIn UTM content | `sportswear_manufacturing_evidence_single_image`（`linkedin / organic_social / technical_guides`） |
+| Instagram 渠道与格式 | `@athletikclothinginc`；1 张 1080 × 1350 JPG（4:5 原比例无裁切）Feed 单图 + 英文正文 |
+| Instagram 公开帖子 URL | <https://www.instagram.com/p/Df9EXeHFOHC/>；2026-11-20 匿名 HTTP 200，已核验 `@athletikclothinginc` 账号与公开正文开头（平台元数据按美西时区显示为 November 19, 2026） |
+| Instagram Story / Bio UTM | `sportswear_manufacturing_evidence_story`（`instagram / organic_social / technical_guides`）；Story Link Sticker 是否同步发布暂 `unconfirmed`，不根据 Feed 状态推断 |
+| 本地素材包 | `D:\B-视频素材\营销内容包\2026-11-sportswear-manufacturing-evidence\`（Git 与网站 uploads 外运营资产） |
+| 发布前校验 | 双端生产 UTM 仅用 `Invoke-WebRequest` 校验返回 HTTP 200、无跳转、参数保留、Canonical 为规范页且含 `ma-sportswear-evidence`（零浏览器打开，无 GA4 污染）；1080×1350 主图与 390×488 手机预览零溢出、无仿按钮 |
+| 七日窗口 | `2026-11-21`～`2026-11-27`（GA4 `Asia/Shanghai` 七个完整自然日）；**2026-11-28 起复盘**。精确发布时分与平台后台数据暂 `unavailable` |
+| 待办 | 确认是否同步发布了 Instagram Story Link Sticker；2026-11-28 起按 SOP §6 排查内部 QA 后补录平台后台明细与 GA4 `technical_guides` 外部 UTM 会话（未取得项保留 `unavailable`，不填 0） |
+
+原制作包内 `captions.md` 与 `发布说明.md` 保留生成时状态，实际发布状态以本日志及素材包内 `发布记录.md`、`metrics-template.csv` 为准。本次属自有渠道分发，不视为第三方背书或 AI 引用；公开买家名单继续限定为场地识别，不证明特定订单或背书。
+
 ## 2026-10-30 — Tech Pack 新示范（所有者确认已发布）
 
 | 字段 | 记录 |
