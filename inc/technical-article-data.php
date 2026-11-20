@@ -60,6 +60,7 @@ function myathletik_technical_article_data() {
 	return array(
 		'flatlock-vs-overlock-technical-knitwear' => array(
 			'status'           => 'publish',
+			'category'         => 'seam-construction',
 			'title'            => __( 'FLATLOCK vs OVERLOCK for Technical Knitwear', 'myathletik-child' ),
 			'seo_title'        => __( 'FLATLOCK vs OVERLOCK for Technical Knitwear | Athletik', 'myathletik-child' ),
 			'meta_description' => __( 'Compare FLATLOCK and OVERLOCK for technical knitwear: seam profile, 607/514 stitch references, garment applications, testing and tech pack callouts.', 'myathletik-child' ),
@@ -141,6 +142,7 @@ function myathletik_technical_article_data() {
 		),
 		'flatlock-vs-activeseam-technical-knitwear' => array(
 			'status'           => 'publish',
+			'category'         => 'seam-construction',
 			'title'            => __( 'Industrial FLATLOCK vs Merrow ACTIVESEAM for Cut-and-Sew Technical Knitwear', 'myathletik-child' ),
 			'seo_title'        => __( 'FLATLOCK vs Merrow ACTIVESEAM for Technical Knitwear | Athletik', 'myathletik-child' ),
 			'meta_description' => __( 'Compare industrial 4-needle 6-thread FLATLOCK with Merrow MB-4DFO ACTIVESEAM: construction, applications, tech pack callouts and sample approval.', 'myathletik-child' ),
@@ -219,6 +221,7 @@ function myathletik_technical_article_data() {
 		),
 		'flatlock-vs-coverstitch-technical-knitwear' => array(
 			'status'           => 'publish',
+			'category'         => 'seam-construction',
 			'title'            => __( 'FLATLOCK vs COVERSTITCH for Technical Knitwear', 'myathletik-child' ),
 			'seo_title'        => __( 'FLATLOCK vs COVERSTITCH for Technical Knitwear | Athletik', 'myathletik-child' ),
 			'meta_description' => __( 'Compare FLATLOCK (ISO 607) vs COVERSTITCH (ISO 605 3-needle 5-thread & ISO 406 2-needle 3-thread) for activewear hems, seams, faux flatlock & tech packs.', 'myathletik-child' ),
@@ -297,6 +300,7 @@ function myathletik_technical_article_data() {
 		),
 		'technical-knitwear-tech-pack-guide' => array(
 			'status'           => 'publish',
+			'category'         => 'tech-pack',
 			'title'            => __( 'Activewear & Sportswear Tech Pack Guide for Technical Knitwear', 'myathletik-child' ),
 			'seo_title'        => __( 'Activewear & Sportswear Tech Pack Guide (PDF) | Athletik', 'myathletik-child' ),
 			'meta_description' => __( 'Build a cut-and-sew activewear & sportswear clothing tech pack: fabric specs, seam maps, POM & BOM tables, testing criteria, plus a 9-page demo PDF.', 'myathletik-child' ),
@@ -368,6 +372,7 @@ function myathletik_technical_article_data() {
 		),
 		'evaluate-technical-knitwear-oem' => array(
 			'status'           => 'publish',
+			'category'         => 'oem-sourcing',
 			'title'            => __( 'How to Evaluate a Vertically Integrated Knitwear OEM', 'myathletik-child' ),
 			'seo_title'        => __( 'How to Evaluate a Technical Knitwear OEM | Athletik', 'myathletik-child' ),
 			'meta_description' => __( 'Evaluate a cut-and-sew knitwear OEM by checking process ownership, fabric controls, seam capability, testing, traceability, capacity and approvals.', 'myathletik-child' ),
@@ -450,6 +455,7 @@ function myathletik_technical_article_data() {
 		),
 		'top-sportswear-manufacturers-china' => array(
 			'status'           => 'publish',
+			'category'         => 'oem-sourcing',
 			'title'            => __( 'Top 5 OEM/ODM Sportswear Manufacturers in China for Mid-Sized Brands (2026)', 'myathletik-child' ),
 			'seo_title'        => __( 'Top 5 Sportswear Manufacturers in China (2026) | Athletik', 'myathletik-child' ),
 			'meta_description' => __( 'Compare five Chinese OEM/ODM sportswear manufacturers by product fit, MOQ, technical construction, fabric development and public manufacturing evidence.', 'myathletik-child' ),
@@ -576,6 +582,7 @@ function myathletik_technical_article_data() {
 		),
 		'garment-quality-control-checklist' => array(
 			'status'           => 'publish',
+			'category'         => 'quality-control',
 			'title'            => __( 'Garment Quality Control Checklist for Technical Knitwear', 'myathletik-child' ),
 			'seo_title'        => __( 'Garment Quality Control Checklist for Knitwear | Athletik', 'myathletik-child' ),
 			'meta_description' => __( 'QC checklist for cut-and-sew technical knitwear: incoming fabric checks, in-line inspection, AQL sampling, final inspection and needle control.', 'myathletik-child' ),
@@ -703,3 +710,58 @@ function myathletik_get_published_technical_articles() {
 		}
 	);
 }
+
+
+/**
+ * Return the canonical filter categories for the technical-guides hub.
+ *
+ * @return array<string, string>
+ */
+function myathletik_technical_guide_categories() {
+	return array(
+		'seam-construction' => __( 'Seam construction', 'myathletik-child' ),
+		'tech-pack'         => __( 'Tech pack & specs', 'myathletik-child' ),
+		'oem-sourcing'      => __( 'OEM & sourcing', 'myathletik-child' ),
+		'quality-control'   => __( 'Quality control', 'myathletik-child' ),
+	);
+}
+
+/**
+ * Resolve an article's canonical filter category key.
+ *
+ * @param array $article Article record.
+ * @return string
+ */
+function myathletik_get_technical_article_category( $article ) {
+	$categories = myathletik_technical_guide_categories();
+	$category   = isset( $article['category'] ) ? (string) $article['category'] : '';
+
+	return isset( $categories[ $category ] ) ? $category : '';
+}
+
+/**
+ * Load technical-guides filtering and pagination only on the hub page.
+ */
+add_action(
+	'wp_enqueue_scripts',
+	static function () {
+		if ( ! is_page( 'technical-guides' ) ) {
+			return;
+		}
+
+		$file = '/assets/js/technical-guides.js';
+		$path = get_stylesheet_directory() . $file;
+		if ( ! file_exists( $path ) ) {
+			return;
+		}
+
+		wp_enqueue_script(
+			'myathletik-technical-guides',
+			get_stylesheet_directory_uri() . $file,
+			array(),
+			(string) filemtime( $path ),
+			true
+		);
+	},
+	30
+);

@@ -83,6 +83,14 @@ Text Domain:  myathletik-child
   --ma-article-media-width: 30rem;
   --ma-article-title-width: 20ch;
   --ma-article-container: 87.5rem;
+  --ma-guides-search-width: 18rem;
+  /* Technical guides hub hero: matches Services / Sustainability / About / Contact full-bleed hero. */
+  --ma-guides-hero-overlay: linear-gradient(90deg, rgba(12, 11, 10, 0.84) 0%, rgba(12, 11, 10, 0.58) 44%, rgba(12, 11, 10, 0.18) 100%),
+    linear-gradient(180deg, rgba(12, 11, 10, 0.3) 0%, rgba(12, 11, 10, 0.12) 32%, rgba(12, 11, 10, 0.56) 100%);
+  --ma-guides-hero-overlay-mobile: linear-gradient(180deg, rgba(12, 11, 10, 0.72) 0%, rgba(12, 11, 10, 0.68) 100%);
+  --ma-guides-hero-kicker: rgba(255, 255, 255, 0.78);
+  --ma-guides-hero-muted: rgba(255, 255, 255, 0.72);
+  --ma-guides-hero-padding-y: clamp(3.5rem, 7vw, 5.25rem);
   --ma-article-reading-width: 72ch;
   --ma-article-sidebar-width: 15rem;
   --ma-article-table-min-width: 60rem;
@@ -5915,8 +5923,28 @@ body.page .site-main.ma-technical-article {
 }
 
 .ma-technical-guides__hero {
-  border-bottom: 1px solid var(--ma-color-border);
-  background: var(--ma-color-surface);
+  position: relative;
+  overflow: hidden;
+  background: var(--ma-color-dark);
+  color: var(--ma-color-white);
+}
+
+.ma-technical-guides__hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  transform: scale(1.04);
+}
+
+.ma-technical-guides__hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--ma-guides-hero-overlay-mobile);
 }
 
 .ma-technical-guides__hero-inner,
@@ -5929,32 +5957,36 @@ body.page .site-main.ma-technical-article {
 }
 
 .ma-technical-guides__hero-inner {
-	display: grid;
-	gap: var(--ma-space-5);
-  padding: var(--ma-space-5) var(--ma-space-4);
+  position: relative;
+  z-index: 2;
+  padding: var(--ma-guides-hero-padding-y) var(--ma-space-4);
 }
 
 .ma-technical-guides__hero-copy {
-	align-self: center;
+  max-width: var(--ma-reading-width);
+}
+
+.ma-technical-guides__hero.ma-technical-guides__hero--bg .ma-section-kicker {
+  color: var(--ma-guides-hero-kicker);
 }
 
 .ma-technical-guides__hero-media,
 .ma-technical-article__hero-media {
-	width: 100%;
-	margin: 0;
-	overflow: hidden;
-	border: 1px solid var(--ma-color-border);
-	border-radius: var(--ma-radius);
-	background: var(--ma-color-border);
-	aspect-ratio: 4 / 3;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-border);
+  aspect-ratio: 4 / 3;
 }
 
 .ma-technical-guides__hero-media img,
 .ma-technical-article__hero-media img {
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .ma-technical-guides__inner,
@@ -5966,46 +5998,167 @@ body.page .site-main.ma-technical-article {
   display: flex;
   flex-wrap: wrap;
   gap: var(--ma-space-2);
-  margin-bottom: var(--ma-space-4);
-  color: var(--ma-color-muted);
+  margin-bottom: var(--ma-space-3);
+  color: var(--ma-guides-hero-muted);
   font-size: var(--ma-fs-small);
 }
 
 .ma-technical-guides__breadcrumb a {
-  color: var(--ma-color-accent-2);
+  color: var(--ma-color-white);
   text-decoration: underline;
   text-underline-offset: var(--ma-space-1);
 }
 
 .ma-technical-guides__breadcrumb a:hover,
-.ma-technical-guides__breadcrumb a:focus {
-  color: var(--ma-color-accent);
+.ma-technical-guides__breadcrumb a:focus-visible {
+  color: var(--ma-guides-hero-kicker);
 }
 
 .ma-technical-guides__hero h1 {
-  max-width: var(--ma-article-title-width);
+  max-width: none;
   margin: 0;
-  color: var(--ma-color-text);
+  color: var(--ma-color-white);
   font-family: var(--ma-font-head);
   font-size: var(--ma-fs-h1);
-  line-height: 1.08;
+  font-weight: 600;
+  line-height: 1.06;
 }
 
 .ma-technical-guides__lede {
   max-width: var(--ma-reading-width);
   margin: var(--ma-space-3) 0 0;
-  color: var(--ma-color-muted);
+  color: var(--ma-guides-hero-muted);
   line-height: var(--ma-lh-body);
+}
+
+.ma-technical-guides__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--ma-space-4);
+  margin-top: var(--ma-space-5);
+  padding-block: var(--ma-space-4);
+  border-block: 1px solid var(--ma-color-border);
+  scroll-margin-top: var(--ma-space-5);
+}
+
+.ma-technical-guides__controls[hidden],
+.ma-technical-guides__empty[hidden],
+.ma-technical-guides__pagination[hidden],
+.ma-guide-card[hidden] {
+  display: none;
+}
+
+.ma-technical-guides__topics {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.ma-technical-guides__control-label {
+  display: block;
+  margin-bottom: var(--ma-space-2);
+  color: var(--ma-color-text);
+  font-size: var(--ma-fs-small);
+  font-weight: 700;
+}
+
+.ma-technical-guides__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ma-space-2);
+}
+
+.ma-technical-guides__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ma-space-2);
+  min-height: var(--ma-touch-target);
+  padding: var(--ma-space-2) var(--ma-space-3);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  color: var(--ma-color-text);
+  font-family: var(--ma-font-body);
+  font-size: var(--ma-fs-small);
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.ma-technical-guides__chip:hover {
+  border-color: var(--ma-color-text);
+}
+
+.ma-technical-guides__chip[aria-pressed="true"] {
+  border-color: var(--ma-color-text);
+  background: var(--ma-color-text);
+  color: var(--ma-color-white);
+}
+
+.ma-technical-guides__chip-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.4em;
+  padding: 0 var(--ma-space-1);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-surface);
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-social);
+  font-weight: 700;
+}
+
+.ma-technical-guides__chip[aria-pressed="true"] .ma-technical-guides__chip-count {
+  background: var(--ma-color-accent);
+  color: var(--ma-color-white);
+}
+
+.ma-technical-guides__search {
+  width: 100%;
+}
+
+.ma-technical-guides__search input {
+  width: 100%;
+  min-height: var(--ma-touch-target);
+  box-sizing: border-box;
+  padding: var(--ma-space-2) var(--ma-space-3);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  color: var(--ma-color-text);
+  font-family: var(--ma-font-body);
+  font-size: var(--ma-fs-small);
+}
+
+.ma-technical-guides__search input::placeholder {
+  color: var(--ma-color-muted);
+}
+
+.ma-technical-guides__status {
+  margin: var(--ma-space-4) 0 0;
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-small);
 }
 
 .ma-technical-guides__grid {
   display: grid;
   gap: var(--ma-space-4);
-  margin-top: var(--ma-space-5);
+  margin-top: var(--ma-space-3);
+}
+
+.ma-technical-guides__grid:focus {
+  outline: none;
+}
+
+.ma-guide-card {
+  min-width: 0;
 }
 
 .ma-guide-card a {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   overflow: hidden;
   border: 1px solid var(--ma-color-border);
@@ -6022,13 +6175,18 @@ body.page .site-main.ma-technical-article {
   transform: translateY(calc(-1 * var(--ma-space-1)));
 }
 
-.ma-guide-card a:focus-visible {
+.ma-guide-card a:focus-visible,
+.ma-technical-guides__chip:focus-visible,
+.ma-technical-guides__search input:focus-visible,
+.ma-technical-guides__page-btn:focus-visible,
+.ma-technical-guides__pagination button:focus-visible {
   outline: 3px solid var(--ma-color-accent);
   outline-offset: var(--ma-space-1);
 }
 
 .ma-guide-card__media {
-  aspect-ratio: 4 / 3;
+  flex-shrink: 0;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--ma-color-border);
 }
@@ -6041,7 +6199,10 @@ body.page .site-main.ma-technical-article {
 }
 
 .ma-guide-card__content {
-  padding: var(--ma-space-4);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: var(--ma-space-3) var(--ma-space-4) var(--ma-space-4);
 }
 
 .ma-guide-card__topic,
@@ -6052,7 +6213,7 @@ body.page .site-main.ma-technical-article {
 
 .ma-guide-card__topic {
   color: var(--ma-color-accent-2);
-  font-size: var(--ma-fs-small);
+  font-size: var(--ma-fs-social);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -6065,17 +6226,93 @@ body.page .site-main.ma-technical-article {
   line-height: 1.25;
 }
 
-.ma-guide-card__content > p {
-  margin-top: var(--ma-space-3);
+.ma-guide-card__summary {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: var(--ma-space-2);
   color: var(--ma-color-muted);
+  font-size: var(--ma-fs-small);
   line-height: var(--ma-lh-body);
 }
 
 .ma-guide-card__link {
   display: inline-block;
-  margin-top: var(--ma-space-4);
+  margin-top: auto;
+  padding-top: var(--ma-space-3);
   color: var(--ma-color-accent-2);
+  font-size: var(--ma-fs-small);
   font-weight: 700;
+}
+
+.ma-technical-guides__empty {
+  margin-top: var(--ma-space-4);
+  padding: var(--ma-space-5);
+  border: 1px dashed var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-surface);
+  text-align: center;
+}
+
+.ma-technical-guides__empty p {
+  margin: 0 0 var(--ma-space-3);
+  color: var(--ma-color-muted);
+}
+
+.ma-technical-guides__pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ma-space-3);
+  margin-top: var(--ma-space-5);
+}
+
+.ma-technical-guides__pagination button.ma-button--outline {
+  min-height: var(--ma-touch-target);
+}
+
+.ma-technical-guides__pagination button.ma-button--outline[aria-disabled="true"] {
+  border-color: var(--ma-color-border);
+  background: var(--ma-color-surface);
+  color: var(--ma-color-muted);
+  cursor: default;
+}
+
+.ma-technical-guides__pages {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ma-space-2);
+}
+
+.ma-technical-guides__page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--ma-touch-target);
+  min-height: var(--ma-touch-target);
+  padding: 0 var(--ma-space-2);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  color: var(--ma-color-text);
+  font-family: var(--ma-font-body);
+  font-size: var(--ma-fs-small);
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.ma-technical-guides__page-btn:hover {
+  border-color: var(--ma-color-text);
+}
+
+.ma-technical-guides__page-btn[aria-current="page"] {
+  border-color: var(--ma-color-accent);
+  background: var(--ma-color-accent);
+  color: var(--ma-color-white);
+  cursor: default;
 }
 
 .ma-technical-guides__scope {
@@ -6150,8 +6387,17 @@ body.page .site-main.ma-technical-article {
 }
 
 @media (min-width: 48rem) {
+  .ma-technical-guides__hero-overlay {
+    background: var(--ma-guides-hero-overlay);
+  }
+
+  .ma-technical-guides__search {
+    width: min(100%, var(--ma-guides-search-width));
+    flex-shrink: 0;
+  }
+
   .ma-technical-guides__grid {
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .ma-guide-card:only-child {
@@ -6159,15 +6405,19 @@ body.page .site-main.ma-technical-article {
   }
 
   .ma-guide-card:only-child a {
-    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
+    flex-direction: row;
+  }
+
+  .ma-guide-card:only-child .ma-guide-card__media {
+    flex: 0 0 42%;
   }
 
   .ma-guide-card:only-child .ma-guide-card__content {
-    align-self: center;
+    justify-content: center;
   }
 
   .ma-technical-guides__scope-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .ma-technical-guides__cta-inner {
@@ -6177,9 +6427,12 @@ body.page .site-main.ma-technical-article {
 }
 
 @media (min-width: 64rem) {
-	.ma-technical-guides__hero-inner {
-		grid-template-columns: minmax(0, 1fr) minmax(0, var(--ma-article-media-width));
-		align-items: center;
+	.ma-technical-guides__grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.ma-technical-guides__scope-grid {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
 	}
 }
 
