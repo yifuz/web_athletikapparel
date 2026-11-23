@@ -306,6 +306,25 @@ if ( ! empty( $category['hero_video'] ) ) {
 				<?php endif; ?>
 				<a class="ma-button ma-button--outline" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Request a program review', 'myathletik-child' ); ?> <span aria-hidden="true">→</span></a>
 			</div>
+			<?php
+			$buying_paths_guide_slug = ! empty( $category['buying_paths_guide'] ) ? sanitize_key( $category['buying_paths_guide'] ) : '';
+			$buying_paths_guide      = $buying_paths_guide_slug ? myathletik_get_technical_article_data( $buying_paths_guide_slug ) : null;
+			if ( $buying_paths_guide && 'publish' === ( $buying_paths_guide['status'] ?? '' ) ) :
+				$guide_thumb_url    = $image_base . ltrim( $buying_paths_guide['featured_small'], '/' );
+				$guide_thumb_height = (int) round( 800 * $buying_paths_guide['featured_height'] / $buying_paths_guide['featured_width'] );
+				?>
+				<a class="ma-product-guide-entry" href="<?php echo esc_url( home_url( '/' . $buying_paths_guide_slug . '/' ) ); ?>">
+					<span class="ma-product-guide-entry__media" aria-hidden="true">
+						<img src="<?php echo esc_url( $guide_thumb_url ); ?>" width="800" height="<?php echo esc_attr( $guide_thumb_height ); ?>" loading="lazy" decoding="async" alt="">
+					</span>
+					<span class="ma-product-guide-entry__copy">
+						<span class="ma-section-kicker"><?php esc_html_e( 'Technical guide', 'myathletik-child' ); ?></span>
+						<strong><?php echo esc_html( $buying_paths_guide['title'] ); ?></strong>
+						<span><?php echo esc_html( $buying_paths_guide['summary'] ); ?></span>
+					</span>
+					<span class="ma-product-guide-entry__link"><?php esc_html_e( 'Read technical guide', 'myathletik-child' ); ?> <span aria-hidden="true">→</span></span>
+				</a>
+			<?php endif; ?>
 		</div>
 	</section>
 	<?php endif; ?>

@@ -4369,6 +4369,77 @@ body.page .container.grid-container:has(.ma-product-category) {
   justify-content: center;
 }
 
+.ma-product-guide-entry {
+  display: grid;
+  gap: var(--ma-space-3);
+  align-items: center;
+  margin-top: var(--ma-space-4);
+  padding: var(--ma-space-3);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  color: var(--ma-color-text);
+  text-decoration: none;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.ma-product-guide-entry:hover,
+.ma-product-guide-entry:focus-visible {
+  border-color: var(--ma-color-accent);
+  transform: translateY(-1px);
+}
+
+.ma-product-guide-entry:focus-visible {
+  outline: 3px solid var(--ma-color-accent);
+  outline-offset: 2px;
+}
+
+.ma-product-guide-entry__media {
+  display: block;
+  overflow: hidden;
+  border-radius: calc(var(--ma-radius) - 2px);
+  background: var(--ma-color-surface);
+}
+
+.ma-product-guide-entry__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.ma-product-guide-entry__copy {
+  display: grid;
+  gap: var(--ma-space-1);
+}
+
+.ma-product-guide-entry__copy .ma-section-kicker {
+  margin: 0;
+}
+
+.ma-product-guide-entry__copy strong {
+  color: var(--ma-color-text);
+  font-family: var(--ma-font-heading);
+  font-size: var(--ma-fs-h3);
+  line-height: var(--ma-lh-snug);
+}
+
+.ma-product-guide-entry__copy > span:last-child {
+  color: var(--ma-color-muted);
+  font-size: var(--ma-fs-small);
+  line-height: var(--ma-lh-body);
+}
+
+.ma-product-guide-entry__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ma-space-1);
+  color: var(--ma-color-accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 /* Category-specific product proof gallery. Product data controls whether the
    section renders, so other category pages keep their current structure. */
 .ma-product-showcase {
@@ -5753,6 +5824,12 @@ body.page .container.grid-container:has(.ma-product-category) {
     justify-self: end;
   }
 
+  .ma-product-guide-entry {
+    grid-template-columns: 11rem minmax(0, 1fr) auto;
+    gap: var(--ma-space-4);
+    padding: var(--ma-space-4);
+  }
+
   .ma-product-showcase__grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--ma-space-4);
@@ -6387,7 +6464,8 @@ body.page .site-main.ma-technical-article {
 }
 
 @media (min-width: 48rem) {
-  .ma-technical-guides__hero-overlay {
+  .ma-technical-guides__hero-overlay,
+  .ma-technical-article__hero-overlay {
     background: var(--ma-guides-hero-overlay);
   }
 
@@ -6447,6 +6525,74 @@ body.page .site-main.ma-technical-article {
 .ma-technical-article__hero {
   border-bottom: 1px solid var(--ma-color-border);
   background: var(--ma-color-surface);
+}
+
+.ma-technical-article__hero--bg {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 0;
+  background: var(--ma-color-dark);
+  color: var(--ma-color-white);
+}
+
+.ma-technical-article__hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  transform: scale(1.04);
+}
+
+.ma-technical-article__hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--ma-guides-hero-overlay-mobile);
+}
+
+.ma-technical-article__hero--bg .ma-technical-article__hero-inner {
+  position: relative;
+  z-index: 2;
+  display: block;
+  padding: var(--ma-guides-hero-padding-y) var(--ma-space-4);
+}
+
+.ma-technical-article__hero--bg .ma-technical-article__hero-copy {
+  max-width: 44rem;
+}
+
+.ma-technical-article__hero.ma-technical-article__hero--bg .ma-section-kicker {
+  color: var(--ma-guides-hero-kicker);
+}
+
+.ma-technical-article__hero.ma-technical-article__hero--bg h1 {
+  color: var(--ma-color-white);
+  font-weight: 600;
+}
+
+.ma-technical-article__hero.ma-technical-article__hero--bg .ma-technical-article__lede {
+  margin-top: var(--ma-space-3);
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.ma-technical-article__hero.ma-technical-article__hero--bg .ma-technical-article__breadcrumb,
+.ma-technical-article__hero.ma-technical-article__hero--bg .ma-technical-article__meta {
+  color: var(--ma-guides-hero-muted);
+}
+
+.ma-technical-article__hero.ma-technical-article__hero--bg .ma-technical-article__breadcrumb a,
+.ma-technical-article__hero.ma-technical-article__hero--bg .ma-technical-article__meta a {
+  color: var(--ma-color-white);
+}
+
+.ma-technical-article__hero.ma-technical-article__hero--bg .ma-technical-article__breadcrumb a:hover,
+.ma-technical-article__hero.ma-technical-article__hero--bg .ma-technical-article__breadcrumb a:focus-visible,
+.ma-technical-article__hero.ma-technical-article__hero--bg .ma-technical-article__meta a:hover,
+.ma-technical-article__hero.ma-technical-article__hero--bg .ma-technical-article__meta a:focus-visible {
+  color: var(--ma-guides-hero-kicker);
 }
 
 .ma-technical-article__hero-inner,
@@ -6693,7 +6839,7 @@ body.page .site-main.ma-technical-article {
 }
 
 @media (min-width: 64rem) and (max-width: 79.99rem) {
-  .ma-technical-article__hero-inner {
+  .ma-technical-article__hero:not(.ma-technical-article__hero--bg) .ma-technical-article__hero-inner {
     grid-template-columns: minmax(0, 1fr) minmax(0, var(--ma-article-media-width));
     align-items: start;
   }
@@ -6792,6 +6938,19 @@ body.page .site-main.ma-technical-article {
   aspect-ratio: 9 / 16;
   border-radius: var(--ma-radius);
   background: var(--ma-color-dark);
+}
+
+.ma-technical-article__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-surface);
+}
+
+.ma-technical-article__media--wide {
+  width: 100%;
+  margin: var(--ma-space-5) 0;
 }
 
 .ma-technical-article__media figcaption {
@@ -6956,7 +7115,7 @@ body.page .site-main.ma-technical-article {
 }
 
 @media (min-width: 80rem) {
-  .ma-technical-article__hero-inner {
+  .ma-technical-article__hero:not(.ma-technical-article__hero--bg) .ma-technical-article__hero-inner {
     grid-template-columns: minmax(0, 1fr) minmax(0, var(--ma-article-media-width));
     align-items: start;
   }

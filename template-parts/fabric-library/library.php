@@ -9,7 +9,7 @@ $material_groups = myathletik_fabric_library_material_groups();
 $available_materials = array_unique( array_merge( ...array_column( $fabrics, 'materials' ) ) );
 ?>
 <section class="ma-product-section ma-fabric-library" id="merino-fabric-examples" aria-labelledby="ma-fabric-library-title" data-fabric-library>
-	<div class="ma-section-inner">
+	<div id="fabric-library" class="ma-section-inner">
 		<header class="ma-fabric-library__heading">
 			<div>
 				<p class="ma-section-kicker"><?php esc_html_e( 'Fabric references', 'myathletik-child' ); ?></p>

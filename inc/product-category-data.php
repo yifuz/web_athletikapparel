@@ -799,6 +799,7 @@ function myathletik_product_category_data() {
 			'buying_paths_heading' => __( 'Merino wool programs for specific layering needs', 'myathletik-child' ),
 			'buying_paths_intro'   => __( 'Start the quotation with the product role and intended climate, then define the composition, micron, GSM, knit structure, fit, construction, and testing requirements for the program.', 'myathletik-child' ),
 			'buying_paths_note'    => __( 'The GSM ranges shown are common briefing starting points, not fixed production limits. Final material and garment specifications are confirmed against the buyer\'s requirements and approved sample.', 'myathletik-child' ),
+			'buying_paths_guide'   => 'merino-wool-base-layer-gsm-guide',
 			'buying_paths'         => array(
 				array(
 					'label'       => __( 'Underwear program', 'myathletik-child' ),
@@ -1114,6 +1115,7 @@ function myathletik_product_category_data() {
 				myathletik_gallery_item( 'merino wool product/merino-wool-base-layer-20.jpg', __( 'Merino wool base layer manufacturing sample', 'myathletik-child' ) ),
 			),
 			'related'          => array(
+				myathletik_related_link( __( 'Merino Wool Base Layer GSM Guide', 'myathletik-child' ), '/merino-wool-base-layer-gsm-guide/' ),
 				myathletik_related_link( __( 'Underwear Manufacturer', 'myathletik-child' ), '/underwear-manufacturer/' ),
 				myathletik_related_link( __( 'Outdoor Clothing Manufacturer', 'myathletik-child' ), '/outdoor-clothing-manufacturer/' ),
 				myathletik_related_link( __( 'FLATLOCK vs OVERLOCK Guide', 'myathletik-child' ), '/flatlock-vs-overlock-technical-knitwear/' ),

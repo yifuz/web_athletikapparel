@@ -29,6 +29,8 @@ $image_url         = $media . ltrim( $article['featured_image'], '/' );
 $image_small_url   = $media . ltrim( $article['featured_small'], '/' );
 $references_kicker = ! empty( $article['references_kicker'] ) ? $article['references_kicker'] : __( 'Primary sources', 'myathletik-child' );
 $references_title  = ! empty( $article['references_title'] ) ? $article['references_title'] : __( 'Technical references', 'myathletik-child' );
+$is_bg_hero        = 'bg' === ( $article['hero_style'] ?? '' );
+$hero_position     = ! empty( $article['hero_position'] ) ? $article['hero_position'] : 'center';
 $related_articles  = array();
 
 foreach ( $article['related_articles'] ?? array() as $related_slug ) {
@@ -42,6 +44,52 @@ foreach ( $article['related_articles'] ?? array() as $related_slug ) {
 
 <main id="primary" class="site-main ma-technical-article">
 	<article aria-labelledby="ma-technical-article-title">
+		<?php if ( $is_bg_hero ) : ?>
+		<header class="ma-technical-article__hero ma-technical-article__hero--bg">
+			<img
+				class="ma-technical-article__hero-bg"
+				src="<?php echo esc_url( $image_url ); ?>"
+				srcset="<?php echo esc_attr( $image_small_url . ' 800w, ' . $image_url . ' ' . $article['featured_width'] . 'w' ); ?>"
+				sizes="100vw"
+				width="<?php echo esc_attr( $article['featured_width'] ); ?>"
+				height="<?php echo esc_attr( $article['featured_height'] ); ?>"
+				loading="eager"
+				fetchpriority="high"
+				decoding="async"
+				alt="<?php echo esc_attr( $article['featured_alt'] ); ?>"
+				style="object-position: <?php echo esc_attr( $hero_position ); ?>;"
+			>
+			<div class="ma-technical-article__hero-overlay" aria-hidden="true"></div>
+			<div class="ma-technical-article__hero-inner">
+				<div class="ma-technical-article__hero-copy">
+					<nav class="ma-technical-article__breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'myathletik-child' ); ?>">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'myathletik-child' ); ?></a>
+						<span aria-hidden="true">/</span>
+						<a href="<?php echo esc_url( home_url( '/technical-guides/' ) ); ?>"><?php esc_html_e( 'Technical Guides', 'myathletik-child' ); ?></a>
+						<span aria-hidden="true">/</span>
+						<span aria-current="page"><?php echo esc_html( $article['title'] ); ?></span>
+					</nav>
+
+					<p class="ma-section-kicker"><?php echo esc_html( $article['kicker'] ); ?></p>
+					<h1 id="ma-technical-article-title"><?php echo esc_html( $article['title'] ); ?></h1>
+					<p class="ma-technical-article__lede"><?php echo esc_html( $article['intro'] ); ?></p>
+					<p class="ma-technical-article__meta">
+						<?php esc_html_e( 'Published by', 'myathletik-child' ); ?>
+						<a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>"><?php esc_html_e( 'Athletik Clothing', 'myathletik-child' ); ?></a>
+						<span aria-hidden="true">·</span>
+						<time datetime="<?php echo esc_attr( $published_iso ); ?>"><?php echo esc_html( $published_display ); ?></time>
+						<span aria-hidden="true">·</span>
+						<?php esc_html_e( 'Technical review completed', 'myathletik-child' ); ?>
+						<time datetime="<?php echo esc_attr( $reviewed_iso ); ?>"><?php echo esc_html( $reviewed_display ); ?></time>
+						<?php if ( $updated_iso ) : ?>
+							<span aria-hidden="true">·</span>
+							<span><?php esc_html_e( 'Content updated', 'myathletik-child' ); ?> <time datetime="<?php echo esc_attr( $updated_iso ); ?>"><?php echo esc_html( $updated_display ); ?></time></span>
+						<?php endif; ?>
+					</p>
+				</div>
+			</div>
+		</header>
+		<?php else : ?>
 		<header class="ma-technical-article__hero">
 			<div class="ma-technical-article__hero-inner">
 				<div class="ma-technical-article__hero-copy">
@@ -87,6 +135,7 @@ foreach ( $article['related_articles'] ?? array() as $related_slug ) {
 				</figure>
 			</div>
 		</header>
+		<?php endif; ?>
 
 		<div class="ma-technical-article__layout">
 			<div class="ma-technical-article__rail">

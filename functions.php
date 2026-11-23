@@ -110,16 +110,19 @@ function myathletik_preload_technical_guide_cover() {
 		return;
 	}
 
-	$base_url  = myathletik_images_uri() . '/';
-	$full_url  = $base_url . ltrim( $image['featured_image'], '/' );
-	$small_url = $base_url . ltrim( $image['featured_small'], '/' );
+	$base_url    = myathletik_images_uri() . '/';
+	$full_url    = $base_url . ltrim( $image['featured_image'], '/' );
+	$small_url   = $base_url . ltrim( $image['featured_small'], '/' );
+	$image_sizes = ( is_page( 'technical-guides' ) || 'bg' === ( $image['hero_style'] ?? '' ) )
+		? '100vw'
+		: '(max-width: 63.99rem) calc(100vw - 3rem), 32rem';
 	?>
 	<link
 		rel="preload"
 		as="image"
 		href="<?php echo esc_url( $full_url ); ?>"
 		imagesrcset="<?php echo esc_attr( $small_url . ' 800w, ' . $full_url . ' ' . $image['featured_width'] . 'w' ); ?>"
-		imagesizes="(max-width: 63.99rem) calc(100vw - 3rem), 32rem"
+		imagesizes="<?php echo esc_attr( $image_sizes ); ?>"
 		fetchpriority="high"
 	>
 	<?php

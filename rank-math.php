@@ -784,6 +784,7 @@ function myathletik_rank_math_is_core_sitemap_url( $url ) {
 			'/flatlock-vs-activeseam-technical-knitwear/',
 			'/flatlock-vs-coverstitch-technical-knitwear/',
 			'/technical-knitwear-tech-pack-guide/',
+			'/merino-wool-base-layer-gsm-guide/',
 			'/evaluate-technical-knitwear-oem/',
 			'/sportswear-manufacturer/',
 			'/underwear-manufacturer/',
