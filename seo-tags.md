@@ -204,6 +204,18 @@ Build a cut-and-sew activewear & sportswear clothing tech pack: fabric specs,
 seam maps, POM & BOM tables, testing criteria, plus a 9-page demo PDF.
 
 ================================================================
+## Technical guide  (/merino-wool-base-layer-gsm-guide/)
+================================================================
+Primary keyword: Merino wool base layer GSM / 150 vs 200 vs 250 GSM merino / merino wool base layer manufacturer
+
+**SEO Title:**
+Merino Wool Base Layer GSM Guide (140–260 GSM) | Athletik
+
+**Meta Description:**
+Compare 150, 200 and 250 GSM Merino wool base layers: 4 weight tiers (140–260 GSM),
+micron, knit structure, blends, FLATLOCK seams, MOQ and tech pack specs.
+
+================================================================
 ## Technical guide  (/evaluate-technical-knitwear-oem/)
 ================================================================
 Primary keyword: evaluate technical knitwear OEM
@@ -279,7 +291,7 @@ NOT filenames, NOT "image1". Describe what's shown + relevant keyword.
 | 首页 `/` | `functions.php` 的 `myathletik_home_meta_description()` 硬编码（首页 Rank Math 描述字段保持为空，防止输出两个 description 标签） |
 | 六个服装品类页（Sportswear、Underwear、Outdoor、Merino、Silk、Sports Accessories） | **仅** Rank Math 后台字段（数据库）。`inc/product-category-data.php` 里的 `seo_title` / `meta_description` 不参与生产输出，改它们无效 |
 | Knitted Fabrics 品类页 | `inc/product-category-data.php` 的 `meta_description`（唯一例外）。主题 `rank-math.php` 的过滤器用它覆盖前端、OG/Twitter 和 WebPage Schema 描述 |
-| 七篇技术指南 + `/technical-guides/` Hub | `inc/technical-article-data.php` 的 `seo_title` / `meta_description`。`functions.php` 的 init 钩子把它们写入 Rank Math 数据库字段，`rank-math.php` 过滤器再从同一份数据覆盖输出 |
+| 八篇技术指南 + `/technical-guides/` Hub | `inc/technical-article-data.php` 的 `seo_title` / `meta_description`。`functions.php` 的 init 钩子把它们写入 Rank Math 数据库字段，`rank-math.php` 过滤器再从同一份数据覆盖输出 |
 | Services、About、Contact、Sustainability | **仅** Rank Math 后台字段（数据库），代码中没有对应字段 |
 
 关键机制说明：
