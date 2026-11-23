@@ -773,7 +773,7 @@ function myathletik_technical_article_data() {
 				'seam-mapping'       => __( 'Seam architecture & zone mapping', 'myathletik-child' ),
 				'functional-details' => __( 'Waistbands, ventilation & finishing options', 'myathletik-child' ),
 				'sampling-and-qc'    => __( 'Sampling validation, QC & testing alignment', 'myathletik-child' ),
-				'moq-and-rfq'        => __( 'MOQ, private-label scope & RFQ checklist', 'myathletik-child' ),
+				'moq-and-rfq'        => __( 'MOQ & starting a custom program', 'myathletik-child' ),
 				'faq'                => __( 'Common buyer questions', 'myathletik-child' ),
 			),
 			'faq'              => array(

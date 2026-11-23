@@ -8,27 +8,25 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
-$sportswear_base = get_stylesheet_directory_uri() . '/assets/images/sportswear/';
 ?>
 
 <section id="direct-answer" aria-labelledby="ma-ac-direct-answer-title">
 	<h2 id="ma-ac-direct-answer-title">Direct answer: why compression and activewear require stricter OEM control</h2>
 	<p>Compression tops, high-rise leggings, fitted shorts and performance training layers carry substantially tighter manufacturing tolerances than casual cut-and-sew knitwear. In everyday T-shirts or relaxed fleece, minor shifts in stitch extension, fabric recovery or seam bulk rarely cause structural failure. Under multi-directional athletic strain, however, the same shortcuts lead directly to seam grinning, snapped threads across gussets, see-through panels during flexion, and waistbands that roll or lose tension after early wash cycles.</p>
 	<p>Athletik Clothing operates as a vertically integrated OEM and ODM cut-and-sew technical knitwear manufacturer in Zhangjiagang, serving performance apparel brands, wholesalers and importers across North America, Europe and Asia-Pacific. Every <a href="<?php echo esc_url( home_url( '/sportswear-manufacturer/' ) ); ?>">sportswear manufacturing program</a>—spanning training tops, tanks and tees, leggings, shorts, compression pieces (including buyer-specified graduated compression evaluations), yoga and studio wear, and running singlets—is built to an approved specification and confirmed production order. <strong>This is not a ready-stock relabeling service</strong>; material selection, seam architecture, fit grading and quality checkpoints are aligned before bulk cutting begins.</p>
-	<p>Buyers sourcing a compression garment manufacturer or a compression shirt and leggings OEM should evaluate four connected decisions together: fiber and elastane balance across the target GSM range, true low-profile seam mapping by garment zone, dynamic sampling verification on bulk-intent fabric, and realistic MOQ planning across styles and colors.</p>
+	<p>Buyers sourcing a compression garment manufacturer or a compression shirt and leggings OEM should evaluate four connected decisions together: fiber and elastane balance across the target GSM range, true low-profile seam mapping by garment zone, fit-sample verification on bulk-intent fabric, and realistic MOQ planning across styles and colors.</p>
 </section>
 
 <section id="fabric-selection" aria-labelledby="ma-ac-fabric-selection-title">
 	<h2 id="ma-ac-fabric-selection-title">Fabric selection: fiber systems, elastane ratios and 160–310 GSM references</h2>
-	<p>Performance in fitted activewear starts with how yarn chemistry, knit density and spandex percentage work together. Rather than selecting a fabric by GSM alone, buyers should match fiber behavior and elastane content to the garment's support role and contact zone:</p>
+	<p>Performance in fitted activewear starts with how yarn chemistry, knit density and spandex percentage work together:</p>
 	<ul>
-		<li><strong>Nylon / Spandex (7% to 23% Spandex):</strong> Widely specified for compression tops, second-skin base layers and high-stretch leggings where smooth surface hand feel, abrasion resistance and multi-directional elastic snap-back are priorities. Higher elastane builds—such as 23% Spandex at 250–255 GSM—provide stronger holding power for supportive bottoms, while 7% to 14% Spandex at 160–180 GSM suits breathable training tops and fitted compression shirts.</li>
-		<li><strong>Polyester / Spandex &amp; Cationic Polyester blends (5% to 14.5% Spandex):</strong> Chosen for crisp shape retention, lower moisture absorption, heathered visual texture (via Cationic Polyester) and print-ready surfaces. Heavier 280–310 GSM polyester-spandex knits also support structured outer training layers, zip tops and colder-weather studio silhouettes.</li>
-		<li><strong>Recycled Polyester / Spandex:</strong> Available where sustainability goals require recycled content (such as GRS-aligned programs, with scope and transaction documentation confirmed per order).</li>
+		<li><strong>Nylon / Spandex (7% to 23% Spandex):</strong> Smooth hand feel, abrasion resistance and strong elastic recovery—from breathable 160–170 GSM training tops to 250 GSM supportive compression leggings.</li>
+		<li><strong>Polyester / Spandex &amp; Cationic Polyester blends:</strong> Crisp shape retention, heathered aesthetics and print-ready surfaces, scaling up to 310 GSM for structured outer training layers.</li>
+		<li><strong>Recycled Polyester / Spandex:</strong> Available where sustainability goals require recycled content (with GRS chain-of-custody documentation confirmed per order).</li>
 	</ul>
 
-	<p>The table below organizes representative synthetic activewear references from Athletik's <a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/#merino-fabric-examples' ) ); ?>">knitted fabric selection library</a> alongside their intended garment categories:</p>
+	<p>The six examples below highlight distinct weight and elastane profiles from Athletik's <a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/#merino-fabric-examples' ) ); ?>">knitted fabric selection library</a>:</p>
 
 	<div class="ma-technical-article__table-wrap" role="region" aria-label="Representative activewear and compression fabric references from 160 to 310 GSM" tabindex="0">
 		<table>
@@ -51,37 +49,19 @@ $sportswear_base = get_stylesheet_directory_uri() . '/assets/images/sportswear/'
 					<th scope="row">HY265055</th>
 					<td>160 GSM</td>
 					<td>93% Nylon / 7% Spandex</td>
-					<td>Lightweight training tops, running tees and warm-weather fitted layers.</td>
+					<td>Lightweight training tops, running tees and fitted base layers.</td>
 				</tr>
 				<tr>
 					<th scope="row">HY265066</th>
 					<td>170 GSM</td>
 					<td>86% Nylon / 14% Spandex</td>
-					<td>Close-fit training singlets and light-to-moderate compression tops needing higher recovery.</td>
-				</tr>
-				<tr>
-					<th scope="row">HY265047 / HY264973</th>
-					<td>180 GSM</td>
-					<td>90% Nylon / 10% Spandex</td>
-					<td>All-season performance tops, fitted studio tees and lightweight performance layers.</td>
-				</tr>
-				<tr>
-					<th scope="row">HY265033</th>
-					<td>180 GSM</td>
-					<td>87% Nylon / 13% Spandex</td>
-					<td>Higher-recovery fitted tops, base layers and contoured athletic silhouettes.</td>
+					<td>Close-fit tops and light-to-moderate compression shirts with higher elastane recovery.</td>
 				</tr>
 				<tr>
 					<th scope="row">HY254835</th>
 					<td>180 GSM</td>
 					<td>76% Recycled Polyester / 13% Polyester / 11% Spandex</td>
 					<td>Recycled-content training tops and stretch activewear programs.</td>
-				</tr>
-				<tr>
-					<th scope="row">HY264974</th>
-					<td>220 GSM</td>
-					<td>95% Polyester / 5% Spandex</td>
-					<td>Mid-weight training tops, warm-up tees and structured stretch knit separates.</td>
 				</tr>
 				<tr>
 					<th scope="row">HY264978</th>
@@ -93,25 +73,13 @@ $sportswear_base = get_stylesheet_directory_uri() . '/assets/images/sportswear/'
 					<th scope="row">HY265035</th>
 					<td>250 GSM</td>
 					<td>77% Nylon / 23% Spandex</td>
-					<td>High-elastane compression leggings, bike shorts and firm-hold studio bottoms.</td>
-				</tr>
-				<tr>
-					<th scope="row">HY254967</th>
-					<td>255 GSM</td>
-					<td>77% Nylon / 23% Spandex</td>
-					<td>Supportive compression bottoms and high-rise leggings requiring dense knit coverage.</td>
-				</tr>
-				<tr>
-					<th scope="row">HY254968</th>
-					<td>280 GSM</td>
-					<td>90% Polyester / 10% Spandex</td>
-					<td>Heavier training layers, studio jackets and structured outer activewear.</td>
+					<td>High-elastane compression leggings, bike shorts and firm-hold bottoms.</td>
 				</tr>
 				<tr>
 					<th scope="row">HY265063</th>
 					<td>310 GSM</td>
 					<td>90% Polyester / 10% Spandex</td>
-					<td>Heavyweight outer training layers and cold-weather performance pieces.</td>
+					<td>Heavyweight structured outer training layers and cold-weather pieces.</td>
 				</tr>
 			</tbody>
 		</table>
@@ -178,35 +146,6 @@ $sportswear_base = get_stylesheet_directory_uri() . '/assets/images/sportswear/'
 	<p><strong>Avoid "faux flatlock" substitution on true compression joins:</strong> A two-step join made by sewing <code>ISO 514</code> OVERLOCK and topstitching the seam allowance flat with <code>ISO 605</code> COVERSTITCH can resemble flatlock from the exterior. Inside the garment, however, it traps a folded three-layer fabric ridge against the skin. While practical on heavier relaxed hoodies or outer layers, faux flatlock is unsuitable for tight crotch gussets, inseams or compression armscyes where minimal internal bulk is essential. For deeper stitch comparisons, review our guides on <a href="<?php echo esc_url( home_url( '/flatlock-vs-overlock-technical-knitwear/' ) ); ?>">FLATLOCK vs OVERLOCK</a>, <a href="<?php echo esc_url( home_url( '/flatlock-vs-coverstitch-technical-knitwear/' ) ); ?>">FLATLOCK vs COVERSTITCH</a> and <a href="<?php echo esc_url( home_url( '/flatlock-vs-activeseam-technical-knitwear/' ) ); ?>">FLATLOCK vs Merrow ACTIVESEAM</a>.</p>
 
 	<p><strong>Sewing high-elastane fabrics (such as 23% Spandex):</strong> Dense 250–255 GSM nylon-spandex knits require careful machine calibration to prevent needle cutting of elastane filaments, heat scorching, skipped stitches at thick gusset intersections, and seam grinning under stretch. Ballpoint needles, extensible textured looper threads, controlled differential feed and sew-off validation on the exact production fabric should be locked before bulk cutting.</p>
-
-	<div class="ma-technical-article__media-grid">
-		<figure class="ma-technical-article__media">
-			<img
-				src="<?php echo esc_url( $sportswear_base . 'compression-leggings-shorts-1800-lossless.webp' ); ?>"
-				srcset="<?php echo esc_attr( $sportswear_base . 'compression-leggings-shorts-800-lossless.webp 800w, ' . $sportswear_base . 'compression-leggings-shorts-1200-lossless.webp 1200w, ' . $sportswear_base . 'compression-leggings-shorts-1800-lossless.webp 1800w' ); ?>"
-				sizes="(max-width: 47.99rem) calc(100vw - 3rem), 22rem"
-				width="1800"
-				height="1350"
-				loading="lazy"
-				decoding="async"
-				alt="Model demonstrating stretch and recovery in charcoal high-rise performance leggings"
-			>
-			<figcaption>High-rise performance leggings demonstrating waistband extension—waistband recovery, seam elongation and fabric opacity should be evaluated on the nominated material during sampling.</figcaption>
-		</figure>
-		<figure class="ma-technical-article__media">
-			<img
-				src="<?php echo esc_url( $sportswear_base . 'training-tops-1448-lossless.webp' ); ?>"
-				srcset="<?php echo esc_attr( $sportswear_base . 'training-tops-800-lossless.webp 800w, ' . $sportswear_base . 'training-tops-1200-lossless.webp 1200w, ' . $sportswear_base . 'training-tops-1448-lossless.webp 1448w' ); ?>"
-				sizes="(max-width: 47.99rem) calc(100vw - 3rem), 22rem"
-				width="1448"
-				height="1086"
-				loading="lazy"
-				decoding="async"
-				alt="Model wearing a heathered performance training tank with printed compression leggings"
-			>
-			<figcaption>Close-fit training top with bound neckline and armholes paired with printed stretch-knit leggings—combining low-profile joins with extensible binding and hem finishes.</figcaption>
-		</figure>
-	</div>
 </section>
 
 <section id="functional-details" aria-labelledby="ma-ac-functional-details-title">
@@ -224,7 +163,7 @@ $sportswear_base = get_stylesheet_directory_uri() . '/assets/images/sportswear/'
 	<h2 id="ma-ac-sampling-and-qc-title">Sampling validation, quality checkpoints and testing alignment</h2>
 	<p>Because compression apparel is worn under tension, static table measurements alone never catch every bulk risk. A structured pre-production and in-line control plan protects fit consistency and garment longevity from first sample through shipment release:</p>
 	<ol>
-		<li><strong>Dynamic movement &amp; opacity review:</strong> During prototype and fit-sample evaluation, test leggings and shorts under full squat and lunge flexion under direct lighting to assess opacity (including squat-proof targets), gusset seam comfort and waistband stay-put behavior.</li>
+		<li><strong>Buyer fit-sample &amp; opacity sign-off:</strong> Where squat-proof opacity, compression feel or movement stability is critical to the garment, the buyer's team typically evaluates fit on-body during prototype and fit-sample review—or specifies an agreed lab method—so acceptance criteria are locked before pre-production approval.</li>
 		<li><strong>Waistband recovery &amp; seam-pop checks:</strong> Inspect waistband attachment elasticity, seam extension across cross-seams (such as crotch gusset intersections and side-seam-to-hem crossings), and absence of thread breakage or seam grinning under agreed stretch.</li>
 		<li><strong>Incoming fabric lot control:</strong> Before bulk cutting, incoming rolls are checked against the approved specification for finished GSM, usable width, shade consistency (with roll-to-roll lot segregation), visual defects and spot stretch/recovery behavior.</li>
 		<li><strong>First-piece, in-line and AQL final inspection:</strong> First-piece approval locks bulk line settings against the sealed pre-production sample. In-line audits check stitch formation, skipped stitches, trim/SCREENPRINT or heat-transfer placement and POM dimensions, followed by pre-shipment AQL inspection (<code>ISO 2859-1</code> / ANSI/ASQ Z1.4) with defect classifications and relaxed vs. extended POM measuring rules documented in the <a href="<?php echo esc_url( home_url( '/technical-knitwear-tech-pack-guide/' ) ); ?>">tech pack</a>.</li>
@@ -234,23 +173,12 @@ $sportswear_base = get_stylesheet_directory_uri() . '/assets/images/sportswear/'
 </section>
 
 <section id="moq-and-rfq" aria-labelledby="ma-ac-moq-and-rfq-title">
-	<h2 id="ma-ac-moq-and-rfq-title">MOQ structure, private-label scope and RFQ launch checklist</h2>
-	<p>Understanding how garment and fabric minimums interact helps activewear brands plan colorways, size curves and launch budgets accurately from the first inquiry:</p>
+	<h2 id="ma-ac-moq-and-rfq-title">MOQ &amp; starting a custom program</h2>
 	<ul>
-		<li><strong>Standard garment entry point:</strong> <strong>500 pieces per style</strong>.</li>
-		<li><strong>Custom fabric color requirement:</strong> For custom fabrics, the minimum is typically evaluated at <strong>400–500 pieces per color per style</strong> with mixed sizes. Both the per-style and per-color conditions apply together and are confirmed against fabric mill minimums, garment fabric consumption and color breakdown (for example, 1 colorway typically starts at 500 pieces, 2 colorways around 800–1,000 pieces, and 3 colorways around 1,200–1,500 pieces—subject to actual consumption and mill dye-lot minimums).</li>
-		<li><strong>Smaller initial runs &amp; repeat orders:</strong> Smaller initial orders are not automatically rejected; they may be evaluated on a project basis where suitable stock fabric is available, without guaranteeing a lower MOQ on custom developments. Repeat orders on an existing style are also evaluated per project against current fabric availability and mill minimums.</li>
-		<li><strong>Sampling fees &amp; private-label execution:</strong> First-time inquiries are typically charged a sample fee that includes sample shipping, calculated on actual project development and courier costs. Approved custom programs support full private-label execution—main labels, care/content labels, hangtags, SCREENPRINT or heat-transfer branding, and custom packaging—built for your production order.</li>
+		<li><strong>Standard MOQ:</strong> <strong>500 pieces per style</strong>. For custom fabrics, the minimum is typically evaluated at <strong>400–500 pieces per color per style</strong> with mixed sizes, confirmed against mill minimums and color breakdown.</li>
+		<li><strong>Smaller runs &amp; sampling:</strong> Smaller initial orders may be evaluated per project where suitable stock fabric is available (without guaranteeing a lower MOQ on custom developments). First-time inquiries are typically charged a sample fee that includes sample shipping, calculated on actual project costs.</li>
+		<li><strong>Private-label execution:</strong> Main labels, care labels, hangtags, SCREENPRINT or heat-transfer branding, and custom packaging are developed for approved custom orders—never ready-stock relabeling.</li>
 	</ul>
 
-	<h3>What to include in your activewear or compression RFQ</h3>
-	<ol>
-		<li><strong>Product scope &amp; silhouette brief:</strong> Style type (compression shirt, high-rise legging, shorts, sports bra, running singlet or outer layer), intended activity and target market across North America, Europe or Asia-Pacific.</li>
-		<li><strong>Tech pack or reference sample:</strong> Technical flats, POM table with tolerances, size range and fit target (including whether graduated compression evaluation is requested).</li>
-		<li><strong>Fabric target:</strong> Preferred fiber blend, GSM range, hand feel, stretch/recovery target, opacity criteria and any finish requirements (such as Carbondry or wicking goals).</li>
-		<li><strong>Seam map &amp; trims:</strong> Exact ISO stitch codes per zone (<code>ISO 607</code> FLATLOCK, ACTIVESEAM, <code>ISO 605</code>/<code>406</code> COVERSTITCH, <code>ISO 514</code> OVERLOCK), elastic specifications, mesh or laser perforation zones and branding placement.</li>
-		<li><strong>Quantities, testing &amp; timeline:</strong> Estimated order quantity per style, colorway split, required lab tests or certifications, and target delivery window.</li>
-	</ol>
-
-	<p>Ready to review feasibility for a custom activewear or compression line? Explore our <a href="<?php echo esc_url( home_url( '/sportswear-manufacturer/' ) ); ?>">sportswear OEM/ODM capabilities</a>, browse reference specs in the <a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/#merino-fabric-examples' ) ); ?>">knitted fabric selection library</a>, review our <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">four-stage production workflow</a>, or <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">contact our team</a> with your tech pack and planned quantities.</p>
+	<p>Ready to review feasibility for a custom activewear or compression line? Explore our <a href="<?php echo esc_url( home_url( '/sportswear-manufacturer/' ) ); ?>">sportswear OEM/ODM capabilities</a>, browse reference specs in the <a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/#merino-fabric-examples' ) ); ?>">knitted fabric selection library</a>, review our <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">production workflow</a>, or <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">contact our team</a> with your tech pack and planned quantities.</p>
 </section>
