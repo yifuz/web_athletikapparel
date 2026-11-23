@@ -785,6 +785,7 @@ function myathletik_rank_math_is_core_sitemap_url( $url ) {
 			'/flatlock-vs-coverstitch-technical-knitwear/',
 			'/technical-knitwear-tech-pack-guide/',
 			'/evaluate-technical-knitwear-oem/',
+			'/activewear-compression-manufacturing-guide/',
 			'/sportswear-manufacturer/',
 			'/underwear-manufacturer/',
 			'/outdoor-clothing-manufacturer/',

@@ -45,6 +45,7 @@
 | 2026-11-20 | GEO / 站外权威 | 所有者完成可控社媒主页地址更正（No.15），并向 Merrow（`support@merrow.com`，附 `MB-4DFO 2.0` ACTIVESEAM 指南与视频链接）及 Woolmark（Licence `0030001176` 询问并列添加主站网址、保留 `woolbaselayer.com`）发送合作/更新邮件 | [`GEO.md`](geo/GEO.md) · [`offsite-authority-opportunity-pool-v1.md`](seo/authority/offsite-authority-opportunity-pool-v1.md) |
 | 2026-11-20 | 网站 | `/technical-guides/` 枢纽页升级：新增 4 主题筛选标签与实时搜索、桌面每页 6 篇／手机 4 篇分页（服务端仍全量输出 7 篇内链保 SEO）、16:9 紧凑卡片、Library scope 改桌面 4 列单行，并将 Hero 统一为全站全幅实拍背景图+左侧深色渐变遮罩；Local 验收后经所有者批准 SSH 部署生产（4 文件全量 SHA-256 校验，无媒体/库变更），源站 HTTP 200 与浏览器交互验收通过（裸 URL 待 Flywheel 边缘缓存刷新或自然过期） | `8b7d0fe` · `inc/technical-article-data.php` · `template-parts/technical-article/hub.php` · `assets/js/technical-guides.js` · `style.css` |
 | 2026-11-23 | GEO / 站外与社媒 | 所有者确认发布 `FLATLOCK vs COVERSTITCH` LinkedIn + Instagram 原生车间视频帖（双端 UTM 预验 HTTP 200，七日窗 11-24～11-30）；实测 Europages 强制欧洲注册国家与 VAT 税号，标为 `deferred / platform-eligibility` 并跳过；批准连续立项 Merino GSM 与 Activewear/Compression 两篇高曝光技术指南 | [`publishing-log.md`](geo/distribution/publishing-log.md) · [`offsite-authority-opportunity-pool-v1.md`](seo/authority/offsite-authority-opportunity-pool-v1.md) |
+| 2026-11-23 | SEO / 网站 | 在独立 Worktree 分支完成方案 B《Activewear & Compression Garment Manufacturing Guide》全部主题模板、6 条 FAQ、Sportswear 双向内链、Sitemap 注册及 `uploads` 封面 WebP（1448×1086 与 800×600）；全部 PHP `php -l` 与资源存在性校验通过，待方案 A 收尾并合入 `main` 后再行 LocalWP 浏览器验收与批准上线 | [`seo-tags.md`](../seo-tags.md) · `inc/technical-article-data.php` · `content-activewear-compression-manufacturing-guide.php` |
 
 ## 使用与维护
 

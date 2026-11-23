@@ -653,6 +653,99 @@ function myathletik_technical_article_data() {
 				),
 			),
 		),
+		'activewear-compression-manufacturing-guide' => array(
+			'status'           => 'publish',
+			'category'         => 'oem-sourcing',
+			'title'            => __( 'Activewear & Compression Garment Manufacturing Guide (Seams, Fabrics & MOQ)', 'myathletik-child' ),
+			'seo_title'        => __( 'Activewear & Compression Manufacturing Guide | Athletik', 'myathletik-child' ),
+			'meta_description' => __( 'B2B activewear & compression garment manufacturing guide: 160–310 GSM stretch fabrics, FLATLOCK & ACTIVESEAM seams, QC checkpoints and 500-piece OEM MOQ.', 'myathletik-child' ),
+			'kicker'           => __( 'OEM manufacturing guide', 'myathletik-child' ),
+			'topic'            => __( 'Activewear & compression OEM', 'myathletik-child' ),
+			'summary'          => __( 'Compare 160–310 GSM stretch fabrics, FLATLOCK, ACTIVESEAM and COVERSTITCH seam mapping, opacity and recovery checks, and custom OEM MOQ for activewear and compression programs.', 'myathletik-child' ),
+			'intro'            => __( 'Compression tops, leggings and fitted training garments place higher demands on elastic recovery, stitch extension, opacity and waistband stability than casual knitwear. This guide covers fabric selection, seam mapping, sampling QC and OEM MOQ for custom cut-and-sew production—not ready-stock relabeling.', 'myathletik-child' ),
+			'reviewed_on'      => '2026-11-23',
+			'updated_on'       => '2026-11-23',
+			'featured_image'   => 'production/articles/covers/activewear-compression-manufacturing-guide-cover.webp',
+			'featured_small'   => 'production/articles/covers/activewear-compression-manufacturing-guide-cover-800.webp',
+			'featured_alt'     => __( 'Side-by-side studio photos of charcoal high-rise performance leggings demonstrating waistband stretch and a fitted long-sleeve technical knit layer', 'myathletik-child' ),
+			'featured_width'   => 1448,
+			'featured_height'  => 1086,
+			'related_articles' => array( 'flatlock-vs-coverstitch-technical-knitwear', 'technical-knitwear-tech-pack-guide', 'garment-quality-control-checklist' ),
+			'article_section'  => __( 'Activewear & compression garment manufacturing', 'myathletik-child' ),
+			'about'            => array( 'Activewear manufacturing', 'Compression garment manufacturer', 'Compression shirt and leggings OEM', 'Sportswear seams and fabrics', 'FLATLOCK', 'ACTIVESEAM', 'COVERSTITCH', 'OEM MOQ' ),
+			'cta_kicker'       => __( 'Start a custom activewear or compression program', 'myathletik-child' ),
+			'cta_title'        => __( 'Review fabrics, seam mapping and MOQ before sampling', 'myathletik-child' ),
+			'cta_copy'         => __( 'Send your tech pack or reference sample, target fabric composition and GSM, seam callouts, planned quantities, color breakdown and testing criteria for a project feasibility review.', 'myathletik-child' ),
+			'toc'              => array(
+				'direct-answer'      => __( 'Why compression & activewear require stricter OEM control', 'myathletik-child' ),
+				'fabric-selection'   => __( 'Fabric selection & 160–310 GSM reference table', 'myathletik-child' ),
+				'seam-mapping'       => __( 'Seam architecture & zone mapping', 'myathletik-child' ),
+				'functional-details' => __( 'Waistbands, ventilation & finishing options', 'myathletik-child' ),
+				'sampling-and-qc'    => __( 'Sampling validation, QC & testing alignment', 'myathletik-child' ),
+				'moq-and-rfq'        => __( 'MOQ, private-label scope & RFQ checklist', 'myathletik-child' ),
+				'faq'                => __( 'Common buyer questions', 'myathletik-child' ),
+			),
+			'faq'              => array(
+				array(
+					'question' => __( 'What is the MOQ for custom activewear and compression garments?', 'myathletik-child' ),
+					'answer'   => __( 'The standard entry point is 500 pieces per style. For custom fabrics, the minimum is typically evaluated at 400–500 pieces per color per style with mixed sizes, with both style and color requirements confirmed against fabric mill minimums, garment consumption and color breakdown. Smaller initial runs may be evaluated on a project basis where suitable stock fabric is available, without automatically guaranteeing a lower MOQ.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'How are squat-proof opacity and compression levels verified before bulk production?', 'myathletik-child' ),
+					'answer'   => __( 'Athletik does not promise generic fixed opacity or compression ratings across styles. Opacity—including squat-proof targets—alongside 4-way stretch, recovery and buyer-specified graduated compression targets are evaluated on the nominated fabric and approved garment sample against agreed test methods and acceptance criteria before bulk cutting.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Should compression shirts and leggings use FLATLOCK (ISO 607) or Merrow ACTIVESEAM?', 'myathletik-child' ),
+					'answer'   => __( 'They are separate low-profile seam systems: industrial 4-needle, 6-thread ISO 607 FLATLOCK (such as Yamato FD-62G series flatseamers) versus Merrow\'s 2-needle, 2- or 3-thread ACTIVESEAM on the MB-4DFO 2.0 platform. Specify each construction explicitly by garment zone in the tech pack and compare sew-offs on the bulk-intent fabric during sampling.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'What are the key sewing risks on high-elastane fabrics such as 77% Nylon / 23% Spandex?', 'myathletik-child' ),
+					'answer'   => __( 'Higher elastane content—such as 77% Nylon / 23% Spandex at 250–255 GSM—increases sensitivity to needle cutting or heat damage, seam grinning, skipped stitches across thick gusset or waistband intersections, wavy hems and thread pop under elongation. Stable production requires proper ballpoint needles, extensible textured looper threads, calibrated differential feed and sew-off validation on the production fabric.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Can faux flatlock replace true ISO 607 FLATLOCK on compression leggings?', 'myathletik-child' ),
+					'answer'   => __( 'It is not recommended on high-tension, next-to-skin joins such as crotch gussets, inseams or tight compression armscyes, because faux flatlock (ISO 514 OVERLOCK topstitched with ISO 605 COVERSTITCH) folds a three-layer seam allowance against the inside of the garment. Reserve faux flatlock for heavier, relaxed-fit layers and state exact ISO stitch codes in the tech pack.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Does Athletik offer ready-stock private-label activewear, and are first-time samples free?', 'myathletik-child' ),
+					'answer'   => __( 'No. Athletik Clothing is a custom cut-and-sew OEM/ODM manufacturer, not a ready-stock relabeling service; main labels, care labels, hangtags, artwork and packaging are developed for approved custom production programs. First-time inquiries are typically charged a sample fee that includes sample shipping, calculated on actual project costs.', 'myathletik-child' ),
+				),
+			),
+			'references'       => array(
+				array(
+					'label' => __( 'ISO 4915 stitch-type classification', 'myathletik-child' ),
+					'url'   => 'https://www.iso.org/standard/10932.html',
+				),
+				array(
+					'label' => __( 'Yamato FD-62G 4-needle, 6-thread flatseamer', 'myathletik-child' ),
+					'url'   => 'https://www.yamato-sewing.com/en/product/flatseamer/fd-62g/',
+				),
+				array(
+					'label' => __( 'Merrow MB-4DFO 2.0 official product page', 'myathletik-child' ),
+					'url'   => 'https://www.merrow.com/Sergers_and_Overlock_Sewing_Machines/mb4dfo',
+				),
+				array(
+					'label' => __( 'ASTM D2594/D2594M-21 stretch and growth of knitted fabrics', 'myathletik-child' ),
+					'url'   => 'https://store.astm.org/d2594_d2594m-21.html',
+				),
+				array(
+					'label' => __( 'AATCC TM135-2025 dimensional changes after home laundering', 'myathletik-child' ),
+					'url'   => 'https://members.aatcc.org/store/tm135/543/',
+				),
+				array(
+					'label' => __( 'ISO 2859-1:2026 sampling procedures for inspection by attributes', 'myathletik-child' ),
+					'url'   => 'https://www.iso.org/standard/85464.html',
+				),
+				array(
+					'label' => __( 'Athletik Clothing sportswear manufacturing program', 'myathletik-child' ),
+					'url'   => 'https://www.athletikapparel.com/sportswear-manufacturer/',
+				),
+				array(
+					'label' => __( 'Athletik Clothing knitted fabrics selection library', 'myathletik-child' ),
+					'url'   => 'https://www.athletikapparel.com/knitted-fabrics-manufacturer/#merino-fabric-examples',
+				),
+			),
+		),
 	);
 }
 

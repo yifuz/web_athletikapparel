@@ -296,6 +296,7 @@ function myathletik_product_category_data() {
 						__( '4-way-stretch and power-stretch knit selection for the intended silhouette', 'myathletik-child' ),
 						__( 'Moisture management, quick-dry, UV protection, or antimicrobial targets confirmed for the selected fabric and finish', 'myathletik-child' ),
 					),
+					'link'        => myathletik_related_link( __( 'Read the Activewear & Compression Manufacturing Guide', 'myathletik-child' ), '/activewear-compression-manufacturing-guide/' ),
 				),
 				array(
 					'title'       => __( 'Sportswear quality checkpoints', 'myathletik-child' ),
@@ -360,6 +361,7 @@ function myathletik_product_category_data() {
 				myathletik_gallery_item( myathletik_aux_image( 'flatlock-athletic-800-13.jpg' ), __( 'Technical sportswear OEM/ODM sample', 'myathletik-child' ) ),
 			),
 			'related'          => array(
+				myathletik_related_link( __( 'Activewear & Compression Manufacturing Guide', 'myathletik-child' ), '/activewear-compression-manufacturing-guide/' ),
 				myathletik_related_link( __( 'Top Sportswear Manufacturers in China', 'myathletik-child' ), '/top-sportswear-manufacturers-china/' ),
 				myathletik_related_link( __( 'Underwear Manufacturer', 'myathletik-child' ), '/underwear-manufacturer/' ),
 				myathletik_related_link( __( 'Outdoor Clothing Manufacturer', 'myathletik-child' ), '/outdoor-clothing-manufacturer/' ),
