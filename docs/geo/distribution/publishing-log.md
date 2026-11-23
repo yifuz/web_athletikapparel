@@ -3,6 +3,20 @@
 本文件记录技术内容的准备、发布及复盘状态。平台实时数据和帖子 URL 必须从后台或公开帖子核对后填写，
 不得根据聊天推断。
 
+## 2026-11-23 — FLATLOCK vs COVERSTITCH 原生车间视频帖（所有者确认已发布）
+
+| 字段 | 记录 |
+|---|---|
+| 内部 Campaign | `2026-11-flatlock-vs-coverstitch-video` |
+| 状态 | `published / owner-confirmed / public-url-pending / measuring`（所有者于 2026-11-23 确认 LinkedIn + Instagram 视频帖已发布） |
+| 官网目标着陆页 | <https://www.athletikapparel.com/flatlock-vs-coverstitch-technical-knitwear/> |
+| 素材与规格 | 复用已上线 JACK 平板绷缝车间实拍 720×1280（9:16 竖屏、7.26 MB）原生视频 `coverstitch-hemming-production-web.mp4`，围绕真实 `ISO 607` FLATLOCK vs `ISO 605 / ISO 406` COVERSTITCH 及“假平缝（OVERLOCK + ISO 605）”规格误区做 B2B 技术拆解 |
+| LinkedIn UTM content | `flatlock_coverstitch_video`（`linkedin / organic_social / technical_guides`）；公开帖子 URL 待补 |
+| Instagram 渠道与 UTM | `@athletikclothinginc` Reels + Story Link Sticker UTM `flatlock_coverstitch_story`（`instagram / organic_social / technical_guides`）；公开帖子 URL 与 Story 发布状态待补 |
+| 发布前校验 | 双端生产 UTM 已于 2026-11-23 经 `Invoke-WebRequest -Method Head` 验证返回 HTTP 200、无跳转、参数完整保留 |
+| 七日窗口 | `2026-11-24`～`2026-11-30`（GA4 `Asia/Shanghai` 七个完整自然日）；**2026-12-01 起复盘** |
+| 待办 | 补录公开帖子 URL；2026-12-01 起复盘平台表现与 GA4 外部 UTM 会话 |
+
 ## 2026-11-20 — Sportswear Manufacturing Evidence（LinkedIn + Instagram Feed 已发布）
 
 | 字段 | 记录 |

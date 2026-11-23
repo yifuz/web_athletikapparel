@@ -118,6 +118,7 @@ Woolmark 官方 Active Licensees 公开名录已列有
 | 2026-08-29 | WRAP 公开列名开启 | wrapcompliance.org | 待补 | `deferred / missing-verifiable-input`；短期无法提供 WRAP ID、有效期与门户列名状态 |
 | 2026-11-20 | Merrow 案例接触与 ACTIVESEAM 授权询问 | merrow.com (`support@merrow.com`) | 待补 | **所有者于 2026-11-20 已发送**（附上线 ACTIVESEAM 专页与 `MB-4DFO 2.0` 视频链接），等待回复 |
 | 2026-11-20 | Woolmark 条目询问并列新增第二网址 | my.woolmark.com (`woolmark.china@wool.com` / `woolmark@wool.com`) | — | **所有者于 2026-11-20 已发送**（保留 `woolbaselayer.com`，询问能否并列添加 `athletikapparel.com`），等待回复 |
+| 2026-11-23 | Europages 中国主体免费建档核查 | europages.co.uk (`en/my-account/new-company`) | — | `deferred / platform-eligibility`；所有者实测自助建档页强制要求欧洲注册国家（下拉无中国）与 VAT 税号，按原则不填错地址或不借用美国主体，暂停跟进（同 ThomasNet） |
 
 ## 6. 下一步
 
@@ -127,7 +128,7 @@ Woolmark 官方 Active Licensees 公开名录已列有
 4. **Kompass 中国主体新建档执行**（所有者操作）：付费 $70/3 年，待所有者结合 §7 收益评估后决策是否注册；
 5. ~~**Merrow 案例联系邮件**（附录 A）所有者审核后发送~~ → **2026-08-19 所有者决定暂缓，周期较长，待后续优先级提升时启动**；
 6. ~~OEKO-TEX Buying Guide 登记、WRAP 公开列名~~ → 2026-08-29 所有者确认所需 certificate / label number、持证主体、WRAP ID / 有效期和门户列名状态短期无法提供；维持 `deferred / missing-verifiable-input`，完整凭据到位后再重开；
-7. Europages / Apparel Search 新建档：中国主体（制造商角色），按 §3A 口径执行；
+7. ~~Europages~~ / Apparel Search 新建档：Europages 已于 2026-11-23 实测确认欧洲主体+VAT 准入限制，改为 `deferred / platform-eligibility`；Apparel Search 视后续优先级按 §3A 口径执行；
 8. 参展与协会会员（P2）单独做投入产出评估后再决策；
 9. 每完成一项在 §5 台账补录 URL 与日期。
 

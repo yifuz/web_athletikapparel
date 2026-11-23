@@ -1,6 +1,6 @@
 # Athletik Clothing 项目进度
 
-> 更新：2026-11-20。这里保留跨项目最新现状、下一步及**当月（2026-11）工作流水账**；每月底将当月流水账按月归档至 `docs/archive/progress-YYYY-MM.md`。
+> 更新：2026-11-23。这里保留跨项目最新现状、下一步及**当月（2026-11）工作流水账**；每月底将当月流水账按月归档至 `docs/archive/progress-YYYY-MM.md`。
 > 📅 **历月进度归档直达**：[2026-07](archive/progress-2026-07.md) · [2026-08](archive/progress-2026-08.md) · [2026-09](archive/progress-2026-09.md) · [2026-10](archive/progress-2026-10.md) · **2026-11（当月见下表）** · [全量合集快照](archive/progress-history-2026-11-18.md)
 
 ## 当前状态
@@ -14,9 +14,9 @@
 
 ## 接下来的工作
 
-1. **站外权威跟进**：LinkedIn / Instagram 主页地址已于 11-20 更正为 No.15；OS Hub 认领（`#6327`）、SourceReady 更正、Merrow 案例合作与 Woolmark 并列主站询问均已发出，等待平台/官方回复；中国站旧门牌等待相关人员修复。
-2. **站内下一曝光破口**：Tech Pack 指南破圈升级已于 11-20 上线；下一立项为高搜索量工艺对比页 **`FLATLOCK vs COVERSTITCH`**（待车间拍完 15～30 秒绷缝实拍视频后启动）。
-3. **到期观察窗口**：11-23 起核查 FLATLOCK→Merino 入链后窗；11-26 起核查摇粒绒 Showcase 与新版 Tech Pack 的 GSC 抓取/收录；11-28 起复盘 `sportswear-manufacturing-evidence` 社媒七日表现。
+1. **站外权威跟进**：OS Hub 认领（`#6327`）、SourceReady 更正、Merrow 案例合作与 Woolmark 并列主站询问均已发出并等待平台/官方回复；`athletik.com.cn` 与 `SourceReady` 截至 11-23 仍显示 `No.25`；Europages 已实测确认强制欧洲注册国家与 VAT 税号，改为 `deferred / platform-eligibility`（同 ThomasNet）。
+2. **站内下一批高曝光技术指南**：`FLATLOCK vs COVERSTITCH` 已上线并完成原生车间视频社媒冷启动；所有者已批准连续推进两篇高曝光指南——先做 **方案 A：`Merino Wool Base Layer GSM Guide`**（反哺 `/merino-wool-manufacturer/`），再做 **方案 B：`Activewear & Compression Garment Manufacturing Guide`**（反哺 `/sportswear-manufacturer/`）。
+3. **到期观察窗口**：`11-26` 起复查摇粒绒 Showcase、升级版 Tech Pack 与 `FLATLOCK vs COVERSTITCH` 的 GSC 抓取/收录；`11-28` 起复盘 `sportswear-manufacturing-evidence` 社媒七日表现；`12-01` 起复盘 `FLATLOCK vs COVERSTITCH` 视频帖七日表现。
 
 ## 2026-11 当月工作流水账（按日追加，严禁抹除，月底归档为 `archive/progress-2026-11.md`）
 
@@ -44,6 +44,7 @@
 | 2026-11-20 | SEO / 网站 | 新增第 7 篇技术指南 `/flatlock-vs-coverstitch-technical-knitwear/`（生产 ID 116，ISO 607 vs ISO 605/406 与假平缝拆解；含 JACK 平板绷缝 720×1280 30fps SDR 静音视频/海报及 Yamato+JACK 拼图封面，复用既有 Yamato 视频，并在 OVERLOCK 指南补充导流内链）；按所有者 8 处复审修订后批准 SSH 部署生产（5 PHP + 4 媒体全量 SHA-256 校验），线上 HTTP 200、单一 H1、Meta/OG/Twitter、Article+FAQPage(5)+BreadcrumbList、视频 200/206、OVERLOCK 内链及 `/page-sitemap.xml` `lastmod=2026-11-20` 验收通过（`/technical-guides/` 源站已现 7 卡，裸 URL 待 Flywheel Varnish 缓存过期或后台 Flush） | [`seo-tags.md`](../seo-tags.md) · `page-flatlock-vs-coverstitch-technical-knitwear.php` · `content-flatlock-vs-coverstitch-technical-knitwear.php` |
 | 2026-11-20 | GEO / 站外权威 | 所有者完成可控社媒主页地址更正（No.15），并向 Merrow（`support@merrow.com`，附 `MB-4DFO 2.0` ACTIVESEAM 指南与视频链接）及 Woolmark（Licence `0030001176` 询问并列添加主站网址、保留 `woolbaselayer.com`）发送合作/更新邮件 | [`GEO.md`](geo/GEO.md) · [`offsite-authority-opportunity-pool-v1.md`](seo/authority/offsite-authority-opportunity-pool-v1.md) |
 | 2026-11-20 | 网站 | `/technical-guides/` 枢纽页升级：新增 4 主题筛选标签与实时搜索、桌面每页 6 篇／手机 4 篇分页（服务端仍全量输出 7 篇内链保 SEO）、16:9 紧凑卡片、Library scope 改桌面 4 列单行，并将 Hero 统一为全站全幅实拍背景图+左侧深色渐变遮罩；Local 验收后经所有者批准 SSH 部署生产（4 文件全量 SHA-256 校验，无媒体/库变更），源站 HTTP 200 与浏览器交互验收通过（裸 URL 待 Flywheel 边缘缓存刷新或自然过期） | `8b7d0fe` · `inc/technical-article-data.php` · `template-parts/technical-article/hub.php` · `assets/js/technical-guides.js` · `style.css` |
+| 2026-11-23 | GEO / 站外与社媒 | 所有者确认发布 `FLATLOCK vs COVERSTITCH` LinkedIn + Instagram 原生车间视频帖（双端 UTM 预验 HTTP 200，七日窗 11-24～11-30）；实测 Europages 强制欧洲注册国家与 VAT 税号，标为 `deferred / platform-eligibility` 并跳过；批准连续立项 Merino GSM 与 Activewear/Compression 两篇高曝光技术指南 | [`publishing-log.md`](geo/distribution/publishing-log.md) · [`offsite-authority-opportunity-pool-v1.md`](seo/authority/offsite-authority-opportunity-pool-v1.md) |
 
 ## 使用与维护
 
