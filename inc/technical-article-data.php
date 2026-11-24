@@ -839,6 +839,105 @@ function myathletik_technical_article_data() {
 				),
 			),
 		),
+		'performance-underwear-manufacturing-guide' => array(
+			'status'           => 'publish',
+			'category'         => 'oem-sourcing',
+			'title'            => __( 'Performance Underwear Manufacturing Guide', 'myathletik-child' ),
+			'seo_title'        => __( 'Performance Underwear Manufacturing Guide | Athletik', 'myathletik-child' ),
+			'meta_description' => __( 'OEM/ODM performance underwear manufacturing guide: cut-and-sew vs. seamless, 138–180 GSM Modal, microfiber & Merino fabrics, waistbands, QC & 500-pc MOQ.', 'myathletik-child' ),
+			'kicker'           => __( 'OEM manufacturing guide', 'myathletik-child' ),
+			'topic'            => __( 'Performance underwear OEM', 'myathletik-child' ),
+			'summary'          => __( 'Compare cut-and-sew (FLATLOCK, ACTIVESEAM, bonded-welded) and seamless knitting, 138–180 GSM Modal, microfiber and Merino fabrics, custom waistbands, QC checkpoints and 500-piece OEM MOQ.', 'myathletik-child' ),
+			'intro'            => __( 'Practical OEM/ODM guidance on cut-and-sew vs. seamless construction, 138–180 GSM fabrics, custom waistbands, pouch engineering, QC checkpoints and MOQ for performance underwear.', 'myathletik-child' ),
+			'reviewed_on'      => '2026-11-24',
+			'updated_on'       => '2026-11-24',
+			'featured_image'   => 'production/articles/covers/performance-underwear-manufacturing-guide-cover.webp',
+			'featured_small'   => 'production/articles/covers/performance-underwear-manufacturing-guide-cover-800.webp',
+			'featured_alt'     => __( 'Close-up of cut-and-sew charcoal heather men\'s performance boxer briefs with woven ATHLETIK elastic waistband, contoured flatlock seam and coverstitched leg hem', 'myathletik-child' ),
+			'featured_width'   => 1536,
+			'featured_height'  => 1024,
+			'hero_style'       => 'bg',
+			'hero_position'    => 'center 48%',
+			'related_articles' => array( 'merino-wool-base-layer-gsm-guide', 'flatlock-vs-activeseam-technical-knitwear', 'garment-quality-control-checklist' ),
+			'article_section'  => __( 'Performance underwear manufacturing', 'myathletik-child' ),
+			'about'            => array( 'Underwear manufacturer', 'Performance underwear OEM', 'Men\'s boxer briefs manufacturer', 'Cut-and-sew vs seamless underwear', 'FLATLOCK', 'ACTIVESEAM', 'COVERSTITCH', 'Custom elastic waistbands', 'OEM MOQ' ),
+			'cta_kicker'       => __( 'Start a custom underwear program', 'myathletik-child' ),
+			'cta_title'        => __( 'Review construction route, fabrics and waistband specs before sampling', 'myathletik-child' ),
+			'cta_copy'         => __( 'Send your tech pack or reference sample, construction route (cut-and-sew or seamless), target fabric composition and GSM, waistband and pouch details, order quantity and testing criteria for a project review.', 'myathletik-child' ),
+			'toc'              => array(
+				'direct-answer'        => __( 'Why performance underwear requires tighter OEM control', 'myathletik-child' ),
+				'construction-routes'  => __( 'Cut-and-sew vs. seamless knitting routes', 'myathletik-child' ),
+				'fabric-selection'     => __( 'Underwear fabric selection & library references', 'myathletik-child' ),
+				'waistbands-and-pouch' => __( 'Waistbands, pouch engineering & private-label details', 'myathletik-child' ),
+				'sampling-and-qc'      => __( 'Sampling validation & underwear QC checkpoints', 'myathletik-child' ),
+				'moq-and-rfq'          => __( 'MOQ, lead time & RFQ starting checklist', 'myathletik-child' ),
+				'faq'                  => __( 'Common buyer questions', 'myathletik-child' ),
+			),
+			'faq'              => array(
+				array(
+					'question' => __( 'What is the MOQ for custom performance underwear?', 'myathletik-child' ),
+					'answer'   => __( 'Athletik Clothing\'s standard entry point is 500 pieces per style. For custom fabric programs, the minimum is typically evaluated at 400–500 pieces per style per color with mixed sizes allowed, against minimum fabric meterage, garment consumption and colorway split (both style and color minimums apply). Smaller initial runs may be evaluated on a project basis only where suitable stock fabric is available, subject to stock colors and quantities, without guaranteeing a lower MOQ on custom developments.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'What is the difference between cut-and-sew and seamless underwear manufacturing?', 'myathletik-child' ),
+					'answer'   => __( 'Athletik offers both cut-and-sew construction (using FLATLOCK, ACTIVESEAM, COVERSTITCH and localized bonded-welded options) and genuine seamless knitting for men\'s boxer briefs and trunks, women\'s briefs and camisoles, and thermal base-layer tops and bottoms. Seamless knitting is an independent circular knitting route—not another name for FLATLOCK, ACTIVESEAM or bonded-welded seams—and seamless garments may still include required sewn joins, attachment points or finishing confirmed during sampling.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Can Athletik develop custom branded elastic waistbands?', 'myathletik-child' ),
+					'answer'   => __( 'Yes. Custom elastic waistbands with woven jacquard or printed branding can be developed to your artwork, band width, modulus and recovery requirements. Trim minimums, color matching, waistband join construction and stretch recovery are confirmed with the approved specification and sample before bulk production.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'How should buyers choose between Modal, microfiber Nylon/Spandex and Merino wool for underwear?', 'myathletik-child' ),
+					'answer'   => __( 'Modal/Spandex blends emphasize soft drape and everyday next-to-skin comfort while requiring careful shrinkage and pilling control. Microfiber Nylon/Spandex offers a smooth hand, high elastic recovery and quick-drying potential for active training underwear. Merino wool blends suit thermal base layers and outdoor underwear focused on temperature regulation and odor-management positioning. Final suitability should always be verified on the nominated fabric and approved sample under agreed test methods.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Which seams prevent chafing on a supportive pouch and crotch gusset?', 'myathletik-child' ),
+					'answer'   => __( 'High-friction pouch contours, crotch gussets and tight next-to-skin joins typically use true 4-needle, 6-thread FLATLOCK (ISO 607) or Merrow ACTIVESEAM (MB-4DFO 2.0) to eliminate upright internal seam ridges. Leg openings are finished with ISO 605 or ISO 406 COVERSTITCH, or localized bonded-welded construction where evaluated for the fabric. Avoid substituting faux flatlock (OVERLOCK plus COVERSTITCH topstitching) on tight crotch joins.', 'myathletik-child' ),
+				),
+				array(
+					'question' => __( 'Does Athletik offer ready-stock underwear relabeling, and what are sampling fees and lead times?', 'myathletik-child' ),
+					'answer'   => __( 'No. Athletik Clothing is a custom OEM/ODM manufacturer, not a ready-stock relabeling service; main labels, care labels, branded waistbands and private-label packaging are developed for approved custom orders. First-time inquiries are typically charged a sample fee that includes sample shipping, calculated on actual project costs. Typical sampling takes around 1–2 weeks after required inputs are aligned, depending on style and material complexity.', 'myathletik-child' ),
+				),
+			),
+			'references'       => array(
+				array(
+					'label' => __( 'ISO 4915 stitch-type classification', 'myathletik-child' ),
+					'url'   => 'https://www.iso.org/standard/10932.html',
+				),
+				array(
+					'label' => __( 'Yamato FD-62G 4-needle, 6-thread flatseamer', 'myathletik-child' ),
+					'url'   => 'https://www.yamato-sewing.com/en/product/flatseamer/fd-62g/',
+				),
+				array(
+					'label' => __( 'Merrow MB-4DFO 2.0 official product page', 'myathletik-child' ),
+					'url'   => 'https://www.merrow.com/Sergers_and_Overlock_Sewing_Machines/mb4dfo',
+				),
+				array(
+					'label' => __( 'ASTM D2594/D2594M-21 stretch and growth of knitted fabrics', 'myathletik-child' ),
+					'url'   => 'https://store.astm.org/d2594_d2594m-21.html',
+				),
+				array(
+					'label' => __( 'AATCC TM135-2025 dimensional changes after home laundering', 'myathletik-child' ),
+					'url'   => 'https://members.aatcc.org/store/tm135/543/',
+				),
+				array(
+					'label' => __( 'ISO 5077 determination of dimensional change after washing and drying', 'myathletik-child' ),
+					'url'   => 'https://www.iso.org/standard/41877.html',
+				),
+				array(
+					'label' => __( 'ISO 2859-1:2026 sampling procedures for inspection by attributes', 'myathletik-child' ),
+					'url'   => 'https://www.iso.org/standard/85464.html',
+				),
+				array(
+					'label' => __( 'Athletik Clothing underwear manufacturing program', 'myathletik-child' ),
+					'url'   => 'https://www.athletikapparel.com/underwear-manufacturer/',
+				),
+				array(
+					'label' => __( 'Athletik Clothing knitted fabrics selection library', 'myathletik-child' ),
+					'url'   => 'https://www.athletikapparel.com/knitted-fabrics-manufacturer/#fabric-library',
+				),
+			),
+		),
 	);
 }
 

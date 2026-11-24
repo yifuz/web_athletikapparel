@@ -787,6 +787,7 @@ function myathletik_rank_math_is_core_sitemap_url( $url ) {
 			'/merino-wool-base-layer-gsm-guide/',
 			'/evaluate-technical-knitwear-oem/',
 			'/activewear-compression-manufacturing-guide/',
+			'/performance-underwear-manufacturing-guide/',
 			'/sportswear-manufacturer/',
 			'/underwear-manufacturer/',
 			'/outdoor-clothing-manufacturer/',

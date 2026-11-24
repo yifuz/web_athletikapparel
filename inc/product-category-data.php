@@ -508,6 +508,7 @@ function myathletik_product_category_data() {
 						__( 'Supportive pouch development and mesh ventilation panels', 'myathletik-child' ),
 						__( 'Artwork, placement, dimensions, and material compatibility confirmed during sampling', 'myathletik-child' ),
 					),
+					'link'        => myathletik_related_link( __( 'Read the Performance Underwear Manufacturing Guide', 'myathletik-child' ), '/performance-underwear-manufacturing-guide/' ),
 				),
 				array(
 					'title'       => __( 'Underwear quality checkpoints', 'myathletik-child' ),
@@ -573,6 +574,7 @@ function myathletik_product_category_data() {
 				myathletik_gallery_item( 'underwear/IMG_4877-scaled.jpg', __( 'Underwear sample for private-label manufacturing', 'myathletik-child' ) ),
 			),
 			'related'          => array(
+				myathletik_related_link( __( 'Performance Underwear Manufacturing Guide', 'myathletik-child' ), '/performance-underwear-manufacturing-guide/' ),
 				myathletik_related_link( __( 'Sportswear Manufacturer', 'myathletik-child' ), '/sportswear-manufacturer/' ),
 				myathletik_related_link( __( 'Merino Wool Manufacturer', 'myathletik-child' ), '/merino-wool-manufacturer/' ),
 				myathletik_related_link( __( 'FLATLOCK vs OVERLOCK Guide', 'myathletik-child' ), '/flatlock-vs-overlock-technical-knitwear/' ),
