@@ -155,7 +155,7 @@ $fabric_library_url   = home_url( '/knitted-fabrics-manufacturer/#fabric-library
 	<h2 id="ma-pu-waistbands-title">Waistbands, pouch engineering &amp; private-label details</h2>
 	<p>In men's boxer briefs, trunks and fitted thermal bottoms, trim engineering and pattern geometry carry just as much weight as the body knit:</p>
 	<ul>
-		<li><strong>Custom branded elastic waistbands:</strong> Athletik develops custom elastic waistbands with woven jacquard or printed branding aligned to your logo artwork, band height, target modulus and recovery after extension. Waistband trim minimums, color matching against the body fabric, back-join finishing and roll-resistance are verified during sampling so the band sits flat without digging into the waist.</li>
+		<li><strong>Custom branded elastic waistbands:</strong> Athletik develops custom elastic waistbands with woven jacquard or printed branding aligned to your logo artwork, band height, target modulus and recovery after extension. Color matching against the body fabric, back-join finishing and roll-resistance are verified during sampling so the band sits flat without digging into the waist.</li>
 		<li><strong>Supportive pouch development &amp; mesh ventilation panels:</strong> Ergonomic 2-piece or 3-piece contoured pouches and crotch gussets depend on balanced left/right pattern symmetry and low-profile <code>ISO 607</code> FLATLOCK or ACTIVESEAM joins. Where designs map breathable mesh panels into the pouch, gusset or lower back, the mesh GSM and stretch modulus must be matched to the main body cloth so seams do not pucker or pull unevenly.</li>
 		<li><strong>Tagless care labels &amp; private-label execution:</strong> Scratchy sewn neck or waist tags are commonly replaced with heat-transfer or <code>SCREENPRINT</code> interior care labels, paired with woven or printed main labels and custom retail packaging (boxes, polybags or hangers) developed specifically for approved custom production orders.</li>
 	</ul>
@@ -201,24 +201,5 @@ $fabric_library_url   = home_url( '/knitted-fabrics-manufacturer/#fabric-library
 		<li><strong>Fabric stretch, recovery &amp; agreed testing alignment:</strong> Confirm incoming roll GSM, width and shade consistency, then verify agreed lab criteria—such as dimensional change after home laundering (<code>AATCC TM135</code> / <code>ISO 5077</code>), knit stretch and growth (<code>ASTM D2594</code>), colorfastness to washing, rubbing and perspiration, and pilling—before pre-shipment AQL inspection (<code>ISO 2859-1</code>).</li>
 	</ol>
 	<p>For full incoming, in-line, needle-control and final AQL procedures, see our <a href="<?php echo esc_url( home_url( '/garment-quality-control-checklist/' ) ); ?>">Garment Quality Control Checklist</a>.</p>
-</section>
-
-<section id="moq-and-rfq" aria-labelledby="ma-pu-moq-rfq-title">
-	<h2 id="ma-pu-moq-rfq-title">MOQ, lead time &amp; RFQ starting checklist</h2>
-	<ul>
-		<li><strong>Standard MOQ:</strong> <strong>500 pieces per style</strong>. For custom fabric developments, minimums are typically evaluated at <strong>400–500 pieces per style per color</strong> (with mixed sizes allowed), confirmed jointly against minimum fabric meterage, garment consumption and colorway split—both style and color minimums apply.</li>
-		<li><strong>Smaller initial runs:</strong> Smaller orders can only be evaluated on a project basis where suitable stock fabric is available (subject to available stock colors and quantities), without guaranteeing lower minimums on custom-knitted or custom-dyed fabrics.</li>
-		<li><strong>Sampling fee &amp; timeline:</strong> First-time inquiries are typically charged a sample fee that includes sample shipping, calculated on actual project costs. Once technical inputs are aligned, typical sampling takes <strong>1–2 weeks</strong>, depending on style and material complexity.</li>
-	</ul>
-
-	<p><strong>What to prepare for an accurate RFQ:</strong></p>
-	<ul>
-		<li>Product type (boxer briefs, trunks, briefs, thermal base layers or seamless pieces) and construction route (cut-and-sew vs. seamless knitting).</li>
-		<li>Tech pack, technical flat sketches or a physical reference sample with size range and target fit.</li>
-		<li>Target fiber composition, GSM, colorways and any testing standards (shrinkage, stretch recovery, colorfastness, RSL).</li>
-		<li>Custom waistband artwork/width, pouch or mesh requirements, tagless care label method and private-label packaging details.</li>
-		<li>Estimated order quantity per style and per color, target market and delivery destination.</li>
-	</ul>
-
-	<p>Ready to review feasibility for a custom underwear or base-layer line? Visit our <a href="<?php echo esc_url( home_url( '/underwear-manufacturer/' ) ); ?>">underwear OEM/ODM program page</a>, browse reference specs in the <a href="<?php echo esc_url( $fabric_library_url ); ?>">knitted fabric library</a>, review our <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">four-step OEM workflow</a>, or <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">contact our team</a> with your brief.</p>
+	<p>Ready to review technical feasibility for a custom underwear or base-layer line? Visit our <a href="<?php echo esc_url( home_url( '/underwear-manufacturer/' ) ); ?>">underwear OEM/ODM program page</a>, browse reference specs in the <a href="<?php echo esc_url( $fabric_library_url ); ?>">knitted fabric library</a>, review our <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">four-step OEM workflow</a>, or <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">contact our team</a> with your brief.</p>
 </section>
