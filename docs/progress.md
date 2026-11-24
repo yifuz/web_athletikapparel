@@ -1,6 +1,6 @@
 # Athletik Clothing 项目进度
 
-> 更新：2026-11-23。这里保留跨项目最新现状、下一步及**当月（2026-11）工作流水账**；每月底将当月流水账按月归档至 `docs/archive/progress-YYYY-MM.md`。
+> 更新：2026-11-24。这里保留跨项目最新现状、下一步及**当月（2026-11）工作流水账**；每月底将当月流水账按月归档至 `docs/archive/progress-YYYY-MM.md`。
 > 📅 **历月进度归档直达**：[2026-07](archive/progress-2026-07.md) · [2026-08](archive/progress-2026-08.md) · [2026-09](archive/progress-2026-09.md) · [2026-10](archive/progress-2026-10.md) · **2026-11（当月见下表）** · [全量合集快照](archive/progress-history-2026-11-18.md)
 
 ## 当前状态
@@ -14,8 +14,8 @@
 
 ## 接下来的工作
 
-1. **站外权威跟进**：OS Hub 认领（`#6327`）、SourceReady 更正、Merrow 案例合作与 Woolmark 并列主站询问均已发出并等待平台/官方回复；`athletik.com.cn` 与 `SourceReady` 截至 11-23 仍显示 `No.25`；Europages 已实测确认强制欧洲注册国家与 VAT 税号，改为 `deferred / platform-eligibility`（同 ThomasNet）。
-2. **站内下一批高曝光技术指南**：**方案 A：`Merino Wool Base Layer GSM Guide`**（`/merino-wool-base-layer-gsm-guide/`，生产 ID 118）已于 11-23 上线部署（反哺 `/merino-wool-manufacturer/`）；接下来推进 **方案 B：`Activewear & Compression Garment Manufacturing Guide`**（反哺 `/sportswear-manufacturer/`）。
+1. **站外权威跟进**：OS Hub 认领（`#6327`）、SourceReady 更正、Merrow 案例合作与 Woolmark 并列主站询问均已发出并等待平台/官方回复；`athletik.com.cn` 与 `SourceReady` 截至 11-23 仍显示 `No.25`；Europages 确认 `deferred / platform-eligibility`（同 ThomasNet）。
+2. **新指南冷启动分发（A、B 均已上线并由 GSC 收录）**：第 8 篇 `Merino Wool Base Layer GSM Guide`（`/merino-wool-base-layer-gsm-guide/`）与第 9 篇 `Activewear & Compression Garment Manufacturing Guide`（`/activewear-compression-manufacturing-guide/`）已通过全量生产技术验收并完成 GSC 收录；下一步可择一制作 LinkedIn / Instagram 社媒原生帖引流。
 3. **到期观察窗口**：`11-26` 起复查摇粒绒 Showcase、升级版 Tech Pack 与 `FLATLOCK vs COVERSTITCH` 的 GSC 抓取/收录；`11-28` 起复盘 `sportswear-manufacturing-evidence` 社媒七日表现；`12-01` 起复盘 `FLATLOCK vs COVERSTITCH` 视频帖七日表现。
 
 ## 2026-11 当月工作流水账（按日追加，严禁抹除，月底归档为 `archive/progress-2026-11.md`）
@@ -48,6 +48,7 @@
 | 2026-11-23 | SEO / 网站 | 新增第 8 篇技术指南 `/merino-wool-base-layer-gsm-guide/`（生产 ID 118，覆盖 140–260 GSM 四档、真实面料库货号、Micron/结构/混纺/ISO 607+605+406 工艺、Woolmark `0030001176` & GRS `ITS-TE-00013212-GRS-04011700`、MOQ 500/400–500 口径，全幅背景 Hero 与羊毛微距配图均用 WebP，并在 `/merino-wool-manufacturer/` 增设入口卡及 `/knitted-fabrics-manufacturer/#fabric-library` 锚点）；Local 1440/390px 审核后经所有者批准直接 SSH 部署生产（10 代码文件 + 4 WebP 全量 SHA-256 校验，执行 `wp cache flush`、`wp rewrite flush` 与 Rank Math Sitemap 缓存清理；按所有者指示未执行线上复验；Flywheel 边缘 Varnish 如需即时显现 8 卡可在后台 Flush） | `a3c2799` · [`seo-tags.md`](../seo-tags.md) · `page-merino-wool-base-layer-gsm-guide.php` · `content-merino-wool-base-layer-gsm-guide.php` |
 | 2026-11-23 | SEO / 网站 | 在独立 Worktree 分支完成第 9 篇方案 B《Activewear & Compression Garment Manufacturing Guide》全部主题模板、6 条 FAQ、Sportswear 双向内链、Sitemap 注册及 `uploads` 封面 WebP（1448×1086 与 800×600）；已合入 `main` 待 LocalWP 浏览器验收与所有者批准上线（尚未推送生产） | `c94dddc` · [`seo-tags.md`](../seo-tags.md) · `inc/technical-article-data.php` · `content-activewear-compression-manufacturing-guide.php` |
 | 2026-11-24 | SEO / 网站 | 按所有者审阅意见精简第 9 篇指南面料表（6 款代表性规格）、移除不匹配文中图、校正试穿防透分工与精简 MOQ 段，替换为 `pexels-yaroslav-shuraev-8692273` 全幅背景 Hero（`-v2` WebP 缓存刷新）并收紧 Hero 标题与导语；同步将全部现有与后续技术指南版式统一为 `--ma-container`（`1200px`）正文左对齐 Hero 标题、目录与推荐栏居右（桌面端 `>= 64rem`），并写入 `AGENTS.md`。经所有者授权“不需要验收 仅推送”，通过 SSH 部署生产（7 代码 + 2 WebP 全量 SHA-256 校验，远程 `php -l` 通过；新建生产页 ID `119`，执行 `wp cache flush`、`wp rewrite flush` 与 Rank Math Sitemap 缓存清理；按指令跳过线上 HTTP/浏览器复验，Flywheel 边缘 Varnish 如需即时刷新全站指南与 Hub 可在后台 Flush） | `9cb4129` · [`AGENTS.md`](../AGENTS.md) · `style.css` · `template-parts/technical-article/page.php` · `inc/technical-article-data.php` |
+| 2026-11-24 | SEO / 收尾 | 完成文章 A、B、`/technical-guides/`（9 卡）与右侧目录新版式生产独立复验（HTTP 200、Schema、图片 20/20 与内链锚点全部通过），所有者确认两篇新指南已由 GSC 收录；批次推送已验收本地提交至 `origin/main` 并清理已合并的 `add_activewear_compression_guide` Worktree 与分支 | [`seo-tags.md`](../seo-tags.md) · `inc/technical-article-data.php` |
 
 ## 使用与维护
 
