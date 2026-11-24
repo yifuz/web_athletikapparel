@@ -82,7 +82,7 @@ Text Domain:  myathletik-child
   --ma-reading-width: 68ch;
   --ma-article-media-width: 30rem;
   --ma-article-title-width: 20ch;
-  --ma-article-container: 87.5rem;
+  --ma-article-container: var(--ma-container);
   --ma-guides-search-width: 18rem;
   /* Technical guides hub hero: matches Services / Sustainability / About / Contact full-bleed hero. */
   --ma-guides-hero-overlay: linear-gradient(90deg, rgba(12, 11, 10, 0.84) 0%, rgba(12, 11, 10, 0.58) 44%, rgba(12, 11, 10, 0.18) 100%),
@@ -93,7 +93,7 @@ Text Domain:  myathletik-child
   --ma-guides-hero-padding-y: clamp(3.5rem, 7vw, 5.25rem);
   --ma-article-reading-width: 72ch;
   --ma-article-sidebar-width: 15rem;
-  --ma-article-table-min-width: 60rem;
+  --ma-article-table-min-width: 44rem;
   --ma-home-hero-content-width: 34rem;
   --ma-home-hero-badge-size: clamp(3.75rem, 4.8vw, 4.5rem);
   --ma-home-hero-video-backdrop: #d2c9bd;
@@ -7133,8 +7133,18 @@ body.page .site-main.ma-technical-article {
   }
 
   .ma-technical-article__layout {
-    grid-template-columns: var(--ma-article-sidebar-width) minmax(0, 1fr);
-    gap: var(--ma-space-5);
+    grid-template-columns: minmax(0, 1fr) var(--ma-article-sidebar-width);
+    gap: var(--ma-space-6);
+  }
+
+  .ma-technical-article__body {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .ma-technical-article__rail {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .ma-technical-article__toc {

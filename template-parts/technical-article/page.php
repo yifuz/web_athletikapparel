@@ -42,7 +42,7 @@ foreach ( $article['related_articles'] ?? array() as $related_slug ) {
 }
 ?>
 
-<main id="primary" class="site-main ma-technical-article">
+<main id="primary" class="site-main ma-technical-article ma-technical-article--<?php echo esc_attr( $article_slug ); ?>">
 	<article aria-labelledby="ma-technical-article-title">
 		<?php if ( $is_bg_hero ) : ?>
 		<header class="ma-technical-article__hero ma-technical-article__hero--bg">
