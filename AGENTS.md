@@ -60,7 +60,7 @@ Read before writing any code, content, or markup. When a task conflicts with the
 ## 2. Information architecture
 
 - **Home** & **Products hub**：首页 `/#ma-home-categories-title` 链接 7 个现有品类页（Knitted Fabrics、Sports Accessories、Outdoor Clothing、Sportswear、Underwear、Merino Wool Apparel、Silk Wear）；当前阶段不建 `/products/`，不新增近义或细分运动品类页。
-- **Product Showcase & Technical Guides**：按 [`docs/sitemap.md`](docs/sitemap.md) 维护现有展示库与技术指南。**技术指南正文版式规范（2026-11-24 确认）**：全部现有与后续技术指南统一采用 `--ma-container`（`1200px`）容器，桌面端（`>= 64rem`）正文居左与 Hero 标题左边缘 1:1 对齐、`On this page` 目录与推荐指南居右侧边栏（`gap: var(--ma-space-6)`），移动端保持目录在正文上方。
+- **Product Showcase & Technical Guides**：按 [`docs/sitemap.md`](docs/sitemap.md) 维护现有展示库与技术指南。**技术指南正文版式规范（2026-11-24 确认）**：全部现有与后续技术指南统一采用 `--ma-container`（`1200px`）容器，桌面端（`>= 64rem`）正文居左与 Hero 标题左边缘 1:1 对齐、`On this page` 目录与推荐指南居右侧边栏（`gap: var(--ma-space-6)`），移动端保持目录在正文上方。**技术指南内容规范（2026-11-24 确认）**：定位为纯技术工程指南，聚焦工艺路线、代表性材料、关键结构、测试与品控；正文、Meta、Summary 与 FAQ 不写 MOQ、打样费、交期或 RFQ 商务细则（留待品类页、`/services/` 及询盘沟通确认，文末仅留 1 句自然导流）；代表性面料按主材质方向精选约 3 款精确引用并链向 `/knitted-fabrics-manufacturer/#fabric-library` 及 `#fabric-hy...`；封面采用全幅背景 WebP（`alt` 只写客观画面、不臆断缝线工艺），正文无精准核实素材时不硬插配图；FAQ 保持 5 条左右纯技术问答。
 - **Capabilities / Services**：不单建 `/production/`、`/factory/`、`/equipments/` 或 4 个服务子页；能力在首页与品类页呈现，流程统一在 `/services/` 单页。
 - **Sustainability / About / Contact**：`/sustainability/` 拼写已修正；`/about-us/` 不公开工厂数量或分包；`/contact/` 表单用于项目匹配评估，不因首批数量低于标准 MOQ 自动筛除客户。
 
