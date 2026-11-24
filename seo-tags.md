@@ -273,7 +273,7 @@ Performance Underwear Manufacturing Guide | Athletik
 
 **Meta Description:**
 OEM/ODM performance underwear manufacturing guide: cut-and-sew vs. seamless,
-138–180 GSM Modal, microfiber & Merino fabrics, waistbands, pouch & QC.
+165–180 GSM Modal, microfiber & Merino fabrics, waistbands, pouch & QC.
 
 ================================================================
 ## Image alt text (general rule for Codex)

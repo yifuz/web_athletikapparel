@@ -9,8 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$underwear_media_base = get_stylesheet_directory_uri() . '/assets/images/underwear/';
-$fabric_library_url   = home_url( '/knitted-fabrics-manufacturer/#fabric-library' );
+$fabric_library_url = home_url( '/knitted-fabrics-manufacturer/#fabric-library' );
 ?>
 
 <section id="direct-answer" aria-labelledby="ma-pu-direct-answer-title">
@@ -78,12 +77,12 @@ $fabric_library_url   = home_url( '/knitted-fabrics-manufacturer/#fabric-library
 	<ul>
 		<li><strong>Modal / Spandex blends (around 180 GSM):</strong> Cellulosic Modal delivers a cool, supple drape suited to everyday and active men's boxer briefs and trunks, while elastane supports close fit. Because Modal absorbs moisture readily, buyers should test dimensional stability and surface pilling early.</li>
 		<li><strong>Microfiber Nylon / Spandex (160–180 GSM):</strong> Smooth filament-nylon jersey constructions offer low surface friction against outer trousers or training shorts, brisk stretch recovery and lighter moisture retention for high-output training and travel underwear.</li>
-		<li><strong>Merino wool blends (138–165 GSM):</strong> Ideal for cold-weather base layers, hiking underwear and multi-day travel programs where temperature buffering and natural odor-management positioning matter. Pairing Merino with nylon or Coolmax and spandex strengthens abrasion life and shape retention compared with unreinforced lightweight wool.</li>
+		<li><strong>Merino wool blends (around 165 GSM):</strong> Ideal for cold-weather base layers, hiking underwear and multi-day travel programs where temperature buffering and natural odor-management positioning matter. Pairing Merino with nylon and spandex strengthens abrasion life and shape retention compared with unreinforced lightweight wool.</li>
 	</ul>
 
-	<p>The seven representative references below come from Athletik Clothing's <a href="<?php echo esc_url( $fabric_library_url ); ?>">knitted fabric selection library</a>:</p>
+	<p>The three representative references below come from Athletik Clothing's <a href="<?php echo esc_url( $fabric_library_url ); ?>">knitted fabric selection library</a>:</p>
 
-	<div class="ma-technical-article__table-wrap" role="region" aria-label="Representative performance underwear fabric references from 138 to 180 GSM" tabindex="0">
+	<div class="ma-technical-article__table-wrap" role="region" aria-label="Representative performance underwear fabric references across Modal, microfiber and Merino blends" tabindex="0">
 		<table>
 			<colgroup>
 				<col style="width: 17%;">
@@ -107,34 +106,10 @@ $fabric_library_url   = home_url( '/knitted-fabrics-manufacturer/#fabric-library
 					<td>Soft-hand everyday and active boxer briefs, trunks and briefs with elastane recovery.</td>
 				</tr>
 				<tr>
-					<th scope="row"><a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/#fabric-hy244667' ) ); ?>">HY244667</a></th>
-					<td>180 GSM</td>
-					<td>88% Modal / 8% Wool / 4% Spandex</td>
-					<td>Modal-wool blend adding natural wool fiber buffering to soft cellulosic underwear.</td>
-				</tr>
-				<tr>
-					<th scope="row"><a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/#fabric-hy265055' ) ); ?>">HY265055</a></th>
-					<td>160 GSM</td>
-					<td>93% Nylon / 7% Spandex</td>
-					<td>Lightweight microfiber briefs, trunks and breathable hot-weather training underwear.</td>
-				</tr>
-				<tr>
 					<th scope="row"><a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/#fabric-hy265066' ) ); ?>">HY265066</a></th>
 					<td>170 GSM</td>
 					<td>86% Nylon / 14% Spandex</td>
 					<td>Higher-elastane microfiber boxer briefs and close-fit athletic underwear prioritizing snap-back recovery.</td>
-				</tr>
-				<tr>
-					<th scope="row"><a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/#fabric-hy265033' ) ); ?>">HY265033</a></th>
-					<td>180 GSM</td>
-					<td>87% Nylon / 13% Spandex</td>
-					<td>Supportive 180 GSM nylon-spandex jersey for structured athletic trunks and performance sets.</td>
-				</tr>
-				<tr>
-					<th scope="row"><a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/#fabric-hy254951' ) ); ?>">HY254951</a></th>
-					<td>138 GSM</td>
-					<td>69% Merino wool / 25% Coolmax / 6% Spandex</td>
-					<td>Lightweight active Merino-Coolmax underwear balancing moisture transfer, stretch and wool comfort.</td>
 				</tr>
 				<tr>
 					<th scope="row"><a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/#fabric-hy254946' ) ); ?>">HY254946</a></th>
@@ -146,7 +121,7 @@ $fabric_library_url   = home_url( '/knitted-fabrics-manufacturer/#fabric-library
 		</table>
 	</div>
 
-	<p>Additional library options include <a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/#fabric-hy254869' ) ); ?>">HY254869</a> (150 GSM, <code>87% Merino wool / 13% Nylon</code>) for elastane-free Merino-nylon underwear and lightweight base layers, and <a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/#fabric-hy265032' ) ); ?>">HY265032</a> (150 GSM, <code>60% Tencel / 40% Wool</code>) as a cellulosic-wool reference. For thermal underwear layering weights up to 260 GSM, see our <a href="<?php echo esc_url( home_url( '/merino-wool-base-layer-gsm-guide/' ) ); ?>">Merino Wool Base Layer GSM Guide</a>.</p>
+	<p>For thermal underwear and cold-weather base-layer weights up to 260 GSM, see our <a href="<?php echo esc_url( home_url( '/merino-wool-base-layer-gsm-guide/' ) ); ?>">Merino Wool Base Layer GSM Guide</a>.</p>
 
 	<p class="ma-technical-article__note"><strong>Specification boundary:</strong> The fabric codes above are representative entries from our <a href="<?php echo esc_url( $fabric_library_url ); ?>">knitted fabrics library</a>—not a live stock list or blanket performance guarantee. Softness, pilling resistance, shrinkage, moisture transfer and elastic recovery depend on yarn count, knit structure, dye shade and finishing, and must be verified on the confirmed production fabric and approved sample under agreed test methods.</p>
 </section>
@@ -159,35 +134,6 @@ $fabric_library_url   = home_url( '/knitted-fabrics-manufacturer/#fabric-library
 		<li><strong>Supportive pouch development &amp; mesh ventilation panels:</strong> Ergonomic 2-piece or 3-piece contoured pouches and crotch gussets depend on balanced left/right pattern symmetry and low-profile <code>ISO 607</code> FLATLOCK or ACTIVESEAM joins. Where designs map breathable mesh panels into the pouch, gusset or lower back, the mesh GSM and stretch modulus must be matched to the main body cloth so seams do not pucker or pull unevenly.</li>
 		<li><strong>Tagless care labels &amp; private-label execution:</strong> Scratchy sewn neck or waist tags are commonly replaced with heat-transfer or <code>SCREENPRINT</code> interior care labels, paired with woven or printed main labels and custom retail packaging (boxes, polybags or hangers) developed specifically for approved custom production orders.</li>
 	</ul>
-
-	<div class="ma-technical-article__media-grid">
-		<figure class="ma-technical-article__media">
-			<img
-				src="<?php echo esc_url( $underwear_media_base . 'boxer-briefs-1200-q85.webp' ); ?>"
-				srcset="<?php echo esc_attr( $underwear_media_base . 'boxer-briefs-800-q85.webp 800w, ' . $underwear_media_base . 'boxer-briefs-1200-q85.webp 1200w' ); ?>"
-				sizes="(max-width: 47.99rem) calc(100vw - 3rem), 22rem"
-				width="1200"
-				height="900"
-				loading="lazy"
-				decoding="async"
-				alt="Close-up of cut-and-sew gray patterned men's performance boxer briefs showing black elastic waistband, contoured flatlock panel seam and coverstitched leg hem"
-			>
-			<figcaption>Representative cut-and-sew men's boxer brief sample showing an attached black elastic waistband, contoured panel seam and two-line coverstitched leg hem (not a seamless garment).</figcaption>
-		</figure>
-		<figure class="ma-technical-article__media">
-			<img
-				src="<?php echo esc_url( $underwear_media_base . 'thermal-base-layers-1200-q85.webp' ); ?>"
-				srcset="<?php echo esc_attr( $underwear_media_base . 'thermal-base-layers-800-q85.webp 800w, ' . $underwear_media_base . 'thermal-base-layers-1200-q85.webp 1200w' ); ?>"
-				sizes="(max-width: 47.99rem) calc(100vw - 3rem), 22rem"
-				width="1200"
-				height="900"
-				loading="lazy"
-				decoding="async"
-				alt="Model wearing a cut-and-sew black patterned thermal base-layer top and underwear bottoms with raglan shoulder seams"
-			>
-			<figcaption>Representative cut-and-sew thermal base-layer top and bottom set showing raglan sleeve and body-panel seams confirmed during sampling (not a seamless garment).</figcaption>
-		</figure>
-	</div>
 </section>
 
 <section id="sampling-and-qc" aria-labelledby="ma-pu-sampling-qc-title">
