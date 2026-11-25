@@ -1,6 +1,6 @@
 # Athletik Clothing 项目进度
 
-> 更新：2026-11-24。这里保留跨项目最新现状、下一步及**当月（2026-11）工作流水账**；每月底将当月流水账按月归档至 `docs/archive/progress-YYYY-MM.md`。
+> 更新：2026-11-25。这里保留跨项目最新现状、下一步及**当月（2026-11）工作流水账**；每月底将当月流水账按月归档至 `docs/archive/progress-YYYY-MM.md`。
 > 📅 **历月进度归档直达**：[2026-07](archive/progress-2026-07.md) · [2026-08](archive/progress-2026-08.md) · [2026-09](archive/progress-2026-09.md) · [2026-10](archive/progress-2026-10.md) · **2026-11（当月见下表）** · [全量合集快照](archive/progress-history-2026-11-18.md)
 
 ## 当前状态
@@ -51,6 +51,7 @@
 | 2026-11-24 | SEO / 收尾 | 完成文章 A、B、`/technical-guides/`（9 卡）与右侧目录新版式生产独立复验（HTTP 200、Schema、图片 20/20 与内链锚点全部通过），所有者确认两篇新指南已由 GSC 收录；批次推送已验收本地提交至 `origin/main` 并清理已合并的 `add_activewear_compression_guide` Worktree 与分支 | [`seo-tags.md`](../seo-tags.md) · `inc/technical-article-data.php` |
 | 2026-11-24 | SEO / 网站 | 新增第 10 篇技术指南《Performance Underwear Manufacturing Guide》（`/performance-underwear-manufacturing-guide/`，生产 ID `120`，`oem-sourcing` 分类；覆盖 Cut-and-Sew vs Seamless 严格区分、3 款代表性内衣面料精确引用、定制腰带/立体囊袋/无感洗标、5 项内衣质检点与 5 条纯技术 FAQ；已于 `/underwear-manufacturer/` 完成双向内链与 `rank-math.php` 核心 Sitemap 注册）。经 LocalWP 验收与所有者“批准上线”后通过 SSH 部署生产（5 PHP + 2 封面 WebP 全量 SHA-256 校验与服务端 `php -l` 通过，私有备份 `C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-24-9e3a97e-guide10`；已执行 `wp cache flush`、`wp rewrite flush` 与 Rank Math Sitemap 缓存清理）；线上 HTTPS 裸 URL 与 `?nocache=1` 全量验收通过（HTTP 200、单一 H1、52 字符 Title / 148 字符 Meta、Canonical、`follow, index`、OG/Twitter、Article + FAQPage(5) + BreadcrumbList、双封面 WebP 200、`/technical-guides/` 10 卡、`/underwear-manufacturer/` 2 处回链及 `/page-sitemap.xml` `lastmod=2026-11-24`），代码保留本地提交待阶段性统一推送 | [`seo-tags.md`](../seo-tags.md) · `page-performance-underwear-manufacturing-guide.php` · `content-performance-underwear-manufacturing-guide.php` |
 | 2026-11-24 | SEO / 收尾 | 完成第 10 篇 `/performance-underwear-manufacturing-guide/` 生产独立复验（HTTP 200、JSON-LD 5 问 FAQ、7/7 媒体、13/13 内链与 3 个面料深链、`/technical-guides/` 10 卡、`/underwear-manufacturer/` 双向内链与 Seamless 模块完好全部通过），所有者确认已完成 GSC 请求收录；清理空 Worktree `performance_underwear_guide` 并将已验收提交同步推送至 `origin/main` | [`seo-tags.md`](../seo-tags.md) · `inc/technical-article-data.php` |
+| 2026-11-25 | 询盘 / 品牌规范 | 完成一封成熟品牌配饰定制网眼开发首封英文回复审核通过，并自动提炼更新询盘手册与品牌规范技能（保留 1/2/3/4 分点清晰度同时去 AI 味自然写作与精简收尾标准、实物来样面料开发、COOLMAX 等品牌纱线与品牌吊牌核验边界、一站式辅料/指定辅料直采或客指采购、分仓分批交付及 FOB/DDP 常用术语） | [`inquiry-reply-playbook.md`](marketing/inquiry-reply-playbook.md) · [`SKILL.md`](../.agents/skills/wp-brand-voice-guard/SKILL.md) |
 
 ## 使用与维护
 
