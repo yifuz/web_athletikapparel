@@ -28,31 +28,21 @@ function myathletik_product_showcase_enabled() {
 	return myathletik_product_showcase_is_public( myathletik_product_showcase_page() );
 }
 
-/** Never expose unpublished, password-protected or missing examples in cards. */
+/** Never expose unpublished, password-protected or missing examples in cards; newest published first. */
 function myathletik_product_showcase_products() {
 	if ( ! myathletik_product_showcase_enabled() ) {
 		return array();
 	}
-	return array_filter( myathletik_product_example_data(), function ( $key ) {
-		return myathletik_product_showcase_is_public( myathletik_product_showcase_page( $key ) );
-	}, ARRAY_FILTER_USE_KEY );
-}
-
-/** Category pages are previews, not another unbounded product library. */
-function myathletik_product_showcase_category_preview( $category_slug ) {
 	$ranked = array();
-	foreach ( myathletik_product_showcase_products() as $key => $product ) {
-		if ( $category_slug !== ( $product['category_slug'] ?? '' ) ) {
-			continue;
-		}
+	foreach ( myathletik_product_example_data() as $key => $product ) {
 		$page = myathletik_product_showcase_page( $key );
 		if ( ! myathletik_product_showcase_is_public( $page ) ) {
 			continue;
 		}
 		$ranked[ $key ] = array(
-			'product' => $product,
+			'product'   => $product,
 			'published' => $page->post_date_gmt,
-			'id' => (int) $page->ID,
+			'id'        => (int) $page->ID,
 		);
 	}
 	// Use publication time, not modification time; routine edits do not reorder cards.
@@ -61,7 +51,15 @@ function myathletik_product_showcase_category_preview( $category_slug ) {
 	} );
 	return array_map( static function ( $item ) {
 		return $item['product'];
-	}, array_slice( $ranked, 0, 2, true ) );
+	}, $ranked );
+}
+
+/** Category pages are previews, not another unbounded product library. */
+function myathletik_product_showcase_category_preview( $category_slug ) {
+	$matched = array_filter( myathletik_product_showcase_products(), static function ( $product ) use ( $category_slug ) {
+		return $category_slug === ( $product['category_slug'] ?? '' );
+	} );
+	return array_slice( $matched, 0, 2, true );
 }
 
 function myathletik_product_showcase_url() {

@@ -19,6 +19,10 @@ $items = myathletik_product_seasonal_gallery_data();
 if ( ! $items ) {
 	return;
 }
+// Newest seasons sort first; items within the same season keep their array order.
+uasort( $items, static function ( $a, $b ) {
+	return strcmp( $b['season'] ?? '', $a['season'] ?? '' );
+} );
 
 $category_order = array(
 	'sportswear-manufacturer'         => 'Sportswear',

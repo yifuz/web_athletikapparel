@@ -16,6 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Return seasonal sample gallery items ordered for display.
  *
+ * Newest seasons sort first automatically; within the same season, add newer
+ * items at the top of the array so they appear first.
+ *
  * @return array<string,array>
  */
 function myathletik_product_seasonal_gallery_data() {
