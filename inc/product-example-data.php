@@ -194,9 +194,9 @@ function myathletik_product_example_data() {
 	$cycling_images     = $build_portrait_images(
 		$cycling_media_base,
 		array(
-			'front'     => array( 'Front view', "Front view of the fluorescent lime lightweight cycling shell jacket with full front zipper and stand collar", 'View front' ),
-			'side'      => array( 'Side view', "Side view of the fluorescent lime cycling jacket showing black sheer mesh underarm gusset and elastic cuff", 'View side' ),
-			'back-view' => array( 'Back view', "Back view of the fluorescent lime cycling jacket with black sheer mesh ventilation panel and rear zippered pocket", 'View back' ),
+			'front'     => array( 'Front view', "Front view of the women's fluorescent lime hi-vis UV-protective cycling top with full front zipper and stand collar", 'View front' ),
+			'side'      => array( 'Side view', "Side view of the women's fluorescent lime hi-vis UV-protective cycling top showing black sheer mesh underarm gusset and elastic cuff", 'View side' ),
+			'back-view' => array( 'Back view', "Back view of the women's fluorescent lime hi-vis UV-protective cycling top with black sheer mesh ventilation panel and rear zippered pocket", 'View back' ),
 		)
 	);
 
@@ -643,26 +643,26 @@ function myathletik_product_example_data() {
 		),
 		'womens-high-vis-cycling-jacket' => array(
 			'slug'             => 'womens-high-vis-cycling-jacket',
-			'seo_title'        => "Women's High-Vis Lightweight Cycling Jacket | Athletik Clothing",
-			'meta_description' => "Explore a women's high-visibility lightweight cycling shell jacket in 40 GSM 100% nylon (HY265135) with mesh ventilation panels, rear zip pocket, and OEM options.",
+			'seo_title'        => "Women's Hi-Vis UV-Protective Cycling Top | Athletik Clothing",
+			'meta_description' => "Explore a women's hi-vis UV-protective cycling top in 40 GSM 100% nylon (HY265135) with mesh ventilation panels, rear zip pocket, and OEM options.",
 			'inquiry_category' => 'Sportswear',
 			'social_image'     => $cycling_media_base . 'front-social.jpg',
 			'category_slug'    => 'sportswear-manufacturer',
 			'category_label'   => 'sportswear',
-			'name'             => 'High-Vis Cycling Jacket',
-			'title'            => "Women's high-vis lightweight cycling jacket",
-			'intro'            => "This women's lightweight cycling shell features a 40 GSM 100% nylon main fabric (HY265135) in high-visibility fluorescent lime, paired with black sheer mesh back and underarm ventilation panels, a stand collar, full front zipper, and a rear zippered pocket.",
-			'summary'          => 'A fluorescent lime lightweight cycling shell jacket in 40 GSM 100% nylon (HY265135) with sheer mesh ventilation panels and a rear zippered pocket.',
-			'characteristics'  => 'Lightweight 40 GSM nylon shell · Mesh back & underarm panels · Rear zippered pocket',
+			'name'             => 'Hi-Vis UV-Protective Cycling Top',
+			'title'            => "Women's hi-vis UV-protective cycling top",
+			'intro'            => "This women's hi-vis UV-protective cycling top pairs a 40 GSM 100% nylon main fabric (HY265135) in high-visibility fluorescent lime with black sheer mesh back and underarm ventilation panels, a stand collar, full front zipper, and a rear zippered pocket.",
+			'summary'          => 'A fluorescent lime hi-vis UV-protective cycling top in 40 GSM 100% nylon (HY265135) with sheer mesh ventilation panels and a rear zippered pocket.',
+			'characteristics'  => 'Hi-vis UV-protective 40 GSM nylon · Mesh ventilation panels · Rear zippered pocket',
 			'material'         => 'nylon',
 			'material_label'   => 'Nylon',
 			'sample_material'  => 'Lightweight woven nylon shell with mesh panels',
 			'composition'      => 'Main shell: 100% Nylon',
 			'gsm'              => '40 GSM (main shell)',
 			'fabric_ref'       => 'HY265135',
-			'use'              => 'Cycling and high-visibility outdoor training',
+			'use'              => 'Cycling, sun-exposed rides, and high-visibility outdoor training',
 			'facts_note'       => 'Composition and 40 GSM apply to the main shell fabric (HY265135), not the sheer mesh panels or trims. UV-protective positioning is verified per the buyer’s specified test method; this record is not a stock availability or lab-tested performance guarantee.',
-			'search'           => "women womens high vis cycling jacket shell windbreaker fluorescent lime green 40 GSM 100 nylon HY265135 mesh ventilation rear zip pocket sportswear",
+			'search'           => "women womens ladies hi vis high vis UV protective cycling top jacket shell windbreaker fluorescent lime green 40 GSM 100 nylon HY265135 mesh ventilation rear zip pocket sportswear",
 			'media'            => array(
 				'aspect'         => 'portrait',
 				'caption_suffix' => 'Studio sample photo',
@@ -673,7 +673,7 @@ function myathletik_product_example_data() {
 				'shared_title' => 'Program and finishing options',
 				'groups'       => array(
 					array(
-						'title' => 'Jacket & pocket development',
+						'title' => 'Cycling top & pocket development',
 						'intro' => 'Silhouette, closure, and storage choices for the outer shell.',
 						'items' => array(
 							'Collar & zip'  => 'Stand collar with full-length zipper / garage guard',
