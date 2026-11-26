@@ -68,9 +68,9 @@ get_header();
 			<div class="ma-pl-tier-head">
 				<div>
 					<p class="ma-pl-eyebrow">Featured Technical Samples</p>
-					<h2 id="ma-pl-featured-title">Detailed product examples with confirmed fabric references</h2>
+					<h2 id="ma-pl-featured-title">OEM Product Examples</h2>
 				</div>
-				<p class="ma-pl-tier-head__note">Complete garment specifications, fiber compositions, GSM weights, and OEM development options.</p>
+				<p class="ma-pl-tier-head__note">Fabric specifications, construction details, and OEM development options.</p>
 			</div>
 			<div class="ma-pl-filter-bar" id="ma-pl-product-filters" role="search" aria-label="Filter product examples" hidden>
 				<div class="ma-pl-filter-groups">

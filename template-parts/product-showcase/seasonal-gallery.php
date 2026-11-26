@@ -66,7 +66,7 @@ foreach ( $items as $id => $item ) {
 			<p class="ma-pl-eyebrow">Recent studio samples</p>
 			<h2 id="ma-pl-seasonal-title">Seasonal Sample Gallery</h2>
 		</div>
-		<p class="ma-pl-tier-head__note">Studio garment photography from recent production runs. Fabric compositions, GSM weights, and trims are confirmed per OEM/ODM project brief.</p>
+		<p class="ma-pl-tier-head__note">Selected seasonal styles for OEM/ODM reference—fabrics, weights, and trims are developed to your project brief.</p>
 	</div>
 
 	<div class="ma-pl-seasonal-toolbar" id="ma-pl-seasonal-filters" hidden>
