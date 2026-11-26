@@ -26,6 +26,22 @@
 
 > 2026-08 至 2026-10 完整历史记录已原样归档至 [docs/archive/gsc-data-log-history-2026-08-to-10.md](../archive/gsc-data-log-history-2026-08-to-10.md)。
 
+## 2026-11-25：6 URL 索引复查、FLATLOCK→Merino 28 天后窗与表单送达核验
+
+只读复查（`seo-clash` v0.2.36，`sc-domain:athletikapparel.com`，`type=web`、`dataState=final`）；最新 `final` 覆盖至 `2026-11-23`（11-18～11-23 日曝光：`97 / 100 / 58 / 72 / 59 / 88`，11-22 为 4 clicks）。
+
+| URL | Verdict / Coverage | Last Crawl (本地换算 / API 原值) | 备注 |
+|---|---|---|---|
+| `/product-showcase/mens-half-zip-fleece-top/` | `PASS / Submitted and indexed` | `2026-11-19` | 此前未收录的摇粒绒已收录（5/5 Showcase 全收录） |
+| `/flatlock-vs-coverstitch-technical-knitwear/` | `PASS / Submitted and indexed` | `2026-11-23` | 已收录 |
+| `/merino-wool-base-layer-gsm-guide/` | `PASS / Submitted and indexed` | `2026-11-24` | 已收录 |
+| `/activewear-compression-manufacturing-guide/` | `PASS / Submitted and indexed` | `2026-11-24` | 已收录 |
+| `/performance-underwear-manufacturing-guide/` | `PASS / Submitted and indexed` | `2026-11-24` | 已收录 |
+| `/technical-knitwear-tech-pack-guide/` | `PASS / Submitted and indexed` | `2026-11-19` | 抓取早于 `11-20` Title/H1 升级，已标记需重新请求索引 |
+
+- **28 天 Page 汇总（`2026-10-24～11-20` 对比前窗 `09-26～10-23`）**：全站 Page 汇总 `30 / 1,699 → 31 / 1,793`。`/knitted-fabrics-manufacturer/` 由 `0 / 131 → 1 / 256`（曝光 +95%）；`/merino-wool-manufacturer/`（`FLATLOCK→Merino` 28 天后窗）由 `4 / 185 → 6 / 229`（含内链与 Showcase 共同变量，维持 `no-change / keep-measuring`）；`/sportswear-manufacturer/` 为 `5 / 56 → 0 / 42`（列为 Product Showcase 优先补强页）。
+- **表单真实送达核验（163 只读、零 PII）**：`INBOX` 已实收 `2026-11-20`（Outdoor，43 件）与 `2026-11-25`（Sports Accessories，5,000 件）两封官网表单通知，自报来源字段均正常显示为 `Google or another search engine`。
+
 ## 2026-11-19：URL Inspection 复查与 Knitted / Merino 完整 28 天后窗
 
 只读复查（`seo-clash` v0.2.36，`sc-domain:athletikapparel.com`，`type=web`、`dataState=final`、`rowLimit=25000`，均未触顶）；未修改网站或重复提交索引。

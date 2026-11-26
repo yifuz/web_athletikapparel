@@ -1,22 +1,22 @@
 # Athletik Clothing 项目进度
 
-> 更新：2026-11-25。这里保留跨项目最新现状、下一步及**当月（2026-11）工作流水账**；每月底将当月流水账按月归档至 `docs/archive/progress-YYYY-MM.md`。
+> 更新：2026-11-26。这里保留跨项目最新现状、下一步及**当月（2026-11）工作流水账**；每月底将当月流水账按月归档至 `docs/archive/progress-YYYY-MM.md`。
 > 📅 **历月进度归档直达**：[2026-07](archive/progress-2026-07.md) · [2026-08](archive/progress-2026-08.md) · [2026-09](archive/progress-2026-09.md) · [2026-10](archive/progress-2026-10.md) · **2026-11（当月见下表）** · [全量合集快照](archive/progress-history-2026-11-18.md)
 
 ## 当前状态
 
 - **网站**：https://www.athletikapparel.com/ 已在 Flywheel 运行。Local 审核、所有者批准、生产部署和验收是独立步骤；实施及回退见[部署流程](operations/flywheel-ssh-deployment.md)。
 - **GEO**：宽泛采购问题中的独立佐证仍是主要缺口。已发布的买家公开名单、Sportswear 证据及现有样本见 [GEO 工作台](geo/GEO.md)；已上线不代表已被 AI 引用或推荐。
-- **询盘来源**：2026-11-18 已在首页、联系页和七个类目页上线可多选的客户自报来源，同时更新 Privacy Policy。线上显示与字段规则已验收；本次未发送真实测试询盘，邮件实际送达未复验。
+- **询盘来源**：2026-11-18 已在首页、联系页和七个类目页上线可多选的客户自报来源，同时更新 Privacy Policy。2026-11-25 经只读 163 邮箱核验，确认 `11-20` 与 `11-25` 两单真实官网表单通知均正常进入 `INBOX` 并完整显示该自报来源字段（零 PII 落盘）。
 - **SEO**：既有页面和观察窗口以 [SEO 工作台](seo/README.md) 及 [V2 Backlog](seo/v2-backlog.md) 为准。2026-11-19 已按覆盖至 11-17 的 `final` 数据完成 Knitted（1/84→1/177）与 Merino（4/177→7/201）完整 28 天后窗复盘（均 `no-change`，明细见 [GSC Log](seo/gsc-data-log.md)）；同日 URL Inspection 确认 Showcase 男款 HY265077 等 3 页已收录，`mens-half-zip-fleece-top` 与 Tech Pack Guide 已于 11-19 由所有者请求索引（建议 11-26 起复查）。下一窗口为 FLATLOCK→Merino 入链（11-23 起）及 Underwear / Yoga（11-27 起）。
 - **对外账号**：官网、当前 Instagram 和 LinkedIn 纳入 GEO；公开发布仍需对应授权。YouTube 账号不由所有者管理。
 - **隐私与询盘**：当前 Privacy Policy 见[批准文本](privacy/policy-draft.md)，其他同意与营销边界见 [privacy 目录](privacy/)。不把来源未知的询盘推断为某一渠道的成果。
 
 ## 接下来的工作
 
-1. **站外权威跟进**：OS Hub 认领（`#6327`）、SourceReady 更正、Merrow 案例合作与 Woolmark 并列主站询问均已发出并等待平台/官方回复；`athletik.com.cn` 与 `SourceReady` 截至 11-23 仍显示 `No.25`；Europages 确认 `deferred / platform-eligibility`（同 ThomasNet）。
-2. **站外投稿与社媒破圈（10 篇技术指南全线打通）**：第 8～10 篇（Merino GSM、Activewear/Compression、Performance Underwear）均已通过全量生产技术验收并由所有者完成 GSC 请求收录；下一步聚焦 **Sourcing Journal Op-Ed 行业专栏投稿定稿**，以及周四（`11-26`）为 Merino GSM 指南准备 LinkedIn + Instagram 原生引流帖。
-3. **到期观察窗口**：`11-26` 起复查摇粒绒 Showcase、升级版 Tech Pack 与 `FLATLOCK vs COVERSTITCH` 的 GSC 抓取/收录；`11-28` 起复盘 `sportswear-manufacturing-evidence` 社媒七日表现；`12-01` 起复盘 `FLATLOCK vs COVERSTITCH` 视频帖七日表现。
+1. **站外权威跟进**：**OS Hub 工厂档案（`CN2021314PF2M92`，原 Claim `#6327`）已于 2026-11-26 经所有者确认认领成功**；继续等待 Merrow、Woolmark、SourceReady 回邮（11-25 查邮暂未见回复）及 `athletik.com.cn` 旧门牌修复。
+2. **`/product-showcase/` 双层升级与 Sportswear 补强（暂停继续连上第 11 篇指南）**：Phase 1 先上线面料已确认的 Sportswear 首批 3 款独立 Showcase（女模 `1款 HY244737`、`2款 HY265075`、`8款 HY265135`）+ 竖图自适应 + 品类筛选/分页 + `/sportswear-manufacturer/` 双卡预览接入；Phase 2 再于 Showcase 下半区新增 `Seasonal Sample Gallery` 收纳当季实拍精选，商业页 Lookbook 维持上限淘汰制。
+3. **到期观察窗口与小补漏**：在 GSC 为 `/technical-knitwear-tech-pack-guide/` 补点一次重抓请求（抓取停在 11-19 早于 11-20 标题升级）；`11-27～12-01` 复盘 Underwear / Yoga 28 天后窗与 `11-20` / `11-23` 社媒后台真实数据。
 
 ## 2026-11 当月工作流水账（按日追加，严禁抹除，月底归档为 `archive/progress-2026-11.md`）
 
@@ -51,6 +51,8 @@
 | 2026-11-24 | SEO / 收尾 | 完成文章 A、B、`/technical-guides/`（9 卡）与右侧目录新版式生产独立复验（HTTP 200、Schema、图片 20/20 与内链锚点全部通过），所有者确认两篇新指南已由 GSC 收录；批次推送已验收本地提交至 `origin/main` 并清理已合并的 `add_activewear_compression_guide` Worktree 与分支 | [`seo-tags.md`](../seo-tags.md) · `inc/technical-article-data.php` |
 | 2026-11-24 | SEO / 网站 | 新增第 10 篇技术指南《Performance Underwear Manufacturing Guide》（`/performance-underwear-manufacturing-guide/`，生产 ID `120`，`oem-sourcing` 分类；覆盖 Cut-and-Sew vs Seamless 严格区分、3 款代表性内衣面料精确引用、定制腰带/立体囊袋/无感洗标、5 项内衣质检点与 5 条纯技术 FAQ；已于 `/underwear-manufacturer/` 完成双向内链与 `rank-math.php` 核心 Sitemap 注册）。经 LocalWP 验收与所有者“批准上线”后通过 SSH 部署生产（5 PHP + 2 封面 WebP 全量 SHA-256 校验与服务端 `php -l` 通过，私有备份 `C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-24-9e3a97e-guide10`；已执行 `wp cache flush`、`wp rewrite flush` 与 Rank Math Sitemap 缓存清理）；线上 HTTPS 裸 URL 与 `?nocache=1` 全量验收通过（HTTP 200、单一 H1、52 字符 Title / 148 字符 Meta、Canonical、`follow, index`、OG/Twitter、Article + FAQPage(5) + BreadcrumbList、双封面 WebP 200、`/technical-guides/` 10 卡、`/underwear-manufacturer/` 2 处回链及 `/page-sitemap.xml` `lastmod=2026-11-24`），代码保留本地提交待阶段性统一推送 | [`seo-tags.md`](../seo-tags.md) · `page-performance-underwear-manufacturing-guide.php` · `content-performance-underwear-manufacturing-guide.php` |
 | 2026-11-24 | SEO / 收尾 | 完成第 10 篇 `/performance-underwear-manufacturing-guide/` 生产独立复验（HTTP 200、JSON-LD 5 问 FAQ、7/7 媒体、13/13 内链与 3 个面料深链、`/technical-guides/` 10 卡、`/underwear-manufacturer/` 双向内链与 Seamless 模块完好全部通过），所有者确认已完成 GSC 请求收录；清理空 Worktree `performance_underwear_guide` 并将已验收提交同步推送至 `origin/main` | [`seo-tags.md`](../seo-tags.md) · `inc/technical-article-data.php` |
+| 2026-11-25 | SEO / 邮箱核验 | 完成 6 URL GSC 只读复查（摇粒绒等 6/6 全收录；发现 Tech Pack 抓取停在 11-19 早于 11-20 升级）、`FLATLOCK→Merino` 28 天后窗（4/185→6/229）及只读 163 查邮实证官网表单真实送达与自报来源字段正常显示（零 PII）；决定暂停连发第 11 篇指南，定案 `/product-showcase/` 双层升级路线并提取女模 1/2/8 款待建 Sportswear Showcase | [`gsc-data-log.md`](seo/gsc-data-log.md) · [`GEO.md`](geo/GEO.md) |
+| 2026-11-26 | GEO / 站外权威 | 所有者确认 Open Supply Hub 工厂档案（`CN2021314PF2M92`，Claim `#6327`）认领审核通过；完成 3 款女装面料规格图片转录（`HY244737`、`HY265075`、`HY265135`）并准备 Product Showcase Phase 1 实施 | [`GEO.md`](geo/GEO.md) |
 | 2026-11-25 | 询盘 / 品牌规范 | 完成两封 B2B 询盘首封英文回复审核通过（成熟品牌定制网眼开发 + 纯面料开发询盘），并自动提炼更新询盘手册与品牌规范技能（保留 1/2/3/4 分点清晰度同时去 AI 味、温和不重复 MOQ 口径、定稿用纯文本代码块适配 Foxmail、实物来样面料开发、COOLMAX 等品牌纱线与吊牌边界、一站式/指定辅料、分仓交付与 FOB/DDP、纯面料直供国内成衣厂及 200–300 kg MOQ/附加费、常规面料色卡免费与特殊印花测试边界） | [`inquiry-reply-playbook.md`](marketing/inquiry-reply-playbook.md) · [`SKILL.md`](../.agents/skills/wp-brand-voice-guard/SKILL.md) |
 
 ## 使用与维护
