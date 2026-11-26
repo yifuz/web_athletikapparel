@@ -59,8 +59,10 @@ $facts_class = 'ma-pl-product-facts' . ( 1 === count( $card_facts ) ? ' ma-pl-pr
 					<div class="ma-pl-fact"><dt><?php echo esc_html( $fact_label ); ?></dt><dd><?php echo esc_html( $fact_value ); ?></dd></div>
 				<?php endforeach; ?>
 			</dl>
-			<p class="ma-pl-composition"><?php echo esc_html( $product['composition'] ); ?></p>
-			<a class="ma-pl-button" href="<?php echo esc_url( $url ); ?>">Explore this product <span aria-hidden="true">→</span></a>
+			<div class="ma-pl-product-card__footer">
+				<p class="ma-pl-composition"><?php echo esc_html( $product['composition'] ); ?></p>
+				<a class="ma-pl-product-card__link" href="<?php echo esc_url( $url ); ?>" aria-label="<?php echo esc_attr( 'View details for ' . $product['name'] ); ?>"><?php esc_html_e( 'Details', 'myathletik-child' ); ?> <span class="ma-pl-product-card__arrow" aria-hidden="true">→</span></a>
+			</div>
 		</div>
 	</article>
 <?php elseif ( 'home' === $context ) : ?>

@@ -62,6 +62,93 @@ function myathletik_product_showcase_category_preview( $category_slug ) {
 	return array_slice( $matched, 0, 2, true );
 }
 
+/** Pick cross-category OEM samples (Sportswear, Merino, Outdoor) for the homepage showcase. */
+function myathletik_product_showcase_home_oem_preview( $limit = 3 ) {
+	$products = myathletik_product_showcase_products();
+	if ( ! $products ) {
+		return array();
+	}
+
+	$preferred_categories = array(
+		'sportswear-manufacturer',
+		'merino-wool-manufacturer',
+		'outdoor-clothing-manufacturer',
+	);
+	$selected             = array();
+
+	foreach ( $preferred_categories as $cat_slug ) {
+		foreach ( $products as $key => $product ) {
+			if ( isset( $selected[ $key ] ) ) {
+				continue;
+			}
+			if ( $cat_slug === ( $product['category_slug'] ?? '' ) ) {
+				$selected[ $key ] = $product;
+				break;
+			}
+		}
+		if ( count( $selected ) >= $limit ) {
+			return $selected;
+		}
+	}
+
+	foreach ( $products as $key => $product ) {
+		if ( count( $selected ) >= $limit ) {
+			break;
+		}
+		if ( ! isset( $selected[ $key ] ) ) {
+			$selected[ $key ] = $product;
+		}
+	}
+
+	return $selected;
+}
+
+/** Pick balanced seasonal studio samples (2 Sportswear + 2 Outdoor) for the homepage showcase. */
+function myathletik_product_showcase_home_seasonal_preview( $limit = 4 ) {
+	if ( ! function_exists( 'myathletik_product_seasonal_gallery_data' ) ) {
+		return array();
+	}
+
+	$items = myathletik_product_seasonal_gallery_data();
+	if ( ! $items ) {
+		return array();
+	}
+
+	uasort( $items, static function ( $a, $b ) {
+		return strcmp( $b['season'] ?? '', $a['season'] ?? '' );
+	} );
+
+	$category_quotas = array(
+		'sportswear-manufacturer'       => 2,
+		'outdoor-clothing-manufacturer' => 2,
+	);
+	$selected        = array();
+
+	foreach ( $category_quotas as $cat_slug => $quota ) {
+		$taken = 0;
+		foreach ( $items as $id => $item ) {
+			if ( $taken >= $quota || count( $selected ) >= $limit ) {
+				break;
+			}
+			if ( ! isset( $selected[ $id ] ) && $cat_slug === ( $item['category_slug'] ?? '' ) ) {
+				$selected[ $id ] = $item;
+				$taken++;
+			}
+		}
+	}
+
+	foreach ( $items as $id => $item ) {
+		if ( count( $selected ) >= $limit ) {
+			break;
+		}
+		if ( ! isset( $selected[ $id ] ) ) {
+			$selected[ $id ] = $item;
+		}
+	}
+
+	return $selected;
+}
+
 function myathletik_product_showcase_url() {
 	$page = myathletik_product_showcase_page();
 	return myathletik_product_showcase_is_public( $page ) ? get_permalink( $page ) : '';

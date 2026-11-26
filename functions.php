@@ -1626,7 +1626,7 @@ function myathletik_site_footer() {
 	$privacy_policy_url   = get_privacy_policy_url();
 	$cookiebot_configured = (bool) get_option( 'cookiebot-cbid' );
 	?>
-	<div class="ma-site-footer">
+	<footer class="ma-site-footer">
 		<div class="ma-site-footer__inner">
 			<div class="ma-site-footer__brand">
 				<a class="ma-site-footer__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Athletik Clothing home', 'myathletik-child' ); ?>">
@@ -1676,6 +1676,6 @@ function myathletik_site_footer() {
 				?>
 			</p>
 		</div>
-	</div>
+	</footer>
 	<?php
 }

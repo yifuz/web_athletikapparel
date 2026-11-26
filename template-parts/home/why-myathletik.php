@@ -44,37 +44,35 @@ $why_media_srcset = implode(
 ?>
 
 <section class="ma-home-why" aria-labelledby="ma-home-why-title">
-	<div class="ma-section-inner">
-		<div class="ma-home-why__panel">
-			<picture class="ma-home-why__background" aria-hidden="true">
+	<div class="ma-section-inner ma-home-why__layout">
+		<div class="ma-home-why__intro">
+			<div class="ma-section-heading">
+				<p class="ma-section-kicker"><?php esc_html_e( 'Why myathletik', 'myathletik-child' ); ?></p>
+				<h2 id="ma-home-why-title"><?php esc_html_e( 'Built for technical repeat orders, not tiny one-off runs', 'myathletik-child' ); ?></h2>
+				<p><?php esc_html_e( "We're not just a factory - we're an integrated production partner. From yarn and fabric development to finished-garment construction, we give performance brands the technical capability and flexible capacity to bring demanding designs to life.", 'myathletik-child' ); ?></p>
+			</div>
+			<figure class="ma-home-why__media">
 				<img
 					src="<?php echo esc_url( $why_media_base . '-800.webp' ); ?>"
 					srcset="<?php echo esc_attr( $why_media_srcset ); ?>"
-					sizes="(max-width: 75rem) calc(100vw - 3rem), 72rem"
+					sizes="(max-width: 63.99rem) calc(100vw - 3rem), 30rem"
 					width="1536"
 					height="1024"
 					loading="lazy"
 					decoding="async"
-					alt=""
+					alt="<?php esc_attr_e( 'Technical knitwear sewing operation on the Athletik Clothing production floor', 'myathletik-child' ); ?>"
 				>
-			</picture>
-			<div class="ma-home-why__foreground ma-home-why__layout">
-				<div class="ma-section-heading">
-					<p class="ma-section-kicker"><?php esc_html_e( 'Why myathletik', 'myathletik-child' ); ?></p>
-					<h2 id="ma-home-why-title"><?php esc_html_e( 'Built for technical repeat orders, not tiny one-off runs', 'myathletik-child' ); ?></h2>
-					<p><?php esc_html_e( "We're not just a factory - we're an integrated production partner. From yarn and fabric development to finished-garment construction, we give performance brands the technical capability and flexible capacity to bring demanding designs to life.", 'myathletik-child' ); ?></p>
-				</div>
+			</figure>
+		</div>
 
-				<div class="ma-home-why__list">
-					<?php foreach ( $reasons as $index => $reason ) : ?>
-						<article class="ma-reason-card">
-							<span><?php echo esc_html( str_pad( (string) ( $index + 1 ), 2, '0', STR_PAD_LEFT ) ); ?></span>
-							<h3><?php echo esc_html( $reason['title'] ); ?></h3>
-							<p><?php echo esc_html( $reason['copy'] ); ?></p>
-						</article>
-					<?php endforeach; ?>
-				</div>
-			</div>
+		<div class="ma-home-why__list">
+			<?php foreach ( $reasons as $index => $reason ) : ?>
+				<article class="ma-reason-card">
+					<span><?php echo esc_html( str_pad( (string) ( $index + 1 ), 2, '0', STR_PAD_LEFT ) ); ?></span>
+					<h3><?php echo esc_html( $reason['title'] ); ?></h3>
+					<p><?php echo esc_html( $reason['copy'] ); ?></p>
+				</article>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </section>
