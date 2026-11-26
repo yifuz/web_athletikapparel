@@ -90,8 +90,12 @@ function myathletik_product_showcase_prepare( $check_media = true ) {
 				$media_urls[] = $image['src'];
 				$media_urls[] = $image['thumbnail'];
 			}
-			$media_urls[] = $product['media']['video']['src'];
-			$media_urls[] = $product['media']['video']['poster'];
+			if ( ! empty( $product['media']['video']['src'] ) ) {
+				$media_urls[] = $product['media']['video']['src'];
+			}
+			if ( ! empty( $product['media']['video']['poster'] ) ) {
+				$media_urls[] = $product['media']['video']['poster'];
+			}
 			foreach ( $product['media']['videos'] ?? array() as $clip_key => $clip ) {
 				foreach ( array( 'src', 'poster', 'thumbnail' ) as $field ) {
 					if ( empty( $clip[ $field ] ) || ! is_string( $clip[ $field ] ) ) {
@@ -107,8 +111,6 @@ function myathletik_product_showcase_prepare( $check_media = true ) {
 					$media_urls[] = $seasonal_img['src'];
 					$media_urls[] = $seasonal_img['thumbnail'];
 				}
-				$media_urls[] = $seasonal_item['video']['src'];
-				$media_urls[] = $seasonal_item['video']['poster'];
 			}
 		}
 		$media_prefixes = array(

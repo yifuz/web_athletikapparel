@@ -19,11 +19,12 @@ if ( ! isset( $products[ $product_key ] ) ) {
 $product = $products[ $product_key ];
 $images  = $product['media']['images'];
 $front   = $images['front'];
-$video   = $product['media']['video'];
+$video   = $product['media']['video'] ?? array();
 // Existing records keep their single-video controls; multiple clips share one player.
-$videos  = ! empty( $product['media']['videos'] ) ? $product['media']['videos'] : array( 'overview' => $video );
+$videos  = ! empty( $product['media']['videos'] ) ? $product['media']['videos'] : ( ! empty( $video['src'] ) ? array( 'overview' => $video ) : array() );
+$has_video       = ! empty( $videos );
 $multiple_videos = count( $videos ) > 1;
-$video   = $videos['overview'] ?? reset( $videos );
+$video   = $has_video ? ( $videos['overview'] ?? reset( $videos ) ) : array();
 $inquiry_url = myathletik_product_example_inquiry_url( $product_key );
 $category_slug  = ! empty( $product['category_slug'] ) ? sanitize_title( $product['category_slug'] ) : '';
 $category_label = ! empty( $product['category_label'] ) ? $product['category_label'] : '';
@@ -45,13 +46,13 @@ $facts   = array_filter( $facts, static function ( $value ) {
 } );
 $photo_count  = count( $images );
 $thumbs_class = 'ma-pl-thumbs';
-if ( $multiple_videos ) {
+if ( $multiple_videos || ! $has_video ) {
 	$thumbs_class .= ' ma-pl-thumbs--photos';
 }
 if ( $is_portrait ) {
 	$thumbs_class .= ' ma-pl-thumbs--portrait';
 }
-if ( $multiple_videos && 3 === $photo_count ) {
+if ( ( $multiple_videos || ! $has_video ) && 3 === $photo_count ) {
 	$thumbs_class .= ' ma-pl-thumbs--count-3';
 }
 $video_tiles_class = 'ma-pl-video-tiles' . ( 3 === count( $videos ) ? ' ma-pl-video-tiles--count-3' : '' );
@@ -69,12 +70,12 @@ get_header();
 			<h1 id="ma-pl-product-title"><?php echo esc_html( $product['title'] ); ?></h1>
 			<p class="ma-pl-intro"><?php echo esc_html( $product['intro'] ); ?></p>
 		</header>
-		<div class="ma-pl-gallery" role="group" aria-label="Product photos and video">
+		<div class="ma-pl-gallery" role="group" aria-label="<?php echo esc_attr( $has_video ? 'Product photos and video' : 'Product photos' ); ?>">
 			<div id="ma-pl-product-media" class="ma-pl-main-image<?php echo $is_portrait ? ' ma-pl-main-image--portrait' : ''; ?>">
 				<img id="ma-pl-main-product-image" src="<?php echo esc_url( $front['src'] ); ?>" srcset="<?php echo esc_attr( $front['srcset'] ); ?>" sizes="<?php echo esc_attr( $sizes ); ?>" width="<?php echo esc_attr( $front_width ); ?>" height="<?php echo esc_attr( $front_height ); ?>" alt="<?php echo esc_attr( $front['alt'] ); ?>" loading="eager" fetchpriority="high" decoding="async">
 			</div>
 			<p id="ma-pl-media-caption" class="ma-pl-image-caption" aria-live="polite" data-caption-suffix="<?php echo esc_attr( $caption_suffix ); ?>"><?php echo esc_html( $front['caption'] . ' · ' . $caption_suffix ); ?></p>
-			<div class="<?php echo esc_attr( $thumbs_class ); ?>" role="group" aria-label="<?php echo esc_attr( $multiple_videos ? 'Choose a photo' : 'Choose a photo or video' ); ?>" hidden>
+			<div class="<?php echo esc_attr( $thumbs_class ); ?>" role="group" aria-label="<?php echo esc_attr( $multiple_videos || ! $has_video ? 'Choose a photo' : 'Choose a photo or video' ); ?>" hidden>
 				<?php foreach ( $images as $image_key => $image ) : ?>
 					<?php
 					$thumb_w = ! empty( $image['thumb_width'] ) ? absint( $image['thumb_width'] ) : ( $is_portrait ? 533 : 640 );
@@ -84,14 +85,14 @@ get_header();
 						<img src="<?php echo esc_url( $image['thumbnail'] ); ?>" width="<?php echo esc_attr( $thumb_w ); ?>" height="<?php echo esc_attr( $thumb_h ); ?>" alt="" loading="lazy" decoding="async">
 					</button>
 				<?php endforeach; ?>
-				<?php if ( ! $multiple_videos ) : ?>
+				<?php if ( $has_video && ! $multiple_videos ) : ?>
 					<button class="ma-pl-thumb ma-pl-thumb--video" type="button" aria-label="View product video" aria-haspopup="dialog" aria-controls="ma-pl-video-dialog" data-media="video" data-video-aspect="<?php echo esc_attr( $video['aspect'] ?? 'landscape' ); ?>">
 						<img src="<?php echo esc_url( $front['thumbnail'] ); ?>" width="640" height="360" alt="" loading="lazy" decoding="async">
 						<span class="ma-pl-thumb__video-mark" aria-hidden="true"><span>▶ Video</span></span>
 					</button>
 				<?php endif; ?>
 			</div>
-			<?php if ( $multiple_videos ) : ?>
+			<?php if ( $has_video && $multiple_videos ) : ?>
 				<div class="ma-pl-videos" role="group" aria-labelledby="ma-pl-videos-label" hidden>
 					<p id="ma-pl-videos-label" class="ma-pl-videos__label">Product videos</p>
 					<div class="<?php echo esc_attr( $video_tiles_class ); ?>">
@@ -111,14 +112,14 @@ get_header();
 			<?php endif; ?>
 			<noscript>
 				<div class="ma-pl-media-fallback">
-					<?php if ( $multiple_videos ) : ?>
+					<?php if ( $has_video && $multiple_videos ) : ?>
 						<p>Product videos</p>
 						<ul>
 							<?php foreach ( $videos as $clip ) : ?>
 								<li><a href="<?php echo esc_url( $clip['src'] ); ?>"><?php echo esc_html( $clip['label'] ); ?> <span aria-hidden="true">→</span></a></li>
 							<?php endforeach; ?>
 						</ul>
-					<?php else : ?>
+					<?php elseif ( $has_video ) : ?>
 						<a class="ma-pl-text-link" href="<?php echo esc_url( $video['src'] ); ?>">Watch the product video <span aria-hidden="true">→</span></a>
 					<?php endif; ?>
 					<ul>
@@ -144,13 +145,16 @@ get_header();
 			<?php endif; ?>
 			<div class="ma-pl-actions">
 				<a class="ma-pl-button" href="<?php echo esc_url( $inquiry_url ); ?>">Request a project review</a>
-				<button id="ma-pl-show-product-video" class="ma-pl-button ma-pl-button--secondary" type="button" aria-haspopup="dialog" aria-controls="ma-pl-video-dialog" data-video-aspect="<?php echo esc_attr( $video['aspect'] ?? 'landscape' ); ?>"<?php if ( $multiple_videos ) : ?> data-video-title="<?php echo esc_attr( $video['label'] ); ?>"<?php endif; ?> hidden>View product video</button>
+				<?php if ( $has_video ) : ?>
+					<button id="ma-pl-show-product-video" class="ma-pl-button ma-pl-button--secondary" type="button" aria-haspopup="dialog" aria-controls="ma-pl-video-dialog" data-video-aspect="<?php echo esc_attr( $video['aspect'] ?? 'landscape' ); ?>"<?php if ( $multiple_videos ) : ?> data-video-title="<?php echo esc_attr( $video['label'] ); ?>"<?php endif; ?> hidden>View product video</button>
+				<?php endif; ?>
 			</div>
 			<?php if ( $category_slug && $category_label ) : ?>
 				<a class="ma-pl-text-link ma-pl-related-category" href="<?php echo esc_url( home_url( '/' . $category_slug . '/' ) ); ?>"><?php echo esc_html( sprintf( __( 'Explore %s manufacturing', 'myathletik-child' ), $category_label ) ); ?> <span aria-hidden="true">→</span></a>
 			<?php endif; ?>
 		</div>
 	</section>
+	<?php if ( $has_video ) : ?>
 	<dialog id="ma-pl-video-dialog" class="ma-pl-video-dialog" aria-labelledby="ma-pl-video-title">
 		<div class="ma-pl-video-dialog__toolbar">
 			<p id="ma-pl-video-title">Product video</p>
@@ -161,6 +165,7 @@ get_header();
 			<a href="<?php echo esc_url( $video['src'] ); ?>">Watch the product video</a>
 		</video>
 	</dialog>
+	<?php endif; ?>
 	<?php if ( ! empty( $product['options'] ) ) : ?>
 	<section id="ma-pl-development-options" class="ma-pl-section" aria-labelledby="ma-pl-development-title">
 		<div class="ma-section-inner">

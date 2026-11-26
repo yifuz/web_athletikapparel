@@ -38,11 +38,17 @@ if ( ! empty( $product['fabric_ref'] ) ) {
 $facts_class = 'ma-pl-product-facts' . ( 1 === count( $card_facts ) ? ' ma-pl-product-facts--single' : '' );
 ?>
 <?php if ( 'library' === $context ) : ?>
-	<?php $sizes = $is_portrait ? '(max-width: 760px) 533px, 600px' : '(max-width: 760px) 684px, 854px'; ?>
+	<?php
+	$sizes       = $is_portrait ? '(max-width: 760px) 533px, 600px' : '(max-width: 760px) 684px, 854px';
+	$video_count = ! empty( $product['media']['videos'] ) ? count( $product['media']['videos'] ) : ( ! empty( $product['media']['video']['src'] ) ? 1 : 0 );
+	$media_note  = $video_count > 1
+		? sprintf( __( 'Photos + %d product videos', 'myathletik-child' ), $video_count )
+		: ( 1 === $video_count ? 'Photos + product video' : sprintf( __( '%d studio photos', 'myathletik-child' ), count( $product['media']['images'] ) ) );
+	?>
 	<article class="ma-pl-product-card" data-category="<?php echo esc_attr( $product['category_slug'] ?? '' ); ?>" data-material="<?php echo esc_attr( $product['material'] ); ?>" data-search="<?php echo esc_attr( $product['search'] ); ?>">
 		<a class="ma-pl-product-card__image<?php echo $is_portrait ? ' ma-pl-product-card__image--portrait' : ''; ?>" href="<?php echo esc_url( $url ); ?>" aria-label="<?php echo esc_attr( 'View ' . $product['name'] . ' product example' ); ?>">
 			<img src="<?php echo esc_url( $image['src'] ); ?>" srcset="<?php echo esc_attr( $image['srcset'] ); ?>" sizes="<?php echo esc_attr( $sizes ); ?>" width="<?php echo esc_attr( $img_width ); ?>" height="<?php echo esc_attr( $img_height ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" loading="eager" decoding="async">
-			<span class="ma-pl-media-note"><?php echo esc_html( count( $product['media']['videos'] ?? array() ) > 1 ? sprintf( __( 'Photos + %d product videos', 'myathletik-child' ), count( $product['media']['videos'] ) ) : 'Photos + product video' ); ?> <span aria-hidden="true">↗</span></span>
+			<span class="ma-pl-media-note"><?php echo esc_html( $media_note ); ?> <span aria-hidden="true">↗</span></span>
 		</a>
 		<div class="ma-pl-product-card__body">
 			<p class="ma-pl-eyebrow"><?php echo esc_html( $product['material_label'] . ' · ' . $product['name'] ); ?></p>

@@ -247,28 +247,28 @@
     var video = document.getElementById('ma-pl-product-video');
     var caption = document.getElementById('ma-pl-media-caption');
     var dialog = document.getElementById('ma-pl-video-dialog');
-    if (!stage || !image || !video || !caption || !dialog) return;
+    if (!stage || !image || !caption) return;
     var gallery = stage.closest('.ma-pl-gallery');
     if (!gallery) return;
     var buttons = Array.from(gallery.querySelectorAll('.ma-pl-thumb'));
     var videoButtons = Array.from(gallery.querySelectorAll('[data-media="video"]'));
     var photoButtons = buttons.filter(function (button) { return button.dataset.media === 'image'; });
     var textButton = document.getElementById('ma-pl-show-product-video');
-    var closeButton = dialog.querySelector('[data-ma-pl-video-close]');
-    var source = video.querySelector('source');
+    var hasVideoModal = Boolean(video && dialog);
+    var closeButton = hasVideoModal ? dialog.querySelector('[data-ma-pl-video-close]') : null;
+    var source = hasVideoModal ? video.querySelector('source') : null;
     var videoTitle = document.getElementById('ma-pl-video-title');
-    var fallbackLink = video.querySelector('a');
-    if (!source || !videoTitle) return;
-    var defaultSource = source.getAttribute('src');
-    var defaultPoster = video.getAttribute('poster');
-    var defaultTitle = videoTitle.textContent;
-    var defaultVideoLabel = video.getAttribute('aria-label');
+    var fallbackLink = hasVideoModal ? video.querySelector('a') : null;
+    var defaultSource = source ? source.getAttribute('src') : '';
+    var defaultPoster = hasVideoModal ? video.getAttribute('poster') : '';
+    var defaultTitle = videoTitle ? videoTitle.textContent : '';
+    var defaultVideoLabel = hasVideoModal ? video.getAttribute('aria-label') : '';
     var loadedSource = null;
     var activeTrigger = null;
     var backdropPointerDown = false;
 
     function selectPhoto(button) {
-      video.pause();
+      if (hasVideoModal) video.pause();
       var thumbImage = button.querySelector('img');
       // Responsive candidates must change together with src to avoid retaining the front image.
       if (button.dataset.srcset) image.srcset = button.dataset.srcset;
@@ -284,6 +284,7 @@
     }
 
     function openVideo(trigger) {
+      if (!hasVideoModal || !source || !videoTitle) return;
       var nextSource = trigger.dataset.videoSrc || defaultSource;
       var nextPoster = trigger.dataset.videoPoster || defaultPoster;
       var nextTitle = trigger.dataset.videoTitle;
@@ -320,37 +321,41 @@
       var rect = dialog.getBoundingClientRect();
       return event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
     }
-    if (closeButton) closeButton.addEventListener('click', function () { dialog.close(); });
-    dialog.addEventListener('pointerdown', function (event) {
-      backdropPointerDown = event.target === dialog && isOutsideDialog(event);
-    });
-    dialog.addEventListener('click', function (event) {
-      if (backdropPointerDown && event.target === dialog && isOutsideDialog(event)) dialog.close();
-      backdropPointerDown = false;
-    });
-    dialog.addEventListener('close', function () {
-      video.pause();
-      document.documentElement.classList.remove('ma-pl-video-open');
-      if (activeTrigger && activeTrigger.isConnected) activeTrigger.focus({preventScroll: true});
-      activeTrigger = null;
-    });
-    window.addEventListener('pagehide', function () { video.pause(); });
+    if (hasVideoModal && source && videoTitle) {
+      if (closeButton) closeButton.addEventListener('click', function () { dialog.close(); });
+      dialog.addEventListener('pointerdown', function (event) {
+        backdropPointerDown = event.target === dialog && isOutsideDialog(event);
+      });
+      dialog.addEventListener('click', function (event) {
+        if (backdropPointerDown && event.target === dialog && isOutsideDialog(event)) dialog.close();
+        backdropPointerDown = false;
+      });
+      dialog.addEventListener('close', function () {
+        video.pause();
+        document.documentElement.classList.remove('ma-pl-video-open');
+        if (activeTrigger && activeTrigger.isConnected) activeTrigger.focus({preventScroll: true});
+        activeTrigger = null;
+      });
+      window.addEventListener('pagehide', function () { video.pause(); });
+    }
 
     photoButtons.forEach(function (button) {
       button.addEventListener('click', function () { selectPhoto(button); });
     });
-    videoButtons.concat(textButton).filter(Boolean).forEach(function (button) {
-      if (typeof dialog.showModal !== 'function') {
-        button.removeAttribute('aria-haspopup');
-        button.removeAttribute('aria-controls');
-      }
-      button.addEventListener('click', function () { openVideo(button); });
-    });
+    if (hasVideoModal) {
+      videoButtons.concat(textButton).filter(Boolean).forEach(function (button) {
+        if (typeof dialog.showModal !== 'function') {
+          button.removeAttribute('aria-haspopup');
+          button.removeAttribute('aria-controls');
+        }
+        button.addEventListener('click', function () { openVideo(button); });
+      });
+    }
     var thumbs = gallery.querySelector('.ma-pl-thumbs');
     if (thumbs) thumbs.hidden = false;
     var videos = gallery.querySelector('.ma-pl-videos');
     if (videos) videos.hidden = false;
-    if (textButton) textButton.hidden = false;
+    if (textButton && hasVideoModal) textButton.hidden = false;
   }
 
   function initializeSeasonalGallery() {
@@ -502,33 +507,17 @@
     var kickerEl = document.getElementById('ma-pl-seasonal-dialog-kicker');
     var titleEl = document.getElementById('ma-pl-seasonal-dialog-title');
     var summaryEl = document.getElementById('ma-pl-seasonal-dialog-summary');
-    var detailsEl = document.getElementById('ma-pl-seasonal-dialog-details');
     var inquiryEl = document.getElementById('ma-pl-seasonal-inquiry');
     var stageImg = document.getElementById('ma-pl-seasonal-stage-img');
     var stageCaption = document.getElementById('ma-pl-seasonal-stage-caption');
     var thumbsWrap = document.getElementById('ma-pl-seasonal-thumbs');
-    var photoPanel = dialog.querySelector('[data-seasonal-photo-panel]');
-    var videoPanel = dialog.querySelector('[data-seasonal-video-panel]');
-    var videoEl = document.getElementById('ma-pl-seasonal-video');
-    var videoCaption = document.getElementById('ma-pl-seasonal-video-caption');
-    var modeButtons = Array.from(dialog.querySelectorAll('[data-seasonal-mode]'));
     var slidePrev = dialog.querySelector('[data-seasonal-slide-prev]');
     var slideNext = dialog.querySelector('[data-seasonal-slide-next]');
     var closeBtn = dialog.querySelector('[data-seasonal-close]');
     var currentItem = null;
     var slideIndex = 0;
-    var currentMode = 'photos';
     var activeTrigger = null;
     var backdropDown = false;
-
-    function releaseVideo() {
-      if (!videoEl) return;
-      videoEl.pause();
-      if (videoEl.getAttribute('src')) {
-        videoEl.removeAttribute('src');
-        videoEl.load();
-      }
-    }
 
     function showSlide(index) {
       if (!currentItem || !currentItem.images || !currentItem.images.length) return;
@@ -552,33 +541,6 @@
       }
     }
 
-    function setMode(mode) {
-      currentMode = mode === 'video' ? 'video' : 'photos';
-      modeButtons.forEach(function (btn) {
-        btn.setAttribute('aria-pressed', String(btn.dataset.seasonalMode === currentMode));
-      });
-      if (photoPanel) photoPanel.hidden = currentMode !== 'photos';
-      if (videoPanel) videoPanel.hidden = currentMode !== 'video';
-      if (currentMode === 'photos') {
-        if (videoEl) videoEl.pause();
-        return;
-      }
-      if (videoEl && currentItem && currentItem.video) {
-        videoEl.dataset.videoAspect = currentItem.video.aspect || 'portrait';
-        videoEl.poster = currentItem.video.poster || '';
-        videoEl.setAttribute('aria-label', currentItem.title + ' — ' + (currentItem.video.label || 'Fit video'));
-        if (videoCaption) videoCaption.textContent = currentItem.video.label || 'Model fit video';
-        if (videoEl.getAttribute('src') !== currentItem.video.src) {
-          videoEl.src = currentItem.video.src;
-          videoEl.preload = 'metadata';
-          videoEl.load();
-        }
-        videoEl.play().then(function () {
-          if (!dialog.open || currentMode !== 'video') videoEl.pause();
-        }).catch(function () {});
-      }
-    }
-
     function openItem(id, trigger) {
       var item = itemsData[id];
       if (!item) return;
@@ -586,21 +548,12 @@
         window.location.assign(item.inquiry_url);
         return;
       }
-      releaseVideo();
       currentItem = item;
       activeTrigger = trigger;
       if (kickerEl) kickerEl.textContent = item.category_label + ' · ' + item.season;
       if (titleEl) titleEl.textContent = item.title;
       if (summaryEl) summaryEl.textContent = item.summary;
       if (inquiryEl) inquiryEl.href = item.inquiry_url;
-      if (detailsEl) {
-        detailsEl.textContent = '';
-        (item.details || []).forEach(function (text) {
-          var li = document.createElement('li');
-          li.textContent = text;
-          detailsEl.appendChild(li);
-        });
-      }
       if (thumbsWrap) {
         thumbsWrap.textContent = '';
         (item.images || []).forEach(function (view, idx) {
@@ -621,12 +574,7 @@
           thumbsWrap.appendChild(btn);
         });
       }
-      var photoModeBtn = dialog.querySelector('[data-seasonal-mode="photos"]');
-      if (photoModeBtn && item.images) {
-        photoModeBtn.textContent = 'Photos (' + item.images.length + ')';
-      }
       showSlide(0);
-      setMode('photos');
       dialog.showModal();
       document.documentElement.classList.add('ma-pl-video-open');
     }
@@ -685,11 +633,6 @@
           openItem(btn.dataset.seasonalOpen, btn);
         });
       });
-      modeButtons.forEach(function (btn) {
-        listen(btn, 'click', function () {
-          setMode(btn.dataset.seasonalMode);
-        });
-      });
       if (slidePrev) listen(slidePrev, 'click', function () { showSlide(slideIndex - 1); });
       if (slideNext) listen(slideNext, 'click', function () { showSlide(slideIndex + 1); });
       if (closeBtn) listen(closeBtn, 'click', function () { dialog.close(); });
@@ -702,18 +645,16 @@
         backdropDown = false;
       });
       listen(dialog, 'keydown', function (e) {
-        if (!dialog.open || currentMode !== 'photos') return;
+        if (!dialog.open) return;
         if (e.key === 'ArrowLeft') { e.preventDefault(); showSlide(slideIndex - 1); }
         else if (e.key === 'ArrowRight') { e.preventDefault(); showSlide(slideIndex + 1); }
       });
       listen(dialog, 'close', function () {
-        releaseVideo();
         document.documentElement.classList.remove('ma-pl-video-open');
         if (activeTrigger && activeTrigger.isConnected) activeTrigger.focus({preventScroll: true});
         activeTrigger = null;
         currentItem = null;
       });
-      listen(window, 'pagehide', releaseVideo);
 
       filters.hidden = false;
       applyFilter();

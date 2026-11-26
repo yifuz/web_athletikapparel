@@ -1,8 +1,9 @@
 <?php
 /**
- * Seasonal Sample Gallery section and in-place modal lightbox for /product-showcase/.
+ * Seasonal Sample Gallery section and in-place photo lightbox for /product-showcase/.
  *
- * Renders studio photography and model fit videos without creating standalone SEO pages.
+ * Studio photography selections only (title + one-sentence summary),
+ * without creating standalone SEO pages.
  *
  * @package myathletik-child
  */
@@ -54,9 +55,7 @@ foreach ( $items as $id => $item ) {
 		'category_label' => $item['category_label'],
 		'season'         => $item['season'],
 		'summary'        => $item['summary'],
-		'details'        => array_values( $item['details'] ),
 		'images'         => $views,
-		'video'          => $item['video'],
 		'inquiry_url'    => myathletik_product_seasonal_inquiry_url( $id ),
 	);
 }
@@ -67,7 +66,7 @@ foreach ( $items as $id => $item ) {
 			<p class="ma-pl-eyebrow">Recent studio samples</p>
 			<h2 id="ma-pl-seasonal-title">Seasonal Sample Gallery</h2>
 		</div>
-		<p class="ma-pl-tier-head__note">Studio garment photos and fit videos from recent production runs. Fabric compositions, GSM weights, and trims are confirmed per OEM/ODM project brief.</p>
+		<p class="ma-pl-tier-head__note">Studio garment photography from recent production runs. Fabric compositions, GSM weights, and trims are confirmed per OEM/ODM project brief.</p>
 	</div>
 
 	<div class="ma-pl-seasonal-toolbar" id="ma-pl-seasonal-filters" hidden>
@@ -100,22 +99,20 @@ foreach ( $items as $id => $item ) {
 			$inquiry = myathletik_product_seasonal_inquiry_url( $id );
 			?>
 			<article class="ma-pl-seasonal-card" data-seasonal-card data-seasonal-category="<?php echo esc_attr( $item['category_slug'] ); ?>">
-				<button class="ma-pl-seasonal-card__trigger" type="button" data-seasonal-open="<?php echo esc_attr( $id ); ?>" aria-haspopup="dialog" aria-controls="ma-pl-seasonal-dialog">
+				<button class="ma-pl-seasonal-card__trigger" type="button" data-seasonal-open="<?php echo esc_attr( $id ); ?>" aria-label="<?php echo esc_attr( 'View photos of ' . $item['title'] ); ?>" aria-haspopup="dialog" aria-controls="ma-pl-seasonal-dialog">
 					<span class="ma-pl-seasonal-card__media">
 						<img src="<?php echo esc_url( $front['src'] ); ?>" srcset="<?php echo esc_attr( $front['srcset'] ); ?>" sizes="(max-width: 639px) 92vw, (max-width: 1023px) 46vw, 370px" width="800" height="1200" alt="<?php echo esc_attr( $front['alt'] ); ?>" loading="lazy" decoding="async">
-						<span class="ma-pl-media-note"><?php echo esc_html( count( $item['images'] ) . ' photos · video' ); ?></span>
+						<span class="ma-pl-media-note"><?php echo esc_html( count( $item['images'] ) . ' photos' ); ?></span>
 					</span>
 					<span class="ma-pl-seasonal-card__body">
 						<span class="ma-pl-eyebrow"><?php echo esc_html( $item['category_label'] . ' · ' . $item['season'] ); ?></span>
 						<h3><?php echo esc_html( $item['title'] ); ?></h3>
 						<span class="ma-pl-seasonal-card__summary"><?php echo esc_html( $item['summary'] ); ?></span>
-						<span class="ma-pl-seasonal-card__cta">Inspect photos &amp; video <span aria-hidden="true">→</span></span>
 					</span>
 				</button>
 				<noscript>
 					<div class="ma-pl-seasonal-card__noscript">
 						<a href="<?php echo esc_url( $front['src'] ); ?>">View photo</a> ·
-						<a href="<?php echo esc_url( $item['video']['src'] ); ?>">Watch video</a> ·
 						<a href="<?php echo esc_url( $inquiry ); ?>">Inquire about this style</a>
 					</div>
 				</noscript>
@@ -140,34 +137,22 @@ foreach ( $items as $id => $item ) {
 		</div>
 		<div class="ma-pl-seasonal-dialog__body">
 			<div class="ma-pl-seasonal-dialog__stage">
-				<div class="ma-pl-seasonal-dialog__modes" role="group" aria-label="Sample view mode">
-					<button class="ma-pl-filter-chip" type="button" aria-pressed="true" data-seasonal-mode="photos">Photos (3)</button>
-					<button class="ma-pl-filter-chip" type="button" aria-pressed="false" data-seasonal-mode="video">Model video</button>
+				<div class="ma-pl-seasonal-dialog__frame">
+					<button class="ma-pl-seasonal-dialog__nav ma-pl-seasonal-dialog__nav--prev" type="button" data-seasonal-slide-prev aria-label="Previous photo">
+						<span aria-hidden="true">←</span>
+					</button>
+					<img id="ma-pl-seasonal-stage-img" src="" alt="" width="800" height="1200" decoding="async">
+					<button class="ma-pl-seasonal-dialog__nav ma-pl-seasonal-dialog__nav--next" type="button" data-seasonal-slide-next aria-label="Next photo">
+						<span aria-hidden="true">→</span>
+					</button>
 				</div>
-				<div class="ma-pl-seasonal-dialog__photo-panel" data-seasonal-photo-panel>
-					<div class="ma-pl-seasonal-dialog__frame">
-						<button class="ma-pl-seasonal-dialog__nav ma-pl-seasonal-dialog__nav--prev" type="button" data-seasonal-slide-prev aria-label="Previous photo">
-							<span aria-hidden="true">←</span>
-						</button>
-						<img id="ma-pl-seasonal-stage-img" src="" alt="" width="800" height="1200" decoding="async">
-						<button class="ma-pl-seasonal-dialog__nav ma-pl-seasonal-dialog__nav--next" type="button" data-seasonal-slide-next aria-label="Next photo">
-							<span aria-hidden="true">→</span>
-						</button>
-					</div>
-					<p class="ma-pl-image-caption" id="ma-pl-seasonal-stage-caption" aria-live="polite"></p>
-					<div class="ma-pl-seasonal-dialog__thumbs" id="ma-pl-seasonal-thumbs" role="group" aria-label="Choose a sample view"></div>
-				</div>
-				<div class="ma-pl-seasonal-dialog__video-panel" data-seasonal-video-panel hidden>
-					<video id="ma-pl-seasonal-video" controls playsinline preload="none" tabindex="0"></video>
-					<p class="ma-pl-image-caption" id="ma-pl-seasonal-video-caption"></p>
-				</div>
+				<p class="ma-pl-image-caption" id="ma-pl-seasonal-stage-caption" aria-live="polite"></p>
+				<div class="ma-pl-seasonal-dialog__thumbs" id="ma-pl-seasonal-thumbs" role="group" aria-label="Choose a sample view"></div>
 			</div>
 			<div class="ma-pl-seasonal-dialog__info">
 				<h3 id="ma-pl-seasonal-dialog-title"></h3>
 				<p class="ma-pl-muted" id="ma-pl-seasonal-dialog-summary"></p>
-				<h4 class="ma-pl-seasonal-dialog__subhead">Observed sample features</h4>
-				<ul class="ma-pl-seasonal-dialog__details" id="ma-pl-seasonal-dialog-details"></ul>
-				<p class="ma-pl-seasonal-dialog__note">Visual sample reference only. Fabric composition, GSM, colourways, and custom trims are confirmed for your OEM/ODM program brief (standard starting baseline: 500 pieces per style).</p>
+				<p class="ma-pl-seasonal-dialog__note">Studio sample reference only. Fabric composition, GSM, colourways, and trims are confirmed for your OEM/ODM program brief (standard starting baseline: 500 pieces per style).</p>
 				<a id="ma-pl-seasonal-inquiry" class="ma-pl-button" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Inquire about this style <span aria-hidden="true">→</span></a>
 			</div>
 		</div>

@@ -170,25 +170,6 @@ function myathletik_product_example_data() {
 		return $out;
 	};
 
-	$build_mixed_videos = static function ( $base, $clips ) {
-		$out = array();
-		foreach ( $clips as $key => $clip ) {
-			$is_portrait = 'portrait' === $clip[2];
-			$out[ $key ] = array(
-				'src'          => $base . $clip[0] . '.mp4',
-				'poster'       => $base . $clip[0] . '-poster.webp',
-				'thumbnail'    => $base . $clip[0] . '-thumb.webp',
-				'label'        => $clip[1],
-				'aspect'       => $clip[2],
-				'width'        => $is_portrait ? 720 : 1280,
-				'height'       => $is_portrait ? 1080 : 720,
-				'thumb_width'  => $is_portrait ? 400 : 640,
-				'thumb_height' => $is_portrait ? 600 : 360,
-			);
-		}
-		return $out;
-	};
-
 	$silver_media_base = get_stylesheet_directory_uri() . '/assets/images/product-examples/womens-silver-yarn-thermal-set/';
 	$silver_images     = $build_portrait_images(
 		$silver_media_base,
@@ -196,14 +177,6 @@ function myathletik_product_example_data() {
 			'front'     => array( 'Front view', "Front view of the sky-blue women's long-sleeve top and leggings set with contrast ACTIVESEAM stitching", 'View front' ),
 			'side'      => array( 'Side view', "Side view of the sky-blue women's long-sleeve top and leggings set showing raglan sleeve and side seam lines", 'View side' ),
 			'back-view' => array( 'Back view', "Back view of the sky-blue women's long-sleeve top and leggings set", 'View back' ),
-		)
-	);
-	$silver_videos     = $build_mixed_videos(
-		$silver_media_base,
-		array(
-			'overview' => array( 'overview-portrait', 'Full-set fit overview', 'portrait' ),
-			'seam'     => array( 'seam-detail-720', 'ACTIVESEAM underarm & gusset detail', 'landscape' ),
-			'fit'      => array( 'fit-detail-720', 'Front hem & seam line detail', 'landscape' ),
 		)
 	);
 
@@ -216,14 +189,6 @@ function myathletik_product_example_data() {
 			'back-view' => array( 'Back view', "Back view of the slate-grey jacquard racerback keyhole sports bra and high-rise leggings", 'View back' ),
 		)
 	);
-	$yoga_videos     = $build_mixed_videos(
-		$yoga_media_base,
-		array(
-			'overview'  => array( 'overview-portrait', 'Full-set overview', 'portrait' ),
-			'jacquard'  => array( 'jacquard-bra-720', 'Jacquard knit & underbust band elasticity', 'landscape' ),
-			'waistband' => array( 'waistband-detail-720', 'High-rise waistband stretch & back cutout', 'landscape' ),
-		)
-	);
 
 	$cycling_media_base = get_stylesheet_directory_uri() . '/assets/images/product-examples/womens-high-vis-cycling-jacket/';
 	$cycling_images     = $build_portrait_images(
@@ -232,15 +197,6 @@ function myathletik_product_example_data() {
 			'front'     => array( 'Front view', "Front view of the fluorescent lime lightweight cycling shell jacket with full front zipper and stand collar", 'View front' ),
 			'side'      => array( 'Side view', "Side view of the fluorescent lime cycling jacket showing black sheer mesh underarm gusset and elastic cuff", 'View side' ),
 			'back-view' => array( 'Back view', "Back view of the fluorescent lime cycling jacket with black sheer mesh ventilation panel and rear zippered pocket", 'View back' ),
-		)
-	);
-	$cycling_videos     = $build_mixed_videos(
-		$cycling_media_base,
-		array(
-			'overview' => array( 'overview-portrait', 'Back mesh panel & fit overview', 'portrait' ),
-			'mesh'     => array( 'mesh-panel-720', 'Underarm mesh ventilation panel', 'landscape' ),
-			'collar'   => array( 'collar-zip-720', 'Stand collar & full-zip closure', 'landscape' ),
-			'pocket'   => array( 'rear-pocket-720', 'Rear zippered storage pocket', 'landscape' ),
 		)
 	);
 
@@ -589,8 +545,6 @@ function myathletik_product_example_data() {
 				'aspect'         => 'portrait',
 				'caption_suffix' => 'Studio sample photo',
 				'images'         => $silver_images,
-				'video'          => $silver_videos['overview'],
-				'videos'         => $silver_videos,
 			),
 			'options'          => array(
 				'intro'        => 'The top and leggings are developed around a coordinated fabric and seam layout. Review the options below for your OEM or ODM sportswear brief.',
@@ -629,7 +583,7 @@ function myathletik_product_example_data() {
 		'womens-leaf-jacquard-yoga-set' => array(
 			'slug'             => 'womens-leaf-jacquard-yoga-set',
 			'seo_title'        => "Women's Leaf Jacquard Yoga Set | Athletik Clothing",
-			'meta_description' => "Explore a women's leaf-and-line jacquard sports bra and high-rise leggings set in 270 GSM polyester/spandex (HY265075) with product videos and OEM options.",
+			'meta_description' => "Explore a women's leaf-and-line jacquard sports bra and high-rise leggings set in 270 GSM polyester/spandex (HY265075) with studio photos and OEM options.",
 			'inquiry_category' => 'Sportswear',
 			'social_image'     => $yoga_media_base . 'front-social.jpg',
 			'category_slug'    => 'sportswear-manufacturer',
@@ -652,8 +606,6 @@ function myathletik_product_example_data() {
 				'aspect'         => 'portrait',
 				'caption_suffix' => 'Studio sample photo',
 				'images'         => $yoga_images,
-				'video'          => $yoga_videos['overview'],
-				'videos'         => $yoga_videos,
 			),
 			'options'          => array(
 				'intro'        => 'Use this matching bra and leggings set as a starting point for custom jacquard activewear development.',
@@ -715,8 +667,6 @@ function myathletik_product_example_data() {
 				'aspect'         => 'portrait',
 				'caption_suffix' => 'Studio sample photo',
 				'images'         => $cycling_images,
-				'video'          => $cycling_videos['overview'],
-				'videos'         => $cycling_videos,
 			),
 			'options'          => array(
 				'intro'        => 'Review the lightweight shell, ventilation panels, and pocket details below for your OEM or ODM cycling and running outerwear brief.',
