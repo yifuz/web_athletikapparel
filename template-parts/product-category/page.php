@@ -245,6 +245,13 @@ if ( ! empty( $category['hero_video'] ) ) {
 				</figure>
 				<?php endforeach; ?>
 			</div>
+			<?php if ( $is_model_lookbook && function_exists( 'myathletik_product_showcase_enabled' ) && myathletik_product_showcase_enabled() ) : ?>
+				<p class="ma-product-showcase__footer-link">
+					<a class="ma-pl-text-link" href="<?php echo esc_url( myathletik_product_showcase_url() . '#seasonal-sample-gallery' ); ?>">
+						<?php esc_html_e( 'Browse full seasonal sample gallery in Product Showcase', 'myathletik-child' ); ?> <span aria-hidden="true">→</span>
+					</a>
+				</p>
+			<?php endif; ?>
 		</div>
 	</section>
 	<?php endif; ?>

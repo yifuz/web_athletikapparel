@@ -353,13 +353,384 @@
     if (textButton) textButton.hidden = false;
   }
 
+  function initializeSeasonalGallery() {
+    var root = document.querySelector('[data-seasonal-gallery]');
+    if (!root) return;
+    var filters = document.getElementById('ma-pl-seasonal-filters');
+    var grid = document.getElementById('ma-pl-seasonal-grid');
+    var status = document.getElementById('ma-pl-seasonal-count');
+    var pagination = document.getElementById('ma-pl-seasonal-pagination');
+    var prevPage = document.getElementById('ma-pl-seasonal-prev');
+    var nextPage = document.getElementById('ma-pl-seasonal-next');
+    var pagesWrap = document.getElementById('ma-pl-seasonal-pages');
+    var dialog = document.getElementById('ma-pl-seasonal-dialog');
+    var dataEl = document.getElementById('ma-pl-seasonal-data');
+    if (!filters || !grid || !status || !dialog || !dataEl || typeof window.matchMedia !== 'function') return;
+
+    var itemsData;
+    try {
+      itemsData = JSON.parse(dataEl.textContent);
+    } catch (e) {
+      return;
+    }
+
+    var cards = Array.from(grid.querySelectorAll('[data-seasonal-card]'));
+    var chips = Array.from(filters.querySelectorAll('[data-seasonal-category]'));
+    var originalStatus = status.textContent;
+    var mobileQuery = window.matchMedia('(max-width: 47.99rem)');
+    var reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var perPage = mobileQuery.matches ? 4 : 6;
+    var activeCategory = 'all';
+    var currentPage = 0;
+    var matches = cards.slice();
+    var listeners = [];
+    var active = false;
+
+    var records = cards.map(function (card) {
+      return {
+        card: card,
+        category: card.dataset.seasonalCategory || ''
+      };
+    });
+    var categoryLabels = {};
+    chips.forEach(function (chip) {
+      categoryLabels[chip.dataset.seasonalCategory] = chip.dataset.seasonalLabel || chip.textContent.trim();
+    });
+
+    function focusedCard() {
+      var el = document.activeElement;
+      if (!el || !grid.contains(el)) return null;
+      return el.closest('[data-seasonal-card]');
+    }
+
+    function scrollSectionIntoViewIfNeeded() {
+      var rect = filters.getBoundingClientRect();
+      if (rect.top >= 0) return;
+      filters.scrollIntoView({
+        block: 'start',
+        behavior: reducedMotionQuery.matches ? 'auto' : 'smooth'
+      });
+    }
+
+    function buildPageButtons(pageCount) {
+      if (!pagesWrap) return;
+      pagesWrap.textContent = '';
+      for (var i = 0; i < pageCount; i++) {
+        (function (pageIndex) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'ma-pl-page-btn';
+          btn.textContent = String(pageIndex + 1);
+          btn.setAttribute('aria-label', 'Seasonal gallery page ' + (pageIndex + 1) + ' of ' + pageCount);
+          btn.setAttribute('aria-controls', grid.id);
+          if (pageIndex === currentPage) btn.setAttribute('aria-current', 'page');
+          btn.addEventListener('click', function () {
+            if (!active || pageIndex === currentPage) return;
+            currentPage = pageIndex;
+            render(true);
+          });
+          pagesWrap.appendChild(btn);
+        })(i);
+      }
+    }
+
+    function updateStatus(start, shownCount) {
+      var total = matches.length;
+      if (!total) {
+        status.textContent = '0 seasonal samples';
+        return;
+      }
+      var scopeSuffix = activeCategory !== 'all' && categoryLabels[activeCategory]
+        ? ' in ' + categoryLabels[activeCategory]
+        : '';
+      if (total <= perPage) {
+        status.textContent = 'Showing ' + total + ' seasonal ' + (total === 1 ? 'sample' : 'samples') + scopeSuffix;
+      } else {
+        status.textContent = 'Showing ' + (start + 1) + '–' + (start + shownCount) + ' of ' + total + ' seasonal samples' + scopeSuffix;
+      }
+    }
+
+    function render(shouldScroll) {
+      var pageCount = Math.ceil(matches.length / perPage);
+      currentPage = Math.max(0, Math.min(currentPage, Math.max(0, pageCount - 1)));
+      var start = currentPage * perPage;
+      var shown = matches.slice(start, start + perPage);
+      var shownCards = shown.map(function (r) { return r.card; });
+      var focused = focusedCard();
+      if (focused && !shownCards.includes(focused)) {
+        grid.focus({preventScroll: true});
+      }
+      cards.forEach(function (card) {
+        card.hidden = !shownCards.includes(card);
+      });
+      chips.forEach(function (chip) {
+        chip.setAttribute('aria-pressed', String(chip.dataset.seasonalCategory === activeCategory));
+      });
+      updateStatus(start, shown.length);
+      if (pagination && prevPage && nextPage && pagesWrap) {
+        if (pageCount > 1) {
+          pagination.hidden = false;
+          prevPage.setAttribute('aria-disabled', String(currentPage === 0));
+          nextPage.setAttribute('aria-disabled', String(currentPage >= pageCount - 1));
+          buildPageButtons(pageCount);
+        } else {
+          pagination.hidden = true;
+        }
+      }
+      if (shouldScroll) scrollSectionIntoViewIfNeeded();
+    }
+
+    function applyFilter() {
+      matches = records.filter(function (record) {
+        return activeCategory === 'all' || record.category === activeCategory;
+      });
+      currentPage = 0;
+      render(false);
+    }
+
+    function resizePages() {
+      var nextSize = mobileQuery.matches ? 4 : 6;
+      if (nextSize === perPage) return;
+      var focused = focusedCard();
+      var anchor = focused ? matches.findIndex(function (r) { return r.card === focused; }) : currentPage * perPage;
+      perPage = nextSize;
+      currentPage = Math.floor(Math.max(0, anchor) / perPage);
+      render(false);
+    }
+
+    // Modal state
+    var kickerEl = document.getElementById('ma-pl-seasonal-dialog-kicker');
+    var titleEl = document.getElementById('ma-pl-seasonal-dialog-title');
+    var summaryEl = document.getElementById('ma-pl-seasonal-dialog-summary');
+    var detailsEl = document.getElementById('ma-pl-seasonal-dialog-details');
+    var inquiryEl = document.getElementById('ma-pl-seasonal-inquiry');
+    var stageImg = document.getElementById('ma-pl-seasonal-stage-img');
+    var stageCaption = document.getElementById('ma-pl-seasonal-stage-caption');
+    var thumbsWrap = document.getElementById('ma-pl-seasonal-thumbs');
+    var photoPanel = dialog.querySelector('[data-seasonal-photo-panel]');
+    var videoPanel = dialog.querySelector('[data-seasonal-video-panel]');
+    var videoEl = document.getElementById('ma-pl-seasonal-video');
+    var videoCaption = document.getElementById('ma-pl-seasonal-video-caption');
+    var modeButtons = Array.from(dialog.querySelectorAll('[data-seasonal-mode]'));
+    var slidePrev = dialog.querySelector('[data-seasonal-slide-prev]');
+    var slideNext = dialog.querySelector('[data-seasonal-slide-next]');
+    var closeBtn = dialog.querySelector('[data-seasonal-close]');
+    var currentItem = null;
+    var slideIndex = 0;
+    var currentMode = 'photos';
+    var activeTrigger = null;
+    var backdropDown = false;
+
+    function releaseVideo() {
+      if (!videoEl) return;
+      videoEl.pause();
+      if (videoEl.getAttribute('src')) {
+        videoEl.removeAttribute('src');
+        videoEl.load();
+      }
+    }
+
+    function showSlide(index) {
+      if (!currentItem || !currentItem.images || !currentItem.images.length) return;
+      var imgs = currentItem.images;
+      slideIndex = ((index % imgs.length) + imgs.length) % imgs.length;
+      var view = imgs[slideIndex];
+      if (stageImg) {
+        if (view.srcset) stageImg.srcset = view.srcset;
+        else stageImg.removeAttribute('srcset');
+        stageImg.sizes = '(max-width: 850px) 92vw, 480px';
+        stageImg.src = view.src;
+        stageImg.alt = view.alt || '';
+      }
+      if (stageCaption) {
+        stageCaption.textContent = (view.label || '') + ' (' + (slideIndex + 1) + ' of ' + imgs.length + ') · Studio sample photo';
+      }
+      if (thumbsWrap) {
+        Array.from(thumbsWrap.querySelectorAll('button')).forEach(function (btn, idx) {
+          btn.setAttribute('aria-pressed', String(idx === slideIndex));
+        });
+      }
+    }
+
+    function setMode(mode) {
+      currentMode = mode === 'video' ? 'video' : 'photos';
+      modeButtons.forEach(function (btn) {
+        btn.setAttribute('aria-pressed', String(btn.dataset.seasonalMode === currentMode));
+      });
+      if (photoPanel) photoPanel.hidden = currentMode !== 'photos';
+      if (videoPanel) videoPanel.hidden = currentMode !== 'video';
+      if (currentMode === 'photos') {
+        if (videoEl) videoEl.pause();
+        return;
+      }
+      if (videoEl && currentItem && currentItem.video) {
+        videoEl.dataset.videoAspect = currentItem.video.aspect || 'portrait';
+        videoEl.poster = currentItem.video.poster || '';
+        videoEl.setAttribute('aria-label', currentItem.title + ' — ' + (currentItem.video.label || 'Fit video'));
+        if (videoCaption) videoCaption.textContent = currentItem.video.label || 'Model fit video';
+        if (videoEl.getAttribute('src') !== currentItem.video.src) {
+          videoEl.src = currentItem.video.src;
+          videoEl.preload = 'metadata';
+          videoEl.load();
+        }
+        videoEl.play().then(function () {
+          if (!dialog.open || currentMode !== 'video') videoEl.pause();
+        }).catch(function () {});
+      }
+    }
+
+    function openItem(id, trigger) {
+      var item = itemsData[id];
+      if (!item) return;
+      if (typeof dialog.showModal !== 'function') {
+        window.location.assign(item.inquiry_url);
+        return;
+      }
+      releaseVideo();
+      currentItem = item;
+      activeTrigger = trigger;
+      if (kickerEl) kickerEl.textContent = item.category_label + ' · ' + item.season;
+      if (titleEl) titleEl.textContent = item.title;
+      if (summaryEl) summaryEl.textContent = item.summary;
+      if (inquiryEl) inquiryEl.href = item.inquiry_url;
+      if (detailsEl) {
+        detailsEl.textContent = '';
+        (item.details || []).forEach(function (text) {
+          var li = document.createElement('li');
+          li.textContent = text;
+          detailsEl.appendChild(li);
+        });
+      }
+      if (thumbsWrap) {
+        thumbsWrap.textContent = '';
+        (item.images || []).forEach(function (view, idx) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'ma-pl-thumb';
+          btn.setAttribute('aria-label', view.label || ('View ' + (idx + 1)));
+          btn.setAttribute('aria-pressed', String(idx === 0));
+          var im = document.createElement('img');
+          im.src = view.thumb;
+          im.width = 533;
+          im.height = 800;
+          im.alt = '';
+          im.loading = 'eager';
+          im.decoding = 'async';
+          btn.appendChild(im);
+          btn.addEventListener('click', function () { showSlide(idx); });
+          thumbsWrap.appendChild(btn);
+        });
+      }
+      var photoModeBtn = dialog.querySelector('[data-seasonal-mode="photos"]');
+      if (photoModeBtn && item.images) {
+        photoModeBtn.textContent = 'Photos (' + item.images.length + ')';
+      }
+      showSlide(0);
+      setMode('photos');
+      dialog.showModal();
+      document.documentElement.classList.add('ma-pl-video-open');
+    }
+
+    function isOutside(event) {
+      var rect = dialog.getBoundingClientRect();
+      return event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+    }
+
+    function restoreFallback() {
+      active = false;
+      listeners.forEach(function (l) { l.target.removeEventListener(l.type, l.cb); });
+      cards.forEach(function (c) { c.hidden = false; });
+      filters.hidden = true;
+      if (pagination) pagination.hidden = true;
+      status.textContent = originalStatus;
+    }
+
+    function listen(target, type, cb) {
+      var guarded = function (e) {
+        if (!active) return;
+        try { cb(e); } catch (err) { restoreFallback(); }
+      };
+      target.addEventListener(type, guarded);
+      listeners.push({target: target, type: type, cb: guarded});
+    }
+
+    try {
+      active = true;
+      chips.forEach(function (chip) {
+        listen(chip, 'click', function () {
+          var nextCat = chip.dataset.seasonalCategory || 'all';
+          if (nextCat === activeCategory) return;
+          activeCategory = nextCat;
+          applyFilter();
+        });
+      });
+      if (prevPage && nextPage) {
+        listen(prevPage, 'click', function (e) {
+          e.preventDefault();
+          if (prevPage.getAttribute('aria-disabled') === 'true') return;
+          currentPage -= 1;
+          render(true);
+        });
+        listen(nextPage, 'click', function (e) {
+          e.preventDefault();
+          if (nextPage.getAttribute('aria-disabled') === 'true') return;
+          currentPage += 1;
+          render(true);
+        });
+      }
+      listen(mobileQuery, 'change', resizePages);
+
+      grid.querySelectorAll('[data-seasonal-open]').forEach(function (btn) {
+        listen(btn, 'click', function () {
+          openItem(btn.dataset.seasonalOpen, btn);
+        });
+      });
+      modeButtons.forEach(function (btn) {
+        listen(btn, 'click', function () {
+          setMode(btn.dataset.seasonalMode);
+        });
+      });
+      if (slidePrev) listen(slidePrev, 'click', function () { showSlide(slideIndex - 1); });
+      if (slideNext) listen(slideNext, 'click', function () { showSlide(slideIndex + 1); });
+      if (closeBtn) listen(closeBtn, 'click', function () { dialog.close(); });
+
+      listen(dialog, 'pointerdown', function (e) {
+        backdropDown = e.target === dialog && isOutside(e);
+      });
+      listen(dialog, 'click', function (e) {
+        if (backdropDown && e.target === dialog && isOutside(e)) dialog.close();
+        backdropDown = false;
+      });
+      listen(dialog, 'keydown', function (e) {
+        if (!dialog.open || currentMode !== 'photos') return;
+        if (e.key === 'ArrowLeft') { e.preventDefault(); showSlide(slideIndex - 1); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); showSlide(slideIndex + 1); }
+      });
+      listen(dialog, 'close', function () {
+        releaseVideo();
+        document.documentElement.classList.remove('ma-pl-video-open');
+        if (activeTrigger && activeTrigger.isConnected) activeTrigger.focus({preventScroll: true});
+        activeTrigger = null;
+        currentItem = null;
+      });
+      listen(window, 'pagehide', releaseVideo);
+
+      filters.hidden = false;
+      applyFilter();
+    } catch (e) {
+      restoreFallback();
+    }
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       initializeLibrary();
       initializeMedia();
+      initializeSeasonalGallery();
     }, {once: true});
   } else {
     initializeLibrary();
     initializeMedia();
+    initializeSeasonalGallery();
   }
 })();

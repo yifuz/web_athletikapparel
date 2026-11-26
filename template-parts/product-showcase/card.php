@@ -46,7 +46,7 @@ $facts_class = 'ma-pl-product-facts' . ( 1 === count( $card_facts ) ? ' ma-pl-pr
 		</a>
 		<div class="ma-pl-product-card__body">
 			<p class="ma-pl-eyebrow"><?php echo esc_html( $product['material_label'] . ' · ' . $product['name'] ); ?></p>
-			<h2><a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $product['title'] ); ?></a></h2>
+			<h3><a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $product['title'] ); ?></a></h3>
 			<p class="ma-pl-product-card__description"><?php echo esc_html( $product['summary'] ); ?></p>
 			<dl class="<?php echo esc_attr( $facts_class ); ?>">
 				<?php foreach ( $card_facts as $fact_label => $fact_value ) : ?>

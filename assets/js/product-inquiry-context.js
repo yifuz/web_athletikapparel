@@ -2,23 +2,32 @@
 (function () {
   'use strict';
   function fillProductReference() {
-    var key = new URLSearchParams(window.location.search).get('product_example');
+    var params = new URLSearchParams(window.location.search);
+    var key = params.get('product_example');
+    var sampleKey = params.get('sample');
     var examples = window.maProductInquiryContext;
-    if (!key || !examples || !Object.prototype.hasOwnProperty.call(examples, key)) return;
+    var seasonal = window.maSeasonalInquiryContext;
+    var record = null;
+    if (key && examples && Object.prototype.hasOwnProperty.call(examples, key)) {
+      record = examples[key];
+    } else if (sampleKey && seasonal && Object.prototype.hasOwnProperty.call(seasonal, sampleKey)) {
+      record = seasonal[sampleKey];
+    }
+    if (!record) return;
     var form = document.querySelector('form[data-form_id="3"]');
     if (!form) return;
     var message = form.querySelector('textarea[name="description"]');
     var category = form.querySelector('select[name="dropdown"]');
     // Preserve restored form content, drafts and browser autofill.
     if (!message || message.value.trim()) return;
-    message.value = examples[key].message;
+    message.value = record.message;
     message.dispatchEvent(new Event('input', { bubbles: true }));
     if (category && Array.from(category.options).some(function (option) {
-      return option.value === examples[key].category;
+      return option.value === record.category;
     }) && Array.from(category.options).some(function (option) {
       return option.defaultSelected && option.value === category.value;
     })) {
-      category.value = examples[key].category;
+      category.value = record.category;
       category.dispatchEvent(new Event('change', { bubbles: true }));
     }
   }

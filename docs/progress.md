@@ -15,7 +15,7 @@
 ## 接下来的工作
 
 1. **站外权威跟进**：**OS Hub 工厂档案（`CN2021314PF2M92`，原 Claim `#6327`）已于 2026-11-26 经所有者确认认领成功**；继续等待 Merrow、Woolmark、SourceReady 回邮（11-25 查邮暂未见回复）及 `athletik.com.cn` 旧门牌修复。
-2. **`/product-showcase/` 双层升级与 Sportswear 补强（Phase 1 已完成 Local 验收待批）**：Phase 1 已在 LocalWP 完成 Sportswear 首批 3 款独立 Showcase（`1款 HY244737`、`2款 HY265075`、`8款 HY265135`）+ 竖图自适应 + 品类/材质筛选与分页 + `/sportswear-manufacturer/` 双卡预览接入，待所有者审核批准上线；Phase 2 将于 Showcase 下半区追加 `Seasonal Sample Gallery`。
+2. **`/product-showcase/` 双层升级与 Sportswear 补强（Phase 1 + Phase 2 均已完成 Local 验收待批）**：Phase 1（Sportswear 首批 3 款独立 Showcase `HY244737`/`HY265075`/`HY265135` + 竖图自适应 + 品类筛选/分页 + `/sportswear-manufacturer/` 双卡预览）与 Phase 2（下层 `Seasonal Sample Gallery` 8 款当季实拍精选 + 原地弹窗图集/视频 + Lookbook 导流闭环）均已在 LocalWP 通过 1440/390px 全量验收，停在 Gate 待所有者审核批准上线。
 3. **到期观察窗口与小补漏**：在 GSC 为 `/technical-knitwear-tech-pack-guide/` 补点一次重抓请求（抓取停在 11-19 早于 11-20 标题升级）；`11-27～12-01` 复盘 Underwear / Yoga 28 天后窗与 `11-20` / `11-23` 社媒后台真实数据。
 
 ## 2026-11 当月工作流水账（按日追加，严禁抹除，月底归档为 `archive/progress-2026-11.md`）
@@ -55,6 +55,7 @@
 | 2026-11-26 | GEO / 站外权威 | 所有者确认 Open Supply Hub 工厂档案（`CN2021314PF2M92`，Claim `#6327`）认领审核通过；完成 3 款女装面料规格图片转录（`HY244737`、`HY265075`、`HY265135`）并准备 Product Showcase Phase 1 实施 | [`GEO.md`](geo/GEO.md) |
 | 2026-11-25 | 询盘 / 品牌规范 | 完成两封 B2B 询盘首封英文回复审核通过（成熟品牌定制网眼开发 + 纯面料开发询盘），并自动提炼更新询盘手册与品牌规范技能（保留 1/2/3/4 分点清晰度同时去 AI 味、温和不重复 MOQ 口径、定稿用纯文本代码块适配 Foxmail、实物来样面料开发、COOLMAX 等品牌纱线与吊牌边界、一站式/指定辅料、分仓交付与 FOB/DDP、纯面料直供国内成衣厂及 200–300 kg MOQ/附加费、常规面料色卡免费与特殊印花测试边界） | [`inquiry-reply-playbook.md`](marketing/inquiry-reply-playbook.md) · [`SKILL.md`](../.agents/skills/wp-brand-voice-guard/SKILL.md) |
 | 2026-11-26 | 网站 / Showcase | 完成 Product Showcase Phase 1 架构升级与 Sportswear 3 款标杆新品（`HY244737`、`HY265075`、`HY265135`）Local 接入：支持 `2:3` 竖图与可选 `gsm` 自适应、`/sportswear-manufacturer/` 双卡预览、`/product-showcase/` 品类/材质筛选与 6/4 分页；完成 51 个媒体转码及去片头器材裁剪，LocalWP 建页（ID `97/98/99`）、Playwright（1440/390px）与全页/弹窗截图复核全部通过，停在 Local Gate 待批准上线（未推远程或生产） | [`product-showcase-sportswear-phase1-2026-11-26.md`](site/product-showcase-sportswear-phase1-2026-11-26.md) |
+| 2026-11-26 | 网站 / Showcase | 完成 Product Showcase Phase 2 `Seasonal Sample Gallery`（8 款当季实拍与视频精选，零新建独立 SEO 页）：新增解耦注册表 `inc/product-seasonal-gallery-data.php`、导出 64 个媒体文件（48 张 2:3 WebP + 8 条去器材 720×1080 MP4 + 8 张海报，13.87 MB）、实现 `#seasonal-sample-gallery` 独立筛选/6-4 分页与原地弹窗（3 图切换 + 按需视频 + `?category=&sample=` 询盘预填）、在 Sportswear Lookbook 底部增加画廊导流链接，合并 Phase 1+2 预检（169 媒体 / 9 页）与 Playwright（1440/390px）+ 视觉复核全通过，停在 Local Gate 待批准上线 | [`product-showcase-seasonal-gallery-phase2-2026-11-26.md`](site/product-showcase-seasonal-gallery-phase2-2026-11-26.md) |
 
 ## 使用与维护
 

@@ -101,6 +101,16 @@ function myathletik_product_showcase_prepare( $check_media = true ) {
 				}
 			}
 		}
+		if ( function_exists( 'myathletik_product_seasonal_gallery_data' ) ) {
+			foreach ( myathletik_product_seasonal_gallery_data() as $seasonal_item ) {
+				foreach ( $seasonal_item['images'] as $seasonal_img ) {
+					$media_urls[] = $seasonal_img['src'];
+					$media_urls[] = $seasonal_img['thumbnail'];
+				}
+				$media_urls[] = $seasonal_item['video']['src'];
+				$media_urls[] = $seasonal_item['video']['poster'];
+			}
+		}
 		$media_prefixes = array(
 			trailingslashit( get_stylesheet_directory_uri() ) . 'assets/images/',
 			trailingslashit( myathletik_images_uri() ),

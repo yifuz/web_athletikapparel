@@ -64,7 +64,14 @@ get_header();
 				<p>See the sample in photos and video, review its fabric specification, then explore the choices for your own program.</p>
 			</div>
 		</section>
-		<section aria-label="Browse product examples">
+		<section aria-labelledby="ma-pl-featured-title">
+			<div class="ma-pl-tier-head">
+				<div>
+					<p class="ma-pl-eyebrow">Featured Technical Samples</p>
+					<h2 id="ma-pl-featured-title">Detailed product examples with confirmed fabric references</h2>
+				</div>
+				<p class="ma-pl-tier-head__note">Complete garment specifications, fiber compositions, GSM weights, and OEM development options.</p>
+			</div>
 			<div class="ma-pl-filter-bar" id="ma-pl-product-filters" role="search" aria-label="Filter product examples" hidden>
 				<div class="ma-pl-filter-groups">
 					<div class="ma-pl-filter-group">
@@ -129,7 +136,7 @@ get_header();
 				</button>
 			</nav>
 		</section>
-		<?php // Phase 2 slot: Seasonal Sample Gallery will render here above manufacturing capabilities. ?>
+		<?php get_template_part( 'template-parts/product-showcase/seasonal-gallery' ); ?>
 		<section class="ma-pl-capability-section" aria-labelledby="ma-pl-capability-title">
 			<h2 id="ma-pl-capability-title">Explore our manufacturing capabilities</h2>
 			<p>Review the wider product range, material choices and production support for your category.</p>

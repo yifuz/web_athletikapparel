@@ -306,10 +306,26 @@ add_action( 'wp_enqueue_scripts', function () {
 				. 'Product page: ' . myathletik_product_example_url( $key ) . "\n\nProject requirements: ",
 		);
 	}
-	if ( ! $context ) {
+	$seasonal_context = array();
+	if ( function_exists( 'myathletik_product_seasonal_gallery_data' ) ) {
+		$gallery_url = myathletik_product_showcase_url() . '#seasonal-sample-gallery';
+		foreach ( myathletik_product_seasonal_gallery_data() as $sample_id => $item ) {
+			$seasonal_context[ $sample_id ] = array(
+				'category' => $item['inquiry_category'],
+				'message'  => 'Seasonal sample reference: ' . $item['title'] . ' (' . $item['season'] . ")\n"
+					. 'Gallery: ' . $gallery_url . "\n\nProject requirements: ",
+			);
+		}
+	}
+	if ( ! $context && ! $seasonal_context ) {
 		return;
 	}
 	$file = '/assets/js/product-inquiry-context.js';
 	wp_enqueue_script( 'myathletik-product-inquiry-context', get_stylesheet_directory_uri() . $file, array(), filemtime( get_stylesheet_directory() . $file ), true );
-	wp_localize_script( 'myathletik-product-inquiry-context', 'maProductInquiryContext', $context );
+	if ( $context ) {
+		wp_localize_script( 'myathletik-product-inquiry-context', 'maProductInquiryContext', $context );
+	}
+	if ( $seasonal_context ) {
+		wp_localize_script( 'myathletik-product-inquiry-context', 'maSeasonalInquiryContext', $seasonal_context );
+	}
 }, 30 );

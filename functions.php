@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once get_stylesheet_directory() . '/inc/product-category-data.php';
 require_once get_stylesheet_directory() . '/inc/technical-article-data.php';
 require_once get_stylesheet_directory() . '/inc/product-example-data.php';
+require_once get_stylesheet_directory() . '/inc/product-seasonal-gallery-data.php';
 require_once get_stylesheet_directory() . '/inc/product-showcase.php';
 require_once get_stylesheet_directory() . '/inc/fabric-library.php';
 
