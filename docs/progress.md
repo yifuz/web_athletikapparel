@@ -15,7 +15,7 @@
 ## 接下来的工作
 
 1. **站外权威跟进**：**OS Hub 工厂档案（`CN2021314PF2M92`，原 Claim `#6327`）已于 2026-11-26 经所有者确认认领成功**；继续等待 Merrow、Woolmark、SourceReady 回邮（11-25 查邮暂未见回复）及 `athletik.com.cn` 旧门牌修复。
-2. **`/product-showcase/` 双层升级与 Sportswear 补强（Phase 1 + Phase 2 均已完成 Local 验收待批）**：Phase 1（Sportswear 首批 3 款独立 Showcase `HY244737`/`HY265075`/`HY265135` + 竖图自适应 + 品类筛选/分页 + `/sportswear-manufacturer/` 双卡预览）与 Phase 2（下层 `Seasonal Sample Gallery` 8 款当季实拍精选 + 原地弹窗图集/视频 + Lookbook 导流闭环）均已在 LocalWP 通过 1440/390px 全量验收，停在 Gate 待所有者审核批准上线。
+2. **站内下一个最高 ROI 升级（Showcase 双层升级已上线验收）**：Product Showcase Phase 1 + Phase 2、首页视觉优化及全站技术指南按最新倒序（首页主推 Activewear/Compression 指南）已全部部署生产并完成线上 HTTPS 与 69/69 新媒体实测验收（新页 ID `121/122/123`）；接下来最值得推进 **24 款 2025 美利奴实拍微距图接入面料库与 Merino 精选卡**。
 3. **到期观察窗口与小补漏**：在 GSC 为 `/technical-knitwear-tech-pack-guide/` 补点一次重抓请求（抓取停在 11-19 早于 11-20 标题升级）；`11-27～12-01` 复盘 Underwear / Yoga 28 天后窗与 `11-20` / `11-23` 社媒后台真实数据。
 
 ## 2026-11 当月工作流水账（按日追加，严禁抹除，月底归档为 `archive/progress-2026-11.md`）
@@ -58,6 +58,7 @@
 | 2026-11-26 | 网站 / Showcase | L1 文案微调：更新 `/product-showcase/` 上层标题为 `OEM Product Examples`、上层说明为 `Fabric specifications, construction details, and OEM development options.`，并更新下层 Seasonal Sample Gallery 说明为方案 B（`Selected seasonal styles for OEM/ODM reference—fabrics, weights, and trims are developed to your project brief.`）；`php -l` 与 LocalWP HTTP 200 渲染验证通过（停在 Gate 待批准上线） | `templates/product-showcase.php` · `template-parts/product-showcase/seasonal-gallery.php` |
 | 2026-11-26 | 网站 / Showcase | L1 功能口径补全：按所有者标注更新 5 款产品标题、描述与 alt——女装 `HY265135` 调整为 `Hi-Vis UV-Protective Cycling Top`（同步 LocalWP ID `99` `post_title`/Rank Math SEO 字段，零虚构 UPF 数值）、画廊马甲标注反光夜跑面料、男装 3 款全部定位 `cooling UV-protective fishing apparel` 并统一归入 `Outdoor Clothing`（画廊分类 Sport 5 / Outdoor 3）；`php -l`、123 媒体预检与 LocalWP 双页 HTTP 200 验证通过（停在 Gate 待批准上线） | `inc/product-example-data.php` · `inc/product-seasonal-gallery-data.php` |
 | 2026-11-26 | 网站 / Showcase | 展厅默认排序升级：`myathletik_product_showcase_products()` 改为按页面发布时间（`post_date_gmt` 降序、同时间按 ID 降序）将新品排在最前，分类双卡预览复用同一排序逻辑；下层 Seasonal Gallery 按 `season` 倒序排列；LocalWP `/product-showcase/` 与 `/sportswear-manufacturer/` 验证通过（停在 Gate 待批准上线） | `inc/product-showcase.php` · `template-parts/product-showcase/seasonal-gallery.php` |
+| 2026-11-26 | 生产部署 / 网站 | 经所有者批准，将 Product Showcase Phase 1+2、首页双层展厅与 Proof/Why/Footer 视觉优化、全站技术指南新发布倒序及首页主推 Activewear 指南一键部署至 Flywheel 生产站（提交 `7ba7f5b`，18 个运行时代码文件 + 69 个新媒体文件全部 SHA-256 与远程 `php -l` 校验通过，私有备份 `C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-26-7ba7f5b-showcase-home`）；执行 `myathletik_product_showcase_setup(true)` 发布 3 个新 Sportswear Showcase（生产 ID `121`/`122`/`123`）并执行 `wp cache flush`、`wp rewrite flush` 与 Rank Math Sitemap 清理；线上裸 URL 实测全部 HTTP 200（含首页双层展示、`/technical-guides/` 10 卡新序、`/product-showcase/` 8+8 卡、`/sportswear-manufacturer/` 双卡预览及 `/page-sitemap.xml` 收录、69/69 新媒体 HTTP 200、零泄漏），并完成 `origin/main` 批量推送 | `7ba7f5b` · [`product-showcase-sportswear-phase1-2026-11-26.md`](site/product-showcase-sportswear-phase1-2026-11-26.md) · [`product-showcase-seasonal-gallery-phase2-2026-11-26.md`](site/product-showcase-seasonal-gallery-phase2-2026-11-26.md) |
 
 ## 使用与维护
 
