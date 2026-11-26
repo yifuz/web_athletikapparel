@@ -983,12 +983,36 @@ function myathletik_technical_article_modified_date( $article, $database_date ) 
  * @return array
  */
 function myathletik_get_published_technical_articles() {
-	return array_filter(
+	$published = array_filter(
 		myathletik_technical_article_data(),
 		static function ( $article ) {
 			return isset( $article['status'] ) && 'publish' === $article['status'];
 		}
 	);
+	$order     = array_flip( array_keys( $published ) );
+
+	uksort(
+		$published,
+		static function ( $a, $b ) use ( $published, $order ) {
+			$a_published = (string) ( $published[ $a ]['reviewed_on'] ?? '' );
+			$b_published = (string) ( $published[ $b ]['reviewed_on'] ?? '' );
+			$cmp         = strcmp( $b_published, $a_published );
+			if ( 0 !== $cmp ) {
+				return $cmp;
+			}
+
+			$a_updated = (string) ( $published[ $a ]['updated_on'] ?? $a_published );
+			$b_updated = (string) ( $published[ $b ]['updated_on'] ?? $b_published );
+			$cmp       = strcmp( $b_updated, $a_updated );
+			if ( 0 !== $cmp ) {
+				return $cmp;
+			}
+
+			return ( $order[ $b ] ?? 0 ) <=> ( $order[ $a ] ?? 0 );
+		}
+	);
+
+	return $published;
 }
 
 

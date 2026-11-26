@@ -9,9 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$articles = myathletik_get_published_technical_articles();
-$slug     = array_key_first( $articles );
-$article  = $slug ? $articles[ $slug ] : null;
+$articles      = myathletik_get_published_technical_articles();
+$featured_slug = 'activewear-compression-manufacturing-guide';
+$slug          = isset( $articles[ $featured_slug ] ) ? $featured_slug : array_key_first( $articles );
+$article       = $slug ? $articles[ $slug ] : null;
 
 if ( ! $article ) {
 	return;
