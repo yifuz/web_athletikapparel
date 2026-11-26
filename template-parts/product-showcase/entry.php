@@ -8,8 +8,9 @@ if ( ! function_exists( 'myathletik_product_showcase_enabled' ) || ! myathletik_
 }
 $context = isset( $args['context'] ) ? $args['context'] : 'home';
 $category_contexts = array(
-	'merino'  => array( 'slug' => 'merino-wool-manufacturer', 'heading' => 'Merino wool product examples' ),
-	'outdoor' => array( 'slug' => 'outdoor-clothing-manufacturer', 'heading' => 'Outdoor clothing product examples' ),
+	'merino'     => array( 'slug' => 'merino-wool-manufacturer', 'heading' => 'Merino wool product examples' ),
+	'outdoor'    => array( 'slug' => 'outdoor-clothing-manufacturer', 'heading' => 'Outdoor clothing product examples' ),
+	'sportswear' => array( 'slug' => 'sportswear-manufacturer', 'heading' => 'Sportswear product examples' ),
 );
 if ( 'home' !== $context && ! isset( $category_contexts[ $context ] ) ) {
 	return;
@@ -20,8 +21,9 @@ $category_products = isset( $category_contexts[ $context ] ) ? myathletik_produc
 if ( ( 'home' === $context && ! isset( $products[ $product_key ] ) ) || ( 'home' !== $context && ! $category_products ) ) {
 	return;
 }
+$entry_modifier = 'home' !== $context ? ' ma-pl-entry--' . sanitize_html_class( $context ) : '';
 ?>
-<section class="ma-pl ma-pl-section ma-pl-surface ma-pl-entry<?php echo 'outdoor' === $context ? ' ma-pl-entry--outdoor' : ''; ?>" aria-labelledby="ma-pl-<?php echo esc_attr( $context ); ?>-title">
+<section class="ma-pl ma-pl-section ma-pl-surface ma-pl-entry<?php echo esc_attr( $entry_modifier ); ?>" aria-labelledby="ma-pl-<?php echo esc_attr( $context ); ?>-title">
 	<?php if ( 'home' === $context ) : ?>
 		<div class="ma-section-inner ma-pl-feature-entry">
 			<div class="ma-pl-feature-entry__intro">
@@ -41,7 +43,7 @@ if ( ( 'home' === $context && ! isset( $products[ $product_key ] ) ) || ( 'home'
 			<?php if ( count( $category_products ) > 1 ) : ?>
 				<p id="ma-pl-<?php echo esc_attr( $context ); ?>-scroll-help" class="ma-pl-preview-help">Swipe or scroll to view both examples.</p>
 			<?php endif; ?>
-			<div class="ma-pl-related-products<?php echo 'outdoor' === $context && 1 === count( $category_products ) ? ' ma-pl-related-products--single' : ''; ?>" role="region" aria-labelledby="ma-pl-<?php echo esc_attr( $context ); ?>-title"<?php if ( count( $category_products ) > 1 ) : ?> tabindex="0" aria-describedby="ma-pl-<?php echo esc_attr( $context ); ?>-scroll-help"<?php endif; ?>>
+			<div class="ma-pl-related-products<?php echo 1 === count( $category_products ) ? ' ma-pl-related-products--single' : ''; ?>" role="region" aria-labelledby="ma-pl-<?php echo esc_attr( $context ); ?>-title"<?php if ( count( $category_products ) > 1 ) : ?> tabindex="0" aria-describedby="ma-pl-<?php echo esc_attr( $context ); ?>-scroll-help"<?php endif; ?>>
 				<?php foreach ( array_keys( $category_products ) as $category_key ) : ?>
 					<?php get_template_part( 'template-parts/product-showcase/card', null, array( 'context' => $context, 'product_key' => $category_key ) ); ?>
 				<?php endforeach; ?>

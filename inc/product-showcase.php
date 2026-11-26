@@ -292,10 +292,17 @@ add_action( 'wp_enqueue_scripts', function () {
 	}
 	$context = array();
 	foreach ( myathletik_product_showcase_products() as $key => $product ) {
+		$fabric_line = 'Fabric reference: ' . $product['fabric_ref'];
+		if ( ! empty( $product['gsm'] ) ) {
+			$fabric_line .= ' (' . $product['gsm'] . ')';
+		}
+		if ( ! empty( $product['style_ref'] ) ) {
+			$fabric_line .= ' | Style reference: ' . $product['style_ref'];
+		}
 		$context[ $key ] = array(
 			'category' => $product['inquiry_category'],
 			'message' => 'Product reference: ' . $product['name'] . ' - ' . $product['title'] . "\n"
-				. 'Fabric reference: ' . $product['fabric_ref'] . ' (' . $product['gsm'] . ")\n"
+				. $fabric_line . "\n"
 				. 'Product page: ' . myathletik_product_example_url( $key ) . "\n\nProject requirements: ",
 		);
 	}

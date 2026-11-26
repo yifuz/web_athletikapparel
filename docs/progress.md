@@ -15,7 +15,7 @@
 ## 接下来的工作
 
 1. **站外权威跟进**：**OS Hub 工厂档案（`CN2021314PF2M92`，原 Claim `#6327`）已于 2026-11-26 经所有者确认认领成功**；继续等待 Merrow、Woolmark、SourceReady 回邮（11-25 查邮暂未见回复）及 `athletik.com.cn` 旧门牌修复。
-2. **`/product-showcase/` 双层升级与 Sportswear 补强（暂停继续连上第 11 篇指南）**：Phase 1 先上线面料已确认的 Sportswear 首批 3 款独立 Showcase（女模 `1款 HY244737`、`2款 HY265075`、`8款 HY265135`）+ 竖图自适应 + 品类筛选/分页 + `/sportswear-manufacturer/` 双卡预览接入；Phase 2 再于 Showcase 下半区新增 `Seasonal Sample Gallery` 收纳当季实拍精选，商业页 Lookbook 维持上限淘汰制。
+2. **`/product-showcase/` 双层升级与 Sportswear 补强（Phase 1 已完成 Local 验收待批）**：Phase 1 已在 LocalWP 完成 Sportswear 首批 3 款独立 Showcase（`1款 HY244737`、`2款 HY265075`、`8款 HY265135`）+ 竖图自适应 + 品类/材质筛选与分页 + `/sportswear-manufacturer/` 双卡预览接入，待所有者审核批准上线；Phase 2 将于 Showcase 下半区追加 `Seasonal Sample Gallery`。
 3. **到期观察窗口与小补漏**：在 GSC 为 `/technical-knitwear-tech-pack-guide/` 补点一次重抓请求（抓取停在 11-19 早于 11-20 标题升级）；`11-27～12-01` 复盘 Underwear / Yoga 28 天后窗与 `11-20` / `11-23` 社媒后台真实数据。
 
 ## 2026-11 当月工作流水账（按日追加，严禁抹除，月底归档为 `archive/progress-2026-11.md`）
@@ -54,6 +54,7 @@
 | 2026-11-25 | SEO / 邮箱核验 | 完成 6 URL GSC 只读复查（摇粒绒等 6/6 全收录；发现 Tech Pack 抓取停在 11-19 早于 11-20 升级）、`FLATLOCK→Merino` 28 天后窗（4/185→6/229）及只读 163 查邮实证官网表单真实送达与自报来源字段正常显示（零 PII）；决定暂停连发第 11 篇指南，定案 `/product-showcase/` 双层升级路线并提取女模 1/2/8 款待建 Sportswear Showcase | [`gsc-data-log.md`](seo/gsc-data-log.md) · [`GEO.md`](geo/GEO.md) |
 | 2026-11-26 | GEO / 站外权威 | 所有者确认 Open Supply Hub 工厂档案（`CN2021314PF2M92`，Claim `#6327`）认领审核通过；完成 3 款女装面料规格图片转录（`HY244737`、`HY265075`、`HY265135`）并准备 Product Showcase Phase 1 实施 | [`GEO.md`](geo/GEO.md) |
 | 2026-11-25 | 询盘 / 品牌规范 | 完成两封 B2B 询盘首封英文回复审核通过（成熟品牌定制网眼开发 + 纯面料开发询盘），并自动提炼更新询盘手册与品牌规范技能（保留 1/2/3/4 分点清晰度同时去 AI 味、温和不重复 MOQ 口径、定稿用纯文本代码块适配 Foxmail、实物来样面料开发、COOLMAX 等品牌纱线与吊牌边界、一站式/指定辅料、分仓交付与 FOB/DDP、纯面料直供国内成衣厂及 200–300 kg MOQ/附加费、常规面料色卡免费与特殊印花测试边界） | [`inquiry-reply-playbook.md`](marketing/inquiry-reply-playbook.md) · [`SKILL.md`](../.agents/skills/wp-brand-voice-guard/SKILL.md) |
+| 2026-11-26 | 网站 / Showcase | 完成 Product Showcase Phase 1 架构升级与 Sportswear 3 款标杆新品（`HY244737`、`HY265075`、`HY265135`）Local 接入：支持 `2:3` 竖图与可选 `gsm` 自适应、`/sportswear-manufacturer/` 双卡预览、`/product-showcase/` 品类/材质筛选与 6/4 分页；完成 51 个媒体转码及去片头器材裁剪，LocalWP 建页（ID `97/98/99`）、Playwright（1440/390px）与全页/弹窗截图复核全部通过，停在 Local Gate 待批准上线（未推远程或生产） | [`product-showcase-sportswear-phase1-2026-11-26.md`](site/product-showcase-sportswear-phase1-2026-11-26.md) |
 
 ## 使用与维护
 

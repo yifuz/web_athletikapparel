@@ -151,6 +151,99 @@ function myathletik_product_example_data() {
 		);
 	}
 
+	$build_portrait_images = static function ( $base, $items ) {
+		$out = array();
+		foreach ( $items as $key => $meta ) {
+			$out[ $key ] = array(
+				'src'          => $base . $key . '-1200.webp',
+				'thumbnail'    => $base . $key . '-533.webp',
+				'srcset'       => $base . $key . '-533.webp 533w, ' . $base . $key . '-1200.webp 800w',
+				'width'        => 800,
+				'height'       => 1200,
+				'thumb_width'  => 533,
+				'thumb_height' => 800,
+				'caption'      => $meta[0],
+				'alt'          => $meta[1],
+				'control'      => $meta[2],
+			);
+		}
+		return $out;
+	};
+
+	$build_mixed_videos = static function ( $base, $clips ) {
+		$out = array();
+		foreach ( $clips as $key => $clip ) {
+			$is_portrait = 'portrait' === $clip[2];
+			$out[ $key ] = array(
+				'src'          => $base . $clip[0] . '.mp4',
+				'poster'       => $base . $clip[0] . '-poster.webp',
+				'thumbnail'    => $base . $clip[0] . '-thumb.webp',
+				'label'        => $clip[1],
+				'aspect'       => $clip[2],
+				'width'        => $is_portrait ? 720 : 1280,
+				'height'       => $is_portrait ? 1080 : 720,
+				'thumb_width'  => $is_portrait ? 400 : 640,
+				'thumb_height' => $is_portrait ? 600 : 360,
+			);
+		}
+		return $out;
+	};
+
+	$silver_media_base = get_stylesheet_directory_uri() . '/assets/images/product-examples/womens-silver-yarn-thermal-set/';
+	$silver_images     = $build_portrait_images(
+		$silver_media_base,
+		array(
+			'front'     => array( 'Front view', "Front view of the sky-blue women's long-sleeve top and leggings set with contrast ACTIVESEAM stitching", 'View front' ),
+			'side'      => array( 'Side view', "Side view of the sky-blue women's long-sleeve top and leggings set showing raglan sleeve and side seam lines", 'View side' ),
+			'back-view' => array( 'Back view', "Back view of the sky-blue women's long-sleeve top and leggings set", 'View back' ),
+		)
+	);
+	$silver_videos     = $build_mixed_videos(
+		$silver_media_base,
+		array(
+			'overview' => array( 'overview-portrait', 'Full-set fit overview', 'portrait' ),
+			'seam'     => array( 'seam-detail-720', 'ACTIVESEAM underarm & gusset detail', 'landscape' ),
+			'fit'      => array( 'fit-detail-720', 'Front hem & seam line detail', 'landscape' ),
+		)
+	);
+
+	$yoga_media_base = get_stylesheet_directory_uri() . '/assets/images/product-examples/womens-leaf-jacquard-yoga-set/';
+	$yoga_images     = $build_portrait_images(
+		$yoga_media_base,
+		array(
+			'front'     => array( 'Front view', "Front view of the slate-grey leaf-and-line jacquard sports bra and high-rise leggings set", 'View front' ),
+			'side'      => array( 'Side view', "Side view of the slate-grey leaf-and-line jacquard yoga set showing contoured leg panel seams", 'View side' ),
+			'back-view' => array( 'Back view', "Back view of the slate-grey jacquard racerback keyhole sports bra and high-rise leggings", 'View back' ),
+		)
+	);
+	$yoga_videos     = $build_mixed_videos(
+		$yoga_media_base,
+		array(
+			'overview'  => array( 'overview-portrait', 'Full-set overview', 'portrait' ),
+			'jacquard'  => array( 'jacquard-bra-720', 'Jacquard knit & underbust band elasticity', 'landscape' ),
+			'waistband' => array( 'waistband-detail-720', 'High-rise waistband stretch & back cutout', 'landscape' ),
+		)
+	);
+
+	$cycling_media_base = get_stylesheet_directory_uri() . '/assets/images/product-examples/womens-high-vis-cycling-jacket/';
+	$cycling_images     = $build_portrait_images(
+		$cycling_media_base,
+		array(
+			'front'     => array( 'Front view', "Front view of the fluorescent lime lightweight cycling shell jacket with full front zipper and stand collar", 'View front' ),
+			'side'      => array( 'Side view', "Side view of the fluorescent lime cycling jacket showing black sheer mesh underarm gusset and elastic cuff", 'View side' ),
+			'back-view' => array( 'Back view', "Back view of the fluorescent lime cycling jacket with black sheer mesh ventilation panel and rear zippered pocket", 'View back' ),
+		)
+	);
+	$cycling_videos     = $build_mixed_videos(
+		$cycling_media_base,
+		array(
+			'overview' => array( 'overview-portrait', 'Back mesh panel & fit overview', 'portrait' ),
+			'mesh'     => array( 'mesh-panel-720', 'Underarm mesh ventilation panel', 'landscape' ),
+			'collar'   => array( 'collar-zip-720', 'Stand collar & full-zip closure', 'landscape' ),
+			'pocket'   => array( 'rear-pocket-720', 'Rear zippered storage pocket', 'landscape' ),
+		)
+	);
+
 	return array(
 		'ocean-depth' => array(
 			'slug'           => 'ocean-depth-merino-wool-blend-set',
@@ -458,6 +551,205 @@ function myathletik_product_example_data() {
 					'Packaging' => 'Packed together as a set or as individually packed pieces, with your specified hangtags.',
 				),
 				'note' => 'Final choices depend on the selected fabric and approved sample; these alternatives are not specifications of the set shown.',
+			),
+		),
+		'womens-silver-yarn-thermal-set' => array(
+			'slug'             => 'womens-silver-yarn-thermal-set',
+			'seo_title'        => "Women's Silver-Yarn Thermal Set | Athletik Clothing",
+			'meta_description' => "Explore a women's long-sleeve top and leggings set in Nylon/Modal/Silver Fiber/Spandex (HY244737) with ACTIVESEAM stitching and OEM development options.",
+			'inquiry_category' => 'Sportswear',
+			'social_image'     => $silver_media_base . 'front-social.jpg',
+			'category_slug'    => 'sportswear-manufacturer',
+			'category_label'   => 'sportswear',
+			'name'             => 'Silver-Yarn Thermal Set',
+			'title'            => "Women's silver-yarn thermal top & leggings set",
+			'intro'            => "This women's two-piece set pairs a crew-neck long-sleeve top with full-length leggings in a Nylon, Modal, Silver Fiber, and Spandex blend (HY244737) constructed with contrast ACTIVESEAM stitching. Review the silhouette, raglan seam layout, and fit as a reference for your own OEM or ODM program.",
+			'summary'          => 'A sky-blue long-sleeve top and leggings set in Nylon/Modal/Silver Fiber/Spandex (HY244737) with contrast ACTIVESEAM stitching.',
+			'characteristics'  => 'Micro-rib knit texture · Contrast ACTIVESEAM stitching · Raglan sleeve layout',
+			'material'         => 'nylon',
+			'material_label'   => 'Nylon / Modal blend',
+			'sample_material'  => 'Nylon / Modal / Silver Fiber knit',
+			'composition'      => '50.5% Nylon / 38% Modal / 4.3% Silver Fiber / 7% Spandex',
+			'gsm'              => '',
+			'fabric_ref'       => 'HY244737',
+			'style_ref'        => 'S2570-A0297',
+			'stitching'        => 'ACTIVESEAM',
+			'use'              => 'Cool-weather training and active layering',
+			'facts'            => array(
+				'Sample material'  => 'Nylon / Modal / Silver Fiber knit',
+				'Composition'      => '50.5% Nylon / 38% Modal / 4.3% Silver Fiber / 7% Spandex',
+				'Fabric reference' => 'HY244737',
+				'Style reference'  => 'S2570-A0297',
+				'Stitching'        => 'ACTIVESEAM',
+				'Suggested use'    => 'Cool-weather training and active layering',
+			),
+			'facts_note'       => 'Fabric weight (GSM) is confirmed against the approved yarn and sample lot for each program. This record illustrates an actual sample for OEM/ODM reference and is not a stock availability or lab-tested performance guarantee.',
+			'search'           => "women womens silver yarn thermal set activewear sportswear HY244737 S2570-A0297 ACTIVESEAM nylon modal silver fiber spandex long sleeve top leggings",
+			'media'            => array(
+				'aspect'         => 'portrait',
+				'caption_suffix' => 'Studio sample photo',
+				'images'         => $silver_images,
+				'video'          => $silver_videos['overview'],
+				'videos'         => $silver_videos,
+			),
+			'options'          => array(
+				'intro'        => 'The top and leggings are developed around a coordinated fabric and seam layout. Review the options below for your OEM or ODM sportswear brief.',
+				'shared_title' => 'Shared options for the set',
+				'groups'       => array(
+					array(
+						'title' => 'Top development',
+						'intro' => 'Pattern, sleeve, and seam options to discuss for the top.',
+						'items' => array(
+							'Neckline'     => 'Crew neck / mock neck',
+							'Sleeve style' => 'Raglan sleeve / set-in sleeve',
+							'Stitching'    => 'ACTIVESEAM / FLATLOCK / contrast or tonal thread',
+							'Sizing'       => 'Your size chart / reference sample',
+						),
+					),
+					array(
+						'title' => 'Leggings development',
+						'intro' => 'Waistband, panel, and length options for the leggings.',
+						'items' => array(
+							'Rise'       => 'Mid rise / high rise',
+							'Panel seams'=> 'Side and inseam ACTIVESEAM / custom seam lines',
+							'Leg length' => 'Full length / 7/8 length',
+							'Sizing'     => 'Your size chart / reference sample',
+						),
+					),
+				),
+				'shared'       => array(
+					'Fabric'              => 'HY244737 Nylon / Modal / Silver Fiber / Spandex blend or alternative target GSM and fiber ratios reviewed per project.',
+					'MOQ baseline'        => 'Standard entry starting at 500 pieces per style; custom fabric minimums and colour splits confirmed during review.',
+					'Labels and branding' => 'Woven or heat-transfer labels, care labels, and custom packaging developed to buyer specification.',
+					'Testing requirements'=> 'Define required wash, shrinkage, or fiber tests and acceptance criteria for the target market.',
+				),
+				'note'         => 'Final choices depend on the selected fabric and approved sample; these development alternatives are not stock availability or lab-tested performance guarantees.',
+			),
+		),
+		'womens-leaf-jacquard-yoga-set' => array(
+			'slug'             => 'womens-leaf-jacquard-yoga-set',
+			'seo_title'        => "Women's Leaf Jacquard Yoga Set | Athletik Clothing",
+			'meta_description' => "Explore a women's leaf-and-line jacquard sports bra and high-rise leggings set in 270 GSM polyester/spandex (HY265075) with product videos and OEM options.",
+			'inquiry_category' => 'Sportswear',
+			'social_image'     => $yoga_media_base . 'front-social.jpg',
+			'category_slug'    => 'sportswear-manufacturer',
+			'category_label'   => 'sportswear',
+			'name'             => 'Leaf Jacquard Yoga Set',
+			'title'            => "Women's leaf-and-line jacquard yoga set",
+			'intro'            => "This women's yoga set combines a racerback keyhole sports bra and high-rise leggings in 270 GSM leaf-and-line jacquard knit (HY265075). Review the knit-in jacquard pattern, underbust band, and contoured waistband as a reference for your own sportswear brief.",
+			'summary'          => 'A slate-grey sports bra and high-rise leggings set in 270 GSM leaf-and-line jacquard knit (HY265075).',
+			'characteristics'  => 'Knit-in leaf-and-line jacquard · Keyhole racerback bra · High-rise contoured waistband',
+			'material'         => 'polyester',
+			'material_label'   => 'Polyester jacquard',
+			'sample_material'  => 'Polyester / Spandex leaf-and-line jacquard',
+			'composition'      => '85% Polyester / 15% Spandex',
+			'gsm'              => '270 GSM',
+			'fabric_ref'       => 'HY265075',
+			'use'              => 'Yoga, studio training, and activewear sets',
+			'facts_note'       => 'This record describes an actual sample for OEM/ODM reference and is not a stock availability or lab-tested performance guarantee. Opacity, support level, and waistband recovery are confirmed on the approved sample.',
+			'search'           => "women womens leaf line jacquard yoga set sports bra high rise leggings HY265075 270 GSM polyester spandex activewear sportswear",
+			'media'            => array(
+				'aspect'         => 'portrait',
+				'caption_suffix' => 'Studio sample photo',
+				'images'         => $yoga_images,
+				'video'          => $yoga_videos['overview'],
+				'videos'         => $yoga_videos,
+			),
+			'options'          => array(
+				'intro'        => 'Use this matching bra and leggings set as a starting point for custom jacquard activewear development.',
+				'shared_title' => 'Shared options for the set',
+				'groups'       => array(
+					array(
+						'title' => 'Sports bra development',
+						'intro' => 'Support, back opening, and strap options for the bra.',
+						'items' => array(
+							'Back design'   => 'Racerback keyhole / cross-back / open scoop',
+							'Underbust band'=> 'Wide self-fabric band / encased elastic',
+							'Padding'       => 'Removable cup pockets / unpadded',
+							'Sizing'        => 'Your size chart / reference sample',
+						),
+					),
+					array(
+						'title' => 'High-rise leggings development',
+						'intro' => 'Waistband, seam, and length options for the leggings.',
+						'items' => array(
+							'Waistband'  => 'Contoured high-rise V-front / straight band',
+							'Leg length' => 'Full length / 7/8 length / biker short',
+							'Pockets'    => 'Clean panel / hidden waistband or side pocket',
+							'Sizing'     => 'Your size chart / reference sample',
+						),
+					),
+				),
+				'shared'       => array(
+					'Jacquard fabric'     => 'HY265075 270 GSM 85% Polyester / 15% Spandex jacquard, or custom jacquard artwork and weight reviewed per brief.',
+					'MOQ baseline'        => 'Standard entry starting at 500 pieces per style; custom jacquard pattern and colour splits reviewed by project.',
+					'Labels and branding' => 'Woven or heat-transfer labels, care labels, and custom packaging developed to suit the brand.',
+					'Testing requirements'=> 'Confirm stretch, recovery, colourfastness, and opacity criteria on the approved pre-production sample.',
+				),
+				'note'         => 'Final choices depend on the selected fabric and approved sample; these development alternatives are not stock availability or lab-tested performance guarantees.',
+			),
+		),
+		'womens-high-vis-cycling-jacket' => array(
+			'slug'             => 'womens-high-vis-cycling-jacket',
+			'seo_title'        => "Women's High-Vis Lightweight Cycling Jacket | Athletik Clothing",
+			'meta_description' => "Explore a women's high-visibility lightweight cycling shell jacket in 40 GSM 100% nylon (HY265135) with mesh ventilation panels, rear zip pocket, and OEM options.",
+			'inquiry_category' => 'Sportswear',
+			'social_image'     => $cycling_media_base . 'front-social.jpg',
+			'category_slug'    => 'sportswear-manufacturer',
+			'category_label'   => 'sportswear',
+			'name'             => 'High-Vis Cycling Jacket',
+			'title'            => "Women's high-vis lightweight cycling jacket",
+			'intro'            => "This women's lightweight cycling shell features a 40 GSM 100% nylon main fabric (HY265135) in high-visibility fluorescent lime, paired with black sheer mesh back and underarm ventilation panels, a stand collar, full front zipper, and a rear zippered pocket.",
+			'summary'          => 'A fluorescent lime lightweight cycling shell jacket in 40 GSM 100% nylon (HY265135) with sheer mesh ventilation panels and a rear zippered pocket.',
+			'characteristics'  => 'Lightweight 40 GSM nylon shell · Mesh back & underarm panels · Rear zippered pocket',
+			'material'         => 'nylon',
+			'material_label'   => 'Nylon',
+			'sample_material'  => 'Lightweight woven nylon shell with mesh panels',
+			'composition'      => 'Main shell: 100% Nylon',
+			'gsm'              => '40 GSM (main shell)',
+			'fabric_ref'       => 'HY265135',
+			'use'              => 'Cycling and high-visibility outdoor training',
+			'facts_note'       => 'Composition and 40 GSM apply to the main shell fabric (HY265135), not the sheer mesh panels or trims. UV-protective positioning is verified per the buyer’s specified test method; this record is not a stock availability or lab-tested performance guarantee.',
+			'search'           => "women womens high vis cycling jacket shell windbreaker fluorescent lime green 40 GSM 100 nylon HY265135 mesh ventilation rear zip pocket sportswear",
+			'media'            => array(
+				'aspect'         => 'portrait',
+				'caption_suffix' => 'Studio sample photo',
+				'images'         => $cycling_images,
+				'video'          => $cycling_videos['overview'],
+				'videos'         => $cycling_videos,
+			),
+			'options'          => array(
+				'intro'        => 'Review the lightweight shell, ventilation panels, and pocket details below for your OEM or ODM cycling and running outerwear brief.',
+				'shared_title' => 'Program and finishing options',
+				'groups'       => array(
+					array(
+						'title' => 'Jacket & pocket development',
+						'intro' => 'Silhouette, closure, and storage choices for the outer shell.',
+						'items' => array(
+							'Collar & zip'  => 'Stand collar with full-length zipper / garage guard',
+							'Ventilation'   => 'Upper-back & underarm mesh panels / laser-perforated zones',
+							'Rear pocket'   => 'Lower-back zippered pocket / packable stow pocket',
+							'Cuffs & hem'   => 'Elastic binding / dropped curved cycling tail',
+						),
+					),
+					array(
+						'title' => 'Shell, mesh & trim development',
+						'intro' => 'Material and visibility options to confirm against your brief.',
+						'items' => array(
+							'Main shell'   => 'HY265135 40 GSM 100% nylon / alternative shell weights',
+							'Mesh panels'  => 'Coordinated black or dyed-to-match ventilation mesh',
+							'Colourways'   => 'High-visibility fluorescent shades or custom Pantone dye',
+							'Sizing'       => 'Your size chart / reference sample',
+						),
+					),
+				),
+				'shared'       => array(
+					'Testing & UV requirements' => 'UV-protective positioning and seam or abrasion tests verified per the buyer’s specified test method on approved lots.',
+					'MOQ baseline'              => 'Standard entry starting at 500 pieces per style; custom dye lots and trim minimums confirmed per program.',
+					'Labels and branding'       => 'Reflective transfers, woven labels, care labels, and custom packaging developed to buyer specification.',
+					'Packaging'                 => 'Individual polybag or custom retail hangtag and pack-out specifications.',
+				),
+				'note'         => 'Final choices depend on the selected fabrics, trims, and approved sample; these alternatives are not stock availability or lab-tested performance guarantees.',
 			),
 		),
 	);
