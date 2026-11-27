@@ -1311,7 +1311,7 @@ add_filter( 'document_title_parts', 'myathletik_about_document_title', 26 );
  * @return string
  */
 function myathletik_home_seo_title() {
-	return 'Performance Apparel Manufacturer | Athletik Clothing';
+	return 'Cut & Sew Performance Apparel Manufacturer China | Athletik';
 }
 
 /**
@@ -1320,7 +1320,7 @@ function myathletik_home_seo_title() {
  * @return string
  */
 function myathletik_home_seo_description() {
-	return 'Performance apparel manufacturer for underwear, base layers, sportswear and yoga apparel. Integrated knit fabric development, FLATLOCK and ACTIVESEAM.';
+	return 'China cut-and-sew OEM apparel manufacturer with own knit fabric mill. Activewear, underwear, Merino wool & outdoor layers. FLATLOCK/ACTIVESEAM, MOQ 500.';
 }
 
 /**

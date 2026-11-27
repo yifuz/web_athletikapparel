@@ -34,6 +34,7 @@ function myathletik_rank_math_home_social_title( $title ) {
 
 	return $title;
 }
+add_filter( 'rank_math/frontend/title', 'myathletik_rank_math_home_social_title', 20 );
 add_filter( 'rank_math/opengraph/facebook/og_title', 'myathletik_rank_math_home_social_title', 20 );
 add_filter( 'rank_math/opengraph/twitter/twitter_title', 'myathletik_rank_math_home_social_title', 20 );
 
@@ -189,6 +190,44 @@ function myathletik_rank_math_knitted_fabrics_description( $description ) {
 add_filter( 'rank_math/frontend/description', 'myathletik_rank_math_knitted_fabrics_description', 22 );
 add_filter( 'rank_math/opengraph/facebook/og_description', 'myathletik_rank_math_knitted_fabrics_description', 22 );
 add_filter( 'rank_math/opengraph/twitter/twitter_description', 'myathletik_rank_math_knitted_fabrics_description', 22 );
+
+/**
+ * Keep the Sportswear title and social title aligned with the code-first category record.
+ *
+ * @param string $title Rank Math generated title.
+ * @return string
+ */
+function myathletik_rank_math_sportswear_title( $title ) {
+	if ( ! is_page( 'sportswear-manufacturer' ) ) {
+		return $title;
+	}
+
+	$category = myathletik_get_product_category_data( 'sportswear-manufacturer' );
+
+	return ! empty( $category['seo_title'] ) ? $category['seo_title'] : $title;
+}
+add_filter( 'rank_math/frontend/title', 'myathletik_rank_math_sportswear_title', 22 );
+add_filter( 'rank_math/opengraph/facebook/og_title', 'myathletik_rank_math_sportswear_title', 22 );
+add_filter( 'rank_math/opengraph/twitter/twitter_title', 'myathletik_rank_math_sportswear_title', 22 );
+
+/**
+ * Keep the Sportswear description and social description aligned with the code-first category record.
+ *
+ * @param string $description Rank Math generated description.
+ * @return string
+ */
+function myathletik_rank_math_sportswear_description( $description ) {
+	if ( ! is_page( 'sportswear-manufacturer' ) ) {
+		return $description;
+	}
+
+	$category = myathletik_get_product_category_data( 'sportswear-manufacturer' );
+
+	return ! empty( $category['meta_description'] ) ? $category['meta_description'] : $description;
+}
+add_filter( 'rank_math/frontend/description', 'myathletik_rank_math_sportswear_description', 22 );
+add_filter( 'rank_math/opengraph/facebook/og_description', 'myathletik_rank_math_sportswear_description', 22 );
+add_filter( 'rank_math/opengraph/twitter/twitter_description', 'myathletik_rank_math_sportswear_description', 22 );
 
 /**
  * Use each approved technical content cover for Open Graph and Twitter cards.
@@ -376,6 +415,36 @@ function myathletik_rank_math_knitted_fabrics_schema_description( $data ) {
 	return $data;
 }
 add_filter( 'rank_math/json_ld', 'myathletik_rank_math_knitted_fabrics_schema_description', 105 );
+
+/**
+ * Keep the Sportswear WebPage entity aligned with the code-first category metadata.
+ *
+ * @param array $data Rank Math JSON-LD entities.
+ * @return array
+ */
+function myathletik_rank_math_sportswear_schema_metadata( $data ) {
+	if (
+		! is_page( 'sportswear-manufacturer' ) ||
+		! is_array( $data ) ||
+		empty( $data['WebPage'] ) ||
+		! is_array( $data['WebPage'] )
+	) {
+		return $data;
+	}
+
+	$category = myathletik_get_product_category_data( 'sportswear-manufacturer' );
+
+	if ( ! empty( $category['seo_title'] ) ) {
+		$data['WebPage']['name'] = $category['seo_title'];
+	}
+
+	if ( ! empty( $category['meta_description'] ) ) {
+		$data['WebPage']['description'] = $category['meta_description'];
+	}
+
+	return $data;
+}
+add_filter( 'rank_math/json_ld', 'myathletik_rank_math_sportswear_schema_metadata', 105 );
 
 /**
  * Keep the publisher entity aligned with the public company details.

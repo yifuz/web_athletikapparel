@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<h3><?php esc_html_e( 'Knitted fabric references', 'myathletik-child' ); ?></h3>
 				</header>
 				<p><?php esc_html_e( 'Compare representative fabric references by fiber composition and GSM. Availability and final specifications are confirmed for each project.', 'myathletik-child' ); ?></p>
-				<a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/#merino-fabric-examples' ) ); ?>"><?php esc_html_e( 'Explore the fabric selection library', 'myathletik-child' ); ?> <span aria-hidden="true">→</span></a>
+				<a href="<?php echo esc_url( home_url( '/knitted-fabrics-manufacturer/#fabric-library' ) ); ?>"><?php esc_html_e( 'Explore the fabric selection library', 'myathletik-child' ); ?> <span aria-hidden="true">→</span></a>
 			</article>
 			<article class="ma-sportswear-evidence__card ma-sportswear-evidence__card--sources">
 				<div class="ma-sportswear-evidence__details">

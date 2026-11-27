@@ -60,12 +60,12 @@ $hero_badges     = array(
 
 	<div class="ma-home-hero__inner">
 		<div class="ma-home-hero__content">
-			<p class="ma-home-hero__eyebrow"><?php esc_html_e( 'Yarn-to-Garment Integration', 'myathletik-child' ); ?></p>
+			<p class="ma-home-hero__eyebrow"><?php esc_html_e( 'China Cut-and-Sew OEM · Own Fabric Mill', 'myathletik-child' ); ?></p>
 			<h1 class="ma-home-hero__title">
 				<span><?php esc_html_e( 'Performance Apparel', 'myathletik-child' ); ?></span>
 				<span><?php esc_html_e( 'Manufacturer', 'myathletik-child' ); ?></span>
 			</h1>
-			<p class="ma-home-hero__subhead"><?php esc_html_e( 'From knitted fabric development to finished garments, we support underwear, base layer, sportswear and yoga apparel programs with integrated production, FLATLOCK and ACTIVESEAM construction.', 'myathletik-child' ); ?></p>
+			<p class="ma-home-hero__subhead"><?php esc_html_e( 'China-based cut-and-sew OEM with our own knit fabric mill—producing sportswear, activewear, underwear, Merino wool base layers, and outdoor knitwear with FLATLOCK and ACTIVESEAM construction.', 'myathletik-child' ); ?></p>
 			<div class="ma-home-hero__actions" aria-label="<?php esc_attr_e( 'Primary homepage actions', 'myathletik-child' ); ?>">
 				<a class="ma-button ma-button--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
 					<?php esc_html_e( 'Request a Quote', 'myathletik-child' ); ?>

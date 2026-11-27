@@ -99,15 +99,13 @@ function myathletik_aux_image( $filename ) {
 /**
  * Get the product category page configuration.
  *
- * SEO field truth source (SEO-IMP-011): the `seo_title` and `meta_description`
- * values below are NOT the live meta tags. For the six garment categories the
- * production <title> and meta description come from the Rank Math fields in
- * the WordPress admin (canonical text: seo-tags.md); editing the values here
- * does not change production output. The ONLY exception is
- * `knitted-fabrics-manufacturer`, whose `meta_description` is read by the
- * filters in rank-math.php (auto-loaded by the Rank Math plugin itself, not by
- * functions.php) for the frontend/OG/Twitter description and the WebPage
- * schema description.
+ * SEO field truth source (SEO-IMP-011 / P3): for five garment categories
+ * (Underwear, Outdoor, Merino, Silk, Sports Accessories), the production
+ * <title> and meta description come from Rank Math DB fields (canonical text:
+ * seo-tags.md). For `knitted-fabrics-manufacturer` (`meta_description`) and
+ * `sportswear-manufacturer` (`seo_title` and `meta_description`), filters in
+ * `rank-math.php` (auto-loaded by Rank Math) override frontend, OG/Twitter,
+ * and WebPage Schema output from this file while keeping DB fields in sync.
  *
  * @return array
  */
@@ -115,9 +113,9 @@ function myathletik_product_category_data() {
 	return array(
 		'sportswear-manufacturer' => array(
 			'title'            => __( 'Sportswear', 'myathletik-child' ),
-			'seo_title'        => __( 'Sportswear Manufacturer | Athletik Clothing', 'myathletik-child' ),
-			'meta_description' => __( 'Sportswear manufacturer for gym, training, running, and yoga activewear - FLATLOCK and ACTIVESEAM construction in power-stretch and moisture-wicking knits.', 'myathletik-child' ),
-			'h1'               => __( 'Sportswear Manufacturer', 'myathletik-child' ),
+			'seo_title'        => __( 'Sportswear & Activewear Manufacturer China | Athletik', 'myathletik-child' ),
+			'meta_description' => __( 'China OEM sportswear & activewear manufacturer for custom leggings, yoga wear, compression shirts & fitness apparel. FLATLOCK/ACTIVESEAM, MOQ 500 pcs.', 'myathletik-child' ),
+			'h1'               => __( 'Sportswear & Activewear Manufacturer', 'myathletik-child' ),
 			'old_url'          => '/products/sportswear/',
 			'social_image'        => 'sportswear/social-share-1200x627.jpg',
 			'social_image_width'  => 1200,
@@ -128,7 +126,7 @@ function myathletik_product_category_data() {
 			'hero_video_poster'   => 'sportswear/sportswear-mens-olive-training-set-hero-poster.webp',
 			'hero_video_position' => 'center center',
 			'hero_video_variant'  => 'split',
-			'intro'            => __( 'Sportswear programs for gym, training, running, and studio applications, developed around the buyer\'s fit, movement, fabric, finish, and testing requirements. We produce tight, fitted, and compression silhouettes for B2B activewear brands, with specifications confirmed through material selection and approved samples.', 'myathletik-child' ),
+			'intro'            => __( 'China-based OEM/ODM sportswear and activewear programs for custom leggings, yoga wear, compression shirts, gym and fitness tops, and running or cycling layers. We produce tight, fitted, and compression knit silhouettes for B2B apparel brands, with fabric, fit, seam construction, finish, and testing criteria confirmed through material selection and approved samples.', 'myathletik-child' ),
 			'buyer_fit'        => array(
 				'heading' => __( 'Is Athletik a fit for your sportswear program?', 'myathletik-child' ),
 				'summary' => __( 'Athletik is a China-based OEM/ODM manufacturer for cut-and-sew knitted sportswear, with production in Zhangjiagang. Its program is best suited to established and mid-sized activewear brands, wholesalers, and importers working from a tech pack, approved reference sample, or defined product brief. It supports coordinated fabric development, fit, technical seam selection, and testing criteria.', 'myathletik-child' ),
@@ -139,7 +137,7 @@ function myathletik_product_category_data() {
 					),
 					array(
 						'label' => __( 'Program scope', 'myathletik-child' ),
-						'value' => __( 'Gym, training, running, yoga, and compression apparel', 'myathletik-child' ),
+						'value' => __( 'Leggings, yoga wear, compression shirts, gym & fitness tops, running and cycling apparel', 'myathletik-child' ),
 					),
 					array(
 						'label' => __( 'Commercial starting point', 'myathletik-child' ),
@@ -172,10 +170,10 @@ function myathletik_product_category_data() {
 				),
 			),
 			'what_we_make'     => array(
-				__( 'Training tops, tanks, and tees', 'myathletik-child' ),
-				__( 'Leggings, shorts, and compression pieces', 'myathletik-child' ),
-				__( 'Yoga and studio wear', 'myathletik-child' ),
-				__( 'Running singlets and performance layers', 'myathletik-child' ),
+				__( 'Fitness tops, gym wear, and compression shirts', 'myathletik-child' ),
+				__( 'Custom leggings, shorts, and compression wear', 'myathletik-child' ),
+				__( 'Yoga wear and studio sets', 'myathletik-child' ),
+				__( 'Running and cycling apparel layers', 'myathletik-child' ),
 			),
 			'showcase_kicker'  => __( 'Product examples', 'myathletik-child' ),
 			'showcase_heading' => __( 'Sportswear lookbook', 'myathletik-child' ),
@@ -201,8 +199,8 @@ function myathletik_product_category_data() {
 			// blocks instead of the plain what_we_make text list.
 			'subcategories'    => array(
 				array(
-					'title'       => __( 'Training tops, tanks, and tees', 'myathletik-child' ),
-					'description' => __( 'Close-fit training tops developed for range-of-motion requirements. FLATLOCK construction can be specified for a low-profile seam, while fabric stretch/recovery and wash-performance targets should be confirmed against the selected material, buyer test criteria, and approved sample.', 'myathletik-child' ),
+					'title'       => __( 'Fitness tops, gym wear, and compression shirts', 'myathletik-child' ),
+					'description' => __( 'Close-fit fitness tops, gym wear, and compression shirts developed for range-of-motion requirements. FLATLOCK construction can be specified for a low-profile seam, while fabric stretch/recovery and wash-performance targets should be confirmed against the selected material, buyer test criteria, and approved sample.', 'myathletik-child' ),
 					'image'       => 'sportswear/IMG_3515_4x3.png',
 					'image_alt'    => __( 'Model wearing a heathered performance training tank with printed leggings', 'myathletik-child' ),
 					'image_width'  => 1448,
@@ -217,8 +215,8 @@ function myathletik_product_category_data() {
 					),
 				),
 				array(
-					'title'       => __( 'Leggings, shorts, and compression pieces', 'myathletik-child' ),
-					'description' => __( 'High-stretch leggings, shorts, and compression pieces - including graduated compression programs where specified - can be developed with power-band waistbands, 4-way-stretch, and power-stretch knits. Opacity, including squat-proof targets, compression level, moisture management, and waistband recovery should be specified for the selected material and confirmed during sampling and project-specific testing.', 'myathletik-child' ),
+					'title'       => __( 'Custom leggings, shorts, and compression wear', 'myathletik-child' ),
+					'description' => __( 'High-stretch custom leggings, shorts, and compression wear - including graduated compression programs where specified - can be developed with power-band waistbands, 4-way-stretch, and power-stretch knits. Opacity, including squat-proof targets, compression level, moisture management, and waistband recovery should be specified for the selected material and confirmed during sampling and project-specific testing.', 'myathletik-child' ),
 					'image'       => 'sportswear/1U128568_4x3_background_extended_final_v2.png',
 					'image_alt'    => __( 'Model demonstrating stretch in black high-rise performance leggings', 'myathletik-child' ),
 					'image_width'  => 2732,
@@ -233,7 +231,7 @@ function myathletik_product_category_data() {
 					),
 				),
 				array(
-					'title'       => __( 'Yoga and studio wear', 'myathletik-child' ),
+					'title'       => __( 'Yoga wear and studio sets', 'myathletik-child' ),
 					'description' => __( 'Custom yoga clothing programs can include sports bras, leggings, shorts, and fitted tops. Develop individual styles or coordinated sets around the buyer\'s material, fit, and construction brief.', 'myathletik-child' ),
 					// Owner-review draft: product-specific briefing, not fixed performance claims.
 					'development' => array(
@@ -266,8 +264,8 @@ function myathletik_product_category_data() {
 					),
 				),
 				array(
-					'title'       => __( 'Running singlets and performance layers', 'myathletik-child' ),
-					'description' => __( 'Running singlets and performance layers can be developed with lightweight knits, mesh ventilation zones, and project-specific moisture-wicking or quick-dry options. Required performance depends on the selected fabric and finish and should be confirmed against buyer test criteria.', 'myathletik-child' ),
+					'title'       => __( 'Running and cycling apparel layers', 'myathletik-child' ),
+					'description' => __( 'Running and cycling apparel layers can be developed with lightweight knits, mesh ventilation zones, and project-specific moisture-wicking or quick-dry options. Required performance depends on the selected fabric and finish and should be confirmed against buyer test criteria.', 'myathletik-child' ),
 					'image'       => 'sportswear/IMG_7601_4X3.png',
 					'image_alt'    => __( 'Model wearing a red long-sleeve athletic performance layer', 'myathletik-child' ),
 					'image_width'  => 1448,
@@ -366,7 +364,7 @@ function myathletik_product_category_data() {
 				myathletik_related_link( __( 'Underwear Manufacturer', 'myathletik-child' ), '/underwear-manufacturer/' ),
 				myathletik_related_link( __( 'Outdoor Clothing Manufacturer', 'myathletik-child' ), '/outdoor-clothing-manufacturer/' ),
 				myathletik_related_link( __( 'FLATLOCK vs OVERLOCK Guide', 'myathletik-child' ), '/flatlock-vs-overlock-technical-knitwear/' ),
-				myathletik_related_link( __( 'Technical Knitwear Tech Pack Guide', 'myathletik-child' ), '/technical-knitwear-tech-pack-guide/' ),
+				myathletik_related_link( __( 'Activewear & Sportswear Tech Pack Guide', 'myathletik-child' ), '/technical-knitwear-tech-pack-guide/' ),
 				myathletik_related_link( __( 'Garment Quality Control Checklist', 'myathletik-child' ), '/garment-quality-control-checklist/' ),
 				myathletik_related_link( __( 'Our Services', 'myathletik-child' ), '/services/' ),
 			),

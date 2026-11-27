@@ -18,14 +18,14 @@ long-tails.
 ================================================================
 ## Home  (/)
 ================================================================
-Primary keyword: performance apparel manufacturer
+Primary keyword: cut and sew performance apparel manufacturer china / performance apparel manufacturer
 
 **SEO Title:**
-Performance Apparel Manufacturer | Athletik Clothing
+Cut & Sew Performance Apparel Manufacturer China | Athletik
 
 **Meta Description:**
-Performance apparel manufacturer for underwear, base layers, sportswear and
-yoga apparel. Integrated knit fabric development, FLATLOCK and ACTIVESEAM.
+China cut-and-sew OEM apparel manufacturer with own knit fabric mill. Activewear,
+underwear, Merino wool & outdoor layers. FLATLOCK/ACTIVESEAM, MOQ 500.
 
 ================================================================
 ## Product Showcase（分批发布）
@@ -70,10 +70,10 @@ yoga apparel. Integrated knit fabric development, FLATLOCK and ACTIVESEAM.
 ================================================================
 
 ### Sportswear  (/sportswear-manufacturer/)
-**SEO Title:** Sportswear Manufacturer | Athletik Clothing
+**SEO Title:** Sportswear & Activewear Manufacturer China | Athletik
 **Meta Description:**
-OEM/ODM sportswear manufacturer specializing in FLATLOCK & ACTIVESEAM technical
-activewear. Performance fabrics, full-package production. Get a quote.
+China OEM sportswear & activewear manufacturer for custom leggings, yoga wear,
+compression shirts & fitness apparel. FLATLOCK/ACTIVESEAM, MOQ 500 pcs.
 
 ### Underwear  (/underwear-manufacturer/)
 **SEO Title:** Underwear Manufacturer | Athletik Clothing
@@ -312,8 +312,9 @@ NOT filenames, NOT "image1". Describe what's shown + relevant keyword.
 
 | 页面 | 生产 Meta 的实际来源 |
 |---|---|
-| 首页 `/` | `functions.php` 的 `myathletik_home_meta_description()` 硬编码（首页 Rank Math 描述字段保持为空，防止输出两个 description 标签） |
-| 六个服装品类页（Sportswear、Underwear、Outdoor、Merino、Silk、Sports Accessories） | **仅** Rank Math 后台字段（数据库）。`inc/product-category-data.php` 里的 `seo_title` / `meta_description` 不参与生产输出，改它们无效 |
+| 首页 `/` | `functions.php` 的 `myathletik_home_seo_title()` / `myathletik_home_seo_description()`（首页 Rank Math 描述字段仍保持为空，防止输出两个 description 标签；Title 由 `myathletik_sync_home_rank_math_title()` 同步至数据库，OG/Twitter/WebPage Schema 由 `rank-math.php` 同步） |
+| Sportswear 品类页 | `inc/product-category-data.php` 的 `seo_title` / `meta_description` + `rank-math.php` 过滤器（代码优先覆盖前端、OG/Twitter 与 WebPage Schema；Rank Math 后台数据库字段保持同步作兜底） |
+| 五个服装品类页（Underwear、Outdoor、Merino、Silk、Sports Accessories） | **仅** Rank Math 后台字段（数据库）。`inc/product-category-data.php` 里的 `seo_title` / `meta_description` 不参与生产输出，改它们无效 |
 | Knitted Fabrics 品类页 | `inc/product-category-data.php` 的 `meta_description`（唯一例外）。主题 `rank-math.php` 的过滤器用它覆盖前端、OG/Twitter 和 WebPage Schema 描述 |
 | 全部技术指南（10 篇）+ `/technical-guides/` Hub | `inc/technical-article-data.php` 的 `seo_title` / `meta_description`。`functions.php` 的 init 钩子把它们写入 Rank Math 数据库字段，`rank-math.php` 过滤器再从同一份数据覆盖输出 |
 | Services、About、Contact、Sustainability | **仅** Rank Math 后台字段（数据库），代码中没有对应字段 |
