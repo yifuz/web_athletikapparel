@@ -649,15 +649,43 @@
         if (e.key === 'ArrowLeft') { e.preventDefault(); showSlide(slideIndex - 1); }
         else if (e.key === 'ArrowRight') { e.preventDefault(); showSlide(slideIndex + 1); }
       });
+      function openFromHash() {
+        var rawHash;
+        try { rawHash = decodeURIComponent(window.location.hash.slice(1)); }
+        catch (err) { return; }
+        var match = /^seasonal-([a-z0-9-]+)$/.exec(rawHash);
+        if (!match) return;
+        var id = match[1];
+        if (!Object.prototype.hasOwnProperty.call(itemsData, id)) return;
+        if (dialog.open && currentItem && currentItem.id === id) return;
+        if (dialog.open) dialog.close();
+        activeCategory = 'all';
+        matches = records.slice();
+        var idx = matches.findIndex(function (r) {
+          return Boolean(r.card.querySelector('[data-seasonal-open="' + id + '"]'));
+        });
+        currentPage = idx >= 0 ? Math.floor(idx / perPage) : 0;
+        render(false);
+        root.scrollIntoView({block: 'start', behavior: 'auto'});
+        var triggerBtn = idx >= 0 ? matches[idx].card.querySelector('[data-seasonal-open]') : null;
+        openItem(id, triggerBtn || null);
+      }
+
       listen(dialog, 'close', function () {
         document.documentElement.classList.remove('ma-pl-video-open');
+        if (window.location.hash.indexOf('#seasonal-') === 0 && window.history && typeof window.history.replaceState === 'function') {
+          window.history.replaceState(null, '', '#seasonal-sample-gallery');
+        }
         if (activeTrigger && activeTrigger.isConnected) activeTrigger.focus({preventScroll: true});
         activeTrigger = null;
         currentItem = null;
       });
 
+      listen(window, 'hashchange', openFromHash);
+
       filters.hidden = false;
       applyFilter();
+      openFromHash();
     } catch (e) {
       restoreFallback();
     }

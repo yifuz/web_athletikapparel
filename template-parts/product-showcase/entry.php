@@ -143,10 +143,13 @@ $entry_modifier = 'home' === $context ? ' ma-pl-entry--home' : ' ma-pl-entry--' 
 					</div>
 
 					<div class="ma-pl-home-seasonal-grid">
-						<?php foreach ( $home_seasonal_items as $item ) : ?>
-							<?php $front = $item['images']['front']; ?>
+						<?php foreach ( $home_seasonal_items as $sample_id => $item ) : ?>
+							<?php
+							$front      = $item['images']['front'];
+							$sample_url = $showcase_url ? $showcase_url . '#seasonal-' . rawurlencode( $sample_id ) : '';
+							?>
 							<article class="ma-pl-home-seasonal-card">
-								<a class="ma-pl-home-seasonal-card__link" href="<?php echo esc_url( $seasonal_url ); ?>">
+								<a class="ma-pl-home-seasonal-card__link" href="<?php echo esc_url( $sample_url ); ?>">
 									<span class="ma-pl-home-seasonal-card__media">
 										<img src="<?php echo esc_url( $front['src'] ); ?>" srcset="<?php echo esc_attr( $front['srcset'] ); ?>" sizes="(max-width: 767px) 68vw, (max-width: 1023px) 46vw, 270px" width="800" height="1200" alt="<?php echo esc_attr( $front['alt'] ); ?>" loading="lazy" decoding="async">
 										<span class="ma-pl-media-note"><?php echo esc_html( count( $item['images'] ) . ' photos' ); ?></span>
