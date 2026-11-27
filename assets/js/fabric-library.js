@@ -214,8 +214,153 @@
     }
   }
 
+  function initializeLightbox(root) {
+    if (typeof HTMLDialogElement === 'undefined' || typeof HTMLDialogElement.prototype.showModal !== 'function') return;
+    var triggers = Array.from(root.querySelectorAll('[data-fabric-lightbox-trigger]'));
+    if (!triggers.length) return;
+
+    triggers.forEach(function (trigger) {
+      trigger.setAttribute('aria-haspopup', 'dialog');
+    });
+
+    var dialog = document.createElement('dialog');
+    dialog.className = 'ma-fabric-lightbox';
+    dialog.setAttribute('aria-label', 'Fabric macro swatch viewer');
+    dialog.innerHTML =
+      '<div class="ma-fabric-lightbox__panel">' +
+        '<div class="ma-fabric-lightbox__toolbar">' +
+          '<div class="ma-fabric-lightbox__title">' +
+            '<strong class="ma-fabric-lightbox__ref" data-fabric-lb-ref></strong>' +
+            '<span class="ma-fabric-lightbox__gsm" data-fabric-lb-gsm></span>' +
+          '</div>' +
+          '<div class="ma-fabric-lightbox__actions">' +
+            '<p class="ma-fabric-lightbox__count" data-fabric-lb-count aria-live="polite"></p>' +
+            '<button type="button" class="ma-fabric-lightbox__close" data-fabric-lb-close aria-label="Close fabric swatch viewer">×</button>' +
+          '</div>' +
+        '</div>' +
+        '<figure class="ma-fabric-lightbox__figure">' +
+          '<img class="ma-fabric-lightbox__image" data-fabric-lb-image width="1440" height="810" alt="">' +
+          '<figcaption class="ma-fabric-lightbox__meta">' +
+            '<span class="ma-fabric-lightbox__kind" data-fabric-lb-kind></span>' +
+            '<span class="ma-fabric-lightbox__composition" data-fabric-lb-composition></span>' +
+          '</figcaption>' +
+        '</figure>' +
+        '<div class="ma-fabric-lightbox__nav">' +
+          '<button type="button" data-fabric-lb-prev aria-label="Previous swatch">← Previous</button>' +
+          '<button type="button" data-fabric-lb-next aria-label="Next swatch">Next →</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(dialog);
+
+    var panel = dialog.querySelector('.ma-fabric-lightbox__panel');
+    var refEl = dialog.querySelector('[data-fabric-lb-ref]');
+    var gsmEl = dialog.querySelector('[data-fabric-lb-gsm]');
+    var countEl = dialog.querySelector('[data-fabric-lb-count]');
+    var closeBtn = dialog.querySelector('[data-fabric-lb-close]');
+    var imageEl = dialog.querySelector('[data-fabric-lb-image]');
+    var kindEl = dialog.querySelector('[data-fabric-lb-kind]');
+    var compEl = dialog.querySelector('[data-fabric-lb-composition]');
+    var prevBtn = dialog.querySelector('[data-fabric-lb-prev]');
+    var nextBtn = dialog.querySelector('[data-fabric-lb-next]');
+    var navEl = dialog.querySelector('.ma-fabric-lightbox__nav');
+
+    var activeTriggers = [];
+    var currentIndex = 0;
+    var activeTrigger = null;
+    var backdropPointerDown = false;
+
+    function visibleTriggers() {
+      return Array.from(root.querySelectorAll('[data-fabric-lightbox-trigger]')).filter(function (trigger) {
+        var card = trigger.closest('[data-fabric-card]');
+        if (card && card.hidden) return false;
+        var details = trigger.closest('details[data-fabric-more]');
+        if (details && !details.open) return false;
+        return true;
+      });
+    }
+
+    function showAt(index) {
+      if (!activeTriggers.length) return;
+      currentIndex = Math.max(0, Math.min(index, activeTriggers.length - 1));
+      var trigger = activeTriggers[currentIndex];
+      var thumb = trigger.querySelector('img');
+      refEl.textContent = trigger.dataset.lightboxRef || '';
+      gsmEl.textContent = trigger.dataset.lightboxGsm || '';
+      kindEl.textContent = trigger.dataset.lightboxKind || '';
+      compEl.textContent = trigger.dataset.lightboxComposition || '';
+      imageEl.alt = (thumb && thumb.alt) ? thumb.alt : '';
+      imageEl.src = trigger.href;
+      countEl.textContent = (currentIndex + 1) + ' / ' + activeTriggers.length;
+      navEl.hidden = activeTriggers.length <= 1;
+
+      var focused = document.activeElement;
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex >= activeTriggers.length - 1;
+      if (focused === prevBtn && prevBtn.disabled) {
+        (nextBtn.disabled ? closeBtn : nextBtn).focus();
+      } else if (focused === nextBtn && nextBtn.disabled) {
+        (prevBtn.disabled ? closeBtn : prevBtn).focus();
+      }
+    }
+
+    root.addEventListener('click', function (event) {
+      var trigger = event.target.closest('[data-fabric-lightbox-trigger]');
+      if (!trigger || !root.contains(trigger)) return;
+      event.preventDefault();
+      activeTriggers = visibleTriggers();
+      var idx = activeTriggers.indexOf(trigger);
+      if (idx === -1) {
+        activeTriggers = [trigger];
+        idx = 0;
+      }
+      activeTrigger = trigger;
+      showAt(idx);
+      dialog.showModal();
+      closeBtn.focus();
+    });
+
+    closeBtn.addEventListener('click', function () { dialog.close(); });
+    prevBtn.addEventListener('click', function () {
+      if (currentIndex > 0) showAt(currentIndex - 1);
+    });
+    nextBtn.addEventListener('click', function () {
+      if (currentIndex < activeTriggers.length - 1) showAt(currentIndex + 1);
+    });
+
+    dialog.addEventListener('pointerdown', function (event) {
+      backdropPointerDown = event.target === dialog && !panel.contains(event.target);
+    });
+    dialog.addEventListener('click', function (event) {
+      if (backdropPointerDown && event.target === dialog && !panel.contains(event.target)) {
+        dialog.close();
+      }
+      backdropPointerDown = false;
+    });
+    dialog.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowLeft' && currentIndex > 0) {
+        event.preventDefault();
+        showAt(currentIndex - 1);
+      } else if (event.key === 'ArrowRight' && currentIndex < activeTriggers.length - 1) {
+        event.preventDefault();
+        showAt(currentIndex + 1);
+      }
+    });
+    dialog.addEventListener('close', function () {
+      imageEl.removeAttribute('src');
+      if (activeTrigger && typeof activeTrigger.focus === 'function') {
+        activeTrigger.focus({preventScroll: true});
+      }
+      activeTrigger = null;
+      backdropPointerDown = false;
+    });
+  }
+
   function initialize() {
-    document.querySelectorAll('[data-fabric-library]').forEach(initializeLibrary);
+    document.querySelectorAll('[data-fabric-library]').forEach(function (root) {
+      initializeLibrary(root);
+      initializeLightbox(root);
+    });
+    document.querySelectorAll('[data-fabric-preview]').forEach(initializeLightbox);
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initialize, {once: true});

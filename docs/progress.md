@@ -1,6 +1,6 @@
 # Athletik Clothing 项目进度
 
-> 更新：2026-11-26。这里保留跨项目最新现状、下一步及**当月（2026-11）工作流水账**；每月底将当月流水账按月归档至 `docs/archive/progress-YYYY-MM.md`。
+> 更新：2026-11-27。这里保留跨项目最新现状、下一步及**当月（2026-11）工作流水账**；每月底将当月流水账按月归档至 `docs/archive/progress-YYYY-MM.md`。
 > 📅 **历月进度归档直达**：[2026-07](archive/progress-2026-07.md) · [2026-08](archive/progress-2026-08.md) · [2026-09](archive/progress-2026-09.md) · [2026-10](archive/progress-2026-10.md) · **2026-11（当月见下表）** · [全量合集快照](archive/progress-history-2026-11-18.md)
 
 ## 当前状态
@@ -15,7 +15,7 @@
 ## 接下来的工作
 
 1. **站外权威跟进**：**OS Hub 工厂档案（`CN2021314PF2M92`，原 Claim `#6327`）已于 2026-11-26 经所有者确认认领成功**；继续等待 Merrow、Woolmark、SourceReady 回邮（11-25 查邮暂未见回复）及 `athletik.com.cn` 旧门牌修复。
-2. **站内下一个最高 ROI 升级（Showcase 双层升级已上线验收）**：Product Showcase Phase 1 + Phase 2、首页视觉优化及全站技术指南按最新倒序（首页主推 Activewear/Compression 指南）已全部部署生产并完成线上 HTTPS 与 69/69 新媒体实测验收（新页 ID `121/122/123`）；接下来最值得推进 **24 款 2025 美利奴实拍微距图接入面料库与 Merino 精选卡**。
+2. **站内已完成 Local 升级待批准上线（49 款羊毛/混纺面料实拍微距图集成）**：已在 LocalWP 完成 2025 批 24 款 + 2024 批去重后 25 款共 49 款面料微距图（98 个 WebP 存于 `uploads/myathletik-theme/assets/images/fabrics/merino/`）、117 款有图优先排序、原生 `<dialog>` 1440px 大图查看器及 `/merino-wool-manufacturer/` 3 卡缩略图预览（未推远程、未部署生产，待所有者验收批准后连同 98 个 WebP 一并 SSH 部署）。
 3. **到期观察窗口与小补漏**：在 GSC 为 `/technical-knitwear-tech-pack-guide/` 补点一次重抓请求（抓取停在 11-19 早于 11-20 标题升级）；`11-27～12-01` 复盘 Underwear / Yoga 28 天后窗与 `11-20` / `11-23` 社媒后台真实数据。
 
 ## 2026-11 当月工作流水账（按日追加，严禁抹除，月底归档为 `archive/progress-2026-11.md`）
@@ -59,6 +59,7 @@
 | 2026-11-26 | 网站 / Showcase | L1 功能口径补全：按所有者标注更新 5 款产品标题、描述与 alt——女装 `HY265135` 调整为 `Hi-Vis UV-Protective Cycling Top`（同步 LocalWP ID `99` `post_title`/Rank Math SEO 字段，零虚构 UPF 数值）、画廊马甲标注反光夜跑面料、男装 3 款全部定位 `cooling UV-protective fishing apparel` 并统一归入 `Outdoor Clothing`（画廊分类 Sport 5 / Outdoor 3）；`php -l`、123 媒体预检与 LocalWP 双页 HTTP 200 验证通过（停在 Gate 待批准上线） | `inc/product-example-data.php` · `inc/product-seasonal-gallery-data.php` |
 | 2026-11-26 | 网站 / Showcase | 展厅默认排序升级：`myathletik_product_showcase_products()` 改为按页面发布时间（`post_date_gmt` 降序、同时间按 ID 降序）将新品排在最前，分类双卡预览复用同一排序逻辑；下层 Seasonal Gallery 按 `season` 倒序排列；LocalWP `/product-showcase/` 与 `/sportswear-manufacturer/` 验证通过（停在 Gate 待批准上线） | `inc/product-showcase.php` · `template-parts/product-showcase/seasonal-gallery.php` |
 | 2026-11-26 | 生产部署 / 网站 | 经所有者批准，将 Product Showcase Phase 1+2、首页双层展厅与 Proof/Why/Footer 视觉优化、全站技术指南新发布倒序及首页主推 Activewear 指南一键部署至 Flywheel 生产站（提交 `7ba7f5b`，18 个运行时代码文件 + 69 个新媒体文件全部 SHA-256 与远程 `php -l` 校验通过，私有备份 `C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-26-7ba7f5b-showcase-home`）；执行 `myathletik_product_showcase_setup(true)` 发布 3 个新 Sportswear Showcase（生产 ID `121`/`122`/`123`）并执行 `wp cache flush`、`wp rewrite flush` 与 Rank Math Sitemap 清理；线上裸 URL 实测全部 HTTP 200（含首页双层展示、`/technical-guides/` 10 卡新序、`/product-showcase/` 8+8 卡、`/sportswear-manufacturer/` 双卡预览及 `/page-sitemap.xml` 收录、69/69 新媒体 HTTP 200、零泄漏），并完成 `origin/main` 批量推送 | `7ba7f5b` · [`product-showcase-sportswear-phase1-2026-11-26.md`](site/product-showcase-sportswear-phase1-2026-11-26.md) · [`product-showcase-seasonal-gallery-phase2-2026-11-26.md`](site/product-showcase-seasonal-gallery-phase2-2026-11-26.md) |
+| 2026-11-27 | 网站 / 面料库 | 完成 49 款羊毛/功能混纺面料实拍微距图 LocalWP 集成（2025 批 24 款 + 2024 批去重后 25 款：跳过 `P1=HY091231`、新增 20 款、从 `recent` 提级 5 款并将 `HY244620`/`HY244663`/`HY244665`/`HY244667` 更新为 `Merino wool`；全库 117 款，有图 49 款排前、纯规格 68 款在后）；11 张无字 `.jpg` 原图免顶裁、38 张顶字源图裁去顶部 12.5% 后导出 98 个 16:9 WebP（640×360 与 1440×810，全部存于 `uploads/myathletik-theme/assets/images/fabrics/merino/`）；修正 `cellulosic` 筛选支持 `lyocell` 且 `HY091396` 不误标 `wool`；新增原生 `<dialog>` 1440px Lightbox 与 `/merino-wool-manufacturer/` 3 卡缩略图预览。`php -l`、98/98 WebP HTTP 200、Playwright 桌面/移动及 4 张 UI 截图复检与 21 处技术指南 `#fabric-hy...` 锚点回归全部通过（仅本地提交，未部署生产、未 `git push`） | `inc/fabric-library.php` · `template-parts/fabric-library/` · `assets/js/fabric-library.js` · `style.css` |
 
 ## 使用与维护
 

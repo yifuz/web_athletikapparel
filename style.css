@@ -140,6 +140,8 @@ Text Domain:  myathletik-child
   --ma-fabric-anchor-offset: calc(var(--ma-space-6) * 2);
   /* Stable specification rows across pages; allow longer content to grow. */
   --ma-fabric-card-min-height: 18rem;
+  --ma-fabric-lightbox-width: 60rem;
+  --ma-fabric-preview-thumb-width: 7.5rem;
 }
 
 html,
@@ -4984,6 +4986,46 @@ body.page .container.grid-container:has(.ma-product-category) {
 }
 
 .ma-fabric-card:target { border-color: var(--ma-color-accent-2); }
+.ma-fabric-card--has-media { min-height: 0; }
+.ma-fabric-card__media {
+  margin: calc(-1 * var(--ma-space-4)) calc(-1 * var(--ma-space-4)) var(--ma-space-4);
+  overflow: hidden;
+  border-bottom: 1px solid var(--ma-color-border);
+  border-radius: calc(var(--ma-radius) - 1px) calc(var(--ma-radius) - 1px) 0 0;
+  background: var(--ma-color-surface);
+}
+.ma-fabric-card__swatch {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  color: var(--ma-color-white);
+  text-decoration: none;
+}
+.ma-fabric-card__swatch img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 0.28s ease;
+}
+.ma-fabric-card__swatch:hover img,
+.ma-fabric-card__swatch:focus-visible img { transform: scale(1.03); }
+.ma-fabric-card__zoom {
+  position: absolute;
+  right: var(--ma-space-2);
+  bottom: var(--ma-space-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--ma-radius);
+  background: color-mix(in srgb, var(--ma-color-dark) 74%, transparent);
+  color: var(--ma-color-white);
+  font-size: var(--ma-fs-small);
+  line-height: 1;
+}
 .ma-fabric-card__head { display: flex; justify-content: space-between; gap: var(--ma-space-3); align-items: center; }
 .ma-fabric-card__kind { margin: 0 0 var(--ma-space-2); color: var(--ma-color-muted); font-size: var(--ma-fs-small); }
 .ma-fabric-card h3 { margin: 0; font-size: var(--ma-fs-h3); font-family: var(--ma-font-head); }
@@ -5020,11 +5062,107 @@ body.page .container.grid-container:has(.ma-product-category) {
 .ma-subcat__body .ma-fabric-preview__label { margin: 0 0 var(--ma-space-2); color: var(--ma-color-accent-2); font-size: var(--ma-fs-small); font-weight: 600; }
 .ma-subcat__body .ma-fabric-preview__scope { margin: 0 0 var(--ma-space-2); color: var(--ma-color-muted); font-size: var(--ma-fs-small); }
 .ma-fabric-preview__list { list-style: none; padding: 0; margin: 0; }
-.ma-fabric-preview__item { display: flex; align-items: center; justify-content: space-between; gap: var(--ma-space-3); min-height: var(--ma-touch-target); padding-block: var(--ma-space-3); border-bottom: 1px solid var(--ma-color-border); color: var(--ma-color-text); text-decoration: none; }
+.ma-fabric-preview__row {
+  display: grid;
+  grid-template-columns: var(--ma-fabric-preview-thumb-width) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--ma-space-3);
+  padding-block: var(--ma-space-3);
+  border-bottom: 1px solid var(--ma-color-border);
+}
+.ma-fabric-preview__thumb {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-surface);
+}
+.ma-fabric-preview__thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+.ma-fabric-preview__thumb:hover img,
+.ma-fabric-preview__thumb:focus-visible img { transform: scale(1.04); }
+.ma-fabric-preview__item { display: flex; align-items: center; justify-content: space-between; gap: var(--ma-space-3); min-width: 0; min-height: var(--ma-touch-target); color: var(--ma-color-text); text-decoration: none; }
 .ma-fabric-preview__item:hover { color: var(--ma-color-accent-2); }
 .ma-fabric-preview__composition { display: block; color: var(--ma-color-muted); font-size: var(--ma-fs-small); line-height: var(--ma-lh-body); }
 .ma-fabric-preview__weight { flex-shrink: 0; font-size: var(--ma-fs-small); color: var(--ma-color-accent-2); font-weight: 600; }
 .ma-fabric-preview__all { display: inline-flex; align-items: center; gap: var(--ma-space-2); min-height: var(--ma-touch-target); margin-top: var(--ma-space-2); font-size: var(--ma-fs-small); font-weight: 600; color: var(--ma-color-accent-2); }
+
+.ma-fabric-lightbox {
+  box-sizing: border-box;
+  width: min(94vw, var(--ma-fabric-lightbox-width));
+  max-width: none;
+  max-height: calc(100dvh - var(--ma-space-4));
+  padding: 0;
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  color: var(--ma-color-text);
+}
+.ma-fabric-lightbox::backdrop { background: color-mix(in srgb, var(--ma-color-dark) 82%, transparent); }
+.ma-fabric-lightbox__panel { padding: var(--ma-space-4); display: grid; gap: var(--ma-space-3); }
+.ma-fabric-lightbox__toolbar,
+.ma-fabric-lightbox__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ma-space-3);
+}
+.ma-fabric-lightbox__title { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--ma-space-3); }
+.ma-fabric-lightbox__ref { font-family: var(--ma-font-head); font-size: var(--ma-fs-h3); color: var(--ma-color-text); }
+.ma-fabric-lightbox__gsm { font-size: var(--ma-fs-small); font-weight: 600; color: var(--ma-color-accent-2); }
+.ma-fabric-lightbox__actions { display: flex; align-items: center; gap: var(--ma-space-3); }
+.ma-fabric-lightbox__count { margin: 0; font-size: var(--ma-fs-small); color: var(--ma-color-muted); }
+.ma-fabric-lightbox button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--ma-touch-target);
+  min-height: var(--ma-touch-target);
+  padding: var(--ma-space-2) var(--ma-space-3);
+  border: 1px solid var(--ma-color-border);
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-white);
+  color: var(--ma-color-accent-2);
+  font-family: var(--ma-font-body);
+  font-size: var(--ma-fs-small);
+  font-weight: 600;
+  cursor: pointer;
+}
+.ma-fabric-lightbox__close { padding-inline: var(--ma-space-2); font-size: var(--ma-fs-h3); line-height: 1; }
+.ma-fabric-lightbox button:hover,
+.ma-fabric-lightbox button:focus-visible { border-color: var(--ma-color-accent-2); background: var(--ma-color-surface); }
+.ma-fabric-lightbox button:focus-visible { outline: var(--ma-fabric-focus-width) solid var(--ma-color-accent-2); outline-offset: var(--ma-space-1); }
+.ma-fabric-lightbox button:disabled { opacity: 0.45; cursor: default; background: var(--ma-color-white); }
+.ma-fabric-lightbox__figure { display: grid; gap: var(--ma-space-3); margin: 0; }
+.ma-fabric-lightbox__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 68dvh;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--ma-radius);
+  background: var(--ma-color-surface);
+}
+.ma-fabric-lightbox__meta { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--ma-space-2) var(--ma-space-4); }
+.ma-fabric-lightbox__kind { font-size: var(--ma-fs-small); color: var(--ma-color-muted); }
+.ma-fabric-lightbox__composition { font-size: var(--ma-fs-base); color: var(--ma-color-text); }
+.ma-fabric-lightbox__nav[hidden] { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ma-fabric-card__swatch img,
+  .ma-fabric-preview__thumb img { transition: none; }
+  .ma-fabric-card__swatch:hover img,
+  .ma-fabric-card__swatch:focus-visible img,
+  .ma-fabric-preview__thumb:hover img,
+  .ma-fabric-preview__thumb:focus-visible img { transform: none; }
+}
 
 @media (max-width: 63.99rem) {
   .ma-fabric-library__controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -5041,6 +5179,8 @@ body.page .container.grid-container:has(.ma-product-category) {
   .ma-fabric-library__controls select { padding-inline: var(--ma-space-2); }
   .ma-fabric-library__grid { grid-template-columns: minmax(0, 1fr); gap: var(--ma-space-3); }
   .ma-fabric-card { min-height: 0; }
+  .ma-fabric-preview__row { grid-template-columns: 5.5rem minmax(0, 1fr); gap: var(--ma-space-2); }
+  .ma-fabric-lightbox__panel { padding: var(--ma-space-3); }
   .ma-fabric-library__pagination { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--ma-space-2); }
   .ma-fabric-library__pagination > span { grid-column: 1 / -1; grid-row: 1; text-align: center; }
   .ma-fabric-library__pagination .ma-button { padding-inline: var(--ma-space-3); justify-content: center; }

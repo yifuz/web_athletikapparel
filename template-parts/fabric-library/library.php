@@ -25,8 +25,8 @@ $available_materials = array_unique( array_merge( ...array_column( $fabrics, 'ma
 		<div class="ma-fabric-library__collections" aria-label="<?php esc_attr_e( 'Collections represented in this library', 'myathletik-child' ); ?>">
 			<p class="ma-fabric-library__collections-label"><?php esc_html_e( 'Currently included', 'myathletik-child' ); ?></p>
 			<ul class="ma-fabric-library__collection-list">
+				<li><strong><?php esc_html_e( 'Merino & wool blends', 'myathletik-child' ); ?></strong><span><?php esc_html_e( '2024–2025 photographed swatches', 'myathletik-child' ); ?></span></li>
 				<li><strong><?php esc_html_e( 'Recent fabric references', 'myathletik-child' ); ?></strong><span>HY24 · HY25 · HY26</span></li>
-				<li><strong><?php esc_html_e( 'Merino wool', 'myathletik-child' ); ?></strong><span><?php esc_html_e( '2025 collection', 'myathletik-child' ); ?></span></li>
 			</ul>
 		</div>
 		<div class="ma-fabric-library__controls" data-fabric-controls role="search" aria-label="<?php esc_attr_e( 'Filter fabric references', 'myathletik-child' ); ?>" hidden>
