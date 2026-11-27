@@ -65,8 +65,13 @@ if ( ! empty( $category['hero_video'] ) ) {
 			<h1 id="ma-product-title"><?php echo esc_html( $category['h1'] ); ?></h1>
 			<p><?php echo esc_html( $category['intro'] ); ?></p>
 			<div class="ma-product-hero__actions">
+				<?php
+				$examples_anchor = 'knitted-fabrics-manufacturer' === $category_slug
+					? '#fabric-library'
+					: ( ! empty( $category['subcategories'] ) ? '#ma-product-subcats-title' : '#product-examples' );
+				?>
 				<a class="ma-button ma-button--primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Request a Quote', 'myathletik-child' ); ?></a>
-				<a class="ma-button <?php echo esc_attr( $examples_button_class ); ?>" href="<?php echo ! empty( $category['subcategories'] ) ? '#ma-product-subcats-title' : '#product-examples'; ?>"><?php esc_html_e( 'View Examples', 'myathletik-child' ); ?></a>
+				<a class="ma-button <?php echo esc_attr( $examples_button_class ); ?>" href="<?php echo esc_attr( $examples_anchor ); ?>"><?php esc_html_e( 'View Examples', 'myathletik-child' ); ?></a>
 			</div>
 		</div>
 	</section>
@@ -132,6 +137,10 @@ if ( ! empty( $category['hero_video'] ) ) {
 			<?php endif; ?>
 		</div>
 	</section>
+	<?php endif; ?>
+
+	<?php if ( 'knitted-fabrics-manufacturer' === $category_slug ) : ?>
+		<?php get_template_part( 'template-parts/fabric-library/library' ); ?>
 	<?php endif; ?>
 
 	<section class="ma-product-section ma-product-intro">
@@ -369,10 +378,6 @@ if ( ! empty( $category['hero_video'] ) ) {
 			<p class="ma-fabric-structures__note"><?php echo esc_html( $category['fabric_structures']['note'] ); ?></p>
 		</div>
 	</section>
-	<?php endif; ?>
-
-	<?php if ( 'knitted-fabrics-manufacturer' === $category_slug ) : ?>
-		<?php get_template_part( 'template-parts/fabric-library/library' ); ?>
 	<?php endif; ?>
 
 	<?php if ( ! empty( $category['subcategories'] ) ) : ?>

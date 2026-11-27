@@ -4883,6 +4883,7 @@ body.page .container.grid-container:has(.ma-product-category) {
 /* Representative fabric library. Scoped to its owning category and compact Merino entry. */
 .ma-fabric-library {
   background: var(--ma-color-bg);
+  border-bottom: 1px solid var(--ma-color-border);
   scroll-margin-top: var(--ma-fabric-anchor-offset);
 }
 
