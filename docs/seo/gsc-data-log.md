@@ -26,6 +26,14 @@
 
 > 2026-08 至 2026-10 完整历史记录已原样归档至 [docs/archive/gsc-data-log-history-2026-08-to-10.md](../archive/gsc-data-log-history-2026-08-to-10.md)。
 
+## 2026-11-27：GSC 截至 11-24 快照、4 URL 请求索引与 190 词美国摸底
+
+- **GSC 索引请求（所有者 `2026-11-26` 操作）**：已为 4 个 URL 提交编制索引请求——`/product-showcase/womens-silver-yarn-thermal-set/`、`/product-showcase/womens-leaf-jacquard-yoga-set/`、`/product-showcase/womens-high-vis-cycling-jacket/`、`/technical-knitwear-tech-pack-guide/`（待 `12-01` 轻量复查抓取状态）。
+- **只读 GSC `final` 快照（`seo-clash`，覆盖至 `2026-11-24`）**：`11-24` 单日 `2 clicks / 111 impressions / pos 7.3`。28 天 Page 对比（`2026-10-28～11-24` vs `09-30～10-27`）：`/top-sportswear-manufacturers-china/` `2/231→6/297`、`/knitted-fabrics-manufacturer/` **`0/127→1/264`**、`/merino-wool-manufacturer/` `6/201→8/237`、`/underwear-manufacturer/` `2/85→2/68`、`/sportswear-manufacturer/` `5/56→0/55`、`/outdoor-clothing-manufacturer/` `1/23→3/46`、`/sports-accessories-manufacturer/` `0/19→0/37`；新上线的 `/flatlock-vs-coverstitch-technical-knitwear/`（`0/34`, pos `5.2`）、`/merino-wool-base-layer-gsm-guide/`（`0/26`, pos `6.5`）与 `/product-showcase/`（`0/26`, pos `7.4`）已获初期曝光。`/knitted-fabrics-manufacturer/` 90 天 Query 显示 `knitted fabric manufacturer`（`54 imp`）列第一。
+- **美国 190 词 DataForSEO `keyword-metrics` 摸底（纯调研无网站改动，总花费 `$0.1088`；原始 JSON/CSV 存于 `.chrome-check/sitewide-keyword-audit-2026-11-27/`，不入 Git）**：
+  - **48 个面料词（`$0.0287`）**：`knit/knitted fabric manufacturer/supplier` 为同一词簇（US 月量 `40`、12mAvg `42.5`、CPC `$2.73`、KD `0`），高于 `sportswear fabric manufacturer`（`20`）与 `activewear fabric supplier`（`10`）/ `activewear fabric manufacturer`（`NR`）；另证实 `circular knit fabric`（`140`, KD `0`）、`merino wool knit fabric`（`110`, KD `0`）、`thermal knit fabric`（`90`, KD `0`）为低竞争细分机会。保留 `/knitted-fabrics-manufacturer/` 主词路线，待 49 张实拍图跑满 28 天后再单变量评估是否微调 Title 为单数+`Custom/China`。
+  - **6 批 142 个全站商业/单品/指南词（`$0.0802`，64 词有观测值）**：**Sportswear** 占全站绝大部分 B2B 需求（`sportswear manufacturer` `1300` / `fitness apparel` `880` / `yoga wear` `880` KD `0` / `activewear` `480` + `activewear manufacturer china` `390` KD `2` / `leggings` `480` + `custom leggings` `390` KD `0` / `compression shirt` `390` `$9.26` KD `0`）；**首页**现主词 `performance apparel manufacturer` 为 `NR`，而 `apparel/clothing/garment manufacturer china` 各 `1000`（`$5.79`）、`cut and sew manufacturer` `720`（**`$12.26` CPC / KD `3`**）；**Underwear** 主词 `320`（`$5.10` / KD `0`）为隐藏金矿应守住；**Merino**（`30` / `$6.02`）与 **Outdoor**（`50` / `$10.11` / KD `2`）主词精准；**Accessories** 靠 `beanie`（`90`）、`custom sports accessories`（`40`）、`neck gaiter`/`balaclava`/`ski mask`（各 `10`）等单品驱动；**Silk Wear** 几乎全组 B2B 词为 `NR`（仅 `silk garment/pajama manufacturer` 各 `10`），优先级排最末。
+
 ## 2026-11-25：6 URL 索引复查、FLATLOCK→Merino 28 天后窗与表单送达核验
 
 只读复查（`seo-clash` v0.2.36，`sc-domain:athletikapparel.com`，`type=web`、`dataState=final`）；最新 `final` 覆盖至 `2026-11-23`（11-18～11-23 日曝光：`97 / 100 / 58 / 72 / 59 / 88`，11-22 为 4 clicks）。

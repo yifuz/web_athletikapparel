@@ -15,8 +15,8 @@
 ## 接下来的工作
 
 1. **站外权威跟进**：**OS Hub 工厂档案（`CN2021314PF2M92`，原 Claim `#6327`）已于 2026-11-26 经所有者确认认领成功**；继续等待 Merrow、Woolmark、SourceReady 回邮（11-25 查邮暂未见回复）及 `athletik.com.cn` 旧门牌修复。
-2. **站内已完成 Local 升级待批准上线（49 款羊毛/混纺面料实拍微距图集成）**：已在 LocalWP 完成 2025 批 24 款 + 2024 批去重后 25 款共 49 款面料微距图（98 个 WebP 存于 `uploads/myathletik-theme/assets/images/fabrics/merino/`）、117 款有图优先排序、原生 `<dialog>` 1440px 大图查看器及 `/merino-wool-manufacturer/` 3 卡缩略图预览（未推远程、未部署生产，待所有者验收批准后连同 98 个 WebP 一并 SSH 部署）。
-3. **到期观察窗口与小补漏**：在 GSC 为 `/technical-knitwear-tech-pack-guide/` 补点一次重抓请求（抓取停在 11-19 早于 11-20 标题升级）；`11-27～12-01` 复盘 Underwear / Yoga 28 天后窗与 `11-20` / `11-23` 社媒后台真实数据。
+2. **12 月核心页面单变量优化准备（基于 11-27 全站 190 词摸底）**：等 11 月下旬批资产索引稳定后，按高 ROI 排序推进——① `/sportswear-manufacturer/`（占全站 B2B 搜索 70%+，单变量强化 `Activewear China` / `Leggings` / `Yoga Wear` / `Compression` 信号，不动 URL）；② 首页 `/`（现主词 `NR`，评估升级融入 `Cut and Sew`（$12.26 CPC / KD 3）+ `Apparel Manufacturer China`）；③ `/underwear-manufacturer/`（320/月、$5.10 CPC、KD 0，主词不动，补实拍 Showcase）。`Merino`、`Outdoor`、`Knitted Fabrics` 主词正确保持稳态，`Silk Wear` 盘子过小放最末。
+3. **近期观察窗口**：`2026-11-26` 所有者已对 3 款新 Sportswear Showcase（生产 ID `121`/`122`/`123`）及 `/technical-knitwear-tech-pack-guide/` 点击 GSC 请求编入索引；**`2026-12-01` 轻量复查**（4 URL 重抓收录状态 + 对照 `11-20`/`11-23` LinkedIn & IG 后台曝光点击定论社媒 ROI）；**`2026-12-18～24` 完整窗口复盘**（10 篇技术指南 + Sportswear Showcase + 49 款面料实拍图满 21～28 天后再跑正式 SERP/GSC 复盘）。
 
 ## 2026-11 当月工作流水账（按日追加，严禁抹除，月底归档为 `archive/progress-2026-11.md`）
 
@@ -62,6 +62,8 @@
 | 2026-11-27 | 网站 / 面料库 | 完成 49 款羊毛/功能混纺面料实拍微距图 LocalWP 集成（2025 批 24 款 + 2024 批去重后 25 款：跳过 `P1=HY091231`、新增 20 款、从 `recent` 提级 5 款并将 `HY244620`/`HY244663`/`HY244665`/`HY244667` 更新为 `Merino wool`；全库 117 款，有图 49 款排前、纯规格 68 款在后）；11 张无字 `.jpg` 原图免顶裁、38 张顶字源图裁去顶部 12.5% 后导出 98 个 16:9 WebP（640×360 与 1440×810，全部存于 `uploads/myathletik-theme/assets/images/fabrics/merino/`）；修正 `cellulosic` 筛选支持 `lyocell` 且 `HY091396` 不误标 `wool`；新增原生 `<dialog>` 1440px Lightbox 与 `/merino-wool-manufacturer/` 3 卡缩略图预览。`php -l`、98/98 WebP HTTP 200、Playwright 桌面/移动及 4 张 UI 截图复检与 21 处技术指南 `#fabric-hy...` 锚点回归全部通过（仅本地提交，未部署生产、未 `git push`） | `inc/fabric-library.php` · `template-parts/fabric-library/` · `assets/js/fabric-library.js` · `style.css` |
 | 2026-11-27 | 网站 / 首页 | L1 替换首页 Bento `Knitted Fabrics` 入口卡原 AI 堆叠色卡图，改用实拍碳黑竖罗纹面料微距图 `HY254938`（由 `P012.png` 裁顶导出 480/640/960/1200w 16:9 WebP 存于 `uploads/myathletik-theme/assets/images/knitted fabrics/`）；`php -l`、4/4 WebP HTTP 200 及首页七宫格视觉复检全部通过（仅本地提交，待与面料库一并批准上线） | `template-parts/home/product-categories.php` |
 | 2026-11-27 | 网站 / 面料页 | L1 将 `/knitted-fabrics-manufacturer/` 的 `#merino-fabric-examples`（`Fabric selection library`）前移至 `Program fit` 之后、`Category overview` 之前，并将该页 Hero 的 `View Examples` 按钮锚点指向 `#fabric-library`；`style.css` 补充底部分隔线；`php -l` 与 LocalWP 全量回归验收通过（仅本地提交） | `template-parts/product-category/page.php` · `style.css` |
+| 2026-11-27 | SEO / 关键词调研 | 完成 190 词美国 DataForSEO `keyword-metrics` 摸底（48 面料词 `$0.0287` + 6 批 142 全站词 `$0.0802`，合计 `$0.1088`，原始文件存于 Git 忽略目录 `.chrome-check/sitewide-keyword-audit-2026-11-27/`），确立 Knitted 主词保留、Sportswear 强化 Activewear/Leggings/Yoga/Compression、首页补入 Cut & Sew + China、Underwear 守住高词量及 Silk 做减法策略；同步入账 `11-24` GSC `final` 快照（111 imp / 2 clicks / pos 7.3；Knitted 0/127→1/264 翻倍）及 `11-26` 4 URL 请求索引记录 | [`gsc-data-log.md`](seo/gsc-data-log.md) |
+| 2026-11-27 | 生产部署 / 网站 | 经所有者验收批准，将 49 款羊毛面料实拍图（`77f74dd`）、首页 `Knitted Fabrics` Bento 实拍图替换（`2a679b9`）及面料库上移至 `Overview` 之前（`5bcb300`）部署至 Flywheel 生产站（8 运行时代码 + 102 WebP 媒体全部 SHA-256 与远程 `php -l` 校验通过，私有备份 `C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-27-5bcb300-fabric-library`，无数据库写入，已执行 `wp cache flush`）；线上裸 URL 实测 HTTP 200（首页新图、`117` 卡 / `49` 图且库前移、Merino 3 卡预览及指南回归正常，102/102 线上 WebP HEAD 200）；工作区未提交的 `product-showcase` 2 文件保留未动 | `5bcb300` · `77f74dd` · `2a679b9` |
 
 ## 使用与维护
 
