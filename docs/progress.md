@@ -64,6 +64,7 @@
 | 2026-11-27 | 网站 / 面料页 | L1 将 `/knitted-fabrics-manufacturer/` 的 `#merino-fabric-examples`（`Fabric selection library`）前移至 `Program fit` 之后、`Category overview` 之前，并将该页 Hero 的 `View Examples` 按钮锚点指向 `#fabric-library`；`style.css` 补充底部分隔线；`php -l` 与 LocalWP 全量回归验收通过（仅本地提交） | `template-parts/product-category/page.php` · `style.css` |
 | 2026-11-27 | SEO / 关键词调研 | 完成 190 词美国 DataForSEO `keyword-metrics` 摸底（48 面料词 `$0.0287` + 6 批 142 全站词 `$0.0802`，合计 `$0.1088`，原始文件存于 Git 忽略目录 `.chrome-check/sitewide-keyword-audit-2026-11-27/`），确立 Knitted 主词保留、Sportswear 强化 Activewear/Leggings/Yoga/Compression、首页补入 Cut & Sew + China、Underwear 守住高词量及 Silk 做减法策略；同步入账 `11-24` GSC `final` 快照（111 imp / 2 clicks / pos 7.3；Knitted 0/127→1/264 翻倍）及 `11-26` 4 URL 请求索引记录 | [`gsc-data-log.md`](seo/gsc-data-log.md) |
 | 2026-11-27 | 生产部署 / 网站 | 经所有者验收批准，将 49 款羊毛面料实拍图（`77f74dd`）、首页 `Knitted Fabrics` Bento 实拍图替换（`2a679b9`）及面料库上移至 `Overview` 之前（`5bcb300`）部署至 Flywheel 生产站（8 运行时代码 + 102 WebP 媒体全部 SHA-256 与远程 `php -l` 校验通过，私有备份 `C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-27-5bcb300-fabric-library`，无数据库写入，已执行 `wp cache flush`）；线上裸 URL 实测 HTTP 200（首页新图、`117` 卡 / `49` 图且库前移、Merino 3 卡预览及指南回归正常，102/102 线上 WebP HEAD 200）；工作区未提交的 `product-showcase` 2 文件保留未动 | `5bcb300` · `77f74dd` · `2a679b9` |
+| 2026-11-27 | 询盘 / 品牌规范 | 完成一封纯面料跟进英文回复审核通过，并自动提炼更新询盘手册与品牌规范技能（纯面料小批量 1 卷约 20 kg 起＋约 RMB 2,000 上机费口径、高摩擦场景羊毛混纺耐磨/速干取舍、厂内未承接特种印花不代统筹试印测试边界） | [`inquiry-reply-playbook.md`](marketing/inquiry-reply-playbook.md) · [`SKILL.md`](../.agents/skills/wp-brand-voice-guard/SKILL.md) |
 
 ## 使用与维护
 
