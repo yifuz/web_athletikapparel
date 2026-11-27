@@ -55,7 +55,8 @@ if ( $is_portrait ) {
 if ( ( $multiple_videos || ! $has_video ) && 3 === $photo_count ) {
 	$thumbs_class .= ' ma-pl-thumbs--count-3';
 }
-$video_tiles_class = 'ma-pl-video-tiles' . ( 3 === count( $videos ) ? ' ma-pl-video-tiles--count-3' : '' );
+$video_count = count( $videos );
+$video_tiles_class = 'ma-pl-video-tiles' . ( in_array( $video_count, array( 2, 3 ), true ) ? ' ma-pl-video-tiles--count-' . $video_count : '' );
 
 get_header();
 ?>

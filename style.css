@@ -7998,6 +7998,7 @@ body.ma-pl-page .content-area { width: 100%; }
 .ma-pl-videos { margin-top: var(--ma-space-4); }
 .ma-pl-videos__label { margin-bottom: var(--ma-space-2); color: var(--ma-color-text); font-size: var(--ma-fs-small); font-weight: 650; }
 .ma-pl-video-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--ma-space-2); }
+.ma-pl-video-tiles--count-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .ma-pl-video-tiles--count-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .ma-pl-video-tile { display: flex; flex-direction: column; min-width: 0; min-height: var(--ma-touch-target); margin: 0; padding: 0; overflow: hidden; border: 1px solid var(--ma-color-border); border-radius: var(--ma-radius); background: var(--ma-color-surface); color: var(--ma-color-text); text-align: left; cursor: pointer; }
 .ma-pl-video-tile:is(:hover, :focus-visible) { border-color: var(--ma-color-accent-2); background: var(--ma-color-surface); color: var(--ma-color-accent-2); }

@@ -200,6 +200,46 @@ function myathletik_product_example_data() {
 		)
 	);
 
+	$build_landscape_videos = static function ( $base, $items ) {
+		$out = array();
+		foreach ( $items as $key => $label ) {
+			$out[ $key ] = array(
+				'src'          => $base . $key . '-1080.mp4',
+				'poster'       => $base . $key . '-poster.webp',
+				'thumbnail'    => $base . $key . '-thumb.webp',
+				'label'        => $label,
+				'aspect'       => 'landscape',
+				'thumb_width'  => 640,
+				'thumb_height' => 360,
+			);
+		}
+		return $out;
+	};
+
+	$silver_videos = $build_landscape_videos(
+		$silver_media_base,
+		array(
+			'overview' => 'Full-set overview',
+			'motion'   => 'Movement & stretch',
+		)
+	);
+	$yoga_videos = $build_landscape_videos(
+		$yoga_media_base,
+		array(
+			'overview' => 'Full-set overview',
+			'stretch'  => 'Stretch & band detail',
+			'jacquard' => 'Back jacquard close-up',
+		)
+	);
+	$cycling_videos = $build_landscape_videos(
+		$cycling_media_base,
+		array(
+			'overview'     => 'Full-body overview',
+			'zip-and-mesh' => 'Zipper & mesh panels',
+			'rear-pocket'  => 'Rear zip pocket detail',
+		)
+	);
+
 	return array(
 		'ocean-depth' => array(
 			'slug'           => 'ocean-depth-merino-wool-blend-set',
@@ -545,6 +585,8 @@ function myathletik_product_example_data() {
 				'aspect'         => 'portrait',
 				'caption_suffix' => 'Studio sample photo',
 				'images'         => $silver_images,
+				'video'          => $silver_videos['overview'],
+				'videos'         => $silver_videos,
 			),
 			'options'          => array(
 				'intro'        => 'The top and leggings are developed around a coordinated fabric and seam layout. Review the options below for your OEM or ODM sportswear brief.',
@@ -583,7 +625,7 @@ function myathletik_product_example_data() {
 		'womens-leaf-jacquard-yoga-set' => array(
 			'slug'             => 'womens-leaf-jacquard-yoga-set',
 			'seo_title'        => "Women's Leaf Jacquard Yoga Set | Athletik Clothing",
-			'meta_description' => "Explore a women's leaf-and-line jacquard sports bra and high-rise leggings set in 270 GSM polyester/spandex (HY265075) with studio photos and OEM options.",
+			'meta_description' => "Explore a women's leaf-and-line jacquard sports bra and high-rise leggings set in 270 GSM polyester/spandex (HY265075) with photos, videos, and OEM options.",
 			'inquiry_category' => 'Sportswear',
 			'social_image'     => $yoga_media_base . 'front-social.jpg',
 			'category_slug'    => 'sportswear-manufacturer',
@@ -606,6 +648,8 @@ function myathletik_product_example_data() {
 				'aspect'         => 'portrait',
 				'caption_suffix' => 'Studio sample photo',
 				'images'         => $yoga_images,
+				'video'          => $yoga_videos['overview'],
+				'videos'         => $yoga_videos,
 			),
 			'options'          => array(
 				'intro'        => 'Use this matching bra and leggings set as a starting point for custom jacquard activewear development.',
@@ -667,6 +711,8 @@ function myathletik_product_example_data() {
 				'aspect'         => 'portrait',
 				'caption_suffix' => 'Studio sample photo',
 				'images'         => $cycling_images,
+				'video'          => $cycling_videos['overview'],
+				'videos'         => $cycling_videos,
 			),
 			'options'          => array(
 				'intro'        => 'Review the lightweight shell, ventilation panels, and pocket details below for your OEM or ODM cycling and running outerwear brief.',
