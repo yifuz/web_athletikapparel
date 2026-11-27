@@ -14,7 +14,7 @@
 | 优先工作 | 当前状态 / 下一步 |
 |---|---|
 | 公开资料一致性 | 中国生产地址为 No.15。**2026-11-20 可控社媒主页地址已更正**；中国站修复与 SourceReady 更正邮件等待对方处理结果（11-19 只读复验仍为 No.25）。 |
-| 宽泛采购的独立佐证 | 已有 [OS Hub、Asda 和 New Balance 记录](testing/buyer-disclosures-osh-2026-11-17.md)；**OS Hub 工厂档案（`CN2021314PF2M92`，原 Pending Claim `#6327`）已于 2026-11-26 经所有者确认认领成功（Approved）**，公开挂载 `https://www.athletikapparel.com/`、No.15 生产地址与扩展品类；**11-20 已向 Merrow（Customer Story / ACTIVESEAM 授权）及 Woolmark（Licence `0030001176` 询问并列加主站、保留 `woolbaselayer.com`）发信**，11-25 只读查邮暂未见回邮，继续等待。 |
+| 宽泛采购的独立佐证 | 已有 [OS Hub、Asda 和 New Balance 记录](testing/buyer-disclosures-osh-2026-11-17.md)；**OS Hub 工厂档案（`CN2021314PF2M92`，原 Pending Claim `#6327`）已于 2026-11-26 经所有者确认认领成功（Approved）并完成档案资料完善保存**，公开挂载 `https://www.athletikapparel.com/`、No.15 生产地址与扩展品类；**11-20 已向 Merrow（Customer Story / ACTIVESEAM 授权）及 Woolmark（Licence `0030001176` 询问并列加主站、保留 `woolbaselayer.com`）发信**，11-25 只读查邮暂未见回邮，继续等待。 |
 | 既定效果复盘 | Knitted / Merino 完整 28 天后窗（`10-21～11-17`）已于 2026-11-19 按 `final` 完成核查（Knitted 1/84→1/177、Merino 4/177→7/201，维度不闭合且含共同变量，均 `no-change`），明细见 [GSC Log](../seo/gsc-data-log.md) 与 [SEO Backlog](../seo/v2-backlog.md)。 |
 | C07 接缝对照 | 暂缺同面料实物样本，待样本及公开许可具备后再推进。 |
 | 功能针织测试指南 | 已完成[机会核查](testing/performance-knit-testing-guide-opportunity-2026-11-17.md)，属于候选；页面位置与正文尚未获批准。 |

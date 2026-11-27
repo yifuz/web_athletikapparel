@@ -14,9 +14,9 @@
 
 ## 接下来的工作
 
-1. **站外权威跟进**：**OS Hub 工厂档案（`CN2021314PF2M92`，原 Claim `#6327`）已于 2026-11-26 经所有者确认认领成功**；继续等待 Merrow、Woolmark、SourceReady 回邮（11-25 查邮暂未见回复）及 `athletik.com.cn` 旧门牌修复。
-2. **12 月核心页面单变量优化准备（基于 11-27 全站 190 词摸底）**：等 11 月下旬批资产索引稳定后，按高 ROI 排序推进——① `/sportswear-manufacturer/`（占全站 B2B 搜索 70%+，单变量强化 `Activewear China` / `Leggings` / `Yoga Wear` / `Compression` 信号，不动 URL）；② 首页 `/`（现主词 `NR`，评估升级融入 `Cut and Sew`（$12.26 CPC / KD 3）+ `Apparel Manufacturer China`）；③ `/underwear-manufacturer/`（320/月、$5.10 CPC、KD 0，主词不动，补实拍 Showcase）。`Merino`、`Outdoor`、`Knitted Fabrics` 主词正确保持稳态，`Silk Wear` 盘子过小放最末。
-3. **近期观察窗口**：`2026-11-26` 所有者已对 3 款新 Sportswear Showcase（生产 ID `121`/`122`/`123`）及 `/technical-knitwear-tech-pack-guide/` 点击 GSC 请求编入索引；**`2026-12-01` 轻量复查**（4 URL 重抓收录状态 + 对照 `11-20`/`11-23` LinkedIn & IG 后台曝光点击定论社媒 ROI）；**`2026-12-18～24` 完整窗口复盘**（10 篇技术指南 + Sportswear Showcase + 49 款面料实拍图满 21～28 天后再跑正式 SERP/GSC 复盘）。
+1. **站外权威跟进**：**OS Hub 工厂档案（`CN2021314PF2M92`，原 Claim `#6327`）已于 2026-11-26 经所有者确认认领成功并完成认领后资料编辑保存**；继续等待 Merrow、Woolmark、SourceReady 回邮（11-25 查邮暂未见回复）及 `athletik.com.cn` 旧门牌修复。
+2. **下一高 ROI 资产方向（基于 11-27 全站 190 词摸底）**：P3（`/` + `/sportswear-manufacturer/` 元数据与主副词升级）及 P1（Sportswear 3 款 8 条去绿幕展示视频）已于 `2026-11-27` 上线生产；下一步高性价比重点为 `/underwear-manufacturer/`（320/月、$5.10 CPC、KD 0）补充 1–2 款男女功能内衣实拍 Showcase；`Merino`、`Outdoor`、`Knitted Fabrics` 主词正确保持稳态，`Silk Wear` 盘子过小放最末。
+3. **近期观察窗口**：待在 GSC 为刚升级元数据的 `/` 与 `/sportswear-manufacturer/` 请求重抓索引（2026-11-26 已为 3 款新 Showcase 与 Tech Pack 指南请求索引）；**`2026-12-01` 轻量复查**（4+2 URL 重抓收录状态 + 对照 `11-20`/`11-23` LinkedIn & IG 后台曝光点击定论社媒 ROI）；**`2026-12-18～24` 完整窗口复盘**（10 篇技术指南 + Sportswear Showcase/视频 + 49 款面料图 + P3 升级满 21～28 天后再跑正式 SERP/GSC 复盘）。
 
 ## 2026-11 当月工作流水账（按日追加，严禁抹除，月底归档为 `archive/progress-2026-11.md`）
 
@@ -67,6 +67,7 @@
 | 2026-11-27 | 生产部署 / 网站 | 经所有者验收批准，将 49 款羊毛面料实拍图（`77f74dd`）、首页 `Knitted Fabrics` Bento 实拍图替换（`2a679b9`）及面料库上移至 `Overview` 之前（`5bcb300`）部署至 Flywheel 生产站（8 运行时代码 + 102 WebP 媒体全部 SHA-256 与远程 `php -l` 校验通过，私有备份 `C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-27-5bcb300-fabric-library`，无数据库写入，已执行 `wp cache flush`）；线上裸 URL 实测 HTTP 200（首页新图、`117` 卡 / `49` 图且库前移、Merino 3 卡预览及指南回归正常，102/102 线上 WebP HEAD 200）；工作区未提交的 `product-showcase` 2 文件保留未动 | `5bcb300` · `77f74dd` · `2a679b9` |
 | 2026-11-27 | 询盘 / 品牌规范 | 完成三封 B2B 询盘英文回复审核通过（纯面料两轮跟进 + 泛批发目录询盘简短礼貌回复），并自动提炼更新询盘手册与品牌规范技能（纯面料 1 卷约 20 kg 起＋约 RMB 2,000 上机费、定制开发周期/费用须向面料部门按项目核实、有诚意客户可按项目批准免国际运费寄送面料册、高摩擦羊毛混纺耐磨/速干取舍、厂内未承接特种印花测试边界及泛批发目录询盘极简礼貌回函策略） | [`inquiry-reply-playbook.md`](marketing/inquiry-reply-playbook.md) · [`SKILL.md`](../.agents/skills/wp-brand-voice-guard/SKILL.md) |
 | 2026-11-27 | SEO / 网站 | 完成 P3 商业搜索词与元数据精准升级（首页 `/` 保持双行 H1 并更新 59 字符 Title / 152 字符 Meta / Hero Eyebrow 与 Subhead；`/sportswear-manufacturer/` 升级 53 字符 Title / 150 字符 Meta、H1、Intro、Scope、`what_we_make` 与 4 子类标题、Tech Pack 链接文案及 `#fabric-library` 锚点，并通过 `rank-math.php` 代码优先输出 + LocalWP DB 兜底同步）；`php -l` 与 LocalWP 全量验收通过，保留本地提交待批准上线（未推远程、未部署生产，工作区未提交 `product-showcase` 2 文件保留未动） | [`seo-tags.md`](../seo-tags.md) · `functions.php` · `rank-math.php` · `inc/product-category-data.php` |
+| 2026-11-27 | 生产部署 / 网站 | 经所有者独立验收与批准，将 P1 Sportswear 3 款 8 条去绿幕 1080p 展示视频（`3467b16`）及 P3 首页与 `/sportswear-manufacturer/` SEO/文案升级（`ee7df48`）一键部署至 Flywheel 生产站（8 运行时代码 `functions.php` 压轴 + 24 媒体 `8 MP4 / 16 WebP` 全部 SHA-256 与远程 `php -l` 校验通过，私有备份 `C:\Users\Administrator\.ssh\athletik-deploy-backups\2026-11-27-ee7df48-p1-p3`，同步生产 `sportswear-manufacturer` ID 19 Rank Math DB 兜底字段并执行 `wp cache flush`）；线上 `/sportswear-manufacturer/` 与 Yoga Showcase 裸 URL、`/?nocache=1` 及另两款 Showcase `?nocache=1` 源站全部通过（`/knitted-fabrics-manufacturer/` 与 `/merino-wool-manufacturer/` 回归正常；24/24 媒体 HEAD 200、8/8 MP4 `Range 206` 正常；首页与另 2 款 Showcase 裸 URL 待 Flywheel Varnish 后台 Flush Cache 或 TTL 过期）；并同步记录所有者已于 11-26 完成 OS Hub 认领后档案编辑；未推远程、未碰工作区未提交 `product-showcase` 2 文件 | `ee7df48` · `3467b16` · [`product-showcase-sportswear-phase1-2026-11-26.md`](site/product-showcase-sportswear-phase1-2026-11-26.md) |
 
 ## 使用与维护
 
